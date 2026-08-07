@@ -1,0 +1,88 @@
+{
+    "misc": {
+		"welcome": "Welcome",
+		"loading": "Loading...",
+		"changeLanguage": "Change Language",
+		"goHome": "Go Home",
+		"active": "Active"        
+	},
+	"form": {
+		"submissionError": "Submission failed. Please try again later or contact support.",
+		"sending": "Sending..."
+	},
+	"errors": {
+        "error": "Error",
+		"notFound": "Page not found",
+		"serverError": "Internal server error",
+		"forbidden": "Access forbidden",
+		"pageTitle": "{{statusCode}} - {{title}}",
+		"statusLabel": "Error {{statusCode}}",
+		"notFoundTitle": "Page not found",
+		"notFoundDescription": "The page you are looking for may have moved, been removed, or never existed. Return home or contact the Smartgrid team if you need help finding something specific.",
+		"serverErrorTitle": "Something went wrong",
+		"serverErrorDescription": "The site could not complete this request. Our team has been notified where possible, and you can try again shortly or contact us directly.",
+		"genericTitle": "Unexpected error",
+		"genericDescription": "An unexpected error interrupted this request. Please try again, return home, or contact the Smartgrid team for support.",
+        
+		"actions": {
+			"home": "Return Home",
+			"contact": "Contact Support"
+		}
+	},
+	
+	"locales": [
+		{
+			"label": "English",
+			"code": "en",
+			"flag": "/img/flags/gb.svg"
+		},
+		{
+			"label": "Swahili",
+			"code": "sw",
+			"flag": "/img/flags/tz.svg"
+		}
+	],
+	"nav": {
+        "logo": "/img/logo.svg",
+		"logo_alt": "SmartGrid",
+		"links": [
+			
+			{ "label": "FAQ", "href": "/#faq", "excludeOnMainNav": true },
+			{ "label": "Contact", "href": "/contact" },
+			{ "label": "About", "href": "/about" }
+		],
+		"cta_ghost": { "label": "Learn More", "href": "/#faq" },
+		"cta_primary": { "label": "Get a Quote", "href": "/contact" }
+	},
+	"footer": {
+		"description": "Reliable. Scalable. Fast. Accurate.",
+		"columns": {
+			"company": {
+				"heading": "Company",
+				"links": [
+					{ "label": "About Us", "href": "/about" },
+					{ "label": "Our Team", "href": "/about#team" }
+				]
+			},
+			
+			"contact": {
+				"heading": "Contact",
+				"links": [
+					{
+						"label": "smartgridsurveying@gmail.com",
+						"href": "mailto:smartgridsurveying@gmail.com"
+					},
+					{ "label": "Nairobi Office", "href": "/contact#hq-nairobi" },
+					{ "label": "Schedule a Call", "href": "/contact" }
+				]
+			}
+		},
+		"copyright": "© {{year}} {{organization}} All rights reserved.",
+		"legal": {
+			"privacy": "Privacy Policy",
+			"terms": "Terms of Use"
+		}
+	}
+	
+	
+}

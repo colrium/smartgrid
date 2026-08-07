@@ -1,0 +1,347 @@
+{
+	"hero": {
+		"tag": "Get In Touch",
+		"headline": "Let's talk about your surveying or engineering project",
+		"description": "Whether you need land surveying, aerial surveys, civil engineering, equipment hire, or drone photography, our team is ready to help.",
+		"badge": { "text": "Response within 24 hours", "status": "active" }
+	},
+	"opportunities": {
+		"tag": "Choose a Route",
+		"headline": "Route your enquiry to the right team",
+		"description": "Select the service that best fits your project so we can provide the right information and next steps."
+	},
+	"offices": {
+		"tag": "Our Offices",
+		"headline": "Find us",
+		"items": [
+			{
+				"id": "hq-nairobi",
+				"label": "Smartgrid Office",
+				"city": "Nairobi",
+				"country": "Kenya",
+				"flag": "🇰🇪",
+				"address_lines": [
+					"SMARTGRID SURVEYING & CIVIL ENGINEERING LTD",
+					"Nairobi, Kenya"
+				],
+				"lat": -1.286389,
+				"lng": 36.821946,
+				"phone": "+254 10 7393023",
+				"email": "smartgridsurveying@gmail.com",
+				"hours": "Mon–Fri 08:00–17:00 EAT",
+				"type": "hq",
+				"note": "Contact us to discuss your surveying, civil engineering, equipment hire, or drone services requirements."
+			},
+			{
+				"id": "regional-nairobi",
+				"label": "East Africa Regional Office",
+				"city": "Nairobi",
+				"country": "Kenya",
+				"flag": "🇰🇪",
+				"address_lines": [
+					"Smartgrid Regional Office",
+					"Upper Hill, Kilimani",
+					"Nairobi, Kenya"
+				],
+				"lat": -1.2921,
+				"lng": 36.8219,
+				"phone": "+254 700 000 002",
+				"email": "smartgridsurveying@gmail.com",
+				"hours": "Mon–Fri 08:30–17:30 EAT",
+				"type": "regional",
+				"note": "Coordinates surveying, engineering, and project-support services in East Africa."
+			},
+			{
+				"id": "west-africa-freetown",
+				"label": "West Africa Office",
+				"city": "Freetown",
+				"country": "Sierra Leone",
+				"flag": "🇸🇱",
+				"address_lines": [
+					"Smartgrid West Africa",
+					"Wilberforce, Freetown",
+					"Sierra Leone"
+				],
+				"lat": 8.4657,
+				"lng": -13.2317,
+				"phone": "+232 76 000 003",
+				"email": "smartgridsurveying@gmail.com",
+				"hours": "Mon–Fri 08:00–17:00 GMT",
+				"type": "regional",
+				"note": "Manages Sierra Leone operations and West African partner relations."
+			},
+			{
+				"id": "southern-africa-johannesburg",
+				"label": "Southern Africa Office",
+				"city": "Johannesburg",
+				"country": "South Africa",
+				"flag": "🇿🇦",
+				"address_lines": [
+					"Smartgrid Southern Africa",
+					"Sandton, Johannesburg",
+					"Gauteng, South Africa"
+				],
+				"lat": -26.1076,
+				"lng": 28.0567,
+				"phone": "+27 11 000 0004",
+				"email": "smartgridsurveying@gmail.com",
+				"hours": "Mon–Fri 08:00–17:00 SAST",
+				"type": "regional",
+				"note": "Covers South Africa, Eswatini, and Malawi operations."
+			}
+		]
+	},
+	"contact_reasons": {
+		"label": "What can we help with?",
+		"options": [
+			{ "value": "investment-enquiry", "label": "Request a quote" },
+			{ "value": "due-diligence", "label": "Request company information" },
+			{ "value": "site-visit", "label": "Schedule a site visit" },
+			{ "value": "partnership", "label": "Technology / equipment partnership" },
+			{ "value": "gold-supply", "label": "Surveying services enquiry" },
+			{ "value": "logistics", "label": "Project logistics enquiry" },
+			{ "value": "press-media", "label": "Press & media enquiry" },
+			{ "value": "compliance-legal", "label": "Compliance / legal" },
+			{ "value": "community", "label": "Community & ESG" },
+			{ "value": "careers", "label": "Careers & employment" },
+			{ "value": "other", "label": "Other" }
+		]
+	},
+	"form": {
+		"tag": "Send a Message",
+		"headline": "Start the conversation",
+		"description": "Fill in the form and the right member of our team will respond within one business day.",
+		"fields": {
+			"first_name": {
+				"label": "First name",
+				"placeholder": "James",
+				"required": true,
+				"type": "text"
+			},
+			"last_name": {
+				"label": "Last name",
+				"placeholder": "Mwangi",
+				"required": true,
+				"type": "text"
+			},
+			"email": {
+				"label": "Email address",
+				"placeholder": "you@example.com",
+				"required": true,
+				"type": "email"
+			},
+			"phone": {
+				"label": "Phone number",
+				"placeholder": "+256 700 000 000",
+				"required": false,
+				"type": "tel"
+			},
+			"country": {
+				"label": "Country",
+				"placeholder": "Select your country",
+				"required": true,
+				"type": "select"
+			},
+			"reason": {
+				"label": "Reason for contact",
+				"placeholder": "Select a reason",
+				"required": true,
+				"type": "select"
+			},
+			"opportunity": {
+				"label": "Opportunity of interest",
+				"placeholder": "Select an opportunity",
+				"required": false,
+				"type": "select",
+				"options": [
+					{ "value": "gold-aggregation", "label": "Land surveying" },
+					{ "value": "technology-partnership", "label": "Aerial surveys or equipment" },
+					{ "value": "gold-supply", "label": "Civil engineering" },
+					{ "value": "export-logistics", "label": "Equipment hire" },
+					{ "value": "goat-farming", "label": "Drone photography" },
+					{ "value": "horticulture", "label": "GIS mapping" },
+					{ "value": "multi-sector", "label": "Multiple opportunities" },
+					{ "value": "unsure", "label": "Not sure yet" }
+				]
+			},
+			"investor_tier": {
+				"label": "Project scale",
+				"placeholder": "Select a tier",
+				"required": false,
+				"type": "select",
+				"show_when": { "field": "reason", "value": "investment-enquiry" },
+				"options": [
+					{ "value": "seed-partner", "label": "Small project" },
+					{ "value": "strategic-partner", "label": "Medium project" },
+					{ "value": "anchor-investor", "label": "Large or complex project" },
+					{ "value": "unsure", "label": "Not sure yet" }
+				]
+			},
+			"message": {
+				"label": "Message",
+				"placeholder": "Tell us more about your enquiry…",
+				"required": true,
+				"type": "textarea",
+				"rows": 5
+			},
+			"consent": {
+				"label": "I consent to Smartgrid storing and using this data to respond to my enquiry, in line with the Privacy Policy.",
+				"required": true,
+				"type": "checkbox"
+			},
+			"newsletter": {
+				"label": "Subscribe me to Smartgrid updates",
+				"required": false,
+				"type": "checkbox"
+			}
+		},
+		"submit_label": "Send Message",
+		"success_heading": "Message received",
+		"success_body": "Thank you for reaching out. A member of our team will respond to your enquiry within one business day.",
+		"error_body": "Something went wrong sending your message. Please try again or email us directly at smartgridsurveying@gmail.com."
+	},
+	"direct_contacts": {
+		"tag": "Direct Contacts",
+		"headline": "Reach the right person",
+		"items": [
+			{
+				"department": "Projects & Partnerships",
+				"name": "Smartgrid Team",
+				"title": "Project Enquiries",
+				"email": "smartgridsurveying@gmail.com",
+				"phone": "+256 700 000 001",
+				"note": "Project enquiries, partnership proposals, and service consultations."
+			},
+			{
+				"department": "Quotes & Administration",
+				"name": "Smartgrid Team",
+				"title": "Client Support",
+				"email": "smartgridsurveying@gmail.com",
+				"phone": "+256 700 000 005",
+				"note": "Quotes, service information, and administrative enquiries."
+			},
+			{
+				"department": "Operations & Site Visits",
+				"name": "Smartgrid Team",
+				"title": "Operations Support",
+				"email": "smartgridsurveying@gmail.com",
+				"phone": "+256 700 000 006",
+				"note": "Site visit coordination, operational updates, and technical service queries."
+			},
+			{
+				"department": "Legal & Compliance",
+				"name": "Grace Njoroge",
+				"title": "Head of Legal & Compliance",
+				"email": "smartgridsurveying@gmail.com",
+				"phone": "+254 700 000 007",
+				"note": "Service agreements, regulatory compliance, and documentation."
+			},
+			{
+				"department": "Press & Media",
+				"name": "Communications Team",
+				"title": "Media Relations",
+				"email": "smartgridsurveying@gmail.com",
+				"phone": "",
+				"note": "Interview requests, press releases, photography and media access."
+			},
+			{
+				"department": "Community & ESG",
+				"name": "ESG Team",
+				"title": "Community Development",
+				"email": "smartgridsurveying@gmail.com",
+				"phone": "",
+				"note": "Community development enquiries, NGO partnerships, environmental reporting."
+			}
+		]
+	},
+	"site_visit": {
+		"tag": "Site Visits",
+		"headline": "See the operation for yourself",
+		"description": "Clients are welcome to arrange a project consultation with our team in Nairobi. Visits can include a discussion of your surveying, civil engineering, equipment, or drone-service requirements.",
+		"process_steps": [
+			{
+				"step": 1,
+				"title": "Submit a request",
+				"description": "Use the contact form above and select 'Schedule a site visit'. Include your preferred date and project requirements."
+			},
+			{
+				"step": 2,
+				"title": "Pre-visit briefing",
+				"description": "Our team will confirm your appointment and share any relevant preparation details."
+			},
+			{
+				"step": 3,
+				"title": "Visit our Nairobi office",
+				"description": "Our office is in Nairobi, Kenya. We will share the meeting details when your appointment is confirmed."
+			},
+			{
+				"step": 4,
+				"title": "Full site tour",
+				"description": "Meet with our team to discuss your scope, timelines, deliverables, and the most suitable service approach."
+			},
+			{
+				"step": 5,
+				"title": "Project next steps",
+				"description": "We will review the recommended next steps, including a tailored scope and quote where applicable."
+			}
+		],
+		"note": "Appointments are available Monday–Friday and should be arranged in advance.",
+		"cta": { "label": "Request a Site Visit", "href": "#contact-form" }
+	},
+	"faq": {
+		"tag": "Quick Answers",
+		"headline": "Common contact questions",
+		"items": [
+			{
+				"question": "How quickly will you respond to my enquiry?",
+				"answer": "All enquiries submitted through the contact form receive a response from the relevant team member within one business day, Monday–Friday, 08:00–17:00 EAT."
+			},
+			{
+				"question": "What information can you provide before a project starts?",
+				"answer": "Smartgrid can provide relevant company information, service details, project experience, and technical documentation on request."
+			},
+			{
+				"question": "Can I arrange a consultation before starting a project?",
+				"answer": "Yes. Contact us to arrange a consultation in Nairobi or discuss your requirements remotely."
+			},
+			{
+				"question": "Do you work on projects outside Kenya?",
+				"answer": "Yes. Smartgrid provides surveying and engineering services across Kenya and Africa. Contact us with your project location and requirements."
+			},
+			{
+				"question": "I represent a fund / family office. Is there a minimum ticket size above $189K?",
+				"answer": "Yes. For large or specialised projects, please contact our team directly at smartgridsurveying@gmail.com to discuss your requirements."
+			}
+		]
+	},
+	"social": {
+		"tag": "Follow Us",
+		"headline": "Stay connected",
+		"channels": [
+			{
+				"platform": "LinkedIn",
+				"handle": "Smartgrid Surveying",
+				"url": "https://linkedin.com/company/smartgridsurveying",
+				"icon": "linkedin"
+			},
+			{
+				"platform": "X / Twitter",
+				"handle": "@smartgridsurvey",
+				"url": "https://twitter.com/smartgridsurvey",
+				"icon": "twitter"
+			},
+			{
+				"platform": "Instagram",
+				"handle": "@smartgridsurveying",
+				"url": "https://instagram.com/smartgridsurveying",
+				"icon": "instagram"
+			},
+			{
+				"platform": "YouTube",
+				"handle": "Smartgrid Surveying",
+				"url": "https://youtube.com/smartgridsurveying",
+				"icon": "youtube"
+			}
+		]
+	}
+}
