@@ -3,15 +3,19 @@
 
 interface SectionTagProps {
 	children: React.ReactNode;
+	startElement?: React.ReactNode;
 	className?: string;
 }
-
-export function SectionTag({ children, className = "" }: SectionTagProps) {
+const StartElement = () => <span className="w-6 h-0.5 bg-primary"></span>;
+export function SectionTag({ children, startElement=<StartElement />, className = "" }: SectionTagProps) {
 	return (
-		<span
-			className={`inline-block text-[0.72rem] tracking-[0.14em] uppercase text-gold/85 mb-3 ${className}`}
-		>
-			{children}
-		</span>
+			<div
+				className={`inline-flex items-center gap-2 font-mono text-xs text-primary uppercase tracking-widest font-semibold ${className}`}
+			>
+				{startElement}
+                <span>
+                    {children}
+                </span>
+			</div>
 	);
 }

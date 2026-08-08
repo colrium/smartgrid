@@ -55,9 +55,9 @@ export default function HeroSection() {
 
 		// --- Kinetic Grid Shader ---
 		const gridUniforms = {
-			uColor: { value: new THREE.Color(0xff0000) },
+			uColor: { value: new THREE.Color(0xd3e3e1) },
 			uDronePos: { value: new THREE.Vector3(10, 10, 10) },
-			uRadius: { value: 4.0 },
+			uRadius: { value: 8.0 },
 		};
 
 		const gridMaterial = new THREE.ShaderMaterial({
@@ -77,20 +77,21 @@ export default function HeroSection() {
         varying vec3 vWorldPosition;
         void main() {
           float dist = distance(vWorldPosition.xz, uDronePos.xz);
-          float alpha = 1.0 - smoothstep(0.0, uRadius, dist);
+          float alpha = 0.7 - smoothstep(0.0, uRadius, dist);
           gl_FragColor = vec4(uColor, alpha);
         }
       `,
 			wireframe: true,
 			transparent: true,
 			depthWrite: false,
-            opacity: 0.5
+            opacity: 0.3
 		});
 
 		// --- Terrain Mesh ---
 		const geometry = new THREE.PlaneGeometry(35, 35, 45, 45);
 		const terrain = new THREE.Mesh(geometry, gridMaterial);
 		terrain.rotation.x = -Math.PI / 2.2;
+		terrain.position.set(0, -3.2, 0);
 		scene.add(terrain);
 
 		// --- Floating Particles ---
@@ -293,7 +294,7 @@ export default function HeroSection() {
 	}, []);
 
 	return (
-		<section className="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden">
+		<section className="relative min-h-screen flex items-center justify-center pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-32 overflow-hidden">
 			{/* WebGL Background */}
 			<div
 				ref={containerRef}
@@ -301,15 +302,15 @@ export default function HeroSection() {
 			/>
 
 			{/* Content Overlay */}
-			<div className="relative z-10 max-w-7xl mx-auto px-6 w-full min-h-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pointer-events-none">
+			<div className="relative z-10 mx-auto w-full min-h-full max-w-7xl px-6 sm:px-8 lg:px-12 xl:px-16 py-10 sm:py-14 lg:py-20 grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 xl:gap-24 items-center pointer-events-none">
 				{/* Left Column */}
 				<div className="lg:col-span-8 h-full pointer-events-auto">
-					<div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface border border-primary/20 text-primary text-xs font-mono font-medium mb-6">
+					<div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface border border-primary/20 text-on-surface text-xs font-mono font-medium mb-8 sm:mb-10">
 						<span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-						<span>{t("home:hero.badge")}</span>
+						<span className="whitespace-pre-line">{t("home:hero.badge")}</span>
 					</div>
 					<FadeRight delay={0.1} className="reveal active">
-						<h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-on-surface leading-[1.08] mb-8">
+						<h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-on-surface leading-[1.08] mb-8 sm:mb-10 lg:mb-12 whitespace-pre-line">
 							<Trans
 								i18nKey={["home:hero.headline"]}
 								defaults="Survey <shine>Smarter</shine>, Build Stronger" // optional defaultValue
@@ -321,10 +322,13 @@ export default function HeroSection() {
 						</h1>
 					</FadeRight>
 
-					<p className="text-base sm:text-lg text-on-surface/70 max-w-2xl font-normal leading-relaxed mb-10">
+					<p className="text-base sm:text-lg text-on-surface/70 max-w-2xl font-normal leading-relaxed mb-10 sm:mb-12 whitespace-pre-line">
 						{t("home:hero.description")}
 					</p>
-					<FadeUp delay={0.1} className="flex flex-col md:flex-row md:flex-wrap justify-center items-center gap-8 ">
+					<FadeUp
+						delay={0.1}
+						className="flex flex-col md:flex-row md:flex-wrap justify-start items-start gap-4 sm:gap-6"
+					>
 						{ctaPrimary?.href && (
 							<Button
 								href={ctaPrimary.href}
@@ -345,8 +349,8 @@ export default function HeroSection() {
 								endIcon={
 									<span className={`mdi mdi-${ctaSecondary.icon} text-sm`} />
 								}
-								variant={ctaSecondary.variant || "text"}
-								color={ctaSecondary.color}
+								variant={ctaSecondary.variant || "contained"}
+								color={ctaSecondary.color || "textPrimary"}
 								size="large"
 							>
 								{ctaSecondary.label}
@@ -354,7 +358,7 @@ export default function HeroSection() {
 						)}
 					</FadeUp>
 					<div className="flex flex-wrap items-center gap-4"></div>
-					<FadeUp delay={0.2} className="mt-10">
+					<FadeUp delay={0.2} className="mt-12 sm:mt-14">
 						<div className="flex flex-wrap items-center gap-8 reveal active">
 							<div className="flex items-center gap-3">
 								<div className="flex -space-x-2">

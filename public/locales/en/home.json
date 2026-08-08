@@ -4,7 +4,7 @@
 		"headline": "Survey <shine>Smarter</shine>, Build Stronger.",
 		"description": "Leading Africa's Land and Aerial Surveying with Advanced equipment Technology",
 		"ctaPrimary": { "label": "Request a Survey", "href": "/contact?reason=request-survey", "class": " rounded-full!", "icon": "send"},
-		"ctaSecondary": { "label": "Explore Services", "href": "/services", "class": " rounded-full!", "icon": "arrow-right"},
+		"ctaSecondary": { "label": "Explore Services", "href": "/services", "class": " rounded-full! bg-surface!", "icon": "arrow-right"},
         "location": {
             "label": "Active across East Africa & beyond",
             "items": [
@@ -16,50 +16,78 @@
 	},
 	
     "leadGenBar": {
-		"label": "Reliable. Scalable. Fast. Accurate.",
+		"title": "SMARTGRID SURVEYING & CIVIL ENGINEERING LTD",
+		"headline": "Reliable. Scalable. Fast. Accurate.",
 		"description": "Unlock faster, more cost-effective, and safer mapping, measurement, and monitoring of 1000+ Acres at a time.  \nAt Smartgrid Surveying, we turn this vision into reality—across Africa and beyond. With our cutting-edge drones and Land surveying techniques, we deliver the actionable data you need, exactly where it matters. \n Smartgrid Surveying is your trusted surveying partner!",
-		"link": {"label": "Company Profile", "href": "/about/company-profile"},
+		"link": { "label": "Company Profile", "href": "/about/company-profile" },
 		"items": [
 			{
-                "icon": "land-fields",
+				"icon": "land-fields",
 				"label": "LAND SURVEYING",
 				"description": "Precise Topographical, boundary, cadastral, GIS, and engineering surveys powered by the latest technology.",
 				"more": {
-                    "label": "Explore more",
-                    "href": "/surveying/land-surveying"
-                },
-                "action": {
-                    "label": "Request Survey",
-                    "href": "/contact?reason=land-surveying"
-                }
+					"label": "Explore more",
+					"href": "/surveying/land-surveying"
+				},
+				"action": {
+					"label": "Request Survey",
+					"href": "/contact?reason=land-surveying"
+				}
 			},
-			
-            {
-                "icon": "quadcopter",
+
+			{
+				"icon": "quadcopter",
 				"label": "AERIAL DRONES",
 				"description": "Aerial and Agricultural High-resolution imagery, 3D mapping, and topographical data delivered faster and safer.",
 				"more": {
-                    "label": "Explore more",
-                    "href": "/surveying/aerial-surveying"
-                },
-                "action": {
-                    "label": "Book a drone survey",
-                    "href": "/contact?reason=book-drone-survey"
-                }
+					"label": "Explore more",
+					"href": "/surveying/aerial-surveying"
+				},
+				"action": {
+					"label": "Book a drone survey",
+					"href": "/contact?reason=book-drone-survey"
+				}
 			},
-            {
-                "icon": "hard-hat",
+			{
+				"icon": "hard-hat",
 				"label": "CIVIL ENGINEERING",
 				"description": "Construction and building Site layout, monitoring, and as-built verification with precision and speed.",
 				"more": {
-                    "label": "Explore more",
-                    "href": "/civil"
-                },
-                "action": {
-                    "label": "Partner with us.",
-                    "href": "mailto:smartgridsurveying@gmail.com"
-                }
+					"label": "Explore more",
+					"href": "/civil"
+				},
+				"action": {
+					"label": "Partner with us.",
+					"href": "mailto:smartgridsurveying@gmail.com"
+				}
 			}
-		]        
-	}
+		]
+	},
+    "about": {
+		"tag": "About Us",
+		"headline": "From Surveying Field Data to Final Design.",
+		"description": "SmartGrid delivers the Clarity and Accuracy your project needs.",
+		"whoWeAre": {
+			"title": "WHO WE ARE",
+			"description": "At SmartGrid surveying and Engineering, we specialize in advanced Land Surveying techniques and Civil Works in Kenya, Uganda, Tanzania and Africa, ensuring precision, efficiency, and reliability in every project. Our expertise in GIS mapping, drone surveying, and power grid analysis helps optimize infrastructure planning, while our civil engineering services lay the foundation for sustainable development."
+		},
+		"mission": {
+			"title": "OUR MISSION",
+			"description": "To deliver innovative, high-precision surveying and civil works solutions that enhance the efficiency and sustainability of projects."
+		}
+	},
+    "surveyingInstruments": {
+        "tag": null,
+        "headline": "Our Surveying Instruments",
+        "description": "We Use Advanced, Calibrated, Precise equipment to ensure every point is accurate and reliable for your construction and engineering projects across Kenya and Beyond.",
+        "items": [
+        ]
+    },
+    "drones": {
+        "tag": null,
+        "headline": "Our Drone Fleet",
+        "description": "We deploy advanced drones to capture high-resolution aerial RGB / LiDAR imagery and multispectral data for Accurate Mapping, Monitoring, Planning, surveying, and engineering.",
+        "items": [
+        ]
+    }
 }

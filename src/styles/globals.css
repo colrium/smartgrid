@@ -6,7 +6,7 @@
     --color-primary-dark: #00677a;
 
     --color-paper: #ffffff;
-    --color-muted: #52686c;
+    --color-mute: #80a5ac;
 
     --color-brand-50: #e5f6f8;
     --color-brand-100: #ccecef;
@@ -20,6 +20,7 @@
     --color-brand-900: #003742;
 
     --color-surface: #ffffff;
+    --color-surface-tint: #d1d1d1;
     --color-surface-100: color-mix(in srgb, var(--color-surface) 98%, #696969 2%);
         --color-surface-200: color-mix(in srgb, var(--color-surface) 96%, #696969 4%);
         --color-surface-300: color-mix(in srgb, var(--color-surface) 94%, #696969 6%);
@@ -30,13 +31,13 @@
         --color-surface-800: color-mix(in srgb, var(--color-surface) 84%, #696969 16%);
         --color-surface-900: color-mix(in srgb, var(--color-surface) 82%, #696969 18%);
 
-    --color-on-surface: #383838;
+    --color-on-surface: #424242;
     --color-on-surface-50: color-mix(in srgb, var(--color-on-surface) 98%, white 4%);
     --color-on-surface-100: color-mix(in srgb, var(--color-on-surface) 96%, white 4%);
         --color-on-surface-200: color-mix(in srgb, var(--color-on-surface) 92%, white 8%);
         --color-on-surface-300: color-mix(in srgb, var(--color-on-surface) 88%, white 12%);
         --color-on-surface-400: color-mix(in srgb, var(--color-on-surface) 84%, white 16%);
-        --color-onSurface0: color-mix(in srgb, var(--color-on-surface) 80%, white 20%);
+        --color-on-surface-500: color-mix(in srgb, var(--color-on-surface) 80%, white 20%);
         --color-on-surface-600: color-mix(in srgb, var(--color-on-surface) 76%, white 24%);
         --color-on-surface-700: color-mix(in srgb, var(--color-on-surface) 72%, white 28%);
         --color-on-surface-800: color-mix(in srgb, var(--color-on-surface) 68%, white 32%);
