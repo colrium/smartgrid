@@ -30,13 +30,7 @@ export default function LegalPageSection({
 }: LegalPageSectionProps) {
 	return (
 		<section className="relative overflow-hidden pt-24 pb-20 md:pt-32 md:pb-28">
-			<div
-				className="absolute inset-0 pointer-events-none"
-				style={{
-					background:
-						"radial-gradient(ellipse 58% 44% at 72% 26%, rgba(243,189,39,0.12) 0%, transparent 70%)",
-				}}
-			/>
+			
 			<div className="relative z-10 max-w-[980px] mx-auto px-6 md:px-8">
 				<div className="mb-12">
 					<span className="inline-flex items-center gap-2 text-xs tracking-[0.14em] uppercase text-primary mb-4">
@@ -54,7 +48,7 @@ export default function LegalPageSection({
 					</div>
 				</div>
 
-				<div className="rounded-lg border border-surface-900/10 bg-surface-900/90 shimmer-y shimmer-subtle">
+				<div className="rounded-lg  bg-surface ">
 					{sections.map((section, index) => (
 						<article
 							key={section.title}

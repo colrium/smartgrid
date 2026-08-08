@@ -1,0 +1,76 @@
+{
+	"misc": {
+		"label": "Terms",
+		"title": "Terms of Use",
+		"description": "These terms explain how you may use the {{site_title}} website, content, contact forms, and investor enquiry features.",
+		"lastUpdatedLabel": "Last Updated",
+		"lastUpdated": "May 31, 2026",
+		"contactLabel": "Contact Us",
+		"contactLink": "/contact?reason=compliance-legal",
+		"note": "These terms are a practical website notice and should be reviewed with qualified counsel before being treated as final legal terms for a specific jurisdiction."
+	},
+	"articles": [
+		{
+			"title": "Acceptance of These Terms",
+			"content": [
+				"By accessing or using this website, you agree to these Terms of Use and any policies referenced on the site. If you do not agree, you should stop using the website.",
+				"AfriGold Hub may update these terms from time to time. Continued use of the website after an update means you accept the revised terms."
+			]
+		},
+		{
+			"title": "Website Content",
+			"content": [
+				"Content on this website is provided for general information about AfriGold Hub, its operations, investment opportunities, and partnership discussions.",
+				"Website content may be updated, corrected, expanded, or withdrawn at any time. It should not be treated as a final agreement, public offer, prospectus, guarantee, or professional advice."
+			]
+		},
+		{
+			"title": "Investment Enquiries",
+			"content": [
+				"Submitting an enquiry, requesting due diligence materials, or discussing an opportunity does not create an investor relationship, partnership, advisory relationship, or obligation for either party.",
+				"Any investment, partnership, site visit, or commercial arrangement is subject to qualification, due diligence, KYC or compliance checks, and signed transaction documents."
+			]
+		},
+		{
+			"title": "Permitted Use",
+			"content": [
+				"You may use this website for lawful informational and enquiry purposes only. You must not misuse the website, attempt unauthorized access, interfere with site operation, submit false information, or use the site to violate any law.",
+				"You are responsible for ensuring that your use of the website and any enquiry you submit complies with laws applicable to you."
+			]
+		},
+		{
+			"title": "Intellectual Property",
+			"content": [
+				"Unless otherwise stated, the text, design, branding, graphics, media, and other content on this website are owned by or licensed to AfriGold Hub.",
+				"You may view and share links to public pages for informational purposes, but you may not copy, reproduce, modify, sell, or commercially exploit website content without prior written permission."
+			]
+		},
+		{
+			"title": "Third-Party Links and Materials",
+			"content": [
+				"The website may reference third-party platforms, maps, media, documents, service providers, or external websites. These are provided for convenience or context only.",
+				"AfriGold Hub is not responsible for third-party content, availability, security, policies, or practices."
+			]
+		},
+		{
+			"title": "No Warranties",
+			"content": [
+				"The website is provided on an as-is and as-available basis. AfriGold Hub does not guarantee that the website will be uninterrupted, error-free, secure, or always current.",
+				"To the fullest extent permitted by law, AfriGold Hub disclaims warranties related to the website and any reliance on website content."
+			]
+		},
+		{
+			"title": "Limitation of Liability",
+			"content": [
+				"To the fullest extent permitted by law, AfriGold Hub will not be liable for indirect, incidental, consequential, special, punitive, or lost-profit damages arising from your use of the website.",
+				"Nothing in these terms limits liability that cannot legally be limited."
+			]
+		},
+		{
+			"title": "Contact",
+			"content": [
+				"Questions about these Terms of Use can be sent through the contact page using the compliance or legal enquiry option."
+			]
+		}
+	]
+}

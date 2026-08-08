@@ -10,7 +10,7 @@ const legalLinks = {
 export default function Footer() {
 	const { t } = useTranslation(["common", "meta"]);
 	return (
-		<footer className="bg-paper  pt-16 pb-8 z-50">
+		<footer className="bg-surface  pt-16 pb-8 z-50">
 			<div className="max-w-295 mx-auto px-8">
 				<div
 					className={`w-full flex flex-col md:grid md:grid-cols-[10fr_30fr] gap-8  pb-12 border-b border-primary`}
@@ -79,7 +79,7 @@ export default function Footer() {
 						})}
 					</span>
 					<div className="flex gap-6">
-						{(["privacy", "terms", "risk"] as const).map((key) => (
+						{(["privacy", "terms"] as const).map((key) => (
 							<Link
 								key={key}
 								href={legalLinks[key]}

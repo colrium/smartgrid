@@ -129,7 +129,7 @@ const stripLocalePrefix = (path: string) => {
 				classes={{
 					root: `transition-all duration-300 ${
 						state.isWindowScrolled
-							? "bg-surface-800/70! bg-opacity-90! backdrop-blur-lg! border-b shadow-xl border-primary/20"
+							? "bg-surface/70! bg-opacity-90! backdrop-blur-lg! border-b shadow-xl border-primary/20"
 							: "bg-surface!"
 					}`,
 				}}

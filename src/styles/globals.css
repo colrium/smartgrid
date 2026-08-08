@@ -19,18 +19,18 @@
     --color-brand-800: #004f5e;
     --color-brand-900: #003742;
 
-    --color-surface-50: #ffffff;
-    --color-surface-100: color-mix(in srgb, var(--color-surface-50) 96%, #696969 4%);
-        --color-surface-200: color-mix(in srgb, var(--color-surface-50) 92%, #696969 8%);
-        --color-surface-300: color-mix(in srgb, var(--color-surface-50) 88%, #696969 12%);
-        --color-surface-400: color-mix(in srgb, var(--color-surface-50) 84%, #696969 16%);
-        --color-surface-500: color-mix(in srgb, var(--color-surface-50) 80%, #696969 20%);
-        --color-surface-600: color-mix(in srgb, var(--color-surface-50) 76%, #696969 24%);
-        --color-surface-700: color-mix(in srgb, var(--color-surface-50) 72%, #696969 28%);
-        --color-surface-800: color-mix(in srgb, var(--color-surface-50) 68%, #696969 32%);
-        --color-surface-900: color-mix(in srgb, var(--color-surface-50) 64%, #696969 36%);
+    --color-surface: #ffffff;
+    --color-surface-100: color-mix(in srgb, var(--color-surface) 98%, #696969 2%);
+        --color-surface-200: color-mix(in srgb, var(--color-surface) 96%, #696969 4%);
+        --color-surface-300: color-mix(in srgb, var(--color-surface) 94%, #696969 6%);
+        --color-surface-400: color-mix(in srgb, var(--color-surface) 92%, #696969 8%);
+        --color-surface-500: color-mix(in srgb, var(--color-surface) 90%, #696969 10%);
+        --color-surface-600: color-mix(in srgb, var(--color-surface) 88%, #696969 12%);
+        --color-surface-700: color-mix(in srgb, var(--color-surface) 86%, #696969 14%);
+        --color-surface-800: color-mix(in srgb, var(--color-surface) 84%, #696969 16%);
+        --color-surface-900: color-mix(in srgb, var(--color-surface) 82%, #696969 18%);
 
-    --color-onSurface-50: #d1d1d1;
+    --color-onSurface-50: #909090;
     --color-onSurface-100: color-mix(in srgb, var(--color-onSurface-50) 96%, black 4%);
         --color-onSurface-200: color-mix(in srgb, var(--color-onSurface-50) 92%, black 8%);
         --color-onSurface-300: color-mix(in srgb, var(--color-onSurface-50) 88%, black 12%);
@@ -41,7 +41,7 @@
         --color-onSurface-800: color-mix(in srgb, var(--color-onSurface-50) 68%, black 32%);
         --color-onSurface-900: color-mix(in srgb, var(--color-onSurface-50) 64%, black 36%);
 
-    --color-background: #e8e8e8;
+    --color-background: #d1d1d1;
     --color-background-paper: #ffffff;
     --color-background-elevated: #ffffff;
 
@@ -57,8 +57,8 @@
     --shimmer-opacity: 0.55;
 }
 
-html {
-    background: theme("colors.paper");
+body {
+    background: theme("colors.background");
 }
 
 
@@ -134,15 +134,15 @@ h3 {
 
 
 
-/* .layout-gradient-bg {
+.layout-gradient-bg {
    
-        background: radial-gradient(at 60% 60%, rgba(212, 173, 0, 0.0281) 0%, rgba(0, 0, 0, 0) 33%);
+        background: radial-gradient(at 60% 60%, rgba(0, 162, 212, 0.028) 0%, rgba(0, 0, 0, 0) 33%);
         filter: blur(40px);
-} */
+}
 .golden-shine {
     line-height: 1;
     text-align: center;
-    background: linear-gradient(90deg, rgba(186, 148, 62, 1) 0%, rgba(236, 172, 32, 1) 20%, rgba(186, 148, 62, 1) 39%, rgba(249, 244, 180, 1) 50%, rgba(186, 148, 62, 1) 60%, rgba(236, 172, 32, 1) 80%, rgba(186, 148, 62, 1) 100%);
+    background: linear-gradient(90deg, rgb(62, 186, 165) 0%, rgb(32, 195, 236) 20%, rgb(62, 157, 186) 39%, rgb(139, 214, 248) 50%, rgb(62, 171, 186) 60%, rgb(32, 188, 236) 80%, rgb(62, 161, 186) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gold-shine 10s infinite alternate;
