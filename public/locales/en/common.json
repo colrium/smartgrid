@@ -46,7 +46,30 @@
         "logo": "/img/logo.svg",
 		"logo_alt": "SmartGrid",
 		"links": [
-			
+			{ "label": "Surveying", "links": [
+				{ "label": "Topographical surveys", "href": "/surveying/topographical-surveys" },
+				{ "label": "Building site surveys", "href": "/surveying/building-site-surveys" },
+				{ "label": "Sectiona properties", "href": "/surveying/sectional-properties" },
+				{ "label": "Cadastral surveys", "href": "/surveying/cadastral-surveys" },
+				{ "label": "Aerial surveys", "href": "/surveying/aerial-surveys" },
+				{
+					"label": "Ground penetrating radar",
+					"href": "/surveying/ground-penetrating-radar"
+				},
+				{ "label": "Resource Mapping", "href": "/surveying/resource-mapping" },
+				{
+					"label": "Bathymetric surveys",
+					"href": "/surveying/bathymetric-surveys"
+				},
+                {
+					"label": "GIS & Mapping",
+					"href": "/surveying/gis-mapping"
+				},
+                {
+					"label": "Company Profile",
+					"href": "/surveying/company-profile"
+				}
+			]},
 			{ "label": "FAQ", "href": "/#faq", "excludeOnMainNav": true },
 			{ "label": "Contact", "href": "/contact" },
 			{ "label": "About", "href": "/about" }

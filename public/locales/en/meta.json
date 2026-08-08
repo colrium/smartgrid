@@ -1,34 +1,52 @@
 {
-    "site": {
-        "title": "SmartGrid",
-        "tagline": "Survey Smarter, Build Stronger",
-        "description": "Smartgrid provides advanced land and aerial surveying, GIS mapping, and civil engineering services across Kenya and Africa."
-    },
-    "pages": {
-        "home": {
-            "title": "Home",
-            "meta_description": "{{site_title}} provides advanced land and aerial surveying, GIS mapping, and civil engineering services across Kenya and Africa."
-        },
-        "about": {
-            "title": "About Us",
-            "meta_description": "Learn more about {{site_title}}, our surveying and civil engineering expertise, mission, and commitment to precision across Africa.",
-            "og_image": "/media/og-about.jpg"
-        },
-        "contact": {
-            "page_title": "Contact",
-            "meta_description": "Get in touch with the {{site_title}} team to discuss land surveying, aerial surveys, civil engineering, equipment hire, or drone photography.",
-            "og_image": "/media/og-contact.jpg"
-        },
-        
-        "privacy_policy": {
-            "page_title": "Privacy Policy",
-            "meta_description": "Learn about how {{site_title}} handles information submitted through our website and contact forms.",
-            "og_image": "/media/og-privacy.jpg"
-        },
-        "terms_of_use": {
-            "page_title": "Terms of Use",
-            "meta_description": "Review the terms of use for {{site_title}}'s website and services.",
-            "og_image": "/media/og-terms.jpg"
-        }
-    }
+	"site": {
+		"title": "SmartGrid",
+        "subtitle": "SURVEYING & CIVIL ENGINEERING LTD",
+		"tagline": "Survey Smarter, Build Stronger",
+		"description": "Smartgrid provides advanced land and aerial surveying, GIS mapping, and civil engineering services across Kenya and Africa."
+	},
+	"pages": {
+		"home": {
+			"title": "Home",
+			"meta_description": "{{site_title}} provides advanced land and aerial surveying, GIS mapping, and civil engineering services across Kenya and Africa."
+		},
+		"about": {
+			"title": "About Us",
+			"meta_description": "Learn more about {{site_title}}, our surveying and civil engineering expertise, mission, and commitment to precision across Africa.",
+			"og_image": "/media/og-about.jpg"
+		},
+		"contact": {
+			"page_title": "Contact",
+			"meta_description": "Get in touch with the {{site_title}} team to discuss land surveying, aerial surveys, civil engineering, equipment hire, or drone photography.",
+			"og_image": "/media/og-contact.jpg"
+		},
+
+		"privacy_policy": {
+			"page_title": "Privacy Policy",
+			"meta_description": "Learn about how {{site_title}} handles information submitted through our website and contact forms.",
+			"og_image": "/media/og-privacy.jpg"
+		},
+		"terms_of_use": {
+			"page_title": "Terms of Use",
+			"meta_description": "Review the terms of use for {{site_title}}'s website and services.",
+			"og_image": "/media/og-terms.jpg"
+		}
+	},
+	"company": {
+		"name": "SMARTGRID SURVEYING & CIVIL ENGINEERING LTD",
+		"legalName": "Smartgrid Surveying & Engineering Ltd",
+		"tagline": "Survey Smarter, Build Stronger",
+		"description": "Leading Africa's Land and Aerial Surveying with Advanced equipment Technology",
+		"address": "Nairobi, Kenya",
+		"phone": "+254 10 7393023",
+		"email": "smartgridsurveying@gmail.com",
+		"mission": "To deliver innovative, high-precision surveying and civil works solutions that enhance the efficiency and sustainability of projects.",
+		"socialMedia": {
+			"facebook": "https://facebook.com/smartgridsurveying",
+			"twitter": "https://twitter.com/smartgridsurvey",
+			"linkedin": "https://linkedin.com/company/smartgridsurveying",
+			"youtube": "https://youtube.com/smartgridsurveying",
+			"instagram": "https://instagram.com/smartgridsurveying"
+		}
+	}
 }

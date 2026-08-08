@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@theme {
+@theme inline {
     --color-primary: #0097b2;
     --color-primary-light: #66c5cf;
     --color-primary-dark: #00677a;
@@ -30,16 +30,17 @@
         --color-surface-800: color-mix(in srgb, var(--color-surface) 84%, #696969 16%);
         --color-surface-900: color-mix(in srgb, var(--color-surface) 82%, #696969 18%);
 
-    --color-onSurface-50: #909090;
-    --color-onSurface-100: color-mix(in srgb, var(--color-onSurface-50) 96%, black 4%);
-        --color-onSurface-200: color-mix(in srgb, var(--color-onSurface-50) 92%, black 8%);
-        --color-onSurface-300: color-mix(in srgb, var(--color-onSurface-50) 88%, black 12%);
-        --color-onSurface-400: color-mix(in srgb, var(--color-onSurface-50) 84%, black 16%);
-        --color-onSurface-500: color-mix(in srgb, var(--color-onSurface-50) 80%, black 20%);
-        --color-onSurface-600: color-mix(in srgb, var(--color-onSurface-50) 76%, black 24%);
-        --color-onSurface-700: color-mix(in srgb, var(--color-onSurface-50) 72%, black 28%);
-        --color-onSurface-800: color-mix(in srgb, var(--color-onSurface-50) 68%, black 32%);
-        --color-onSurface-900: color-mix(in srgb, var(--color-onSurface-50) 64%, black 36%);
+    --color-on-surface: #383838;
+    --color-on-surface-50: color-mix(in srgb, var(--color-on-surface) 98%, white 4%);
+    --color-on-surface-100: color-mix(in srgb, var(--color-on-surface) 96%, white 4%);
+        --color-on-surface-200: color-mix(in srgb, var(--color-on-surface) 92%, white 8%);
+        --color-on-surface-300: color-mix(in srgb, var(--color-on-surface) 88%, white 12%);
+        --color-on-surface-400: color-mix(in srgb, var(--color-on-surface) 84%, white 16%);
+        --color-onSurface0: color-mix(in srgb, var(--color-on-surface) 80%, white 20%);
+        --color-on-surface-600: color-mix(in srgb, var(--color-on-surface) 76%, white 24%);
+        --color-on-surface-700: color-mix(in srgb, var(--color-on-surface) 72%, white 28%);
+        --color-on-surface-800: color-mix(in srgb, var(--color-on-surface) 68%, white 32%);
+        --color-on-surface-900: color-mix(in srgb, var(--color-on-surface) 64%, white 36%);
 
     --color-background: #d1d1d1;
     --color-background-paper: #ffffff;
@@ -49,6 +50,10 @@
     --color-border-primary-subtle: rgba(0, 151, 178, 0.1);
 
     --color-ring-primary: #0097b2;
+
+
+    --font-sans: var(--font-google-sans-flex);
+    --font-display: var(--font-plus-jakarta-sans);
 
 }
 
@@ -61,7 +66,22 @@ body {
     background: theme("colors.background");
 }
 
+html {
+    font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+}
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+}
+
+.font-body {
+    font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+.font-display {
+    font-family: var(--font-display), serif;
+}
 
 body::before {
     content: '';
@@ -77,7 +97,7 @@ body::before {
 
     0%,
     100% {
-        color: var(--color-onSurface-900);
+        color: var(--color-on-surface-900);
         background: transparent;
     }
 }
@@ -92,7 +112,7 @@ input:-webkit-autofill {
 select option {
     margin: 40px;
     /* background: var(--color-surface-900);
-    color: var(--color-onSurface-100); */
+    color: var(--color-on-surface-100); */
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
 
@@ -106,30 +126,15 @@ select option:disabled {
 ::picker(select) {
     /* background-color: var(--color-surface-900); */
     border-radius: 8px;
-    /* color: var(--color-onSurface-100); */
+    /* color: var(--color-on-surface-100); */
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 }
 
 select option {
     margin: 40px;
     /* background: var(--color-surface-900);
-    color: var(--color-onSurface-100);
+    color: var(--color-on-surface-100);
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4); */
-}
-
-h4,
-h5,
-h6,
-p,
-body {
-    font-family: var(--font-manrope);
-    font-weight: 300;
-}
-
-h1,
-h2,
-h3 {
-    font-family: var(--font-montserrat);
 }
 
 
@@ -341,6 +346,17 @@ h3 {
     }
 }
 
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0); }
 
 ::-webkit-scrollbar {
     width: 8px;

@@ -18,16 +18,19 @@ import { useTranslation } from "@/hooks";
 import { useRouter } from "next/router";
 import useSetState from "@/hooks/useSetState";
 import { Avatar } from "@mui/material";
+import NavMenu from "./NavMenu";
 
-
-
-
-
+interface NavBarLink {
+	label: string;
+	href: string;
+	excludeOnMainNav?: boolean;
+	links?: NavBarLink[];
+}
 
 export default function Navbar() {
 	const router = useRouter();
 	const { t, i18n } = useTranslation(["common", "meta"]);
-    const [state, setState] = useSetState({
+	const [state, setState] = useSetState({
 		drawerOpen: false,
 		isWindowScrolled: false,
 		languageMenuAnchor: null,
@@ -36,30 +39,34 @@ export default function Navbar() {
 		isWindowScrolled: boolean;
 		languageMenuAnchor: null | HTMLElement;
 	});
-    
-    const locales = t("common:locales", { returnObjects: true }) as {
+
+	const locales = t("common:locales", { returnObjects: true }) as {
 		code: string;
 		label: string;
 		flag: string;
-    }[];
-
-    const localeCodes =  locales.map((locale) => locale.code);
-    
-    const localeObj = locales.find((l) => l.code === router.locale) || locales.find((l) => l.code === i18n.language) || { code: 'en', label: 'English', flag: '/flags/en.svg' };
-
-	const navs = t("common:nav.links", { returnObjects: true }) as {
-		label: string;
-		href: string;
-		excludeOnMainNav?: boolean;
 	}[];
 
-const stripLocalePrefix = (path: string) => {
+	const localeCodes = locales.map((locale) => locale.code);
+
+	const localeObj = locales.find((l) => l.code === router.locale) ||
+		locales.find((l) => l.code === i18n.language) || {
+			code: "en",
+			label: "English",
+			flag: "/flags/en.svg",
+		};
+
+	const navs = t("common:nav.links", { returnObjects: true }) as NavBarLink[];
+
+	const stripLocalePrefix = (path: string) => {
 		const localePattern = new RegExp(`^/(${localeCodes.join("|")})(?:/|$)`);
 		const strippedPath = path.replace(localePattern, "/");
 		return strippedPath === "" ? "/" : strippedPath;
 	};
 
-	const localizePath = (path: string, locale: string) => {
+    const localizePath = (path: string, locale: string) => {
+        if (!path) {
+			return "/";
+		}
 		if (!path.startsWith("/") || path.startsWith("//")) {
 			return path;
 		}
@@ -70,9 +77,7 @@ const stripLocalePrefix = (path: string) => {
 		const localizedPathname =
 			cleanPathname === "/" ? `/${locale}` : `/${locale}${cleanPathname}`;
 
-		return `${localizedPathname}${query ? `?${query}` : ""}${
-			hash ? `#${hash}` : ""
-		}`;
+		return `${localizedPathname}${query ? `?${query}` : ""}${hash ? `#${hash}` : ""}`;
 	};
 
 	const onToggleLanguageClick = async (newLocale: string) => {
@@ -85,7 +90,6 @@ const stripLocalePrefix = (path: string) => {
 		await i18n.changeLanguage(newLocale);
 		await router.replace(localizedPath, undefined, { locale: false });
 	};
-
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -129,12 +133,12 @@ const stripLocalePrefix = (path: string) => {
 				classes={{
 					root: `transition-all duration-300 ${
 						state.isWindowScrolled
-							? "bg-surface/70! bg-opacity-90! backdrop-blur-lg! border-b shadow-xl border-primary/20"
-							: "bg-surface!"
+							? "bg-surface/70! bg-opacity-90! backdrop-blur-md shadow-xl"
+							: "bg-surface"
 					}`,
 				}}
 			>
-				<Container maxWidth="xl">
+				<Container maxWidth="lg">
 					<Toolbar disableGutters className={`bg-transparent!`}>
 						<IconButton
 							onClick={handleDrawerToggle}
@@ -152,33 +156,22 @@ const stripLocalePrefix = (path: string) => {
 								width={32}
 								height={32}
 							/>
-							<Typography
-								variant="h5"
-								noWrap
-								className="mr-2 flex font-mono font-bold text-primary-500  text-inherit no-underline"
+                            <div className="flex flex-col mr-2 ">
+                            <h6
+								className="flex uppercase font-extrabold text-primary no-underline"
 							>
 								{t("meta:site.title")}
-							</Typography>
+							</h6>
+                            <span
+								className="flex uppercase font-bold text-xs  no-underline"
+							>
+								{t("meta:site.subtitle")}
+							</span>
+                            </div>
+							
 						</Link>
 
-						<Box className="hidden lg:flex flex-1 lg:grow lg:gap-4 lg:items-center lg:justify-end">
-							{Array.isArray(navs) &&
-								navs.map(
-									({ label, href, excludeOnMainNav }, i) =>
-										!excludeOnMainNav && (
-											<MuiLink
-												component={Link}
-												color="textPrimary"
-												className={`text-xs mr-4 no-underline! font-light tracking-[0.03em] text-onSurface-800  hover:text-primary-500 transition-colors`}
-												href={localizePath(href, currentLocale)}
-												locale={false}
-												key={`nav-${i}`}
-											>
-												{label}
-											</MuiLink>
-										)
-								)}
-						</Box>
+						<NavMenu items={navs} locale={currentLocale} localizePath={localizePath} horizontal />
 
 						<Box className="lg:hidden grow" />
 						<Box className="flex items-center gap-2">

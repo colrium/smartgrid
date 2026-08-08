@@ -9,3 +9,27 @@ export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
 export type AppPropsWithLayout = AppProps & {
 	Component: NextPageWithLayout;
 };
+
+export interface Service {
+	id: string;
+	icon: string;
+	title: string;
+	description: string;
+	label: string;
+}
+
+export interface Project {
+	id: string;
+	title: string;
+	subtitle: string;
+	description: string;
+	image: string;
+	type: string;
+	date: string;
+}
+
+export interface Metric {
+	label: string;
+	value: string;
+	suffix?: string;
+}

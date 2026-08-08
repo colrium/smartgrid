@@ -1,0 +1,65 @@
+{
+	"hero": {
+		"badge": "Engineering Precision",
+		"headline": "Survey <shine>Smarter</shine>, Build Stronger.",
+		"description": "Leading Africa's Land and Aerial Surveying with Advanced equipment Technology",
+		"ctaPrimary": { "label": "Request a Survey", "href": "/contact?reason=request-survey", "class": " rounded-full!", "icon": "send"},
+		"ctaSecondary": { "label": "Explore Services", "href": "/services", "class": " rounded-full!", "icon": "arrow-right"},
+        "location": {
+            "label": "Active across East Africa & beyond",
+            "items": [
+                { "label": "Kenya", "code": "KE" },
+                { "label": "Uganda", "code": "UG" },
+                { "label": "Tanzania", "code": "TZ" }
+            ]
+        }
+	},
+	
+    "leadGenBar": {
+		"label": "Reliable. Scalable. Fast. Accurate.",
+		"description": "Unlock faster, more cost-effective, and safer mapping, measurement, and monitoring of 1000+ Acres at a time.  \nAt Smartgrid Surveying, we turn this vision into reality—across Africa and beyond. With our cutting-edge drones and Land surveying techniques, we deliver the actionable data you need, exactly where it matters. \n Smartgrid Surveying is your trusted surveying partner!",
+		"link": {"label": "Company Profile", "href": "/about/company-profile"},
+		"items": [
+			{
+                "icon": "land-fields",
+				"label": "LAND SURVEYING",
+				"description": "Precise Topographical, boundary, cadastral, GIS, and engineering surveys powered by the latest technology.",
+				"more": {
+                    "label": "Explore more",
+                    "href": "/surveying/land-surveying"
+                },
+                "action": {
+                    "label": "Request Survey",
+                    "href": "/contact?reason=land-surveying"
+                }
+			},
+			
+            {
+                "icon": "quadcopter",
+				"label": "AERIAL DRONES",
+				"description": "Aerial and Agricultural High-resolution imagery, 3D mapping, and topographical data delivered faster and safer.",
+				"more": {
+                    "label": "Explore more",
+                    "href": "/surveying/aerial-surveying"
+                },
+                "action": {
+                    "label": "Book a drone survey",
+                    "href": "/contact?reason=book-drone-survey"
+                }
+			},
+            {
+                "icon": "hard-hat",
+				"label": "CIVIL ENGINEERING",
+				"description": "Construction and building Site layout, monitoring, and as-built verification with precision and speed.",
+				"more": {
+                    "label": "Explore more",
+                    "href": "/civil"
+                },
+                "action": {
+                    "label": "Partner with us.",
+                    "href": "mailto:smartgridsurveying@gmail.com"
+                }
+			}
+		]        
+	}
+}

@@ -28,6 +28,7 @@ const theme = createTheme({
 			dark: brand[900],
 			contrastText: "#ffffff",
 		},
+		
 		background: {
 			default: "#f7f3e8",
 			paper: "#ffffff",
@@ -43,21 +44,20 @@ const theme = createTheme({
 		info: { main: "#29b6f6" },
 	},
 	typography: {
-		fontFamily: 'var(--font-manrope), "Inter", "Roboto", "Helvetica", "Arial", sans-serif',
-		h1: { 
+		fontFamily: 'var(--font-sans), "Inter", "Roboto", "Helvetica", "Arial", sans-serif',
+		h1: {
 			fontWeight: 700,
-			fontFamily: 'var(--font-montserrat), "Inter", "Roboto", "Helvetica", "Arial", sans-serif',
+			fontFamily: 'var(--font-display), "Inter", "Roboto", "Helvetica", "Arial", sans-serif',
 		},
-		h2: { 
+		h2: {
 			fontWeight: 700,
-			fontFamily: 'var(--font-montserrat), "Inter", "Roboto", "Helvetica", "Arial", sans-serif',
+			fontFamily: 'var(--font-display), "Inter", "Roboto", "Helvetica", "Arial", sans-serif',
 		},
-		h3: { 
+		h3: {
 			fontWeight: 600,
-			fontFamily: 'var(--font-montserrat), "Inter", "Roboto", "Helvetica", "Arial", sans-serif',
+			fontFamily: 'var(--font-display), "Inter", "Roboto", "Helvetica", "Arial", sans-serif',
 		},
 	},
-	
 });
 
 export { brand };
