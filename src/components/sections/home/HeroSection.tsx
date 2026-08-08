@@ -55,9 +55,9 @@ export default function HeroSection() {
 
 		// --- Kinetic Grid Shader ---
 		const gridUniforms = {
-			uColor: { value: new THREE.Color(0xd3e3e1) },
+			uColor: { value: new THREE.Color(0xd1e6e3) },
 			uDronePos: { value: new THREE.Vector3(10, 10, 10) },
-			uRadius: { value: 8.0 },
+			uRadius: { value: 9.0 },
 		};
 
 		const gridMaterial = new THREE.ShaderMaterial({
