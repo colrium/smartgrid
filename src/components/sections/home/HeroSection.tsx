@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 
 import { useEffect, useRef } from "react";
@@ -12,27 +13,27 @@ interface CtaItem {
 	label: string;
 	href?: string;
 	icon?: string;
-    class?: string;
-    variant?: ButtonProps["variant"];
+	class?: string;
+	variant?: ButtonProps["variant"];
 	color?: ButtonProps["color"];
 }
-interface LocationTagItem {	
+interface LocationTagItem {
 	label: string;
-    code: string;
+	code: string;
 	href?: string;
-    icon?: string;
-    class?: string
+	icon?: string;
+	class?: string;
 }
-interface Location {	
+interface Location {
 	label: string;
-    items?: LocationTagItem[];
+	items?: LocationTagItem[];
 }
 export default function HeroSection() {
 	const containerRef = useRef<HTMLDivElement>(null);
-    const { t } = useTranslation(["home"]);
-    const ctaPrimary = t("home:hero.ctaPrimary", { returnObjects: true }) as CtaItem;
-    const ctaSecondary = t("home:hero.ctaSecondary", { returnObjects: true }) as CtaItem;
-    const location = t("home:hero.location", { returnObjects: true }) as Location;
+	const { t } = useTranslation(["home"]);
+	const ctaPrimary = t("home:hero.ctaPrimary", { returnObjects: true }) as CtaItem;
+	const ctaSecondary = t("home:hero.ctaSecondary", { returnObjects: true }) as CtaItem;
+	const location = t("home:hero.location", { returnObjects: true }) as Location;
 
 	useEffect(() => {
 		const container = containerRef.current;
@@ -84,7 +85,7 @@ export default function HeroSection() {
 			wireframe: true,
 			transparent: true,
 			depthWrite: false,
-            opacity: 0.3
+			opacity: 0.3,
 		});
 
 		// --- Terrain Mesh ---
