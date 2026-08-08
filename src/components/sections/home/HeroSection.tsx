@@ -304,13 +304,13 @@ export default function HeroSection() {
 			{/* Content Overlay */}
 			<div className="relative z-10 mx-auto w-full min-h-full max-w-7xl px-6 sm:px-8 lg:px-12 xl:px-16 py-10 sm:py-14 lg:py-20 grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 xl:gap-24 items-center pointer-events-none">
 				{/* Left Column */}
-				<div className="lg:col-span-8 h-full pointer-events-auto">
+				<div className="lg:col-span-10 h-full pointer-events-auto">
 					<div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface border border-primary/20 text-on-surface text-xs font-mono font-medium mb-8 sm:mb-10">
 						<span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
 						<span className="whitespace-pre-line">{t("home:hero.badge")}</span>
 					</div>
 					<FadeRight delay={0.1} className="reveal active">
-						<h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-on-surface leading-[1.08] mb-8 sm:mb-10 lg:mb-12 whitespace-pre-line">
+						<h1 className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight text-on-surface leading-[1.08] mb-8 sm:mb-10 lg:mb-12 whitespace-pre-line">
 							<Trans
 								i18nKey={["home:hero.headline"]}
 								defaults="Survey <shine>Smarter</shine>, Build Stronger" // optional defaultValue
@@ -381,7 +381,7 @@ export default function HeroSection() {
 				</div>
 
 				{/* Right Column — HUD Card */}
-				<div className="lg:col-span-4 pointer-events-auto">
+				<div className="lg:col-span-2 pointer-events-auto">
 					{/* <div className="px-6 rounded-3xl border border-primary/20 relative overflow-hidden ">
 						<Image
 							src="/img/equipment/total-station.svg"
