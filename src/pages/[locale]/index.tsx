@@ -28,18 +28,24 @@ const Page: NextPage<PageProps> = () => {
 			<PageHead pageName="home" />
 			<div className="flex flex-col min-h-screen">
 				<HeroSection />
-                <div className="flex flex-col mx-auto max-w-7xl px-6 w-full">
-                    <LeadGenBar className="my-12  -mt-48" />
+				<div className="flex flex-col mx-auto max-w-7xl px-6 w-full">
 					<AboutSection />
+					<LeadGenBar
+						//className="my-12  -mt-48"
+						className="my-12 "
+					/>
 				</div>
 				<SurveyingInstrumentsSection />
 				<DronesSection />
-				<WhyChooseUsSection />
-				{/* <TrusteesSection /> */}
-				<KeyFactsSection />
-				<CoreExpertiseSection />
-				<CertificationsSection />
-				<MetricsSection />
+				<div className="flex flex-col bg-surface w-full">
+					<WhyChooseUsSection />
+					{/* <TrusteesSection /> */}
+					<KeyFactsSection />
+					<CoreExpertiseSection />
+					<CertificationsSection />
+					<MetricsSection />
+				</div>
+
 				<ServicesSection />
 				<CtaSection />
 			</div>

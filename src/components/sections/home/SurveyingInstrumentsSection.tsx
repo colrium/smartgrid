@@ -24,7 +24,7 @@ export function SurveyingInstrumentsSection() {
 		>
 			{/* Soft institutional background shapes */}
 			<Blob className="w-[28rem] h-[28rem] bg-brand-200/40 -top-24 -right-24" opacity={0.55} />
-			<ParallaxDecor speed={-0.06} className="absolute top-1/3 left-1/4 z-0">
+			<ParallaxDecor speed={-0.06} className="absolute top-1/2 left-1/4 z-0">
 				<Blob className="w-64 h-64 bg-brand-100/70" opacity={0.6} />
 			</ParallaxDecor>
 

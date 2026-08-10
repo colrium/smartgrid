@@ -56,7 +56,10 @@ export default function NavMenu({ items, locale, localizePath, horizontal = fals
 						<Button
 							onClick={(e) => handleOpen(i, e.currentTarget)}
 							endIcon={<KeyboardArrowDownIcon />}
-							className={`text-sm mr-4 no-underline! font-medium tracking-tight text-ink hover:text-primary-500 relative transition-colors after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full`}
+							color="inherit"
+							size="small"
+							variant="text"
+							className={`text-sm mr-4 no-underline! capitalize! font-medium tracking-tight text-ink hover:text-primary-500 relative transition-colors after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full`}
 						>
 							{item.label}
 						</Button>
@@ -67,6 +70,14 @@ export default function NavMenu({ items, locale, localizePath, horizontal = fals
 							onClose={() => handleClose(i)}
 							anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
 							transformOrigin={{ vertical: "top", horizontal: "left" }}
+							slotProps={{
+								paper: {
+									className:
+										"rounded-xl hairline bg-white/95! backdrop-blur-md! card-shadow",
+									style: { marginTop: 10 },
+									sx: { minWidth: { xs: 220, sm: 260 } },
+								},
+							}}
 						>
 							<NavMenu
 								items={item.links}
@@ -79,16 +90,19 @@ export default function NavMenu({ items, locale, localizePath, horizontal = fals
 			}
 
           return (
-            <MuiLink
+            <Button
               component={Link}
-              color="textPrimary"
-              className={`text-sm mr-4 no-underline! font-medium tracking-tight text-ink hover:text-primary-500 relative transition-colors after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full`}
+                  color="inherit"
+                  size="small"
+              variant="text"
+              disableElevation
+              className={`text-sm mr-4 no-underline! capitalize! font-medium tracking-tight text-on-surface hover:text-primary-500 relative transition-colors after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full`}
               href={localizePath(item.href, locale)}
               locale={false}
               key={`nav-${i}`}
             >
               {item.label}
-            </MuiLink>
+            </Button>
           );
         })}
       </Box>
@@ -110,6 +124,7 @@ export default function NavMenu({ items, locale, localizePath, horizontal = fals
 						onMouseEnter={(e) => handleOpen(i, e.currentTarget as HTMLElement)}
 						onMouseLeave={() => handleClose(i)}
 						sx={{ display: "flex", justifyContent: "space-between", gap: 1 }}
+						className="text-sm font-medium tracking-tight text-ink hover:bg-brand-50"
 					>
 						<Box
 							component="span"
@@ -121,7 +136,7 @@ export default function NavMenu({ items, locale, localizePath, horizontal = fals
 									href={localizePath(item.href, locale)}
 									locale={false}
 									onClick={() => handleClose()}
-                                    className="no-underline py-1 px-2 hover:bg-primary-light"
+                                    className="no-underline py-1 px-2 hover:text-primary rounded-md"
                                     underline="none"
 								>
 									{item.label}
@@ -130,7 +145,7 @@ export default function NavMenu({ items, locale, localizePath, horizontal = fals
 							{!item.href && item.label}
 						</Box>
 
-						<ChevronRightIcon fontSize="small" />
+						<ChevronRightIcon fontSize="small" className="text-primary" />
 					</MenuItem>
 
 					<Menu
@@ -139,6 +154,14 @@ export default function NavMenu({ items, locale, localizePath, horizontal = fals
 						onClose={() => handleClose(i)}
 						anchorOrigin={{ vertical: "top", horizontal: "right" }}
 						transformOrigin={{ vertical: "top", horizontal: "left" }}
+						slotProps={{
+							paper: {
+								className:
+									"rounded-xl hairline bg-white/95! backdrop-blur-md! card-shadow",
+								style: { marginLeft: 8 },
+								sx: { minWidth: 220 },
+							},
+						}}
 					>
 						<NavMenu items={item.links} locale={locale} localizePath={localizePath} />
 					</Menu>
@@ -147,14 +170,18 @@ export default function NavMenu({ items, locale, localizePath, horizontal = fals
 		}
 
         return (
-			<MenuItem key={`item-${i}`} onClick={() => handleClose()}>
-				<MuiLink
-					component={Link}
-					href={localizePath(item.href, locale)}
-					locale={false}
-					className="no-underline"
-					underline="none"
+			<MenuItem
+					key={`item-${i}`}
+					onClick={() => handleClose()}
+					className="text-sm font-medium tracking-tight text-ink hover:bg-brand-50"
 				>
+					<MuiLink
+						component={Link}
+						href={localizePath(item.href, locale)}
+						locale={false}
+						className="no-underline"
+						underline="none"
+					>
 					{item.label}
 				</MuiLink>
 			</MenuItem>

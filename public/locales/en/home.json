@@ -122,8 +122,8 @@
 		]
 	},
 	"drones": {
-		"tag": null,
-		"headline": "Our Drone Fleet",
+		"tag": "Drone Fleet",
+		"headline": "Our Drones",
 		"description": "We deploy advanced drones to capture high-resolution aerial RGB / LiDAR imagery and multispectral data for Accurate Mapping, Monitoring, Planning, surveying, and engineering.",
 		"items": [
 			{
@@ -153,8 +153,8 @@
 		]
 	},
 	"whyChooseUs": {
-		"tag": null,
-		"headline": "Why Choose Us",
+		"tag": "Why Choose Us",
+		"headline": "Exceptional surveying and engineering solutions.",
 		"description": "We combine cutting-edge technology with extensive experience to deliver exceptional surveying and engineering solutions.",
 		"items": [
 			{
@@ -439,7 +439,6 @@
 			}
 		]
 	},
-
 	"cta": {
 		"tag": "Let's work together",
 		"headline": "Precision survey & engineering, ready when you are.",
