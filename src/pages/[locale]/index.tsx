@@ -5,6 +5,17 @@ import { getI18nProps } from "@/lib/i18n";
 import HeroSection from "@/components/sections/home/HeroSection";
 import { AboutSection } from "@/components/sections/home/AboutSection";
 import LeadGenBar from "@/components/sections/home/LeadGenBar";
+import {
+	SurveyingInstrumentsSection,
+	DronesSection,
+	WhyChooseUsSection,
+	KeyFactsSection,
+	CoreExpertiseSection,
+	CertificationsSection,
+	MetricsSection,
+	TrusteesSection,
+	ServicesSection,
+} from "@/components/sections/home";
 
 interface PageProps {
 	// Add any additional props fetched server-side here
@@ -20,6 +31,15 @@ const Page: NextPage<PageProps> = () => {
                     <LeadGenBar className="my-12  -mt-48" />
 					<AboutSection />
 				</div>
+				<SurveyingInstrumentsSection />
+				<DronesSection />
+				<WhyChooseUsSection />
+				{/* <TrusteesSection /> */}
+				<KeyFactsSection />
+				<CoreExpertiseSection />
+				<CertificationsSection />
+				<MetricsSection />
+				<ServicesSection />
 			</div>
 		</div>
 	);

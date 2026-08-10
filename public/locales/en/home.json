@@ -77,7 +77,13 @@
 		"tag": "About Us",
 		"headline": "From Surveying Field Data to Final Design.",
 		"description": "SmartGrid delivers the Clarity and Accuracy your project needs.",
-		"featureImg": "",
+		"featureImg": {
+			"url": "/media/field/AG8ngQW.jpeg",
+			"alt": "Surveying Field Data",
+			"caption": "Field Operations",
+			"title": "High-Density Terrestrial Laser Scanning",
+			"description": "SmartGrid delivers the Clarity and Accuracy your project needs."
+		},
 		"whoWeAre": {
 			"title": "WHO WE ARE",
 			"description": "At SmartGrid surveying and Engineering, we specialize in advanced Land Surveying techniques and Civil Works in Kenya, Uganda, Tanzania and Africa, ensuring precision, efficiency, and reliability in every project. Our expertise in GIS mapping, drone surveying, and power grid analysis helps optimize infrastructure planning, while our civil engineering services lay the foundation for sustainable development."

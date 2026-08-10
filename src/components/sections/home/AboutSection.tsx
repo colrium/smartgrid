@@ -77,22 +77,20 @@ export const AboutSection: React.FC = () => {
 									<div
 										className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-80"
 										style={{
-											backgroundImage:
-												'url("https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80")',
+											backgroundImage: `url("${t("home:about.featureImg.url")}")`,
 										}}
 									/>
 									<div className="absolute inset-0 bg-gradient-to-t from-on-surface via-on-surface/20 to-transparent" />
 
 									<div className="absolute bottom-6 left-6 right-6 text-surface">
 										<span className="text-xs font-mono text-primary uppercase font-bold tracking-wider">
-											Field Operations
+											{t("home:about.featureImg.caption")}
 										</span>
 										<h3 className="text-xl font-bold mt-1">
-											High-Density Terrestrial Laser Scanning
+											{t("home:about.featureImg.title")}
 										</h3>
 										<p className="text-xs text-surface/70 mt-2">
-											Capture 2,000,000 points per second for millimetric 3D
-											structural analysis.
+											{t("home:about.featureImg.description")}
 										</p>
 									</div>
 								</div>
