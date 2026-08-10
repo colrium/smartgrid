@@ -3,6 +3,7 @@
 import { useTranslation } from "@/hooks";
 import { SectionTag } from "@/components/SectionTag";
 import { FadeUp } from "@/components/animations/Fade";
+import { ParallaxDecor, Blob } from "./decor";
 
 interface ExpertiseItem {
 	icon?: string | null;
@@ -30,46 +31,66 @@ export function CoreExpertiseSection() {
 
 	return (
 		<section id="core-expertise" className="py-24 sm:py-28 relative overflow-hidden">
-			<div className="absolute -top-24 -left-24 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+			{/* Soft institutional background shapes */}
+			<Blob className="w-[24rem] h-[24rem] bg-brand-200/40 -top-24 right-10" opacity={0.5} />
+			<ParallaxDecor speed={-0.05} className="absolute bottom-10 -left-16 z-0">
+				<Blob className="w-72 h-72 bg-brand-100/70" opacity={0.6} />
+			</ParallaxDecor>
 
-			<div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
-					<div className="mt-4 mb-12 flex flex-col items-center gap-4 text-center">
+					<div className="mb-12 flex flex-col items-center gap-4 text-center">
 						<SectionTag>{t("home:coreExpertise.tag") as string}</SectionTag>
+						<span className="inline-flex items-center gap-3">
+							<span className="h-px w-10 bg-primary/40" />
+							<span className="h-1.5 w-1.5 rounded-full bg-primary" />
+							<span className="h-px w-10 bg-primary/40" />
+						</span>
 					</div>
 				</FadeUp>
 
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
 					{Array.isArray(items) &&
 						items.map((item, index) => (
-							<FadeUp key={index} delay={index * 0.1}>
-								<div className="group h-full relative rounded-3xl bg-surface border border-slate-200/70 shadow-sm hover:shadow-lg p-7 transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-									<span className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand-200 via-primary to-brand-200 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+							<FadeUp
+								key={index}
+								delay={(index % 4) * 0.08}
+								className={index % 2 === 1 ? "lg:translate-y-8" : ""}
+							>
+								<article className="group relative h-full flex flex-col rounded-[15px] border-t-2 border-ink/10 bg-surface card-shadow p-7 transition-all duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-t-primary overflow-hidden">
+									{/* watermark index */}
+									<span
+										className="absolute right-4 top-2 font-light text-5xl tracking-tight text-ink/[0.05] select-none pointer-events-none"
+										aria-hidden
+									>
+										{String(index + 1).padStart(2, "0")}
+									</span>
 
-									<span className="absolute -bottom-8 -right-8 w-28 h-28 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors duration-300" />
-
-									<div className="relative flex flex-col h-full">
-										<span className="w-13 h-13 p-3 rounded-2xl bg-brand-100 text-primary flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
+									<div className="flex items-center justify-between mb-8">
+										<span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
 											<span
-												className={`mdi mdi-${item.icon || expertiseIcon(item.label, index)} text-2xl`}
+												className={`mdi mdi-${
+													item.icon || expertiseIcon(item.label, index)
+												} text-2xl`}
 											/>
 										</span>
-
-										<h3 className="text-lg font-bold text-on-surface leading-snug mb-3">
-											{item.label}
-										</h3>
-										<p className="text-sm text-on-surface/70 leading-relaxed flex-1">
-											{item.description}
-										</p>
-
-										<span className="inline-flex items-center gap-1.5 mt-6 text-primary font-semibold text-sm opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-											{t("home:coreExpertise.label", {
-												defaultValue: "Core capability",
-											}) as string}
-											<span className="mdi mdi-arrow-right text-lg" />
-										</span>
+										<span className="mdi mdi-arrow-up-right text-xl text-on-surface/25 -translate-x-2 translate-y-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 group-hover:text-primary" />
 									</div>
-								</div>
+
+									<h3 className="text-lg font-medium leading-snug text-ink mb-3">
+										{item.label}
+									</h3>
+									<p className="text-sm text-on-surface/60 leading-relaxed flex-1">
+										{item.description}
+									</p>
+
+									<span className="mt-6 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-primary">
+										<span className="h-px w-6 bg-primary/50" />
+										{t("home:coreExpertise.label", {
+											defaultValue: "Core capability",
+										}) as string}
+									</span>
+								</article>
 							</FadeUp>
 						))}
 				</div>

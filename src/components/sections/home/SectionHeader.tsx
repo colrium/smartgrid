@@ -1,58 +1,64 @@
 "use client";
 
-import type { ReactNode } from "react";
-import { SectionTag } from "@/components/SectionTag";
-import { FadeUp } from "@/components/animations/Fade";
-
 interface SectionHeaderProps {
-	tag?: string | null;
-	headline?: string | null;
-	description?: string | null;
+	tag?: string;
+	headline: string;
+	description?: string;
+	tone?: "light" | "dark";
 	align?: "left" | "center";
-	dark?: boolean;
-	className?: string;
-	startElement?: ReactNode;
-	endElement?: ReactNode;
 }
 
 export function SectionHeader({
 	tag,
 	headline,
 	description,
-	align = "center",
-	dark = false,
-	className = "",
-	startElement,
-	endElement,
+	tone = "light",
+	align = "left",
 }: SectionHeaderProps) {
-	const centered = align === "center";
+	const dark = tone === "dark";
+
+	const descClass = dark
+		? "text-white/65"
+		: "text-on-surface/60";
+
 	return (
-		<FadeUp
-			className={`flex flex-col gap-4 max-w-3xl ${centered ? "mx-auto text-center items-center" : "text-left items-start"} ${className}`}
+		<div
+			className={`flex flex-col gap-5 ${
+				align === "center" ? "items-center text-center" : "items-start"
+			}`}
 		>
 			{tag && (
-				<SectionTag startElement={startElement} endElement={endElement} className={dark ? "text-primary" : "text-primary"}>
-					{tag}
-				</SectionTag>
-			)}
-			{headline && (
-				<h2
-					className={`text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.15] ${
-						dark ? "text-white" : "text-on-surface"
+				<span
+					className={`inline-flex items-center gap-3 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em] ${
+						dark ? "text-brand-200" : "text-primary"
 					}`}
 				>
-					{headline}
-				</h2>
+					<span
+						className={`inline-block h-px w-9 ${
+							dark ? "bg-brand-200/70" : "bg-primary/60"
+						}`}
+					/>
+					{tag}
+				</span>
 			)}
+			<h2
+				className={`font-light tracking-tight leading-[1.08] text-3xl sm:text-4xl lg:text-[2.85rem] ${
+					dark ? "text-white" : "text-ink"
+				}`}
+			>
+				{headline}
+			</h2>
 			{description && (
 				<p
-					className={`text-base sm:text-lg leading-relaxed whitespace-pre-line ${
-						dark ? "text-white/70" : "text-on-surface/70"
+					className={`text-base sm:text-lg leading-relaxed max-w-2xl ${descClass} ${
+						align === "center" ? "mx-auto" : ""
 					}`}
 				>
 					{description}
 				</p>
 			)}
-		</FadeUp>
+		</div>
 	);
 }
+
+export default SectionHeader;

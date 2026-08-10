@@ -57,14 +57,14 @@ function MarqueeRow({
 
 	return (
 		<div
-			className="group overflow-hidden rounded-3xl border border-slate-200/70 bg-surface/70 backdrop-blur-sm py-6 sm:py-7 relative"
+			className="group relative overflow-hidden rounded-[20px] hairline bg-white py-6 sm:py-7"
 			aria-label={items.map((i) => i.label).join(", ")}
 		>
-			<div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-surface to-transparent z-10 pointer-events-none" />
-			<div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-surface to-transparent z-10 pointer-events-none" />
+			<div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+			<div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
 			{reduceMotion ? (
-				<div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 px-6">
+				<div className="flex flex-wrap items-center justify-center gap-4 px-6">
 					{items.map((item, index) => (
 						<TrusteeLogo key={index} item={item} />
 					))}
@@ -87,10 +87,7 @@ function MarqueeRow({
 
 function RowContent({ items, ariaHidden = false }: { items: TrusteeItem[]; ariaHidden?: boolean }) {
 	return (
-		<div
-			aria-hidden={ariaHidden || undefined}
-			className="flex items-center gap-x-12 sm:gap-x-16 pr-12 sm:pr-16"
-		>
+		<div aria-hidden={ariaHidden || undefined} className="flex items-center gap-4 pr-4">
 			{items.map((item, index) => (
 				<TrusteeLogo key={index} item={item} />
 			))}
@@ -102,7 +99,7 @@ function TrusteeLogo({ item }: { item: TrusteeItem }) {
 	const src = resolveAsset(item);
 	return (
 		<div
-			className="flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+			className="flex h-16 items-center justify-center rounded-xl border border-ink/10 bg-surface px-6 grayscale opacity-70 transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-brand-50 hover:grayscale-0 hover:opacity-100 cursor-pointer"
 			title={item.label}
 		>
 			{src ? (
@@ -111,7 +108,7 @@ function TrusteeLogo({ item }: { item: TrusteeItem }) {
 					alt={item.label}
 					width={96}
 					height={40}
-					className="h-8 w-auto object-contain sm:h-10"
+					className="h-8 w-auto object-contain sm:h-9"
 				/>
 			) : (
 				<span className="text-sm font-bold uppercase tracking-widest text-on-surface/60">
@@ -134,15 +131,18 @@ export function TrusteesSection() {
 
 	return (
 		<section id="trustees" className="py-24 sm:py-28 relative overflow-hidden">
-			<div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
-
-			<div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
-					<div className="mt-4 mb-12 flex flex-col items-center gap-4 text-center">
+					<div className="mb-12 flex flex-col items-center gap-4 text-center">
 						<SectionTag>{t("home:trustees.tag") as string}</SectionTag>
-						<h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-on-surface leading-tight">
+						<h2 className="text-3xl sm:text-5xl font-light tracking-tight text-ink leading-tight">
 							{t("home:trustees.headline") as string}
 						</h2>
+						<span className="inline-flex items-center gap-3">
+							<span className="h-px w-10 bg-primary/40" />
+							<span className="h-1.5 w-1.5 rounded-full bg-primary" />
+							<span className="h-px w-10 bg-primary/40" />
+						</span>
 					</div>
 				</FadeUp>
 

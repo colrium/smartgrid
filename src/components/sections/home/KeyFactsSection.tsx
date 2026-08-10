@@ -3,6 +3,7 @@
 import { useTranslation } from "@/hooks";
 import { SectionTag } from "@/components/SectionTag";
 import { FadeUp } from "@/components/animations/Fade";
+import { ParallaxDecor, Blob } from "./decor";
 
 interface KeyFactItem {
 	icon?: string | null;
@@ -23,43 +24,65 @@ export function KeyFactsSection() {
 
 	return (
 		<section id="key-facts" className="py-24 sm:py-28 relative overflow-hidden">
-			<div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+			<ParallaxDecor speed={0.05} className="absolute top-10 right-1/4 z-0">
+				<Blob className="w-72 h-72 bg-brand-200/50" opacity={0.5} />
+			</ParallaxDecor>
+
+			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
-					<div className="mt-4 mb-12 flex flex-col items-center gap-4 text-center">
+					<div className="mb-12 flex flex-col items-center gap-4 text-center">
 						<SectionTag>{t("home:keyFacts.tag") as string}</SectionTag>
+						<span className="inline-flex items-center gap-3">
+							<span className="h-px w-10 bg-primary/40" />
+							<span className="h-1.5 w-1.5 rounded-full bg-primary" />
+							<span className="h-px w-10 bg-primary/40" />
+						</span>
 					</div>
 				</FadeUp>
 
 				<FadeUp delay={0.08}>
-					<div className="relative rounded-4xl bg-surface border border-slate-200/70 shadow-xl overflow-hidden">
-						<div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand-200 via-primary to-brand-200" />
-						<div className="absolute -top-16 -right-16 w-56 h-56 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+					<div className="relative rounded-[20px] pale-panel hairline card-shadow overflow-hidden">
+						{/* texture + watermark */}
+						<ParallaxDecor speed={0.06} className="absolute -top-16 -right-16 z-0">
+							<Blob className="w-72 h-72 bg-brand-100/90" opacity={0.7} />
+						</ParallaxDecor>
+						<span
+							className="absolute -right-2 top-1/2 -translate-y-1/2 font-light tracking-tighter text-[11rem] leading-none text-ink/[0.04] select-none pointer-events-none"
+							aria-hidden
+						>
+							{String(Array.isArray(items) ? items.length : 0).padStart(2, "0")}
+						</span>
 
-						<div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x divide-slate-200/70">
+						<div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 p-6 sm:p-8 lg:p-10">
 							{Array.isArray(items) &&
 								items.map((item, index) => (
 									<div
 										key={index}
-										className="group flex flex-col items-center text-center gap-4 p-8 sm:p-10 transition-colors duration-300 hover:bg-brand-100/60"
+										className="group glass rounded-xl p-8 flex flex-col items-center text-center transition-all duration-500 hover:-translate-y-1.5 hover:card-shadow-lift"
 									>
-										<span className="relative w-14 h-14 flex items-center justify-center">
-											<span className="absolute inset-0 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300" />
-											<span
-												className={`relative mdi mdi-${
-													item.icon || FACT_ICONS[index % FACT_ICONS.length]
-												} text-2xl text-primary`}
-											/>
+										{/* Sealed medallion */}
+										<span className="relative mb-6 flex h-14 w-14 items-center justify-center">
+											<span className="absolute inset-0 rounded-full border border-ink/15 group-hover:border-primary/60 transition-colors duration-300" />
+											<span className="absolute inset-1.5 rounded-full border border-dashed border-ink/20 group-hover:rotate-180 transition-transform duration-[1200ms] ease-out" />
+											<span className="relative flex h-9 w-9 items-center justify-center rounded-full bg-surface text-primary shadow-sm">
+												<span
+													className={`mdi mdi-${
+														item.icon || FACT_ICONS[index % FACT_ICONS.length]
+													} text-lg`}
+												/>
+											</span>
 										</span>
-										<div>
-											<h3 className="text-base font-bold text-on-surface uppercase tracking-wide mb-2">
-												{item.label}
-											</h3>
-											<p className="text-sm text-on-surface/70 leading-relaxed">
-												{item.description}
-											</p>
-										</div>
-										<span className="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.18em] text-primary/70">
-											<FACT_INDEX index={index} />
+
+										<h3 className="text-[15px] font-semibold text-ink uppercase tracking-wide mb-2">
+											{item.label}
+										</h3>
+										<p className="text-sm text-ink/60 leading-relaxed">
+											{item.description}
+										</p>
+
+										<span className="mt-6 inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-ink/35">
+											<span className="h-1 w-1 rounded-full bg-primary" />
+											{String(index + 1).padStart(2, "0")}
 										</span>
 									</div>
 								))}
@@ -68,15 +91,6 @@ export function KeyFactsSection() {
 				</FadeUp>
 			</div>
 		</section>
-	);
-}
-
-function FACT_INDEX({ index }: { index: number }) {
-	return (
-		<>
-			<span className="mdi mdi-circle-small" />
-			{String(index + 1).padStart(2, "0")}
-		</>
 	);
 }
 

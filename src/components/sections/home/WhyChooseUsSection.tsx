@@ -3,6 +3,7 @@
 import { useTranslation } from "@/hooks";
 import { SectionHeader } from "./SectionHeader";
 import { FadeUp } from "@/components/animations/Fade";
+import { ParallaxDecor, Blob } from "./decor";
 
 interface WhyChooseUsItem {
 	icon?: string | null;
@@ -28,43 +29,66 @@ export function WhyChooseUsSection() {
 
 	return (
 		<section id="why-choose-us" className="py-24 sm:py-28 relative overflow-hidden">
-			<div className="absolute -bottom-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+			{/* Soft institutional background shapes */}
+			<Blob className="w-[26rem] h-[26rem] bg-brand-200/40 -top-20 right-0" opacity={0.5} />
+			<ParallaxDecor speed={-0.06} className="absolute bottom-24 -left-20 z-0">
+				<Blob className="w-80 h-80 bg-brand-100/80" opacity={0.6} />
+			</ParallaxDecor>
 
-			<div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-				<SectionHeader
-					tag={t("home:whyChooseUs.tag") as string}
-					headline={t("home:whyChooseUs.headline") as string}
-					description={t("home:whyChooseUs.description") as string}
-				/>
+			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+				<div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+					{/* Sticky manifesto header */}
+					<FadeUp className="lg:col-span-5 lg:sticky lg:top-28 self-start">
+						<SectionHeader
+							tag={t("home:whyChooseUs.tag") as string}
+							headline={t("home:whyChooseUs.headline") as string}
+							description={t("home:whyChooseUs.description") as string}
+						/>
+						<div className="mt-10 inline-flex items-center gap-4">
+							<span className="h-[1px] w-12 bg-primary/60" />
+							<span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-on-surface/40">
+								{String(1).padStart(2, "0")} —{" "}
+								{String(Array.isArray(items) ? items.length : 0).padStart(2, "0")}
+							</span>
+						</div>
+					</FadeUp>
 
-				<div className="mt-14 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7">
-					{Array.isArray(items) &&
-						items.map((item, index) => (
-							<FadeUp key={index} delay={(index % 3) * 0.1}>
-								<div className="group h-full relative rounded-3xl bg-surface border border-slate-200/70 shadow-sm hover:shadow-lg hover:border-primary/40 p-7 sm:p-8 transition-all duration-300 hover:-translate-y-1">
-									<div className="flex items-start justify-between mb-5">
-										<span className="w-13 h-13 p-3.5 rounded-2xl bg-brand-100 text-primary flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-											<span
-												className={`mdi mdi-${item.icon || FALLBACK_ICONS[index % FALLBACK_ICONS.length]} text-2xl`}
-											/>
-										</span>
-										<span className="text-4xl font-display font-light text-primary/15 group-hover:text-primary/25 transition-colors duration-300">
+					{/* Editorial list */}
+					<div className="lg:col-span-7">
+						{Array.isArray(items) &&
+							items.map((item, index) => (
+								<FadeUp key={index} delay={index * 0.05}>
+									<div className="group border-t border-ink/10 py-7 sm:py-8 flex items-start gap-6 sm:gap-8 transition-colors duration-300 hover:bg-surface/60 px-1 sm:px-3 -mx-1 sm:-mx-3">
+										<span className="pt-1 text-sm font-semibold tabular-nums tracking-[0.14em] text-primary">
 											{String(index + 1).padStart(2, "0")}
 										</span>
-									</div>
 
-									<span className="text-[11px] font-mono uppercase tracking-[0.18em] text-primary font-semibold">
-										{item.name}
-									</span>
-									<h3 className="text-lg sm:text-xl font-bold text-on-surface leading-snug mt-2 mb-3">
-										{item.label}
-									</h3>
-									<p className="text-sm sm:text-base text-on-surface/70 leading-relaxed">
-										{item.description}
-									</p>
-								</div>
-							</FadeUp>
-						))}
+										<div className="flex-1 min-w-0">
+											<span className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-on-surface/45">
+												{item.icon ? (
+													<span className={`mdi mdi-${item.icon} text-sm text-primary`} />
+												) : (
+													<span
+														className={`mdi mdi-${
+															FALLBACK_ICONS[index % FALLBACK_ICONS.length]
+														} text-sm text-primary`}
+													/>
+												)}
+												{item.name}
+											</span>
+											<h3 className="mt-2 text-xl sm:text-2xl font-medium tracking-tight text-ink leading-snug transition-colors duration-300 group-hover:text-primary">
+												{item.label}
+											</h3>
+											<p className="mt-3 text-sm sm:text-[15px] text-on-surface/60 leading-relaxed">
+												{item.description}
+											</p>
+										</div>
+
+										<span className="mdi mdi-arrow-right mt-1.5 text-xl text-on-surface/25 -translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 group-hover:text-primary" />
+									</div>
+								</FadeUp>
+							))}
+					</div>
 				</div>
 			</div>
 		</section>

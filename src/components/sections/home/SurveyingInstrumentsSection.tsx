@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useTranslation } from "@/hooks";
 import { SectionHeader } from "./SectionHeader";
 import { FadeUp } from "@/components/animations/Fade";
+import { ParallaxDecor, Blob } from "./decor";
 
 interface InstrumentItem {
 	label: string;
@@ -21,10 +22,13 @@ export function SurveyingInstrumentsSection() {
 			id="surveying-instruments"
 			className="py-24 sm:py-28 relative overflow-hidden"
 		>
-			<div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
-			<div className="absolute -bottom-24 -left-24 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+			{/* Soft institutional background shapes */}
+			<Blob className="w-[28rem] h-[28rem] bg-brand-200/40 -top-24 -right-24" opacity={0.55} />
+			<ParallaxDecor speed={-0.06} className="absolute top-1/3 left-1/4 z-0">
+				<Blob className="w-64 h-64 bg-brand-100/70" opacity={0.6} />
+			</ParallaxDecor>
 
-			<div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader
 					tag={t("home:surveyingInstruments.tag") as string}
 					headline={t("home:surveyingInstruments.headline") as string}
@@ -36,33 +40,36 @@ export function SurveyingInstrumentsSection() {
 						items.map((item, index) => (
 							<FadeUp
 								key={index}
-								delay={index * 0.08}
+								delay={(index % 4) * 0.08}
 								className={index === 0 ? "sm:col-span-2 lg:col-span-2" : ""}
 							>
-								<article className="group relative h-64 sm:h-80 overflow-hidden rounded-3xl bg-surface border border-slate-200/70 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+								<article className="group relative h-64 sm:h-80 overflow-hidden rounded-2xl hairline bg-surface card-shadow transition-all duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-brand-300">
 									{item.img && (
 										<Image
 											src={item.img}
 											alt={item.label}
 											fill
 											sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-											className="object-cover transition-transform duration-500 group-hover:scale-110"
+											className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
 										/>
 									)}
-									<div className="absolute inset-0 bg-gradient-to-t from-on-surface via-on-surface/30 to-transparent opacity-90" />
+									<div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/10 to-transparent" />
 
-									<span className="absolute top-4 right-4 w-9 h-9 rounded-full bg-surface/80 backdrop-blur-sm flex items-center justify-center text-primary opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300">
-										<span className="mdi mdi-arrow-top-right text-lg" />
+									{/* Frosted index chip */}
+									<span className="absolute top-4 left-4 inline-flex items-center gap-2 glass rounded-lg text-[11px] font-semibold uppercase tracking-[0.18em] text-ink px-3 py-1.5">
+										<span className="h-1.5 w-1.5 rounded-full bg-primary" />
+										{String(index + 1).padStart(2, "0")}
 									</span>
 
-									<div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
-										<span className="inline-block text-[11px] font-mono uppercase tracking-[0.18em] text-primary font-semibold mb-2">
+									<div className="absolute inset-x-5 bottom-5">
+										<span className="block text-[10px] font-semibold uppercase tracking-[0.22em] text-brand-200 mb-1.5">
 											{t("home:surveyingInstruments.label", {
 												defaultValue: "Instrument",
 											}) as string}
 										</span>
-										<h3 className="text-lg sm:text-xl font-bold text-surface leading-snug uppercase">
+										<h3 className="flex items-end justify-between gap-3 text-xl sm:text-2xl font-light uppercase tracking-tight text-white leading-none">
 											{item.label}
+											<span className="mdi mdi-arrow-right shrink-0 text-brand-200 text-lg -translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
 										</h3>
 									</div>
 								</article>
