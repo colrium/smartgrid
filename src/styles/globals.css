@@ -2,8 +2,7 @@
 
 @theme inline {
     --color-primary: #0097b2;
-    --color-primary-light: #66c5cf;
-    --color-primary-dark: #00677a;
+    --color-secondary: #000000;
 
     --color-paper: #ffffff;
     --color-mute: #80a5ac;
@@ -91,7 +90,7 @@ body::before {
     bottom: 0;
     width: 100%;
     z-index: -2;
-    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.75), rgba(0, 151, 178, 0.06) 75%);
+    background: linear-gradient(180deg, rgba(0, 151, 178, 0.66) 1%, rgba(211, 231, 245, 0.79) 52%, rgba(235, 235, 235, 0.65) 97%);
 }
 
 @-webkit-keyframes autofill {

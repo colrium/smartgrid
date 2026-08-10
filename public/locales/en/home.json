@@ -3,20 +3,30 @@
 		"badge": "Engineering Precision",
 		"headline": "Survey <shine>Smarter</shine>, Build Stronger.",
 		"description": "Leading Africa's Land and Aerial Surveying with Advanced equipment Technology",
-		"ctaPrimary": { "label": "Request a Survey", "href": "/contact?reason=request-survey", "class": " rounded-full!", "icon": "send"},
-		"ctaSecondary": { "label": "Explore Services", "href": "/services", "class": " rounded-full! bg-surface!", "icon": "arrow-right"},
-        "location": {
-            "label": "Active across East Africa & beyond",
-            "items": [
-                { "label": "Kenya", "code": "KE" },
-                { "label": "Uganda", "code": "UG" },
-                { "label": "Tanzania", "code": "TZ" }
-            ]
-        }
+		"ctaPrimary": {
+			"label": "Request a Survey",
+			"href": "/contact?reason=request-survey",
+			"class": " rounded-full!",
+			"icon": "send"
+		},
+		"ctaSecondary": {
+			"label": "Explore Services",
+			"href": "/services",
+			"class": " rounded-full! bg-surface!",
+			"icon": "arrow-right"
+		},
+		"location": {
+			"label": "Active across East Africa & beyond",
+			"items": [
+				{ "label": "Kenya", "code": "KE" },
+				{ "label": "Uganda", "code": "UG" },
+				{ "label": "Tanzania", "code": "TZ" }
+			]
+		}
 	},
-	
-    "leadGenBar": {
-		"title": "SMARTGRID SURVEYING & CIVIL ENGINEERING LTD",
+
+	"leadGenBar": {
+		"tag": "SMARTGRID SURVEYING & CIVIL ENGINEERING LTD",
 		"headline": "Reliable. Scalable. Fast. Accurate.",
 		"description": "Unlock faster, more cost-effective, and safer mapping, measurement, and monitoring of 1000+ Acres at a time.  \nAt Smartgrid Surveying, we turn this vision into reality—across Africa and beyond. With our cutting-edge drones and Land surveying techniques, we deliver the actionable data you need, exactly where it matters. \n Smartgrid Surveying is your trusted surveying partner!",
 		"link": { "label": "Company Profile", "href": "/about/company-profile" },
@@ -63,10 +73,11 @@
 			}
 		]
 	},
-    "about": {
+	"about": {
 		"tag": "About Us",
 		"headline": "From Surveying Field Data to Final Design.",
 		"description": "SmartGrid delivers the Clarity and Accuracy your project needs.",
+		"featureImg": "",
 		"whoWeAre": {
 			"title": "WHO WE ARE",
 			"description": "At SmartGrid surveying and Engineering, we specialize in advanced Land Surveying techniques and Civil Works in Kenya, Uganda, Tanzania and Africa, ensuring precision, efficiency, and reliability in every project. Our expertise in GIS mapping, drone surveying, and power grid analysis helps optimize infrastructure planning, while our civil engineering services lay the foundation for sustainable development."
@@ -76,18 +87,350 @@
 			"description": "To deliver innovative, high-precision surveying and civil works solutions that enhance the efficiency and sustainability of projects."
 		}
 	},
-    "surveyingInstruments": {
-        "tag": null,
-        "headline": "Our Surveying Instruments",
-        "description": "We Use Advanced, Calibrated, Precise equipment to ensure every point is accurate and reliable for your construction and engineering projects across Kenya and Beyond.",
-        "items": [
-        ]
-    },
-    "drones": {
-        "tag": null,
-        "headline": "Our Drone Fleet",
-        "description": "We deploy advanced drones to capture high-resolution aerial RGB / LiDAR imagery and multispectral data for Accurate Mapping, Monitoring, Planning, surveying, and engineering.",
-        "items": [
-        ]
-    }
+	"surveyingInstruments": {
+		"tag": "Precision",
+		"headline": "Our Surveying Instruments",
+		"description": "We Use Advanced, Calibrated, Precise equipment to ensure every point is accurate and reliable for your construction and engineering projects across Kenya and Beyond.",
+		"items": [
+			{
+				"label": "RTK GNSS FOIF A90",
+				"img": "/media/instruments/RTK-GNSS-FOIF-A90.jpg"
+			},
+			{
+				"label": "Total Stations",
+				"img": "/media/instruments/TOTAL-STATIONS.jpg"
+			},
+
+			{
+				"label": "AUTOMATIC LEVELS",
+				"img": "/media/instruments/AUTOMATIC-LEVELS.jpg"
+			},
+			{
+				"label": "GPR SCANNER",
+				"img": "/media/instruments/GPR-SCANNER.jpg"
+			},
+            {
+				"label": "LASER SCANNERS",
+				"img": "/media/instruments/LASER-SCANNERS.jpg"
+			}
+		]
+	},
+	"drones": {
+		"tag": null,
+		"headline": "Our Drone Fleet",
+		"description": "We deploy advanced drones to capture high-resolution aerial RGB / LiDAR imagery and multispectral data for Accurate Mapping, Monitoring, Planning, surveying, and engineering.",
+		"items": [
+			{
+				"icon": "quadcopter",
+				"img": "/media/drones/dji-matrice-300-rtk.jpeg",
+				"label": "DJI Matrice 300 RTK",
+				"description": "The DJI Matrice 300 RTK is a versatile and powerful drone designed for industrial applications, including surveying, mapping, and inspection. It features advanced flight capabilities, long battery life, and the ability to carry various payloads, making it ideal for professional use in challenging environments."
+			},
+			{
+				"icon": "quadcopter",
+				"img": "/media/drones/dji-air-3s.jpeg",
+				"label": "DJI Air 3S",
+				"description": "The DJI Air 3S is a compact and portable drone that offers high-quality aerial photography and videography capabilities. It features a dual-camera system, long flight time, and intelligent flight modes, making it suitable for both professional and recreational use."
+			},
+			{
+				"icon": "quadcopter",
+				"img": "/media/drones/dji-mavic-3m-3e.jpeg",
+				"label": "DJI Mavic 3M / 3E",
+				"description": "The DJI Mavic 3M / 3E is a lightweight and portable drone that provides excellent aerial imaging capabilities. It features a high-resolution camera, obstacle avoidance sensors, and intelligent flight modes, making it ideal for capturing stunning photos and videos from the sky."
+			},
+			{
+				"icon": "quadcopter",
+				"img": "/media/drones/dji-phantom-4.jpeg",
+				"label": "DJI Phantom 4",
+				"description": "The DJI Phantom 4 is a professional-grade drone designed for aerial photography and videography. It features a high-resolution camera with a large sensor, advanced flight modes, and obstacle avoidance technology, making it suitable for capturing high-quality images and videos from the air."
+			}
+		]
+	},
+	"whyChooseUs": {
+		"tag": null,
+		"headline": "Why Choose Us",
+		"description": "We combine cutting-edge technology with extensive experience to deliver exceptional surveying and engineering solutions.",
+		"items": [
+			{
+				"icon": "check-circle",
+				"name": "Expertise",
+				"label": "Expertise in Power Grid Surveying & Civil Works",
+				"description": "Our team of licensed professionals brings extensive experience in surveying and civil engineering."
+			},
+			{
+				"icon": "check-circle",
+				"name": "Advanced Technology",
+				"label": "Use of Drone & GIS Technologies",
+				"description": "We utilize the latest surveying instruments and drone technology for accurate and efficient data collection."
+			},
+			{
+				"icon": "check-circle",
+				"name": "Comprehensive Services",
+				"label": "Comprehensive Services",
+				"description": "From land surveying to civil engineering, we offer a wide range of services to meet your project needs."
+			},
+			{
+				"icon": "check-circle",
+				"name": "Quality Assurance",
+				"label": "Commitment to Quality & Innovation",
+				"description": "We adhere to strict quality standards and continuously innovate to provide the best solutions for our clients."
+			},
+			{
+				"icon": "check-circle",
+				"name": "Client-Centric Approach",
+				"label": "Client-Centric Approach",
+				"description": "We prioritize our clients' needs, ensuring clear communication and tailored solutions for every project."
+			},
+			{
+				"icon": "check-circle",
+				"name": "Proven Track Record",
+				"label": "Proven Track Record",
+				"description": "We have a proven track record of delivering successful projects on time and within budget."
+			}
+		]
+	},
+	"keyFacts": {
+		"tag": "Key Facts",
+		"headline": null,
+		"items": [
+			{
+				"icon": "check-circle",
+				"label": "Regional Coverage",
+				"description": "East Africa operations across Kenya, Uganda, Tanzania, Rwanda & surrounding regions."
+			},
+			{
+				"icon": "check-circle",
+				"label": "Specialization",
+				"description": "Land surveying, drone mapping & geospatial data solutions."
+			},
+			{
+				"icon": "check-circle",
+				"label": "Experience",
+				"description": "5+ years delivering engineering-grade spatial data."
+			},
+			{
+				"icon": "check-circle",
+				"label": "Standards",
+				"description": "Compliance with national regulations and survey best practices."
+			}
+		]
+	},
+	"coreExpertise": {
+		"tag": "Core Expertise",
+		"headline": null,
+		"items": [
+			{
+				"icon": null,
+				"label": "Topographical & Engineering Surveys",
+				"description": "Accurate land surveys for construction, infrastructure, and development projects."
+			},
+			{
+				"icon": null,
+				"label": "Drone Mapping & Photogrammetry",
+				"description": "High-resolution aerial imagery and 3D mapping for precise data collection."
+			},
+			{
+				"icon": null,
+				"label": "Construction & Site Control",
+				"description": "Surveying services for construction layout, monitoring, and quality control."
+			},
+			{
+				"icon": null,
+				"label": "Infrastructure Support",
+				"description": "Surveying and engineering solutions for roads, bridges, utilities, and other infrastructure projects."
+			}
+		]
+	},
+	"certifications": {
+		"tag": "Certifications",
+		"headline": null,
+		"items": [
+			{
+				"icon": null,
+				"name": "ISK",
+				"label": "Surveyors of Kenya"
+			},
+			{
+				"icon": null,
+				"name": "NEMA",
+				"label": "Environmental Compliance"
+			},
+			{
+				"icon": null,
+				"name": "NCA",
+				"label": "Construction Authority"
+			},
+			{
+				"icon": null,
+				"name": "SOK",
+				"label": "Survey of Kenya"
+			}
+		]
+	},
+	"metrics": {
+		"tag": "Operational Scale",
+		"headline": null,
+		"items": [
+			{
+				"icon": null,
+				"name": "Countries",
+				"value": 7
+			},
+			{
+				"icon": null,
+				"name": "Project",
+				"value": 250
+			},
+			{
+				"icon": null,
+				"name": "Years",
+				"value": 5
+			},
+			{
+				"icon": null,
+				"name": "%CSAT",
+				"value": 100
+			}
+		]
+	},
+	"trustees": {
+		"tag": null,
+		"headline": "OUR TRUSTEES",
+		"items": [
+			{
+				"label": "DJI",
+				"logoUrl": "/media/logos/dji.png"
+			},
+			{
+				"label": "ESRI",
+				"logoUrl": "/media/logos/esri.png"
+			},
+			{
+				"label": "Trimble",
+				"logoUrl": "/media/logos/trimble.png"
+			},
+			{
+				"label": "FOIF",
+				"logoUrl": "/media/logos/foif.png"
+			},
+			{
+				"label": "GoK",
+				"logoUrl": "/media/logos/gok.png"
+			},
+			{
+				"label": "AutoCAD",
+				"logoUrl": "/media/logos/autocad.png"
+			},
+			{
+				"label": "KCAA",
+				"logoUrl": "/media/logos/kcaa.png"
+			},
+			{
+				"label": "PIX4D",
+				"logoUrl": "/media/logos/pix4d.png"
+			},
+			{
+				"label": "BLUEGEOG",
+				"logoUrl": "/media/logos/bluegeog.png"
+			},
+			{
+				"label": "ArcGIS",
+				"logoUrl": "/media/logos/arcgis.png"
+			},
+			{
+				"label": "Bosch",
+				"logoUrl": "/media/logos/bosch.png"
+			},
+			{
+				"label": "Agisoft Metashape",
+				"logoUrl": "/media/logos/agisoft.png"
+			}
+		]
+	},
+	"services": {
+		"tag": "Services",
+		"headline": "Our Services",
+		"items": [
+			{
+				"featureImg": "/media/services/land-surveying-deliverables.png",
+				"label": "Land Surveying",
+				"description": "We provide a wide range of land surveying services, including topographical surveys, boundary surveys, sectional properties, building site surveys, resource mapping, bathymetric surveys, hydrographic surveys, and GIS mapping. Our deliverables include boundary survey reports and plans, cadastral plans for title processing, beacons monumentation, registry maps, 3D spatial data (X, Y, Z), topographical maps, contours, CAD shapefiles, survey reports, PDF map outputs, and other specialized deliverables.",
+				"items": [
+					"Topographical surveys",
+					"Boundary Surveys",
+					"Sectional Properties",
+					"Building Sites surveys",
+					"Resource mapping",
+					"Bathymetric survey / Hydrographic survey",
+					"GIS Mapping"
+				],
+				"deliverables": [
+					"Boundary Survey Reports & Plans",
+					"Cadastral Plans for Title Processing",
+					"Beacons Monumentation",
+					"Registry Maps",
+					"3D Spatial Data (X, Y, Z)",
+					"Topographical Maps",
+					"Contours",
+					"CAD Shapefiles",
+					"Survey Reports",
+					"PDF Map Outputs",
+					"Other Specialized Deliverables"
+				]
+			},
+			{
+				"featureImg": "/media/services/aerial-drone-deliverables.png",
+				"label": "AERIAL SURVEYS",
+				"description": "We offer a wide range of aerial surveying services, including drone imagery surveys, Lidar mapping, agricultural NDVI mapping, as-built surveys, monitoring and evaluation, solar panel drone surveys, volumetric surveys, and landfill & quarry drone surveys. Our deliverables include boundary survey reports and plans, cadastral plans for title processing, beacons monumentation, registry maps, 3D spatial data (X, Y, Z), topographical maps, contours, CAD shapefiles, survey reports, PDF map outputs, and other specialized deliverables.",
+				"items": [
+					"Drone imagery surveys",
+					"Lidar Mapping",
+					"Agricultural NDVI Mapping",
+					"As built surveys",
+					"Monitoring and Evaluation",
+					"Solar Panel Drone Surveys",
+					"Volumetric Surveys",
+					"Landfill & Quarry Drone Surveys"
+				],
+				"deliverables": [
+					"Orthorectified Imagery (Geo-Referenced) + Raw images",
+					"Orthomosaic Maps (Geo-Referenced)",
+					"Digital Elevation Models (DTM, DSM)",
+					"Contours",
+					"3D Point Clouds (X, Y, Z)",
+					"Topographical Maps",
+					"CAD Shapefiles",
+					"Volumetric Analysis Reports",
+					"Survey Reports",
+					"NDVI & Multispectral Maps (Agriculture only)"
+				]
+			},
+            {
+				"featureImg": "/media/services/civil-engineering-deliverables.png",
+				"label": "CIVIL ENGINEERING",
+				"description": "We offer a wide range of civil engineering services, including site engineering, building setting out, underground utilities installation, highway engineering, stake out, leveling, benchmarking, and construction services. Our deliverables include as-built maps, digital elevation models, setting out coordinates, 3D data, contours, master plans, building layouts, CAD shapefiles, and PDF maps.",
+				"items": [
+					"Site Engineering ",
+					"Buildings Setting Out",
+					"Underground utilities (Water lines, sanitation lines, electrical lines)",
+					"Highway engineering",
+					"Stake out",
+					"Leveling",
+					"Benchmarking",
+					"Construction services"
+				],
+				"deliverables": [
+					"AS-BUILT Maps",
+					"Digital Elevation Models (DSM, DTM)",
+					"Setting Out Coordinates",
+					"3D DATA (X, Y, Z)",
+					"Contours",
+					"Master Plans",
+					"Buildings Layout / BIM",
+					"CAD Shapefiles",
+					"PDF Map"
+				]
+			}
+		]
+	}
 }

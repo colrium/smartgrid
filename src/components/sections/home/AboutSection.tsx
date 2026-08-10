@@ -5,34 +5,32 @@
 import React from "react";
 import ShieldIcon from "@mui/icons-material/Shield";
 import MemoryIcon from "@mui/icons-material/Memory";
+import useTranslation from "@/hooks/useTranslation";
+import { SectionTag } from "@/components/SectionTag";
 export const AboutSection: React.FC = () => {
+    const { t } = useTranslation(["home"]);
 	return (
 		<section id="about" className="py-28 relative  overflow-hidden">
 			<div className="max-w-7xl mx-auto px-6">
 				<div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
 					{/* Left Narrative */}
 					<div className="lg:col-span-6 space-y-6">
-						<div className="inline-flex items-center gap-2 font-mono text-xs text-primary uppercase tracking-widest font-semibold">
-							<span className="w-6 h-[2px] bg-primary" />
-							<span>01 // About Smartgrid</span>
-						</div>
+						<SectionTag className="text-primary">{t("home:about.tag")}</SectionTag>
 
-						<h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-textMain leading-tight">
-							Bridging Physical Reality & Digital Precision.
+						<h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-on-surface leading-tight">
+							{t("home:about.headline")}
 						</h2>
 
-						<p className="text-textMain/70 leading-relaxed text-base sm:text-lg">
-							Smartgrid Surveying & Engineering Ltd is a premier geospatial
-							consultancy based in Nairobi, Kenya. We redefine site intelligence by
-							merging classic land surveying fundamentals with futuristic scanning
-							technology.
+						<p className="text-on-surface/70 leading-relaxed text-base sm:text-lg">
+							{t("home:about.description")}
 						</p>
 
-						<p className="text-textMain/70 leading-relaxed text-sm sm:text-base">
-							From complex infrastructure layout and cadastral mapping to aerial
-							photogrammetry and subsurface utility exploration, our
-							multi-disciplinary engineering approach minimizes project risk,
-							accelerates timelines, and guarantees regulatory compliance.
+						<h3 className="text-xl sm:text-3xl font-bold tracking-tight text-primary leading-tight">
+							{t("home:about.whoWeAre.title")}
+						</h3>
+
+						<p className="text-on-surface/70 leading-relaxed text-sm sm:text-base">
+							{t("home:about.whoWeAre.description")}
 						</p>
 
 						<div className="pt-4 grid grid-cols-2 gap-4">
@@ -41,10 +39,10 @@ export const AboutSection: React.FC = () => {
 									<ShieldIcon className="w-5 h-5" />
 								</div>
 								<div>
-									<h4 className="font-bold text-sm text-textMain">
+									<h4 className="font-bold text-sm text-on-surface">
 										Licensed Experts
 									</h4>
-									<p className="text-xs text-textMain/60 mt-1">
+									<p className="text-xs text-on-surface/60 mt-1">
 										Full Institution of Surveyors certification.
 									</p>
 								</div>
@@ -55,10 +53,10 @@ export const AboutSection: React.FC = () => {
 									<MemoryIcon className="w-5 h-5" />
 								</div>
 								<div>
-									<h4 className="font-bold text-sm text-textMain">
+									<h4 className="font-bold text-sm text-on-surface">
 										Drone & LiDAR
 									</h4>
-									<p className="text-xs text-textMain/60 mt-1">
+									<p className="text-xs text-on-surface/60 mt-1">
 										Automated high-density spatial capture.
 									</p>
 								</div>

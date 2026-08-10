@@ -32,7 +32,7 @@ const LeadGenBar: React.FC<{ className?: string }> = ({ className }) => {
 				<div className="max-w-7xl mx-auto px-6">
 					<div className="flex flex-col items-center gap-4">
 						<SectionTag >
-							{t("home:leadGenBar.title")}
+							{t("home:leadGenBar.tag")}
 						</SectionTag>
 						<h2 className="text-3xl sm:text-5xl font-bold tracking-tight leading-tight whitespace-pre-line max-w-3xl">
 							{t("home:leadGenBar.headline")}

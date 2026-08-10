@@ -23,12 +23,12 @@ const theme = createTheme({
 			contrastText: "#ffffff",
 		},
 		secondary: {
-			main: brand[700],
-			light: brand[300],
-			dark: brand[900],
+			main: "#000000",
+			light: "#404040",
+			dark: "#000000",
 			contrastText: "#ffffff",
 		},
-		
+
 		background: {
 			default: "#f7f3e8",
 			paper: "#ffffff",

@@ -7,7 +7,7 @@ import * as THREE from "three";
 import { useTranslation } from "@/hooks";
 import { Trans } from "next-i18next/pages";
 import Button, { ButtonProps } from "@mui/material/Button";
-import { FadeUp, FadeRight } from "@/components/animations/Fade";
+import { FadeUp, FadeRight, FadeLeft } from "@/components/animations/Fade";
 
 interface CtaItem {
 	label: string;
@@ -306,10 +306,13 @@ export default function HeroSection() {
 			<div className="relative z-10 mx-auto w-full min-h-full max-w-7xl px-6 sm:px-8 lg:px-12 xl:px-16 py-10 sm:py-14 lg:py-20 grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 xl:gap-24 items-center pointer-events-none">
 				{/* Left Column */}
 				<div className="lg:col-span-10 h-full pointer-events-auto">
-					<div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface border border-primary/20 text-on-surface text-xs font-mono font-medium mb-8 sm:mb-10">
-						<span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-						<span className="whitespace-pre-line">{t("home:hero.badge")}</span>
-					</div>
+					<FadeLeft delay={0.1} className="reveal active">
+						<div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface border border-primary/20 text-on-surface text-xs font-sans font-medium mb-8 sm:mb-10">
+							<span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+							<span className="whitespace-pre-line">{t("home:hero.badge")}</span>
+						</div>
+					</FadeLeft>
+
 					<FadeRight delay={0.1} className="reveal active">
 						<h1 className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight text-on-surface leading-[1.08] mb-8 sm:mb-10 lg:mb-12 whitespace-pre-line">
 							<Trans
@@ -322,10 +325,12 @@ export default function HeroSection() {
 							/>
 						</h1>
 					</FadeRight>
+					<FadeUp delay={0.15} className="mt-12 sm:mt-14">
+						<p className="text-base sm:text-lg text-on-surface/70 max-w-2xl font-normal leading-relaxed mb-10 sm:mb-12 whitespace-pre-line">
+							{t("home:hero.description")}
+						</p>
+					</FadeUp>
 
-					<p className="text-base sm:text-lg text-on-surface/70 max-w-2xl font-normal leading-relaxed mb-10 sm:mb-12 whitespace-pre-line">
-						{t("home:hero.description")}
-					</p>
 					<FadeUp
 						delay={0.1}
 						className="flex flex-col md:flex-row md:flex-wrap justify-start items-start gap-4 sm:gap-6"
@@ -337,7 +342,7 @@ export default function HeroSection() {
 								endIcon={<span className={`mdi mdi-${ctaPrimary.icon} text-xl`} />}
 								size="large"
 								variant={ctaPrimary.variant || "contained"}
-								color={ctaPrimary.color || "primary"}
+								color={ctaPrimary.color || "secondary"}
 							>
 								{ctaPrimary.label}
 							</Button>
