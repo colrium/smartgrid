@@ -7,8 +7,8 @@ interface SectionTagProps {
 	endElement?: React.ReactNode;
 	className?: string;
 }
-const StartElement = () => <span className="w-6 h-0.5 bg-primary"></span>;
-const EndElement = () => <span className="w-6 h-0.5 bg-primary"></span>;
+const StartElement = () => <span className="w-6 h-px bg-primary/40"></span>;
+const EndElement = () => <span className="w-6 h-px bg-primary/40"></span>;
 export function SectionTag({ children, startElement=<StartElement />, endElement=<EndElement />, className = "" }: SectionTagProps) {
 	return (
 			<div

@@ -27,11 +27,7 @@ export function CertificationsSection() {
 				<FadeUp>
 					<div className="mb-12 flex flex-col items-center gap-4 text-center">
 						<SectionTag>{t("home:certifications.tag") as string}</SectionTag>
-						<span className="inline-flex items-center gap-3">
-							<span className="h-px w-10 bg-primary/40" />
-							<span className="h-1.5 w-1.5 rounded-full bg-primary" />
-							<span className="h-px w-10 bg-primary/40" />
-						</span>
+						
 					</div>
 				</FadeUp>
 

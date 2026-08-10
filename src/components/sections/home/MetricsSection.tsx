@@ -39,11 +39,7 @@ export function MetricsSection() {
 							<SectionTag className="text-brand-200">
 								{t("home:metrics.tag") as string}
 							</SectionTag>
-							<span className="inline-flex items-center gap-3">
-								<span className="h-px w-10 bg-brand-200/50" />
-								<span className="h-1.5 w-1.5 rounded-full bg-brand-200" />
-								<span className="h-px w-10 bg-brand-200/50" />
-							</span>
+							
 						</div>
 
 						<div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">

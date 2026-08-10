@@ -85,7 +85,8 @@ export function ServicesSection() {
 											}
 											iconPosition="start"
 											label={service.label}
-											sx={{
+                                            sx={{
+                                                mb: 2,
 												minHeight: "auto",
 												padding: "16px 20px",
 												borderRadius: "10px",
@@ -94,7 +95,7 @@ export function ServicesSection() {
 													? "#01373d"
 													: "rgba(1, 55, 61, 0.12)",
 												color: selected ? "#ffffff" : "#345a60",
-												backgroundColor: selected ? "#01373d" : "#ffffff",
+												backgroundColor: selected ? "#01373d" : "transparent",
 												boxShadow: selected
 													? "0 14px 34px -14px rgba(1, 55, 61, 0.55)"
 													: "none",
@@ -111,7 +112,6 @@ export function ServicesSection() {
 													backgroundColor: selected
 														? "#01373d"
 														: "rgba(0, 151, 178, 0.06)",
-													transform: "translateX(3px)",
 												},
 												"&:active": { transform: "scale(0.985)" },
 											}}
