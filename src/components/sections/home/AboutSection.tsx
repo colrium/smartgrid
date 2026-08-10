@@ -17,46 +17,46 @@ export const AboutSection: React.FC = () => {
 					<div className="lg:col-span-6 space-y-6">
 						<SectionTag className="text-primary">{t("home:about.tag")}</SectionTag>
 
-						<h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-on-surface leading-tight">
+						<h2 className="text-3xl sm:text-5xl font-light tracking-tight text-ink leading-tight">
 							{t("home:about.headline")}
 						</h2>
 
-						<p className="text-on-surface/70 leading-relaxed text-base sm:text-lg">
+						<p className="text-on-surface/60 leading-relaxed text-base sm:text-lg">
 							{t("home:about.description")}
 						</p>
 
-						<h3 className="text-xl sm:text-3xl font-bold tracking-tight text-primary leading-tight">
+						<h3 className="text-xl sm:text-2xl font-medium tracking-tight text-primary leading-tight pt-2">
 							{t("home:about.whoWeAre.title")}
 						</h3>
 
-						<p className="text-on-surface/70 leading-relaxed text-sm sm:text-base">
+						<p className="text-on-surface/60 leading-relaxed text-sm sm:text-base">
 							{t("home:about.whoWeAre.description")}
 						</p>
 
 						<div className="pt-4 grid grid-cols-2 gap-4">
-							<div className="p-4 rounded-2xl bg-surface border border-slate-200/80 shadow-sm flex items-start gap-3">
-								<div className="p-2 rounded-xl bg-primary-light text-primary">
+							<div className="p-4 rounded-[15px] bg-surface hairline hover:border-primary cursor-default transition-all duration-300 hover:-translate-y-0.5 hover:card-shadow-lift flex items-start gap-3">
+								<div className="p-2.5 rounded-lg bg-brand-50 text-primary">
 									<ShieldIcon className="w-5 h-5" />
 								</div>
 								<div>
-									<h4 className="font-bold text-sm text-on-surface">
+									<h4 className="font-semibold text-sm text-ink">
 										Licensed Experts
 									</h4>
-									<p className="text-xs text-on-surface/60 mt-1">
+									<p className="text-xs text-on-surface/60 mt-1 leading-relaxed">
 										Full Institution of Surveyors certification.
 									</p>
 								</div>
 							</div>
 
-							<div className="p-4 rounded-2xl bg-surface border border-slate-200/80 shadow-sm flex items-start gap-3">
-								<div className="p-2 rounded-xl bg-primary-light text-primary">
+							<div className="p-4 rounded-[15px] bg-surface hairline hover:border-primary cursor-default transition-all duration-300 hover:-translate-y-0.5 hover:card-shadow-lift flex items-start gap-3">
+								<div className="p-2.5 rounded-lg bg-brand-50 text-primary">
 									<MemoryIcon className="w-5 h-5" />
 								</div>
 								<div>
-									<h4 className="font-bold text-sm text-on-surface">
+									<h4 className="font-semibold text-sm text-ink">
 										Drone & LiDAR
 									</h4>
-									<p className="text-xs text-on-surface/60 mt-1">
+									<p className="text-xs text-on-surface/60 mt-1 leading-relaxed">
 										Automated high-density spatial capture.
 									</p>
 								</div>
@@ -71,8 +71,8 @@ export const AboutSection: React.FC = () => {
 							<div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/10 rounded-full blur-2xl" />
 							<div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl" />
 
-							<div className="relative bg-surface p-4 rounded-3xl border border-on-surface-300/10 shadow-premium">
-								<div className="relative h-96 rounded-2xl overflow-hidden bg-slate-900 group">
+							<div className="relative bg-surface p-4 rounded-[20px] hairline card-shadow">
+								<div className="relative h-96 rounded-xl overflow-hidden bg-slate-900 group">
 									{/* Abstract Representation of Pointcloud / Surveying Mesh */}
 									<div
 										className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-80"
@@ -80,16 +80,22 @@ export const AboutSection: React.FC = () => {
 											backgroundImage: `url("${t("home:about.featureImg.url")}")`,
 										}}
 									/>
-									<div className="absolute inset-0 bg-gradient-to-t from-on-surface via-on-surface/20 to-transparent" />
+									<div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/25 to-transparent" />
+
+									{/* Frosted index chip */}
+									<span className="absolute top-4 left-4 inline-flex items-center gap-2 glass rounded-lg text-[11px] font-semibold uppercase tracking-[0.18em] text-ink px-3 py-1.5">
+										<span className="h-1.5 w-1.5 rounded-full bg-primary" />
+										01 — Capability
+									</span>
 
 									<div className="absolute bottom-6 left-6 right-6 text-surface">
-										<span className="text-xs font-mono text-primary uppercase font-bold tracking-wider">
+										<span className="text-xs font-mono text-brand-200 uppercase font-bold tracking-wider">
 											{t("home:about.featureImg.caption")}
 										</span>
-										<h3 className="text-xl font-bold mt-1">
+										<h3 className="text-xl font-light mt-1">
 											{t("home:about.featureImg.title")}
 										</h3>
-										<p className="text-xs text-surface/70 mt-2">
+										<p className="text-xs text-surface/70 mt-2 leading-relaxed">
 											{t("home:about.featureImg.description")}
 										</p>
 									</div>

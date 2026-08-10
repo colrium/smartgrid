@@ -131,15 +131,18 @@ export default function Navbar() {
 				elevation={0}
 				color="transparent"
 				classes={{
-					root: `transition-all duration-300 ${
-						state.isWindowScrolled
-							? "bg-surface/70! bg-opacity-90! backdrop-blur-md shadow-xl"
-							: "bg-surface"
-					}`,
+					root: "bg-transparent! transition-all duration-300",
 				}}
 			>
-				<Container maxWidth="lg">
-					<Toolbar disableGutters className={`bg-transparent!`}>
+				<Container
+					maxWidth="lg"
+					classes={{
+						root: `mt-3 mb-1 rounded-2xl hairline bg-white/85! backdrop-blur-md! transition-all duration-300 ${
+							state.isWindowScrolled ? "card-shadow-lift" : "card-shadow"
+						}`,
+					}}
+				>
+					<Toolbar disableGutters className={`bg-transparent! h-16`}>
 						<IconButton
 							onClick={handleDrawerToggle}
 							classes={{ root: "lg:hidden! mr-4!" }}
@@ -156,18 +159,18 @@ export default function Navbar() {
 								width={32}
 								height={32}
 							/>
-                            <div className="flex flex-col mr-2 ">
-                            <h6
-								className="flex uppercase font-extrabold text-primary no-underline"
-							>
-								{t("meta:site.title")}
-							</h6>
-                            <span
-								className="flex uppercase font-bold text-xs  no-underline"
-							>
-								{t("meta:site.subtitle")}
-							</span>
-                            </div>
+                            <div className="flex flex-col mr-2 leading-tight">
+								<h6
+									className="flex uppercase font-semibold tracking-wide text-ink no-underline"
+								>
+									{t("meta:site.title")}
+								</h6>
+								<span
+									className="flex uppercase font-semibold text-[10px] tracking-[0.18em] text-on-surface/55 no-underline"
+								>
+									{t("meta:site.subtitle")}
+								</span>
+							</div>
 							
 						</Link>
 
@@ -219,7 +222,7 @@ export default function Navbar() {
 				className="block lg:hidden"
 				onClose={handleDrawerToggle}
 				classes={{
-					paper: "bg-surface-900/70! bg-opacity-90! backdrop-blur-lg! border-b shadow-xl",
+					paper: "bg-white/95! backdrop-blur-lg! hairline! border-t! shadow-xl",
 				}}
 			>
 				<Box

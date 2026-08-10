@@ -56,7 +56,7 @@ export default function NavMenu({ items, locale, localizePath, horizontal = fals
 						<Button
 							onClick={(e) => handleOpen(i, e.currentTarget)}
 							endIcon={<KeyboardArrowDownIcon />}
-							className={`text-xs mr-4 no-underline! font-light tracking-[0.03em] text-onSurface-800  hover:text-primary-500 transition-colors`}
+							className={`text-sm mr-4 no-underline! font-medium tracking-tight text-ink hover:text-primary-500 relative transition-colors after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full`}
 						>
 							{item.label}
 						</Button>
@@ -82,7 +82,7 @@ export default function NavMenu({ items, locale, localizePath, horizontal = fals
             <MuiLink
               component={Link}
               color="textPrimary"
-              className={`text-xs mr-4 no-underline! font-light tracking-[0.03em] text-onSurface-800  hover:text-primary-500 transition-colors`}
+              className={`text-sm mr-4 no-underline! font-medium tracking-tight text-ink hover:text-primary-500 relative transition-colors after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full`}
               href={localizePath(item.href, locale)}
               locale={false}
               key={`nav-${i}`}

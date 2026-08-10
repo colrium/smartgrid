@@ -307,14 +307,14 @@ export default function HeroSection() {
 				{/* Left Column */}
 				<div className="lg:col-span-10 h-full pointer-events-auto">
 					<FadeLeft delay={0.1} className="reveal active">
-						<div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface border border-primary/20 text-on-surface text-xs font-sans font-medium mb-8 sm:mb-10">
-							<span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+						<div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass text-ink text-xs font-semibold uppercase tracking-[0.18em] mb-8 sm:mb-10">
+							<span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
 							<span className="whitespace-pre-line">{t("home:hero.badge")}</span>
 						</div>
 					</FadeLeft>
 
 					<FadeRight delay={0.1} className="reveal active">
-						<h1 className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight text-on-surface leading-[1.08] mb-8 sm:mb-10 lg:mb-12 whitespace-pre-line">
+						<h1 className="text-5xl sm:text-7xl lg:text-8xl font-light tracking-tight text-ink leading-[1.05] mb-8 sm:mb-10 lg:mb-12 whitespace-pre-line">
 							<Trans
 								i18nKey={["home:hero.headline"]}
 								defaults="Survey <shine>Smarter</shine>, Build Stronger" // optional defaultValue
@@ -326,7 +326,7 @@ export default function HeroSection() {
 						</h1>
 					</FadeRight>
 					<FadeUp delay={0.15} className="mt-12 sm:mt-14">
-						<p className="text-base sm:text-lg text-on-surface/70 max-w-2xl font-normal leading-relaxed mb-10 sm:mb-12 whitespace-pre-line">
+						<p className="text-base sm:text-lg text-on-surface/60 max-w-2xl font-normal leading-relaxed mb-10 sm:mb-12 whitespace-pre-line">
 							{t("home:hero.description")}
 						</p>
 					</FadeUp>
@@ -370,12 +370,12 @@ export default function HeroSection() {
 								<div className="flex -space-x-2">
 									{Array.isArray(location.items) &&
 										location.items.map((item: any, index: number) => (
-											<div
-												className="w-9 h-9 rounded-full bg-primary/20 border-2 border-surface flex items-center justify-center text-xs font-bold text-primary"
-												key={index}
-											>
-												{item.code}
-											</div>
+<div
+											className="w-9 h-9 rounded-full glass flex items-center justify-center text-xs font-bold text-ink"
+											key={index}
+										>
+											{item.code}
+										</div>
 										))}
 								</div>
 								<span className="text-sm text-on-surface/50 font-medium">

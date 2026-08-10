@@ -10,10 +10,10 @@ const legalLinks = {
 export default function Footer() {
 	const { t } = useTranslation(["common", "meta"]);
 	return (
-		<footer className="bg-surface  pt-16 pb-8 z-50">
+		<footer className="bg-surface border-t hairline pt-16 pb-8 z-50">
 			<div className="max-w-295 mx-auto px-8">
 				<div
-					className={`w-full flex flex-col md:grid md:grid-cols-[10fr_30fr] gap-8  pb-12 border-b border-primary`}
+					className={`w-full flex flex-col md:grid md:grid-cols-[10fr_30fr] gap-8  pb-12 border-b border-ink/10`}
 				>
 					<div>
 						<Link href="/" className="flex items-center gap-2.5 mb-5">
@@ -24,11 +24,11 @@ export default function Footer() {
 								width={32}
 								height={32}
 							/>
-							<span className="text-[1.3rem] font-bold tracking-[0.04em] text-primary">
+							<span className="text-[1.3rem] font-semibold tracking-wide text-ink">
 								{t("meta:site.title")}
 							</span>
 						</Link>
-						<p className="text-xs text-on-surface font-light leading-relaxed">
+						<p className="text-xs text-on-surface/55 font-normal leading-relaxed max-w-xs">
 							{t("common:footer.description")}
 						</p>
 					</div>
@@ -44,7 +44,7 @@ export default function Footer() {
 							}
 							return (
 								<div key={colKey}>
-									<h5 className="text-base text-onSurface-700 mb-5">
+									<h5 className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary mb-5">
 										{t(`common:footer.columns.${colKey}.heading`)}
 									</h5>
 									<ul className="flex flex-col gap-3">
@@ -53,12 +53,12 @@ export default function Footer() {
 												{link.href ? (
 													<Link
 														href={link.href}
-														className="text-sm text-onSurface-900 font-light hover:text-primary transition-colors"
+														className="text-sm text-on-surface/65 hover:text-primary transition-colors"
 													>
 														{link.label}
 													</Link>
 												) : (
-													<span className="text-sm text-onSurface-800 font-light">
+													<span className="text-sm text-on-surface/60">
 														{link.label}
 													</span>
 												)}
@@ -72,7 +72,7 @@ export default function Footer() {
 				</div>
 
 				<div className="flex flex-col md:flex-row md:auto-cols-max justify-between items-center gap-4 pt-8">
-					<span className="text-xs text-onSurface-800">
+					<span className="text-xs text-on-surface/60">
 						{t("common:footer.copyright", {
 							year: new Date().getFullYear(),
 							organization: t("meta:site.title"),
@@ -83,7 +83,7 @@ export default function Footer() {
 							<Link
 								key={key}
 								href={legalLinks[key]}
-								className="text-xs text-onSurface-800 hover:text-primary transition-colors"
+								className="text-xs text-on-surface/60 hover:text-primary transition-colors"
 							>
 								{t(`common:footer.legal.${key}`)}
 							</Link>

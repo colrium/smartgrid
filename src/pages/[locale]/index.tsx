@@ -15,6 +15,7 @@ import {
 	MetricsSection,
 	TrusteesSection,
 	ServicesSection,
+	CtaSection,
 } from "@/components/sections/home";
 
 interface PageProps {
@@ -40,6 +41,7 @@ const Page: NextPage<PageProps> = () => {
 				<CertificationsSection />
 				<MetricsSection />
 				<ServicesSection />
+				<CtaSection />
 			</div>
 		</div>
 	);

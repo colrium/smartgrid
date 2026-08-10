@@ -438,5 +438,21 @@
 				]
 			}
 		]
+	},
+
+	"cta": {
+		"tag": "Let's work together",
+		"headline": "Precision survey & engineering, ready when you are.",
+		"description": "From a single plot to 1000+ acres, our surveyors and pilots are ready to deliver fast, accurate and actionable data — across East Africa and beyond.",
+		"primary": {
+			"label": "Request a Survey",
+			"href": "/contact?reason=request-survey",
+			"icon": "send"
+		},
+		"secondary": {
+			"label": "Talk to an Expert",
+			"href": "mailto:smartgridsurveying@gmail.com",
+			"icon": "email"
+		}
 	}
 }

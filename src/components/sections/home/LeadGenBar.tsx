@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { useTranslation } from "@/hooks";
 import Button from "@mui/material/Button";
 import Link from "next/link";
@@ -26,45 +26,47 @@ const LeadGenBar: React.FC<{ className?: string }> = ({ className }) => {
 
 	return (
 		<section className={`relative  ${className || ""}`}>
-			<div className="absolute -top-6 -left-6 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
-			<div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/30 rounded-full blur-2xl"></div>
-			<div className={`py-20 relative z-20 my-12 bg-surface rounded-4xl overflow-hidden`}>
-				<div className="max-w-7xl mx-auto px-6">
+			<div className="absolute -top-6 -left-6 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+			<div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl pointer-events-none"></div>
+			<div className={`py-14 sm:py-20 relative z-20 my-12 rounded-[20px] pale-panel-soft hairline card-shadow overflow-hidden`}>
+				<div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 					<div className="flex flex-col items-center gap-4">
 						<SectionTag >
 							{t("home:leadGenBar.tag")}
 						</SectionTag>
-						<h2 className="text-3xl sm:text-5xl font-bold tracking-tight leading-tight whitespace-pre-line max-w-3xl">
+						<h2 className="text-3xl sm:text-5xl font-light tracking-tight text-ink leading-tight whitespace-pre-line max-w-3xl">
 							{t("home:leadGenBar.headline")}
 						</h2>
-						<p className="text-md  text-center max-w-2xl font-normal leading-relaxed mb-10 sm:mb-20 whitespace-pre-line">
+						<p className="text-md text-center text-on-surface/60 max-w-2xl font-normal leading-relaxed mb-10 sm:mb-16 whitespace-pre-line">
 							{t("home:leadGenBar.description")}
 						</p>
 					</div>
-					<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
 						{Array.isArray(leadGenItems) &&
 							leadGenItems.map((item, index) => (
 								<div
 									key={index}
-									className="rounded-4xl gap-4 py-8 md:px-6  text-center md:text-left flex flex-col items-center h-full"
+									className="glass rounded-xl gap-4 py-10 md:px-7 text-center md:text-left flex flex-col items-center h-full transition-all duration-500 hover:-translate-y-1.5 hover:card-shadow-lift"
 									style={{ transitionDelay: `${index * 100}ms` }}
 								>
-									<span
-										className={`mdi mdi-${item.icon} text-3xl sm:text-7xl mb-6 text-mute`}
-									/>
+									<span className="flex h-14 w-14 items-center justify-center rounded-xl bg-surface text-primary shadow-sm mb-6">
+										<span className={`mdi mdi-${item.icon} text-2xl`} />
+									</span>
 
-									<h5 className="text-xl text-center font-bold uppercase tracking-wider ">
+									<h5 className="text-sm text-center font-semibold uppercase tracking-[0.18em] text-ink">
 										{item.label}
 									</h5>
-									<p className="text-base text-center flex-1">
+									<p className="text-sm text-center text-on-surface/60 leading-relaxed flex-1">
 										{item.description}
 									</p>
+
 									{item?.more?.href && (
 										<Button
 											component={Link}
 											href={item.more.href}
 											color="primary"
-											className="rounded-full!"
+											endIcon={<span className="mdi mdi-arrow-right" />}
+											className="!normal-case !rounded-lg !px-2 !min-w-0"
 										>
 											{item.more.label}
 										</Button>
@@ -75,7 +77,7 @@ const LeadGenBar: React.FC<{ className?: string }> = ({ className }) => {
 											href={item.action.href}
 											variant="outlined"
 											color="primary"
-											className="rounded-full!"
+											className="!normal-case !rounded-lg !border-ink/15"
 										>
 											{item.action.label}
 										</Button>
