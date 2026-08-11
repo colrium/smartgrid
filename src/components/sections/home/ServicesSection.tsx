@@ -131,7 +131,7 @@ export function ServicesSection() {
 									exit={{ opacity: 0, y: -12 }}
 									transition={{ duration: 0.4, ease: PANEL_EASE }}
 								>
-									<div className="group relative h-56 sm:h-72 lg:h-80 rounded-[15px] hairline overflow-hidden bg-surface card-shadow">
+									<div className="group relative h-56 sm:h-120 lg:h-200 rounded-[15px] hairline overflow-hidden bg-surface card-shadow">
 										{active.featureImg && (
 											<Image
 												src={active.featureImg}

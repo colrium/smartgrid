@@ -1,0 +1,461 @@
+{
+	"hero": {
+		"badge": "Usahihi wa Uhandisi",
+		"headline": "Pima Kwa <shine>Umaalimu</shine>, Jenga kwa Nguvu.",
+		"description": "Kiongozi wa Upimaji wa Ardhi na Angani Afrika kwa Teknolojia ya Kisasa",
+		"ctaPrimary": {
+			"label": "Omba Upimaji",
+			"href": "/contact?reason=request-survey",
+			"class": " rounded-full!",
+			"icon": "send"
+		},
+		"ctaSecondary": {
+			"label": "Chunguza Huduma",
+			"href": "/services",
+			"class": " rounded-full! bg-surface!",
+			"icon": "arrow-right"
+		},
+		"location": {
+			"label": "Inatumika Afrika Mashariki na kwingineko",
+			"items": [
+				{ "label": "Kenya", "code": "KE" },
+				{ "label": "Uganda", "code": "UG" },
+				{ "label": "Tanzania", "code": "TZ" }
+			]
+		}
+	},
+
+	"leadGenBar": {
+		"tag": "SMARTGRID SURVEYING & CIVIL ENGINEERING LTD",
+		"headline": "Ya Kuaminika. Inayoweza Kupanuka. Ya Haraka. Sahihi.",
+		"description": "Fungua njia za haraka zaidi, za gharama nafuu, na salama za upimaji ramani, vipimo na ufuatiliaji wa ekari 1000+ kwa wakati mmoja.\n Katika Smartgrid Surveying, tunageuza maono haya kuwa ukweli—kote Afrika na nje yake. Kwa droni zetu za kisasa na mbinu za upimaji wa ardhi, tunakupa data tendekevu unayohitaji, mahali pale inapohitajika. \n Smartgrid Surveying ni mshirika wako wa upimaji wa kuaminika!",
+		"link": { "label": "Wasifu wa Kampuni", "href": "/about/company-profile" },
+		"items": [
+			{
+				"icon": "land-fields",
+				"label": "UPIMAJI WA ARDHI",
+				"description": "Upimaji sahihi wa topografia, mipaka, cadastral, GIS, na uhandisi kwa teknolojia ya kisasa zaidi.",
+				"more": {
+					"label": "Chunguza zaidi",
+					"href": "/surveying/land-surveying"
+				},
+				"action": {
+					"label": "Omba Upimaji",
+					"href": "/contact?reason=land-surveying"
+				}
+			},
+
+			{
+				"icon": "quadcopter",
+				"label": "DRONI ZA ANGANI",
+				"description": "Picha za angani na kilimo za mwonekano wa juu, upimaji ramani wa 3D, na data ya topografia kwa haraka na usalama zaidi.",
+				"more": {
+					"label": "Chunguza zaidi",
+					"href": "/surveying/aerial-surveying"
+				},
+				"action": {
+					"label": "Panga upimaji wa droni",
+					"href": "/contact?reason=book-drone-survey"
+				}
+			},
+			{
+				"icon": "hard-hat",
+				"label": "UHANDISI WA KIRAHISI",
+				"description": "Mpangilio wa tovuti za ujenzi na majengo, ufuatiliaji, na uthibitisho wa kama ulivyojengwa kwa usahihi na haraka.",
+				"more": {
+					"label": "Chunguza zaidi",
+					"href": "/civil"
+				},
+				"action": {
+					"label": "Shirikiana nasi.",
+					"href": "mailto:smartgridsurveying@gmail.com"
+				}
+			}
+		]
+	},
+	"about": {
+		"tag": "Kuhusu Sisi",
+		"headline": "Kutoka Data ya Uwanjani hadi Muundo wa Mwisho.",
+		"description": "SmartGrid hutoa Uwazi na Usahihi unaohitaji mradi wako.",
+		"featureImg": {
+			"url": "/media/field/AG8ngQW.jpeg",
+			"alt": "Data ya Uwanjani ya Upimaji",
+			"caption": "Operesheni za Uwanjani",
+			"title": "Uchanganuzi wa Laser wa Nchi Kavu wenye Msongamano wa Juu",
+			"description": "SmartGrid hutoa Uwazi na Usahihi unaohitaji mradi wako."
+		},
+		"whoWeAre": {
+			"title": "SISI NI AKINA NANI",
+			"description": "Katika SmartGrid surveying na Engineering, tunabobea katika mbinu za kisasa za Upimaji wa Ardhi na Kazi za Kirahisi nchini Kenya, Uganda, Tanzania na Afrika, kuhakikisha usahihi, ufanisi, na uaminifu katika kila mradi. Utaalam wetu katika ramani ya GIS, upimaji wa droni, na uchambuzi wa gridi ya umeme husaidia kuboresha mipango ya miundombinu, wakati huduma zetu za uhandisi wa kirahisi zinaweka msingi wa maendeleo endelevu."
+		},
+		"mission": {
+			"title": "DHAMIRA YETU",
+			"description": "Kutoa suluhisho bunifu, za usahihi wa juu za upimaji na kazi za kirahisi zinazoimarisha ufanisi na uendelevu wa miradi."
+		}
+	},
+	"surveyingInstruments": {
+		"tag": "Usahihi",
+		"headline": "Vyombo Vyetu vya Upimaji",
+		"description": "Tunatumia vifaa vya kisasa, vilivyopimwa, na sahihi ili kuhakikisha kila sehemu ni sahihi na ya kuaminika kwa miradi yako ya ujenzi na uhandisi kote Kenya na nje.",
+		"items": [
+			{
+				"label": "RTK GNSS FOIF A90",
+				"img": "/media/instruments/RTK-GNSS-FOIF-A90.jpg"
+			},
+			{
+				"label": "Vituo vya Jumla (Total Stations)",
+				"img": "/media/instruments/TOTAL-STATIONS.jpg"
+			},
+
+			{
+				"label": "VIWANGO VYA KIJIOTEGEMEA",
+				"img": "/media/instruments/AUTOMATIC-LEVELS.jpg"
+			},
+			{
+				"label": "SCANNER YA GPR",
+				"img": "/media/instruments/GPR-SCANNER.jpg"
+			},
+            {
+				"label": "SCANNERS ZA LASER",
+				"img": "/media/instruments/LASER-SCANNERS.jpg"
+			}
+		]
+	},
+	"drones": {
+		"tag": "Meli ya Droni",
+		"headline": "Droni Zetu",
+		"description": "Tunatuma droni za kisasa kukusanya picha za angani za mwonekano wa juu, data ya RGB / LiDAR na data ya multispectral kwa Upimaji wa ramani sahihi, ufuatiliaji, mipango, upimaji, na uhandisi.",
+		"items": [
+			{
+				"icon": "quadcopter",
+				"img": "/media/drones/dji-matrice-300-rtk.jpeg",
+				"label": "DJI Matrice 300 RTK",
+				"description": "DJI Matrice 300 RTK ni droni inayoweza kubadilika na yenye nguvu iliyoundwa kwa matumizi ya viwandani, ikijumuisha upimaji, ramani, na ukaguzi. Inawezesha safari za ndege za kisasa, maisha marefu ya betri, na uwezo wa kubeba malipo mbalimbali, na kuifanya kuwa bora kwa matumizi ya kitaalamu katika mazingira magumu."
+			},
+			{
+				"icon": "quadcopter",
+				"img": "/media/drones/dji-air-3s.jpeg",
+				"label": "DJI Air 3S",
+				"description": "DJI Air 3S ni droni ndogo na inayobebeka inayotoa uwezo wa upigaji picha za angani na video za ubora wa juu. Ina mfumo wa kamera mbili, muda mrefu wa ndege, na hali za ndege za akili, na kuifanya kufaa kwa matumizi ya kitaalamu na ya burudani."
+			},
+			{
+				"icon": "quadcopter",
+				"img": "/media/drones/dji-mavic-3m-3e.jpeg",
+				"label": "DJI Mavic 3M / 3E",
+				"description": "DJI Mavic 3M / 3E ni droni nyepesi na inayobebeka inayotoa uwezo bora wa upigaji picha za angani. Ina kamera ya mwonekano wa juu, vitambuzi vya kuepuka vizuizi, na hali za ndege za akili, na kuifanya kuwa bora kwa kunasa picha na video za kuvutia kutoka angani."
+			},
+			{
+				"icon": "quadcopter",
+				"img": "/media/drones/dji-phantom-4.jpeg",
+				"label": "DJI Phantom 4",
+				"description": "DJI Phantom 4 ni droni ya kiwango cha kitaalamu iliyoundwa kwa upigaji picha na video za angani. Ina kamera ya mwonekano wa juu yenye sensor kubwa, hali za ndege za kisasa, na teknolojia ya kuepuka vizuizi, na kuifanya kufaa kwa kunasa picha na video za ubora wa juu kutoka angani."
+			}
+		]
+	},
+	"whyChooseUs": {
+		"tag": "Kwa Nini Utuchague",
+		"headline": "Suluhisho bora za upimaji na uhandisi.",
+		"description": "Tunachanganya teknolojia ya kisasa na uzoefu mpana ili kutoa suluhisho bora za upimaji na uhandisi.",
+		"items": [
+			{
+				"icon": "check-circle",
+				"name": "Utaalam",
+				"label": "Utaalam katika Upimaji wa Gridi ya Umeme na Kazi za Kirahisi",
+				"description": "Timu yetu ya wataalamu walio na leseni inaleta uzoefu mpana katika upimaji na uhandisi wa kirahisi."
+			},
+			{
+				"icon": "check-circle",
+				"name": "Teknolojia ya Kisasa",
+				"label": "Matumizi ya Teknolojia za Droni na GIS",
+				"description": "Tunatumia vyombo na teknolojia za kisasa zaidi za upimaji na droni kwa ukusanyaji wa data sahihi na bora."
+			},
+			{
+				"icon": "check-circle",
+				"name": "Huduma Kamili",
+				"label": "Huduma Kamili",
+				"description": "Kutoka upimaji wa ardhi hadi uhandisi wa kirahisi, tunatoa huduma nyingi kukidhi mahitaji ya mradi wako."
+			},
+			{
+				"icon": "check-circle",
+				"name": "Udhibiti wa Ubora",
+				"label": "Kujitolea kwa Ubora na Ubunifu",
+				"description": "Tunazingatia viwango vikali vya ubora na kuendelea kufanya ubunifu ili kutoa suluhisho bora kwa wateja wetu."
+			},
+			{
+				"icon": "check-circle",
+				"name": "Mbinu Inayozingatia Mteja",
+				"label": "Mbinu Inayozingatia Mteja",
+				"description": "Tunatanguliza mahitaji ya wateja wetu, kuhakikisha mawasiliano ya wazi na suluhisho maalum kwa kila mradi."
+			},
+			{
+				"icon": "check-circle",
+				"name": "Rekodi Imara",
+				"label": "Rekodi Imara ya Ufanisi",
+				"description": "Tuna rekodi imara ya kutoa miradi yenye mafanikio kwa wakati na ndani ya bajeti."
+			}
+		]
+	},
+	"keyFacts": {
+		"tag": "Mambo Muhimu",
+		"headline": null,
+        "description": "Sisi ni kampuni inayoongoza ya upimaji na uhandisi yenye uwepo mkubwa Afrika Mashariki, inayobobea katika upimaji wa ardhi, upimaji wa ramani kwa droni, na suluhisho za data za kimaeneo (geospatial). Kwa uzoefu wa miaka 5+ , tumekamilisha miradi mingi huku tukizingatia kanuni za kitaifa na mbinu bora za upimaji.",
+		"items": [
+			{
+				"icon": "check-circle",
+				"label": "Upatikanaji wa Kikanda",
+				"description": "Operesheni za Afrika Mashariki nchini Kenya, Uganda, Tanzania, Rwanda na maeneo ya jirani."
+			},
+			{
+				"icon": "check-circle",
+				"label": "Umaalumu",
+				"description": "Upimaji wa ardhi, uchoraji ramani kwa droni na suluhisho za data za kimaeneo."
+			},
+			{
+				"icon": "check-circle",
+				"label": "Uzoefu",
+				"description": "Miaka 5+ ya kutoa data sahihi za kiwango cha uhandisi."
+			},
+			{
+				"icon": "check-circle",
+				"label": "Viwango",
+				"description": "Uzingatiaji wa kanuni za kitaifa na mbinu bora za upimaji."
+			}
+		]
+	},
+	"coreExpertise": {
+		"tag": "Wataalam",
+		"headline": "Utaalam Wetu wa Msingi",
+        "description": "Tunabobea katika kutoa huduma za upimaji na uhandisi za ubora wa juu, tukitumia teknolojia ya kisasa na utaalam wa tasnia kutoa matokeo sahihi na ya kuaminika kwa wateja wetu.",
+		"items": [
+			{
+				"icon": null,
+				"label": "Uchunguzi wa Topografia na Uhandisi",
+				"description": "Upimaji sahihi wa ardhi kwa ajili ya miradi ya ujenzi, miundombinu, na maendeleo."
+			},
+			{
+				"icon": null,
+				"label": "Uchoraji Ramani kwa Droni na Photogrammetry",
+				"description": "Picha za angani za mwonekano wa juu na uchoraji ramani wa 3D kwa ukusanyaji sahihi wa data."
+			},
+			{
+				"icon": null,
+				"label": "Ujenzi na Udhibiti wa Tovuti",
+				"description": "Huduma za upimaji kwa mpangilio wa ujenzi, ufuatiliaji, na udhibiti wa ubora."
+			},
+			{
+				"icon": null,
+				"label": "Msaada wa Miundombinu",
+				"description": "Suluhisho za upimaji na uhandisi kwa barabara, madaraja, huduma za umeme, na miradi mingine ya miundombinu."
+			}
+		]
+	},
+	"certifications": {
+		"tag": "Imethibitishwa",
+		"headline": "Vidhibitisho Vyetu",
+        "description": "Tunajivunia kushikilia vidhibitisho kutoka mashirika yanayoheshimika, kuonyesha kujitolea kwetu kwa ubora, usalama, na taaluma katika tasnia ya upimaji na uhandisi.",
+		"items": [
+			{
+				"icon": null,
+				"name": "ISK",
+				"label": "Wapimaji wa Kenya"
+			},
+			{
+				"icon": null,
+				"name": "NEMA",
+				"label": "Uzingatiaji wa Mazingira"
+			},
+			{
+				"icon": null,
+				"name": "NCA",
+				"label": "Mamlaka ya ujenzi"
+			},
+			{
+				"icon": null,
+				"name": "SOK",
+				"label": "Uchunguzi wa Kenya"
+			}
+		]
+	},
+	"metrics": {
+		"tag": "Kiwango",
+		"headline": "Kiwango Chetu cha Uendeshaji",
+        "description": "Tuna kiwango kikubwa cha uendeshaji, kwa uwepo katika nchi nyingi, idadi kubwa ya miradi iliyokamilishwa, na kujitolea kwa kutoa huduma za ubora wa juu kwa miaka mingi.",
+		"items": [
+			{
+				"icon": null,
+				"name": "Nchi",
+				"value": 7
+			},
+			{
+				"icon": null,
+				"name": "Miradi",
+				"value": 250
+			},
+			{
+				"icon": null,
+				"name": "Miaka",
+				"value": 5
+			},
+			{
+				"icon": null,
+				"name": "%CSAT",
+				"value": 100
+			}
+		]
+	},
+	"trustees": {
+		"tag": null,
+		"headline": "WADHAMINI WETU",
+		"items": [
+			{
+				"label": "DJI",
+				"logoUrl": "/media/logos/dji.png"
+			},
+			{
+				"label": "ESRI",
+				"logoUrl": "/media/logos/esri.png"
+			},
+			{
+				"label": "Trimble",
+				"logoUrl": "/media/logos/trimble.png"
+			},
+			{
+				"label": "FOIF",
+				"logoUrl": "/media/logos/foif.jpg"
+			},
+			{
+				"label": "GoK",
+				"logoUrl": "/media/logos/gok.png"
+			},
+			{
+				"label": "AutoCAD",
+				"logoUrl": "/media/logos/autocad.png"
+			},
+			{
+				"label": "KCAA",
+				"logoUrl": "/media/logos/kcaa.png"
+			},
+			{
+				"label": "PIX4D",
+				"logoUrl": "/media/logos/pix4d.jpg"
+			},
+			{
+				"label": "BLUEGEOG",
+				"logoUrl": "/media/logos/bluegeog.png"
+			},
+			{
+				"label": "ArcGIS",
+				"logoUrl": "/media/logos/arcgis.png"
+			},
+			{
+				"label": "Bosch",
+				"logoUrl": "/media/logos/bosch.png"
+			},
+			{
+				"label": "Agisoft Metashape",
+				"logoUrl": "/media/logos/agisoft.png"
+			}
+		]
+	},
+	"services": {
+		"tag": "Huduma",
+		"headline": "Huduma Zetu",
+		"items": [
+			{
+				"featureImg": "/media/services/land-surveying-deliverables.png",
+				"label": "Upimaji wa Ardhi",
+				"description": "Tunatoa huduma nyingi za upimaji wa ardhi, ikijumuisha uchunguzi wa topografia, uchunguzi wa mipaka, mali za sehemu, uchunguzi wa tovuti za majengo, upimaji wa rasilimali, uchunguzi wa bathymetric, uchunguzi wa hydrographic, na ushirika wa GIS. Wazao wetu hujumuisha ripoti na mipango ya uchunguzi wa mipaka, mipango ya cadastral kwa kuchakata hati miliki, monumentation ya beacons, ramani za usajili, data ya 3D (X, Y, Z), ramani za topografia, kontua, shapefiles za CAD, ripoti za uchunguzi, matokeo ya PDF, na wazao wengine maalum.",
+				"items": [
+					"Uchunguzi wa Topografia",
+					"Uchunguzi wa Mipaka",
+					"Mali za Sehemu",
+					"Uchunguzi wa Tovuti za Majengo",
+					"Upimaji wa Rasilimali",
+					"Uchunguzi wa Bathymetric / Hydrographic",
+					"Uchoraji Ramani wa GIS"
+				],
+				"deliverables": [
+					"Ripoti na Mipango ya Uchunguzi wa Mipaka",
+					"Mipango ya Cadastral kwa Uchakataji wa Hati Miliki",
+					"Monumentation ya Beacons",
+					"Ramani za Usajili",
+					"Data ya 3D (X, Y, Z)",
+					"Ramani za Topografia",
+					"Kontua",
+					"Shapefiles za CAD",
+					"Ripoti za Uchunguzi",
+					"Matokeo ya PDF",
+					"Wazao Wengine Maalum"
+				]
+			},
+			{
+				"featureImg": "/media/services/aerial-drone-deliverables.png",
+				"label": "UCHUNGUZI WA ANGANI",
+				"description": "Tunatoa huduma nyingi za uchunguzi wa angani, ikijumuisha uchunguzi wa picha kwa droni, upimaji ramani wa Lidar, uchunguzi wa NDVI wa kilimo, uhandisi wa kama ulivyojengwa (as-built), ufuatiliaji na tathmini, uchunguzi wa paneli za sola kwa droni, uchunguzi wa kiasi (volumetric), na uchunguzi wa taka na machimbo kwa droni. Wazao wetu hujumuisha ripoti na mipango ya uchunguzi wa mipaka, mipango ya cadastral kwa kuchakata hati miliki, monumentation ya beacons, ramani za usajili, data ya 3D (X, Y, Z), ramani za topografia, kontua, shapefiles za CAD, ripoti za uchunguzi, matokeo ya PDF, na wazao wengine maalum.",
+				"items": [
+					"Uchunguzi wa picha kwa droni",
+					"Upimaji ramani wa Lidar",
+					"Uchunguzi wa NDVI wa kilimo",
+					"Uchunguzi wa kama ulivyojengwa (As built)",
+					"Ufuatiliaji na Tathmini",
+					"Uchunguzi wa panela za sola kwa droni",
+					"Uchunguzi wa kiasi (Volumetric)",
+					"Uchunguzi wa taka na machimbo kwa droni"
+				],
+				"deliverables": [
+					"Picha za Orthorectified (Zirizidhishwa) + Picha mbichi",
+					"Ramani za Orthomosaic (Zirizidhishwa)",
+					"Miundo ya Eleza ya Dijiti (DTM, DSM)",
+					"Kontua",
+					"Mwiko wa Point za 3D (X, Y, Z)",
+					"Ramani za Topografia",
+					"Shapefiles za CAD",
+					"Ripoti za Uchambuzi wa Kiasi",
+					"Ripoti za Uchunguzi",
+					"Ramani za NDVI na Multispectral (Kilimo pekee)"
+				]
+			},
+            {
+				"featureImg": "/media/services/civil-engineering-deliverables.png",
+				"label": "UHANDISI WA KIRAHISI",
+				"description": "Tunatoa huduma nyingi za uhandisi wa kirahisi, ikijumuisha uhandisi wa tovuti, uwekaji wa viwango vya majengo, ufungaji wa huduma za ardhini, uhandisi wa barabara kuu, uchunguzi wa stakeout, usawazishaji, uwekaji wa viwango vya kumbukumbu (benchmarking), na huduma za ujenzi. Wazao wetu hujumuisha ramani za kama ulivyojengwa, miundo ya eleza ya dijiti, viwianishi vya uwekaji, data ya 3D, kontua, mipango mkuu, mipangilio ya majengo, shapefiles za CAD, na ramani za PDF.",
+				"items": [
+					"Uhandisi wa Tovuti ",
+					"Uwekaji wa Viwango vya Majengo",
+					"Huduma za ardhini (Mifereji ya maji, usafi, nyaya za umeme)",
+					"Uhandisi wa barabara kuu",
+					"Uchunguzi wa stakeout",
+					"Usawazishaji (Leveling)",
+					"Uwekaji wa viwango vya kumbukumbu (Benchmarking)",
+					"Huduma za ujenzi"
+				],
+				"deliverables": [
+					"Ramani za AS-BUILT",
+					"Miundo ya Eleza ya Dijiti (DSM, DTM)",
+					"Viwianishi vya Uwekaji",
+					"DATA YA 3D (X, Y, Z)",
+					"Kontua",
+					"Mipango Mkuu",
+					"Mipangilio ya Majengo / BIM",
+					"Shapefiles za CAD",
+					"Ramani ya PDF"
+				]
+			}
+		]
+	},
+	"cta": {
+		"tag": "Tushirikiane",
+		"headline": "Upimaji sahihi na uhandisi, tayari unapohitaji.",
+		"description": "Kutoka kiwanja kimoja hadi ekari 1000+, wapimaji na marubani wetu wako tayari kutoa data ya haraka, sahihi na tendekevu — kote Afrika Mashariki na nje.",
+		"primary": {
+			"label": "Omba Upimaji",
+			"href": "/contact?reason=request-survey",
+			"icon": "send"
+		},
+		"secondary": {
+			"label": "Ongea na Mtaalam",
+			"href": "mailto:smartgridsurveying@gmail.com",
+			"icon": "email"
+		}
+	}
+}

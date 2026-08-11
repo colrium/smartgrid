@@ -1,0 +1,147 @@
+{
+    "misc": {
+		"welcome": "Karibu",
+		"loading": "Inapakia...",
+		"changeLanguage": "Badilisha Lugha",
+		"goHome": "Rudi Nyumbani",
+		"active": "Inatumika"
+	},
+	"form": {
+		"submissionError": "Uwasilishaji ulishindikana. Tafadhali jaribu tena baadaye au wasiliana na msaada.",
+		"sending": "Inatuma..."
+	},
+	"errors": {
+        "error": "Hitilafu",
+		"notFound": "Ukurasa haukupatikana",
+		"serverError": "Hitilafu ndani ya seva",
+		"forbidden": "Ufikiaji umekatazwa",
+		"pageTitle": "{{statusCode}} - {{title}}",
+		"statusLabel": "Hitilafu {{statusCode}}",
+		"notFoundTitle": "Ukurasa haukupatikana",
+		"notFoundDescription": "Ukurasa unaouangalia huenda ulihamishwa, kuondolewa, au haukuwahi kuwepo. Rudi nyumbani au wasiliana na timu ya Smartgrid ikiwa unahitaji msaada kutafuta kitu maalum.",
+		"serverErrorTitle": "Kitu kilienda vibaya",
+		"serverErrorDescription": "Tovuti haikuweza kukamilisha ombi hili. Timu yetu imearifiwa inapowezekana, na unaweza kujaribu tena hivi karibuni au kuwasiliana nasi moja kwa moja.",
+		"genericTitle": "Hitilafu isiyotarajiwa",
+		"genericDescription": "Hitilafu isiyotarajiwa ilikatiza ombi hili. Tafadhali jaribu tena, rudi nyumbani, au wasiliana na timu ya Smartgrid kwa msaada.",
+
+		"actions": {
+			"home": "Rudi Nyumbani",
+			"contact": "Wasiliana na Msaada"
+		}
+	},
+
+	"locales": [
+		{
+			"label": "English",
+			"code": "en",
+			"flag": "/img/flags/gb.svg"
+		},
+		{
+			"label": "Kiswahili",
+			"code": "sw",
+			"flag": "/img/flags/tz.svg"
+		}
+	],
+	"nav": {
+        "logo": "/img/logo.svg",
+		"logo_alt": "SmartGrid",
+		"links": [
+			{
+				"label": "Upimaji",
+				"links": [
+					{
+						"label": "Uchunguzi wa topografia",
+						"href": "/surveying/topographical-surveys"
+					},
+					{
+						"label": "Uchunguzi wa tovuti za majengo",
+						"href": "/surveying/building-site-surveys"
+					},
+					{ "label": "Mali za sehemu", "href": "/surveying/sectional-properties" },
+					{ "label": "Uchunguzi wa cadastral", "href": "/surveying/cadastral-surveys" },
+					{ "label": "Uchunguzi wa angani", "href": "/surveying/aerial-surveys" },
+					{
+						"label": "Rada ya mionzi ya ardhini",
+						"href": "/surveying/ground-penetrating-radar"
+					},
+					{ "label": "Upimaji wa rasilimali", "href": "/surveying/resource-mapping" },
+					{
+						"label": "Uchunguzi wa bathymetric",
+						"href": "/surveying/bathymetric-surveys"
+					},
+					{
+						"label": "GIS na Uchoraji Ramani",
+						"href": "/surveying/gis-mapping"
+					},
+					{
+						"label": "Wasifu wa Kampuni",
+						"href": "/surveying/company-profile"
+					}
+				]
+			},
+			{
+				"label": "Droni za Angani",
+				"links": [
+					{
+						"label": "Uchunguzi wa topografia",
+						"href": "/surveying/topographical-surveys"
+					}
+				]
+			},
+			{
+				"label": "Kirahisi",
+				"links": [
+					{
+						"label": "Uchunguzi wa topografia",
+						"href": "/surveying/topographical-surveys"
+					}
+				]
+			},
+			{
+				"label": "Uuzaji wa vifaa",
+				"links": [
+					{
+						"label": "Uchunguzi wa topografia",
+						"href": "/surveying/topographical-surveys"
+					}
+				]
+			},
+			{ "label": "Ajira", "href": "/hiring" },
+			{ "label": "Kuhusu", "href": "/about" },
+			{ "label": "Wasiliana", "href": "/contact", "type": "pill" }
+		],
+		"cta_ghost": { "label": "Jifunze Zaidi", "href": "/#faq" },
+		"cta_primary": { "label": "Omba Nukuu", "href": "/contact" }
+	},
+	"footer": {
+		"description": "Ya Kuaminika. Inayoweza Kupanuka. Ya Haraka. Sahihi.",
+		"columns": {
+			"company": {
+				"heading": "Kampuni",
+				"links": [
+					{ "label": "Kuhusu Sisi", "href": "/about" },
+					{ "label": "Timu Yetu", "href": "/about#team" }
+				]
+			},
+
+			"contact": {
+				"heading": "Wasiliana",
+				"links": [
+					{
+						"label": "smartgridsurveying@gmail.com",
+						"href": "mailto:smartgridsurveying@gmail.com"
+					},
+					{ "label": "Ofisi ya Nairobi", "href": "/contact#hq-nairobi" },
+					{ "label": "Panga Simu", "href": "/contact" }
+				]
+			}
+		},
+		"copyright": "© {{year}} {{organization}} Haki zote zimehifadhiwa.",
+		"legal": {
+			"privacy": "Sera ya Faragha",
+			"terms": "Masharti ya Matumizi"
+		}
+	}
+
+
+}

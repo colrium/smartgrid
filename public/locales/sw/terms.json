@@ -1,0 +1,76 @@
+{
+	"misc": {
+		"label": "Masharti",
+		"title": "Masharti ya Matumizi",
+		"description": "Masharti haya yanaelezea jinsi unavyoweza kutumia tovuti ya {{site_title}}, maudhui, fomu za mawasiliano, na vipengele vya maswali ya wawekezaji.",
+		"lastUpdatedLabel": "Ilisasishwa Mwisho",
+		"lastUpdated": "May 31, 2026",
+		"contactLabel": "Wasiliana Nasi",
+		"contactLink": "/contact?reason=compliance-legal",
+		"note": "Masharti haya ni taarifa ya vitendo ya tovuti na yanapaswa kupitiwa na wakili mwenye sifa kabla ya kuchukuliwa kama masharti ya mwisho ya kisheria kwa eneo mahususi la mamlaka."
+	},
+	"articles": [
+		{
+			"title": "Kukubali Masharti Haya",
+			"content": [
+				"Kwa kufikia au kutumia tovuti hii, unakubali Masharti haya ya Matumizi na sera zozote zilizorejelewa kwenye tovuti. Ikiwa hukubali, unapaswa kuacha kutumia tovuti.",
+				"AfriGold Hub inaweza kusasisha masharti haya mara kwa mara. Kuendelea kutumia tovuti baada ya sasisho kunamaanisha unakubali masharti yaliyorekebishwa."
+			]
+		},
+		{
+			"title": "Maudhui ya Tovuti",
+			"content": [
+				"Maudhui kwenye tovuti hii hutolewa kwa taarifa ya jumla kuhusu AfriGold Hub, shughuli zake, fursa za uwekezaji, na majadiliano ya ushirikiano.",
+				"Maudhui ya tovuti yanaweza kusasishwa, kusahihishwa, kupanuliwa, au kuondolewa wakati wowote. Hayapaswi kuchukuliwa kama makubaliano ya mwisho, ofa ya umma, waraka wa hisa, dhamana, au ushauri wa kitaalamu."
+			]
+		},
+		{
+			"title": "Maswali ya Uwekezaji",
+			"content": [
+				"Kuwasilisha swali, kuomba nyaraka za uchunguzi wa ustahiki, au kujadili fursa hakunaunda uhusiano wa mwekezaji, ushirikiano, uhusiano wa ushauri, au wajibu kwa upande wowote.",
+				"Uwekezaji wowote, ushirikiano, ziara ya tovuti, au mpangilio wa kibiashara unategemea sifa, uchunguzi wa ustahiki, ukaguzi wa KYC au uzingatiaji, na nyaraka zilizosainiwa za miamala."
+			]
+		},
+		{
+			"title": "Matumizi Yaliyoruhusiwa",
+			"content": [
+				"Unaweza kutumia tovuti hii kwa madhumuni halali ya taarifa na maswali pekee. Haupaswi kuitumia vibaya tovuti, kujaribu ufikiaji usioidhinishwa, kuingilia uendeshaji wa tovuti, kuwasilisha taarifa za uongo, au kuitumia tovuti kukiuka sheria yoyote.",
+				"Unawajibika kuhakikisha matumizi yako ya tovuti na swali lolote unalowasilisha yanazingatia sheria zinazokuhusu."
+			]
+		},
+		{
+			"title": "Haki Miliki",
+			"content": [
+				"Isipokuwa ikiwa imeelezwa vinginevyo, maandishi, muundo, chapa, michoro, media, na maudhui mengine kwenye tovuti hii yanamilikiwa au yametolewa leseni kwa AfriGold Hub.",
+				"Unaweza kutazama na kushiriki viungo vya kurasa za umma kwa madhumuni ya taarifa, lakini haupaswi kunakili, kuzalisha tena, kurekebisha, kuuza, au kutumia kibiashara maudhui ya tovuti bila ruhusa ya maandishi ya awali."
+			]
+		},
+		{
+			"title": "Viungo na Nyaraka za Wahusika Wengine",
+			"content": [
+				"Tovuti inaweza kurejelea majukwaa, ramani, media, nyaraka, watoa huduma, au tovuti za nje za wahusika wengine. Hizi hutolewa kwa urahisi au muktadha tu.",
+				"AfriGold Hub haiwajibiki kwa maudhui ya wahusika wengine, upatikanaji, usalama, sera, au mazoea yao."
+			]
+		},
+		{
+			"title": "Hakuna Dhamana",
+			"content": [
+				"Tovuti hutolewa kwa misingi ya ilivyo na inavyopatikana. AfriGold Hub haidhamini kwamba tovuti itakuwa isiyokatiza, isiyo na makosa, yenye usalama, au ya sasa kila wakati.",
+				"Kwa kiwango kikubwa kinachoruhusiwa na sheria, AfriGold Hub inakanusha dhamana zinazohusiana na tovuti na utegemezi wowote kwenye maudhui ya tovuti."
+			]
+		},
+		{
+			"title": "Kikomo cha Dhima",
+			"content": [
+				"Kwa kiwango kikubwa kinachoruhusiwa na sheria, AfriGold Hub haitawajibika kwa uharibifu usio wa moja kwa moja, wa bahati mbaya, wa matokeo, maalum, wa adhabu, au hasara ya faida inayotokana na matumizi yako ya tovuti.",
+				"Hakuna katika masharti haya kinachozuia dhima ambayo haiwezi kuzuiwa kisheria."
+			]
+		},
+		{
+			"title": "Wasiliana",
+			"content": [
+				"Maswali kuhusu Masharti haya ya Matumizi yanaweza kutumwa kupitia ukurasa wa mawasiliano kwa kutumia chaguo la uzingatiaji au la kisheria."
+			]
+		}
+	]
+}

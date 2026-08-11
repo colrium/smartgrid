@@ -37,6 +37,7 @@ const Page: NextPage<PageProps> = () => {
 				</div>
 				<SurveyingInstrumentsSection />
 				<DronesSection />
+				<ServicesSection />
 				<div className="flex flex-col  w-full">
 					<WhyChooseUsSection />
 
@@ -47,7 +48,6 @@ const Page: NextPage<PageProps> = () => {
 					<MetricsSection />
 				</div>
 
-				<ServicesSection />
 				<CtaSection />
 			</div>
 		</div>

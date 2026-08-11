@@ -1,0 +1,52 @@
+{
+	"site": {
+		"title": "SmartGrid",
+        "subtitle": "SURVEYING & CIVIL ENGINEERING LTD",
+		"tagline": "Pima Kwa Umaalimu, Jenga kwa Nguvu",
+		"description": "Smartgrid hutoa huduma za kisasa za upimaji wa ardhi na angani, uchoraji ramani wa GIS, na uhandisi wa kirahisi kote Kenya na Afrika."
+	},
+	"pages": {
+		"home": {
+			"title": "Nyumbani",
+			"meta_description": "{{site_title}} hutoa huduma za kisasa za upimaji wa ardhi na angani, uchoraji ramani wa GIS, na uhandisi wa kirahisi kote Kenya na Afrika."
+		},
+		"about": {
+			"title": "Kuhusu Sisi",
+			"meta_description": "Jifunze zaidi kuhusu {{site_title}}, utaalam wetu wa upimaji na uhandisi wa kirahisi, dhamira, na kujitolea kwetu kwa usahihi kote Afrika.",
+			"og_image": "/media/og-about.jpg"
+		},
+		"contact": {
+			"page_title": "Wasiliana",
+			"meta_description": "Wasiliana na timu ya {{site_title}} kujadili upimaji wa ardhi, uchunguzi wa angani, uhandisi wa kirahisi, ukodishaji wa vifaa, au upigaji picha kwa ndege zisizo na rubani.",
+			"og_image": "/media/og-contact.jpg"
+		},
+
+		"privacy_policy": {
+			"page_title": "Sera ya Faragha",
+			"meta_description": "Jifunze jinsi {{site_title}} inavyoshughulikia taarifa zinazowasilishwa kupitia tovuti yetu na fomu za mawasiliano.",
+			"og_image": "/media/og-privacy.jpg"
+		},
+		"terms_of_use": {
+			"page_title": "Masharti ya Matumizi",
+			"meta_description": "Angalia masharti ya matumizi ya tovuti na huduma za {{site_title}}.",
+			"og_image": "/media/og-terms.jpg"
+		}
+	},
+	"company": {
+		"name": "SMARTGRID SURVEYING & CIVIL ENGINEERING LTD",
+		"legalName": "Smartgrid Surveying & Engineering Ltd",
+		"tagline": "Pima Kwa Umaalimu, Jenga kwa Nguvu",
+		"description": "Kiongozi wa Upimaji wa Ardhi na Angani Afrika kwa Teknolojia ya Kisasa",
+		"address": "Nairobi, Kenya",
+		"phone": "+254 10 7393023",
+		"email": "smartgridsurveying@gmail.com",
+		"mission": "Kutoa suluhisho bunifu, za usahihi wa juu za upimaji na uhandisi za kirahisi zinazoimarisha ufanisi na uendelevu wa miradi.",
+		"socialMedia": {
+			"facebook": "https://facebook.com/smartgridsurveying",
+			"twitter": "https://twitter.com/smartgridsurvey",
+			"linkedin": "https://linkedin.com/company/smartgridsurveying",
+			"youtube": "https://youtube.com/smartgridsurveying",
+			"instagram": "https://instagram.com/smartgridsurveying"
+		}
+	}
+}

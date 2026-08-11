@@ -70,7 +70,7 @@ export default function HeroSection() {
 		const gridUniforms = {
 			uColor: { value: new THREE.Color(0xd1e6e3) },
 			uDronePos: { value: new THREE.Vector3(10, 10, 10) },
-			uRadius: { value: 9.0 },
+			uRadius: { value: 10.0 },
 		};
 
 		const gridMaterial = new THREE.ShaderMaterial({
@@ -322,7 +322,7 @@ export default function HeroSection() {
 				{/* Left Column */}
 				<div className="lg:col-span-10 h-full pointer-events-auto">
 					<FadeLeft delay={0.1} className="reveal active">
-						<div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass text-ink text-xs font-semibold uppercase tracking-[0.18em] mb-8 sm:mb-10">
+						<div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass text-primary text-xs font-semibold uppercase tracking-[0.18em] mb-8 sm:mb-10">
 							<span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
 							<span className="whitespace-pre-line">{t("home:hero.badge")}</span>
 						</div>

@@ -1,0 +1,347 @@
+{
+	"hero": {
+		"tag": "Wasiliana Nasi",
+		"headline": "Hebu tuzungumze kuhusu mradi wako wa upimaji au uhandisi",
+		"description": "Iwe unahitaji upimaji wa ardhi, uchunguzi wa angani, uhandisi wa kirahisi, ukodishaji wa vifaa, au upigaji picha kwa ndege zisizo na rubani, timu yetu iko tayari kukusaidia.",
+		"badge": { "text": "Majibu ndani ya saa 24", "status": "active" }
+	},
+	"opportunities": {
+		"tag": "Chagua Njia",
+		"headline": "Elekeza swali lako kwa timu sahihi",
+		"description": "Chagua huduma inayofaa zaidi mradi wako ili tuweze kutoa taarifa sahihi na hatua zinazofuata."
+	},
+	"offices": {
+		"tag": "Ofisi Zetu",
+		"headline": "Tupate",
+		"items": [
+			{
+				"id": "hq-nairobi",
+				"label": "Ofisi ya Smartgrid",
+				"city": "Nairobi",
+				"country": "Kenya",
+				"flag": "🇰🇪",
+				"address_lines": [
+					"SMARTGRID SURVEYING & CIVIL ENGINEERING LTD",
+					"Nairobi, Kenya"
+				],
+				"lat": -1.286389,
+				"lng": 36.821946,
+				"phone": "+254 10 7393023",
+				"email": "smartgridsurveying@gmail.com",
+				"hours": "Mon–Fri 08:00–17:00 EAT",
+				"type": "hq",
+				"note": "Wasiliana nasi kujadili mahitaji yako ya upimaji, uhandisi wa kirahisi, ukodishaji wa vifaa, au huduma za droni."
+			},
+			{
+				"id": "regional-nairobi",
+				"label": "Ofisi ya Kanda ya Afrika Mashariki",
+				"city": "Nairobi",
+				"country": "Kenya",
+				"flag": "🇰🇪",
+				"address_lines": [
+					"Ofisi ya Kanda ya Smartgrid",
+					"Upper Hill, Kilimani",
+					"Nairobi, Kenya"
+				],
+				"lat": -1.2921,
+				"lng": 36.8219,
+				"phone": "+254 700 000 002",
+				"email": "smartgridsurveying@gmail.com",
+				"hours": "Mon–Fri 08:30–17:30 EAT",
+				"type": "regional",
+				"note": "Inaratibu huduma za upimaji, uhandisi, na msaada wa miradi Afrika Mashariki."
+			},
+			{
+				"id": "west-africa-freetown",
+				"label": "Ofisi ya Afrika Magharibi",
+				"city": "Freetown",
+				"country": "Sierra Leone",
+				"flag": "🇸🇱",
+				"address_lines": [
+					"Smartgrid Afrika Magharibi",
+					"Wilberforce, Freetown",
+					"Sierra Leone"
+				],
+				"lat": 8.4657,
+				"lng": -13.2317,
+				"phone": "+232 76 000 003",
+				"email": "smartgridsurveying@gmail.com",
+				"hours": "Mon–Fri 08:00–17:00 GMT",
+				"type": "regional",
+				"note": "Inasimamia shughuli za Sierra Leone na mahusiano ya washirika katika Afrika Magharibi."
+			},
+			{
+				"id": "southern-africa-johannesburg",
+				"label": "Ofisi ya Afrika Kusini",
+				"city": "Johannesburg",
+				"country": "South Africa",
+				"flag": "🇿🇦",
+				"address_lines": [
+					"Smartgrid Afrika Kusini",
+					"Sandton, Johannesburg",
+					"Gauteng, South Africa"
+				],
+				"lat": -26.1076,
+				"lng": 28.0567,
+				"phone": "+27 11 000 0004",
+				"email": "smartgridsurveying@gmail.com",
+				"hours": "Mon–Fri 08:00–17:00 SAST",
+				"type": "regional",
+				"note": "Inashughulikia shughuli za Afrika Kusini, Eswatini, na Malawi."
+			}
+		]
+	},
+	"contact_reasons": {
+		"label": "Tunaweza kusaidia na nini?",
+		"options": [
+			{ "value": "investment-enquiry", "label": "Omba nukuu" },
+			{ "value": "due-diligence", "label": "Omba taarifa za kampuni" },
+			{ "value": "site-visit", "label": "Panga ziara ya tovuti" },
+			{ "value": "partnership", "label": "Ushirikiano wa teknolojia / vifaa" },
+			{ "value": "gold-supply", "label": "Swali la huduma za upimaji" },
+			{ "value": "logistics", "label": "Swali la vifaa vya mradi" },
+			{ "value": "press-media", "label": "Swali la vyombo vya habari" },
+			{ "value": "compliance-legal", "label": "Uzingatiaji / kisheria" },
+			{ "value": "community", "label": "Jamii na ESG" },
+			{ "value": "careers", "label": "Kazi na ajira" },
+			{ "value": "other", "label": "Nyingine" }
+		]
+	},
+	"form": {
+		"tag": "Tuma Ujumbe",
+		"headline": "Anza mazungumzo",
+		"description": "Jaza fomu na mwanachama sahihi wa timu yetu atajibu ndani ya siku moja ya kazi.",
+		"fields": {
+			"first_name": {
+				"label": "Jina la kwanza",
+				"placeholder": "James",
+				"required": true,
+				"type": "text"
+			},
+			"last_name": {
+				"label": "Jina la mwisho",
+				"placeholder": "Mwangi",
+				"required": true,
+				"type": "text"
+			},
+			"email": {
+				"label": "Anwani ya barua pepe",
+				"placeholder": "you@example.com",
+				"required": true,
+				"type": "email"
+			},
+			"phone": {
+				"label": "Nambari ya simu",
+				"placeholder": "+256 700 000 000",
+				"required": false,
+				"type": "tel"
+			},
+			"country": {
+				"label": "Nchi",
+				"placeholder": "Chagua nchi yako",
+				"required": true,
+				"type": "select"
+			},
+			"reason": {
+				"label": "Sababu ya mawasiliano",
+				"placeholder": "Chagua sababu",
+				"required": true,
+				"type": "select"
+			},
+			"opportunity": {
+				"label": "Fursa ya maslahi",
+				"placeholder": "Chagua fursa",
+				"required": false,
+				"type": "select",
+				"options": [
+					{ "value": "gold-aggregation", "label": "Upimaji wa ardhi" },
+					{ "value": "technology-partnership", "label": "Uchunguzi wa angani au vifaa" },
+					{ "value": "gold-supply", "label": "Uhandisi wa kirahisi" },
+					{ "value": "export-logistics", "label": "Ukodishaji wa vifaa" },
+					{ "value": "goat-farming", "label": "Upigaji picha kwa droni" },
+					{ "value": "horticulture", "label": "Uchoraji ramani wa GIS" },
+					{ "value": "multi-sector", "label": "Fursa nyingi" },
+					{ "value": "unsure", "label": "Bado sijajua" }
+				]
+			},
+			"investor_tier": {
+				"label": "Kiwango cha mradi",
+				"placeholder": "Chagua kiwango",
+				"required": false,
+				"type": "select",
+				"show_when": { "field": "reason", "value": "investment-enquiry" },
+				"options": [
+					{ "value": "seed-partner", "label": "Mradi mdogo" },
+					{ "value": "strategic-partner", "label": "Mradi wa wastani" },
+					{ "value": "anchor-investor", "label": "Mradi mkubwa au mgumu" },
+					{ "value": "unsure", "label": "Bado sijajua" }
+				]
+			},
+			"message": {
+				"label": "Ujumbe",
+				"placeholder": "Tuambie zaidi kuhusu swali lako…",
+				"required": true,
+				"type": "textarea",
+				"rows": 5
+			},
+			"consent": {
+				"label": "Nakubali Smartgrid kuhifadhi na kutumia data hii kujibu swali langu, kwa mujibu wa Sera ya Faragha.",
+				"required": true,
+				"type": "checkbox"
+			},
+			"newsletter": {
+				"label": "Nisajili kupokea taarifa za Smartgrid",
+				"required": false,
+				"type": "checkbox"
+			}
+		},
+		"submit_label": "Tuma Ujumbe",
+		"success_heading": "Ujumbe umepokelewa",
+		"success_body": "Asante kwa kuwasiliana nasi. Mwanachama wa timu yetu atajibu swali lako ndani ya siku moja ya kazi.",
+		"error_body": "Kuna tatizo limetokea kutuma ujumbe wako. Tafadhali jaribu tena au tutumie barua pepe moja kwa moja kwa smartgridsurveying@gmail.com."
+	},
+	"direct_contacts": {
+		"tag": "Mawasiliano ya Moja kwa Moja",
+		"headline": "Fikia mtu sahihi",
+		"items": [
+			{
+				"department": "Miradi na Ushirikiano",
+				"name": "Timu ya Smartgrid",
+				"title": "Maswali ya Miradi",
+				"email": "smartgridsurveying@gmail.com",
+				"phone": "+256 700 000 001",
+				"note": "Maswali ya miradi, mapendekezo ya ushirikiano, na mashauriano ya huduma."
+			},
+			{
+				"department": "Nukuu na Utawala",
+				"name": "Timu ya Smartgrid",
+				"title": "Msaada wa Wateja",
+				"email": "smartgridsurveying@gmail.com",
+				"phone": "+256 700 000 005",
+				"note": "Nukuu, taarifa za huduma, na maswali ya kiutawala."
+			},
+			{
+				"department": "Uendeshaji na Ziara za Tovuti",
+				"name": "Timu ya Smartgrid",
+				"title": "Msaada wa Uendeshaji",
+				"email": "smartgridsurveying@gmail.com",
+				"phone": "+256 700 000 006",
+				"note": "Uratibu wa ziara za tovuti, masasisho ya uendeshaji, na maswali ya huduma ya kiufundi."
+			},
+			{
+				"department": "Kisheria na Uzingatiaji",
+				"name": "Grace Njoroge",
+				"title": "Mkuu wa Kisheria na Uzingatiaji",
+				"email": "smartgridsurveying@gmail.com",
+				"phone": "+254 700 000 007",
+				"note": "Makubaliano ya huduma, uzingatiaji wa kanuni, na nyaraka."
+			},
+			{
+				"department": "Vyombo vya Habari",
+				"name": "Timu ya Mawasiliano",
+				"title": "Mahusiano ya Vyombo vya Habari",
+				"email": "smartgridsurveying@gmail.com",
+				"phone": "",
+				"note": "Ombi za mahojiano, vyeti vya waandishi, upigaji picha na ufikiaji wa vyombo vya habari."
+			},
+			{
+				"department": "Jamii na ESG",
+				"name": "Timu ya ESG",
+				"title": "Maendeleo ya Jamii",
+				"email": "smartgridsurveying@gmail.com",
+				"phone": "",
+				"note": "Maswali ya maendeleo ya jamii, ushirikiano wa NGOs, taarifa za mazingira."
+			}
+		]
+	},
+	"site_visit": {
+		"tag": "Ziara za Tovuti",
+		"headline": "Jionee uendeshaji mwenyewe",
+		"description": "Wateja wanakaribishwa kupanga mashauriano ya mradi na timu yetu jijini Nairobi. Ziara zinaweza kujumuisha mjadala wa mahitaji yako ya upimaji, uhandisi wa kirahisi, vifaa, au huduma za droni.",
+		"process_steps": [
+			{
+				"step": 1,
+				"title": "Wasilisha ombi",
+				"description": "Tumia fomu ya mawasiliano hapo juu na uchague 'Panga ziara ya tovuti'. Jumuisha tarehe unayoipenda na mahitaji ya mradi."
+			},
+			{
+				"step": 2,
+				"title": "Maelezo mapema ya ziara",
+				"description": "Timu yetu itathibitisha miadi yako na kushiriki maelezo yoyote muhimu ya maandalizi."
+			},
+			{
+				"step": 3,
+				"title": "Tembelea ofisi yetu ya Nairobi",
+				"description": "Ofisi yetu iko Nairobi, Kenya. Tutashiriki taarifa za mkutano wakati miadi yako itakapothibitishwa."
+			},
+			{
+				"step": 4,
+				"title": "Ziara kamili ya tovuti",
+				"description": "Kutana na timu yetu kujadili upeo wako, ratiba, matokeo, na mbinu sahihi zaidi ya huduma."
+			},
+			{
+				"step": 5,
+				"title": "Hatua zinazofuata za mradi",
+				"description": "Tutakagua hatua zinazofuata zilizopendekezwa, ikijumuisha upeo maalum na nukuu inapofaa."
+			}
+		],
+		"note": "Miadi zinapatikana Jumatatu–Ijumaa na zinapaswa kupangwa mapema.",
+		"cta": { "label": "Omba Ziara ya Tovuti", "href": "#contact-form" }
+	},
+	"faq": {
+		"tag": "Majibu ya Haraka",
+		"headline": "Maswali ya kawaida ya mawasiliano",
+		"items": [
+			{
+				"question": "Ni haraka kiasi gani mtajibu swali langu?",
+				"answer": "Maswali yote yaliyowasilishwa kupitia fomu ya mawasiliano hupokea jibu kutoka kwa mwanachama husika wa timu ndani ya siku moja ya kazi, Jumatatu–Ijumaa, 08:00–17:00 EAT."
+			},
+			{
+				"question": "Ni taarifa zipi mnaweza kutoa kabla ya mradi kuanza?",
+				"answer": "Smartgrid inaweza kutoa taarifa husika za kampuni, maelezo ya huduma, uzoefu wa miradi, na nyaraka za kiufundi kwa ombi."
+			},
+			{
+				"question": "Naweza kupanga mashauriano kabla ya kuanza mradi?",
+				"answer": "Ndiyo. Wasiliana nasi kupanga mashauriano jijini Nairobi au kujadili mahitaji yako kwa mbali."
+			},
+			{
+				"question": "Je, mnafanya kazi kwenye miradi nje ya Kenya?",
+				"answer": "Ndiyo. Smartgrid hutoa huduma za upimaji na uhandisi kote Kenya na Afrika. Wasiliana nasi kwa mahali na mahitaji ya mradi wako."
+			},
+			{
+				"question": "Ninawakilisha mfuko / familia ofisi. Kuna kiwango cha chini cha mkubwa wa $189K?",
+				"answer": "Ndiyo. Kwa miradi mikubwa au maalum, tafadhali wasiliana na timu yetu moja kwa moja kwa smartgridsurveying@gmail.com kujadili mahitaji yako."
+			}
+		]
+	},
+	"social": {
+		"tag": "Tufuate",
+		"headline": "Endelea kuwa karibu nasi",
+		"channels": [
+			{
+				"platform": "LinkedIn",
+				"handle": "Smartgrid Surveying",
+				"url": "https://linkedin.com/company/smartgridsurveying",
+				"icon": "linkedin"
+			},
+			{
+				"platform": "X / Twitter",
+				"handle": "@smartgridsurvey",
+				"url": "https://twitter.com/smartgridsurvey",
+				"icon": "twitter"
+			},
+			{
+				"platform": "Instagram",
+				"handle": "@smartgridsurveying",
+				"url": "https://instagram.com/smartgridsurveying",
+				"icon": "instagram"
+			},
+			{
+				"platform": "YouTube",
+				"handle": "Smartgrid Surveying",
+				"url": "https://youtube.com/smartgridsurveying",
+				"icon": "youtube"
+			}
+		]
+	}
+}
