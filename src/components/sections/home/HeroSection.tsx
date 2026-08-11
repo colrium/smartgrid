@@ -42,7 +42,7 @@ export default function HeroSection() {
 	// wireframe lines fade in underneath so the panel ends as clean line-work.
 	const { scrollYProgress } = useScroll({
 		target: heroRef,
-		offset: ["start end", "end end"],
+		offset: ["start end", "start end"],
 	});
 	const wireframeOpacity = useTransform(scrollYProgress, [0.02, 0.35], [0, 1]);
 	const colorOpacity = useTransform(scrollYProgress, [0.3, 0.7], [1, 0]);
@@ -415,7 +415,7 @@ export default function HeroSection() {
 				</div>
 			</div>
 			<motion.div
-				className={`px-6 rounded-3xl hidden md:inline-block fixed right-0 bottom-0 overflow-hidden h-2/3 md:w-1/3 w-full bg-[url('/img/equipment/total-station-wireframe.svg')] bg-cover bg-no-repeat -z-1`}
+				className={`px-6 rounded-3xl hidden md:inline-block fixed right-0 bottom-0 overflow-hidden h-2/3 md:w-1/3 w-full bg-[url('/img/equipment/total-station-wireframe.svg')] bg-cover bg-no-repeat -z-0`}
 				style={{ opacity: wireframeOpacity }}
 			></motion.div>
 			{/* <motion.div
