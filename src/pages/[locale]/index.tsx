@@ -30,14 +30,14 @@ const Page: NextPage<PageProps> = () => {
 				<HeroSection />
 				<div className="flex flex-col mx-auto max-w-7xl px-6 w-full">
 					<LeadGenBar
-						//className="my-12  -mt-48"
-						className="my-12 "
+						className="my-12  -mt-48"
+						// className="my-12 "
 					/>
 					<AboutSection />
 				</div>
 				<SurveyingInstrumentsSection />
 				<DronesSection />
-				<div className="flex flex-col bg-surface w-full">
+				<div className="flex flex-col  w-full">
 					<WhyChooseUsSection />
 
 					<CoreExpertiseSection />

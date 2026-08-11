@@ -108,7 +108,7 @@ export default function HeroSection() {
 		scene.add(terrain);
 
 		// --- Floating Particles ---
-		const particleCount = 100;
+		const particleCount = 10;
 		const pGeometry = new THREE.BufferGeometry();
 		const pPositions = new Float32Array(particleCount * 3);
 		for (let i = 0; i < particleCount * 3; i++) {
@@ -305,11 +305,11 @@ export default function HeroSection() {
 			}
 		};
 	}, []);
-    console.log("wireframeOpacity", wireframeOpacity, "colorOpacity", colorOpacity);
+    // console.log("wireframeOpacity", wireframeOpacity, "colorOpacity", colorOpacity);
 	return (
 		<section
 			ref={heroRef}
-			className="relative min-h-screen flex items-center justify-center pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-32 overflow-hidden"
+			className="relative min-h-[90dvh] flex items-center justify-center pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-32 overflow-hidden"
 		>
 			{/* WebGL Background */}
 			<div
@@ -415,7 +415,7 @@ export default function HeroSection() {
 				</div>
 			</div>
 			<motion.div
-				className={`px-6 rounded-3xl hidden md:inline-block fixed right-0 bottom-0 overflow-hidden h-2/3 md:w-1/3 w-full bg-[url('/img/equipment/total-station-wireframe.svg')] bg-cover bg-no-repeat -z-0`}
+				className={`px-6 rounded-3xl hidden md:inline-block absolute right-0 bottom-0 overflow-hidden h-2/3 md:w-1/3 w-full bg-[url('/img/equipment/total-station-wireframe.svg')] bg-cover bg-no-repeat -z-0`}
 				style={{ opacity: wireframeOpacity }}
 			></motion.div>
 			{/* <motion.div

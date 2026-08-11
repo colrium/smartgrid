@@ -28,7 +28,7 @@ export function WhyChooseUsSection() {
 	}) as unknown as WhyChooseUsItem[];
 
 	return (
-		<section id="why-choose-us" className="py-24 sm:py-28 relative overflow-hidden">
+		<section id="why-choose-us" className="py-24 sm:py-28 relative overflow-hidden bg-surface">
 			{/* Soft institutional background shapes */}
 			<Blob className="w-[26rem] h-[26rem] bg-brand-200/40 -top-20 right-0" opacity={0.5} />
 			<ParallaxDecor speed={-0.06} className="absolute bottom-24 -left-20 z-0">

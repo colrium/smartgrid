@@ -36,7 +36,7 @@ export function DronesSection() {
 					{Array.isArray(items) &&
 						items.map((item, index) => (
 							<FadeUp key={index} delay={(index % 2) * 0.1}>
-								<article className="group overflow-hidden bg-surface rounded-[15px] hairline card-shadow transition-all duration-500 hover:-translate-x-1 hover:-translate-y-1 hover:card-shadow-lift hover:border-brand-300">
+								<article className="group overflow-hidden bg-surface rounded-[15px] hairline card-shadow transition-all duration-500 hover:-translate-x-1 hover:-translate-y-1 hover:card-shadow-lift hover:border-brand-300 h-full">
 									{/* Image */}
 									<div className="relative h-52 sm:h-60 overflow-hidden">
 										{item.img && (
