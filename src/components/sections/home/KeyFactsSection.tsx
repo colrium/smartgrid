@@ -4,6 +4,7 @@ import { useTranslation } from "@/hooks";
 import { SectionTag } from "@/components/SectionTag";
 import { FadeUp } from "@/components/animations/Fade";
 import { ParallaxDecor, Blob } from "./decor";
+import { SectionHeader } from "./SectionHeader";
 
 interface KeyFactItem {
 	icon?: string | null;
@@ -29,15 +30,11 @@ export function KeyFactsSection() {
 			</ParallaxDecor>
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-				<FadeUp>
-					<div className="mb-12 flex flex-col items-center gap-4 text-center">
-						<SectionTag>{t("home:keyFacts.tag") as string}</SectionTag>
-						
-					</div>
-				</FadeUp>
+				
 
 				<FadeUp delay={0.08}>
 					<div className="relative rounded-[20px] pale-panel hairline card-shadow overflow-hidden">
+						
 						{/* texture + watermark */}
 						<ParallaxDecor speed={0.06} className="absolute -top-16 -right-16 z-0">
 							<Blob className="w-72 h-72 bg-brand-100/90" opacity={0.7} />
@@ -48,7 +45,14 @@ export function KeyFactsSection() {
 						>
 							{String(Array.isArray(items) ? items.length : 0).padStart(2, "0")}
 						</span>
-
+						<div className="my-12 flex flex-col items-center gap-4 text-center">
+							<SectionTag>{t("home:keyFacts.tag") as string}</SectionTag>
+							<p
+								className={`text-base sm:text-lg leading-relaxed max-w-2xl mx-auto text-on-surface/60`}
+							>
+								{t("home:keyFacts.description") as string}
+							</p>
+						</div>
 						<div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 p-6 sm:p-8 lg:p-10">
 							{Array.isArray(items) &&
 								items.map((item, index) => (
@@ -63,7 +67,8 @@ export function KeyFactsSection() {
 											<span className="relative flex h-9 w-9 items-center justify-center rounded-full bg-surface text-primary shadow-sm">
 												<span
 													className={`mdi mdi-${
-														item.icon || FACT_ICONS[index % FACT_ICONS.length]
+														item.icon ||
+														FACT_ICONS[index % FACT_ICONS.length]
 													} text-lg`}
 												/>
 											</span>

@@ -3,6 +3,7 @@
 
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 import { useTranslation } from "@/hooks";
 import { Trans } from "next-i18next/pages";
@@ -30,10 +31,21 @@ interface Location {
 }
 export default function HeroSection() {
 	const containerRef = useRef<HTMLDivElement>(null);
+	const heroRef = useRef<HTMLElement>(null);
 	const { t } = useTranslation(["home"]);
 	const ctaPrimary = t("home:hero.ctaPrimary", { returnObjects: true }) as CtaItem;
 	const ctaSecondary = t("home:hero.ctaSecondary", { returnObjects: true }) as CtaItem;
 	const location = t("home:hero.location", { returnObjects: true }) as Location;
+
+	// Scroll-driven total station reveal: the color render stays while the
+	// header is on screen, then fades out as the hero scrolls away; the
+	// wireframe lines fade in underneath so the panel ends as clean line-work.
+	const { scrollYProgress } = useScroll({
+		target: heroRef,
+		offset: ["start end", "end end"],
+	});
+	const wireframeOpacity = useTransform(scrollYProgress, [0.02, 0.35], [0, 1]);
+	const colorOpacity = useTransform(scrollYProgress, [0.3, 0.7], [1, 0]);
 
 	useEffect(() => {
 		const container = containerRef.current;
@@ -293,9 +305,12 @@ export default function HeroSection() {
 			}
 		};
 	}, []);
-
+    console.log("wireframeOpacity", wireframeOpacity, "colorOpacity", colorOpacity);
 	return (
-		<section className="relative min-h-screen flex items-center justify-center pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-32 overflow-hidden">
+		<section
+			ref={heroRef}
+			className="relative min-h-screen flex items-center justify-center pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-32 overflow-hidden"
+		>
 			{/* WebGL Background */}
 			<div
 				ref={containerRef}
@@ -370,12 +385,12 @@ export default function HeroSection() {
 								<div className="flex -space-x-2">
 									{Array.isArray(location.items) &&
 										location.items.map((item: any, index: number) => (
-<div
-											className="w-9 h-9 rounded-full glass flex items-center justify-center text-xs font-bold text-ink"
-											key={index}
-										>
-											{item.code}
-										</div>
+											<div
+												className="w-9 h-9 rounded-full glass flex items-center justify-center text-xs font-bold text-ink"
+												key={index}
+											>
+												{item.code}
+											</div>
 										))}
 								</div>
 								<span className="text-sm text-on-surface/50 font-medium">
@@ -399,16 +414,14 @@ export default function HeroSection() {
 					</div> */}
 				</div>
 			</div>
-			<div
-				className={`px-6 rounded-3xl  hidden md:inline-block fixed right-0 bottom-0 overflow-hidden h-2/3 md:w-1/3 w-full bg-[url('/img/equipment/total-station-wireframe.svg')] bg-cover bg-no-repeat`}
-			>
-				{/* <Image
-					src="/img/equipment/total-station-wireframe.svg"
-					alt="total-station-wireframe"
-					width={400}
-					height={300}
-				/> */}
-			</div>
+			<motion.div
+				className={`px-6 rounded-3xl hidden md:inline-block fixed right-0 bottom-0 overflow-hidden h-2/3 md:w-1/3 w-full bg-[url('/img/equipment/total-station-wireframe.svg')] bg-cover bg-no-repeat -z-1`}
+				style={{ opacity: wireframeOpacity }}
+			></motion.div>
+			{/* <motion.div
+				className="px-6 rounded-3xl hidden md:inline-block fixed right-0 bottom-0 overflow-hidden h-2/3 md:w-1/3 w-full bg-[url('/img/equipment/total-station-color.png')] bg-cover bg-no-repeat"
+				style={{ opacity: colorOpacity }}
+			/> */}
 		</section>
 	);
 }

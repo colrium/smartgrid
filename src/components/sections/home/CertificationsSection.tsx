@@ -27,7 +27,11 @@ export function CertificationsSection() {
 				<FadeUp>
 					<div className="mb-12 flex flex-col items-center gap-4 text-center">
 						<SectionTag>{t("home:certifications.tag") as string}</SectionTag>
-						
+						<p
+							className={`text-base sm:text-lg leading-relaxed max-w-2xl mx-auto text-on-surface/60`}
+						>
+							{t("home:certifications.description") as string}
+						</p>
 					</div>
 				</FadeUp>
 
@@ -35,14 +39,9 @@ export function CertificationsSection() {
 					{Array.isArray(items) &&
 						items.map((item, index) => (
 							<FadeUp key={index} delay={(index % 4) * 0.08}>
-								<div className="group flex flex-col h-full min-h-56 rounded-[20px] hairline bg-surface card-shadow p-6 sm:p-7 transition-all duration-500 hover:border-4 hover:border-primary hover:-translate-y-1.5 hover:card-shadow-lift">
+								<div className="group flex flex-col h-full min-h-56 rounded-[20px] hairline bg-surface card-shadow p-6 sm:p-7 transition-all duration-500 hover:border-primary ">
 									<div className="flex items-center justify-between">
-										<span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-ink">
-											<span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary text-white">
-												<span className="mdi mdi-check text-[11px]" />
-											</span>
-											{item.name}
-										</span>
+									
 										<span className="text-[11px] font-semibold tabular-nums tracking-[0.14em] text-on-surface/35">
 											{String(index + 1).padStart(2, "0")}
 										</span>
@@ -51,7 +50,7 @@ export function CertificationsSection() {
 									<div className="my-5 border-t border-ink/10" />
 
 									<span className="font-light leading-none tracking-tight text-ink/80 text-6xl select-none">
-										{item.name.charAt(0)}
+										{item.name}
 									</span>
 
 									<p className="mt-auto pt-5 text-[13px] leading-snug text-on-surface/60">

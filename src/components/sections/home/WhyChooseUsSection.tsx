@@ -65,15 +65,9 @@ export function WhyChooseUsSection() {
 
 										<div className="flex-1 min-w-0">
 											<span className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-on-surface/45">
-												{item.icon ? (
+												{/*item.icon && (
 													<span className={`mdi mdi-${item.icon} text-sm text-primary`} />
-												) : (
-													<span
-														className={`mdi mdi-${
-															FALLBACK_ICONS[index % FALLBACK_ICONS.length]
-														} text-sm text-primary`}
-													/>
-												)}
+												)*/}
 												{item.name}
 											</span>
 											<h3 className="mt-2 text-xl sm:text-2xl font-medium tracking-tight text-ink leading-snug transition-colors duration-300 group-hover:text-primary">

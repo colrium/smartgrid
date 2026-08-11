@@ -49,8 +49,8 @@ const LeadGenBar: React.FC<{ className?: string }> = ({ className }) => {
 									className="glass rounded-xl gap-4 py-10 md:px-7 text-center md:text-left flex flex-col items-center h-full transition-all duration-500 hover:-translate-y-1.5 hover:card-shadow-lift"
 									style={{ transitionDelay: `${index * 100}ms` }}
 								>
-									<span className="flex h-14 w-14 items-center justify-center rounded-xl bg-surface text-primary shadow-sm mb-6">
-										<span className={`mdi mdi-${item.icon} text-2xl`} />
+									<span className="flex h-14 w-14 items-center justify-center rounded-xl bg-surface text-mute shadow-sm mb-6">
+										<span className={`mdi mdi-${item.icon} text-7xl`} />
 									</span>
 
 									<h5 className="text-sm text-center font-semibold uppercase tracking-[0.18em] text-ink">
@@ -66,7 +66,7 @@ const LeadGenBar: React.FC<{ className?: string }> = ({ className }) => {
 											href={item.more.href}
 											color="primary"
 											endIcon={<span className="mdi mdi-arrow-right" />}
-											className="!normal-case !rounded-lg !px-2 !min-w-0"
+											className="!normal-case rounded-lg!"
 										>
 											{item.more.label}
 										</Button>
@@ -77,7 +77,7 @@ const LeadGenBar: React.FC<{ className?: string }> = ({ className }) => {
 											href={item.action.href}
 											variant="outlined"
 											color="primary"
-											className="!normal-case !rounded-lg !border-ink/15"
+											className="!normal-case rounded-full!"
 										>
 											{item.action.label}
 										</Button>

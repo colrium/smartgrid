@@ -198,6 +198,7 @@
 	"keyFacts": {
 		"tag": "Key Facts",
 		"headline": null,
+        "description": "We are a leading surveying and engineering company with a strong presence in East Africa, specializing in land surveying, drone mapping, and geospatial data solutions. With over 5 years of experience, we have successfully completed numerous projects while adhering to national regulations and survey best practices.",
 		"items": [
 			{
 				"icon": "check-circle",
@@ -222,8 +223,9 @@
 		]
 	},
 	"coreExpertise": {
-		"tag": "Core Expertise",
-		"headline": null,
+		"tag": "Experts",
+		"headline": "Our Core Expertise",
+        "description": "We specialize in providing high-quality surveying and engineering services, leveraging advanced technology and industry expertise to deliver accurate and reliable results for our clients.",
 		"items": [
 			{
 				"icon": null,
@@ -248,8 +250,9 @@
 		]
 	},
 	"certifications": {
-		"tag": "Certifications",
-		"headline": null,
+		"tag": "Certified",
+		"headline": "Our Certifications",
+        "description": "We are proud to hold certifications from reputable organizations, demonstrating our commitment to quality, safety, and professionalism in the surveying and engineering industry.",
 		"items": [
 			{
 				"icon": null,
@@ -274,8 +277,9 @@
 		]
 	},
 	"metrics": {
-		"tag": "Operational Scale",
-		"headline": null,
+		"tag": "Scale",
+		"headline": "Our Operational Scale",
+        "description": "We have a strong operational scale, with a presence in multiple countries, a large number of projects completed, and a commitment to delivering high-quality services over the years.",
 		"items": [
 			{
 				"icon": null,
@@ -317,7 +321,7 @@
 			},
 			{
 				"label": "FOIF",
-				"logoUrl": "/media/logos/foif.png"
+				"logoUrl": "/media/logos/foif.jpg"
 			},
 			{
 				"label": "GoK",
@@ -333,7 +337,7 @@
 			},
 			{
 				"label": "PIX4D",
-				"logoUrl": "/media/logos/pix4d.png"
+				"logoUrl": "/media/logos/pix4d.jpg"
 			},
 			{
 				"label": "BLUEGEOG",

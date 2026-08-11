@@ -18,7 +18,7 @@ export function SectionHeader({
 	const dark = tone === "dark";
 
 	const descClass = dark
-		? "text-white/65"
+		? "text-surface/65"
 		: "text-on-surface/60";
 
 	return (

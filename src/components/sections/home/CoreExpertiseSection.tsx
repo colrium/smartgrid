@@ -41,7 +41,11 @@ export function CoreExpertiseSection() {
 				<FadeUp>
 					<div className="mb-12 flex flex-col items-center gap-4 text-center">
 						<SectionTag>{t("home:coreExpertise.tag") as string}</SectionTag>
-						
+						<p
+							className={`text-base sm:text-lg leading-relaxed max-w-2xl mx-auto text-on-surface/60`}
+						>
+							{t("home:coreExpertise.description") as string}
+						</p>
 					</div>
 				</FadeUp>
 
@@ -82,9 +86,11 @@ export function CoreExpertiseSection() {
 
 									<span className="mt-6 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-primary">
 										<span className="h-px w-6 bg-primary/50" />
-										{t("home:coreExpertise.label", {
-											defaultValue: "Core capability",
-										}) as string}
+										{
+											t("home:coreExpertise.label", {
+												defaultValue: "Core capability",
+											}) as string
+										}
 									</span>
 								</article>
 							</FadeUp>

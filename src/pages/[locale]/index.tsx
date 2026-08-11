@@ -13,9 +13,9 @@ import {
 	CoreExpertiseSection,
 	CertificationsSection,
 	MetricsSection,
-	TrusteesSection,
 	ServicesSection,
 	CtaSection,
+    TrusteesSection,
 } from "@/components/sections/home";
 
 interface PageProps {
@@ -29,20 +29,21 @@ const Page: NextPage<PageProps> = () => {
 			<div className="flex flex-col min-h-screen">
 				<HeroSection />
 				<div className="flex flex-col mx-auto max-w-7xl px-6 w-full">
-					<AboutSection />
 					<LeadGenBar
 						//className="my-12  -mt-48"
 						className="my-12 "
 					/>
+					<AboutSection />
 				</div>
 				<SurveyingInstrumentsSection />
 				<DronesSection />
 				<div className="flex flex-col bg-surface w-full">
 					<WhyChooseUsSection />
-					{/* <TrusteesSection /> */}
-					<KeyFactsSection />
+
 					<CoreExpertiseSection />
 					<CertificationsSection />
+					<TrusteesSection />
+					<KeyFactsSection />
 					<MetricsSection />
 				</div>
 

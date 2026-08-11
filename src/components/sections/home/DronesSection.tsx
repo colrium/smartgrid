@@ -50,10 +50,7 @@ export function DronesSection() {
 										)}
 										<div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/5 to-transparent" />
 
-										<span className="absolute top-4 left-4 inline-flex items-center gap-2 glass rounded-lg text-[11px] font-semibold uppercase tracking-[0.18em] text-ink px-3 py-1.5">
-											<span className="mdi mdi-quadcopter text-sm" />
-											Fleet
-										</span>
+										
 										<span className="absolute top-4 right-4 glass rounded-lg text-[11px] font-semibold uppercase tracking-[0.18em] text-ink px-3 py-1.5">
 											{String(index + 1).padStart(2, "0")}
 										</span>

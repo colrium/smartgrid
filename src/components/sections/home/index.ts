@@ -6,9 +6,9 @@ export { KeyFactsSection } from "./KeyFactsSection";
 export { CoreExpertiseSection } from "./CoreExpertiseSection";
 export { CertificationsSection } from "./CertificationsSection";
 export { MetricsSection } from "./MetricsSection";
-export { TrusteesSection } from "./TrusteesSection";
 export { ServicesSection } from "./ServicesSection";
 export { CtaSection } from "./CtaSection";
+export { TrusteesSection } from "./TrusteesSection";
 
 export { default as SurveyingInstrumentsSectionDefault } from "./SurveyingInstrumentsSection";
 export { default as DronesSectionDefault } from "./DronesSection";
@@ -17,6 +17,6 @@ export { default as KeyFactsSectionDefault } from "./KeyFactsSection";
 export { default as CoreExpertiseSectionDefault } from "./CoreExpertiseSection";
 export { default as CertificationsSectionDefault } from "./CertificationsSection";
 export { default as MetricsSectionDefault } from "./MetricsSection";
-export { default as TrusteesSectionDefault } from "./TrusteesSection";
 export { default as ServicesSectionDefault } from "./ServicesSection";
 export { default as CtaSectionDefault } from "./CtaSection";
+export { default as TrusteesSectionDefault } from "./TrusteesSection";
