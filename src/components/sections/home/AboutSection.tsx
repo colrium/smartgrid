@@ -33,6 +33,14 @@ export const AboutSection: React.FC = () => {
 							{t("home:about.whoWeAre.description")}
 						</p>
 
+						<h3 className="text-xl sm:text-2xl font-medium tracking-tight text-primary leading-tight pt-2">
+							{t("home:about.mission.title")}
+						</h3>
+
+						<p className="text-on-surface/60 leading-relaxed text-sm sm:text-base">
+							{t("home:about.mission.description")}
+						</p>
+
 						<div className="pt-4 grid grid-cols-2 gap-4">
 							<div className="p-4 rounded-[15px] bg-surface hairline hover:border-primary cursor-default transition-all duration-300 hover:-translate-y-0.5 hover:card-shadow-lift flex items-start gap-3">
 								<div className="p-2.5 rounded-lg bg-brand-50 text-primary">
@@ -81,12 +89,6 @@ export const AboutSection: React.FC = () => {
 										}}
 									/>
 									<div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/25 to-transparent" />
-
-									{/* Frosted index chip */}
-									<span className="absolute top-4 left-4 inline-flex items-center gap-2 glass rounded-lg text-[11px] font-semibold uppercase tracking-[0.18em] text-ink px-3 py-1.5">
-										<span className="h-1.5 w-1.5 rounded-full bg-primary" />
-										01 — Capability
-									</span>
 
 									<div className="absolute bottom-6 left-6 right-6 text-surface">
 										<span className="text-xs font-mono text-brand-200 uppercase font-bold tracking-wider">

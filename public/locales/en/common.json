@@ -83,7 +83,39 @@
 				"label": "Aerial Drones",
 				"links": [
 					{
-						"label": "Topographical surveys",
+						"label": "Drone imagery surveys",
+						"href": "/surveying/topographical-surveys"
+					},
+                    {
+						"label": "Lidar Mapping",
+						"href": "/surveying/topographical-surveys"
+					},
+                    {
+						"label": "Agricultural NDVI Mapping",
+						"href": "/surveying/topographical-surveys"
+					},
+                    {
+						"label": "As built surveys",
+						"href": "/surveying/topographical-surveys"
+					},
+                    {
+						"label": "Monitoring and Evaluation",
+						"href": "/surveying/topographical-surveys"
+					},
+                    {
+						"label": "Solar Panel Drone Surveys",
+						"href": "/surveying/topographical-surveys"
+					},
+                    {
+						"label": "Volumetric Surveys",
+						"href": "/surveying/topographical-surveys"
+					},
+                    {
+						"label": "Landfill & Quarry Drone Surveys",
+						"href": "/surveying/topographical-surveys"
+					},
+                    {
+						"label": "Photography & Video Marketing",
 						"href": "/surveying/topographical-surveys"
 					}
 				]
