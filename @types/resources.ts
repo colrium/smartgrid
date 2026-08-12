@@ -1,3 +1,4 @@
+import aerialsurveys from '../public/locales/en/aerial-surveys.json';
 import buildingsitesurveys from '../public/locales/en/building-site-surveys.json';
 import cadastralsurveys from '../public/locales/en/cadastral-surveys.json';
 import common from '../public/locales/en/common.json';
@@ -11,6 +12,7 @@ import terms from '../public/locales/en/terms.json';
 import topographicalsurveys from '../public/locales/en/topographical-surveys.json';
 
 const resources = {
+  'aerial-surveys': aerialsurveys,
   'building-site-surveys': buildingsitesurveys,
   'cadastral-surveys': cadastralsurveys,
   common,

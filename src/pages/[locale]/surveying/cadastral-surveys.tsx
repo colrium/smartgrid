@@ -3,10 +3,14 @@ import PageHead from "@/components/Head";
 
 import { getI18nProps } from "@/lib/i18n";
 import {
-	CadastralHeroSection,
+	BuildingSiteHeroSection,
 	IntroSection,
-	WhyBoundarySurveysSection,
-} from "@/components/sections/surveying/cadastral";
+	BuildSmarterSection,
+	SiteEngineeringSection,
+	ProcessSection,
+	ExploreMoreSection,
+	SiteCtaSection,
+} from "@/components/sections/surveying/building-site";
 
 type PageProps = {
 	// Add custom props here
@@ -17,9 +21,13 @@ const Page: NextPage<PageProps> = () => {
 		<div className="relative">
 			<PageHead pageName="cadastral-surveys" />
 			<div className="flex flex-col min-h-screen">
-				<CadastralHeroSection />
+				<BuildingSiteHeroSection />
 				<IntroSection />
-				<WhyBoundarySurveysSection />
+				<SiteEngineeringSection />
+				<BuildSmarterSection />
+				<ProcessSection />
+				<ExploreMoreSection />
+				<SiteCtaSection />
 			</div>
 		</div>
 	);

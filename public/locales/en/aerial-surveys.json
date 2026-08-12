@@ -1,0 +1,160 @@
+{
+	"hero": {
+		"headline": "AERIAL SURVEYS",
+		"title": "Accurate measurements. Fast. Reliable surveys.",
+		"image": "/media/surveying/aerial-surveys/AG8ng.jpeg",
+		"description": "Leading Africa's Land and Aerial Surveying Revolution",
+		"ctaPrimary": {
+			"label": "Get Your Free Consultation",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"section1": {
+		"tag": "Your trusted partner",
+		"headline": "Reliable. Scalable. Fast. Effective.",
+		"description": "Whether you're a government agency, an NGO, or a private developer, Smartgrid Surveying is your trusted partner! \n Our drones deliver actionable data where it matters most. ",
+		"ctaPrimary": {
+			"label": "Start your Aerial Survey with Us!",
+			"href": "/aerial-drones/drone-imagery-surveys"
+		}
+	},
+	"whatWeOffer": {
+		"tag": "Services",
+		"headline": "Our Aerial Surveying Services",
+		"items": [
+			{
+				"title": "Aerial Mapping",
+				"description": "Accurate drone-based imagery for planning, documentation, and analysis.",
+				"popupContent": "SmartGrid Surveying delivers ultra-precise aerial mapping using UAVs to generate georeferenced orthomosaics, topographic data, and planning-grade base maps. Our solutions support infrastructure, utilities, and land development with unmatched speed and accuracy."
+			},
+			{
+				"title": "Construction Monitoring",
+				"description": "Track site activity using consistent, real-time aerial visuals.",
+				"popupContent": "SmartGrid offers site monitoring through high-resolution drone flyovers. Our automated flights provide weekly visual updates, detect deviations from schedule, and support decision-making for project managers and developers."
+			},
+			{
+				"title": "Environmental Monitoring",
+				"description": "Visualize ecological change and monitor conservation areas.",
+				"popupContent": "Using UAVs, SmartGrid tracks land cover change, deforestation, erosion, and other ecological indicators. Our data supports impact assessments and regulatory compliance with repeatable, time-stamped visuals."
+			},
+			{
+				"title": "Agricultural Mapping",
+				"description": "Drone-based multispectral data for crop health and farm optimization.",
+				"popupContent": "SmartGrid empowers agronomists with data on crop health, plant stress, and irrigation patterns. We use NDVI and multispectral analysis to optimize input use and improve yield sustainability."
+			},
+			{
+				"title": "3D Modeling",
+				"description": "Photorealistic 3D models to support planning and inspections.",
+				"popupContent": "We create detailed 3D mesh and textured models of terrain, buildings, and infrastructure. These models are BIM-ready and useful for design validation, inspection, and immersive planning."
+			},
+			{
+				"title": "Infrastructure Planning",
+				"description": "Route and terrain data for smart infrastructure layout.",
+				"popupContent": "We map routes and sites using drone LiDAR and photogrammetry. This ensures smart siting of roads, pipelines, and urban developments while minimizing environmental disruption."
+			},
+			{
+				"title": "DTMs & DEMs",
+				"description": "Digital terrain and elevation models for hydrological and civil works.",
+				"popupContent": "Our terrain and elevation models help civil engineers and hydrologists analyze runoff, slope stability, and grading. We deliver precise elevation data to support resilient infrastructure."
+			},
+			{
+				"title": "Volumetric Calculations",
+				"description": "Calculate material volumes and manage resources accurately.",
+				"popupContent": "SmartGrid computes cut/fill volumes and stockpile measurements with centimeter-level accuracy. Our aerial photogrammetry offers fast, safe, and repeatable results."
+			},
+			{
+				"title": "Disaster Assessment",
+				"description": "Route and terrain data for smart infrastructure layout.",
+				"popupContent": "After floods, landslides, or earthquakes, SmartGrid uses drones to quickly document damage. Our data helps responders prioritize actions, allocate aid, and plan recovery operations."
+			}
+		]
+	},
+	"precision": {
+		"tag": "Precision",
+		"headline": "Eyes in the Sky, Precision on the Ground",
+		"description": "At SmartGrid Surveying, our aerial drone survey solutions offer high-resolution imagery, topographic mapping, and volumetric analysis with unmatched accuracy and speed. From vast farmlands to urban infrastructure, our drone technology captures data quickly, safely, and cost-effectively—especially in hard-to-reach or expansive areas. \n\n We’ve completed aerial drone surveys across multiple sectors in 10+ African countries, serving land developers, governments, mining companies, and agribusinesses.",
+		"image": "/media/surveying/aerial-surveys/drone-piloting.jpeg"
+	},
+	"aerialSurveying": {
+		"tag": "",
+		"headline": "Aerial Surveying",
+		"description": "Drones have transformed the surveying industry—and we’re leading the way. Smartgrid Surveying leverages aerial drones for mapping, 3D modeling, volumetrics, environmental assessments, and monitoring large or inaccessible areas. Beyond technical mapping, we offer professional drone photography for real estate, construction marketing, tourism, and events. Using drones equipped with RTK GPS and high-resolution sensors, we capture precise geospatial data that empowers engineers, developers, governments, and NGOs to make smarter decisions, faster. \n\n We deliver fast, accurate, and detailed surveys for:",
+		"items": [
+			{
+				"label": "Aerial Mapping",
+				"image": "/media/surveying/aerial-surveys/aerial-mapping.jpeg"
+			},
+			{
+				"label": "3d models",
+				"image": "/media/surveying/aerial-surveys/3d-models.jpeg"
+			},
+			{
+				"label": "Digital Terrain & Elevation Models (DTMs & DEMs)",
+				"image": "/media/surveying/aerial-surveys/digital-terrain-elevation-models.jpeg"
+			},
+			{
+				"label": "Construction Monitoring",
+				"image": "/media/surveying/aerial-surveys/construction-monitoring.jpeg"
+			},
+			{
+				"label": "Agricultural Mapping",
+				"image": "/media/surveying/aerial-surveys/agricultural-mapping.jpeg"
+			},
+			{
+				"label": "Environmental Monitoring",
+				"image": "/media/surveying/aerial-surveys/environmental-monitoring.png"
+			},
+			{
+				"label": "Infrastructure Planning",
+				"image": "/media/surveying/aerial-surveys/infrastructure-planning.jpeg"
+			},
+			{
+				"label": "Volumetric calculations",
+				"image": "/media/surveying/aerial-surveys/volumetric-calculations.jpeg"
+			}
+		]
+	},
+	"deliverables": {
+		"tag": "What you get",
+		"headline": "Aerial Drone Deliverables",
+		"image": "/media/surveying/aerial-surveys/aerial-drone-deliverables.png",
+		"items": [
+			"Orthorectified Imagery (Geo-Referenced) + Raw images",
+			"Orthomosaic Maps (Geo-Referenced)",
+			"Digital Elevation Models (DTM, DSM)",
+			"Contours",
+			"3D Point Clouds (X, Y, Z)",
+			"Topographical Maps",
+			"CAD Shapefiles",
+			"Volumetric Analysis Reports",
+			"Survey Reports",
+			"NDVI & Multispectral Maps (Agriculture only)"
+		]
+	},
+	"projects": {
+		"tag": "completed Projects",
+		"headline": "PROJECTS DONE ACROSS AFRICA",
+		"images": [
+			"/media/surveying/aerial-surveys/drone-photography-1.jpeg",
+			"/media/surveying/aerial-surveys/drone-photography-2.jpeg",
+			"/media/surveying/aerial-surveys/drone-photography-3.jpeg",
+			"/media/surveying/aerial-surveys/drone-photography-4.jpeg",
+			"/media/surveying/aerial-surveys/drone-photography-5.jpeg"
+		],
+		"description": "We’ve completed aerial drone surveys across several African countries, supporting governments, private developers, and NGOs. Here are a few highlights:",
+		"items": [
+			"Kenya – 2,000 ha for agricultural zoning in Uasin Gishu",
+			"Ghana – 3,500 ha for cocoa plantation mapping in Kumasi",
+			"Rwanda – 1,800 ha of wetland analysis in Bugesera",
+			"South Africa – 5,200 ha for mining volumetrics in Limpopo",
+			"Nigeria – 4,100 ha urban sprawl monitoring in Abuja",
+			"East Africa Region – Over 10,000 ha surveyed across regional infrastructure and land use planning projects in Kenya, Uganda, and Tanzania"
+		]
+	},
+	"additionalServices": {
+		"tag": "In addition to technical surveys",
+		"headline": "we offer aerial photography services for",
+		"items": ["Real estate and property marketing", "Events coverage", "Promotional media"],
+		"description": "Need equipment? Our drone rental service gives clients access to high-quality drones for short- or long-term hire, with optional training or operator support."
+	}
+}
