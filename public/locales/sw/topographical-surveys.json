@@ -1,0 +1,150 @@
+{
+	"hero": {
+		"headline": "Uchunguzi wa Topografia",
+		"title": "Vipimo Sahihi. Haraka. Uchunguzi wa Kuaminika.",
+		"subTitle": "Uchunguzi wa Nchi Kavu na Angani unaoongoza nchini Kenya.",
+		"description": "Uchunguzi wa Nchi Kavu na Angani unaoongoza nchini Kenya.",
+		"image": "/media/surveying/topographical/AG8ng.jpeg"
+	},
+	"section1": {
+		"tag": "Uchunguzi wa Topografia",
+		"headline": "Ona Ardhi Jinsi Ilivyo",
+		"description": "SmartGrid Surveying hutoa uchunguzi wa topografia wenye undani na usahihi wa hali ya juu kwa ajili ya uhandisi, upangaji, na ujenzi. Iwe Nairobi, Kisumu, Mombasa — au kote Afrika na nje yake — timu yetu ya wataalamu inakamata mandhari kwa usahihi wa ngazi ya sentimita kwa kutumia GNSS, Total Stations, na Uchoraji wa Ramani kwa Drone LiDAR."
+	},
+	"whatWeOffer": {
+		"tag": "Huduma",
+		"headline": "Tunachotoa kama SmartGrid!",
+		"items": [
+			{
+				"title": "Usahihi wa Kiwango cha Uhandisi",
+				"description": "Tunatumia teknolojia ya kisasa ya GNSS RTK, Total stations, UAV LiDAR na Viwango vya Kiotomatiki ili kupata data sahihi kwa barabara, mifereji, vipengele na muundo wa ujenzi."
+			},
+			{
+				"title": "Ushirikiano wa Drone na Ardhi",
+				"description": "Ushirikiano usio na mshono wa data ya angani na ya nchi kavu huhakikisha mifano thabiti na ya kina ya mandhari ya 3D na kontua."
+			},
+			{
+				"title": "Chanjo ya Kitaifa na Kuvuka Mipaka",
+				"description": "Timu zetu za Upimaji zinafanya kazi kote Kenya, Afrika Mashariki, na maeneo ya kimataifa - zinaaminika na wahandisi, waendelezaji, na wakandarasi duniani."
+			}
+		]
+	},
+	"detailedTopographicalSurveys": {
+		"tag": null,
+		"headline": "Uchunguzi wa Topografia wa Kina kote Afrika Mashariki!",
+		"description": "Katika SmartGrid Surveying Ltd, tunabobea katika kutoa uchunguzi wa topografia wa usahihi wa hali ya juu kote Afrika Mashariki, ukijumuisha Kenya, Uganda, Tanzania, Rwanda, Burundi, Somalia, Sudan Kusini, Ethiopia, na Sehemu Nyingine za Afrika. Timu yetu ya wapima ardhi wataalamu hutumia teknolojia ya kisasa, ikijumuisha GPS, dronzi, na total stations, ili kutoa suluhisho sahihi na za kina za uchoraji ramani kwa miradi mbalimbali.",
+		"items": [
+			{
+				"title": "Uchoraji wa Ramani ya Kontua za Ardhi",
+				"description": "Mbinu zetu za kisasa za upimaji zinatuwezesha kuunda ramani za kina za kontua, zikitoa taarifa muhimu kwa maendeleo ya ardhi, upangaji wa ujenzi, na tathmini za mazingira.",
+				"image": "/media/surveying/topographical/land-contours-mapping.png"
+			},
+			{
+				"title": "Vipengele vya Asili / vinavyotengenezwa na Binadamu",
+				"description": "Tunakamata na kuweka ramani kwa usahihi vipengele vya asili na vinavyotengenezwa na binadamu, ikijumuisha majengo, barabara, mimea, na sehemu za maji, kuhakikisha data kamili kwa miradi yako.",
+				"image": "/media/surveying/topographical/man-made-features.png"
+			},
+			{
+				"title": "Uchoraji wa Ramani ya Miundombinu",
+				"description": "Timu yetu inabobea katika kuweka ramani za miundombinu muhimu kama vile huduma, mitandao ya usafirishaji, na vifaa vya umma, ikitoa maarifa muhimu kwa upangaji wa miji na maendeleo.",
+				"image": "/media/surveying/topographical/infrastructure-mapping.png"
+			},
+			{
+				"title": "Uchunguzi wa Mipaka Jumuishi",
+				"description": "Tunafanya uchunguzi sahihi wa mipaka ili kuanzisha mistari ya mali na mipaka ya kisheria, kuhakikisha kufuata kanuni za mitaa na kuzuia migogoro.",
+				"image": "/media/surveying/topographical/boundary-survey-inclusive.jpeg"
+			},
+			{
+				"title": "Uchoraji wa Ramani ya Huduma",
+				"description": "Huduma zetu za uchoraji ramani za huduma hugundua na kuandika huduma zilizo chini ya ardhi na juu yake, kusaidia katika upangaji wa ujenzi, matengenezo, na usalama.",
+				"image": "/media/surveying/topographical/utilities-mapping.jpeg"
+			},
+			{
+				"title": "Ripoti za Matumizi ya Ardhi",
+				"description": "Huduma zetu za ripoti za matumizi ya ardhi hutoa uchambuzi kamili wa mifumo ya sasa na inayopendekezwa ya matumizi ya ardhi, zikisaidia kufanya maamuzi sahihi kwa miradi ya maendeleo.",
+				"image": "/media/surveying/topographical/land-use-reports.png"
+			},
+			{
+				"title": "Mkusanyo wa Data ya 3D",
+				"description": "Huduma zetu za mkusanyo wa data ya 3D hutumia teknolojia za kisasa kuunda mifano sahihi na ya kina ya 3D ya maeneo ya utafiti, ikisaidia matumizi mbalimbali katika ujenzi, upangaji, na uchambuzi.",
+				"image": "/media/surveying/topographical/3d-data-collection.jpeg"
+			},
+			{
+				"title": "Usindikaji wa Data (DEM, DTM, DSM, CAD shapefiles)",
+				"description": "Tunatoa huduma kamili za usindikaji wa data, ikijumuisha utengenezaji wa Mifano ya Kiwimbo cha Kielektroniki (DEM), Mifano ya Mandhari ya Dijiti (DTM), Mifano ya Sehemu ya Dijiti (DSM), na shapefiles za CAD, kuhakikisha kwamba data ya uchunguzi iko tayari kwa uchambuzi na matumizi.",
+				"image": "/media/surveying/topographical/data-processing.png"
+			}
+		]
+	},
+	"sampleTopographicalMap": {
+		"tag": null,
+		"headline": "RAMANI YA MFANO WA TOPOGRAFIA",
+		"description": "SmartGrid Surveying ilifanya uchunguzi kamili wa topografia huko Usenge, Kaunti ya Siaya, ukizingatia uchoraji na utambuzi wa miundombinu iliyopo na inayowezekana ya bomba la maji. Mradi huu unasaidia juhudi za jamii za kuongeza ufanisi wa usambazaji wa maji na upangaji wa miundombinu kote eneo hilo.",
+		"map": {
+			"title": "VITU KUU VYA RAMANI",
+			"description": "Ramani ya topografia inajumuisha vipengele vyote muhimu vya katigrafia:",
+			"image": "/media/surveying/topographical/sample-topographical-map.png",
+			"items": [
+				"Kiwango: 1:2500 kwa usahihi wa azimio la juu",
+				"Mistari ya gridi kwa marejeleo ya kuratibu",
+				"Data ya kontua na mwinuko kwa uchambuzi wa mandhari",
+				"Ufunguo unaoeleza barabara, mabomba, mistari ya umeme, na vifaa vya maji",
+				"Metadata ya uchunguzi ikijumuisha tarehe, eneo, mteja, na saini za uthibitishaji"
+			]
+		}
+	},
+	"surveyingInstruments": {
+		"tag": null,
+		"headline": "Vyombo Vyetu vya Upimaji",
+		"description": "Tunatumia vifaa vya kisasa, vilivyopimwa, na sahihi ili kuhakikisha kila nukta ni sahihi na ya kuaminika kwa miradi yako ya ujenzi na uhandisi kote Kenya na nje yake.",
+		"items": [
+			{
+				"label": "RTK GNSS FOIF A90",
+				"image": "/media/instruments/RTK-GNSS-FOIF-A90.jpg"
+			},
+			{
+				"label": "TOTAL STATIONS",
+				"image": "/media/instruments/TOTAL-STATIONS.jpg"
+			},
+			{
+				"label": "AUTOMATIC LEVELS",
+				"image": "/media/instruments/AUTOMATIC-LEVELS.jpg"
+			},
+			{
+				"label": "LASER SCANNERS",
+				"image": "/media/instruments/LASER-SCANNERS.jpg"
+			}
+		]
+	},
+	"whyConductSurvey": {
+		"tag": null,
+		"headline": "Kwa Nini Ufanye Uchunguzi wa Topografia",
+		"description": "",
+		"items": [
+			{
+				"title": "Uchoraji Sahihi wa Ramani ya Ardhi",
+				"description": "Smartgrid Engineering huhakikisha kila kontua, mwinuko, na maelezo ya sehemu hupimwa kwa usahihi kwa miundo isiyo na makosa."
+			},
+			{
+				"title": "Upangaji Bora wa Ujenzi",
+				"description": "Tambua miteremko, mifereji ya maji, na huduma zilizo chini ya ardhi kabla ya kuanza ujenzi ili kupunguza mshangao wa gharama."
+			},
+			{
+				"title": "Kisheria na Uzingatiaji",
+				"description": "Hakikisha uchunguzi wako unakidhi kanuni za serikali na manispaa ili kuepuka masuala ya kisheria wakati wa idhini za mradi."
+			},
+			{
+				"title": "Maendeleo ya Miundombinu",
+				"description": "Toa msingi kwa barabara, madaraja, na miradi mikubwa kwa data ya uchunguzi ya kuaminika."
+			},
+			{
+				"title": "Tathmini ya Hatari ya Mafuriko",
+				"description": "Chambua mwinuko wa ardhi na mifumo ya mifereji ya maji ili kupunguza hatari za mafuriko katika maendeleo yote."
+			},
+			{
+				"title": "Migogoro ya Ardhi na Ufafanuzi wa Mipaka",
+				"description": "Tatua migogoro na ufafanue mipaka ya ardhi kwa data sahihi ya uchunguzi kutoka Smartgrid Engineering."
+			}
+		]
+	}
+}

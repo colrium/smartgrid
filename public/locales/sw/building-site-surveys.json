@@ -1,0 +1,129 @@
+{
+	"hero": {
+		"headline": "UCHUNGUZI WA UJENZI NA UHANDISI",
+		"title": "Pima Kwa Umaalimu, Jenga kwa Nguvu",
+		"image": "Uchunguzi wa nchi kavu na angani unaoongoza nchini Kenya.",
+		"description": "Kiongozi wa Mapinduzi ya Uchunguzi wa Ardhi na Angani Afrika",
+		"ctaPrimary": {
+			"label": "Pata Ushauri Wako wa Bure",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"section1": {
+		"tag": "Ujenzi Bora",
+		"headline": "Uchunguzi wa Usahihi kwa Ujenzi Bora",
+		"description": "Katika Smartgrid Surveying, tunatoa huduma za kitaalam za uchunguzi wa kiwanja cha ujenzi zilizoundwa kuhakikisha usahihi, ufanisi, na uzingatiaji katika miradi ya ujenzi. Iwe unapanga maendeleo ya makazi, biashara, au viwanda, teknolojia yetu ya kisasa ya upimaji na wataalamu wenye uzoefu hutoa data unayohitaji kujenga kwa ujasiri."
+	},
+	"section2": {
+		"tag": "Jenga kwa Umaalimu",
+		"headline": "Ya Kuaminika. Sahihi. Haraka. Yenye Nguvu.",
+		"subtitle": "Smartgrid Surveying ni mshirika wako wa upimaji anayeaminika!",
+		"description": "Jenga kwa Umaalimu tangu Mwanzo—uchunguzi wetu wa kiwanja unaowezeshwa na dronzi hutoa vipimo sahihi, maarifa ya haraka ya ardhi, na kufanya maamuzi yenye taarifa kwa miradi yako ya ujenzi. Kwa kunasa data ya topografia ya azimio la juu, mifano ya ardhi ya 3D, na taswira sahihi za mipaka, tunarahisisha upangaji wa kiwanja na kupunguza kazi ya kurudia ya gharama. Iwe unaanza ujenzi au unasimamia upyaji wa miundombinu, SmartGrid Surveying inakupa uwazi wa kijiografia unaohitajika kuhandisi kwa ujasiri na usahihi.",
+		"ctaPrimary": {
+			"label": "Tutumie Barua Pepe Leo!",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"siteEngineeringSurveys": {
+		"tag": null,
+		"headline": "Uchunguzi wa Usahihi wa Uhandisi wa Kiwanja",
+		"description": "Chunguza jinsi SmartGrid Surveying inavyotumia teknolojia za kisasa za dronzi, LiDAR, na kijiografia kutoa uchunguzi wa kiwango cha uhandisi unaowezesha ujenzi na maendeleo ya miundombinu.",
+		"items": [
+			{
+				"title": "Uchunguzi wa Topografia",
+				"description": "Tunaweka ramani ya vipengele vya asili na vilivyojengwa, tukitoa maarifa muhimu ya mwinuko na ardhi kwa upangaji wa kirahisi na wa kimuundo."
+			},
+			{
+				"title": "Uwekaji Alama na Mpangilio wa Ujenzi",
+				"description": "Huduma za mpangilio wa usahihi huhakikisha ujenzi unafuata vipimo vya kubuni hasa—kupunguza makosa na ucheleweshaji."
+			},
+			{
+				"title": "Uchanganuzi wa 3D wa Laser na Uchoraji wa Ramani wa LiDAR",
+				"description": "Kutoka point clouds hadi mifano ya mesh, tunadijitalisha kiwanja chako kwa uratibu wa kubuni, uingizaji wa BIM, na uthibitishaji wa awali wa ujenzi."
+			},
+			{
+				"title": "Uchunguzi wa Mipaka na Mali",
+				"description": "Taasisi ya mipaka ya kisheria ya mali, easements, na uvamizi—muhimu kwa vibali na maendeleo ya ardhi."
+			},
+			{
+				"title": "Uchunguzi wa As-Built",
+				"description": "Andika kumbukumbu na uhakiki kazi zilizokamilishwa dhidi ya mipango ya awali kwa uthibitisho, uzingatiaji, na kufunga mradi."
+			},
+			{
+				"title": "Uchunguzi wa Huduma za Chini ya Ardhi",
+				"description": "Gundua na weka ramani ya miundombinu iliyozikwa kwa usumbufu mdogo—muhimu kwa upangaji wa uchimbaji na uratibu wa huduma."
+			}
+		]
+	},
+	"cta": {
+		"tag": null,
+		"headline": "Shirikiana na SmartGrid kwa Uchunguzi wa Usahihi wa Kiwanja",
+		"description": "",
+		"ctaPrimary": {
+			"label": "Wasiliana Nasi",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"process": {
+		"tag": null,
+		"headline": "Mchakato wa Upimaji wa Ardhi",
+		"image": "",
+		"items": [
+			{
+				"label": "Upangaji wa Awali wa Uchunguzi",
+				"description": "Fanya tathmini kamili ya kiwanja na tathmini vigezo vya ndege kwa utayari wa uchunguzi wa droni."
+			},
+			{
+				"label": "Uanzishaji wa Udhibiti wa Ardhi",
+				"description": "Weka pointi za udhibiti wa ardhi zilizorejelewana kijiografia (GCPs) kwa ujumuishaji sahihi wa data ya angani."
+			},
+			{
+				"label": "Operesheni ya Ndege ya Droni",
+				"description": "Tumia droni kwa njia sahihi za ndege, kunasa taswira za azimio la juu na data ya topografia."
+			},
+			{
+				"label": "Usindikaji na Uchambuzi wa Data",
+				"description": "Chakata data ya angani kwa kutumia programu ya photogrammetry kutoa mifano ya 3D, orthoimages, na kontua."
+			},
+			{
+				"label": "Uthibitishaji na Ukaguzi wa Usahihi",
+				"description": "Tumia total stations na mifumo ya RTK-GNSS kuthibitisha data ya droni na kuhakikisha usahihi wa juu zaidi."
+			},
+			{
+				"label": "Bidhaa za Mwisho za Uchunguzi",
+				"description": "Tengeneza michoro za CAD, tabaka za GIS, na ripoti za dijiti kwa makabidhiano ya mwisho ya mradi na uchambuzi."
+			}
+		]
+	},
+	"exploreMore": {
+		"tag": null,
+		"headline": "Chunguza zaidi...",
+		"description": "",
+		"items": [
+			{
+				"title": "Upimaji Viwango",
+				"image": "/media/surveying/building-site-surveys/leveling.jpeg"
+			},
+			{
+				"title": "Huduma za Uchimbaji",
+				"image": "/media/surveying/building-site-surveys/excavation-services.jpg"
+			},
+			{
+				"title": "Uchunguzi wa As-Built",
+				"image": "/media/surveying/building-site-surveys/as-built-surveys.jpeg"
+			},
+			{
+				"title": "Uwekaji Alama wa Majengo",
+				"image": "/media/surveying/building-site-surveys/buildings-stakeout.jpeg"
+			},
+			{
+				"title": "Uchoraji wa Ramani ya Huduma",
+				"image": "/media/surveying/building-site-surveys/utilities-mapping.jpeg"
+			},
+			{
+				"title": "Tathmini na Ufuatiliaji",
+				"image": "/media/surveying/building-site-surveys/evaluation-monitoring.jpeg"
+			}
+		]
+	}
+}

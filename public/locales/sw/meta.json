@@ -30,6 +30,16 @@
 			"page_title": "Masharti ya Matumizi",
 			"meta_description": "Angalia masharti ya matumizi ya tovuti na huduma za {{site_title}}.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"topographical-surveys": {
+			"page_title": "Uchunguzi wa Topografia",
+			"meta_description": "Uchunguzi wa Topografia — Ona Ardhi Jinsi Ilivyo",
+			"og_image": "/media/og-terms.jpg"
+		},
+		"building-site-surveys": {
+			"page_title": "Uchunguzi wa Kiwanja cha Ujenzi",
+			"meta_description": "Uchunguzi wa usahihi kwa ajili ya ujenzi bora — uchunguzi wa kiwanja, upangaji na mpangilio wa ujenzi, uchunguzi wa mali na huduma za chini ya ardhi.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {

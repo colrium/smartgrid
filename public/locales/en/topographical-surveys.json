@@ -1,0 +1,151 @@
+{
+	"hero": {
+		"headline": "Topographical Surveys",
+		"title": "Accurate Measurements. Fast. Reliable Surveys.",
+		"subTitle": "Leading Land and Aerial surveying in Kenya.",
+		"description": "Leading Land and Aerial surveying in Kenya.",
+        "image": "/media/surveying/topographical/AG8ng.jpeg"
+	},
+	"section1": {
+		"tag": "Topographical Surveying",
+		"headline": "See the Land as It Truly Is",
+		"description": "SmartGrid Surveying delivers highly detailed and accurate topographical surveys for engineering, planning, and construction. Whether in Nairobi, Kisumu, Mombasa — or across Africa and beyond — our expert team captures terrain with centimeter-level precision using GNSS, Total Stations, and Drone LiDAR Mapping."
+	},
+	"whatWeOffer": {
+		"tag": "Services",
+		"headline": "What we offer as SmartGrid!",
+		"items": [
+			{
+				"title": "Engineering - Grade Accuracy",
+				"description": "We use state of art GNSS RTK, Total stations, UAV LiDAR and Automatic levels to achieve precise data for roads, drainage, features and construction design "
+			},
+			{
+				"title": "Drone & Ground intergration",
+				"description": "Seamless intergration of aerial and terrestrial data ensures consistent, detailed 3D terrain models and contours."
+			},
+			{
+				"title": "National & Cross Border Coverage",
+				"description": "Our survey teams operate across Kenya, East Africa, and international territories - trusted by engineers, developers, and contractors worldwide."
+			}
+		]
+	},
+	"detailedTopographicalSurveys": {
+		"tag": null,
+		"headline": "Detailed Topographical Surveys Across East Africa!",
+		"description": "At SmartGrid Surveying Ltd, we specialize in delivering high-precision topographical surveys across East Africa, covering Kenya, Uganda, Tanzania, Rwanda, Burundi, Somalia, South Sudan, Ethiopia, and Other Parts of Africa. Our team of expert surveyors utilizes the latest technology, including GPS, drones, and total stations, to provide accurate and detailed mapping solutions for various projects.",
+		"items": [
+			{
+				"title": "Land Contours Mapping",
+				"description": "Our advanced surveying techniques allow us to create detailed contour maps, providing essential information for land development, construction planning, and environmental assessments.",
+				"image": "/media/surveying/topographical/land-contours-mapping.png"
+			},
+			{
+				"title": "Land/ Man-made features",
+				"description": "We accurately capture and map both natural and man-made features, including buildings, roads, vegetation, and water bodies, ensuring comprehensive data for your projects.",
+				"image": "/media/surveying/topographical/man-made-features.png"
+			},
+			{
+				"title": "Infrastructure mapping",
+				"description": "Our team specializes in mapping critical infrastructure such as utilities, transportation networks, and public facilities, providing valuable insights for urban planning and development.",
+				"image": "/media/surveying/topographical/infrastructure-mapping.png"
+			},
+			{
+				"title": "Boundary Survey Inclusive",
+				"description": "We conduct precise boundary surveys to establish property lines and legal boundaries, ensuring compliance with local regulations and preventing disputes.",
+				"image": "/media/surveying/topographical/boundary-survey-inclusive.jpeg"
+			},
+			{
+				"title": "Utilities mapping",
+				"description": "Our utility mapping services identify and document underground and above-ground utilities, aiding in construction planning, maintenance, and safety.",
+				"image": "/media/surveying/topographical/utilities-mapping.jpeg"
+			},
+			{
+				"title": "Land Use reports",
+				"description": "Our land use reporting services provide comprehensive analysis of current and proposed land use patterns, supporting informed decision-making for development projects.",
+				"image": "/media/surveying/topographical/land-use-reports.png"
+			},
+			{
+				"title": "3D Data Collection",
+				"description": "Our 3D data collection services utilize advanced technologies to create detailed and accurate 3D models of survey areas, supporting various applications in construction, planning, and analysis.",
+				"image": "/media/surveying/topographical/3d-data-collection.jpeg"
+			},
+			{
+				"title": "Data Processing(DEM, DTM,DSM, CAD shapefiles)",
+				"description": "We provide comprehensive data processing services, including the generation of Digital Elevation Models (DEM), Digital Terrain Models (DTM), Digital Surface Models (DSM), and CAD shapefiles, ensuring that survey data is ready for analysis and application.",
+				"image": "/media/surveying/topographical/data-processing.png"
+			}
+		]
+	},
+	"sampleTopographicalMap": {
+		"tag": null,
+		"headline": "SAMPLE TOPOGRAPHICAL MAP",
+		"description": "SmartGrid Surveying conducted a comprehensive topographical survey in Usenge, Siaya County, focused on mapping and identifying existing and potential water pipeline infrastructure. This project supports the community's initiative to enhance water distribution efficiency and infrastructure planning across the region.",
+		"map": {
+			"title": "MAP HIGHLIGHTS",
+			"description": "The topographical map integrates all essential cartographic elements:",
+			"image": "/media/surveying/topographical/sample-topographical-map.png",
+			"items": [
+				"Scale: 1:2500 for high‑resolution accuracy",
+				"Grid lines for coordinate referencing",
+				"Contour and elevation data for terrain analysis",
+				"Legend detailing roads, pipelines, powerlines, and water facilities",
+				"Survey metadata including date, locality, client, and verification signatures"
+			]
+		}
+	},
+
+	"surveyingInstruments": {
+		"tag": null,
+		"headline": "Our Surveying Instruments",
+		"description": "We Use Advanced, Calibrated, Precise equipment to ensure every point is accurate and reliable for your construction and engineering projects across Kenya and Beyond.",
+		"items": [
+			{
+				"label": "RTK GNSS FOIF A90",
+				"image": "/media/instruments/RTK-GNSS-FOIF-A90.jpg"
+			},
+			{
+				"label": "TOTAL STATIONS",
+				"image": "/media/instruments/TOTAL-STATIONS.jpg"
+			},
+			{
+				"label": "AUTOMATIC LEVELS",
+				"image": "/media/instruments/AUTOMATIC-LEVELS.jpg"
+			},
+			{
+				"label": "LASER SCANNERS",
+				"image": "/media/instruments/LASER-SCANNERS.jpg"
+			}
+		]
+	},
+	"whyConductSurvey": {
+		"tag": null,
+		"headline": "Why Conduct a Topographical Survey",
+		"description": "",
+		"items": [
+			{
+				"title": "Accurate Land Mapping",
+				"description": "Smartgrid Engineering ensures every contour, elevation, and surface detail is measured with precision for error-free designs."
+			},
+			{
+				"title": "Better Construction Planning",
+				"description": "Identify slopes, drainage, and underground utilities before breaking ground to reduce costly surprises."
+			},
+			{
+				"title": "Legal & Compliance",
+				"description": "Ensure your surveys meet government and municipal regulations to avoid legal issues during project approvals."
+			},
+			{
+				"title": "Infrastructure Development",
+				"description": "Provide the foundation for roads, bridges, and large-scale projects with reliable survey data."
+			},
+			{
+				"title": "Flood Risk Assessment",
+				"description": "Analyze terrain elevations and drainage systems to mitigate flood risks in all developments."
+			},
+			{
+				"title": "Land Disputes & Boundary Clarifications",
+				"description": "Resolve disputes and clarify land boundaries with precise survey data from Smartgrid Engineering."
+			}
+		]
+	}
+}

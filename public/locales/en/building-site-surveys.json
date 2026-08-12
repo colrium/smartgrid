@@ -1,0 +1,130 @@
+{
+	"hero": {
+		"headline": "BUILDING & ENGINEERING SURVEYS",
+		"title": "Survey Smarter, Build Stronger",
+		"image": "/media/surveying/building-site-surveys/AG8ng.jpeg",
+		"description": "Leading Africa's Land and Aerial Surveying Revolution",
+		"ctaPrimary": {
+            "label": "Get Your Free Consultation",
+            "href": "mailto:smartgridsurveying@gmail.com"
+        }
+	},
+	"section1": {
+		"tag": "Smarter Construction",
+		"headline": "Precision Surveys for Smarter Construction",
+		"description": "At Smartgrid Surveying, we provide expert building site surveying services designed to ensure accuracy, efficiency, and compliance in construction projects. Whether you're planning a residential, commercial, or industrial development, our advanced surveying technology and experienced professionals deliver the data you need to build with confidence."
+	},
+	"section2": {
+		"tag": "Build Smarter",
+		"headline": "Reliable. Accurate. Fast. Powerful.",
+		"subtitle": "Smartgrid Surveying is your trusted surveying partner!",
+		"description": "Build Smarter from the Ground Up—our drone-enabled site engineering surveys deliver precise measurements, rapid terrain insights, and informed decision-making for your construction projects. By capturing high-resolution topographic data, 3D ground models, and accurate boundary visuals, we streamline site planning and reduce costly rework. Whether you're breaking ground or managing infrastructure upgrades, SmartGrid Surveying gives you the geospatial clarity needed to engineer with confidence and precision.",
+		"ctaPrimary": {
+			"label": "Email Us Today!",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"siteEngineeringSurveys": {
+		"tag": null,
+		"headline": "Precision Site Engineering Surveys",
+		"description": "Explore how SmartGrid Surveying leverages cutting-edge drone, LiDAR, and geospatial technologies to deliver engineering-grade surveys that empower construction and infrastructure development.",
+		"items": [
+			{
+				"title": "Topographic Surveys",
+				"description": "We map both natural and built features, offering vital elevation and terrain insights for civil and structural planning."
+			},
+			{
+				"title": "Construction Staking & Layout",
+				"description": "Precision layout services ensure construction follows design specifications exactly—minimizing errors and delays."
+			},
+			{
+				"title": "3D Laser Scanning & LiDAR Mapping",
+				"description": "From point clouds to mesh models, we digitize your site for design coordination, BIM input, and pre-construction validation."
+			},
+			{
+				"title": "Boundary & Title Surveys",
+				"description": "Establish legal property limits, easements, and encroachments—essential for permitting and land development."
+			},
+			{
+				"title": "As-Built Surveys",
+				"description": "Document and verify completed works against original plans for certification, compliance, and project closeout."
+			},
+			{
+				"title": "Underground Utility Surveys",
+				"description": "Detect and map buried infrastructure with minimal disruption—vital for excavation planning and utility coordination."
+			}
+		]
+	},
+	"cta": {
+		"tag": null,
+		"headline": "Partner with SmartGrid for Precision Site Surveys",
+		"description": "",
+		"ctaPrimary": {
+			"label": "Get in Touch",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+
+	"process": {
+		"tag": null,
+		"headline": "Land Surveying Process",
+		"image": "",
+		"items": [
+			{
+				"label": "Pre-Survey Planning",
+				"description": "Conduct a thorough site evaluation and assess flight parameters for drone survey readiness."
+			},
+			{
+				"label": "Establishing Ground Control",
+				"description": "Place georeferenced ground control points (GCPs) for accurate integration of aerial data."
+			},
+			{
+				"label": "Drone Flight Operation",
+				"description": "Deploy drone with precise flight paths, capturing high-resolution imagery and topographic data."
+			},
+			{
+				"label": "Data Processing & Analysis",
+				"description": "Process aerial data using photogrammetry software to generate 3D models, orthoimages, and contours."
+			},
+			{
+				"label": "Validation & Accuracy Check",
+				"description": "Use total stations and RTK-GNSS systems to validate drone data and ensure the highest accuracy."
+			},
+			{
+				"label": "Final Survey Deliverables",
+				"description": "Generate CAD drawings, GIS layers, and digital reports for final project handover and analysis."
+			}
+		]
+	},
+	"exploreMore": {
+		"tag": null,
+		"headline": "Explore more...",
+		"description": "",
+		"items": [
+			{
+				"title": "Leveling",
+				"image": "/media/surveying/building-site-surveys/leveling.jpeg"
+			},
+			{
+				"title": "Excavation services",
+				"image": "/media/surveying/building-site-surveys/excavation-services.jpg"
+			},
+			{
+				"title": "As-built Surveys",
+				"image": "/media/surveying/building-site-surveys/as-built-surveys.jpeg"
+			},
+			{
+				"title": "Buildings stakeout",
+				"image": "/media/surveying/building-site-surveys/buildings-stakeout.jpeg"
+			},
+			{
+				"title": "Utilities mapping",
+				"image": "/media/surveying/building-site-surveys/utilities-mapping.jpeg"
+			},
+			{
+				"title": "Evaluation and monitoring",
+				"image": "/media/surveying/building-site-surveys/evaluation-monitoring.jpeg"
+			}
+		]
+	}
+}
