@@ -45,6 +45,11 @@
 			"page_title": "Mali za Sehemu",
 			"meta_description": "Uchunguzi wa mali za sehemu ulioidhinishwa (mipango ya strata) — mipango ya hatimiliki ya sehemu, uchunguzi wa vitengo, ukaguzi wa mipaka na uvamizi, na uchanganuzi wa 3D wa as-built.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"cadastral-surveys": {
+			"page_title": "Uchunguzi wa Cadastral",
+			"meta_description": "Uchunguzi wa cadastral na mipaka — jua mipaka yako na ujenge kwa ujasiri. Mistari sahihi ya mali, utambuzi wa uvamizi na kuzuia migogoro.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {

@@ -1,0 +1,45 @@
+{
+	"hero": {
+		"headline": "CADASTRAL SURVEYS",
+		"title": "Know Your Boundaries, Build with Confidence",
+		"image": "/media/surveying/cadastral-surveys/AG8ng.jpg",
+		"description": "",
+		"ctaPrimary": {
+			"label": "Get Your Free Consultation",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"section1": {
+		"tag": "Build Confidently",
+		"headline": "What is a boundary survey?",
+		"image": "/media/surveying/cadastral-surveys/AG8ngQ.png",
+		"description": "A boundary survey determines the legal property lines of a parcel of land. Using advanced GPS, total stations, and historical land records, SmartGrid Surveying provides highly accurate maps that define property limits and identify any encroachments or discrepancies."
+	},
+	"whyBoundarySurveys": {
+		"tag": null,
+		"headline": "Why Are Boundary Surveys Essential? ",
+		"description": "",
+		"items": [
+			{
+                "icon": "scale-balance",
+				"title": "Avoid legal disputes",
+				"description": "Prevent costly property line conflicts with neighbors by ensuring accurate boundary identification."
+			},
+			{
+				"icon": "account-hard-hat",
+				"title": "Ensure Construction Compliance",
+				"description": "Build within your legally defined property limits to meet zoning and regulatory requirements."
+			},
+			{
+				"icon": "shield-sun",
+				"title": "Protect Your Investment",
+				"description": "Know exactly what you own before buying, selling, or developing land."
+			},
+			{
+				"icon": "receipt-text-check",
+				"title": "Resolve Encroachments",
+				"description": "Identify overlapping structures or fencing issues and take corrective action before they become major problems."
+			}
+		]
+	}
+}

@@ -1,0 +1,45 @@
+{
+	"hero": {
+		"headline": "UCHUNGUZI WA CADASTRAL",
+		"title": "Jua Mipaka Yako, Jenga kwa Ujasiri",
+		"image": "/media/surveying/cadastral-surveys/AG8ng.jpg",
+		"description": "",
+		"ctaPrimary": {
+			"label": "Pata Ushauri Wako wa Bure",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"section1": {
+		"tag": "Jenga kwa Ujasiri",
+		"headline": "Ni nini uchunguzi wa mipaka?",
+		"image": "/media/surveying/cadastral-surveys/AG8ngQ.png",
+		"description": "Uchunguzi wa mipaka huamua mistari ya kisheria ya mali ya kiwanja cha ardhi. Kwa kutumia GPS ya kisasa, total stations, na rekodi za kihistoria za ardhi, SmartGrid Surveying hutoa ramani sahihi sana zinazofafanua mipaka ya mali na kutambua uvamizi au hitilafu zozote."
+	},
+	"whyBoundarySurveys": {
+		"tag": null,
+		"headline": "Kwa Nini Uchunguzi wa Mipaka Ni Muhimu? ",
+		"description": "",
+		"items": [
+			{
+				"icon": "scale-balance",
+				"title": "Epuka migogoro ya kisheria",
+				"description": "Zuia migogoro ya gharama kubwa ya mistari ya mali na majirani kwa kuhakikisha utambuzi sahihi wa mipaka."
+			},
+			{
+				"icon": "account-hard-hat",
+				"title": "Hakikisha Uzingatiaji wa Ujenzi",
+				"description": "Jenga ndani ya mipaka yako iliyofafanuliwa kisheria ili kukidhi mahitaji ya ukandaji na kanuni."
+			},
+			{
+				"icon": "shield-sun",
+				"title": "Linda Uwekezaji Wako",
+				"description": "Jua hasa unachomiliki kabla ya kununua, kuuza, au kuendeleza ardhi."
+			},
+			{
+				"icon": "receipt-text-check",
+				"title": "Suluhisha Uvamizi",
+				"description": "Tambua miundo au masuala ya ua yanayopishana na uchukue hatua za kurekebisha kabla ya kuwa matatizo makubwa."
+			}
+		]
+	}
+}

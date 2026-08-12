@@ -1,4 +1,5 @@
 import buildingsitesurveys from '../public/locales/en/building-site-surveys.json';
+import cadastralsurveys from '../public/locales/en/cadastral-surveys.json';
 import common from '../public/locales/en/common.json';
 import contact from '../public/locales/en/contact.json';
 import home from '../public/locales/en/home.json';
@@ -11,6 +12,7 @@ import topographicalsurveys from '../public/locales/en/topographical-surveys.jso
 
 const resources = {
   'building-site-surveys': buildingsitesurveys,
+  'cadastral-surveys': cadastralsurveys,
   common,
   contact,
   home,
