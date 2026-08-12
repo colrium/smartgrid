@@ -1,0 +1,180 @@
+{
+	"hero": {
+		"headline": "Mali za Sehemu, Mipango na Vitengo.",
+		"image": "/media/surveying/sectional-properties/AG8ng.jpg",
+		"description": "Kiongozi wa Mapinduzi ya Uchunguzi wa Ardhi na Angani Afrika"
+	},
+	"section1": {
+		"tag": "Uchunguzi wa mali za sehemu ulioidhinishwa",
+		"headline": "Ya Kuaminika. Inaweza Kupanuliwa. Haraka. Yenye Ufanisi.",
+		"description": "SmartGrid hutoa uchunguzi wa mali za sehemu ulioidhinishwa (mipango ya strata) unaozingatia mahitaji ya usajili wa ardhi wa eneo. \n\nTunaweka ramani ya mali ya pamoja, sehemu za matumizi ya kipekee, ukubwa wa vitengo na kuandaa mipango ya sakafu iliyoidhinishwa na ratiba za maeneo tayari kwa uwasilishaji.",
+		"ctaPrimary": {
+			"label": "Anza Uchunguzi wa Mali za Sehemu Nasi!",
+			"href": "/aerial-drones/drone-imagery-surveys"
+		}
+	},
+	"process": {
+		"tag": "Mchakato",
+		"headline": "Mchakato wa Uchunguzi wa Mali za Sehemu",
+		"description": "",
+		"items": [
+			{
+				"label": "Uchunguzi wa awali wa tovuti",
+				"description": "Ziara ya tovuti, pima udhibiti na uhakiki mipaka na alama ya jengo."
+			},
+			{
+				"label": "Uchunguzi wa kina wa vitengo",
+				"description": "Tumia total station / GNSS na uchanganuzi wa laser pale inapohitajika kunasa ukubwa sahihi wa sakafu na urefu wa dari."
+			},
+			{
+				"label": "Utayarishaji wa mipango",
+				"description": "Toa mipango ya sehemu (CAD), ratiba za vitengo, mahesabu ya maeneo na mipango ya PDF na uthibitisho."
+			}
+		],
+		"ctaPrimary": {
+			"label": "Omba Nukuu",
+			"href": "mailto:info@smartgridsurveying.com?subject=Request%20for%20Sectional%20Property%20Survey%20Quote&body=Dear%20SmartGrid%20Surveying%20Team,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20quotation%20for%20a%20Sectional%20Property%20Survey.%20Please%20find%20my%20project%20details%20below:%0D%0A%0D%0AProject%20Name:%20%0D%0ALocation:%20%0D%0AProperty%20Type:%20(e.g.%20apartment,%20commercial,%20mixed-use)%0D%0ANumber%20of%20Units:%20%0D%0AAdditional%20Information:%20%0D%0A%0D%0AThank%20you.%0D%0A%0D%0ABest%20regards,%0D%0A[Your%20Full%20Name]%0D%0A[Your%20Phone%20Number]"
+		},
+		"ctaSecondary": {
+			"label": "Pakua Mfano wa Mpango",
+			"href": "mailto:info@smartgridsurveying.com?subject=Request%20for%20Sample%20Sectional%20Plan&body=Dear%20SmartGrid%20Surveying%20Team,%0D%0A%0D%0AI%20would%20like%20to%20receive%20a%20sample%20Sectional%20Plan%20to%20understand%20your%20deliverables.%0D%0A%0D%0APlease%20find%20my%20details%20below:%0D%0A%0D%0AName:%20%0D%0AOrganization/Company:%20%0D%0AEmail:%20%0D%0APhone:%20%0D%0AProject%20Type:%20%0D%0A%0D%0AThank%20you.%0D%0A%0D%0ABest%20regards,%0D%0A[Your%20Name]"
+		}
+	},
+	"sectionalServices": {
+		"tag": null,
+		"headline": "HUDUMA ZA SEHEMU",
+		"description": "",
+		"items": [
+			{
+				"title": "Mipango ya Hatimiliki za Sehemu",
+				"image": "/media/surveying/sectional-properties/sectional-title-plans.jpeg",
+				"description": ""
+			},
+			{
+				"title": "Uchunguzi wa Vitengo na Ratiba za Maeneo",
+				"image": "/media/surveying/sectional-properties/unit-surveys-area-schedules.jpeg",
+				"description": ""
+			},
+			{
+				"title": "Ukaguzi wa Mipaka na Uvamizi",
+				"image": "/media/surveying/sectional-properties/boundary-encroachment-checks.jpeg",
+				"description": ""
+			},
+			{
+				"title": "Uchanganuzi wa 3D na Uchunguzi wa As-built",
+				"image": "/media/surveying/sectional-properties/3d-scanning-as-built-survey.jpeg",
+				"description": ""
+			}
+		]
+	},
+	"sectionalPropertyServices": {
+		"tag": null,
+		"headline": "Huduma Zetu za Mali za Sehemu",
+		"description": "Huduma kamili kuanzia mipango ya sehemu hadi as-builts za 3D — iliyoundwa kwa usahihi, uzingatiaji, na ufanisi.",
+		"items": [
+			{
+				"title": "Mipango ya Hatimiliki za Sehemu",
+				"description": "Andaa na uidhinishe mipango ya hatimiliki ya sehemu / strata kwa maendeleo mapya na migawanyo katika vitengo."
+			},
+			{
+				"title": "Uchunguzi wa Vitengo na Ratiba za Maeneo",
+				"description": "Vipimo sahihi vya ndani na nje vya vitengo, mahesabu ya maeneo ya wavu/jumla na ratiba za kumbukumbu."
+			},
+			{
+				"title": "Ukaguzi wa Mipaka na Uvamizi",
+				"description": "Thibitisha mipaka, angalia mistari ya kuta za pamoja na tambua uvamizi unaoathiri mipango ya sehemu."
+			},
+			{
+				"title": "Uchanganuzi wa 3D na As-Builts",
+				"description": "Uchanganuzi wa laser (LiDAR ya ardhini) kwa majengo ya orofa nyingi na jiometri ngumu — point clouds za haraka na za kina."
+			}
+		]
+	},
+	"faq": {
+		"tag": null,
+		"headline": "MASWALI YANAYOULIZWA MARA KWA MARA",
+		"items": [
+			{
+				"q": "Ni nini \"mpango wa sehemu\" na unahitajika lini?",
+				"a": "Chini ya Sehemu ya 4 ya Sheria ya Kenya, \"mpango wa sehemu\" ni hati kwa ajili ya kugawanya muundo au sehemu iliyopo katika vitengo viwili au zaidi kwa umiliki tofauti. Sheria inatumika kwa ardhi inayomilikiwa kwa freehold au leasehold yenye mwaka angalau 21 uliosalia.\n\nJinsi tunavyozingatia SmartGrid:",
+				"b": [
+					"Tunatumia wapima ardhi walioidhinishwa kuandaa mipango ya sehemu iliyorejelewa kijiografia inayokidhi vigezo vya kisheria (tazama Sehemu ya 9) ikiwa pamoja na ufafanuzi wazi wa vitengo, mambo ya vitengo, na uchoraji wa ramani ya mali ya pamoja.",
+					"Tunathibitisha kwamba hati-kuu ya umiliki (parcel mama) ni halali (freehold au leasehold yenye mwaka ≥21 uliosalia) kabla ya kuanza mpango."
+				]
+			},
+			{
+				"q": "Ni mahitaji gani ya kiufundi na kikanuni kwa mpango wa sehemu?",
+				"a": "Sehemu ya 9 ya Sheria inaweka mahitaji: mpango lazima urejelewe kijiografia, uwe na kichwa kinachosema \"Sectional Plan\", uonyeshe mipaka ya vitengo kwa sakafu/kuta/dari, uwe na ratiba ya mambo ya vitengo, uonyeshe kategoria ya mtumiaji, na utiwe saini na mwenye mali na mamlaka ya upimaji. \n\n Zaidi ya hayo, Sehemu ya 11 inahitaji uidhinisho: wa mchunguzi anayethibitisha kwamba vitengo viko ndani ya mipaka ya kiwanja, na wa serikali ya kaunti ikikubali mgawanyo wa jengo.\n\nJinsi SmartGrid inavyozingatia:",
+				"b": [
+					"Tunafanya uchunguzi wa GNSS/total-station na kutoa mchoro wa CAD uliorejelewa kijiografia unaoendana na kuratibu za kiwanja na mfumo wa udhibiti wa usajili.",
+					"Tunashirikiana na mamlaka ya uidhinishaji wa majengo ya serikali ya kaunti kuhakikisha mgawanyo unaoendana na mipango iliyoidhinishwa ya jengo na kupata cheti kinachohitajika kabla ya usajili.",
+					"Bidhaa zetu zinajumuisha ratiba ya mambo ya vitengo na mahesabu ya hisa za mali ya pamoja."
+				]
+			},
+			{
+				"q": "Nini hufanyika baada ya mpango wa sehemu kusajiliwa?",
+				"a": "Mara tu ukisajiliwa (chini ya Sehemu ya 5), rejesta ya kiwanja cha awali hufungwa, rejesta tofauti hufunguliwa kwa kila kitengo, na kila kitengo kinapata cheti chake cha umiliki (freehold) au cheti cha kukodisha (leasehold). Maslahi katika mali ya pamoja yanaonyeshwa. \n\nZaidi ya hayo, shirika (body corporate) huundwa moja kwa moja chini ya Sehemu ya 17 kusimamia mali ya pamoja.\n\nJinsi SmartGrid inavyozingatia:",
+				"b": [
+					"Uchunguzi wetu unaweka wazi mali ya pamoja na maeneo ya matumizi ya kipekee ili hati ya umiliki iweze kuwa na hisa sahihi ya mali ya pamoja (Sehemu ya 6).",
+					"Tunatoa nyaraka katika muundo unaoendana na rejesta ya ardhi ili rejesta iweze kusasishwa kwa ufanisi."
+				]
+			},
+			{
+				"q": "Wamiliki wa vitengo wana haki na wajibu gani chini ya Sheria ya Sehemu ya Kenya?",
+				"a": "Chini ya Sehemu ya 7, kila kitengo na mali ya pamoja hufurahia haki za msaada, makao, na ufikiaji wa huduma (ikijumuisha maji, mfumo wa maji taka, na umeme) kama haki za appurtenant. \n\n Sehemu ya 8 inasema kwamba dhima ya mmiliki kwa mizigo kwenye mali ya pamoja inalingana na kipengele chao cha kitengo. \n\nJinsi SmartGrid inavyozingatia:",
+				"b": [
+					"Katika ratiba zetu za vitengo, tunahesabu kipengele cha kitengo (hisa ya uwiano) kwa usahihi ili dhima ya wamiliki na haki za kupiga kura (katika shirika) ziamuliwe kwa haki.",
+					"Bidhaa zetu za uchunguzi zinaweka ramani za njia za huduma na easements ili haki za ufikiaji na huduma zifafanuliwe na kuandikwe waziwazi."
+				]
+			},
+			{
+				"q": "Kwa nini kubadilisha kodi za muda mrefu zilizopo kuwa hatimiliki za sehemu?",
+				"a": "Sehemu ya 13 ya Sheria inaamuru kwamba jengo linalojumuisha majengo yasiyojumuishwa katika mpango wa sehemu haliwezi kuuzwa kama kitengo hadi mpango huo usajiliwe. \n\n Zaidi ya hayo, Kanuni inahitaji kurejelewa kijiografia kwa mipango ya sehemu na ubadilishaji wa kodi za zamani za muda mrefu pale inapohitajika.\n\n Jinsi SmartGrid inavyozingatia:",
+				"b": [
+					"Kwa maendeleo ya zamani, tunafanya uchunguzi (diagnostics): tunaangalia kodi zilizopo, tunathibitisha kama mpango wa sehemu upo, na kama haupo, tunaandaa na kurejelea kijiografia mpango mpya, kuwezesha ubadilishaji halali.",
+					"Tunafanya kazi na washauri wa kisheria na rejesta ya ardhi kuhakikisha mchakato wa ubadilishaji unasimamiwa kwa usahihi na hatimiliki mpya inatolewa."
+				]
+			},
+			{
+				"q": "Ni nini matokeo ya kutozingatia?",
+				"a": "Kushindwa kusajili mpango wa sehemu inapohitajika kunamaanisha kwamba mauzo, uhamisho au ufadhili wowote kulingana na kitengo bila hati sahihi yanaweza kutoishia kutekelezeka.\n\n Msajili anaweza kuweka kizuizi kwenye hati kama mwendelezaji atashindwa kubadilisha (kulingana na Sehemu ya 13).\n\n Jinsi SmartGrid Surveying inavyozingatia:",
+				"b": [
+					"Tunahakikisha huduma zetu zinalinda dhidi ya kutozingatia kwa kutoa mipango ya uchunguzi inayokidhi mahitaji ya usajili wa kisheria—ili waendelezaji/wamiliki waepuke hatari ya shughuli kutofanya kazi.",
+					"Mchakato wetu wa udhibiti wa ubora unahakikisha kwamba mpango wa sehemu unasajiliwa na hatimiliki zinaweza kutolewa, kuepuka vikwazo au adhabu."
+				]
+			},
+			{
+				"q": "Masuala ya mipaka na uvamizi hushughulikiwaje kwa mali za sehemu?",
+				"a": "Sheria inahitaji kwamba mpango wa sehemu uandaliwe na mchunguzi anayethibitisha kwamba muundo upo ndani ya mipaka ya kiwanja na kwamba easements zozote (k.m., kwa overhangs) zinatolewa. \n\n Sehemu ya 10 inahusu mipaka ya vitengo: ikiwa ukuta wa kubeba mzigo unafanya mipaka, nyenzo za kumalizia ndani huhesabiwa kama sehemu ya kitengo. \n\n Jinsi SmartGrid Surveying inavyozingatia:",
+				"b": [
+					"Tunafanya uhakiki kamili wa mipaka kwa kutumia GNSS/total station na kutoa kuratibu za mfumo wa udhibiti zilizounganishwa na alama za rejesta; kisha tunathibitisha kwamba alama za jengo na maramuko (kama overhangs za mifereji) zinaendana na mipaka iliyosajiliwa ya kiwanja.",
+					"Tunarekodi uvamizi au kukengeuka, kuyachora kwenye CAD/PDF, na kushauri easements zinazohitajika au masahihisho kabla ya uwasilishaji kwa rejesta ya ardhi."
+				]
+			},
+			{
+				"q": "Ni bidhaa gani za mali za sehemu mwendelezaji/mwenye anapaswa kutarajia kutoka kwa mchunguzi?",
+				"a": "Sheria inatarajia mpango wa sehemu ulioandaliwa kitaalamu (kwa nakala nne) tayari kwa usajili, ratiba ya vitengo yenye mambo ya vitengo, mchoro uliorejelewa kijiografia, na uidhinisho wa kaunti/cheti. \n\n Jinsi SmartGrid inavyozingatia:",
+				"b": [
+					"Tunatoa kifurushi kamili: michoro ya CAD iliyorejelewa kijiografia, mipango ya PDF iliyoidhinishwa na mchunguzi aliyeidhinishwa, ratiba ya mambo ya vitengo, ripoti ya kuratibu, cheti cha kufuata, na nyaraka za msaada kwa uwasilishaji wa rejesta.",
+					"Pia tunasaidia katika mawasiliano na mamlaka husika (ofisi ya mipango ya kaunti, rejesta ya ardhi) kuhakikisha usajili sahihi."
+				]
+			}
+		]
+	},
+	"socials": {
+		"items": [
+			{
+				"name": "Linkedin",
+				"url": "https://www.google.com/url?q=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fsmartgrid-surveying%2F%3FviewAsMember%3Dtrue&sa=D&sntz=1&usg=AOvVaw2Xl7Wj_jgzQI4BmpN_e8_I"
+			},
+			{
+				"mane": "Facebook",
+				"url": "https://www.google.com/url?q=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D61573692652626%23&sa=D&sntz=1&usg=AOvVaw1g3GPpUcorud4pmhfsXw8-"
+			},
+			{
+				"name": "Whatsapp",
+				"url": "https://www.google.com/url?q=https%3A%2F%2Fwa.me%2F254107393023&sa=D&sntz=1&usg=AOvVaw2ogerNY-f_aw0ThREOG0yi"
+			}
+		]
+	}
+}

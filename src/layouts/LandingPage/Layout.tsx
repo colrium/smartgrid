@@ -26,7 +26,7 @@ export default function LandingPageLayout({ children }: { children: ReactNode })
 			<div id="back-to-top-anchor"></div>
 			<Navbar />
 
-			<main className="flex-1">
+			<main className="flex-1 -mt-24">
 				<div
 					className="fixed inset-0"
 					style={{

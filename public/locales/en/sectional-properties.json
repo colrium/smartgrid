@@ -1,0 +1,183 @@
+{
+	"hero": {
+		"headline": "Sectional Properties, Plans and Units.",
+		"image": "/media/surveying/sectional-properties/AG8ng.jpg",
+		"description": "Leading Africa's Land and Aerial Surveying Revolution"
+		
+	},
+	"section1": {
+		"tag": "Certified sectional property surveys",
+		"headline": "Reliable. Scalable. Fast. Effective.",
+		"description": "SmartGrid provides certified sectional property surveys (strata plans) that comply with local land registry requirements. \n\nWe map common property, exclusive use areas, unit extents and prepare certified floor plans and area schedules ready for submission.",
+		"ctaPrimary": {
+			"label": "Start your Survey with Us!",
+			"href": "/aerial-drones/drone-imagery-surveys"
+		}
+	},
+	"process": {
+		"tag": "Process",
+		"headline": "Sectional Property Survey Process",
+        "description": "",
+        "items": [
+            {
+				"label": "Site reconnaissance",
+				"description": "Site visit, measure control and verify boundaries and building footprint."
+			},
+            {
+				"label": "Detailed unit surveys",
+				"description": "Use total station / GNSS and laser scanning where required to capture accurate floor extents and ceiling heights."
+			},
+            {
+				"label": "Plan production",
+				"description": "Produce sectional plans (CAD), unit schedules, area calculations and PDF plans with certification."
+			}
+        ],
+		"ctaPrimary": {
+			"label": "Request a Quote",
+			"href": "mailto:info@smartgridsurveying.com?subject=Request%20for%20Sectional%20Property%20Survey%20Quote&body=Dear%20SmartGrid%20Surveying%20Team,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20quotation%20for%20a%20Sectional%20Property%20Survey.%20Please%20find%20my%20project%20details%20below:%0D%0A%0D%0AProject%20Name:%20%0D%0ALocation:%20%0D%0AProperty%20Type:%20(e.g.%20apartment,%20commercial,%20mixed-use)%0D%0ANumber%20of%20Units:%20%0D%0AAdditional%20Information:%20%0D%0A%0D%0AThank%20you.%0D%0A%0D%0ABest%20regards,%0D%0A[Your%20Full%20Name]%0D%0A[Your%20Phone%20Number]"
+		},
+        "ctaSecondary": {
+			"label": "Download Sample Plan",
+			"href": "mailto:info@smartgridsurveying.com?subject=Request%20for%20Sample%20Sectional%20Plan&body=Dear%20SmartGrid%20Surveying%20Team,%0D%0A%0D%0AI%20would%20like%20to%20receive%20a%20sample%20Sectional%20Plan%20to%20understand%20your%20deliverables.%0D%0A%0D%0APlease%20find%20my%20details%20below:%0D%0A%0D%0AName:%20%0D%0AOrganization/Company:%20%0D%0AEmail:%20%0D%0APhone:%20%0D%0AProject%20Type:%20%0D%0A%0D%0AThank%20you.%0D%0A%0D%0ABest%20regards,%0D%0A[Your%20Name]"
+		}
+	},
+	"sectionalServices": {
+		"tag": null,
+		"headline": "SECTIONAL SERVICES",
+		"description": "",
+		"items": [
+			{
+				"title": "Sectional Title Plans",
+                "image": "/media/surveying/sectional-properties/sectional-title-plans.jpeg",
+				"description": ""
+			},
+			{
+				"title": "Unit Surveys & Area Schedules",
+                "image": "/media/surveying/sectional-properties/unit-surveys-area-schedules.jpeg",
+				"description": ""
+			},
+			{
+				"title": "Boundary & Encroachment Checks",
+                "image": "/media/surveying/sectional-properties/boundary-encroachment-checks.jpeg",
+				"description": ""
+			},
+			{
+				"title": "3D Scanning and As-built survey",
+                "image": "/media/surveying/sectional-properties/3d-scanning-as-built-survey.jpeg",
+				"description": ""
+			}
+		]
+	},
+	"sectionalPropertyServices": {
+		"tag": null,
+		"headline": "Our Sectional Property Services",
+		"description": "Comprehensive services from sectional plans to 3D as-builts — designed for accuracy, compliance, and efficiency.",
+		"items": [
+            {
+			    "title": "Sectional Title Plans",
+			    "description": "Prepare and certify sectional title / strata plans for new developments and subdivisions into units."
+		    },
+            {
+			    "title": "Unit Surveys & Area Schedules",
+			    "description": "Accurate internal and external unit measurements, net/gross floor area calculations and schedules for record."
+		    },
+            {
+			    "title": "Boundary & Encroachment Checks",
+			    "description": "Confirm boundaries, check party wall lines and identify encroachments affecting sectional plans."
+		    },
+            {
+			    "title": "3D Scanning & As-Builts",
+			    "description": "Laser scanning (terrestrial LiDAR) for multi-storey complexes and complex geometries — rapid, detailed point clouds."
+		    }
+        ]
+	},
+
+	"faq": {
+		"tag": null,
+		"headline": "FREQUENTLY ASKED QUESTION",
+		"items": [
+			{
+				"q": "What is a “sectional plan” and when is it required?",
+				"a": "Under Section 4 of the Act of Kenya, a “sectional plan” is the document by which an existing structure or parcel is divided into two or more units for separate ownership. The Act applies to land held on freehold or on leasehold with at least 21 years remaining.\n\nHow we comply at SmartGrid:",
+                "b": [
+                    "We engage licensed surveyors to prepare geo‑referenced sectional plans meeting the legal criteria (see Section 9) including clear unit delineation, unit factors, and common property mapping.",
+                    "We verify that the head‑title (mother parcel) is valid (freehold or leasehold with ≥21 years remaining) before initiating the plan."
+                ]
+			},
+			{
+				"q": "What are the technical and regulatory requirements for a sectional plan?",
+				"a": "The Act’s Section 9 sets out the requirements: the plan must be geo‑referenced, have a heading stating “Sectional Plan”, show unit boundaries by floors/walls/ceilings, have a schedule of unit‑factors, show user category, and be signed by the proprietor and the survey authority. \n\n Additionally, Section 11 requires endorsements: by a surveyor certifying that the units lie within the parcel boundaries, and by the county government approving the building division.\n\nHow SmartGrid complies:",
+                "b": [
+                    "We perform GNSS/total‑station surveys and deliver a geo‑referenced CAD drawing that aligns with the parcel’s coordinates and registry survey control.",
+                    "We liaise with the county government’s building approval authority to ensure the division conforms with approved building plans and obtain the required certificate before registration.",
+                    "Our deliverable includes the schedule of unit‑factors and common‑property share calculations."
+                ]
+			},
+            {
+				"q": "What happens after a sectional plan is registered?",
+				"a": "Once registered (under Section 5), the register of the original parcel is closed, separate registers are opened for each unit, and each unit gets its own certificate of title (freehold) or certificate of lease (leasehold). The interest in the common property is shown. \n\nMoreover, the corporation (body corporate) is automatically constituted under Section 17 to manage the common property.\n\nHow SmartGrid complies:",
+                "b": [
+                    "Our surveys clearly mark the common property and exclusive‑use areas so that the title deed can contain the correct share in common property (Section 6).",
+                    "We provide the documentation in a format compatible with the land registry so that the register can be updated efficiently."
+                ]
+			},
+            {
+				"q": "What rights and obligations do unit owners have under the Sectional Act of Kenya?",
+				"a": "Under Section 7, each unit and the common property enjoy rights of support, shelter, and access to services (including water, sewer, and electricity) as appurtenant rights. \n\n Section 8 states that an owner’s liability for burdens on common property is proportionate to their unit factor. \n\nHow SmartGrid complies:",
+                "b": [
+                    "In our unit schedules, we compute the unit‑factor (proportional share) correctly so that owners’ liability and voting rights (in the corporation) are determined fairly.",
+                    "Our survey deliverables map service routes and easements so the rights of access and services are clearly defined and documented."
+                ]
+			},
+            {
+				"q": "Why convert existing long‑term leases to sectional titles?",
+				"a": "Section 13 of the Act mandates that a building containing premises not included in a sectional plan cannot be sold as a unit until the plan is registered. \n\n Additionally, the Regulation requires geo‑referencing of sectional plans and the conversion of older long‑term leases where necessary.\n\n How SmartGrid complies:",
+                "b": [
+                    "For older developments, we undertake the diagnostics: we check existing leases, confirm if a sectional plan exists, and if not, we prepare and geo–reference a new plan, enabling lawful conversion.",
+                    "We work with legal advisors and the land registry to ensure the conversion process is correctly managed and the new titles are issued."
+                ]
+			},
+            {
+				"q": "What are the consequences of non‑compliance?",
+				"a": "Failure to register a sectional plan when required means any sale, transfer or financing based on a unit without proper title may be unenforceable.\n\n The Registrar may place a restriction on a title if a developer fails to convert (per Section 13).\n\n How at SmartGrid surveying complies:",
+                "b": [
+                    "We ensure that our services guard against non‑compliance by delivering survey plans that meet legal registration requirements—so developers/owners can avoid the risk of transactions being invalid.",
+                    "Our quality control process ensures that the sectional plan is registered and titles can issue, avoiding restrictions or penalties."
+                ]
+			},
+            {
+				"q": "How do boundary and encroachment issues work for sectional properties?",
+				"a": "The Act requires that the sectional plan be prepared by a surveyor who certifies that the structure lies within the parcel boundaries and that any easements (e.g., for overhangs) are granted. \n\nSection 10 deals with boundaries of units: if a load‑bearing wall forms a boundary, the finishing materials inside count as part of the unit. \n\n How at SmartGrid surveying complies:",
+                "b": [
+                    "We perform full boundary verification using GNSS/total station and produce control‑net coordinates tied to registry beacons; we then confirm that building footprints and projections (e.g., gutter overhangs) comply with recorded parcel boundaries.",
+                    "We document encroachments or deviations, map them in CAD/PDF, and advise on required easements or amendments before submission to land registry."
+                ]
+			},
+            {
+				"q": "What sectional properties deliverables should a developer/owner expect from the surveyor?",
+				"a": "The law expects a professionally prepared sectional plan (in quadruplicate) ready for registration, unit schedule with unit factors, geo‑referenced drawing, and county/certification endorsements. \n\n How SmartGrid complies:",
+                "b": [
+                    "We provide a full deliverable package: geo‑referenced CAD drawings, PDF plans endorsed by licensed surveyor, unit‑factors schedule, coordinate report, certificate of compliance, and support documentation for registry submission.",
+                    "We also assist in liaison with relevant authorities (county planning office, land registry) to ensure proper registration."
+                ]
+			}
+		]
+	},
+	"socials": {
+        
+		"items": [
+			{
+				"name": "Linkedin",
+				"url": "https://www.google.com/url?q=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fsmartgrid-surveying%2F%3FviewAsMember%3Dtrue&sa=D&sntz=1&usg=AOvVaw2Xl7Wj_jgzQI4BmpN_e8_I"
+			},
+			{
+				"mane": "Facebook",
+				"url": "https://www.google.com/url?q=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D61573692652626%23&sa=D&sntz=1&usg=AOvVaw1g3GPpUcorud4pmhfsXw8-"
+			},
+			{
+				"name": "Whatsapp",
+				"url": "https://www.google.com/url?q=https%3A%2F%2Fwa.me%2F254107393023&sa=D&sntz=1&usg=AOvVaw2ogerNY-f_aw0ThREOG0yi"
+			}
+		]
+	}
+}

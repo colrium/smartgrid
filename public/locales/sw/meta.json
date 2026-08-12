@@ -40,6 +40,11 @@
 			"page_title": "Uchunguzi wa Kiwanja cha Ujenzi",
 			"meta_description": "Uchunguzi wa usahihi kwa ajili ya ujenzi bora — uchunguzi wa kiwanja, upangaji na mpangilio wa ujenzi, uchunguzi wa mali na huduma za chini ya ardhi.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"sectional-properties": {
+			"page_title": "Mali za Sehemu",
+			"meta_description": "Uchunguzi wa mali za sehemu ulioidhinishwa (mipango ya strata) — mipango ya hatimiliki ya sehemu, uchunguzi wa vitengo, ukaguzi wa mipaka na uvamizi, na uchanganuzi wa 3D wa as-built.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {

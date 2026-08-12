@@ -40,6 +40,11 @@
 			"page_title": "Building site surveys",
 			"meta_description": "Precision Surveys for Smarter Construction — building site surveys, construction staking & layout, as-built and underground utility surveys.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"sectional-properties": {
+			"page_title": "Sectional Properties",
+			"meta_description": "Certified sectional property surveys (strata plans) — sectional title plans, unit surveys, boundary & encroachment checks, and 3D as-built scanning.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {
