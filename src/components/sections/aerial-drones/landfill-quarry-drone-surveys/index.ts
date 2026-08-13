@@ -1,0 +1,10 @@
+export { HeroSection } from "./HeroSection";
+export { default as HeroSectionDefault } from "./HeroSection";
+export { QuarryServicesSection } from "./QuarryServicesSection";
+export { default as QuarryServicesSectionDefault } from "./QuarryServicesSection";
+export { QuarryServicesItemsSection } from "./QuarryServicesItemsSection";
+export { default as QuarryServicesItemsSectionDefault } from "./QuarryServicesItemsSection";
+export { MaximizeProductivitySection } from "./MaximizeProductivitySection";
+export { default as MaximizeProductivitySectionDefault } from "./MaximizeProductivitySection";
+export { WhatWeOfferSection } from "./WhatWeOfferSection";
+export { default as WhatWeOfferSectionDefault } from "./WhatWeOfferSection";

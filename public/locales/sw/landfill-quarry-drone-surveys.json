@@ -1,0 +1,96 @@
+{
+	"hero": {
+		"headline": "Upime Kwa Busara, Jenga Kwa Nguvu Zaidi",
+		"title": "UCHUNGUZI WA NDEGE WA MASHIMO YA TAKA NA MACHIMBO",
+		"image": "/media/aerial-drones/landfill-quarry-drone-surveys/01.jpg",
+		"description": "Kuongoza Mapinduzi ya Upimaji wa Ardhi na Angani barani Afrika. Fungua uchoraji ramani, kipimo, na ufuatiliaji wa haraka, wa gharama nafuu, na salama zaidi wa zaidi ya ekari 1000 kwa wakati mmoja.",
+		"ctaPrimary": {
+			"icon": "gift",
+			"label": "Pata Ushauri Wako wa Bure",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"quarryServices": {
+		"tag": "Akili ya Tovuti",
+		"headline": "HUDUMA ZA MACHIMBO",
+		"description": "Fungua Usahihi. Kuza Faida. Uchunguzi wetu wa ndege na ardhi kwa machimbo hutoa data unayohitaji—haraka, salama, na sahihi zaidi kuliko hapo awali."
+	},
+	"quarryServicesItems": {
+		"tag": null,
+		"headline": "Kubadilisha Usimamizi wa Machimbo, Taka na Rasilimali",
+		"description": "",
+		"items": [
+			{
+				"icon": "cube-scan",
+				"title": "Ufuatiliaji wa Kiasi cha Tovuti ya Taka",
+				"description": "Tumia uchunguzi wa ndege wa mwonekano wa juu kukadiria uwezo wa tovuti ya taka na kusimamia nafasi ya baadaye kwa ufanisi."
+			},
+			{
+				"icon": "excavator",
+				"title": "Uchambuzi wa Kukata na Kujaza kwa Machimbo",
+				"description": "Fuatilia kiasi cha uchimbaji na mabadiliko ya uso kwa muda kudumisha kufuata kanuni na faida."
+			},
+			{
+				"icon": "map",
+				"title": "Uchoraji Ramani wa Topografia",
+				"description": "Mifano sahihi ya ardhi ya 3D inayozalishwa kupitia UAV na GNSS kwa upangaji, kubuni, na mipango."
+			}
+		]
+	},
+	"maximizeProductivity": {
+		"tag": "Haraka, Busara Zaidi",
+		"headline": "Kuongeza Tija. Kupunguza Bahati Nasibu.",
+		"description": "Tumia uchunguzi wa kiasi wa kisasa wa ndege za SmartGrid kufanya maamuzi ya haraka na ya busara zaidi tovutini. Acha data iongoze njia ya faida."
+	},
+	"whatWeOffer": {
+		"tag": "Huduma",
+		"headline": "Huduma Zetu za Uchunguzi wa Angani",
+		"items": [
+			{
+				"title": "Uchoraji Ramani wa Angani",
+				"description": "Picha sahihi za ndege zisizo na rubani kwa upangaji, nyaraka, na uchambuzi.",
+				"popupContent": "SmartGrid Surveying hutoa uchoraji ramani wa angani wa usahihi wa hali ya juu kwa kutumia UAV kuzalisha orthomosaic zenye marejeleo ya kijiografia, data ya topografia, na ramani za msingi za kiwango cha upangaji. Suluhisho zetu zinasaidia miundombinu, huduma, na maendeleo ya ardhi kwa kasi na usahihi usio na mfano."
+			},
+			{
+				"title": "Ufuatiliaji wa Ujenzi",
+				"description": "Fuatilia shughuli za tovuti kwa taswira thabiti za angani za wakati halisi.",
+				"popupContent": "SmartGrid hutoa ufuatiliaji wa tovuti kupitia safari za ndege za mwonekano wa juu. Safari zetu za kiotomatiki hutoa sasisho za kila wiki, kugundua mkengeuko kutoka kwa ratiba, na kusaidia ufanyaji maamuzi kwa wasimamizi wa mradi na waendelezaji."
+			},
+			{
+				"title": "Ufuatiliaji wa Mazingira",
+				"description": "Ona mabadiliko ya ikolojia na fuatilia maeneo ya uhifadhi.",
+				"popupContent": "Kwa kutumia UAV, SmartGrid hufuatilia mabadiliko ya chanjo ya ardhi, ukataji miti, mmomonyoko, na viashiria vingine vya ikolojia. Data yetu inasaidia tathmini za athari na kufuata kanuni kwa taswira zinazorudiwa, zenye muhuri wa muda."
+			},
+			{
+				"title": "Uchoraji Ramani wa Kilimo",
+				"description": "Data ya multispectral ya ndege zisizo na rubani kwa afya ya mazao na uboreshaji wa shamba.",
+				"popupContent": "SmartGrid huiwezesha agronomists kwa data kuhusu afya ya mazao, mkazo wa mimea, na mifumo ya umwagiliaji. Tunatumia uchambuzi wa NDVI na multispectral kuboresha matumizi ya pembejeo na kuboresha uendelevu wa mavuno."
+			},
+			{
+				"title": "Uundaji wa Mifano ya 3D",
+				"description": "Mifano ya 3D yenye mwonekano halisi kusaidia upangaji na ukaguzi.",
+				"popupContent": "Tunaunda mifano ya kina ya mesh na yenye maandishi ya ardhi, majengo, na miundombinu. Mifano hizi ziko tayari za BIM na muhimu kwa uthibitishaji wa kubuni, ukaguzi, na upangaji wa kina."
+			},
+			{
+				"title": "Upangaji wa Miundombinu",
+				"description": "Data ya njia na ardhi kwa mpangilio bora wa miundombinu.",
+				"popupContent": "Tunachora ramani za njia na tovuti kwa kutumia LiDAR ya ndege na photogrammetry. Hii inahakikisha uwekaji bora wa barabara, mabomba, na maendeleo ya miji huku ikipunguza usumbufu wa mazingira."
+			},
+			{
+				"title": "DTMs na DEMs",
+				"description": "Mifano ya ardhi na mwinuko ya dijitali kwa kazi za maji na uhandisi wa kiraia.",
+				"popupContent": "Mifano yetu ya ardhi na mwinuko huwasaidia wahandisi wa kiraia na wanahidrolojia kuchambua mtiririko wa maji, uthabiti wa mteremko, na upangaji. Tunatoa data sahihi ya mwinuko kusaidia miundombinu inayostahimili."
+			},
+			{
+				"title": "Hesabu za Kiasi",
+				"description": "Hesabu kiasi cha nyenzo na kusimamia rasilimali kwa usahihi.",
+				"popupContent": "SmartGrid huhesabu kiasi cha kukata/kujaza na vipimo vya mrundikano kwa usahihi wa kiwango cha sentimita. Photogrammetry yetu ya angani hutoa matokeo ya haraka, salama, na yanayorudiwa."
+			},
+			{
+				"title": "Tathmini ya Maafa",
+				"description": "Data ya njia na ardhi kwa mpangilio bora wa miundombinu.",
+				"popupContent": "Baada ya mafuriko, maporomoko ya ardhi, au matetemeko ya ardhi, SmartGrid hutumia ndege zisizo na rubani kuandika uharibifu haraka. Data yetu husaidia wajibu kuweka vipaumbele vya hatua, kutenga msaada, na kupanga shughuli za uokoaji."
+			}
+		]
+	}
+}

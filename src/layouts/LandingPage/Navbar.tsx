@@ -137,7 +137,7 @@ export default function Navbar() {
 				<Container
 					maxWidth="lg"
 					classes={{
-						root: `mt-3 mb-1 rounded-4xl hairline bg-surface/85!  backdrop-blur-lg! transition-all duration-300 ${
+						root: `mt-3 mb-1 rounded-3xl bg-surface/85!  backdrop-blur-lg! transition-all duration-300 ${
 							state.isWindowScrolled ? "card-shadow-lift" : "card-shadow"
 						}`,
 					}}

@@ -21,17 +21,17 @@
 		"description": "",
 		"items": [
 			{
-				"icon": "stockpile",
+				"icon": "cube-scan",
 				"title": "Landfill Volume Monitoring",
 				"description": "Use high-resolution drone surveys to estimate landfill capacity and manage future space efficiently."
 			},
 			{
-				"icon": "map-contour",
+				"icon": "excavator",
 				"title": "Quarry Cut & Fill Analysis",
 				"description": "Track extraction volumes and surface changes over time to maintain compliance and profitability."
 			},
 			{
-				"icon": "map-contour",
+				"icon": "map",
 				"title": "Topographic Mapping",
 				"description": "Accurate 3D terrain models generated via UAV and GNSS for grading, design, and planning."
 			}

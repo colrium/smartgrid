@@ -414,7 +414,7 @@ select option {
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 11px;
 }
 
 ::-webkit-scrollbar-track {
@@ -427,5 +427,5 @@ select option {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-primary-dark);
+    background: var(--color-brand-700);
 } 

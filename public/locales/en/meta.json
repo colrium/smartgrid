@@ -110,6 +110,11 @@
 			"page_title": "Volumetric Surveys",
 			"meta_description": "Volumetric surveys done smarter — drone-enabled stockpile volumes, cut/fill quantities, quarry monitoring, and site balances with centimeter-level accuracy.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"landfill-quarry-drone-surveys": {
+			"page_title": "Landfill & Quarry Drone Surveys",
+			"meta_description": "Landfill and quarry drone surveys — faster, safer, and more accurate mapping, measurement, and monitoring of 1000+ acres at a time across Africa.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {
