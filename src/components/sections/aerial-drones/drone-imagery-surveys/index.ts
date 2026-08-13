@@ -1,0 +1,12 @@
+export { DroneImageryHeroSection } from "./DroneImageryHeroSection";
+export { default as DroneImageryHeroSectionDefault } from "./DroneImageryHeroSection";
+export { WhatWeOfferSection } from "./WhatWeOfferSection";
+export { default as WhatWeOfferSectionDefault } from "./WhatWeOfferSection";
+export { WhyDronesMatterSection } from "./WhyDronesMatterSection";
+export { default as WhyDronesMatterSectionDefault } from "./WhyDronesMatterSection";
+export { AerialSurveyDeliverablesSection } from "./AerialSurveyDeliverablesSection";
+export { default as AerialSurveyDeliverablesSectionDefault } from "./AerialSurveyDeliverablesSection";
+export { DronesSection } from "./DronesSection";
+export { default as DronesSectionDefault } from "./DronesSection";
+export { ProjectsAcrossAfricaSection } from "./ProjectsAcrossAfricaSection";
+export { default as ProjectsAcrossAfricaSectionDefault } from "./ProjectsAcrossAfricaSection";

@@ -75,6 +75,11 @@
 			"page_title": "GIS Mapping",
 			"meta_description": "GIS, mapping & remote sensing — UAV photogrammetry, LiDAR mapping, multispectral analysis and DEM creation. Precise spatial data for planning, engineering, and environmental projects.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"drone-imagery-surveys": {
+			"page_title": "Drone Imagery Surveys",
+			"meta_description": "Drone imagery surveys — reliable, scalable, fast and powerful. Map, measure, and monitor 1000+ acres at a time with cutting-edge drones across Africa.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {

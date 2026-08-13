@@ -1,0 +1,189 @@
+{
+	"hero": {
+		"headline": "UCHUNGUZI WA PICHA ZA NDEGE ZISIZO NA RUBANI",
+		"title": "Kuaminika. Kupanuka. Haraka. Nguvu.",
+		"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-01.jpg",
+		"description": "Fungua uchoraji ramani, upimaji, na ufuatiliaji wa haraka zaidi, wa gharama nafuu, na salama wa zaidi ya Ekari 1000 kwa wakati mmoja. Kwa ndege za kisasa zisizo na rubani na mbinu za upimaji wa ardhi, tunatoa data inayoweza kutumika kote Afrika na nje yake.",
+		"ctaPrimary": {
+			"label": "Chunguza Huduma Zetu za Angani",
+			"href": "/aerial-drones/drone-imagery-surveys"
+		}
+	},
+	"whatWeOffer": {
+		"tag": "Huduma",
+		"headline": "Huduma Zetu za Uchunguzi wa Angani",
+		"items": [
+			{
+				"title": "Uchoraji Ramani wa Angani",
+				"description": "Picha sahihi za ndege zisizo na rubani kwa mipango, nyaraka, na uchambuzi.",
+				"popupContent": "SmartGrid Surveying hutoa uchoraji ramani sahihi wa angani kwa kutumia UAV kuzalisha orthomosaic zenye marejeleo ya kijiografia, data ya topografia, na ramani za msingi za upangaji. Suluhisho zetu zinasaidia miundombinu, huduma, na maendeleo ya ardhi kwa kasi na usahihi usio na mfano."
+			},
+			{
+				"title": "Ufuatiliaji wa Ujenzi",
+				"description": "Fuatilia shughuli za kiwanja kwa kutumia picha za angani thabiti na za wakati halisi.",
+				"popupContent": "SmartGrid hutoa ufuatiliaji wa tovuti kupitia safari za ndege za mwonekano wa juu. Safari zetu za kiotomatiki hutoa masasisho ya kila wiki ya kuona, kugundua mkengeuko kutoka kwa ratiba, na kusaidia uamuzi kwa wasimamizi wa miradi na wakandarasi."
+			},
+			{
+				"title": "Ufuatiliaji wa Mazingira",
+				"description": "Ona mabadiliko ya ikolojia na fuatilia maeneo ya uhifadhi.",
+				"popupContent": "Kwa kutumia UAV, SmartGrid hufuatilia mabadiliko ya kifuniko cha ardhi, ukataji miti, mmomonyoko, na viashiria vingine vya ikolojia. Data yetu inasaidia tathmini za athari na kufuata kanuni kwa picha za muda zilizorudiwa na zilizowekwa alama."
+			},
+			{
+				"title": "Uchoraji Ramani wa Kilimo",
+				"description": "Data ya multispectral inayotokana na ndege zisizo na rubani kwa afya ya mazao na uboreshaji wa shamba.",
+				"popupContent": "SmartGrid huwapa agronomists data kuhusu afya ya mazao, mkazo wa mimea, na mifumo ya umwagiliaji. Tunatumia uchambuzi wa NDVI na multispectral kuboresha matumizi ya pembejeo na kuboresha uendelevu wa mavuno."
+			},
+			{
+				"title": "Muundo wa 3D",
+				"description": "Mifano halisi ya 3D kusaidia mipango na ukaguzi.",
+				"popupContent": "Tunaunda mifano ya 3D ya kina ya ardhi, majengo, na miundombinu. Mifano hii iko tayari kwa BIM na ni muhimu kwa uthibitisho wa muundo, ukaguzi, na upangaji wa kina."
+			},
+			{
+				"title": "Upangaji wa Miundombinu",
+				"description": "Data ya njia na ardhi kwa mpangilio bora wa miundombinu.",
+				"popupContent": "Tunachora ramani za njia na maeneo kwa kutumia LiDAR ya ndege zisizo na rubani na photogrammetry. Hii inahakikisha uwekaji bora wa barabara, mabomba, na maendeleo ya mijini huku ikipunguza usumbufu wa mazingira."
+			},
+			{
+				"title": "DTMs na DEMs",
+				"description": "Mifano ya kidijitali ya ardhi na mwinuko kwa kazi za maji na uhandisi wa kirahisi.",
+				"popupContent": "Mifano yetu ya ardhi na mwinuko huwasaidia wahandisi wa kirahisi na wataalamu wa maji kuchambua mtiririko wa maji, utulivu wa mteremko, na ujazo. Tunatoa data sahihi ya mwinuko kusaidia miundombinu thabiti."
+			},
+			{
+				"title": "Hesabu za Kiasi (Volumetric)",
+				"description": "Hesabu kiasi cha nyenzo na kusimamia rasilimali kwa usahihi.",
+				"popupContent": "SmartGrid hukokotoa kiasi cha cut/fill na vipimo vya hisa kwa usahihi wa kiwango cha sentimita. Photogrammetry yetu ya angani hutoa matokeo ya haraka, salama, na yanayorudiwa."
+			},
+			{
+				"title": "Tathmini ya Maafa",
+				"description": "Data ya njia na ardhi kwa mpangilio bora wa miundombinu.",
+				"popupContent": "Baada ya mafuriko, maporomoko ya ardhi, au matetemeko ya ardhi, SmartGrid hutumia ndege zisizo na rubani kuhariri uharibifu haraka. Data yetu huwasaidia wahudumu kutanguliza hatua, kugawa misaada, na kupanga shughuli za uokoaji."
+			}
+		]
+	},
+	"whyDronesMatter": {
+		"tag": "Mustakabali wa Upimaji",
+		"headline": "Kwa Nini Ndege Zisizo na Rubani Zina Umuhimu!",
+		"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-12.jpg",
+		"description": "Upimaji wa kisasa unabadilika—na ndege zisizo na rubani ziko katikati ya mabadiliko haya. Zinapeleka kasi, usahihi, usalama, na maarifa yenye nguvu ya kijiografia ambayo mbinu za jadi pekee haziwezi kufikia. Katika Smartgrid Surveying, tunatoa uchunguzi wa haraka, sahihi, na wa kina."
+	},
+	"aerialSurveyDeliverables": {
+		"tag": "Matokeo ya Data",
+		"headline": "Bidhaa za Uchunguzi wa Angani",
+		"description": "Suluhisho zetu za uchunguzi zinazotegemea ndege zisizo na rubani huboresha uamuzi kwa ujenzi, uhandisi, usimamizi wa ardhi, na ufuatiliaji wa mazingira. Tunakamata data sahihi ya kijiografia kwa kutumia jukwaa za kisasa za UAV zenye sensorer za RGB, LiDAR, na joto. Matokeo yote yameboreshwa kwa matumizi ndani ya michakato ya GIS, CAD, BIM, na uhandisi.",
+		"items": [
+			{
+				"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-04.jpg",
+				"title": "Orthomosaic",
+				"description": "GeoTIFF / JPEG + Picha mbichi"
+			},
+			{
+				"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-06.jpg",
+				"title": "DTM / DSM",
+				"description": "LAS / TIFF"
+			},
+			{
+				"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-13.jpg",
+				"title": "Mesh ya 3D",
+				"description": "OBJ / FBX"
+			},
+			{
+				"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-07.jpg",
+				"title": "Ramani za Contour",
+				"description": "DWG / DXF"
+			},
+			{
+				"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-14.jpg",
+				"title": "Point Clouds za 3D",
+				"description": "LAS / LAZ"
+			},
+			{
+				"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-05.jpg",
+				"title": "Ramani za Topografia",
+				"description": "DWG / PDF / SHP"
+			},
+			{
+				"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-08.jpg",
+				"title": "Ramani za NDVI na Multispectral",
+				"description": "Afya ya mimea na uchambuzi wa multispectral"
+			},
+			{
+				"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-15.jpg",
+				"title": "Ripoti za Uchunguzi",
+				"description": "PDF"
+			}
+		]
+	},
+	"drones": {
+		"tag": "Melia",
+		"headline": "Ndege Zetu Zisizo na Rubani",
+		"description": "Katika SmartGrid Surveying, tunatumia ndege za kisasa zisizo na rubani kukamata picha za angani za mwonekano wa juu na data ya multispectral kwa uchoraji ramani sahihi, ufuatiliaji, na upimaji.",
+		"items": [
+			{
+				"icon": "quadcopter",
+				"img": "/media/drones/dji-matrice-300-rtk.jpeg",
+				"label": "DJI Matrice 300 RTK",
+				"description": "DJI Matrice 300 RTK ni ndege yenye uwezo mwingi na yenye nguvu iliyoundwa kwa matumizi ya viwandani, ikijumuisha upimaji, uchoraji ramani, na ukaguzi. Ina uwezo wa juu wa kuruka, muda mrefu wa betri, na uwezo wa kubeba mizigo mbalimbali, na kuifanya kuwa bora kwa matumizi ya kitaalamu katika mazingira magumu."
+			},
+			{
+				"icon": "quadcopter",
+				"img": "/media/drones/dji-air-3s.jpeg",
+				"label": "DJI Air 3S",
+				"description": "DJI Air 3S ni ndege ndogo na inayobebeka inayotoa uwezo wa ubora wa juu wa upigaji picha na video za angani. Ina mfumo wa kamera mbili, muda mrefu wa kuruka, na aina za ndege za akili, na kuifanya kufaa kwa matumizi ya kitaalamu na ya burudani."
+			},
+			{
+				"icon": "quadcopter",
+				"img": "/media/drones/dji-mavic-3m-3e.jpeg",
+				"label": "DJI Mavic 3M / 3E",
+				"description": "DJI Mavic 3M / 3E ni ndege nyepesi na inayobebeka inayotoa uwezo bora wa picha za angani. Ina kamera ya mwonekano wa juu, sensorer za kuepuka vizuizi, na aina za ndege za akili, na kuifanya kuwa bora kwa kupiga picha na video za kupendeza kutoka angani."
+			},
+			{
+				"icon": "quadcopter",
+				"img": "/media/drones/dji-phantom-4.jpeg",
+				"label": "DJI Phantom 4",
+				"description": "DJI Phantom 4 ni ndege ya kiwango cha kitaalamu iliyoundwa kwa upigaji picha na video za angani. Ina kamera ya mwonekano wa juu yenye sensorer kubwa, aina za ndege za juu, na teknolojia ya kuepuka vizuizi, na kuifanya kufaa kwa kupiga picha na video za ubora wa juu kutoka angani."
+			}
+		],
+		"subheadline": "Je, ikiwa ungeweza kuchora ramani, kupima, na kufuatilia maeneo yote kwa haraka, kwa gharama nafuu, na kwa usalama zaidi? \n\n Katika Smartgrid Surveying, tunaifanya iwezekane — kote Afrika na nje yake."
+	},
+	"projectsAcrossAfrica": {
+		"tag": "Ufikiaji Wetu",
+		"headline": "MIRADI ILIYOFANYWA KOTE AFRIKA",
+		"images": [
+			"/media/aerial-drones/drone-imagery-surveys/drone-imagery-16.jpg",
+			"/media/aerial-drones/drone-imagery-surveys/drone-imagery-02.jpg"
+		],
+		"description": "Tumekamilisha uchunguzi wa angani katika nchi kadhaa za Afrika, tukisaidia serikali, wasanidi binafsi, na NGO. Hapa kuna baadhi ya mambo muhimu:",
+		"items": [
+			{
+				"icon": "map-marker",
+				"title": "Kenya – hekta 2,000",
+				"description": "Ukandaji wa kilimo Uasin Gishu"
+			},
+			{
+				"icon": "map-marker",
+				"title": "Ghana – hekta 3,500",
+				"description": "Uchoraji ramani wa mashamba ya kakao Kumasi"
+			},
+			{
+				"icon": "map-marker",
+				"title": "Rwanda – hekta 1,800",
+				"description": "Uchambuzi wa ardhi oevu Bugesera"
+			},
+			{
+				"icon": "map-marker",
+				"title": "Afrika Kusini – hekta 5,200",
+				"description": "Kiasi cha madini Limpopo"
+			},
+			{
+				"icon": "map-marker",
+				"title": "Nigeria – hekta 4,100",
+				"description": "Ufuatiliaji wa upanuzi wa miji Abuja"
+			},
+			{
+				"icon": "map-marker",
+				"title": "Mkoa wa Afrika Mashariki – hekta 10,000+",
+				"description": "Upangaji wa miundombinu na matumizi ya ardhi Kenya, Uganda, na Tanzania"
+			}
+		]
+	}
+}

@@ -75,6 +75,11 @@
 			"page_title": "Uchoraji Ramani wa GIS",
 			"meta_description": "GIS, uchoraji ramani na vihisishi vya mbali — photogrammetry ya UAV, uchoraji wa LiDAR, uchambuzi wa multispectral na uundaji wa DEM. Data sahihi ya kijiografia kwa miradi ya upangaji, uhandisi, na mazingira.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"drone-imagery-surveys": {
+			"page_title": "Uchunguzi wa Picha za Ndege Zisizo na Rubani",
+			"meta_description": "Uchunguzi wa picha za ndege zisizo na rubani — kuaminika, kupanuka, haraka na nguvu. Chora ramani, pima, na fuatilia zaidi ya ekari 1000 kwa wakati mmoja kwa ndege za kisasa kote Afrika.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {
