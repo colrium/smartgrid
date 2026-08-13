@@ -38,13 +38,13 @@ export function Lmx200FeaturesSection() {
 							<div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl" />
 
 							<div className="relative bg-surface p-4 rounded-[20px] hairline card-shadow">
-								<div className="relative aspect-[16/10] rounded-xl overflow-hidden bg-slate-900">
+								<div className="relative aspect-[16/12] rounded-xl overflow-hidden bg-slate-900">
 									<Image
 										src={section.image}
 										alt={section.headline}
 										fill
 										sizes="(min-width: 1024px) 65vw, 100vw"
-										className="object-cover object-center"
+										className="object-fill object-center"
 									/>
 								</div>
 							</div>

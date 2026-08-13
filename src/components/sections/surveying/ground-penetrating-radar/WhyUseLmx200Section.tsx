@@ -44,13 +44,13 @@ export function WhyUseLmx200Section() {
 						<FadeUp key={index} delay={(index % 4) * 0.07}>
 							<article className="group relative h-full flex flex-col overflow-hidden rounded-[20px] bg-surface hairline card-shadow transition-all duration-500 hover:card-shadow-lift hover:border-primary">
 								{item.image && (
-									<div className="relative h-96 overflow-hidden bg-slate-900">
+									<div className="relative h-72 overflow-hidden bg-slate-900">
 										<Image
 											src={item.image}
 											alt={item.title}
 											fill
 											sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-											className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+											className="object-fill object-center transition-transform duration-700 ease-out group-hover:scale-105"
 										/>
 										<div className="absolute inset-0 bg-gradient-to-t from-ink/50 to-transparent" />
 									</div>
