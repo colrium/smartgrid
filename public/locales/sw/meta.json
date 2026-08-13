@@ -70,6 +70,11 @@
 			"page_title": "Uchunguzi wa Bathymetric",
 			"meta_description": "Uchoraji ramani sahihi wa chini ya maji kwa mabwawa, maziwa, mito na bahari — uchunguzi wa kina na ardhi ya chini ya maji kwa madhumuni ya uhandisi, mazingira, na mipango.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"gis-mapping": {
+			"page_title": "Uchoraji Ramani wa GIS",
+			"meta_description": "GIS, uchoraji ramani na vihisishi vya mbali — photogrammetry ya UAV, uchoraji wa LiDAR, uchambuzi wa multispectral na uundaji wa DEM. Data sahihi ya kijiografia kwa miradi ya upangaji, uhandisi, na mazingira.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {

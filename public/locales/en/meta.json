@@ -70,6 +70,11 @@
 			"page_title": "Bathymetric Surveys",
 			"meta_description": "Precision underwater mapping for dams, lakes, rivers & oceans — sonar-based depth and terrain surveys for engineering, environmental, and planning purposes.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"gis-mapping": {
+			"page_title": "GIS Mapping",
+			"meta_description": "GIS, mapping & remote sensing — UAV photogrammetry, LiDAR mapping, multispectral analysis and DEM creation. Precise spatial data for planning, engineering, and environmental projects.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {

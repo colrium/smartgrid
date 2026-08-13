@@ -2,7 +2,7 @@
 	"hero": {
 		"headline": "GIS, MAPPING & REMOTE SENSING",
 		"title": "Survey Smarter, Build Stronger",
-		"image": "/images/placeholder.jpg",
+		"image": "/media/surveying/gis-mapping/gis-mapping-01.jpg",
 		"description": "Leading Africa's Land and Aerial Surveying Revolution. SmartGrid Surveying provides precise GIS and remote sensing services — from UAV photogrammetry, LiDAR mapping, to multispectral analysis and DEM creation.",
 		"ctaPrimary": {
 			"label": "Get Your Free Consultation",
@@ -12,32 +12,35 @@
 	"whatIsGis": {
 		"tag": "Spatial Intelligence",
 		"headline": "Geographic Information Systems (GIS)",
-		"image": "/images/placeholder.jpg",
-		"description": "At Smartgrid Surveying, we use GIS technology to bring data to life. By combining geographic science with cutting-edge mapping tools, we transform layers of data into actionable insights that power smarter decisions for governments, businesses, and communities across Africa and beyond. GIS (Geographic Information Systems) is a powerful technology that links location data with attributes, allowing users to visualize, analyze, and interpret spatial relationships. From urban planning to agriculture, GIS empowers you to see the bigger picture — and all the critical details."
+		"description": "At Smartgrid Surveying, we use GIS technology to bring data to life. By combining geographic science with cutting-edge mapping tools, we transform layers of data into actionable insights that power smarter decisions for governments, businesses, and communities across Africa and beyond. GIS (Geographic Information Systems) is a powerful technology that links location data with attributes, allowing users to visualize, analyze, and interpret spatial relationships. From urban planning to agriculture, GIS empowers you to see the bigger picture — and all the critical details.",
+        "ctaPrimary": {
+			"label": "Request GIS & RS services!",
+			"href": "/aerial-drones/drone-imagery-surveys"
+		}
 	},
 	"remoteSensingSolutions": {
 		"tag": "Advanced Data Capture",
 		"headline": "Remote Sensing Solutions",
-		"image": "/images/placeholder.jpg",
+		
 		"description": "SmartGrid Surveying provides precise GIS and remote sensing services — from UAV photogrammetry, LiDAR mapping, to multispectral analysis and DEM creation. We deliver accurate spatial data to support planning, engineering, and environmental projects across Kenya and Africa.",
 		"items": [
 			{
-				"icon": "camera-multispectral",
+				"image": "/media/surveying/gis-mapping/gis-mapping-01.jpg",
 				"title": "Multispectral Analysis",
 				"description": "Capture data across multiple spectral bands for agriculture, vegetation health, and environmental monitoring."
 			},
 			{
-				"icon": "vector-polygon",
+				"image": "/media/surveying/gis-mapping/gis-mapping-08.jpg",
 				"title": "Feature Extraction",
 				"description": "Identify and digitize geographic features such as buildings, roads, water bodies, and land cover from imagery."
 			},
 			{
-				"icon": "cube-scan",
+				"image": "/media/surveying/gis-mapping/gis-mapping-10.jpg",
 				"title": "Volumetric Calculations",
 				"description": "Compute volumes of stockpiles, cut/fill operations, and resource deposits with high precision."
 			},
 			{
-				"icon": "map-legend",
+				"image": "/media/surveying/gis-mapping/gis-mapping-07.jpg",
 				"title": "Land Use/Land Cover",
 				"description": "Classify and map land use categories and land cover types for planning and environmental management."
 			}
@@ -46,21 +49,20 @@
 	"mappingServices": {
 		"tag": "Core Capabilities",
 		"headline": "Mapping Services",
-		"image": "/images/placeholder.jpg",
 		"description": "SmartGrid Surveying provides precise GIS and remote sensing services — from UAV photogrammetry, LiDAR mapping, to multispectral analysis and DEM creation. We deliver accurate spatial data to support planning, engineering, and environmental projects across Kenya and Africa.",
 		"items": [
 			{
-				"icon": "drone",
+				"image": "/media/surveying/gis-mapping/gis-mapping-02.jpg",
 				"title": "Drone Photogrammetry",
 				"description": "High-resolution orthomosaics and point clouds for accurate site modeling and volumetrics."
 			},
 			{
-				"icon": "laser-scan",
+				"image": "/media/surveying/gis-mapping/gis-mapping-03.jpg",
 				"title": "LiDAR Mapping",
 				"description": "Precise terrain and vegetation models using UAV or terrestrial LiDAR."
 			},
 			{
-				"icon": "terrain",
+				"image": "/media/surveying/gis-mapping/gis-mapping-04.jpg",
 				"title": "DEM & DSM Production",
 				"description": "Digital Elevation Models and contour maps for planning and engineering."
 			}
@@ -69,7 +71,28 @@
 	"gisComponents": {
 		"tag": "Technology Stack",
 		"headline": "GIS Components",
-		"image": "/images/placeholder.jpg",
-		"description": "Our GIS solutions integrate hardware, software, data, people, and methods to create comprehensive spatial analysis and mapping systems."
+		"description": "Our GIS solutions integrate hardware, software, data, people, and methods to create comprehensive spatial analysis and mapping systems.",
+        "list": [
+            {
+                "title": "Hardware",
+                "description": "Physical tools like computers, servers, GPS devices, and drones that support GIS operations."
+            },
+            {
+				"title": "Software",
+				"description": "GIS applications such as ArcGIS, QGIS, and Google Earth Engine used for data processing and visualization."
+			},
+            {
+				"title": "Data",
+				"description": "The geographic information: raster images, vector files, tables, and metadata that form the core of GIS."
+			},
+            {
+				"title": "People",
+				"description": "GIS professionals and users who interpret, apply, and communicate geospatial insights."
+			},
+            {
+				"title": "Methods",
+				"description": "Standardized procedures and analytical techniques used in GIS workflows for accurate decision-making."
+			}
+        ]
 	}
 }

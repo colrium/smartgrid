@@ -1,0 +1,97 @@
+{
+	"hero": {
+		"headline": "GIS, UCHORAJI RAMANI NA VIHISISHI VYA MBALI",
+		"title": "Pima Kwa Umaalimu, Jenga kwa Nguvu",
+		"image": "/media/surveying/gis-mapping/gis-mapping-01.jpg",
+		"description": "Kuongoza Mapinduzi ya Upimaji wa Ardhi na Angani Afrika. SmartGrid Surveying hutoa huduma sahihi za GIS na vihisishi vya mbali — kutoka photogrammetry ya UAV, uchoraji wa LiDAR, hadi uchambuzi wa multispectral na uundaji wa DEM.",
+		"ctaPrimary": {
+			"label": "Pata Ushauri Wako Bure",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"whatIsGis": {
+		"tag": "Akili ya Kijiografia",
+		"headline": "Mifumo ya Taarifa za Kijiografia (GIS)",
+		"description": "Katika Smartgrid Surveying, tunatumia teknolojia ya GIS kuleta data hai. Kwa kuchanganya sayansi ya kijiografia na zana za kisasa za uchoraji ramani, tunageuza tabaka za data kuwa maarifa yanayoweza kuchukuliwa hatua ambayo huwezesha maamuzi bora kwa serikali, biashara, na jamii kote Afrika na nje yake. GIS (Mifumo ya Taarifa za Kijiografia) ni teknolojia yenye nguvu inayounganisha data ya eneo na sifa, ikiruhusu watumiaji kuona, kuchambua, na kufasiri uhusiano wa kijiografia. Kutoka upangaji wa miji hadi kilimo, GIS hukuwezesha kuona picha kubwa — na maelezo yote muhimu.",
+		"ctaPrimary": {
+			"label": "Omba huduma za GIS na RS!",
+			"href": "/aerial-drones/drone-imagery-surveys"
+		}
+	},
+	"remoteSensingSolutions": {
+		"tag": "Ukusanyaji wa Data wa Kisasa",
+		"headline": "Suluhisho za Vihisishi vya Mbali",
+		"description": "SmartGrid Surveying hutoa huduma sahihi za GIS na vihisishi vya mbali — kutoka photogrammetry ya UAV, uchoraji wa LiDAR, hadi uchambuzi wa multispectral na uundaji wa DEM. Tunatoa data sahihi ya kijiografia kusaidia miradi ya upangaji, uhandisi, na mazingira kote Kenya na Afrika.",
+		"items": [
+			{
+				"image": "/media/surveying/gis-mapping/gis-mapping-01.jpg",
+				"title": "Uchambuzi wa Multispectral",
+				"description": "Kukamata data katika bendi nyingi za spectral kwa kilimo, afya ya mimea, na ufuatiliaji wa mazingira."
+			},
+			{
+				"image": "/media/surveying/gis-mapping/gis-mapping-08.jpg",
+				"title": "Utoaji wa Vipengele",
+				"description": "Tambua na ubadilishe vipengele vya kijiografia kama majengo, barabara, miili ya maji, na kifuniko cha ardhi kutoka picha."
+			},
+			{
+				"image": "/media/surveying/gis-mapping/gis-mapping-10.jpg",
+				"title": "Hesabu za Kiasi",
+				"description": "Hesabu kiasi cha hisa, shughuli za cut/fill, na amana za rasilimali kwa usahihi wa juu."
+			},
+			{
+				"image": "/media/surveying/gis-mapping/gis-mapping-07.jpg",
+				"title": "Matumizi ya Ardhi/Kifuniko cha Ardhi",
+				"description": "Ainisha na chora ramani za kategoria za matumizi ya ardhi na aina za kifuniko cha ardhi kwa upangaji na usimamizi wa mazingira."
+			}
+		]
+	},
+	"mappingServices": {
+		"tag": "Uwezo wa Msingi",
+		"headline": "Huduma za Uchoraji Ramani",
+		"description": "SmartGrid Surveying hutoa huduma sahihi za GIS na vihisishi vya mbali — kutoka photogrammetry ya UAV, uchoraji wa LiDAR, hadi uchambuzi wa multispectral na uundaji wa DEM. Tunatoa data sahihi ya kijiografia kusaidia miradi ya upangaji, uhandisi, na mazingira kote Kenya na Afrika.",
+		"items": [
+			{
+				"image": "/media/surveying/gis-mapping/gis-mapping-02.jpg",
+				"title": "Photogrammetry ya Ndege Zisizo na Rubani",
+				"description": "Orthomosaic za mwonekano wa juu na point clouds kwa uundaji sahihi wa tovuti na kiasi."
+			},
+			{
+				"image": "/media/surveying/gis-mapping/gis-mapping-03.jpg",
+				"title": "Uchoraji wa LiDAR",
+				"description": "Mifano sahihi ya ardhi na mimea kwa kutumia LiDAR ya UAV au ya nchi kavu."
+			},
+			{
+				"image": "/media/surveying/gis-mapping/gis-mapping-04.jpg",
+				"title": "Uzalishaji wa DEM na DSM",
+				"description": "Mifano ya Kidijitali ya Mwinuko na ramani za contour kwa upangaji na uhandisi."
+			}
+		]
+	},
+	"gisComponents": {
+		"tag": "Msururu wa Teknolojia",
+		"headline": "Vipengele vya GIS",
+		"description": "Suluhisho zetu za GIS zinajumuisha maunzi, programu, data, watu, na mbinu kuunda mifumo kamili ya uchambuzi wa kijiografia na uchoraji ramani.",
+		"list": [
+			{
+				"title": "Maunzi",
+				"description": "Zana halisi kama kompyuta, seva, vifaa vya GPS, na ndege zisizo na rubani zinazosaidia shughuli za GIS."
+			},
+			{
+				"title": "Programu",
+				"description": "Programu za GIS kama ArcGIS, QGIS, na Google Earth Engine zinazotumika kwa uchakataji na taswira ya data."
+			},
+			{
+				"title": "Data",
+				"description": "Taarifa za kijiografia: picha za raster, faili za vector, majedwali, na metadata zinazounda msingi wa GIS."
+			},
+			{
+				"title": "Watu",
+				"description": "Wataalamu na watumiaji wa GIS wanaofasiri, kutumia, na kuwasilisha maarifa ya kijiografia."
+			},
+			{
+				"title": "Mbinu",
+				"description": "Taratibu sanifu na mbinu za uchambuzi zinazotumika katika michakato ya GIS kwa uamuzi sahihi."
+			}
+		]
+	}
+}
