@@ -1,0 +1,81 @@
+{
+	"hero": {
+		"headline": "UCHUNGUZI WA NDEGE WA PANELI ZA SOLA",
+		"title": "Kuaminika. Kupanuka. Haraka. Nguvu.",
+		"image": "/media/aerial-drones/solar-panel-drone-surveys/01.jpg",
+		"description": "Angazia mustakabali wako wa nishati—uchunguzi wetu wa paneli za sola unaoendeshwa na ndege zisizo na rubani hutoa usahihi usio na mfano, maarifa ya haraka, na maamuzi bora kutoka angani kwenda chini. Kwa kukamata picha za mwonekano wa juu, data ya ardhi ya 3D, na uchambuzi wa joto, tunasaidia kuboresha utendaji wa sola huku tukipunguza ukaguzi wa gharama kubwa wa tovuti. Iwe unapanga usakinishaji mpya au unatunza shamba la sola lililopo, uchunguzi wetu hutoa uwazi wa data unaohitaji kuongeza ROI na ufanisi wa mfumo. \n\n Kwa SmartGrid, nguvu ya akili ya kijiografia inapeleka miradi yako ya sola kwenye kiwango kinachofuata. \n\n Smartgrid Surveying ni mshirika wako wa kuaminika wa upimaji!",
+		"ctaPrimary": {
+			"icon": "compass",
+			"label": "Chunguza Huduma Nyingine za Angani",
+			"href": "/aerial-drones/drone-imagery-surveys"
+		}
+	},
+	"whatWeDo": {
+		"tag": "Huduma",
+		"headline": "Tunachofanya",
+		"description": "Katika SmartGrid Surveying, tunatumia teknolojia ya kisasa ya ndege zisizo na rubani kufanya uchunguzi sahihi, bora, na salama kwa usakinishaji wa paneli za sola. Kuanzia upangaji na ukaguzi hadi uchoraji ramani wa joto na tathmini za baada ya usakinishaji, uchunguzi wetu wa ndege hutoa maarifa yasiyo na mfano kwa wateja wa kampuni na binafsi.",
+		"items": [
+			{
+				"icon": "map-search",
+				"title": "Uchoraji Ramani wa Shamba la Sola",
+				"description": "Picha za mwonekano wa juu na mifano ya ardhi kubuni na kupanga mipangilio bora ya paneli za sola kwa mwonekano kamili wa tovuti."
+			},
+			{
+				"icon": "chart-bell-curve",
+				"title": "Uchambuzi wa Kabla ya Usakinishaji",
+				"description": "Uchanganuzi wa tovuti wa 3D na uigaji wa vivuli hukusaidia kufanya maamuzi bora ya nafasi kwa ufanisi wa juu."
+			},
+			{
+				"icon": "thermometer-lines",
+				"title": "Ukaguzi wa Joto",
+				"description": "Upigaji picha wa joto hugundua paneli zisizofanya kazi au zenye utendaji duni kupunguza muda wa kusimama na kuboresha ROI."
+			},
+			{
+				"icon": "clipboard-check-outline",
+				"title": "Ukaguzi wa Baada ya Uwekaji",
+				"description": "Hakikisha mali za sola zinakidhi vipimo na viwango vya utendaji kwa nyaraka za kijiografia zinazotayari kwa ukaguzi."
+			}
+		]
+	},
+	"cta": {
+		"tag": null,
+		"headline": "Unataka Kuinua Miradi Yako ya Sola?",
+		"description": "Wasiliana nasi kwa suluhisho la uchunguzi wa ndege lililoundwa mahsusi.",
+		"ctaPrimary": {
+			"label": "Wasiliana Nasi",
+			"href": "mailto:contact@smartgridsurveying.com"
+		}
+	},
+	"droneIntegrationProcess": {
+		"tag": "Mchakato",
+		"headline": "Ujumuishaji wa Ndege Zisizo na Rubani katika Mchakato wa Usakinishaji wa Sola",
+		"description": "",
+		"items": [
+			{
+				"icon": "map-marker-check",
+				"title": "Tathmini ya Uwezekano wa Tovuti",
+				"description": "Ndege zisizo na rubani hukamata picha za angani na topografia, kutathmini ardhi, vivuli, na uwezekano wa uwekaji wa sola."
+			},
+			{
+				"icon": "cube-outline",
+				"title": "Upangaji wa Kabla ya Usakinishaji",
+				"description": "Uundaji wa mifano ya 3D na uchoraji ramani wa mionzi ya sola huongoza mpangilio na mwelekeo bora wa paneli kwa matokeo ya juu."
+			},
+			{
+				"icon": "drone",
+				"title": "Ufuatiliaji wa Ujenzi",
+				"description": "Rekodi za moja kwa moja za ndege na photogrammetry huhakikisha upatanishi wa ujenzi, sasisho za wakati halisi, na ufuatiliaji wa maendeleo."
+			},
+			{
+				"icon": "checkbox-marked-circle",
+				"title": "Ukaguzi wa Mwisho na QA",
+				"description": "Ukaguzi wa joto na wa mwonekano wa ndege hugundua hitilafu au kupotoka kabla ya kuwasilisha mradi."
+			},
+			{
+				"icon": "wrench-outline",
+				"title": "Matengenezo Yanayoendelea",
+				"description": "Safari za ndege zilizoratibiwa hufuatilia afya ya paneli, kugundua uchafu au uharibifu, na kudumisha ufanisi wa juu wa mfumo."
+			}
+		]
+	}
+}

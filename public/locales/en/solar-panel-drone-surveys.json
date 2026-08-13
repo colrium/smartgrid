@@ -2,18 +2,80 @@
 	"hero": {
 		"headline": "SOLAR PANEL DRONE SURVEYS",
 		"title": "Reliable. Scalable. Fast. Powerful.",
-		"image": "/images/placeholder.jpg",
+		"image": "/media/aerial-drones/solar-panel-drone-surveys/01.jpg",
 		"description": "Illuminate your energy future—our drone-powered solar panel surveys deliver unmatched precision, faster insights, and smarter decisions from the sky down. By capturing high-resolution imagery, 3D terrain data, and thermal analytics, we help optimize solar performance while reducing costly on-site inspections. Whether you're planning a new installation or maintaining an existing solar farm, our surveys provide the data clarity you need to maximize ROI and system efficiency. \n\n With SmartGrid, the power of geospatial intelligence takes your solar projects to the next level. \n\n Smartgrid Surveying is your trusted surveying partner!",
 		"ctaPrimary": {
-            "icon": "compass",
+			"icon": "compass",
 			"label": "Explore Other Aerial Services",
 			"href": "/aerial-drones/drone-imagery-surveys"
 		}
 	},
-	"surveyOverview": {
-		"tag": "Solar Asset Intelligence",
-		"headline": "Drone & Surveying Application",
-		"image": "/images/placeholder.jpg",
-		"description": "By capturing high-resolution imagery, 3D terrain data, and thermal analytics, we help optimize solar performance while reducing costly on-site inspections. Whether you're planning a new installation or maintaining an existing solar farm, our surveys provide the data clarity you need to maximize ROI and system efficiency. With SmartGrid, the power of geospatial intelligence takes your solar projects to the next level."
+	"whatWeDo": {
+		"tag": "Services",
+		"headline": "What We Do",
+		"description": "At SmartGrid Surveying, we leverage cutting-edge drone technology to perform precise, efficient, and safe surveys for solar panel installations. From planning and inspection to thermal mapping and post-installation assessments, our drone surveys offer unmatched insight for both corporate and individual clients.",
+		"items": [
+			{
+				"icon": "map-search",
+				"title": "Solar Farm Mapping",
+				"description": "High-resolution aerial imagery and terrain models to design and plan optimal solar panel layouts with full site visibility."
+			},
+			{
+				"icon": "chart-bell-curve",
+				"title": "Pre-Installation Analysis",
+				"description": "3D site scans and shadow simulations help you make better positioning decisions for maximum efficiency."
+			},
+			{
+				"icon": "thermometer-lines",
+				"title": "Thermal Inspections",
+				"description": "Thermal imaging detects malfunctioning or underperforming panels to reduce downtime and improve ROI."
+			},
+			{
+				"icon": "clipboard-check-outline",
+				"title": "Post-Deployment Audits",
+				"description": "Ensure solar assets meet specs and performance benchmarks with audit-ready geospatial documentation."
+			}
+		]
+	},
+	"cta": {
+		"tag": null,
+		"headline": "Want to Elevate Your Solar Projects?",
+		"description": "Contact us for a tailored drone survey solution.",
+		"ctaPrimary": {
+			"label": "Get in Touch",
+			"href": "mailto:contact@smartgridsurveying.com"
+		}
+	},
+	"droneIntegrationProcess": {
+		"tag": "Process",
+		"headline": "Drone Integration in the Solar Installation Process",
+		"description": "",
+		"items": [
+			{
+				"icon": "map-marker-check",
+				"title": "Site Feasibility Assessment",
+				"description": "Drones capture aerial imagery and topography, evaluating terrain, shading, and viability for solar deployment."
+			},
+			{
+				"icon": "cube-outline",
+				"title": "Pre-Installation Planning",
+				"description": "3D modeling and solar irradiance mapping guide optimal panel layout and orientation for maximum output."
+			},
+			{
+				"icon": "drone",
+				"title": "Construction Monitoring",
+				"description": "Live drone footage and photogrammetry ensure build alignment, real-time updates, and progress tracking."
+			},
+			{
+				"icon": "checkbox-marked-circle",
+				"title": "Final Inspection & QA",
+				"description": "Thermal and visual drone inspections identify faults or misalignments before commissioning."
+			},
+			{
+				"icon": "wrench-outline",
+				"title": "Ongoing Maintenance",
+				"description": "Scheduled drone flyovers monitor panel health, detect dirt or damage, and maintain peak system efficiency."
+			}
+		]
 	}
 }

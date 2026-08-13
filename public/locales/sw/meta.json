@@ -100,6 +100,11 @@
 			"page_title": "Ufuatiliaji na Tathmini",
 			"meta_description": "Ufuatiliaji na tathmini ya usahihi kwa ndege zisizo na rubani kwa uendelevu, uhifadhi, na kufuata kanuni — uchambuzi wa NDVI, uchoraji ramani wa mabonde, upigaji picha wa joto, na zaidi.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"solar-panel-drone-surveys": {
+			"page_title": "Uchunguzi wa Ndege wa Paneli za Sola",
+			"meta_description": "Uchunguzi wa paneli za sola unaoendeshwa na ndege zisizo na rubani — picha za mwonekano wa juu, data ya ardhi ya 3D, na uchambuzi wa joto kuboresha utendaji wa sola na kuongeza ROI.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {

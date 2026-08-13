@@ -100,6 +100,11 @@
 			"page_title": "Monitoring & Evaluation",
 			"meta_description": "Precision-driven drone monitoring and evaluation for sustainability, conservation, and compliance — NDVI analysis, watershed mapping, thermal imaging, and more.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"solar-panel-drone-surveys": {
+			"page_title": "Solar Panel Drone Surveys",
+			"meta_description": "Drone-powered solar panel surveys — high-resolution imagery, 3D terrain data, and thermal analytics to optimize solar performance and maximize ROI.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {
