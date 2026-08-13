@@ -80,6 +80,11 @@
 			"page_title": "Uchunguzi wa Picha za Ndege Zisizo na Rubani",
 			"meta_description": "Uchunguzi wa picha za ndege zisizo na rubani — kuaminika, kupanuka, haraka na nguvu. Chora ramani, pima, na fuatilia zaidi ya ekari 1000 kwa wakati mmoja kwa ndege za kisasa kote Afrika.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"lidar-mapping": {
+			"page_title": "Uchoraji Ramani wa LiDAR",
+			"meta_description": "Huduma za uchoraji ramani wa LiDAR — kuaminika, kupanuka, haraka na nguvu. Point clouds za usahihi wa juu, DEMs, na mifano ya 3D kwa ujenzi, madini, misitu, na kilimo.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {

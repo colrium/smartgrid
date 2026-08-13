@@ -80,6 +80,11 @@
 			"page_title": "Drone Imagery Surveys",
 			"meta_description": "Drone imagery surveys — reliable, scalable, fast and powerful. Map, measure, and monitor 1000+ acres at a time with cutting-edge drones across Africa.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"lidar-mapping": {
+			"page_title": "LiDAR Mapping",
+			"meta_description": "LiDAR mapping services — reliable, scalable, fast and powerful. High-accuracy point clouds, DEMs, and 3D models for construction, mining, forestry, and agriculture.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {

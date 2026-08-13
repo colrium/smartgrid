@@ -2,17 +2,17 @@
 	"hero": {
 		"headline": "AGRICULTURAL NDVI MAPPING",
 		"title": "Transforming Agriculture with Aerial Intelligence",
-		"image": "/images/placeholder.jpg",
-		"description": "Leading Africa's Land and Aerial Surveying Revolution. SmartGrid Surveying empowers modern agriculture with cutting-edge drone solutions designed to maximize yields, reduce costs, and make data-driven farming a reality.",
+		"image": "/media/aerial-drones/agricultural-ndvi-mapping/agricultural-ndvi-mapping-01.jpg",
+		"description": "At SmartGrid Surveying, we empower modern agriculture with cutting-edge drone solutions designed to maximize yields, reduce costs, and make data-driven farming a reality. \n\n Our drone technology brings real-time insights from above—helping farmers monitor crops, optimize inputs, and make informed decisions across their agricultural operations.\n\n Smartgrid Surveying is your trusted surveying partner!",
 		"ctaPrimary": {
-			"label": "Get Your Free Consultation",
-			"href": "mailto:smartgridsurveying@gmail.com"
+			"label": "Explore our Aerial Services",
+			"href": "/aerial-drones/drone-imagery-surveys"
 		}
 	},
 	"whyUseDronesInAgriculture": {
 		"tag": "Precision Farming",
 		"headline": "Why Use Drones in Agriculture?",
-		"image": "/images/placeholder.jpg",
+		"image": "/media/aerial-drones/agricultural-ndvi-mapping/agricultural-ndvi-mapping-02.jpg",
 		"description": "Our drone technology brings real-time insights from above—helping farmers monitor crops, optimize inputs, and make informed decisions across their agricultural operations.",
 		"items": [
 			{
@@ -34,6 +34,37 @@
 				"icon": "recycle",
 				"title": "Enhance Sustainability",
 				"description": "Promote conservation agriculture through better land and input management."
+			}
+		]
+	},
+	"process": {
+		"tag": "Process",
+		"headline": "Agricultural Aerial Survey Process",
+		"description": "",
+		"items": [
+			{
+				"title": "Needs Assessment & Site Planning",
+				"description": "We begin by understanding the specific agricultural goals—whether it’s crop health, irrigation analysis, or yield estimation—and plan the flight accordingly."
+			},
+			{
+				"title": "Drone Deployment",
+				"description": "Using multispectral or RGB drones, we conduct automated flights capturing aerial data with GPS precision, ensuring full field coverage."
+			},
+			{
+				"title": "Data Capture",
+				"description": "Collect NDVI, RGB, thermal, or LiDAR data depending on the survey needs. High-resolution geotagged imagery is recorded in real-time."
+			},
+			{
+				"title": "Data Processing & Mapping",
+				"description": "The imagery is stitched into orthomosaics and analyzed to generate crop health maps, topographic contours, and vegetation indices."
+			},
+            {
+				"title": "Report Generation & Insights",
+				"description": "We compile actionable insights—highlighting issues such as underperforming zones or stress areas—for improved farming decisions."
+			},
+            {
+				"title": "Delivery & Support",
+				"description": "Final maps and data are delivered in GIS-ready formats with expert interpretation support and integration guidance."
 			}
 		]
 	}

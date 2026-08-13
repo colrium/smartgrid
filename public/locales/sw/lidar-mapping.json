@@ -1,0 +1,108 @@
+{
+	"hero": {
+		"headline": "UCHORAJI RAMANI WA LIDAR",
+		"title": "Kuaminika. Kupanuka. Haraka. Nguvu.",
+		"image": "/media/aerial-drones/lidar-mapping/lidar-mapping-01.jpg",
+		"description": "Teknolojia ya LiDAR imekuwa kibadilishaji mchezo kwa tasnia nyingi. Katika SmartGrid Surveying, kwa fahari tunatoa huduma za uchoraji ramani wa LiDAR kwa sekta mbalimbali.",
+		"ctaPrimary": {
+			"label": "PATA NUKUU YA UCHORAJI RAMANI WA LIDAR",
+			"href": "/aerial-drones/drone-imagery-surveys"
+		}
+	},
+	"industriesWeServe": {
+		"tag": "Maeneo ya Athari",
+		"headline": "Tasnia Tunazohudumia",
+		"description": "Teknolojia ya LiDAR inaweza kubadilisha jinsi tasnia zinavyokusanya na kutumia data. Hapa kuna maeneo machache ambapo SmartGrid Surveying inatoa athari:",
+		"items": [
+			{
+				"title": "Ujenzi",
+				"description": "Uchoraji ramani wa LiDAR kwa uchunguzi sahihi wa tovuti, hesabu za kiasi, na muundo wa 3D husaidia kupunguza makosa na kurahisisha upangaji wa ujenzi."
+			},
+			{
+				"title": "Madini",
+				"description": "LiDAR husaidia kuchora ramani za tovuti za madini kwa usahihi, kuwezesha usimamizi bora wa ardhi na ufuatiliaji wa mabadiliko kwa muda."
+			},
+			{
+				"title": "Misitu",
+				"description": "LiDAR husaidia kuchambua urefu wa miti, miundo ya taji, na msongamano wa misitu kwa usimamizi bora wa rasilimali na juhudi za uhifadhi."
+			},
+			{
+				"title": "Kilimo",
+				"description": "Pata maarifa kuhusu afya ya mazao na tofauti za ardhi, kuboresha shughuli za kilimo na kuongeza utabiri wa mavuno."
+			}
+		]
+	},
+	"whyChooseLidar": {
+		"tag": "Data ya Usahihi",
+		"headline": "Kwa Nini Uchague Suluhisho Zetu za Uchoraji Ramani wa LiDAR?",
+		"description": "Suluhisho zetu za uchoraji ramani wa LiDAR zinapeleka usahihi na maelezo yasiyo na kifani kwa matumizi mbalimbali, kuhakikisha data ya kuaminika kwa maamuzi muhimu.",
+		"items": [
+			{
+				"title": "Data ya Usahihi wa Juu",
+				"description": "Uchunguzi wetu wa LiDAR wa angani hutoa usahihi wa kiwango cha sentimita, bora kwa uhandisi, madini, misitu, na upangaji wa miji."
+			},
+			{
+				"title": "Mwakiki wa Haraka",
+				"description": "Uchunguzi unaotegemea ndege zisizo na rubani hupunguza muda wa miradi hadi 60%, kukupa maarifa na uamuzi wa haraka."
+			},
+			{
+				"title": "Kupanuka Katika Mandhari Mbalimbali",
+				"description": "Tunachora ramani za mandhari magumu — kutoka misitu minene hadi jangwa la mbali — kote Afrika na ulimwenguni."
+			},
+			{
+				"title": "Tayari kwa Ujumuishaji",
+				"description": "Matokeo yanajumuisha point clouds, contours, DEMs, na mifano ya 3D tayari kwa jukwaa za CAD, GIS, na BIM."
+			}
+		]
+	},
+	"lidarPowerlineInspection": {
+		"tag": "Usalama wa Miundombinu",
+		"headline": "Ukaguzi wa Nyaya za Umeme wa Lidar",
+		"image": "/media/aerial-drones/lidar-mapping/lidar-mapping-05.png",
+		"description": "LiDAR ni ya thamani kubwa kwa ukaguzi wa nyaya za umeme, kugundua uvamizi wa mimea, masuala ya uadilifu wa kimuundo, na kuhakikisha kufuata viwango vya usalama."
+	},
+	"forestry": {
+		"tag": "Usimamizi wa Mazingira",
+		"headline": "Misitu",
+		"image": "/media/aerial-drones/lidar-mapping/lidar-mapping-03.jpg",
+		"description": "Teknolojia ya LiDAR katika misitu huwezesha kipimo sahihi cha urefu wa miti, miundo ya taji, na biomass kwa kukamata data ya kina ya 3D kutoka juu. Hii inawaruhusu wasimamizi wa misitu kutathmini afya, kupanga uvunaji endelevu, na kufuatilia mabadiliko ya mfumo ikolojia kwa usahihi usio na mfano."
+	},
+	"construction": {
+		"tag": "Ufanisi wa Mradi",
+		"headline": "Ujenzi",
+		"image": "/media/aerial-drones/lidar-mapping/lidar-mapping-02.jpg",
+		"description": "LiDAR katika ujenzi hutoa data sahihi ya topografia na mifano ya tovuti ya 3D, kurahisisha upangaji, muundo, na makadirio ya kazi za ardhi. Inaboresha usahihi katika ufuatiliaji wa maendeleo, kugundua mkengeuko wa kimuundo, na kupunguza kazi ghali ya kurudia."
+	},
+	"ctaSection": {
+		"tag": null,
+		"headline": "Anza Leo!",
+		"description": "Tayari kupeleka miradi yako kwenye kiwango kinachofuata na uchoraji ramani wa LiDAR? Wasiliana na SmartGrid Surveying kujifunza zaidi kuhusu jinsi suluhisho zetu zinavyoweza kukusaidia kufikia malengo yako. Timu yetu iko hapa kujibu maswali yoyote na kutoa ushauri wa bure.",
+		"ctaPrimary": {
+			"label": "Tutumie barua pepe!",
+			"href": "smartgridsurveying@gmail.com"
+		}
+	},
+	"howItWorks": {
+		"tag": "rahisi na bora",
+		"headline": "Inavyofanya Kazi",
+		"description": "Mchakato wetu wa uchoraji ramani wa LiDAR ni rahisi na bora. Hivi ndivyo tunavyofanya:",
+		"items": [
+			{
+				"title": "Maandalizi",
+				"description": "Tunafanya kazi nawe kuelewa upeo na malengo ya mradi wako, kuchagua vifaa sahihi na mipango ya ndege iliyoundwa kwa mahitaji yako."
+			},
+			{
+				"title": "Ukusanyaji wa Data",
+				"description": "Kwa kutumia mifumo ya kisasa ya LiDAR iliyowekwa kwenye ndege zisizo na rubani na ndege, tunakagua ardhi kwa mamilioni ya alama za data za mawimbi ya laser."
+			},
+			{
+				"title": "Uchakataji wa Data",
+				"description": "Tunachakata data mbichi kuwa mifano sahihi ya 3D, point clouds, na ramani za mwinuko kwa matumizi yanayoweza kutekelezwa."
+			},
+			{
+				"title": "Utoaji",
+				"description": "Matokeo ya mwisho yanakuja katika miundo ya CAD, GIS, au BIM — tayari kwa ujumuishaji katika michakato yako ya kazi."
+			}
+		]
+	}
+}
