@@ -1,10 +1,11 @@
 {
 	"hero": {
-		"headline": "LANDFILL & QUARRY DRONE SURVEYS",
-		"title": "Survey Smarter, Build Stronger",
-		"image": "/images/placeholder.jpg",
+		"headline": "Survey Smarter, Build Stronger",
+		"title": "LANDFILL & QUARRY DRONE SURVEYS",
+		"image": "/media/aerial-drones/landfill-quarry-drone-surveys/01.jpg",
 		"description": "Leading Africa's Land and Aerial Surveying Revolution. Unlock faster, more cost-effective, and safer mapping, measurement, and monitoring of 1000+ Acres at a time.",
 		"ctaPrimary": {
+			"icon": "gift",
 			"label": "Get Your Free Consultation",
 			"href": "mailto:smartgridsurveying@gmail.com"
 		}
@@ -12,56 +13,83 @@
 	"quarryServices": {
 		"tag": "Site Intelligence",
 		"headline": "QUARRY SERVICES",
-		"image": "/images/placeholder.jpg",
-		"description": "Unlock Precision. Boost Profitability. Our drone and land surveys for quarries deliver the data you need—faster, safer, and more accurately than ever before.",
+		"description": "Unlock Precision. Boost Profitability. Our drone and land surveys for quarries deliver the data you need—faster, safer, and more accurately than ever before."
+	},
+	"quarryServicesItems": {
+		"tag": null,
+		"headline": "Transforming Quarries, Waste & Resource Management",
+		"description": "",
 		"items": [
 			{
 				"icon": "stockpile",
-				"title": "Volumetric Analysis",
-				"description": "Accurate measurement of extracted materials, stockpiles, and remaining reserves for production planning."
+				"title": "Landfill Volume Monitoring",
+				"description": "Use high-resolution drone surveys to estimate landfill capacity and manage future space efficiently."
+			},
+			{
+				"icon": "map-contour",
+				"title": "Quarry Cut & Fill Analysis",
+				"description": "Track extraction volumes and surface changes over time to maintain compliance and profitability."
 			},
 			{
 				"icon": "map-contour",
 				"title": "Topographic Mapping",
-				"description": "High-resolution terrain models and contour maps for pit design and operational management."
-			},
-			{
-				"icon": "chart-timeline",
-				"title": "Progression Tracking",
-				"description": "Regular monitoring of excavation progress and site development over time."
-			},
-			{
-				"icon": "safety-goggles",
-				"title": "Safety & Compliance",
-				"description": "Identify potential hazards, monitor slope stability, and ensure regulatory compliance."
+				"description": "Accurate 3D terrain models generated via UAV and GNSS for grading, design, and planning."
 			}
 		]
 	},
-	"landfillServices": {
-		"tag": "Environmental Management",
-		"headline": "LANDFILL SERVICES",
-		"image": "/images/placeholder.jpg",
-		"description": "Our drone surveys provide comprehensive data for landfill management, including capacity planning, environmental monitoring, and operational efficiency.",
+	"maximizeProductivity": {
+		"tag": "Faster, Smarter",
+		"headline": "Maximize Productivity. Minimize Guesswork.",
+		"description": "Leverage SmartGrid's cutting-edge drone volume surveys to make faster, smarter decisions on site. Let data lead the way to profitability."
+	},
+	"whatWeOffer": {
+		"tag": "Services",
+		"headline": "Our Aerial Surveying Services",
 		"items": [
 			{
-				"icon": "cube-scan",
-				"title": "Capacity & Volume Assessment",
-				"description": "Calculate remaining airspace, track fill rates, and plan for future expansion or closure."
+				"title": "Aerial Mapping",
+				"description": "Accurate drone-based imagery for planning, documentation, and analysis.",
+				"popupContent": "SmartGrid Surveying delivers ultra-precise aerial mapping using UAVs to generate georeferenced orthomosaics, topographic data, and planning-grade base maps. Our solutions support infrastructure, utilities, and land development with unmatched speed and accuracy."
 			},
 			{
-				"icon": "recycle",
-				"title": "Cover & Settlement Monitoring",
-				"description": "Monitor cover material distribution, detect settlement issues, and ensure proper compaction."
+				"title": "Construction Monitoring",
+				"description": "Track site activity using consistent, real-time aerial visuals.",
+				"popupContent": "SmartGrid offers site monitoring through high-resolution drone flyovers. Our automated flights provide weekly visual updates, detect deviations from schedule, and support decision-making for project managers and developers."
 			},
 			{
-				"icon": "leaf",
-				"title": "Environmental Compliance",
-				"description": "Detect leachate seepage, assess vegetation health, and track post-closure rehabilitation."
+				"title": "Environmental Monitoring",
+				"description": "Visualize ecological change and monitor conservation areas.",
+				"popupContent": "Using UAVs, SmartGrid tracks land cover change, deforestation, erosion, and other ecological indicators. Our data supports impact assessments and regulatory compliance with repeatable, time-stamped visuals."
 			},
 			{
-				"icon": "map-clock",
-				"title": "Historical Comparison",
-				"description": "Compare data over time to evaluate operational changes and environmental impact."
+				"title": "Agricultural Mapping",
+				"description": "Drone-based multispectral data for crop health and farm optimization.",
+				"popupContent": "SmartGrid empowers agronomists with data on crop health, plant stress, and irrigation patterns. We use NDVI and multispectral analysis to optimize input use and improve yield sustainability."
+			},
+			{
+				"title": "3D Modeling",
+				"description": "Photorealistic 3D models to support planning and inspections.",
+				"popupContent": "We create detailed 3D mesh and textured models of terrain, buildings, and infrastructure. These models are BIM-ready and useful for design validation, inspection, and immersive planning."
+			},
+			{
+				"title": "Infrastructure Planning",
+				"description": "Route and terrain data for smart infrastructure layout.",
+				"popupContent": "We map routes and sites using drone LiDAR and photogrammetry. This ensures smart siting of roads, pipelines, and urban developments while minimizing environmental disruption."
+			},
+			{
+				"title": "DTMs & DEMs",
+				"description": "Digital terrain and elevation models for hydrological and civil works.",
+				"popupContent": "Our terrain and elevation models help civil engineers and hydrologists analyze runoff, slope stability, and grading. We deliver precise elevation data to support resilient infrastructure."
+			},
+			{
+				"title": "Volumetric Calculations",
+				"description": "Calculate material volumes and manage resources accurately.",
+				"popupContent": "SmartGrid computes cut/fill volumes and stockpile measurements with centimeter-level accuracy. Our aerial photogrammetry offers fast, safe, and repeatable results."
+			},
+			{
+				"title": "Disaster Assessment",
+				"description": "Route and terrain data for smart infrastructure layout.",
+				"popupContent": "After floods, landslides, or earthquakes, SmartGrid uses drones to quickly document damage. Our data helps responders prioritize actions, allocate aid, and plan recovery operations."
 			}
 		]
 	}

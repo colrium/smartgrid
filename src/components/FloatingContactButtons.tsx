@@ -31,17 +31,11 @@ const FloatingContactButtons = () => {
 				target="_blank"
 				rel="noopener noreferrer"
 				aria-label={label}
-				size="small"
-				sx={{
-					position: "fixed",
-					right: 16,
-					bottom: 72,
-					zIndex: (theme) => theme.zIndex.speedDial,
-					bgcolor: "#25D366",
-					color: "#fff",
-					"&:hover": {
-						bgcolor: "#1DA851",
-					},
+				size="large"
+				// className="fixed bottom-4 right-4 z-[9999] text-surface bg-[#25D366] hover:bg-[#1DA851]"
+                classes={{
+                    
+					root: "fixed! bottom-4! right-4! z-[9999] text-surface! bg-[#25D366]! hover:bg-[#1DA851]!",
 				}}
 			>
 				<WhatsAppIcon />

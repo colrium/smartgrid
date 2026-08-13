@@ -45,8 +45,8 @@ const ScrollTop = (props: Props) => {
 				role="presentation"
 				sx={{
 					position: "fixed",
-					bottom: 32,
-					right: 16,
+					bottom: 80,
+					right: 24,
 					zIndex: (theme) => theme.zIndex.speedDial,
 				}}
 			>

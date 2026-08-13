@@ -105,6 +105,11 @@
 			"page_title": "Solar Panel Drone Surveys",
 			"meta_description": "Drone-powered solar panel surveys — high-resolution imagery, 3D terrain data, and thermal analytics to optimize solar performance and maximize ROI.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"volumetric-surveys": {
+			"page_title": "Volumetric Surveys",
+			"meta_description": "Volumetric surveys done smarter — drone-enabled stockpile volumes, cut/fill quantities, quarry monitoring, and site balances with centimeter-level accuracy.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {

@@ -1,41 +1,80 @@
 {
 	"hero": {
-		"headline": "VOLUMETRIC SURVEYS",
-		"title": "Reliable. Scalable. Fast. Powerful.",
-		"image": "/images/placeholder.jpg",
-		"description": "Unlock the True Value of Your Site—our drone-enabled volumetric surveys provide precise, timely measurements that drive smarter planning, resource management, and project efficiency.",
+		"headline": "Leading Africa's Land and Aerial Surveying Revolution",
+		"title": "Volumetric Surveys done Smarter.",
+		"image": "/media/aerial-drones/volumetric-surveys/01.jpg",
+		"description": "",
 		"ctaPrimary": {
+			"icon": "gift",
 			"label": "Get Your Free Consultation",
 			"href": "mailto:smartgridsurveying@gmail.com"
 		}
 	},
-	"precisionVolumetricAnalysis": {
-		"tag": "Accurate Site Intelligence",
-		"headline": "Precision Volumetric Analysis with Drone Technology",
-		"image": "/images/placeholder.jpg",
-		"description": "SmartGrid leverages advanced UAVs and photogrammetry to deliver fast, accurate volumetric measurements. Whether you're managing stockpiles, quarries, or earthworks, our drone solutions cut time and cost while enhancing safety and data reliability.",
+	"intro": {
+		"tag": null,
+		"headline": "Reliable. Scalable. Fast. Powerful.",
+		"description": "Unlock the True Value of Your Site—our drone-enabled volumetric surveys provide precise, timely measurements that drive smarter planning, resource management, and project efficiency. By capturing high-resolution 3D data and calculating accurate stockpile volumes, cut/fill quantities, and site balances, we reduce manual errors and eliminate the guesswork. Whether you’re managing earthworks, mining operations, or material inventory, our surveys deliver the geospatial clarity you need to make informed decisions. With SmartGrid, precision from above becomes your foundation for productivity below. \n\n Smartgrid Surveying is your trusted surveying partner!",
+		"ctaPrimary": {
+			"icon": "compass",
+			"label": "Explore Other Aerial Services",
+			"href": "/aerial-drones/drone-imagery-surveys"
+		}
+	},
+	"maximizeProductivity": {
+		"tag": "Faster, Smarter",
+		"headline": "Maximize Productivity. Minimize Guesswork.",
+		"description": "Leverage SmartGrid's cutting-edge drone volume surveys to make faster, smarter decisions on site. Let data lead the way to profitability."
+	},
+	"droneTechLeverage": {
+		"tag": "Advanced UAVs",
+		"headline": "Precision volumetric Analysis with Drone Technology",
+		"image": "/media/aerial-drones/volumetric-surveys/02.jpg",
+		"description": "SmartGrid leverages advanced UAVs and photogrammetry to deliver fast, accurate volumetric measurements. \n\n Whether you’re managing stockpiles, quarries, or earthworks, our drone solutions cut time and cost while enhancing safety and data reliability."
+	},
+	"services": {
+		"tag": "What we do",
+		"headline": "VOLUME SERVICES",
+		"description": "Whether you're a government agency, an NGO, or a private developer, Smartgrid Surveying is your trusted partner! \n\n Our drones deliver actionable data where it matters most. ",
 		"items": [
 			{
 				"icon": "stockpile",
-				"title": "Stockpile Volumes",
-				"description": "Calculate exact volumes of aggregate, coal, grain, and other bulk materials with high precision."
+				"title": "Stockpile Volume Measurement",
+				"description": "Quick and safe volumetric data for materials like gravel, sand, and coal — reducing the need for manual measurement and risk."
 			},
 			{
 				"icon": "mine",
-				"title": "Quarry & Mining Volumes",
-				"description": "Track extraction volumes, monitor pit development, and manage resource inventory efficiently."
+				"title": "Quarry and Mine Monitoring",
+				"description": "Track cut/fill volumes and changes over time with high-resolution terrain data captured from above."
 			},
 			{
 				"icon": "bulldozer",
-				"title": "Earthworks Volumes",
-				"description": "Compute cut/fill quantities, site balances, and earthmoving progress for construction projects."
+				"title": "Earthworks Progress Tracking",
+				"description": "Compare as-built models against designs to monitor progress and confirm excavation volumes with centimeter-level accuracy."
+			},
+			{
+				"icon": "ruler-square",
+				"title": "Cut and Fill Calculations",
+				"description": "Generate detailed 3D models to determine how much material needs to be removed or added—ideal for grading and leveling."
+			},
+			{
+				"icon": "history",
+				"title": "Historical Comparison and Audits",
+				"description": "Compare datasets over time for performance reviews, billing verification, and regulatory compliance."
 			}
 		]
 	},
-	"volumeServices": {
-		"tag": "Clients & Benefits",
-		"headline": "VOLUME SERVICES",
-		"image": "/images/placeholder.jpg",
-		"description": "Whether you're a government agency, an NGO, or a private developer, Smartgrid Surveying is your trusted partner! Our drones deliver actionable data where it matters most."
+	"boostAccuracy": {
+		"tag": "Clarity & Control",
+		"headline": "Boost Accuracy. Drive Efficiency.",
+		"description": "Say goodbye to outdated manual surveys. Our drone-based volume calculations bring clarity and control to every project milestone."
+	},
+	"cta": {
+		"tag": null,
+		"headline": "Need Accurate Volumetric Data for Your Site?",
+		"description": "Contact SmartGrid Surveying for a custom drone volume survey that saves time, reduces risk, and delivers results.",
+		"ctaPrimary": {
+			"label": "Request a volumetric Survey",
+			"href": "mailto:contact@smartgridsurveying.com"
+		}
 	}
 }

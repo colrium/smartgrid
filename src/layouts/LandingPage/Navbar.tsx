@@ -131,13 +131,13 @@ export default function Navbar() {
 				elevation={0}
 				color="transparent"
 				classes={{
-					root: "px-8 bg-transparent! transition-all duration-300",
+					root: "px-4 md:px-8 bg-transparent! transition-all duration-300",
 				}}
 			>
 				<Container
 					maxWidth="lg"
 					classes={{
-						root: `mt-3 mb-1 rounded-2xl hairline bg-surface/85!  backdrop-blur-lg! transition-all duration-300 ${
+						root: `mt-3 mb-1 rounded-4xl hairline bg-surface/85!  backdrop-blur-lg! transition-all duration-300 ${
 							state.isWindowScrolled ? "card-shadow-lift" : "card-shadow"
 						}`,
 					}}

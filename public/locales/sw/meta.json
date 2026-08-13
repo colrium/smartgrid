@@ -105,6 +105,11 @@
 			"page_title": "Uchunguzi wa Ndege wa Paneli za Sola",
 			"meta_description": "Uchunguzi wa paneli za sola unaoendeshwa na ndege zisizo na rubani — picha za mwonekano wa juu, data ya ardhi ya 3D, na uchambuzi wa joto kuboresha utendaji wa sola na kuongeza ROI.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"volumetric-surveys": {
+			"page_title": "Uchunguzi wa Kiasi",
+			"meta_description": "Uchunguzi wa kiasi kwa busara zaidi — kiasi cha mrundikano kinachowezeshwa na ndege zisizo na rubani, kiasi cha kukata/kujaza, ufuatiliaji wa machimbo, na mizani ya tovuti kwa usahihi wa kiwango cha sentimita.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {
