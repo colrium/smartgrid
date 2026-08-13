@@ -1,0 +1,114 @@
+{
+	"hero": {
+		"headline": "UCHUNGUZI WA BATHYMETRIC",
+		"title": "Uchoraji Ramani Sahihi wa Chini ya Maji kwa Mabwawa, Maziwa, Mito na Bahari",
+		"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-01.jpg",
+		"description": "Kwa kutumia vifaa vya kisasa vya sonar na ujumuishaji wa GPS, SmartGrid Surveying huchora kina na topografia ya maji — kutoa data muhimu kwa madhumuni ya uhandisi, mazingira, na upangaji.",
+		"ctaPrimary": {
+			"label": "Pata Ushauri Wako Bure",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"whatIsBathymetricSurveys": {
+		"tag": "Topografia ya Chini ya Maji",
+		"headline": "Uchunguzi wa Bathymetric ni Nini?",
+		"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-09.jpg",
+		"description": "Uchunguzi wa bathymetric unahusisha kupima kina cha maji na kuchora ardhi ya chini ya maji. Mbinu hii ni muhimu kwa kuelewa viwango vya mashapo, kiasi cha maji, na hatari za chini ya maji. Inasaidia ujenzi salama, usimamizi bora wa rasilimali za maji, na ulinzi wa mazingira makini. SmartGrid Surveying hutumia echo sounders za mwonekano wa juu, mifumo ya uwekaji ya GNSS, na boti za uchunguzi zinazodhibitiwa kwa mbali kufikia maeneo ya maji ya kina kifupi na yaliyozuiliwa kwa usalama na ufanisi."
+	},
+	"damsLakesSeaOcean": {
+		"tag": "Miundombinu ya Maji na Mazingira",
+		"headline": "MABWAWA, MAZIWA, BAHARI NA OCEAN",
+		"images": [
+			"/media/surveying/bathymetric-surveys/bathymetric-surveys-10.jpg",
+			"/media/surveying/bathymetric-surveys/bathymetric-surveys-11.jpg"
+		],
+		"description": "Utaalam wetu ni muhimu hasa kwa usimamizi na matengenezo ya mabwawa, maziwa, bahari, na ocean. Tunatoa data inayowasaidia wateja:",
+		"items": [
+			{
+				"icon": "chart-bubble",
+				"title": "Fuatilia Siltation na Mashapo",
+				"description": "Fuatilia mkusanyiko wa siltation na mashapo"
+			},
+			{
+				"icon": "water",
+				"title": "Tathmini Uwezo wa Hifadhi wa Bwawa",
+				"description": "Tathmini uwezo wa hifadhi na kiasi cha bwawa"
+			},
+			{
+				"icon": "dam",
+				"title": "Tathmini Hatari za Kimuundo",
+				"description": "Tathmini hatari za kimuundo na tambua maeneo ya mmomonyoko"
+			},
+			{
+				"icon": "dredge",
+				"title": "Tathmini za Kabla/Baada ya Dredging",
+				"description": "Fanya tathmini za kabla na baada ya dredging"
+			},
+			{
+				"icon": "expansion",
+				"title": "Panga Upanuzi au Urekebishaji",
+				"description": "Panga upanuzi wa bwawa au urekebishaji"
+			},
+			{
+				"icon": "leaf-maple",
+				"title": "Fuatilia Mabadiliko ya Ikolojia",
+				"description": "Fuatilia mabadiliko ya ikolojia na mazingira"
+			}
+		]
+	},
+	"applications": {
+		"tag": "Matumizi Muhimu",
+		"headline": "Matumizi Yetu ya Uchunguzi wa Bathymetric katika SmartGrid Surveying",
+		"description": "",
+		"items": [
+			{
+				"icon": "ruler-water",
+				"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-13.jpg",
+				"title": "Uchambuzi wa Kina",
+				"description": "Kipimo sahihi cha kina cha maji kwa urambazaji, ujenzi, na upangaji wa rasilimali."
+			},
+			{
+				"icon": "water-pump",
+				"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-02.jpg",
+				"title": "Usimamizi wa Rasilimali za Maji",
+				"description": "Usimamizi unaoendeshwa na data wa usambazaji wa maji, umwagiliaji, na shughuli za hifadhi."
+			},
+			{
+				"icon": "fish",
+				"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-12.jpg",
+				"title": "Utafiti wa Makazi ya Majini",
+				"description": "Uchoraji ramani wa ardhi ya chini ya maji kusaidia utafiti wa ikolojia na juhudi za uhifadhi."
+			},
+			{
+				"icon": "waves-arrow-right",
+				"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-04.jpg",
+				"title": "Kupunguza Hatari ya Maafa (Uundaji wa Mafuriko)",
+				"description": "Kutumia data ya bathymetric kuiga mifumo ya mafuriko na kutathmini hatari za mafuriko."
+			},
+			{
+				"icon": "leaf",
+				"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-05.jpg",
+				"title": "Tathmini ya Athari kwa Mazingira",
+				"description": "Kutathmini athari zinazowezekana za kimazingira za miradi kwenye miili ya maji."
+			},
+			{
+				"icon": "chart-waterfall",
+				"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-06.jpg",
+				"title": "Uchunguzi wa Hydrographic",
+				"description": "Uchoraji kamili wa ramani za miili ya maji kwa chati za bahari na urambazaji wa baharini."
+			},
+			{
+				"icon": "dam",
+				"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-08.jpg",
+				"title": "Uhandisi wa Mabwawa",
+				"description": "Data muhimu kwa muundo, ukaguzi wa usalama, na matengenezo ya mabwawa."
+			},
+			{
+				"icon": "flash",
+				"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-03.jpg",
+				"title": "Nishati ya Hydroelectric",
+				"description": "Kusaidia tathmini ya tovuti na ufanisi wa kiutendaji kwa miradi ya umeme wa maji."
+			}
+		]
+	}
+}

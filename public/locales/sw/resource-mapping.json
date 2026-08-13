@@ -1,0 +1,192 @@
+{
+	"hero": {
+		"headline": "UCHORAJI RAMANI WA RASILIMALI",
+		"title": "Akili ya Kijiografia ya Kimfumo kwa Kila Sekta",
+		"image": "/media/surveying/resource-mapping/hero.jpg",
+		"description": "SmartGrid Surveying huwezesha kilimo cha usahihi, usimamizi wa huduma, madini, ujenzi, uhifadhi wa mazingira, na kukabiliana na maafa kupitia uchoraji ramani wa gridi unaofanana, unaorudiwa, na unaoweza kupanuka.",
+		"ctaPrimary": {
+			"label": "Pata Ushauri Wako Bure",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"agriculture": {
+		"tag": "Kilimo cha Usahihi",
+		"headline": "KILIMO",
+		"images": ["/media/surveying/resource-mapping/agriculture-1.jpg", "/media/surveying/resource-mapping/agriculture-2.jpg"],
+		"description": "SmartGrid Surveying huwezesha kilimo cha usahihi kwa kuunda chanjo sawa ya kijiografia katika mashamba yote. Hii inahakikisha data thabiti, inayolinganishwa ambayo wakulima na agronomists wanaweza kutenda kwa ujasiri.",
+		"items": [
+			{
+				"icon": "leaf",
+				"title": "Ufuatiliaji wa Afya ya Mazao",
+				"description": "Ndege zisizo na rubani zenye kamera za multispectral hukusanya data katika kila seli ya gridi, kugundua mkazo, magonjwa, au upungufu wa virutubisho mapema."
+			},
+			{
+				"icon": "soil-analysis",
+				"title": "Uchambuzi wa Udongo na Ukandaji",
+				"description": "Mifano ya mwinuko na uso inayotolewa kupitia mifumo ya SmartGrid husaidia kuunda maeneo ya mifereji na umwagiliaji."
+			},
+			{
+				"icon": "sprout",
+				"title": "Uboreshaji wa Upandaji na Mavuno",
+				"description": "Kwa kuchora maeneo ya mavuno na mifumo ya ukuaji kwa uthabiti kwa muda, SmartGrid Surveying huboresha upangaji wa kupanda na kuvuna."
+			}
+		]
+	},
+	"utilitiesEnergySmartInfrastructure": {
+		"tag": "Huduma na Nishati",
+		"headline": "Huduma, Nishati na Miundombinu Mahiri",
+		"images": [
+			"/media/surveying/resource-mapping/utilities-energy-1.jpg",
+			"/media/surveying/resource-mapping/utilities-energy-2.jpg"
+		],
+		"description": "Watoa huduma na nishati wanafaidi kutokana na mbinu ya kimfumo, inayoweza kupanuka ya SmartGrid Surveying ya kuchora mitandao mikubwa na mara nyingi ya mbali.",
+		"items": [
+			{
+				"icon": "transmission-tower",
+				"title": "Uchoraji Ramani wa Ukanda wa Nguvu na Mabomba",
+				"description": "Safari za ndege zisizo na rubani zilizoimarishwa na RTK kwenye ukanda uliopangwa hupunguza muda wa ukaguzi na kuboresha usahihi wa kijiografia."
+			},
+			{
+				"icon": "solar-panel",
+				"title": "Uchambuzi wa Tovuti za Jua na Upepo",
+				"description": "Tathmini kufaa kwa ardhi, pembe za mteremko, na sababu za kivuli kwa kutumia mifano ya mwinuko na mwangaza ya SmartGrid."
+			},
+			{
+				"icon": "city-digital",
+				"title": "Usimamizi wa Mali na Matengenezo",
+				"description": "Unda mifano ya kidijitali ya mitandao ya huduma kwa kutumia data thabiti ya SmartGrid, kuboresha ufuatiliaji wa hesabu na matengenezo."
+			}
+		]
+	},
+	"quarryMining": {
+		"tag": "Madini na Uchimbaji",
+		"headline": "MACHIMBWE NA MADINI",
+		"images": [
+			"/media/surveying/resource-mapping/quary-mining-1.jpg",
+			"/media/surveying/resource-mapping/quary-mining-2.jpg"
+		],
+		"description": "SmartGrid Surveying hutoa mbinu ya kimfumo ya kufuatilia tovuti za uchimbaji na mazingira yanayozunguka, kutoa akili ya kijiografia inayohitajika kufanya kazi kwa ufanisi na kwa uwajibikaji.",
+		"items": [
+			{
+				"icon": "terrain",
+				"title": "Uchoraji Ramani wa Topografia kwa Ugunduzi",
+				"description": "Tengeneza mifano ya mwinuko wa mwonekano wa juu na ramani za ardhi katika vitalu vikubwa vya uchunguzi kwa usahihi wa gridi."
+			},
+			{
+				"icon": "cube-outline",
+				"title": "Hesabu za Kiasi",
+				"description": "Fuatilia kiasi cha hisa na shughuli za cut/fill kwa usahihi wa hali ya juu kwa kutumia DEMs na mifano ya 3D ya SmartGrid."
+			},
+			{
+				"icon": "tree-outline",
+				"title": "Ufuatiliaji wa Mazingira",
+				"description": "Chanjo thabiti ya gridi inasaidia uchoraji ramani wa msingi na ufuatiliaji wa ukarabati wa ardhi baada ya madini."
+			}
+		]
+	},
+	"constructionCivilEngineering": {
+		"tag": "Ujenzi na Uhandisi",
+		"headline": "Ujenzi na Uhandisi wa Kirahisi",
+		"images": [
+			"/media/surveying/resource-mapping/construction-civil-1.jpg",
+			"/media/surveying/resource-mapping/construction-civil-2.jpg"
+		],
+		"description": "Kuanzia uchambuzi wa tovuti kabla ya ujenzi hadi nyaraka za baada ya ujenzi, SmartGrid Surveying huharakisha michakato ya kazi na kuhakikisha upatanisho na vipimo vya mradi.",
+		"items": [
+			{
+				"icon": "bulldozer",
+				"title": "Maandalizi ya Tovuti na Kazi za Ardhi",
+				"description": "Mipango sahihi ya kusawazisha na kiwango inatengenezwa kwa kutumia data ya topografia ya SmartGrid iliyoimarishwa na RTK."
+			},
+			{
+				"icon": "chart-timeline",
+				"title": "Ufuatiliaji wa Maendeleo",
+				"description": "Safari za ndege za gridi zinaweza kurudiwa kwa vipindi vilivyopangwa kutoa ripoti za maendeleo za kuona na za kiasi."
+			},
+			{
+				"icon": "pipe-valve",
+				"title": "Uchoraji Ramani wa Huduma na Miundombinu",
+				"description": "Chanjo ya SmartGrid inahakikisha hakuna mali iliyoachwa bila uchoraji ramani — kutoka barabara hadi mabomba na nyaya za umeme."
+			}
+		]
+	},
+	"environmentalManagementConservation": {
+		"tag": "Uhifadhi wa Mazingira",
+		"headline": "Usimamizi wa Mazingira na Uhifadhi",
+		"images": [
+			"/media/surveying/resource-mapping/environmental-management-1.jpg",
+			"/media/surveying/resource-mapping/environmental-management-2.jpg"
+		],
+		"description": "Kwa SmartGrid Surveying, wataalamu wa mazingira wanaweza kukamata mabadiliko kwa muda, kwa nafasi, na ndani ya maeneo maalum ya ikolojia.",
+		"items": [
+			{
+				"icon": "forest",
+				"title": "Uchoraji Ramani wa Misitu na Mimea",
+				"description": "Mifano sawa ya urefu wa taji na tabaka za NDVI zinatokana na uchunguzi wa SmartGrid kwa tathmini za afya ya misitu."
+			},
+			{
+				"icon": "waves",
+				"title": "Uchambuzi wa Vyanzo vya Maji na Maeneo ya Mafuriko",
+				"description": "DEMs zinazozalishwa kutoka kwa uchunguzi wa angani wa gridi husaidia kuiga mtiririko wa uso, mmomonyoko, na usambazaji wa maji."
+			},
+			{
+				"icon": "paw",
+				"title": "Ufuatiliaji wa Makazi ya Wanyamapori",
+				"description": "Data thabiti ya SmartGrid inahakikisha uchunguzi unaorudiwa wa makazi yaliyolindwa au yanayo hatarini."
+			}
+		]
+	},
+	"disasterRiskReduction": {
+		"tag": "Mwitikio wa Dharura",
+		"headline": "Kupunguza Hatari ya Maafa na Mwitikio wa Dharura",
+		"images": [
+			"/media/surveying/resource-mapping/disaster-emergency-1.jpg",
+			"/media/surveying/resource-mapping/disaster-emergency-2.jpg"
+		],
+		"description": "Katika maeneo yanayokabiliwa na mafuriko, maporomoko ya ardhi, au migogoro, SmartGrid Surveying hutoa ukusanyaji wa data wa haraka, uliopangwa kusaidia upangaji na mwitikio.",
+		"items": [
+			{
+				"icon": "map-clock",
+				"title": "Uchoraji Ramani wa Hatari na Uundaji wa Hatari",
+				"description": "Jenga DEMs za mwonekano wa juu kuiga mtiririko wa maji, kukosekana kwa utulivu wa mteremko, au mifumo ya kuenea kwa moto."
+			},
+			{
+				"icon": "image-compare",
+				"title": "Tathmini ya Uharibifu",
+				"description": "Fanya uchunguzi wa baada ya tukio kwa kutumia mipango sawa ya ndege za SmartGrid kulinganisha hali kabla na baada ya maafa."
+			},
+			{
+				"icon": "road-variant",
+				"title": "Urejeshaji wa Miundombinu",
+				"description": "Tanguliza juhudi za ujenzi upya kwa kutumia data sahihi, ya kisasa ya kijiografia na chanjo kamili ya eneo."
+			}
+		]
+	},
+	"whySmartGridStandsOut": {
+		"tag": "Faida Zetu",
+		"headline": "Kwa Nini SmartGrid Surveying Inajitokeza",
+		"description": "",
+		"items": [
+			{
+				"icon": "repeat",
+				"title": "Inayorudiwa",
+				"description": "Mpangilio huo wa SmartGrid unaweza kurushwa mara kwa mara kwa ulinganisho wa muda wa kuaminika."
+			},
+			{
+				"icon": "scale",
+				"title": "Inayoweza Kupanuka",
+				"description": "Iwe ni shamba dogo au hifadhi ya taifa, msongamano wa gridi unaweza kubadilishwa ili kupanuka."
+			},
+			{
+				"icon": "application-export",
+				"title": "Inayopatana",
+				"description": "Matokeo yanaunganishwa kikamilifu na jukwaa za GIS, CAD, na uundaji."
+			},
+			{
+				"icon": "robot",
+				"title": "Tayari kwa Wakati Ujao",
+				"description": "Seti za data zilizopangwa za gridi ni bora kwa kulisha mifano ya AI na ujifunzaji wa mashine kwa uchambuzi wa utabiri."
+			}
+		]
+	}
+}

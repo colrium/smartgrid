@@ -60,6 +60,16 @@
 			"page_title": "Ground Penetrating Radar",
 			"meta_description": "Advanced subsurface utility detection and underground mapping — non-destructive GPR surveys with the LMX200 for construction, engineering, and infrastructure projects.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"resource-mapping": {
+			"page_title": "Resource Mapping",
+			"meta_description": "Systematic spatial intelligence for every sector — precision agriculture, utilities, mining, construction, environmental conservation, and disaster response through grid-based mapping.",
+			"og_image": "/media/og-terms.jpg"
+		},
+		"bathymetric-surveys": {
+			"page_title": "Bathymetric Surveys",
+			"meta_description": "Precision underwater mapping for dams, lakes, rivers & oceans — sonar-based depth and terrain surveys for engineering, environmental, and planning purposes.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {

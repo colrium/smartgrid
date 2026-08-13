@@ -60,6 +60,16 @@
 			"page_title": "Rada ya Kupenya Ardhi",
 			"meta_description": "Ugunduzi wa kisasa wa huduma za chini ya ardhi na uchoraji ramani wa chini ya ardhi — uchunguzi wa GPR usioharibu kwa LMX200 kwa miradi ya ujenzi, uhandisi, na miundombinu.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"resource-mapping": {
+			"page_title": "Uchoraji Ramani wa Rasilimali",
+			"meta_description": "Akili ya kijiografia ya kimfumo kwa kila sekta — kilimo cha usahihi, huduma, madini, ujenzi, uhifadhi wa mazingira, na kukabiliana na maafa kupitia uchoraji ramani wa gridi.",
+			"og_image": "/media/og-terms.jpg"
+		},
+		"bathymetric-surveys": {
+			"page_title": "Uchunguzi wa Bathymetric",
+			"meta_description": "Uchoraji ramani sahihi wa chini ya maji kwa mabwawa, maziwa, mito na bahari — uchunguzi wa kina na ardhi ya chini ya maji kwa madhumuni ya uhandisi, mazingira, na mipango.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {
