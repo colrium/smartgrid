@@ -1,0 +1,71 @@
+{
+	"hero": {
+		"headline": "UCHORAJI RAMANI WA NDVI WA KILIMO",
+		"title": "Kubadilisha Kilimo kwa Akili ya Angani",
+		"image": "/media/aerial-drones/agricultural-ndvi-mapping/agricultural-ndvi-mapping-01.jpg",
+		"description": "Katika SmartGrid Surveying, tunaimarisha kilimo cha kisasa kwa suluhisho za kisasa za ndege zisizo na rubani zilizoundwa kuongeza mavuno, kupunguza gharama, na kufanya kilimo kinachoendeshwa na data kuwa ukweli. \n\n Teknolojia yetu ya ndege zisizo na rubani huleta maarifa ya wakati halisi kutoka juu—kusaidia wakulima kufuatilia mazao, kuboresha pembejeo, na kufanya maamuzi sahihi katika shughuli zao za kilimo.\n\n Smartgrid Surveying ni mshirika wako wa kuaminika wa upimaji!",
+		"ctaPrimary": {
+			"label": "Chunguza Huduma Zetu za Angani",
+			"href": "/aerial-drones/drone-imagery-surveys"
+		}
+	},
+	"whyUseDronesInAgriculture": {
+		"tag": "Kilimo cha Usahihi",
+		"headline": "Kwa Nini Utumie Ndege Zisizo na Rubani Kilimoni?",
+		"image": "/media/aerial-drones/agricultural-ndvi-mapping/agricultural-ndvi-mapping-02.jpg",
+		"description": "Teknolojia yetu ya ndege zisizo na rubani huleta maarifa ya wakati halisi kutoka juu—kusaidia wakulima kufuatilia mazao, kuboresha pembejeo, na kufanya maamuzi sahihi katika shughuli zao za kilimo.",
+		"items": [
+			{
+				"icon": "clock-fast",
+				"title": "Okoa Muda na Kazi",
+				"description": "Funika maeneo makubwa kwa dakika ikilinganishwa na kazi ya shambani ya mikono."
+			},
+			{
+				"icon": "leaf",
+				"title": "Boresha Ufanisi wa Rasilimali",
+				"description": "Tumia pembejeo pale zinapohitajika tu, kupunguza gharama na athari za mazingira."
+			},
+			{
+				"icon": "brain",
+				"title": "Fanya Maamuzi Bora",
+				"description": "Tumia data ya angani kwa tathmini za shambani za wakati halisi na uchambuzi wa mwelekeo wa kihistoria."
+			},
+			{
+				"icon": "recycle",
+				"title": "Imarisha Uendelevu",
+				"description": "Kukuza kilimo cha uhifadhi kupitia usimamizi bora wa ardhi na pembejeo."
+			}
+		]
+	},
+	"process": {
+		"tag": "Mchakato",
+		"headline": "Mchakato wa Uchunguzi wa Angani wa Kilimo",
+		"description": "",
+		"items": [
+			{
+				"title": "Tathmini ya Mahitaji na Upangaji wa Tovuti",
+				"description": "Tunaanza kwa kuelewa malengo maalum ya kilimo—iwe ni afya ya mazao, uchambuzi wa umwagiliaji, au makadirio ya mavuno—na kupanga ndege ipasavyo."
+			},
+			{
+				"title": "Uwekaji wa Ndege Zisizo na Rubani",
+				"description": "Kwa kutumia ndege za multispectral au RGB, tunafanya safari za kiotomatiki zinazokamata data ya angani kwa usahihi wa GPS, kuhakikisha chanjo kamili ya shamba."
+			},
+			{
+				"title": "Ukamataji wa Data",
+				"description": "Kusanya data ya NDVI, RGB, joto, au LiDAR kulingana na mahitaji ya uchunguzi. Picha za mwonekano wa juu zenye marejeleo ya kijiografia hurekodiwa kwa wakati halisi."
+			},
+			{
+				"title": "Uchakataji wa Data na Uchoraji Ramani",
+				"description": "Picha hushonwa kuwa orthomosaic na kuchambuliwa kuzalisha ramani za afya ya mazao, contours za topografia, na viashiria vya mimea."
+			},
+			{
+				"title": "Uzalishaji wa Ripoti na Maarifa",
+				"description": "Tunakusanya maarifa yanayoweza kutekelezwa—kuangazia masuala kama maeneo yasiyofanya vizuri au maeneo ya mkazo—kwa maamuzi bora ya kilimo."
+			},
+			{
+				"title": "Utoaji na Usaidizi",
+				"description": "Ramani na data za mwisho hutolewa katika miundo tayari ya GIS pamoja na usaidizi wa kitaalamu wa ufafanuzi na mwongozo wa ujumuishaji."
+			}
+		]
+	}
+}

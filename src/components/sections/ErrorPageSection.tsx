@@ -61,7 +61,7 @@ export default function ErrorPageSection({
 					</Link>
 					<Link
 						href="/contact"
-						className="inline-flex items-center justify-center gap-2 rounded border border-primary/30 bg-transparent px-6 py-3 text-sm font-medium text-primary transition-all hover:border-primary hover:bg-primary/10"
+						className="inline-flex items-center justify-center gap-2 rounded-full  border border-primary/30 bg-transparent px-6 py-3 text-sm font-medium text-primary transition-all hover:border-primary hover:bg-primary/10"
 					>
 						<MailOutlinedIcon fontSize="small" />
 						{contactLabel}

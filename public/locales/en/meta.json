@@ -85,6 +85,11 @@
 			"page_title": "LiDAR Mapping",
 			"meta_description": "LiDAR mapping services — reliable, scalable, fast and powerful. High-accuracy point clouds, DEMs, and 3D models for construction, mining, forestry, and agriculture.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"agricultural-ndvi-mapping": {
+			"page_title": "Agricultural NDVI Mapping",
+			"meta_description": "Transforming agriculture with aerial intelligence — drone-based NDVI and multispectral mapping for crop health, irrigation analysis, and yield estimation.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {

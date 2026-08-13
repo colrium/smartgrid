@@ -85,6 +85,11 @@
 			"page_title": "Uchoraji Ramani wa LiDAR",
 			"meta_description": "Huduma za uchoraji ramani wa LiDAR — kuaminika, kupanuka, haraka na nguvu. Point clouds za usahihi wa juu, DEMs, na mifano ya 3D kwa ujenzi, madini, misitu, na kilimo.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"agricultural-ndvi-mapping": {
+			"page_title": "Uchoraji Ramani wa NDVI wa Kilimo",
+			"meta_description": "Kubadilisha kilimo kwa akili ya angani — uchoraji ramani wa NDVI na multispectral kwa ndege zisizo na rubani kwa afya ya mazao, uchambuzi wa umwagiliaji, na makadirio ya mavuno.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {
