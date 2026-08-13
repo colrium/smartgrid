@@ -1,0 +1,62 @@
+{
+	"hero": {
+		"headline": "HIGHWAY SURVEYS",
+		"title": "Highway Surveys Solutions",
+		"image": "/images/placeholder.jpg",
+		"description": "Leading Africa's Land and Aerial Surveying Revolution. Highway surveys play a critical role in the planning, design, construction, and operation of road infrastructure.",
+		"ctaPrimary": {
+			"label": "Get Your Free Consultation",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"overview": {
+		"tag": "Critical Infrastructure",
+		"headline": "Overview",
+		"image": "/images/placeholder.jpg",
+		"description": "Leveraging a mix of aerial imaging, UAV photogrammetry, LiDAR, GNSS, and conventional surveying, engineers can make data-driven decisions that ensure safety, efficiency, and sustainability throughout the lifecycle of a highway project."
+	},
+	"benefitsOfHighwaySurveys": {
+		"tag": "Value Drivers",
+		"headline": "Benefits of Integrated Highway Surveys",
+		"image": "/images/placeholder.jpg",
+		"description": "",
+		"items": [
+			{
+				"icon": "ruler-compass",
+				"title": "Planning & Design",
+				"description": "Surveys provide essential data for designing new roads, considering factors like traffic volume, safety, and environmental impact."
+			},
+			{
+				"icon": "wrench",
+				"title": "Maintenance",
+				"description": "Surveys help identify areas in need of repair, prioritize maintenance, and evaluate the effectiveness of repairs."
+			},
+			{
+				"icon": "pipe-valve",
+				"title": "Utility Protection",
+				"description": "Identifying and mapping utilities helps avoid damaging them during construction, minimizing disruptions."
+			},
+			{
+				"icon": "office-building",
+				"title": "Construction",
+				"description": "Construction layout surveys ensure roads are built according to design plans and safety standards."
+			},
+			{
+				"icon": "shield-check",
+				"title": "Safety",
+				"description": "Accurate surveys contribute to road safety by ensuring proper alignment, clear sight distances, and appropriate signage."
+			},
+			{
+				"icon": "clipboard-list",
+				"title": "Assets Management",
+				"description": "Inventory surveys provide data for managing and maintaining highway infrastructure."
+			}
+		]
+	},
+	"highwaySurveyDeliverables": {
+		"tag": "Project Outputs",
+		"headline": "Highway Surveys Deliverables",
+		"image": "/images/placeholder.jpg",
+		"description": "We deliver comprehensive data packages tailored for highway engineering and construction workflows."
+	}
+}

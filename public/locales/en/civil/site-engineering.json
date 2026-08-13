@@ -1,0 +1,56 @@
+{
+	"hero": {
+		"headline": "SITE ENGINEERING SURVEYS",
+		"title": "Survey Smarter, Build Stronger",
+		"image": "/images/placeholder.jpg",
+		"description": "Leading Africa's Land and Aerial Surveying Revolution. Build Smarter from the Ground Up—our drone-enabled site engineering surveys deliver precise measurements, rapid terrain insights, and informed decision-making for your construction projects.",
+		"ctaPrimary": {
+			"label": "Get Your Free Consultation",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"overview": {
+		"tag": "Precision Construction",
+		"headline": "Reliable. Scalable. Fast. Powerful.",
+		"image": "/images/placeholder.jpg",
+		"description": "By capturing high-resolution topographic data, 3D ground models, and accurate boundary visuals, we streamline site planning and reduce costly rework. Whether you're breaking ground or managing infrastructure upgrades, SmartGrid Surveying gives you the geospatial clarity needed to engineer with confidence and precision."
+	},
+	"services": {
+		"tag": "Our Capabilities",
+		"headline": "Site Engineering Services",
+		"image": "/images/placeholder.jpg",
+		"description": "We provide a comprehensive suite of site engineering services to support every phase of your construction project, from planning to completion.",
+		"items": [
+			{
+				"icon": "level",
+				"title": "Leveling",
+				"description": "Precise leveling services to establish accurate elevation benchmarks and ensure proper grading for construction."
+			},
+			{
+				"icon": "excavator",
+				"title": "Excavation Services",
+				"description": "Providing detailed excavation plans and volume calculations to guide earthmoving operations."
+			},
+			{
+				"icon": "file-document",
+				"title": "As-built Surveys",
+				"description": "Documenting final construction conditions to verify compliance with design specifications and support asset management."
+			},
+			{
+				"icon": "ruler-square",
+				"title": "Buildings Stakeout",
+				"description": "Accurately marking out building positions, foundations, and structural elements on site for construction crews."
+			},
+			{
+				"icon": "pipe-valve",
+				"title": "Utilities Mapping",
+				"description": "Identifying, mapping, and documenting existing and new utility networks to prevent conflicts and ensure safety."
+			},
+			{
+				"icon": "chart-timeline",
+				"title": "Evaluation and Monitoring",
+				"description": "Ongoing assessment of site conditions, progress tracking, and change detection for quality control."
+			}
+		]
+	}
+}

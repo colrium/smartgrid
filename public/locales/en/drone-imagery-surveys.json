@@ -1,0 +1,104 @@
+{
+	"hero": {
+		"headline": "DRONE IMAGERY SURVEYS",
+		"title": "Reliable. Scalable. Fast. Powerful.",
+		"image": "/images/placeholder.jpg",
+		"description": "Unlock faster, more cost-effective, and safer mapping, measurement, and monitoring of 1000+ Acres at a time. With cutting-edge drones and land surveying techniques, we deliver actionable data across Africa and beyond.",
+		"ctaPrimary": {
+			"label": "Get Your Free Consultation",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"whyDronesMatter": {
+		"tag": "The Future of Surveying",
+		"headline": "Why Drones Matter!",
+		"image": "/images/placeholder.jpg",
+		"description": "Modern surveying is evolving—and drones sit at the heart of this transformation. They deliver speed, precision, safety, and powerful spatial insights that traditional methods alone cannot match. At Smartgrid Surveying, we deliver fast, accurate, and detailed surveys."
+	},
+	"aerialSurveyDeliverables": {
+		"tag": "Data Outputs",
+		"headline": "Aerial Surveys Deliverables",
+		"image": "/images/placeholder.jpg",
+		"description": "Our drone‑based surveying solutions enhance decision‑making for construction, engineering, land administration, and environmental monitoring. We capture accurate geospatial data using advanced UAV platforms equipped with RGB, LiDAR, and thermal sensors. All outputs are optimized for use within GIS, CAD, BIM, and engineering workflows.",
+		"items": [
+			{
+				"icon": "image",
+				"title": "Orthomosaics",
+				"description": "GeoTIFF / JPEG + Raw images"
+			},
+			{
+				"icon": "terrain",
+				"title": "DTM / DSM",
+				"description": "LAS / TIFF"
+			},
+			{
+				"icon": "cube-3d",
+				"title": "3D Mesh",
+				"description": "OBJ / FBX"
+			},
+			{
+				"icon": "map-contour",
+				"title": "Contour Maps",
+				"description": "DWG / DXF"
+			},
+			{
+				"icon": "point-cloud",
+				"title": "3D Point Clouds",
+				"description": "LAS / LAZ"
+			},
+			{
+				"icon": "map",
+				"title": "Topographical Maps",
+				"description": "DWG / PDF / SHP"
+			},
+			{
+				"icon": "leaf",
+				"title": "NDVI & Multispectral Maps",
+				"description": "Vegetation health and multispectral analysis"
+			},
+			{
+				"icon": "file-pdf-box",
+				"title": "Survey Reports",
+				"description": "PDF"
+			}
+		]
+	},
+	"projectsAcrossAfrica": {
+		"tag": "Our Reach",
+		"headline": "PROJECTS DONE ACROSS AFRICA",
+		"image": "/images/placeholder.jpg",
+		"description": "We've completed aerial drone surveys across several African countries, supporting governments, private developers, and NGOs. Here are a few highlights:",
+		"items": [
+			{
+				"icon": "map-marker",
+				"title": "Kenya – 2,000 ha",
+				"description": "Agricultural zoning in Uasin Gishu"
+			},
+			{
+				"icon": "map-marker",
+				"title": "Ghana – 3,500 ha",
+				"description": "Cocoa plantation mapping in Kumasi"
+			},
+			{
+				"icon": "map-marker",
+				"title": "Rwanda – 1,800 ha",
+				"description": "Wetland analysis in Bugesera"
+			},
+			{
+				"icon": "map-marker",
+				"title": "South Africa – 5,200 ha",
+				"description": "Mining volumetrics in Limpopo"
+			},
+			{
+				"icon": "map-marker",
+				"title": "Nigeria – 4,100 ha",
+				"description": "Urban sprawl monitoring in Abuja"
+			},
+			{
+				"icon": "map-marker",
+				"title": "East Africa Region – 10,000+ ha",
+				"description": "Infrastructure and land use planning across Kenya, Uganda, and Tanzania"
+			}
+		]
+	}
+}

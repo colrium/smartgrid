@@ -43,7 +43,7 @@
 		}
 	],
 	"nav": {
-        "logo": "/img/logo.svg",
+		"logo": "/img/logo.svg",
 		"logo_alt": "SmartGrid",
 		"links": [
 			{
@@ -86,35 +86,35 @@
 						"label": "Drone imagery surveys",
 						"href": "/surveying/topographical-surveys"
 					},
-                    {
+					{
 						"label": "Lidar Mapping",
 						"href": "/surveying/topographical-surveys"
 					},
-                    {
+					{
 						"label": "Agricultural NDVI Mapping",
 						"href": "/surveying/topographical-surveys"
 					},
-                    {
+					{
 						"label": "As built surveys",
 						"href": "/surveying/topographical-surveys"
 					},
-                    {
+					{
 						"label": "Monitoring and Evaluation",
 						"href": "/surveying/topographical-surveys"
 					},
-                    {
+					{
 						"label": "Solar Panel Drone Surveys",
 						"href": "/surveying/topographical-surveys"
 					},
-                    {
+					{
 						"label": "Volumetric Surveys",
 						"href": "/surveying/topographical-surveys"
 					},
-                    {
+					{
 						"label": "Landfill & Quarry Drone Surveys",
 						"href": "/surveying/topographical-surveys"
 					},
-                    {
+					{
 						"label": "Photography & Video Marketing",
 						"href": "/surveying/topographical-surveys"
 					}
@@ -124,8 +124,28 @@
 				"label": "Civil",
 				"links": [
 					{
-						"label": "Topographical surveys",
-						"href": "/surveying/topographical-surveys"
+						"label": "Highway Surveys",
+						"href": "/civil/highway-surveys"
+					},
+					{
+						"label": "As-built surveys",
+						"href": "/civil/as-built-surveys"
+					},
+					{
+						"label": "Volumetric surveys",
+						"href": "/civil/volumetric-surveys"
+					},
+					{
+						"label": "BIM",
+						"href": "/civil/bim"
+					},
+					{
+						"label": "Site Engineering",
+						"href": "/civil/site-engineering"
+					},
+					{
+						"label": "Site setting out",
+						"href": "/civil/site-setting-out"
 					}
 				]
 			},
@@ -133,17 +153,39 @@
 				"label": "Equipment sale",
 				"links": [
 					{
-						"label": "Topographical surveys",
-						"href": "/surveying/topographical-surveys"
+						"label": "FOIF A90 RTK GNSS",
+						"href": "/equipment-sale/foif-a90-rtk-gnss"
+					},
+					{
+						"label": "TOTAL STATION ESURVEY",
+						"href": "/equipment-sale/total-station-esurvey"
+					},
+					{
+						"label": "TOTAL STATION DTM 152M",
+						"href": "/equipment-sale/total-station-dtm-152m"
+					},
+					{
+						"label": "AUTOMATIC LEVEL BOSCH",
+						"href": "/equipment-sale/automatic-level-bosch"
+					},
+					{
+						"label": "AUTOMATIC LEVEL HUEPER",
+						"href": "/equipment-sale/automatic-level-bosch"
+					},
+					{
+						"label": "EQUIPMENT CATALOGUE",
+						"href": "/equipment-sale/equipment-catalogue"
 					}
 				]
 			},
 			{ "label": "Hiring", "href": "/hiring" },
 			{ "label": "About", "href": "/about" },
-			{ "label": "Contact", "href": "/contact", "type": "pill" }
+			{ "label": "Contact Us", "href": "/contact", "type": "pill" }
 		],
-		"cta_ghost": { "label": "Learn More", "href": "/#faq" },
-		"cta_primary": { "label": "Get a Quote", "href": "/contact" }
+
+		"ctaPrimary": { "label": "Get a Quote", "href": "/contact?reason=request-quote" },
+		"ctaSecondary": { "label": "Learn More", "href": "/#faq" },
+        "ctaSearch": { "label": "Learn More", "href": "/#faq" }
 	},
 	"footer": {
 		"description": "Reliable. Scalable. Fast. Accurate.",

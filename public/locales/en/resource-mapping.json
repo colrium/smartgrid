@@ -1,0 +1,178 @@
+{
+	"hero": {
+		"headline": "RESOURCE MAPPING",
+		"title": "Systematic Spatial Intelligence for Every Sector",
+		"image": "/images/placeholder.jpg",
+		"description": "SmartGrid Surveying enables precision agriculture, utilities management, mining, construction, environmental conservation, and disaster response through uniform, repeatable, and scalable grid-based mapping.",
+		"ctaPrimary": {
+			"label": "Get Your Free Consultation",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"agriculture": {
+		"tag": "Precision Agriculture",
+		"headline": "AGRICULTURE",
+		"image": "/images/placeholder.jpg",
+		"description": "SmartGrid Surveying enables precision agriculture by creating uniform spatial coverage across entire fields. This ensures consistent, comparable data that farmers and agronomists can act on with confidence.",
+		"items": [
+			{
+				"icon": "leaf",
+				"title": "Crop Health Monitoring",
+				"description": "Drones equipped with multispectral cameras collect data across every grid cell, detecting stress, disease, or nutrient deficiencies early."
+			},
+			{
+				"icon": "soil-analysis",
+				"title": "Soil Analysis & Zoning",
+				"description": "Elevation and surface models generated through SmartGrid frameworks assist in creating drainage and irrigation zones."
+			},
+			{
+				"icon": "sprout",
+				"title": "Planting & Harvest Optimization",
+				"description": "By mapping yield zones and growth patterns consistently over time, SmartGrid Surveying improves planning for sowing and harvesting."
+			}
+		]
+	},
+	"utilitiesEnergySmartInfrastructure": {
+		"tag": "Utilities & Energy",
+		"headline": "Utilities, Energy & Smart Infrastructure",
+		"image": "/images/placeholder.jpg",
+		"description": "Utilities and energy providers benefit from SmartGrid Surveying's systematic, scalable approach to mapping vast and often remote networks.",
+		"items": [
+			{
+				"icon": "transmission-tower",
+				"title": "Powerline & Pipeline Corridor Mapping",
+				"description": "RTK-enhanced drone flights along grid-aligned corridors reduce inspection time and improve spatial accuracy."
+			},
+			{
+				"icon": "solar-panel",
+				"title": "Solar & Wind Site Analysis",
+				"description": "Evaluate terrain suitability, slope angles, and shade factors using SmartGrid elevation and exposure models."
+			},
+			{
+				"icon": "city-digital",
+				"title": "Asset Management & Maintenance",
+				"description": "Create digital twins of utility networks using consistent SmartGrid-collected data, improving inventory and maintenance tracking."
+			}
+		]
+	},
+	"quarryMining": {
+		"tag": "Mining & Extraction",
+		"headline": "QUARRY & MINING",
+		"image": "/images/placeholder.jpg",
+		"description": "SmartGrid Surveying provides a systematic method to monitor extraction sites and surrounding environments, delivering the spatial intelligence needed to operate efficiently and responsibly.",
+		"items": [
+			{
+				"icon": "terrain",
+				"title": "Topographic Mapping for Exploration",
+				"description": "Generate high-resolution elevation models and terrain maps across large survey blocks with grid-based accuracy."
+			},
+			{
+				"icon": "cube-outline",
+				"title": "Volumetric Calculations",
+				"description": "Track stockpile volumes and cut/fill operations with pinpoint precision using SmartGrid-based DEMs and 3D models."
+			},
+			{
+				"icon": "tree-outline",
+				"title": "Environmental Monitoring",
+				"description": "Consistent grid coverage supports baseline mapping and post-mining land rehabilitation tracking."
+			}
+		]
+	},
+	"constructionCivilEngineering": {
+		"tag": "Construction & Engineering",
+		"headline": "Construction & Civil Engineering",
+		"image": "/images/placeholder.jpg",
+		"description": "From pre-construction site analysis to post-construction documentation, SmartGrid Surveying accelerates workflows and ensures alignment with project specs.",
+		"items": [
+			{
+				"icon": "bulldozer",
+				"title": "Site Preparation & Earthworks",
+				"description": "Accurate grading and leveling plans are developed using RTK-enhanced SmartGrid topographic data."
+			},
+			{
+				"icon": "chart-timeline",
+				"title": "Progress Tracking",
+				"description": "Grid-based drone flights can be repeated at scheduled intervals to produce visual and quantitative progress reports."
+			},
+			{
+				"icon": "pipe-valve",
+				"title": "Utility & Infrastructure Mapping",
+				"description": "SmartGrid coverage ensures that no asset is left unmapped—from roads to pipelines and power lines."
+			}
+		]
+	},
+	"environmentalManagementConservation": {
+		"tag": "Environmental Conservation",
+		"headline": "Environmental Management & Conservation",
+		"image": "/images/placeholder.jpg",
+		"description": "With SmartGrid Surveying, environmental specialists can capture change over time, across space, and within specific ecological zones.",
+		"items": [
+			{
+				"icon": "forest",
+				"title": "Forest & Vegetation Mapping",
+				"description": "Uniform canopy height models and NDVI layers are derived from SmartGrid surveys for forest health assessments."
+			},
+			{
+				"icon": "waves",
+				"title": "Watershed & Floodplain Analysis",
+				"description": "DEMs generated from grid-based aerial surveys help model surface runoff, erosion, and water distribution."
+			},
+			{
+				"icon": "paw",
+				"title": "Wildlife Habitat Monitoring",
+				"description": "Consistent SmartGrid data ensures repeatable observations of protected or endangered habitats."
+			}
+		]
+	},
+	"disasterRiskReduction": {
+		"tag": "Emergency Response",
+		"headline": "Disaster Risk Reduction & Emergency Response",
+		"image": "/images/placeholder.jpg",
+		"description": "In areas prone to floods, landslides, or conflict, SmartGrid Surveying offers rapid, structured data collection to support planning and response.",
+		"items": [
+			{
+				"icon": "map-clock",
+				"title": "Hazard Mapping & Risk Modeling",
+				"description": "Build high-resolution DEMs to simulate water flow, slope instability, or fire spread patterns."
+			},
+			{
+				"icon": "image-compare",
+				"title": "Damage Assessment",
+				"description": "Conduct post-event surveys using the same SmartGrid flight plans to compare pre- and post-disaster conditions."
+			},
+			{
+				"icon": "road-variant",
+				"title": "Infrastructure Recovery",
+				"description": "Prioritize reconstruction efforts using accurate, up-to-date geospatial data with full area coverage."
+			}
+		]
+	},
+	"whySmartGridStandsOut": {
+		"tag": "Our Advantages",
+		"headline": "Why SmartGrid Surveying Stands Out",
+		"image": "/images/placeholder.jpg",
+		"description": "",
+		"items": [
+			{
+				"icon": "repeat",
+				"title": "Repeatable",
+				"description": "The same SmartGrid layout can be flown repeatedly for reliable temporal comparisons."
+			},
+			{
+				"icon": "scale",
+				"title": "Scalable",
+				"description": "Whether it's a small farm or a national park, grid density can be adjusted to scale."
+			},
+			{
+				"icon": "application-export",
+				"title": "Compatible",
+				"description": "Outputs integrate seamlessly with GIS, CAD, and modeling platforms."
+			},
+			{
+				"icon": "robot",
+				"title": "Future-Proof",
+				"description": "Grid-aligned datasets are ideal for feeding into AI and machine learning models for predictive analysis."
+			}
+		]
+	}
+}

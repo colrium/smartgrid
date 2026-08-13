@@ -1,0 +1,42 @@
+{
+	"hero": {
+		"headline": "LIDAR MAPPING",
+		"title": "Reliable. Scalable. Fast. Powerful.",
+		"image": "/images/placeholder.jpg",
+		"description": "LiDAR technology has become a game-changer for many industries. At SmartGrid Surveying, we proudly offer LiDAR mapping services to a wide range of sectors.",
+		"ctaPrimary": {
+			"label": "Get Your Free Consultation",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"whyChooseLidar": {
+		"tag": "Precision Data",
+		"headline": "Why Choose Our LiDAR Mapping Solutions?",
+		"image": "/images/placeholder.jpg",
+		"description": "Our LiDAR mapping solutions deliver unparalleled accuracy and detail for diverse applications, ensuring reliable data for critical decision-making."
+	},
+	"lidarPowerlineInspection": {
+		"tag": "Infrastructure Safety",
+		"headline": "Lidar Powerline Inspection",
+		"image": "/images/placeholder.jpg",
+		"description": "LiDAR is invaluable for powerline inspection, detecting vegetation encroachment, structural integrity issues, and ensuring compliance with safety standards."
+	},
+	"forestry": {
+		"tag": "Environmental Management",
+		"headline": "Forestry",
+		"image": "/images/placeholder.jpg",
+		"description": "LiDAR technology in forestry enables accurate measurement of tree heights, canopy structures, and biomass by capturing detailed 3D data from above. This allows forest managers to assess health, plan sustainable harvesting, and monitor ecosystem changes with unmatched precision."
+	},
+	"construction": {
+		"tag": "Project Efficiency",
+		"headline": "Construction",
+		"image": "/images/placeholder.jpg",
+		"description": "LiDAR in construction provides precise topographic data and 3D site models, streamlining planning, design, and earthwork estimation. It enhances accuracy in monitoring progress, detecting structural deviations, and reducing costly rework."
+	},
+	"ctaSection": {
+		"tag": null,
+		"headline": "Get started Today!",
+		"image": "/images/placeholder.jpg",
+		"description": "Ready to take your projects to the next level with LiDAR mapping? Contact SmartGrid Surveying to learn more about how our solutions can help you achieve your goals. Our team is here to answer any questions and provide a free consultation."
+	}
+}

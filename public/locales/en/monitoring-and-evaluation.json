@@ -1,0 +1,60 @@
+{
+	"hero": {
+		"headline": "MONITORING AND EVALUATION",
+		"title": "Monitoring & Evaluation to Build Stronger",
+		"image": "/images/placeholder.jpg",
+		"description": "Precision-driven solutions for sustainability, conservation, and compliance.",
+		"ctaPrimary": {
+			"label": "Get Your Free Consultation",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"ourMonitoringServices": {
+		"tag": "Data-Driven Insights",
+		"headline": "Our Monitoring & Evaluation Services",
+		"image": "/images/placeholder.jpg",
+		"description": "We provide comprehensive monitoring and evaluation solutions using advanced aerial and ground-based surveying technologies to track progress, assess impact, and ensure compliance across various sectors.",
+		"items": [
+			{
+				"icon": "map",
+				"title": "Aerial Mapping",
+				"description": "High-resolution orthomosaics and georeferenced maps for baseline establishment and change detection."
+			},
+			{
+				"icon": "cube-3d",
+				"title": "3D Models",
+				"description": "Detailed three-dimensional representations of sites, structures, and terrain for visualization and analysis."
+			},
+			{
+				"icon": "terrain",
+				"title": "Digital Terrain & Elevation Models (DTMs & DEMs)",
+				"description": "Precise ground surface models for hydrological analysis, earthworks, and land use planning."
+			},
+			{
+				"icon": "chart-timeline",
+				"title": "Construction Monitoring",
+				"description": "Track project progress, verify compliance with design specifications, and identify deviations in real-time."
+			},
+			{
+				"icon": "leaf",
+				"title": "Agricultural Mapping",
+				"description": "Monitor crop health, assess vegetation indices (NDVI), and optimize resource allocation."
+			},
+			{
+				"icon": "tree-outline",
+				"title": "Environmental Monitoring",
+				"description": "Track land use changes, deforestation, reforestation, and habitat restoration efforts."
+			},
+			{
+				"icon": "city",
+				"title": "Infrastructure Planning",
+				"description": "Provide accurate spatial data for designing, expanding, and maintaining public utilities and transport networks."
+			},
+			{
+				"icon": "calculator",
+				"title": "Volumetric Calculations",
+				"description": "Compute stockpile volumes, cut/fill quantities, and resource extraction metrics with high accuracy."
+			}
+		]
+	}
+}

@@ -50,6 +50,11 @@
 			"page_title": "Uchunguzi wa Cadastral",
 			"meta_description": "Uchunguzi wa cadastral na mipaka — jua mipaka yako na ujenge kwa ujasiri. Mistari sahihi ya mali, utambuzi wa uvamizi na kuzuia migogoro.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"aerial-surveys": {
+			"page_title": "Uchunguzi wa Angani",
+			"meta_description": "Uchunguzi wa angani kwa ndege zisizo na rubani — vipimo sahihi, vya haraka na vya kuaminika. Orthomosaic, mifano ya 3D, DTMs na DEMs, uchambuzi wa kiasi, na ufuatiliaji wa ujenzi kote Afrika.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {

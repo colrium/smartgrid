@@ -1,0 +1,133 @@
+{
+	"hero": {
+		"headline": "ABOUT US",
+		"title": "Reliable. Scalable. Fast. Effective.",
+		"image": "/images/placeholder.jpg",
+		"description": "Whether you're a government agency, an NGO, or a private developer, Smartgrid Surveying is your trusted partner! Our drones deliver actionable data where it matters most.",
+		"ctaPrimary": {
+			"label": "Get Your Free Consultation",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"ourStory": {
+		"tag": "Our Journey",
+		"headline": "SMARTGRID SURVEYING & ENGINEERING",
+		"image": "/images/placeholder.jpg",
+		"description": "At Smartgrid Surveying, established 2020. We're redefining the future of land and aerial surveys across Africa and beyond. With cutting-edge technology and an unwavering commitment to precision, we offer a full suite of professional surveying services that support infrastructure development, land administration, environmental monitoring, and planning projects of all scales."
+	},
+	"aerialSurveying": {
+		"tag": "Aerial Intelligence",
+		"headline": "AERIAL SURVEYING",
+		"image": "/images/placeholder.jpg",
+		"description": "Drones have transformed the surveying industry—and we're leading the way. Smartgrid Surveying leverages aerial drones for mapping, 3D modeling, volumetrics, environmental assessments, and monitoring large or inaccessible areas. Beyond technical mapping, we offer professional drone photography for real estate, construction marketing, tourism, and events. Using drones equipped with RTK GPS and high-resolution sensors, we capture precise geospatial data that empowers engineers, developers, governments, and NGOs to make smarter decisions, faster.",
+		"items": [
+			{
+				"icon": "map",
+				"title": "Aerial Mapping",
+				"description": "High-resolution orthomosaics and georeferenced maps."
+			},
+			{
+				"icon": "cube-3d",
+				"title": "3D Models",
+				"description": "Detailed three-dimensional representations for analysis."
+			},
+			{
+				"icon": "terrain",
+				"title": "DTMs & DEMs",
+				"description": "Digital Terrain and Elevation Models for planning."
+			},
+			{
+				"icon": "chart-timeline",
+				"title": "Construction Monitoring",
+				"description": "Track progress and verify compliance."
+			},
+			{
+				"icon": "leaf",
+				"title": "Agricultural Mapping",
+				"description": "Crop health and resource optimization."
+			},
+			{
+				"icon": "tree-outline",
+				"title": "Environmental Monitoring",
+				"description": "Land use, deforestation, and habitat tracking."
+			},
+			{
+				"icon": "city",
+				"title": "Infrastructure Planning",
+				"description": "Data for designing and maintaining infrastructure."
+			},
+			{
+				"icon": "calculator",
+				"title": "Volumetric Calculations",
+				"description": "Stockpile and earthwork volume computations."
+			}
+		]
+	},
+	"landSurveying": {
+		"tag": "Ground Precision",
+		"headline": "SMARTGRID LAND SURVEYING",
+		"image": "/images/placeholder.jpg",
+		"description": "At Smartgrid Surveying, we're redefining the future of land and aerial surveys across Africa and beyond. With cutting-edge technology and an unwavering commitment to precision, we offer a full suite of professional surveying services that support infrastructure development, land administration, environmental monitoring, and planning projects of all scales. Smartgrid Surveying provides comprehensive land surveying solutions tailored to developers, governments, contractors, and private clients. Whether it's for title deeds, boundary demarcation, construction layouts, or cadastral mapping, we bring experience and excellence to every site.",
+		"items": [
+			{
+				"icon": "map-marker",
+				"title": "Boundary Surveys & Subdivisions",
+				"description": "Accurate property line determination and land subdivision."
+			},
+			{
+				"icon": "map-contour",
+				"title": "Topographic Mapping",
+				"description": "Detailed terrain mapping for planning and design."
+			},
+			{
+				"icon": "ruler-square",
+				"title": "Engineering & Construction Surveys",
+				"description": "Site setting out, leveling, and stakeout for projects."
+			},
+			{
+				"icon": "file-document",
+				"title": "As-Built Surveys",
+				"description": "Documenting final construction conditions."
+			}
+		]
+	},
+	"impactAcrossAfrica": {
+		"tag": "Our Reach",
+		"headline": "Impact Across Africa",
+		"image": "/images/placeholder.jpg",
+		"description": "From Kenya's Rift Valley to forests in the Congo Basin, and urban expansion in Accra, Ghana, Smartgrid Surveying has completed projects spanning thousands of hectares, transforming raw data into meaningful insights that support development, climate resilience, and sustainable land use."
+	},
+	"whyChooseSmartGrid": {
+		"tag": "Why Us",
+		"headline": "Why Choose SmartGrid for Drone Services?",
+		"image": "/images/placeholder.jpg",
+		"description": "",
+		"items": [
+			{
+				"icon": "certificate",
+				"title": "Certified Drone Pilots",
+				"description": "Expert pilots for safe and precise operations."
+			},
+			{
+				"icon": "camera-4k",
+				"title": "4K Imaging & High-Accuracy Mapping",
+				"description": "Stunning imagery with cm-level accuracy."
+			},
+			{
+				"icon": "map-multiple",
+				"title": "Nationwide & Cross-Border Coverage",
+				"description": "Service across Kenya and beyond."
+			},
+			{
+				"icon": "file-contract",
+				"title": "Flexible Hire Plans",
+				"description": "Customized rental options for your project."
+			},
+			{
+				"icon": "headset",
+				"title": "End-to-End Support",
+				"description": "From planning to final delivery."
+			}
+		]
+	}
+}

@@ -1,0 +1,104 @@
+{
+	"hero": {
+		"headline": "BATHYMETRIC SURVEYS",
+		"title": "Precision Underwater Mapping for Dams, Lakes, Rivers & Oceans",
+		"image": "/images/placeholder.jpg",
+		"description": "Using advanced sonar equipment and GPS integration, SmartGrid Surveying maps the depth and topography of water bodies—delivering vital data for engineering, environmental, and planning purposes.",
+		"ctaPrimary": {
+			"label": "Get Your Free Consultation",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"whatIsBathymetricSurveys": {
+		"tag": "Underwater Topography",
+		"headline": "What is Bathymetric Surveys?",
+		"image": "/images/placeholder.jpg",
+		"description": "Bathymetric surveys involve measuring the depth of water bodies and charting the underwater terrain. This technique is crucial for understanding sediment levels, water volume, and underwater hazards. It supports safer construction, better water resource management, and proactive environmental protection. SmartGrid Surveying uses high-resolution echo sounders, GNSS positioning systems, and remote-controlled survey boats to access shallow and restricted water zones safely and efficiently."
+	},
+	"damsLakesSeaOcean": {
+		"tag": "Water Infrastructure & Environment",
+		"headline": "DAMS, LAKES, SEA & OCEAN",
+		"image": "/images/placeholder.jpg",
+		"description": "Our expertise is especially critical for the management and maintenance of dams, lakes, sea, and oceans. We provide data that helps clients:",
+		"items": [
+			{
+				"icon": "chart-bubble",
+				"title": "Monitor Siltation & Sediment",
+				"description": "Monitor siltation and sediment build-up"
+			},
+			{
+				"icon": "water",
+				"title": "Assess Dam Storage Capacity",
+				"description": "Assess dam storage capacity and volume"
+			},
+			{
+				"icon": "dam",
+				"title": "Evaluate Structural Risks",
+				"description": "Evaluate structural risks and identify erosion zones"
+			},
+			{
+				"icon": "dredge",
+				"title": "Pre-/Post-Dredging Assessments",
+				"description": "Conduct pre- and post-dredging assessments"
+			},
+			{
+				"icon": "expansion",
+				"title": "Plan for Expansion or Rehabilitation",
+				"description": "Plan for dam expansion or rehabilitation"
+			},
+			{
+				"icon": "leaf-maple",
+				"title": "Track Ecological Changes",
+				"description": "Track ecological and environmental changes"
+			}
+		]
+	},
+	"applications": {
+		"tag": "Key Applications",
+		"headline": "Our Applications of Bathymetric Surveys at SmartGrid Surveying",
+		"image": "/images/placeholder.jpg",
+		"description": "",
+		"items": [
+			{
+				"icon": "ruler-water",
+				"title": "Depth Analysis",
+				"description": "Precise measurement of water depths for navigation, construction, and resource planning."
+			},
+			{
+				"icon": "water-pump",
+				"title": "Water Resource Management",
+				"description": "Data-driven management of water supply, irrigation, and reservoir operations."
+			},
+			{
+				"icon": "fish",
+				"title": "Aquatic Habitat Study",
+				"description": "Mapping underwater terrain to support ecological research and conservation efforts."
+			},
+			{
+				"icon": "waves-arrow-right",
+				"title": "Disaster Risk Reduction (Flood Modeling)",
+				"description": "Using bathymetric data to model flood patterns and assess flood risks."
+			},
+			{
+				"icon": "leaf",
+				"title": "Environmental Impact Assessment",
+				"description": "Evaluating the potential environmental effects of projects on water bodies."
+			},
+			{
+				"icon": "chart-waterfall",
+				"title": "Hydrographic Surveys",
+				"description": "Comprehensive mapping of water bodies for nautical charting and marine navigation."
+			},
+			{
+				"icon": "dam",
+				"title": "Dam Engineering",
+				"description": "Critical data for the design, safety inspection, and maintenance of dams."
+			},
+			{
+				"icon": "flash",
+				"title": "Hydroelectric Power",
+				"description": "Supporting site assessment and operational efficiency for hydropower projects."
+			}
+		]
+	}
+}

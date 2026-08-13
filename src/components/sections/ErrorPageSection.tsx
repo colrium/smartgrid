@@ -54,7 +54,7 @@ export default function ErrorPageSection({
 				<div className="mt-10 flex flex-col gap-3 sm:flex-row">
 					<Link
 						href="/"
-						className="inline-flex items-center justify-center gap-2 rounded border border-primary bg-primary px-6 py-3 text-sm font-medium text-black transition-all hover:bg-[#E5C46A]"
+						className="inline-flex items-center justify-center gap-2 rounded-full border border-primary bg-primary px-6 py-3 text-sm font-medium text-surface transition-all hover:bg-transparent"
 					>
 						<ArrowBackIcon fontSize="small" />
 						{homeLabel}

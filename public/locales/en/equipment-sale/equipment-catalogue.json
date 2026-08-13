@@ -1,0 +1,51 @@
+{
+	"hero": {
+		"headline": "EQUIPMENT CATALOGUE",
+		"title": "Reliable. Calibrated. Accurate.",
+		"image": "/images/placeholder.jpg",
+		"description": "Unlock faster, more cost-effective, and safer mapping, measurement, and Engineering. At Smartgrid Surveying, we turn this vision into reality—across Africa and beyond. With our cutting-edge drones and Land surveying techniques, we deliver the actionable data you need, exactly where it matters.",
+		"ctaPrimary": {
+			"label": "Get Your Free Consultation",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"catalogueOverview": {
+		"tag": "Our Equipment Range",
+		"headline": "Equipment Catalogue",
+		"image": "/images/placeholder.jpg",
+		"description": "SmartGrid Surveying offers a comprehensive range of high-quality surveying and engineering equipment. All instruments are reliable, calibrated, and accurate to support your projects with precision."
+	},
+	"equipmentCategories": {
+		"tag": "Product Categories",
+		"headline": "What We Offer",
+		"image": "/images/placeholder.jpg",
+		"description": "Browse our selection of professional surveying equipment and accessories.",
+		"items": [
+			{
+				"icon": "satellite",
+				"title": "GNSS Systems",
+				"description": "High-precision GNSS receivers including FOIF A90 RTK for centimeter-level positioning."
+			},
+			{
+				"icon": "ruler-square",
+				"title": "Total Stations",
+				"description": "E-Survey and DTM total stations for accurate angle and distance measurements."
+			},
+			{
+				"icon": "level",
+				"title": "Automatic Levels",
+				"description": "Bosch and Hueper automatic levels for precise height and leveling tasks."
+			},
+			{
+				"icon": "drone",
+				"title": "Drones & UAVs",
+				"description": "Advanced drones equipped with sensors for mapping, inspection, and monitoring."
+			},
+			{
+				"icon": "toolbox",
+				"title": "Accessories",
+				"description": "Prisms, tripods, staffs, data collectors, and other field essentials."
+			}
+		]
+	}
+}

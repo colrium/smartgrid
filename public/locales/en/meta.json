@@ -50,6 +50,11 @@
 			"page_title": "Cadastral surveys",
 			"meta_description": "Cadastral & boundary surveys — know your boundaries and build with confidence. Accurate property lines, encroachment identification and dispute prevention.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"aerial-surveys": {
+			"page_title": "Aerial surveys",
+			"meta_description": "Aerial drone surveys — accurate measurements, fast and reliable. Orthomosaics, 3D models, DTMs & DEMs, volumetric analysis, and construction monitoring across Africa.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {

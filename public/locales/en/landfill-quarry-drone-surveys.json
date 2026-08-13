@@ -1,0 +1,68 @@
+{
+	"hero": {
+		"headline": "LANDFILL & QUARRY DRONE SURVEYS",
+		"title": "Survey Smarter, Build Stronger",
+		"image": "/images/placeholder.jpg",
+		"description": "Leading Africa's Land and Aerial Surveying Revolution. Unlock faster, more cost-effective, and safer mapping, measurement, and monitoring of 1000+ Acres at a time.",
+		"ctaPrimary": {
+			"label": "Get Your Free Consultation",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"quarryServices": {
+		"tag": "Site Intelligence",
+		"headline": "QUARRY SERVICES",
+		"image": "/images/placeholder.jpg",
+		"description": "Unlock Precision. Boost Profitability. Our drone and land surveys for quarries deliver the data you need—faster, safer, and more accurately than ever before.",
+		"items": [
+			{
+				"icon": "stockpile",
+				"title": "Volumetric Analysis",
+				"description": "Accurate measurement of extracted materials, stockpiles, and remaining reserves for production planning."
+			},
+			{
+				"icon": "map-contour",
+				"title": "Topographic Mapping",
+				"description": "High-resolution terrain models and contour maps for pit design and operational management."
+			},
+			{
+				"icon": "chart-timeline",
+				"title": "Progression Tracking",
+				"description": "Regular monitoring of excavation progress and site development over time."
+			},
+			{
+				"icon": "safety-goggles",
+				"title": "Safety & Compliance",
+				"description": "Identify potential hazards, monitor slope stability, and ensure regulatory compliance."
+			}
+		]
+	},
+	"landfillServices": {
+		"tag": "Environmental Management",
+		"headline": "LANDFILL SERVICES",
+		"image": "/images/placeholder.jpg",
+		"description": "Our drone surveys provide comprehensive data for landfill management, including capacity planning, environmental monitoring, and operational efficiency.",
+		"items": [
+			{
+				"icon": "cube-scan",
+				"title": "Capacity & Volume Assessment",
+				"description": "Calculate remaining airspace, track fill rates, and plan for future expansion or closure."
+			},
+			{
+				"icon": "recycle",
+				"title": "Cover & Settlement Monitoring",
+				"description": "Monitor cover material distribution, detect settlement issues, and ensure proper compaction."
+			},
+			{
+				"icon": "leaf",
+				"title": "Environmental Compliance",
+				"description": "Detect leachate seepage, assess vegetation health, and track post-closure rehabilitation."
+			},
+			{
+				"icon": "map-clock",
+				"title": "Historical Comparison",
+				"description": "Compare data over time to evaluate operational changes and environmental impact."
+			}
+		]
+	}
+}

@@ -68,7 +68,7 @@ export function CtaSection() {
 								{secondary?.href && (
 									<Link
 										href={secondary.href}
-										className="inline-flex items-center gap-2.5 h-14 rounded-full border border-white/30 px-8 text-white text-base transition-all duration-300 hover:border-white hover:bg-white/10"
+										className="inline-flex items-center gap-2.5 h-14 rounded-full border border-white/30 px-8 text-white text-base transition-all duration-300 hover:border-white hover:bg-surface/10"
 									>
 										{secondary.icon ? (
 											<span

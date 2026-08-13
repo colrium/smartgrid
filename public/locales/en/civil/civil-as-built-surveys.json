@@ -1,0 +1,84 @@
+{
+	"hero": {
+		"headline": "AS-BUILT SURVEYS",
+		"title": "As-Built Surveys",
+		"image": "/images/placeholder.jpg",
+		"description": "Leading Africa's Land and Aerial Surveying Revolution. Capture the true, current state of built environments by comparing actual field conditions with original designs.",
+		"ctaPrimary": {
+			"label": "Get Your Free Consultation",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"whatAreAsBuiltSurveys": {
+		"tag": "Precision Documentation",
+		"headline": "What are As-built surveys?",
+		"image": "/images/placeholder.jpg",
+		"description": "As-built surveys capture the true, current state of built environments by comparing actual field conditions with original designs. Using drones, LiDAR, and photogrammetry, we document infrastructure with centimeter-level accuracy, from the air—faster and safer than traditional methods."
+	},
+	"applications": {
+		"tag": "Key Applications",
+		"headline": "Our Applications",
+		"image": "/images/placeholder.jpg",
+		"description": "",
+		"items": [
+			{
+				"icon": "chart-timeline",
+				"title": "Construction Progress Verification",
+				"description": "Verify that construction aligns with design specifications and identify deviations early."
+			},
+			{
+				"icon": "file-document",
+				"title": "Post-Construction Documentation",
+				"description": "Create comprehensive records of completed structures for operations and maintenance."
+			},
+			{
+				"icon": "clipboard-search",
+				"title": "Structural and Utility Audits",
+				"description": "Conduct detailed inspections of existing structures and underground utilities."
+			},
+			{
+				"icon": "city-digital",
+				"title": "Digital Twin Creation",
+				"description": "Build precise digital replicas of physical assets for simulation and analysis."
+			},
+			{
+				"icon": "cube-scan",
+				"title": "BIM Integration & Model Validation",
+				"description": "Validate and update Building Information Models with as-built data."
+			}
+		]
+	},
+	"keyIndustries": {
+		"tag": "Sectors Served",
+		"headline": "Key Industries",
+		"image": "/images/placeholder.jpg",
+		"description": "",
+		"items": [
+			{
+				"icon": "road-variant",
+				"title": "Infrastructure & Transportation",
+				"description": "Highways, railways, and airports."
+			},
+			{
+				"icon": "flash",
+				"title": "Energy & Utilities",
+				"description": "Power lines, substations, and solar farms."
+			},
+			{
+				"icon": "city",
+				"title": "Commercial & Residential Development",
+				"description": "Building and housing projects."
+			},
+			{
+				"icon": "gas-station",
+				"title": "Oil & Gas Facilities",
+				"description": "Refineries, pipelines, and storage depots."
+			},
+			{
+				"icon": "office-building",
+				"title": "Public Works & Civil Engineering",
+				"description": "Bridges, dams, and municipal projects."
+			}
+		]
+	}
+}

@@ -1,0 +1,46 @@
+{
+	"hero": {
+		"headline": "FOIF A90 RTK GNSS",
+		"title": "High-Precision GNSS Receiver for Professional Surveying",
+		"image": "/images/placeholder.jpg",
+		"description": "The FOIF A90 RTK GNSS system delivers centimeter-level accuracy for all your surveying needs. Designed for reliability and performance in the field.",
+		"ctaPrimary": {
+			"label": "Inquire About This Equipment",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"productOverview": {
+		"tag": "Surveying Equipment",
+		"headline": "FOIF A90 RTK GNSS",
+		"image": "/images/placeholder.jpg",
+		"description": "The FOIF A90 is a multi-frequency, multi-constellation GNSS receiver designed for high-precision RTK surveys. It offers robust performance even in challenging environments, making it ideal for cadastral, construction, and engineering projects."
+	},
+	"keyFeatures": {
+		"tag": "Features",
+		"headline": "Key Features",
+		"image": "/images/placeholder.jpg",
+		"description": "",
+		"items": [
+			{
+				"icon": "satellite",
+				"title": "Multi-Constellation Support",
+				"description": "Tracks GPS, GLONASS, BeiDou, and Galileo for maximum satellite availability."
+			},
+			{
+				"icon": "ruler",
+				"title": "Centimeter-Level Accuracy",
+				"description": "Delivers RTK positioning accuracy of ±1 cm + 1 ppm horizontally."
+			},
+			{
+				"icon": "wifi",
+				"title": "Advanced Connectivity",
+				"description": "Equipped with Bluetooth, UHF, and 4G for seamless data transmission."
+			},
+			{
+				"icon": "battery-10",
+				"title": "Long Battery Life",
+				"description": "All-day operation with hot-swappable battery support."
+			}
+		]
+	}
+}

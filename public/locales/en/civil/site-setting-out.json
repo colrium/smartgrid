@@ -1,0 +1,104 @@
+{
+	"hero": {
+		"headline": "SITE SETTING OUT",
+		"title": "Staking Out and Setting Out",
+		"image": "/images/placeholder.jpg",
+		"description": "SmartGrid Surveying ensures precise construction by translating designs into accurate physical points on-site, supporting engineering, building, and civil projects across Kenya.",
+		"ctaPrimary": {
+			"label": "Get Your Free Consultation",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"serviceOverview": {
+		"tag": "Precision Construction",
+		"headline": "Overview",
+		"image": "/images/placeholder.jpg",
+		"description": "Ensure your construction projects start with precision. SmartGrid Surveying delivers expert site setting out services, translating designs into accurate physical points on-site for buildings, roads, and infrastructure. Our experienced team uses advanced surveying instruments and GNSS technology to guarantee centimeter-level accuracy, helping projects stay on schedule and compliant with engineering standards."
+	},
+	"ourServices": {
+		"tag": "Core Capabilities",
+		"headline": "Our Services",
+		"image": "/images/placeholder.jpg",
+		"description": "We provide comprehensive site setting out services to ensure your project is built exactly as designed.",
+		"items": [
+			{
+				"icon": "ruler-square",
+				"title": "Building Setting Out",
+				"description": "Accurate marking of building corners, foundations, columns, and structural grids from design plans."
+			},
+			{
+				"icon": "road-variant",
+				"title": "Road & Infrastructure Setting Out",
+				"description": "Establishing alignments, levels, and widths for roads, pavements, and drainage systems."
+			},
+			{
+				"icon": "pipe-valve",
+				"title": "Utility Setting Out",
+				"description": "Marking positions for underground services including water, sewer, power, and telecom lines."
+			},
+			{
+				"icon": "terrain",
+				"title": "Leveling & Grading Control",
+				"description": "Setting benchmarks and grade stakes for earthworks, foundations, and slab pours."
+			},
+			{
+				"icon": "check-circle",
+				"title": "Verification Checks",
+				"description": "Follow-up surveys at key construction stages to ensure ongoing alignment with design."
+			}
+		]
+	},
+	"faq": {
+		"tag": "Common Questions",
+		"headline": "Frequently Asked Questions",
+		"image": "/images/placeholder.jpg",
+		"description": "",
+		"items": [
+			{
+				"icon": "help-circle",
+				"title": "What is a Site Setting Out Survey?",
+				"description": "A site setting out survey translates the design drawings into physical points on the ground. It establishes the exact locations for buildings, roads, utilities, and other structures to ensure construction is accurate and complies with engineering plans."
+			},
+			{
+				"icon": "help-circle",
+				"title": "Why do I need a Site Setting Out Survey?",
+				"description": "Without accurate setting out, structures can be misaligned or result in costly rework. SmartGrid Surveying ensures your project is built exactly as designed, maintaining legal and engineering compliance while saving time and resources."
+			},
+			{
+				"icon": "help-circle",
+				"title": "How long does a Site Setting Out survey take?",
+				"description": "The duration depends on the project size and complexity. SmartGrid Surveying provides a detailed timeline before starting, ensuring transparency. For example, a residential plot may take 1–2 days, while larger commercial or infrastructure sites may take several days."
+			},
+			{
+				"icon": "help-circle",
+				"title": "Do you mark the site physically?",
+				"description": "Yes. SmartGrid Surveying places markers, pegs, or paint markings on the ground according to design coordinates, ensuring builders and contractors can accurately follow the plans."
+			},
+			{
+				"icon": "help-circle",
+				"title": "Can a Site Setting Out survey prevent boundary disputes?",
+				"description": "Absolutely. By aligning structures according to cadastral plans and approved drawings, SmartGrid Surveying ensures construction respects property boundaries, minimizing conflicts with neighbors or local authorities."
+			},
+			{
+				"icon": "help-circle",
+				"title": "What documentation do I get after the survey?",
+				"description": "After a site setting out survey, SmartGrid Surveying provides: Survey drawings showing all marked points, Coordinates of reference points, Verification report confirming alignment with design, and Certificates for legal or regulatory purposes if needed."
+			},
+			{
+				"icon": "help-circle",
+				"title": "How often should setting out checks be done?",
+				"description": "Initial marking is done before construction begins. SmartGrid Surveying recommends follow-up checks at key stages (foundation, floor slabs, road alignment) to maintain accuracy throughout the construction process."
+			},
+			{
+				"icon": "help-circle",
+				"title": "Is this service compliant with Kenyan regulations?",
+				"description": "Yes. SmartGrid Surveying operates under the Survey Act, Cap 299, and all work is performed by licensed surveyors. We also comply with county planning regulations and building codes."
+			},
+			{
+				"icon": "help-circle",
+				"title": "How can I request a Site Setting Out survey?",
+				"description": "You can contact SmartGrid Surveying via WhatsApp, email, or phone. We will schedule a site visit, provide a quotation, and outline the survey plan tailored to your project."
+			}
+		]
+	}
+}

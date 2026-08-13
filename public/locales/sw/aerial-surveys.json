@@ -1,0 +1,160 @@
+{
+	"hero": {
+		"headline": "UCHUNGUZI WA ANGANI",
+		"title": "Vipimo sahihi. Haraka. Uchunguzi wa kuaminika.",
+		"image": "/media/surveying/aerial-surveys/AG8ng.jpeg",
+		"description": "Kuongoza Mapinduzi ya Upimaji wa Ardhi na Angani Afrika",
+		"ctaPrimary": {
+			"label": "Pata Ushauri Wako Bure",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"section1": {
+		"tag": "Mshirika wako wa kuaminika",
+		"headline": "Kuaminika. Kupanuka. Haraka. Ufanisi.",
+		"description": "Iwe wewe ni wakala wa serikali, shirika lisilo la kiserikali, au mwekezaji binafsi, Smartgrid Surveying ni mshirika wako wa kuaminika! \n Ndege zetu zisizo na rubani hutoa data inayoweza kutumiwa pale inapohitajika zaidi.",
+		"ctaPrimary": {
+			"label": "Anza Uchunguzi Wako wa Angani na Sisi!",
+			"href": "/aerial-drones/drone-imagery-surveys"
+		}
+	},
+	"whatWeOffer": {
+		"tag": "Huduma",
+		"headline": "Huduma Zetu za Uchunguzi wa Angani",
+		"items": [
+			{
+				"title": "Uchoraji Ramani wa Angani",
+				"description": "Picha sahihi za ndege zisizo na rubani kwa mipango, nyaraka, na uchambuzi.",
+				"popupContent": "SmartGrid Surveying hutoa uchoraji ramani sahihi wa angani kwa kutumia UAV kuzalisha orthomosaic zenye marejeleo ya kijiografia, data ya topografia, na ramani za msingi za upangaji. Suluhisho zetu zinasaidia miundombinu, huduma, na maendeleo ya ardhi kwa kasi na usahihi usio na mfano."
+			},
+			{
+				"title": "Ufuatiliaji wa Ujenzi",
+				"description": "Fuatilia shughuli za kiwanja kwa kutumia picha za angani thabiti na za wakati halisi.",
+				"popupContent": "SmartGrid hutoa ufuatiliaji wa tovuti kupitia safari za ndege za risasi za mwonekano wa juu. Safari zetu za kiotomatiki hutoa masasisho ya kila wiki ya kuona, kugundua mkengeuko kutoka kwa ratiba, na kusaidia uamuzi kwa wasimamizi wa miradi na wakandarasi."
+			},
+			{
+				"title": "Ufuatiliaji wa Mazingira",
+				"description": "Ona mabadiliko ya ikolojia na fuatilia maeneo ya uhifadhi.",
+				"popupContent": "Kwa kutumia UAV, SmartGrid hufuatilia mabadiliko ya kifuniko cha ardhi, ukataji miti, mmomonyoko, na viashiria vingine vya ikolojia. Data yetu inasaidia tathmini za athari na kufuata kanuni kwa picha za muda zilizorudiwa na zilizowekwa alama."
+			},
+			{
+				"title": "Uchoraji Ramani wa Kilimo",
+				"description": "Data ya multispectral inayotokana na ndege zisizo na rubani kwa afya ya mazao na uboreshaji wa shamba.",
+				"popupContent": "SmartGrid huwapa agronomists data kuhusu afya ya mazao, mkazo wa mimea, na mifumo ya umwagiliaji. Tunatumia uchambuzi wa NDVI na multispectral kuboresha matumizi ya pembejeo na kuboresha uendelevu wa mavuno."
+			},
+			{
+				"title": "Muundo wa 3D",
+				"description": "Mifano halisi ya 3D kusaidia mipango na ukaguzi.",
+				"popupContent": "Tunaunda mifano ya 3D ya kina ya ardhi, majengo, na miundombinu. Mifano hii iko tayari kwa BIM na ni muhimu kwa uthibitisho wa muundo, ukaguzi, na upangaji wa kina."
+			},
+			{
+				"title": "Upangaji wa Miundombinu",
+				"description": "Data ya njia na ardhi kwa mpangilio bora wa miundombinu.",
+				"popupContent": "Tunachora ramani za njia na maeneo kwa kutumia LiDAR ya ndege zisizo na rubani na photogrammetry. Hii inahakikisha uwekaji bora wa barabara, mabomba, na maendeleo ya mijini huku ikipunguza usumbufu wa mazingira."
+			},
+			{
+				"title": "DTMs na DEMs",
+				"description": "Mifano ya kidijitali ya ardhi na mwinuko kwa kazi za maji na uhandisi wa kirahisi.",
+				"popupContent": "Mifano yetu ya ardhi na mwinuko huwasaidia wahandisi wa kirahisi na wataalamu wa maji kuchambua mtiririko wa maji, utulivu wa mteremko, na ujazo. Tunatoa data sahihi ya mwinuko kusaidia miundombinu thabiti."
+			},
+			{
+				"title": "Hesabu za Kiasi (Volumetric)",
+				"description": "Hesabu kiasi cha nyenzo na kusimamia rasilimali kwa usahihi.",
+				"popupContent": "SmartGrid hukokotoa kiasi cha cut/fill na vipimo vya hisa kwa usahihi wa kiwango cha sentimita. Photogrammetry yetu ya angani hutoa matokeo ya haraka, salama, na yanayorudiwa."
+			},
+			{
+				"title": "Tathmini ya Maafa",
+				"description": "Data ya njia na ardhi kwa mpangilio bora wa miundombinu.",
+				"popupContent": "Baada ya mafuriko, maporomoko ya ardhi, au matetemeko ya ardhi, SmartGrid hutumia ndege zisizo na rubani kuhariri uharibifu haraka. Data yetu huwasaidia wahudumu kutanguliza hatua, kugawa misaada, na kupanga shughuli za uokoaji."
+			}
+		]
+	},
+	"precision": {
+		"tag": "Usahihi",
+		"headline": "Macho Angani, Usahihi Duniani",
+		"description": "Katika SmartGrid Surveying, suluhisho zetu za uchunguzi wa angani kwa ndege zisizo na rubani hutoa picha za mwonekano wa juu, uchoraji ramani wa topografia, na uchambuzi wa kiasi kwa usahihi na kasi isiyo na kifani. Kuanzia mashamba makubwa hadi miundombinu ya mijini, teknolojia yetu ya ndege zisizo na rubani hukamata data haraka, salama, na kwa gharama nafuu—haswa katika maeneo magumu kufikia au mapana. \n\n Tumekamilisha uchunguzi wa angani katika sekta nyingi katika nchi 10+ za Afrika, tukihudumia wasanidi ardhi, serikali, kampuni za madini, na biashara za kilimo.",
+		"image": "/media/surveying/aerial-surveys/drone-piloting.jpeg"
+	},
+	"aerialSurveying": {
+		"tag": "",
+		"headline": "Uchunguzi wa Angani",
+		"description": "Ndege zisizo na rubani zimebadilisha tasnia ya upimaji—na tunaongoza. Smartgrid Surveying hutumia ndege zisizo na rubani kwa uchoraji ramani, muundo wa 3D, kiasi, tathmini za mazingira, na ufuatiliaji wa maeneo makubwa au magumu kufikia. Zaidi ya uchoraji ramani wa kiufundi, tunatoa upigaji picha wa kitaalamu kwa mali isiyohamishika, uuzaji wa ujenzi, utalii, na matukio. Kwa kutumia ndege zisizo na rubani zenye RTK GPS na sensorer za mwonekano wa juu, tunakamata data ya kijiografia sahihi inayowawezesha wahandisi, wasanidi, serikali, na NGO kufanya maamuzi bora, haraka. \n\n Tunatoa uchunguzi wa haraka, sahihi, na wa kina kwa:",
+		"items": [
+			{
+				"label": "Uchoraji Ramani wa Angani",
+				"image": "/media/surveying/aerial-surveys/aerial-mapping.jpeg"
+			},
+			{
+				"label": "Mifano ya 3D",
+				"image": "/media/surveying/aerial-surveys/3d-models.jpeg"
+			},
+			{
+				"label": "Mifano ya Kidijitali ya Ardhi na Mwinuko (DTMs na DEMs)",
+				"image": "/media/surveying/aerial-surveys/digital-terrain-elevation-models.jpeg"
+			},
+			{
+				"label": "Ufuatiliaji wa Ujenzi",
+				"image": "/media/surveying/aerial-surveys/construction-monitoring.jpeg"
+			},
+			{
+				"label": "Uchoraji Ramani wa Kilimo",
+				"image": "/media/surveying/aerial-surveys/agricultural-mapping.jpeg"
+			},
+			{
+				"label": "Ufuatiliaji wa Mazingira",
+				"image": "/media/surveying/aerial-surveys/environmental-monitoring.png"
+			},
+			{
+				"label": "Upangaji wa Miundombinu",
+				"image": "/media/surveying/aerial-surveys/infrastructure-planning.jpeg"
+			},
+			{
+				"label": "Hesabu za Kiasi",
+				"image": "/media/surveying/aerial-surveys/volumetric-calculations.jpeg"
+			}
+		]
+	},
+	"deliverables": {
+		"tag": "Unachopata",
+		"headline": "Bidhaa za Uchunguzi wa Angani",
+		"image": "/media/surveying/aerial-surveys/aerial-drone-deliverables.png",
+		"items": [
+			"Picha Zilizosahihishwa (Zenye Marejeleo ya Kijiografia) + Picha Mbichi",
+			"Ramani za Orthomosaic (Zenye Marejeleo ya Kijiografia)",
+			"Mifano ya Kidijitali ya Mwinuko (DTM, DSM)",
+			"Mistari ya Contour",
+			"Point Clouds za 3D (X, Y, Z)",
+			"Ramani za Topografia",
+			"Shapefiles za CAD",
+			"Ripoti za Uchambuzi wa Kiasi",
+			"Ripoti za Uchunguzi",
+			"Ramani za NDVI na Multispectral (Kilimo tu)"
+		]
+	},
+	"projects": {
+		"tag": "Miradi Iliyokamilika",
+		"headline": "MIRADI ILIYOFANYWA KOTE AFRIKA",
+		"images": [
+			"/media/surveying/aerial-surveys/drone-photography-1.jpeg",
+			"/media/surveying/aerial-surveys/drone-photography-2.jpeg",
+			"/media/surveying/aerial-surveys/drone-photography-3.jpeg",
+			"/media/surveying/aerial-surveys/drone-photography-4.jpeg",
+			"/media/surveying/aerial-surveys/drone-photography-5.jpeg"
+		],
+		"description": "Tumekamilisha uchunguzi wa angani katika nchi kadhaa za Afrika, tukisaidia serikali, wasanidi binafsi, na NGO. Hapa kuna baadhi ya mambo muhimu:",
+		"items": [
+			"Kenya – hekta 2,000 za ukandaji wa kilimo Uasin Gishu",
+			"Ghana – hekta 3,500 za uchoraji ramani wa mashamba ya kakao Kumasi",
+			"Rwanda – hekta 1,800 za uchambuzi wa ardhi oevu Bugesera",
+			"Afrika Kusini – hekta 5,200 za kiasi cha madini Limpopo",
+			"Nigeria – hekta 4,100 za ufuatiliaji wa upanuzi wa miji Abuja",
+			"Mkoa wa Afrika Mashariki – zaidi ya hekta 10,000 zilipimwa katika miradi ya miundombinu ya kikanda na upangaji wa matumizi ya ardhi Kenya, Uganda, na Tanzania"
+		]
+	},
+	"additionalServices": {
+		"tag": "Mbali na uchunguzi wa kiufundi",
+		"headline": "tunatoa huduma za upigaji picha za angani kwa",
+		"items": ["Uuzaji wa mali isiyohamishika na majengo", "Ushughulikiaji wa matukio", "Vyombo vya utangazaji"],
+		"description": "Unahitaji vifaa? Huduma yetu ya kukodisha ndege zisizo na rubani huwapa wateja ufikiaji wa ndege bora kwa kukodisha kwa muda mfupi au mrefu, pamoja na mafunzo ya hiari au usaidizi wa waendeshaji."
+	}
+}

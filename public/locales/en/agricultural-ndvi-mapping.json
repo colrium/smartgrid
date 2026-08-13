@@ -1,0 +1,40 @@
+{
+	"hero": {
+		"headline": "AGRICULTURAL NDVI MAPPING",
+		"title": "Transforming Agriculture with Aerial Intelligence",
+		"image": "/images/placeholder.jpg",
+		"description": "Leading Africa's Land and Aerial Surveying Revolution. SmartGrid Surveying empowers modern agriculture with cutting-edge drone solutions designed to maximize yields, reduce costs, and make data-driven farming a reality.",
+		"ctaPrimary": {
+			"label": "Get Your Free Consultation",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"whyUseDronesInAgriculture": {
+		"tag": "Precision Farming",
+		"headline": "Why Use Drones in Agriculture?",
+		"image": "/images/placeholder.jpg",
+		"description": "Our drone technology brings real-time insights from above—helping farmers monitor crops, optimize inputs, and make informed decisions across their agricultural operations.",
+		"items": [
+			{
+				"icon": "clock-fast",
+				"title": "Save Time & Labor",
+				"description": "Cover large areas in minutes compared to manual fieldwork."
+			},
+			{
+				"icon": "leaf",
+				"title": "Improve Resource Efficiency",
+				"description": "Apply inputs only where needed, reducing cost and environmental impact."
+			},
+			{
+				"icon": "brain",
+				"title": "Make Smarter Decisions",
+				"description": "Use aerial data for real-time field assessments and historical trend analysis."
+			},
+			{
+				"icon": "recycle",
+				"title": "Enhance Sustainability",
+				"description": "Promote conservation agriculture through better land and input management."
+			}
+		]
+	}
+}

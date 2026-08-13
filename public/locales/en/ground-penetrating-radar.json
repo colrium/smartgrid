@@ -1,0 +1,174 @@
+{
+	"hero": {
+		"headline": "GROUND PENETRATING RADAR",
+		"title": "Advanced Subsurface Utility Detection and Underground Mapping",
+		"image": "/medial/surveying/ground-penetrating-radar/hero.png",
+		"description": "High-resolution GPR technology for construction, engineering, and infrastructure projects.",
+		"ctaPrimary": {
+			"label": "Get Your Free Consultation",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"whatIsGprSurveying": {
+		"tag": "Non-Destructive & Accurate",
+		"headline": "What is GPR Surveying?",
+		"image": "/medial/surveying/ground-penetrating-radar/gpr-01.jpeg",
+		"description": "Ground Penetrating Radar (GPR) is a non-destructive geophysical method used to detect and map subsurface features. SmartGrid Surveying utilizes advanced GPR systems such as the LMX200 to accurately identify underground utilities, voids, foundations, and anomalies without excavation."
+	},
+	"gprLmx200": {
+		"tag": "Our Core Technology",
+		"headline": "GPR LMX 200",
+		"image": "/medial/surveying/ground-penetrating-radar/gpr-lmx-200.gif",
+		"description": "Our LMX 200 will provide real time data as we scan through underground services such as electrical cables, PVC water line pipes, GI Pipes among others. Led By our surveyors, we further process the data after real time data is collected to provide comprehensive reports and maps that show the underground services networks mapped."
+	},
+	"precisionBelowAndAbove": {
+		"tag": "Detecting the Invisible",
+		"headline": "Precision Below & Above",
+		"image": "/medial/surveying/ground-penetrating-radar/placeholder.jpg",
+		"description": "Smartgrid Surveying leads in Ground Penetrating Radar and Topographical Mapping -- Detecting the invidible and mapping the critical. High‑resolution subsurface scanning for utilities, voids, pavement assessments, and engineering investigations."
+	},
+	"whatWeDo": {
+		"tag": "Our Services",
+		"headline": "What we do!",
+		"description": "",
+		"items": [
+			{
+				"icon": "radar",
+				"image": "/medial/surveying/ground-penetrating-radar/gpr-lmx-200.jpeg",
+				"title": "Subsurface Imaging",
+				"description": "2D Radagrams Profiling. Identify utilities, voids, tanks, and anomalies up to 10 meters deep — non-invasively."
+			},
+			{
+				"icon": "map-marker-path",
+				"image": "/medial/surveying/ground-penetrating-radar/topographical-mapping.png",
+				"title": "Topographical Mapping",
+				"description": "Create Topo Maps. Deliver precise elevation models tied to RTK GNSS benchmarks with cm-level resolution."
+			},
+			{
+				"icon": "chart-scatter-plot",
+				"image": "/medial/surveying/ground-penetrating-radar/data-integration.png",
+				"title": "Smart Data Integration",
+				"description": "Data Interpretation. Transform field data into engineering-ready formats using GPR-Slice, Civil 3D, QGIS, and BIM workflows."
+			}
+		]
+	},
+	"whyUseLmx200": {
+		"tag": null,
+		"headline": "Why Use the LMX200 GPR System?",
+		"description": "",
+
+		"items": [
+			{
+				"icon": "shield-check",
+				"image": "/medial/surveying/ground-penetrating-radar/gpr-16.jpeg",
+				"title": "NON DESTRUCTIVE",
+				"description": "No excavation required, preserving site integrity."
+			},
+			{
+				"icon": "ruler-square",
+				"image": "/medial/surveying/ground-penetrating-radar/gpr-15.jpeg",
+				"title": "HIGH ACCURACY",
+				"description": "Paired with Advanced RTK equipment for 1cm accuracy"
+			},
+			{
+				"icon": "cube-scan",
+				"image": "/medial/surveying/ground-penetrating-radar/gpr-02.png",
+				"title": "ALL IN ONE SOLUTION",
+				"description": "Combines GPR Data with drone mapping and GIS"
+			},
+			{
+				"icon": "clock-fast",
+				"image": "/medial/surveying/ground-penetrating-radar/gpr-12.jpeg",
+				"title": "FAST TURNAROUND",
+				"description": "Quick data collection and reporting."
+			}
+		]
+	},
+	"lmx200Features": {
+		"tag": null,
+		"headline": "LMX 200 FEATURES",
+		"description": "",
+		"image": "/medial/surveying/ground-penetrating-radar/lmx-200-features.png"
+	},
+	"featuredProjects": {
+		"tag": "Case Studies",
+		"headline": "Featured Projects Across Kenya",
+		"description": "",
+		"items": [
+			{
+				"icon": "city",
+				"title": "Utility Mapping – Nairobi CBD",
+				"description": "Used: LMX200 Ground Penetrating Radar integrated with RTK-GNSS positioning. Objective: Detect and map existing underground utilities before foundation excavation. Result: Successfully identified fiber optics, power conduits, and storm drains — preventing costly conflicts during construction."
+			},
+			{
+				"icon": "pipe",
+				"title": "Pipeline Integrity Survey – Kisumu",
+				"description": "Used: LMX200 GPR for non-destructive assessment of aging municipal water lines. Objective: Identify voids, pipe fractures, and leakage zones along the corridor. Result: Detected subsurface anomalies consistent with leakage and pipe deterioration, enabling targeted maintenance."
+			},
+			{
+				"icon": "archaeology",
+				"title": "Archaeological Site Survey – Tharaka Nithi",
+				"description": "Used: LMX200 GPR combined with drone-based topographical mapping. Objective: Locate buried cultural features without intrusive excavation. Result: Mapped subsurface stone alignments and structural remains while preserving site integrity."
+			},
+			{
+				"icon": "road",
+				"title": "Highway Expansion Risk Mapping – Nakuru",
+				"description": "Used: LMX200 GPR in corridor scanning mode synchronized with GNSS data. Objective: Identify underground utilities and potential weak zones ahead of road widening works. Result: Provided high-resolution GPR profiles highlighting voids and buried services, improving design safety margins."
+			},
+			{
+				"icon": "factory",
+				"title": "Industrial Site Clearance – Mombasa",
+				"description": "Used: LMX200 Ground Penetrating Radar for pre-redevelopment clearance verification. Objective: Confirm absence of buried tanks, debris, or metallic hazards across a decommissioned port depot. Result: Verified the site as clear of subsurface obstructions, supporting safe redevelopment and compliance certification."
+			}
+		]
+	},
+	"gprImagesSlider": {
+		"items": [
+			{
+				"image": "/medial/surveying/ground-penetrating-radar/gpr-01.jpeg",
+				"title": "Field Scan",
+				"description": "Real-time GPR profiling across an urban site showing utility corridors."
+			},
+			{
+				"image": "/medial/surveying/ground-penetrating-radar/gpr-07.jpeg",
+				"title": "Corridor Mapping",
+				"description": "High-density transects collected for thorough subsurface coverage."
+			},
+			{
+				"image": "/medial/surveying/ground-penetrating-radar/gpr-10.jpeg",
+				"title": "Shallow Utility Detection",
+				"description": "Clear identification of shallow cables and conduits prior to excavation."
+			},
+			{
+				"image": "/medial/surveying/ground-penetrating-radar/gpr-12.jpeg",
+				"title": "Deep Anomaly Profiling",
+				"description": "Detecting deeper voids and buried structures with enhanced penetration."
+			},
+			{
+				"image": "/medial/surveying/ground-penetrating-radar/gpr-09.jpeg",
+				"title": "RTK Integration",
+				"description": "Synchronised GNSS positioning providing centimeter-accurate geolocation."
+			},
+			{
+				"image": "/medial/surveying/ground-penetrating-radar/gpr-14.jpeg",
+				"title": "Data Interpretation",
+				"description": "Post-processed slices and maps ready for engineering workflows."
+			},
+			{
+				"image": "/medial/surveying/ground-penetrating-radar/gpr-11.jpeg",
+				"title": "Pipeline Corridor Survey",
+				"description": "Non-destructive assessment along long pipeline alignments."
+			},
+			{
+				"image": "/medial/surveying/ground-penetrating-radar/gpr-05.jpeg",
+				"title": "Urban Redevelopment",
+				"description": "Pre-redevelopment scans to verify absence of buried hazards."
+			},
+			{
+				"image": "/medial/surveying/ground-penetrating-radar/gpr-17.jpeg",
+				"title": "Archaeological Survey",
+				"description": "Sensitive detection of subsurface cultural features without excavation."
+			}
+		]
+	}
+}

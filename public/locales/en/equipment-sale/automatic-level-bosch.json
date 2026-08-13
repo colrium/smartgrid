@@ -1,0 +1,46 @@
+{
+	"hero": {
+		"headline": "AUTOMATIC LEVEL BOSCH",
+		"title": "Bosch Automatic Level – Reliable Levelling Instruments",
+		"image": "/images/placeholder.jpg",
+		"description": "SmartGrid Surveying supplies high-quality Bosch automatic levels for precise height measurements and levelling tasks in construction, surveying, and engineering projects.",
+		"ctaPrimary": {
+			"label": "Inquire About This Equipment",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"productOverview": {
+		"tag": "Surveying Equipment",
+		"headline": "Bosch Automatic Level",
+		"image": "/images/placeholder.jpg",
+		"description": "Bosch automatic levels are known for their accuracy, durability, and ease of use. Designed for construction sites and surveying applications, these instruments provide reliable height readings and leveling reference points for a wide range of projects."
+	},
+	"keyFeatures": {
+		"tag": "Specifications",
+		"headline": "Key Features",
+		"image": "/images/placeholder.jpg",
+		"description": "",
+		"items": [
+			{
+				"icon": "compass",
+				"title": "High Accuracy",
+				"description": "Precision levelling with standard deviation of ±1 mm per km (double run)."
+			},
+			{
+				"icon": "magnify",
+				"title": "Magnification",
+				"description": "Bright, clear optics with 24x – 32x magnification for accurate sighting."
+			},
+			{
+				"icon": "shield-check",
+				"title": "Durable Design",
+				"description": "Robust construction with water and dust resistance for field use."
+			},
+			{
+				"icon": "ruler",
+				"title": "Easy to Use",
+				"description": "Magnetic damper compensator for quick and stable leveling."
+			}
+		]
+	}
+}

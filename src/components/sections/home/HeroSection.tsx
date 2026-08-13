@@ -2,6 +2,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import * as THREE from "three";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -351,31 +352,34 @@ export default function HeroSection() {
 						className="flex flex-col md:flex-row md:flex-wrap justify-start items-start gap-4 sm:gap-6"
 					>
 						{ctaPrimary?.href && (
-							<Button
+							<Link
 								href={ctaPrimary.href}
-								className={`rounded-full ${ctaPrimary?.class || ""}`}
-								endIcon={<span className={`mdi mdi-${ctaPrimary.icon} text-xl`} />}
-								size="large"
-								variant={ctaPrimary.variant || "contained"}
-								color={ctaPrimary.color || "secondary"}
+								className="group inline-flex items-center gap-3 h-14 rounded-full bg-primary px-8 text-surface font-medium text-base transition-all duration-300 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]"
 							>
+								<span className="h-1.5 w-1.5 rounded-full bg-surface transition-transform duration-300 group-hover:scale-125" />
 								{ctaPrimary.label}
-							</Button>
+								{ctaPrimary.icon && (
+									<span
+										className={`mdi mdi-${ctaPrimary.icon} text-xl text-surface transition-transform duration-300 group-hover:translate-x-1`}
+									/>
+								)}
+							</Link>
 						)}
 
 						{ctaSecondary?.href && (
-							<Button
+							<Link
 								href={ctaSecondary.href}
-								className={`rounded-full ${ctaSecondary?.class || ""}`}
-								endIcon={
-									<span className={`mdi mdi-${ctaSecondary.icon} text-sm`} />
-								}
-								variant={ctaSecondary.variant || "contained"}
-								color={ctaSecondary.color || "textPrimary"}
-								size="large"
+								className="inline-flex items-center gap-2.5 h-14 rounded-full border border-primary/30 px-8 text-primary text-base transition-all duration-300 hover:border-primary hover:bg-surface/10"
 							>
+								{ctaSecondary.icon ? (
+									<span
+										className={`mdi mdi-${ctaSecondary.icon} text-lg text-primary`}
+									/>
+								) : (
+									<span className="h-1.5 w-1.5 rounded-full bg-brand-200" />
+								)}
 								{ctaSecondary.label}
-							</Button>
+							</Link>
 						)}
 					</FadeUp>
 					<div className="flex flex-wrap items-center gap-4"></div>

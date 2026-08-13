@@ -1,0 +1,42 @@
+{
+	"hero": {
+		"headline": "TOTAL STATION DTM 152M",
+		"title": "DTM 152M – Precision Total Station for Demanding Surveys",
+		"image": "/images/placeholder.jpg",
+		"description": "SmartGrid Surveying offers the DTM 152M total station, designed for reliable angle and distance measurements in construction, cadastral, and engineering projects.",
+		"ctaPrimary": {
+			"label": "Inquire About This Equipment",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"productOverview": {
+		"tag": "Surveying Equipment",
+		"headline": "DTM 152M Total Station",
+		"image": "/images/placeholder.jpg",
+		"description": "The DTM 152M is a robust total station combining precision optics with advanced electronic distance measurement (EDM) technology. Built for durability in the field, it delivers accurate data for a wide range of surveying applications, from topographic mapping to construction layout."
+	},
+	"keyProducts": {
+		"tag": "Available Models",
+		"headline": "Our Total Station Range",
+		"image": "/images/placeholder.jpg",
+		"description": "",
+		"items": [
+			{
+				"icon": "ruler-square",
+				"title": "DTM 152M",
+				"description": "A robust total station designed for precision tasks such as topographic mapping, setting out, and deformation monitoring."
+			},
+			{
+				"icon": "ruler-square",
+				"title": "E SURVEY E3L",
+				"description": "A versatile total station offering high-accuracy angle measurement and long-range EDM capability for general surveying and construction layout."
+			}
+		]
+	},
+	"otherProducts": {
+		"tag": "Accessories & More",
+		"headline": "OTHER RELATED PRODUCTS",
+		"image": "/images/placeholder.jpg",
+		"description": "We also supply a full range of accessories and related equipment to support your surveying operations, including prisms, tripods, data collectors, and field software."
+	}
+}
