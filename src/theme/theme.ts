@@ -44,7 +44,9 @@ const theme = createTheme({
 		info: { main: "#29b6f6" },
 	},
 	typography: {
-		fontFamily: 'var(--font-sans), "Inter", "Roboto", "Helvetica", "Arial", sans-serif',
+		fontFamily: [
+			"var(--font-google-sans-flex)"
+		].join(","),
 		h1: {
 			fontWeight: 700,
 			fontFamily: 'var(--font-display), "Inter", "Roboto", "Helvetica", "Arial", sans-serif',

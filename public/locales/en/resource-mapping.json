@@ -2,7 +2,7 @@
 	"hero": {
 		"headline": "RESOURCE MAPPING",
 		"title": "Systematic Spatial Intelligence for Every Sector",
-		"image": "/images/placeholder.jpg",
+		"image": "/media/surveying/resource-maping/hero.jpg",
 		"description": "SmartGrid Surveying enables precision agriculture, utilities management, mining, construction, environmental conservation, and disaster response through uniform, repeatable, and scalable grid-based mapping.",
 		"ctaPrimary": {
 			"label": "Get Your Free Consultation",
@@ -12,7 +12,7 @@
 	"agriculture": {
 		"tag": "Precision Agriculture",
 		"headline": "AGRICULTURE",
-		"image": "/images/placeholder.jpg",
+		"images": ["/media/surveying/resource-maping/agriculture-1.jpg", "/media/surveying/resource-maping/agriculture-2.jpg"],
 		"description": "SmartGrid Surveying enables precision agriculture by creating uniform spatial coverage across entire fields. This ensures consistent, comparable data that farmers and agronomists can act on with confidence.",
 		"items": [
 			{
@@ -35,7 +35,10 @@
 	"utilitiesEnergySmartInfrastructure": {
 		"tag": "Utilities & Energy",
 		"headline": "Utilities, Energy & Smart Infrastructure",
-		"image": "/images/placeholder.jpg",
+		"images": [
+			"/media/surveying/resource-maping/utilities-energy-1.jpg",
+			"/media/surveying/resource-maping/utilities-energy-2.jpg"
+		],
 		"description": "Utilities and energy providers benefit from SmartGrid Surveying's systematic, scalable approach to mapping vast and often remote networks.",
 		"items": [
 			{
@@ -58,7 +61,10 @@
 	"quarryMining": {
 		"tag": "Mining & Extraction",
 		"headline": "QUARRY & MINING",
-		"image": "/images/placeholder.jpg",
+		"images": [
+			"/media/surveying/resource-maping/quary-mining-1.jpg",
+			"/media/surveying/resource-maping/quary-mining-2.jpg"
+		],
 		"description": "SmartGrid Surveying provides a systematic method to monitor extraction sites and surrounding environments, delivering the spatial intelligence needed to operate efficiently and responsibly.",
 		"items": [
 			{
@@ -81,7 +87,10 @@
 	"constructionCivilEngineering": {
 		"tag": "Construction & Engineering",
 		"headline": "Construction & Civil Engineering",
-		"image": "/images/placeholder.jpg",
+		"images": [
+			"/media/surveying/resource-maping/construction-civil-1.jpg",
+			"/media/surveying/resource-maping/construction-civil-2.jpg"
+		],
 		"description": "From pre-construction site analysis to post-construction documentation, SmartGrid Surveying accelerates workflows and ensures alignment with project specs.",
 		"items": [
 			{
@@ -104,7 +113,10 @@
 	"environmentalManagementConservation": {
 		"tag": "Environmental Conservation",
 		"headline": "Environmental Management & Conservation",
-		"image": "/images/placeholder.jpg",
+		"images": [
+			"/media/surveying/resource-maping/environmental-management-1.jpg",
+			"/media/surveying/resource-maping/environmental-management-2.jpg"
+		],
 		"description": "With SmartGrid Surveying, environmental specialists can capture change over time, across space, and within specific ecological zones.",
 		"items": [
 			{
@@ -127,7 +139,10 @@
 	"disasterRiskReduction": {
 		"tag": "Emergency Response",
 		"headline": "Disaster Risk Reduction & Emergency Response",
-		"image": "/images/placeholder.jpg",
+		"images": [
+			"/media/surveying/resource-maping/disaster-emergency-1.jpg",
+			"/media/surveying/resource-maping/disaster-emergency-2.jpg"
+		],
 		"description": "In areas prone to floods, landslides, or conflict, SmartGrid Surveying offers rapid, structured data collection to support planning and response.",
 		"items": [
 			{
@@ -150,7 +165,6 @@
 	"whySmartGridStandsOut": {
 		"tag": "Our Advantages",
 		"headline": "Why SmartGrid Surveying Stands Out",
-		"image": "/images/placeholder.jpg",
 		"description": "",
 		"items": [
 			{

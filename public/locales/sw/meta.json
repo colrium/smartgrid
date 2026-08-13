@@ -55,6 +55,11 @@
 			"page_title": "Uchunguzi wa Angani",
 			"meta_description": "Uchunguzi wa angani kwa ndege zisizo na rubani — vipimo sahihi, vya haraka na vya kuaminika. Orthomosaic, mifano ya 3D, DTMs na DEMs, uchambuzi wa kiasi, na ufuatiliaji wa ujenzi kote Afrika.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"ground-penetrating-radar": {
+			"page_title": "Rada ya Kupenya Ardhi",
+			"meta_description": "Ugunduzi wa kisasa wa huduma za chini ya ardhi na uchoraji ramani wa chini ya ardhi — uchunguzi wa GPR usioharibu kwa LMX200 kwa miradi ya ujenzi, uhandisi, na miundombinu.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {

@@ -55,6 +55,11 @@
 			"page_title": "Aerial surveys",
 			"meta_description": "Aerial drone surveys — accurate measurements, fast and reliable. Orthomosaics, 3D models, DTMs & DEMs, volumetric analysis, and construction monitoring across Africa.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"ground-penetrating-radar": {
+			"page_title": "Ground Penetrating Radar",
+			"meta_description": "Advanced subsurface utility detection and underground mapping — non-destructive GPR surveys with the LMX200 for construction, engineering, and infrastructure projects.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {
