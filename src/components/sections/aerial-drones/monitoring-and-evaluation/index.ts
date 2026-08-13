@@ -1,0 +1,18 @@
+export { HeroSection } from "./HeroSection";
+export { default as HeroSectionDefault } from "./HeroSection";
+export { DrivingSustainabilitySection } from "./DrivingSustainabilitySection";
+export { default as DrivingSustainabilitySectionDefault } from "./DrivingSustainabilitySection";
+export { OurCapabilitiesSection } from "./OurCapabilitiesSection";
+export { default as OurCapabilitiesSectionDefault } from "./OurCapabilitiesSection";
+export { TechWeUseSection } from "./TechWeUseSection";
+export { default as TechWeUseSectionDefault } from "./TechWeUseSection";
+export { ImpactSection } from "./ImpactSection";
+export { default as ImpactSectionDefault } from "./ImpactSection";
+export { WhyPartnerWithUsSection } from "./WhyPartnerWithUsSection";
+export { default as WhyPartnerWithUsSectionDefault } from "./WhyPartnerWithUsSection";
+export { SmartMonitoringSection } from "./SmartMonitoringSection";
+export { default as SmartMonitoringSectionDefault } from "./SmartMonitoringSection";
+export { WhatWeOfferSection } from "./WhatWeOfferSection";
+export { default as WhatWeOfferSectionDefault } from "./WhatWeOfferSection";
+export { CtaSection } from "./CtaSection";
+export { default as CtaSectionDefault } from "./CtaSection";

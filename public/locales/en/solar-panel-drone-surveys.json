@@ -3,10 +3,11 @@
 		"headline": "SOLAR PANEL DRONE SURVEYS",
 		"title": "Reliable. Scalable. Fast. Powerful.",
 		"image": "/images/placeholder.jpg",
-		"description": "Illuminate your energy future—our drone-powered solar panel surveys deliver unmatched precision, faster insights, and smarter decisions from the sky down.",
+		"description": "Illuminate your energy future—our drone-powered solar panel surveys deliver unmatched precision, faster insights, and smarter decisions from the sky down. By capturing high-resolution imagery, 3D terrain data, and thermal analytics, we help optimize solar performance while reducing costly on-site inspections. Whether you're planning a new installation or maintaining an existing solar farm, our surveys provide the data clarity you need to maximize ROI and system efficiency. \n\n With SmartGrid, the power of geospatial intelligence takes your solar projects to the next level. \n\n Smartgrid Surveying is your trusted surveying partner!",
 		"ctaPrimary": {
-			"label": "Get Your Free Consultation",
-			"href": "mailto:smartgridsurveying@gmail.com"
+            "icon": "compass",
+			"label": "Explore Other Aerial Services",
+			"href": "/aerial-drones/drone-imagery-surveys"
 		}
 	},
 	"surveyOverview": {

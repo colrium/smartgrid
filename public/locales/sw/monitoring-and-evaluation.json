@@ -1,0 +1,180 @@
+{
+	"hero": {
+		"headline": "UFUATILIAJI NA TATHMINI",
+		"title": "Ufuatiliaji na Tathmini kwa Kujenga Kwa Nguvu Zaidi",
+		"image": "/media/aerial-drones/monitoring-and-evaluation/01.jpg",
+		"description": "Suluhisho zinazoendeshwa na usahihi kwa uendelevu, uhifadhi, na kufuata kanuni.",
+		"ctaPrimary": {
+			"icon": "gift",
+			"label": "Pata Ushauri Wako wa Bure",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"drivingSustainability": {
+		"tag": "Uendelevu",
+		"headline": "Kuendesha Uendelevu kwa Data",
+		"description": "Katika SmartGrid, tunatumia zana za kijiografia za angani na za ardhini kusaidia ulinzi wa mazingira, uhifadhi, na matumizi endelevu ya ardhi kupitia ufuatiliaji wa usahihi."
+	},
+	"ourCapabilities": {
+		"tag": "Tunachofanya",
+		"headline": "Uwezo Wetu",
+		"description": "",
+		"items": [
+			{
+				"title": "Uchambuzi wa NDVI na Makazi",
+				"description": "Upigaji picha wa multispectral kwa ndege zisizo na rubani kwa afya ya mimea na uhai wa mfumo ikolojia."
+			},
+			{
+				"title": "Uchoraji Ramani wa Mabonde",
+				"description": "Topografia ya bonde la mto, hidrolojia na uchambuzi wa hatari ya mmomonyoko kwa upangaji."
+			},
+			{
+				"title": "Upigaji Picha wa Joto",
+				"description": "Kutambua uchafuzi, maeneo ya joto mijini, na masuala ya ubora wa maji kupitia infrared ya angani."
+			},
+			{
+				"title": "Mipaka ya Ardhi Oevu",
+				"description": "Uwekaji mipaka sahihi kwa ulinzi wa mito na nyaraka za EIA."
+			}
+		]
+	},
+	"techWeUse": {
+		"tag": "Maarifa ya Kina, Sahihi",
+		"headline": "Teknolojia Tunayotumia",
+		"description": "Timu yetu hutumia ndege zisizo na rubani za LiDAR, vitengo vya RTK GNSS, total station, vitanda vya bathymetry na programu za hali ya juu za GIS kama QGIS, Pix4D, na ArcGIS Pro. Zana hizi hutusaidia kutoa maarifa ya kina, sahihi kijiografia kusaidia mahitaji yako ya mazingira."
+	},
+	"impact": {
+		"tag": "Athari",
+		"headline": "Athari ya Ulimwengu Halisi",
+		"description": "",
+		"items": [
+			{
+				"title": "Ufuatiliaji wa Mabwawa",
+				"description": "Fuatilia viwango vya mashapo na panga mikakati ya kuchimba kwa uendelevu wa muda mrefu."
+			},
+			{
+				"title": "Ufuatiliaji wa Upotevu wa Mimea",
+				"description": "Linganisha uchunguzi wa msimu wa angani kugundua mabadiliko na kufahamisha uhifadhi."
+			},
+			{
+				"title": "Maeneo ya Hatari ya Mafuriko",
+				"description": "Tengeneza mfano wa mtiririko wa maji, beseni, na ujenge ramani za ustahimilivu wa mafuriko kwa mamlaka za mitaa."
+			}
+		]
+	},
+	"whyPartnerWithUs": {
+		"tag": null,
+		"headline": "Kwa Nini Ushirikiane Nasi?",
+		"description": "Tunatoa akili ya kijiografia na uchunguzi wa hali ya juu kwa matokeo endelevu. Timu yetu inayoitikia huhakikisha ripoti kwa wakati, huduma zinazoweza kubadilishwa, na matokeo ya GIS yanayoendana na mtiririko wako wa kazi."
+	},
+	"cta": {
+		"tag": null,
+		"headline": "Tuushirikiane",
+		"description": "Una mradi akilini au unahitaji ushauri?",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Omba Nukta ya Bei",
+			"href": "mailto:info@smartgridsurveying.com?subject=Request%20for%20Environmental%20Survey%20Quotation&body=Hello%20SmartGrid%20Team%2C%0A%0AI would like to request a quotation for the following environmental service:%0A%0AType of Survey:%0ALocation:%0AProject Size:%0ATimeline:%0A%0ARegards,"
+		}
+	},
+	"smartMonitoringAndEval": {
+		"tag": "Kwa Ndege Zisizo na Rubani",
+		"headline": "Ufuatiliaji na Tathmini Mahiri kwa Ndege Zisizo na Rubani",
+		"description": "",
+		"items": [
+			{
+				"icon": "table-clock",
+				"title": "Usimamizi wa Mradi wa Wakati Halisi",
+				"description": "Fuatilia maendeleo ya ujenzi au kilimo kwa taswira za hivi karibuni za ndege zisizo na rubani na uchambuzi wa angani kwa imani ya kufanya maamuzi."
+			},
+			{
+				"icon": "map-marker-multiple",
+				"title": "Utambuzi wa Mabadiliko ya Kijiografia",
+				"description": "Tumia orthomosaic zilizokamatwa na ndege zisizo na rubani kufuatilia mabadiliko ya ardhi, afya ya mazao, au kufuata tovuti kwa muda."
+			},
+			{
+				"icon": "chart-line",
+				"title": "Upimaji wa Utendaji",
+				"description": "Linganisha hali ya shamba kabla na baada ya hatua muhimu za mradi, kuhakikisha matokeo yanalingana na lengo la kubuni na ratiba."
+			},
+			{
+				"icon": "view-dashboard",
+				"title": "Ripoti na Dashibodi za Papo Hapo",
+				"description": "Unganisha data ya taswira kwenye BIM, GIS, au dashibodi maalum na chaguo za kuhamisha kiotomatiki katika muundo unaoupendelea."
+			},
+			{
+				"icon": "clipboard-check",
+				"title": "Ukaguzi wa Kufuata Kanuni wa Angani",
+				"description": "Fanya ukaguzi wa kiotomatiki kuthibitisha kufuata kanuni na mikataba bila hitaji la watu kwenye ardhi."
+			},
+			{
+				"icon": "robot",
+				"title": "Maarifa Yanayoendeshwa na AI",
+				"description": "Tumia kujifunza kwa mashine kugundua mifumo, hitilafu, au hatari katika hali ya tovuti kabla hazijakua."
+			},
+			{
+				"icon": "cube",
+				"title": "Mifano ya 3D na Topografia",
+				"description": "Zalisha mifano ya kina ya 3D na ramani za topografia zinazosaidia upangaji, uthibitishaji wa kubuni, na hesabu za kiasi."
+			},
+			{
+				"icon": "wrench",
+				"title": "Ukaguzi wa Miundombinu na Matengenezo",
+				"description": "Tumia ndege zisizo na rubani kukagua miundombinu ngumu kufikia kama paa, minara, na mabomba, kuwezesha kutambua uchakavu na hitilafu mapema."
+			}
+		],
+		"ctaPrimary": {
+			"icon": "whatsapp",
+			"label": "Tuma Ujumbe kwa WhatsApp",
+			"href": "https://wa.me/254107393023?text=Hi%20SmartGrid%20Surveying,%20I%E2%80%99m%20interested%20in%20drone%20monitoring%20and%20evaluation%20services."
+		},
+		"ctaSecondary": {
+			"icon": "email",
+			"label": "Tuma Barua Pepe",
+			"href": "mailto:Smartgridsurveying@gmail.com?subject=Drone Monitoring Services Request&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to learn more about drone monitoring and evaluation solutions for my project. Please contact me with details.%0D%0A%0D%0AThank you."
+		}
+	},
+	"whatWeOffer": {
+		"tag": "Teknolojia + Utaalamu",
+		"headline": "Tunachotoa",
+		"images": [
+			"/media/aerial-drones/monitoring-and-evaluation/02.jpg",
+			"/media/aerial-drones/monitoring-and-evaluation/04.jpg"
+		],
+		"description": "Katika SmartGrid Surveying & Engineering Ltd, tunachanganya teknolojia ya ndege zisizo na rubani, remote sensing, na utaalamu wa GIS kutoa maarifa yanayoweza kutekelezwa kwa ufanyaji maamuzi wa mazingira. Huduma zetu zinaaminika na washirika wa mazingira, mashirika ya uhifadhi yasiyo ya kiserikali, waendelezaji, na mamlaka za udhibiti kote Kenya na kanda.",
+		"items": [
+			{
+				"label": "Uchoraji Ramani wa Angani",
+				"image": "/media/aerial-drones/monitoring-and-evaluation/05.jpg"
+			},
+			{
+				"label": "Mifano ya 3D",
+				"image": "/media/aerial-drones/monitoring-and-evaluation/06.jpg"
+			},
+			{
+				"title": "Mifano ya Uso na Mwinuko wa Dijitali (DTMs & DEMs)",
+				"image": "/media/aerial-drones/monitoring-and-evaluation/07.jpg"
+			},
+			{
+				"label": "Ufuatiliaji wa Ujenzi",
+				"image": "/media/aerial-drones/monitoring-and-evaluation/08.jpg"
+			},
+			{
+				"label": "Uchoraji Ramani wa Kilimo",
+				"image": "/media/aerial-drones/monitoring-and-evaluation/09.jpg"
+			},
+			{
+				"title": "Ufuatiliaji wa Mazingira",
+				"image": "/media/aerial-drones/monitoring-and-evaluation/03.png"
+			},
+			{
+				"label": "Upangaji wa Miundombinu",
+				"image": "/media/aerial-drones/monitoring-and-evaluation/10.jpg"
+			},
+			{
+				"title": "Hesabu za Kiasi",
+				"image": "/media/aerial-drones/monitoring-and-evaluation/11.jpg"
+			}
+		]
+	}
+}

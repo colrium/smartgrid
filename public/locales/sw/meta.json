@@ -95,6 +95,11 @@
 			"page_title": "Uchunguzi wa As-Built",
 			"meta_description": "Kuongoza mapinduzi ya upimaji wa ardhi na angani barani Afrika — uchunguzi wa as-built kwa ndege zisizo na rubani kwa ramani sahihi, kasi, na ujumuishaji usio na mshono wa CAD/BIM.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"monitoring-and-evaluation": {
+			"page_title": "Ufuatiliaji na Tathmini",
+			"meta_description": "Ufuatiliaji na tathmini ya usahihi kwa ndege zisizo na rubani kwa uendelevu, uhifadhi, na kufuata kanuni — uchambuzi wa NDVI, uchoraji ramani wa mabonde, upigaji picha wa joto, na zaidi.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {
