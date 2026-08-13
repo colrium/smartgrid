@@ -4,7 +4,6 @@ import Link from "next/link";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import MuiLink from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -19,6 +18,7 @@ import { useRouter } from "next/router";
 import useSetState from "@/hooks/useSetState";
 import { Avatar } from "@mui/material";
 import NavMenu from "./NavMenu";
+import NavMenuMobile from "./NavMenuMobile";
 
 interface NavBarLink {
 	label: string;
@@ -131,18 +131,18 @@ export default function Navbar() {
 				elevation={0}
 				color="transparent"
 				classes={{
-					root: "bg-transparent! transition-all duration-300",
+					root: "px-8 bg-transparent! transition-all duration-300",
 				}}
 			>
 				<Container
 					maxWidth="lg"
 					classes={{
-						root: `mt-3 mb-1 rounded-2xl hairline bg-white/85! backdrop-blur-md! transition-all duration-300 ${
+						root: `mt-3 mb-1 rounded-2xl hairline bg-surface/85!  backdrop-blur-lg! transition-all duration-300 ${
 							state.isWindowScrolled ? "card-shadow-lift" : "card-shadow"
 						}`,
 					}}
 				>
-					<Toolbar disableGutters className={`bg-transparent! h-16`}>
+					<Toolbar disableGutters className={`bg-transparent! `}>
 						<IconButton
 							onClick={handleDrawerToggle}
 							classes={{ root: "lg:hidden! mr-4!" }}
@@ -245,32 +245,12 @@ export default function Navbar() {
 					</IconButton>
 
 					{/* Mobile Navigation Links */}
-					<Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-						{Array.isArray(navs) &&
-							navs.map(
-								({ excludeOnMainNav, label, href }, i) =>
-									!excludeOnMainNav && (
-										<MuiLink
-											component={Link}
-											key={`mobile-nav-${i}`}
-											href={localizePath(href, currentLocale)}
-											locale={false}
-											onClick={handleDrawerToggle}
-											sx={{
-												py: 1,
-												px: 2,
-												borderRadius: 1,
-												"&:hover": {
-													backgroundColor: "rgba(0, 0, 0, 0.05)",
-												},
-											}}
-											className="no-underline py-1 px-2 hover:bg-primary-light"
-										>
-											{label}
-										</MuiLink>
-									)
-							)}
-					</Box>
+					<NavMenuMobile
+						items={navs}
+						locale={currentLocale}
+						localizePath={localizePath}
+						onNavigate={handleDrawerToggle}
+					/>
 				</Box>
 			</Drawer>
 		</>

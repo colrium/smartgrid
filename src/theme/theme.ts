@@ -13,6 +13,10 @@ const brand = {
 	900: "#003742",
 };
 
+const fontSans = 'var(--font-sans), "Inter", "Roboto", "Helvetica", "Arial", sans-serif';
+const fontDisplay =
+	'var(--font-display), "Inter", "Roboto", "Helvetica", "Arial", sans-serif';
+
 const theme = createTheme({
 	palette: {
 		mode: "light",
@@ -44,20 +48,85 @@ const theme = createTheme({
 		info: { main: "#29b6f6" },
 	},
 	typography: {
-		fontFamily: [
-			"var(--font-google-sans-flex)"
-		].join(","),
+		htmlFontSize: 14,
+		fontFamily: fontSans,
+		fontWeightLight: 300,
+		fontWeightRegular: 400,
+		fontWeightMedium: 500,
+		fontWeightBold: 700,
 		h1: {
+			fontFamily: fontDisplay,
+			fontSize: "3rem", // text-5xl
+			lineHeight: 1,
 			fontWeight: 700,
-			fontFamily: 'var(--font-display), "Inter", "Roboto", "Helvetica", "Arial", sans-serif',
 		},
 		h2: {
+			fontFamily: fontDisplay,
+			fontSize: "2.25rem", // text-4xl
+			lineHeight: "2.5rem",
 			fontWeight: 700,
-			fontFamily: 'var(--font-display), "Inter", "Roboto", "Helvetica", "Arial", sans-serif',
 		},
 		h3: {
+			fontFamily: fontDisplay,
+			fontSize: "1.875rem", // text-3xl
+			lineHeight: "2.25rem",
 			fontWeight: 600,
-			fontFamily: 'var(--font-display), "Inter", "Roboto", "Helvetica", "Arial", sans-serif',
+		},
+		h4: {
+			fontFamily: fontDisplay,
+			fontSize: "1.5rem", // text-2xl
+			lineHeight: "2rem",
+			fontWeight: 600,
+		},
+		h5: {
+			fontFamily: fontDisplay,
+			fontSize: "1.25rem", // text-xl
+			lineHeight: "1.75rem",
+			fontWeight: 600,
+		},
+		h6: {
+			fontFamily: fontDisplay,
+			fontSize: "1.125rem", // text-lg
+			lineHeight: "1.75rem",
+			fontWeight: 600,
+		},
+		subtitle1: {
+			fontSize: "1.125rem", // text-lg
+			lineHeight: "1.75rem",
+			fontWeight: 500,
+		},
+		subtitle2: {
+			fontSize: "0.875rem", // text-sm
+			lineHeight: "1.25rem",
+			fontWeight: 500,
+		},
+		body1: {
+			fontSize: "1rem", // text-base
+			lineHeight: "1.5rem",
+			fontWeight: 400,
+		},
+		body2: {
+			fontSize: "0.875rem", // text-sm
+			lineHeight: "1.25rem",
+			fontWeight: 400,
+		},
+		button: {
+			fontSize: "0.875rem", // text-sm
+			lineHeight: "1.25rem",
+			fontWeight: 500,
+			textTransform: "none",
+			letterSpacing: "normal",
+		},
+		caption: {
+			fontSize: "0.75rem", // text-xs
+			lineHeight: "1rem",
+			fontWeight: 400,
+		},
+		overline: {
+			fontSize: "0.75rem", // text-xs
+			lineHeight: "1rem",
+			fontWeight: 600,
+			textTransform: "none",
 		},
 	},
 });

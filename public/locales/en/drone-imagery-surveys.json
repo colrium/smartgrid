@@ -2,71 +2,156 @@
 	"hero": {
 		"headline": "DRONE IMAGERY SURVEYS",
 		"title": "Reliable. Scalable. Fast. Powerful.",
-		"image": "/images/placeholder.jpg",
+		"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-01.jpg",
 		"description": "Unlock faster, more cost-effective, and safer mapping, measurement, and monitoring of 1000+ Acres at a time. With cutting-edge drones and land surveying techniques, we deliver actionable data across Africa and beyond.",
 		"ctaPrimary": {
-			"label": "Get Your Free Consultation",
-			"href": "mailto:smartgridsurveying@gmail.com"
+			"label": "Explore our Aerial Services",
+			"href": "/aerial-drones/drone-imagery-surveys"
 		}
+	},
+	"whatWeOffer": {
+		"tag": "Services",
+		"headline": "Our Aerial Surveying Services",
+		"items": [
+			{
+				"title": "Aerial Mapping",
+				"description": "Accurate drone-based imagery for planning, documentation, and analysis.",
+				"popupContent": "SmartGrid Surveying delivers ultra-precise aerial mapping using UAVs to generate georeferenced orthomosaics, topographic data, and planning-grade base maps. Our solutions support infrastructure, utilities, and land development with unmatched speed and accuracy."
+			},
+			{
+				"title": "Construction Monitoring",
+				"description": "Track site activity using consistent, real-time aerial visuals.",
+				"popupContent": "SmartGrid offers site monitoring through high-resolution drone flyovers. Our automated flights provide weekly visual updates, detect deviations from schedule, and support decision-making for project managers and developers."
+			},
+			{
+				"title": "Environmental Monitoring",
+				"description": "Visualize ecological change and monitor conservation areas.",
+				"popupContent": "Using UAVs, SmartGrid tracks land cover change, deforestation, erosion, and other ecological indicators. Our data supports impact assessments and regulatory compliance with repeatable, time-stamped visuals."
+			},
+			{
+				"title": "Agricultural Mapping",
+				"description": "Drone-based multispectral data for crop health and farm optimization.",
+				"popupContent": "SmartGrid empowers agronomists with data on crop health, plant stress, and irrigation patterns. We use NDVI and multispectral analysis to optimize input use and improve yield sustainability."
+			},
+			{
+				"title": "3D Modeling",
+				"description": "Photorealistic 3D models to support planning and inspections.",
+				"popupContent": "We create detailed 3D mesh and textured models of terrain, buildings, and infrastructure. These models are BIM-ready and useful for design validation, inspection, and immersive planning."
+			},
+			{
+				"title": "Infrastructure Planning",
+				"description": "Route and terrain data for smart infrastructure layout.",
+				"popupContent": "We map routes and sites using drone LiDAR and photogrammetry. This ensures smart siting of roads, pipelines, and urban developments while minimizing environmental disruption."
+			},
+			{
+				"title": "DTMs & DEMs",
+				"description": "Digital terrain and elevation models for hydrological and civil works.",
+				"popupContent": "Our terrain and elevation models help civil engineers and hydrologists analyze runoff, slope stability, and grading. We deliver precise elevation data to support resilient infrastructure."
+			},
+			{
+				"title": "Volumetric Calculations",
+				"description": "Calculate material volumes and manage resources accurately.",
+				"popupContent": "SmartGrid computes cut/fill volumes and stockpile measurements with centimeter-level accuracy. Our aerial photogrammetry offers fast, safe, and repeatable results."
+			},
+			{
+				"title": "Disaster Assessment",
+				"description": "Route and terrain data for smart infrastructure layout.",
+				"popupContent": "After floods, landslides, or earthquakes, SmartGrid uses drones to quickly document damage. Our data helps responders prioritize actions, allocate aid, and plan recovery operations."
+			}
+		]
 	},
 	"whyDronesMatter": {
 		"tag": "The Future of Surveying",
 		"headline": "Why Drones Matter!",
-		"image": "/images/placeholder.jpg",
+		"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-12.jpg",
 		"description": "Modern surveying is evolving—and drones sit at the heart of this transformation. They deliver speed, precision, safety, and powerful spatial insights that traditional methods alone cannot match. At Smartgrid Surveying, we deliver fast, accurate, and detailed surveys."
 	},
 	"aerialSurveyDeliverables": {
 		"tag": "Data Outputs",
 		"headline": "Aerial Surveys Deliverables",
-		"image": "/images/placeholder.jpg",
 		"description": "Our drone‑based surveying solutions enhance decision‑making for construction, engineering, land administration, and environmental monitoring. We capture accurate geospatial data using advanced UAV platforms equipped with RGB, LiDAR, and thermal sensors. All outputs are optimized for use within GIS, CAD, BIM, and engineering workflows.",
 		"items": [
 			{
-				"icon": "image",
+				"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-04.jpg",
 				"title": "Orthomosaics",
 				"description": "GeoTIFF / JPEG + Raw images"
 			},
 			{
-				"icon": "terrain",
+				"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-06.jpg",
 				"title": "DTM / DSM",
 				"description": "LAS / TIFF"
 			},
 			{
-				"icon": "cube-3d",
+				"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-13.jpg",
 				"title": "3D Mesh",
 				"description": "OBJ / FBX"
 			},
 			{
-				"icon": "map-contour",
+				"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-07.jpg",
 				"title": "Contour Maps",
 				"description": "DWG / DXF"
 			},
 			{
-				"icon": "point-cloud",
+				"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-14.jpg",
 				"title": "3D Point Clouds",
 				"description": "LAS / LAZ"
 			},
 			{
-				"icon": "map",
+				"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-05.jpg",
 				"title": "Topographical Maps",
 				"description": "DWG / PDF / SHP"
 			},
 			{
-				"icon": "leaf",
+				"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-08.jpg",
 				"title": "NDVI & Multispectral Maps",
 				"description": "Vegetation health and multispectral analysis"
 			},
 			{
-				"icon": "file-pdf-box",
+				"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-15.jpg",
 				"title": "Survey Reports",
 				"description": "PDF"
 			}
 		]
 	},
+	"drones": {
+		"tag": "Fleet",
+		"headline": "Our Drones",
+		"description": "At SmartGrid Surveying, we deploy advanced drones to capture high-resolution aerial imagery and multispectral data for accurate mapping, monitoring, and surveying.",
+		"items": [
+			{
+				"icon": "quadcopter",
+				"img": "/media/drones/dji-matrice-300-rtk.jpeg",
+				"label": "DJI Matrice 300 RTK",
+				"description": "The DJI Matrice 300 RTK is a versatile and powerful drone designed for industrial applications, including surveying, mapping, and inspection. It features advanced flight capabilities, long battery life, and the ability to carry various payloads, making it ideal for professional use in challenging environments."
+			},
+			{
+				"icon": "quadcopter",
+				"img": "/media/drones/dji-air-3s.jpeg",
+				"label": "DJI Air 3S",
+				"description": "The DJI Air 3S is a compact and portable drone that offers high-quality aerial photography and videography capabilities. It features a dual-camera system, long flight time, and intelligent flight modes, making it suitable for both professional and recreational use."
+			},
+			{
+				"icon": "quadcopter",
+				"img": "/media/drones/dji-mavic-3m-3e.jpeg",
+				"label": "DJI Mavic 3M / 3E",
+				"description": "The DJI Mavic 3M / 3E is a lightweight and portable drone that provides excellent aerial imaging capabilities. It features a high-resolution camera, obstacle avoidance sensors, and intelligent flight modes, making it ideal for capturing stunning photos and videos from the sky."
+			},
+			{
+				"icon": "quadcopter",
+				"img": "/media/drones/dji-phantom-4.jpeg",
+				"label": "DJI Phantom 4",
+				"description": "The DJI Phantom 4 is a professional-grade drone designed for aerial photography and videography. It features a high-resolution camera with a large sensor, advanced flight modes, and obstacle avoidance technology, making it suitable for capturing high-quality images and videos from the air."
+			}
+		],
+        "subheadline": "What if you could map, measure, and monitor entire regions faster, cheaper, and safer? \n\n At Smartgrid Surveying, we make it happen — across Africa and beyond."
+	},
 	"projectsAcrossAfrica": {
 		"tag": "Our Reach",
 		"headline": "PROJECTS DONE ACROSS AFRICA",
-		"image": "/images/placeholder.jpg",
+		"images": [
+            "/media/aerial-drones/drone-imagery-surveys/drone-imagery-16.jpg",
+            "/media/aerial-drones/drone-imagery-surveys/drone-imagery-02.jpg"
+        ],
 		"description": "We've completed aerial drone surveys across several African countries, supporting governments, private developers, and NGOs. Here are a few highlights:",
 		"items": [
 			{

@@ -64,7 +64,7 @@ export function ServicesCardGrid({
 						<FadeUp key={index} delay={(index % columns) * 0.06}>
 							<article className="group relative h-full flex flex-col overflow-hidden rounded-[20px] bg-surface hairline card-shadow transition-all duration-500 hover:card-shadow-lift hover:border-primary">
 								{item.image && (
-									<div className="relative h-48 overflow-hidden bg-slate-900">
+									<div className="relative h-56 overflow-hidden bg-slate-900">
 										<Image
 											src={item.image}
 											alt={item.title}
@@ -74,7 +74,7 @@ export function ServicesCardGrid({
 													? "(min-width: 1024px) 33vw, 100vw"
 													: "(min-width: 1024px) 25vw, 100vw"
 											}
-											className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+											className="object-fill object-center transition-transform duration-700 ease-out group-hover:scale-105"
 										/>
 										<div className="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent" />
 									</div>
