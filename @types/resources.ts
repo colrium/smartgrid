@@ -1,7 +1,7 @@
 import about from '../public/locales/en/about.json';
+import aerialdronesasbuiltsurveys from '../public/locales/en/aerial-drones-as-built-surveys.json';
 import aerialsurveys from '../public/locales/en/aerial-surveys.json';
 import agriculturalndvimapping from '../public/locales/en/agricultural-ndvi-mapping.json';
-import asbuiltsurveys from '../public/locales/en/as-built-surveys.json';
 import bathymetricsurveys from '../public/locales/en/bathymetric-surveys.json';
 import buildingsitesurveys from '../public/locales/en/building-site-surveys.json';
 import cadastralsurveys from '../public/locales/en/cadastral-surveys.json';
@@ -40,9 +40,9 @@ import totalstationesurvey from '../public/locales/en/equipment-sale/total-stati
 
 const resources = {
   about,
+  'aerial-drones-as-built-surveys': aerialdronesasbuiltsurveys,
   'aerial-surveys': aerialsurveys,
   'agricultural-ndvi-mapping': agriculturalndvimapping,
-  'as-built-surveys': asbuiltsurveys,
   'bathymetric-surveys': bathymetricsurveys,
   'building-site-surveys': buildingsitesurveys,
   'cadastral-surveys': cadastralsurveys,

@@ -1,0 +1,86 @@
+{
+	"hero": {
+		"headline": "Uchunguzi wa As-Built",
+		"image": "/media/aerial-drones/aerial-drones-as-built-surveys/01.jpg",
+		"description": "Kuongoza Mapinduzi ya Upimaji wa Ardhi na Angani barani Afrika",
+		"ctaPrimary": {
+			"label": "Pata Ushauri Wako wa Bure",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"whyUseDrones": {
+		"tag": "Kwa Nini Ndege Zisizo na Rubani?",
+		"headline": "Kwa Nini Utumie Ndege Zisizo na Rubani kwa Uchunguzi wa As-Built?",
+		"items": [
+			{
+				"title": "Uchoraji Ramani Sahihi",
+				"description": "Zalisha blueprints za dijitali zenye usahihi wa ukubwa halisi kwa kutumia orthomosaic za mwonekano wa juu na miundo ya 3D."
+			},
+			{
+				"title": "Kasi na Ufanisi",
+				"description": "Chunguza maeneo makubwa ya ujenzi kwa rekodi ya muda, kuboresha ratiba na kupunguza kazi ya kurudia."
+			},
+			{
+				"title": "Ufuatiliaji wa Mazingira",
+				"description": "Ona mabadiliko ya ikolojia na fuatilia maeneo ya uhifadhi.",
+				"popupContent": "Kwa kutumia UAV, SmartGrid hufuatilia mabadiliko ya chanjo ya ardhi, ukataji miti, mmomonyoko, na viashiria vingine vya ikolojia. Data yetu inasaidia tathmini za athari na kufuata kanuni kwa taswira zinazorudiwa, zenye muhuri wa muda."
+			},
+			{
+				"title": "Ujumuishaji Usio na Mshono",
+				"description": "Matokeo yanayoendana na CAD, Revit, GIS, na majukwaa yote makubwa ya BIM."
+			}
+		]
+	},
+	"process": {
+		"tag": "",
+		"headline": "Mchakato Wetu Unavyofanya Kazi",
+		"items": [
+			{
+				"title": "Upangaji wa Tovuti",
+				"description": "Wahandisi wetu hutathmini mazingira na kuanzisha mantiki ya ndege zisizo na rubani na vituo vya udhibiti."
+			},
+			{
+				"title": "Ukamataji wa Data wa Ndege Zisizo na Rubani",
+				"description": "Tunatumia ndege zisizo na rubani zilizotengenezwa kwa vitambuzi vya photogrammetry au LiDAR kukamata hali ya uso ya as-built."
+			},
+			{
+				"title": "Uzalishaji wa Mifano ya 3D",
+				"description": "Data iliyokusanywa inachakatwa kuwa mifano ya 3D inayoingiliana na tabaka zilizo na marejeleo ya kijiografia."
+			},
+			{
+				"title": "Utoaji wa Uchunguzi wa Mwisho",
+				"description": "Pokea matokeo yanayoweza kutekelezwa yanayolisha moja kwa moja kwenye zana zako za usimamizi wa ujenzi."
+			}
+		]
+	},
+	"metrics": {
+		"items": [
+			{
+				"value": "95%",
+				"description": "Muda uliookolewa ikilinganishwa na upimaji wa kawaida"
+			},
+			{
+				"value": "99.8%",
+				"description": "Usahihi na UAV zenye RTK"
+			},
+			{
+				"value": "+100",
+				"description": "Miradi iliyowasilishwa katika sekta mbalimbali"
+			}
+		]
+	},
+	"ctaSection": {
+		"tag": null,
+		"headline": "Badilisha Ujenzi Wako Kuwa Ukweli Uliothibitishwa",
+		"description": "Shirikiana na SmartGrid Surveying kwa uandikishaji wa kizazi kijacho wa as-built unaotegemea ndege zisizo na rubani.",
+		"ctaPrimary": {
+			"label": "🚀 Pata Ushauri wa Bure",
+			"href": "mailto:Smartgridsurveying@gmail.com?subject=As-Built Survey Consultation Request&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'm interested in getting a quote for an as-built drone survey. Please get in touch with me.%0D%0A%0D%0AThank you."
+		},
+		"images": [
+			"/media/aerial-drones/aerial-drones-as-built-surveys/02.jpg",
+			"/media/aerial-drones/aerial-drones-as-built-surveys/03.jpg",
+			"/media/aerial-drones/aerial-drones-as-built-surveys/04.jpg"
+		]
+	}
+}

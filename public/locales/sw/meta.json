@@ -90,6 +90,11 @@
 			"page_title": "Uchoraji Ramani wa NDVI wa Kilimo",
 			"meta_description": "Kubadilisha kilimo kwa akili ya angani — uchoraji ramani wa NDVI na multispectral kwa ndege zisizo na rubani kwa afya ya mazao, uchambuzi wa umwagiliaji, na makadirio ya mavuno.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"aerial-drones-as-built-surveys": {
+			"page_title": "Uchunguzi wa As-Built",
+			"meta_description": "Kuongoza mapinduzi ya upimaji wa ardhi na angani barani Afrika — uchunguzi wa as-built kwa ndege zisizo na rubani kwa ramani sahihi, kasi, na ujumuishaji usio na mshono wa CAD/BIM.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {

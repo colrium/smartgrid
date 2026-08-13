@@ -90,6 +90,11 @@
 			"page_title": "Agricultural NDVI Mapping",
 			"meta_description": "Transforming agriculture with aerial intelligence — drone-based NDVI and multispectral mapping for crop health, irrigation analysis, and yield estimation.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"aerial-drones-as-built-surveys": {
+			"page_title": "As-Built Surveys",
+			"meta_description": "Leading Africa's land and aerial surveying revolution — drone-based as-built surveys with precision mapping, speed, and seamless CAD/BIM integration.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {

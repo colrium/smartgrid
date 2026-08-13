@@ -1,3 +1,88 @@
 {
-    
+	"hero": {
+		"headline": "As-Built Surveys",
+		"image": "/media/aerial-drones/aerial-drones-as-built-surveys/01.jpg",
+		"description": "Leading Africa's Land and Aerial Surveying Revolution",
+		"ctaPrimary": {
+			"label": "Get Your Free Consultation",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+
+	"whyUseDrones": {
+		"tag": "Why Drones?",
+		"headline": "Why Use Drones for As-Built Surveys?",
+		"items": [
+			{
+				"title": "Precision Mapping",
+				"description": "Generate true-to-scale digital blueprints using high-resolution orthomosaics and 3D reconstructions."
+			},
+			{
+				"title": "Speed & Efficiency",
+				"description": "Survey vast construction zones in record time, improving timelines and reducing rework."
+			},
+			{
+				"title": "Environmental Monitoring",
+				"description": "Visualize ecological change and monitor conservation areas.",
+				"popupContent": "Using UAVs, SmartGrid tracks land cover change, deforestation, erosion, and other ecological indicators. Our data supports impact assessments and regulatory compliance with repeatable, time-stamped visuals."
+			},
+			{
+				"title": "Seamless Integration",
+				"description": "Compatible outputs for CAD, Revit, GIS, and all major BIM platforms."
+			}
+		]
+	},
+	"process": {
+		"tag": "",
+		"headline": "How Our Process Works",
+		"items": [
+			{
+				"title": "Site Planning",
+				"description": "Our engineers assess the environment and establish drone flight logistics and control stations."
+			},
+			{
+				"title": "Drone Data Capture",
+				"description": "We deploy drones equipped with photogrammetry or LiDAR sensors to capture as-built surface conditions."
+			},
+			{
+				"title": "3D Model Generation",
+				"description": "Collected data is processed into interactive 3D models and geo-referenced layers."
+			},
+			{
+				"title": "Final Survey Delivery",
+				"description": "Receive actionable deliverables that feed directly into your construction management tools."
+			}
+		]
+	},
+	"metrics": {
+		"items": [
+			{
+				"value": "95%",
+				"description": "Time saved vs traditional surveying"
+			},
+			{
+				"value": "99.8%",
+				"description": "Accuracy with RTK-Enabled UAVs"
+			},
+			{
+				"value": "+100",
+				"description": "Projects delivered across sectors"
+			}
+		]
+	},
+	"ctaSection": {
+		"tag": null,
+		"headline": "Transform Your Build Into Verified Reality",
+		"description": "Partner with SmartGrid Surveying for next-generation, drone-based as-built documentation.",
+
+		"ctaPrimary": {
+			"label": "🚀 Get a Free Consultation",
+			"href": "mailto:Smartgridsurveying@gmail.com?subject=As-Built Survey Consultation Request&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI’m interested in getting a quote for an as-built drone survey. Please get in touch with me.%0D%0A%0D%0AThank you."
+		},
+		"images": [
+			"/media/aerial-drones/aerial-drones-as-built-surveys/02.jpg",
+			"/media/aerial-drones/aerial-drones-as-built-surveys/03.jpg",
+			"/media/aerial-drones/aerial-drones-as-built-surveys/04.jpg"
+		]
+	}
 }
