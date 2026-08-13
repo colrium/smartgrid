@@ -27,24 +27,7 @@ export default function LandingPageLayout({ children }: { children: ReactNode })
 			<Navbar />
 
 			<main className="flex-1 -mt-24">
-				<div
-					className="fixed inset-0"
-					style={{
-						background:
-							"radial-gradient(ellipse 60% 50% at 70% 40%, rgba(201,168,76,0.07) 0%, transparent 80%), radial-gradient(ellipse 40% 60% at 10% 80%, rgba(201,168,76,0.025) 0%, transparent 60%)",
-					}}
-				/>
-				<div className="layout-gradient-bg fixed inset-0"></div>
-				<div
-					className="fixed z-[-1] inset-0"
-					style={{
-						backgroundImage:
-							"linear-gradient(rgba(201,168,76,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px)",
-						backgroundSize: "80px 80px",
-						maskImage:
-							"radial-gradient(ellipse 80% 60% at 60% 40%, black 30%, transparent 80%)",
-					}}
-				/>
+				
 				{children}
 				<ChatWidget />
 

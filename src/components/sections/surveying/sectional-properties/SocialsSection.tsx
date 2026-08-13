@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
+import { SectionTag } from "@/components/SectionTag";
 
 interface SocialItem {
 	name?: string;
@@ -37,11 +38,9 @@ export function SocialsSection() {
 						/>
 
 						<div className="relative flex flex-col items-center gap-8">
-							<span className="inline-flex items-center gap-3 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-brand-200">
-								<span className="inline-block h-px w-9 bg-brand-200/70" />
+							<SectionTag>
 								Sectional Properties
-								<span className="inline-block h-px w-9 bg-brand-200/70" />
-							</span>
+							</SectionTag>
 
 							<div className="flex flex-wrap items-center justify-center gap-4">
 								{items.map((item, index) => {

@@ -12,7 +12,7 @@ const getTawkUrl = () => {
 const ChatWidget = () => {
 	const tawkUrl = getTawkUrl();
 
-	if (!tawkUrl) return null;
+	if (!tawkUrl || process.env.NODE_ENV === "development") return null;
 
 	return (
 		<Script id="tawk-to-widget" strategy="afterInteractive">

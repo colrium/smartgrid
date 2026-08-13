@@ -2,58 +2,178 @@
 	"hero": {
 		"headline": "MONITORING AND EVALUATION",
 		"title": "Monitoring & Evaluation to Build Stronger",
-		"image": "/images/placeholder.jpg",
+		"image": "/media/aerial-drones/monitoring-and-evaluation/01.jpg",
 		"description": "Precision-driven solutions for sustainability, conservation, and compliance.",
 		"ctaPrimary": {
+            "icon": "gift",
 			"label": "Get Your Free Consultation",
 			"href": "mailto:smartgridsurveying@gmail.com"
 		}
 	},
-	"ourMonitoringServices": {
-		"tag": "Data-Driven Insights",
-		"headline": "Our Monitoring & Evaluation Services",
-		"image": "/images/placeholder.jpg",
-		"description": "We provide comprehensive monitoring and evaluation solutions using advanced aerial and ground-based surveying technologies to track progress, assess impact, and ensure compliance across various sectors.",
+	"drivingSustainability": {
+		"tag": "Sustainability",
+		"headline": "Driving Sustainability with Data",
+		"description": "At SmartGrid, we leverage aerial and terrestrial geospatial tools to support environmental protection, conservation, and sustainable land use through precision monitoring."
+	},
+	"ourCapabilities": {
+		"tag": "What we do",
+		"headline": "Our Capabilities",
+		"description": "",
 		"items": [
 			{
-				"icon": "map",
-				"title": "Aerial Mapping",
-				"description": "High-resolution orthomosaics and georeferenced maps for baseline establishment and change detection."
+				"title": "NDVI & Habitat Analysis",
+				"description": "Multispectral drone imaging for vegetation health and ecosystem vitality."
 			},
 			{
-				"icon": "cube-3d",
-				"title": "3D Models",
-				"description": "Detailed three-dimensional representations of sites, structures, and terrain for visualization and analysis."
+				"title": "Watershed Mapping",
+				"description": "River basin terrain, hydrology and erosion risk analysis for planning."
 			},
 			{
-				"icon": "terrain",
+				"title": "Thermal Imaging",
+				"description": "Identifying pollution, urban heat zones, and water quality issues via aerial infrared."
+			},
+			{
+				"title": "Wetland Boundaries",
+				"description": "Accurate delineation for riparian protection and EIA documentation."
+			}
+		]
+	},
+	"techWeUse": {
+		"tag": "Detailed, Accurate Insights",
+		"headline": "Technology We Use",
+		"description": "Our team utilizes LiDAR drones, RTK GNSS units, total stations, bathymetry kits and advanced GIS software such as QGIS, Pix4D, and ArcGIS Pro. These tools help us provide detailed, spatially accurate insights to support your environmental needs."
+	},
+	"impact": {
+		"tag": "Impact",
+		"headline": "Real-World Impact",
+		"description": "",
+		"items": [
+			{
+				"title": "Reservoir Monitoring",
+				"description": "Track sediment levels and plan dredging strategies for long-term sustainability."
+			},
+			{
+				"title": "Vegetation Loss Tracking",
+				"description": "Compare seasonal aerial surveys to detect changes and inform conservation"
+			},
+			{
+				"title": "Flood Risk Zones",
+				"description": "Model runoff, catchments, and build flood resilience maps for local authorities."
+			}
+		]
+	},
+	"whyPartnerWithUs": {
+		"tag": null,
+		"headline": "Why Partner With Us?",
+		"description": "We deliver high-quality geospatial and survey intelligence for sustainable outcomes. Our responsive team ensures timely reporting, customizable services, and GIS outputs that are compatible with your workflow."
+	},
+	"cta": {
+		"tag": null,
+		"headline": "Let’s Collaborate",
+		"description": "Have a project in mind or need a consultation?",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Request a Quotation",
+			"href": "mailto:info@smartgridsurveying.com?subject=Request%20for%20Environmental%20Survey%20Quotation&body=Hello%20SmartGrid%20Team%2C%0A%0AI would like to request a quotation for the following environmental service:%0A%0AType of Survey:%0ALocation:%0AProject Size:%0ATimeline:%0A%0ARegards,"
+		}
+	},
+	"smartMonitoringAndEval": {
+		"tag": "With Drones",
+		"headline": "Smart Monitoring & Evaluation with Drones",
+		"description": "",
+		"items": [
+			{
+				"icon": "table-clock",
+				"title": "Real-Time Project Oversight",
+				"description": "Track construction or agricultural progress with up-to-date drone visuals and aerial analytics for decision-making confidence."
+			},
+			{
+				"icon": "map-marker-multiple",
+				"title": "Geospatial Change Detection",
+				"description": "Use drone-captured orthomosaics to monitor terrain shifts, crop health, or site compliance over time."
+			},
+			{
+				"icon": "chart-line",
+				"title": "Performance Benchmarking",
+				"description": "Compare field conditions before and after project milestones, ensuring outcomes match design intent and timeline."
+			},
+			{
+				"icon": "view-dashboard",
+				"title": "Instant Reports & Dashboards",
+				"description": "Integrate visual data into BIM, GIS, or custom dashboards with automatic export options in your preferred format."
+			},
+			{
+				"icon": "clipboard-check",
+				"title": "Aerial Compliance Audits",
+				"description": "Conduct automated inspections to verify regulatory and contractual compliance without boots on the ground."
+			},
+			{
+				"icon": "robot",
+				"title": "AI-Driven Insights",
+				"description": "Leverage machine learning to detect patterns, anomalies, or risks in site conditions before they escalate."
+			},
+			{
+				"icon": "cube",
+				"title": "3D Models & Topography",
+				"description": "Generate detailed 3D models and topographic maps that support planning, design validation, and volumetric calculations."
+			},
+			{
+				"icon": "wrench",
+				"title": "Infrastructure & Maintenance Inspections",
+				"description": "Use drones to inspect hard-to-reach infrastructure like rooftops, towers, and pipelines, enabling early detection of wear and faults."
+			}
+		],
+		"ctaPrimary": {
+			"icon": "whatsapp",
+			"label": "Message on WhatsApp",
+			"href": "https://wa.me/254107393023?text=Hi%20SmartGrid%20Surveying,%20I%E2%80%99m%20interested%20in%20drone%20monitoring%20and%20evaluation%20services."
+		},
+		"ctaSecondary": {
+			"icon": "email",
+			"label": "Send Email",
+			"href": "mailto:Smartgridsurveying@gmail.com?subject=Drone Monitoring Services Request&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI’d like to learn more about drone monitoring and evaluation solutions for my project. Please contact me with details.%0D%0A%0D%0AThank you."
+		}
+	},
+	"whatWeOffer": {
+		"tag": "Tech + Expertise",
+		"headline": "What We Offer",
+		"images": [
+			"/media/aerial-drones/monitoring-and-evaluation/02.jpg",
+			"/media/aerial-drones/monitoring-and-evaluation/04.jpg"
+		],
+		"description": "At SmartGrid Surveying & Engineering Ltd, we combine drone technology, remote sensing, and GIS expertise to provide actionable insights for environmental decision-making. Our services are trusted by environmental consultants, conservation NGOs, developers, and regulatory bodies across Kenya and the region.",
+		"items": [
+			{
+				"label": "Aerial Mapping",
+				"image": "/media/aerial-drones/monitoring-and-evaluation/05.jpg"
+			},
+			{
+				"label": "3d models",
+				"image": "/media/aerial-drones/monitoring-and-evaluation/06.jpg"
+			},
+			{
 				"title": "Digital Terrain & Elevation Models (DTMs & DEMs)",
-				"description": "Precise ground surface models for hydrological analysis, earthworks, and land use planning."
+				"image": "/media/aerial-drones/monitoring-and-evaluation/07.jpg"
 			},
 			{
-				"icon": "chart-timeline",
-				"title": "Construction Monitoring",
-				"description": "Track project progress, verify compliance with design specifications, and identify deviations in real-time."
+				"label": "Construction Monitoring",
+				"image": "/media/aerial-drones/monitoring-and-evaluation/08.jpg"
 			},
 			{
-				"icon": "leaf",
-				"title": "Agricultural Mapping",
-				"description": "Monitor crop health, assess vegetation indices (NDVI), and optimize resource allocation."
+				"label": "Agricultural Mapping",
+				"image": "/media/aerial-drones/monitoring-and-evaluation/09.jpg"
 			},
 			{
-				"icon": "tree-outline",
 				"title": "Environmental Monitoring",
-				"description": "Track land use changes, deforestation, reforestation, and habitat restoration efforts."
+				"image": "/media/aerial-drones/monitoring-and-evaluation/03.png"
 			},
 			{
-				"icon": "city",
-				"title": "Infrastructure Planning",
-				"description": "Provide accurate spatial data for designing, expanding, and maintaining public utilities and transport networks."
+				"label": "Infrastructure Planning",
+				"image": "/media/aerial-drones/monitoring-and-evaluation/10.jpg"
 			},
 			{
-				"icon": "calculator",
-				"title": "Volumetric Calculations",
-				"description": "Compute stockpile volumes, cut/fill quantities, and resource extraction metrics with high accuracy."
+				"title": "Volumetric calculations",
+				"image": "/media/aerial-drones/monitoring-and-evaluation/11.jpg"
 			}
 		]
 	}

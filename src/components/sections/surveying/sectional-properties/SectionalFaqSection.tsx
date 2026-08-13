@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { Blob } from "@/components/sections/home/decor";
+import { SectionTag } from "@/components/SectionTag";
 
 interface FaqItem {
 	q: string;
@@ -31,11 +32,9 @@ export function SectionalFaqSection() {
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<div className="max-w-3xl mx-auto text-center">
-					<span className="inline-flex items-center gap-3 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-						<span className="inline-block h-px w-9 bg-primary/60" />
-						{section.tag || "FAQ"}
-						<span className="inline-block h-px w-9 bg-primary/60" />
-					</span>
+                    {section.tag && <SectionTag >
+                        {section.tag}
+                    </SectionTag> }
 					<h2 className="mt-5 font-light tracking-tight leading-[1.08] text-3xl sm:text-4xl lg:text-[2.85rem] text-ink">
 						{section.headline}
 					</h2>

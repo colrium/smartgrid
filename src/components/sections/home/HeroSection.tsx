@@ -382,8 +382,30 @@ export default function HeroSection() {
 							</Link>
 						)}
 					</FadeUp>
-					<div className="flex flex-wrap items-center gap-4"></div>
-					<FadeUp delay={0.2} className="mt-12 sm:mt-14">
+					<div className="flex flex-wrap items-center gap-4">
+						<FadeUp delay={0.2} className="mt-12 sm:mt-14">
+							<div className="flex flex-wrap items-center gap-8 reveal active">
+								<div className="flex items-center gap-3">
+									<div className="flex -space-x-2">
+										{Array.isArray(location.items) &&
+											location.items.map((item: any, index: number) => (
+												<div
+													className="w-9 h-9 rounded-full bg-primary/20 border-2 border-surface flex items-center justify-center text-xs font-bold text-primary"
+													key={index}
+												>
+													{item.code}
+												</div>
+											))}
+									</div>
+									<span className="text-sm text-on-surface/50 font-medium">
+										{location.label}
+									</span>
+								</div>
+							</div>
+						</FadeUp>
+					</div>
+
+					{/* <FadeUp delay={0.2} className="mt-12 sm:mt-14">
 						<div className="flex flex-wrap items-center gap-8 reveal active">
 							<div className="flex items-center gap-3">
 								<div className="flex -space-x-2">
@@ -402,7 +424,7 @@ export default function HeroSection() {
 								</span>
 							</div>
 						</div>
-					</FadeUp>
+					</FadeUp> */}
 				</div>
 
 				{/* Right Column — HUD Card */}

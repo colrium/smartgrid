@@ -20,7 +20,10 @@ export function DronesSection() {
 	return (
 		<section id="drones" className="py-24 sm:py-28 relative overflow-hidden">
 			{/* Soft institutional background shapes */}
-			<Blob className="w-[26rem] h-[26rem] bg-brand-200/40 -bottom-24 -left-24" opacity={0.5} />
+			<Blob
+				className="w-[26rem] h-[26rem] bg-brand-200/40 -bottom-24 -left-24"
+				opacity={0.5}
+			/>
 			<ParallaxDecor speed={0.06} className="absolute top-24 right-1/4 z-0">
 				<Blob className="w-72 h-72 bg-brand-100/70" opacity={0.6} />
 			</ParallaxDecor>
@@ -36,9 +39,9 @@ export function DronesSection() {
 					{Array.isArray(items) &&
 						items.map((item, index) => (
 							<FadeUp key={index} delay={(index % 2) * 0.1}>
-								<article className="group overflow-hidden bg-surface rounded-[15px] hairline card-shadow transition-all duration-500  hover:border-primary/20 h-full">
+								<article className="group overflow-hidden bg-surface rounded-4xl hairline card-shadow transition-all duration-500  hover:border-primary/20 h-full">
 									{/* Image */}
-									<div className="relative h-52 sm:h-60 overflow-hidden">
+									<div className="relative h-64 sm:h-96 overflow-hidden">
 										{item.img && (
 											<Image
 												src={item.img}
@@ -50,7 +53,6 @@ export function DronesSection() {
 										)}
 										<div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/5 to-transparent" />
 
-										
 										<span className="absolute top-4 right-4 glass rounded-lg text-[11px] font-semibold uppercase tracking-[0.18em] text-ink px-3 py-1.5">
 											{String(index + 1).padStart(2, "0")}
 										</span>
@@ -60,14 +62,18 @@ export function DronesSection() {
 									<div className="p-6 sm:p-7">
 										<div className="flex items-center justify-between gap-3 mb-3">
 											{item.icon ? (
-												<span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-50 text-primary">
-													<span className={`mdi mdi-${item.icon} text-lg`} />
+												<span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-50 text-primary group-hover:text-surface group-hover:bg-primary transition-colors duration-300">
+													<span
+														className={`mdi mdi-${item.icon} text-lg`}
+													/>
 												</span>
 											) : (
 												<span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
-													{t("home:drones.label", {
-														defaultValue: "Aerial capability",
-													}) as string}
+													{
+														t("home:drones.label", {
+															defaultValue: "Aerial capability",
+														}) as string
+													}
 												</span>
 											)}
 											<span className="mdi mdi-arrow-right text-on-surface/30 group-hover:text-primary transition-colors duration-300" />

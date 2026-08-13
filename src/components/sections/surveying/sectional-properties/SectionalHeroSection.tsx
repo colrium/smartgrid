@@ -3,11 +3,13 @@
 import Image from "next/image";
 import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
+import { SectionTag } from "@/components/SectionTag";
 
 interface SectionalHeroContent {
 	headline: string;
 	description: string;
 	image?: string | null;
+	tag?: string;
 }
 
 export function SectionalHeroSection() {
@@ -37,10 +39,7 @@ export function SectionalHeroSection() {
 
 			<div className="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12">
 				<FadeUp>
-					<span className="inline-flex items-center gap-3 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-brand-200">
-						<span className="inline-block h-px w-9 bg-brand-200/70" />
-						Sectional Properties
-					</span>
+					{hero.tag && <SectionTag>{hero.tag}</SectionTag>}
 
 					<h1 className="mt-5 max-w-4xl font-light tracking-tight leading-[1.05] text-4xl sm:text-6xl lg:text-7xl text-white">
 						{hero.headline}

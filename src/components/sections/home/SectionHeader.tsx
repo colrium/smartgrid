@@ -1,5 +1,7 @@
 "use client";
 
+import { SectionTag } from "@/components/SectionTag";
+
 interface SectionHeaderProps {
 	tag?: string;
 	headline: string;
@@ -20,7 +22,7 @@ export function SectionHeader({
 	const descClass = dark
 		? "text-surface/65"
 		: "text-on-surface/60";
-
+    
 	return (
 		<div
 			className={`flex flex-col gap-5 ${
@@ -28,18 +30,12 @@ export function SectionHeader({
 			}`}
 		>
 			{tag && (
-				<span
-					className={`inline-flex items-center gap-3 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em] ${
-						dark ? "text-brand-200" : "text-primary"
-					}`}
+				<SectionTag
+					// className={`inline-flex items-center gap-3 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em]`}					
+					dark={dark}
 				>
-					<span
-						className={`inline-block h-px w-9 ${
-							dark ? "bg-brand-200/70" : "bg-primary/60"
-						}`}
-					/>
 					{tag}
-				</span>
+				</SectionTag>
 			)}
 			<h2
 				className={`font-light tracking-tight leading-[1.08] text-3xl sm:text-4xl lg:text-[2.85rem] ${
