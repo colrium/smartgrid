@@ -364,7 +364,7 @@ export default function HeroSection() {
 			</div>
 
 			<motion.div
-				className={`px-6 rounded-3xl hidden md:inline-block absolute right-0 bottom-0 overflow-hidden h-2/3 md:w-1/3 w-full bg-[url('/img/equipment/total-station-wireframe.svg')] bg-cover bg-no-repeat -z-0`}
+				className={`px-6 rounded-3xl hidden md:inline-block absolute right-0 bottom-0 overflow-hidden h-2/3 md:w-1/3 w-full bg-[url('/img/equipment/total-station-color.png')] bg-cover bg-no-repeat -z-0`}
 				style={{ opacity: wireframeOpacity }}
 			/>
 		</section>
