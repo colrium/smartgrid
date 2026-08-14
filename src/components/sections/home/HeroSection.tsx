@@ -302,7 +302,7 @@ export default function HeroSection() {
 
 					<FadeUp
 						delay={0.1}
-						className="flex flex-col md:flex-row md:flex-wrap justify-start items-start gap-4 sm:gap-6"
+						className="flex flex-col-reverse items-center md:flex-row md:flex-wrap justify-start md:items-start gap-4 sm:gap-6"
 					>
 						{ctaPrimary?.href && (
 							<Link
