@@ -4,6 +4,7 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import * as THREE from "three";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import { useTranslation } from "@/hooks";
@@ -30,6 +31,7 @@ interface Location {
 	label: string;
 	items?: LocationTagItem[];
 }
+
 export default function HeroSection() {
 	const containerRef = useRef<HTMLDivElement>(null);
 	const heroRef = useRef<HTMLElement>(null);
@@ -38,9 +40,6 @@ export default function HeroSection() {
 	const ctaSecondary = t("home:hero.ctaSecondary", { returnObjects: true }) as CtaItem;
 	const location = t("home:hero.location", { returnObjects: true }) as Location;
 
-	// Scroll-driven total station reveal: the color render stays while the
-	// header is on screen, then fades out as the hero scrolls away; the
-	// wireframe lines fade in underneath so the panel ends as clean line-work.
 	const { scrollYProgress } = useScroll({
 		target: heroRef,
 		offset: ["start end", "start end"],
@@ -66,6 +65,14 @@ export default function HeroSection() {
 		renderer.setSize(window.innerWidth, window.innerHeight);
 		renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 		container.appendChild(renderer.domElement);
+
+		// --- Lighting (Required for GLTF standard materials) ---
+		const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
+		scene.add(ambientLight);
+
+		const dirLight = new THREE.DirectionalLight(0xffffff, 2.5);
+		dirLight.position.set(5, 12, 8);
+		scene.add(dirLight);
 
 		// --- Kinetic Grid Shader ---
 		const gridUniforms = {
@@ -125,94 +132,12 @@ export default function HeroSection() {
 		const particles = new THREE.Points(pGeometry, pMaterial);
 		scene.add(particles);
 
-		// --- Drone Construction ---
+		// --- Drone Parent Container ---
 		const droneGroup = new THREE.Group();
+		droneGroup.position.set(0, 3.5, 0);
+		scene.add(droneGroup);
 
-		const wireMain = new THREE.LineBasicMaterial({
-			color: 0x0097b2,
-			transparent: true,
-			opacity: 0.7,
-		});
-		const wireDim = new THREE.LineBasicMaterial({
-			color: 0x0097b2,
-			transparent: true,
-			opacity: 0.45,
-		});
-		const rotorMat = new THREE.MeshBasicMaterial({
-			color: 0x0097b2,
-			transparent: true,
-			opacity: 0.15,
-			side: THREE.DoubleSide,
-		});
-
-		const wireMesh = (geo: THREE.BufferGeometry, mat = wireMain) => {
-			const edges = new THREE.EdgesGeometry(geo);
-			return new THREE.LineSegments(edges, mat);
-		};
-
-		// Body
-		const body = wireMesh(new THREE.BoxGeometry(0.4, 0.2, 0.7), wireMain);
-		droneGroup.add(body);
-
-		// Canopy
-		const canopy = wireMesh(new THREE.BoxGeometry(0.25, 0.05, 0.4), wireMain);
-		canopy.position.set(0, 0.12, 0.05);
-		droneGroup.add(canopy);
-
-		// Arms & Rotors
-		const rotors: THREE.Mesh[] = [];
-		const angles = [Math.PI / 4, (3 * Math.PI) / 4, -Math.PI / 4, (-3 * Math.PI) / 4];
-
-		angles.forEach((angle) => {
-			const armGroup = new THREE.Group();
-			armGroup.rotation.y = angle;
-
-			const arm = wireMesh(new THREE.CylinderGeometry(0.025, 0.025, 0.8, 8), wireDim);
-			arm.rotation.x = Math.PI / 2;
-			arm.position.z = 0.4;
-			armGroup.add(arm);
-
-			const motor = wireMesh(new THREE.CylinderGeometry(0.06, 0.06, 0.1, 12), wireMain);
-			motor.position.set(0, 0.05, 0.8);
-			armGroup.add(motor);
-
-			const rotor = new THREE.Mesh(
-				new THREE.CylinderGeometry(0.35, 0.35, 0.005, 16),
-				rotorMat
-			);
-			rotor.position.set(0, 0.1, 0.8);
-			armGroup.add(rotor);
-			rotors.push(rotor);
-
-			droneGroup.add(armGroup);
-		});
-
-		// Landing Gear
-		const skidGeo = new THREE.CylinderGeometry(0.015, 0.015, 0.6, 8);
-		const skid1 = wireMesh(skidGeo, wireDim);
-		skid1.rotation.x = Math.PI / 2;
-		skid1.position.set(0.2, -0.25, 0);
-		droneGroup.add(skid1);
-
-		const skid2 = wireMesh(skidGeo, wireDim);
-		skid2.rotation.x = Math.PI / 2;
-		skid2.position.set(-0.2, -0.25, 0);
-		droneGroup.add(skid2);
-
-		const legGeo = new THREE.CylinderGeometry(0.015, 0.015, 0.3, 8);
-		[-0.2, 0.2].forEach((x) => {
-			[-0.15, 0.15].forEach((z) => {
-				const leg = wireMesh(legGeo, wireDim);
-				leg.position.set(x, -0.125, z);
-				droneGroup.add(leg);
-			});
-		});
-
-		// Gimbal & Scanner Beam
-		const gimbal = wireMesh(new THREE.SphereGeometry(0.1, 16, 16), wireMain);
-		gimbal.position.set(0, -0.15, 0.2);
-		droneGroup.add(gimbal);
-
+		// --- Scanner Beam (Sci-fi Light Cone) ---
 		const scannerGeo = new THREE.ConeGeometry(2.5, 6, 16, 4, true);
 		scannerGeo.translate(0, -3, 0);
 		const scannerMat = new THREE.MeshBasicMaterial({
@@ -226,15 +151,42 @@ export default function HeroSection() {
 		scanner.position.set(0, -0.15, 0.2);
 		droneGroup.add(scanner);
 
-		droneGroup.position.set(0, 3.5, 0);
-		scene.add(droneGroup);
+		// --- GLTF Drone Model Loader ---
+		let mixer: THREE.AnimationMixer | null = null;
+		const loader = new GLTFLoader();
+
+		// Update path to point to your GLTF model file in the public directory
+		loader.load(
+			"/models/drone.gltf",
+			(gltf) => {
+				const gltfScene = gltf.scene;
+
+				// Adjust scale, position, or rotation if needed to fit your scene
+				gltfScene.scale.set(0.3, 0.3, 0.3);
+				gltfScene.position.set(0, -0.3, 0);
+
+				droneGroup.add(gltfScene);
+
+				// Play model animations (e.g. spinning propellers) if embedded in GLTF
+				if (gltf.animations && gltf.animations.length > 0) {
+					mixer = new THREE.AnimationMixer(gltfScene);
+					gltf.animations.forEach((clip) => {
+						mixer.clipAction(clip).play();
+					});
+				}
+			},
+			undefined,
+			(error) => {
+				console.error("An error occurred loading the GLTF model:", error);
+			}
+		);
 
 		// --- Mouse Interaction ---
 		let mouseX = 0;
 		let mouseY = 0;
 		const onMouseMove = (e: MouseEvent) => {
-			mouseX = (e.clientX / window.innerWidth - 0.5) * 0.5;
-			mouseY = (e.clientY / window.innerHeight - 0.5) * 0.5;
+			mouseX = -(e.clientX / window.innerWidth - 0.5) * 2 + 1;
+			mouseY = (e.clientY / window.innerHeight - 0.5) * 2 + 1;
 		};
 		window.addEventListener("mousemove", onMouseMove);
 
@@ -244,7 +196,11 @@ export default function HeroSection() {
 
 		const animate = () => {
 			animId = requestAnimationFrame(animate);
+			const delta = clock.getDelta();
 			const t = clock.getElapsedTime();
+
+			// Update GLTF model animations (e.g., spinning rotors)
+			if (mixer) mixer.update(delta);
 
 			// Terrain wave
 			const pos = geometry.attributes.position as THREE.BufferAttribute;
@@ -259,16 +215,13 @@ export default function HeroSection() {
 			terrain.rotation.z = t * 0.05;
 			particles.rotation.y = t * 0.02;
 
-			// Drone physics
+			// Drone floating physics
 			droneGroup.position.y = 3.5 + Math.sin(t * 2) * 0.3;
 			droneGroup.rotation.z = Math.sin(t * 1.5) * 0.05;
 			droneGroup.rotation.x = Math.cos(t * 1.2) * 0.05;
 			droneGroup.position.x = Math.sin(t * 0.5) * 2.5;
 			droneGroup.position.z = Math.cos(t * 0.5) * 1.8;
 
-			rotors.forEach((r) => {
-				r.rotation.y -= 0.8;
-			});
 			scanner.rotation.y += 0.02;
 
 			// Sync shader scan position to drone
@@ -306,7 +259,7 @@ export default function HeroSection() {
 			}
 		};
 	}, []);
-    // console.log("wireframeOpacity", wireframeOpacity, "colorOpacity", colorOpacity);
+
 	return (
 		<section
 			ref={heroRef}
@@ -333,7 +286,7 @@ export default function HeroSection() {
 						<h1 className="text-5xl sm:text-7xl lg:text-8xl font-light tracking-tight text-ink leading-[1.05] mb-8 sm:mb-10 lg:mb-12 whitespace-pre-line">
 							<Trans
 								i18nKey={["home:hero.headline"]}
-								defaults="Survey <shine>Smarter</shine>, Build Stronger" // optional defaultValue
+								defaults="Survey <shine>Smarter</shine>, Build Stronger"
 								components={{
 									italic: <i />,
 									shine: <span className="text-primary shine-primary " />,
@@ -354,7 +307,7 @@ export default function HeroSection() {
 						{ctaPrimary?.href && (
 							<Link
 								href={ctaPrimary.href}
-								className="group inline-flex items-center gap-3 h-14 rounded-full bg-primary px-8 text-surface font-medium text-base transition-all duration-300 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]"
+								className="group inline-flex items-center gap-3 h-14 rounded-full bg-primary shadow-2xl px-8 text-surface font-medium text-base transition-all duration-300 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]"
 							>
 								<span className="h-1.5 w-1.5 rounded-full bg-surface transition-transform duration-300 group-hover:scale-125" />
 								{ctaPrimary.label}
@@ -369,16 +322,16 @@ export default function HeroSection() {
 						{ctaSecondary?.href && (
 							<Link
 								href={ctaSecondary.href}
-								className="inline-flex items-center gap-2.5 h-14 rounded-full border border-primary/30 px-8 text-primary text-base transition-all duration-300 hover:border-primary hover:bg-surface/10"
+								className="group inline-flex items-center gap-3 h-14 rounded-full bg-surface shadow-2xl px-8 text-primary font-medium text-base transition-all duration-300 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]"
 							>
+								{ctaSecondary.label}
 								{ctaSecondary.icon ? (
 									<span
-										className={`mdi mdi-${ctaSecondary.icon} text-lg text-primary`}
+										className={`mdi mdi-${ctaSecondary.icon} text-lg text-primary transition-transform group-hover:translate-x-1`}
 									/>
 								) : (
 									<span className="h-1.5 w-1.5 rounded-full bg-brand-200" />
 								)}
-								{ctaSecondary.label}
 							</Link>
 						)}
 					</FadeUp>
@@ -404,50 +357,16 @@ export default function HeroSection() {
 							</div>
 						</FadeUp>
 					</div>
-
-					{/* <FadeUp delay={0.2} className="mt-12 sm:mt-14">
-						<div className="flex flex-wrap items-center gap-8 reveal active">
-							<div className="flex items-center gap-3">
-								<div className="flex -space-x-2">
-									{Array.isArray(location.items) &&
-										location.items.map((item: any, index: number) => (
-											<div
-												className="w-9 h-9 rounded-full glass flex items-center justify-center text-xs font-bold text-ink"
-												key={index}
-											>
-												{item.code}
-											</div>
-										))}
-								</div>
-								<span className="text-sm text-on-surface/50 font-medium">
-									{location.label}
-								</span>
-							</div>
-						</div>
-					</FadeUp> */}
 				</div>
 
-				{/* Right Column — HUD Card */}
-				<div className="lg:col-span-2 pointer-events-auto">
-					{/* <div className="px-6 rounded-3xl border border-primary/20 relative overflow-hidden ">
-						<Image
-							src="/img/equipment/total-station.svg"
-							alt="total-station-wireframe"
-                            
-							width={400}
-							height={300}
-						/>
-					</div> */}
-				</div>
+				{/* Right Column */}
+				<div className="lg:col-span-2 pointer-events-auto" />
 			</div>
+
 			<motion.div
 				className={`px-6 rounded-3xl hidden md:inline-block absolute right-0 bottom-0 overflow-hidden h-2/3 md:w-1/3 w-full bg-[url('/img/equipment/total-station-wireframe.svg')] bg-cover bg-no-repeat -z-0`}
 				style={{ opacity: wireframeOpacity }}
-			></motion.div>
-			{/* <motion.div
-				className="px-6 rounded-3xl hidden md:inline-block fixed right-0 bottom-0 overflow-hidden h-2/3 md:w-1/3 w-full bg-[url('/img/equipment/total-station-color.png')] bg-cover bg-no-repeat"
-				style={{ opacity: colorOpacity }}
-			/> */}
+			/>
 		</section>
 	);
 }
