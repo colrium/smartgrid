@@ -1,12 +1,86 @@
 {
 	"hero": {
-		"headline": "PHOTOGRAPHY & VIDEO MARKETING",
-		"title": "Photography, Video Marketing, Inspections & Monitoring at Your Fingertips",
-		"image": "/images/placeholder.jpg",
-		"description": "Leading Africa's Land and Aerial Surveying Revolution. Capture stunning aerial visuals for marketing, inspections, and project monitoring.",
+		"headline": "Survey Smarter, Build Stronger",
+		"title": "Photography & Video Marketing",
+		"image": "/media/aerial-drones/photography-video-marketing/01.jpg",
+		"description": "Leading Africa's Land and Aerial Surveying Revolution. Photography, video Marketing, Inspections & Monitoring ast your fingertips",
 		"ctaPrimary": {
+			"icon": "gift",
 			"label": "Get Your Free Consultation",
 			"href": "mailto:smartgridsurveying@gmail.com"
 		}
+	},
+	"services": {
+		"tag": "Cinematic excellence",
+		"headline": "Corporate Drone Photography & Video Marketing",
+		"description": "Showcase your business with cinematic excellence. Our DJI Air 3s drones deliver unmatched visuals for campaigns, events, and executive storytelling.",
+		"items": [
+			{
+				"title": "Executive Brand Videos",
+				"description": "Command attention with top-tier aerial visuals that tell your corporate story — from boardroom introductions to facility tours with cinematic depth."
+			},
+			{
+				"title": "Commercial Property Showcases",
+				"description": "Highlight real estate, office parks, or industrial zones with sweeping drone flyovers and top-down spatial clarity using DJI’s dual-camera system."
+			},
+			{
+				"title": "Construction & Progress Reports",
+				"description": "Visualize progress like never before. Our drones provide high-res progress monitoring, orthomosaic mapping, and on-site executive walkthroughs."
+			},
+			{
+				"title": "Marketing Campaigns",
+				"description": "From launch videos to brand identity reels, we produce motion content that elevates your brand perception and boosts engagement."
+			},
+			{
+				"title": "Corporate Events Coverage",
+				"description": "Capture internal events, product launches, or team milestones from the air — offering a fresh perspective to share across all platforms."
+			},
+			{
+				"title": "Smart Grid Aerial Inspections",
+				"description": "Demonstrate your infrastructure capabilities. Use drone footage to present safety, inspection, or maintenance protocols to stakeholders."
+			},
+			{
+				"title": "High Altitude Product Launches",
+				"description": "Elevate your product unveilings — literally. Launch new products with dramatic, high-altitude perspectives that captivate and excite."
+			},
+			{
+				"title": "Social Media Short-form Content",
+				"description": "Create bite-sized, drone-captured social videos ideal for Instagram Reels, TikTok, and YouTube Shorts — viral ready with every frame."
+			}
+		],
+		"ctaPrimary": {
+			"icon": "whatsapp",
+			"label": "Book Your Drone Session",
+			"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I'm%20interested%20in%20booking%20a%20Drone%20Corporate%20Session."
+		}
+	},
+	"imageSlider": {
+		"items": [
+			{
+				"image": "/media/aerial-drones/photography-video-marketing/02.jpg",
+				"title": "Golden Hour Cityscape",
+				"description": "Aerial golden-hour shot showcasing an urban skyline and dramatic lighting, perfect for marketing campaigns."
+			},
+			{
+				"image": "/media/aerial-drones/photography-video-marketing/03.jpg",
+				"title": "Commercial Property Showcase",
+				"description": "High-angle view of a commercial property highlighting layout, access and surrounding amenities for listings and promos."
+			},
+			{
+				"image": "/media/aerial-drones/photography-video-marketing/04.jpg",
+				"title": "Construction Progress Overview",
+				"description": "Top-down drone capture of an active construction site showing progress stages and site layout for client reports."
+			},
+			{
+				"image": "/media/aerial-drones/photography-video-marketing/05.jpg",
+				"title": "Event Aerial Coverage",
+				"description": "Wide aerial shot capturing event layout and crowd flow, ideal for promotional reels and post-event highlights."
+			},
+            {
+				"image": "/media/aerial-drones/photography-video-marketing/06.jpg",
+				"title": "Inspection & Detail Shot",
+				"description": "Low-altitude, detail-focused capture useful for inspections, product showcases, and close-up narrative shots."
+			}
+		]
 	}
 }

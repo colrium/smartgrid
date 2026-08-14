@@ -1,0 +1,86 @@
+{
+	"hero": {
+		"headline": "Upime Kwa Busara, Jenga Kwa Nguvu Zaidi",
+		"title": "Upigaji Picha na Uuzaji wa Video",
+		"image": "/media/aerial-drones/photography-video-marketing/01.jpg",
+		"description": "Kuongoza Mapinduzi ya Upimaji wa Ardhi na Angani barani Afrika. Upigaji picha, uuzaji wa video, ukaguzi na ufuatiliaji kwa vidole vyako",
+		"ctaPrimary": {
+			"icon": "gift",
+			"label": "Pata Ushauri Wako wa Bure",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"services": {
+		"tag": "Ubora wa sinema",
+		"headline": "Upigaji Picha wa Kampuni na Uuzaji wa Video wa Ndege Zisizo na Rubani",
+		"description": "Onyesha biashara yako kwa ubora wa sinema. Ndege zetu zisizo na rubani za DJI Air 3s hutoa taswira zisizo na kifani kwa kampeni, matukio, na usimulizi wa utendaji.",
+		"items": [
+			{
+				"title": "Video za Utambulisho wa Utendaji",
+				"description": "Vuta umakini kwa taswira za angani za hali ya juu zinazosimulia hadithi yako ya kampuni — kutoka utambulisho wa chumba cha bodi hadi ziara za vifaa kwa kina cha sinema."
+			},
+			{
+				"title": "Maonyesho ya Mali ya Biashara",
+				"description": "Angazia mali isiyohamishika, mbuga za ofisi, au maeneo ya viwanda kwa safari za ndege za angani na uwazi wa anga wa juu-chini kwa kutumia mfumo wa kamera mbili wa DJI."
+			},
+			{
+				"title": "Ripoti za Ujenzi na Maendeleo",
+				"description": "Ona maendeleo kama hapo awali. Ndege zetu zisizo na rubani hutoa ufuatiliaji wa maendeleo wa mwonekano wa juu, uchoraji ramani wa orthomosaic, na ziara za utendaji tovutini."
+			},
+			{
+				"title": "Kampeni za Uuzaji",
+				"description": "Kutoka video za uzinduzi hadi reels za utambulisho wa chapa, tunazalisha maudhui ya mwendo yanayoinua mtazamo wa chapa yako na kuongeza ushiriki."
+			},
+			{
+				"title": "Chanjo ya Matukio ya Kampuni",
+				"description": "Kamata matukio ya ndani, uzinduzi wa bidhaa, au hatua muhimu za timu kutoka angani — kutoa mtazamo mpya wa kushiriki kwenye majukwaa yote."
+			},
+			{
+				"title": "Ukaguzi wa Angani wa Smart Grid",
+				"description": "Onyesha uwezo wako wa miundombinu. Tumia rekodi za ndege kuwasilisha itifaki za usalama, ukaguzi, au matengenezo kwa wadau."
+			},
+			{
+				"title": "Uzinduzi wa Bidhaa za Mwinuko wa Juu",
+				"description": "Inua uzinduzi wako wa bidhaa — kimwili. Zindua bidhaa mpya kwa mitazamo ya kuvutia, ya mwinuko wa juu inayonasa na kuchochea."
+			},
+			{
+				"title": "Maudhui ya Fomu Fupi ya Mitandao ya Kijamii",
+				"description": "Unda video za kijamii za ukubwa mdogo zinazokamatwa na ndege zisizo na rubani zilizo bora kwa Instagram Reels, TikTok, na YouTube Shorts — tayari za kusambaa kwa kila fremu."
+			}
+		],
+		"ctaPrimary": {
+			"icon": "whatsapp",
+			"label": "Hifadhi Kikao Chako cha Ndege",
+			"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I'm%20interested%20in%20booking%20a%20Drone%20Corporate%20Session."
+		}
+	},
+	"imageSlider": {
+		"items": [
+			{
+				"image": "/media/aerial-drones/photography-video-marketing/02.jpg",
+				"title": "Mandhari ya Jiji la Saa ya Dhahabu",
+				"description": "Picha ya angani ya saa ya dhahabu inayoonyesha mwonekano wa jiji na mwanga wa kuvutia, bora kwa kampeni za uuzaji."
+			},
+			{
+				"image": "/media/aerial-drones/photography-video-marketing/03.jpg",
+				"title": "Maonyesho ya Mali ya Biashara",
+				"description": "Mwonekano wa pembe ya juu wa mali ya biashara unaoangazia mpangilio, ufikiaji na vifaa vinavyoizunguka kwa orodha na matangazo."
+			},
+			{
+				"image": "/media/aerial-drones/photography-video-marketing/04.jpg",
+				"title": "Mwonekano wa Maendeleo ya Ujenzi",
+				"description": "Ukamataji wa anga wa juu-chini wa tovuti ya ujenzi inayoendelea kuonyesha hatua za maendeleo na mpangilio wa tovuti kwa ripoti za mteja."
+			},
+			{
+				"image": "/media/aerial-drones/photography-video-marketing/05.jpg",
+				"title": "Chanjo ya Matukio ya Angani",
+				"description": "Picha pana ya angani inayokamata mpangilio wa tukio na mtiririko wa umati, bora kwa reels za matangazo na muhtasari wa baada ya tukio."
+			},
+			{
+				"image": "/media/aerial-drones/photography-video-marketing/06.jpg",
+				"title": "Ukaguzi na Picha ya Maelezo",
+				"description": "Ukamataji wa mwinuko wa chini, unaolenga maelezo muhimu kwa ukaguzi, maonyesho ya bidhaa, na picha za karibu za usimulizi."
+			}
+		]
+	}
+}

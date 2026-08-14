@@ -25,7 +25,7 @@ export function HowItWorksSection() {
 	const items = Array.isArray(section.items) ? section.items : [];
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
+		<section className="py-24 sm:py-28 relative overflow-hidden ">
 			<Blob className="w-[28rem] h-[28rem] bg-brand-100/60 -bottom-24 -right-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
