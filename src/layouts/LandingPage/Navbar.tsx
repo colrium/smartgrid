@@ -153,28 +153,28 @@ export default function Navbar() {
 
 						<Link href="/" className="flex items-center gap-2">
 							<Image
-								className="hidden lg:flex lg:mr-1"
+								className="flex lg:mr-1"
 								src={t("common:nav.logo")}
 								alt={t("common:nav.logo_alt")}
 								width={32}
 								height={32}
 							/>
-                            <div className="flex flex-col mr-2 leading-tight">
-								<h6
-									className="flex uppercase font-semibold tracking-wide text-ink no-underline"
-								>
+							<div className="flex flex-col mr-2 leading-tight">
+								<h6 className="flex uppercase font-semibold tracking-wide text-ink no-underline">
 									{t("meta:site.title")}
 								</h6>
-								<span
-									className="flex uppercase font-semibold text-[10px] tracking-[0.18em] text-on-surface/55 no-underline"
-								>
+								<span className=" capitalize hidden lg:flex font-semibold text-[9px]  text-on-surface/55 no-underline">
 									{t("meta:site.subtitle")}
 								</span>
 							</div>
-							
 						</Link>
 
-						<NavMenu items={navs} locale={currentLocale} localizePath={localizePath} horizontal />
+						<NavMenu
+							items={navs}
+							locale={currentLocale}
+							localizePath={localizePath}
+							horizontal
+						/>
 
 						<Box className="lg:hidden grow" />
 						<Box className="flex items-center gap-2">

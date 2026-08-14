@@ -3,20 +3,21 @@
 @theme inline {
     --color-primary: #0097b2;
     --color-secondary: #000000;
+    --color-accent: #947e5e;
 
     --color-paper: #ffffff;
     --color-mute: #80a5ac;
 
-    --color-brand-50: #e5f6f8;
-    --color-brand-100: #ccecef;
-    --color-brand-200: #99d9df;
-    --color-brand-300: #66c5cf;
-    --color-brand-400: #33b2bf;
-    --color-brand-500: #0097b2;
-    --color-brand-600: #007f96;
-    --color-brand-700: #00677a;
-    --color-brand-800: #004f5e;
-    --color-brand-900: #003742;
+    --color-primary-50: #e5f6f8;
+    --color-primary-100: #ccecef;
+    --color-primary-200: #99d9df;
+    --color-primary-300: #66c5cf;
+    --color-primary-400: #33b2bf;
+    --color-primary-500: #0097b2;
+    --color-primary-600: #007f96;
+    --color-primary-700: #00677a;
+    --color-primary-800: #004f5e;
+    --color-primary-900: #003742;
 
     --color-surface: #ffffff;
     --color-surface-tint: #d1d1d1;
@@ -51,10 +52,6 @@
 
     --color-ring-primary: #0097b2;
 
-    --color-gold: #c9a84c;
-    --color-gold-100: #f2e6c2;
-    --color-gold-200: #e6d197;
-    --color-gold-300: #d9bd7a;
 
     --color-ink: #01373d;
     --color-ink-soft: #345a60;
@@ -427,5 +424,5 @@ select option {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-brand-700);
+    background: var(--color-primary-700);
 } 

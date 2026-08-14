@@ -322,15 +322,15 @@ export default function HeroSection() {
 						{ctaSecondary?.href && (
 							<Link
 								href={ctaSecondary.href}
-								className="group inline-flex items-center gap-3 h-14 rounded-full bg-surface shadow-2xl px-8 text-primary font-medium text-base transition-all duration-300 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]"
+								className="group inline-flex items-center gap-3 h-14 rounded-full bg-accent shadow-2xl px-8 text-surface font-medium text-base transition-all duration-300 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]"
 							>
 								{ctaSecondary.label}
 								{ctaSecondary.icon ? (
 									<span
-										className={`mdi mdi-${ctaSecondary.icon} text-lg text-primary transition-transform group-hover:translate-x-1`}
+										className={`mdi mdi-${ctaSecondary.icon} text-lg text-surface transition-transform group-hover:translate-x-1`}
 									/>
 								) : (
-									<span className="h-1.5 w-1.5 rounded-full bg-brand-200" />
+									<span className="h-1.5 w-1.5 rounded-full bg-primary-200" />
 								)}
 							</Link>
 						)}
@@ -364,7 +364,7 @@ export default function HeroSection() {
 			</div>
 
 			<motion.div
-				className={`px-6 rounded-3xl hidden md:inline-block absolute right-0 bottom-0 overflow-hidden h-2/3 md:w-1/3 w-full bg-[url('/img/equipment/total-station-color.png')] bg-cover bg-no-repeat -z-0`}
+				className={`px-6 rounded-3xl hidden md:inline-block absolute right-0 bottom-0 overflow-hidden h-2/3 md:w-1/3 w-full bg-[url('/img/equipment/total-station-color.png')] bg-cover bg-no-repeat z-0`}
 				style={{ opacity: wireframeOpacity }}
 			/>
 		</section>
