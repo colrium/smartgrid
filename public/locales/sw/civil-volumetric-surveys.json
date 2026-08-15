@@ -1,0 +1,75 @@
+{
+	"hero": {
+		"headline": "Kuaminika. Kupanuka. Haraka. Nguvu.",
+		"title": "Uchunguzi wa Kiasi Unafanywa Kwa Busara Zaidi.",
+		"image": "/media/civil/volumetric-surveys/01.jpg",
+		"description": "Fungua Thamani Halisi ya Tovuti Yako—uchunguzi wetu wa kiasi unaowezeshwa na ndege zisizo na rubani hutoa vipimo sahihi, vya wakati unaofaa ambavyo vinaendesha upangaji bora, usimamizi wa rasilimali, na ufanisi wa mradi.",
+		"ctaPrimary": {
+			"icon": "gift",
+			"label": "Pata Ushauri Wako wa Bure",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		},
+		"ctaSecondary": {
+			"icon": "compass",
+			"label": "Chunguza Huduma Nyingine za Angani",
+			"href": "/aerial-drones/drone-imagery-surveys"
+		}
+	},
+	"maxProductivityMinGuesswork": {
+		"tag": "Ongoza kwa Data",
+		"headline": "Kuongeza Tija. Kupunguza Bahati Nasibu.",
+		"description": "Tumia uchunguzi wa kiasi wa kisasa wa ndege za SmartGrid kufanya maamuzi ya haraka na ya busara zaidi tovutini. Acha data iongoze njia ya faida."
+	},
+	"precisionVolumetricAnalysis": {
+		"tag": "Akili Sahihi ya Tovuti",
+		"headline": "Uchambuzi Sahihi wa Kiasi kwa Teknolojia ya Ndege Zisizo na Rubani",
+		"image": "/media/civil/volumetric-surveys/02.jpg",
+		"description": "SmartGrid hutumia UAV za hali ya juu na photogrammetry kutoa vipimo vya kiasi vya haraka, sahihi.\n\n Iwe unasimamia mrundikano, machimbo, au kazi za ardhi, suluhisho zetu za ndege hupunguza muda na gharama huku zikiboresha usalama na uaminifu wa data."
+	},
+	"services": {
+		"tag": "HUDUMA ZA KIASI",
+		"headline": "Iwe wewe ni wakala wa serikali, shirika lisilo la kiserikali, au msanidi binafsi, Smartgrid Surveying ni mshirika wako wa kuaminika!\n\n Ndege zetu zisizo na rubani hutoa data inayoweza kutekelezwa mahali inapohitajika zaidi.",
+		"items": [
+			{
+				"icon": "stockpile",
+				"title": "Kipimo cha Kiasi cha Mrundikano",
+				"description": "Data ya kiasi ya haraka na salama kwa nyenzo kama changarawe, mchanga, na makaa—kupunguza hitaji la kipimo cha mikono na hatari."
+			},
+			{
+				"icon": "mine",
+				"title": "Ufuatiliaji wa Machimbo na Madini",
+				"description": "Fuatilia kiasi cha kukata/kujaza na mabadiliko kwa muda kwa data ya ardhi ya mwonekano wa juu iliyokamatwa kutoka juu."
+			},
+			{
+				"icon": "bulldozer",
+				"title": "Ufuatiliaji wa Maendeleo ya Kazi za Ardhi",
+				"description": "Linganisha mifano ya as-built dhidi ya mibuni kufuatilia maendeleo na kuthibitisha kiasi cha uchimbaji kwa usahihi wa kiwango cha sentimita."
+			},
+			{
+				"icon": "ruler-square",
+				"title": "Hesabu za Kukata na Kujaza",
+				"description": "Zalisha mifano ya kina ya 3D kuamua ni kiasi gani cha nyenzo kinahitaji kuondolewa au kuongezwa—bora kwa usawazishaji na kusawazisha."
+			},
+			{
+				"icon": "history",
+				"title": "Ulinganisho wa Kihistoria na Ukaguzi",
+				"description": "Linganisha seti za data kwa muda kwa hakiki za utendaji, uthibitishaji wa bili, na kufuata kanuni."
+			}
+		]
+	},
+	"clarityAndControl": {
+		"tag": "Uwazi na Udhibiti",
+		"headline": "Kuongeza Usahihi. Kuendesha Ufanisi.",
+		"description": "Sema kwaheri kwa uchunguzi wa kizamani wa mikono. Hesabu zetu za kiasi za ndege zisizo na rubani huleta uwazi na udhibiti katika kila hatua muhimu ya mradi."
+	},
+	"cta": {
+		"tag": "Tuushirikiane",
+		"headline": "Unahitaji Data Sahihi ya Kiasi kwa Tovuti Yako?",
+		"description": "Wasiliana na SmartGrid Surveying kwa uchunguzi maalum wa kiasi wa ndege unaookoa muda, kupunguza hatari, na kutoa matokeo.",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Omba Uchunguzi wa Kiasi",
+			"href": "mailto:contact@smartgridsurveying.com"
+		}
+	}
+}

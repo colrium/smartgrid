@@ -61,5 +61,15 @@
 		"tag": "Clarity & Control",
 		"headline": "Boost Accuracy. Drive Efficiency.",
 		"description": "Say goodbye to outdated manual surveys. Our drone-based volume calculations bring clarity and control to every project milestone."
+	},
+	"cta": {
+		"tag": "Let’s Collaborate",
+		"headline": "Need Accurate Volumetric Data for Your Site?",
+		"description": "Contact SmartGrid Surveying for a custom drone volume survey that saves time, reduces risk, and delivers results.",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Request a volumetric Survey",
+			"href": "mailto:contact@smartgridsurveying.com"
+		}
 	}
 }

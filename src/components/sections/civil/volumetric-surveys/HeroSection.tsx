@@ -7,6 +7,7 @@ import { FadeUp } from "@/components/animations/Fade";
 import { SectionTag } from "@/components/SectionTag";
 
 interface HeroCta {
+	icon?: string;
 	label: string;
 	href: string;
 }
@@ -17,11 +18,12 @@ interface HeroContent {
 	description?: string;
 	image?: string | null;
 	ctaPrimary?: HeroCta | null;
+	ctaSecondary?: HeroCta | null;
 }
 
 export function HeroSection() {
-	const { t } = useTranslation(["civil-as-built-surveys"]);
-	const hero = t("civil-as-built-surveys:hero", {
+	const { t } = useTranslation(["civil-volumetric-surveys"]);
+	const hero = t("civil-volumetric-surveys:hero", {
 		returnObjects: true,
 	}) as unknown as HeroContent;
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");
@@ -45,7 +47,7 @@ export function HeroSection() {
 
 			<div className="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12">
 				<FadeUp>
-					<SectionTag>{hero.headline}</SectionTag>
+					<SectionTag dark>{hero.headline}</SectionTag>
 
 					<h1 className="mt-5 max-w-4xl font-light tracking-tight leading-[1.05] text-4xl sm:text-6xl lg:text-7xl text-white">
 						{hero.title}
@@ -57,16 +59,34 @@ export function HeroSection() {
 						</p>
 					)}
 
-					{hero.ctaPrimary?.href && (
-						<div className="mt-10">
-							<Link
-								href={hero.ctaPrimary.href}
-								className="group inline-flex items-center gap-3 h-14 rounded-full bg-surface px-8 text-ink font-medium text-base transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]"
-							>
-								<span className="h-1.5 w-1.5 rounded-full bg-primary transition-transform duration-300 group-hover:scale-125" />
-								{hero.ctaPrimary.label}
-								<span className="mdi mdi-arrow-right text-xl text-ink transition-transform duration-300 group-hover:translate-x-1" />
-							</Link>
+					{(hero.ctaPrimary?.href || hero.ctaSecondary?.href) && (
+						<div className="mt-10 flex flex-wrap items-center gap-4">
+							{hero.ctaPrimary?.href && (
+								<Link
+									href={hero.ctaPrimary.href}
+									className="group inline-flex items-center gap-3 h-14 rounded-full bg-surface px-8 text-ink font-medium text-base transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]"
+								>
+									{hero.ctaPrimary.icon && (
+										<span
+											className={`mdi mdi-${hero.ctaPrimary.icon} text-xl text-ink`}
+										/>
+									)}
+									{hero.ctaPrimary.label}
+								</Link>
+							)}
+
+							{hero.ctaSecondary?.href && (
+								<Link
+									href={hero.ctaSecondary.href}
+									className="group inline-flex items-center gap-3 h-14 rounded-full border border-surface/40 px-8 text-white font-medium text-base transition-all duration-300 hover:bg-surface hover:text-ink"
+								>
+									{hero.ctaSecondary.icon && (
+										<span className={`mdi mdi-${hero.ctaSecondary.icon} text-xl`} />
+									)}
+									{hero.ctaSecondary.label}
+									<span className="mdi mdi-arrow-right text-xl transition-transform duration-300 group-hover:translate-x-1" />
+								</Link>
+							)}
 						</div>
 					)}
 				</FadeUp>

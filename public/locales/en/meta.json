@@ -130,6 +130,11 @@
 			"page_title": "As-Built Surveys",
 			"meta_description": "Capture the true, current state of built environments — drone, LiDAR, and photogrammetry as-built surveys with centimeter-level accuracy for BIM, CAD, and compliance.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"civil-volumetric-surveys": {
+			"page_title": "Volumetric Surveys",
+			"meta_description": "Volumetric surveys done smarter — drone-enabled stockpile volumes, cut/fill quantities, quarry monitoring, and site balances with centimeter-level accuracy.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {
