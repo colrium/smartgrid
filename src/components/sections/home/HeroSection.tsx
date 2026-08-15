@@ -5,13 +5,72 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import { useTranslation } from "@/hooks";
 import { Trans } from "next-i18next/pages";
-import Button, { ButtonProps } from "@mui/material/Button";
+import { ButtonProps } from "@mui/material/Button";
 import { FadeUp, FadeRight, FadeLeft } from "@/components/animations/Fade";
 
+const drone3dProps = new Map([
+	[
+		"/models/dji_spark_low_poly_medium.glb",
+		{
+			propellorsAxis: "y",
+			scale: [5, 5, 5],
+			position: [0, -0.25, 0],
+			propellors: [
+				"DJI_Spark_LowPol_Prop006_33",
+				"DJI_Spark_LowPol_Prop005_28",
+				"DJI_Spark_LowPol_Prop003_18",
+				"DJI_Spark_LowPol_Prop004_23",
+			],
+		},
+	],
+	[
+		"/models/drone.gltf",
+		{
+			propellorsAxis: "y",
+			scale: [0.3, 0.3, 0.3],
+			position: [0, -0.3, 0],
+			propellors: ["Object_164"],
+		},
+	],
+	[
+		"/models/drone_low_poly.glb",
+		{
+			scale: [0.005, 0.005, 0.005],
+			position: [0, -0.1, 0],
+			propellorsAxis: "z",
+			propellors: [
+				"Wing1_LowPolyDrone_0",
+				"Wing2_LowPolyDrone_0",
+				"Wing3_LowPolyDrone_0",
+				"Wing4_LowPolyDrone_0",
+			],
+		},
+	],
+	[
+		"/models/dji_fpv.glb",
+		{
+			propellorsAxis: "y",
+			scale: [0.003, 0.003, 0.003],
+			position: [0, 0, 0],
+			propellors: ["SpineB.006"],
+		},
+	],
+	[
+		"/models/dji_spark.glb",
+		{
+			propellorsAxis: "z",
+			scale: [0.15, 0.15, 0.15],
+			position: [0, -0.2, 0],
+			propellors: ["Cube_001_Black02_0", "Cube_002_Black02_0", "Cube_003_Black02_0", "Cube_004_Black02_0"],
+		},
+	],
+]);
+const drone3dFile = "/models/dji_spark.glb";
 interface CtaItem {
 	label: string;
 	href?: string;
@@ -32,6 +91,15 @@ interface Location {
 	items?: LocationTagItem[];
 }
 
+// Utility function for debouncing events
+function debounce<T extends (...args: any[]) => void>(func: T, wait: number) {
+	let timeout: ReturnType<typeof setTimeout>;
+	return function (this: any, ...args: Parameters<T>) {
+		clearTimeout(timeout);
+		timeout = setTimeout(() => func.apply(this, args), wait);
+	};
+}
+
 export default function HeroSection() {
 	const containerRef = useRef<HTMLDivElement>(null);
 	const heroRef = useRef<HTMLElement>(null);
@@ -45,12 +113,20 @@ export default function HeroSection() {
 		offset: ["start end", "start end"],
 	});
 	const wireframeOpacity = useTransform(scrollYProgress, [0.02, 0.35], [0, 1]);
-	const colorOpacity = useTransform(scrollYProgress, [0.3, 0.7], [1, 0]);
 
 	useEffect(() => {
 		const container = containerRef.current;
 		if (!container) return;
-
+		// --- Viewport Observer ---
+		let isInViewport = true;
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				isInViewport = entry.isIntersecting;
+			},
+			{ threshold: 0 } // Triggers as soon as it fully leaves or partially enters
+		);
+        observer.observe(containerRef.current);
+		
 		// --- Scene Setup ---
 		const scene = new THREE.Scene();
 		const camera = new THREE.PerspectiveCamera(
@@ -66,13 +142,13 @@ export default function HeroSection() {
 		renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 		container.appendChild(renderer.domElement);
 
-		// --- Lighting (Required for GLTF standard materials) ---
-		const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
+		// Lighting for the GLB Model
+		const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
 		scene.add(ambientLight);
 
-		const dirLight = new THREE.DirectionalLight(0xffffff, 2.5);
-		dirLight.position.set(5, 12, 8);
-		scene.add(dirLight);
+		const directionalLight = new THREE.DirectionalLight(0xffffff, 2.0);
+		directionalLight.position.set(10, 20, 15);
+		scene.add(directionalLight);
 
 		// --- Kinetic Grid Shader ---
 		const gridUniforms = {
@@ -132,12 +208,12 @@ export default function HeroSection() {
 		const particles = new THREE.Points(pGeometry, pMaterial);
 		scene.add(particles);
 
-		// --- Drone Parent Container ---
+		// --- Drone Container Group ---
 		const droneGroup = new THREE.Group();
 		droneGroup.position.set(0, 3.5, 0);
 		scene.add(droneGroup);
 
-		// --- Scanner Beam (Sci-fi Light Cone) ---
+		// Attached Scanner Beam Effect
 		const scannerGeo = new THREE.ConeGeometry(2.5, 6, 16, 4, true);
 		scannerGeo.translate(0, -3, 0);
 		const scannerMat = new THREE.MeshBasicMaterial({
@@ -148,59 +224,85 @@ export default function HeroSection() {
 			side: THREE.DoubleSide,
 		});
 		const scanner = new THREE.Mesh(scannerGeo, scannerMat);
-		scanner.position.set(0, -0.15, 0.2);
+		scanner.position.set(0, -0.15, 0);
 		droneGroup.add(scanner);
 
-		// --- GLTF Drone Model Loader ---
+		// --- Load GLB Drone Model ---
 		let mixer: THREE.AnimationMixer | null = null;
-		const loader = new GLTFLoader();
+		const dracoLoader = new DRACOLoader();
+		dracoLoader.setDecoderPath("https://www.gstatic.com/draco/versioned/decoders/1.5.6/");
 
-		// Update path to point to your GLTF model file in the public directory
-		loader.load(
-			"/models/drone.gltf",
+		const gltfLoader = new GLTFLoader();
+		gltfLoader.setDRACOLoader(dracoLoader);
+
+		let loadedDroneMesh: THREE.Object3D | null = null;
+		const propellers: THREE.Object3D[] = [];
+		//
+		const drone3dScale = drone3dProps.get(drone3dFile).scale;
+		const drone3dPos = drone3dProps.get(drone3dFile).position;
+		const propellorsAxis = drone3dProps.get(drone3dFile).propellorsAxis;
+		gltfLoader.load(
+			drone3dFile,
 			(gltf) => {
-				const gltfScene = gltf.scene;
+				loadedDroneMesh = gltf.scene;
 
-				// Adjust scale, position, or rotation if needed to fit your scene
-				gltfScene.scale.set(0.3, 0.3, 0.3);
-				gltfScene.position.set(0, -0.3, 0);
+				loadedDroneMesh.scale.set(drone3dScale[0], drone3dScale[1], drone3dScale[2]);
+				loadedDroneMesh.position.set(drone3dPos[0], drone3dPos[1], drone3dPos[2]);
 
-				droneGroup.add(gltfScene);
-
-				// Play model animations (e.g. spinning propellers) if embedded in GLTF
-				if (gltf.animations && gltf.animations.length > 0) {
-					mixer = new THREE.AnimationMixer(gltfScene);
-					gltf.animations.forEach((clip) => {
+				if (loadedDroneMesh.animations && loadedDroneMesh.animations.length > 0) {
+					mixer = new THREE.AnimationMixer(loadedDroneMesh);
+					loadedDroneMesh.animations.forEach((clip) => {
 						mixer.clipAction(clip).play();
 					});
+				} else if (drone3dProps.has(drone3dFile)) {
+					loadedDroneMesh.traverse((child) => {
+						const name = child.name;
+						if (drone3dProps.get(drone3dFile).propellors.includes(name)) {
+							propellers.push(child);
+						}
+					});
+					console.log("propellers", propellers);
 				}
+				droneGroup.add(loadedDroneMesh);
+				animate();
 			},
 			undefined,
 			(error) => {
-				console.error("An error occurred loading the GLTF model:", error);
+				console.error("Error loading GLB Drone model:", error);
 			}
 		);
 
-		// --- Mouse Interaction ---
-		let mouseX = 0;
-		let mouseY = 0;
-		const onMouseMove = (e: MouseEvent) => {
-			mouseX = -(e.clientX / window.innerWidth - 0.5) * 2 + 1;
-			mouseY = (e.clientY / window.innerHeight - 0.5) * 2 + 1;
-		};
+		// 👇 RENDER ONE STATIC FRAME WHILE WAITING FOR THE MODEL TO LOAD
+		// This ensures the canvas isn't entirely blank during the loading phase
+		// renderer.render(scene, camera);
+
+		// --- Mouse Interaction with Interpolation ---
+		let targetMouseX = 0;
+		let targetMouseY = 0;
+		let smoothMouseX = 0;
+		let smoothMouseY = 0;
+
+		// Debounced Mouse Move
+		const onMouseMove = debounce((e: MouseEvent) => {
+			targetMouseX = (e.clientX / window.innerWidth) * 2 - 1;
+			targetMouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+		}, 15); // Fast debounce to prevent excessive calls but keep feeling responsive
+
 		window.addEventListener("mousemove", onMouseMove);
 
 		// --- Animation Loop ---
 		const clock = new THREE.Clock();
 		let animId: number;
 
-		const animate = () => {
-			animId = requestAnimationFrame(animate);
-			const delta = clock.getDelta();
+		function animate() {
+            animId = requestAnimationFrame(animate);
+            // If not in the viewport, skip all calculations and rendering!
+            if (!isInViewport) return;
 			const t = clock.getElapsedTime();
 
-			// Update GLTF model animations (e.g., spinning rotors)
-			if (mixer) mixer.update(delta);
+			// Lerp mouse variables for butter-smooth animation despite debounced events
+			smoothMouseX += (targetMouseX - smoothMouseX) * 0.05;
+			smoothMouseY += (targetMouseY - smoothMouseY) * 0.05;
 
 			// Terrain wave
 			const pos = geometry.attributes.position as THREE.BufferAttribute;
@@ -215,33 +317,42 @@ export default function HeroSection() {
 			terrain.rotation.z = t * 0.05;
 			particles.rotation.y = t * 0.02;
 
-			// Drone floating physics
-			droneGroup.position.y = 3.5 + Math.sin(t * 2) * 0.3;
+			// Drone physics, movement, and subtle mouse follow
 			droneGroup.rotation.z = Math.sin(t * 1.5) * 0.05;
 			droneGroup.rotation.x = Math.cos(t * 1.2) * 0.05;
-			droneGroup.position.x = Math.sin(t * 0.5) * 2.5;
-			droneGroup.position.z = Math.cos(t * 0.5) * 1.8;
+			droneGroup.rotation.y += 0.025;
+
+			// Combine sine wave hovering with the smoothed mouse coordinates
+			droneGroup.position.x = Math.sin(t * 0.5) * 2.5 + smoothMouseX * 3;
+			droneGroup.position.y = 4 + Math.sin(t * 1.2) * 0.3 + smoothMouseY * 2;
+			droneGroup.position.z = Math.cos(t * 0.5) * 1.2;
+
+			// Spin the propellers
+			propellers.forEach((prop, index) => {
+				const direction = index % 2 === 0 ? 1 : -1;
+				prop.rotation[propellorsAxis] += 0.9 * direction;
+			});
 
 			scanner.rotation.y += 0.02;
-
 			// Sync shader scan position to drone
 			gridUniforms.uDronePos.value.copy(droneGroup.position);
 
-			// Camera parallax
-			camera.position.x += (mouseX * 5 - camera.position.x) * 0.05;
-			camera.position.y += (-mouseY * 5 + 5 - camera.position.y) * 0.05;
-			camera.lookAt(0, 0, 0);
+			// Camera parallax (also using smoothed mouse variables)
+			camera.position.x += (smoothMouseX * 5 - camera.position.x) * 0.1;
+			// camera.position.y += (-smoothMouseY * 5 + 5 - camera.position.y) * 0.1;
+
+			camera.lookAt(0, 2, 0); // Focus slightly above the center
 
 			renderer.render(scene, camera);
-		};
-		animate();
+		}
 
-		// --- Resize Handler ---
-		const onResize = () => {
+		// --- Debounced Resize Handler ---
+		const onResize = debounce(() => {
 			camera.aspect = window.innerWidth / window.innerHeight;
 			camera.updateProjectionMatrix();
 			renderer.setSize(window.innerWidth, window.innerHeight);
-		};
+		}, 250); // Standard quarter-second debounce for resize operations
+
 		window.addEventListener("resize", onResize);
 
 		// --- Cleanup ---
@@ -254,6 +365,7 @@ export default function HeroSection() {
 			pGeometry.dispose();
 			pMaterial.dispose();
 			renderer.dispose();
+			dracoLoader.dispose();
 			if (container.contains(renderer.domElement)) {
 				container.removeChild(renderer.domElement);
 			}
@@ -370,3 +482,5 @@ export default function HeroSection() {
 		</section>
 	);
 }
+// Adding this non-React export breaks Fast Refresh for this specific module
+export const disableFastRefresh = true;

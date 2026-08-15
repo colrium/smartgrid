@@ -13,9 +13,9 @@ const brand = {
 	900: "#003742",
 };
 
-const fontSans = 'var(--font-sans), "Inter", "Roboto", "Helvetica", "Arial", sans-serif';
+const fontSans = 'var(--font-google-sans-flex), "Inter", "Roboto", "Helvetica", "Arial", sans-serif';
 const fontDisplay =
-	'var(--font-display), "Inter", "Roboto", "Helvetica", "Arial", sans-serif';
+	'var(--font-plus-jakarta), "Inter", "Roboto", "Helvetica", "Arial", sans-serif';
 
 const theme = createTheme({
 	palette: {

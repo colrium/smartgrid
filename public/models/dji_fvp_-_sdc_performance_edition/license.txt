@@ -1,0 +1,11 @@
+Model Information:
+* title:	DJI FVP - SDC PERFORMANCE EDITION
+* source:	https://sketchfab.com/3d-models/dji-fvp-sdc-performance-edition-54615efde3654019b93a74fae1431067
+* author:	SDC PERFORMANCE™️ (https://sketchfab.com/3Duae)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "DJI FVP - SDC PERFORMANCE EDITION" (https://sketchfab.com/3d-models/dji-fvp-sdc-performance-edition-54615efde3654019b93a74fae1431067) by SDC PERFORMANCE™️ (https://sketchfab.com/3Duae) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
