@@ -34,7 +34,7 @@ export function CtaSection() {
 						<span className="absolute inset-3 rounded-[15px] hairline-dark pointer-events-none" aria-hidden />
 
 						<div className="relative flex flex-col items-center gap-6">
-							{section.tag && <SectionTag dark>{section.tag}</SectionTag>}
+							{section.tag && <SectionTag>{section.tag}</SectionTag>}
 
 							<h2 className="font-light tracking-tight leading-[1.08] text-3xl sm:text-5xl lg:text-[3.4rem] text-white max-w-3xl">
 								{section.headline}

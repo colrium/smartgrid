@@ -47,7 +47,7 @@ export function HeroSection() {
 
 			<div className="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12">
 				<FadeUp>
-					<SectionTag dark>{hero.headline}</SectionTag>
+					<SectionTag>{hero.headline}</SectionTag>
 
 					<h1 className="mt-5 max-w-4xl font-light tracking-tight leading-[1.05] text-4xl sm:text-6xl lg:text-7xl text-white">
 						{hero.title}
