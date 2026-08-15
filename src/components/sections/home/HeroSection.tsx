@@ -70,7 +70,7 @@ const drone3dProps = new Map([
 		},
 	],
 ]);
-const drone3dFile = "/models/dji_spark.glb";
+const drone3dFile = "/models/drone_low_poly.glb";
 interface CtaItem {
 	label: string;
 	href?: string;

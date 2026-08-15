@@ -120,6 +120,11 @@
 			"page_title": "Photography & Video Marketing",
 			"meta_description": "Corporate drone photography and video marketing — cinematic visuals for campaigns, events, property showcases, inspections, and executive storytelling.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"civil-highway-surveys": {
+			"page_title": "Highway Surveys",
+			"meta_description": "Highway surveys solutions — planning, design, construction, and operation of road infrastructure with aerial imaging, LiDAR, GNSS, and conventional surveying.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {

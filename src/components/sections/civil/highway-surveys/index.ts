@@ -1,0 +1,10 @@
+export { HeroSection } from "./HeroSection";
+export { default as HeroSectionDefault } from "./HeroSection";
+export { OverviewSection } from "./OverviewSection";
+export { default as OverviewSectionDefault } from "./OverviewSection";
+export { ServicesSection } from "./ServicesSection";
+export { default as ServicesSectionDefault } from "./ServicesSection";
+export { BenefitsSection } from "./BenefitsSection";
+export { default as BenefitsSectionDefault } from "./BenefitsSection";
+export { DeliverablesSection } from "./DeliverablesSection";
+export { default as DeliverablesSectionDefault } from "./DeliverablesSection";

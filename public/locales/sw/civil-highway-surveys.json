@@ -1,0 +1,106 @@
+{
+	"hero": {
+		"headline": "UCHUNGUZI WA BARABARA KUU",
+		"title": "Suluhisho za Uchunguzi wa Barabara Kuu",
+		"image": "/media/civil/highway-surveys/01.jpg",
+		"description": "Kuongoza Mapinduzi ya Upimaji wa Ardhi na Angani barani Afrika. Uchunguzi wa barabara kuu una jukumu muhimu katika upangaji, kubuni, ujenzi, na uendeshaji wa miundombinu ya barabara.",
+		"ctaPrimary": {
+			"label": "Pata Ushauri Wako wa Bure",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"overview": {
+		"tag": "Miundombinu Muhimu",
+		"headline": "Muhtasari",
+		"description": "Kwa kutumia mchanganyiko wa picha za angani, photogrammetry ya UAV, LiDAR, GNSS, na upimaji wa kawaida, wahandisi wanaweza kufanya maamuzi yanayoendeshwa na data yanayohakikisha usalama, ufanisi, na uendelevu katika mzunguko wote wa maisha ya mradi wa barabara kuu."
+	},
+	"services": {
+		"tag": "Tunachotoa",
+		"headline": "Huduma za Uchunguzi wa Barabara Kuu",
+		"description": "",
+		"items": [
+			{
+				"title": "Uchambuzi wa Njia ya Awali",
+				"description": "Remote sensing na picha za angani hutumika kutambua njia bora za barabara kuu, kuepuka ardhi nyeti, na kutathmini matumizi ya ardhi."
+			},
+			{
+				"title": "Uchoraji Ramani wa Topografia",
+				"description": "LiDAR na photogrammetry za ndege zisizo na rubani hukamata mifano ya mwinuko wa mwonekano wa juu kwa ramani za kiwango cha kubuni na uchambuzi wa kukata-kujaza."
+			},
+			{
+				"title": "Uchunguzi wa Udhibiti wa Ardhi",
+				"description": "Uanzishwaji wa pointi za udhibiti wa ardhi (GCPs) kwa kutumia GNSS RTK kwa marejeleo ya kijiografia ya data ya angani na kuthibitisha usahihi wa anga."
+			},
+			{
+				"title": "Uchunguzi wa Upangaji na Njia",
+				"description": "Uchunguzi wa kina wa njia kwa kutumia total station, GNSS, na mifumo ya ramani ya simu kufafanua mistari ya katikati, ROW, na sehemu za msalaba."
+			},
+			{
+				"title": "Usalama",
+				"description": "Uchunguzi sahihi huchangia usalama wa barabara kwa kuhakikisha upangaji sahihi, umbali wazi wa mwonekano, na alama sahihi za barabara."
+			},
+			{
+				"title": "Ufuatiliaji wa Ujenzi",
+				"description": "Safari za UAV zilizounganishwa na udhibiti wa ardhini hukagua maendeleo, kuhakikisha kufuata kanuni, na kugundua mkengeuko kwa wakati halisi."
+			},
+			{
+				"title": "As-Built na Digital Twins",
+				"description": "Uchoraji ramani wa 3D wa baada ya ujenzi kwa kutumia UAV na teknolojia ya skanning huingia kwenye BIM na mazingira ya digital twin kwa usimamizi wa mali za mzunguko wa maisha."
+			}
+		]
+	},
+	"benefitsOfHighwaySurveys": {
+		"tag": "Viendeshaji vya Thamani",
+		"headline": "Faida za Uchunguzi Jumuishi wa Barabara Kuu",
+		"description": "",
+		"items": [
+			{
+				"icon": "ruler-compass",
+				"title": "Upangaji na Kubuni",
+				"description": "Uchunguzi hutoa data muhimu kwa kubuni barabara mpya, kuzingatia vipengele kama kiwango cha trafiki, usalama, na athari za mazingira."
+			},
+			{
+				"icon": "wrench",
+				"title": "Matengenezo",
+				"description": "Uchunguzi husaidia kutambua maeneo yanayohitaji ukarabati, kuweka vipaumbele vya matengenezo, na kutathmini ufanisi wa ukarabati."
+			},
+			{
+				"icon": "pipe-valve",
+				"title": "Ulinzi wa Huduma",
+				"description": "Kutambua na kuweka ramani za huduma husaidia kuepuka kuziharibu wakati wa ujenzi, kupunguza usumbufu."
+			},
+			{
+				"icon": "office-building",
+				"title": "Ujenzi",
+				"description": "Uchunguzi wa mpangilio wa ujenzi huhakikisha barabara zinajengwa kulingana na mipango ya kubuni na viwango vya usalama."
+			},
+			{
+				"icon": "shield-check",
+				"title": "Usalama",
+				"description": "Uchunguzi sahihi huchangia usalama wa barabara kwa kuhakikisha upangaji sahihi, umbali wazi wa mwonekano, na alama sahihi za barabara."
+			},
+			{
+				"icon": "clipboard-list",
+				"title": "Usimamizi wa Mali",
+				"description": "Uchunguzi wa hesabu hutoa data kwa kusimamia na kudumisha miundombinu ya barabara kuu."
+			}
+		]
+	},
+	"highwaySurveyDeliverables": {
+		"tag": "Matokeo ya Mradi",
+		"headline": "Matokeo ya Uchunguzi wa Barabara Kuu",
+		"image": "/media/civil/highway-surveys/03.png",
+		"description": "Tunatoa vifurushi kamili vya data vilivyoundwa kwa mtiririko wa kazi wa uhandisi wa barabara kuu na ujenzi.",
+		"items": [
+			"Ramani za As-Built",
+			"Mifano ya Mwinuko wa Dijitali (DSM, DTM)",
+			"Viambatanisho vya Kuweka",
+			"Data ya Anga ya 3D (X, Y, Z)",
+			"Ramani za Contour",
+			"Mipango Mikuu Kamili",
+			"Mipangilio ya Majengo na Ujumuishaji wa BIM",
+			"Shapefiles Zinazoendana na CAD na GIS",
+			"Utoaji wa Ramani za PDF za Kitaalamu"
+		]
+	}
+}

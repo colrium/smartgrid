@@ -120,6 +120,11 @@
 			"page_title": "Upigaji Picha na Uuzaji wa Video",
 			"meta_description": "Upigaji picha wa kampuni na uuzaji wa video wa ndege zisizo na rubani — taswira za sinema kwa kampeni, matukio, maonyesho ya mali, ukaguzi, na usimulizi wa utendaji.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"civil-highway-surveys": {
+			"page_title": "Uchunguzi wa Barabara Kuu",
+			"meta_description": "Suluhisho za uchunguzi wa barabara kuu — upangaji, kubuni, ujenzi, na uendeshaji wa miundombinu ya barabara kwa picha za angani, LiDAR, GNSS, na upimaji wa kawaida.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {
