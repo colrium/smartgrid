@@ -2,7 +2,7 @@
 	"hero": {
 		"headline": "HIGHWAY SURVEYS",
 		"title": "Highway Surveys Solutions",
-		"image": "/images/placeholder.jpg",
+		"image": "/media/civil/highway-surveys/01.jpg",
 		"description": "Leading Africa's Land and Aerial Surveying Revolution. Highway surveys play a critical role in the planning, design, construction, and operation of road infrastructure.",
 		"ctaPrimary": {
 			"label": "Get Your Free Consultation",
@@ -12,13 +12,46 @@
 	"overview": {
 		"tag": "Critical Infrastructure",
 		"headline": "Overview",
-		"image": "/images/placeholder.jpg",
 		"description": "Leveraging a mix of aerial imaging, UAV photogrammetry, LiDAR, GNSS, and conventional surveying, engineers can make data-driven decisions that ensure safety, efficiency, and sustainability throughout the lifecycle of a highway project."
 	},
-	"benefitsOfHighwaySurveys": {
+	"services": {
+		"tag": "What we offer",
+		"headline": "Highway Surveying Services",
+		"description": "",
+		"items": [
+			{
+				"title": "Preliminary Route Analysis",
+				"description": "Remote sensing and aerial imagery used to identify optimal highway corridors, avoid sensitive terrain, and assess land use."
+			},
+			{
+				"title": "Topographic Mapping",
+				"description": "Drone-based LiDAR and photogrammetry capture high-resolution elevation models for design-grade mapping and cut-fill analysis."
+			},
+			{
+				"title": "Ground Control Surveys",
+				"description": "Establishment of ground control points (GCPs) using GNSS RTK for geo-referencing aerial data and validating spatial accuracy."
+			},
+			{
+				"title": "Alignment & Corridor Surveys",
+				"description": "Detailed corridor surveying using total stations, GNSS, and mobile mapping systems to define centerlines, ROW, and cross-sections."
+			},
+			{
+				"title": "Safety",
+				"description": "Accurate surveys contribute to road safety by ensuring proper alignment, clear sight distances, and appropriate signage."
+			},
+			{
+				"title": "Construction Monitoring",
+				"description": "Integrated UAV flyovers and terrestrial control check progress, ensure compliance, and detect deviations in real time."
+			},
+            {
+				"title": "As-Built & Digital Twins",
+				"description": "Post-construction 3D mapping using UAV and scanning tech feeds into BIM and digital twin environments for lifecycle asset management."
+			}
+		]
+	},
+    "benefitsOfHighwaySurveys": {
 		"tag": "Value Drivers",
 		"headline": "Benefits of Integrated Highway Surveys",
-		"image": "/images/placeholder.jpg",
 		"description": "",
 		"items": [
 			{
@@ -56,7 +89,18 @@
 	"highwaySurveyDeliverables": {
 		"tag": "Project Outputs",
 		"headline": "Highway Surveys Deliverables",
-		"image": "/images/placeholder.jpg",
-		"description": "We deliver comprehensive data packages tailored for highway engineering and construction workflows."
+		"image": "/media/civil/highway-surveys/03.png",
+		"description": "We deliver comprehensive data packages tailored for highway engineering and construction workflows.",
+        "items": [
+			"As-Built Maps",
+			"Digital Elevation Models (DSM, DTM)",
+			"Setting Out Coordinates",
+			"3D Spatial Data (X, Y, Z)",
+			"Contour Maps",
+			"Comprehensive Master Plans",
+			"Building Layouts & BIM Integration",
+			"CAD and GIS-Compatible Shapefiles",
+			"Professional PDF Map Exports"
+		]
 	}
 }
