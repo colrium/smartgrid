@@ -5,7 +5,9 @@ import agriculturalndvimapping from '../public/locales/en/agricultural-ndvi-mapp
 import bathymetricsurveys from '../public/locales/en/bathymetric-surveys.json';
 import buildingsitesurveys from '../public/locales/en/building-site-surveys.json';
 import cadastralsurveys from '../public/locales/en/cadastral-surveys.json';
+import civilasbuiltsurveys from '../public/locales/en/civil-as-built-surveys.json';
 import civilhighwaysurveys from '../public/locales/en/civil-highway-surveys.json';
+import civilvolumetricsurveys from '../public/locales/en/civil-volumetric-surveys.json';
 import common from '../public/locales/en/common.json';
 import contact from '../public/locales/en/contact.json';
 import droneimagerysurveys from '../public/locales/en/drone-imagery-surveys.json';
@@ -26,9 +28,7 @@ import surveying from '../public/locales/en/surveying.json';
 import terms from '../public/locales/en/terms.json';
 import topographicalsurveys from '../public/locales/en/topographical-surveys.json';
 import volumetricsurveys from '../public/locales/en/volumetric-surveys.json';
-import civilasbuiltsurveys from '../public/locales/en/civil/civil-as-built-surveys.json';
 import civilbim from '../public/locales/en/civil/civil-bim.json';
-import civilvolumetricsurveys from '../public/locales/en/civil/civil-volumetric-surveys.json';
 import siteengineering from '../public/locales/en/civil/site-engineering.json';
 import sitesettingout from '../public/locales/en/civil/site-setting-out.json';
 import automaticlevelbosch from '../public/locales/en/equipment-sale/automatic-level-bosch.json';
@@ -46,7 +46,9 @@ const resources = {
   'bathymetric-surveys': bathymetricsurveys,
   'building-site-surveys': buildingsitesurveys,
   'cadastral-surveys': cadastralsurveys,
+  'civil-as-built-surveys': civilasbuiltsurveys,
   'civil-highway-surveys': civilhighwaysurveys,
+  'civil-volumetric-surveys': civilvolumetricsurveys,
   common,
   contact,
   'drone-imagery-surveys': droneimagerysurveys,
@@ -67,9 +69,7 @@ const resources = {
   terms,
   'topographical-surveys': topographicalsurveys,
   'volumetric-surveys': volumetricsurveys,
-  'civil-as-built-surveys': civilasbuiltsurveys,
   'civil-bim': civilbim,
-  'civil-volumetric-surveys': civilvolumetricsurveys,
   'site-engineering': siteengineering,
   'site-setting-out': sitesettingout,
   'automatic-level-bosch': automaticlevelbosch,

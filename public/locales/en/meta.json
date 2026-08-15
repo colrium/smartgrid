@@ -125,6 +125,11 @@
 			"page_title": "Highway Surveys",
 			"meta_description": "Highway surveys solutions — planning, design, construction, and operation of road infrastructure with aerial imaging, LiDAR, GNSS, and conventional surveying.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"civil-as-built-surveys": {
+			"page_title": "As-Built Surveys",
+			"meta_description": "Capture the true, current state of built environments — drone, LiDAR, and photogrammetry as-built surveys with centimeter-level accuracy for BIM, CAD, and compliance.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {

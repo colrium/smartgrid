@@ -125,6 +125,11 @@
 			"page_title": "Uchunguzi wa Barabara Kuu",
 			"meta_description": "Suluhisho za uchunguzi wa barabara kuu — upangaji, kubuni, ujenzi, na uendeshaji wa miundombinu ya barabara kwa picha za angani, LiDAR, GNSS, na upimaji wa kawaida.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"civil-as-built-surveys": {
+			"page_title": "Uchunguzi wa As-Built",
+			"meta_description": "Kamata hali halisi, ya sasa ya mazingira yaliyojengwa — uchunguzi wa as-built wa ndege zisizo na rubani, LiDAR, na photogrammetry kwa usahihi wa kiwango cha sentimita kwa BIM, CAD, na kufuata kanuni.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {

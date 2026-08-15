@@ -1,0 +1,122 @@
+{
+	"hero": {
+		"headline": "UCHUNGUZI WA AS-BUILT",
+		"title": "Uchunguzi wa As-Built",
+		"image": "/media/civil/as-built-surveys/01.jpg",
+		"description": "Kuongoza Mapinduzi ya Upimaji wa Ardhi na Angani barani Afrika. Kamata hali halisi, ya sasa ya mazingira yaliyojengwa kwa kulinganisha hali halisi ya shambani na mibuni asilia.",
+		"ctaPrimary": {
+			"label": "Pata Ushauri Wako wa Bure",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"whatAreAsBuiltSurveys": {
+		"tag": "Nyaraka za Usahihi",
+		"headline": "Uchunguzi wa as-built ni nini?",
+		"description": "Uchunguzi wa as-built hukamata hali halisi, ya sasa ya mazingira yaliyojengwa kwa kulinganisha hali halisi ya shambani na mibuni asilia. Kwa kutumia ndege zisizo na rubani, LiDAR, na photogrammetry, tunaandika miundombinu kwa usahihi wa kiwango cha sentimita, kutoka angani—haraka na salama kuliko mbinu za kawaida."
+	},
+	"asBuiltSolutions": {
+		"tag": "Tunachofanya",
+		"headline": "Suluhisho za As-Built",
+		"description": "",
+		"items": [
+			{
+				"title": "Usahihi wa Ndege Zisizo na Rubani",
+				"description": "Tunatumia UAV zilizo na LiDAR na photogrammetry kukamata hali ya as-built kwa uaminifu wa hali ya juu, kupunguza makosa ya kibinadamu na kuongeza maelezo."
+			},
+			{
+				"title": "Ujumuishaji wa Mifano ya 3D",
+				"description": "Data yetu huingia moja kwa moja kwenye mazingira ya BIM na CAD, kuwezesha ushirikiano usio na mshono kati ya timu za uhandisi, kubuni, na usimamizi wa mali."
+			},
+			{
+				"title": "Uthibitishaji wa Kufuata Kanuni",
+				"description": "Tunathibitisha kuwa miundo na miundombinu vinakidhi vipimo vya kubuni, kanuni, na viwango vya udhibiti kupitia nyaraka sahihi za anga."
+			},
+			{
+				"title": "Uchoraji Ramani wa Huduma",
+				"description": "Mistari ya huduma za chini ya ardhi na za juu hurekodiwa na kupewa marejeleo ya kijiografia, na kuunda rekodi ya kudumu ya dijitali kupunguza hatari na kusaidia maendeleo ya baadaye."
+			},
+			{
+				"title": "Rekodi za Maendeleo na Ukabidhi",
+				"description": "Kamata kila hatua muhimu ya ujenzi kwa data ya angani yenye muhuri wa muda—bora kwa ripoti, sasisho za wadau, na nyaraka za mwisho za ukabidhi."
+			},
+			{
+				"title": "Nyaraka Mahiri",
+				"description": "Ramani zinazoingiliana, mipango ya 2D, na seti za data za 3D hutolewa kupitia lango salama, kuwapa wateja ufikiaji rahisi wa rekodi zao za as-built kutoka kifaa chochote."
+			}
+		]
+	},
+	"keyIndustries": {
+		"tag": "Sekta Zinazohudumiwa",
+		"headline": "Viwanda Muhimu",
+		"description": "",
+		"items": [
+			{
+				"icon": "road-variant",
+				"title": "Miundombinu na Usafiri",
+				"description": "Barabara kuu, reli, na viwanja vya ndege."
+			},
+			{
+				"icon": "flash",
+				"title": "Nishati na Huduma",
+				"description": "Nyaya za umeme, vituo vya usambazaji, na mashamba ya sola."
+			},
+			{
+				"icon": "city",
+				"title": "Maendeleo ya Biashara na Makazi",
+				"description": "Miradi ya majengo na makazi."
+			},
+			{
+				"icon": "gas-station",
+				"title": "Vifaa vya Mafuta na Gesi",
+				"description": "Viwekeo, mabomba, na maghala ya kuhifadhia."
+			},
+			{
+				"icon": "office-building",
+				"title": "Kazi za Umma na Uhandisi wa Kiraia",
+				"description": "Madaraja, mabwawa, na miradi ya manispaa."
+			}
+		]
+	},
+	"maxProductivityMinGuesswork": {
+		"tag": "Ongoza kwa Data",
+		"headline": "Kuongeza Tija. Kupunguza Bahati Nasibu.",
+		"description": "Katika SmartGrid Surveying, tunatumia UAV zilizo na vitambuzi vya usahihi wa hali ya juu kukusanya data ya 3D, orthomosaic, na mifano ya mwinuko. Hii inawezesha nakala kamili ya dijitali ya tovuti—bora kwa kuthibitisha uvumilivu wa uhandisi, kutathmini mkengeuko, na kuwezesha ufanyaji maamuzi bora. Acha data iongoze njia ya faida."
+	},
+	"applications": {
+		"tag": "Matumizi Muhimu",
+		"headline": "Matumizi Yetu",
+		"description": "",
+		"items": [
+			{
+				"icon": "chart-timeline",
+				"title": "Uthibitishaji wa Maendeleo ya Ujenzi",
+				"description": "Thibitisha kuwa ujenzi unalingana na vipimo vya kubuni na utambue mkengeuko mapema."
+			},
+			{
+				"icon": "file-document",
+				"title": "Nyaraka za Baada ya Ujenzi",
+				"description": "Unda rekodi kamili za miundo iliyokamilika kwa uendeshaji na matengenezo."
+			},
+			{
+				"icon": "clipboard-search",
+				"title": "Ukaguzi wa Kimuundo na wa Huduma",
+				"description": "Fanya ukaguzi wa kina wa miundo iliyopo na huduma za chini ya ardhi."
+			},
+			{
+				"icon": "city-digital",
+				"title": "Uundaji wa Digital Twin",
+				"description": "Jenga nakala sahihi za dijitali za mali halisi kwa uigaji na uchambuzi."
+			},
+			{
+				"icon": "cube-scan",
+				"title": "Ujumuishaji wa BIM na Uthibitishaji wa Mifano",
+				"description": "Thibitisha na sasisha Mifano ya Taarifa za Ujenzi kwa data ya as-built."
+			}
+		]
+	},
+	"actionableInsights": {
+		"tag": "Maarifa Yanayoweza Kutekelezwa",
+		"headline": "Maarifa Mahiri, Yanayowasilishwa Dijitali!",
+		"description": "Kwa kuoanisha data ya ndege zisizo na rubani na mbinu za upimaji na usindikaji wa GIS, tunabadilisha data mbichi ya angani kuwa maarifa yanayoweza kutekelezwa. Ona mkengeuko, weka alama za kutofautiana, na ulete uwazi kwenye mtiririko wako wa kazi wa ujenzi—yote kwenye jukwaa moja lisilo na mshono."
+	}
+}

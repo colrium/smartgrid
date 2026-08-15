@@ -1,0 +1,154 @@
+{
+	"hero": {
+		"headline": "AS-BUILT SURVEYS",
+		"title": "As-Built Surveys",
+		"image": "/media/civil/as-built-surveys/01.jpg",
+		"description": "Leading Africa's Land and Aerial Surveying Revolution. Capture the true, current state of built environments by comparing actual field conditions with original designs.",
+		"ctaPrimary": {
+			"label": "Get Your Free Consultation",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"whatAreAsBuiltSurveys": {
+		"tag": "Precision Documentation",
+		"headline": "What are As-built surveys?",
+		"description": "As-built surveys capture the true, current state of built environments by comparing actual field conditions with original designs. Using drones, LiDAR, and photogrammetry, we document infrastructure with centimeter-level accuracy, from the air—faster and safer than traditional methods."
+	},
+	"asBuiltSolutions": {
+		"tag": "What we do",
+		"headline": "As-Built Solutions",
+		"description": "",
+		"items": [
+			{
+				"title": "Drone-Based Accuracy",
+				"description": "We deploy UAVs equipped with LiDAR and photogrammetry to capture as-built conditions with high fidelity, minimizing human error and maximizing detail."
+			},
+			{
+				"title": "3D Model Integration",
+				"description": "Our data feeds directly into BIM and CAD environments, enabling seamless collaboration across engineering, design, and asset management teams."
+			},
+			{
+				"title": "Compliance Verification",
+				"description": "We verify that structures and infrastructure meet design specifications, codes, and regulatory standards through precision spatial documentation."
+			},
+			{
+				"title": "Utility Mapping",
+				"description": "Subsurface and surface utility lines are geo-referenced and recorded, creating a permanent digital record to reduce risk and support future development."
+			},
+			{
+				"title": "Progress & Handover Records",
+				"description": "Capture every construction milestone with timestamped aerial data—perfect for reporting, stakeholder updates, and final handover documentation."
+			},
+			{
+				"title": "Smart Documentation",
+				"description": "Interactive maps, 2D plans, and 3D datasets are delivered through secure portals, giving clients easy access to their as-built records from any device."
+			}
+		]
+	},
+	"keyIndustries": {
+		"tag": "Sectors Served",
+		"headline": "Key Industries",
+		"description": "",
+		"items": [
+			{
+				"icon": "road-variant",
+				"title": "Infrastructure & Transportation",
+				"description": "Highways, railways, and airports."
+			},
+			{
+				"icon": "flash",
+				"title": "Energy & Utilities",
+				"description": "Power lines, substations, and solar farms."
+			},
+			{
+				"icon": "city",
+				"title": "Commercial & Residential Development",
+				"description": "Building and housing projects."
+			},
+			{
+				"icon": "gas-station",
+				"title": "Oil & Gas Facilities",
+				"description": "Refineries, pipelines, and storage depots."
+			},
+			{
+				"icon": "office-building",
+				"title": "Public Works & Civil Engineering",
+				"description": "Bridges, dams, and municipal projects."
+			}
+		]
+	},
+	"maxProductivityMinGuesswork": {
+		"tag": "Lead with Data",
+		"headline": "Maximize Productivity. Minimize Guesswork.",
+		"description": "At SmartGrid Surveying, we use UAVs equipped with high-precision sensors to collect 3D data, orthomosaics, and elevation models. This enables a complete digital replica of the site—ideal for validating engineering tolerances, assessing deviations, and facilitating smarter decision-making. Let data lead the way to profitability."
+	},
+	"applications": {
+		"tag": "Key Applications",
+		"headline": "Our Applications",
+		"description": "",
+		"items": [
+			{
+				"icon": "chart-timeline",
+				"title": "Construction Progress Verification",
+				"description": "Verify that construction aligns with design specifications and identify deviations early."
+			},
+			{
+				"icon": "file-document",
+				"title": "Post-Construction Documentation",
+				"description": "Create comprehensive records of completed structures for operations and maintenance."
+			},
+			{
+				"icon": "clipboard-search",
+				"title": "Structural and Utility Audits",
+				"description": "Conduct detailed inspections of existing structures and underground utilities."
+			},
+			{
+				"icon": "city-digital",
+				"title": "Digital Twin Creation",
+				"description": "Build precise digital replicas of physical assets for simulation and analysis."
+			},
+			{
+				"icon": "cube-scan",
+				"title": "BIM Integration & Model Validation",
+				"description": "Validate and update Building Information Models with as-built data."
+			}
+		]
+	},
+	"keyIndustries": {
+		"tag": "Sectors Served",
+		"headline": "Key Industries",
+		"description": "",
+		"items": [
+			{
+				"icon": "road-variant",
+				"title": "Infrastructure & Transportation",
+				"description": "Highways, railways, and airports."
+			},
+			{
+				"icon": "flash",
+				"title": "Energy & Utilities",
+				"description": "Power lines, substations, and solar farms."
+			},
+			{
+				"icon": "city",
+				"title": "Commercial & Residential Development",
+				"description": "Building and housing projects."
+			},
+			{
+				"icon": "gas-station",
+				"title": "Oil & Gas Facilities",
+				"description": "Refineries, pipelines, and storage depots."
+			},
+			{
+				"icon": "office-building",
+				"title": "Public Works & Civil Engineering",
+				"description": "Bridges, dams, and municipal projects."
+			}
+		]
+	},
+	"actionableInsights": {
+		"tag": "Actionable Insights",
+		"headline": "Smart Insights, Delivered Digitally!",
+		"description": "Pairing drone data with surveying techniques and GIS processing, we convert raw aerial data into actionable insights. Visualize deviations, flag inconsistencies, and bring clarity to your construction workflows—all in one seamless platform."
+	}
+}
