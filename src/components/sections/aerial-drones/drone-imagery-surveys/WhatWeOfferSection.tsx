@@ -65,7 +65,7 @@ export function WhatWeOfferSection() {
 									<span
 										className={`mdi mdi-${
 											FALLBACK_ICONS[index % FALLBACK_ICONS.length]
-										} text-7xl`}
+										} text-3xl`}
 									/>
 								</span>
 

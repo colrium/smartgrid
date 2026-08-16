@@ -68,8 +68,8 @@ export default function NavMenu({ items, locale, localizePath, horizontal = fals
 							anchorEl={anchorEl}
 							open={Boolean(anchorEl)}
 							onClose={() => handleClose(i)}
-							anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
-							transformOrigin={{ vertical: "top", horizontal: "left" }}
+							anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+							transformOrigin={{ vertical: "top", horizontal: "center" }}
 							slotProps={{
 								paper: {
 									className:
@@ -172,20 +172,13 @@ export default function NavMenu({ items, locale, localizePath, horizontal = fals
 
         return (
 			<MenuItem
-					key={`item-${i}`}
-					onClick={() => handleClose()}
-					className="text-sm font-medium tracking-tight text-ink hover:bg-brand-50"
-				>
-					<MuiLink
-						component={Link}
-						href={localizePath(item.href, locale)}
-						locale={false}
-                    className="no-underline"
-                    color="inherit"
-						underline="none"
-					>
-					{item.label}
-				</MuiLink>
+				key={`item-${i}`}
+				onClick={() => handleClose()}
+				className="text-sm font-medium tracking-tight text-ink hover:bg-brand-50"
+				component={Link}
+                href={localizePath(item.href, locale)}
+			>
+				{item.label}
 			</MenuItem>
 		);
       })}

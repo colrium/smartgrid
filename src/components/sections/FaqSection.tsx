@@ -17,7 +17,7 @@ export default function FaqSection({className, ...props}: ComponentPropsWithoutR
 					<span className="inline-block text-xs tracking-[0.14em] uppercase text-primary opacity-80 mb-3">
 						{t("faq:tag")}
 					</span>
-					<h2 className="text-[clamp(2rem,3.5vw,2.9rem)] tracking-tight text-onSurface-800">
+					<h2 className="text-[clamp(2rem,3.5vw,2.9rem)] tracking-tight text-on-surface-800">
 						{t("faq:headline")}
 					</h2>
 				</div>
@@ -25,7 +25,7 @@ export default function FaqSection({className, ...props}: ComponentPropsWithoutR
 					{items.map((item, i) => (
 						<div key={i} className="border-b border-primary/10">
 							<button
-								className="w-full flex justify-between items-center py-6 text-left text-sm text-onSurface-800 bg-transparent border-none cursor-pointer"
+								className="w-full flex justify-between items-center py-6 text-left text-sm text-on-surface-800 bg-transparent border-none cursor-pointer"
 								onClick={() => setOpenIndex(openIndex === i ? null : i)}
 							>
 								<span className={openIndex === i ? "text-primary" : ""}>
@@ -41,7 +41,7 @@ export default function FaqSection({className, ...props}: ComponentPropsWithoutR
 								</span>
 							</button>
 							<div
-								className="overflow-hidden text-sm text-onSurface-700 leading-[1.75] transition-all"
+								className="overflow-hidden text-sm text-on-surface-700 leading-[1.75] transition-all"
 								style={{
 									maxHeight: openIndex === i ? "200px" : "0",
 									paddingBottom: openIndex === i ? "1.5rem" : "0",

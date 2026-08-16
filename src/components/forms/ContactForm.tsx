@@ -25,7 +25,7 @@ type ReasonState = {
 
 
 
-const inputClassName = "w-full rounded bg-surface border border-primary/15 px-4 py-3 text-sm text-onSurface-800 outline-none transition focus:border-primary placeholder:text-onSurface-800/35";
+const inputClassName = "w-full rounded bg-surface border border-primary/15 px-4 py-3 text-sm text-on-surface-800 outline-none transition focus:border-primary placeholder:text-on-surface-800/35";
 
 type ContactFormProps = ComponentPropsWithoutRef<"form">;
 
@@ -92,7 +92,7 @@ export default function ContactForm({ className = "", ...props }: ContactFormPro
 					<div className="text-primary font-medium">
 						{t("contact:form.success_heading")}
 					</div>
-					<p className="text-sm text-onSurface-800 mt-2 leading-relaxed">
+					<p className="text-sm text-on-surface-800 mt-2 leading-relaxed">
 						{t("contact:form.success_body")}
 					</p>
 				</div>
@@ -102,14 +102,14 @@ export default function ContactForm({ className = "", ...props }: ContactFormPro
 					<div className="text-red-900 font-medium">
 						{t("common:errors.error")}
 					</div>
-					<p className="text-sm text-onSurface-800 mt-2 leading-relaxed">
+					<p className="text-sm text-on-surface-800 mt-2 leading-relaxed">
 						{t("common:form.submissionError")}
 					</p>
 				</div>
 			)}
 			<div className=" p-6 md:p-8 grid gap-5">
 				<div className="grid md:grid-cols-2 gap-5">
-					<label className="grid gap-2 text-sm text-onSurface-800">
+					<label className="grid gap-2 text-sm text-on-surface-800">
 						{fields.first_name.label}
 						<input
 							className={inputClassName}
@@ -119,7 +119,7 @@ export default function ContactForm({ className = "", ...props }: ContactFormPro
 							required={fields.first_name.required}
 						/>
 					</label>
-					<label className="grid gap-2 text-sm text-onSurface-800">
+					<label className="grid gap-2 text-sm text-on-surface-800">
 						{fields.last_name.label}
 						<input
 							className={inputClassName}
@@ -131,7 +131,7 @@ export default function ContactForm({ className = "", ...props }: ContactFormPro
 					</label>
 				</div>
 				<div className="grid md:grid-cols-2 gap-5">
-					<label className="grid gap-2 text-sm text-onSurface-800">
+					<label className="grid gap-2 text-sm text-on-surface-800">
 						{fields.email.label}
 						<input
 							className={inputClassName}
@@ -141,7 +141,7 @@ export default function ContactForm({ className = "", ...props }: ContactFormPro
 							required={fields.email.required}
 						/>
 					</label>
-					<label className="grid gap-2 text-sm text-onSurface-800">
+					<label className="grid gap-2 text-sm text-on-surface-800">
 						{fields.phone.label}
 						<input
 							className={inputClassName}
@@ -152,7 +152,7 @@ export default function ContactForm({ className = "", ...props }: ContactFormPro
 					</label>
 				</div>
 				<div className="grid md:grid-cols-2 gap-5">
-					<label className="grid gap-2 text-sm text-onSurface-800">
+					<label className="grid gap-2 text-sm text-on-surface-800">
 						{fields.country.label}
 						<select
 							className={inputClassName}
@@ -170,7 +170,7 @@ export default function ContactForm({ className = "", ...props }: ContactFormPro
 							))}
 						</select>
 					</label>
-					<label className="grid gap-2 text-sm text-onSurface-800">
+					<label className="grid gap-2 text-sm text-on-surface-800">
 						{fields.reason.label}
 						<select
 							className={inputClassName}
@@ -196,7 +196,7 @@ export default function ContactForm({ className = "", ...props }: ContactFormPro
 					</label>
 				</div>
 				{["investment-enquiry", "due-diligence", "partnership"].includes(state.reason) && (
-					<label className="grid gap-2 text-sm text-onSurface-800">
+					<label className="grid gap-2 text-sm text-on-surface-800">
 						{fields.opportunity.label}
 						<select
 							className={inputClassName}
@@ -222,7 +222,7 @@ export default function ContactForm({ className = "", ...props }: ContactFormPro
 				)}
 				{state.reason === "investment-enquiry" &&
 					state.opportunity === "gold-aggregation" && (
-						<label className="grid gap-2 text-sm text-onSurface-800">
+						<label className="grid gap-2 text-sm text-on-surface-800">
 							{fields.investor_tier.label}
 							<select
 								className={inputClassName}
@@ -246,7 +246,7 @@ export default function ContactForm({ className = "", ...props }: ContactFormPro
 							</select>
 						</label>
 					)}
-				<label className="grid gap-2 text-sm text-onSurface-800">
+				<label className="grid gap-2 text-sm text-on-surface-800">
 					{fields.message.label}
 					<textarea
 						className={`${inputClassName} resize-y min-h-36`}
@@ -256,7 +256,7 @@ export default function ContactForm({ className = "", ...props }: ContactFormPro
 						rows={fields.message.rows ?? 5}
 					/>
 				</label>
-				<label className="flex gap-3 text-sm text-onSurface-800 leading-relaxed">
+				<label className="flex gap-3 text-sm text-on-surface-800 leading-relaxed">
 					<input
 						className="mt-1 accent-primary"
 						name="consent"
@@ -265,14 +265,14 @@ export default function ContactForm({ className = "", ...props }: ContactFormPro
 					/>
 					<span>{fields.consent.label}</span>
 				</label>
-				<label className="flex gap-3 text-sm text-onSurface-800 leading-relaxed">
+				<label className="flex gap-3 text-sm text-on-surface-800 leading-relaxed">
 					<input className="mt-1 accent-primary" name="newsletter" type="checkbox" />
 					<span>{fields.newsletter.label}</span>
 				</label>
 				<button
 					type="submit"
 					disabled={formspree.submitting}
-					className="inline-flex items-center justify-center gap-2 bg-primary text-black font-medium px-7 py-3.5 rounded border border-primary hover:bg-[#E5C46A] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+					className="inline-flex items-center justify-center gap-2 bg-primary text-surface font-medium px-7 py-3.5 rounded border border-primary  transition-all disabled:opacity-50 disabled:cursor-not-allowed"
 				>
 					{formspree.submitting
 						? t("common:form.sending")

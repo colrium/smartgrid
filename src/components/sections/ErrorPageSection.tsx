@@ -37,14 +37,14 @@ export default function ErrorPageSection({
 						{statusCode}
 					</p>
 					<div className="max-w-[620px] pb-4">
-						<h1 className="text-[clamp(2.5rem,6vw,5rem)] leading-[0.96] tracking-tight text-onSurface-800">
+						<h1 className="text-[clamp(2.5rem,6vw,5rem)] leading-[0.96] tracking-tight text-on-surface-800">
 							{title}
 						</h1>
-						<p className="mt-6 text-base font-light leading-[1.8] text-onSurface-900 md:text-lg">
+						<p className="mt-6 text-base font-light leading-[1.8] text-on-surface-900 md:text-lg">
 							{description}
 						</p>
 						{detail ? (
-							<pre className="mt-6 max-h-64 overflow-auto whitespace-pre-wrap rounded border border-primary/20 bg-black/40 p-4 text-xs leading-relaxed text-onSurface-900">
+							<pre className="mt-6 max-h-64 overflow-auto whitespace-pre-wrap rounded border border-primary/20 bg-black/40 p-4 text-xs leading-relaxed text-on-surface-900">
 								{detail}
 							</pre>
 						) : null}

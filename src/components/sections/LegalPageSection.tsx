@@ -37,10 +37,10 @@ export default function LegalPageSection({
 						<GavelIcon fontSize="small" />
 						{label}
 					</span>
-					<h1 className="text-[clamp(2.7rem,6vw,5.4rem)] leading-[0.96] tracking-tight text-onSurface-800 max-w-[820px]">
+					<h1 className="text-[clamp(2.7rem,6vw,5.4rem)] leading-[0.96] tracking-tight text-on-surface-800 max-w-[820px]">
 						{title}
 					</h1>
-					<p className="mt-7 text-base md:text-lg text-onSurface-800 font-light leading-[1.8] max-w-[740px]">
+					<p className="mt-7 text-base md:text-lg text-on-surface-800 font-light leading-[1.8] max-w-[740px]">
 						{description}
 					</p>
 					<div className="mt-7 inline-flex rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-xs uppercase tracking-[0.12em] text-primary">
@@ -56,7 +56,7 @@ export default function LegalPageSection({
 								index > 0 ? "border-t border-surface-900/10" : ""
 							}`}
 						>
-							<h2 className="text-2xl md:text-3xl text-onSurface-800">
+							<h2 className="text-2xl md:text-3xl text-on-surface-800">
 								{section.title}
 							</h2>
 							<div className="mt-4 space-y-4">
@@ -64,12 +64,12 @@ export default function LegalPageSection({
 									section.content.map((paragraph, j) => (
 										<p
 											key={`content-${index}-${j}`}
-											className="text-sm md:text-base text-onSurface-800 font-light leading-[1.8]"
+											className="text-sm md:text-base text-on-surface-800 font-light leading-[1.8]"
 										>
 											{paragraph}
 									</p>
 								))) : (
-                                    <p className="text-sm md:text-base text-onSurface-800 font-light leading-[1.8]" key={`content-${index}`}>
+                                    <p className="text-sm md:text-base text-on-surface-800 font-light leading-[1.8]" key={`content-${index}`}>
                                         {section.content}
                                     </p>
                                 )}
@@ -79,7 +79,7 @@ export default function LegalPageSection({
 				</div>
 
 				<div className="mt-10 flex flex-col md:flex-row md:items-center md:justify-between gap-5 rounded-lg border border-primary/20 bg-surface-900 p-6">
-					<p className="text-sm text-onSurface-800 leading-relaxed max-w-[620px]">
+					<p className="text-sm text-on-surface-800 leading-relaxed max-w-[620px]">
 						{note || ""}
 					</p>
 					<Link

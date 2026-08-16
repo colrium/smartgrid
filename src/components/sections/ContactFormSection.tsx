@@ -24,7 +24,7 @@ type ReasonState = {
 };
 
 function inputClassName() {
-	return "w-full rounded bg-surface border border-primary/15 px-4 py-3 text-sm text-onSurface-800 outline-none transition focus:border-primary placeholder:text-onSurface-800/35";
+	return "w-full rounded bg-surface border border-primary/15 px-4 py-3 text-sm text-on-surface-800 outline-none transition focus:border-primary placeholder:text-on-surface-800/35";
 }
 
 export default function ContactFormSection() {
@@ -35,13 +35,13 @@ export default function ContactFormSection() {
 		<section id="contact-form" className="relative py-24">
 			<div className="max-w-295 mx-auto px-8 grid lg:grid-cols-[0.75fr_1.25fr] gap-12">
 				<div>
-					<span className="inline-block text-xs tracking-[0.14em] uppercase text-primary opacity-80 mb-3">
+					<span className="inline-block text-xs  uppercase text-primary opacity-80 mb-3">
 						{t("contact:form.tag")}
 					</span>
-					<h2 className="text-[clamp(2rem,3.5vw,2.9rem)] tracking-tight text-onSurface-800 mb-5">
+					<h2 className="text-on-surface-800 mb-5">
 						{t("contact:form.headline")}
 					</h2>
-					<p className="text-base text-onSurface-900 leading-[1.75] font-light">
+					<p className="text-base text-on-surface-900 leading-[1.75] font-light">
 						{t("contact:form.description")}
 					</p>
 				</div>
