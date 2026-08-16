@@ -21,7 +21,7 @@
 		}
 	},
     "contact":{
-        "description": "Maswali kuhusu ukurasa huu au jinsi yanavyohusu swali lako yanaweza kutumwa kwa timu ya AfriGold Hub.",
+        "description": "Maswali kuhusu ukurasa huu au jinsi yanavyohusu swali lako yanaweza kutumwa kwa timu ya SmartGrid.",
         "link": {
             "label": "Wasiliana na Timu ya Faragha",
             "href": "/contact?reason=privacy"
@@ -30,7 +30,7 @@
     "articles": [
         {
             "title": "Taarifa Tunazokusanya",
-            "content": ["Tunakusanya taarifa unazochagua kutoa unapowasilisha swali, kuomba nyaraka za wawekezaji, kupanga ziara ya tovuti, au kuwasiliana na AfriGold Hub. Hii inaweza kujumuisha jina lako, anwani ya barua pepe, nambari ya simu, nchi, shirika, maslahi ya uwekezaji, na maelezo ya ujumbe.",
+            "content": ["Tunakusanya taarifa unazochagua kutoa unapowasilisha swali, kuomba nyaraka za wawekezaji, kupanga ziara ya tovuti, au kuwasiliana na SmartGrid. Hii inaweza kujumuisha jina lako, anwani ya barua pepe, nambari ya simu, nchi, shirika, maslahi ya uwekezaji, na maelezo ya ujumbe.",
 
             "Tunaweza pia kukusanya taarifa za kiufundi za msingi kutoka kwenye kivinjari au kifaa chako, kama vile kurasa zilizotembelewa, eneo la takriban, viungo vya marejeleo, na mifumo ya matumizi, ili kutusaidia kuweka tovuti kuwa ya kuaminika na kuboresha uzoefu."]
         },
@@ -56,7 +56,7 @@
         },
         {
             "title": "Shughuli za kimataifa",
-            "content": ["AfriGold Hub hufanya kazi katika eneo nyingi za Kiafrika na inaweza kushughulikia maswali kutoka kwa watumiaji katika nchi nyingine. Taarifa zinaweza kwa hivyo kuchakatwa katika nchi tofauti na yako, kwa kuzingatia udhibiti ufaao wa uendeshaji na uzingatiaji.",
+            "content": ["SmartGrid hufanya kazi katika eneo nyingi za Kiafrika na inaweza kushughulikia maswali kutoka kwa watumiaji katika nchi nyingine. Taarifa zinaweza kwa hivyo kuchakatwa katika nchi tofauti na yako, kwa kuzingatia udhibiti ufaao wa uendeshaji na uzingatiaji.",
             "Ukurasa huu unakusudiwa kuwa taarifa ya faragha ya tovuti ya vitendo na unapaswa kupitiwa na wakili mwenye sifa kwa mahitaji ya kisheria yanayotegemea eneo kabla ya kuchukuliwa kama sera ya mwisho ya kisheria."]
         }
     ]

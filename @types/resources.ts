@@ -24,7 +24,6 @@ import lidarmapping from '../public/locales/en/lidar-mapping.json';
 import meta from '../public/locales/en/meta.json';
 import monitoringandevaluation from '../public/locales/en/monitoring-and-evaluation.json';
 import photographyvideomarketing from '../public/locales/en/photography-video-marketing.json';
-import privacy from '../public/locales/en/privacy.json';
 import resourcemapping from '../public/locales/en/resource-mapping.json';
 import sectionalproperties from '../public/locales/en/sectional-properties.json';
 import solarpaneldronesurveys from '../public/locales/en/solar-panel-drone-surveys.json';
@@ -65,7 +64,6 @@ const resources = {
   meta,
   'monitoring-and-evaluation': monitoringandevaluation,
   'photography-video-marketing': photographyvideomarketing,
-  privacy,
   'resource-mapping': resourcemapping,
   'sectional-properties': sectionalproperties,
   'solar-panel-drone-surveys': solarpaneldronesurveys,

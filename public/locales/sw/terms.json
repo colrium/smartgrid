@@ -14,13 +14,13 @@
 			"title": "Kukubali Masharti Haya",
 			"content": [
 				"Kwa kufikia au kutumia tovuti hii, unakubali Masharti haya ya Matumizi na sera zozote zilizorejelewa kwenye tovuti. Ikiwa hukubali, unapaswa kuacha kutumia tovuti.",
-				"AfriGold Hub inaweza kusasisha masharti haya mara kwa mara. Kuendelea kutumia tovuti baada ya sasisho kunamaanisha unakubali masharti yaliyorekebishwa."
+				"SmartGrid inaweza kusasisha masharti haya mara kwa mara. Kuendelea kutumia tovuti baada ya sasisho kunamaanisha unakubali masharti yaliyorekebishwa."
 			]
 		},
 		{
 			"title": "Maudhui ya Tovuti",
 			"content": [
-				"Maudhui kwenye tovuti hii hutolewa kwa taarifa ya jumla kuhusu AfriGold Hub, shughuli zake, fursa za uwekezaji, na majadiliano ya ushirikiano.",
+				"Maudhui kwenye tovuti hii hutolewa kwa taarifa ya jumla kuhusu SmartGrid, shughuli zake, fursa za uwekezaji, na majadiliano ya ushirikiano.",
 				"Maudhui ya tovuti yanaweza kusasishwa, kusahihishwa, kupanuliwa, au kuondolewa wakati wowote. Hayapaswi kuchukuliwa kama makubaliano ya mwisho, ofa ya umma, waraka wa hisa, dhamana, au ushauri wa kitaalamu."
 			]
 		},
@@ -41,7 +41,7 @@
 		{
 			"title": "Haki Miliki",
 			"content": [
-				"Isipokuwa ikiwa imeelezwa vinginevyo, maandishi, muundo, chapa, michoro, media, na maudhui mengine kwenye tovuti hii yanamilikiwa au yametolewa leseni kwa AfriGold Hub.",
+				"Isipokuwa ikiwa imeelezwa vinginevyo, maandishi, muundo, chapa, michoro, media, na maudhui mengine kwenye tovuti hii yanamilikiwa au yametolewa leseni kwa SmartGrid.",
 				"Unaweza kutazama na kushiriki viungo vya kurasa za umma kwa madhumuni ya taarifa, lakini haupaswi kunakili, kuzalisha tena, kurekebisha, kuuza, au kutumia kibiashara maudhui ya tovuti bila ruhusa ya maandishi ya awali."
 			]
 		},
@@ -49,20 +49,20 @@
 			"title": "Viungo na Nyaraka za Wahusika Wengine",
 			"content": [
 				"Tovuti inaweza kurejelea majukwaa, ramani, media, nyaraka, watoa huduma, au tovuti za nje za wahusika wengine. Hizi hutolewa kwa urahisi au muktadha tu.",
-				"AfriGold Hub haiwajibiki kwa maudhui ya wahusika wengine, upatikanaji, usalama, sera, au mazoea yao."
+				"SmartGrid haiwajibiki kwa maudhui ya wahusika wengine, upatikanaji, usalama, sera, au mazoea yao."
 			]
 		},
 		{
 			"title": "Hakuna Dhamana",
 			"content": [
-				"Tovuti hutolewa kwa misingi ya ilivyo na inavyopatikana. AfriGold Hub haidhamini kwamba tovuti itakuwa isiyokatiza, isiyo na makosa, yenye usalama, au ya sasa kila wakati.",
-				"Kwa kiwango kikubwa kinachoruhusiwa na sheria, AfriGold Hub inakanusha dhamana zinazohusiana na tovuti na utegemezi wowote kwenye maudhui ya tovuti."
+				"Tovuti hutolewa kwa misingi ya ilivyo na inavyopatikana. SmartGrid haidhamini kwamba tovuti itakuwa isiyokatiza, isiyo na makosa, yenye usalama, au ya sasa kila wakati.",
+				"Kwa kiwango kikubwa kinachoruhusiwa na sheria, SmartGrid inakanusha dhamana zinazohusiana na tovuti na utegemezi wowote kwenye maudhui ya tovuti."
 			]
 		},
 		{
 			"title": "Kikomo cha Dhima",
 			"content": [
-				"Kwa kiwango kikubwa kinachoruhusiwa na sheria, AfriGold Hub haitawajibika kwa uharibifu usio wa moja kwa moja, wa bahati mbaya, wa matokeo, maalum, wa adhabu, au hasara ya faida inayotokana na matumizi yako ya tovuti.",
+				"Kwa kiwango kikubwa kinachoruhusiwa na sheria, SmartGrid haitawajibika kwa uharibifu usio wa moja kwa moja, wa bahati mbaya, wa matokeo, maalum, wa adhabu, au hasara ya faida inayotokana na matumizi yako ya tovuti.",
 				"Hakuna katika masharti haya kinachozuia dhima ambayo haiwezi kuzuiwa kisheria."
 			]
 		},
