@@ -201,7 +201,7 @@ export default function Navbar() {
 						/>
 
 						<Box className="lg:hidden grow" />
-						<Box className="flex items-center gap-2">
+						{/* <Box className="flex items-center gap-2">
 							<Avatar
 								onClick={handleLanguageMenuOpen}
 								className="mx-4  cursor-pointer"
@@ -234,7 +234,7 @@ export default function Navbar() {
 										</MenuItem>
 									))}
 							</Menu>
-						</Box>
+						</Box> */}
 					</Toolbar>
 				</Container>
 			</AppBar>
