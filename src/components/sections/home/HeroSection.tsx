@@ -388,7 +388,7 @@ export default function HeroSection() {
 				{/* Left Column */}
 				<div className="lg:col-span-10 h-full pointer-events-auto">
 					<FadeLeft delay={0.1} className="reveal active">
-						<div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full text-primary text-xs font-semibold uppercase tracking-[0.18em] mb-8 sm:mb-10">
+						<div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full text-ink text-xs font-semibold uppercase tracking-[0.18em] mb-8 sm:mb-10">
 							<span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
 							<span className="whitespace-pre-line">{t("home:hero.badge")}</span>
 						</div>
@@ -434,12 +434,12 @@ export default function HeroSection() {
 						{ctaSecondary?.href && (
 							<Link
 								href={ctaSecondary.href}
-								className="group inline-flex items-center gap-3 h-14 rounded-full bg-accent shadow-2xl px-8 text-surface font-medium text-base transition-all duration-300 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]"
+								className="group inline-flex items-center gap-3 h-14 rounded-full border border-accent/20 shadow-2xl px-8 text-accent font-medium text-base transition-all duration-300 "
 							>
 								{ctaSecondary.label}
 								{ctaSecondary.icon ? (
 									<span
-										className={`mdi mdi-${ctaSecondary.icon} text-lg text-surface transition-transform group-hover:translate-x-1`}
+										className={`mdi mdi-${ctaSecondary.icon} text-lg text-accent transition-transform group-hover:translate-x-1`}
 									/>
 								) : (
 									<span className="h-1.5 w-1.5 rounded-full bg-primary-200" />
