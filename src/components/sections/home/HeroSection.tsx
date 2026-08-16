@@ -395,7 +395,7 @@ export default function HeroSection() {
 					</FadeLeft>
 
 					<FadeRight delay={0.1} className="reveal active">
-						<h1 className="text-5xl sm:text-7xl lg:text-8xl font-light tracking-tight text-ink leading-[1.05] mb-8 sm:mb-10 lg:mb-12 whitespace-pre-line">
+						<h1 className="text-5xl sm:text-7xl lg:text-8xl font-semibold tracking-tight text-ink leading-[1.05] mb-8 sm:mb-10 lg:mb-12 whitespace-pre-line">
 							<Trans
 								i18nKey={["home:hero.headline"]}
 								defaults="Survey <shine>Smarter</shine>, Build Stronger"
