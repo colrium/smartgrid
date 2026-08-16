@@ -1,8 +1,8 @@
 {
 	"hero": {
-		"headline": "FOIF A90 RTK GNSS",
-		"title": "High-Precision GNSS Receiver for Professional Surveying",
-		"image": "/images/placeholder.jpg",
+		"headline": "High-Precision GNSS Receiver for Professional Surveying",
+		"title": "FOIF A90 RTK GNSS",
+		"image": "/media/equipment-sale/foif-a90-rtk-gnss/01.jpg",
 		"description": "The FOIF A90 RTK GNSS system delivers centimeter-level accuracy for all your surveying needs. Designed for reliability and performance in the field.",
 		"ctaPrimary": {
 			"label": "Inquire About This Equipment",
@@ -12,13 +12,16 @@
 	"productOverview": {
 		"tag": "Surveying Equipment",
 		"headline": "FOIF A90 RTK GNSS",
-		"image": "/images/placeholder.jpg",
+		"images": [
+			"/media/equipment-sale/foif-a90-rtk-gnss/10.png",
+			"/media/equipment-sale/foif-a90-rtk-gnss/02.png",
+			"/media/equipment-sale/foif-a90-rtk-gnss/03.png"
+		],
 		"description": "The FOIF A90 is a multi-frequency, multi-constellation GNSS receiver designed for high-precision RTK surveys. It offers robust performance even in challenging environments, making it ideal for cadastral, construction, and engineering projects."
 	},
 	"keyFeatures": {
 		"tag": "Features",
 		"headline": "Key Features",
-		"image": "/images/placeholder.jpg",
 		"description": "",
 		"items": [
 			{
@@ -40,6 +43,123 @@
 				"icon": "battery-10",
 				"title": "Long Battery Life",
 				"description": "All-day operation with hot-swappable battery support."
+			}
+		]
+	},
+	"engineAndSignal": {
+		"tag": "Features",
+		"headline": "GNSS Engine & Signal Reception",
+		"description": "",
+		"list": [
+			"Channel: 1408",
+			"All constellation and all band reception",
+			"BDS: B1I/B2I/B3I/B1C/B2a/B2b",
+			"GPS: L1C/A/L2P(Y)/L2C/L5",
+			"GLONASS: G1/G2/G3",
+			"Galileo: E1/E5a/E5b/E6",
+			"QZSS: L1/L2/L5"
+		]
+	},
+	"performance": {
+		"tag": null,
+		"headline": "Performance",
+		"description": "",
+		"list": [
+			"Time Accuracy (RMS): 20 ns",
+			"Velocity Accuracy (RMS): 0.03 m/s",
+			"Cold start: <30 s",
+			"Initialization Time: <5 s (typical)",
+			"Initialization Reliability: >99.9%"
+		],
+		"subsection": {
+			"title": "Positioning Accuracy",
+			"list": [
+				"Single-point RMS: Horizontal 1.5m, Vertical 2.5m",
+				"DGPS RMS: Horizontal 0.4m, Vertical 0.8m",
+				"Static: Horizontal ±(2.5mm+0.5ppm), Vertical ±(5mm+0.5ppm)",
+				"RTK RMS: Horizontal ±(8mm+1ppm), Vertical ±(15mm+1ppm)"
+			]
+		}
+	},
+	"configurationAndConnectivity": {
+		"tag": null,
+		"headline": "Configuration & Connectivity",
+		"description": "",
+		"list": [
+			"Bluetooth: 2.1+EDR / 4.0 BLE built-in",
+			"Electronic bubble: supported",
+			"Tilt survey: IMU inertial navigation, 6-axis, 400Hz dynamic output, calibration-free",
+			"Network communication: supports various networks",
+			"WiFi: 802.11b/g/n, WebUI management for firmware, data, settings",
+			"Radio: Internal 1W (5km), External 2/35W (15km), supports multiple protocols (TrimTalk450S, PCC-EOT, HiTarget, GeoTalk, etc.)"
+		]
+	},
+	"physicalAndBattery": {
+		"tag": null,
+		"headline": "Physical & Battery",
+		"description": "",
+		"list": [
+			"Size: 156mm x 76mm (Φ x H)",
+			"Material: magnesium alloy base, polymer top",
+			"Battery: 7.4V x 3400mAh x2, removable, smart lithium with power indicator",
+			"User interface: 4 LED lights, TF & SIM slots, TNC port, 5-pin & 7-pin lemo ports, voice broadcast"
+		]
+	},
+	"environmentalSpecs": {
+		"tag": null,
+		"headline": "Environmental Specs",
+		"description": "",
+		"list": [
+			"Operating Temperature: -30℃ to 60℃",
+			"Storage Temperature: -40℃ to 80℃",
+			"Humidity: 100% condensing resistant",
+			"Shock: 2 m pole drop resistant at normal temperature",
+			"Protection: IP68"
+		]
+	},
+	"cta": {
+		"tag": "Countact us",
+		"headline": "Inquire About This Equipment",
+		"description": "",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Email Us",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		},
+		"ctaSecondary": {
+			"icon": "whatsapp",
+			"label": "WhatsApp Us",
+			"href": "https://wa.me/254701618282"
+		}
+	},
+	"relatedProducts": {
+		"tag": null,
+		"headline": "OTHER RELATED PRODUCTS",
+		"description": "",
+        "images": [
+            "/media/equipment-sale/foif-a90-rtk-gnss/04.png",
+            "/media/equipment-sale/foif-a90-rtk-gnss/05.png"
+        ],
+		"items": [
+			{
+				"image": "/media/equipment-sale/foif-a90-rtk-gnss/06.png",
+				"label": "TOTAL STATION ESURVEY",
+				"href": "/equipment-sale/total-station-esurvey"
+			},
+            {
+				"image": "/media/equipment-sale/foif-a90-rtk-gnss/07.png",
+				"label": "TOTAL STATION DTM 152M",
+				"href": "/equipment-sale/total-station-dtm-152m"
+			},
+            {
+				"image": "/media/equipment-sale/foif-a90-rtk-gnss/08.png",
+				"label": "AUTOMATIC LEVEL HUEPER",
+				"href": "/equipment-sale/automatic-level-hueper"
+			},
+            {
+				"image": "/media/equipment-sale/foif-a90-rtk-gnss/09.png",
+				"label": "AUTOMATIC LEVEL BOSCH",
+				"href": "/equipment-sale/automatic-level-bosch"
 			}
 		]
 	}
