@@ -84,37 +84,38 @@ export function ServicesSection() {
 												/>
 											}
 											iconPosition="start"
-											label={service.label}
-                                            sx={{
-                                                mb: 2,
-												minHeight: "auto",
-												padding: "16px 20px",
-												borderRadius: "10px",
-												border: "1px solid",
-												borderColor: selected
-													? "#01373d"
-													: "rgba(1, 55, 61, 0.12)",
-												color: selected ? "#ffffff" : "#345a60",
-												backgroundColor: selected ? "#01373d" : "transparent",
-												boxShadow: selected
-													? "0 14px 34px -14px rgba(1, 55, 61, 0.55)"
-													: "none",
-												textTransform: "none",
-												fontWeight: 500,
-												fontSize: "0.95rem",
-												justifyContent: "flex-start",
-												transition:
-													"all 250ms cubic-bezier(0.16, 1, 0.3, 1)",
-												"& .MuiTab-iconWrapper": { marginRight: "10px" },
-												"&:hover": {
-													borderColor: "#0097b2",
-													color: selected ? "#ffffff" : "#0097b2",
-													backgroundColor: selected
-														? "#01373d"
-														: "rgba(0, 151, 178, 0.06)",
-												},
-												"&:active": { transform: "scale(0.985)" },
-											}}
+                                            label={service.label}
+                                            classes={{
+                                                root: `rounded-full! border! p-2! mb-2! min-h-auto! ${selected? 'bg-primary! text-surface!': 'text-primary!  border-primary/50!'}`
+                                            }}
+                                            // sx={{
+                                            //     mb: 2,
+											// 	minHeight: "auto",
+											// 	padding: "16px 20px",
+											// 	borderRadius: "10px",
+											// 	border: "1px solid",
+											// 	borderColor: selected
+											// 		? "#01373d"
+											// 		: "rgba(1, 55, 61, 0.12)",
+											// 	color: selected ? "#ffffff" : "#345a60",
+											// 	backgroundColor: selected ? "#01373d" : "transparent",
+												
+											// 	textTransform: "none",
+											// 	fontWeight: 500,
+											// 	fontSize: "0.95rem",
+											// 	justifyContent: "flex-start",
+											// 	transition:
+											// 		"all 250ms cubic-bezier(0.16, 1, 0.3, 1)",
+											// 	"& .MuiTab-iconWrapper": { marginRight: "10px" },
+											// 	"&:hover": {
+											// 		borderColor: "#0097b2",
+											// 		color: selected ? "#ffffff" : "#0097b2",
+											// 		backgroundColor: selected
+											// 			? "#01373d"
+											// 			: "rgba(0, 151, 178, 0.06)",
+											// 	},
+											// 	"&:active": { transform: "scale(0.985)" },
+											// }}
 										/>
 									);
 								})}
@@ -143,11 +144,8 @@ export function ServicesSection() {
 										)}
 										<div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/15 to-transparent" />
 
-										<span className="absolute top-4 left-4 inline-flex items-center gap-2 glass rounded-lg text-[11px] font-semibold uppercase tracking-[0.18em] text-ink px-3 py-1.5">
-											<span className="mdi mdi-circle-small text-primary" />
-											{t("home:services.tag") as string}
-										</span>
-										<span className="absolute top-4 right-4 glass rounded-lg text-[11px] font-semibold tabular-nums tracking-[0.14em] text-ink px-3 py-1.5">
+										
+										<span className="absolute top-4 right-4 glass rounded-xl  text-[11px] font-semibold tabular-nums tracking-[0.14em] text-ink px-3 py-1.5">
 											{String(activeTab + 1).padStart(2, "0")}
 										</span>
 

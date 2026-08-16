@@ -142,7 +142,7 @@ export default function Navbar() {
 						}`,
 					}}
 				>
-					<div className="hidden lg:flex items-center justify-between gap-8 px-2 pt-3.5 pb-3 text-xs text-on-surface/70 border-b border-ink/10">
+					<div className="hidden lg:flex items-center justify-between gap-8 px-2 pt-3.5 pb-3 text-xs text-on-surface/70 border-b border-ink/10 font-semibold">
 						<span className="inline-flex items-center gap-2">
 							<span className="mdi mdi-map-marker text-primary text-sm" />
 							{t("common:contacts.address")}
