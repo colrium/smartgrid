@@ -401,7 +401,7 @@ export default function HeroSection() {
 								defaults="Survey <primary>Smarter</primary>, Build Stronger"
 								components={{
 									italic: <i />,
-									shine: <span className="text-primary shine-primary " />,
+									primary: <span className="text-primary" />,
 								}}
 							/>
 						</h1>

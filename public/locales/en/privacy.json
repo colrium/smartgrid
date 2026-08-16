@@ -4,7 +4,7 @@
         "title": "Privacy Policy",
         "description": "This policy explains how {{site_title}} handles information submitted through our website, contact forms, investor enquiries, and site-visit requests.",
         "lastUpdatedLabel": "Last Updated",
-        "lastUpdated": "May 16, 2026",
+        "lastUpdated": "Aug, 2026",
         "contactLabel": "Contact Privacy Team",
         "contactLink": "/contact?reason=privacy",
         "note": "This page is intended as a practical website privacy notice and should be reviewed with qualified counsel for jurisdiction-specific legal requirements before being treated as a final legal policy. Questions about this page or how it applies to your enquiry can be sent to the {{site_title}} team."
@@ -13,7 +13,7 @@
 		"tag": "Privacy Policy",
 		"headline": "Your information, our commitment",
 		"description": "We are committed to protecting your personal information and ensuring transparency in how we collect, use, and safeguard your data.",
-		"badge": { "text": "Minimum 3-month commitment", "status": "active" },
+		"badge": { "text": "Minimum 3-month commitment", "status": "active" }
 		
 	},
     "contact":{

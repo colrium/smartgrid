@@ -29,7 +29,7 @@ export default function LegalPageSection({
     note = "",
 }: LegalPageSectionProps) {
 	return (
-		<section className="relative overflow-hidden pt-24 pb-20 md:pt-32 md:pb-28">
+		<section className="relative overflow-hidden pt-24 pb-20 md:pt-48 md:pb-28">
 			
 			<div className="relative z-10 max-w-[980px] mx-auto px-6 md:px-8">
 				<div className="mb-12">
@@ -84,7 +84,7 @@ export default function LegalPageSection({
 					</p>
 					<Link
 						href={contactHref}
-						className="inline-flex items-center justify-center gap-2 rounded border border-primary bg-primary px-6 py-3 text-sm font-medium text-black hover:bg-primary transition-all"
+						className="inline-flex items-center justify-center gap-2 rounded border border-primary bg-primary px-6 py-3 text-sm font-medium text-surface hover:bg-primary transition-all"
 					>
 						{contactLabel}
 						<ArrowOutwardIcon fontSize="small" />
