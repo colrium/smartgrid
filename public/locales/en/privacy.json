@@ -14,14 +14,10 @@
 		"headline": "Your information, our commitment",
 		"description": "We are committed to protecting your personal information and ensuring transparency in how we collect, use, and safeguard your data.",
 		"badge": { "text": "Minimum 3-month commitment", "status": "active" },
-		"cta_primary": { "label": "Compare Tiers", "href": "/invest#tiers" },
-		"cta_secondary": {
-			"label": "Request Due Diligence",
-			"href": "/contact?reason=due-diligence"
-		}
+		
 	},
     "contact":{
-        "description": "Questions about this page or how it applies to your enquiry can be sent to the AfriGold Hub team.",
+        "description": "Questions about this page or how it applies to your enquiry can be sent to the SmartGrid team.",
         "link": {
             "label": "Contact Privacy Team",
             "href": "/contact?reason=privacy"
@@ -30,7 +26,7 @@
     "articles": [
         {
             "title": "Information We Collect",
-            "content": ["We collect information you choose to provide when you submit an enquiry, request investor materials, schedule a site visit, or contact AfriGold Hub. This may include your name, email address, phone number, country, organisation, investment interest, and message details.",
+            "content": ["We collect information you choose to provide when you submit an enquiry, request investor materials, schedule a site visit, or contact SmartGrid. This may include your name, email address, phone number, country, organisation, investment interest, and message details.",
 
             "We may also collect basic technical information from your browser or device, such as pages visited, approximate location, referring links, and usage patterns, to help us keep the website reliable and improve the experience."]
         },
@@ -56,7 +52,7 @@
         },
         {
             "title": "International operations",
-            "content": ["AfriGold Hub operates across multiple African jurisdictions and may handle enquiries from users in other countries. Information may therefore be processed in a country different from your own, subject to appropriate operational and compliance controls.",
+            "content": ["SmartGrid operates across multiple African jurisdictions and may handle enquiries from users in other countries. Information may therefore be processed in a country different from your own, subject to appropriate operational and compliance controls.",
             "This page is intended as a practical website privacy notice and should be reviewed with qualified counsel for jurisdiction-specific legal requirements before being treated as a final legal policy."]
         }
     ]
