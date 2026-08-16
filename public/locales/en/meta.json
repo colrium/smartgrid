@@ -150,6 +150,11 @@
 			"page_title": "Site Setting Out",
 			"meta_description": "Staking out and setting out surveys — translating designs into accurate physical points on-site with centimeter-level GNSS accuracy for buildings, roads, and infrastructure.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"foif-a90-rtk-gnss": {
+			"page_title": "FOIF A90 RTK GNSS",
+			"meta_description": "High-precision multi-frequency, multi-constellation RTK GNSS receiver with centimeter-level accuracy — ideal for cadastral, construction, and engineering projects.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {

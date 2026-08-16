@@ -150,6 +150,11 @@
 			"page_title": "Uwekaji wa Alama za Tovuti",
 			"meta_description": "Uchunguzi wa staking out na setting out — kutafsiri mibuni kuwa pointi sahihi za kimwili tovutini kwa usahihi wa kiwango cha sentimita wa GNSS kwa majengo, barabara, na miundombinu.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"foif-a90-rtk-gnss": {
+			"page_title": "FOIF A90 RTK GNSS",
+			"meta_description": "Kipokezi cha RTK GNSS cha usahihi wa juu wa mawimbi mengi na makundi mengi — bora kwa miradi ya cadastral, ujenzi, na uhandisi.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {

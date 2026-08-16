@@ -1,0 +1,166 @@
+{
+	"hero": {
+		"headline": "Kipokezi cha GNSS cha Usahihi wa Juu kwa Upimaji wa Kitaalamu",
+		"title": "FOIF A90 RTK GNSS",
+		"image": "/media/equipment-sale/foif-a90-rtk-gnss/01.jpg",
+		"description": "Mfumo wa FOIF A90 RTK GNSS hutoa usahihi wa kiwango cha sentimita kwa mahitaji yako yote ya upimaji. Imeundwa kwa kuegemea na utendaji shambani.",
+		"ctaPrimary": {
+			"label": "Ulizia Kuhusu Kifaa Hiki",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"productOverview": {
+		"tag": "Vifaa vya Upimaji",
+		"headline": "FOIF A90 RTK GNSS",
+		"images": [
+			"/media/equipment-sale/foif-a90-rtk-gnss/10.png",
+			"/media/equipment-sale/foif-a90-rtk-gnss/02.png",
+			"/media/equipment-sale/foif-a90-rtk-gnss/03.png"
+		],
+		"description": "FOIF A90 ni kipokezi cha GNSS cha mawimbi mengi, makundi mengi kilichoundwa kwa uchunguzi wa RTK wa usahihi wa juu. Hutoa utendaji imara hata katika mazingira magumu, na kuifanya kufaa kwa miradi ya cadastral, ujenzi, na uhandisi."
+	},
+	"keyFeatures": {
+		"tag": "Vipengele",
+		"headline": "Vipengele Muhimu",
+		"description": "",
+		"items": [
+			{
+				"icon": "satellite",
+				"title": "Usaidizi wa Makundi Mengi",
+				"description": "Hufuatilia GPS, GLONASS, BeiDou, na Galileo kwa upatikanaji wa juu wa satelaiti."
+			},
+			{
+				"icon": "ruler",
+				"title": "Usahihi wa Kiwango cha Sentimita",
+				"description": "Hutoa usahihi wa nafasi ya RTK ya ±1 cm + 1 ppm kwa mlalo."
+			},
+			{
+				"icon": "wifi",
+				"title": "Muunganisho wa Kisasa",
+				"description": "Ina vifaa vya Bluetooth, UHF, na 4G kwa usafirishaji wa data usio na mshono."
+			},
+			{
+				"icon": "battery-10",
+				"title": "Maisha ya Betri ya Muda Mrefu",
+				"description": "Uendeshaji wa siku nzima na usaidizi wa betri inayoweza kubadilishwa kwa joto."
+			}
+		]
+	},
+	"engineAndSignal": {
+		"tag": "Vipengele",
+		"headline": "Injini ya GNSS na Upokeaji wa Mawimbi",
+		"description": "",
+		"list": [
+			"Channel: 1408",
+			"Upokeaji wa makundi yote na bendi zote",
+			"BDS: B1I/B2I/B3I/B1C/B2a/B2b",
+			"GPS: L1C/A/L2P(Y)/L2C/L5",
+			"GLONASS: G1/G2/G3",
+			"Galileo: E1/E5a/E5b/E6",
+			"QZSS: L1/L2/L5"
+		]
+	},
+	"performance": {
+		"tag": null,
+		"headline": "Utendaji",
+		"description": "",
+		"list": [
+			"Usahihi wa Muda (RMS): 20 ns",
+			"Usahihi wa Kasi (RMS): 0.03 m/s",
+			"Kuanza kwa baridi: <30 s",
+			"Muda wa Kuanzisha: <5 s (kawaida)",
+			"Kuegemea kwa Uanzishaji: >99.9%"
+		],
+		"subsection": {
+			"title": "Usahihi wa Nafasi",
+			"list": [
+				"RMS ya nukta moja: Mlalo 1.5m, Wima 2.5m",
+				"RMS ya DGPS: Mlalo 0.4m, Wima 0.8m",
+				"Tuli: Mlalo ±(2.5mm+0.5ppm), Wima ±(5mm+0.5ppm)",
+				"RMS ya RTK: Mlalo ±(8mm+1ppm), Wima ±(15mm+1ppm)"
+			]
+		}
+	},
+	"configurationAndConnectivity": {
+		"tag": null,
+		"headline": "Usanidi na Muunganisho",
+		"description": "",
+		"list": [
+			"Bluetooth: 2.1+EDR / 4.0 BLE iliyojengewa ndani",
+			"Kiputo cha elektroniki: kinatumika",
+			"Uchunguzi wa tilt: IMU inertial navigation, 6-axis, 400Hz dynamic output, bila calibration",
+			"Mawasiliano ya mtandao: huuunga mkono mitandao mbalimbali",
+			"WiFi: 802.11b/g/n, usimamizi wa WebUI kwa firmware, data, mipangilio",
+			"Redio: Ndani 1W (5km), Nje 2/35W (15km), inaunga mkono itifaki nyingi (TrimTalk450S, PCC-EOT, HiTarget, GeoTalk, nk.)"
+		]
+	},
+	"physicalAndBattery": {
+		"tag": null,
+		"headline": "Kimwili na Betri",
+		"description": "",
+		"list": [
+			"Ukubwa: 156mm x 76mm (Φ x H)",
+			"Nyenzo: msingi wa aloi ya magnesiamu, juu ya polima",
+			"Betri: 7.4V x 3400mAh x2, inayoweza kuondolewa, smart lithium na kiashiria cha nishati",
+			"Kiolesura cha mtumiaji: Taa 4 za LED, slots za TF & SIM, lango la TNC, milango ya lemo 5-pin & 7-pin, utangazaji wa sauti"
+		]
+	},
+	"environmentalSpecs": {
+		"tag": null,
+		"headline": "Vipimo vya Mazingira",
+		"description": "",
+		"list": [
+			"Joto la Uendeshaji: -30℃ hadi 60℃",
+			"Joto la Uhifadhi: -40℃ hadi 80℃",
+			"Unyevu: sugu ya condensation 100%",
+			"Mitikiso: sugu ya kuanguka kwa fimbo ya m 2 kwa joto la kawaida",
+			"Ulinzi: IP68"
+		]
+	},
+	"cta": {
+		"tag": "Wasiliana nasi",
+		"headline": "Ulizia Kuhusu Kifaa Hiki",
+		"description": "",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Tutumie Barua Pepe",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		},
+		"ctaSecondary": {
+			"icon": "whatsapp",
+			"label": "Tutumie WhatsApp",
+			"href": "https://wa.me/254701618282"
+		}
+	},
+	"relatedProducts": {
+		"tag": null,
+		"headline": "BIDHAA NYINGINE ZINAZOHUSIANA",
+		"description": "",
+        "images": [
+            "/media/equipment-sale/foif-a90-rtk-gnss/04.png",
+            "/media/equipment-sale/foif-a90-rtk-gnss/05.png"
+        ],
+		"items": [
+			{
+				"image": "/media/equipment-sale/foif-a90-rtk-gnss/06.png",
+				"label": "TOTAL STATION ESURVEY",
+				"href": "/equipment-sale/total-station-esurvey"
+			},
+            {
+				"image": "/media/equipment-sale/foif-a90-rtk-gnss/07.png",
+				"label": "TOTAL STATION DTM 152M",
+				"href": "/equipment-sale/total-station-dtm-152m"
+			},
+            {
+				"image": "/media/equipment-sale/foif-a90-rtk-gnss/08.png",
+				"label": "AUTOMATIC LEVEL HUEPER",
+				"href": "/equipment-sale/automatic-level-hueper"
+			},
+            {
+				"image": "/media/equipment-sale/foif-a90-rtk-gnss/09.png",
+				"label": "AUTOMATIC LEVEL BOSCH",
+				"href": "/equipment-sale/automatic-level-bosch"
+			}
+		]
+	}
+}
