@@ -27,7 +27,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 const googleSansFlex = localFont({
-	src: "../fonts/google-sans-flex-latin-300-normal.woff2",
+	src: "../fonts/google-sans-flex-latin-400-normal.woff2",
 	variable: "--font-sans", // Define the custom CSS variable
 	display: "swap",
 });

@@ -36,7 +36,7 @@ export default function LandingPageLayout({ children }: { children: ReactNode })
 				<div id="back-to-top-anchor"></div>
 				<Navbar />
 
-				<div className="flex-1 -mt-24">
+				<div className="flex-1 -mt-35">
 					{children}
 					<ChatWidget />
 

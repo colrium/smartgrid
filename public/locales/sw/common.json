@@ -10,6 +10,11 @@
 		"submissionError": "Uwasilishaji ulishindikana. Tafadhali jaribu tena baadaye au wasiliana na msaada.",
 		"sending": "Inatuma..."
 	},
+    "contacts": {
+        "address": "Nairobi, Kenya",
+        "mobile": "+254 10 7393023",
+        "Email": "smartgridsurveying@gmail.com"
+    },
 	"errors": {
         "error": "Hitilafu",
 		"notFound": "Ukurasa haukupatikana",

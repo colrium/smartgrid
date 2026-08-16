@@ -75,7 +75,7 @@ body {
 
 html {
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 400;
 }
 main * {
     font-family: var(--font-sans),
@@ -421,7 +421,7 @@ select option {
 }
 
 ::-webkit-scrollbar {
-    width: 11px;
+    width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -429,7 +429,7 @@ select option {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--color-primary);
+    background: var(--color-mute);
     border-radius: 4px;
 }
 

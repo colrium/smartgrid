@@ -142,6 +142,30 @@ export default function Navbar() {
 						}`,
 					}}
 				>
+					<div className="hidden lg:flex items-center justify-between gap-8 px-2 pt-3.5 pb-3 text-xs text-on-surface/70 border-b border-ink/10">
+						<span className="inline-flex items-center gap-2">
+							<span className="mdi mdi-map-marker text-primary text-sm" />
+							{t("common:contacts.address")}
+						</span>
+
+						<div className="flex items-center gap-8">
+							<a
+								href={`tel:${t("common:contacts.mobile").replace(/\s/g, "")}`}
+								className="inline-flex items-center gap-2 hover:text-primary transition-colors duration-300"
+							>
+								<span className="mdi mdi-phone text-primary text-sm" />
+								{t("common:contacts.mobile")}
+							</a>
+							<a
+								href={`mailto:${t("common:contacts.Email")}`}
+								className="inline-flex items-center gap-2 hover:text-primary transition-colors duration-300"
+							>
+								<span className="mdi mdi-email-outline text-primary text-sm" />
+								{t("common:contacts.Email")}
+							</a>
+						</div>
+					</div>
+
 					<Toolbar disableGutters className={`bg-transparent! `}>
 						<IconButton
 							onClick={handleDrawerToggle}

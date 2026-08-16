@@ -14,6 +14,7 @@ import civilvolumetricsurveys from '../public/locales/en/civil-volumetric-survey
 import common from '../public/locales/en/common.json';
 import contact from '../public/locales/en/contact.json';
 import droneimagerysurveys from '../public/locales/en/drone-imagery-surveys.json';
+import foifa90rtkgnss from '../public/locales/en/foif-a90-rtk-gnss.json';
 import gismapping from '../public/locales/en/gis-mapping.json';
 import groundpenetratingradar from '../public/locales/en/ground-penetrating-radar.json';
 import hiring from '../public/locales/en/hiring.json';
@@ -34,7 +35,6 @@ import volumetricsurveys from '../public/locales/en/volumetric-surveys.json';
 import automaticlevelbosch from '../public/locales/en/equipment-sale/automatic-level-bosch.json';
 import automaticlevelhueper from '../public/locales/en/equipment-sale/automatic-level-hueper.json';
 import equipmentcatalogue from '../public/locales/en/equipment-sale/equipment-catalogue.json';
-import foifa90rtkgnss from '../public/locales/en/equipment-sale/foif-a90-rtk-gnss.json';
 import totalstationdtm152m from '../public/locales/en/equipment-sale/total-station-dtm-152m.json';
 import totalstationesurvey from '../public/locales/en/equipment-sale/total-station-esurvey.json';
 
@@ -55,6 +55,7 @@ const resources = {
   common,
   contact,
   'drone-imagery-surveys': droneimagerysurveys,
+  'foif-a90-rtk-gnss': foifa90rtkgnss,
   'gis-mapping': gismapping,
   'ground-penetrating-radar': groundpenetratingradar,
   hiring,
@@ -75,7 +76,6 @@ const resources = {
   'automatic-level-bosch': automaticlevelbosch,
   'automatic-level-hueper': automaticlevelhueper,
   'equipment-catalogue': equipmentcatalogue,
-  'foif-a90-rtk-gnss': foifa90rtkgnss,
   'total-station-dtm-152m': totalstationdtm152m,
   'total-station-esurvey': totalstationesurvey
 } as const;

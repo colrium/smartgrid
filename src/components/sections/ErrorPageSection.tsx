@@ -22,7 +22,7 @@ export default function ErrorPageSection({
 	detail,
 }: ErrorPageSectionProps) {
 	return (
-		<section className="relative min-h-[72vh] overflow-hidden px-6 py-24 md:px-8 md:py-32">
+		<section className="relative flex flex-col justify-center min-h-screen overflow-hidden px-6 py-24 md:px-8 md:py-48">
 			<div
 				className="absolute inset-0 pointer-events-none"
 				
