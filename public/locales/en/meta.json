@@ -155,6 +155,11 @@
 			"page_title": "FOIF A90 RTK GNSS",
 			"meta_description": "High-precision multi-frequency, multi-constellation RTK GNSS receiver with centimeter-level accuracy — ideal for cadastral, construction, and engineering projects.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"total-station-esurvey": {
+			"page_title": "Total Station E-Survey",
+			"meta_description": "High-performance E-Survey total stations for reliable angle and distance measurements in construction, cadastral, and engineering projects.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {

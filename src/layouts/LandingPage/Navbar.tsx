@@ -145,7 +145,7 @@ export default function Navbar() {
 					<div className="hidden lg:flex items-center justify-between gap-8 px-2 pt-3.5 pb-3 text-xs text-on-surface/70 border-b border-ink/10 font-semibold">
 						<span className="inline-flex items-center gap-2">
 							<span className="mdi mdi-map-marker text-primary text-sm" />
-							{t("common:contacts.address")}
+							<span className="text-accent">{t("common:contacts.address")}</span>
 						</span>
 
 						<div className="flex items-center gap-8">
@@ -154,14 +154,14 @@ export default function Navbar() {
 								className="inline-flex items-center gap-2 hover:text-primary transition-colors duration-300"
 							>
 								<span className="mdi mdi-phone text-primary text-sm" />
-								{t("common:contacts.mobile")}
+								<span className="text-accent">{t("common:contacts.mobile")}</span>
 							</a>
 							<a
 								href={`mailto:${t("common:contacts.Email")}`}
 								className="inline-flex items-center gap-2 hover:text-primary transition-colors duration-300"
 							>
 								<span className="mdi mdi-email-outline text-primary text-sm" />
-								{t("common:contacts.Email")}
+								<span className="text-accent">{t("common:contacts.Email")}</span>
 							</a>
 						</div>
 					</div>

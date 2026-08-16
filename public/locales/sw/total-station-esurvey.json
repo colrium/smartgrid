@@ -1,0 +1,106 @@
+{
+	"hero": {
+		"headline": "Vituo Kamili vya Usahihi wa Juu kwa Upimaji Sahihi",
+		"title": "TOTAL STATION ESURVEY",
+		"image": "/media/equipment-sale/total-station-esurvey/01.png",
+		"description": "SmartGrid Surveying inatoa aina mbalimbali za vituo kamili vya E-Survey vilivyoundwa kwa vipimo vya kuaminika vya pembe na umbali katika miradi ya ujenzi, cadastral, na uhandisi.",
+		"ctaPrimary": {
+			"label": "Ulizia Kuhusu Kifaa Hiki",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"productOverview": {
+		"tag": "Vifaa vya Upimaji",
+		"headline": "E-Survey E3L Total Station",
+		"image": "/media/equipment-sale/total-station-esurvey/06.png",
+		"description": "Kituo kamili cha utendaji wa juu kilichoundwa kwa upimaji wa usahihi, mpangilio wa ujenzi, na matumizi ya uhandisi kwa usahihi wa kuaminika na mtiririko mzuri wa kazi shambani."
+	},
+	"measurementCapability": {
+		"tag": null,
+		"headline": "Uwezo wa Kipimo",
+		"description": "",
+		"list": [
+			"Usahihi wa Angular: 2”",
+			"Umbali (Prism): Hadi 5000m",
+			"Bila Reflector: Hadi 800m",
+			"Vipimo vya haraka na imara"
+		]
+	},
+	"accuracyAndPerformance": {
+		"tag": null,
+		"headline": "Usahihi na Utendaji",
+		"description": "",
+		"list": [
+			"Usahihi wa Prism: ±(2mm + 2ppm)",
+			"Bila Reflector: ±(3mm + 2ppm)",
+			"Kujirudia kwa hali ya juu",
+			"Kuaminika katika hali ya shambani"
+		]
+	},
+	"dataAndInterface": {
+		"tag": null,
+		"headline": "Data na Kiolesura",
+		"description": "",
+		"list": [
+			"Hifadhi ya data ndani ya kifaa",
+			"Muunganisho wa USB na serial",
+			"Kiolesura rafiki kwa mtumiaji",
+			"Usanidi wa haraka shambani"
+		]
+	},
+	"applications": {
+		"tag": null,
+		"headline": "Matumizi",
+		"description": "",
+		"list": ["Uchunguzi wa Topografia", "Mpangilio wa Ujenzi", "Uchunguzi wa Mipaka", "Miradi ya Uhandisi"]
+	},
+	"cta": {
+		"tag": "Wasiliana nasi",
+		"headline": "Pata Kifaa Hiki",
+		"description": "Wasiliana nasi moja kwa moja kwa bei, upatikanaji, na mwongozo wa kitaalamu.",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Tutumie Barua Pepe",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		},
+		"ctaSecondary": {
+			"icon": "whatsapp",
+			"label": "Tutumie WhatsApp",
+			"href": "https://wa.me/254701618282"
+		}
+	},
+    "saleBanner": {
+        "images": [
+			"/media/equipment-sale/total-station-esurvey/08.png",
+			"/media/equipment-sale/total-station-esurvey/09.png"
+		],
+    },
+	"relatedProducts": {
+		"tag": null,
+		"headline": "BIDHAA NYINGINE ZINAZOHUSIANA",
+		"description": "",
+
+		"items": [
+			{
+				"image": "/media/equipment-sale/total-station-esurvey/10.png",
+				"label": "FOIF A90 RTK GNSS",
+				"href": "/equipment-sale/total-station-esurvey"
+			},
+			{
+				"image": "/media/equipment-sale/total-station-esurvey/02.png",
+				"label": "TOTAL STATION DTM 152M",
+				"href": "/equipment-sale/total-station-dtm-152m"
+			},
+			{
+				"image": "/media/equipment-sale/total-station-esurvey/03.png",
+				"label": "AUTOMATIC LEVEL HUEPER",
+				"href": "/equipment-sale/automatic-level-hueper"
+			},
+			{
+				"image": "/media/equipment-sale/total-station-esurvey/04.png",
+				"label": "AUTOMATIC LEVEL BOSCH",
+				"href": "/equipment-sale/automatic-level-bosch"
+			}
+		]
+	}
+}

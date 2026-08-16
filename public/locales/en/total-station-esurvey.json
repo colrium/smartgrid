@@ -1,0 +1,108 @@
+{
+	"hero": {
+		"headline": "High-Precision Total Stations for Accurate Surveying",
+		"title": "TOTAL STATION ESURVEY",
+		"image": "/media/equipment-sale/total-station-esurvey/01.png",
+		"description": "SmartGrid Surveying offers a range of E-Survey total stations designed for reliable angle and distance measurements in construction, cadastral, and engineering projects.",
+		"ctaPrimary": {
+			"label": "Inquire About This Equipment",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"productOverview": {
+		"tag": "Surveying Equipment",
+		"headline": "E-Survey E3L Total Station",
+		"image": "/media/equipment-sale/total-station-esurvey/06.png",
+		"description": "High-performance total station engineered for precision surveying, construction layout, and engineering applications with reliable accuracy and efficient field workflows."
+	},
+
+	"measurementCapability": {
+		"tag": null,
+		"headline": "Measurement Capability",
+		"description": "",
+		"list": [
+			"Angular Accuracy: 2”",
+			"Distance (Prism): Up to 5000m",
+			"Reflectorless: Up to 800m",
+			"Fast and stable measurements"
+		]
+	},
+	"accuracyAndPerformance": {
+		"tag": null,
+		"headline": "Accuracy & Performance",
+		"description": "",
+		"list": [
+			"Prism Accuracy: ±(2mm + 2ppm)",
+			"Reflectorless: ±(3mm + 2ppm)",
+			"High repeatability",
+			"Reliable in field conditions"
+		]
+	},
+	"dataAndInterface": {
+		"tag": null,
+		"headline": "Data & Interface",
+		"description": "",
+		"list": [
+			"Onboard data storage",
+			"USB & serial connectivity",
+			"User-friendly interface",
+			"Fast field setup"
+		]
+	},
+	"applications": {
+		"tag": null,
+		"headline": "Applications",
+		"description": "",
+		"list": ["Topographic Surveys", "Construction Layout", "Boundary Surveys", "Engineering Projects"]
+	},
+	
+	"cta": {
+		"tag": "Countact us",
+		"headline": "Get This Equipment",
+		"description": "Contact us directly for pricing, availability, and expert guidance.",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Email Us",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		},
+		"ctaSecondary": {
+			"icon": "whatsapp",
+			"label": "WhatsApp Us",
+			"href": "https://wa.me/254701618282"
+		}
+	},
+    "saleBanner": {
+        "images": [
+			"/media/equipment-sale/total-station-esurvey/08.png",
+			"/media/equipment-sale/total-station-esurvey/09.png"
+		]
+    },
+	"relatedProducts": {
+		"tag": null,
+		"headline": "OTHER RELATED PRODUCTS",
+		"description": "",
+		
+		"items": [
+			{
+				"image": "/media/equipment-sale/total-station-esurvey/10.png",
+				"label": "FOIF A90 RTK GNSS",
+				"href": "/equipment-sale/total-station-esurvey"
+			},
+			{
+				"image": "/media/equipment-sale/total-station-esurvey/02.png",
+				"label": "TOTAL STATION DTM 152M",
+				"href": "/equipment-sale/total-station-dtm-152m"
+			},
+			{
+				"image": "/media/equipment-sale/total-station-esurvey/03.png",
+				"label": "AUTOMATIC LEVEL HUEPER",
+				"href": "/equipment-sale/automatic-level-hueper"
+			},
+			{
+				"image": "/media/equipment-sale/total-station-esurvey/04.png",
+				"label": "AUTOMATIC LEVEL BOSCH",
+				"href": "/equipment-sale/automatic-level-bosch"
+			}
+		]
+	}
+}

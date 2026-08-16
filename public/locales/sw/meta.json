@@ -155,6 +155,11 @@
 			"page_title": "FOIF A90 RTK GNSS",
 			"meta_description": "Kipokezi cha RTK GNSS cha usahihi wa juu wa mawimbi mengi na makundi mengi — bora kwa miradi ya cadastral, ujenzi, na uhandisi.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"total-station-esurvey": {
+			"page_title": "Total Station E-Survey",
+			"meta_description": "Vituo kamili vya E-Survey vya utendaji wa juu kwa vipimo vya kuaminika vya pembe na umbali katika miradi ya ujenzi, cadastral, na uhandisi.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {
