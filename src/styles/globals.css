@@ -1,5 +1,7 @@
 @import "tailwindcss";
-
+@theme {
+    --font-sans: var(--font-google-sans); 
+}
 @theme inline {
     --color-primary: #0097b2;
     --color-secondary: #000000;
@@ -20,7 +22,7 @@
     --color-primary-900: #003742;
 
     --color-surface: #ffffff;
-    --color-surface-tint: #d1d1d1;
+    --color-surface-tint: #ececec;
     --color-surface-100: color-mix(in srgb, var(--color-surface) 98%, #696969 2%);
         --color-surface-200: color-mix(in srgb, var(--color-surface) 96%, #696969 4%);
         --color-surface-300: color-mix(in srgb, var(--color-surface) 94%, #696969 6%);
@@ -43,7 +45,7 @@
         --color-on-surface-800: color-mix(in srgb, var(--color-on-surface) 68%, white 32%);
         --color-on-surface-900: color-mix(in srgb, var(--color-on-surface) 64%, white 36%);
 
-    --color-background: #d1d1d1;
+    --color-background: #ececec;
     --color-background-paper: #ffffff;
     --color-background-elevated: #ffffff;
 
@@ -57,8 +59,8 @@
     --color-ink-soft: #345a60;
 
 
-    --font-sans: var(--font-google-sans-flex);
-    --font-display: var(--font-plus-jakarta-sans);
+    --font-sans: var(--google-sans);
+    --font-mono: var(--font-mono);
 
 }
 
@@ -72,17 +74,25 @@ body {
 }
 
 html {
-    font-family: var(--font-sans), Arial, Helvetica, sans-serif;
     font-size: 14px;
     font-weight: 300;
 }
-
+main * {
+    font-family: var(--font-sans),
+            ui-sans-serif,
+            system-ui;
+}
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-plus-jakarta-sans), sans-serif;
+    font-family: var(--font-mono),
+        ui-monospace,
+        SFMono-Regular;
 }
 
+
 .font-body {
-    font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+    font-family: var(--font-sans),
+        ui-sans-serif,
+        system-ui;
 }
 .font-display {
     font-family: var(--font-display), serif;

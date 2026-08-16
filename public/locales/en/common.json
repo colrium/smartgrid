@@ -10,6 +10,11 @@
 		"submissionError": "Submission failed. Please try again later or contact support.",
 		"sending": "Sending..."
 	},
+    "contacts": {
+        "address": "Nairobi, Kenya",
+        "mobile": "+254 10 7393023",
+        "Email": "smartgridsurveying@gmail.com"
+    },
 	"errors": {
         "error": "Error",
 		"notFound": "Page not found",

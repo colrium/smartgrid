@@ -57,11 +57,11 @@ export default function NavMenuMobile({
 									"&.Mui-expanded": { minHeight: 40, my: 0 },
 									"& .MuiAccordionSummary-content": { my: 0.5 },
 								}}
-								className="rounded-lg hover:bg-brand-50"
+								className=" hover:bg-brand-50"
 							>
 								<Box
 									sx={{ display: "flex", alignItems: "center", gap: 1 }}
-									className="text-sm font-medium tracking-tight text-ink"
+									className=" text-ink"
 								>
 									{item.href && (
 										<MuiLink
@@ -69,6 +69,7 @@ export default function NavMenuMobile({
 											href={localizePath(item.href, locale)}
 											locale={false}
 											onClick={onNavigate}
+											color="inherit"
 											underline="none"
 											className="no-underline py-1 px-2 hover:text-primary rounded-md"
 										>
@@ -99,6 +100,8 @@ export default function NavMenuMobile({
 						href={localizePath(item.href, locale)}
 						locale={false}
 						onClick={onNavigate}
+						color="inherit"
+						underline="none"
 						sx={{
 							display: "flex",
 							alignItems: "center",
@@ -111,7 +114,7 @@ export default function NavMenuMobile({
 								backgroundColor: "rgba(0, 0, 0, 0.05)",
 							},
 						}}
-						className="no-underline text-sm font-medium tracking-tight text-ink hover:text-primary hover:bg-brand-50"
+						className=" text-ink hover:text-primary hover:bg-brand-50"
 					>
 						{item.label}
 					</MuiLink>

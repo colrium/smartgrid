@@ -11,7 +11,7 @@ interface FadeProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export function FadeUp({ children, delay = 0, className = "", ...props }: FadeProps) {
 	// Replicating viewport={{ margin: "-50px" }}
-	const { ref, isInView } = useInView({ rootMargin: "-56px" });
+	const { ref, isInView } = useInView({ rootMargin: "-50px" });
 
 	return (
 		<div

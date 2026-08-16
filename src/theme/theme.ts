@@ -13,9 +13,9 @@ const brand = {
 	900: "#003742",
 };
 
-const fontSans = 'var(--font-google-sans-flex), "Inter", "Roboto", "Helvetica", "Arial", sans-serif';
+const fontSans = 'var(--font-sans), "Inter", "Roboto", "Helvetica", "Arial", sans-serif';
 const fontDisplay =
-	'var(--font-plus-jakarta), "Inter", "Roboto", "Helvetica", "Arial", sans-serif';
+	'var(--font-mono), "Inter", "Roboto", "Helvetica", "Arial", sans-serif';
 
 const theme = createTheme({
 	palette: {
@@ -49,43 +49,37 @@ const theme = createTheme({
 	},
 	typography: {
 		htmlFontSize: 14,
-		fontFamily: fontSans,
+		fontFamily: 'var(--font-google-sans), Arial, sans-serif',
 		fontWeightLight: 300,
 		fontWeightRegular: 400,
 		fontWeightMedium: 500,
 		fontWeightBold: 700,
 		h1: {
-			fontFamily: fontDisplay,
 			fontSize: "3rem", // text-5xl
 			lineHeight: 1,
 			fontWeight: 700,
 		},
 		h2: {
-			fontFamily: fontDisplay,
 			fontSize: "2.25rem", // text-4xl
 			lineHeight: "2.5rem",
 			fontWeight: 700,
 		},
 		h3: {
-			fontFamily: fontDisplay,
 			fontSize: "1.875rem", // text-3xl
 			lineHeight: "2.25rem",
 			fontWeight: 600,
 		},
 		h4: {
-			fontFamily: fontDisplay,
 			fontSize: "1.5rem", // text-2xl
 			lineHeight: "2rem",
 			fontWeight: 600,
 		},
 		h5: {
-			fontFamily: fontDisplay,
 			fontSize: "1.25rem", // text-xl
 			lineHeight: "1.75rem",
 			fontWeight: 600,
 		},
 		h6: {
-			fontFamily: fontDisplay,
 			fontSize: "1.125rem", // text-lg
 			lineHeight: "1.75rem",
 			fontWeight: 600,
@@ -111,6 +105,7 @@ const theme = createTheme({
 			fontWeight: 400,
 		},
 		button: {
+			fontFamily: "var(--font-sans), sans-serif",
 			fontSize: "0.875rem", // text-sm
 			lineHeight: "1.25rem",
 			fontWeight: 500,

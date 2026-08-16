@@ -137,6 +137,7 @@ export default function NavMenu({ items, locale, localizePath, horizontal = fals
 									locale={false}
 									onClick={() => handleClose()}
                                     className="no-underline py-1 px-2 hover:text-primary rounded-md"
+                                    color="inherit"
                                     underline="none"
 								>
 									{item.label}
@@ -179,7 +180,8 @@ export default function NavMenu({ items, locale, localizePath, horizontal = fals
 						component={Link}
 						href={localizePath(item.href, locale)}
 						locale={false}
-						className="no-underline"
+                    className="no-underline"
+                    color="inherit"
 						underline="none"
 					>
 					{item.label}
