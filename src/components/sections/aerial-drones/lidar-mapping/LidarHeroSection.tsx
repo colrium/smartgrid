@@ -45,7 +45,7 @@ export function LidarHeroSection() {
 
 			<div className="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12">
 				<FadeUp>
-					<SectionTag className="inline-flex items-center gap-3 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-brand-200">
+					<SectionTag>
 						{hero.headline}
 					</SectionTag>
 

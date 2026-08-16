@@ -47,7 +47,7 @@ export function BuildingSiteHeroSection() {
 
 			<div className="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12">
 				<FadeUp>
-					<SectionTag dark>
+					<SectionTag>
 						{hero.headline}
 					</SectionTag>
 
