@@ -1,0 +1,94 @@
+{
+	"hero": {
+		"headline": "Survey Smarter, Build Stronger",
+		"title": "SITE ENGINEERING SURVEYS",
+		"image": "/media/civil/site-engineering/01.jpg",
+		"description": "Build Smarter from the Ground Up—our drone-enabled site engineering surveys deliver precise measurements, rapid terrain insights, and informed decision-making for your construction projects. By capturing high-resolution topographic data, 3D ground models, and accurate boundary visuals, we streamline site planning and reduce costly rework. Whether you're breaking ground or managing infrastructure upgrades, SmartGrid Surveying gives you the geospatial clarity needed to engineer with confidence and precision.\n\n <bold>Smartgrid Surveying is your trusted surveying partner!</bold>",
+		"ctaPrimary": {
+			"label": "Email Us Today!",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"overview": {
+		"tag": "Precision Construction",
+		"headline": "Reliable. Scalable. Fast. Powerful.",
+		"image": "/media/civil/site-engineering/01.jpg",
+		"description": "By capturing high-resolution topographic data, 3D ground models, and accurate boundary visuals, we streamline site planning and reduce costly rework. Whether you're breaking ground or managing infrastructure upgrades, SmartGrid Surveying gives you the geospatial clarity needed to engineer with confidence and precision."
+	},
+	"WhatWeDo": {
+		"tag": "Precision Construction",
+		"headline": "Precision Site Engineering Surveys",
+		"description": "Build smarter from the ground up—SmartGrid Surveying's drone-powered site surveys deliver real-time terrain data, accurate site modeling, and faster decision-making for modern construction projects.",
+		"items": [
+			{
+				"title": "Topographic Mapping",
+				"description": "We create detailed elevation models and contour maps using drone photogrammetry and LiDAR—crucial for earthworks and drainage planning."
+			},
+			{
+				"title": "Boundary & Layout Surveys",
+				"description": "Ensure accurate positioning of foundations and infrastructure using georeferenced aerial data integrated with CAD and GIS systems."
+			},
+			{
+				"title": "Cut & Fill Calculations",
+				"description": "Quickly compute volumes for excavation and grading work using drone-derived 3D models—enhancing cost-efficiency and project timelines."
+			},
+			{
+				"title": "Construction Progress Monitoring",
+				"description": "Track development in real time through weekly or monthly flyovers, enabling teams to spot deviations from plans early and act fast."
+			},
+			{
+				"title": "Utilities Mapping",
+				"description": "Identifying, mapping, and documenting existing and new utility networks to prevent conflicts and ensure safety."
+			},
+			{
+				"title": "Underground Utility Planning",
+				"description": "Visualize terrain overlays and elevation profiles to plan trench paths and prevent utility conflicts before breaking ground."
+			},
+			{
+				"title": "Quality Assurance & As-Builts",
+				"description": "Generate digital as-built maps to confirm compliance with designs—ensuring transparency, record-keeping, and safety audits."
+			}
+		]
+	},
+    "cta": {
+		"tag": "Let’s Collaborate",
+		"headline": "Need High-Precision Surveys for Your Next Build?",
+		"description": "",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Get in Touch",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"exploreMore": {
+		"tag": null,
+		"headline": "Explore more...",
+		"description": "",
+		"items": [
+			{
+				"image": "/media/civil/site-engineering/04.jpg",
+				"title": "Leveling"
+			},
+			{
+				"image": "/media/civil/site-engineering/05.jpg",
+				"title": "Excavation services"
+			},
+			{
+				"image": "/media/civil/site-engineering/06.jpg",
+				"title": "As-built Surveys"
+			},
+			{
+				"image": "/media/civil/site-engineering/07.jpg",
+				"title": "Buildings stakeout"
+			},
+			{
+				"image": "/media/civil/site-engineering/02.jpg",
+				"title": "Utilities  mapping"
+			},
+			{
+				"image": "/media/civil/site-engineering/03.jpg",
+				"title": "Evaluation and monitoring"
+			}
+		]
+	}
+}

@@ -1,0 +1,54 @@
+{
+	"hero": {
+		"headline": "Kuaminika. Kupanuka. Haraka. Nguvu.",
+		"title": "Muundo wa Taarifa za Ujenzi (BIM)",
+		"image": "/media/civil/bim/01.jpg",
+		"description": "Mwangaza mustakabali wako wa nishati—uchunguzi wetu wa paneli za sola unaoendeshwa na ndege zisizo na rubani hutoa usahihi usio na kifani, maarifa ya haraka, na maamuzi ya busara zaidi kutoka angani kwenda chini. Kwa kukamata picha za mwonekano wa juu, data ya ardhi ya 3D, na uchanganuzi wa joto, tunasaidia kuboresha utendaji wa sola huku tukipunguza ukaguzi wa gharama wa tovutini. Iwe unapanga usakinishaji mpya au unadumisha shamba lililopo la sola, uchunguzi wetu hutoa uwazi wa data unaohitaji kuongeza ROI na ufanisi wa mfumo. Kwa SmartGrid, nguvu ya akili ya kijiografia hupeleka miradi yako ya sola kiwango kingine.\n\n Smartgrid Surveying ni mshirika wako wa upimaji anayeaminika!",
+		"ctaSecondary": {
+			"icon": "email",
+			"label": "Tutumie Barua Pepe Leo!",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"bimServices": {
+		"tag": "Uwezo Wetu",
+		"headline": "Muundo wa Taarifa za Ujenzi (BIM) katika Upimaji wa Uhandisi",
+		"description": "Gundua jinsi SmartGrid Surveying inavyounganisha data ya ndege zisizo na rubani na kijiografia na mtiririko wa kazi wa BIM kukuza maendeleo ya miundombinu ya kisasa kwa usahihi na ufanisi.",
+		"items": [
+			{
+				"title": "Ukamataji wa Uhalisia",
+				"description": "Tunatumia ndege zisizo na rubani kukamata picha za angani zilizorejelewa kijiografia na point clouds, zinazoliswa kwenye programu ya BIM kwa uundaji sahihi wa mifano ya hali zilizopo."
+			},
+			{
+				"title": "Uchunguzi wa Topografia",
+				"description": "Data ya topografia inayotokana na ndege zisizo na rubani huwasaidia wahandisi kubuni kulingana na ardhi halisi ya dunia, kupunguza mawazo na makosa katika hatua za upangaji."
+			},
+			{
+				"title": "Uundaji wa Mifano ya 3D ya Tovuti",
+				"description": "Suluhisho zetu za LiDAR za angani na photogrammetry huzalisha mifano ya 3D ya maeneo ya ujenzi, ikijumuishwa kwa urahisi katika majukwaa ya BIM."
+			},
+			{
+				"title": "Ufuatiliaji wa Maendeleo",
+				"description": "Picha za muda wa ndege zisizo na rubani huruhusu kufuatilia awamu za mradi, kulinganisha mifano ya BIM na ujenzi wa ulimwengu halisi kutambua ucheleweshaji au kutofautiana."
+			},
+			{
+				"title": "Usimamizi wa Mali",
+				"description": "Tunapachika data ya kijiografia ndani ya BIM kwa ufuatiliaji wa mali katika mzunguko wake wote wa maisha—muhimu katika huduma, usafiri, na miundombinu ya mijini."
+			},
+			{
+				"title": "Ugunduzi wa Migongano",
+				"description": "Kwa kuchanganya skana za ndege zisizo na rubani na mifano ya BIM, wahandisi hutambua migongano inayowezekana ya kubuni kabla ya ujenzi kuanza."
+			}
+		]
+	},
+	"cta": {
+		"tag": "Tuushirikiane",
+		"headline": "Uko Tayari Kuinua Miundombinu Yako kwa BIM?",
+		"description": "",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Wasiliana Nasi",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	}
+}

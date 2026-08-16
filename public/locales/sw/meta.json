@@ -131,9 +131,14 @@
 			"meta_description": "Kamata hali halisi, ya sasa ya mazingira yaliyojengwa — uchunguzi wa as-built wa ndege zisizo na rubani, LiDAR, na photogrammetry kwa usahihi wa kiwango cha sentimita kwa BIM, CAD, na kufuata kanuni.",
 			"og_image": "/media/og-terms.jpg"
 		},
-		"civil-volumetric-surveys": {
+"civil-volumetric-surveys": {
 			"page_title": "Uchunguzi wa Kiasi",
 			"meta_description": "Uchunguzi wa kiasi kwa busara zaidi — kiasi cha mrundikano kinachowezeshwa na ndege zisizo na rubani, kiasi cha kukata/kujaza, ufuatiliaji wa machimbo, na mizani ya tovuti kwa usahihi wa kiwango cha sentimita.",
+			"og_image": "/media/og-terms.jpg"
+		},
+		"civil-bim": {
+			"page_title": "Muundo wa Taarifa za Ujenzi (BIM)",
+			"meta_description": "Muundo wa Taarifa za Ujenzi katika upimaji wa uhandisi — data ya ndege zisizo na rubani na kijiografia inajumuishwa na mtiririko wa kazi wa BIM kwa ukamataji wa uhalisia, uundaji wa mifano ya 3D, ugunduzi wa migongano, na usimamizi wa mali.",
 			"og_image": "/media/og-terms.jpg"
 		}
 	},

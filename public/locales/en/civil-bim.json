@@ -1,0 +1,55 @@
+{
+	"hero": {
+		"headline": "Reliable. Scalable. Fast. Powerful.",
+		"title": "Building Information Modelling (BIM)",
+		"image": "/media/civil/bim/01.jpg",
+		"description": "Illuminate your energy future—our drone-powered solar panel surveys deliver unmatched precision, faster insights, and smarter decisions from the sky down. By capturing high-resolution imagery, 3D terrain data, and thermal analytics, we help optimize solar performance while reducing costly on-site inspections. Whether you're planning a new installation or maintaining an existing solar farm, our surveys provide the data clarity you need to maximize ROI and system efficiency. With SmartGrid, the power of geospatial intelligence takes your solar projects to the next level.\n\n Smartgrid Surveying is your trusted surveying partner!",
+		"ctaSecondary": {
+			"icon": "email",
+			"label": "Email Us Today!",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+
+	"bimServices": {
+		"tag": "Our Capabilities",
+		"headline": "Building Information Modeling (BIM) in Engineering Surveying",
+		"description": "Discover how SmartGrid Surveying integrates drone and geospatial data with BIM workflows to power modern infrastructure development with precision and efficiency.",
+		"items": [
+			{
+				"title": "Reality Capture",
+				"description": "We use drones to capture detailed, geo-referenced aerial imagery and point clouds, feeding into BIM software for accurate modeling of existing conditions."
+			},
+			{
+				"title": "Topographic Surveys",
+				"description": "Drone-based topographic data helps engineers design around real-world terrain, reducing assumptions and errors in planning stages."
+			},
+			{
+				"title": "3D Site Modeling",
+				"description": "Our aerial LiDAR and photogrammetry solutions generate 3D models of construction sites, integrated seamlessly into BIM platforms."
+			},
+			{
+				"title": "Progress Tracking",
+				"description": "Timelapse drone imagery allows for tracking project phases, comparing BIM models with real-world builds to identify delays or discrepancies."
+			},
+			{
+				"title": "Asset Management",
+				"description": "We embed geospatial data into BIM for lifecycle asset tracking—useful in utilities, transport, and urban infrastructure."
+			},
+			{
+				"title": "Clash Detection",
+				"description": "By combining drone scans with BIM models, engineers identify potential design conflicts before construction begins."
+			}
+		]
+	},
+	"cta": {
+		"tag": "Let’s Collaborate",
+		"headline": "Ready to Elevate Your Infrastructure with BIM?",
+		"description": "",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Get in Touch",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	}
+}
