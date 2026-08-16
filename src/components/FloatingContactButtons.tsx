@@ -13,7 +13,7 @@ const FloatingContactButtons = () => {
 	const { t } = useTranslation("common");
 	const phoneNumber = getWhatsAppNumber();
 	const message = t("common:chat.whatsappMessage", {
-		defaultValue: "Hello AfriGold Hub, I would like to speak with your team.",
+		defaultValue: "Hello SmartGrid Hub Hub, I would like to speak with your team.",
 	});
 	const label = t("common:chat.whatsappLabel", {
 		defaultValue: "Chat on WhatsApp",
