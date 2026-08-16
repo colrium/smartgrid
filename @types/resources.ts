@@ -9,6 +9,7 @@ import civilasbuiltsurveys from '../public/locales/en/civil-as-built-surveys.jso
 import civilbim from '../public/locales/en/civil-bim.json';
 import civilhighwaysurveys from '../public/locales/en/civil-highway-surveys.json';
 import civilsiteengineering from '../public/locales/en/civil-site-engineering.json';
+import civilsitesettingout from '../public/locales/en/civil-site-setting-out.json';
 import civilvolumetricsurveys from '../public/locales/en/civil-volumetric-surveys.json';
 import common from '../public/locales/en/common.json';
 import contact from '../public/locales/en/contact.json';
@@ -30,7 +31,6 @@ import surveying from '../public/locales/en/surveying.json';
 import terms from '../public/locales/en/terms.json';
 import topographicalsurveys from '../public/locales/en/topographical-surveys.json';
 import volumetricsurveys from '../public/locales/en/volumetric-surveys.json';
-import sitesettingout from '../public/locales/en/civil/site-setting-out.json';
 import automaticlevelbosch from '../public/locales/en/equipment-sale/automatic-level-bosch.json';
 import automaticlevelhueper from '../public/locales/en/equipment-sale/automatic-level-hueper.json';
 import equipmentcatalogue from '../public/locales/en/equipment-sale/equipment-catalogue.json';
@@ -50,6 +50,7 @@ const resources = {
   'civil-bim': civilbim,
   'civil-highway-surveys': civilhighwaysurveys,
   'civil-site-engineering': civilsiteengineering,
+  'civil-site-setting-out': civilsitesettingout,
   'civil-volumetric-surveys': civilvolumetricsurveys,
   common,
   contact,
@@ -71,7 +72,6 @@ const resources = {
   terms,
   'topographical-surveys': topographicalsurveys,
   'volumetric-surveys': volumetricsurveys,
-  'site-setting-out': sitesettingout,
   'automatic-level-bosch': automaticlevelbosch,
   'automatic-level-hueper': automaticlevelhueper,
   'equipment-catalogue': equipmentcatalogue,

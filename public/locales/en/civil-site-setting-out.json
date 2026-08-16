@@ -2,56 +2,78 @@
 	"hero": {
 		"headline": "SITE SETTING OUT",
 		"title": "Staking Out and Setting Out",
-		"image": "/images/placeholder.jpg",
-		"description": "SmartGrid Surveying ensures precise construction by translating designs into accurate physical points on-site, supporting engineering, building, and civil projects across Kenya.",
+		"image": "/media/civil/site-setting-out/01.jpg",
+		"description": "SmartGrid Surveying ensures precise construction by translating designs into accurate physical points on-site, supporting engineering, building, and civil projects across Kenya. Ensure your construction projects start with precision. SmartGrid Surveying delivers expert site setting out services, translating designs into accurate physical points on-site for buildings, roads, and infrastructure.\n\n Our experienced team uses advanced surveying instruments and GNSS technology to guarantee centimeter-level accuracy, helping projects stay on schedule and compliant with engineering standards.",
 		"ctaPrimary": {
 			"label": "Get Your Free Consultation",
 			"href": "mailto:smartgridsurveying@gmail.com"
+		},
+		"ctaSecondary": {
+			"label": "Request Setting Out services!",
+			"href": "/aerial-drones/drone-imagery-surveys"
 		}
-	},
-	"serviceOverview": {
-		"tag": "Precision Construction",
-		"headline": "Overview",
-		"image": "/images/placeholder.jpg",
-		"description": "Ensure your construction projects start with precision. SmartGrid Surveying delivers expert site setting out services, translating designs into accurate physical points on-site for buildings, roads, and infrastructure. Our experienced team uses advanced surveying instruments and GNSS technology to guarantee centimeter-level accuracy, helping projects stay on schedule and compliant with engineering standards."
 	},
 	"ourServices": {
 		"tag": "Core Capabilities",
 		"headline": "Our Services",
-		"image": "/images/placeholder.jpg",
-		"description": "We provide comprehensive site setting out services to ensure your project is built exactly as designed.",
+		"description": "",
 		"items": [
 			{
-				"icon": "ruler-square",
-				"title": "Building Setting Out",
-				"description": "Accurate marking of building corners, foundations, columns, and structural grids from design plans."
+				"title": "Building Layouts",
+				"description": "Accurate marking of building corners, walls, and structural elements to design specifications."
 			},
 			{
-				"icon": "road-variant",
-				"title": "Road & Infrastructure Setting Out",
-				"description": "Establishing alignments, levels, and widths for roads, pavements, and drainage systems."
+				"title": "Road & Infrastructure Alignment",
+				"description": "Precise positioning of roads, drainage, and utility corridors for engineering and construction."
 			},
 			{
-				"icon": "pipe-valve",
-				"title": "Utility Setting Out",
-				"description": "Marking positions for underground services including water, sewer, power, and telecom lines."
+				"title": "Boundary & Plot Setting",
+				"description": "Physical demarcation of land plots, fences, and property lines according to cadastral plans."
 			},
 			{
-				"icon": "terrain",
-				"title": "Leveling & Grading Control",
-				"description": "Setting benchmarks and grade stakes for earthworks, foundations, and slab pours."
+				"title": "Leveling & Grid Establishment",
+				"description": "Setting benchmarks, grids, and reference points for construction works and surveys."
 			},
 			{
-				"icon": "check-circle",
-				"title": "Verification Checks",
-				"description": "Follow-up surveys at key construction stages to ensure ongoing alignment with design."
+				"title": "Design Verification",
+				"description": "Field verification to ensure construction aligns with architectural, civil, and engineering plans."
+			},
+			{
+				"title": "Utility & Services Layout",
+				"description": "Accurate marking of water, electrical, and communication lines on site to prevent future conflicts."
+			}
+		]
+	},
+	"ourInstruments": {
+		"tag": "Accurate & Reliable",
+		"headline": "Our Surveying Instruments",
+		"description": "We use advanced, precise equipment to ensure every point is accurate and reliable for your construction and engineering projects.",
+		"items": [
+			{
+				"title": "RTK GNSS FOIF A90",
+				"image": "/media/civil/site-setting-out/04.jpg"
+			},
+			{
+				"title": "Total Station",
+				"image": "/media/civil/site-setting-out/05.jpg"
+			},
+			{
+				"title": "Automatic Level",
+				"image": "/media/civil/site-setting-out/02.jpg"
+			},
+			{
+				"title": "Laser Scanners",
+				"image": "/media/civil/site-setting-out/03.jpg"
+			},
+			{
+				"title": "Theodolite",
+				"image": "/media/civil/site-setting-out/01.jpg"
 			}
 		]
 	},
 	"faq": {
 		"tag": "Common Questions",
 		"headline": "Frequently Asked Questions",
-		"image": "/images/placeholder.jpg",
 		"description": "",
 		"items": [
 			{
@@ -82,7 +104,7 @@
 			{
 				"icon": "help-circle",
 				"title": "What documentation do I get after the survey?",
-				"description": "After a site setting out survey, SmartGrid Surveying provides: Survey drawings showing all marked points, Coordinates of reference points, Verification report confirming alignment with design, and Certificates for legal or regulatory purposes if needed."
+				"description": "After a site setting out survey, SmartGrid Surveying provides: \n\n\t 1. Survey drawings showing all marked points.\n 2. Coordinates of reference points.\n\t 3. Verification report confirming alignment with design.\n\t 4. Certificates for legal or regulatory purposes if needed."
 			},
 			{
 				"icon": "help-circle",

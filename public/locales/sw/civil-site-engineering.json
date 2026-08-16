@@ -1,0 +1,94 @@
+{
+	"hero": {
+		"headline": "Chunguza kwa Busara, Jenga kwa Nguvu",
+		"title": "UCHUNGUZI WA UHANDISI WA TOVUTI",
+		"image": "/media/civil/site-engineering/01.jpg",
+		"description": "Jenga kwa Busara Zaidi Tangu Mwanzo—uchunguzi wetu wa uhandisi wa tovuti unaowezeshwa na ndege zisizo na rubani hutoa vipimo sahihi, maarifa ya haraka ya ardhi, na ufanyaji maamuzi wenye taarifa kwa miradi yako ya ujenzi. Kwa kukamata data ya topografia ya mwonekano wa juu, mifano ya ardhi ya 3D, na picha sahihi za mipaka, tunarahisisha upangaji wa tovuti na kupunguza ukarabati wa gharama kubwa. Iwe unaanza ujenzi au unadumisha uboreshaji wa miundombinu, SmartGrid Surveying hukupa uwazi wa kijiografia unaohitaji kuhandisi kwa imani na usahihi.\n\n <bold>Smartgrid Surveying ni mshirika wako wa upimaji anayeaminika!</bold>",
+		"ctaPrimary": {
+			"label": "Tutumie Barua Pepe Leo!",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"overview": {
+		"tag": "Ujenzi wa Usahihi",
+		"headline": "Kuaminika. Kupanuka. Haraka. Nguvu.",
+		"image": "/media/civil/site-engineering/01.jpg",
+		"description": "Kwa kukamata data ya topografia ya mwonekano wa juu, mifano ya ardhi ya 3D, na picha sahihi za mipaka, tunarahisisha upangaji wa tovuti na kupunguza ukarabati wa gharama kubwa. Iwe unaanza ujenzi au unadumisha uboreshaji wa miundombinu, SmartGrid Surveying hukupa uwazi wa kijiografia unaohitaji kuhandisi kwa imani na usahihi."
+	},
+	"WhatWeDo": {
+		"tag": "Ujenzi wa Usahihi",
+		"headline": "Uchunguzi Sahihi wa Uhandisi wa Tovuti",
+		"description": "Jenga kwa busara zaidi tangu mwanzo—uchunguzi wa tovuti unaoendeshwa na ndege zisizo na rubani wa SmartGrid Surveying hutoa data ya ardhi ya wakati halisi, uundaji sahihi wa mifano ya tovuti, na ufanyaji maamuzi wa haraka kwa miradi ya kisasa ya ujenzi.",
+		"items": [
+			{
+				"title": "Ramani za Topografia",
+				"description": "Tunaunda mifano ya kina ya mwinuko na ramani za contour kwa kutumia photogrammetry na LiDAR ya ndege zisizo na rubani—muhimu kwa upangaji wa kazi za ardhi na mifereji."
+			},
+			{
+				"title": "Uchunguzi wa Mipaka na Mpangilio",
+				"description": "Hakikisha nafasi sahihi ya misingi na miundombinu kwa kutumia data ya angani iliyorejelewa kijiografia ikijumuishwa na mifumo ya CAD na GIS."
+			},
+			{
+				"title": "Hesabu za Kukata na Kujaza",
+				"description": "Hesabu kwa haraka kiasi cha uchimbaji na kazi za usawazishaji kwa kutumia mifano ya 3D inayotokana na ndege zisizo na rubani—ikiboresha ufanisi wa gharama na ratiba za mradi."
+			},
+			{
+				"title": "Ufuatiliaji wa Maendeleo ya Ujenzi",
+				"description": "Fuatilia maendeleo kwa wakati halisi kupitia safari za ndege za kila wiki au mwezi, kuwawezesha timu kugundua mkengeuko kutoka kwa mipango mapema na kuchukua hatua haraka."
+			},
+			{
+				"title": "Ramani za Huduma",
+				"description": "Kutambua, kuweka ramani, na kuandika mitandao iliyopo na mipya ya huduma kuzuia migongano na kuhakikisha usalama."
+			},
+			{
+				"title": "Upangaji wa Huduma za Chini ya Ardhi",
+				"description": "Angazia mitandao ya ardhi na wasifu wa mwinuko kupanga njia za mitaro na kuzuia migongano ya huduma kabla ya kuanza uchimbaji."
+			},
+			{
+				"title": "Uhakikisho wa Ubora na As-Builts",
+				"description": "Zalisha ramani za as-built za dijitali kuthibitisha kufuata mibuni—kuhakikisha uwazi, uhifadhi wa kumbukumbu, na ukaguzi wa usalama."
+			}
+		]
+	},
+	"cta": {
+		"tag": "Tuushirikiane",
+		"headline": "Unahitaji Uchunguzi wa Usahihi wa Juu kwa Ujenzi Wako Ujao?",
+		"description": "",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Wasiliana Nasi",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"exploreMore": {
+		"tag": null,
+		"headline": "Chunguza zaidi...",
+		"description": "",
+		"items": [
+			{
+				"image": "/media/civil/site-engineering/04.jpg",
+				"title": "Usawazishaji"
+			},
+			{
+				"image": "/media/civil/site-engineering/05.jpg",
+				"title": "Huduma za Uchimbaji"
+			},
+			{
+				"image": "/media/civil/site-engineering/06.jpg",
+				"title": "Uchunguzi wa As-Built"
+			},
+			{
+				"image": "/media/civil/site-engineering/07.jpg",
+				"title": "Uwekaji wa alama za Majengo"
+			},
+			{
+				"image": "/media/civil/site-engineering/02.jpg",
+				"title": "Ramani za Huduma"
+			},
+			{
+				"image": "/media/civil/site-engineering/03.jpg",
+				"title": "Tathmini na ufuatiliaji"
+			}
+		]
+	}
+}

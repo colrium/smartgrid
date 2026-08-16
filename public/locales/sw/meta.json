@@ -140,6 +140,16 @@
 			"page_title": "Muundo wa Taarifa za Ujenzi (BIM)",
 			"meta_description": "Muundo wa Taarifa za Ujenzi katika upimaji wa uhandisi — data ya ndege zisizo na rubani na kijiografia inajumuishwa na mtiririko wa kazi wa BIM kwa ukamataji wa uhalisia, uundaji wa mifano ya 3D, ugunduzi wa migongano, na usimamizi wa mali.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"civil-site-engineering": {
+			"page_title": "Uchunguzi wa Uhandisi wa Tovuti",
+			"meta_description": "Chunguza kwa busara, jenga kwa nguvu — uchunguzi wa uhandisi wa tovuti unaowezeshwa na ndege zisizo na rubani kwa ramani za topografia, hesabu za kukata na kujaza, ufuatiliaji wa maendeleo ya ujenzi, na uhakikisho wa ubora.",
+			"og_image": "/media/og-terms.jpg"
+		},
+		"civil-site-setting-out": {
+			"page_title": "Uwekaji wa Alama za Tovuti",
+			"meta_description": "Uchunguzi wa staking out na setting out — kutafsiri mibuni kuwa pointi sahihi za kimwili tovutini kwa usahihi wa kiwango cha sentimita wa GNSS kwa majengo, barabara, na miundombinu.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {

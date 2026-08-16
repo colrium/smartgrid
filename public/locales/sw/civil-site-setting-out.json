@@ -1,0 +1,126 @@
+{
+	"hero": {
+		"headline": "UWEKAJI WA ALAMA ZA TOVUTI",
+		"title": "Staking Out na Setting Out",
+		"image": "/media/civil/site-setting-out/01.jpg",
+		"description": "SmartGrid Surveying huhakikisha ujenzi sahihi kwa kutafsiri mibuni kuwa pointi sahihi za kimwili tovutini, kusaidia miradi ya uhandisi, ujenzi, na kiraia kote Kenya. Hakikisha miradi yako ya ujenzi inaanza kwa usahihi. SmartGrid Surveying hutoa huduma za kitaalamu za setting out za tovuti, kutafsiri mibuni kuwa pointi sahihi za kimwili tovutini kwa majengo, barabara, na miundombinu.\n\n Timu yetu yenye uzoefu hutumia vyombo vya kisasa vya upimaji na teknolojia ya GNSS kuhakikisha usahihi wa kiwango cha sentimita, kusaidia miradi kukamilika kwa ratiba na kufuata viwango vya uhandisi.",
+		"ctaPrimary": {
+			"label": "Pata Ushauri Wako wa Bure",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		},
+		"ctaSecondary": {
+			"label": "Omba Huduma za Setting Out!",
+			"href": "/aerial-drones/drone-imagery-surveys"
+		}
+	},
+	"ourServices": {
+		"tag": "Uwezo wa Msingi",
+		"headline": "Huduma Zetu",
+		"description": "",
+		"items": [
+			{
+				"title": "Mpangilio wa Majengo",
+				"description": "Uwekaji sahihi wa kona za majengo, kuta, na vipengele vya kimuundo kulingana na vipimo vya kubuni."
+			},
+			{
+				"title": "Usawazishaji wa Barabara na Miundombinu",
+				"description": "Uwekaji sahihi wa barabara, mifereji, na korido za huduma kwa uhandisi na ujenzi."
+			},
+			{
+				"title": "Uwekaji wa Mipaka na Viwanja",
+				"description": "Mgawanyo wa kimwili wa viwanja vya ardhi, ua, na mistari ya mali kulingana na mipango ya cadastral."
+			},
+			{
+				"title": "Uanzishwaji wa Usawazishaji na Gridi",
+				"description": "Kuweka benchmarks, gridi, na pointi za marejeleo kwa kazi za ujenzi na uchunguzi."
+			},
+			{
+				"title": "Uthibitishaji wa Kubuni",
+				"description": "Uthibitishaji wa shambani kuhakikisha ujenzi unalingana na mipango ya usanifu, kiraia, na uhandisi."
+			},
+			{
+				"title": "Mpangilio wa Huduma na Utawala",
+				"description": "Uwekaji sahihi wa mistari ya maji, umeme, na mawasiliano tovutini kuzuia migongano ya siku zijazo."
+			}
+		]
+	},
+	"ourInstruments": {
+		"tag": "Sahihi na Kuaminika",
+		"headline": "Vyombo Vyetu vya Upimaji",
+		"description": "Tunatumia vifaa vya kisasa na sahihi kuhakikisha kila pointi ni sahihi na kuaminika kwa miradi yako ya ujenzi na uhandisi.",
+		"items": [
+			{
+				"title": "RTK GNSS FOIF A90",
+				"image": "/media/civil/site-setting-out/04.jpg"
+			},
+			{
+				"title": "Kituo Kamili (Total Station)",
+				"image": "/media/civil/site-setting-out/05.jpg"
+			},
+			{
+				"title": "Kiwango cha Kiotomatiki",
+				"image": "/media/civil/site-setting-out/02.jpg"
+			},
+			{
+				"title": "Skana za Laser",
+				"image": "/media/civil/site-setting-out/03.jpg"
+			},
+			{
+				"title": "Theodolite",
+				"image": "/media/civil/site-setting-out/01.jpg"
+			}
+		]
+	},
+	"faq": {
+		"tag": "Maswali ya Kawaida",
+		"headline": "Maswali Yanayoulizwa Mara kwa Mara",
+		"description": "",
+		"items": [
+			{
+				"icon": "help-circle",
+				"title": "Uchunguzi wa Setting Out wa Tovuti ni nini?",
+				"description": "Uchunguzi wa setting out wa tovuti hutafsiri michoro ya kubuni kuwa pointi za kimwili ardhini. Huanzisha maeneo halisi ya majengo, barabara, huduma, na miundo mingine kuhakikisha ujenzi ni sahihi na unakidhi mipango ya uhandisi."
+			},
+			{
+				"icon": "help-circle",
+				"title": "Kwa nini nahitaji Uchunguzi wa Setting Out wa Tovuti?",
+				"description": "Bila setting out sahihi, miundo inaweza kupotoka au kusababisha ukarabati wa gharama kubwa. SmartGrid Surveying huhakikisha mradi wako umejengwa hasa kama ulivyobuniwa, kudumisha kufuata kisheria na kihandisi huku ikihifadhi muda na rasilimali."
+			},
+			{
+				"icon": "help-circle",
+				"title": "Uchunguzi wa Setting Out wa Tovuti huchukua muda gani?",
+				"description": "Muda unategemea ukubwa wa mradi na ugumu wake. SmartGrid Surveying hutoa ratiba ya kina kabla ya kuanza, kuhakikisha uwazi. Kwa mfano, kiwanja cha makazi kinaweza kuchukua siku 1–2, wakati maeneo makubwa ya biashara au miundombinu yanaweza kuchukua siku kadhaa."
+			},
+			{
+				"icon": "help-circle",
+				"title": "Je, mnaweka alama tovutini kimwili?",
+				"description": "Ndiyo. SmartGrid Surveying huweka alama, vigingi, au alama za rangi ardhini kulingana na kuratibu za kubuni, kuhakikisha wajenzi na makandarasi wanaweza kufuata mipango kwa usahihi."
+			},
+			{
+				"icon": "help-circle",
+				"title": "Je, Uchunguzi wa Setting Out wa Tovuti unaweza kuzuia mizozo ya mipaka?",
+				"description": "Kabisa. Kwa kuoanisha miundo kulingana na mipango ya cadastral na michoro iliyoidhinishwa, SmartGrid Surveying huhakikisha ujenzi unaheshimu mipaka ya mali, kupunguza migogoro na majirani au mamlaka za mitaa."
+			},
+			{
+				"icon": "help-circle",
+				"title": "Nipata nyaraka gani baada ya uchunguzi?",
+				"description": "Baada ya uchunguzi wa setting out wa tovuti, SmartGrid Surveying hutoa: \n\n\t 1. Michoro ya uchunguzi inayoonyesha pointi zote zilizowekwa alama.\n 2. Kuratibu za pointi za marejeleo.\n\t 3. Ripoti ya uthibitishaji inayothibitisha kulingana na kubuni.\n\t 4. Vyeti kwa madhumuni ya kisheria au ya udhibiti ikihitajika."
+			},
+			{
+				"icon": "help-circle",
+				"title": "Ukaguzi wa setting out unapaswa kufanywa mara ngapi?",
+				"description": "Uwekaji wa alama wa awali unafanywa kabla ya ujenzi kuanza. SmartGrid Surveying inapendekeza ukaguzi wa ufuatiliaji katika hatua muhimu (msingi, slabs za sakafu, usawazishaji wa barabara) kudumisha usahihi wakati wote wa mchakato wa ujenzi."
+			},
+			{
+				"icon": "help-circle",
+				"title": "Je, huduma hii inazingatia kanuni za Kenya?",
+				"description": "Ndiyo. SmartGrid Surveying inafanya kazi chini ya Sheria ya Uchunguzi, Cap 299, na kazi zote zinafanywa na wapima ardhi walio na leseni. Pia tunazingatia kanuni za upangaji za kaunti na kanuni za ujenzi."
+			},
+			{
+				"icon": "help-circle",
+				"title": "Ninawezaje kuomba Uchunguzi wa Setting Out wa Tovuti?",
+				"description": "Unaweza kuwasiliana na SmartGrid Surveying kupitia WhatsApp, barua pepe, au simu. Tutapanga ziara ya tovuti, kutoa makadirio, na kuelezea mpango wa uchunguzi ulioundwa kwa mradi wako."
+			}
+		]
+	}
+}
