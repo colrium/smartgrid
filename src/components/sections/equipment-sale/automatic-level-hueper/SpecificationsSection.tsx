@@ -20,8 +20,8 @@ const SPEC_KEYS = [
 ];
 
 function SpecCard({ sectionKey, delay }: { sectionKey: string; delay: number }) {
-	const { t } = useTranslation(["automatic-level-bosch"]);
-	const group = t(`automatic-level-bosch:${sectionKey}`, {
+	const { t } = useTranslation(["automatic-level-hueper"]);
+	const group = t(`automatic-level-hueper:${sectionKey}`, {
 		returnObjects: true,
 	}) as unknown as SpecGroup;
 	const list = Array.isArray(group.list) ? group.list : [];

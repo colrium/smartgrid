@@ -3,6 +3,7 @@ import aerialdronesasbuiltsurveys from '../public/locales/en/aerial-drones-as-bu
 import aerialsurveys from '../public/locales/en/aerial-surveys.json';
 import agriculturalndvimapping from '../public/locales/en/agricultural-ndvi-mapping.json';
 import automaticlevelbosch from '../public/locales/en/automatic-level-bosch.json';
+import automaticlevelhueper from '../public/locales/en/automatic-level-hueper.json';
 import bathymetricsurveys from '../public/locales/en/bathymetric-surveys.json';
 import buildingsitesurveys from '../public/locales/en/building-site-surveys.json';
 import cadastralsurveys from '../public/locales/en/cadastral-surveys.json';
@@ -35,7 +36,6 @@ import topographicalsurveys from '../public/locales/en/topographical-surveys.jso
 import totalstationdtm152m from '../public/locales/en/total-station-dtm-152m.json';
 import totalstationesurvey from '../public/locales/en/total-station-esurvey.json';
 import volumetricsurveys from '../public/locales/en/volumetric-surveys.json';
-import automaticlevelhueper from '../public/locales/en/equipment-sale/automatic-level-hueper.json';
 import equipmentcatalogue from '../public/locales/en/equipment-sale/equipment-catalogue.json';
 
 const resources = {
@@ -44,6 +44,7 @@ const resources = {
   'aerial-surveys': aerialsurveys,
   'agricultural-ndvi-mapping': agriculturalndvimapping,
   'automatic-level-bosch': automaticlevelbosch,
+  'automatic-level-hueper': automaticlevelhueper,
   'bathymetric-surveys': bathymetricsurveys,
   'building-site-surveys': buildingsitesurveys,
   'cadastral-surveys': cadastralsurveys,
@@ -76,7 +77,6 @@ const resources = {
   'total-station-dtm-152m': totalstationdtm152m,
   'total-station-esurvey': totalstationesurvey,
   'volumetric-surveys': volumetricsurveys,
-  'automatic-level-hueper': automaticlevelhueper,
   'equipment-catalogue': equipmentcatalogue
 } as const;
 

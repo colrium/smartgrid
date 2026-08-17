@@ -1,20 +1,20 @@
 {
 	"hero": {
-		"headline": "Reliable Levelling Instruments",
-		"title": "Bosch GOL 32D Automatic Level",
-		"image": "/media/equipment-sale/automatic-level-bosch/01.png",
-		"description": "The Bosch GOL 32D Automatic Level is a high-performance optical leveling instrument designed for precise elevation measurement in construction and surveying projects. Built for durability and accuracy, it ensures reliable performance in demanding field conditions.",
+		"headline": "AUTOMATIC LEVEL HUEPER",
+		"title": "Huepar ALX32 Automatic Level",
+		"image": "/media/equipment-sale/automatic-level-hueper/01.png",
+		"description": "The Huepar ALX32 Automatic Level is a precision optical leveling instrument designed for construction and surveying applications. With 32x magnification and a reliable automatic compensator, it delivers consistent accuracy and ease of use in demanding field environments.",
 		"ctaPrimary": {
 			"label": "Inquire About This Equipment",
 			"href": "mailto:smartgridsurveying@gmail.com"
 		}
 	},
 	"images": [
-		"/media/equipment-sale/automatic-level-bosch/02.png",
-		"/media/equipment-sale/automatic-level-bosch/03.png",
-		"/media/equipment-sale/automatic-level-bosch/04.jpg",
-        "/media/equipment-sale/automatic-level-bosch/09.png",
-        "/media/equipment-sale/automatic-level-bosch/10.png"
+		"/media/equipment-sale/automatic-level-hueper/02.png",
+		"/media/equipment-sale/automatic-level-hueper/03.png",
+		"/media/equipment-sale/automatic-level-hueper/04.png",
+		"/media/equipment-sale/automatic-level-hueper/05.jpg",
+		"/media/equipment-sale/automatic-level-hueper/06.jpg"
 	],
 	"opticalPerformance": {
 		"tag": null,
@@ -43,10 +43,10 @@
 		"headline": "Build & Durability",
 		"description": "",
 		"list": [
-			"Robust metal housing for field durability",
-			"Dust and splash resistant (IP54)",
-			"Shock-resistant design",
-			"Long service life in tough environments"
+			"Rugged construction for field conditions",
+            "Dust and splash resistant (IP54 class)",
+            "Shock-resistant internal structure",
+            "Lightweight and portable design"
 		]
 	},
 	"operationAndFeatures": {
@@ -54,10 +54,10 @@
 		"headline": "Operation & Features",
 		"description": "",
 		"list": [
-			"Endless horizontal circle (360° rotation)",
-			"Easy-to-use focusing knob",
-			"Smooth and precise movement",
-			"Quick setup on tripod"
+			"360° horizontal circle rotation",
+			"Smooth focusing and fine adjustment knobs",
+			"Quick tripod setup and leveling",
+			"User-friendly operation for fast deployment"
 		]
 	},
 	"applications": {
@@ -66,8 +66,8 @@
 		"description": "",
 		"list": [
 			"Construction leveling",
-			"Site grading & earthworks",
-			"Drainage and road works",
+			"Site grading and earthworks",
+			"Road and drainage works",
 			"Foundation and structural leveling"
 		]
 	},
@@ -87,9 +87,7 @@
 		}
 	},
 	"saleBanner": {
-		"images": [
-			"/media/equipment-sale/automatic-level-bosch/05.png"
-		]
+		"images": ["/media/equipment-sale/automatic-level-hueper/07.png"]
 	},
 	"relatedProducts": {
 		"tag": null,
@@ -112,11 +110,10 @@
 				"label": "FOIF A90 RTK GNSS",
 				"href": "/equipment-sale/foif-a90-rtk-gnss"
 			},
-
 			{
-				"image": "/img/instruments/automatic-level-hueper.png",
-				"label": "AUTOMATIC LEVEL HUEPER",
-				"href": "/equipment-sale/automatic-level-hueper"
+				"image": "/img/instruments/automatic-level-bosch.png",
+				"label": "AUTOMATIC LEVEL BOSCH",
+				"href": "/equipment-sale/automatic-level-bosch"
 			}
 		]
 	}

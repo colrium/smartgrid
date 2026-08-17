@@ -1,20 +1,20 @@
 {
 	"hero": {
-		"headline": "Vyombo vya Kuaminika vya Usawazishaji",
-		"title": "Bosch GOL 32D Automatic Level",
-		"image": "/media/equipment-sale/automatic-level-bosch/01.png",
-		"description": "Bosch GOL 32D Automatic Level ni chombo cha macho cha utendaji wa juu cha usawazishaji kilichoundwa kwa kipimo sahihi cha mwinuko katika miradi ya ujenzi na upimaji. Kimejengwa kwa uimara na usahihi, kikihakikisha utendaji wa kuaminika katika hali ngumu shambani.",
+		"headline": "KIWANGO CHA KIOTOMATIKI CHA HUEPER",
+		"title": "Huepar ALX32 Automatic Level",
+		"image": "/media/equipment-sale/automatic-level-hueper/01.png",
+		"description": "Huepar ALX32 Automatic Level ni chombo cha usawazishaji cha macho cha usahihi kilichoundwa kwa matumizi ya ujenzi na upimaji. Kwa ukuzaji wa 32x na fidia ya kiotomatiki ya kuaminika, hutoa usahihi thabiti na urahisi wa matumizi katika mazingira magumu shambani.",
 		"ctaPrimary": {
 			"label": "Ulizia Kuhusu Kifaa Hiki",
 			"href": "mailto:smartgridsurveying@gmail.com"
 		}
 	},
 	"images": [
-		"/media/equipment-sale/automatic-level-bosch/02.png",
-		"/media/equipment-sale/automatic-level-bosch/03.png",
-		"/media/equipment-sale/automatic-level-bosch/04.jpg",
-        "/media/equipment-sale/automatic-level-bosch/09.png",
-        "/media/equipment-sale/automatic-level-bosch/10.png"
+		"/media/equipment-sale/automatic-level-hueper/02.png",
+		"/media/equipment-sale/automatic-level-hueper/03.png",
+		"/media/equipment-sale/automatic-level-hueper/04.png",
+		"/media/equipment-sale/automatic-level-hueper/05.jpg",
+		"/media/equipment-sale/automatic-level-hueper/06.jpg"
 	],
 	"opticalPerformance": {
 		"tag": null,
@@ -43,10 +43,10 @@
 		"headline": "Ujenzi na Uimara",
 		"description": "",
 		"list": [
-			"Kifuniko imara cha chuma kwa uimara shambani",
-			"Kinastahimili vumbi na maji (IP54)",
-			"Muundo unaostahimili mitikiso",
-			"Maisha marefu ya huduma katika mazingira magumu"
+			"Ujenzi thabiti kwa hali za shambani",
+            "Kinastahimili vumbi na maji (daraja la IP54)",
+            "Muundo wa ndani unaostahimili mitikiso",
+            "Muundo mwepesi na rahisi kubeba"
 		]
 	},
 	"operationAndFeatures": {
@@ -54,10 +54,10 @@
 		"headline": "Uendeshaji na Vipengele",
 		"description": "",
 		"list": [
-			"Duara lisilo na mwisho la mlalo (mzunguko wa 360°)",
-			"Kipini rahisi cha kulenga",
-			"Mwendo laini na sahihi",
-			"Usanidi wa haraka kwenye tripod"
+			"Mzunguko wa duara mlalo wa 360°",
+			"Vipini laini vya kulenga na kurekebisha vizuri",
+			"Usanidi wa haraka wa tripod na usawazishaji",
+			"Uendeshaji rahisi kwa mtumiaji kwa upelekaji wa haraka"
 		]
 	},
 	"applications": {
@@ -67,7 +67,7 @@
 		"list": [
 			"Usawazishaji wa ujenzi",
 			"Usawazishaji wa tovuti na kazi za ardhi",
-			"Kazi za mifereji na barabara",
+			"Kazi za barabara na mifereji",
 			"Usawazishaji wa misingi na muundo"
 		]
 	},
@@ -87,9 +87,7 @@
 		}
 	},
 	"saleBanner": {
-		"images": [
-			"/media/equipment-sale/automatic-level-bosch/05.png"
-		]
+		"images": ["/media/equipment-sale/automatic-level-hueper/07.png"]
 	},
 	"relatedProducts": {
 		"tag": null,
@@ -113,9 +111,9 @@
 				"href": "/equipment-sale/foif-a90-rtk-gnss"
 			},
 			{
-				"image": "/img/instruments/automatic-level-hueper.png",
-				"label": "AUTOMATIC LEVEL HUEPER",
-				"href": "/equipment-sale/automatic-level-hueper"
+				"image": "/img/instruments/automatic-level-bosch.png",
+				"label": "AUTOMATIC LEVEL BOSCH",
+				"href": "/equipment-sale/automatic-level-bosch"
 			}
 		]
 	}

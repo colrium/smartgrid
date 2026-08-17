@@ -1,0 +1,10 @@
+export { ImagesSection } from "./ImagesSection";
+export { default as ImagesSectionDefault } from "./ImagesSection";
+export { SpecificationsSection } from "./SpecificationsSection";
+export { default as SpecificationsSectionDefault } from "./SpecificationsSection";
+export { SaleBannerSection } from "./SaleBannerSection";
+export { default as SaleBannerSectionDefault } from "./SaleBannerSection";
+export { CtaSection } from "./CtaSection";
+export { default as CtaSectionDefault } from "./CtaSection";
+export { RelatedProductsSection } from "./RelatedProductsSection";
+export { default as RelatedProductsSectionDefault } from "./RelatedProductsSection";
