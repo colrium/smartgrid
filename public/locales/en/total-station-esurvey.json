@@ -81,25 +81,25 @@
 		"tag": null,
 		"headline": "OTHER RELATED PRODUCTS",
 		"description": "",
-		
 		"items": [
 			{
-				"image": "/media/equipment-sale/total-station-esurvey/10.png",
-				"label": "FOIF A90 RTK GNSS",
-				"href": "/equipment-sale/total-station-esurvey"
-			},
-			{
-				"image": "/media/equipment-sale/total-station-esurvey/02.png",
+				"image": "/img/instruments/total-station-dtm-152m.png",
 				"label": "TOTAL STATION DTM 152M",
 				"href": "/equipment-sale/total-station-dtm-152m"
 			},
 			{
-				"image": "/media/equipment-sale/total-station-esurvey/03.png",
+				"image": "/img/instruments/foif-a90-rtk-gnss",
+				"label": "FOIF A90 RTK GNSS",
+				"href": "/equipment-sale/total-station-dtm-152m"
+			},
+
+			{
+				"image": "/img/instruments/automatic-level-hueper.png",
 				"label": "AUTOMATIC LEVEL HUEPER",
 				"href": "/equipment-sale/automatic-level-hueper"
 			},
 			{
-				"image": "/media/equipment-sale/total-station-esurvey/04.png",
+				"image": "/img/instruments/automatic-level-bosch.png",
 				"label": "AUTOMATIC LEVEL BOSCH",
 				"href": "/equipment-sale/automatic-level-bosch"
 			}

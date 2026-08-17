@@ -165,6 +165,11 @@
 			"page_title": "Total Station DTM 152M",
 			"meta_description": "Kituo kamili cha usahihi wa juu kwa uchunguzi wa kuhitajika — vipimo sahihi kwa ujenzi, uhandisi, na matumizi ya uchunguzi wa cadastral.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"automatic-level-bosch": {
+			"page_title": "Kiwango cha Kiotomatiki cha Bosch GOL 32D",
+			"meta_description": "Chombo cha kiwango cha macho cha utendaji wa juu kwa kipimo sahihi cha mwinuko katika miradi ya ujenzi na upimaji — imara, sahihi, na ya kuaminika shambani.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {

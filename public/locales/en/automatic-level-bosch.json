@@ -1,0 +1,123 @@
+{
+	"hero": {
+		"headline": "Reliable Levelling Instruments",
+		"title": "Bosch GOL 32D Automatic Level",
+		"image": "/media/equipment-sale/automatic-level-bosch/01.png",
+		"description": "The Bosch GOL 32D Automatic Level is a high-performance optical leveling instrument designed for precise elevation measurement in construction and surveying projects. Built for durability and accuracy, it ensures reliable performance in demanding field conditions.",
+		"ctaPrimary": {
+			"label": "Inquire About This Equipment",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"images": [
+		"/media/equipment-sale/automatic-level-bosch/02.png",
+		"/media/equipment-sale/automatic-level-bosch/03.png",
+		"/media/equipment-sale/automatic-level-bosch/04.jpg",
+        "/media/equipment-sale/automatic-level-bosch/09.png",
+        "/media/equipment-sale/automatic-level-bosch/10.png"
+	],
+	"opticalPerformance": {
+		"tag": null,
+		"headline": "Optical Performance",
+		"description": "",
+		"list": [
+			"Magnification: 32x high clarity optics",
+			"Objective aperture: 36mm",
+			"Clear, bright image even in low light",
+			"Minimum focusing distance: ~0.3m"
+		]
+	},
+	"accuracyAndLevelinge": {
+		"tag": null,
+		"headline": "Accuracy & Leveling",
+		"description": "",
+		"list": [
+			"Leveling accuracy: ±1.0mm per km (double run)",
+			"Automatic compensator for fast leveling",
+			"Working range of compensator: ±15’",
+			"Stable and precise horizontal alignment"
+		]
+	},
+	"buildAndDurability": {
+		"tag": null,
+		"headline": "Build & Durability",
+		"description": "",
+		"list": [
+			"Robust metal housing for field durability",
+			"Dust and splash resistant (IP54)",
+			"Shock-resistant design",
+			"Long service life in tough environments"
+		]
+	},
+	"operationAndFeatures": {
+		"tag": null,
+		"headline": "Operation & Features",
+		"description": "",
+		"list": [
+			"Endless horizontal circle (360° rotation)",
+			"Easy-to-use focusing knob",
+			"Smooth and precise movement",
+			"Quick setup on tripod"
+		]
+	},
+	"applications": {
+		"tag": null,
+		"headline": "Applications",
+		"description": "",
+		"list": [
+			"Construction leveling",
+			"Site grading & earthworks",
+			"Drainage and road works",
+			"Foundation and structural leveling"
+		]
+	},
+	"cta": {
+		"tag": "Countact us",
+		"headline": "Get This Equipment",
+		"description": "Contact us for pricing, availability, and expert guidance.",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Email Us",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		},
+		"ctaSecondary": {
+			"icon": "whatsapp",
+			"label": "WhatsApp Us",
+			"href": "https://wa.me/254701618282"
+		}
+	},
+	"saleBanner": {
+		"images": [
+			"/media/equipment-sale/automatic-level-bosch/05.png"
+		]
+	},
+	"relatedProducts": {
+		"tag": null,
+		"headline": "OTHER RELATED PRODUCTS",
+		"description": "",
+
+		"items": [
+			{
+				"image": "/img/instruments/total-station-esurvey.png",
+				"label": "TOTAL STATION ESURVEY",
+				"href": "/equipment-sale/total-station-esurvey"
+			},
+			{
+				"image": "/img/instruments/total-station-dtm-152m.png",
+				"label": "TOTAL STATION DTM 152M",
+				"href": "/equipment-sale/automatic-level-bosch"
+			},
+			{
+				"image": "/img/instruments/foif-a90-rtk-gnss",
+				"label": "FOIF A90 RTK GNSS",
+				"href": "/equipment-sale/automatic-level-bosch"
+			},
+
+			{
+				"image": "/img/instruments/automatic-level-hueper.png",
+				"label": "AUTOMATIC LEVEL HUEPER",
+				"href": "/equipment-sale/automatic-level-hueper"
+			}
+		]
+	}
+}

@@ -1,0 +1,122 @@
+{
+	"hero": {
+		"headline": "Vyombo vya Kuaminika vya Usawazishaji",
+		"title": "Bosch GOL 32D Automatic Level",
+		"image": "/media/equipment-sale/automatic-level-bosch/01.png",
+		"description": "Bosch GOL 32D Automatic Level ni chombo cha macho cha utendaji wa juu cha usawazishaji kilichoundwa kwa kipimo sahihi cha mwinuko katika miradi ya ujenzi na upimaji. Kimejengwa kwa uimara na usahihi, kikihakikisha utendaji wa kuaminika katika hali ngumu shambani.",
+		"ctaPrimary": {
+			"label": "Ulizia Kuhusu Kifaa Hiki",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"images": [
+		"/media/equipment-sale/automatic-level-bosch/02.png",
+		"/media/equipment-sale/automatic-level-bosch/03.png",
+		"/media/equipment-sale/automatic-level-bosch/04.jpg",
+        "/media/equipment-sale/automatic-level-bosch/09.png",
+        "/media/equipment-sale/automatic-level-bosch/10.png"
+	],
+	"opticalPerformance": {
+		"tag": null,
+		"headline": "Utendaji wa Macho",
+		"description": "",
+		"list": [
+			"Ukuzaji: macho ya uwazi wa juu 32x",
+			"Fungu la kitu: 36mm",
+			"Picha wazi na angavu hata kwenye mwanga hafifu",
+			"Umbali wa chini wa kulenga: ~0.3m"
+		]
+	},
+	"accuracyAndLevelinge": {
+		"tag": null,
+		"headline": "Usahihi na Usawazishaji",
+		"description": "",
+		"list": [
+			"Usahihi wa usawazishaji: ±1.0mm kwa km (mwendo maradufu)",
+			"Fidia ya kiotomatiki kwa usawazishaji wa haraka",
+			"Kiwango cha kazi cha fidia: ±15’",
+			"Usawazishaji thabiti na sahihi wa mlalo"
+		]
+	},
+	"buildAndDurability": {
+		"tag": null,
+		"headline": "Ujenzi na Uimara",
+		"description": "",
+		"list": [
+			"Kifuniko imara cha chuma kwa uimara shambani",
+			"Kinastahimili vumbi na maji (IP54)",
+			"Muundo unaostahimili mitikiso",
+			"Maisha marefu ya huduma katika mazingira magumu"
+		]
+	},
+	"operationAndFeatures": {
+		"tag": null,
+		"headline": "Uendeshaji na Vipengele",
+		"description": "",
+		"list": [
+			"Duara lisilo na mwisho la mlalo (mzunguko wa 360°)",
+			"Kipini rahisi cha kulenga",
+			"Mwendo laini na sahihi",
+			"Usanidi wa haraka kwenye tripod"
+		]
+	},
+	"applications": {
+		"tag": null,
+		"headline": "Matumizi",
+		"description": "",
+		"list": [
+			"Usawazishaji wa ujenzi",
+			"Usawazishaji wa tovuti na kazi za ardhi",
+			"Kazi za mifereji na barabara",
+			"Usawazishaji wa misingi na muundo"
+		]
+	},
+	"cta": {
+		"tag": "Wasiliana nasi",
+		"headline": "Pata Kifaa Hiki",
+		"description": "Wasiliana nasi kwa bei, upatikanaji, na mwongozo wa kitaalamu.",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Tutumie Barua Pepe",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		},
+		"ctaSecondary": {
+			"icon": "whatsapp",
+			"label": "Tutumie WhatsApp",
+			"href": "https://wa.me/254701618282"
+		}
+	},
+	"saleBanner": {
+		"images": [
+			"/media/equipment-sale/automatic-level-bosch/05.png"
+		]
+	},
+	"relatedProducts": {
+		"tag": null,
+		"headline": "BIDHAA NYINGINE ZINAZOHUSIANA",
+		"description": "",
+
+		"items": [
+			{
+				"image": "/img/instruments/total-station-esurvey.png",
+				"label": "TOTAL STATION ESURVEY",
+				"href": "/equipment-sale/total-station-esurvey"
+			},
+			{
+				"image": "/img/instruments/total-station-dtm-152m.png",
+				"label": "TOTAL STATION DTM 152M",
+				"href": "/equipment-sale/automatic-level-bosch"
+			},
+			{
+				"image": "/img/instruments/foif-a90-rtk-gnss",
+				"label": "FOIF A90 RTK GNSS",
+				"href": "/equipment-sale/automatic-level-bosch"
+			},
+			{
+				"image": "/img/instruments/automatic-level-hueper.png",
+				"label": "AUTOMATIC LEVEL HUEPER",
+				"href": "/equipment-sale/automatic-level-hueper"
+			}
+		]
+	}
+}
