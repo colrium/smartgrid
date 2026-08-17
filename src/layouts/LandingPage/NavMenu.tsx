@@ -21,9 +21,10 @@ interface Props {
   locale: string;
   localizePath: (path: string, locale: string) => string;
   horizontal?: boolean; // top-level horizontal rendering
+  variant?: "light" | "dark"; // top-level (horizontal) color variant
 }
 
-export default function NavMenu({ items, locale, localizePath, horizontal = false }: Props) {
+export default function NavMenu({ items, locale, localizePath, horizontal = false, variant = "light" }: Props) {
   const [anchorMap, setAnchorMap] = useState<Record<number, HTMLElement | null>>({});
   const [openMenuIndex, setOpenMenuIndex] = useState<number | null>(null);
 
@@ -59,7 +60,11 @@ export default function NavMenu({ items, locale, localizePath, horizontal = fals
 							color="inherit"
 							size="small"
 							variant="text"
-							className={`text-sm mr-4 no-underline! capitalize! font-medium tracking-tight text-ink hover:text-primary-500 relative transition-colors after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full`}
+							className={`text-sm mr-4 no-underline! capitalize! font-medium tracking-tight relative transition-colors after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-0 after:transition-all after:duration-300 hover:after:w-full ${
+								variant === "dark"
+									? "text-surface hover:text-primary-300 after:bg-primary-300"
+									: "text-ink hover:text-primary-500 after:bg-primary"
+							}`}
 						>
 							{item.label}
 						</Button>
@@ -96,7 +101,11 @@ export default function NavMenu({ items, locale, localizePath, horizontal = fals
                   size="small"
               variant="text"
               disableElevation
-              className={`text-sm mr-4 no-underline! capitalize! font-medium tracking-tight text-on-surface hover:text-primary-500 relative transition-colors after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full`}
+              className={`text-sm mr-4 no-underline! capitalize! font-medium tracking-tight relative transition-colors after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-0 after:transition-all after:duration-300 hover:after:w-full ${
+                variant === "dark"
+                  ? "text-surface hover:text-primary-300 after:bg-primary-300"
+                  : "text-on-surface hover:text-primary-500 after:bg-primary"
+              }`}
               href={localizePath(item.href, locale)}
               locale={false}
               key={`nav-${i}`}

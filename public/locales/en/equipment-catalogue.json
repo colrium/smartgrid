@@ -2,7 +2,7 @@
 	"hero": {
 		"headline": "EQUIPMENT CATALOGUE",
 		"title": "Reliable. Calibrated. Accurate.",
-		"image": "/images/placeholder.jpg",
+		"image": "/media/equipment-sale/equipment-catalogue/01.jpg",
 		"description": "Unlock faster, more cost-effective, and safer mapping, measurement, and Engineering. At Smartgrid Surveying, we turn this vision into reality—across Africa and beyond. With our cutting-edge drones and Land surveying techniques, we deliver the actionable data you need, exactly where it matters.",
 		"ctaPrimary": {
 			"label": "Get Your Free Consultation",
@@ -12,40 +12,83 @@
 	"catalogueOverview": {
 		"tag": "Our Equipment Range",
 		"headline": "Equipment Catalogue",
-		"image": "/images/placeholder.jpg",
 		"description": "SmartGrid Surveying offers a comprehensive range of high-quality surveying and engineering equipment. All instruments are reliable, calibrated, and accurate to support your projects with precision."
 	},
 	"equipmentCategories": {
 		"tag": "Product Categories",
 		"headline": "What We Offer",
-		"image": "/images/placeholder.jpg",
 		"description": "Browse our selection of professional surveying equipment and accessories.",
 		"items": [
 			{
 				"icon": "satellite",
-				"title": "GNSS Systems",
-				"description": "High-precision GNSS receivers including FOIF A90 RTK for centimeter-level positioning."
+				"title": "FOIF A90 RTK GNSS",
+				"description": "High-precision GNSS system with multi-constellation support delivering centimeter-level RTK accuracy for mapping and engineering surveys.",
+				"badge": "In Stock",
+				"ctaPrimary": {
+					"icon": "launch",
+					"label": "Diew Details",
+					"href": "/equipment-sale/foif-a90"
+				}
 			},
 			{
 				"icon": "ruler-square",
-				"title": "Total Stations",
-				"description": "E-Survey and DTM total stations for accurate angle and distance measurements."
+				"title": "E-Survey E3L Total Station",
+				"description": "2” accuracy total station with 5000m range, ideal for construction layout, boundary surveys, and topographic mapping.",
+				"badge": "Available",
+				"ctaPrimary": {
+					"icon": "launch",
+					"label": "Diew Details",
+					"href": "/equipment-sale/total-station-esurvey"
+				}
+			},
+			{
+				"icon": "ruler-square",
+				"title": "DTM 152M Total Station",
+				"description": "Reliable and efficient total station for engineering and cadastral surveys with stable measurement performance.",
+				"badge": "Hot Deal",
+				"ctaPrimary": {
+					"icon": "launch",
+					"label": "Diew Details",
+					"href": "/equipment-sale/total-station-dtm-152m"
+				}
 			},
 			{
 				"icon": "level",
-				"title": "Automatic Levels",
-				"description": "Bosch and Hueper automatic levels for precise height and leveling tasks."
+				"title": "Bosch GOL 32D Level",
+				"description": "32x automatic level for precise construction leveling, grading, and site works with excellent optical clarity.",
+				"badge": "New",
+				"ctaPrimary": {
+					"icon": "launch",
+					"label": "Diew Details",
+					"href": "/equipment-sale/automatic-level-bosch"
+				}
 			},
 			{
-				"icon": "drone",
-				"title": "Drones & UAVs",
-				"description": "Advanced drones equipped with sensors for mapping, inspection, and monitoring."
-			},
-			{
-				"icon": "toolbox",
-				"title": "Accessories",
-				"description": "Prisms, tripods, staffs, data collectors, and other field essentials."
+				"icon": "level",
+				"title": "Huepar ALX32 Level",
+				"description": "Affordable 32x automatic level offering reliable accuracy for construction and general leveling tasks.",
+				"badge": "Budget",
+				"ctaPrimary": {
+					"icon": "launch",
+					"label": "Diew Details",
+					"href": "/equipment-sale/automatic-level-hueper"
+				}
 			}
 		]
+	},
+	"cta": {
+		"tag": "Countact us",
+		"headline": "Need Help Choosing Equipment?",
+		"description": "Talk to us directly for expert advice, pricing, and availability.",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Email Us",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		},
+		"ctaSecondary": {
+			"icon": "whatsapp",
+			"label": "WhatsApp Us",
+			"href": "https://wa.me/254701618282"
+		}
 	}
 }

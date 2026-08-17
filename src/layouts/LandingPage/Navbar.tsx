@@ -27,16 +27,32 @@ interface NavBarLink {
 	links?: NavBarLink[];
 }
 
-export default function Navbar() {
+export interface NavbarProps {
+	/** Base color variant of the navbar. Defaults to "light". */
+	variant?: "light" | "dark";
+	/**
+	 * Optional scroll-triggered switch: once the window is scrolled past this
+	 * percentage (0–100) of the page height, the navbar automatically uses the
+	 * "dark" variant. Omit or pass 0 to disable the trigger.
+	 */
+	scrollVariantPercent?: number;
+}
+
+export default function Navbar({
+	variant = "light",
+	scrollVariantPercent,
+}: NavbarProps) {
 	const router = useRouter();
 	const { t, i18n } = useTranslation(["common", "meta"]);
 	const [state, setState] = useSetState({
 		drawerOpen: false,
 		isWindowScrolled: false,
+		scrollPercent: 0,
 		languageMenuAnchor: null,
 	} as {
 		drawerOpen: boolean;
 		isWindowScrolled: boolean;
+		scrollPercent: number;
 		languageMenuAnchor: null | HTMLElement;
 	});
 
@@ -93,10 +109,18 @@ export default function Navbar() {
 
 	useEffect(() => {
 		const handleScroll = () => {
-			setState({ isWindowScrolled: window.scrollY > 48 });
+			const maxScroll =
+				document.documentElement.scrollHeight - window.innerHeight;
+			const scrollPercent =
+				maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 100;
+
+			/* setState({
+				isWindowScrolled: window.scrollY > 48,
+				scrollPercent,
+			}); */
 		};
 
-		window.addEventListener("scroll", handleScroll);
+		// window.addEventListener("scroll", handleScroll);
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 
@@ -123,6 +147,16 @@ export default function Navbar() {
 
 	const currentLocale = router.locale ?? i18n.language ?? "en";
 
+	const isDark =
+		variant === "dark" ||
+		(typeof scrollVariantPercent === "number" &&
+			scrollVariantPercent > 0 &&
+			state.scrollPercent >= scrollVariantPercent);
+
+	const iconColor = isDark ? "text-primary-300" : "text-primary";
+	const accentColor = isDark ? "text-surface" : "text-accent";
+	const hoverColor = isDark ? "hover:text-primary-300" : "hover:text-primary";
+
 	return (
 		<>
 			<AppBar
@@ -137,31 +171,39 @@ export default function Navbar() {
 				<Container
 					maxWidth="lg"
 					classes={{
-						root: `mt-3 mb-1 rounded-3xl bg-surface/85!  backdrop-blur-lg! transition-all duration-300 ${
-							state.isWindowScrolled ? "card-shadow-lift" : "card-shadow"
-						}`,
+						root: `mt-3 mb-1 rounded-3xl backdrop-blur-lg! transition-all duration-300 ${
+							isDark
+								? "bg-black/85! text-surface!"
+								: "bg-surface/85! text-ink!"
+						} ${state.isWindowScrolled ? "card-shadow-lift" : "card-shadow"}`,
 					}}
 				>
-					<div className="hidden lg:flex items-center justify-between gap-8 px-2 pt-3.5 pb-3 text-xs text-on-surface/70 border-b border-ink/10 font-semibold">
+					<div
+						className={`hidden lg:flex items-center justify-between gap-8 px-2 pt-3.5 pb-3 text-xs font-semibold ${
+							isDark
+								? "text-surface/70 border-b border-surface/10"
+								: "text-on-surface/70 border-b border-ink/10"
+						}`}
+					>
 						<span className="inline-flex items-center gap-2">
-							<span className="mdi mdi-map-marker text-primary text-sm" />
-							<span className="text-accent">{t("common:contacts.address")}</span>
+							<span className={`mdi mdi-map-marker text-sm ${iconColor}`} />
+							<span className={accentColor}>{t("common:contacts.address")}</span>
 						</span>
 
 						<div className="flex items-center gap-8">
 							<a
 								href={`tel:${t("common:contacts.mobile").replace(/\s/g, "")}`}
-								className="inline-flex items-center gap-2 hover:text-primary transition-colors duration-300"
+								className={`inline-flex items-center gap-2 transition-colors duration-300 ${hoverColor}`}
 							>
-								<span className="mdi mdi-phone text-primary text-sm" />
-								<span className="text-accent">{t("common:contacts.mobile")}</span>
+								<span className={`mdi mdi-phone text-sm ${iconColor}`} />
+								<span className={accentColor}>{t("common:contacts.mobile")}</span>
 							</a>
 							<a
 								href={`mailto:${t("common:contacts.Email")}`}
-								className="inline-flex items-center gap-2 hover:text-primary transition-colors duration-300"
+								className={`inline-flex items-center gap-2 transition-colors duration-300 ${hoverColor}`}
 							>
-								<span className="mdi mdi-email-outline text-primary text-sm" />
-								<span className="text-accent">{t("common:contacts.Email")}</span>
+								<span className={`mdi mdi-email-outline text-sm ${iconColor}`} />
+								<span className={accentColor}>{t("common:contacts.Email")}</span>
 							</a>
 						</div>
 					</div>
@@ -184,10 +226,18 @@ export default function Navbar() {
 								height={32}
 							/>
 							<div className="flex flex-col mr-2 leading-tight">
-								<h6 className="flex uppercase font-semibold tracking-wide text-ink no-underline">
+								<h6
+									className={`flex uppercase font-semibold tracking-wide no-underline ${
+										isDark ? "text-surface" : "text-ink"
+									}`}
+								>
 									{t("meta:site.title")}
 								</h6>
-								<span className=" capitalize hidden lg:flex font-semibold text-[9px]  text-on-surface/55 no-underline">
+								<span
+									className={`capitalize hidden lg:flex font-semibold text-[9px] no-underline ${
+										isDark ? "text-surface/55" : "text-on-surface/55"
+									}`}
+								>
 									{t("meta:site.subtitle")}
 								</span>
 							</div>
@@ -198,6 +248,7 @@ export default function Navbar() {
 							locale={currentLocale}
 							localizePath={localizePath}
 							horizontal
+							variant={isDark ? "dark" : "light"}
 						/>
 
 						<Box className="lg:hidden grow" />

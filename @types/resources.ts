@@ -16,6 +16,7 @@ import civilvolumetricsurveys from '../public/locales/en/civil-volumetric-survey
 import common from '../public/locales/en/common.json';
 import contact from '../public/locales/en/contact.json';
 import droneimagerysurveys from '../public/locales/en/drone-imagery-surveys.json';
+import equipmentcatalogue from '../public/locales/en/equipment-catalogue.json';
 import foifa90rtkgnss from '../public/locales/en/foif-a90-rtk-gnss.json';
 import gismapping from '../public/locales/en/gis-mapping.json';
 import groundpenetratingradar from '../public/locales/en/ground-penetrating-radar.json';
@@ -36,7 +37,6 @@ import topographicalsurveys from '../public/locales/en/topographical-surveys.jso
 import totalstationdtm152m from '../public/locales/en/total-station-dtm-152m.json';
 import totalstationesurvey from '../public/locales/en/total-station-esurvey.json';
 import volumetricsurveys from '../public/locales/en/volumetric-surveys.json';
-import equipmentcatalogue from '../public/locales/en/equipment-sale/equipment-catalogue.json';
 
 const resources = {
   about,
@@ -57,6 +57,7 @@ const resources = {
   common,
   contact,
   'drone-imagery-surveys': droneimagerysurveys,
+  'equipment-catalogue': equipmentcatalogue,
   'foif-a90-rtk-gnss': foifa90rtkgnss,
   'gis-mapping': gismapping,
   'ground-penetrating-radar': groundpenetratingradar,
@@ -76,8 +77,7 @@ const resources = {
   'topographical-surveys': topographicalsurveys,
   'total-station-dtm-152m': totalstationdtm152m,
   'total-station-esurvey': totalstationesurvey,
-  'volumetric-surveys': volumetricsurveys,
-  'equipment-catalogue': equipmentcatalogue
+  'volumetric-surveys': volumetricsurveys
 } as const;
 
 export default resources;

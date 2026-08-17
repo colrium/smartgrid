@@ -1,0 +1,94 @@
+{
+	"hero": {
+		"headline": "KATALOGI YA VIFAA",
+		"title": "Ya Kuaminika. Imesawazishwa. Sahihi.",
+		"image": "/media/equipment-sale/equipment-catalogue/01.jpg",
+		"description": "Fungua uchoraji wa ramani, kipimo, na uhandisi wa haraka, wenye gharama nafuu na salama zaidi. Katika Smartgrid Surveying, tunageuza maono haya kuwa ukweli—kote Afrika na kuendelea. Kwa droni zetu za kisasa na mbinu za upimaji ardhi, tunatoa data ya kiutendaji unayohitaji, hasa pale inapohitajika.",
+		"ctaPrimary": {
+			"label": "Pata Ushauri Wako Bure",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"catalogueOverview": {
+		"tag": "Aina zetu za Vifaa",
+		"headline": "Katalogi ya Vifaa",
+		"description": "SmartGrid Surveying inatoa anuwai kamili ya vifaa vya upimaji na uhandisi vya ubora wa juu. Vyombo vyote vinaaminika, vimesawazishwa, na ni sahihi kusaidia miradi yako kwa usahihi."
+	},
+	"equipmentCategories": {
+		"tag": "Makundi ya Bidhaa",
+		"headline": "Tunachotoa",
+		"description": "Vinjari uteuzi wetu wa vifaa vya upimaji na vifaa vya ziada vya kitaalamu.",
+		"items": [
+			{
+				"icon": "satellite",
+				"title": "FOIF A90 RTK GNSS",
+				"description": "Mfumo wa GNSS wa usahihi wa juu wenye msaada wa vyombo vingi ukitoa usahihi wa RTK wa sentimita kwa upimaji wa ramani na uhandisi.",
+				"badge": "Katika Hisa",
+				"ctaPrimary": {
+					"icon": "launch",
+					"label": "Tazama Maelezo",
+					"href": "/equipment-sale/foif-a90"
+				}
+			},
+			{
+				"icon": "ruler-square",
+				"title": "E-Survey E3L Total Station",
+				"description": "Total station yenye usahihi wa 2” na mbalimbali ya mita 5000, bora kwa mpangilio wa ujenzi, upimaji wa mipaka, na uchoraji ramani topografia.",
+				"badge": "Inapatikana",
+				"ctaPrimary": {
+					"icon": "launch",
+					"label": "Tazama Maelezo",
+					"href": "/equipment-sale/total-station-esurvey"
+				}
+			},
+			{
+				"icon": "ruler-square",
+				"title": "DTM 152M Total Station",
+				"description": "Total station inayoaminika na yenye ufanisi kwa upimaji wa uhandisi na cadastral yenye utendaji thabiti wa kipimo.",
+				"badge": "Mkataba Moto",
+				"ctaPrimary": {
+					"icon": "launch",
+					"label": "Tazama Maelezo",
+					"href": "/equipment-sale/total-station-dtm-152m"
+				}
+			},
+			{
+				"icon": "level",
+				"title": "Bosch GOL 32D Level",
+				"description": "Kiwango cha kiotomatiki cha 32x kwa usawazishaji sahihi wa ujenzi, usawazishaji wa ardhi, na kazi za tovuti zenye uwazi bora wa macho.",
+				"badge": "Kipya",
+				"ctaPrimary": {
+					"icon": "launch",
+					"label": "Tazama Maelezo",
+					"href": "/equipment-sale/automatic-level-bosch"
+				}
+			},
+			{
+				"icon": "level",
+				"title": "Huepar ALX32 Level",
+				"description": "Kiwango cha kiotomatiki cha 32x cha bei nafuu kinachotoa usahihi wa kuaminika kwa ujenzi na kazi za jumla za usawazishaji.",
+				"badge": "Bajeti",
+				"ctaPrimary": {
+					"icon": "launch",
+					"label": "Tazama Maelezo",
+					"href": "/equipment-sale/automatic-level-hueper"
+				}
+			}
+		]
+	},
+	"cta": {
+		"tag": "Wasiliana nasi",
+		"headline": "Unahitaji Msaada Kuchagua Vifaa?",
+		"description": "Zungumza nasi moja kwa moja kwa ushauri wa kitaalamu, bei, na upatikanaji.",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Tutumie Barua Pepe",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		},
+		"ctaSecondary": {
+			"icon": "whatsapp",
+			"label": "Tutumie WhatsApp",
+			"href": "https://wa.me/254701618282"
+		}
+	}
+}
