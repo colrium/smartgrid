@@ -53,7 +53,7 @@
 				}
 			},
 			{
-				"icon": "level",
+				"icon": "spirit-level",
 				"title": "Bosch GOL 32D Level",
 				"description": "Kiwango cha kiotomatiki cha 32x kwa usawazishaji sahihi wa ujenzi, usawazishaji wa ardhi, na kazi za tovuti zenye uwazi bora wa macho.",
 				"badge": "Kipya",
@@ -64,7 +64,7 @@
 				}
 			},
 			{
-				"icon": "level",
+				"icon": "spirit-level",
 				"title": "Huepar ALX32 Level",
 				"description": "Kiwango cha kiotomatiki cha 32x cha bei nafuu kinachotoa usahihi wa kuaminika kwa ujenzi na kazi za jumla za usawazishaji.",
 				"badge": "Bajeti",

@@ -70,7 +70,8 @@ const drone3dProps = new Map([
 		},
 	],
 ]);
-const drone3dFile = "/models/drone_low_poly.glb";
+const drone3dKeys = Array.from(drone3dProps.keys());
+const drone3dFile = drone3dKeys[Math.floor(Math.random() * drone3dKeys.length)];
 interface CtaItem {
 	label: string;
 	href?: string;
