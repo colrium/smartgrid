@@ -10,7 +10,7 @@ interface ImagesContent {
 
 export function ImagesSection() {
 	const { t } = useTranslation(["automatic-level-bosch"]);
-	const section = t("automatic-level-bosch:images", {
+	const section = t("automatic-level-bosch:productImages", {
 		returnObjects: true,
 	}) as unknown as ImagesContent;
 	const images = Array.isArray(section.images) ? section.images : [];

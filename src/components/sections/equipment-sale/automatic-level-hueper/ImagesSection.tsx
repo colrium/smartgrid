@@ -10,7 +10,7 @@ interface ImagesContent {
 
 export function ImagesSection() {
 	const { t } = useTranslation(["automatic-level-hueper"]);
-	const section = t("automatic-level-hueper:images", {
+	const section = t("automatic-level-hueper:productImages", {
 		returnObjects: true,
 	}) as unknown as ImagesContent;
 	const images = Array.isArray(section.images) ? section.images : [];
@@ -24,7 +24,7 @@ export function ImagesSection() {
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
-			<div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
+			<div className="relative z-10 max-w-7xl mx-auto sm:px-4 lg:px-2">
 				<FadeUp>
 					<Slider slides={slides} autoplay={5000} showArrows showDots />
 				</FadeUp>

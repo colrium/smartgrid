@@ -9,13 +9,15 @@
 			"href": "mailto:smartgridsurveying@gmail.com"
 		}
 	},
-	"images": [
-		"/media/equipment-sale/automatic-level-hueper/02.png",
-		"/media/equipment-sale/automatic-level-hueper/03.png",
-		"/media/equipment-sale/automatic-level-hueper/04.png",
-		"/media/equipment-sale/automatic-level-hueper/05.jpg",
-		"/media/equipment-sale/automatic-level-hueper/06.jpg"
-	],
+	"productImages": {
+		"images": [
+			"/media/equipment-sale/automatic-level-hueper/02.png",
+			"/media/equipment-sale/automatic-level-hueper/03.png",
+			"/media/equipment-sale/automatic-level-hueper/04.jpg",
+			"/media/equipment-sale/automatic-level-hueper/05.jpg",
+			"/media/equipment-sale/automatic-level-hueper/06.jpg"
+		]
+	},
 	"opticalPerformance": {
 		"tag": null,
 		"headline": "Optical Performance",
@@ -44,9 +46,9 @@
 		"description": "",
 		"list": [
 			"Rugged construction for field conditions",
-            "Dust and splash resistant (IP54 class)",
-            "Shock-resistant internal structure",
-            "Lightweight and portable design"
+			"Dust and splash resistant (IP54 class)",
+			"Shock-resistant internal structure",
+			"Lightweight and portable design"
 		]
 	},
 	"operationAndFeatures": {
@@ -101,12 +103,12 @@
 				"href": "/equipment-sale/total-station-esurvey"
 			},
 			{
-				"image": "/img/instruments/total-station-dtm-152m.png",
+				"image": "/img/instruments/total-station-dtm-152m.jpg",
 				"label": "TOTAL STATION DTM 152M",
 				"href": "/equipment-sale/total-station-dtm-152m"
 			},
 			{
-				"image": "/img/instruments/foif-a90-rtk-gnss",
+				"image": "/img/instruments/foif-a90-rtk-gnss.png",
 				"label": "FOIF A90 RTK GNSS",
 				"href": "/equipment-sale/foif-a90-rtk-gnss"
 			},

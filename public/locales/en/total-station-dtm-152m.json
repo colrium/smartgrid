@@ -9,11 +9,13 @@
 			"href": "mailto:smartgridsurveying@gmail.com"
 		}
 	},
-    "images": [
-        "/media/equipment-sale/total-station-dtm-152m/01.png",
-        "/media/equipment-sale/total-station-dtm-152m/09.png",
-        "/media/equipment-sale/total-station-dtm-152m/02.jpg"
-    ],
+    "productImages":{
+        "images": [
+            "/media/equipment-sale/total-station-dtm-152m/01.png",
+            "/media/equipment-sale/total-station-dtm-152m/09.png",
+            "/media/equipment-sale/total-station-dtm-152m/02.jpg"
+        ]
+    },
 	"measurementCapability": {
 		"tag": null,
 		"headline": "Measurement Capability",
@@ -101,7 +103,7 @@
 				"href": "/equipment-sale/total-station-esurvey"
 			},
 			{
-				"image": "/img/instruments/foif-a90-rtk-gnss",
+				"image": "/img/instruments/foif-a90-rtk-gnss.png",
 				"label": "FOIF A90 RTK GNSS",
 				"href": "/equipment-sale/total-station-dtm-152m"
 			},

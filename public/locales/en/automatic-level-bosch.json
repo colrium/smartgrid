@@ -9,13 +9,15 @@
 			"href": "mailto:smartgridsurveying@gmail.com"
 		}
 	},
-	"images": [
-		"/media/equipment-sale/automatic-level-bosch/02.png",
-		"/media/equipment-sale/automatic-level-bosch/03.png",
-		"/media/equipment-sale/automatic-level-bosch/04.jpg",
-        "/media/equipment-sale/automatic-level-bosch/09.png",
-        "/media/equipment-sale/automatic-level-bosch/10.png"
-	],
+	"productImages": {
+		"images": [
+			"/media/equipment-sale/automatic-level-bosch/02.jpg",
+			"/media/equipment-sale/automatic-level-bosch/03.jpg",
+			"/media/equipment-sale/automatic-level-bosch/04.jpg",
+			"/media/equipment-sale/automatic-level-bosch/09.png",
+			"/media/equipment-sale/automatic-level-bosch/10.png"
+		]
+	},
 	"opticalPerformance": {
 		"tag": null,
 		"headline": "Optical Performance",
@@ -87,9 +89,7 @@
 		}
 	},
 	"saleBanner": {
-		"images": [
-			"/media/equipment-sale/automatic-level-bosch/05.png"
-		]
+		"images": ["/media/equipment-sale/automatic-level-bosch/05.png"]
 	},
 	"relatedProducts": {
 		"tag": null,
@@ -103,12 +103,12 @@
 				"href": "/equipment-sale/total-station-esurvey"
 			},
 			{
-				"image": "/img/instruments/total-station-dtm-152m.png",
+				"image": "/img/instruments/total-station-dtm-152m.jpg",
 				"label": "TOTAL STATION DTM 152M",
 				"href": "/equipment-sale/total-station-dtm-152m"
 			},
 			{
-				"image": "/img/instruments/foif-a90-rtk-gnss",
+				"image": "/img/instruments/foif-a90-rtk-gnss.png",
 				"label": "FOIF A90 RTK GNSS",
 				"href": "/equipment-sale/foif-a90-rtk-gnss"
 			},

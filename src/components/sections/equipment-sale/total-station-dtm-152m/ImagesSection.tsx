@@ -14,14 +14,14 @@ const  ImagesSection = () => {
 		returnObjects: true,
 	}) as unknown as ImagesContent;
 	const images = Array.isArray(section.images) ? section.images : [];
-
+    console.log("images", images);
 	if (images.length === 0) return null;
 
 	const slides = images.map((image, index) => ({
 		image,
 		alt: `Product image ${index + 1}`,
 	}));
-    console.log("slides", slides)
+    
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden">
 			<div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
