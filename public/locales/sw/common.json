@@ -1,43 +1,41 @@
 {
-    "misc": {
+	"misc": {
 		"welcome": "Karibu",
 		"loading": "Inapakia...",
-		"changeLanguage": "Badilisha Lugha",
-		"goHome": "Rudi Nyumbani",
+		"changeLanguage": "Badili Lugha",
+		"goHome": "Nenda Nyumbani",
 		"active": "Inatumika"
 	},
 	"form": {
-		"submissionError": "Uwasilishaji ulishindikana. Tafadhali jaribu tena baadaye au wasiliana na msaada.",
+		"submissionError": "Uwasilishaji umeshindwa. Tafadhali jaribu tena baadaye au wasiliana na msaada.",
 		"sending": "Inatuma..."
 	},
-    "contacts": {
-        "address": "Nairobi, Kenya",
-        "mobile": "+254 10 7393023",
-        "Email": "smartgridsurveying@gmail.com"
-    },
+	"contacts": {
+		"address": "Nairobi, Kenya",
+		"mobile": "+254 10 7393023",
+		"Email": "smartgridsurveying@gmail.com"
+	},
 	"errors": {
-        "error": "Hitilafu",
-		"notFound": "Ukurasa haukupatikana",
-		"serverError": "Hitilafu ndani ya seva",
+		"error": "Hitilafu",
+		"notFound": "Ukurasa haupatikani",
+		"serverError": "Hitilafu ya ndani ya seva",
 		"forbidden": "Ufikiaji umekatazwa",
 		"pageTitle": "{{statusCode}} - {{title}}",
 		"statusLabel": "Hitilafu {{statusCode}}",
-		"notFoundTitle": "Ukurasa haukupatikana",
-		"notFoundDescription": "Ukurasa unaouangalia huenda ulihamishwa, kuondolewa, au haukuwahi kuwepo. Rudi nyumbani au wasiliana na timu ya Smartgrid ikiwa unahitaji msaada kutafuta kitu maalum.",
-		"serverErrorTitle": "Kitu kilienda vibaya",
-		"serverErrorDescription": "Tovuti haikuweza kukamilisha ombi hili. Timu yetu imearifiwa inapowezekana, na unaweza kujaribu tena hivi karibuni au kuwasiliana nasi moja kwa moja.",
+		"notFoundTitle": "Ukurasa haupatikani",
+		"notFoundDescription": "Ukurasa unaotafuta huenda umehamishwa, kuondolewa, au haukuwepo kamwe. Rudi nyumbani au wasiliana na timu ya Smartgrid ikiwa unahitaji msaada wa kupata kitu maalum.",
+		"serverErrorTitle": "Hitilafu imetokea",
+		"serverErrorDescription": "Tovuti haikuweza kukamilisha ombi hili. Timu yetu imearifiwa inapowezekana, na unaweza kujaribu tena baadaye au kuwasiliana nasi moja kwa moja.",
 		"genericTitle": "Hitilafu isiyotarajiwa",
-		"genericDescription": "Hitilafu isiyotarajiwa ilikatiza ombi hili. Tafadhali jaribu tena, rudi nyumbani, au wasiliana na timu ya Smartgrid kwa msaada.",
-
+		"genericDescription": "Hitilafu isiyotarajiwa ilikatisha ombi hili. Tafadhali jaribu tena, rudi nyumbani, au wasiliana na timu ya Smartgrid kwa usaidizi.",
 		"actions": {
 			"home": "Rudi Nyumbani",
 			"contact": "Wasiliana na Msaada"
 		}
 	},
-
 	"locales": [
 		{
-			"label": "English",
+			"label": "Kiingereza",
 			"code": "en",
 			"flag": "/img/flags/gb.svg"
 		},
@@ -48,34 +46,34 @@
 		}
 	],
 	"nav": {
-        "logo": "/img/logo.svg",
+		"logo": "/img/logo.svg",
 		"logo_alt": "SmartGrid",
 		"links": [
 			{
 				"label": "Upimaji",
 				"links": [
 					{
-						"label": "Uchunguzi wa topografia",
+						"label": "Upimaji wa topografia",
 						"href": "/surveying/topographical-surveys"
 					},
 					{
-						"label": "Uchunguzi wa tovuti za majengo",
+						"label": "Upimaji wa tovuti za ujenzi",
 						"href": "/surveying/building-site-surveys"
 					},
 					{ "label": "Mali za sehemu", "href": "/surveying/sectional-properties" },
-					{ "label": "Uchunguzi wa cadastral", "href": "/surveying/cadastral-surveys" },
-					{ "label": "Uchunguzi wa angani", "href": "/surveying/aerial-surveys" },
+					{ "label": "Upimaji wa cadastral", "href": "/surveying/cadastral-surveys" },
+					{ "label": "Upimaji wa angani", "href": "/surveying/aerial-surveys" },
 					{
-						"label": "Rada ya mionzi ya ardhini",
+						"label": "Rada ya kupenya ardhini",
 						"href": "/surveying/ground-penetrating-radar"
 					},
-					{ "label": "Upimaji wa rasilimali", "href": "/surveying/resource-mapping" },
+					{ "label": "Ramani ya Rasilimali", "href": "/surveying/resource-mapping" },
 					{
-						"label": "Uchunguzi wa bathymetric",
+						"label": "Upimaji wa bathymetric",
 						"href": "/surveying/bathymetric-surveys"
 					},
 					{
-						"label": "GIS na Uchoraji Ramani",
+						"label": "GIS na Ramani",
 						"href": "/surveying/gis-mapping"
 					},
 					{
@@ -85,41 +83,114 @@
 				]
 			},
 			{
-				"label": "Droni za Angani",
+				"label": "Ndege zisizo na rubani",
 				"links": [
 					{
-						"label": "Uchunguzi wa topografia",
-						"href": "/surveying/topographical-surveys"
+						"label": "Upimaji wa picha za ndege zisizo na rubani",
+						"href": "/aerial-drones/drone-imagery-surveys"
+					},
+					{
+						"label": "Ramani ya Lidar",
+						"href": "/aerial-drones/lidar-mapping"
+					},
+					{
+						"label": "Ramani ya NDVI ya Kilimo",
+						"href": "/aerial-drones/agricultural-ndvi-mapping"
+					},
+					{
+						"label": "Upimaji wa 'as built'",
+						"href": "/aerial-drones/as-built-surveys"
+					},
+					{
+						"label": "Ufuatiliaji na Tathmini",
+						"href": "/aerial-drones/monitoring-and-evaluation"
+					},
+					{
+						"label": "Upimaji wa Paneli za Jua kwa Ndege zisizo na rubani",
+						"href": "/aerial-drones/solar-panel-drone-surveys"
+					},
+					{
+						"label": "Upimaji wa Kiasi (Volumetric)",
+						"href": "/aerial-drones/volumetric-surveys"
+					},
+					{
+						"label": "Upimaji wa Dampo na Machimbo kwa Ndege zisizo na rubani",
+						"href": "/aerial-drones/landfill-quarry-drone-surveys"
+					},
+					{
+						"label": "Upigaji picha na Uuzaji wa Video",
+						"href": "/aerial-drones/photography-video-marketing"
 					}
 				]
 			},
 			{
-				"label": "Kirahisi",
+				"label": "Uhandisi wa Miundombinu",
 				"links": [
 					{
-						"label": "Uchunguzi wa topografia",
-						"href": "/surveying/topographical-surveys"
+						"label": "Upimaji wa Barabara kuu",
+						"href": "/civil/highway-surveys"
+					},
+					{
+						"label": "Upimaji wa 'as built'",
+						"href": "/civil/as-built-surveys"
+					},
+					{
+						"label": "Upimaji wa kiasi (Volumetric)",
+						"href": "/civil/volumetric-surveys"
+					},
+					{
+						"label": "BIM",
+						"href": "/civil/bim"
+					},
+					{
+						"label": "Uhandisi wa Tovuti",
+						"href": "/civil/site-engineering"
+					},
+					{
+						"label": "Uwekezaji wa tovuti",
+						"href": "/civil/site-setting-out"
 					}
 				]
 			},
 			{
-				"label": "Uuzaji wa vifaa",
+				"label": "Uuzaji wa Vifaa",
 				"links": [
 					{
-						"label": "Uchunguzi wa topografia",
-						"href": "/surveying/topographical-surveys"
+						"label": "FOIF A90 RTK GNSS",
+						"href": "/equipment-sale/foif-a90-rtk-gnss"
+					},
+					{
+						"label": "TOTAL STATION ESURVEY",
+						"href": "/equipment-sale/total-station-esurvey"
+					},
+					{
+						"label": "TOTAL STATION DTM 152M",
+						"href": "/equipment-sale/total-station-dtm-152m"
+					},
+					{
+						"label": "AUTOMATIC LEVEL BOSCH",
+						"href": "/equipment-sale/automatic-level-bosch"
+					},
+					{
+						"label": "AUTOMATIC LEVEL HUEPER",
+						"href": "/equipment-sale/automatic-level-hueper"
+					},
+					{
+						"label": "KATALOGI YA VIFAA",
+						"href": "/equipment-sale/equipment-catalogue"
 					}
 				]
 			},
-			{ "label": "Ajira", "href": "/hiring" },
+			{ "label": "Kukodisha", "href": "/hiring" },
 			{ "label": "Kuhusu", "href": "/about" },
-			{ "label": "Wasiliana", "href": "/contact", "type": "pill" }
+			{ "label": "Wasiliana Nasi", "href": "/contact", "type": "pill" }
 		],
-		"cta_ghost": { "label": "Jifunze Zaidi", "href": "/#faq" },
-		"cta_primary": { "label": "Omba Nukuu", "href": "/contact" }
+		"ctaPrimary": { "label": "Pata Nukuu", "href": "/contact?reason=request-quote" },
+		"ctaSecondary": { "label": "Jifunze Zaidi", "href": "/#faq" },
+		"ctaSearch": { "label": "Jifunze Zaidi", "href": "/#faq" }
 	},
 	"footer": {
-		"description": "Ya Kuaminika. Inayoweza Kupanuka. Ya Haraka. Sahihi.",
+		"description": "Inaaminika. Inaweza kupanuka. Haraka. Sahihi.",
 		"columns": {
 			"company": {
 				"heading": "Kampuni",
@@ -128,9 +199,8 @@
 					{ "label": "Timu Yetu", "href": "/about#team" }
 				]
 			},
-
 			"contact": {
-				"heading": "Wasiliana",
+				"heading": "Wasiliana Nasi",
 				"links": [
 					{
 						"label": "smartgridsurveying@gmail.com",
@@ -147,6 +217,4 @@
 			"terms": "Masharti ya Matumizi"
 		}
 	}
-
-
 }
