@@ -1,0 +1,122 @@
+{
+	"hero": {
+		"headline": "Precision Total Station for Demanding Surveys",
+		"title": "TOTAL STATION DTM 152M",
+		"image": "/media/equipment-sale/total-station-dtm-152m/01.png",
+		"description": "The DTM 152M Total Station is a reliable, high-precision surveying instrument designed for efficient field operations, delivering accurate measurements for construction, engineering, and cadastral survey applications.",
+		"ctaPrimary": {
+			"label": "Inquire About This Equipment",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+    "images": [
+        "/media/equipment-sale/total-station-dtm-152m/01.png",
+        "/media/equipment-sale/total-station-dtm-152m/09.png",
+        "/media/equipment-sale/total-station-dtm-152m/02.jpg"
+    ],
+	"measurementCapability": {
+		"tag": null,
+		"headline": "Measurement Capability",
+		"description": "",
+		"list": [
+			"Angular Accuracy: 2” high precision",
+			"Distance (Prism): Up to 3000m",
+			"Reflectorless Measurement: Up to 500m",
+			"Fast and stable distance acquisition"
+		]
+	},
+	"accuracyAndPerformance": {
+		"tag": null,
+		"headline": "Accuracy & Performance",
+		"description": "",
+		"list": [
+			"Distance Accuracy (Prism): ±(2mm + 2ppm)",
+			"Reflectorless Accuracy: ±(3mm + 2ppm)",
+			"Quick response for real-time surveying",
+			"Consistent performance in field conditions"
+		]
+	},
+	"dataAndInterface": {
+		"tag": null,
+		"headline": "Data & Interface",
+		"description": "",
+		"list": [
+			"Internal memory for data storage",
+			"USB and serial communication support",
+			"Simple and intuitive user interface",
+			"Efficient onboard data collection"
+		]
+	},
+	"buildAndDurability": {
+		"tag": null,
+		"headline": "Build & Durability",
+		"description": "",
+		"list": [
+			"Compact and lightweight design",
+			"Rugged construction for field use",
+			"Weather-resistant housing",
+			"Long battery life for extended operations"
+		]
+	},
+	"applications": {
+		"tag": null,
+		"headline": "Build & Durability",
+		"description": "",
+		"list": [
+			"Topographic Surveys",
+			"Construction Layout & Setting Out",
+			"Boundary Re-establishment",
+			"Engineering & Infrastructure Projects"
+		]
+	},
+	"cta": {
+		"tag": "Countact us",
+		"headline": "Get This Equipment",
+		"description": "Contact us for pricing, availability, and professional support.",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Email Us",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		},
+		"ctaSecondary": {
+			"icon": "whatsapp",
+			"label": "WhatsApp Us",
+			"href": "https://wa.me/254701618282"
+		}
+	},
+	"saleBanner": {
+		"images": [
+			"/media/equipment-sale/total-station-dtm-152m/03.png",
+			"/media/equipment-sale/total-station-dtm-152m/04.png"
+		]
+	},
+	"relatedProducts": {
+		"tag": null,
+		"headline": "OTHER RELATED PRODUCTS",
+		"description": "",
+
+		"items": [
+			{
+				"image": "/media/equipment-sale/total-station-dtm-152m/05.png",
+				"label": "TOTAL STATION ESURVEY",
+				"href": "/equipment-sale/total-station-dtm-152m"
+			},
+			{
+				"image": "/media/equipment-sale/total-station-dtm-152m/06.png",
+				"label": "FOIF A90 RTK GNSS",
+				"href": "/equipment-sale/total-station-dtm-152m"
+			},
+
+			{
+				"image": "/media/equipment-sale/total-station-dtm-152m/07.png",
+				"label": "AUTOMATIC LEVEL HUEPER",
+				"href": "/equipment-sale/automatic-level-hueper"
+			},
+			{
+				"image": "/media/equipment-sale/total-station-dtm-152m/08.png",
+				"label": "AUTOMATIC LEVEL BOSCH",
+				"href": "/equipment-sale/automatic-level-bosch"
+			}
+		]
+	}
+}

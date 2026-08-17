@@ -1,7 +1,7 @@
 {
 	"hero": {
 		"badge": "Usahihi wa Uhandisi",
-		"headline": "Pima Kwa <primary>Umaalimu</primary>, Jenga kwa Nguvu.",
+		"headline": "Pima Kwa <primary>Umaalimu</primary>, Jenga kwa <accent>Nguvu</accent>.",
 		"description": "Kiongozi wa Upimaji wa Ardhi na Angani Afrika kwa Teknolojia ya Kisasa",
 		"ctaPrimary": {
 			"label": "Omba Upimaji",

@@ -1,0 +1,116 @@
+{
+	"hero": {
+		"headline": "Kituo Kamili cha Usahihi kwa Uchunguzi wa Kuhitajika",
+		"title": "TOTAL STATION DTM 152M",
+		"image": "/media/equipment-sale/total-station-dtm-152m/01.jpg",
+		"description": "DTM 152M Total Station ni kifaa cha upimaji cha kuaminika, cha usahihi wa juu kilichoundwa kwa uendeshaji mzuri shambani, kikitoa vipimo sahihi kwa matumizi ya ujenzi, uhandisi, na uchunguzi wa cadastral.",
+		"ctaPrimary": {
+			"label": "Ulizia Kuhusu Kifaa Hiki",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"measurementCapability": {
+		"tag": null,
+		"headline": "Uwezo wa Kipimo",
+		"description": "",
+		"list": [
+			"Usahihi wa Angular: usahihi wa juu wa 2”",
+			"Umbali (Prism): Hadi 3000m",
+			"Kipimo bila Reflector: Hadi 500m",
+			"Upataji wa umbali wa haraka na imara"
+		]
+	},
+	"accuracyAndPerformance": {
+		"tag": null,
+		"headline": "Usahihi na Utendaji",
+		"description": "",
+		"list": [
+			"Usahihi wa Umbali (Prism): ±(2mm + 2ppm)",
+			"Usahihi bila Reflector: ±(3mm + 2ppm)",
+			"Mwitikio wa haraka kwa upimaji wa wakati halisi",
+			"Utendaji thabiti katika hali za shambani"
+		]
+	},
+	"dataAndInterface": {
+		"tag": null,
+		"headline": "Data na Kiolesura",
+		"description": "",
+		"list": [
+			"Kumbukumbu ya ndani kwa uhifadhi wa data",
+			"Usaidizi wa mawasiliano wa USB na serial",
+			"Kiolesura rahisi na angavu cha mtumiaji",
+			"Ukusanyaji mzuri wa data ndani ya kifaa"
+		]
+	},
+	"buildAndDurability": {
+		"tag": null,
+		"headline": "Ujenzi na Uimara",
+		"description": "",
+		"list": [
+			"Muundo mwembamba na mwepesi",
+			"Ujenzi thabiti kwa matumizi ya shambani",
+			"Kifuniko kinachostahimili hali ya hewa",
+			"Maisha marefu ya betri kwa uendeshaji wa muda mrefu"
+		]
+	},
+	"applications": {
+		"tag": null,
+		"headline": "Ujenzi na Uimara",
+		"description": "",
+		"list": [
+			"Uchunguzi wa Topografia",
+			"Mpangilio wa Ujenzi na Setting Out",
+			"Urejesho wa Mipaka",
+			"Miradi ya Uhandisi na Miundombinu"
+		]
+	},
+	"cta": {
+		"tag": "Wasiliana nasi",
+		"headline": "Pata Kifaa Hiki",
+		"description": "Wasiliana nasi kwa bei, upatikanaji, na msaada wa kitaalamu.",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Tutumie Barua Pepe",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		},
+		"ctaSecondary": {
+			"icon": "whatsapp",
+			"label": "Tutumie WhatsApp",
+			"href": "https://wa.me/254701618282"
+		}
+	},
+	"saleBanner": {
+		"images": [
+			"/media/equipment-sale/total-station-dtm-152m/08.png",
+			"/media/equipment-sale/total-station-dtm-152m/09.png"
+		]
+	},
+	"relatedProducts": {
+		"tag": null,
+		"headline": "BIDHAA NYINGINE ZINAZOHUSIANA",
+		"description": "",
+
+		"items": [
+			{
+				"image": "/media/equipment-sale/total-station-dtm-152m/05.png",
+				"label": "TOTAL STATION ESURVEY",
+				"href": "/equipment-sale/total-station-dtm-152m"
+			},
+			{
+				"image": "/media/equipment-sale/total-station-dtm-152m/06.png",
+				"label": "FOIF A90 RTK GNSS",
+				"href": "/equipment-sale/total-station-dtm-152m"
+			},
+			{
+				"image": "/media/equipment-sale/total-station-dtm-152m/07.png",
+				"label": "AUTOMATIC LEVEL HUEPER",
+				"href": "/equipment-sale/automatic-level-hueper"
+			},
+			{
+				"image": "/media/equipment-sale/total-station-dtm-152m/08.png",
+				"label": "AUTOMATIC LEVEL BOSCH",
+				"href": "/equipment-sale/automatic-level-bosch"
+			}
+		]
+	}
+}

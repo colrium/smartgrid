@@ -31,12 +31,12 @@ import solarpaneldronesurveys from '../public/locales/en/solar-panel-drone-surve
 import surveying from '../public/locales/en/surveying.json';
 import terms from '../public/locales/en/terms.json';
 import topographicalsurveys from '../public/locales/en/topographical-surveys.json';
+import totalstationdtm152m from '../public/locales/en/total-station-dtm-152m.json';
 import totalstationesurvey from '../public/locales/en/total-station-esurvey.json';
 import volumetricsurveys from '../public/locales/en/volumetric-surveys.json';
 import automaticlevelbosch from '../public/locales/en/equipment-sale/automatic-level-bosch.json';
 import automaticlevelhueper from '../public/locales/en/equipment-sale/automatic-level-hueper.json';
 import equipmentcatalogue from '../public/locales/en/equipment-sale/equipment-catalogue.json';
-import totalstationdtm152m from '../public/locales/en/equipment-sale/total-station-dtm-152m.json';
 
 const resources = {
   about,
@@ -72,12 +72,12 @@ const resources = {
   surveying,
   terms,
   'topographical-surveys': topographicalsurveys,
+  'total-station-dtm-152m': totalstationdtm152m,
   'total-station-esurvey': totalstationesurvey,
   'volumetric-surveys': volumetricsurveys,
   'automatic-level-bosch': automaticlevelbosch,
   'automatic-level-hueper': automaticlevelhueper,
-  'equipment-catalogue': equipmentcatalogue,
-  'total-station-dtm-152m': totalstationdtm152m
+  'equipment-catalogue': equipmentcatalogue
 } as const;
 
 export default resources;

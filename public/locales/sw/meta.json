@@ -160,6 +160,11 @@
 			"page_title": "Total Station E-Survey",
 			"meta_description": "Vituo kamili vya E-Survey vya utendaji wa juu kwa vipimo vya kuaminika vya pembe na umbali katika miradi ya ujenzi, cadastral, na uhandisi.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"total-station-dtm-152m": {
+			"page_title": "Total Station DTM 152M",
+			"meta_description": "Kituo kamili cha usahihi wa juu kwa uchunguzi wa kuhitajika — vipimo sahihi kwa ujenzi, uhandisi, na matumizi ya uchunguzi wa cadastral.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {
