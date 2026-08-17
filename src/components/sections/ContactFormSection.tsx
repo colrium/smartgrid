@@ -32,13 +32,13 @@ export default function ContactFormSection() {
 	
 
 	return (
-		<section id="contact-form" className="relative py-24">
+		<section id="contact-form" className="relative pt-64 pb-24">
 			<div className="max-w-295 mx-auto px-8 grid lg:grid-cols-[0.75fr_1.25fr] gap-12">
 				<div>
 					<span className="inline-block text-xs  uppercase text-primary opacity-80 mb-3">
 						{t("contact:form.tag")}
 					</span>
-					<h2 className="text-on-surface-800 mb-5">
+					<h2 className="text-5xl text-ink-soft  mb-5">
 						{t("contact:form.headline")}
 					</h2>
 					<p className="text-base text-on-surface-900 leading-[1.75] font-light">

@@ -5,6 +5,8 @@ import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionTag } from "@/components/SectionTag";
 import { Blob } from "@/components/sections/home/decor";
+import Slider from "@/components/Slider";
+
 
 interface ProductOverviewContent {
 	tag?: string | null;
@@ -19,6 +21,10 @@ export function ProductOverviewSection() {
 		returnObjects: true,
 	}) as unknown as ProductOverviewContent;
 	const images = Array.isArray(section.images) ? section.images : [];
+    const slides = images.map((image, index) => ({
+		image,
+		alt: `Product image ${index + 1}`,
+	}));
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden">
@@ -58,6 +64,18 @@ export function ProductOverviewSection() {
 						</FadeUp>
 					))}
 				</div>
+
+				{/* <div className="relative z-10 max-w-7xl mx-auto sm:py-4 lg:py-2">
+					<FadeUp>
+						<Slider
+							slides={slides}
+							autoplay={5000}
+							showArrows
+							showDots
+							imgClassName="object-contain!"
+						/>
+					</FadeUp>
+				</div> */}
 			</div>
 		</section>
 	);

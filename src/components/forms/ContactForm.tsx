@@ -272,7 +272,7 @@ export default function ContactForm({ className = "", ...props }: ContactFormPro
 				<button
 					type="submit"
 					disabled={formspree.submitting}
-					className="inline-flex items-center justify-center gap-2 bg-primary text-surface font-medium px-7 py-3.5 rounded border border-primary  transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+					className="inline-flex items-center justify-center gap-2 bg-primary text-surface font-medium px-7 py-3.5 rounded-full border border-primary  transition-all disabled:opacity-50 disabled:cursor-not-allowed"
 				>
 					{formspree.submitting
 						? t("common:form.sending")

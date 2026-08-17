@@ -24,9 +24,9 @@ export function ImagesSection() {
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
-			<div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
+			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
-					<Slider slides={slides} autoplay={5000} showArrows showDots />
+					<Slider slides={slides} autoplay={0} showArrows showDots imgClassName="object-contain!" />
 				</FadeUp>
 			</div>
 		</section>

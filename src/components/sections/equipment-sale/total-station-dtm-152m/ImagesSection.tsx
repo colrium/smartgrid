@@ -10,7 +10,7 @@ interface ImagesContent {
 
 const  ImagesSection = () => {
 	const { t } = useTranslation(["total-station-dtm-152m"]);
-	const section = t("total-station-dtm-152m:images", {
+	const section = t("total-station-dtm-152m:productImages", {
 		returnObjects: true,
 	}) as unknown as ImagesContent;
 	const images = Array.isArray(section.images) ? section.images : [];
@@ -24,9 +24,15 @@ const  ImagesSection = () => {
     
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden">
-			<div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
+			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
-					<Slider slides={slides} autoplay={5000} showArrows showDots />
+					<Slider
+						slides={slides}
+						autoplay={0}
+						showArrows
+						showDots
+						imgClassName="object-contain!"
+					/>
 				</FadeUp>
 			</div>
 		</section>
