@@ -34,7 +34,7 @@ const drone3dProps = new Map([
 			propellorsAxis: "y",
 			scale: [0.3, 0.3, 0.3],
 			position: [0, -0.3, 0],
-			propellors: ["Object_164"],
+			propellors: [],
 		},
 	],
 	[
@@ -57,7 +57,7 @@ const drone3dProps = new Map([
 			propellorsAxis: "y",
 			scale: [0.003, 0.003, 0.003],
 			position: [0, 0, 0],
-			propellors: ["SpineB.006"],
+			propellors: [],
 		},
 	],
 	[
@@ -321,7 +321,7 @@ export default function HeroSection() {
 			// Drone physics, movement, and subtle mouse follow
 			droneGroup.rotation.z = Math.sin(t * 1.5) * 0.05;
 			droneGroup.rotation.x = Math.cos(t * 1.2) * 0.05;
-			droneGroup.rotation.y += 0.025;
+			droneGroup.rotation.y += Math.random() * 0.005;
 
 			// Combine sine wave hovering with the smoothed mouse coordinates
 			droneGroup.position.x = Math.sin(t * 0.5) * 2.5 + smoothMouseX * 3;
@@ -334,7 +334,7 @@ export default function HeroSection() {
 				prop.rotation[propellorsAxis] += 0.9 * direction;
 			});
 
-			scanner.rotation.y += 0.02;
+			scanner.rotation.y += 0.005;
 			// Sync shader scan position to drone
 			gridUniforms.uDronePos.value.copy(droneGroup.position);
 
