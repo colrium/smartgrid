@@ -117,6 +117,12 @@
 			"Protection: IP68"
 		]
 	},
+	"saleBanner": {
+		"images": [
+			"/media/equipment-sale/foif-a90-rtk-gnss/04.png",
+			"/media/equipment-sale/foif-a90-rtk-gnss/05.png"
+		]
+	},
 	"cta": {
 		"tag": "Countact us",
 		"headline": "Inquire About This Equipment",

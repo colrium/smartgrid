@@ -8,3 +8,4 @@ export { CtaSection } from "./CtaSection";
 export { default as CtaSectionDefault } from "./CtaSection";
 export { RelatedProductsSection } from "./RelatedProductsSection";
 export { default as RelatedProductsSectionDefault } from "./RelatedProductsSection";
+export { default as SaleBannerSection } from "./SaleBannerSection";

@@ -26,7 +26,6 @@ export function RelatedProductsSection() {
 		returnObjects: true,
 	}) as unknown as RelatedProductsContent;
 	const items = Array.isArray(section.items) ? section.items : [];
-	const images = Array.isArray(section.images) ? section.images : [];
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
@@ -39,26 +38,7 @@ export function RelatedProductsSection() {
 					</h2>
 				</FadeUp>
 
-				{images.length > 0 && (
-					<div className="mt-10 flex items-center justify-center gap-4 sm:gap-6 overflow-hidden">
-						{images.map((image, index) => (
-							<div
-								key={index}
-								className="relative h-132 sm:h-140 w-xl sm:w-152 shrink-0 rounded-[20px] bg-surface hairline card-shadow p-4"
-							>
-								<div className="relative h-full w-full overflow-hidden rounded-[15px] bg-brand-50/60">
-									<Image
-										src={image}
-										alt=""
-										fill
-										sizes="(min-width: 640px) 13rem, 11rem"
-										className="object-contain object-center"
-									/>
-								</div>
-							</div>
-						))}
-					</div>
-				)}
+				
 
 				<div className="mt-12 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
 					{items.map((item, index) => (

@@ -132,31 +132,33 @@
 			"href": "https://wa.me/254701618282"
 		}
 	},
+	"saleBanner": {
+		"images": [
+			"/media/equipment-sale/foif-a90-rtk-gnss/04.png",
+			"/media/equipment-sale/foif-a90-rtk-gnss/05.png"
+		]
+	},
 	"relatedProducts": {
 		"tag": null,
 		"headline": "BIDHAA NYINGINE ZINAZOHUSIANA",
 		"description": "",
-        "images": [
-            "/media/equipment-sale/foif-a90-rtk-gnss/04.png",
-            "/media/equipment-sale/foif-a90-rtk-gnss/05.png"
-        ],
 		"items": [
 			{
 				"image": "/media/equipment-sale/foif-a90-rtk-gnss/06.png",
 				"label": "TOTAL STATION ESURVEY",
 				"href": "/equipment-sale/total-station-esurvey"
 			},
-            {
+			{
 				"image": "/media/equipment-sale/foif-a90-rtk-gnss/07.png",
 				"label": "TOTAL STATION DTM 152M",
 				"href": "/equipment-sale/total-station-dtm-152m"
 			},
-            {
+			{
 				"image": "/media/equipment-sale/foif-a90-rtk-gnss/08.png",
 				"label": "AUTOMATIC LEVEL HUEPER",
 				"href": "/equipment-sale/automatic-level-hueper"
 			},
-            {
+			{
 				"image": "/media/equipment-sale/foif-a90-rtk-gnss/09.png",
 				"label": "AUTOMATIC LEVEL BOSCH",
 				"href": "/equipment-sale/automatic-level-bosch"

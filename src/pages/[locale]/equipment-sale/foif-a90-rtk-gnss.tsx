@@ -9,6 +9,7 @@ import {
 	SpecificationsSection,
 	CtaSection,
 	RelatedProductsSection,
+	SaleBannerSection,
 } from "@/components/sections/equipment-sale/foif-a90-rtk-gnss";
 
 type PageProps = {
@@ -23,7 +24,8 @@ const Page: NextPage<PageProps> = () => {
 				<EquipmentHeroSection namespace="foif-a90-rtk-gnss" />
 				<ProductOverviewSection />
 				<KeyFeaturesSection />
-				<SpecificationsSection />
+                <SpecificationsSection />
+                <SaleBannerSection />
 				<CtaSection />
 				<RelatedProductsSection />
 			</div>
