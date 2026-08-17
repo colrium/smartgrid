@@ -41,12 +41,12 @@ export function SectionalHeroSection() {
 				<FadeUp>
 					{hero.tag && <SectionTag>{hero.tag}</SectionTag>}
 
-					<h1 className="mt-5 max-w-4xl font-light tracking-tight leading-[1.05] text-4xl sm:text-6xl lg:text-7xl text-white">
+					<h1 className="mt-5 max-w-4xl font-light tracking-tight leading-[1.05] text-4xl sm:text-6xl lg:text-7xl text-surface">
 						{hero.headline}
 					</h1>
 
 					{hero.description && (
-						<p className="mt-6 max-w-2xl text-base sm:text-lg text-white/70 leading-relaxed">
+						<p className="mt-6 max-w-2xl text-base sm:text-lg text-surface/70 leading-relaxed">
 							{hero.description}
 						</p>
 					)}

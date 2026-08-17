@@ -26,11 +26,11 @@ export function MetricsSection() {
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={index * 0.08}>
 							<div className="flex flex-col items-center gap-2 text-center">
-								<span className="text-4xl sm:text-5xl font-light tracking-tight text-white">
+								<span className="text-4xl sm:text-5xl font-light tracking-tight text-surface">
 									{item.value}
 								</span>
-								<span className="inline-block h-px w-10 bg-white/40" />
-								<span className="text-sm sm:text-[15px] text-white/70 leading-relaxed">
+								<span className="inline-block h-px w-10 bg-surface/40" />
+								<span className="text-sm sm:text-[15px] text-surface/70 leading-relaxed">
 									{item.description}
 								</span>
 							</div>

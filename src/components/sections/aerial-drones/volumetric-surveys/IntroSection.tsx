@@ -48,7 +48,7 @@ export function IntroSection() {
 							<div className="mt-10">
 								<Link
 									href={section.ctaPrimary.href}
-									className="group inline-flex items-center gap-3 h-14 rounded-full bg-primary px-8 text-white font-medium text-base transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]"
+									className="group inline-flex items-center gap-3 h-14 rounded-full bg-primary px-8 text-surface font-medium text-base transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]"
 								>
 									<span className="h-1.5 w-1.5 rounded-full bg-surface transition-transform duration-300 group-hover:scale-125" />
 									{section.ctaPrimary.label}

@@ -67,7 +67,7 @@ export function CoreExpertiseSection() {
 									</span>
 
 									<div className="flex items-center justify-between mb-8">
-										<span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
+										<span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 											<span
 												className={`mdi mdi-${
 													item.icon || expertiseIcon(item.label, index)

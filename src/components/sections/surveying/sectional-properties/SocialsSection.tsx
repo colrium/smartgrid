@@ -52,7 +52,7 @@ export function SocialsSection() {
 											href={item.url}
 											target="_blank"
 											rel="noopener noreferrer"
-											className="group inline-flex items-center gap-3 h-14 rounded-full border border-white/30 px-8 text-white text-base transition-all duration-300 hover:border-white hover:bg-white/10"
+											className="group inline-flex items-center gap-3 h-14 rounded-full border border-surface/30 px-8 text-surface text-base transition-all duration-300 hover:border-surface hover:bg-surface/10"
 										>
 											<span
 												className={`mdi ${meta.icon} text-lg text-brand-200`}

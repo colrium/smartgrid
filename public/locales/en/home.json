@@ -20,7 +20,9 @@
 			"items": [
 				{ "label": "Kenya", "code": "KE" },
 				{ "label": "Uganda", "code": "UG" },
-				{ "label": "Tanzania", "code": "TZ" }
+				{ "label": "Tanzania", "code": "TZ" },
+                { "label": "Nigeria", "code": "NG" },
+                { "label": "South Africa", "code": "SA" }
 			]
 		}
 	},

@@ -39,7 +39,7 @@ export function SectionHeader({
 			)}
 			<h2
 				className={`font-light tracking-tight leading-[1.08] text-3xl sm:text-4xl lg:text-[2.85rem] ${
-					dark ? "text-white" : "text-ink"
+					dark ? "text-surface" : "text-ink"
 				}`}
 			>
 				{headline}

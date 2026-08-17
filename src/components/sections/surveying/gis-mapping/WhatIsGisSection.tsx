@@ -42,11 +42,11 @@ export function WhatIsGisSection() {
 						<div className="mt-10 flex justify-center">
 							<Link
 								href={section.ctaPrimary.href}
-								className="group inline-flex items-center gap-3 h-14 rounded-full bg-primary px-8 text-white font-medium text-base transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_42px_-10px_rgba(0,151,178,0.55)]"
+								className="group inline-flex items-center gap-3 h-14 rounded-full bg-primary px-8 text-surface font-medium text-base transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_42px_-10px_rgba(0,151,178,0.55)]"
 							>
-								<span className="h-1.5 w-1.5 rounded-full bg-white/70 transition-transform duration-300 group-hover:scale-125" />
+								<span className="h-1.5 w-1.5 rounded-full bg-surface/70 transition-transform duration-300 group-hover:scale-125" />
 								{section.ctaPrimary.label}
-								<span className="mdi mdi-arrow-right text-xl text-white transition-transform duration-300 group-hover:translate-x-1" />
+								<span className="mdi mdi-arrow-right text-xl text-surface transition-transform duration-300 group-hover:translate-x-1" />
 							</Link>
 						</div>
 					)}

@@ -59,7 +59,7 @@ export function ServicesSection() {
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={(index % 4) * 0.06}>
 							<article className="group relative h-full flex flex-col items-center gap-4 rounded-[20px] bg-surface hairline card-shadow p-7 text-center transition-all duration-500 hover:card-shadow-lift hover:border-primary">
-								<span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
+								<span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 									<span
 										className={`mdi mdi-${
 											FALLBACK_ICONS[index % FALLBACK_ICONS.length]
@@ -83,7 +83,7 @@ export function ServicesSection() {
 						<div className="mt-12 flex justify-center">
 							<Link
 								href={section.ctaPrimary.href}
-								className="group inline-flex items-center gap-3 h-14 rounded-full bg-primary px-8 text-white font-medium text-base transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]"
+								className="group inline-flex items-center gap-3 h-14 rounded-full bg-primary px-8 text-surface font-medium text-base transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]"
 							>
 								{section.ctaPrimary.icon && (
 									<span className={`mdi mdi-${section.ctaPrimary.icon} text-xl`} />

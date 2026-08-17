@@ -42,7 +42,7 @@ export function KeyFeaturesSection() {
 						<FadeUp className="h-full" key={index} delay={(index % 4) * 0.07}>
 							<article className="group relative h-full flex flex-col items-center gap-4 rounded-[20px] bg-surface hairline card-shadow p-8 text-center transition-all duration-500 hover:card-shadow-lift hover:border-primary">
 								{item.icon && (
-									<span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
+									<span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 										<span className={`mdi mdi-${item.icon} text-3xl`} />
 									</span>
 								)}

@@ -47,7 +47,7 @@ export function OurCapabilitiesSection() {
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={(index % 4) * 0.06}>
 							<article className="group relative h-full flex flex-col items-center gap-4 rounded-[20px] bg-surface hairline card-shadow p-7 text-center transition-all duration-500 hover:card-shadow-lift hover:border-primary">
-								<span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
+								<span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 									<span
 										className={`mdi mdi-${FALLBACK_ICONS[index % FALLBACK_ICONS.length]} text-2xl`}
 									/>

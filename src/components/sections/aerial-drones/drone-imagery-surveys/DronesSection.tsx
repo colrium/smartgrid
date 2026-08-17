@@ -58,7 +58,7 @@ export function DronesSection() {
 
 								<div className="flex flex-col flex-1 p-7">
 									{item.icon && (
-										<span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
+										<span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 											<span className={`mdi mdi-${item.icon} text-lg`} />
 										</span>
 									)}
@@ -79,7 +79,7 @@ export function DronesSection() {
 					<FadeUp delay={0.15} className="mt-14 sm:mt-16">
 						<div className="relative rounded-[20px] ink-panel px-8 sm:px-12 py-12 sm:py-14 overflow-hidden">
 							<Blob className="w-72 h-72 bg-primary/25 -top-20 -right-20" opacity={0.6} />
-							<p className="relative z-10 max-w-3xl mx-auto text-center text-xl sm:text-2xl lg:text-[1.7rem] font-light leading-relaxed text-white whitespace-pre-line">
+							<p className="relative z-10 max-w-3xl mx-auto text-center text-xl sm:text-2xl lg:text-[1.7rem] font-light leading-relaxed text-surface whitespace-pre-line">
 								{section.subheadline}
 							</p>
 						</div>

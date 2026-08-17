@@ -61,10 +61,10 @@ export function AerialSurveyingSection() {
 
 										<div className="relative h-full flex items-center gap-4 px-5">
 											<span className="h-1.5 w-1.5 rounded-full bg-brand-200 shrink-0" />
-											<span className="text-sm sm:text-base font-medium text-white leading-snug">
+											<span className="text-sm sm:text-base font-medium text-surface leading-snug">
 												{item.label}
 											</span>
-											<span className="mdi mdi-arrow-right ml-auto text-white/40 text-lg -translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 group-hover:text-brand-200" />
+											<span className="mdi mdi-arrow-right ml-auto text-surface/40 text-lg -translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 group-hover:text-brand-200" />
 										</div>
 									</article>
 								</FadeUp>

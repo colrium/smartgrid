@@ -151,7 +151,7 @@ export function ServicesSection() {
 
 										<div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 flex items-end justify-between gap-4">
 											<div>
-												<h3 className="text-2xl sm:text-3xl font-light uppercase tracking-tight text-white leading-tight">
+												<h3 className="text-2xl sm:text-3xl font-light uppercase tracking-tight text-surface leading-tight">
 													{active.label}
 												</h3>
 											</div>
@@ -185,7 +185,7 @@ export function ServicesSection() {
 																key={i}
 																className="group/li flex items-start gap-3 text-sm text-on-surface/75 leading-relaxed"
 															>
-																<span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-brand-50 text-primary transition-all duration-300 group-hover/li:bg-primary group-hover/li:text-white">
+																<span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-brand-50 text-primary transition-all duration-300 group-hover/li:bg-primary group-hover/li:text-surface">
 																	<span
 																		className="mdi mdi-check text-sm"
 																		aria-hidden

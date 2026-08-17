@@ -31,7 +31,7 @@ export function SiteCtaSection() {
 						<span className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-brand-300/30 blur-[90px] pointer-events-none" />
 						<span className="absolute -bottom-28 -left-20 w-72 h-72 rounded-full bg-primary/30 blur-[90px] pointer-events-none" />
 						<span
-							className="absolute -bottom-10 right-4 font-light tracking-tighter text-[11rem] leading-none text-white/[0.03] select-none pointer-events-none hidden sm:block"
+							className="absolute -bottom-10 right-4 font-light tracking-tighter text-[11rem] leading-none text-surface/[0.03] select-none pointer-events-none hidden sm:block"
 							aria-hidden
 						>
 							↗
@@ -48,12 +48,12 @@ export function SiteCtaSection() {
 								</SectionTag>
 							)}
 
-							<h2 className="font-light tracking-tight leading-[1.08] text-3xl sm:text-5xl lg:text-[3.4rem] text-white max-w-3xl">
+							<h2 className="font-light tracking-tight leading-[1.08] text-3xl sm:text-5xl lg:text-[3.4rem] text-surface max-w-3xl">
 								{section.headline}
 							</h2>
 
 							{section.description && (
-								<p className="text-base sm:text-lg text-white/65 leading-relaxed max-w-2xl mx-auto">
+								<p className="text-base sm:text-lg text-surface/65 leading-relaxed max-w-2xl mx-auto">
 									{section.description}
 								</p>
 							)}

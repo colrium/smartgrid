@@ -54,11 +54,11 @@ export function MetricsSection() {
 										delay={(index % 4) * 0.08}
 										className="h-full"
 									>
-										<div className="glass-dark rounded-xl h-full p-8 flex flex-col items-center text-center gap-4 transition-all duration-500 hover:-translate-y-1.5 hover:border-white/30">
+										<div className="glass-dark rounded-xl h-full p-8 flex flex-col items-center text-center gap-4 transition-all duration-500 hover:-translate-y-1.5 hover:border-surface/30">
 											<span className="relative flex h-14 w-14 items-center justify-center">
-												<span className="absolute inset-0 rounded-full border border-white/20" />
+												<span className="absolute inset-0 rounded-full border border-surface/20" />
 												<span className="absolute inset-1 rounded-full border border-dashed border-gold/50" />
-												<span className="relative flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-brand-200">
+												<span className="relative flex h-9 w-9 items-center justify-center rounded-full bg-surface/10 text-brand-200">
 													<span
 														className={`mdi mdi-${
 															item.icon ||
@@ -70,7 +70,7 @@ export function MetricsSection() {
 												</span>
 											</span>
 
-											<span className="text-5xl sm:text-[3.4rem] font-light text-white tabular-nums leading-none tracking-tight">
+											<span className="text-5xl sm:text-[3.4rem] font-light text-surface tabular-nums leading-none tracking-tight">
 												<CountUp
 													to={item.value}
 													duration={1.8}
@@ -78,7 +78,7 @@ export function MetricsSection() {
 												/>
 											</span>
 
-											<span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-white/55">
+											<span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-surface/55">
 												{item.name}
 											</span>
 										</div>

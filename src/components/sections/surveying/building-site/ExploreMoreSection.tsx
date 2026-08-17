@@ -53,7 +53,7 @@ export function ExploreMoreSection() {
 								<div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
 
 								<div className="absolute inset-x-5 bottom-5 flex items-center justify-between gap-3">
-									<h3 className="text-xl sm:text-2xl font-light tracking-tight text-white leading-none">
+									<h3 className="text-xl sm:text-2xl font-light tracking-tight text-surface leading-none">
 										{item.title}
 									</h3>
 									<span className="h-10 w-10 shrink-0 rounded-full glass flex items-center justify-center text-ink">

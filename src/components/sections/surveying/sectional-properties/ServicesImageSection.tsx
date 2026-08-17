@@ -59,11 +59,11 @@ export function ServicesImageSection() {
 								</span>
 
 								<div className="absolute inset-x-5 bottom-5">
-									<h3 className="text-xl sm:text-2xl font-light tracking-tight text-white leading-none">
+									<h3 className="text-xl sm:text-2xl font-light tracking-tight text-surface leading-none">
 										{item.title}
 									</h3>
 									{item.description && (
-										<p className="mt-2 text-xs text-white/70 leading-relaxed">
+										<p className="mt-2 text-xs text-surface/70 leading-relaxed">
 											{item.description}
 										</p>
 									)}

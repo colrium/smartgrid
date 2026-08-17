@@ -36,7 +36,7 @@ export default function WipeWord({
 
 	return (
 		<span className="relative inline-block">
-			<span className={orange ? "text-primary-500" : "text-black"}>{children}</span>
+			<span className={orange ? "text-primary-500" : "text-on-surface"}>{children}</span>
 			{/* Curtain overlay */}
 			<motion.span
 				aria-hidden

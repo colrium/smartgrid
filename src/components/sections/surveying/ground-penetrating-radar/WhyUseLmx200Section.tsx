@@ -58,7 +58,7 @@ export function WhyUseLmx200Section() {
 
 								<div className="flex flex-col flex-1 p-6">
 									{item.icon && (
-										<span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
+										<span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 											<span className={`mdi mdi-${item.icon} text-lg`} />
 										</span>
 									)}

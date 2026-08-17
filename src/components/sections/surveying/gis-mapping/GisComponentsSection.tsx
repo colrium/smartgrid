@@ -46,7 +46,7 @@ export function GisComponentsSection() {
 										: ""
 								}`}
 							>
-								<span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 font-semibold text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
+								<span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 font-semibold text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 									{String(index + 1).padStart(2, "0")}
 								</span>
 

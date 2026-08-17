@@ -52,7 +52,7 @@ export function ExploreMoreSection() {
 								<div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-transparent" />
 
 								<div className="absolute inset-x-0 bottom-0 p-6">
-									<h3 className="text-lg sm:text-xl font-medium tracking-tight text-white">
+									<h3 className="text-lg sm:text-xl font-medium tracking-tight text-surface">
 										{item.title}
 									</h3>
 								</div>

@@ -129,12 +129,12 @@ export function Slider({
 						{(slide.title || slide.description) && (
 							<div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
 								{slide.title && (
-									<h3 className="text-lg sm:text-2xl font-medium tracking-tight text-white">
+									<h3 className="text-lg sm:text-2xl font-medium tracking-tight text-surface">
 										{slide.title}
 									</h3>
 								)}
 								{slide.description && (
-									<p className="mt-2 max-w-2xl text-sm sm:text-base text-white/70 leading-relaxed">
+									<p className="mt-2 max-w-2xl text-sm sm:text-base text-surface/70 leading-relaxed">
 										{slide.description}
 									</p>
 								)}
@@ -149,7 +149,7 @@ export function Slider({
 							type="button"
 							aria-label="Previous slide"
 							onClick={prev}
-							className="absolute left-4 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full bg-surface/85 backdrop-blur text-ink flex items-center justify-center shadow-lg transition-colors duration-300 hover:bg-primary hover:text-white cursor-pointer"
+							className="absolute left-4 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full bg-surface/85 backdrop-blur text-ink flex items-center justify-center shadow-lg transition-colors duration-300 hover:bg-primary hover:text-surface cursor-pointer"
 						>
 							<span className="mdi mdi-chevron-left text-2xl" />
 						</button>
@@ -157,7 +157,7 @@ export function Slider({
 							type="button"
 							aria-label="Next slide"
 							onClick={next}
-							className="absolute right-4 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full bg-surface/85 backdrop-blur text-ink flex items-center justify-center shadow-lg transition-colors duration-300 hover:bg-primary hover:text-white cursor-pointer"
+							className="absolute right-4 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full bg-surface/85 backdrop-blur text-ink flex items-center justify-center shadow-lg transition-colors duration-300 hover:bg-primary hover:text-surface cursor-pointer"
 						>
 							<span className="mdi mdi-chevron-right text-2xl" />
 						</button>

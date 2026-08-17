@@ -55,7 +55,7 @@ export function EquipmentHeroSection({ namespace }: EquipmentHeroSectionProps) {
 							<div className="mt-10 flex flex-wrap items-center gap-4">
 								<Link
 									href={hero.ctaPrimary.href}
-									className="group inline-flex items-center gap-3 h-14 rounded-full bg-primary px-8 text-white font-medium text-base transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_42px_-10px_rgba(0,151,178,0.6)]"
+									className="group inline-flex items-center gap-3 h-14 rounded-full bg-primary px-8 text-surface font-medium text-base transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_42px_-10px_rgba(0,151,178,0.6)]"
 								>
 									{hero.ctaPrimary.icon && (
 										<span className={`mdi mdi-${hero.ctaPrimary.icon} text-xl`} />

@@ -47,7 +47,7 @@ export function HeroSection() {
 				<FadeUp>
 					<SectionTag>{hero.headline}</SectionTag>
 
-					<h1 className="mt-5 max-w-4xl font-light tracking-tight leading-[1.05] text-4xl sm:text-6xl lg:text-7xl text-white">
+					<h1 className="mt-5 max-w-4xl font-light tracking-tight leading-[1.05] text-4xl sm:text-6xl lg:text-7xl text-surface">
 						{hero.title}
 					</h1>
 

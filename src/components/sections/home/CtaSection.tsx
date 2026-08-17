@@ -25,7 +25,7 @@ export function CtaSection() {
 						<span className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-brand-300/30 blur-[90px] pointer-events-none" />
 						<span className="absolute -bottom-28 -left-20 w-72 h-72 rounded-full bg-primary/30 blur-[90px] pointer-events-none" />
 						<span
-							className="absolute -bottom-10 right-4 font-light tracking-tighter text-[11rem] leading-none text-white/[0.03] select-none pointer-events-none hidden sm:block"
+							className="absolute -bottom-10 right-4 font-light tracking-tighter text-[11rem] leading-none text-surface/[0.03] select-none pointer-events-none hidden sm:block"
 							aria-hidden
 						>
 							↗
@@ -41,11 +41,11 @@ export function CtaSection() {
 								{t("home:cta.tag") as string}
 							</SectionTag>
 
-							<h2 className="font-light tracking-tight leading-[1.08] text-3xl sm:text-5xl lg:text-[3.4rem] text-white max-w-3xl">
+							<h2 className="font-light tracking-tight leading-[1.08] text-3xl sm:text-5xl lg:text-[3.4rem] text-surface max-w-3xl">
 								{t("home:cta.headline") as string}
 							</h2>
 
-							<p className="text-base sm:text-lg text-white/65 leading-relaxed max-w-2xl mx-auto">
+							<p className="text-base sm:text-lg text-surface/65 leading-relaxed max-w-2xl mx-auto">
 								{t("home:cta.description") as string}
 							</p>
 
@@ -67,7 +67,7 @@ export function CtaSection() {
 								{secondary?.href && (
 									<Link
 										href={secondary.href}
-										className="inline-flex items-center gap-2.5 h-14 rounded-full border border-white/30 px-8 text-white text-base transition-all duration-300 hover:border-white hover:bg-surface/10"
+										className="inline-flex items-center gap-2.5 h-14 rounded-full border border-surface/30 px-8 text-surface text-base transition-all duration-300 hover:border-surface hover:bg-surface/10"
 									>
 										{secondary.icon ? (
 											<span

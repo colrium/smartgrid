@@ -246,7 +246,7 @@ export default function Navbar() {
 				className="block lg:hidden"
 				onClose={handleDrawerToggle}
 				classes={{
-					paper: "bg-white/95! backdrop-blur-lg! hairline! border-t! shadow-xl",
+					paper: "bg-surface/95! backdrop-blur-lg! hairline! border-t! shadow-xl",
 				}}
 			>
 				<Box

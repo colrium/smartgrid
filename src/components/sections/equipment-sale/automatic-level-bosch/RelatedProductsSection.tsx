@@ -58,7 +58,7 @@ export function RelatedProductsSection() {
 									<h3 className="text-sm font-semibold tracking-wide text-ink">
 										{item.label}
 									</h3>
-									<span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
+									<span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 										<span className="mdi mdi-arrow-right text-sm" />
 									</span>
 								</div>

@@ -33,7 +33,7 @@
         --color-surface-800: color-mix(in srgb, var(--color-surface) 84%, #696969 16%);
         --color-surface-900: color-mix(in srgb, var(--color-surface) 82%, #696969 18%);
 
-    --color-on-surface: #424242;
+    --color-on-surface: #01373d;
     --color-on-surface-50: color-mix(in srgb, var(--color-on-surface) 98%, white 4%);
     --color-on-surface-100: color-mix(in srgb, var(--color-on-surface) 96%, white 4%);
         --color-on-surface-200: color-mix(in srgb, var(--color-on-surface) 92%, white 8%);

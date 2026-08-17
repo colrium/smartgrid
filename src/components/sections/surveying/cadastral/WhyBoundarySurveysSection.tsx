@@ -47,7 +47,7 @@ export function WhyBoundarySurveysSection() {
 						<FadeUp key={index} delay={(index % 4) * 0.08}>
 							<article className="group relative h-full p-8 rounded-[20px] bg-paper hairline card-shadow transition-all duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-primary">
 								<div className="flex items-start justify-between gap-4">
-									<span className="p-3 rounded-xl bg-brand-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
+									<span className="p-3 rounded-xl bg-brand-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 										<span
 											className={`mdi mdi-${
 												item.icon || FALLBACK_ICONS[index % FALLBACK_ICONS.length]

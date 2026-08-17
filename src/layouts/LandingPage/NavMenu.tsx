@@ -73,7 +73,7 @@ export default function NavMenu({ items, locale, localizePath, horizontal = fals
 							slotProps={{
 								paper: {
 									className:
-										"rounded-xl hairline bg-white/95! backdrop-blur-md! card-shadow",
+										"rounded-xl hairline bg-surface/95! backdrop-blur-md! card-shadow",
 									style: { marginTop: 10 },
 									sx: { minWidth: { xs: 220, sm: 260 } },
 								},
@@ -158,7 +158,7 @@ export default function NavMenu({ items, locale, localizePath, horizontal = fals
 						slotProps={{
 							paper: {
 								className:
-									"rounded-xl hairline bg-white/95! backdrop-blur-md! card-shadow",
+									"rounded-xl hairline bg-surface/95! backdrop-blur-md! card-shadow",
 								style: { marginLeft: 8 },
 								sx: { minWidth: 220 },
 							},

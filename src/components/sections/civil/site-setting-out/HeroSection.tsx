@@ -49,7 +49,7 @@ export function HeroSection() {
 				<FadeUp>
 					<SectionTag>{hero.headline}</SectionTag>
 
-					<h1 className="mt-5 max-w-4xl font-light tracking-tight leading-[1.05] text-4xl sm:text-6xl lg:text-7xl text-white">
+					<h1 className="mt-5 max-w-4xl font-light tracking-tight leading-[1.05] text-4xl sm:text-6xl lg:text-7xl text-surface">
 						{hero.title}
 					</h1>
 
@@ -76,7 +76,7 @@ export function HeroSection() {
 							{hero.ctaSecondary?.href && (
 								<Link
 									href={hero.ctaSecondary.href}
-									className="group inline-flex items-center gap-3 h-14 rounded-full border border-surface/40 px-8 text-white font-medium text-base transition-all duration-300 hover:bg-surface hover:text-ink"
+									className="group inline-flex items-center gap-3 h-14 rounded-full border border-surface/40 px-8 text-surface font-medium text-base transition-all duration-300 hover:bg-surface hover:text-ink"
 								>
 									{hero.ctaSecondary.icon && (
 										<span className={`mdi mdi-${hero.ctaSecondary.icon} text-xl`} />

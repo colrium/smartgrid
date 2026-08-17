@@ -37,12 +37,12 @@ export function CtaSection() {
 						<div className="relative flex flex-col items-center gap-6">
 							{section.tag && <SectionTag>{section.tag}</SectionTag>}
 
-							<h2 className="font-light tracking-tight leading-[1.08] text-3xl sm:text-5xl lg:text-[3.4rem] text-white max-w-3xl">
+							<h2 className="font-light tracking-tight leading-[1.08] text-3xl sm:text-5xl lg:text-[3.4rem] text-surface max-w-3xl">
 								{section.headline}
 							</h2>
 
 							{section.description && (
-								<p className="text-base sm:text-lg text-white/65 leading-relaxed max-w-2xl mx-auto">
+								<p className="text-base sm:text-lg text-surface/65 leading-relaxed max-w-2xl mx-auto">
 									{section.description}
 								</p>
 							)}
@@ -66,7 +66,7 @@ export function CtaSection() {
 									{section.ctaSecondary?.href && (
 										<Link
 											href={section.ctaSecondary.href}
-											className="group inline-flex items-center gap-3 h-14 rounded-full border border-surface/40 px-8 text-white font-medium text-base transition-all duration-300 hover:bg-surface hover:text-ink"
+											className="group inline-flex items-center gap-3 h-14 rounded-full border border-surface/40 px-8 text-surface font-medium text-base transition-all duration-300 hover:bg-surface hover:text-ink"
 										>
 											{section.ctaSecondary.icon && (
 												<span className={`mdi mdi-${section.ctaSecondary.icon} text-xl`} />

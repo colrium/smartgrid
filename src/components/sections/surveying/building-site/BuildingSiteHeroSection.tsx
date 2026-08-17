@@ -32,7 +32,7 @@ export function BuildingSiteHeroSection() {
 			<span className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-brand-300/30 blur-[90px] pointer-events-none" />
 			<span className="absolute -bottom-28 -left-20 w-72 h-72 rounded-full bg-primary/30 blur-[90px] pointer-events-none" />
 			<span
-				className="absolute -bottom-10 right-4 font-light tracking-tighter text-[11rem] leading-none text-white/[0.04] select-none pointer-events-none hidden sm:block"
+				className="absolute -bottom-10 right-4 font-light tracking-tighter text-[11rem] leading-none text-surface/[0.04] select-none pointer-events-none hidden sm:block"
 				aria-hidden
 			>
 				⌖
@@ -51,12 +51,12 @@ export function BuildingSiteHeroSection() {
 						{hero.headline}
 					</SectionTag>
 
-					<h1 className="mt-5 max-w-4xl font-light tracking-tight leading-[1.05] text-4xl sm:text-6xl lg:text-7xl text-white">
+					<h1 className="mt-5 max-w-4xl font-light tracking-tight leading-[1.05] text-4xl sm:text-6xl lg:text-7xl text-surface">
 						{hero.title}
 					</h1>
 
 					{hero.description && (
-						<p className="mt-6 max-w-2xl text-base sm:text-lg text-white/70 leading-relaxed">
+						<p className="mt-6 max-w-2xl text-base sm:text-lg text-surface/70 leading-relaxed">
 							{hero.description}
 						</p>
 					)}

@@ -61,7 +61,7 @@ export function SectionalFaqSection() {
 										<span
 											className={`w-8 h-8 shrink-0 rounded-full border flex items-center justify-center transition-all duration-300 ${
 												isOpen
-													? "border-primary bg-primary text-white rotate-45"
+													? "border-primary bg-primary text-surface rotate-45"
 													: "border-ink/15 text-primary"
 											}`}
 										>

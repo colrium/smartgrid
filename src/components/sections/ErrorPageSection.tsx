@@ -44,7 +44,7 @@ export default function ErrorPageSection({
 							{description}
 						</p>
 						{detail ? (
-							<pre className="mt-6 max-h-64 overflow-auto whitespace-pre-wrap rounded border border-primary/20 bg-black/40 p-4 text-xs leading-relaxed text-on-surface-900">
+							<pre className="mt-6 max-h-64 overflow-auto whitespace-pre-wrap rounded border border-primary/20 bg-on-surface/40 p-4 text-xs leading-relaxed text-on-surface-900">
 								{detail}
 							</pre>
 						) : null}

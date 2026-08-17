@@ -61,7 +61,7 @@ export function WhatWeDoSection() {
 
 								<div className="flex flex-col flex-1 p-8">
 									{item.icon && (
-										<span className="self-start  mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-white card-shadow-lift">
+										<span className="self-start  mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-surface card-shadow-lift">
 											<span className={`mdi mdi-${item.icon} text-xl`} />
 										</span>
 									)}
