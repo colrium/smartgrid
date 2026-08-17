@@ -17,6 +17,7 @@ interface SliderProps {
 	showArrows?: boolean;
 	showDots?: boolean;
 	className?: string;
+	imgClassName?: string;
 }
 
 const SLIDE_VARIANTS = {
@@ -38,7 +39,8 @@ export function Slider({
 	autoplay = 0,
 	showArrows = true,
 	showDots = true,
-	className = "",
+    className = "",
+    imgClassName=""
 }: SliderProps) {
 	const count = slides.length;
 	const [index, setIndex] = useState(0);
@@ -117,12 +119,12 @@ export function Slider({
 								alt={slide.alt || slide.title || `Slide ${index + 1}`}
 								fill
 								sizes="(min-width: 1024px) 80vw, 100vw"
-								className="object-cover object-center"
+								className={`object-cover object-center ${imgClassName || ""}`}
 							/>
 						) : (
 							<div className="absolute inset-0 ink-panel" />
 						)}
-						<div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
+                        {(slide.title || slide.description) && (<div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />)}
 
 						{(slide.title || slide.description) && (
 							<div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
