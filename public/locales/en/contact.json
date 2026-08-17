@@ -50,44 +50,6 @@
 				"hours": "Mon–Fri 08:30–17:30 EAT",
 				"type": "regional",
 				"note": "Coordinates surveying, engineering, and project-support services in East Africa."
-			},
-			{
-				"id": "west-africa-freetown",
-				"label": "West Africa Office",
-				"city": "Freetown",
-				"country": "Sierra Leone",
-				"flag": "🇸🇱",
-				"address_lines": [
-					"Smartgrid West Africa",
-					"Wilberforce, Freetown",
-					"Sierra Leone"
-				],
-				"lat": 8.4657,
-				"lng": -13.2317,
-				"phone": "+232 76 000 003",
-				"email": "smartgridsurveying@gmail.com",
-				"hours": "Mon–Fri 08:00–17:00 GMT",
-				"type": "regional",
-				"note": "Manages Sierra Leone operations and West African partner relations."
-			},
-			{
-				"id": "southern-africa-johannesburg",
-				"label": "Southern Africa Office",
-				"city": "Johannesburg",
-				"country": "South Africa",
-				"flag": "🇿🇦",
-				"address_lines": [
-					"Smartgrid Southern Africa",
-					"Sandton, Johannesburg",
-					"Gauteng, South Africa"
-				],
-				"lat": -26.1076,
-				"lng": 28.0567,
-				"phone": "+27 11 000 0004",
-				"email": "smartgridsurveying@gmail.com",
-				"hours": "Mon–Fri 08:00–17:00 SAST",
-				"type": "regional",
-				"note": "Covers South Africa, Eswatini, and Malawi operations."
 			}
 		]
 	},

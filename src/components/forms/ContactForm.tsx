@@ -4,6 +4,7 @@ import { useTranslation, useSetState } from "@/hooks";
 import SendIcon from "@mui/icons-material/Send";
 import { useForm, ValidationError } from "@formspree/react";
 
+type Country = { code?: string; name: string; flag?: string };
 type Option = { value: string; label: string };
 type Field = {
 	label: string;
@@ -30,7 +31,7 @@ const inputClassName = "w-full rounded bg-surface border border-primary/15 px-4 
 type ContactFormProps = ComponentPropsWithoutRef<"form">;
 
 export default function ContactForm({ className = "", ...props }: ContactFormProps) {
-	const { t, tObject } = useTranslation(["contact", "operations", "common"]);
+	const { t, tObject } = useTranslation(["contact", "common"]);
     const router = useRouter();
     const formspreeFormId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID;
     const [formspree, handleFormspreeSubmit] = useForm(formspreeFormId);
@@ -54,7 +55,7 @@ export default function ContactForm({ className = "", ...props }: ContactFormPro
 	const opportunityOptions = tObject<Option[]>("contact:form.fields.opportunity.options", {
 		returnObjects: true,
 	}) as unknown as Option[];
-	const operationCountries = tObject<string[]>("operations:locations.countries", {
+	const locationCountries = tObject<Country[]>("common:locations.countries", {
 		returnObjects: true,
 	});
 	const officeCountries = (
@@ -63,7 +64,9 @@ export default function ContactForm({ className = "", ...props }: ContactFormPro
 		}) 
 	).map((office) => office.country);
 	
-    const countries = Array.from(new Set([...operationCountries, ...officeCountries]));
+    const countries = Array.from(
+		new Set([...locationCountries.map((c) => c.name), ...officeCountries])
+	);
 
 	useEffect(() => {
 		const reason = typeof reasonQuery === "string" ? reasonQuery : "";

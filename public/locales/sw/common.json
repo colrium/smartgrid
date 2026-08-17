@@ -15,6 +15,30 @@
 		"mobile": "+254 10 7393023",
 		"Email": "smartgridsurveying@gmail.com"
 	},
+	"locations": {
+		"countries": [
+			{
+				"code": "KE",
+				"name": "Kenya",
+				"flag": "/img/flags/ke.svg"
+			},
+			{
+				"code": "UG",
+				"name": "Uganda",
+				"flag": "/img/flags/ug.svg"
+			},
+			{
+				"code": "TZ",
+				"name": "Tanzania",
+				"flag": "/img/flags/tz.svg"
+			},
+			{
+				"code": "SA",
+				"name": "South Africa",
+				"flag": "/img/flags/ke.svg"
+			}
+		]
+	},
 	"errors": {
 		"error": "Hitilafu",
 		"notFound": "Ukurasa haupatikani",

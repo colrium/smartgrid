@@ -28,7 +28,7 @@ function inputClassName() {
 }
 
 export default function ContactFormSection() {
-	const { t } = useTranslation(["contact", "operations"]);
+	const { t } = useTranslation(["contact", "common"]);
 	
 
 	return (
