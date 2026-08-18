@@ -86,7 +86,7 @@ export function ServicesSection() {
 											iconPosition="start"
                                             label={service.label}
                                             classes={{
-                                                root: `rounded-full! border! p-2! mb-2! min-h-auto! ${selected? 'bg-primary! text-surface!': 'text-primary!  border-primary/50!'}`
+                                                root: `rounded-full! border! p-2! mb-2! capitalize! min-h-auto! ${selected? 'bg-primary! text-surface!': 'text-primary!  border-primary/50!'}`
                                             }}
                                             // sx={{
                                             //     mb: 2,

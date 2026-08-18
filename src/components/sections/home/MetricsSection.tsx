@@ -56,16 +56,16 @@ export function MetricsSection() {
 									>
 										<div className="glass-dark rounded-xl h-full p-8 flex flex-col items-center text-center gap-4 transition-all duration-500 hover:-translate-y-1.5 hover:border-surface/30">
 											<span className="relative flex h-14 w-14 items-center justify-center">
-												<span className="absolute inset-0 rounded-full border border-surface/20" />
-												<span className="absolute inset-1 rounded-full border border-dashed border-gold/50" />
-												<span className="relative flex h-9 w-9 items-center justify-center rounded-full bg-surface/10 text-brand-200">
+												
+												
+												<span className="relative flex items-center justify-center rounded-fulltext-brand-200">
 													<span
 														className={`mdi mdi-${
 															item.icon ||
 															METRIC_ICONS[
 																index % METRIC_ICONS.length
 															]
-														} text-lg`}
+														} text-surface/85 text-3xl`}
 													/>
 												</span>
 											</span>

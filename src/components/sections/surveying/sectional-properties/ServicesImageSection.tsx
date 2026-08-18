@@ -53,7 +53,7 @@ export function ServicesImageSection() {
 								)}
 								<div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
 
-								<span className="absolute top-4 left-4 inline-flex items-center gap-2 glass rounded-lg text-[11px] font-semibold uppercase tracking-[0.18em] text-ink px-3 py-1.5">
+								<span className="absolute top-4 left-4 inline-flex items-center gap-2 glass rounded-full text-sm font-semibold uppercase tracking-[0.18em] text-ink px-3 py-1.5">
 									<span className="h-1.5 w-1.5 rounded-full bg-primary" />
 									{String(index + 1).padStart(2, "0")}
 								</span>

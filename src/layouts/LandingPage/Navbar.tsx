@@ -156,7 +156,7 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 		typeof scrollVariantPercent !== "number"? variant === "dark" :
 		(variant === "light" && state.scrollVariantToggled) || (variant === "dark" && !state.scrollVariantToggled);
 
-	const iconColor = isDark ? "text-primary-300" : "text-primary";
+	const iconColor = isDark ? "text-secondary" : "text-primary";
 	const accentColor = isDark ? "text-surface" : "text-accent";
 	const hoverColor = isDark ? "hover:text-primary-300" : "hover:text-primary";
 
@@ -175,7 +175,7 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 					maxWidth="lg"
 					classes={{
 						root: `mt-3 mb-1 rounded-3xl backdrop-blur-lg! transition-all duration-500 ${
-							isDark ? "bg-black/85! text-surface!" : "bg-surface/85! text-ink!"
+							isDark ? "bg-primary-700/85! text-surface!" : "bg-surface/85! text-ink!"
 						} ${state.isWindowScrolled ? "card-shadow-lift" : "card-shadow"}`,
 					}}
 				>

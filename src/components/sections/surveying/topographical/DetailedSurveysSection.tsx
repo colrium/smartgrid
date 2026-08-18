@@ -52,7 +52,7 @@ export function DetailedSurveysSection() {
 											className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
 										/>
 										<div className="absolute inset-0 bg-gradient-to-t from-ink/30 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-										<span className="absolute top-4 left-4 inline-flex items-center gap-2 glass rounded-lg text-[11px] font-semibold uppercase tracking-[0.18em] text-ink px-3 py-1.5">
+										<span className="absolute top-4 left-4 inline-flex items-center gap-2 glass rounded-full text-sm font-semibold uppercase tracking-[0.18em] text-ink px-3 py-1.5">
 											<span className="h-1.5 w-1.5 rounded-full bg-primary" />
 											{String(index + 1).padStart(2, "0")}
 										</span>
