@@ -32,7 +32,7 @@ export function EquipmentHeroSection({ namespace }: EquipmentHeroSectionProps) {
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");
 
 	return (
-		<section className="relative overflow-hidden bg-surface/60 pt-48">
+		<section className="relative overflow-hidden  pt-48">
 			<Blob className="w-[30rem] h-[30rem] bg-primary-100/50 -top-32 -left-24" opacity={0.5} />
 			<Blob className="w-[26rem] h-[26rem] bg-primary/10 -bottom-24 -right-20" opacity={0.5} />
 

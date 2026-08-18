@@ -7,6 +7,17 @@
     --color-secondary: #000000;
     --color-accent: #947e5e;
 
+    --color-accent-50: #f4f2ef;
+    --color-accent-100: #e8e3dc;
+    --color-accent-200: #d4cbbf;
+    --color-accent-300: #c1b4a2;
+    --color-accent-400: #ac9a81;
+    --color-accent-500: #947e5e;
+    --color-accent-600: #79674d;
+    --color-accent-700: #5f513c;
+    --color-accent-800: #443a2b;
+    --color-accent-900: #29231a;
+
     --color-paper: #ffffff;
     --color-mute: #80a5ac;
 

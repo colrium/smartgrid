@@ -157,8 +157,9 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 		(variant === "light" && state.scrollVariantToggled) || (variant === "dark" && !state.scrollVariantToggled);
 
 	const iconColor = isDark ? "text-primary-200" : "text-primary";
-	const accentColor = isDark ? "text-surface" : "text-accent";
-	const hoverColor = isDark ? "hover:text-primary-300" : "hover:text-primary";
+	const accentColor = isDark ? "text-accent-200" : "text-accent-700";
+    const hoverColor = isDark ? "hover:text-primary-300" : "hover:text-primary";
+    const menuClassName = isDark ? "bg-ink-soft/95! text-surface!" : "bg-surface/95! text-ink!";
 
 	return (
 		<>
@@ -235,9 +236,7 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 									{t("meta:site.title")}
 								</h6>
 								<span
-									className={`capitalize hidden lg:flex font-bold text-[8px] no-underline transition-all duration-500 ${
-										isDark ? "text-surface/55" : "text-on-surface/55"
-									}`}
+									className={`capitalize hidden lg:flex font-bold text-[8px] no-underline transition-all duration-500 ${accentColor}`}
 								>
 									{t("meta:site.subtitle")}
 								</span>
@@ -266,6 +265,13 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 								anchorEl={state.languageMenuAnchor}
 								open={Boolean(state.languageMenuAnchor)}
 								onClose={handleLanguageMenuClose}
+								slotProps={{
+									paper: {
+										className: `rounded-xl! hairline transition-all duration-500 ${menuClassName} backdrop-blur-lg! card-shadow `,
+										style: { marginTop: 10 },
+										sx: { minWidth: { xs: 120, sm: 160 } },
+									},
+								}}
 							>
 								{Array.isArray(locales) &&
 									locales.map((locale) => (
@@ -273,7 +279,7 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 											key={locale.code}
 											onClick={() => handleLanguageSelect(locale.code)}
 											selected={router.locale === locale.code}
-											disabled={router.locale === locale.code}
+											// disabled={router.locale === locale.code}
 										>
 											<Image
 												className="mr-2"
