@@ -106,20 +106,26 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 	};
 
 	useLenis(
-        ({ scroll, limit }) => {
-            if (!scrollVariantPercent || scrollVariantPercent == 0) {
-                return
-			}
+		({ scroll, limit }) => {
             const progress = (scroll / limit) * 100;
-            const scrollVariantToggled = progress >= scrollVariantPercent;
-            if (scrollVariantToggled !== state.scrollVariantToggled) {
-                console.log("useLenis scrollVariantToggled", scrollVariantToggled);
-                setState((prev) => ({
+            const isWindowScrolled = progress >= 2;
+            if (isWindowScrolled !== state.isWindowScrolled) {
+				setState((prev) => ({
+					isWindowScrolled: !prev.isWindowScrolled,
+				}));
+			}
+			if (!scrollVariantPercent || scrollVariantPercent == 0) {
+				return;
+			}
+
+			const scrollVariantToggled = progress >= scrollVariantPercent;
+			if (scrollVariantToggled !== state.scrollVariantToggled) {
+				setState((prev) => ({
 					scrollVariantToggled: !prev.scrollVariantToggled,
 				}));
 			}
 		},
-		[scrollVariantPercent, scrollVariant, state.scrollVariantToggled]
+		[scrollVariantPercent, scrollVariant, state.scrollVariantToggled, state.isWindowScrolled]
 	);
 	
 

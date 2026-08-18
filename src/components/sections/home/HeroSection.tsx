@@ -490,11 +490,11 @@ export default function HeroSection() {
 			</div>
 
 			<motion.div
-				className={`px-6 rounded-3xl hidden md:inline-block fixed right-0 bottom-0 overflow-hidden h-2/3 md:w-1/3 w-full bg-[url('/img/instruments/total-station-color.png')] bg-cover bg-no-repeat z-0`}
+				className={`px-6 rounded-3xl hidden md:inline-block fixed right-0 bottom-0 overflow-hidden h-2/3 md:w-1/3 w-full bg-[url('/img/instruments/total-station-color.png')] bg-contain bg-no-repeat z-0`}
 				style={{ opacity: colorOpacity }}
 			/>
 			<motion.div
-				className={`px-6 rounded-3xl hidden md:inline-block fixed right-0 bottom-0 overflow-hidden h-2/3 md:w-1/3 w-full bg-[url('/img/instruments/total-station-wireframe.svg')] bg-cover bg-no-repeat`}
+				className={`px-6 rounded-3xl hidden md:inline-block fixed right-0 bottom-0 overflow-hidden h-2/3 md:w-1/3 w-full bg-[url('/img/instruments/total-station-wireframe.svg')] bg-contain bg-no-repeat`}
 				style={{ opacity: wireframeOpacity }}
 			/>
 		</section>
