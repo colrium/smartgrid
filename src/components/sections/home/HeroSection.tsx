@@ -6,8 +6,8 @@ import Link from "next/link";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
-import { motion, useScroll, useTransform } from "framer-motion";
-
+import { motion, useScroll, useTransform, useMotionValue } from "framer-motion";
+import { useLenis } from "lenis/react";
 import { useTranslation } from "@/hooks";
 import { Trans } from "next-i18next/pages";
 import { ButtonProps } from "@mui/material/Button";
@@ -109,13 +109,24 @@ export default function HeroSection() {
 	const { t } = useTranslation(["home"]);
 	const ctaPrimary = t("home:hero.ctaPrimary", { returnObjects: true }) as CtaItem;
 	const ctaSecondary = t("home:hero.ctaSecondary", { returnObjects: true }) as CtaItem;
-	const location = t("home:hero.location", { returnObjects: true }) as Location;
-
+    const location = t("home:hero.location", { returnObjects: true }) as Location;
+    const scrollYPercentage = useMotionValue(0);
+    useLenis(
+		({ scroll, limit }) => {
+			const progressPercentage = scroll / limit * 100;
+            scrollYPercentage.set(progressPercentage);
+			console.log("useLenis progressPercentage", progressPercentage);
+		},
+		[]
+	);
 	const { scrollYProgress } = useScroll({
 		target: heroRef,
 		offset: ["start end", "start end"],
-	});
-	const wireframeOpacity = useTransform(scrollYProgress, [0.02, 0.35], [0, 1]);
+    });
+    
+
+	const colorOpacity = useTransform(scrollYPercentage, [2, 10], [1, 0]);
+    const wireframeOpacity = useTransform(scrollYPercentage, [2, 10], [0, 0.5]);
 
 	useEffect(() => {
 		const container = containerRef.current;
@@ -479,7 +490,11 @@ export default function HeroSection() {
 			</div>
 
 			<motion.div
-				className={`px-6 rounded-3xl hidden md:inline-block absolute right-0 bottom-0 overflow-hidden h-2/3 md:w-1/3 w-full bg-[url('/img/instruments/total-station-color.png')] bg-cover bg-no-repeat z-0`}
+				className={`px-6 rounded-3xl hidden md:inline-block fixed right-0 bottom-0 overflow-hidden h-2/3 md:w-1/3 w-full bg-[url('/img/instruments/total-station-color.png')] bg-cover bg-no-repeat z-0`}
+				style={{ opacity: colorOpacity }}
+			/>
+			<motion.div
+				className={`px-6 rounded-3xl hidden md:inline-block fixed right-0 bottom-0 overflow-hidden h-2/3 md:w-1/3 w-full bg-[url('/img/instruments/total-station-wireframe.svg')] bg-cover bg-no-repeat`}
 				style={{ opacity: wireframeOpacity }}
 			/>
 		</section>

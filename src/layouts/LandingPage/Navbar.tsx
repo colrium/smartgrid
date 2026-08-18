@@ -13,7 +13,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Drawer from "@mui/material/Drawer";
 import CloseIcon from "@mui/icons-material/Close";
 import { useTranslation } from "@/hooks";
-
+import { useLenis } from "lenis/react";
 import { useRouter } from "next/router";
 import useSetState from "@/hooks/useSetState";
 import { Avatar } from "@mui/material";
@@ -36,23 +36,21 @@ export interface NavbarProps {
 	 * "dark" variant. Omit or pass 0 to disable the trigger.
 	 */
 	scrollVariantPercent?: number;
+	scrollVariant?: "light" | "dark";
 }
 
-export default function Navbar({
-	variant = "light",
-	scrollVariantPercent,
-}: NavbarProps) {
+export default function Navbar({ variant = "light", scrollVariantPercent = 20, scrollVariant = "dark"}: NavbarProps) {
 	const router = useRouter();
 	const { t, i18n } = useTranslation(["common", "meta"]);
 	const [state, setState] = useSetState({
 		drawerOpen: false,
 		isWindowScrolled: false,
-		scrollPercent: 0,
+		scrollVariantToggled: false,
 		languageMenuAnchor: null,
 	} as {
 		drawerOpen: boolean;
 		isWindowScrolled: boolean;
-		scrollPercent: number;
+		scrollVariantToggled: boolean;
 		languageMenuAnchor: null | HTMLElement;
 	});
 
@@ -79,8 +77,8 @@ export default function Navbar({
 		return strippedPath === "" ? "/" : strippedPath;
 	};
 
-    const localizePath = (path: string, locale: string) => {
-        if (!path) {
+	const localizePath = (path: string, locale: string) => {
+		if (!path) {
 			return "/";
 		}
 		if (!path.startsWith("/") || path.startsWith("//")) {
@@ -107,22 +105,23 @@ export default function Navbar({
 		await router.replace(localizedPath, undefined, { locale: false });
 	};
 
-	useEffect(() => {
-		const handleScroll = () => {
-			const maxScroll =
-				document.documentElement.scrollHeight - window.innerHeight;
-			const scrollPercent =
-				maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 100;
-
-			/* setState({
-				isWindowScrolled: window.scrollY > 48,
-				scrollPercent,
-			}); */
-		};
-
-		// window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, []);
+	useLenis(
+        ({ scroll, limit }) => {
+            if (!scrollVariantPercent || scrollVariantPercent == 0) {
+                return
+			}
+            const progress = (scroll / limit) * 100;
+            const scrollVariantToggled = progress >= scrollVariantPercent;
+            if (scrollVariantToggled !== state.scrollVariantToggled) {
+                console.log("useLenis scrollVariantToggled", scrollVariantToggled);
+                setState((prev) => ({
+					scrollVariantToggled: !prev.scrollVariantToggled,
+				}));
+			}
+		},
+		[scrollVariantPercent, scrollVariant, state.scrollVariantToggled]
+	);
+	
 
 	const handleDrawerToggle = () => {
 		setState({ drawerOpen: !state.drawerOpen });
@@ -148,10 +147,8 @@ export default function Navbar({
 	const currentLocale = router.locale ?? i18n.language ?? "en";
 
 	const isDark =
-		variant === "dark" ||
-		(typeof scrollVariantPercent === "number" &&
-			scrollVariantPercent > 0 &&
-			state.scrollPercent >= scrollVariantPercent);
+		typeof scrollVariantPercent !== "number"? variant === "dark" :
+		(variant === "light" && state.scrollVariantToggled) || (variant === "dark" && !state.scrollVariantToggled);
 
 	const iconColor = isDark ? "text-primary-300" : "text-primary";
 	const accentColor = isDark ? "text-surface" : "text-accent";
@@ -165,21 +162,19 @@ export default function Navbar({
 				elevation={0}
 				color="transparent"
 				classes={{
-					root: "px-4 md:px-8 bg-transparent! transition-all duration-300",
+					root: "px-4 md:px-8 bg-transparent! transition-all duration-500",
 				}}
 			>
 				<Container
 					maxWidth="lg"
 					classes={{
-						root: `mt-3 mb-1 rounded-3xl backdrop-blur-lg! transition-all duration-300 ${
-							isDark
-								? "bg-black/85! text-surface!"
-								: "bg-surface/85! text-ink!"
+						root: `mt-3 mb-1 rounded-3xl backdrop-blur-lg! transition-all duration-500 ${
+							isDark ? "bg-black/85! text-surface!" : "bg-surface/85! text-ink!"
 						} ${state.isWindowScrolled ? "card-shadow-lift" : "card-shadow"}`,
 					}}
 				>
 					<div
-						className={`hidden lg:flex items-center justify-between gap-8 px-2 pt-3.5 pb-3 text-xs font-semibold ${
+						className={`hidden lg:flex items-center justify-between gap-8 px-2 pt-3.5 pb-3 text-xs font-semibold transition-all duration-500 ${
 							isDark
 								? "text-surface/70 border-b border-surface/10"
 								: "text-on-surface/70 border-b border-ink/10"
@@ -227,14 +222,14 @@ export default function Navbar({
 							/>
 							<div className="flex flex-col mr-2 leading-tight">
 								<h6
-									className={`flex uppercase font-semibold tracking-wide no-underline ${
+									className={`flex uppercase font-semibold tracking-wide  no-underline transition-all duration-500 ${
 										isDark ? "text-surface" : "text-ink"
 									}`}
 								>
 									{t("meta:site.title")}
 								</h6>
 								<span
-									className={`capitalize hidden lg:flex font-semibold text-[9px] no-underline ${
+									className={`capitalize hidden lg:flex font-semibold text-[9px] no-underline transition-all duration-500 ${
 										isDark ? "text-surface/55" : "text-on-surface/55"
 									}`}
 								>

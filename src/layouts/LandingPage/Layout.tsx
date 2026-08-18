@@ -23,19 +23,8 @@ interface LandingPageLayoutProps {
 
 
 export default function LandingPageLayout({ children, slotProps = {} }: LandingPageLayoutProps) {
-    const { navbar = { scrollVariantPercent : 10, variant: 'light'} } = slotProps;
-	useEffect(() => {
-		const lenis = new Lenis();
-		const raf = (time: number) => {
-			lenis.raf(time);
-			requestAnimationFrame(raf);
-		};
-		requestAnimationFrame(raf);
-
-		return () => {
-			lenis.destroy();
-		};
-	}, []);
+    const { navbar = { scrollVariantPercent : 15, variant: 'light'} } = slotProps;
+	
 	return (
 		<div className={`flex flex-col min-h-screen relative`}>
 			<div id="back-to-top-anchor"></div>
@@ -43,7 +32,7 @@ export default function LandingPageLayout({ children, slotProps = {} }: LandingP
 
 			<div className="flex-1 -mt-35">
 				{children}
-				<ChatWidget />
+				{/* <ChatWidget /> */}
 
 				<ScrollTop querySelector="#back-to-top-anchor" />
 				<FloatingContactButtons />
