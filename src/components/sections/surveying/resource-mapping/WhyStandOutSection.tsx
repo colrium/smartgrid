@@ -27,9 +27,9 @@ export function WhyStandOutSection() {
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
-			<Blob className="w-[28rem] h-[28rem] bg-brand-100/60 -bottom-24 -left-24" opacity={0.5} />
+			<Blob className="w-[28rem] h-[28rem] bg-primary-100/60 -bottom-24 -left-24" opacity={0.5} />
 			<ParallaxDecor speed={-0.06} className="absolute top-16 -right-24 z-0">
-				<Blob className="w-72 h-72 bg-brand-200/70" opacity={0.6} />
+				<Blob className="w-72 h-72 bg-primary-200/70" opacity={0.6} />
 			</ParallaxDecor>
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -45,7 +45,7 @@ export function WhyStandOutSection() {
 						<FadeUp key={index} delay={(index % 4) * 0.07}>
 							<article className="group relative h-full flex flex-col items-center gap-4 rounded-[20px] bg-surface hairline card-shadow p-8 text-center transition-all duration-500 hover:card-shadow-lift hover:border-primary">
 								{item.icon && (
-									<span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
+									<span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 										<span className={`mdi mdi-${item.icon} text-2xl`} />
 									</span>
 								)}

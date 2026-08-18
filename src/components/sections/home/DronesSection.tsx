@@ -21,11 +21,11 @@ export function DronesSection() {
 		<section id="drones" className="py-24 sm:py-28 relative overflow-hidden">
 			{/* Soft institutional background shapes */}
 			<Blob
-				className="w-[26rem] h-[26rem] bg-brand-200/40 -bottom-24 -left-24"
+				className="w-[26rem] h-[26rem] bg-primary-200/40 -bottom-24 -left-24"
 				opacity={0.5}
 			/>
 			<ParallaxDecor speed={0.06} className="absolute top-24 right-1/4 z-0">
-				<Blob className="w-72 h-72 bg-brand-100/70" opacity={0.6} />
+				<Blob className="w-72 h-72 bg-primary-100/70" opacity={0.6} />
 			</ParallaxDecor>
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -62,7 +62,7 @@ export function DronesSection() {
 									<div className="p-6 sm:p-7">
 										<div className="flex items-center justify-between gap-3 mb-3">
 											{item.icon ? (
-												<span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-50 text-primary group-hover:text-surface group-hover:bg-primary transition-colors duration-300">
+												<span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary-50 text-primary group-hover:text-surface group-hover:bg-primary transition-colors duration-300">
 													<span
 														className={`mdi mdi-${item.icon} text-lg`}
 													/>
@@ -76,7 +76,7 @@ export function DronesSection() {
 													}
 												</span>
 											)}
-											<span className="mdi mdi-arrow-right text-on-surface/30 group-hover:text-primary transition-colors duration-300" />
+											{/* <span className="mdi mdi-arrow-right text-on-surface/30 group-hover:text-primary transition-colors duration-300" /> */}
 										</div>
 
 										<h3 className="text-lg sm:text-xl font-medium text-ink leading-snug transition-colors duration-300 group-hover:text-primary">

@@ -42,7 +42,8 @@ export default function NavMenu({ items, locale, localizePath, horizontal = fals
     }
     setOpenMenuIndex(null);
   };
-
+  const menuClassName =
+		variant === "dark" ? "bg-ink-soft/95! text-surface!" : "bg-surface/95! text-ink!";
   if (horizontal) {
     return (
       <Box className="hidden lg:flex flex-1 lg:grow lg:gap-4 lg:items-center lg:justify-end">
@@ -77,8 +78,7 @@ export default function NavMenu({ items, locale, localizePath, horizontal = fals
 							transformOrigin={{ vertical: "top", horizontal: "center" }}
 							slotProps={{
 								paper: {
-									className:
-										"rounded-xl hairline bg-surface/95! backdrop-blur-md! card-shadow",
+									className: `rounded-xl! hairline transition-all duration-500 ${menuClassName} backdrop-blur-lg! card-shadow `,
 									style: { marginTop: 10 },
 									sx: { minWidth: { xs: 220, sm: 260 } },
 								},
@@ -133,7 +133,7 @@ export default function NavMenu({ items, locale, localizePath, horizontal = fals
 						onMouseEnter={(e) => handleOpen(i, e.currentTarget as HTMLElement)}
 						onMouseLeave={() => handleClose(i)}
 						sx={{ display: "flex", justifyContent: "space-between", gap: 1 }}
-						className="text-sm font-medium tracking-tight text-ink hover:bg-brand-50"
+						className="text-sm font-medium tracking-tight text-ink hover:bg-primary-50"
 					>
 						<Box
 							component="span"
@@ -183,7 +183,7 @@ export default function NavMenu({ items, locale, localizePath, horizontal = fals
 			<MenuItem
 				key={`item-${i}`}
 				onClick={() => handleClose()}
-				className="text-sm font-medium tracking-tight text-ink hover:bg-brand-50"
+				className="text-sm font-medium tracking-tight text-ink hover:bg-primary-50"
 				component={Link}
                 href={localizePath(item.href, locale)}
 			>

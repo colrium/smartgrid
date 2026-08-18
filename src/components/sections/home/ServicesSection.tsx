@@ -45,9 +45,9 @@ export function ServicesSection() {
 	return (
 		<section id="services" className="py-24 sm:py-28 relative overflow-hidden">
 			{/* Soft institutional background shapes */}
-			<Blob className="w-[26rem] h-[26rem] bg-brand-200/40 -top-24 left-1/4" opacity={0.5} />
+			<Blob className="w-[26rem] h-[26rem] bg-primary-200/40 -top-24 left-1/4" opacity={0.5} />
 			<ParallaxDecor speed={0.06} className="absolute bottom-16 -right-16 z-0">
-				<Blob className="w-80 h-80 bg-brand-100/80" opacity={0.6} />
+				<Blob className="w-80 h-80 bg-primary-100/80" opacity={0.6} />
 			</ParallaxDecor>
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -185,7 +185,7 @@ export function ServicesSection() {
 																key={i}
 																className="group/li flex items-start gap-3 text-sm text-on-surface/75 leading-relaxed"
 															>
-																<span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-brand-50 text-primary transition-all duration-300 group-hover/li:bg-primary group-hover/li:text-surface">
+																<span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-primary-50 text-primary transition-all duration-300 group-hover/li:bg-primary group-hover/li:text-surface">
 																	<span
 																		className="mdi mdi-check text-sm"
 																		aria-hidden

@@ -30,9 +30,9 @@ export function WhyChooseUsSection() {
 	return (
 		<section id="why-choose-us" className="py-24 sm:py-28 relative overflow-hidden bg-surface">
 			{/* Soft institutional background shapes */}
-			<Blob className="w-[26rem] h-[26rem] bg-brand-200/40 -top-20 right-0" opacity={0.5} />
+			<Blob className="w-[26rem] h-[26rem] bg-primary-200/40 -top-20 right-0" opacity={0.5} />
 			<ParallaxDecor speed={-0.06} className="absolute bottom-24 -left-20 z-0">
-				<Blob className="w-80 h-80 bg-brand-100/80" opacity={0.6} />
+				<Blob className="w-80 h-80 bg-primary-100/80" opacity={0.6} />
 			</ParallaxDecor>
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -44,13 +44,13 @@ export function WhyChooseUsSection() {
 							headline={t("home:whyChooseUs.headline") as string}
 							description={t("home:whyChooseUs.description") as string}
 						/>
-						<div className="mt-10 inline-flex items-center gap-4">
+						{/* <div className="mt-10 inline-flex items-center gap-4">
 							<span className="h-[1px] w-12 bg-primary/60" />
 							<span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-on-surface/40">
 								{String(1).padStart(2, "0")} —{" "}
 								{String(Array.isArray(items) ? items.length : 0).padStart(2, "0")}
 							</span>
-						</div>
+						</div> */}
 					</FadeUp>
 
 					{/* Editorial list */}

@@ -27,7 +27,7 @@ export function ExploreMoreSection() {
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden">
-			<Blob className="w-[28rem] h-[28rem] bg-brand-100/70 -bottom-24 -left-24" opacity={0.5} />
+			<Blob className="w-[28rem] h-[28rem] bg-primary-100/70 -bottom-24 -left-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader

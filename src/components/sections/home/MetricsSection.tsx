@@ -58,7 +58,7 @@ export function MetricsSection() {
 											<span className="relative flex h-14 w-14 items-center justify-center">
 												
 												
-												<span className="relative flex items-center justify-center rounded-fulltext-brand-200">
+												<span className="relative flex items-center justify-center rounded-fulltext-primary-200">
 													<span
 														className={`mdi mdi-${
 															item.icon ||

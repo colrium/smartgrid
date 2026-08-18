@@ -30,7 +30,7 @@ export function SocialsSection() {
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
 					<div className="relative rounded-[20px] ink-panel card-shadow overflow-hidden px-8 py-16 sm:px-12 text-center">
-						<span className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-brand-300/30 blur-[90px] pointer-events-none" />
+						<span className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary-300/30 blur-[90px] pointer-events-none" />
 						<span className="absolute -bottom-28 -left-20 w-72 h-72 rounded-full bg-primary/30 blur-[90px] pointer-events-none" />
 						<span
 							className="absolute inset-3 rounded-[15px] hairline-dark pointer-events-none"
@@ -38,7 +38,7 @@ export function SocialsSection() {
 						/>
 
 						<div className="relative flex flex-col items-center gap-8">
-							<SectionTag>
+							<SectionTag dark>
 								Sectional Properties
 							</SectionTag>
 
@@ -55,7 +55,7 @@ export function SocialsSection() {
 											className="group inline-flex items-center gap-3 h-14 rounded-full border border-surface/30 px-8 text-surface text-base transition-all duration-300 hover:border-surface hover:bg-surface/10"
 										>
 											<span
-												className={`mdi ${meta.icon} text-lg text-brand-200`}
+												className={`mdi ${meta.icon} text-lg text-primary-200`}
 											/>
 											{label}
 										</Link>

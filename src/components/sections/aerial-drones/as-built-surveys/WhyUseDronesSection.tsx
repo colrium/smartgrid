@@ -39,7 +39,10 @@ export function WhyUseDronesSection() {
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
-			<Blob className="w-[28rem] h-[28rem] bg-brand-100/60 -bottom-24 -right-24" opacity={0.5} />
+			<Blob
+				className="w-[28rem] h-[28rem] bg-primary-100/60 -bottom-24 -right-24"
+				opacity={0.5}
+			/>
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader tag={section.tag} headline={section.headline} align="center" />
@@ -48,18 +51,18 @@ export function WhyUseDronesSection() {
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={(index % 2) * 0.08}>
 							<article className="group relative h-full flex flex-col p-8 rounded-[20px] bg-surface hairline card-shadow transition-all duration-500 hover:card-shadow-lift hover:border-primary">
-								<span className="p-3 rounded-xl bg-brand-50 text-mute transition-colors duration-300 group-hover:bg-primary group-hover:text-surface self-center">
+								<span className="p-3 rounded-xl bg-primary-50 text-mute transition-colors duration-300   self-center">
 									<span
 										className={`mdi mdi-${
 											FALLBACK_ICONS[index % FALLBACK_ICONS.length]
-										} text-6xl`}
+										} text-3xl group-hover:text-primary`}
 									/>
 								</span>
 
 								<h3 className="mt-6 text-lg sm:text-xl font-medium tracking-tight text-ink leading-snug text-center">
 									{item.title}
 								</h3>
-								<p className="mt-3 flex-1 text-sm text-on-surface/60 leading-relaxed text-center">
+								<p className="mt-3 flex-1  text-on-surface/60 leading-relaxed text-center">
 									{item.description}
 								</p>
 

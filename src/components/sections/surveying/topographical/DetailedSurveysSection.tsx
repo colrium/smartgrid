@@ -28,7 +28,7 @@ export function DetailedSurveysSection() {
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
-			<Blob className="w-[26rem] h-[26rem] bg-brand-100/60 -top-20 right-0" opacity={0.5} />
+			<Blob className="w-[26rem] h-[26rem] bg-primary-100/60 -top-20 right-0" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader
@@ -41,7 +41,7 @@ export function DetailedSurveysSection() {
 				<div className="mt-14 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={(index % 4) * 0.08}>
-							<article className="group relative h-full overflow-hidden rounded-2xl hairline bg-paper card-shadow transition-all duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-brand-300 flex flex-col">
+							<article className="group relative h-full overflow-hidden rounded-2xl hairline bg-paper card-shadow transition-all duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-primary-300 flex flex-col">
 								{item.image && (
 									<div className="relative h-52 overflow-hidden shrink-0">
 										<Image

@@ -21,7 +21,7 @@ export function Lmx200FeaturesSection() {
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden">
-			<Blob className="w-[26rem] h-[26rem] bg-brand-200/40 -top-24 -right-24" opacity={0.5} />
+			<Blob className="w-[26rem] h-[26rem] bg-primary-200/40 -top-24 -right-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader

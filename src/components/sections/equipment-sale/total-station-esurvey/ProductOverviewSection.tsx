@@ -21,7 +21,7 @@ export function ProductOverviewSection() {
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden">
-			<Blob className="w-[28rem] h-[28rem] bg-brand-200/40 -top-24 -right-24" opacity={0.5} />
+			<Blob className="w-[28rem] h-[28rem] bg-primary-200/40 -top-24 -right-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -45,7 +45,7 @@ export function ProductOverviewSection() {
 								<div className="absolute inset-6 bg-primary/15 rounded-full blur-3xl" />
 
 								<div className="relative bg-surface p-6 sm:p-8 rounded-[20px] hairline card-shadow">
-									<div className="relative aspect-square rounded-[15px] overflow-hidden bg-brand-50/60">
+									<div className="relative aspect-square rounded-[15px] overflow-hidden bg-primary-50/60">
 										<Image
 											src={section.image}
 											alt={section.headline}

@@ -22,7 +22,7 @@ export function CtaSection() {
 				<FadeUp>
 					<div className="relative rounded-[20px] ink-panel card-shadow overflow-hidden px-8 py-16 sm:px-12 sm:py-24 text-center">
 						{/* authoritative glows + watermark */}
-						<span className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-brand-300/30 blur-[90px] pointer-events-none" />
+						<span className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary-300/30 blur-[90px] pointer-events-none" />
 						<span className="absolute -bottom-28 -left-20 w-72 h-72 rounded-full bg-primary/30 blur-[90px] pointer-events-none" />
 						<span
 							className="absolute -bottom-10 right-4 font-light tracking-tighter text-[11rem] leading-none text-surface/[0.03] select-none pointer-events-none hidden sm:block"
@@ -37,7 +37,7 @@ export function CtaSection() {
 
 						<div className="relative flex flex-col items-center gap-6">
 							{/* kicker */}
-							<SectionTag className="inline-flex items-center gap-3 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-brand-200">
+							<SectionTag dark>
 								{t("home:cta.tag") as string}
 							</SectionTag>
 
@@ -71,10 +71,10 @@ export function CtaSection() {
 									>
 										{secondary.icon ? (
 											<span
-												className={`mdi mdi-${secondary.icon} text-lg text-brand-200`}
+												className={`mdi mdi-${secondary.icon} text-lg text-primary-200`}
 											/>
 										) : (
-											<span className="h-1.5 w-1.5 rounded-full bg-brand-200" />
+											<span className="h-1.5 w-1.5 rounded-full bg-primary-200" />
 										)}
 										{secondary.label}
 									</Link>

@@ -49,7 +49,7 @@ const theme = createTheme({
 	},
 	typography: {
 		htmlFontSize: 14,
-		fontFamily: 'var(--font-google-sans), Arial, sans-serif',
+		fontFamily: "var(--font-google-sans), Arial, sans-serif",
 		fontWeightLight: 300,
 		fontWeightRegular: 400,
 		fontWeightMedium: 500,
@@ -123,6 +123,9 @@ const theme = createTheme({
 			fontWeight: 600,
 			textTransform: "none",
 		},
+	},
+	shape: {
+		borderRadius: 20,
 	},
 });
 

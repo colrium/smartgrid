@@ -19,7 +19,7 @@ export function TrusteesSection() {
 
 	return (
 		<section id="trustees" className="py-24 sm:py-28 relative overflow-hidden">
-			<Blob className="w-72 h-72 bg-brand-200/50 -right-16 top-10" opacity={0.4} />
+			<Blob className="w-72 h-72 bg-primary-200/50 -right-16 top-10" opacity={0.4} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>

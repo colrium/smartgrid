@@ -57,7 +57,7 @@ export default function NavMenuMobile({
 									"&.Mui-expanded": { minHeight: 40, my: 0 },
 									"& .MuiAccordionSummary-content": { my: 0.5 },
 								}}
-								className=" hover:bg-brand-50"
+								className=" hover:bg-primary-50"
 							>
 								<Box
 									sx={{ display: "flex", alignItems: "center", gap: 1 }}
@@ -114,7 +114,7 @@ export default function NavMenuMobile({
 								backgroundColor: "rgba(0, 0, 0, 0.05)",
 							},
 						}}
-						className=" text-ink hover:text-primary hover:bg-brand-50"
+						className=" text-ink hover:text-primary hover:bg-primary-50"
 					>
 						{item.label}
 					</MuiLink>

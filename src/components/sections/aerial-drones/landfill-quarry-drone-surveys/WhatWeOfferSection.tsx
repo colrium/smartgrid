@@ -51,7 +51,7 @@ export function WhatWeOfferSection() {
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
 			<Blob
-				className="w-[28rem] h-[28rem] bg-brand-100/60 -bottom-24 -right-24"
+				className="w-[28rem] h-[28rem] bg-primary-100/60 -bottom-24 -right-24"
 				opacity={0.5}
 			/>
 
@@ -67,7 +67,7 @@ export function WhatWeOfferSection() {
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={(index % 3) * 0.08}>
 							<article className="group relative h-full flex flex-col p-8 rounded-[20px] bg-surface hairline card-shadow transition-all duration-500 hover:card-shadow-lift hover:border-primary">
-								<span className=" w-14 h-14 flex items-center justify-center rounded-full bg-brand-50 text-mute transition-colors duration-300 group-hover:text-primary self-center">
+								<span className=" w-14 h-14 flex items-center justify-center rounded-full bg-primary-50 text-mute transition-colors duration-300 group-hover:text-primary self-center">
 									<span
 										className={`mdi mdi-${
 											FALLBACK_ICONS[index % FALLBACK_ICONS.length]

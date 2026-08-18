@@ -29,7 +29,7 @@ export function ApplicationsSection() {
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
-			<Blob className="w-[28rem] h-[28rem] bg-brand-100/60 -top-24 -right-24" opacity={0.5} />
+			<Blob className="w-[28rem] h-[28rem] bg-primary-100/60 -top-24 -right-24" opacity={0.5} />
 			<ParallaxDecor speed={-0.06} className="absolute bottom-16 -left-24 z-0">
 				<Blob className="w-72 h-72 bg-primary/70" opacity={0.6} />
 			</ParallaxDecor>

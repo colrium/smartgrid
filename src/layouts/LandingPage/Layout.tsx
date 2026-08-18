@@ -23,7 +23,7 @@ interface LandingPageLayoutProps {
 
 
 export default function LandingPageLayout({ children, slotProps = {} }: LandingPageLayoutProps) {
-    const { navbar = { scrollVariantPercent : 10, variant: 'light'} } = slotProps;
+    const { navbar = { scrollVariantPercent : 20, variant: 'light'} } = slotProps;
 	
 	return (
 		<div className={`flex flex-col min-h-screen relative`}>

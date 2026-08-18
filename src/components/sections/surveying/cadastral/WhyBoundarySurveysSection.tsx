@@ -29,9 +29,9 @@ export function WhyBoundarySurveysSection() {
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
-			<Blob className="w-[28rem] h-[28rem] bg-brand-200/40 -top-24 -right-24" opacity={0.5} />
+			<Blob className="w-[28rem] h-[28rem] bg-primary-200/40 -top-24 -right-24" opacity={0.5} />
 			<ParallaxDecor speed={-0.06} className="absolute bottom-16 -left-24 z-0">
-				<Blob className="w-72 h-72 bg-brand-100/80" opacity={0.6} />
+				<Blob className="w-72 h-72 bg-primary-100/80" opacity={0.6} />
 			</ParallaxDecor>
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -47,7 +47,7 @@ export function WhyBoundarySurveysSection() {
 						<FadeUp key={index} delay={(index % 4) * 0.08}>
 							<article className="group relative h-full p-8 rounded-[20px] bg-paper hairline card-shadow transition-all duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-primary">
 								<div className="flex items-start justify-between gap-4">
-									<span className="p-3 rounded-xl bg-brand-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
+									<span className="p-3 rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 										<span
 											className={`mdi mdi-${
 												item.icon || FALLBACK_ICONS[index % FALLBACK_ICONS.length]

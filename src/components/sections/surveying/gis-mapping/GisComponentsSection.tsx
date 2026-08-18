@@ -26,7 +26,7 @@ export function GisComponentsSection() {
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
-			<Blob className="w-[28rem] h-[28rem] bg-brand-100/60 -bottom-24 -right-24" opacity={0.5} />
+			<Blob className="w-[28rem] h-[28rem] bg-primary-100/60 -bottom-24 -right-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader
@@ -46,7 +46,7 @@ export function GisComponentsSection() {
 										: ""
 								}`}
 							>
-								<span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 font-semibold text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
+								<span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 font-semibold text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 									{String(index + 1).padStart(2, "0")}
 								</span>
 

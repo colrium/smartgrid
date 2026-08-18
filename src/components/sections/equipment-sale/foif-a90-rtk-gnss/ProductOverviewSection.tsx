@@ -28,7 +28,7 @@ export function ProductOverviewSection() {
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden">
-			<Blob className="w-[28rem] h-[28rem] bg-brand-200/40 -top-24 -right-24" opacity={0.5} />
+			<Blob className="w-[28rem] h-[28rem] bg-primary-200/40 -top-24 -right-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<div className="max-w-3xl">
@@ -51,7 +51,7 @@ export function ProductOverviewSection() {
 					{images.map((image, index) => (
 						<FadeUp key={index} delay={(index % 3) * 0.07}>
 							<div className="group relative aspect-square rounded-[20px] bg-surface hairline card-shadow p-6 sm:p-8 transition-all duration-500 hover:card-shadow-lift">
-								<div className="relative h-full w-full rounded-[15px] overflow-hidden bg-brand-50/60">
+								<div className="relative h-full w-full rounded-[15px] overflow-hidden bg-primary-50/60">
 									<Image
 										src={image}
 										alt={`${section.headline} ${index + 1}`}

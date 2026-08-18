@@ -107,7 +107,7 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 
 	useLenis(
 		({ scroll, limit }) => {
-            const progress = (scroll / limit) * 100;
+            const progress = (scroll / window.innerHeight) * 100;
             const isWindowScrolled = progress >= 2;
             if (isWindowScrolled !== state.isWindowScrolled) {
 				setState((prev) => ({
@@ -156,7 +156,7 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 		typeof scrollVariantPercent !== "number"? variant === "dark" :
 		(variant === "light" && state.scrollVariantToggled) || (variant === "dark" && !state.scrollVariantToggled);
 
-	const iconColor = isDark ? "text-secondary" : "text-primary";
+	const iconColor = isDark ? "text-primary-200" : "text-primary";
 	const accentColor = isDark ? "text-surface" : "text-accent";
 	const hoverColor = isDark ? "hover:text-primary-300" : "hover:text-primary";
 
@@ -175,12 +175,12 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 					maxWidth="lg"
 					classes={{
 						root: `mt-3 mb-1 rounded-3xl backdrop-blur-lg! transition-all duration-500 ${
-							isDark ? "bg-primary-700/85! text-surface!" : "bg-surface/85! text-ink!"
+							isDark ? "bg-ink-soft/85! text-surface!" : "bg-surface/85! text-ink!"
 						} ${state.isWindowScrolled ? "card-shadow-lift" : "card-shadow"}`,
 					}}
 				>
 					<div
-						className={`hidden lg:flex items-center justify-between gap-8 px-2 pt-3.5 pb-3 text-xs font-semibold transition-all duration-500 ${
+						className={`hidden lg:flex items-center justify-between gap-8 px-2 pt-3.5 pb-3 text-xs  transition-all duration-500 ${
 							isDark
 								? "text-surface/70 border-b border-surface/10"
 								: "text-on-surface/70 border-b border-ink/10"
@@ -235,7 +235,7 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 									{t("meta:site.title")}
 								</h6>
 								<span
-									className={`capitalize hidden lg:flex font-semibold text-[9px] no-underline transition-all duration-500 ${
+									className={`capitalize hidden lg:flex font-bold text-[8px] no-underline transition-all duration-500 ${
 										isDark ? "text-surface/55" : "text-on-surface/55"
 									}`}
 								>

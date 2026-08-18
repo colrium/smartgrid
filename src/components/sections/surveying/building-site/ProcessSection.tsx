@@ -26,7 +26,7 @@ export function ProcessSection() {
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
-			<Blob className="w-[26rem] h-[26rem] bg-brand-100/60 -top-20 right-0" opacity={0.5} />
+			<Blob className="w-[26rem] h-[26rem] bg-primary-100/60 -top-20 right-0" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader
@@ -38,13 +38,13 @@ export function ProcessSection() {
 				<div className="mt-14 sm:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
 					{steps.map((step, index) => (
 						<FadeUp key={index} delay={(index % 3) * 0.08}>
-							<article className="group relative h-full overflow-hidden rounded-2xl hairline bg-paper card-shadow transition-all duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-brand-300 p-8">
+							<article className="group relative h-full overflow-hidden rounded-2xl hairline bg-paper card-shadow transition-all duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-primary-300 p-8">
 								<span className="absolute -right-3 -top-6 font-light tracking-tighter text-[7rem] leading-none text-primary/[0.06] select-none pointer-events-none">
 									{String(index + 1).padStart(2, "0")}
 								</span>
 
 								<div className="relative flex items-center gap-3">
-									<span className="inline-flex items-center justify-center h-9 w-9 rounded-full bg-brand-50 text-primary text-sm font-semibold tabular-nums">
+									<span className="inline-flex items-center justify-center h-9 w-9 rounded-full bg-primary-50 text-primary text-sm font-semibold tabular-nums">
 										{index + 1}
 									</span>
 									<span className="h-px flex-1 bg-ink/10" />

@@ -26,7 +26,7 @@ export function KeyFactsSection() {
 	return (
 		<section id="key-facts" className="py-24 sm:py-28 relative overflow-hidden">
 			<ParallaxDecor speed={0.05} className="absolute top-10 right-1/4 z-0">
-				<Blob className="w-72 h-72 bg-brand-200/50" opacity={0.5} />
+				<Blob className="w-72 h-72 bg-primary-200/50" opacity={0.5} />
 			</ParallaxDecor>
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -37,7 +37,7 @@ export function KeyFactsSection() {
 						
 						{/* texture + watermark */}
 						<ParallaxDecor speed={0.06} className="absolute -top-16 -right-16 z-0">
-							<Blob className="w-72 h-72 bg-brand-100/90" opacity={0.7} />
+							<Blob className="w-72 h-72 bg-primary-100/90" opacity={0.7} />
 						</ParallaxDecor>
 						<span
 							className="absolute -right-2 top-1/2 -translate-y-1/2 font-light tracking-tighter text-[11rem] leading-none text-ink/[0.04] select-none pointer-events-none"

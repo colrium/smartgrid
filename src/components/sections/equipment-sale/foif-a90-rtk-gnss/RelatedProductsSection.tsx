@@ -29,7 +29,7 @@ export function RelatedProductsSection() {
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
-			<Blob className="w-[28rem] h-[28rem] bg-brand-100/60 -bottom-24 -right-24" opacity={0.5} />
+			<Blob className="w-[28rem] h-[28rem] bg-primary-100/60 -bottom-24 -right-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
@@ -47,7 +47,7 @@ export function RelatedProductsSection() {
 								href={item.href}
 								className="group block h-full rounded-[20px] bg-surface hairline card-shadow p-5 transition-all duration-500 hover:card-shadow-lift hover:border-primary"
 							>
-								<div className="relative aspect-square rounded-[15px] overflow-hidden bg-brand-50/60">
+								<div className="relative aspect-square rounded-[15px] overflow-hidden bg-primary-50/60">
 									{item.image && (
 										<Image
 											src={item.image}
@@ -63,7 +63,7 @@ export function RelatedProductsSection() {
 									<h3 className="text-sm font-semibold tracking-wide text-ink">
 										{item.label}
 									</h3>
-									<span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
+									<span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 										<span className="mdi mdi-arrow-right text-sm" />
 									</span>
 								</div>

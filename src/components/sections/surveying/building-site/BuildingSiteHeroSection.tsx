@@ -29,7 +29,7 @@ export function BuildingSiteHeroSection() {
 		<section className="relative min-h-[86dvh] flex items-end overflow-hidden pb-14 sm:pb-20">
 			{/* Institutional panel background (falls back to gradients when no image url) */}
 			<div className="absolute inset-0 ink-panel" />
-			<span className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-brand-300/30 blur-[90px] pointer-events-none" />
+			<span className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary-300/30 blur-[90px] pointer-events-none" />
 			<span className="absolute -bottom-28 -left-20 w-72 h-72 rounded-full bg-primary/30 blur-[90px] pointer-events-none" />
 			<span
 				className="absolute -bottom-10 right-4 font-light tracking-tighter text-[11rem] leading-none text-surface/[0.04] select-none pointer-events-none hidden sm:block"
@@ -47,7 +47,7 @@ export function BuildingSiteHeroSection() {
 
 			<div className="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12">
 				<FadeUp>
-					<SectionTag>
+					<SectionTag dark>
 						{hero.headline}
 					</SectionTag>
 

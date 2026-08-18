@@ -36,7 +36,7 @@ export function EquipmentCategoriesSection() {
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
-			<Blob className="w-[28rem] h-[28rem] bg-brand-100/60 -top-24 -right-24" opacity={0.5} />
+			<Blob className="w-[28rem] h-[28rem] bg-primary-100/60 -top-24 -right-24" opacity={0.5} />
 			<Blob className="w-[26rem] h-[26rem] bg-primary/5 -bottom-24 -left-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -54,7 +54,7 @@ export function EquipmentCategoriesSection() {
 						<FadeUp key={index} delay={(index % 3) * 0.07}>
 							<article className="group h-full flex flex-col rounded-[20px] bg-surface hairline card-shadow p-7 sm:p-8 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
 								<div className="flex items-start justify-between gap-4">
-									<div className="h-14 w-14 rounded-2xl bg-brand-50 text-primary flex items-center justify-center transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
+									<div className="h-14 w-14 rounded-2xl bg-primary-50 text-primary flex items-center justify-center transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
 										{item.icon && (
 											<span className={`mdi mdi-${item.icon} text-2xl`} />
 										)}

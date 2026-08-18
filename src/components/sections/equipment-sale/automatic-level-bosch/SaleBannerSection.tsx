@@ -24,7 +24,7 @@ export function SaleBannerSection() {
 					{images.map((image, index) => (
 						<FadeUp key={index} delay={(index % 2) * 0.07}>
 							<div className="relative h-140 sm:h-152 w-156 sm:w-172 shrink-0 rounded-[20px] bg-surface hairline card-shadow p-4 sm:p-5">
-								<div className="relative h-full w-full overflow-hidden rounded-[15px] bg-brand-50/60">
+								<div className="relative h-full w-full overflow-hidden rounded-[15px] bg-primary-50/60">
 									<Image
 										src={image}
 										alt=""

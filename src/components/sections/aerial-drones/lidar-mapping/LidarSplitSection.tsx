@@ -73,7 +73,7 @@ export function LidarSplitSection({
 			}`}
 		>
 			<Blob
-				className={`w-[26rem] h-[26rem] bg-brand-100/60 ${
+				className={`w-[26rem] h-[26rem] bg-primary-100/60 ${
 					imagePosition === "left" ? "-bottom-24 -left-24" : "-bottom-24 -right-24"
 				}`}
 				opacity={0.5}

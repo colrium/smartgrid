@@ -30,7 +30,7 @@ export function DamsLakesSection() {
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden">
-			<Blob className="w-[26rem] h-[26rem] bg-brand-200/40 -bottom-24 -left-24" opacity={0.5} />
+			<Blob className="w-[26rem] h-[26rem] bg-primary-200/40 -bottom-24 -left-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -75,7 +75,7 @@ export function DamsLakesSection() {
 						<FadeUp key={index} delay={(index % 3) * 0.08}>
 							<article className="group relative h-full flex flex-col gap-4 rounded-[20px] bg-surface hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
 								{item.icon && (
-									<span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
+									<span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 										<span className={`mdi mdi-${item.icon} text-lg`} />
 									</span>
 								)}

@@ -27,7 +27,7 @@ export function AerialSurveyingSection() {
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden">
-			<Blob className="w-104 h-104 bg-brand-100/70 -top-24 -left-24" opacity={0.5} />
+			<Blob className="w-104 h-104 bg-primary-100/70 -top-24 -left-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<div className="flex flex-col items-center">
@@ -47,7 +47,7 @@ export function AerialSurveyingSection() {
 						<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
 							{items.map((item, index) => (
 								<FadeUp key={index} delay={(index % 2) * 0.05}>
-									<article className="group relative h-64 sm:h-72 overflow-hidden rounded-2xl hairline bg-surface card-shadow transition-all duration-500 hover:-translate-y-1 hover:card-shadow-lift hover:border-brand-300">
+									<article className="group relative h-64 sm:h-72 overflow-hidden rounded-2xl hairline bg-surface card-shadow transition-all duration-500 hover:-translate-y-1 hover:card-shadow-lift hover:border-primary-300">
 										{item.image && (
 											<Image
 												src={item.image}
@@ -60,11 +60,11 @@ export function AerialSurveyingSection() {
 										<div className="absolute inset-0 bg-linear-to-r from-ink/80 via-ink/40 to-ink/10 transition-opacity duration-300" />
 
 										<div className="relative h-full flex items-center gap-4 px-5">
-											<span className="h-1.5 w-1.5 rounded-full bg-brand-200 shrink-0" />
+											<span className="h-1.5 w-1.5 rounded-full bg-primary-200 shrink-0" />
 											<span className="text-sm sm:text-base font-medium text-surface leading-snug">
 												{item.label}
 											</span>
-											<span className="mdi mdi-arrow-right ml-auto text-surface/40 text-lg -translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 group-hover:text-brand-200" />
+											<span className="mdi mdi-arrow-right ml-auto text-surface/40 text-lg -translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 group-hover:text-primary-200" />
 										</div>
 									</article>
 								</FadeUp>

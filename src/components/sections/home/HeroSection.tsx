@@ -105,17 +105,21 @@ function debounce<T extends (...args: any[]) => void>(func: T, wait: number) {
 
 export default function HeroSection() {
 	const containerRef = useRef<HTMLDivElement>(null);
-	const heroRef = useRef<HTMLElement>(null);
+    const heroRef = useRef<HTMLElement>(null);
+    // const heroRef = useRef<HTMLElement>(null);
+
 	const { t } = useTranslation(["home"]);
 	const ctaPrimary = t("home:hero.ctaPrimary", { returnObjects: true }) as CtaItem;
 	const ctaSecondary = t("home:hero.ctaSecondary", { returnObjects: true }) as CtaItem;
     const location = t("home:hero.location", { returnObjects: true }) as Location;
     const scrollYPercentage = useMotionValue(0);
+
     useLenis(
-		({ scroll, limit }) => {
-			const progressPercentage = scroll / limit * 100;
+        ({ scroll, limit }) => {
+            const heroHeight = (heroRef.current?.clientHeight || 900) * 2;
+            const scrollTop = heroRef.current?.scrollTop;
+			const progressPercentage = (scroll / heroHeight) * 100;
             scrollYPercentage.set(progressPercentage);
-			console.log("useLenis progressPercentage", progressPercentage);
 		},
 		[]
 	);
@@ -125,8 +129,8 @@ export default function HeroSection() {
     });
     
 
-	const colorOpacity = useTransform(scrollYPercentage, [2, 10], [1, 0]);
-    const wireframeOpacity = useTransform(scrollYPercentage, [2, 10], [0, 0.5]);
+	const colorOpacity = useTransform(scrollYPercentage, [10, 30], [1, 0]);
+    const wireframeOpacity = useTransform(scrollYPercentage, [10, 30], [0, 0.5]);
 
 	useEffect(() => {
 		const container = containerRef.current;
@@ -490,11 +494,11 @@ export default function HeroSection() {
 			</div>
 
 			<motion.div
-				className={`px-6 rounded-3xl hidden md:inline-block fixed right-0 bottom-0 overflow-hidden h-2/3 md:w-1/3 w-full bg-[url('/img/instruments/total-station-color.png')] bg-contain bg-no-repeat z-0`}
+				className={`rounded-3xl  fixed right-0 md:-right-1 lg:-right-8 bottom-0 overflow-hidden h-2/3 w-1/3 bg-[url('/img/instruments/total-station-color.png')] bg-cover bg-no-repeat z-0`}
 				style={{ opacity: colorOpacity }}
 			/>
 			<motion.div
-				className={`px-6 rounded-3xl hidden md:inline-block fixed right-0 bottom-0 overflow-hidden h-2/3 md:w-1/3 w-full bg-[url('/img/instruments/total-station-wireframe.svg')] bg-contain bg-no-repeat`}
+				className={`rounded-3xl  fixed right-0 md:-right-1 lg:-right-8 bottom-0 overflow-hidden h-2/3 w-1/3 bg-[url('/img/instruments/total-station-wireframe.svg')] bg-cover bg-no-repeat`}
 				style={{ opacity: wireframeOpacity }}
 			/>
 		</section>

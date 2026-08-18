@@ -43,7 +43,7 @@ export const AboutSection: React.FC = () => {
 
 						<div className="pt-4 grid grid-cols-2 gap-4">
 							<div className="p-4 rounded-[15px] bg-surface hairline hover:border-primary cursor-default transition-all duration-300 hover:-translate-y-0.5 hover:card-shadow-lift flex items-start gap-3">
-								<div className="p-2.5 rounded-lg bg-brand-50 text-primary">
+								<div className="p-2.5 rounded-lg bg-primary-50 text-primary">
 									<ShieldIcon className="w-5 h-5" />
 								</div>
 								<div>
@@ -57,7 +57,7 @@ export const AboutSection: React.FC = () => {
 							</div>
 
 							<div className="p-4 rounded-[15px] bg-surface hairline hover:border-primary cursor-default transition-all duration-300 hover:-translate-y-0.5 hover:card-shadow-lift flex items-start gap-3">
-								<div className="p-2.5 rounded-lg bg-brand-50 text-primary">
+								<div className="p-2.5 rounded-lg bg-primary-50 text-primary">
 									<MemoryIcon className="w-5 h-5" />
 								</div>
 								<div>
@@ -91,7 +91,7 @@ export const AboutSection: React.FC = () => {
 									<div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/25 to-transparent" />
 
 									<div className="absolute bottom-6 left-6 right-6 text-surface">
-										<span className="text-xs font-mono text-brand-200 uppercase font-bold tracking-wider">
+										<span className="text-xs font-mono text-primary-200 uppercase font-bold tracking-wider">
 											{t("home:about.featureImg.caption")}
 										</span>
 										<h3 className="text-xl font-light mt-1">

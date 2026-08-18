@@ -33,7 +33,7 @@ export function EquipmentHeroSection({ namespace }: EquipmentHeroSectionProps) {
 
 	return (
 		<section className="relative overflow-hidden bg-surface/60 pt-48">
-			<Blob className="w-[30rem] h-[30rem] bg-brand-100/50 -top-32 -left-24" opacity={0.5} />
+			<Blob className="w-[30rem] h-[30rem] bg-primary-100/50 -top-32 -left-24" opacity={0.5} />
 			<Blob className="w-[26rem] h-[26rem] bg-primary/10 -bottom-24 -right-20" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-16 sm:pt-20 pb-16 sm:pb-24">
@@ -85,7 +85,7 @@ export function EquipmentHeroSection({ namespace }: EquipmentHeroSectionProps) {
 								<div className="absolute inset-6 bg-primary/15 rounded-full blur-3xl" />
 
 								<div className="relative bg-surface p-6 sm:p-8 rounded-[20px] hairline card-shadow">
-									<div className="relative aspect-square rounded-[15px] overflow-hidden bg-brand-50/60">
+									<div className="relative aspect-square rounded-[15px] overflow-hidden bg-primary-50/60">
 										<Image
 											src={hero.image as string}
 											alt={hero.title}

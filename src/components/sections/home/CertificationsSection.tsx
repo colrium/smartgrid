@@ -20,7 +20,7 @@ export function CertificationsSection() {
 	return (
 		<section id="certifications" className="py-24 sm:py-28 relative overflow-hidden">
 			<ParallaxDecor speed={0.05} className="absolute top-16 left-1/3 z-0">
-				<Blob className="w-64 h-64 bg-brand-200/50" opacity={0.5} />
+				<Blob className="w-64 h-64 bg-primary-200/50" opacity={0.5} />
 			</ParallaxDecor>
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">

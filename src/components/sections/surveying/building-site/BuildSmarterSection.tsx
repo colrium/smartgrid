@@ -27,7 +27,7 @@ export function BuildSmarterSection() {
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
-			<Blob className="w-[26rem] h-[26rem] bg-brand-100/60 -bottom-24 -right-24" opacity={0.5} />
+			<Blob className="w-[26rem] h-[26rem] bg-primary-100/60 -bottom-24 -right-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -41,12 +41,12 @@ export function BuildSmarterSection() {
 
 					<FadeUp delay={0.1} className="lg:col-span-6">
 						<div className="relative rounded-[20px] ink-panel card-shadow overflow-hidden px-8 py-10 sm:px-10 sm:py-12">
-							<span className="absolute -top-20 -right-16 w-60 h-60 rounded-full bg-brand-300/30 blur-[80px] pointer-events-none" />
+							<span className="absolute -top-20 -right-16 w-60 h-60 rounded-full bg-primary-300/30 blur-[80px] pointer-events-none" />
 							<span className="absolute -bottom-16 -left-12 w-52 h-52 rounded-full bg-primary/30 blur-[80px] pointer-events-none" />
 
 							<div className="relative">
 								{section.subtitle && (
-									<p className="text-brand-200 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em]">
+									<p className="text-primary-200 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em]">
 										{section.subtitle}
 									</p>
 								)}
