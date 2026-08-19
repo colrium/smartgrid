@@ -23,7 +23,7 @@ export function SurveyingInstrumentsSection() {
 			className="py-24 sm:py-28 relative overflow-hidden"
 		>
 			{/* Soft institutional background shapes */}
-			<Blob className="w-[28rem] h-[28rem] bg-primary-200/40 -top-24 -right-24" opacity={0.55} />
+			<Blob className="w-[28rem] h-[28rem] bg-primary-200/40 top-1/2 right-8" opacity={0.55} />
 			<ParallaxDecor speed={-0.06} className="absolute top-1/2 left-1/4 z-0">
 				<Blob className="w-64 h-64 bg-primary-100/70" opacity={0.6} />
 			</ParallaxDecor>
@@ -65,7 +65,7 @@ export function SurveyingInstrumentsSection() {
 										</span>
 										<h3 className="flex items-end justify-between gap-3 text-xl sm:text-2xl font-light uppercase tracking-tight text-surface leading-none">
 											{item.label}
-											<span className="mdi mdi-arrow-right shrink-0 text-primary-200 text-lg -translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+											{/* <span className="mdi mdi-arrow-right shrink-0 text-primary-200 text-lg -translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" /> */}
 										</h3>
 									</div>
 								</article>

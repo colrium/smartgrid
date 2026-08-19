@@ -209,7 +209,7 @@
 			{ "label": "Kuhusu", "href": "/about" },
 			{ "label": "Wasiliana Nasi", "href": "/contact", "type": "pill" }
 		],
-		"ctaPrimary": { "label": "Pata Nukuu", "href": "/contact?reason=request-quote" },
+		"ctaPrimary": { "label": "Pata Nukuu", "href": "/contact?reason=request-quote#contact-form" },
 		"ctaSecondary": { "label": "Jifunze Zaidi", "href": "/#faq" },
 		"ctaSearch": { "label": "Jifunze Zaidi", "href": "/#faq" }
 	},

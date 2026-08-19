@@ -6,7 +6,7 @@
         "lastUpdatedLabel": "Ilisasishwa Mwisho",
         "lastUpdated": "Aug, 2026",
         "contactLabel": "Wasiliana na Timu ya Faragha",
-        "contactLink": "/contact?reason=privacy",
+        "contactLink": "/contact?reason=privacy#contact-form",
         "note": "Ukurasa huu unakusudiwa kuwa taarifa ya faragha ya tovuti ya vitendo na unapaswa kupitiwa na wakili mwenye sifa kwa mahitaji ya kisheria yanayotegemea eneo kabla ya kuchukuliwa kama sera ya mwisho ya kisheria. Maswali kuhusu ukurasa huu au jinsi yanavyohusu swali lako yanaweza kutumwa kwa timu ya {{site_title}}."
     },
 	"hero": {
@@ -17,14 +17,14 @@
 		"cta_primary": { "label": "Linganisha Viwango", "href": "/invest#tiers" },
 		"cta_secondary": {
 			"label": "Omba Uchunguzi wa Ustahiki",
-			"href": "/contact?reason=due-diligence"
+			"href": "/contact?reason=due-diligence#contact-form"
 		}
 	},
     "contact":{
         "description": "Maswali kuhusu ukurasa huu au jinsi yanavyohusu swali lako yanaweza kutumwa kwa timu ya SmartGrid.",
         "link": {
             "label": "Wasiliana na Timu ya Faragha",
-            "href": "/contact?reason=privacy"
+            "href": "/contact?reason=privacy#contact-form"
         }
     },
     "articles": [

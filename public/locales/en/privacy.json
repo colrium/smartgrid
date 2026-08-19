@@ -6,7 +6,7 @@
         "lastUpdatedLabel": "Last Updated",
         "lastUpdated": "Aug, 2026",
         "contactLabel": "Contact Privacy Team",
-        "contactLink": "/contact?reason=privacy",
+        "contactLink": "/contact?reason=privacy#contact-form",
         "note": "This page is intended as a practical website privacy notice and should be reviewed with qualified counsel for jurisdiction-specific legal requirements before being treated as a final legal policy. Questions about this page or how it applies to your enquiry can be sent to the {{site_title}} team."
     },   
 	"hero": {
@@ -20,7 +20,7 @@
         "description": "Questions about this page or how it applies to your enquiry can be sent to the SmartGrid team.",
         "link": {
             "label": "Contact Privacy Team",
-            "href": "/contact?reason=privacy"
+            "href": "/contact?reason=privacy#contact-form"
         }
     },
     "articles": [

@@ -5,7 +5,7 @@
 		"description": "Kiongozi wa Upimaji wa Ardhi na Angani Afrika kwa Teknolojia ya Kisasa",
 		"ctaPrimary": {
 			"label": "Omba Upimaji",
-			"href": "/contact?reason=request-survey",
+			"href": "/contact?reason=request-survey#contact-form",
 			"class": " rounded-full!",
 			"icon": "send"
 		},
@@ -43,7 +43,7 @@
 				},
 				"action": {
 					"label": "Omba Upimaji",
-					"href": "/contact?reason=land-surveying"
+					"href": "/contact?reason=land-surveying#contact-form"
 				}
 			},
 
@@ -57,7 +57,7 @@
 				},
 				"action": {
 					"label": "Panga upimaji wa droni",
-					"href": "/contact?reason=book-drone-survey"
+					"href": "/contact?reason=book-drone-survey#contact-form"
 				}
 			},
 			{
@@ -451,7 +451,7 @@
 		"description": "Kutoka kiwanja kimoja hadi ekari 1000+, wapimaji na marubani wetu wako tayari kutoa data ya haraka, sahihi na tendekevu — kote Afrika Mashariki na nje.",
 		"primary": {
 			"label": "Omba Upimaji",
-			"href": "/contact?reason=request-survey",
+			"href": "/contact?reason=request-survey#contact-form",
 			"icon": "send"
 		},
 		"secondary": {

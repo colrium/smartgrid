@@ -59,7 +59,7 @@ export default function FooterLight() {
 								<span className="text-xl font-semibold tracking-wide text-ink uppercase">
 									{title}
 								</span>
-								<span className="mt-0.5 text-[9px] uppercase tracking-[0.28em] text-primary">
+								<span className="mt-0.5 text-[9px] uppercase tracking-[0.28em] text-accent">
 									{subtitle}
 								</span>
 							</span>

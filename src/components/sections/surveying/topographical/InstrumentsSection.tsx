@@ -62,7 +62,7 @@ export function InstrumentsSection() {
 								<div className="absolute inset-x-5 bottom-5">
 									<h3 className="flex items-end justify-between gap-3 text-xl sm:text-2xl font-light uppercase tracking-tight text-surface leading-none">
 										{item.label}
-										<span className="mdi mdi-arrow-right shrink-0 text-primary-200 text-lg -translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+										{/* <span className="mdi mdi-arrow-right shrink-0 text-primary-200 text-lg -translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" /> */}
 									</h3>
 								</div>
 							</article>

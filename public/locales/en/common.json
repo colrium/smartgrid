@@ -212,7 +212,7 @@
 			{ "label": "Contact Us", "href": "/contact", "type": "pill" }
 		],
 
-		"ctaPrimary": { "label": "Get a Quote", "href": "/contact?reason=request-quote" },
+		"ctaPrimary": { "label": "Get a Quote", "href": "/contact?reason=request-quote#contact-form" },
 		"ctaSecondary": { "label": "Learn More", "href": "/#faq" },
 		"ctaSearch": { "label": "Learn More", "href": "/#faq" }
 	},

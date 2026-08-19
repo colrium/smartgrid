@@ -5,7 +5,7 @@
 		"description": "Leading Africa's Land and Aerial Surveying with Advanced equipment Technology",
 		"ctaPrimary": {
 			"label": "Request a Survey",
-			"href": "/contact?reason=request-survey",
+			"href": "/contact?reason=request-survey#contact-form",
 			"class": " rounded-full!",
 			"icon": "send"
 		},
@@ -43,7 +43,7 @@
 				},
 				"action": {
 					"label": "Request Survey",
-					"href": "/contact?reason=land-surveying"
+					"href": "/contact?reason=land-surveying#contact-form"
 				}
 			},
 
@@ -57,7 +57,7 @@
 				},
 				"action": {
 					"label": "Book a drone survey",
-					"href": "/contact?reason=book-drone-survey"
+					"href": "/contact?reason=book-drone-survey#contact-form"
 				}
 			},
 			{
@@ -451,7 +451,7 @@
 		"description": "From a single plot to 1000+ acres, our surveyors and pilots are ready to deliver fast, accurate and actionable data — across East Africa and beyond.",
 		"primary": {
 			"label": "Request a Survey",
-			"href": "/contact?reason=request-survey",
+			"href": "/contact?reason=request-survey#contact-form",
 			"icon": "send"
 		},
 		"secondary": {
