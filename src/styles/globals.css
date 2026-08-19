@@ -7,6 +7,10 @@
     --color-secondary: #000000;
     --color-accent: #947e5e;
 
+    --color-gmail: #C5221F;
+        --color-calendly: #006bff;
+        --color-whatsapp: #25d366;
+
     --color-accent-50: #f4f2ef;
     --color-accent-100: #e8e3dc;
     --color-accent-200: #d4cbbf;
@@ -69,7 +73,8 @@
     --color-ink: #01373d;
     --color-ink-soft: #345a60;
 
-
+    
+    
     --font-sans: var(--google-sans);
     --font-mono: var(--font-mono);
 

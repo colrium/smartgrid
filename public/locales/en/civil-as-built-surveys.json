@@ -103,7 +103,7 @@
 				"description": "Conduct detailed inspections of existing structures and underground utilities."
 			},
 			{
-				"icon": "city-digital",
+				"icon": "content-duplicate",
 				"title": "Digital Twin Creation",
 				"description": "Build precise digital replicas of physical assets for simulation and analysis."
 			},

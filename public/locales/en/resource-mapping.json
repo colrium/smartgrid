@@ -52,7 +52,7 @@
 				"description": "Evaluate terrain suitability, slope angles, and shade factors using SmartGrid elevation and exposure models."
 			},
 			{
-				"icon": "city-digital",
+				"icon": "abacus",
 				"title": "Asset Management & Maintenance",
 				"description": "Create digital twins of utility networks using consistent SmartGrid-collected data, improving inventory and maintenance tracking."
 			}

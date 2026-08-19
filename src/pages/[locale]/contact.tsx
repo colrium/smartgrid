@@ -3,6 +3,11 @@ import type { GetServerSideProps, NextPage } from "next";
 import { getI18nProps } from "@/lib/i18n";
 import PageHead from "@/components/Head";
 import { ContactFormSection } from "@/components/sections";
+import {
+	ContactHeroSection,
+	TalkToUsSection,
+	OfficesSection,
+} from "@/components/sections/contact";
 
 type PageProps = {
 	// Add custom props here
@@ -12,6 +17,9 @@ const Page: NextPage<PageProps> = () => {
 	return (
 		<div className="relative">
 			<PageHead pageName="contact" />
+			<ContactHeroSection />
+			<TalkToUsSection />
+			<OfficesSection />
 			<ContactFormSection />
 		</div>
 	);

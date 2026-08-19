@@ -46,8 +46,8 @@ export default function PageTransitionLoader() {
 					exit={{ opacity: 0, transition: { duration: 0.5, ease: "easeInOut" } }}
 				>
 					<div className="absolute inset-0 bg-surface/85 backdrop-blur-3xl" />
-					<div className="absolute -top-40 -left-40 w-[28rem] h-[28rem] rounded-full bg-primary/35 blur-[120px]" />
-					<div className="absolute bottom-4 right-4 w-[28rem] h-[28rem] rounded-full bg-primary/20 blur-[120px]" />
+					<div className="absolute -top-40 -left-40 w-[28rem] h-[28rem] rounded-full bg-primary/25 blur-[120px]" />
+					<div className="absolute bottom-4 right-4 w-[28rem] h-[28rem] rounded-full bg-primary/10 blur-[120px]" />
 
 					<div className="absolute top-0 left-0 h-1 w-full overflow-hidden">
 						<motion.div

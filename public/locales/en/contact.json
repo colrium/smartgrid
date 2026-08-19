@@ -14,37 +14,43 @@
 				"icon": "phone",
 				"label": "+254 107 393 023",
 				"href": "tel:+254107393023",
-				"note": ""
+				"note": "HQ (Ruiru)",
+                "color": "primary"
 			},
             {
 				"icon": "phone",
 				"label": "+254 701 618 282",
 				"href": "tel:+254701618282",
-				"note": "Nairobi"
+				"note": "Nairobi",
+				"color": "primary-500"
 			},
             {
 				"icon": "email",
 				"label": "info@smartgridsurveying.com",
 				"href": "mailto:info@smartgridsurveying.com",
-				"note": ""
+				"note": "Queries",
+				"color": "primary-700"
 			},
             {
-				"icon": "email",
-                "label": "smartgridsurveying@gmail.com",
+				"icon": "gmail",
+				"label": "smartgridsurveying@gmail.com",
 				"href": "mailto:smartgridsurveying@gmail.com",
-				"note": ""
+				"note": "Quotes",
+				"color": "gmail"
 			},
             {
 				"icon": "whatsapp",
                 "label": "Chat on WhatsApp",
 				"href": "https://wa.me/254107393023",
-				"note": ""
+				"note": "Quick",
+                "color" : "whatsapp"
 			},
             {
 				"icon": "calendar",
 				"label": "Schedule via Calendly",
 				"href": "https://calendly.com/smartgridconsultation",
-				"note": ""
+				"note": "Scheduled",
+				"color": "calendly"
 			}
         ]
 	},
@@ -56,7 +62,7 @@
 			{
 				"id": "hq-nairobi",
 				"label": "SmartGrid Surveying HQ",
-				"city": "Nairobi",
+				"city": "Ruiru",
 				"country": "Kenya",
 				"flag": "🇰🇪",
 				"address_lines": [
@@ -77,9 +83,7 @@
 				"country": "Kenya",
 				"flag": "🇰🇪",
 				"address_lines": [
-					"SmartGrid Field Office,",
-					"Mombasa Road",
-					"Nairobi, Kenya"
+					"SmartGrid Field Office, Mombasa Road, Nairobi, Kenya"
 				],
 				"lat": -1.2921,
 				"lng": 36.8219,

@@ -33,7 +33,7 @@ export default function ContactFormSection() {
 	
 
 	return (
-		<section id="contact-form" className="relative pt-64 pb-24">
+		<section id="contact-form" className="relative pt-20 sm:pt-24 pb-24">
 			<div className="max-w-295 mx-auto px-8 grid lg:grid-cols-[0.75fr_1.25fr] gap-12">
 				<div>
 					<SectionTag className=" mb-3">
