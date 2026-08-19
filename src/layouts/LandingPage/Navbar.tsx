@@ -1,17 +1,15 @@
-import { useEffect } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import IconButton from "@mui/material/IconButton";
 import MenuItem from "@mui/material/MenuItem";
 import Drawer from "@mui/material/Drawer";
-import CloseIcon from "@mui/icons-material/Close";
 import { useTranslation } from "@/hooks";
 import { useLenis } from "lenis/react";
 import { useRouter } from "next/router";
@@ -128,7 +126,7 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 		[scrollVariantPercent, scrollVariant, state.scrollVariantToggled, state.isWindowScrolled]
 	);
 	
-
+    
 	const handleDrawerToggle = () => {
 		setState({ drawerOpen: !state.drawerOpen });
 	};

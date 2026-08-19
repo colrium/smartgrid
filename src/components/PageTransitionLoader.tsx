@@ -77,7 +77,7 @@ export default function PageTransitionLoader() {
 							<span className="font-mono font-semibold uppercase tracking-[0.28em] text-on-surface text-sm sm:text-base">
 								{t("meta:site.title")}
 							</span>
-							<span className="text-[10px] uppercase tracking-[0.18em] text-on-surface/50">
+							<span className="text-[10px] uppercase tracking-[0.18em] text-accent-600">
 								{t("meta:site.subtitle")}
 							</span>
 						</div>
