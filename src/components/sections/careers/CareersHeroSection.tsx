@@ -23,17 +23,10 @@ export function CareersHeroSection() {
 	const hero = t("careers:hero", { returnObjects: true }) as unknown as CareersHeroContent;
 
 	return (
-		<section className="relative min-h-[88dvh] flex items-center justify-center overflow-hidden pt-40 pb-24 sm:pt-44 sm:pb-28">
+		<section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-40 pb-24 sm:pt-44 sm:pb-28">
 			<div className="absolute inset-0 ink-panel" />
 
-			<div
-				className="absolute inset-0 opacity-[0.35] pointer-events-none"
-				style={{
-					backgroundImage:
-						"linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
-					backgroundSize: "56px 56px",
-				}}
-			/>
+			
 
 			<span className="absolute -top-32 -left-24 w-[30rem] h-[30rem] rounded-full bg-primary/25 blur-[120px] pointer-events-none" />
 			<span className="absolute -bottom-32 -right-24 w-[30rem] h-[30rem] rounded-full bg-primary/20 blur-[120px] pointer-events-none" />

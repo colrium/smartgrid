@@ -32,13 +32,13 @@ export function OurStorySection() {
 								{/* <div className="absolute inset-6 bg-primary/15 rounded-full blur-3xl" /> */}
 								<div className="relative p-8 sm:p-10">
 									<div className="relative aspect-square rounded-[15px] overflow-hidden bg-primary-50/60">
-										<Image
+										{/* <Image
 											src={section.image as string}
 											alt={section.headline}
 											fill
 											sizes="(min-width: 1024px) 40vw, 100vw"
 											className="object-contain object-center"
-										/>
+										/> */}
 									</div>
 								</div>
 							</div>

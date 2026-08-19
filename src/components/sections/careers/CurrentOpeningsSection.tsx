@@ -130,7 +130,7 @@ function OpeningCard({ opening, mounted, featured = false }: { opening: Opening;
 			<FadeUp>
 				<article className="relative rounded-[20px] ink-panel card-shadow overflow-hidden p-8 sm:p-10 lg:p-12">
 					<span className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary-300/30 blur-[90px] pointer-events-none" />
-					<span className="absolute inset-3 rounded-[15px] hairline-dark pointer-events-none" aria-hidden />
+					{/* <span className="absolute inset-3 rounded-[15px] hairline-dark pointer-events-none" aria-hidden /> */}
 
 					<div className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 						<div className="lg:col-span-8">

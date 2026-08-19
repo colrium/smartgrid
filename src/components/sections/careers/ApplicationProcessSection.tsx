@@ -20,7 +20,7 @@ function renderBold(text: string): ReactNode[] {
 		}
 		nodes.push(
 			bold ? (
-				<strong key={nodes.length} className="font-semibold text-white">
+				<strong key={nodes.length} className="font-semibold text-on-surface">
 					{part}
 				</strong>
 			) : (
@@ -42,21 +42,19 @@ export function ApplicationProcessSection() {
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden">
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+				<span className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary-300/10 blur-[90px] pointer-events-none" />
+				<span className="absolute bottom-2 -left-20 w-72 h-72 rounded-full bg-primary/10 blur-[90px] pointer-events-none" />
 				<FadeUp>
-					<div className="relative rounded-[20px] ink-panel card-shadow overflow-hidden px-8 py-16 sm:px-12 sm:py-24 text-center">
-						<span className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary-300/30 blur-[90px] pointer-events-none" />
-						<span className="absolute -bottom-28 -left-20 w-72 h-72 rounded-full bg-primary/30 blur-[90px] pointer-events-none" />
-						<span className="absolute inset-3 rounded-[15px] hairline-dark pointer-events-none" aria-hidden />
-
+					<div className="relative rounded-[20px] card-panel   overflow-hidden px-8 py-16 sm:px-12 sm:py-24 text-center">
 						<div className="relative flex flex-col items-center gap-6">
 							{section.subtitle && (
-								<h2 className="font-light tracking-tight leading-[1.08] text-3xl sm:text-5xl text-white">
+								<h2 className="font-light tracking-tight leading-[1.08] text-3xl sm:text-5xl text-on-surface">
 									{section.subtitle}
 								</h2>
 							)}
 
 							{section.description && (
-								<p className="text-base sm:text-lg text-white/65 leading-relaxed max-w-3xl mx-auto whitespace-pre-line">
+								<p className="text-base sm:text-lg text-on-surface/65 leading-relaxed max-w-3xl mx-auto whitespace-pre-line">
 									{renderBold(section.description)}
 								</p>
 							)}
