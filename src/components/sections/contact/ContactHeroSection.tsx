@@ -24,14 +24,7 @@ export function ContactHeroSection() {
 
 	return (
 		<section className="relative overflow-hidden bg-surface pt-40 sm:pt-44 pb-20 sm:pb-24">
-			<div
-				className="absolute inset-0 opacity-50 pointer-events-none"
-				style={{
-					backgroundImage:
-						"linear-gradient(rgba(1,55,61,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(1,55,61,0.05) 1px, transparent 1px)",
-					backgroundSize: "56px 56px",
-				}}
-			/>
+			
 			<Blob className="w-[30rem] h-[30rem] bg-primary-100/60 -top-32 -left-24" opacity={0.5} />
 			<Blob className="w-[26rem] h-[26rem] bg-primary/10 -bottom-24 -right-20" opacity={0.5} />
 

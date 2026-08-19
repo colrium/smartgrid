@@ -28,6 +28,8 @@ export function CtaSection() {
 	return (
 		<section className="pb-24 sm:pb-28 relative overflow-hidden">
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+				
+
 				<FadeUp>
 					<div className="relative rounded-[20px] ink-panel card-shadow overflow-hidden px-8 py-16 sm:px-12 sm:py-24 text-center">
 						<span className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary-300/30 blur-[90px] pointer-events-none" />
@@ -66,10 +68,12 @@ export function CtaSection() {
 									{section.ctaSecondary?.href && (
 										<Link
 											href={section.ctaSecondary.href}
-											className="group inline-flex items-center gap-3 h-14 rounded-full border border-surface/40 px-8 text-surface font-medium text-base transition-all duration-300 hover:bg-surface hover:text-ink"
+											className="group inline-flex items-center gap-3 h-14 rounded-full border border-surface/40 px-8 text-surface font-medium text-base transition-all duration-300 hover:bg-surface hover:text-whatsapp"
 										>
 											{section.ctaSecondary.icon && (
-												<span className={`mdi mdi-${section.ctaSecondary.icon} text-xl`} />
+												<span
+													className={`mdi mdi-${section.ctaSecondary.icon} text-xl`}
+												/>
 											)}
 											{section.ctaSecondary.label}
 											<span className="mdi mdi-arrow-right text-xl transition-transform duration-300 group-hover:translate-x-1" />
