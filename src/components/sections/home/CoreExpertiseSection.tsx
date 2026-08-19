@@ -84,8 +84,8 @@ export function CoreExpertiseSection() {
 										{item.description}
 									</p>
 
-									<span className="mt-6 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-primary">
-										<span className="h-px w-6 bg-primary/50" />
+									<span className="mt-6 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-mute">
+										
 										{
 											t("home:coreExpertise.label", {
 												defaultValue: "Core capability",

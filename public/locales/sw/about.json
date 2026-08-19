@@ -1,0 +1,242 @@
+{
+	"hero": {
+		"headline": "Ya Kuaminika. Inayoweza Kupanuka. Ya Haraka. Inayofaa.",
+		"title": "Kuhusu Sisi",
+		"image": "/media/about/01.jpeg",
+		"description": "Iwe ni wakala wa serikali, NGO, au msanidi programu wa kibinafsi, Smartgrid Surveying ni mshirika wako anayeaminika! Droni zetu hutoa data ya kiutendaji pale inapohitajika zaidi.",
+		"ctaPrimary": {
+			"label": "Anza Uchunguzi wako wa Angani na Sisi!",
+			"href": "/aerial-drones/drone-imagery-surveys"
+		}
+	},
+	"ourStory": {
+		"tag": "Safari Yetu",
+		"headline": "SMARTGRID SURVEYING & ENGINEERING",
+		"image": "/img/logo.svg",
+		"description": "Katika Smartgrid Surveying, iliyoanzishwa 2020. Tunafafanua upya mustakabali wa uchunguzi wa ardhi na anga kote Afrika na kuendelea. Kwa teknolojia ya kisasa na kujitolea thabiti kwa usahihi, tunatoa huduma kamili za upimaji wa kitaalamu zinazosaidia maendeleo ya miundombinu, usimamizi wa ardhi, ufuatiliaji wa mazingira, na miradi ya upangaji ya viwango vyote."
+	},
+	"aerialSurveying": {
+		"tag": "Akili ya Angani",
+		"headline": "UPIMAJI WA ANGANI",
+		"description": "Droni zimebadilisha tasnia ya upimaji—na sisi tunaongoza. Smartgrid Surveying hutumia droni za angani kwa uchoraji ramani, uundaji wa modeli 3D, kiasi, tathmini za mazingira, na ufuatiliaji wa maeneo makubwa au yasiyofikika. Zaidi ya uchoraji ramani wa kiufundi, tunatoa upigaji picha wa kitaalamu wa droni kwa mali isiyohamishika, uuzaji wa ujenzi, utalii, na matukio. Kwa kutumia droni zilizo na RTK GPS na vitambuzi vya azimio la juu, tunakamata data ya kijiografia sahihi inayowawezesha wahandisi, wasanidi, serikali, na NGO kufanya maamuzi mahiri, haraka.",
+		"items": [
+			{
+				"title": "Uchoraji Ramani wa Angani",
+				"description": "Picha sahihi za droni kwa upangaji, uhifadhi wa nyaraka, na uchambuzi.",
+				"popupContent": "SmartGrid Surveying hutoa uchoraji ramani wa angani wa usahihi wa hali ya juu kwa kutumia UAV kuzalisha orthomosaics zilizorejelewa kijiografia, data topografia, na ramani za msingi za kiwango cha upangaji. Suluhisho zetu zinasaidia miundombinu, huduma, na maendeleo ya ardhi kwa kasi na usahihi usio na kifani."
+			},
+			{
+				"title": "Ufuatiliaji wa Ujenzi",
+				"description": "Fuatilia shughuli za tovuti kwa kutumia picha za angani thabiti za wakati halisi.",
+				"popupContent": "SmartGrid hutoa ufuatiliaji wa tovuti kupitia safari za ndege za droni za azimio la juu. Safari zetu za kiotomatiki hutoa sasisho za kila wiki, hugundua mkengeuko kutoka kwa ratiba, na kusaidia kufanya maamuzi kwa wasimamizi wa miradi na wasanidi."
+			},
+			{
+				"title": "Ufuatiliaji wa Mazingira",
+				"description": "Ona mabadiliko ya ikolojia na ufuatilie maeneo ya uhifadhi.",
+				"popupContent": "Kwa kutumia UAV, SmartGrid hufuatilia mabadiliko ya chanjo ya ardhi, ukataji miti, mmomonyoko, na viashiria vingine vya ikolojia. Data yetu inasaidia tathmini za athari na kufuata kanuni kwa picha za muda-thabiti zinazoweza kurudiwa."
+			},
+			{
+				"title": "Uchoraji Ramani wa Kilimo",
+				"description": "Data ya anga za multispectral kwa afya ya mazao na uboreshaji wa shamba.",
+				"popupContent": "SmartGrid huwawezesha wataalamu wa kilimo kwa data kuhusu afya ya mazao, mkazo wa mimea, na mifumo ya umwagiliaji. Tunatumia uchambuzi wa NDVI na multispectral kuboresha matumizi ya pembejeo na kuimarisha uendelevu wa mavuno."
+			},
+			{
+				"title": "Uundaji wa Modeli 3D",
+				"description": "Modeli za 3D za uhalisia wa picha kusaidia upangaji na ukaguzi.",
+				"popupContent": "Tunaunda modeli za mesh za 3D na zenye muundo wa eneo, majengo, na miundombinu. Modeli hizi ziko tayari kwa BIM na zinafaa kwa uthibitishaji wa muundo, ukaguzi, na upangaji wa kina."
+			},
+			{
+				"title": "Upangaji wa Miundombinu",
+				"description": "Data ya njia na eneo kwa mpangilio mahiri wa miundombinu.",
+				"popupContent": "Tunachora ramani za njia na maeneo kwa kutumia LiDAR ya droni na fotogrametri. Hii inahakikisha uwekaji mahiri wa barabara, mabomba, na maendeleo ya miji huku ikipunguza usumbufu wa mazingira."
+			},
+			{
+				"title": "DTM na DEM",
+				"description": "Modeli za kidijitali za eneo na mwinuko kwa kazi za maji na uhandisi wa umma.",
+				"popupContent": "Modeli zetu za eneo na mwinuko husaidia wahandisi wa umma na wanahidrolojia kuchambua mtiririko wa maji, uthabiti wa mteremko, na upangaji wa ardhi. Tunatoa data sahihi ya mwinuko kusaidia miundombinu imara."
+			},
+			{
+				"title": "Mahesabu ya Kiasi (Volumetric)",
+				"description": "Kokotoa kiasi cha nyenzo na usimamie rasilimali kwa usahihi.",
+				"popupContent": "SmartGrid hukokotoa kiasi cha cut/fill na vipimo vya akiba kwa usahihi wa sentimita. Fotogrametri yetu ya angani inatoa matokeo ya haraka, salama, na yanayoweza kurudiwa."
+			},
+			{
+				"title": "Tathmini ya Maafa",
+				"description": "Data ya njia na eneo kwa mpangilio mahiri wa miundombinu.",
+				"popupContent": "Baada ya mafuriko, maporomoko ya ardhi, au matetemeko ya ardhi, SmartGrid hutumia droni kuandika uharibifu haraka. Data yetu husaidia wahudumu kutanguliza hatua, kutenga misaada, na kupanga shughuli za uokoaji."
+			}
+		]
+	},
+	"servicesByImages": {
+		"tag": null,
+		"headline": "",
+		"description": "",
+		"items": [
+			{
+				"label": "Uchoraji Ramani wa Angani",
+				"image": "/media/about/09.jpeg"
+			},
+			{
+				"label": "Modeli za 3d",
+				"image": "/media/about/25.jpeg"
+			},
+			{
+				"title": "Modeli za Kidijitali za Eneo na Mwinuko (DTM na DEM)",
+				"image": "/media/about/11.jpeg"
+			},
+			{
+				"label": "Ufuatiliaji wa Ujenzi",
+				"image": "/media/about/26.jpeg"
+			},
+			{
+				"label": "Uchoraji Ramani wa Kilimo",
+				"image": "/media/about/19.jpeg"
+			},
+			{
+				"title": "Ufuatiliaji wa Mazingira",
+				"image": "/media/about/10.png"
+			},
+			{
+				"label": "Upangaji wa Miundombinu",
+				"image": "/media/about/22.jpeg"
+			},
+			{
+				"title": "Mahesabu ya Kiasi (Volumetric)",
+				"image": "/media/about/27.jpeg"
+			}
+		]
+	},
+	"dronePhotographyimageSlider": {
+		"tag": null,
+		"headline": "Upigaji Picha wa Droni",
+		"description": "",
+		"items": [
+			"/media/about/15.jpeg",
+			"/media/about/24.jpeg",
+			"/media/about/17.jpeg",
+			"/media/about/13.jpeg",
+			"/media/about/07.jpeg"
+		]
+	},
+	"landSurveying": {
+		"tag": "Usahihi wa Ardhi",
+		"headline": "UPIMAJI WA ARDHI WA SMARTGRID",
+		"description": "Katika Smartgrid Surveying, tunafafanua upya mustakabali wa <primary>uchunguzi wa ardhi na anga</primary> kote Afrika na kuendelea. Kwa teknolojia ya kisasa na kujitolea thabiti kwa <primary>usahihi</primary>, tunatoa huduma kamili ya <primary>upimaji wa kitaalamu</primary> inayosaidia maendeleo ya miundombinu, usimamizi wa ardhi, ufuatiliaji wa mazingira, na miradi ya upangaji ya viwango vyote. Smartgrid Surveying hutoa suluhisho kamili za upimaji wa ardhi zilizoundwa kwa <primary>wasanidi, serikali, makandarasi, na wateja binafsi</primary>. Iwe ni kwa hati miliki, uwekaji wa mipaka, mipangilio ya ujenzi, au uchoraji ramani wa cadastral, tunaleta uzoefu na ubora kwa kila tovuti.",
+		"itemsTitle": "Huduma Zetu za Upimaji wa Ardhi",
+		"items": [
+			{
+				"title": "Uchunguzi wa Topografia",
+				"description": "Uchunguzi sahihi kwa upangaji, ujenzi, mipaka, na maendeleo."
+			},
+			{
+				"title": "Uchunguzi wa Droni wa Angani",
+				"description": "Upatikanaji wa picha na data wa angani wa haraka, salama, na wa azimio la juu na droni."
+			},
+			{
+				"title": "Uchunguzi wa Majengo na Uhandisi",
+				"description": "Mpangilio wa tovuti, ufuatiliaji, na uthibitishaji wa as-built kwa usahihi na kasi."
+			},
+			{
+				"title": "Uchunguzi wa Cadastral",
+				"description": "Fafanua mipaka ya mali kwa usahihi na kujiamini na wachunguzi wataalamu."
+			},
+			{
+				"title": "Uchunguzi wa Bathymetric",
+				"description": "Uchoraji ramani wa kina wa eneo la chini ya maji kwa mabwawa, mito, maziwa, na bahari."
+			},
+			{
+				"title": "Upimaji wa Rasilimali",
+				"description": "Uchoraji ramani mzuri wa rasilimali kama vile misitu, chanjo ya miti, na maeneo ya kilimo."
+			},
+			{
+				"title": "Uchunguzi wa GIS",
+				"description": "Unganisha data ya kijiografia kwa urahisi kwa uchambuzi bora wa anga na uchoraji ramani."
+			}
+		]
+	},
+	"landSurveyingImages": {
+		"tag": null,
+		"headline": "",
+		"description": "",
+		"items": [
+			{
+				"image": "/media/about/16.jpeg",
+				"title": "Uchunguzi wa Mipaka na Migawanyo"
+			},
+			{
+				"image": "/media/about/18.jpeg",
+				"title": "Uchoraji Ramani wa Topografia"
+			},
+			{
+				"image": "/media/about/26.jpeg",
+				"title": "Uchunguzi wa Uhandisi na Ujenzi"
+			},
+			{
+				"image": "/media/about/05.jpeg",
+				"title": "Uchunguzi wa As-Built"
+			}
+		]
+	},
+	"impactAcrossAfrica": {
+		"tag": "Ufikiaji Wetu",
+		"headline": "Athari Kote Afrika",
+		"image": "/media/about/28.jpeg",
+		"description": "Kutoka Bonde la Rift la Kenya hadi misitu ya Bonde la Kongo, na upanuzi wa miji huko Accra, Ghana, Smartgrid Surveying imekamilisha miradi inayojumuisha maelfu ya hekta, ikigeuza data ghafi kuwa maarifa ya maana yanayosaidia maendeleo, uthabiti wa hali ya hewa, na matumizi endelevu ya ardhi.",
+		"whyChooseUs": {
+			"icon": "lightbulb-on",
+			"title": "Kwa Nini Uchague SmartGrid kwa Huduma za Droni?",
+			"items": [
+				"Mapiloti wa Droni Walioidhinishwa",
+				"Picha za 4K na Uchoraji Ramani wa Usahihi wa Juu",
+				"Ufunikaji wa Kitaifa na Kimataifa",
+				"Mipango Rahisi ya Kukodisha",
+				"Msaada wa Kuanzia Mwisho hadi Mwisho – Kuanzia Upangaji hadi Uwasilishaji"
+			]
+		}
+	},
+	"whyChooseSmartGrid": {
+		"tag": "Kwa Nini Sisi",
+		"headline": "Kwa Nini Uchague SmartGrid kwa Huduma za Droni?",
+		"description": "",
+		"items": [
+			{
+				"icon": "certificate",
+				"title": "Mapiloti wa Droni Walioidhinishwa",
+				"description": "Mapiloti wataalamu kwa shughuli salama na sahihi."
+			},
+			{
+				"icon": "video-4k-box",
+				"title": "Picha za 4K na Uchoraji Ramani wa Usahihi wa Juu",
+				"description": "Picha za kuvutia kwa usahihi wa ngazi ya sentimita."
+			},
+			{
+				"icon": "earth-box",
+				"title": "Ufunikaji wa Kitaifa na Kimataifa",
+				"description": "Huduma kote Kenya na kuendelea."
+			},
+			{
+				"icon": "file-sign",
+				"title": "Mipango Rahisi ya Kukodisha",
+				"description": "Chaguo maalum za kukodisha kwa mradi wako."
+			},
+			{
+				"icon": "headset",
+				"title": "Msaada wa Kuanzia Mwisho hadi Mwisho",
+				"description": "Kuanzia upangaji hadi uwasilishaji wa mwisho."
+			}
+		]
+	},
+	"projectsCompletedImagesMasonry": {
+		"tag": null,
+		"headline": "MIRADI IMEKAMILIKA",
+		"description": "",
+		"items": [
+			"/media/about/04.png",
+			"/media/about/12.png",
+			"/media/about/08.png",
+			"/media/about/14.png",
+			"/media/about/06.png",
+			"/media/about/02.png"
+		]
+	}
+}

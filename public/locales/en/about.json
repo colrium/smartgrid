@@ -2,105 +2,203 @@
 	"hero": {
 		"headline": "Reliable. Scalable. Fast. Effective.",
 		"title": "About Us",
-		"image": "/images/placeholder.jpg",
+		"image": "/media/about/01.jpeg",
 		"description": "Whether you're a government agency, an NGO, or a private developer, Smartgrid Surveying is your trusted partner! Our drones deliver actionable data where it matters most.",
 		"ctaPrimary": {
 			"label": "Start your Aerial Survey with Us!",
 			"href": "/aerial-drones/drone-imagery-surveys"
 		}
 	},
+	
 	"ourStory": {
 		"tag": "Our Journey",
 		"headline": "SMARTGRID SURVEYING & ENGINEERING",
-		"image": "/images/placeholder.jpg",
+		"image": "/img/logo.svg",
 		"description": "At Smartgrid Surveying, established 2020. We're redefining the future of land and aerial surveys across Africa and beyond. With cutting-edge technology and an unwavering commitment to precision, we offer a full suite of professional surveying services that support infrastructure development, land administration, environmental monitoring, and planning projects of all scales."
 	},
 	"aerialSurveying": {
 		"tag": "Aerial Intelligence",
 		"headline": "AERIAL SURVEYING",
-		"image": "/images/placeholder.jpg",
 		"description": "Drones have transformed the surveying industry—and we're leading the way. Smartgrid Surveying leverages aerial drones for mapping, 3D modeling, volumetrics, environmental assessments, and monitoring large or inaccessible areas. Beyond technical mapping, we offer professional drone photography for real estate, construction marketing, tourism, and events. Using drones equipped with RTK GPS and high-resolution sensors, we capture precise geospatial data that empowers engineers, developers, governments, and NGOs to make smarter decisions, faster.",
 		"items": [
 			{
-				"icon": "map",
 				"title": "Aerial Mapping",
-				"description": "High-resolution orthomosaics and georeferenced maps."
+				"description": "Accurate drone-based imagery for planning, documentation, and analysis.",
+				"popupContent": "SmartGrid Surveying delivers ultra-precise aerial mapping using UAVs to generate georeferenced orthomosaics, topographic data, and planning-grade base maps. Our solutions support infrastructure, utilities, and land development with unmatched speed and accuracy."
 			},
 			{
-				"icon": "cube-3d",
-				"title": "3D Models",
-				"description": "Detailed three-dimensional representations for analysis."
-			},
-			{
-				"icon": "terrain",
-				"title": "DTMs & DEMs",
-				"description": "Digital Terrain and Elevation Models for planning."
-			},
-			{
-				"icon": "chart-timeline",
 				"title": "Construction Monitoring",
-				"description": "Track progress and verify compliance."
+				"description": "Track site activity using consistent, real-time aerial visuals.",
+				"popupContent": "SmartGrid offers site monitoring through high-resolution drone flyovers. Our automated flights provide weekly visual updates, detect deviations from schedule, and support decision-making for project managers and developers."
 			},
 			{
-				"icon": "leaf",
-				"title": "Agricultural Mapping",
-				"description": "Crop health and resource optimization."
-			},
-			{
-				"icon": "tree-outline",
 				"title": "Environmental Monitoring",
-				"description": "Land use, deforestation, and habitat tracking."
+				"description": "Visualize ecological change and monitor conservation areas.",
+				"popupContent": "Using UAVs, SmartGrid tracks land cover change, deforestation, erosion, and other ecological indicators. Our data supports impact assessments and regulatory compliance with repeatable, time-stamped visuals."
 			},
 			{
-				"icon": "city",
+				"title": "Agricultural Mapping",
+				"description": "Drone-based multispectral data for crop health and farm optimization.",
+				"popupContent": "SmartGrid empowers agronomists with data on crop health, plant stress, and irrigation patterns. We use NDVI and multispectral analysis to optimize input use and improve yield sustainability."
+			},
+			{
+				"title": "3D Modeling",
+				"description": "Photorealistic 3D models to support planning and inspections.",
+				"popupContent": "We create detailed 3D mesh and textured models of terrain, buildings, and infrastructure. These models are BIM-ready and useful for design validation, inspection, and immersive planning."
+			},
+			{
 				"title": "Infrastructure Planning",
-				"description": "Data for designing and maintaining infrastructure."
+				"description": "Route and terrain data for smart infrastructure layout.",
+				"popupContent": "We map routes and sites using drone LiDAR and photogrammetry. This ensures smart siting of roads, pipelines, and urban developments while minimizing environmental disruption."
 			},
 			{
-				"icon": "calculator",
+				"title": "DTMs & DEMs",
+				"description": "Digital terrain and elevation models for hydrological and civil works.",
+				"popupContent": "Our terrain and elevation models help civil engineers and hydrologists analyze runoff, slope stability, and grading. We deliver precise elevation data to support resilient infrastructure."
+			},
+			{
 				"title": "Volumetric Calculations",
-				"description": "Stockpile and earthwork volume computations."
+				"description": "Calculate material volumes and manage resources accurately.",
+				"popupContent": "SmartGrid computes cut/fill volumes and stockpile measurements with centimeter-level accuracy. Our aerial photogrammetry offers fast, safe, and repeatable results."
+			},
+			{
+				"title": "Disaster Assessment",
+				"description": "Route and terrain data for smart infrastructure layout.",
+				"popupContent": "After floods, landslides, or earthquakes, SmartGrid uses drones to quickly document damage. Our data helps responders prioritize actions, allocate aid, and plan recovery operations."
 			}
+		]
+	},
+    "servicesByImages": {
+		"tag": null,
+		"headline": "",
+		"description": "",
+		"items": [
+			{
+				"label": "Aerial Mapping",
+				"image": "/media/about/09.jpeg"
+			},
+			{
+				"label": "3d models",
+				"image": "/media/about/25.jpeg"
+			},
+			{
+				"title": "Digital Terrain & Elevation Models (DTMs & DEMs)",
+				"image": "/media/about/11.jpeg"
+			},
+			{
+				"label": "Construction Monitoring",
+				"image": "/media/about/26.jpeg"
+			},
+			{
+				"label": "Agricultural Mapping",
+				"image": "/media/about/19.jpeg"
+			},
+			{
+				"title": "Environmental Monitoring",
+				"image": "/media/about/10.png"
+			},
+			{
+				"label": "Infrastructure Planning",
+				"image": "/media/about/22.jpeg"
+			},
+			{
+				"title": "Volumetric calculations",
+				"image": "/media/about/27.jpeg"
+			}
+		]
+	},
+    "dronePhotographyimageSlider": {
+		"tag": null,
+		"headline": "Drone Photography",
+		"description": "",
+		"items": [
+			"/media/about/15.jpeg",
+			"/media/about/24.jpeg",
+			"/media/about/17.jpeg",
+			"/media/about/13.jpeg",
+			"/media/about/07.jpeg"
 		]
 	},
 	"landSurveying": {
 		"tag": "Ground Precision",
 		"headline": "SMARTGRID LAND SURVEYING",
-		"image": "/images/placeholder.jpg",
-		"description": "At Smartgrid Surveying, we're redefining the future of land and aerial surveys across Africa and beyond. With cutting-edge technology and an unwavering commitment to precision, we offer a full suite of professional surveying services that support infrastructure development, land administration, environmental monitoring, and planning projects of all scales. Smartgrid Surveying provides comprehensive land surveying solutions tailored to developers, governments, contractors, and private clients. Whether it's for title deeds, boundary demarcation, construction layouts, or cadastral mapping, we bring experience and excellence to every site.",
+		"description": "At Smartgrid Surveying, we're redefining the future of <primary>land and aerial surveys</primary> across Africa and beyond. With cutting-edge technology and an unwavering commitment to <primary>precision</primary>, we offer a full suite of <primary>professional surveying</primary> services that support infrastructure development, land administration, environmental monitoring, and planning projects of all scales. Smartgrid Surveying provides comprehensive land surveying solutions tailored to <primary>developers, governments, contractors, and private clients</primary>. Whether it's for title deeds, boundary demarcation, construction layouts, or cadastral mapping, we bring experience and excellence to every site.",
+        "itemsTitle": "Our Land Surveying Services",
 		"items": [
 			{
-				"icon": "map-marker",
-				"title": "Boundary Surveys & Subdivisions",
-				"description": "Accurate property line determination and land subdivision."
+				"title": "Topographical Surveys",
+				"description": "Accurate surveys for planning, construction, boundaries, and development."
 			},
 			{
-				"icon": "map-contour",
-				"title": "Topographic Mapping",
-				"description": "Detailed terrain mapping for planning and design."
+				"title": "Aerial Drone Surveys",
+				"description": "Fast, safe, and high-resolution aerial imagery and data acquisition with drones."
 			},
 			{
-				"icon": "ruler-square",
-				"title": "Engineering & Construction Surveys",
-				"description": "Site setting out, leveling, and stakeout for projects."
+				"title": "Building & Engineering Surveys",
+				"description": "Site layout, monitoring, and as-built verification with precision and speed."
 			},
 			{
-				"icon": "file-document",
-				"title": "As-Built Surveys",
-				"description": "Documenting final construction conditions."
+				"title": "Cadastral Surveys",
+				"description": "Define property boundaries precisely and confidently with expert surveyors."
+			},
+
+			{
+				"title": "Bathymetric Surveys",
+				"description": "Detailed underwater terrain mapping for dams, rivers, lakes, and oceans."
+			},
+			{
+				"title": "Resource Mapping",
+				"description": "Efficient mapping of resources such as forests, tree cover, and agricultural areas."
+			},
+			{
+				"title": "GIS Surveys",
+				"description": "Integrate geographic data seamlessly for smarter spatial analysis and mapping."
+			}
+		]
+	},
+    "landSurveyingImages": {
+		"tag": null,
+		"headline": "",
+		"description": "",
+		"items": [
+			{
+				"image": "/media/about/16.jpeg",
+				"title": "Boundary Surveys & Subdivisions"
+			},
+			{
+				"image": "/media/about/18.jpeg",
+				"title": "Topographic Mapping"
+			},
+			{
+				"image": "/media/about/26.jpeg",
+				"title": "Engineering & Construction Surveys"
+			},
+			{
+				"image": "/media/about/05.jpeg",
+				"title": "As-Built Surveys"
 			}
 		]
 	},
 	"impactAcrossAfrica": {
 		"tag": "Our Reach",
 		"headline": "Impact Across Africa",
-		"image": "/images/placeholder.jpg",
-		"description": "From Kenya's Rift Valley to forests in the Congo Basin, and urban expansion in Accra, Ghana, Smartgrid Surveying has completed projects spanning thousands of hectares, transforming raw data into meaningful insights that support development, climate resilience, and sustainable land use."
+		"image": "/media/about/28.jpeg",
+		"description": "From Kenya's Rift Valley to forests in the Congo Basin, and urban expansion in Accra, Ghana, Smartgrid Surveying has completed projects spanning thousands of hectares, transforming raw data into meaningful insights that support development, climate resilience, and sustainable land use.",
+        "whyChooseUs": {
+            "icon": "lightbulb-on",
+            "title": "Why Choose SmartGrid for Drone Services?",
+            "items": [
+				"Certified Drone Pilots",
+				"4K Imaging & High-Accuracy Mapping",
+				"Nationwide & Cross-Border Coverage",
+				"Flexible Hire Plans",
+				"End-to-End Support – From Planning to Delivery"
+			]
+        }
 	},
 	"whyChooseSmartGrid": {
 		"tag": "Why Us",
 		"headline": "Why Choose SmartGrid for Drone Services?",
-		"image": "/images/placeholder.jpg",
 		"description": "",
 		"items": [
 			{
@@ -109,17 +207,17 @@
 				"description": "Expert pilots for safe and precise operations."
 			},
 			{
-				"icon": "camera-4k",
+				"icon": "video-4k-box",
 				"title": "4K Imaging & High-Accuracy Mapping",
 				"description": "Stunning imagery with cm-level accuracy."
 			},
 			{
-				"icon": "map-multiple",
+				"icon": "earth-box",
 				"title": "Nationwide & Cross-Border Coverage",
 				"description": "Service across Kenya and beyond."
 			},
 			{
-				"icon": "file-contract",
+				"icon": "file-sign",
 				"title": "Flexible Hire Plans",
 				"description": "Customized rental options for your project."
 			},
@@ -128,6 +226,19 @@
 				"title": "End-to-End Support",
 				"description": "From planning to final delivery."
 			}
+		]
+	},
+    "projectsCompletedImagesMasonry": {
+		"tag": null,
+		"headline": "PROJECTS COMPLETED",
+		"description": "",
+		"items": [
+			"/media/about/04.png",
+			"/media/about/12.png",
+			"/media/about/08.png",
+			"/media/about/14.png",
+			"/media/about/06.png",
+			"/media/about/02.png"
 		]
 	}
 }

@@ -78,7 +78,7 @@ export function WhyChooseUsSection() {
 											</p>
 										</div>
 
-										<span className="mdi mdi-arrow-right mt-1.5 text-xl text-on-surface/25 -translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 group-hover:text-primary" />
+										
 									</div>
 								</FadeUp>
 							))}

@@ -30,10 +30,7 @@ export function CtaSection() {
 						>
 							↗
 						</span>
-						<span
-							className="absolute inset-3 rounded-[15px] hairline-dark pointer-events-none"
-							aria-hidden
-						/>
+						
 
 						<div className="relative flex flex-col items-center gap-6">
 							{/* kicker */}
