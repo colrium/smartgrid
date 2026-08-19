@@ -32,7 +32,7 @@ export function SectionTag({
 			} ${className}`}
 		>
 			{startNode}
-			<span >{children}</span>
+			<span className="text-center">{children}</span>
 			{endNode}
 		</div>
 	);

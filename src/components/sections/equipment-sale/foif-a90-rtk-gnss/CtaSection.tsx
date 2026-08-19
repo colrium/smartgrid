@@ -32,10 +32,10 @@ export function CtaSection() {
 					<div className="relative rounded-[20px] ink-panel card-shadow overflow-hidden px-8 py-16 sm:px-12 sm:py-24 text-center">
 						<span className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary-300/30 blur-[90px] pointer-events-none" />
 						<span className="absolute -bottom-28 -left-20 w-72 h-72 rounded-full bg-primary/30 blur-[90px] pointer-events-none" />
-						<span className="absolute inset-3 rounded-[15px] hairline-dark pointer-events-none" aria-hidden />
+						
 
 						<div className="relative flex flex-col items-center gap-6">
-							{section.tag && <SectionTag>{section.tag}</SectionTag>}
+							{section.tag && <SectionTag dark>{section.tag}</SectionTag>}
 
 							<h2 className="font-light tracking-tight leading-[1.08] text-3xl sm:text-5xl lg:text-[3.4rem] text-surface max-w-3xl">
 								{section.headline}

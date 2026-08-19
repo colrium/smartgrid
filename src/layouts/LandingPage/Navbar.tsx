@@ -313,18 +313,38 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 						p: 2,
 					}}
 				>
-					{/* Close Button */}
-					<IconButton
-						onClick={handleDrawerToggle}
-						sx={{
-							minWidth: "auto",
-							p: 0,
-							mb: 2,
-							color: "inherit",
-						}}
-					>
-						<CloseIcon />
-					</IconButton>
+					<div className="flex justify-between items-center mb-6">
+						<Link href="/" className="flex items-center gap-2">
+							<Image
+								className="flex lg:mr-1"
+								src={t("common:nav.logo")}
+								alt={t("common:nav.logo_alt")}
+								width={32}
+								height={32}
+							/>
+							<div className="flex flex-col mr-2 leading-tight">
+								<h6
+									className={`flex uppercase font-semibold tracking-wide  no-underline transition-all duration-500 ${
+										isDark ? "text-surface" : "text-ink"
+									}`}
+								>
+									{t("meta:site.title")}
+								</h6>
+								<span
+									className={`capitalize hidden lg:flex font-bold text-[8px] no-underline transition-all duration-500 ${accentColor}`}
+								>
+									{t("meta:site.subtitle")}
+								</span>
+							</div>
+						</Link>
+						{/* Close Button */}
+						<IconButton
+							onClick={handleDrawerToggle}
+							size="small"
+						>
+							<span className="mdi mdi-close text-red-900" />
+						</IconButton>
+					</div>
 
 					{/* Mobile Navigation Links */}
 					<NavMenuMobile

@@ -11,6 +11,7 @@ import theme from "@/theme/theme";
 import i18nextConfig from "../../next-i18next.config";
 import type { AppPropsWithLayout } from "@/types/next";
 import LandingPageLayout from "@/layouts/LandingPage/Layout";
+import PageTransitionLoader from "@/components/PageTransitionLoader";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import { ReactLenis } from "lenis/react";
@@ -58,6 +59,7 @@ function App({ Component, pageProps }: AppPropsWithLayout) {
 			>
 				<ThemeProvider theme={theme}>
 					<CssBaseline />
+					<PageTransitionLoader />
 					{renderPageWithLayout(<Component {...pageProps} />)}
 					<ReactLenis root options={{ autoRaf: false }} ref={lenisRef} />
 				</ThemeProvider>

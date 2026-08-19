@@ -51,7 +51,8 @@ const ScrollTop = (props: Props) => {
 				}}
 			>
 				<Fab
-					size="small"
+                    size="small"
+                    color="primary"
 					aria-label={t("common:chat.scrollTopLabel", {
 						defaultValue: "Scroll back to top",
 					})}

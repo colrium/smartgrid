@@ -20,7 +20,7 @@ export function SaleBannerSection() {
 	return (
 		<section className="pb-24 sm:pb-28 relative overflow-hidden">
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-				<div className="flex items-center justify-center gap-4 sm:gap-6 overflow-hidden">
+				<div className="flex flex-col lg:flex-row items-center justify-center gap-4 sm:gap-6 overflow-hidden">
 					{images.map((image, index) => (
 						<FadeUp key={index} delay={(index % 2) * 0.07}>
 							<div className="relative h-140 sm:h-152 w-156 sm:w-172 shrink-0 rounded-[20px] bg-surface hairline card-shadow p-4 sm:p-5">
