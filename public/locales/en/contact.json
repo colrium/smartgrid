@@ -5,10 +5,48 @@
 		"description": "Whether you need land surveying, aerial surveys, civil engineering, equipment hire, or drone photography, our team is ready to help.",
 		"badge": { "text": "Response within 24 hours", "status": "active" }
 	},
-	"opportunities": {
-		"tag": "Choose a Route",
-		"headline": "Route your enquiry to the right team",
-		"description": "Select the service that best fits your project so we can provide the right information and next steps."
+	"talkToUs": {
+		"tag": "Reach Out",
+		"headline": "Talk to Us",
+		"description": "Reach out to our experts via call or email for service inquiries, support, or proposals.",
+        "contacts": [
+            {
+				"icon": "phone",
+				"label": "+254 107 393 023",
+				"href": "tel:+254107393023",
+				"note": ""
+			},
+            {
+				"icon": "phone",
+				"label": "+254 701 618 282",
+				"href": "tel:+254701618282",
+				"note": "Nairobi"
+			},
+            {
+				"icon": "email",
+				"label": "info@smartgridsurveying.com",
+				"href": "mailto:info@smartgridsurveying.com",
+				"note": ""
+			},
+            {
+				"icon": "email",
+                "label": "smartgridsurveying@gmail.com",
+				"href": "mailto:smartgridsurveying@gmail.com",
+				"note": ""
+			},
+            {
+				"icon": "whatsapp",
+                "label": "Chat on WhatsApp",
+				"href": "https://wa.me/254107393023",
+				"note": ""
+			},
+            {
+				"icon": "calendar",
+				"label": "Schedule via Calendly",
+				"href": "https://calendly.com/smartgridconsultation",
+				"note": ""
+			}
+        ]
 	},
 	"offices": {
 		"tag": "Our Offices",
@@ -45,16 +83,16 @@
 				],
 				"lat": -1.2921,
 				"lng": 36.8219,
-				"phone": "+254 10 7393023",
+				"phone": "+254 701 618 282",
 				"email": "smartgridsurveying@gmail.com",
 				"hours": "Mon–Fri 08:30–17:30 EAT",
-				"type": "regional",
+				"type": "field",
 				"note": ""
 			}
 		],
         "cta": {
             "label": "Book a consultation",
-            "href": ""
+            "href": "/contact?reason=book-consultation#contact-form"
         }
 	},
 	"contact_reasons": {
@@ -63,6 +101,7 @@
 			{ "value": "investment-enquiry", "label": "Request a quote" },
 			{ "value": "due-diligence", "label": "Request company information" },
 			{ "value": "site-visit", "label": "Schedule a site visit" },
+			{ "value": "book-consultation", "label": "Book a Consultation" },
 			{ "value": "partnership", "label": "Technology / equipment partnership" },
 			{ "value": "services-enquiry", "label": "Surveying services enquiry" },
 			{ "value": "logistics", "label": "Project logistics enquiry" },
