@@ -116,6 +116,12 @@
 			{ "value": "compliance-legal", "label": "Uzingatiaji / kisheria" },
 			{ "value": "community", "label": "Jamii na ESG" },
 			{ "value": "careers", "label": "Kazi na ajira" },
+			{ "value": "request-quote", "label": "Omba nukuu" },
+			{ "value": "request-survey", "label": "Omba upimaji" },
+			{ "value": "land-surveying", "label": "Upimaji wa ardhi" },
+			{ "value": "book-drone-survey", "label": "Panga upimaji wa drone" },
+			{ "value": "privacy", "label": "Ombi la faragha na data" },
+			{ "value": "book-consultation", "label": "Panga Mashauriano" },
 			{ "value": "other", "label": "Nyingine" }
 		]
 	},

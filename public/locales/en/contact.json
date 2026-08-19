@@ -113,6 +113,11 @@
 			{ "value": "compliance-legal", "label": "Compliance / legal" },
 			{ "value": "community", "label": "Community & ESG" },
 			{ "value": "careers", "label": "Careers & employment" },
+			{ "value": "request-quote", "label": "Request a quote" },
+			{ "value": "request-survey", "label": "Request a survey" },
+			{ "value": "land-surveying", "label": "Land surveying" },
+			{ "value": "book-drone-survey", "label": "Book a drone survey" },
+			{ "value": "privacy", "label": "Privacy & data request" },
 			{ "value": "other", "label": "Other" }
 		]
 	},
