@@ -180,6 +180,11 @@
 			"page_title": "Katalogi ya Vifaa",
 			"meta_description": "Kagua anuwai ya vifaa vya upimaji na uhandisi vya kuaminika, vilivyosawazishwa na sahihi vya SmartGrid Surveying — mifumo ya GNSS, total station, na viwango vya kiotomatiki.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"careers": {
+			"page_title": "Ajira",
+			"meta_description": "Jiunge na SmartGrid Surveying — chunguza nafasi zilizo wazi katika upimaji wa ardhi, ramani za UAV, GIS, uhandisi wa kiraia, na zaidi. Omba sasa kwa nafasi za sasa nchini Kenya na kwingineko.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {

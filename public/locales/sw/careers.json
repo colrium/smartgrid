@@ -1,0 +1,284 @@
+{
+	"hero": {
+		"headline": "Let's Work Together in Kenya and Beyond.",
+		"title": "Careers.",
+		"description": "SmartGrid Surveying is a professional geospatial and engineering firm delivering precision land surveying, UAV mapping, GIS, underground utility detection, and civil infrastructure solutions. We seek disciplined, technically competent professionals committed to accuracy, safety, and excellence in project delivery.",
+		"ctaPrimary": {
+			"label": "Apply Now",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"currentOpenings": {
+		"tag": "Join Our Team",
+		"headline": "Current Opportunities",
+		"description": "Explore the open positions below and apply to become part of our growing team.",
+		"featuredOpenings": [
+			{
+				"icon": "account-tie",
+				"title": "Project Manager",
+				"applicationDeadline": {
+					"label": "Application Date",
+					"value": "20 April 2026"
+				},
+				"description": "Lead project planning, resource coordination, reporting, and delivery of multidisciplinary surveying and civil works assignments.",
+				"actions": [
+					{
+						"icon": "email",
+						"label": "Apply Via Mail",
+						"href": "mailto:smartgridsurveying@gmail.com"
+					},
+					{
+						"icon": "download",
+						"label": "Download Job Description",
+						"href": "/"
+					}
+				]
+			}
+		],
+		"items": [
+			{
+				"icon": "account-tie",
+				"title": "Project Manager",
+				"applicationDeadline": {
+					"label": "Application Application Deadline",
+					"value": "8 March 2026"
+				},
+				"description": "Lead project planning, resource coordination, reporting, and delivery of multidisciplinary surveying and civil works assignments.",
+				"actions": [
+					{
+						"icon": "email",
+						"label": "Apply Via Mail",
+						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Project%20Manager"
+					},
+					{
+						"icon": "download",
+						"label": "Download TOR (PDF)",
+						"href": "#"
+					}
+				]
+			},
+			{
+				"icon": "hard-hat",
+				"title": "Civil Engineer",
+				"applicationDeadline": {
+					"label": "Application Deadline",
+					"value": "10 March 2026"
+				},
+				"description": "Supervise and coordinate civil works execution, ensuring compliance with design specifications, quality standards, and safety protocols.",
+				"actions": [
+					{
+						"icon": "email",
+						"label": "Apply Via Mail",
+						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Civil%20Engineer"
+					},
+					{
+						"icon": "download",
+						"label": "Download TOR (PDF)",
+						"href": "#"
+					}
+				]
+			},
+			{
+				"icon": "land-fields",
+				"title": "Land Surveyor",
+				"applicationDeadline": {
+					"label": "Application Deadline",
+					"value": "15 March 2026"
+				},
+				"description": "Lead topographical, boundary, cadastral, and engineering surveys supporting infrastructure and construction projects with high accuracy standards.",
+				"actions": [
+					{
+						"icon": "email",
+						"label": "Apply Via Mail",
+						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Civil%20Engineer"
+					},
+					{
+						"icon": "download",
+						"label": "Download TOR (PDF)",
+						"href": "#"
+					}
+				]
+			},
+			{
+				"icon": "account-hard-hat",
+				"title": "Engineering Survey Technician",
+				"applicationDeadline": {
+					"label": "Application Deadline",
+					"value": "18 March 2026"
+				},
+				"description": "Support site setting-out, control establishment, as-built surveys, and alignment verification using GNSS and total station equipment.",
+				"actions": [
+					{
+						"icon": "email",
+						"label": "Apply Via Mail",
+						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Engineering%20Survey%20Technician"
+					},
+					{
+						"icon": "download",
+						"label": "Download TOR (PDF)",
+						"href": "#"
+					}
+				]
+			},
+			{
+				"icon": "quadcopter",
+				"title": "UAV / Drone Survey Specialist",
+				"applicationDeadline": {
+					"label": "Application Deadline",
+					"value": "18 March 2026"
+				},
+				"description": "Execute aerial mapping, photogrammetry, and LiDAR data acquisition for corridor mapping, volumetrics, and infrastructure monitoring.",
+				"actions": [
+					{
+						"icon": "email",
+						"label": "Apply Via Mail",
+						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Engineering%20Survey%20Technician"
+					},
+					{
+						"icon": "download",
+						"label": "Download TOR (PDF)",
+						"href": "#"
+					}
+				]
+			},
+			{
+				"icon": "database-marker",
+				"title": "GIS & Spatial Data Analyst",
+				"applicationDeadline": {
+					"label": "Application Deadline",
+					"value": "20 March 2026"
+				},
+				"description": "Develop spatial databases, conduct geospatial analysis, and produce professional cartographic outputs for donor and infrastructure projects.",
+				"actions": [
+					{
+						"icon": "email",
+						"label": "Apply Via Mail",
+						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20GIS%20Spatial%20Data%20Analyst"
+					},
+					{
+						"icon": "download",
+						"label": "Download TOR (PDF)",
+						"href": "#"
+					}
+				]
+			},
+			{
+				"icon": "account-tie",
+				"title": "Construction Site Supervisor",
+				"applicationDeadline": {
+					"label": "Application Deadline",
+					"value": "20 March 2026"
+				},
+				"description": "Oversee daily construction activities, workforce coordination, progress tracking, and compliance with project timelines.",
+				"actions": [
+					{
+						"icon": "email",
+						"label": "Apply Via Mail",
+						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Construction%20Site%20Supervisor"
+					},
+					{
+						"icon": "download",
+						"label": "Download TOR (PDF)",
+						"href": "#"
+					}
+				]
+			},
+			{
+				"icon": "cube-scan",
+				"title": "Quantity Surveyor",
+				"applicationDeadline": {
+					"label": "Application Deadline",
+					"value": "22 March 2026"
+				},
+				"description": "Prepare BOQs, cost estimates, valuations, and financial tracking reports for civil and infrastructure projects.",
+				"actions": [
+					{
+						"icon": "email",
+						"label": "Apply Via Mail",
+						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Construction%20Site%20Supervisor"
+					},
+					{
+						"icon": "download",
+						"label": "Download TOR (PDF)",
+						"href": "#"
+					}
+				]
+			},
+			{
+				"icon": "tunnel",
+				"title": "Underground Utilities & GPR Technician",
+				"applicationDeadline": {
+					"label": "Application Deadline",
+					"value": "22 March 2026"
+				},
+				"description": "Conduct underground utility detection, mapping, and documentation using GPR and electromagnetic locating systems.",
+				"actions": [
+					{
+						"icon": "email",
+						"label": "Apply Via Mail",
+						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Underground%20Utilities%20GPR%20Technician"
+					},
+					{
+						"icon": "download",
+						"label": "Download TOR (PDF)",
+						"href": "#"
+					}
+				]
+			},
+			{
+				"icon": "clipboard-edit-outline",
+				"title": "HSE Officer",
+				"applicationDeadline": {
+					"label": "Application Deadline",
+					"value": "22 March 2026"
+				},
+				"description": "Ensure strict adherence to occupational health, safety, environmental safeguards, and compliance standards across project sites.",
+				"actions": [
+					{
+						"icon": "email",
+						"label": "Apply Via Mail",
+						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20HSE%20Officer"
+					},
+					{
+						"icon": "download",
+						"label": "Download TOR (PDF)",
+						"href": "#"
+					}
+				]
+			},
+			{
+				"icon": "account-school",
+				"title": "Graduate Interns & Industrial Attachés (Surveying, GIS, Civil)",
+				"applicationDeadline": {
+					"label": "Application Deadline",
+					"value": "25 March 2026"
+				},
+				"description": "Opportunities for students and recent graduates to gain practical field and office experience in surveying, geospatial analysis, and civil works projects.",
+				"actions": [
+					{
+						"icon": "email",
+						"label": "Apply Via Mail",
+						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Internship%20or%20Industrial%20Attachment"
+					},
+					{
+						"icon": "download",
+						"label": "Download TOR (PDF)",
+						"href": "#"
+					}
+				]
+			}
+		]
+	},
+	"applicationProcess": {
+		"tag": null,
+		"title": "",
+		"subtitle": "Application Process",
+		"description": "Submit your CV and cover letter to <bold>info@smartgridsurveying.com<bold> indicating the position applied for in the subject line.\n\n Only shortlisted candidates will be contacted. SmartGrid Surveying is an equal opportunity employer committed to professionalism, integrity, and excellence."
+	},
+	"statement": {
+		"tag": null,
+		"title": "",
+		"subtitle": "Equal Opportunity & Donor Compliance Statement",
+		"description": "SmartGrid Surveying & Civil Works Ltd is an equal opportunity employer. Recruitment and employment decisions are made without discrimination based on gender, ethnicity, religion, disability, or background. We are committed to compliance with applicable national labor laws and donor-funded project requirements, including World Bank, UN, and development partner standards on ethics, safeguarding, and professional conduct."
+	}
+}

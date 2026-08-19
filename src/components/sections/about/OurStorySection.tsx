@@ -29,9 +29,9 @@ export function OurStorySection() {
 					<FadeUp className="lg:col-span-5">
 						{hasImage && (
 							<div className="relative mx-auto max-w-sm">
-								<div className="absolute inset-6 bg-primary/15 rounded-full blur-3xl" />
-								<div className="relative bg-surface p-8 sm:p-10 rounded-[20px] hairline card-shadow">
-									<div className="relative aspect-square rounded-[15px] overflow-hidden bg-brand-50/60">
+								{/* <div className="absolute inset-6 bg-primary/15 rounded-full blur-3xl" /> */}
+								<div className="relative p-8 sm:p-10">
+									<div className="relative aspect-square rounded-[15px] overflow-hidden bg-primary-50/60">
 										<Image
 											src={section.image as string}
 											alt={section.headline}

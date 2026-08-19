@@ -7,6 +7,7 @@ import automaticlevelhueper from '../public/locales/en/automatic-level-hueper.js
 import bathymetricsurveys from '../public/locales/en/bathymetric-surveys.json';
 import buildingsitesurveys from '../public/locales/en/building-site-surveys.json';
 import cadastralsurveys from '../public/locales/en/cadastral-surveys.json';
+import careers from '../public/locales/en/careers.json';
 import civilasbuiltsurveys from '../public/locales/en/civil-as-built-surveys.json';
 import civilbim from '../public/locales/en/civil-bim.json';
 import civilhighwaysurveys from '../public/locales/en/civil-highway-surveys.json';
@@ -20,7 +21,6 @@ import equipmentcatalogue from '../public/locales/en/equipment-catalogue.json';
 import foifa90rtkgnss from '../public/locales/en/foif-a90-rtk-gnss.json';
 import gismapping from '../public/locales/en/gis-mapping.json';
 import groundpenetratingradar from '../public/locales/en/ground-penetrating-radar.json';
-import hiring from '../public/locales/en/hiring.json';
 import home from '../public/locales/en/home.json';
 import landfillquarrydronesurveys from '../public/locales/en/landfill-quarry-drone-surveys.json';
 import lidarmapping from '../public/locales/en/lidar-mapping.json';
@@ -48,6 +48,7 @@ const resources = {
   'bathymetric-surveys': bathymetricsurveys,
   'building-site-surveys': buildingsitesurveys,
   'cadastral-surveys': cadastralsurveys,
+  careers,
   'civil-as-built-surveys': civilasbuiltsurveys,
   'civil-bim': civilbim,
   'civil-highway-surveys': civilhighwaysurveys,
@@ -61,7 +62,6 @@ const resources = {
   'foif-a90-rtk-gnss': foifa90rtkgnss,
   'gis-mapping': gismapping,
   'ground-penetrating-radar': groundpenetratingradar,
-  hiring,
   home,
   'landfill-quarry-drone-surveys': landfillquarrydronesurveys,
   'lidar-mapping': lidarmapping,

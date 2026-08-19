@@ -207,7 +207,7 @@
 					}
 				]
 			},
-			{ "label": "Hiring", "href": "/hiring" },
+			{ "label": "Careers", "href": "/careers" },
 			{ "label": "About", "href": "/about" },
 			{ "label": "Contact Us", "href": "/contact", "type": "pill" }
 		],

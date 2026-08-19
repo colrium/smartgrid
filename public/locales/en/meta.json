@@ -180,6 +180,11 @@
 			"page_title": "Equipment Catalogue",
 			"meta_description": "Browse SmartGrid Surveying's range of reliable, calibrated, and accurate surveying and engineering equipment — GNSS systems, total stations, and automatic levels.",
 			"og_image": "/media/og-terms.jpg"
+		},
+		"careers": {
+			"page_title": "Careers",
+			"meta_description": "Join SmartGrid Surveying — explore open positions across land surveying, UAV mapping, GIS, civil engineering, and more. Apply now for current opportunities in Kenya and beyond.",
+			"og_image": "/media/og-terms.jpg"
 		}
 	},
 	"company": {
