@@ -7,7 +7,7 @@
 		"ctaPrimary": {
 			"icon": "gift",
 			"label": "Get Your Free Consultation",
-			"href": "mailto:smartgridsurveying@gmail.com"
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Volumetric Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Volumetric Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		},
 		"ctaSecondary": {
 			"icon": "compass",
@@ -69,7 +69,7 @@
 		"ctaPrimary": {
 			"icon": "email",
 			"label": "Request a volumetric Survey",
-			"href": "mailto:contact@smartgridsurveying.com"
+			"href": "mailto:contact@smartgridsurveying.com?subject=Quote Request: Volumetric Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Volumetric Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	}
 }

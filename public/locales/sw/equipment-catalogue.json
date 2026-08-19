@@ -6,7 +6,7 @@
 		"description": "Fungua uchoraji wa ramani, kipimo, na uhandisi wa haraka, wenye gharama nafuu na salama zaidi. Katika Smartgrid Surveying, tunageuza maono haya kuwa ukweli—kote Afrika na kuendelea. Kwa droni zetu za kisasa na mbinu za upimaji ardhi, tunatoa data ya kiutendaji unayohitaji, hasa pale inapohitajika.",
 		"ctaPrimary": {
 			"label": "Pata Ushauri Wako Bure",
-			"href": "mailto:smartgridsurveying@gmail.com"
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Equipment&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Equipment. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
 	"catalogueOverview": {
@@ -83,7 +83,7 @@
 		"ctaPrimary": {
 			"icon": "email",
 			"label": "Tutumie Barua Pepe",
-			"href": "mailto:smartgridsurveying@gmail.com"
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Equipment&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Equipment. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		},
 		"ctaSecondary": {
 			"icon": "whatsapp",

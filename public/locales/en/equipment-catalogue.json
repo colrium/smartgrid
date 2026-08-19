@@ -6,7 +6,7 @@
 		"description": "Unlock faster, more cost-effective, and safer mapping, measurement, and Engineering. At Smartgrid Surveying, we turn this vision into reality—across Africa and beyond. With our cutting-edge drones and Land surveying techniques, we deliver the actionable data you need, exactly where it matters.",
 		"ctaPrimary": {
 			"label": "Get Your Free Consultation",
-			"href": "mailto:smartgridsurveying@gmail.com"
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Equipment&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Equipment. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
 	"catalogueOverview": {
@@ -83,7 +83,7 @@
 		"ctaPrimary": {
 			"icon": "email",
 			"label": "Email Us",
-			"href": "mailto:smartgridsurveying@gmail.com"
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Equipment&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Equipment. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		},
 		"ctaSecondary": {
 			"icon": "whatsapp",

@@ -5,7 +5,7 @@
 		"description": "SmartGrid Surveying ni kampuni ya kitaalamu ya jiospatiali na uhandisi inayotoa upimaji wa ardhi wa usahihi wa juu, ramani za UAV, GIS, ugunduzi wa huduma za chini ya ardhi, na suluhisho za miundombinu ya kiraia. Tunatafuta wataalamu wenye nidhamu na ujuzi wa kiufundi waliojitolea kwa usahihi, usalama, na ubora katika utoaji wa miradi.",
 		"ctaPrimary": {
 			"label": "Omba Sasa",
-			"href": "mailto:smartgridsurveying@gmail.com"
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Careers Inquiry&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to inquire about career opportunities at SmartGrid Surveying.%0D%0A%0D%0ARole of interest:%0D%0AYour name:%0D%0A%0D%0AThank you."
 		}
 	},
 	"currentOpenings": {
@@ -25,7 +25,7 @@
 					{
 						"icon": "email",
 						"label": "Omba Kupitia Barua Pepe",
-						"href": "mailto:smartgridsurveying@gmail.com"
+						"href": "mailto:smartgridsurveying@gmail.com?subject=Application: Project Manager&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to apply for the Project Manager position. Please find my CV and application attached.%0D%0A%0D%0AThank you."
 					},
 					{
 						"icon": "download",

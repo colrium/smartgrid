@@ -27,14 +27,14 @@
             {
 				"icon": "email",
 				"label": "info@smartgridsurveying.com",
-				"href": "mailto:info@smartgridsurveying.com",
+				"href": "mailto:info@smartgridsurveying.com?subject=General Inquiry&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to make an inquiry.%0D%0A%0D%0AName:%0D%0AMessage:%0D%0A%0D%0AThank you.",
 				"note": "Queries",
 				"color": "primary-700"
 			},
             {
 				"icon": "gmail",
 				"label": "smartgridsurveying@gmail.com",
-				"href": "mailto:smartgridsurveying@gmail.com",
+				"href": "mailto:smartgridsurveying@gmail.com?subject=General Inquiry&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to make an inquiry.%0D%0A%0D%0AName:%0D%0AMessage:%0D%0A%0D%0AThank you.",
 				"note": "Quotes",
 				"color": "gmail"
 			},

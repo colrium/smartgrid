@@ -6,7 +6,7 @@
 		"description": "The Huepar ALX32 Automatic Level is a precision optical leveling instrument designed for construction and surveying applications. With 32x magnification and a reliable automatic compensator, it delivers consistent accuracy and ease of use in demanding field environments.",
 		"ctaPrimary": {
 			"label": "Inquire About This Equipment",
-			"href": "mailto:smartgridsurveying@gmail.com"
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Huepar ALX32 Automatic Level&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Huepar ALX32 Automatic Level. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
 	"productImages": {
@@ -80,7 +80,7 @@
 		"ctaPrimary": {
 			"icon": "email",
 			"label": "Email Us",
-			"href": "mailto:smartgridsurveying@gmail.com"
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Huepar ALX32 Automatic Level&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Huepar ALX32 Automatic Level. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		},
 		"ctaSecondary": {
 			"icon": "whatsapp",

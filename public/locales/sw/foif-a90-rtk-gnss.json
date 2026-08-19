@@ -6,7 +6,7 @@
 		"description": "Mfumo wa FOIF A90 RTK GNSS hutoa usahihi wa kiwango cha sentimita kwa mahitaji yako yote ya upimaji. Imeundwa kwa kuegemea na utendaji shambani.",
 		"ctaPrimary": {
 			"label": "Ulizia Kuhusu Kifaa Hiki",
-			"href": "mailto:smartgridsurveying@gmail.com"
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: FOIF A90 RTK GNSS&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for FOIF A90 RTK GNSS. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
 	"productOverview": {
@@ -124,7 +124,7 @@
 		"ctaPrimary": {
 			"icon": "email",
 			"label": "Tutumie Barua Pepe",
-			"href": "mailto:smartgridsurveying@gmail.com"
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: FOIF A90 RTK GNSS&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for FOIF A90 RTK GNSS. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		},
 		"ctaSecondary": {
 			"icon": "whatsapp",

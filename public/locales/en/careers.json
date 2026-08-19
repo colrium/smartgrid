@@ -5,7 +5,7 @@
 		"description": "SmartGrid Surveying is a professional geospatial and engineering firm delivering precision land surveying, UAV mapping, GIS, underground utility detection, and civil infrastructure solutions. We seek disciplined, technically competent professionals committed to accuracy, safety, and excellence in project delivery.",
 		"ctaPrimary": {
 			"label": "Apply Now",
-			"href": "mailto:smartgridsurveying@gmail.com"
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Careers Inquiry&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to inquire about career opportunities at SmartGrid Surveying.%0D%0A%0D%0ARole of interest:%0D%0AYour name:%0D%0A%0D%0AThank you."
 		}
 	},
 	"currentOpenings": {
@@ -25,7 +25,7 @@
 					{
 						"icon": "email",
 						"label": "Apply Via Mail",
-						"href": "mailto:smartgridsurveying@gmail.com"
+						"href": "mailto:smartgridsurveying@gmail.com?subject=Application: Project Manager&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to apply for the Project Manager position. Please find my CV and application attached.%0D%0A%0D%0AThank you."
 					},
 					{
 						"icon": "download",

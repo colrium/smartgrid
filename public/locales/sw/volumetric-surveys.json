@@ -7,7 +7,7 @@
 		"ctaPrimary": {
 			"icon": "gift",
 			"label": "Pata Ushauri Wako wa Bure",
-			"href": "mailto:smartgridsurveying@gmail.com"
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Volumetric Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Volumetric Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
 	"intro": {
@@ -74,7 +74,7 @@
 		"description": "Wasiliana na SmartGrid Surveying kwa uchunguzi maalum wa kiasi wa ndege unaookoa muda, kupunguza hatari, na kutoa matokeo.",
 		"ctaPrimary": {
 			"label": "Omba Uchunguzi wa Kiasi",
-			"href": "mailto:contact@smartgridsurveying.com"
+			"href": "mailto:contact@smartgridsurveying.com?subject=Quote Request: Volumetric Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Volumetric Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	}
 }

@@ -6,7 +6,7 @@
 		"description": "The Bosch GOL 32D Automatic Level is a high-performance optical leveling instrument designed for precise elevation measurement in construction and surveying projects. Built for durability and accuracy, it ensures reliable performance in demanding field conditions.",
 		"ctaPrimary": {
 			"label": "Inquire About This Equipment",
-			"href": "mailto:smartgridsurveying@gmail.com"
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Bosch GOL 32D Automatic Level&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Bosch GOL 32D Automatic Level. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
 	"productImages": {
@@ -80,7 +80,7 @@
 		"ctaPrimary": {
 			"icon": "email",
 			"label": "Email Us",
-			"href": "mailto:smartgridsurveying@gmail.com"
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Bosch GOL 32D Automatic Level&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Bosch GOL 32D Automatic Level. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		},
 		"ctaSecondary": {
 			"icon": "whatsapp",

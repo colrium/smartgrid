@@ -6,7 +6,7 @@
 		"description": "High-resolution GPR technology for construction, engineering, and infrastructure projects.",
 		"ctaPrimary": {
 			"label": "Get Your Free Consultation",
-			"href": "mailto:smartgridsurveying@gmail.com"
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Ground Penetrating Radar&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Ground Penetrating Radar. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
 	"whatIsGprSurveying": {
@@ -105,7 +105,7 @@
 				"description": "Used: LMX200 GPR for non-destructive assessment of aging municipal water lines. Objective: Identify voids, pipe fractures, and leakage zones along the corridor. Result: Detected subsurface anomalies consistent with leakage and pipe deterioration, enabling targeted maintenance."
 			},
 			{
-				"icon": "archaeology",
+				"icon": "shovel",
 				"title": "Archaeological Site Survey – Tharaka Nithi",
 				"description": "Used: LMX200 GPR combined with drone-based topographical mapping. Objective: Locate buried cultural features without intrusive excavation. Result: Mapped subsurface stone alignments and structural remains while preserving site integrity."
 			},

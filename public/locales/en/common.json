@@ -232,7 +232,7 @@
 				"links": [
 					{
 						"label": "smartgridsurveying@gmail.com",
-						"href": "mailto:smartgridsurveying@gmail.com"
+						"href": "mailto:smartgridsurveying@gmail.com?subject=Contact SmartGrid Surveying&body=Hi SmartGrid Surveying,%0D%0A%0D%0APlease get in touch with me about my request.%0D%0A%0D%0AName:%0D%0AMessage:%0D%0A%0D%0AThank you."
 					},
 					{ "label": "Nairobi Office", "href": "/contact#hq-nairobi" },
 					{ "label": "Schedule a Call", "href": "/contact" }

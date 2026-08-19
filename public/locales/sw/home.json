@@ -70,7 +70,7 @@
 				},
 				"action": {
 					"label": "Shirikiana nasi.",
-					"href": "mailto:smartgridsurveying@gmail.com"
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Partnership Inquiry&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'm interested in partnering with SmartGrid Surveying.%0D%0A%0D%0AOrganization:%0D%0AProposal details:%0D%0A%0D%0AThank you."
 				}
 			}
 		]
@@ -456,7 +456,7 @@
 		},
 		"secondary": {
 			"label": "Ongea na Mtaalam",
-			"href": "mailto:smartgridsurveying@gmail.com",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Talk to an Expert&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to talk to an expert about a surveying project.%0D%0A%0D%0AName:%0D%0AService of interest:%0D%0AMessage:%0D%0A%0D%0AThank you.",
 			"icon": "email"
 		}
 	}

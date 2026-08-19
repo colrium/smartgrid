@@ -6,7 +6,7 @@
 		"description": "The DTM 152M Total Station is a reliable, high-precision surveying instrument designed for efficient field operations, delivering accurate measurements for construction, engineering, and cadastral survey applications.",
 		"ctaPrimary": {
 			"label": "Inquire About This Equipment",
-			"href": "mailto:smartgridsurveying@gmail.com"
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Total Station DTM 152M&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Total Station DTM 152M. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
     "productImages":{
@@ -78,7 +78,7 @@
 		"ctaPrimary": {
 			"icon": "email",
 			"label": "Email Us",
-			"href": "mailto:smartgridsurveying@gmail.com"
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Total Station DTM 152M&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Total Station DTM 152M. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		},
 		"ctaSecondary": {
 			"icon": "whatsapp",

@@ -6,7 +6,7 @@
 		"description": "SmartGrid Surveying inatoa aina mbalimbali za vituo kamili vya E-Survey vilivyoundwa kwa vipimo vya kuaminika vya pembe na umbali katika miradi ya ujenzi, cadastral, na uhandisi.",
 		"ctaPrimary": {
 			"label": "Ulizia Kuhusu Kifaa Hiki",
-			"href": "mailto:smartgridsurveying@gmail.com"
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Total Station ESurvey&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Total Station ESurvey. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
 	"productOverview": {
@@ -61,7 +61,7 @@
 		"ctaPrimary": {
 			"icon": "email",
 			"label": "Tutumie Barua Pepe",
-			"href": "mailto:smartgridsurveying@gmail.com"
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Total Station ESurvey&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Total Station ESurvey. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		},
 		"ctaSecondary": {
 			"icon": "whatsapp",

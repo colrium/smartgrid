@@ -6,7 +6,7 @@
 		"description": "Teknolojia ya GPR ya mwonekano wa juu kwa miradi ya ujenzi, uhandisi, na miundombinu.",
 		"ctaPrimary": {
 			"label": "Pata Ushauri Wako Bure",
-			"href": "mailto:smartgridsurveying@gmail.com"
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Ground Penetrating Radar&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Ground Penetrating Radar. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
 	"whatIsGprSurveying": {
@@ -105,7 +105,7 @@
 				"description": "Iliyotumika: GPR ya LMX200 kwa tathmini isiyoharibu ya mabomba ya maji ya manispaa yanayozeeka. Lengo: Kutambua mashimo, nyufa za bomba, na maeneo ya uvujaji kando ya ukanda. Matokeo: Ilitambua hitilafu za chini ya ardhi zinazoendana na uvujaji na kuharibika kwa bomba, kuwezesha matengenezo yaliyolengwa."
 			},
 			{
-				"icon": "archaeology",
+				"icon": "shovel",
 				"title": "Uchunguzi wa Tovuti ya Akiolojia – Tharaka Nithi",
 				"description": "Iliyotumika: GPR ya LMX200 pamoja na uchoraji ramani wa topografia kwa ndege zisizo na rubani. Lengo: Kupata vipengele vya kitamaduni vilivyozikwa bila kuchimba kwa uvamizi. Matokeo: Ilichora mipangilio ya mawe ya chini ya ardhi na mabaki ya muundo huku ikihifadhi uadilifu wa tovuti."
 			},

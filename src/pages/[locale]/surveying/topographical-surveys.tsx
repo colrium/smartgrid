@@ -11,7 +11,6 @@ import {
 	InstrumentsSection,
 	WhyConductSection,
 } from "@/components/sections/surveying/topographical";
-import { CtaSection } from "@/components/sections/home";
 
 type PageProps = {
 	// Add custom props here
@@ -29,7 +28,6 @@ const Page: NextPage<PageProps> = () => {
 				<SampleMapSection />
 				<InstrumentsSection />
 				<WhyConductSection />
-				<CtaSection />
 			</div>
 		</div>
 	);
