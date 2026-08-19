@@ -1,35 +1,35 @@
 {
 	"hero": {
-		"headline": "Let's Work Together in Kenya and Beyond.",
-		"title": "Careers.",
-		"description": "SmartGrid Surveying is a professional geospatial and engineering firm delivering precision land surveying, UAV mapping, GIS, underground utility detection, and civil infrastructure solutions. We seek disciplined, technically competent professionals committed to accuracy, safety, and excellence in project delivery.",
+		"headline": "Wacha Tufanye Kazi Pamoja Kenya na Kwingineko.",
+		"title": "Ajira.",
+		"description": "SmartGrid Surveying ni kampuni ya kitaalamu ya jiospatiali na uhandisi inayotoa upimaji wa ardhi wa usahihi wa juu, ramani za UAV, GIS, ugunduzi wa huduma za chini ya ardhi, na suluhisho za miundombinu ya kiraia. Tunatafuta wataalamu wenye nidhamu na ujuzi wa kiufundi waliojitolea kwa usahihi, usalama, na ubora katika utoaji wa miradi.",
 		"ctaPrimary": {
-			"label": "Apply Now",
+			"label": "Omba Sasa",
 			"href": "mailto:smartgridsurveying@gmail.com"
 		}
 	},
 	"currentOpenings": {
-		"tag": "Join Our Team",
-		"headline": "Current Opportunities",
-		"description": "Explore the open positions below and apply to become part of our growing team.",
+		"tag": "Jiunge na Timu Yetu",
+		"headline": "Nafasi za Sasa",
+		"description": "Chunguza nafasi zilizo wazi hapa chini na uombe uwe sehemu ya timu yetu inayokua.",
 		"featuredOpenings": [
 			{
 				"icon": "account-tie",
-				"title": "Project Manager",
+				"title": "Meneja wa Mradi",
 				"applicationDeadline": {
-					"label": "Application Date",
+					"label": "Tarehe ya Maombi",
 					"value": "20 April 2026"
 				},
-				"description": "Lead project planning, resource coordination, reporting, and delivery of multidisciplinary surveying and civil works assignments.",
+				"description": "Ongoa upangaji wa mradi, uratibu wa rasilimali, kuripoti, na utoaji wa kazi za upimaji wa taaluma nyingi na uhandisi wa kiraia.",
 				"actions": [
 					{
 						"icon": "email",
-						"label": "Apply Via Mail",
+						"label": "Omba Kupitia Barua Pepe",
 						"href": "mailto:smartgridsurveying@gmail.com"
 					},
 					{
 						"icon": "download",
-						"label": "Download Job Description",
+						"label": "Pakua Maelezo ya Kazi",
 						"href": "/"
 					}
 				]
@@ -38,231 +38,231 @@
 		"items": [
 			{
 				"icon": "account-tie",
-				"title": "Project Manager",
+				"title": "Meneja wa Mradi",
 				"applicationDeadline": {
-					"label": "Application Application Deadline",
+					"label": "Tarehe ya Mwisho ya Maombi ya Maombi",
 					"value": "8 March 2026"
 				},
-				"description": "Lead project planning, resource coordination, reporting, and delivery of multidisciplinary surveying and civil works assignments.",
+				"description": "Ongoa upangaji wa mradi, uratibu wa rasilimali, kuripoti, na utoaji wa kazi za upimaji wa taaluma nyingi na uhandisi wa kiraia.",
 				"actions": [
 					{
 						"icon": "email",
-						"label": "Apply Via Mail",
+						"label": "Omba Kupitia Barua Pepe",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Project%20Manager"
 					},
 					{
 						"icon": "download",
-						"label": "Download TOR (PDF)",
+						"label": "Pakua TOR (PDF)",
 						"href": "#"
 					}
 				]
 			},
 			{
 				"icon": "hard-hat",
-				"title": "Civil Engineer",
+				"title": "Mhandisi wa Kiraia",
 				"applicationDeadline": {
-					"label": "Application Deadline",
+					"label": "Tarehe ya Mwisho ya Maombi",
 					"value": "10 March 2026"
 				},
-				"description": "Supervise and coordinate civil works execution, ensuring compliance with design specifications, quality standards, and safety protocols.",
+				"description": "Simamia na uratibu utekelezaji wa kazi za uhandisi wa kiraia, kuhakikisha kufuata vipimo vya muundo, viwango vya ubora, na itifaki za usalama.",
 				"actions": [
 					{
 						"icon": "email",
-						"label": "Apply Via Mail",
+						"label": "Omba Kupitia Barua Pepe",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Civil%20Engineer"
 					},
 					{
 						"icon": "download",
-						"label": "Download TOR (PDF)",
+						"label": "Pakua TOR (PDF)",
 						"href": "#"
 					}
 				]
 			},
 			{
 				"icon": "land-fields",
-				"title": "Land Surveyor",
+				"title": "Mpima Ardhi",
 				"applicationDeadline": {
-					"label": "Application Deadline",
+					"label": "Tarehe ya Mwisho ya Maombi",
 					"value": "15 March 2026"
 				},
-				"description": "Lead topographical, boundary, cadastral, and engineering surveys supporting infrastructure and construction projects with high accuracy standards.",
+				"description": "Ongoa upimaji wa topografia, mipaka, cadastral, na uhandisi unaosaidia miradi ya miundombinu na ujenzi kwa viwango vya usahihi wa hali ya juu.",
 				"actions": [
 					{
 						"icon": "email",
-						"label": "Apply Via Mail",
+						"label": "Omba Kupitia Barua Pepe",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Civil%20Engineer"
 					},
 					{
 						"icon": "download",
-						"label": "Download TOR (PDF)",
+						"label": "Pakua TOR (PDF)",
 						"href": "#"
 					}
 				]
 			},
 			{
 				"icon": "account-hard-hat",
-				"title": "Engineering Survey Technician",
+				"title": "Fundi wa Uchunguzi wa Uhandisi",
 				"applicationDeadline": {
-					"label": "Application Deadline",
+					"label": "Tarehe ya Mwisho ya Maombi",
 					"value": "18 March 2026"
 				},
-				"description": "Support site setting-out, control establishment, as-built surveys, and alignment verification using GNSS and total station equipment.",
+				"description": "Saidia uwekaji wa tovuti, uanzishaji wa udhibiti, upimaji wa kama-ilivyojengwa, na uthibitishaji wa upangaji kwa kutumia vifaa vya GNSS na total station.",
 				"actions": [
 					{
 						"icon": "email",
-						"label": "Apply Via Mail",
+						"label": "Omba Kupitia Barua Pepe",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Engineering%20Survey%20Technician"
 					},
 					{
 						"icon": "download",
-						"label": "Download TOR (PDF)",
+						"label": "Pakua TOR (PDF)",
 						"href": "#"
 					}
 				]
 			},
 			{
 				"icon": "quadcopter",
-				"title": "UAV / Drone Survey Specialist",
+				"title": "Mtaalamu wa Uchunguzi wa UAV / Drone",
 				"applicationDeadline": {
-					"label": "Application Deadline",
+					"label": "Tarehe ya Mwisho ya Maombi",
 					"value": "18 March 2026"
 				},
-				"description": "Execute aerial mapping, photogrammetry, and LiDAR data acquisition for corridor mapping, volumetrics, and infrastructure monitoring.",
+				"description": "Tekeleza upimaji wa angani, photogrammetry, na ukusanyaji wa data wa LiDAR kwa ramani za korido, vipimo vya kiasi, na ufuatiliaji wa miundombinu.",
 				"actions": [
 					{
 						"icon": "email",
-						"label": "Apply Via Mail",
+						"label": "Omba Kupitia Barua Pepe",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Engineering%20Survey%20Technician"
 					},
 					{
 						"icon": "download",
-						"label": "Download TOR (PDF)",
+						"label": "Pakua TOR (PDF)",
 						"href": "#"
 					}
 				]
 			},
 			{
 				"icon": "database-marker",
-				"title": "GIS & Spatial Data Analyst",
+				"title": "Mchambuzi wa GIS na Data za Anga",
 				"applicationDeadline": {
-					"label": "Application Deadline",
+					"label": "Tarehe ya Mwisho ya Maombi",
 					"value": "20 March 2026"
 				},
-				"description": "Develop spatial databases, conduct geospatial analysis, and produce professional cartographic outputs for donor and infrastructure projects.",
+				"description": "Tengeneza hifadhidata za anga, fanya uchambuzi wa jiospatiali, na uzalishe matokeo ya kitaalamu ya ramani kwa miradi ya wafadhili na miundombinu.",
 				"actions": [
 					{
 						"icon": "email",
-						"label": "Apply Via Mail",
+						"label": "Omba Kupitia Barua Pepe",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20GIS%20Spatial%20Data%20Analyst"
 					},
 					{
 						"icon": "download",
-						"label": "Download TOR (PDF)",
+						"label": "Pakua TOR (PDF)",
 						"href": "#"
 					}
 				]
 			},
 			{
 				"icon": "account-tie",
-				"title": "Construction Site Supervisor",
+				"title": "Msamaria wa Ujenzi",
 				"applicationDeadline": {
-					"label": "Application Deadline",
+					"label": "Tarehe ya Mwisho ya Maombi",
 					"value": "20 March 2026"
 				},
-				"description": "Oversee daily construction activities, workforce coordination, progress tracking, and compliance with project timelines.",
+				"description": "Simamia shughuli za kila siku za ujenzi, uratibu wa wafanyakazi, ufuatiliaji wa maendeleo, na kufuata ratiba za mradi.",
 				"actions": [
 					{
 						"icon": "email",
-						"label": "Apply Via Mail",
+						"label": "Omba Kupitia Barua Pepe",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Construction%20Site%20Supervisor"
 					},
 					{
 						"icon": "download",
-						"label": "Download TOR (PDF)",
+						"label": "Pakua TOR (PDF)",
 						"href": "#"
 					}
 				]
 			},
 			{
 				"icon": "cube-scan",
-				"title": "Quantity Surveyor",
+				"title": "Mpima Kiasi",
 				"applicationDeadline": {
-					"label": "Application Deadline",
+					"label": "Tarehe ya Mwisho ya Maombi",
 					"value": "22 March 2026"
 				},
-				"description": "Prepare BOQs, cost estimates, valuations, and financial tracking reports for civil and infrastructure projects.",
+				"description": "Andaa BOQ, makadirio ya gharama, tathmini, na ripoti za ufuatiliaji wa fedha kwa miradi ya kiraia na miundombinu.",
 				"actions": [
 					{
 						"icon": "email",
-						"label": "Apply Via Mail",
+						"label": "Omba Kupitia Barua Pepe",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Construction%20Site%20Supervisor"
 					},
 					{
 						"icon": "download",
-						"label": "Download TOR (PDF)",
+						"label": "Pakua TOR (PDF)",
 						"href": "#"
 					}
 				]
 			},
 			{
 				"icon": "tunnel",
-				"title": "Underground Utilities & GPR Technician",
+				"title": "Fundi wa Huduma za Chini ya Ardhi na GPR",
 				"applicationDeadline": {
-					"label": "Application Deadline",
+					"label": "Tarehe ya Mwisho ya Maombi",
 					"value": "22 March 2026"
 				},
-				"description": "Conduct underground utility detection, mapping, and documentation using GPR and electromagnetic locating systems.",
+				"description": "Fanya ugunduzi wa huduma za chini ya ardhi, uchoraji ramani, na uandishi kwa kutumia mifumo ya GPR na electromagnetic.",
 				"actions": [
 					{
 						"icon": "email",
-						"label": "Apply Via Mail",
+						"label": "Omba Kupitia Barua Pepe",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Underground%20Utilities%20GPR%20Technician"
 					},
 					{
 						"icon": "download",
-						"label": "Download TOR (PDF)",
+						"label": "Pakua TOR (PDF)",
 						"href": "#"
 					}
 				]
 			},
 			{
 				"icon": "clipboard-edit-outline",
-				"title": "HSE Officer",
+				"title": "Afisa wa HSE",
 				"applicationDeadline": {
-					"label": "Application Deadline",
+					"label": "Tarehe ya Mwisho ya Maombi",
 					"value": "22 March 2026"
 				},
-				"description": "Ensure strict adherence to occupational health, safety, environmental safeguards, and compliance standards across project sites.",
+				"description": "Hakikisha kufuata kali kwa afya ya kazini, usalama, ulinzi wa mazingira, na viwango vya utiifu katika maeneo ya miradi.",
 				"actions": [
 					{
 						"icon": "email",
-						"label": "Apply Via Mail",
+						"label": "Omba Kupitia Barua Pepe",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20HSE%20Officer"
 					},
 					{
 						"icon": "download",
-						"label": "Download TOR (PDF)",
+						"label": "Pakua TOR (PDF)",
 						"href": "#"
 					}
 				]
 			},
 			{
 				"icon": "account-school",
-				"title": "Graduate Interns & Industrial Attachés (Surveying, GIS, Civil)",
+				"title": "Wahitimu Wanaofanya Kazi na Waombaji wa Kiwanda (Upimaji, GIS, Uhandisi wa Kiraia)",
 				"applicationDeadline": {
-					"label": "Application Deadline",
+					"label": "Tarehe ya Mwisho ya Maombi",
 					"value": "25 March 2026"
 				},
-				"description": "Opportunities for students and recent graduates to gain practical field and office experience in surveying, geospatial analysis, and civil works projects.",
+				"description": "Fursa kwa wanafunzi na wahitimu wa hivi karibuni kupata uzoefu wa vitendo shambani na ofisini katika upimaji, uchambuzi wa jiospatiali, na miradi ya uhandisi wa kiraia.",
 				"actions": [
 					{
 						"icon": "email",
-						"label": "Apply Via Mail",
+						"label": "Omba Kupitia Barua Pepe",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Internship%20or%20Industrial%20Attachment"
 					},
 					{
 						"icon": "download",
-						"label": "Download TOR (PDF)",
+						"label": "Pakua TOR (PDF)",
 						"href": "#"
 					}
 				]
@@ -272,13 +272,13 @@
 	"applicationProcess": {
 		"tag": null,
 		"title": "",
-		"subtitle": "Application Process",
-		"description": "Submit your CV and cover letter to <bold>info@smartgridsurveying.com<bold> indicating the position applied for in the subject line.\n\n Only shortlisted candidates will be contacted. SmartGrid Surveying is an equal opportunity employer committed to professionalism, integrity, and excellence."
+		"subtitle": "Mchakato wa Maombi",
+		"description": "Tuma CV yako na barua ya maelezo kwa <bold>info@smartgridsurveying.com<bold> ukionyesha nafasi unayoomba kwenye mstari wa mada.\n\n Waombaji walioteuliwa tu ndio watawasiliana nao. SmartGrid Surveying ni mwajiri wa fursa sawa anayejitolea kwa taaluma, uadilifu, na ubora."
 	},
 	"statement": {
 		"tag": null,
 		"title": "",
-		"subtitle": "Equal Opportunity & Donor Compliance Statement",
-		"description": "SmartGrid Surveying & Civil Works Ltd is an equal opportunity employer. Recruitment and employment decisions are made without discrimination based on gender, ethnicity, religion, disability, or background. We are committed to compliance with applicable national labor laws and donor-funded project requirements, including World Bank, UN, and development partner standards on ethics, safeguarding, and professional conduct."
+		"subtitle": "Taarifa ya Fursa Sawa na Uzingatiaji wa Wafadhili",
+		"description": "SmartGrid Surveying & Civil Works Ltd ni mwajiri wa fursa sawa. Maamuzi ya kuajiri na kuajiriwa hayafanywi kwa ubaguzi kwa msingi wa jinsia, kabila, dini, ulemavu, au asili. Tumejitolea kuzingatia sheria za kazi za kitaifa na mahitaji ya miradi inayofadhiliwa na wafadhili, ikijumuisha viwango vya Benki ya Dunia, Umoja wa Mataifa, na washirika wa maendeleo kuhusu maadili, ulinzi, na mwenendo wa kitaalamu."
 	}
 }

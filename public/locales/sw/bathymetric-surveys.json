@@ -12,7 +12,7 @@
 	"whatIsBathymetricSurveys": {
 		"tag": "Topografia ya Chini ya Maji",
 		"headline": "Uchunguzi wa Bathymetric ni Nini?",
-		"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-09.jpg",
+		"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-09.png",
 		"description": "Uchunguzi wa bathymetric unahusisha kupima kina cha maji na kuchora ardhi ya chini ya maji. Mbinu hii ni muhimu kwa kuelewa viwango vya mashapo, kiasi cha maji, na hatari za chini ya maji. Inasaidia ujenzi salama, usimamizi bora wa rasilimali za maji, na ulinzi wa mazingira makini. SmartGrid Surveying hutumia echo sounders za mwonekano wa juu, mifumo ya uwekaji ya GNSS, na boti za uchunguzi zinazodhibitiwa kwa mbali kufikia maeneo ya maji ya kina kifupi na yaliyozuiliwa kwa usalama na ufanisi."
 	},
 	"damsLakesSeaOcean": {
@@ -35,17 +35,17 @@
 				"description": "Tathmini uwezo wa hifadhi na kiasi cha bwawa"
 			},
 			{
-				"icon": "dam",
+				"icon": "waterfall",
 				"title": "Tathmini Hatari za Kimuundo",
 				"description": "Tathmini hatari za kimuundo na tambua maeneo ya mmomonyoko"
 			},
 			{
-				"icon": "dredge",
+				"icon": "waterfall",
 				"title": "Tathmini za Kabla/Baada ya Dredging",
 				"description": "Fanya tathmini za kabla na baada ya dredging"
 			},
 			{
-				"icon": "expansion",
+				"icon": "arrow-expand-horizontal",
 				"title": "Panga Upanuzi au Urekebishaji",
 				"description": "Panga upanuzi wa bwawa au urekebishaji"
 			},
@@ -62,7 +62,7 @@
 		"description": "",
 		"items": [
 			{
-				"icon": "ruler-water",
+				"icon": "water-well",
 				"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-13.jpg",
 				"title": "Uchambuzi wa Kina",
 				"description": "Kipimo sahihi cha kina cha maji kwa urambazaji, ujenzi, na upangaji wa rasilimali."
@@ -75,7 +75,7 @@
 			},
 			{
 				"icon": "fish",
-				"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-12.jpg",
+				"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-12.png",
 				"title": "Utafiti wa Makazi ya Majini",
 				"description": "Uchoraji ramani wa ardhi ya chini ya maji kusaidia utafiti wa ikolojia na juhudi za uhifadhi."
 			},
@@ -98,14 +98,14 @@
 				"description": "Uchoraji kamili wa ramani za miili ya maji kwa chati za bahari na urambazaji wa baharini."
 			},
 			{
-				"icon": "dam",
-				"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-08.jpg",
+				"icon": "waterfall",
+				"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-08.png",
 				"title": "Uhandisi wa Mabwawa",
 				"description": "Data muhimu kwa muundo, ukaguzi wa usalama, na matengenezo ya mabwawa."
 			},
 			{
 				"icon": "flash",
-				"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-03.jpg",
+				"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-03.png",
 				"title": "Nishati ya Hydroelectric",
 				"description": "Kusaidia tathmini ya tovuti na ufanisi wa kiutendaji kwa miradi ya umeme wa maji."
 			}

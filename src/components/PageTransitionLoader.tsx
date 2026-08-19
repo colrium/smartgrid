@@ -42,12 +42,12 @@ export default function PageTransitionLoader() {
 			{loading && (
 				<motion.div
 					key="page-transition-loader"
-					className="fixed inset-0 z-[10000] flex flex-col items-center justify-center"
-					exit={{ opacity: 0, transition: { duration: 0.45, ease: "easeInOut" } }}
+					className="fixed inset-0 z-10000 flex flex-col items-center justify-center"
+					exit={{ opacity: 0, transition: { duration: 0.5, ease: "easeInOut" } }}
 				>
-					<div className="absolute inset-0 bg-surface/85 backdrop-blur-2xl" />
-					<div className="absolute -top-40 -left-40 w-[28rem] h-[28rem] rounded-full bg-primary/15 blur-[120px]" />
-					<div className="absolute -bottom-40 -right-40 w-[28rem] h-[28rem] rounded-full bg-primary/10 blur-[120px]" />
+					<div className="absolute inset-0 bg-surface/85 backdrop-blur-3xl" />
+					<div className="absolute -top-40 -left-40 w-[28rem] h-[28rem] rounded-full bg-primary/35 blur-[120px]" />
+					<div className="absolute bottom-4 right-4 w-[28rem] h-[28rem] rounded-full bg-primary/20 blur-[120px]" />
 
 					<div className="absolute top-0 left-0 h-1 w-full overflow-hidden">
 						<motion.div
@@ -60,10 +60,10 @@ export default function PageTransitionLoader() {
 					<motion.div
 						className="relative flex flex-col items-center gap-6"
 						initial={{ opacity: 0, y: 14 }}
-						animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
+						animate={{ opacity: 1, y: 0, transition: { duration: 0.3 } }}
 					>
 						<div className="relative">
-							<div className="absolute inset-0 bg-surface/25 rounded-full blur-2xl" />
+							<div className="absolute inset-0 bg-surface/75 rounded-full blur-3xl" />
 							<Image
 								src={t("common:nav.logo")}
 								alt={t("common:nav.logo_alt")}
@@ -84,7 +84,7 @@ export default function PageTransitionLoader() {
 
 						<div className="mt-2 flex items-center gap-3">
 							<span className="h-5 w-5 rounded-full border-2 border-surface/20 border-t-primary-300 animate-spin" />
-							<span className="text-xs uppercase tracking-[0.2em] text-on-surface/70">
+							<span className="text-xs uppercase tracking-[0.2em] text-primary/70">
 								{t("common:misc.loading")}
 							</span>
 						</div>

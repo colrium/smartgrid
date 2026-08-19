@@ -205,7 +205,7 @@
 					}
 				]
 			},
-			{ "label": "Kukodisha", "href": "/careers" },
+			{ "label": "Ajira", "href": "/careers" },
 			{ "label": "Kuhusu", "href": "/about" },
 			{ "label": "Wasiliana Nasi", "href": "/contact", "type": "pill" }
 		],

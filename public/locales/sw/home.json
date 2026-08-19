@@ -311,51 +311,51 @@
 		"items": [
 			{
 				"label": "DJI",
-				"logoUrl": "/media/logos/dji.png"
+				"logoUrl": "/media/trustees/dji.png"
 			},
 			{
 				"label": "ESRI",
-				"logoUrl": "/media/logos/esri.png"
+				"logoUrl": "/media/trustees/esri.png"
 			},
 			{
 				"label": "Trimble",
-				"logoUrl": "/media/logos/trimble.png"
+				"logoUrl": "/media/trustees/trimble.png"
 			},
 			{
 				"label": "FOIF",
-				"logoUrl": "/media/logos/foif.jpg"
+				"logoUrl": "/media/trustees/foif.jpg"
 			},
 			{
 				"label": "GoK",
-				"logoUrl": "/media/logos/gok.png"
+				"logoUrl": "/media/trustees/gok.png"
 			},
 			{
 				"label": "AutoCAD",
-				"logoUrl": "/media/logos/autocad.png"
+				"logoUrl": "/media/trustees/autocad.png"
 			},
 			{
 				"label": "KCAA",
-				"logoUrl": "/media/logos/kcaa.png"
+				"logoUrl": "/media/trustees/kcaa.png"
 			},
 			{
 				"label": "PIX4D",
-				"logoUrl": "/media/logos/pix4d.jpg"
+				"logoUrl": "/media/trustees/pix4d.jpg"
 			},
 			{
 				"label": "BLUEGEOG",
-				"logoUrl": "/media/logos/bluegeog.png"
+				"logoUrl": "/media/trustees/blue-geog.png"
 			},
 			{
 				"label": "ArcGIS",
-				"logoUrl": "/media/logos/arcgis.png"
+				"logoUrl": "/media/trustees/arcgis.png"
 			},
 			{
 				"label": "Bosch",
-				"logoUrl": "/media/logos/bosch.png"
+				"logoUrl": "/media/trustees/bosch.jpg"
 			},
 			{
 				"label": "Agisoft Metashape",
-				"logoUrl": "/media/logos/agisoft.png"
+				"logoUrl": "/media/trustees/agisoft-metashape.png"
 			}
 		]
 	},

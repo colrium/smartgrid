@@ -12,17 +12,17 @@
 	},
 	"offices": {
 		"tag": "Our Offices",
-		"headline": "Find us",
+		"headline": "Reach Our Offices",
+        "description": "Visit our head office for professional consultation on land, aerial, and engineering surveys.",
 		"items": [
 			{
 				"id": "hq-nairobi",
-				"label": "Smartgrid Office",
+				"label": "SmartGrid Surveying HQ",
 				"city": "Nairobi",
 				"country": "Kenya",
 				"flag": "🇰🇪",
 				"address_lines": [
-					"SMARTGRID SURVEYING & CIVIL ENGINEERING LTD",
-					"Nairobi, Kenya"
+					"SmartGrid Surveying HQ, Nord Mall, Ruiru, Kenya"
 				],
 				"lat": -1.286389,
 				"lng": 36.821946,
@@ -33,25 +33,29 @@
 				"note": "Contact us to discuss your surveying, civil engineering, equipment hire, or drone services requirements."
 			},
 			{
-				"id": "regional-nairobi",
-				"label": "East Africa Regional Office",
+				"id": "field-office-nairobi",
+				"label": "Mombasa Road",
 				"city": "Nairobi",
 				"country": "Kenya",
 				"flag": "🇰🇪",
 				"address_lines": [
-					"Smartgrid Regional Office",
-					"Upper Hill, Kilimani",
+					"SmartGrid Field Office,",
+					"Mombasa Road",
 					"Nairobi, Kenya"
 				],
 				"lat": -1.2921,
 				"lng": 36.8219,
-				"phone": "+254 700 000 002",
+				"phone": "+254 10 7393023",
 				"email": "smartgridsurveying@gmail.com",
 				"hours": "Mon–Fri 08:30–17:30 EAT",
 				"type": "regional",
-				"note": "Coordinates surveying, engineering, and project-support services in East Africa."
+				"note": ""
 			}
-		]
+		],
+        "cta": {
+            "label": "Book a consultation",
+            "href": ""
+        }
 	},
 	"contact_reasons": {
 		"label": "What can we help with?",
@@ -60,7 +64,7 @@
 			{ "value": "due-diligence", "label": "Request company information" },
 			{ "value": "site-visit", "label": "Schedule a site visit" },
 			{ "value": "partnership", "label": "Technology / equipment partnership" },
-			{ "value": "gold-supply", "label": "Surveying services enquiry" },
+			{ "value": "services-enquiry", "label": "Surveying services enquiry" },
 			{ "value": "logistics", "label": "Project logistics enquiry" },
 			{ "value": "press-media", "label": "Press & media enquiry" },
 			{ "value": "compliance-legal", "label": "Compliance / legal" },

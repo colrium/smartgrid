@@ -2,7 +2,7 @@
 	"hero": {
 		"headline": "RADA YA KUPENYA ARDHI",
 		"title": "Ugunduzi wa Kina wa Huduma za Chini ya Ardhi na Uchoraji Ramani wa Chini ya Ardhi",
-		"image": "/medial/surveying/ground-penetrating-radar/hero.png",
+		"image": "/media/surveying/ground-penetrating-radar/hero.png",
 		"description": "Teknolojia ya GPR ya mwonekano wa juu kwa miradi ya ujenzi, uhandisi, na miundombinu.",
 		"ctaPrimary": {
 			"label": "Pata Ushauri Wako Bure",
@@ -12,13 +12,13 @@
 	"whatIsGprSurveying": {
 		"tag": "Isiyoharibu na Sahihi",
 		"headline": "Uchunguzi wa GPR ni Nini?",
-		"image": "/medial/surveying/ground-penetrating-radar/gpr-01.jpeg",
+		"image": "/media/surveying/ground-penetrating-radar/gpr-01.jpeg",
 		"description": "Rada ya Kupenya Ardhi (GPR) ni mbinu ya kijiofizikia isiyoharibu inayotumika kugundua na kuchora ramani za vipengele vya chini ya ardhi. SmartGrid Surveying hutumia mifumo ya kisasa ya GPR kama LMX200 kutambua kwa usahihi huduma za chini ya ardhi, mashimo, misingi, na hitilafu bila kuchimba."
 	},
 	"gprLmx200": {
 		"tag": "Teknolojia Yetu ya Msingi",
 		"headline": "GPR LMX 200",
-		"image": "/medial/surveying/ground-penetrating-radar/gpr-lmx-200.gif",
+		"image": "/media/surveying/ground-penetrating-radar/gpr-lmx-200.gif",
 		"description": "LMX 200 wetu hutoa data ya wakati halisi tunapokagua huduma za chini ya ardhi kama nyaya za umeme, mabomba ya maji ya PVC, Mabomba ya GI miongoni mwa mengine. Tukiongozwa na wapimaji wetu, tunachakata zaidi data baada ya kukusanywa data ya wakati halisi ili kutoa ripoti na ramani za kina zinazoonyesha mitandao ya huduma za chini ya ardhi iliyochorwa."
 	},
 	"precisionBelowAndAbove": {
@@ -34,19 +34,19 @@
 		"items": [
 			{
 				"icon": "radar",
-				"image": "/medial/surveying/ground-penetrating-radar/gpr-lmx-200.jpeg",
+				"image": "/media/surveying/ground-penetrating-radar/gpr-lmx-200.jpeg",
 				"title": "Picha za Chini ya Ardhi",
 				"description": "Uchambuzi wa Radagrams 2D. Tambua huduma, mashimo, matangi, na hitilafu hadi mita 10 kirefu — bila kuvamiza."
 			},
 			{
 				"icon": "map-marker-path",
-				"image": "/medial/surveying/ground-penetrating-radar/topographical-mapping.png",
+				"image": "/media/surveying/ground-penetrating-radar/topographical-mapping.png",
 				"title": "Uchoraji Ramani wa Topografia",
 				"description": "Unda Ramani za Topo. Toa mifano sahihi ya mwinuko iliyounganishwa na alama za RTK GNSS kwa azimio la ngazi ya sentimita."
 			},
 			{
 				"icon": "chart-scatter-plot",
-				"image": "/medial/surveying/ground-penetrating-radar/data-integration.png",
+				"image": "/media/surveying/ground-penetrating-radar/data-integration.png",
 				"title": "Ujumuishaji wa Data Mahiri",
 				"description": "Ufafanuzi wa Data. Geuza data ya shambani kuwa miundo tayari kwa uhandisi kwa kutumia GPR-Slice, Civil 3D, QGIS, na michakato ya BIM."
 			}
@@ -59,25 +59,25 @@
 		"items": [
 			{
 				"icon": "shield-check",
-				"image": "/medial/surveying/ground-penetrating-radar/gpr-16.jpeg",
+				"image": "/media/surveying/ground-penetrating-radar/gpr-16.jpeg",
 				"title": "ISIYOHARIBU",
 				"description": "Hakuna kuchimba kunakohitajika, kuhifadhi uadilifu wa tovuti."
 			},
 			{
 				"icon": "ruler-square",
-				"image": "/medial/surveying/ground-penetrating-radar/gpr-15.jpeg",
+				"image": "/media/surveying/ground-penetrating-radar/gpr-15.jpeg",
 				"title": "USAHIHI WA JUU",
 				"description": "Imependanishwa na vifaa vya kisasa vya RTK kwa usahihi wa sentimita 1"
 			},
 			{
 				"icon": "cube-scan",
-				"image": "/medial/surveying/ground-penetrating-radar/gpr-02.png",
+				"image": "/media/surveying/ground-penetrating-radar/gpr-02.png",
 				"title": "SULUHISHO LA KILA KITU",
 				"description": "Inachanganya data ya GPR na uchoraji ramani wa ndege zisizo na rubani na GIS"
 			},
 			{
 				"icon": "clock-fast",
-				"image": "/medial/surveying/ground-penetrating-radar/gpr-12.jpeg",
+				"image": "/media/surveying/ground-penetrating-radar/gpr-12.jpeg",
 				"title": "MWAKIKI WA HARAKA",
 				"description": "Ukusanyaji wa data na kuripoti kwa haraka."
 			}
@@ -87,7 +87,7 @@
 		"tag": null,
 		"headline": "VIPENGELE VYA LMX 200",
 		"description": "",
-		"image": "/medial/surveying/ground-penetrating-radar/lmx-200-features.png"
+		"image": "/media/surveying/ground-penetrating-radar/lmx-200-features.png"
 	},
 	"featuredProjects": {
 		"tag": "Mifano ya Uchunguzi",
@@ -124,47 +124,47 @@
 	"gprImagesSlider": {
 		"items": [
 			{
-				"image": "/medial/surveying/ground-penetrating-radar/gpr-01.jpeg",
+				"image": "/media/surveying/ground-penetrating-radar/gpr-01.jpeg",
 				"title": "Uchunguzi wa Shambani",
 				"description": "Uchambuzi wa GPR wa wakati halisi katika tovuti ya mjini kuonyesha ukanda wa huduma."
 			},
 			{
-				"image": "/medial/surveying/ground-penetrating-radar/gpr-07.jpeg",
+				"image": "/media/surveying/ground-penetrating-radar/gpr-07.jpeg",
 				"title": "Uchoraji Ramani wa Ukanda",
 				"description": "Sehemu za msongamano wa juu zilizokusanywa kwa chanjo kamili ya chini ya ardhi."
 			},
 			{
-				"image": "/medial/surveying/ground-penetrating-radar/gpr-10.jpeg",
+				"image": "/media/surveying/ground-penetrating-radar/gpr-10.jpeg",
 				"title": "Ugunduzi wa Huduma za Kina Kidogo",
 				"description": "Utambulisho wazi wa nyaya na mabomba yasiyo ya kina kabla ya kuchimba."
 			},
 			{
-				"image": "/medial/surveying/ground-penetrating-radar/gpr-12.jpeg",
+				"image": "/media/surveying/ground-penetrating-radar/gpr-12.jpeg",
 				"title": "Uchambuzi wa Hitilafu za Kina",
 				"description": "Kugundua mashimo ya kina na miundo iliyozikwa kwa kupenya kwa kina."
 			},
 			{
-				"image": "/medial/surveying/ground-penetrating-radar/gpr-09.jpeg",
+				"image": "/media/surveying/ground-penetrating-radar/gpr-09.jpeg",
 				"title": "Ujumuishaji wa RTK",
 				"description": "Uwekaji wa GNSS uliosawazishwa ukitoa maelezo ya kijiografia sahihi ya sentimita."
 			},
 			{
-				"image": "/medial/surveying/ground-penetrating-radar/gpr-14.jpeg",
+				"image": "/media/surveying/ground-penetrating-radar/gpr-14.jpeg",
 				"title": "Ufafanuzi wa Data",
 				"description": "Sehemu na ramani zilizochakatwa tayari kwa michakato ya uhandisi."
 			},
 			{
-				"image": "/medial/surveying/ground-penetrating-radar/gpr-11.jpeg",
+				"image": "/media/surveying/ground-penetrating-radar/gpr-11.jpeg",
 				"title": "Uchunguzi wa Ukanda wa Bomba",
 				"description": "Tathmini isiyoharibu kwenye mipangilio mirefu ya mabomba."
 			},
 			{
-				"image": "/medial/surveying/ground-penetrating-radar/gpr-05.jpeg",
+				"image": "/media/surveying/ground-penetrating-radar/gpr-05.jpeg",
 				"title": "Maendeleo mapya ya Mjini",
 				"description": "Uchunguzi kabla ya maendeleo mapya kuthibitisha kutokuwepo kwa hatari zilizozikwa."
 			},
 			{
-				"image": "/medial/surveying/ground-penetrating-radar/gpr-17.jpeg",
+				"image": "/media/surveying/ground-penetrating-radar/gpr-17.jpeg",
 				"title": "Uchunguzi wa Akiolojia",
 				"description": "Ugunduzi nyeti wa vipengele vya kitamaduni vya chini ya ardhi bila kuchimba."
 			}

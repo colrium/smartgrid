@@ -144,22 +144,22 @@
 		"description": "",
 		"items": [
 			{
-				"image": "/media/equipment-sale/foif-a90-rtk-gnss/06.png",
+				"image": "/img/instruments/total-station-esurvey.png",
 				"label": "TOTAL STATION ESURVEY",
 				"href": "/equipment-sale/total-station-esurvey"
 			},
 			{
-				"image": "/media/equipment-sale/foif-a90-rtk-gnss/07.png",
+				"image": "/img/instruments/total-station-dtm-152m.jpg",
 				"label": "TOTAL STATION DTM 152M",
 				"href": "/equipment-sale/total-station-dtm-152m"
 			},
 			{
-				"image": "/media/equipment-sale/foif-a90-rtk-gnss/08.png",
+				"image": "/img/instruments/automatic-level-hueper.png",
 				"label": "AUTOMATIC LEVEL HUEPER",
 				"href": "/equipment-sale/automatic-level-hueper"
 			},
 			{
-				"image": "/media/equipment-sale/foif-a90-rtk-gnss/09.png",
+				"image": "/img/instruments/automatic-level-bosch.png",
 				"label": "AUTOMATIC LEVEL BOSCH",
 				"href": "/equipment-sale/automatic-level-bosch"
 			}
