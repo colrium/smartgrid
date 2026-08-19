@@ -47,7 +47,7 @@
 			{
 				"icon": "calendar",
 				"label": "Panga kwa Calendly",
-				"href": "https://calendly.com/smartgridconsultation",
+				"href": "https://calendly.com/smartgridsurveying",
 				"note": "Scheduled",
 				"color": "calendly"
 			}
@@ -150,7 +150,7 @@
 			},
 			"phone": {
 				"label": "Nambari ya simu",
-				"placeholder": "+256 700 000 000",
+				"placeholder": "+254 700 000 000",
 				"required": false,
 				"type": "tel"
 			},
@@ -204,6 +204,9 @@
 			},
 			"consent": {
 				"label": "Nakubali Smartgrid kuhifadhi na kutumia data hii kujibu swali langu, kwa mujibu wa Sera ya Faragha.",
+				"label_prefix": "Nakubali Smartgrid kuhifadhi na kutumia data hii kujibu swali langu, kwa mujibu wa ",
+				"label_link": "Sera ya Faragha",
+				"label_suffix": ".",
 				"required": true,
 				"type": "checkbox"
 			},
@@ -227,7 +230,7 @@
 				"name": "Timu ya Smartgrid",
 				"title": "Maswali ya Miradi",
 				"email": "smartgridsurveying@gmail.com",
-				"phone": "+256 700 000 001",
+				"phone": "+254 700 000 001",
 				"note": "Maswali ya miradi, mapendekezo ya ushirikiano, na mashauriano ya huduma."
 			},
 			{
@@ -235,7 +238,7 @@
 				"name": "Timu ya Smartgrid",
 				"title": "Msaada wa Wateja",
 				"email": "smartgridsurveying@gmail.com",
-				"phone": "+256 700 000 005",
+				"phone": "+254 700 000 005",
 				"note": "Nukuu, taarifa za huduma, na maswali ya kiutawala."
 			},
 			{
@@ -243,7 +246,7 @@
 				"name": "Timu ya Smartgrid",
 				"title": "Msaada wa Uendeshaji",
 				"email": "smartgridsurveying@gmail.com",
-				"phone": "+256 700 000 006",
+				"phone": "+254 700 000 006",
 				"note": "Uratibu wa ziara za tovuti, masasisho ya uendeshaji, na maswali ya huduma ya kiufundi."
 			},
 			{

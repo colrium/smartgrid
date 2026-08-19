@@ -48,7 +48,7 @@
             {
 				"icon": "calendar",
 				"label": "Schedule via Calendly",
-				"href": "https://calendly.com/smartgridconsultation",
+				"href": "https://calendly.com/smartgridsurveying",
 				"note": "Scheduled",
 				"color": "calendly"
 			}
@@ -146,7 +146,7 @@
 			},
 			"phone": {
 				"label": "Phone number",
-				"placeholder": "+256 700 000 000",
+				"placeholder": "+254 700 000 000",
 				"required": false,
 				"type": "tel"
 			},
@@ -200,6 +200,9 @@
 			},
 			"consent": {
 				"label": "I consent to Smartgrid storing and using this data to respond to my enquiry, in line with the Privacy Policy.",
+				"label_prefix": "I consent to Smartgrid storing and using this data to respond to my enquiry, in line with the ",
+				"label_link": "Privacy Policy",
+				"label_suffix": ".",
 				"required": true,
 				"type": "checkbox"
 			},
@@ -223,7 +226,7 @@
 				"name": "Smartgrid Team",
 				"title": "Project Enquiries",
 				"email": "smartgridsurveying@gmail.com",
-				"phone": "+256 700 000 001",
+				"phone": "+254 700 000 001",
 				"note": "Project enquiries, partnership proposals, and service consultations."
 			},
 			{
@@ -231,7 +234,7 @@
 				"name": "Smartgrid Team",
 				"title": "Client Support",
 				"email": "smartgridsurveying@gmail.com",
-				"phone": "+256 700 000 005",
+				"phone": "+254 700 000 005",
 				"note": "Quotes, service information, and administrative enquiries."
 			},
 			{
@@ -239,7 +242,7 @@
 				"name": "Smartgrid Team",
 				"title": "Operations Support",
 				"email": "smartgridsurveying@gmail.com",
-				"phone": "+256 700 000 006",
+				"phone": "+254 700 000 006",
 				"note": "Site visit coordination, operational updates, and technical service queries."
 			},
 			{

@@ -1,8 +1,16 @@
-import { ComponentPropsWithoutRef, FormEvent, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 import { useTranslation, useSetState } from "@/hooks";
 import SendIcon from "@mui/icons-material/Send";
-import { useForm, ValidationError } from "@formspree/react";
+import TextField from "@mui/material/TextField";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
+import InputLabel from "@mui/material/InputLabel";
+import FormControl from "@mui/material/FormControl";
+import Checkbox from "@mui/material/Checkbox";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import { useForm } from "@formspree/react";
 
 type Country = { code?: string; name: string; flag?: string };
 type Option = { value: string; label: string };
@@ -13,37 +21,48 @@ type Field = {
 	type: string;
 	rows?: number;
 	options?: Option[];
+	label_prefix?: string;
+	label_link?: string;
+	label_suffix?: string;
 };
 
-type ReasonState = {
+type FormValues = {
+	first_name: string;
+	last_name: string;
+	email: string;
+	phone: string;
+	country: string;
 	reason: string;
 	opportunity: string;
 	tier: string;
-	sent: boolean;
-	loading: boolean;
-	error: string | null;
+	message: string;
+	consent: boolean;
+	newsletter: boolean;
 };
 
+const initialValues: FormValues = {
+	first_name: "",
+	last_name: "",
+	email: "",
+	phone: "",
+	country: "",
+	reason: "",
+	opportunity: "",
+	tier: "",
+	message: "",
+	consent: false,
+	newsletter: false,
+};
 
+type ContactFormProps = { className?: string };
 
-const inputClassName = "w-full rounded bg-surface border border-primary/15 px-4 py-3 text-sm text-on-surface-800 outline-none transition focus:border-primary placeholder:text-on-surface-800/35";
-
-type ContactFormProps = ComponentPropsWithoutRef<"form">;
-
-export default function ContactForm({ className = "", ...props }: ContactFormProps) {
+export default function ContactForm({ className = "" }: ContactFormProps) {
 	const { t, tObject } = useTranslation(["contact", "common"]);
-    const router = useRouter();
-    const formspreeFormId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID;
-    const [formspree, handleFormspreeSubmit] = useForm(formspreeFormId);
-    const {opportunity: opportunityQuery, reason: reasonQuery, tier: tierQuery} = router.query;
-	const [state, setState] = useSetState<ReasonState>({
-		reason: "",
-		opportunity: "",
-		tier: "",
-		sent: false,
-		loading: false,
-		error: null,
-	});
+	const router = useRouter();
+	const formspreeFormId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID;
+	const [formspree, handleFormspreeSubmit] = useForm(formspreeFormId);
+	const { opportunity: opportunityQuery, reason: reasonQuery, tier: tierQuery } = router.query;
+	const [values, setValues] = useSetState<FormValues>(initialValues);
 
 	const reasons = tObject<Option[]>("contact:contact_reasons.options", {
 		returnObjects: true,
@@ -61,10 +80,10 @@ export default function ContactForm({ className = "", ...props }: ContactFormPro
 	const officeCountries = (
 		tObject<{ country: string }[]>("contact:offices.items", {
 			returnObjects: true,
-		}) 
+		})
 	).map((office) => office.country);
-	
-    const countries = Array.from(
+
+	const countries = Array.from(
 		new Set([...locationCountries.map((c) => c.name), ...officeCountries])
 	);
 
@@ -73,7 +92,7 @@ export default function ContactForm({ className = "", ...props }: ContactFormPro
 		const opportunity =
 			typeof opportunityQuery === "string" ? opportunityQuery : "";
 		const tier = typeof tierQuery === "string" ? tierQuery : "";
-		setState((current) => ({
+		setValues((current) => ({
 			reason: reason === "invest" ? "investment-enquiry" : reason || current.reason,
 			opportunity: opportunity || current.opportunity,
 			tier: tier || current.tier,
@@ -81,13 +100,20 @@ export default function ContactForm({ className = "", ...props }: ContactFormPro
 	}, [opportunityQuery, reasonQuery, tierQuery]);
 
 	const tierOptions = useMemo(() => fields.investor_tier.options ?? [], [fields]);
-	
 
+	// Clear the form once a submission succeeds.
+	useEffect(() => {
+		if (formspree.succeeded) {
+			setValues(initialValues);
+		}
+	}, [formspree.succeeded]);
+
+	const consentPrefix = fields.consent.label_prefix ?? fields.consent.label;
+	const consentSuffix = fields.consent.label_suffix ?? "";
 
 	return (
 		<form
 			className={`max-w-295 mx-auto flex flex-col gap-12 rounded-lg border border-primary/20 bg-surface-200 p-6 md:p-8 ${className}`}
-			{...props}
 			onSubmit={handleFormspreeSubmit}
 		>
 			{formspree.succeeded && (
@@ -112,170 +138,210 @@ export default function ContactForm({ className = "", ...props }: ContactFormPro
 			)}
 			<div className=" p-6 md:p-8 grid gap-5">
 				<div className="grid md:grid-cols-2 gap-5">
-					<label className="grid gap-2 text-sm text-on-surface-800">
-						{fields.first_name.label}
-						<input
-							className={inputClassName}
-							name="first_name"
-							type="text"
-							placeholder={fields.first_name.placeholder}
-							required={fields.first_name.required}
-						/>
-					</label>
-					<label className="grid gap-2 text-sm text-on-surface-800">
-						{fields.last_name.label}
-						<input
-							className={inputClassName}
-							name="last_name"
-							type="text"
-							placeholder={fields.last_name.placeholder}
-							required={fields.last_name.required}
-						/>
-					</label>
+					<TextField
+						fullWidth
+						variant="outlined"
+						name="first_name"
+						label={fields.first_name.label}
+						placeholder={fields.first_name.placeholder}
+						required={fields.first_name.required}
+						value={values.first_name}
+						onChange={(event) =>
+							setValues((current) => ({ ...current, first_name: event.target.value }))
+						}
+					/>
+					<TextField
+						fullWidth
+						variant="outlined"
+						name="last_name"
+						label={fields.last_name.label}
+						placeholder={fields.last_name.placeholder}
+						required={fields.last_name.required}
+						value={values.last_name}
+						onChange={(event) =>
+							setValues((current) => ({ ...current, last_name: event.target.value }))
+						}
+					/>
 				</div>
 				<div className="grid md:grid-cols-2 gap-5">
-					<label className="grid gap-2 text-sm text-on-surface-800">
-						{fields.email.label}
-						<input
-							className={inputClassName}
-							name="email"
-							type="email"
-							placeholder={fields.email.placeholder}
-							required={fields.email.required}
-						/>
-					</label>
-					<label className="grid gap-2 text-sm text-on-surface-800">
-						{fields.phone.label}
-						<input
-							className={inputClassName}
-							name="phone"
-							type="tel"
-							placeholder={fields.phone.placeholder}
-						/>
-					</label>
+					<TextField
+						fullWidth
+						variant="outlined"
+						name="email"
+						type="email"
+						label={fields.email.label}
+						placeholder={fields.email.placeholder}
+						required={fields.email.required}
+						value={values.email}
+						onChange={(event) =>
+							setValues((current) => ({ ...current, email: event.target.value }))
+						}
+					/>
+					<TextField
+						fullWidth
+						variant="outlined"
+						name="phone"
+						type="tel"
+						label={fields.phone.label}
+						placeholder={fields.phone.placeholder}
+						required={fields.phone.required}
+						value={values.phone}
+						onChange={(event) =>
+							setValues((current) => ({ ...current, phone: event.target.value }))
+						}
+					/>
 				</div>
 				<div className="grid md:grid-cols-2 gap-5">
-					<label className="grid gap-2 text-sm text-on-surface-800">
-						{fields.country.label}
-						<select
-							className={inputClassName}
+					<FormControl fullWidth>
+						<InputLabel>{fields.country.label}</InputLabel>
+						<Select
+							label={fields.country.label}
 							name="country"
 							required={fields.country.required}
-							defaultValue=""
+							value={values.country}
+							onChange={(event) =>
+								setValues((current) => ({ ...current, country: event.target.value }))
+							}
+							displayEmpty
 						>
-							<option value="" disabled>
+							<MenuItem value="" disabled>
 								{fields.country.placeholder}
-							</option>
+							</MenuItem>
 							{countries.map((country) => (
-								<option key={country} value={country}>
+								<MenuItem key={country} value={country}>
 									{country}
-								</option>
+								</MenuItem>
 							))}
-						</select>
-					</label>
-					<label className="grid gap-2 text-sm text-on-surface-800">
-						{fields.reason.label}
-						<select
-							className={inputClassName}
+						</Select>
+					</FormControl>
+					<FormControl fullWidth>
+						<InputLabel>{fields.reason.label}</InputLabel>
+						<Select
+							label={fields.reason.label}
 							name="reason"
 							required={fields.reason.required}
-							value={state.reason}
+							value={values.reason}
 							onChange={(event) =>
-								setState((current) => ({
-									...current,
-									reason: event.target.value,
-								}))
+								setValues((current) => ({ ...current, reason: event.target.value }))
 							}
+							displayEmpty
 						>
-							<option value="" disabled>
+							<MenuItem value="" disabled>
 								{fields.reason.placeholder}
-							</option>
+							</MenuItem>
 							{reasons.map((reason) => (
-								<option key={reason.value} value={reason.value}>
+								<MenuItem key={reason.value} value={reason.value}>
 									{reason.label}
-								</option>
+								</MenuItem>
 							))}
-						</select>
-					</label>
+						</Select>
+					</FormControl>
 				</div>
-				{["investment-enquiry", "due-diligence", "partnership"].includes(state.reason) && (
-					<label className="grid gap-2 text-sm text-on-surface-800">
-						{fields.opportunity.label}
-						<select
-							className={inputClassName}
+				{["investment-enquiry", "due-diligence", "partnership"].includes(values.reason) && (
+					<FormControl fullWidth>
+						<InputLabel>{fields.opportunity.label}</InputLabel>
+						<Select
+							label={fields.opportunity.label}
 							name="opportunity"
-							value={state.opportunity}
+							value={values.opportunity}
 							onChange={(event) =>
-								setState((current) => ({
-									...current,
-									opportunity: event.target.value,
-								}))
+								setValues((current) => ({ ...current, opportunity: event.target.value }))
 							}
+							displayEmpty
 						>
-							<option value="" disabled>
+							<MenuItem value="" disabled>
 								{fields.opportunity.placeholder}
-							</option>
+							</MenuItem>
 							{opportunityOptions.map((opportunity) => (
-								<option key={opportunity.value} value={opportunity.value}>
+								<MenuItem key={opportunity.value} value={opportunity.value}>
 									{opportunity.label}
-								</option>
+								</MenuItem>
 							))}
-						</select>
-					</label>
+						</Select>
+					</FormControl>
 				)}
-				{state.reason === "investment-enquiry" &&
-					state.opportunity === "gold-aggregation" && (
-						<label className="grid gap-2 text-sm text-on-surface-800">
-							{fields.investor_tier.label}
-							<select
-								className={inputClassName}
+				{values.reason === "investment-enquiry" &&
+					values.opportunity === "gold-aggregation" && (
+						<FormControl fullWidth>
+							<InputLabel>{fields.investor_tier.label}</InputLabel>
+							<Select
+								label={fields.investor_tier.label}
 								name="investor_tier"
-								value={state.tier}
+								value={values.tier}
 								onChange={(event) =>
-									setState((current) => ({
-										...current,
-										tier: event.target.value,
-									}))
+									setValues((current) => ({ ...current, tier: event.target.value }))
 								}
+								displayEmpty
 							>
-								<option value="" disabled>
+								<MenuItem value="" disabled>
 									{fields.investor_tier.placeholder}
-								</option>
+								</MenuItem>
 								{tierOptions.map((tier) => (
-									<option key={tier.value} value={tier.value}>
+									<MenuItem key={tier.value} value={tier.value}>
 										{tier.label}
-									</option>
+									</MenuItem>
 								))}
-							</select>
-						</label>
+							</Select>
+						</FormControl>
 					)}
-				<label className="grid gap-2 text-sm text-on-surface-800">
-					{fields.message.label}
-					<textarea
-						className={`${inputClassName} resize-y min-h-36`}
-						name="message"
-						placeholder={fields.message.placeholder}
-						required={fields.message.required}
-						rows={fields.message.rows ?? 5}
-					/>
-				</label>
-				<label className="flex gap-3 text-sm text-on-surface-800 leading-relaxed">
-					<input
-						className="mt-1 accent-primary"
-						name="consent"
-						type="checkbox"
-						required={fields.consent.required}
-					/>
-					<span>{fields.consent.label}</span>
-				</label>
-				<label className="flex gap-3 text-sm text-on-surface-800 leading-relaxed">
-					<input className="mt-1 accent-primary" name="newsletter" type="checkbox" />
-					<span>{fields.newsletter.label}</span>
-				</label>
+				<TextField
+					fullWidth
+					variant="outlined"
+					name="message"
+					multiline
+					rows={fields.message.rows ?? 5}
+					label={fields.message.label}
+					placeholder={fields.message.placeholder}
+					required={fields.message.required}
+					value={values.message}
+					onChange={(event) =>
+						setValues((current) => ({ ...current, message: event.target.value }))
+					}
+				/>
+				<FormControlLabel
+					control={
+						<Checkbox
+							name="consent"
+							required={fields.consent.required}
+							checked={values.consent}
+							onChange={(event) =>
+								setValues((current) => ({ ...current, consent: event.target.checked }))
+							}
+						/>
+					}
+					label={
+						<span className="text-sm text-on-surface-800 leading-relaxed">
+							{consentPrefix}
+							{fields.consent.label_link && (
+								<Link
+									href="/privacy-policy"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-primary underline hover:text-primary-700"
+								>
+									{fields.consent.label_link}
+								</Link>
+							)}
+							{consentSuffix}
+						</span>
+					}
+				/>
+				<FormControlLabel
+					control={
+						<Checkbox
+							name="newsletter"
+							checked={values.newsletter}
+							onChange={(event) =>
+								setValues((current) => ({ ...current, newsletter: event.target.checked }))
+							}
+						/>
+					}
+					label={<span className="text-sm text-on-surface-800">{fields.newsletter.label}</span>}
+				/>
 				<button
 					type="submit"
 					disabled={formspree.submitting}
-					className="inline-flex items-center justify-center gap-2 bg-primary text-surface font-medium px-7 py-3.5 rounded-full border border-primary  transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+					className="inline-flex items-center justify-center gap-2 bg-primary text-surface font-medium px-7 py-3.5 rounded-full border border-primary transition-all disabled:opacity-50 disabled:cursor-not-allowed"
 				>
 					{formspree.submitting
 						? t("common:form.sending")

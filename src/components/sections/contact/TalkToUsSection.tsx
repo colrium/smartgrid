@@ -84,7 +84,7 @@ export function TalkToUsSection() {
 								</div>
 								{contact.icon && (
 									<span
-										className={`absolute -bottom-10 -right-8 text-on-surface opacity-5 pointer-events-none`}
+										className={`absolute -bottom-10 -right-8 text-${contact.color || "on-surface"} opacity-5 pointer-events-none`}
 										aria-hidden
 									>
 										<span
