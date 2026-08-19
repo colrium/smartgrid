@@ -37,7 +37,7 @@
 		"description": "Iwe wewe ni wakala wa serikali, shirika lisilo la kiserikali, au msanidi binafsi, Smartgrid Surveying ni mshirika wako wa kuaminika! \n\n Ndege zetu zisizo na rubani hutoa data inayoweza kutekelezwa mahali inapohitajika zaidi.",
 		"items": [
 			{
-				"icon": "stockpile",
+				"icon": "weight",
 				"title": "Kipimo cha Kiasi cha Mrundikano",
 				"description": "Data ya kiasi ya haraka na salama kwa nyenzo kama changarawe, mchanga, na makaa—kupunguza hitaji la kipimo cha mikono na hatari."
 			},

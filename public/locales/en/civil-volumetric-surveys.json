@@ -31,7 +31,7 @@
 		"headline": "Whether you're a government agency, an NGO, or a private developer, Smartgrid Surveying is your trusted partner!\n\n Our drones deliver actionable data where it matters most. ",
 		"items": [
 			{
-				"icon": "stockpile",
+				"icon": "weight",
 				"title": "Stockpile Volume Measurement",
 				"description": "Quick and safe volumetric data for materials like gravel, sand, and coal — reducing the need for manual measurement and risk."
 			},
