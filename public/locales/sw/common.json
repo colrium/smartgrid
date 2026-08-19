@@ -220,18 +220,40 @@
 				"heading": "Kampuni",
 				"links": [
 					{ "label": "Kuhusu Sisi", "href": "/about" },
-					{ "label": "Timu Yetu", "href": "/about#team" }
+					{ "label": "Kazi", "href": "/careers" },
+					{ "label": "Wasiliana Nasi", "href": "/contact" },
+					{ "label": "Katalogi ya Vifaa", "href": "/equipment-sale/equipment-catalogue" }
 				]
 			},
-			"contact": {
-				"heading": "Wasiliana Nasi",
+			"surveying": {
+				"heading": "Upimaji",
 				"links": [
-					{
-						"label": "smartgridsurveying@gmail.com",
-						"href": "mailto:smartgridsurveying@gmail.com?subject=Contact SmartGrid Surveying&body=Hi SmartGrid Surveying,%0D%0A%0D%0APlease get in touch with me about my request.%0D%0A%0D%0AName:%0D%0AMessage:%0D%0A%0D%0AThank you."
-					},
-					{ "label": "Ofisi ya Nairobi", "href": "/contact#hq-nairobi" },
-					{ "label": "Panga Simu", "href": "/contact" }
+					{ "label": "Upimaji wa Topografia", "href": "/surveying/topographical-surveys" },
+					{ "label": "Upimaji wa Cadastral", "href": "/surveying/cadastral-surveys" },
+					{ "label": "Upimaji wa Angani", "href": "/surveying/aerial-surveys" },
+					{ "label": "Upimaji wa Maeneo ya Ujenzi", "href": "/surveying/building-site-surveys" },
+					{ "label": "Radar ya Kupenya Ardhi", "href": "/surveying/ground-penetrating-radar" },
+					{ "label": "Upimaji wa Bathymetric", "href": "/surveying/bathymetric-surveys" }
+				]
+			},
+			"drones": {
+				"heading": "Ndege za Drone",
+				"links": [
+					{ "label": "Upimaji wa Picha za Drone", "href": "/aerial-drones/drone-imagery-surveys" },
+					{ "label": "Uchoraji wa LiDAR", "href": "/aerial-drones/lidar-mapping" },
+					{ "label": "Ufuatiliaji na Tathmini", "href": "/aerial-drones/monitoring-and-evaluation" },
+					{ "label": "Upimaji wa Volumetric", "href": "/aerial-drones/volumetric-surveys" },
+					{ "label": "Upigaji Picha na Video", "href": "/aerial-drones/photography-video-marketing" }
+				]
+			},
+			"civil": {
+				"heading": "Uhandisi wa Kiraia",
+				"links": [
+					{ "label": "Upimaji wa Barabara", "href": "/civil/highway-surveys" },
+					{ "label": "Upimaji wa Hali Halisi", "href": "/civil/as-built-surveys" },
+					{ "label": "Muundo wa Taarifa za Jengo", "href": "/civil/bim" },
+					{ "label": "Uhandisi wa Maeneo", "href": "/civil/site-engineering" },
+					{ "label": "Uwekaji wa Maeneo", "href": "/civil/site-setting-out" }
 				]
 			}
 		},

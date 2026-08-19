@@ -284,22 +284,22 @@
         "description": "We have a strong operational scale, with a presence in multiple countries, a large number of projects completed, and a commitment to delivering high-quality services over the years.",
 		"items": [
 			{
-				"icon": null,
+				"icon": "map-marker-multiple",
 				"name": "Countries",
 				"value": 7
 			},
 			{
-				"icon": null,
+				"icon": "clipboard-check",
 				"name": "Project",
 				"value": 250
 			},
 			{
-				"icon": null,
+				"icon": "timer-check",
 				"name": "Years",
 				"value": 5
 			},
 			{
-				"icon": null,
+				"icon": "emoticon-happy",
 				"name": "%CSAT",
 				"value": 100
 			}

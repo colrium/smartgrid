@@ -49,7 +49,11 @@ export async function getI18nProps(
 	const locale = getLocale(params);
 	if (!locale) return null;
 
+	// The shared layout (navbar/footer) always renders contact details and
+	// social links from the "contact" namespace, so load it on every page.
+	const ns = Array.from(new Set(["contact", ...namespaces]));
+
 	return {
-		...(await serverSideTranslations(locale, namespaces, i18nextConfig)),
+		...(await serverSideTranslations(locale, ns, i18nextConfig)),
 	};
 }

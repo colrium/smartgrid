@@ -212,7 +212,8 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 						<IconButton
 							onClick={handleDrawerToggle}
 							classes={{ root: "lg:hidden! mr-4!" }}
-							sx={{ color: "inherit" }}
+                            sx={{ color: "inherit" }}
+                            aria-label="Menu"
 						>
 							<MenuIcon />
 						</IconButton>

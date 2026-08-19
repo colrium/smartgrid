@@ -223,19 +223,40 @@
 				"heading": "Company",
 				"links": [
 					{ "label": "About Us", "href": "/about" },
-					{ "label": "Our Team", "href": "/about#team" }
+					{ "label": "Careers", "href": "/careers" },
+					{ "label": "Contact Us", "href": "/contact" },
+					{ "label": "Equipment Catalogue", "href": "/equipment-sale/equipment-catalogue" }
 				]
 			},
-
-			"contact": {
-				"heading": "Contact",
+			"surveying": {
+				"heading": "Surveying",
 				"links": [
-					{
-						"label": "smartgridsurveying@gmail.com",
-						"href": "mailto:smartgridsurveying@gmail.com?subject=Contact SmartGrid Surveying&body=Hi SmartGrid Surveying,%0D%0A%0D%0APlease get in touch with me about my request.%0D%0A%0D%0AName:%0D%0AMessage:%0D%0A%0D%0AThank you."
-					},
-					{ "label": "Nairobi Office", "href": "/contact#hq-nairobi" },
-					{ "label": "Schedule a Call", "href": "/contact" }
+					{ "label": "Topographical Surveys", "href": "/surveying/topographical-surveys" },
+					{ "label": "Cadastral Surveys", "href": "/surveying/cadastral-surveys" },
+					{ "label": "Aerial Surveys", "href": "/surveying/aerial-surveys" },
+					{ "label": "Building Site Surveys", "href": "/surveying/building-site-surveys" },
+					{ "label": "Ground Penetrating Radar", "href": "/surveying/ground-penetrating-radar" },
+					{ "label": "Bathymetric Surveys", "href": "/surveying/bathymetric-surveys" }
+				]
+			},
+			"drones": {
+				"heading": "Aerial Drones",
+				"links": [
+					{ "label": "Drone Imagery Surveys", "href": "/aerial-drones/drone-imagery-surveys" },
+					{ "label": "LiDAR Mapping", "href": "/aerial-drones/lidar-mapping" },
+					{ "label": "Monitoring & Evaluation", "href": "/aerial-drones/monitoring-and-evaluation" },
+					{ "label": "Volumetric Surveys", "href": "/aerial-drones/volumetric-surveys" },
+					{ "label": "Photography & Video Marketing", "href": "/aerial-drones/photography-video-marketing" }
+				]
+			},
+			"civil": {
+				"heading": "Civil Engineering",
+				"links": [
+					{ "label": "Highway Surveys", "href": "/civil/highway-surveys" },
+					{ "label": "As-Built Surveys", "href": "/civil/as-built-surveys" },
+					{ "label": "Building Information Modelling", "href": "/civil/bim" },
+					{ "label": "Site Engineering", "href": "/civil/site-engineering" },
+					{ "label": "Site Setting Out", "href": "/civil/site-setting-out" }
 				]
 			}
 		},

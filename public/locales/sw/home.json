@@ -284,22 +284,22 @@
         "description": "Tuna kiwango kikubwa cha uendeshaji, kwa uwepo katika nchi nyingi, idadi kubwa ya miradi iliyokamilishwa, na kujitolea kwa kutoa huduma za ubora wa juu kwa miaka mingi.",
 		"items": [
 			{
-				"icon": null,
+				"icon": "map-marker-multiple",
 				"name": "Nchi",
 				"value": 7
 			},
 			{
-				"icon": null,
+				"icon": "clipboard-check",
 				"name": "Miradi",
 				"value": 250
 			},
 			{
-				"icon": null,
+				"icon": "timer-check",
 				"name": "Miaka",
 				"value": 5
 			},
 			{
-				"icon": null,
+				"icon": "emoticon-happy",
 				"name": "%CSAT",
 				"value": 100
 			}
