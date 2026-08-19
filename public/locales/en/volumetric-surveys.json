@@ -42,7 +42,7 @@
 				"description": "Quick and safe volumetric data for materials like gravel, sand, and coal — reducing the need for manual measurement and risk."
 			},
 			{
-				"icon": "mine",
+				"icon": "excavator",
 				"title": "Quarry and Mine Monitoring",
 				"description": "Track cut/fill volumes and changes over time with high-resolution terrain data captured from above."
 			},
