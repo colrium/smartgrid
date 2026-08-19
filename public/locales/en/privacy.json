@@ -7,7 +7,7 @@
         "lastUpdated": "Aug, 2026",
         "contactLabel": "Contact Privacy Team",
         "contactLink": "/contact?reason=privacy#contact-form",
-        "note": "This page is intended as a practical website privacy notice and should be reviewed with qualified counsel for jurisdiction-specific legal requirements before being treated as a final legal policy. Questions about this page or how it applies to your enquiry can be sent to the {{site_title}} team."
+        "note": "Questions about this policy or how it applies to your enquiry can be sent to the {{site_title}} team."
     },   
 	"hero": {
 		"tag": "Privacy Policy",
