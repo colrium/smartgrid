@@ -56,9 +56,9 @@ export function ExploreMoreSection() {
 									<h3 className="text-xl sm:text-2xl font-light tracking-tight text-surface leading-none">
 										{item.title}
 									</h3>
-									<span className="h-10 w-10 shrink-0 rounded-full glass flex items-center justify-center text-ink">
+									{/* <span className="h-10 w-10 shrink-0 rounded-full glass flex items-center justify-center text-ink">
 										<span className="mdi mdi-arrow-right text-lg transition-transform duration-300 group-hover:translate-x-0.5" />
-									</span>
+									</span> */}
 								</div>
 							</article>
 						</FadeUp>

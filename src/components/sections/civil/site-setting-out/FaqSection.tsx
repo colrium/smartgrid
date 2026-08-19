@@ -5,6 +5,7 @@ import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { Blob } from "@/components/sections/home/decor";
 import { SectionTag } from "@/components/SectionTag";
+import { IconButton } from "@mui/material";
 
 interface FaqItem {
 	icon?: string;
@@ -45,7 +46,10 @@ export function FaqSection() {
 						{items.map((item, index) => {
 							const isOpen = openIndex === index;
 							return (
-								<div key={index} className={index > 0 ? "border-t border-ink/10" : ""}>
+								<div
+									key={index}
+									className={index > 0 ? "border-t border-ink/10" : ""}
+								>
 									<button
 										type="button"
 										onClick={() => setOpenIndex(isOpen ? null : index)}
@@ -54,7 +58,9 @@ export function FaqSection() {
 										<span className="flex items-center gap-3 sm:gap-4">
 											{item.icon && (
 												<span className="hidden sm:inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary">
-													<span className={`mdi mdi-${item.icon} text-xl`} />
+													<span
+														className={`mdi mdi-${item.icon} text-xl`}
+													/>
 												</span>
 											)}
 
@@ -67,20 +73,20 @@ export function FaqSection() {
 											</span>
 										</span>
 
-										<span
-											className={`w-8 h-8 shrink-0 rounded-full border flex items-center justify-center transition-all duration-300 ${
-												isOpen
-													? "border-primary bg-primary text-surface rotate-45"
-													: "border-ink/15 text-primary"
-											}`}
-										>
-											<span className="mdi mdi-plus text-lg leading-none" />
-										</span>
+										<IconButton size="small" LinkComponent={"span"}>
+											<span
+												className={`mdi mdi-${
+													isOpen ? "close text-red-700" : "plus"
+												} text-lg leading-none`}
+											/>
+										</IconButton>
 									</button>
 
 									<div
 										className={`grid transition-all duration-500 ease-out ${
-											isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+											isOpen
+												? "grid-rows-[1fr] opacity-100"
+												: "grid-rows-[0fr] opacity-0"
 										}`}
 									>
 										<div className="overflow-hidden">
