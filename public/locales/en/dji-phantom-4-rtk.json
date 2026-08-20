@@ -1,0 +1,162 @@
+{
+	"hero": {
+		"tag": "Survey Drone",
+		"headline": "Photogrammetry Drone",
+		"title": "DJI Phantom 4 RTK",
+		"image": "/media/equipment-sale/dji-phantom-4-rtk/01.jpeg",
+		"description": "A benchmark survey drone, widely used in cadastral and engineering mapping.",
+		"ctaPrimary": {
+			"label": "Inquire About This Drone",
+			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Phantom 4 RTK&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Phantom 4 RTK. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+		}
+	},
+	"breadcrumb": {
+		"home": "Home",
+		"section": "Equipment Sale",
+		"sectionHref": "/equipment-sale/equipment-catalogue"
+	},
+	"pricing": {
+		"new": {
+			"label": "Brand New",
+			"currency": "KES",
+			"amount": 900000
+		}
+	},
+	"categories": [
+		{
+			"name": "drones",
+			"label": "Drones",
+			"href": "/equipment-sale/equipment-catalogue?category=drones"
+		}
+	],
+	"quickFacts": [
+		{
+			"icon": "camera",
+			"label": "Camera",
+			"value": "20 MP, 1-inch CMOS"
+		},
+		{
+			"icon": "crosshairs-gps",
+			"label": "Accuracy",
+			"value": "±1-2 cm horizontal"
+		},
+		{
+			"icon": "ruler",
+			"label": "GSD",
+			"value": "~2.7 cm at 100 m"
+		},
+		{
+			"icon": "shield-check",
+			"label": "Track Record",
+			"value": "Proven reliability"
+		}
+	],
+	"productOverview": {
+		"tag": "Product Overview",
+		"headline": "The Benchmark Survey Drone",
+		"images": [
+			"/media/equipment-sale/dji-phantom-4-rtk/02.jpeg",
+			"/media/equipment-sale/dji-phantom-4-rtk/03.jpeg",
+			"/media/equipment-sale/dji-phantom-4-rtk/04.jpeg"
+		],
+		"description": "The DJI Phantom 4 RTK remains a proven, reliable choice for cadastral and engineering mapping, pairing a mechanical shutter camera with seamless RTK integration for high mapping accuracy."
+	},
+	"keyFeatures": {
+		"tag": "Highlights",
+		"headline": "Key Features",
+		"description": "Why the Phantom 4 RTK remains an industry benchmark.",
+		"items": [
+			{
+				"icon": "camera",
+				"title": "1-Inch CMOS Camera",
+				"description": "20 MP resolution with a mechanical shutter for distortion-free mapping imagery."
+			},
+			{
+				"icon": "crosshairs-gps",
+				"title": "Seamless RTK Integration",
+				"description": "Delivers ±1-2 cm horizontal and ±2-3 cm vertical accuracy in the field."
+			},
+			{
+				"icon": "shield-check",
+				"title": "Proven Reliability",
+				"description": "A long-standing industry standard for cadastral and engineering surveys."
+			},
+			{
+				"icon": "ruler",
+				"title": "High Mapping Accuracy",
+				"description": "GSD of ~2.7 cm at 100 m altitude for detailed orthomosaics."
+			}
+		]
+	},
+	"cameraSystem": {
+		"tag": "Camera",
+		"headline": "Camera",
+		"description": "A dedicated mapping camera built for accuracy.",
+		"list": [
+			"20 MP, 1-inch CMOS",
+			"Mechanical shutter",
+			"GSD: ~2.7 cm at 100 m"
+		]
+	},
+	"positioningAndAccuracy": {
+		"tag": "Positioning",
+		"headline": "Accuracy",
+		"description": "Survey-grade RTK positioning built in.",
+		"list": [
+			"Horizontal accuracy: ±1-2 cm",
+			"Vertical accuracy: ±2-3 cm"
+		]
+	},
+	"specs": {
+		"tag": "Tech Data",
+		"headline": "Technical Specifications",
+		"description": "Complete technical details for the DJI Phantom 4 RTK."
+	},
+	"strengths": {
+		"tag": "Strengths",
+		"headline": "Strengths",
+		"description": "What has made the Phantom 4 RTK an enduring choice for surveyors.",
+		"list": [
+			"Proven reliability",
+			"High mapping accuracy",
+			"Seamless RTK integration"
+		]
+	},
+	"cta": {
+		"tag": "Get a Quote",
+		"headline": "Inquire About This Drone",
+		"description": "Tell us about your project and get a tailored quote for the DJI Phantom 4 RTK.",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Email Us",
+			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Phantom 4 RTK&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Phantom 4 RTK. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+		},
+		"ctaSecondary": {
+			"icon": "whatsapp",
+			"label": "WhatsApp Us",
+			"href": "https://wa.me/254701618282"
+		}
+	},
+	"relatedProducts": {
+		"tag": "Explore",
+		"headline": "Other Drones You May Like",
+		"description": "Discover more survey drones from the SmartGrid catalogue.",
+		"items": [
+			{
+				"image": "/media/equipment-sale/dji-air-3s/01.jpeg",
+				"label": "DJI AIR 3S",
+				"href": "/equipment-sale/dji-air-3s"
+			},
+			{
+				"image": "/media/equipment-sale/dji-mavic-3-enterprise/01.jpeg",
+				"label": "DJI MAVIC 3 ENTERPRISE",
+				"href": "/equipment-sale/dji-mavic-3-enterprise"
+			},
+			{
+				"image": "/media/equipment-sale/dji-matrice-350-rtk/01.jpeg",
+				"label": "DJI MATRICE 350 RTK",
+				"href": "/equipment-sale/dji-matrice-350-rtk"
+			}
+		]
+	}
+}

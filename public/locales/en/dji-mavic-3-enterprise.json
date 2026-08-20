@@ -1,0 +1,172 @@
+{
+	"hero": {
+		"tag": "Survey Drone",
+		"headline": "Mid-Range Survey & Photogrammetry Platform",
+		"title": "DJI Mavic 3 Enterprise Series",
+		"image": "/media/equipment-sale/dji-mavic-3-enterprise/01.jpeg",
+		"description": "A compact RTK-enabled drone optimized for rapid deployment mapping, ideal for topographical surveys, cadastral mapping, and small-to-medium construction projects.",
+		"ctaPrimary": {
+			"label": "Inquire About This Drone",
+			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Mavic 3 Enterprise&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Mavic 3 Enterprise. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+		}
+	},
+	"breadcrumb": {
+		"home": "Home",
+		"section": "Equipment Sale",
+		"sectionHref": "/equipment-sale/equipment-catalogue"
+	},
+	"pricing": {
+		"new": {
+			"label": "Brand New",
+			"currency": "KES",
+			"amount": 1599000
+		}
+	},
+	"categories": [
+		{
+			"name": "drones",
+			"label": "Drones",
+			"href": "/equipment-sale/equipment-catalogue?category=drones"
+		}
+	],
+	"quickFacts": [
+		{
+			"icon": "crosshairs-gps",
+			"label": "RTK Accuracy",
+			"value": "±2-3 cm horizontal"
+		},
+		{
+			"icon": "camera",
+			"label": "Camera",
+			"value": "20 MP, 4/3 CMOS"
+		},
+		{
+			"icon": "clock-outline",
+			"label": "Flight Time",
+			"value": "~43 minutes"
+		},
+		{
+			"icon": "map",
+			"label": "Coverage",
+			"value": "Up to 200 hectares/day"
+		}
+	],
+	"productOverview": {
+		"tag": "Product Overview",
+		"headline": "Your Daily Driver for Rapid Survey Deployment",
+		"images": [
+			"/media/equipment-sale/dji-mavic-3-enterprise/02.jpeg",
+			"/media/equipment-sale/dji-mavic-3-enterprise/03.jpeg",
+			"/media/equipment-sale/dji-mavic-3-enterprise/04.jpeg"
+		],
+		"description": "The DJI Mavic 3 Enterprise is a highly portable RTK-enabled mapping drone built for rapid deployment, land subdivision, cadastral overlays, and site progress monitoring."
+	},
+	"keyFeatures": {
+		"tag": "Highlights",
+		"headline": "Key Features",
+		"description": "What makes the Mavic 3 Enterprise the go-to daily survey drone.",
+		"items": [
+			{
+				"icon": "camera",
+				"title": "4/3 CMOS Camera",
+				"description": "20 MP resolution with a mechanical shutter, critical for accurate mapping."
+			},
+			{
+				"icon": "crosshairs-gps",
+				"title": "Optional RTK Module",
+				"description": "Delivers ±2-3 cm horizontal and ±3-5 cm vertical accuracy when fitted."
+			},
+			{
+				"icon": "rocket-launch",
+				"title": "Rapid Deployment",
+				"description": "Ready to fly in under 2 minutes, fits in a compact field kit."
+			},
+			{
+				"icon": "battery-90",
+				"title": "Efficient Coverage",
+				"description": "~43 minutes flight time covering up to 200 hectares per day."
+			}
+		]
+	},
+	"cameraSystem": {
+		"tag": "Camera",
+		"headline": "Camera System",
+		"description": "Purpose-built optics for accurate photogrammetric capture.",
+		"list": [
+			"Sensor: 4/3 CMOS",
+			"Resolution: 20 MP",
+			"Mechanical shutter (critical for mapping accuracy)",
+			"GSD: ~2-5 cm at 100 m altitude"
+		]
+	},
+	"positioningAndFlight": {
+		"tag": null,
+		"headline": "Positioning & Flight Performance",
+		"description": "RTK-backed accuracy with efficient area coverage.",
+		"list": [
+			"RTK module (optional but essential)",
+			"Horizontal accuracy: ±2-3 cm",
+			"Vertical accuracy: ±3-5 cm",
+			"Flight time: ~43 minutes",
+			"Coverage: Up to 200 hectares per day",
+			"Rapid deployment (<2 minutes setup)"
+		]
+	},
+	"specs": {
+		"tag": "Tech Data",
+		"headline": "Technical Specifications",
+		"description": "Complete technical details for the DJI Mavic 3 Enterprise Series."
+	},
+	"surveyApplications": {
+		"tag": "Applications",
+		"headline": "Survey Advantages & Applications",
+		"description": "Where the Mavic 3 Enterprise fits best.",
+		"list": [
+			"Highly portable, fits in field kit",
+			"Reduced operational costs vs M350",
+			"Land subdivision",
+			"Real estate mapping",
+			"Site progress monitoring",
+			"Road design surveys",
+			"Combine with GNSS RTK (FOIF A90) for GCPs",
+			"Exports directly into AutoCAD Civil 3D, ArcGIS Pro, Global Mapper"
+		]
+	},
+	"cta": {
+		"tag": "Get a Quote",
+		"headline": "Inquire About This Drone",
+		"description": "Tell us about your project and get a tailored quote for the DJI Mavic 3 Enterprise.",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Email Us",
+			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Mavic 3 Enterprise&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Mavic 3 Enterprise. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+		},
+		"ctaSecondary": {
+			"icon": "whatsapp",
+			"label": "WhatsApp Us",
+			"href": "https://wa.me/254701618282"
+		}
+	},
+	"relatedProducts": {
+		"tag": "Explore",
+		"headline": "Other Drones You May Like",
+		"description": "Discover more survey drones from the SmartGrid catalogue.",
+		"items": [
+			{
+				"image": "/media/equipment-sale/dji-matrice-350-rtk/01.jpeg",
+				"label": "DJI MATRICE 350 RTK",
+				"href": "/equipment-sale/dji-matrice-350-rtk"
+			},
+			{
+				"image": "/media/equipment-sale/dji-air-3s/01.jpeg",
+				"label": "DJI AIR 3S",
+				"href": "/equipment-sale/dji-air-3s"
+			},
+			{
+				"image": "/media/equipment-sale/dji-phantom-4-rtk/01.jpeg",
+				"label": "DJI PHANTOM 4 RTK",
+				"href": "/equipment-sale/dji-phantom-4-rtk"
+			}
+		]
+	}
+}

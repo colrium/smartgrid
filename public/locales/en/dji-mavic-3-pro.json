@@ -1,0 +1,188 @@
+{
+	"hero": {
+		"tag": "Prosumer Drone",
+		"headline": "Advanced Prosumer Mapping Platform",
+		"title": "DJI Mavic 3 Pro",
+		"image": "/media/equipment-sale/dji-mavic-3-pro/01.jpeg",
+		"description": "A high-end prosumer drone featuring a triple-camera system, bridging the gap between cinematic imaging and semi-professional geospatial data capture.",
+		"ctaPrimary": {
+			"label": "Inquire About This Drone",
+			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Mavic 3 Pro&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Mavic 3 Pro. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+		}
+	},
+	"breadcrumb": {
+		"home": "Home",
+		"section": "Equipment Sale",
+		"sectionHref": "/equipment-sale/equipment-catalogue"
+	},
+	"pricing": {
+		"new": {
+			"label": "Brand New",
+			"currency": "KES",
+			"amount": 1100000
+		}
+	},
+	"categories": [
+		{
+			"name": "drones",
+			"label": "Drones",
+			"href": "/equipment-sale/equipment-catalogue?category=drones"
+		}
+	],
+	"quickFacts": [
+		{
+			"icon": "camera-burst",
+			"label": "Camera",
+			"value": "Triple camera, Hasselblad 4/3"
+		},
+		{
+			"icon": "video",
+			"label": "Video",
+			"value": "Up to 5.1K / 20 MP stills"
+		},
+		{
+			"icon": "clock-outline",
+			"label": "Flight Time",
+			"value": "~43 minutes"
+		},
+		{
+			"icon": "wifi-strength-3",
+			"label": "Transmission",
+			"value": "15 km O3+ system"
+		}
+	],
+	"productOverview": {
+		"tag": "Product Overview",
+		"headline": "Triple-Camera Versatility for Visual & Geospatial Work",
+		"images": [
+			"/media/equipment-sale/dji-mavic-3-pro/02.jpeg",
+			"/media/equipment-sale/dji-mavic-3-pro/03.jpeg",
+			"/media/equipment-sale/dji-mavic-3-pro/04.jpeg"
+		],
+		"description": "The DJI Mavic 3 Pro pairs a Hasselblad main sensor with 70 mm and 166 mm tele lenses, delivering cinematic imaging alongside orthomosaic-capable photogrammetry for site documentation and pre-construction reconnaissance."
+	},
+	"keyFeatures": {
+		"tag": "Highlights",
+		"headline": "Key Features",
+		"description": "What sets the Mavic 3 Pro apart as a prosumer mapping tool.",
+		"items": [
+			{
+				"icon": "camera-burst",
+				"title": "Triple Camera Configuration",
+				"description": "4/3 CMOS Hasselblad main sensor plus 70 mm medium tele and 166 mm tele lenses."
+			},
+			{
+				"icon": "video",
+				"title": "High-Resolution Capture",
+				"description": "Up to 5.1K video and 20 MP stills, ~12.8 stops dynamic range, 12-bit RAW support."
+			},
+			{
+				"icon": "shield-check",
+				"title": "Omnidirectional Obstacle Sensing",
+				"description": "Enhanced safety for flights near structures and vegetation."
+			},
+			{
+				"icon": "image-multiple",
+				"title": "Orthomosaic Generation",
+				"description": "GSD ~2-4 cm at 100 m altitude, works best with high overlap (≥80/70) and GCPs."
+			}
+		]
+	},
+	"cameraSystem": {
+		"tag": "Camera",
+		"headline": "Camera System (Key Strength)",
+		"description": "Cinematic-grade imaging in a compact prosumer body.",
+		"list": [
+			"Triple camera configuration",
+			"4/3 CMOS Hasselblad (main sensor)",
+			"70 mm medium tele lens",
+			"166 mm tele lens",
+			"Resolution: Up to 5.1K video / 20 MP stills",
+			"Dynamic range: ~12.8 stops",
+			"12-bit RAW support"
+		]
+	},
+	"flightPerformance": {
+		"tag": null,
+		"headline": "Flight Performance",
+		"description": "Reliable range and safety systems for field work.",
+		"list": [
+			"Flight time: ~43 minutes",
+			"Transmission: 15 km O3+ system",
+			"Omnidirectional obstacle sensing"
+		]
+	},
+	"accuracyNotes": {
+		"tag": "Accuracy",
+		"headline": "Accuracy (Important Reality Check)",
+		"description": "GCP-dependent accuracy given no built-in RTK.",
+		"list": [
+			"Without RTK: ~1-3 m absolute accuracy",
+			"With GCP correction: ~3-10 cm achievable"
+		]
+	},
+	"specs": {
+		"tag": "Tech Data",
+		"headline": "Technical Specifications",
+		"description": "Complete technical details for the DJI Mavic 3 Pro."
+	},
+	"surveyApplications": {
+		"tag": "Applications",
+		"headline": "Engineering Applications",
+		"description": "Where the Mavic 3 Pro fits into a survey workflow.",
+		"list": [
+			"Site progress documentation (high visual quality)",
+			"Real estate mapping (marketing + GIS hybrid)",
+			"Pre-construction reconnaissance",
+			"Urban modelling (3D mesh generation)"
+		]
+	},
+	"limitations": {
+		"tag": "Limitations",
+		"headline": "Limitations (Critical for Surveyors)",
+		"description": "Considerations before using this drone for precision survey work.",
+		"list": [
+			"No built-in RTK, requires heavy GCP dependence",
+			"No mechanical shutter, potential motion distortion",
+			"Not ideal for cadastral surveys",
+			"Not ideal for engineering setting out"
+		]
+	},
+	"cta": {
+		"tag": "Get a Quote",
+		"headline": "Inquire About This Drone",
+		"description": "Tell us about your project and get a tailored quote for the DJI Mavic 3 Pro.",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Email Us",
+			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Mavic 3 Pro&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Mavic 3 Pro. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+		},
+		"ctaSecondary": {
+			"icon": "whatsapp",
+			"label": "WhatsApp Us",
+			"href": "https://wa.me/254701618282"
+		}
+	},
+	"relatedProducts": {
+		"tag": "Explore",
+		"headline": "Other Drones You May Like",
+		"description": "Discover more survey drones from the SmartGrid catalogue.",
+		"items": [
+			{
+				"image": "/media/equipment-sale/dji-air-3s/01.jpeg",
+				"label": "DJI AIR 3S",
+				"href": "/equipment-sale/dji-air-3s"
+			},
+			{
+				"image": "/media/equipment-sale/dji-mavic-3-enterprise/01.jpeg",
+				"label": "DJI MAVIC 3 ENTERPRISE",
+				"href": "/equipment-sale/dji-mavic-3-enterprise"
+			},
+			{
+				"image": "/media/equipment-sale/dji-phantom-4-rtk/01.jpeg",
+				"label": "DJI PHANTOM 4 RTK",
+				"href": "/equipment-sale/dji-phantom-4-rtk"
+			}
+		]
+	}
+}
