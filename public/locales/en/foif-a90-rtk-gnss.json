@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"tag": "Surveying Equipment",
 		"headline": "High-Precision GNSS Receiver for Professional Surveying",
 		"title": "FOIF A90 RTK GNSS",
 		"image": "/media/equipment-sale/foif-a90-rtk-gnss/01.jpeg",
@@ -9,9 +10,55 @@
 			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: FOIF A90 RTK GNSS&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for FOIF A90 RTK GNSS. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
+	"breadcrumb": {
+		"home": "Home",
+		"section": "Equipment Sale",
+		"sectionHref": "/equipment-sale/equipment-catalogue"
+	},
+	"pricing": {
+		"new": {
+			"label": "Brand New",
+			"currency": "KES",
+			"amount": 650000
+		},
+		"used": {
+			"label": "Slightly Used",
+			"currency": "KES",
+			"amount": 550000
+		}
+	},
+    "categories": [
+        {
+			"name": "surveying-equipment",
+			"label": "Surveying Equipment",
+			"href": "/equipment-sale/equipment-catalogue"
+		}
+    ],
+	"quickFacts": [
+		{
+			"icon": "crosshairs-gps",
+			"label": "RTK Accuracy",
+			"value": "±8 mm + 1 ppm"
+		},
+		{
+			"icon": "satellite-variant",
+			"label": "Channels",
+			"value": "1408"
+		},
+		{
+			"icon": "battery-90",
+			"label": "Battery",
+			"value": "Hot-swappable 7.4V"
+		},
+		{
+			"icon": "water",
+			"label": "Protection",
+			"value": "IP68"
+		}
+	],
 	"productOverview": {
-		"tag": "Surveying Equipment",
-		"headline": "FOIF A90 RTK GNSS",
+		"tag": "Product Overview",
+		"headline": "Built for Precision, Ready for the Field",
 		"images": [
 			"/media/equipment-sale/foif-a90-rtk-gnss/10.png",
 			"/media/equipment-sale/foif-a90-rtk-gnss/02.png",
@@ -20,9 +67,9 @@
 		"description": "The FOIF A90 is a multi-frequency, multi-constellation GNSS receiver designed for high-precision RTK surveys. It offers robust performance even in challenging environments, making it ideal for cadastral, construction, and engineering projects."
 	},
 	"keyFeatures": {
-		"tag": "Features",
+		"tag": "Highlights",
 		"headline": "Key Features",
-		"description": "",
+		"description": "A closer look at what makes the A90 a dependable field partner.",
 		"items": [
 			{
 				"icon": "satellite",
@@ -47,9 +94,9 @@
 		]
 	},
 	"engineAndSignal": {
-		"tag": "Features",
+		"tag": "Signal",
 		"headline": "GNSS Engine & Signal Reception",
-		"description": "",
+		"description": "Multi-constellation, all-band tracking for maximum satellite visibility.",
 		"list": [
 			"Channel: 1408",
 			"All constellation and all band reception",
@@ -63,7 +110,7 @@
 	"performance": {
 		"tag": null,
 		"headline": "Performance",
-		"description": "",
+		"description": "Field-proven accuracy and speed you can rely on.",
 		"list": [
 			"Time Accuracy (RMS): 20 ns",
 			"Velocity Accuracy (RMS): 0.03 m/s",
@@ -84,7 +131,7 @@
 	"configurationAndConnectivity": {
 		"tag": null,
 		"headline": "Configuration & Connectivity",
-		"description": "",
+		"description": "Flexible setup options and dependable data links in the field.",
 		"list": [
 			"Bluetooth: 2.1+EDR / 4.0 BLE built-in",
 			"Electronic bubble: supported",
@@ -97,7 +144,7 @@
 	"physicalAndBattery": {
 		"tag": null,
 		"headline": "Physical & Battery",
-		"description": "",
+		"description": "A rugged build and all-day power for demanding sites.",
 		"list": [
 			"Size: 156mm x 76mm (Φ x H)",
 			"Material: magnesium alloy base, polymer top",
@@ -108,7 +155,7 @@
 	"environmentalSpecs": {
 		"tag": null,
 		"headline": "Environmental Specs",
-		"description": "",
+		"description": "Engineered to keep performing through heat, dust, rain, and drops.",
 		"list": [
 			"Operating Temperature: -30℃ to 60℃",
 			"Storage Temperature: -40℃ to 80℃",
@@ -117,16 +164,50 @@
 			"Protection: IP68"
 		]
 	},
-	"saleBanner": {
-		"images": [
-			"/media/equipment-sale/foif-a90-rtk-gnss/04.png",
-			"/media/equipment-sale/foif-a90-rtk-gnss/05.png"
+	"specs": {
+		"tag": "Tech Data",
+		"headline": "Technical Specifications",
+		"description": "Complete technical details for the FOIF A90 RTK GNSS system."
+	},
+	"includedInPackage": {
+		"tag": "Package Contents",
+		"headline": "Included in Package",
+		"description": "Everything you need to get surveying, right out of the box.",
+		"items": [
+			{
+				"label": "Base Unit",
+				"description": "The A90 receiver configured as the base station for broadcasting corrections."
+			},
+			{
+				"label": "Rover Unit",
+				"description": "The A90 receiver configured as the rover for on-site data collection."
+			},
+			{
+				"label": "Controller Unit(RC)",
+				"description": "Handheld controller for managing surveys, settings, and data in the field."
+			},
+			{
+				"label": "Tripod",
+				"description": "Sturdy tripod for stable base station setup."
+			},
+			{
+				"label": "Internal & External Radios",
+				"description": "Built-in and external radio options for reliable correction transmission."
+			},
+			{
+				"label": "Rover Rod",
+				"description": "Carbon-fiber rod for precise handheld RTK measurements."
+			},
+			{
+				"label": "Software Suite",
+				"description": "Processing and management software to handle your survey data."
+			}
 		]
 	},
 	"cta": {
-		"tag": "Countact us",
+		"tag": "Get a Quote",
 		"headline": "Inquire About This Equipment",
-		"description": "",
+		"description": "Tell us about your project and get a tailored quote for the FOIF A90 RTK GNSS.",
 		"ctaPrimary": {
 			"icon": "email",
 			"label": "Email Us",
@@ -139,9 +220,9 @@
 		}
 	},
 	"relatedProducts": {
-		"tag": null,
-		"headline": "OTHER RELATED PRODUCTS",
-		"description": "",
+		"tag": "Explore",
+		"headline": "Other Products You May Like",
+		"description": "Discover more surveying instruments from the SmartGrid catalogue.",
 		"images": [
 			"/media/equipment-sale/foif-a90-rtk-gnss/04.png",
 			"/media/equipment-sale/foif-a90-rtk-gnss/05.png"

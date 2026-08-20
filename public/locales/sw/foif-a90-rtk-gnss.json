@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"tag": "Vifaa vya Upimaji",
 		"headline": "Kipokezi cha GNSS cha Usahihi wa Juu kwa Upimaji wa Kitaalamu",
 		"title": "FOIF A90 RTK GNSS",
 		"image": "/media/equipment-sale/foif-a90-rtk-gnss/01.jpeg",
@@ -9,9 +10,55 @@
 			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: FOIF A90 RTK GNSS&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for FOIF A90 RTK GNSS. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
+	"breadcrumb": {
+		"home": "Nyumbani",
+		"section": "Uuzaji wa Vifaa",
+		"sectionHref": "/equipment-sale/equipment-catalogue"
+	},
+	"pricing": {
+		"new": {
+			"label": "Mpya Kabisa",
+			"currency": "KES",
+			"amount": 650000
+		},
+		"used": {
+			"label": "Iliyotumika Kidogo",
+			"currency": "KES",
+			"amount": 550000
+		}
+	},
+	"categories": [
+		{
+			"name": "surveying-equipment",
+			"label": "Vifaa vya Upimaji",
+			"href": "/equipment-sale/equipment-catalogue"
+		}
+	],
+	"quickFacts": [
+		{
+			"icon": "crosshairs-gps",
+			"label": "Usahihi wa RTK",
+			"value": "±8 mm + 1 ppm"
+		},
+		{
+			"icon": "satellite-variant",
+			"label": "Njia",
+			"value": "1408"
+		},
+		{
+			"icon": "battery-90",
+			"label": "Betri",
+			"value": "Hot-swappable 7.4V"
+		},
+		{
+			"icon": "water",
+			"label": "Ulinzi",
+			"value": "IP68"
+		}
+	],
 	"productOverview": {
-		"tag": "Vifaa vya Upimaji",
-		"headline": "FOIF A90 RTK GNSS",
+		"tag": "Muhtasari wa Bidhaa",
+		"headline": "Imeundwa kwa Usahihi, Iko Tayari Shambani",
 		"images": [
 			"/media/equipment-sale/foif-a90-rtk-gnss/10.png",
 			"/media/equipment-sale/foif-a90-rtk-gnss/02.png",
@@ -20,9 +67,9 @@
 		"description": "FOIF A90 ni kipokezi cha GNSS cha mawimbi mengi, makundi mengi kilichoundwa kwa uchunguzi wa RTK wa usahihi wa juu. Hutoa utendaji imara hata katika mazingira magumu, na kuifanya kufaa kwa miradi ya cadastral, ujenzi, na uhandisi."
 	},
 	"keyFeatures": {
-		"tag": "Vipengele",
+		"tag": "Mambo Muhimu",
 		"headline": "Vipengele Muhimu",
-		"description": "",
+		"description": "Uchunguzi wa karibu wa kile kinachomfanya A90 kuwa mshirika wa kuaminika shambani.",
 		"items": [
 			{
 				"icon": "satellite",
@@ -47,9 +94,9 @@
 		]
 	},
 	"engineAndSignal": {
-		"tag": "Vipengele",
+		"tag": "Mawimbi",
 		"headline": "Injini ya GNSS na Upokeaji wa Mawimbi",
-		"description": "",
+		"description": "Ufuatiliaji wa makundi mengi na bendi zote kwa mwonekano wa juu wa satelaiti.",
 		"list": [
 			"Channel: 1408",
 			"Upokeaji wa makundi yote na bendi zote",
@@ -63,7 +110,7 @@
 	"performance": {
 		"tag": null,
 		"headline": "Utendaji",
-		"description": "",
+		"description": "Usahihi na kasi zilizothibitishwa shambani unazoweza kuzitegemea.",
 		"list": [
 			"Usahihi wa Muda (RMS): 20 ns",
 			"Usahihi wa Kasi (RMS): 0.03 m/s",
@@ -84,7 +131,7 @@
 	"configurationAndConnectivity": {
 		"tag": null,
 		"headline": "Usanidi na Muunganisho",
-		"description": "",
+		"description": "Chaguo rahisi za usanidi na viungo vya kuaminika vya data shambani.",
 		"list": [
 			"Bluetooth: 2.1+EDR / 4.0 BLE iliyojengewa ndani",
 			"Kiputo cha elektroniki: kinatumika",
@@ -97,7 +144,7 @@
 	"physicalAndBattery": {
 		"tag": null,
 		"headline": "Kimwili na Betri",
-		"description": "",
+		"description": "Ujenzi imara na nishati ya siku nzima kwa maeneo magumu.",
 		"list": [
 			"Ukubwa: 156mm x 76mm (Φ x H)",
 			"Nyenzo: msingi wa aloi ya magnesiamu, juu ya polima",
@@ -108,7 +155,7 @@
 	"environmentalSpecs": {
 		"tag": null,
 		"headline": "Vipimo vya Mazingira",
-		"description": "",
+		"description": "Imeundwa kuendelea kufanya kazi katikati ya joto, vumbi, mvua, na mianguko.",
 		"list": [
 			"Joto la Uendeshaji: -30℃ hadi 60℃",
 			"Joto la Uhifadhi: -40℃ hadi 80℃",
@@ -117,10 +164,50 @@
 			"Ulinzi: IP68"
 		]
 	},
+	"specs": {
+		"tag": "Data ya Kiufundi",
+		"headline": "Vipimo vya Kiufundi",
+		"description": "Maelezo kamili ya kiufundi kwa mfumo wa FOIF A90 RTK GNSS."
+	},
+	"includedInPackage": {
+		"tag": "Maudhui ya Kifurushi",
+		"headline": "Yaliyomo kwenye Kifurushi",
+		"description": "Kila kitu unachohitaji kuanza upimaji, moja kwa moja kutoka kwenye kifurushi.",
+		"items": [
+			{
+				"label": "Kitengo cha Msingi",
+				"description": "Kipokezi cha A90 kimesanidiwa kama kituo cha msingi cha kutangaza masahihisho."
+			},
+			{
+				"label": "Kitengo cha Rover",
+				"description": "Kipokezi cha A90 kimesanidiwa kama rover kwa ukusanyaji wa data tovutini."
+			},
+			{
+				"label": "Kidhibiti (RC)",
+				"description": "Kidhibiti cha mkono cha kusimamia upimaji, mipangilio, na data shambani."
+			},
+			{
+				"label": "Tripod",
+				"description": "Tripod imara kwa usanidi thabiti wa kituo cha msingi."
+			},
+			{
+				"label": "Redio za Ndani na Nje",
+				"description": "Chaguo za redio zilizojengewa ndani na za nje kwa usambazaji wa kuaminika wa masahihisho."
+			},
+			{
+				"label": "Fimbo ya Rover",
+				"description": "Fimbo ya fiber kaboni kwa vipimo sahihi vya RTK vya mkono."
+			},
+			{
+				"label": "Kifurushi cha Programu",
+				"description": "Programu ya kuchakata na kusimamia data yako ya upimaji."
+			}
+		]
+	},
 	"cta": {
-		"tag": "Wasiliana nasi",
+		"tag": "Pata Nukuu",
 		"headline": "Ulizia Kuhusu Kifaa Hiki",
-		"description": "",
+		"description": "Tuambie kuhusu mradi wako na upate nukuu iliyoundwa kwa ajili ya FOIF A90 RTK GNSS.",
 		"ctaPrimary": {
 			"icon": "email",
 			"label": "Tutumie Barua Pepe",
@@ -132,16 +219,10 @@
 			"href": "https://wa.me/254701618282"
 		}
 	},
-	"saleBanner": {
-		"images": [
-			"/media/equipment-sale/foif-a90-rtk-gnss/04.png",
-			"/media/equipment-sale/foif-a90-rtk-gnss/05.png"
-		]
-	},
 	"relatedProducts": {
-		"tag": null,
-		"headline": "BIDHAA NYINGINE ZINAZOHUSIANA",
-		"description": "",
+		"tag": "Chunguza",
+		"headline": "Bidhaa Nyingine Unazoweza Kuzipenda",
+		"description": "Gundua vifaa vingine vya upimaji kutoka kwenye katalogi ya SmartGrid.",
 		"items": [
 			{
 				"image": "/img/instruments/total-station-esurvey.png",
