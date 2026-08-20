@@ -139,7 +139,7 @@ export function ProductHeroSection({ namespace }: ProductHeroSectionProps) {
 									{priceOptions.map((price) => (
 										<div
 											key={price.label}
-											className="rounded-2xl bg-surface hairline card-shadow p-4 sm:p-5"
+											className="rounded-2xl bg-surface  card-shadow p-4 sm:p-5"
 										>
 											<span className="text-[11px] uppercase tracking-wider text-on-surface/50">
 												{price.label}

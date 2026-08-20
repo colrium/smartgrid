@@ -27,13 +27,13 @@
 			"amount": 550000
 		}
 	},
-    "categories": [
-        {
+	"categories": [
+		{
 			"name": "surveying-equipment",
 			"label": "Surveying Equipment",
 			"href": "/equipment-sale/equipment-catalogue"
 		}
-    ],
+	],
 	"quickFacts": [
 		{
 			"icon": "crosshairs-gps",
@@ -175,30 +175,37 @@
 		"description": "Everything you need to get surveying, right out of the box.",
 		"items": [
 			{
+				"icon": "satellite-uplink",
 				"label": "Base Unit",
 				"description": "The A90 receiver configured as the base station for broadcasting corrections."
 			},
 			{
+				"icon": "crosshairs-gps",
 				"label": "Rover Unit",
 				"description": "The A90 receiver configured as the rover for on-site data collection."
 			},
 			{
+				"icon": "remote",
 				"label": "Controller Unit(RC)",
 				"description": "Handheld controller for managing surveys, settings, and data in the field."
 			},
 			{
+				"icon": "tripod",
 				"label": "Tripod",
 				"description": "Sturdy tripod for stable base station setup."
 			},
 			{
+				"icon": "radio",
 				"label": "Internal & External Radios",
 				"description": "Built-in and external radio options for reliable correction transmission."
 			},
 			{
+				"icon": "ruler",
 				"label": "Rover Rod",
 				"description": "Carbon-fiber rod for precise handheld RTK measurements."
 			},
 			{
+				"icon": "application-cog",
 				"label": "Software Suite",
 				"description": "Processing and management software to handle your survey data."
 			}

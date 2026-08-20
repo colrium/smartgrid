@@ -8,6 +8,7 @@ import { Blob } from "@/components/sections/home/decor";
 interface PackageItem {
 	label: string;
 	description?: string;
+    icon?: string;
 }
 
 interface PackageContent {
@@ -47,7 +48,7 @@ export function IncludedInPackageSection({ namespace }: IncludedInPackageSection
 						<FadeUp className="h-full" key={index} delay={(index % 3) * 0.07}>
 							<article className="group relative h-full flex flex-col gap-4 rounded-[20px] bg-surface hairline card-shadow p-7 sm:p-8 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
 								<span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
-									<span className="mdi mdi-package-variant-closed text-3xl" />
+									<span className={`mdi mdi-${item.icon || "package-variant-closed"} text-3xl`} />
 								</span>
 
 								<h3 className="text-base sm:text-lg font-medium tracking-tight text-ink leading-snug">

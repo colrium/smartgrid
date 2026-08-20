@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, type MouseEvent } from "react";
 import Image from "next/image";
 
 interface ProductGalleryProps {
@@ -9,8 +9,15 @@ interface ProductGalleryProps {
 	className?: string;
 }
 
+interface ZoomState {
+	x: number;
+	y: number;
+	active: boolean;
+}
+
 export function ProductGallery({ images, alt, className = "" }: ProductGalleryProps) {
 	const [active, setActive] = useState(0);
+	const [zoom, setZoom] = useState<ZoomState | null>(null);
 	const count = images.length;
 
 	const go = useCallback(
@@ -20,6 +27,15 @@ export function ProductGallery({ images, alt, className = "" }: ProductGalleryPr
 		},
 		[count],
 	);
+
+	const handleMouseMove = (event: MouseEvent<HTMLDivElement>) => {
+		const rect = event.currentTarget.getBoundingClientRect();
+		const x = ((event.clientX - rect.left) / rect.width) * 100;
+		const y = ((event.clientY - rect.top) / rect.height) * 100;
+		setZoom({ x, y, active: true });
+	};
+
+	const handleMouseLeave = () => setZoom(null);
 
 	useEffect(() => {
 		if (active >= count) setActive(0);
@@ -31,7 +47,13 @@ export function ProductGallery({ images, alt, className = "" }: ProductGalleryPr
 
 	return (
 		<div className={`flex flex-col gap-4 sm:gap-5 ${className}`}>
-			<div className="group relative aspect-square overflow-hidden rounded-[20px] bg-surface hairline card-shadow">
+			<div
+				className={`group relative aspect-square overflow-hidden rounded-[20px] bg-surface hairline card-shadow ${
+					zoom?.active ? "cursor-zoom-in" : "cursor-default"
+				}`}
+				onMouseMove={handleMouseMove}
+				onMouseLeave={handleMouseLeave}
+			>
 				<span
 					aria-hidden
 					className="pointer-events-none absolute -top-16 -right-16 h-56 w-56 rounded-full bg-primary-100/70 blur-3xl"
@@ -47,7 +69,11 @@ export function ProductGallery({ images, alt, className = "" }: ProductGalleryPr
 						alt={`${alt} - image ${active + 1}`}
 						fill
 						sizes="(min-width: 1024px) 45vw, 100vw"
-						className="object-contain object-center transition-transform duration-700 group-hover:scale-[1.03]"
+						className="object-contain object-center transition-transform duration-300 ease-out"
+						style={{
+							transformOrigin: zoom ? `${zoom.x}% ${zoom.y}%` : "50% 50%",
+							transform: zoom?.active ? "scale(1.8)" : undefined,
+						}}
 						priority={active === 0}
 					/>
 				</div>

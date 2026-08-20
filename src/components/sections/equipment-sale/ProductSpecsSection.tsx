@@ -74,7 +74,7 @@ export function ProductSpecsSection({ namespace, groupKeys }: ProductSpecsSectio
 								>
 									<span
 										className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-xs ${
-											index === active ? "bg-surface/20 text-surface" : "bg-primary-50 text-primary"
+											index === active ? "bg-surface text-primary" : "bg-primary-50 text-primary"
 										}`}
 									>
 										{String(index + 1).padStart(2, "0")}
