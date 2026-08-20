@@ -58,7 +58,7 @@ export function ProductGallery({ images, alt, className = "" }: ProductGalleryPr
 							type="button"
 							aria-label="Previous image"
 							onClick={() => go(active - 1)}
-							className="absolute left-4 top-1/2 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full bg-surface/85 text-ink shadow-md backdrop-blur transition-colors duration-300 hover:bg-primary hover:text-surface cursor-pointer"
+							className="absolute left-4 top-1/2 -translate-y-1/2 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-surface/85 text-ink shadow-md backdrop-blur transition-colors duration-300 hover:bg-primary hover:text-surface cursor-pointer"
 						>
 							<span className="mdi mdi-chevron-left text-2xl" />
 						</button>
@@ -66,7 +66,7 @@ export function ProductGallery({ images, alt, className = "" }: ProductGalleryPr
 							type="button"
 							aria-label="Next image"
 							onClick={() => go(active + 1)}
-							className="absolute right-4 top-1/2 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full bg-surface/85 text-ink shadow-md backdrop-blur transition-colors duration-300 hover:bg-primary hover:text-surface cursor-pointer"
+							className="absolute right-4 top-1/2 -translate-y-1/2 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-surface/85 text-ink shadow-md backdrop-blur transition-colors duration-300 hover:bg-primary hover:text-surface cursor-pointer"
 						>
 							<span className="mdi mdi-chevron-right text-2xl" />
 						</button>
