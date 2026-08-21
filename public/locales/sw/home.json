@@ -130,25 +130,25 @@
 		"items": [
 			{
 				"icon": "quadcopter",
-				"img": "/media/drones/dji-matrice-300-rtk.jpeg",
+				"img": "/media/uas/dji-matrice-300-rtk.jpeg",
 				"label": "DJI Matrice 300 RTK",
 				"description": "DJI Matrice 300 RTK ni droni inayoweza kubadilika na yenye nguvu iliyoundwa kwa matumizi ya viwandani, ikijumuisha upimaji, ramani, na ukaguzi. Inawezesha safari za ndege za kisasa, maisha marefu ya betri, na uwezo wa kubeba malipo mbalimbali, na kuifanya kuwa bora kwa matumizi ya kitaalamu katika mazingira magumu."
 			},
 			{
 				"icon": "quadcopter",
-				"img": "/media/drones/dji-air-3s.jpeg",
+				"img": "/media/uas/dji-air-3s.jpeg",
 				"label": "DJI Air 3S",
 				"description": "DJI Air 3S ni droni ndogo na inayobebeka inayotoa uwezo wa upigaji picha za angani na video za ubora wa juu. Ina mfumo wa kamera mbili, muda mrefu wa ndege, na hali za ndege za akili, na kuifanya kufaa kwa matumizi ya kitaalamu na ya burudani."
 			},
 			{
 				"icon": "quadcopter",
-				"img": "/media/drones/dji-mavic-3m-3e.jpeg",
+				"img": "/media/uas/dji-mavic-3m-3e.jpeg",
 				"label": "DJI Mavic 3M / 3E",
 				"description": "DJI Mavic 3M / 3E ni droni nyepesi na inayobebeka inayotoa uwezo bora wa upigaji picha za angani. Ina kamera ya mwonekano wa juu, vitambuzi vya kuepuka vizuizi, na hali za ndege za akili, na kuifanya kuwa bora kwa kunasa picha na video za kuvutia kutoka angani."
 			},
 			{
 				"icon": "quadcopter",
-				"img": "/media/drones/dji-phantom-4.jpeg",
+				"img": "/media/uas/dji-phantom-4.jpeg",
 				"label": "DJI Phantom 4",
 				"description": "DJI Phantom 4 ni droni ya kiwango cha kitaalamu iliyoundwa kwa upigaji picha na video za angani. Ina kamera ya mwonekano wa juu yenye sensor kubwa, hali za ndege za kisasa, na teknolojia ya kuepuka vizuizi, na kuifanya kufaa kwa kunasa picha na video za ubora wa juu kutoka angani."
 			}

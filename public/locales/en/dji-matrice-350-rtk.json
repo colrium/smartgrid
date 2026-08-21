@@ -1,0 +1,185 @@
+{
+	"hero": {
+		"tag": "Survey Drone",
+		"headline": "Heavy-Lift LiDAR & High-Precision Survey Platform",
+		"title": "DJI Matrice 350 RTK (M350 RTK)",
+		"image": "/media/equipment-sale/drones/dji-matrice-350-rtk/01.jpeg",
+		"description": "A flagship enterprise UAV designed for high-accuracy geospatial data acquisition, particularly for LiDAR mapping, corridor surveys, and large-scale engineering projects.",
+		"ctaPrimary": {
+			"label": "Inquire About This Drone",
+			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Matrice 350 RTK&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Matrice 350 RTK. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+		}
+	},
+	"breadcrumb": {
+		"home": "Home",
+		"section": "Equipment Sale",
+		"sectionHref": "/equipment-sale/equipment-catalogue"
+	},
+	"pricing": {
+		"new": {
+			"label": "Brand New",
+			"currency": "KES",
+			"amount": 5000000
+		}
+	},
+	"categories": [
+		{
+			"name": "drones",
+			"label": "Drones",
+			"href": "/equipment-sale/equipment-catalogue?category=drones"
+		}
+	],
+	"quickFacts": [
+		{
+			"icon": "crosshairs-gps",
+			"label": "Positioning",
+			"value": "±1 cm + 1 ppm horizontal"
+		},
+		{
+			"icon": "clock-outline",
+			"label": "Flight Time",
+			"value": "~55 minutes (no payload)"
+		},
+		{
+			"icon": "wifi-strength-4",
+			"label": "Transmission Range",
+			"value": "20 km (OcuSync Enterprise)"
+		},
+		{
+			"icon": "weather-windy",
+			"label": "Wind Resistance",
+			"value": "12 m/s"
+		}
+	],
+	"productOverview": {
+		"tag": "Product Overview",
+		"headline": "Enterprise-Grade Precision for Demanding Surveys",
+		"images": [
+			"/media/equipment-sale/drones/dji-matrice-350-rtk/02.jpeg",
+			"/media/equipment-sale/drones/dji-matrice-350-rtk/03.jpeg",
+			"/media/equipment-sale/drones/dji-matrice-350-rtk/04.jpeg"
+		],
+		"description": "The DJI Matrice 350 RTK pairs a built-in RTK/PPK GNSS module with interchangeable LiDAR and photogrammetry payloads, delivering survey-grade accuracy across dense vegetation, powerline corridors, and large-scale engineering sites."
+	},
+	"keyFeatures": {
+		"tag": "Highlights",
+		"headline": "Key Features",
+		"description": "Everything that makes the M350 RTK the benchmark heavy-lift survey platform.",
+		"items": [
+			{
+				"icon": "crosshairs-gps",
+				"title": "Built-in RTK/PPK GNSS",
+				"description": "Supports Network RTK (CORS), D-RTK 2 Base Station, and PPK workflows for redundancy."
+			},
+			{
+				"icon": "radar",
+				"title": "DJI Zenmuse L2 LiDAR",
+				"description": "240,000 pts/sec laser return rate with 450 m range and ≤4 cm vertical accuracy, ideal for dense vegetation and terrain penetration."
+			},
+			{
+				"icon": "camera",
+				"title": "DJI Zenmuse P1 Photogrammetry",
+				"description": "45 MP full-frame global shutter camera delivering 1.5-3 cm GSD at 100 m altitude."
+			},
+			{
+				"icon": "battery-90",
+				"title": "Long Endurance",
+				"description": "Up to 55 minutes flight time, 30-45 minutes typical survey endurance with payload."
+			}
+		]
+	},
+	"positioningAndAccuracy": {
+		"tag": "Positioning",
+		"headline": "Positioning & Accuracy",
+		"description": "Survey-grade GNSS positioning built into the airframe.",
+		"list": [
+			"Built-in RTK/PPK GNSS module",
+			"Horizontal accuracy: ±1 cm + 1 ppm",
+			"Vertical accuracy: ±1.5 cm + 1 ppm",
+			"Supports Network RTK (CORS)",
+			"Supports D-RTK 2 Base Station",
+			"Supports PPK workflows for redundancy"
+		]
+	},
+	"flightPerformance": {
+		"tag": null,
+		"headline": "Flight Performance",
+		"description": "Built for extended, stable survey missions.",
+		"list": [
+			"Max flight time: ~55 minutes (no payload)",
+			"Typical survey endurance: 30-45 minutes (with LiDAR/camera payload)",
+			"Max transmission range: 20 km (OcuSync Enterprise)",
+			"Wind resistance: 12 m/s (critical for stable mapping)"
+		]
+	},
+	"payloadOptions": {
+		"tag": "Payloads",
+		"headline": "Payload Options (Survey-Focused)",
+		"description": "Interchangeable payloads for LiDAR mapping and photogrammetry.",
+		"items": [
+			{
+				"label": "DJI Zenmuse L2 (LiDAR Mapping)",
+				"description": "Laser return rate 240,000 pts/sec, 450 m range, vertical accuracy ≤4 cm, integrated RGB camera for colorized point clouds. Ideal for dense vegetation mapping, powerline corridors, and terrain penetration."
+			},
+			{
+				"label": "DJI Zenmuse P1 (Photogrammetry)",
+				"description": "45 MP full-frame sensor with global shutter (no rolling distortion). GSD ~1.5-3 cm at 100 m altitude. Accuracy: 3-5 cm absolute (with GCPs), sub-centimeter relative."
+			}
+		]
+	},
+	"specs": {
+		"tag": "Tech Data",
+		"headline": "Technical Specifications",
+		"description": "Complete technical details for the DJI Matrice 350 RTK."
+	},
+	"surveyApplications": {
+		"tag": "Applications",
+		"headline": "Survey Applications",
+		"description": "Where the M350 RTK excels in the field.",
+		"list": [
+			"Engineering corridor mapping (roads, pipelines, transmission lines)",
+			"LiDAR terrain modeling (DTM under canopy)",
+			"Volumetric analysis (quarries, stockpiles)",
+			"Eliminates heavy dependence on ground control points (GCPs)",
+			"Handles large-area surveys efficiently (100-500+ hectares/day)",
+			"Integrates directly into Civil 3D, ArcGIS, Pix4D, Metashape workflows"
+		]
+	},
+	"cta": {
+		"tag": "Get a Quote",
+		"headline": "Inquire About This Drone",
+		"description": "Tell us about your project and get a tailored quote for the DJI Matrice 350 RTK.",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Email Us",
+			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Matrice 350 RTK&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Matrice 350 RTK. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+		},
+		"ctaSecondary": {
+			"icon": "whatsapp",
+			"label": "WhatsApp Us",
+			"href": "https://wa.me/254701618282"
+		}
+	},
+	"relatedProducts": {
+		"tag": "Explore",
+		"headline": "Other Drones You May Like",
+		"description": "Discover more survey drones from the SmartGrid catalogue.",
+		"items": [
+			{
+				"image": "/media/equipment-sale/drones/dji-mavic-3-enterprise/01.jpeg",
+				"label": "DJI MAVIC 3 ENTERPRISE",
+				"href": "/equipment-sale/dji-mavic-3-enterprise"
+			},
+			{
+				"image": "/media/equipment-sale/drones/dji-mavic-3-multispectral/01.jpeg",
+				"label": "DJI MAVIC 3 MULTISPECTRAL",
+				"href": "/equipment-sale/dji-mavic-3-multispectral"
+			},
+			{
+				"image": "/media/equipment-sale/drones/dji-phantom-4-rtk/01.jpeg",
+				"label": "DJI PHANTOM 4 RTK",
+				"href": "/equipment-sale/dji-phantom-4-rtk"
+			}
+		]
+	}
+}

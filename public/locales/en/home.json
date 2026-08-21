@@ -130,25 +130,25 @@
 		"items": [
 			{
 				"icon": "quadcopter",
-				"img": "/media/drones/dji-matrice-300-rtk.jpeg",
+				"img": "/media/uas/dji-matrice-300-rtk.jpeg",
 				"label": "DJI Matrice 300 RTK",
 				"description": "The DJI Matrice 300 RTK is a versatile and powerful drone designed for industrial applications, including surveying, mapping, and inspection. It features advanced flight capabilities, long battery life, and the ability to carry various payloads, making it ideal for professional use in challenging environments."
 			},
 			{
 				"icon": "quadcopter",
-				"img": "/media/drones/dji-air-3s.jpeg",
+				"img": "/media/uas/dji-air-3s.jpeg",
 				"label": "DJI Air 3S",
 				"description": "The DJI Air 3S is a compact and portable drone that offers high-quality aerial photography and videography capabilities. It features a dual-camera system, long flight time, and intelligent flight modes, making it suitable for both professional and recreational use."
 			},
 			{
 				"icon": "quadcopter",
-				"img": "/media/drones/dji-mavic-3m-3e.jpeg",
+				"img": "/media/uas/dji-mavic-3m-3e.jpeg",
 				"label": "DJI Mavic 3M / 3E",
 				"description": "The DJI Mavic 3M / 3E is a lightweight and portable drone that provides excellent aerial imaging capabilities. It features a high-resolution camera, obstacle avoidance sensors, and intelligent flight modes, making it ideal for capturing stunning photos and videos from the sky."
 			},
 			{
 				"icon": "quadcopter",
-				"img": "/media/drones/dji-phantom-4.jpeg",
+				"img": "/media/uas/dji-phantom-4.jpeg",
 				"label": "DJI Phantom 4",
 				"description": "The DJI Phantom 4 is a professional-grade drone designed for aerial photography and videography. It features a high-resolution camera with a large sensor, advanced flight modes, and obstacle avoidance technology, making it suitable for capturing high-quality images and videos from the air."
 			}
