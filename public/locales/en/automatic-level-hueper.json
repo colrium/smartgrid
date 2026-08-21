@@ -18,6 +18,25 @@
 			"/media/equipment-sale/automatic-level-hueper/06.jpg"
 		]
 	},
+    "breadcrumb": {
+		"home": "Home",
+		"section": "Equipment Sale",
+		"sectionHref": "/equipment-sale/equipment-catalogue"
+	},
+	"pricing": {
+		"new": {
+			"label": "Brand New",
+			"currency": "KES",
+			"amount": 28000
+		}
+	},
+	"categories": [
+		{
+			"name": "surveying-equipment",
+			"label": "Surveying Equipment",
+			"href": "/equipment-sale/equipment-catalogue"
+		}
+	],
 	"opticalPerformance": {
 		"tag": null,
 		"headline": "Optical Performance",
@@ -87,9 +106,6 @@
 			"label": "WhatsApp Us",
 			"href": "https://wa.me/254701618282"
 		}
-	},
-	"saleBanner": {
-		"images": ["/media/equipment-sale/automatic-level-hueper/07.png"]
 	},
 	"relatedProducts": {
 		"tag": null,

@@ -9,13 +9,27 @@
 			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Total Station DTM 152M&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Total Station DTM 152M. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
-    "productImages":{
-        "images": [
+	"productImages": {
+		"images": [
 			"/media/equipment-sale/total-station-dtm-152m/01.png",
 			"/media/equipment-sale/total-station-dtm-152m/02.jpg",
 			"/media/equipment-sale/total-station-dtm-152m/05.jpg"
 		]
-    },
+	},
+	"pricing": {
+		"new": {
+			"label": "Brand New",
+			"currency": "KES",
+			"amount": 400000
+		}
+	},
+	"categories": [
+		{
+			"name": "surveying-equipment",
+			"label": "Surveying Equipment",
+			"href": "/equipment-sale/equipment-catalogue"
+		}
+	],
 	"measurementCapability": {
 		"tag": null,
 		"headline": "Measurement Capability",
@@ -86,10 +100,23 @@
 			"href": "https://wa.me/254701618282"
 		}
 	},
-	"saleBanner": {
-		"images": [
-			"/media/equipment-sale/total-station-dtm-152m/03.png",
-			"/media/equipment-sale/total-station-dtm-152m/04.png"
+	"includedInPackage": {
+		"tag": "Package Contents",
+		"headline": "Included in Package",
+		"description": "Everything you need to get surveying, right out of the box.",
+		"items": [
+			{
+				"label": "Tripod Stand",
+				"description": ""
+			},
+			{
+				"label": "Reflective Prism",
+				"description": ""
+			},
+			{
+				"label": "Prism Rod",
+				"description": ""
+			}
 		]
 	},
 	"relatedProducts": {

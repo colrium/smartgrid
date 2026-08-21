@@ -15,7 +15,25 @@
 		"image": "/media/equipment-sale/total-station-esurvey/06.png",
 		"description": "High-performance total station engineered for precision surveying, construction layout, and engineering applications with reliable accuracy and efficient field workflows."
 	},
-
+	"breadcrumb": {
+		"home": "Home",
+		"section": "Equipment Sale",
+		"sectionHref": "/equipment-sale/equipment-catalogue"
+	},
+	"pricing": {
+		"new": {
+			"label": "Brand New",
+			"currency": "KES",
+			"amount": 400000
+		}
+	},
+	"categories": [
+		{
+			"name": "surveying-equipment",
+			"label": "Surveying Equipment",
+			"href": "/equipment-sale/equipment-catalogue"
+		}
+	],
 	"measurementCapability": {
 		"tag": null,
 		"headline": "Measurement Capability",
@@ -53,9 +71,14 @@
 		"tag": null,
 		"headline": "Applications",
 		"description": "",
-		"list": ["Topographic Surveys", "Construction Layout", "Boundary Surveys", "Engineering Projects"]
+		"list": [
+			"Topographic Surveys",
+			"Construction Layout",
+			"Boundary Surveys",
+			"Engineering Projects"
+		]
 	},
-	
+
 	"cta": {
 		"tag": "Countact us",
 		"headline": "Get This Equipment",
@@ -71,12 +94,25 @@
 			"href": "https://wa.me/254701618282"
 		}
 	},
-    "saleBanner": {
-        "images": [
-			"/media/equipment-sale/total-station-esurvey/08.png",
-			"/media/equipment-sale/total-station-esurvey/09.png"
+	"includedInPackage": {
+		"tag": "Package Contents",
+		"headline": "Included in Package",
+		"description": "Everything you need to get surveying, right out of the box.",
+		"items": [
+			{
+				"label": "Tripod Stand",
+				"description": ""
+			},
+			{
+				"label": "Reflective Prism",
+				"description": ""
+			},
+			{
+				"label": "Prism Rod",
+				"description": ""
+			}
 		]
-    },
+	},
 	"relatedProducts": {
 		"tag": null,
 		"headline": "OTHER RELATED PRODUCTS",

@@ -18,6 +18,25 @@
 			"/media/equipment-sale/automatic-level-bosch/10.png"
 		]
 	},
+    "breadcrumb": {
+		"home": "Home",
+		"section": "Equipment Sale",
+		"sectionHref": "/equipment-sale/equipment-catalogue"
+	},
+	"pricing": {
+		"used": {
+			"label": "Slightly Used",
+			"currency": "KES",
+			"amount": 28000
+		}
+	},
+	"categories": [
+		{
+			"name": "surveying-equipment",
+			"label": "Surveying Equipment",
+			"href": "/equipment-sale/equipment-catalogue"
+		}
+	],
 	"opticalPerformance": {
 		"tag": null,
 		"headline": "Optical Performance",
@@ -87,9 +106,6 @@
 			"label": "WhatsApp Us",
 			"href": "https://wa.me/254701618282"
 		}
-	},
-	"saleBanner": {
-		"images": ["/media/equipment-sale/automatic-level-bosch/05.png"]
 	},
 	"relatedProducts": {
 		"tag": null,
