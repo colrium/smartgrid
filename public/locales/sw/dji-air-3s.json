@@ -1,0 +1,186 @@
+{
+	"hero": {
+		"tag": "Droni ya Upimaji",
+		"headline": "Droni ya Kisasa ya Ramani za Katikati",
+		"title": "DJI Air 3S",
+		"image": "/media/equipment-sale/dji-air-3s/images/01.png",
+		"description": "Mageuzi ya kizazi kipya cha mfululizo wa Air, yenye utendaji wa juu na gharama nafuu ikilinganishwa na mfululizo wa Mavic 3, inayopendwa zaidi kwa kazi za haraka za ramani na ukaguzi.",
+		"ctaPrimary": {
+			"label": "Ulizia Droni Hii",
+			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Air 3S&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Air 3S. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+		}
+	},
+	"breadcrumb": {
+		"home": "Nyumbani",
+		"section": "Uuzaji wa Vifaa",
+		"sectionHref": "/equipment-sale/equipment-catalogue"
+	},
+	"pricing": {
+		"new": {
+			"label": "Mpya Kabisa",
+			"currency": "KES",
+			"amount": 880000
+		}
+	},
+	"categories": [
+		{
+			"name": "drones",
+			"label": "Droni",
+			"href": "/equipment-sale/equipment-catalogue?category=drones"
+		}
+	],
+	"quickFacts": [
+		{
+			"icon": "camera",
+			"label": "Kamera",
+			"value": "Mbili: 50 MP pana + 48 MP tele"
+		},
+		{
+			"icon": "clock-outline",
+			"label": "Muda wa Kuruka",
+			"value": "~Dakika 40-45"
+		},
+		{
+			"icon": "wifi-strength-4",
+			"label": "Usambazaji",
+			"value": "O4 / kiungo cha dijitali kilichoboreshwa"
+		},
+		{
+			"icon": "ruler",
+			"label": "GSD",
+			"value": "~cm 2-5 kwa m 100"
+		}
+	],
+	"productOverview": {
+		"tag": "Muhtasari wa Bidhaa",
+		"headline": "Ramani za Gharama Nafuu Bila Fursa",
+		"images": [
+			"/media/equipment-sale/dji-air-3s/images/02.png",
+			"/media/equipment-sale/dji-air-3s/images/03.png",
+			"/media/equipment-sale/dji-air-3s/images/04.png",
+			"/media/equipment-sale/dji-air-3s/images/05.png",
+			"/media/equipment-sale/dji-air-3s/images/06.png"
+		],
+		"description": "DJI Air 3S inaunganisha mfumo wa kamera mbili na uwezo wa juu wa kustahimili upepo na matandao imara ya ramani, na kuifanya kuwa chaguo la kuaminika kwa uchunguzi wa topografia, utafiti wa njia za barabara, na ufuatiliaji wa ujenzi."
+	},
+	"model3d": {
+		"tag": "Mwingiliano wa 3D",
+		"headline": "Chunguza Air 3S kwa 3D",
+		"description": "Buruta kuzungusha modeli na tumia gurudumu la kutanua au kidondoa kukaza.",
+		"models": [
+			"/media/equipment-sale/dji-air-3s/models/01.glb",
+			"/media/equipment-sale/dji-air-3s/models/02.glb"
+		]
+	},
+	"keyFeatures": {
+		"tag": "Mambo Muhimu",
+		"headline": "Vipengele Muhimu",
+		"description": "Kinachomfanya Air 3S kuwa chaguo zuri la upimaji wa katikati.",
+		"items": [
+			{
+				"icon": "camera",
+				"title": "Mfumo wa Kamera Mbili",
+				"description": "Sensor ya pana ya daraja la inchi 1 ya ~50 MP pamoja na lensi ya tele ya ~48 MP."
+			},
+			{
+				"icon": "video",
+				"title": "Video Bora",
+				"description": "Hadi 4K 120 fps kwa uwazi ulioboreshwa wa mwanga hafifu."
+			},
+			{
+				"icon": "weather-windy",
+				"title": "Ustahimilivu wa Juu wa Upepo",
+				"description": "Matandao imara ya ramani hata katika hali ngumu shambani."
+			},
+			{
+				"icon": "wifi-strength-4",
+				"title": "Kiungo cha Dijitali cha O4",
+				"description": "Usambazaji wa kuaminika kwa misheni marefu ya upimaji."
+			}
+		]
+	},
+	"cameraSystem": {
+		"tag": "Kamera",
+		"headline": "Mfumo wa Kamera",
+		"description": "Upigaji panga wa lensi mbili ulioundwa kwa ukamataji wa aina mbalimbali.",
+		"list": [
+			"Mfumo wa kamera mbili: Pana (sensor ya daraja la inchi 1 ~50 MP), Tele (~48 MP)",
+			"Video: Hadi 4K 120 fps",
+			"Uwazi ulioboreshwa wa mwanga hafifu"
+		]
+	},
+	"flightAndCoverage": {
+		"tag": null,
+		"headline": "Uruka na Ufunikaji",
+		"description": "Ufunikaji mzuri na imara kwa maeneo ya upimaji ya wastani.",
+		"list": [
+			"Muda wa kuruka: ~Dakika 40-45",
+			"Usambazaji: O4 / kiungo cha dijitali kilichoboreshwa",
+			"Ustahimilivu wa juu wa upepo kwa matandao imara ya ramani"
+		]
+	},
+	"accuracyNotes": {
+		"tag": "Usahihi",
+		"headline": "Uwezo na Usahihi wa Photogrammetry",
+		"description": "Usahihi unategemea GCP kwa kuwa haipo RTK iliyojengwa ndani.",
+		"list": [
+			"GSD: ~cm 2-5 kwa m 100",
+			"Inafaa kwa uzalishaji wa orthomosaic na DSM/DTM (modeli za uso)",
+			"Bila RTK: usahihi wa juu wa ~m 1-2",
+			"Kwa GCP: usahihi wa ~cm 5-15"
+		]
+	},
+	"specs": {
+		"tag": "Data ya Kiufundi",
+		"headline": "Vipimo vya Kiufundi",
+		"description": "Maelezo kamili ya kiufundi kwa DJI Air 3S."
+	},
+	"surveyApplications": {
+		"tag": "Matumizi",
+		"headline": "Matumizi ya Uhandisi",
+		"description": "Pale Air 3S inavyofaa katika mchakato wa upimaji.",
+		"list": [
+			"Uchunguzi wa topografia (maeneo madogo-katikati)",
+			"Utafiti wa njia za barabara",
+			"Ufuatiliaji wa ujenzi",
+			"Uchambuzi wa machimbo na makusanyo"
+		]
+	},
+	"cta": {
+		"tag": "Pata Nukuu",
+		"headline": "Ulizia Droni Hii",
+		"description": "Tuambie kuhusu mradi wako na upate nukuu iliyoundwa kwa ajili ya DJI Air 3S.",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Tutumie Barua Pepe",
+			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Air 3S&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Air 3S. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+		},
+		"ctaSecondary": {
+			"icon": "whatsapp",
+			"label": "Tutumie WhatsApp",
+			"href": "https://wa.me/254701618282"
+		}
+	},
+	"relatedProducts": {
+		"tag": "Chunguza",
+		"headline": "Droni Nyingine Unazoweza Kuzipenda",
+		"description": "Gundua droni zaidi za upimaji kutoka kwenye katalogi ya SmartGrid.",
+		"items": [
+			{
+				"image": "/media/equipment-sale/dji-mavic-3-pro/images/02.png",
+				"label": "DJI MAVIC 3 PRO",
+				"href": "/equipment-sale/dji-mavic-3-pro"
+			},
+			{
+				"image": "/media/equipment-sale/dji-phantom-4-rtk/images/02.png",
+				"label": "DJI PHANTOM 4 RTK",
+				"href": "/equipment-sale/dji-phantom-4-rtk"
+			},
+			{
+				"image": "/media/equipment-sale/dji-mavic-3-enterprise/images/02.png",
+				"label": "DJI MAVIC 3 ENTERPRISE",
+				"href": "/equipment-sale/dji-mavic-3-enterprise"
+			}
+		]
+	}
+}

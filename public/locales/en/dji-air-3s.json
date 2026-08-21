@@ -54,10 +54,6 @@
 	"productOverview": {
 		"tag": "Product Overview",
 		"headline": "Cost-Efficient Mapping Without Compromise",
-        "models": [
-			"/media/equipment-sale/dji-air-3s/models/01.glb",
-			"/media/equipment-sale/dji-air-3s/images/03.glb"
-		],
 		"images": [
 			"/media/equipment-sale/dji-air-3s/images/02.png",
 			"/media/equipment-sale/dji-air-3s/images/03.png",
@@ -66,6 +62,15 @@
 			"/media/equipment-sale/dji-air-3s/images/06.png"
 		],
 		"description": "The DJI Air 3S combines a dual-camera system with high wind resistance and stable mapping grids, making it a reliable choice for topographical surveys, road alignment reconnaissance, and construction monitoring."
+	},
+	"model3d": {
+		"tag": "Interactive 3D",
+		"headline": "Explore the Air 3S in 3D",
+		"description": "Drag to rotate the model and scroll or pinch to zoom.",
+		"models": [
+			"/media/equipment-sale/dji-air-3s/models/01.glb",
+			"/media/equipment-sale/dji-air-3s/models/02.glb"
+		]
 	},
 	"keyFeatures": {
 		"tag": "Highlights",
