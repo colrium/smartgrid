@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"tag": "Surveying Equipment",
 		"headline": "Reliable Levelling Instruments",
 		"title": "Bosch GOL 32D Automatic Level",
 		"image": "/media/equipment-sale/automatic-level-bosch/01.png",
@@ -37,10 +38,15 @@
 			"href": "/equipment-sale/equipment-catalogue"
 		}
 	],
+	"specs": {
+		"tag": "Tech Data",
+		"headline": "Technical Specifications",
+		"description": "Complete technical details for the Bosch GOL 32D Automatic Level."
+	},
 	"opticalPerformance": {
 		"tag": null,
 		"headline": "Optical Performance",
-		"description": "",
+		"description": "Crisp, bright optics built for precise sighting.",
 		"list": [
 			"Magnification: 32x high clarity optics",
 			"Objective aperture: 36mm",
@@ -51,7 +57,7 @@
 	"accuracyAndLeveling": {
 		"tag": null,
 		"headline": "Accuracy & Leveling",
-		"description": "",
+		"description": "Fast, accurate leveling with a dependable automatic compensator.",
 		"list": [
 			"Leveling accuracy: ±1.0mm per km (double run)",
 			"Automatic compensator for fast leveling",
@@ -62,7 +68,7 @@
 	"buildAndDurability": {
 		"tag": null,
 		"headline": "Build & Durability",
-		"description": "",
+		"description": "Tough, weather-ready construction for demanding sites.",
 		"list": [
 			"Robust metal housing for field durability",
 			"Dust and splash resistant (IP54)",
@@ -73,7 +79,7 @@
 	"operationAndFeatures": {
 		"tag": null,
 		"headline": "Operation & Features",
-		"description": "",
+		"description": "Simple controls for quick setup and smooth operation.",
 		"list": [
 			"Endless horizontal circle (360° rotation)",
 			"Easy-to-use focusing knob",
@@ -84,7 +90,7 @@
 	"applications": {
 		"tag": null,
 		"headline": "Applications",
-		"description": "",
+		"description": "Proven use cases across construction and surveying work.",
 		"list": [
 			"Construction leveling",
 			"Site grading & earthworks",
@@ -93,7 +99,7 @@
 		]
 	},
 	"cta": {
-		"tag": "Countact us",
+		"tag": "Get a Quote",
 		"headline": "Get This Equipment",
 		"description": "Contact us for pricing, availability, and expert guidance.",
 		"ctaPrimary": {
@@ -108,9 +114,9 @@
 		}
 	},
 	"relatedProducts": {
-		"tag": null,
-		"headline": "OTHER RELATED PRODUCTS",
-		"description": "",
+		"tag": "Explore",
+		"headline": "Other Products You May Like",
+		"description": "Discover more surveying instruments from the SmartGrid catalogue.",
 
 		"items": [
 			{

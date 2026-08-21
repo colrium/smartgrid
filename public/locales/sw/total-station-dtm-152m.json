@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"tag": "Vifaa vya Upimaji",
 		"headline": "Kituo Kamili cha Usahihi kwa Uchunguzi wa Kuhitajika",
 		"title": "TOTAL STATION DTM 152M",
 		"image": "/media/equipment-sale/total-station-dtm-152m/01.png",
@@ -16,10 +17,53 @@
 			"/media/equipment-sale/total-station-dtm-152m/05.jpg"
 		]
 	},
+	"breadcrumb": {
+		"home": "Nyumbani",
+		"section": "Uuzaji wa Vifaa",
+		"sectionHref": "/equipment-sale/equipment-catalogue"
+	},
+	"pricing": {
+		"new": {
+			"label": "Mpya Kabisa",
+			"currency": "KES",
+			"amount": 400000
+		}
+	},
+	"categories": [
+		{
+			"name": "surveying-equipment",
+			"label": "Vifaa vya Upimaji",
+			"href": "/equipment-sale/equipment-catalogue"
+		}
+	],
+	"specs": {
+		"tag": "Data ya Kiufundi",
+		"headline": "Vipimo vya Kiufundi",
+		"description": "Maelezo kamili ya kiufundi kwa DTM 152M Total Station."
+	},
+	"includedInPackage": {
+		"tag": "Maudhui ya Kifurushi",
+		"headline": "Yaliyomo kwenye Kifurushi",
+		"description": "Kila kitu unachohitaji kuanza upimaji, moja kwa moja kutoka kwenye kifurushi.",
+		"items": [
+			{
+				"label": "Tripod",
+				"description": "Tripod imara kwa usanidi thabiti wa kifaa."
+			},
+			{
+				"label": "Prism Inayong'aa",
+				"description": "Prism kwa vipimo sahihi ya umbali wa mbali."
+			},
+			{
+				"label": "Fimbo ya Prism",
+				"description": "Fimbo ya prism kwa kuweka prism mahali sahihi shambani."
+			}
+		]
+	},
 	"measurementCapability": {
 		"tag": null,
 		"headline": "Uwezo wa Kipimo",
-		"description": "",
+		"description": "Vipimo vya pembe za usahihi wa juu na umbali wa mbali.",
 		"list": [
 			"Usahihi wa Angular: usahihi wa juu wa 2”",
 			"Umbali (Prism): Hadi 3000m",
@@ -30,7 +74,7 @@
 	"accuracyAndPerformance": {
 		"tag": null,
 		"headline": "Usahihi na Utendaji",
-		"description": "",
+		"description": "Usahihi wa kiwango cha milimita unazoweza kuzitegemea kwa kila kipimo.",
 		"list": [
 			"Usahihi wa Umbali (Prism): ±(2mm + 2ppm)",
 			"Usahihi bila Reflector: ±(3mm + 2ppm)",
@@ -41,7 +85,7 @@
 	"dataAndInterface": {
 		"tag": null,
 		"headline": "Data na Kiolesura",
-		"description": "",
+		"description": "Hifadhi ya ndani na muunganisho rahisi kwa mchakato mzuri wa kazi.",
 		"list": [
 			"Kumbukumbu ya ndani kwa uhifadhi wa data",
 			"Usaidizi wa mawasiliano wa USB na serial",
@@ -52,7 +96,7 @@
 	"buildAndDurability": {
 		"tag": null,
 		"headline": "Ujenzi na Uimara",
-		"description": "",
+		"description": "Changa, imara, na tayari kwa siku ndefu shambani.",
 		"list": [
 			"Muundo mwembamba na mwepesi",
 			"Ujenzi thabiti kwa matumizi ya shambani",
@@ -62,8 +106,8 @@
 	},
 	"applications": {
 		"tag": null,
-		"headline": "Ujenzi na Uimara",
-		"description": "",
+		"headline": "Matumizi",
+		"description": "Inatumiwa kwenye kazi za topografia, mpangilio, na uhandisi.",
 		"list": [
 			"Uchunguzi wa Topografia",
 			"Mpangilio wa Ujenzi na Setting Out",
@@ -72,7 +116,7 @@
 		]
 	},
 	"cta": {
-		"tag": "Wasiliana nasi",
+		"tag": "Pata Nukuu",
 		"headline": "Pata Kifaa Hiki",
 		"description": "Wasiliana nasi kwa bei, upatikanaji, na msaada wa kitaalamu.",
 		"ctaPrimary": {
@@ -86,16 +130,10 @@
 			"href": "https://wa.me/254701618282"
 		}
 	},
-	"saleBanner": {
-		"images": [
-			"/media/equipment-sale/total-station-dtm-152m/08.png",
-			"/media/equipment-sale/total-station-dtm-152m/09.png"
-		]
-	},
 	"relatedProducts": {
-		"tag": null,
-		"headline": "BIDHAA NYINGINE ZINAZOHUSIANA",
-		"description": "",
+		"tag": "Chunguza",
+		"headline": "Bidhaa Nyingine Unazoweza Kuzipenda",
+		"description": "Gundua vifaa vingine vya upimaji kutoka kwenye katalogi ya SmartGrid.",
 
 		"items": [
 			{

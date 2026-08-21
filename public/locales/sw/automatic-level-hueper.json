@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"tag": "Vifaa vya Upimaji",
 		"headline": "KIWANGO CHA KIOTOMATIKI CHA HUEPER",
 		"title": "Huepar ALX32 Automatic Level",
 		"image": "/media/equipment-sale/automatic-level-hueper/01.png",
@@ -18,10 +19,34 @@
 			"/media/equipment-sale/automatic-level-hueper/06.jpg"
 		]
 	},
+	"breadcrumb": {
+		"home": "Nyumbani",
+		"section": "Uuzaji wa Vifaa",
+		"sectionHref": "/equipment-sale/equipment-catalogue"
+	},
+	"pricing": {
+		"new": {
+			"label": "Mpya Kabisa",
+			"currency": "KES",
+			"amount": 28000
+		}
+	},
+	"categories": [
+		{
+			"name": "surveying-equipment",
+			"label": "Vifaa vya Upimaji",
+			"href": "/equipment-sale/equipment-catalogue"
+		}
+	],
+	"specs": {
+		"tag": "Data ya Kiufundi",
+		"headline": "Vipimo vya Kiufundi",
+		"description": "Maelezo kamili ya kiufundi kwa Huepar ALX32 Automatic Level."
+	},
 	"opticalPerformance": {
 		"tag": null,
 		"headline": "Utendaji wa Macho",
-		"description": "",
+		"description": "Optiki kali na angavu zilizoundwa kulenga kwa usahihi.",
 		"list": [
 			"Ukuzaji: macho ya uwazi wa juu 32x",
 			"Fungu la kitu: 36mm",
@@ -32,7 +57,7 @@
 	"accuracyAndLeveling": {
 		"tag": null,
 		"headline": "Usahihi na Usawazishaji",
-		"description": "",
+		"description": "Usawazishaji wa haraka na sahihi kwa fidia ya kuaminika ya kiotomatiki.",
 		"list": [
 			"Usahihi wa usawazishaji: ±1.0mm kwa km (mwendo maradufu)",
 			"Fidia ya kiotomatiki kwa usawazishaji wa haraka",
@@ -43,7 +68,7 @@
 	"buildAndDurability": {
 		"tag": null,
 		"headline": "Ujenzi na Uimara",
-		"description": "",
+		"description": "Imara na inayostahimili hali ya hewa, ikiwa mwepesi kubeba.",
 		"list": [
 			"Ujenzi thabiti kwa hali za shambani",
 			"Kinastahimili vumbi na maji (daraja la IP54)",
@@ -54,7 +79,7 @@
 	"operationAndFeatures": {
 		"tag": null,
 		"headline": "Uendeshaji na Vipengele",
-		"description": "",
+		"description": "Vidhibiti rahisi kwa usanidi wa haraka na uendeshaji laini.",
 		"list": [
 			"Mzunguko wa duara mlalo wa 360°",
 			"Vipini laini vya kulenga na kurekebisha vizuri",
@@ -65,7 +90,7 @@
 	"applications": {
 		"tag": null,
 		"headline": "Matumizi",
-		"description": "",
+		"description": "Matumizi yaliyothibitika katika kazi za ujenzi na upimaji.",
 		"list": [
 			"Usawazishaji wa ujenzi",
 			"Usawazishaji wa tovuti na kazi za ardhi",
@@ -74,7 +99,7 @@
 		]
 	},
 	"cta": {
-		"tag": "Wasiliana nasi",
+		"tag": "Pata Nukuu",
 		"headline": "Pata Kifaa Hiki",
 		"description": "Wasiliana nasi kwa bei, upatikanaji, na mwongozo wa kitaalamu.",
 		"ctaPrimary": {
@@ -88,13 +113,10 @@
 			"href": "https://wa.me/254701618282"
 		}
 	},
-	"saleBanner": {
-		"images": ["/media/equipment-sale/automatic-level-hueper/07.png"]
-	},
 	"relatedProducts": {
-		"tag": null,
-		"headline": "BIDHAA NYINGINE ZINAZOHUSIANA",
-		"description": "",
+		"tag": "Chunguza",
+		"headline": "Bidhaa Nyingine Unazoweza Kuzipenda",
+		"description": "Gundua vifaa vingine vya upimaji kutoka kwenye katalogi ya SmartGrid.",
 
 		"items": [
 			{

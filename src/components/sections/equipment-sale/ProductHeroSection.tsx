@@ -52,6 +52,10 @@ interface ProductOverviewContent {
 	images?: string[] | null;
 }
 
+interface ProductImagesContent {
+	images?: string[] | null;
+}
+
 interface CtaContent {
 	ctaSecondary?: EnquiryCta | null;
 }
@@ -66,12 +70,17 @@ export function ProductHeroSection({ namespace }: ProductHeroSectionProps) {
 	const { t, tObject } = useTranslation([namespace]);
 	const hero = t(`${namespace}:hero`, { returnObjects: true }) as unknown as ProductHeroContent;
 	const breadcrumb = t(`${namespace}:breadcrumb`, { returnObjects: true }) as unknown as BreadcrumbContent;
-	const quickFacts = (t(`${namespace}:quickFacts`, { returnObjects: true }) as unknown as QuickFact[]) ?? [];
+	const quickFactsRaw = t(`${namespace}:quickFacts`, { returnObjects: true }) as unknown;
+	const quickFacts = Array.isArray(quickFactsRaw) ? (quickFactsRaw as QuickFact[]) : [];
 	const pricing = t(`${namespace}:pricing`, { returnObjects: true }) as unknown as Record<string, PriceOption> | null;
-	const categories = (t(`${namespace}:categories`, { returnObjects: true }) as unknown as Category[]) ?? [];
+	const categoriesRaw = t(`${namespace}:categories`, { returnObjects: true }) as unknown;
+	const categories = Array.isArray(categoriesRaw) ? (categoriesRaw as Category[]) : [];
 	const overview = t(`${namespace}:productOverview`, {
 		returnObjects: true,
 	}) as unknown as ProductOverviewContent;
+	const productImages = t(`${namespace}:productImages`, {
+		returnObjects: true,
+	}) as unknown as ProductImagesContent;
 	const cta = t(`${namespace}:cta`, { returnObjects: true }) as unknown as CtaContent;
 
 	const priceOptions = pricing
@@ -80,10 +89,18 @@ export function ProductHeroSection({ namespace }: ProductHeroSectionProps) {
 				.filter((price): price is PriceOption => Boolean(price?.amount))
 		: [];
 
+	const galleryImages =
+		Array.isArray(overview?.images) && overview.images.length > 0
+			? overview.images
+			: (productImages?.images ?? []);
+
 	const images = [
 		hero.image,
-		...(overview.images ?? []),
-	].filter((src): src is string => typeof src === "string" && src.startsWith("/"));
+		...(galleryImages ?? []),
+	].filter(
+		(src): src is string =>
+			typeof src === "string" && src.startsWith("/") && src !== hero.image,
+	);
 
 	return (
 		<section className="relative overflow-hidden pt-44 sm:pt-52">

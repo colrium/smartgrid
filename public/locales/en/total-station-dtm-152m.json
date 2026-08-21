@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"tag": "Surveying Equipment",
 		"headline": "Precision Total Station for Demanding Surveys",
 		"title": "TOTAL STATION DTM 152M",
 		"image": "/media/equipment-sale/total-station-dtm-152m/01.png",
@@ -16,6 +17,11 @@
 			"/media/equipment-sale/total-station-dtm-152m/05.jpg"
 		]
 	},
+	"breadcrumb": {
+		"home": "Home",
+		"section": "Equipment Sale",
+		"sectionHref": "/equipment-sale/equipment-catalogue"
+	},
 	"pricing": {
 		"new": {
 			"label": "Brand New",
@@ -30,10 +36,15 @@
 			"href": "/equipment-sale/equipment-catalogue"
 		}
 	],
+	"specs": {
+		"tag": "Tech Data",
+		"headline": "Technical Specifications",
+		"description": "Complete technical details for the DTM 152M Total Station."
+	},
 	"measurementCapability": {
 		"tag": null,
 		"headline": "Measurement Capability",
-		"description": "",
+		"description": "High-precision angles and long-range distance measurement.",
 		"list": [
 			"Angular Accuracy: 2” high precision",
 			"Distance (Prism): Up to 3000m",
@@ -44,7 +55,7 @@
 	"accuracyAndPerformance": {
 		"tag": null,
 		"headline": "Accuracy & Performance",
-		"description": "",
+		"description": "Millimeter-grade accuracy you can trust on every shot.",
 		"list": [
 			"Distance Accuracy (Prism): ±(2mm + 2ppm)",
 			"Reflectorless Accuracy: ±(3mm + 2ppm)",
@@ -55,7 +66,7 @@
 	"dataAndInterface": {
 		"tag": null,
 		"headline": "Data & Interface",
-		"description": "",
+		"description": "Onboard storage and simple connectivity for smooth workflows.",
 		"list": [
 			"Internal memory for data storage",
 			"USB and serial communication support",
@@ -66,7 +77,7 @@
 	"buildAndDurability": {
 		"tag": null,
 		"headline": "Build & Durability",
-		"description": "",
+		"description": "Compact, rugged, and ready for long days in the field.",
 		"list": [
 			"Compact and lightweight design",
 			"Rugged construction for field use",
@@ -76,8 +87,8 @@
 	},
 	"applications": {
 		"tag": null,
-		"headline": "Build & Durability",
-		"description": "",
+		"headline": "Applications",
+		"description": "Trusted across topographic, layout, and engineering work.",
 		"list": [
 			"Topographic Surveys",
 			"Construction Layout & Setting Out",
@@ -86,7 +97,7 @@
 		]
 	},
 	"cta": {
-		"tag": "Countact us",
+		"tag": "Get a Quote",
 		"headline": "Get This Equipment",
 		"description": "Contact us for pricing, availability, and professional support.",
 		"ctaPrimary": {
@@ -107,22 +118,22 @@
 		"items": [
 			{
 				"label": "Tripod Stand",
-				"description": ""
+				"description": "Sturdy tripod for stable instrument setup."
 			},
 			{
 				"label": "Reflective Prism",
-				"description": ""
+				"description": "Prism for accurate long-range distance measurements."
 			},
 			{
 				"label": "Prism Rod",
-				"description": ""
+				"description": "Prism pole for precise prism positioning in the field."
 			}
 		]
 	},
 	"relatedProducts": {
-		"tag": null,
-		"headline": "OTHER RELATED PRODUCTS",
-		"description": "",
+		"tag": "Explore",
+		"headline": "Other Products You May Like",
+		"description": "Discover more surveying instruments from the SmartGrid catalogue.",
 		"items": [
 			{
 				"image": "/img/instruments/total-station-esurvey.png",

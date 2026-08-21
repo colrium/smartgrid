@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"tag": "Vifaa vya Upimaji",
 		"headline": "Vituo Kamili vya Usahihi wa Juu kwa Upimaji Sahihi",
 		"title": "TOTAL STATION ESURVEY",
 		"image": "/media/equipment-sale/total-station-esurvey/01.png",
@@ -9,16 +10,59 @@
 			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Total Station ESurvey&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Total Station ESurvey. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
+	"breadcrumb": {
+		"home": "Nyumbani",
+		"section": "Uuzaji wa Vifaa",
+		"sectionHref": "/equipment-sale/equipment-catalogue"
+	},
+	"pricing": {
+		"new": {
+			"label": "Mpya Kabisa",
+			"currency": "KES",
+			"amount": 400000
+		}
+	},
+	"categories": [
+		{
+			"name": "surveying-equipment",
+			"label": "Vifaa vya Upimaji",
+			"href": "/equipment-sale/equipment-catalogue"
+		}
+	],
 	"productOverview": {
-		"tag": "Vifaa vya Upimaji",
-		"headline": "E-Survey E3L Total Station",
+		"tag": "Muhtasari wa Bidhaa",
+		"headline": "Imeundwa kwa Usahihi, Imejengwa kwa Uzalishaji",
 		"image": "/media/equipment-sale/total-station-esurvey/06.png",
 		"description": "Kituo kamili cha utendaji wa juu kilichoundwa kwa upimaji wa usahihi, mpangilio wa ujenzi, na matumizi ya uhandisi kwa usahihi wa kuaminika na mtiririko mzuri wa kazi shambani."
+	},
+	"specs": {
+		"tag": "Data ya Kiufundi",
+		"headline": "Vipimo vya Kiufundi",
+		"description": "Maelezo kamili ya kiufundi kwa E-Survey E3L Total Station."
+	},
+	"includedInPackage": {
+		"tag": "Maudhui ya Kifurushi",
+		"headline": "Yaliyomo kwenye Kifurushi",
+		"description": "Kila kitu unachohitaji kuanza upimaji, moja kwa moja kutoka kwenye kifurushi.",
+		"items": [
+			{
+				"label": "Tripod",
+				"description": "Tripod imara kwa usanidi thabiti wa kifaa."
+			},
+			{
+				"label": "Prism Inayong'aa",
+				"description": "Prism kwa vipimo sahihi ya umbali wa mbali."
+			},
+			{
+				"label": "Fimbo ya Prism",
+				"description": "Fimbo ya prism kwa kuweka prism mahali sahihi shambani."
+			}
+		]
 	},
 	"measurementCapability": {
 		"tag": null,
 		"headline": "Uwezo wa Kipimo",
-		"description": "",
+		"description": "Vipimo vya pembe za usahihi wa juu na umbali wa mbali.",
 		"list": [
 			"Usahihi wa Angular: 2”",
 			"Umbali (Prism): Hadi 5000m",
@@ -29,7 +73,7 @@
 	"accuracyAndPerformance": {
 		"tag": null,
 		"headline": "Usahihi na Utendaji",
-		"description": "",
+		"description": "Usahihi unaorudiwa wa kiwango cha milimita katika hali halisi za shambani.",
 		"list": [
 			"Usahihi wa Prism: ±(2mm + 2ppm)",
 			"Bila Reflector: ±(3mm + 2ppm)",
@@ -40,7 +84,7 @@
 	"dataAndInterface": {
 		"tag": null,
 		"headline": "Data na Kiolesura",
-		"description": "",
+		"description": "Usimamizi rahisi wa data kwa muunganisho wa haraka na unaojulikana.",
 		"list": [
 			"Hifadhi ya data ndani ya kifaa",
 			"Muunganisho wa USB na serial",
@@ -51,11 +95,11 @@
 	"applications": {
 		"tag": null,
 		"headline": "Matumizi",
-		"description": "",
+		"description": "Inatumiwa kwenye kazi za topografia, mpangilio, na mipaka.",
 		"list": ["Uchunguzi wa Topografia", "Mpangilio wa Ujenzi", "Uchunguzi wa Mipaka", "Miradi ya Uhandisi"]
 	},
 	"cta": {
-		"tag": "Wasiliana nasi",
+		"tag": "Pata Nukuu",
 		"headline": "Pata Kifaa Hiki",
 		"description": "Wasiliana nasi moja kwa moja kwa bei, upatikanaji, na mwongozo wa kitaalamu.",
 		"ctaPrimary": {
@@ -69,16 +113,10 @@
 			"href": "https://wa.me/254701618282"
 		}
 	},
-    "saleBanner": {
-        "images": [
-			"/media/equipment-sale/total-station-esurvey/08.png",
-			"/media/equipment-sale/total-station-esurvey/09.png"
-		],
-    },
 	"relatedProducts": {
-		"tag": null,
-		"headline": "BIDHAA NYINGINE ZINAZOHUSIANA",
-		"description": "",
+		"tag": "Chunguza",
+		"headline": "Bidhaa Nyingine Unazoweza Kuzipenda",
+		"description": "Gundua vifaa vingine vya upimaji kutoka kwenye katalogi ya SmartGrid.",
 
 		"items": [
 			{

@@ -2,14 +2,21 @@ import type { GetServerSideProps, NextPage } from "next";
 import PageHead from "@/components/Head";
 
 import { getI18nProps } from "@/lib/i18n";
-import { EquipmentHeroSection } from "@/components/sections/equipment-sale/EquipmentHeroSection";
+import { ProductHeroSection } from "@/components/sections/equipment-sale/ProductHeroSection";
+import { ProductSpecsSection } from "@/components/sections/equipment-sale/ProductSpecsSection";
+import { IncludedInPackageSection } from "@/components/sections/equipment-sale/IncludedInPackageSection";
 import {
-	SpecificationsSection,
-	SaleBannerSection,
 	CtaSection,
 	RelatedProductsSection,
 } from "@/components/sections/equipment-sale/total-station-dtm-152m";
-import ImagesSection from "@/components/sections/equipment-sale/total-station-dtm-152m/ImagesSection";
+
+const SPEC_GROUP_KEYS = [
+	"measurementCapability",
+	"accuracyAndPerformance",
+	"dataAndInterface",
+	"buildAndDurability",
+	"applications",
+];
 
 type PageProps = {
 	// Add custom props here
@@ -20,10 +27,12 @@ const Page: NextPage<PageProps> = () => {
 		<div className="relative">
 			<PageHead pageName="total-station-dtm-152m" />
 			<div className="flex flex-col min-h-screen">
-                <EquipmentHeroSection namespace="total-station-dtm-152m" />
-                <ImagesSection />
-				<SpecificationsSection />
-				<SaleBannerSection />
+				<ProductHeroSection namespace="total-station-dtm-152m" />
+				<IncludedInPackageSection namespace="total-station-dtm-152m" />
+				<ProductSpecsSection
+					namespace="total-station-dtm-152m"
+					groupKeys={SPEC_GROUP_KEYS}
+				/>
 				<CtaSection />
 				<RelatedProductsSection />
 			</div>

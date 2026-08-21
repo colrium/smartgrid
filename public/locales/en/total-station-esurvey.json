@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"tag": "Surveying Equipment",
 		"headline": "High-Precision Total Stations for Accurate Surveying",
 		"title": "TOTAL STATION ESURVEY",
 		"image": "/media/equipment-sale/total-station-esurvey/01.png",
@@ -10,8 +11,8 @@
 		}
 	},
 	"productOverview": {
-		"tag": "Surveying Equipment",
-		"headline": "E-Survey E3L Total Station",
+		"tag": "Product Overview",
+		"headline": "Engineered for Precision, Built for Productivity",
 		"image": "/media/equipment-sale/total-station-esurvey/06.png",
 		"description": "High-performance total station engineered for precision surveying, construction layout, and engineering applications with reliable accuracy and efficient field workflows."
 	},
@@ -34,10 +35,15 @@
 			"href": "/equipment-sale/equipment-catalogue"
 		}
 	],
+	"specs": {
+		"tag": "Tech Data",
+		"headline": "Technical Specifications",
+		"description": "Complete technical details for the E-Survey E3L Total Station."
+	},
 	"measurementCapability": {
 		"tag": null,
 		"headline": "Measurement Capability",
-		"description": "",
+		"description": "High-precision angles and long-range distance measurement.",
 		"list": [
 			"Angular Accuracy: 2”",
 			"Distance (Prism): Up to 5000m",
@@ -48,7 +54,7 @@
 	"accuracyAndPerformance": {
 		"tag": null,
 		"headline": "Accuracy & Performance",
-		"description": "",
+		"description": "Repeatable, millimeter-grade accuracy in real field conditions.",
 		"list": [
 			"Prism Accuracy: ±(2mm + 2ppm)",
 			"Reflectorless: ±(3mm + 2ppm)",
@@ -59,7 +65,7 @@
 	"dataAndInterface": {
 		"tag": null,
 		"headline": "Data & Interface",
-		"description": "",
+		"description": "Simple data handling with fast, familiar connectivity.",
 		"list": [
 			"Onboard data storage",
 			"USB & serial connectivity",
@@ -70,7 +76,7 @@
 	"applications": {
 		"tag": null,
 		"headline": "Applications",
-		"description": "",
+		"description": "Trusted across topographic, layout, and boundary work.",
 		"list": [
 			"Topographic Surveys",
 			"Construction Layout",
@@ -80,7 +86,7 @@
 	},
 
 	"cta": {
-		"tag": "Countact us",
+		"tag": "Get a Quote",
 		"headline": "Get This Equipment",
 		"description": "Contact us directly for pricing, availability, and expert guidance.",
 		"ctaPrimary": {
@@ -101,22 +107,22 @@
 		"items": [
 			{
 				"label": "Tripod Stand",
-				"description": ""
+				"description": "Sturdy tripod for stable instrument setup."
 			},
 			{
 				"label": "Reflective Prism",
-				"description": ""
+				"description": "Prism for accurate long-range distance measurements."
 			},
 			{
 				"label": "Prism Rod",
-				"description": ""
+				"description": "Prism pole for precise prism positioning in the field."
 			}
 		]
 	},
 	"relatedProducts": {
-		"tag": null,
-		"headline": "OTHER RELATED PRODUCTS",
-		"description": "",
+		"tag": "Explore",
+		"headline": "Other Products You May Like",
+		"description": "Discover more surveying instruments from the SmartGrid catalogue.",
 		"items": [
 			{
 				"image": "/img/instruments/total-station-dtm-152m.jpg",
