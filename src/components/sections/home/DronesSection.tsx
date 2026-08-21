@@ -5,6 +5,7 @@ import { useTranslation } from "@/hooks";
 import { SectionHeader } from "./SectionHeader";
 import { FadeUp } from "@/components/animations/Fade";
 import { ParallaxDecor, Blob } from "./decor";
+import ModelViewer from "@/components/ui/ModelViewer";
 
 interface DroneItem {
 	icon?: string | null;
@@ -33,7 +34,11 @@ export function DronesSection() {
 					tag={t("home:drones.tag") as string}
 					headline={t("home:drones.headline") as string}
 					description={t("home:drones.description") as string}
-				/>
+                />
+                
+                <div>
+                    <ModelViewer  url={"/media/equipment-sale/dji-air-3s/models/01.glb"} />
+                </div>
 
 				<div className="mt-14 sm:mt-20 grid grid-cols-1 md:grid-cols-2 gap-7 sm:gap-8">
 					{Array.isArray(items) &&

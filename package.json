@@ -2,8 +2,7 @@
 	"name": "smartgrid-surveying-and-engineering",
 	"version": "1.0.0",
 	"main": "index.js",
-	"license": "MIT",
-	"scripts": {
+	"license": "MIT",	"scripts": {
 		"dev": "next",
 		"build": "next build",
 		"start": "next start -p 3000",

@@ -2,10 +2,9 @@ import type { GetServerSideProps, NextPage } from "next";
 import PageHead from "@/components/Head";
 
 import { getI18nProps } from "@/lib/i18n";
-import { EquipmentHeroSection } from "@/components/sections/equipment-sale/EquipmentHeroSection";
 import {
-	CatalogueOverviewSection,
-	EquipmentCategoriesSection,
+	CatalogueHeroSection,
+	ProductListingSection,
 	CtaSection,
 } from "@/components/sections/equipment-sale/equipment-catalogue";
 
@@ -18,9 +17,8 @@ const Page: NextPage<PageProps> = () => {
 		<div className="relative">
 			<PageHead pageName="equipment-catalogue" />
 			<div className="flex flex-col min-h-screen">
-				<EquipmentHeroSection namespace="equipment-catalogue" />
-				<CatalogueOverviewSection />
-				<EquipmentCategoriesSection />
+				<CatalogueHeroSection namespace="equipment-catalogue" />
+				<ProductListingSection namespace="equipment-catalogue" />
 				<CtaSection />
 			</div>
 		</div>

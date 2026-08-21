@@ -3,7 +3,7 @@
 		"tag": "Survey Drone",
 		"headline": "Next-Gen Mid-Range Mapping Drone",
 		"title": "DJI Air 3S",
-		"image": "/media/equipment-sale/dji-air-3s/01.jpeg",
+		"image": "/media/equipment-sale/dji-air-3s/images/01.png",
 		"description": "A next-generation evolution of the Air series, positioned as a high-performance, cost-efficient alternative to the Mavic 3 line, increasingly preferred for rapid mapping and inspection workflows.",
 		"ctaPrimary": {
 			"label": "Inquire About This Drone",
@@ -54,10 +54,16 @@
 	"productOverview": {
 		"tag": "Product Overview",
 		"headline": "Cost-Efficient Mapping Without Compromise",
+        "models": [
+			"/media/equipment-sale/dji-air-3s/models/01.glb",
+			"/media/equipment-sale/dji-air-3s/images/03.glb"
+		],
 		"images": [
-			"/media/equipment-sale/dji-air-3s/02.jpeg",
-			"/media/equipment-sale/dji-air-3s/03.jpeg",
-			"/media/equipment-sale/dji-air-3s/04.jpeg"
+			"/media/equipment-sale/dji-air-3s/images/02.png",
+			"/media/equipment-sale/dji-air-3s/images/03.png",
+			"/media/equipment-sale/dji-air-3s/images/04.png",
+			"/media/equipment-sale/dji-air-3s/images/05.png",
+			"/media/equipment-sale/dji-air-3s/images/06.png"
 		],
 		"description": "The DJI Air 3S combines a dual-camera system with high wind resistance and stable mapping grids, making it a reliable choice for topographical surveys, road alignment reconnaissance, and construction monitoring."
 	},
@@ -156,17 +162,17 @@
 		"description": "Discover more survey drones from the SmartGrid catalogue.",
 		"items": [
 			{
-				"image": "/media/equipment-sale/dji-mavic-3-pro/01.jpeg",
+				"image": "/media/equipment-sale/dji-mavic-3-pro/images/02.png",
 				"label": "DJI MAVIC 3 PRO",
 				"href": "/equipment-sale/dji-mavic-3-pro"
 			},
 			{
-				"image": "/media/equipment-sale/dji-phantom-4-rtk/01.jpeg",
+				"image": "/media/equipment-sale/dji-phantom-4-rtk/images/02.png",
 				"label": "DJI PHANTOM 4 RTK",
 				"href": "/equipment-sale/dji-phantom-4-rtk"
 			},
 			{
-				"image": "/media/equipment-sale/dji-mavic-3-enterprise/01.jpeg",
+				"image": "/media/equipment-sale/dji-mavic-3-enterprise/images/02.png",
 				"label": "DJI MAVIC 3 ENTERPRISE",
 				"href": "/equipment-sale/dji-mavic-3-enterprise"
 			}

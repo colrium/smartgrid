@@ -9,6 +9,11 @@
 			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Equipment&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Equipment. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
+	"breadcrumb": {
+		"home": "Home",
+		"section": "Equipment Sale",
+		"sectionHref": "/equipment-sale/equipment-catalogue"
+	},
 	"catalogueOverview": {
 		"tag": "Our Equipment Range",
 		"headline": "Equipment Catalogue",
@@ -24,10 +29,16 @@
 				"title": "FOIF A90 RTK GNSS",
 				"description": "High-precision GNSS system with multi-constellation support delivering centimeter-level RTK accuracy for mapping and engineering surveys.",
 				"badge": "In Stock",
+				"image": "/media/equipment-sale/foif-a90-rtk-gnss/01.jpeg",
+				"price": {
+					"prefix": "From",
+					"currency": "KES",
+					"amount": 550000
+				},
 				"ctaPrimary": {
 					"icon": "launch",
-					"label": "Diew Details",
-					"href": "/equipment-sale/foif-a90"
+					"label": "View Details",
+					"href": "/equipment-sale/foif-a90-rtk-gnss"
 				}
 			},
 			{
@@ -35,9 +46,14 @@
 				"title": "E-Survey E3L Total Station",
 				"description": "2” accuracy total station with 5000m range, ideal for construction layout, boundary surveys, and topographic mapping.",
 				"badge": "Available",
+				"image": "/media/equipment-sale/total-station-esurvey/01.png",
+				"price": {
+					"currency": "KES",
+					"amount": 400000
+				},
 				"ctaPrimary": {
 					"icon": "launch",
-					"label": "Diew Details",
+					"label": "View Details",
 					"href": "/equipment-sale/total-station-esurvey"
 				}
 			},
@@ -46,9 +62,14 @@
 				"title": "DTM 152M Total Station",
 				"description": "Reliable and efficient total station for engineering and cadastral surveys with stable measurement performance.",
 				"badge": "Hot Deal",
+				"image": "/media/equipment-sale/total-station-dtm-152m/01.png",
+				"price": {
+					"currency": "KES",
+					"amount": 400000
+				},
 				"ctaPrimary": {
 					"icon": "launch",
-					"label": "Diew Details",
+					"label": "View Details",
 					"href": "/equipment-sale/total-station-dtm-152m"
 				}
 			},
@@ -57,9 +78,14 @@
 				"title": "Bosch GOL 32D Level",
 				"description": "32x automatic level for precise construction leveling, grading, and site works with excellent optical clarity.",
 				"badge": "New",
+				"image": "/media/equipment-sale/automatic-level-bosch/01.png",
+				"price": {
+					"currency": "KES",
+					"amount": 28000
+				},
 				"ctaPrimary": {
 					"icon": "launch",
-					"label": "Diew Details",
+					"label": "View Details",
 					"href": "/equipment-sale/automatic-level-bosch"
 				}
 			},
@@ -68,16 +94,21 @@
 				"title": "Huepar ALX32 Level",
 				"description": "Affordable 32x automatic level offering reliable accuracy for construction and general leveling tasks.",
 				"badge": "Budget",
+				"image": "/media/equipment-sale/automatic-level-hueper/01.png",
+				"price": {
+					"currency": "KES",
+					"amount": 28000
+				},
 				"ctaPrimary": {
 					"icon": "launch",
-					"label": "Diew Details",
+					"label": "View Details",
 					"href": "/equipment-sale/automatic-level-hueper"
 				}
 			}
 		]
 	},
 	"cta": {
-		"tag": "Countact us",
+		"tag": "Get a Quote",
 		"headline": "Need Help Choosing Equipment?",
 		"description": "Talk to us directly for expert advice, pricing, and availability.",
 		"ctaPrimary": {

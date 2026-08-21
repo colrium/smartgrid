@@ -9,6 +9,11 @@
 			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Equipment&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Equipment. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
+	"breadcrumb": {
+		"home": "Nyumbani",
+		"section": "Uuzaji wa Vifaa",
+		"sectionHref": "/equipment-sale/equipment-catalogue"
+	},
 	"catalogueOverview": {
 		"tag": "Aina zetu za Vifaa",
 		"headline": "Katalogi ya Vifaa",
@@ -24,10 +29,16 @@
 				"title": "FOIF A90 RTK GNSS",
 				"description": "Mfumo wa GNSS wa usahihi wa juu wenye msaada wa vyombo vingi ukitoa usahihi wa RTK wa sentimita kwa upimaji wa ramani na uhandisi.",
 				"badge": "Katika Hisa",
+				"image": "/media/equipment-sale/foif-a90-rtk-gnss/01.jpeg",
+				"price": {
+					"prefix": "Kuanzia",
+					"currency": "KES",
+					"amount": 550000
+				},
 				"ctaPrimary": {
 					"icon": "launch",
 					"label": "Tazama Maelezo",
-					"href": "/equipment-sale/foif-a90"
+					"href": "/equipment-sale/foif-a90-rtk-gnss"
 				}
 			},
 			{
@@ -35,6 +46,11 @@
 				"title": "E-Survey E3L Total Station",
 				"description": "Total station yenye usahihi wa 2” na mbalimbali ya mita 5000, bora kwa mpangilio wa ujenzi, upimaji wa mipaka, na uchoraji ramani topografia.",
 				"badge": "Inapatikana",
+				"image": "/media/equipment-sale/total-station-esurvey/01.png",
+				"price": {
+					"currency": "KES",
+					"amount": 400000
+				},
 				"ctaPrimary": {
 					"icon": "launch",
 					"label": "Tazama Maelezo",
@@ -46,6 +62,11 @@
 				"title": "DTM 152M Total Station",
 				"description": "Total station inayoaminika na yenye ufanisi kwa upimaji wa uhandisi na cadastral yenye utendaji thabiti wa kipimo.",
 				"badge": "Mkataba Moto",
+				"image": "/media/equipment-sale/total-station-dtm-152m/01.png",
+				"price": {
+					"currency": "KES",
+					"amount": 400000
+				},
 				"ctaPrimary": {
 					"icon": "launch",
 					"label": "Tazama Maelezo",
@@ -57,6 +78,11 @@
 				"title": "Bosch GOL 32D Level",
 				"description": "Kiwango cha kiotomatiki cha 32x kwa usawazishaji sahihi wa ujenzi, usawazishaji wa ardhi, na kazi za tovuti zenye uwazi bora wa macho.",
 				"badge": "Kipya",
+				"image": "/media/equipment-sale/automatic-level-bosch/01.png",
+				"price": {
+					"currency": "KES",
+					"amount": 28000
+				},
 				"ctaPrimary": {
 					"icon": "launch",
 					"label": "Tazama Maelezo",
@@ -68,6 +94,11 @@
 				"title": "Huepar ALX32 Level",
 				"description": "Kiwango cha kiotomatiki cha 32x cha bei nafuu kinachotoa usahihi wa kuaminika kwa ujenzi na kazi za jumla za usawazishaji.",
 				"badge": "Bajeti",
+				"image": "/media/equipment-sale/automatic-level-hueper/01.png",
+				"price": {
+					"currency": "KES",
+					"amount": 28000
+				},
 				"ctaPrimary": {
 					"icon": "launch",
 					"label": "Tazama Maelezo",
@@ -77,7 +108,7 @@
 		]
 	},
 	"cta": {
-		"tag": "Wasiliana nasi",
+		"tag": "Pata Nukuu",
 		"headline": "Unahitaji Msaada Kuchagua Vifaa?",
 		"description": "Zungumza nasi moja kwa moja kwa ushauri wa kitaalamu, bei, na upatikanaji.",
 		"ctaPrimary": {
