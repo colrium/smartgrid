@@ -271,9 +271,9 @@ const ModelInner: FC<ModelInnerProps> = ({
 			const dy = e.clientY - ly;
 			lx = e.clientX;
 			ly = e.clientY;
-			outer.current.rotation.y += dx * ROTATE_SPEED;
-			outer.current.rotation.x += dy * ROTATE_SPEED;
-			vel.current = { x: dx * ROTATE_SPEED, y: dy * ROTATE_SPEED };
+			outer.current.rotation.y -= dx * ROTATE_SPEED;
+			outer.current.rotation.x -= dy * ROTATE_SPEED;
+			vel.current = { x: -dx * ROTATE_SPEED, y: -dy * ROTATE_SPEED };
 			invalidate();
 		};
 		const up = () => (drag = false);
@@ -342,9 +342,9 @@ const ModelInner: FC<ModelInnerProps> = ({
 				const dy = e.clientY - ly;
 				lx = e.clientX;
 				ly = e.clientY;
-				outer.current.rotation.y += dx * ROTATE_SPEED;
-				outer.current.rotation.x += dy * ROTATE_SPEED;
-				vel.current = { x: dx * ROTATE_SPEED, y: dy * ROTATE_SPEED };
+				outer.current.rotation.y -= dx * ROTATE_SPEED;
+				outer.current.rotation.x -= dy * ROTATE_SPEED;
+				vel.current = { x: -dx * ROTATE_SPEED, y: -dy * ROTATE_SPEED };
 				invalidate();
 			} else if (mode === "pinch" && pts.size === 2) {
 				e.preventDefault();

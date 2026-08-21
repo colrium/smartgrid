@@ -104,6 +104,22 @@
 					"label": "Tazama Maelezo",
 					"href": "/equipment-sale/automatic-level-hueper"
 				}
+			},
+			{
+				"icon": "quadcopter",
+				"title": "DJI Air 3S",
+				"description": "Droni ya kisasa ya katikati ya ramani yenye mfumo wa kamera mbili, muda wa kuruka wa dakika ~40-45, na matandao imara kwa kazi za haraka za ramani na ukaguzi.",
+				"badge": "Kipya",
+				"image": "/media/equipment-sale/dji-air-3s/images/01.png",
+				"price": {
+					"currency": "KES",
+					"amount": 880000
+				},
+				"ctaPrimary": {
+					"icon": "launch",
+					"label": "Tazama Maelezo",
+					"href": "/equipment-sale/dji-air-3s"
+				}
 			}
 		]
 	},

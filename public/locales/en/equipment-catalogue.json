@@ -104,6 +104,22 @@
 					"label": "View Details",
 					"href": "/equipment-sale/automatic-level-hueper"
 				}
+			},
+			{
+				"icon": "quadcopter",
+				"title": "DJI Air 3S",
+				"description": "Next-gen mid-range mapping drone with a dual-camera system, ~40-45 min flight time, and stable grids for rapid mapping and inspection workflows.",
+				"badge": "New",
+				"image": "/media/equipment-sale/dji-air-3s/images/01.png",
+				"price": {
+					"currency": "KES",
+					"amount": 880000
+				},
+				"ctaPrimary": {
+					"icon": "launch",
+					"label": "View Details",
+					"href": "/equipment-sale/dji-air-3s"
+				}
 			}
 		]
 	},

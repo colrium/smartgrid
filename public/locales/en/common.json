@@ -197,14 +197,18 @@
 						"label": "AUTOMATIC LEVEL BOSCH",
 						"href": "/equipment-sale/automatic-level-bosch"
 					},
-					{
-						"label": "AUTOMATIC LEVEL HUEPER",
-						"href": "/equipment-sale/automatic-level-hueper"
-					},
-					{
-						"label": "EQUIPMENT CATALOGUE",
-						"href": "/equipment-sale/equipment-catalogue"
-					}
+				{
+					"label": "AUTOMATIC LEVEL HUEPER",
+					"href": "/equipment-sale/automatic-level-hueper"
+				},
+				{
+					"label": "DJI AIR 3S",
+					"href": "/equipment-sale/dji-air-3s"
+				},
+				{
+					"label": "EQUIPMENT CATALOGUE",
+					"href": "/equipment-sale/equipment-catalogue"
+				}
 				]
 			},
 			{ "label": "Careers", "href": "/careers" },
