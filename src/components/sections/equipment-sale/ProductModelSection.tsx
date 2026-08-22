@@ -6,15 +6,16 @@ import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionHeader } from "@/components/sections/home";
 import { Blob } from "@/components/sections/home/decor";
+import ModelViewer from "@/components/ui/ModelViewer";
 
-const ModelViewer = dynamic(() => import("@/components/ui/ModelViewer"), {
+/* const ModelViewer = dynamic(() => import("@/components/ui/ModelViewer/index"), {
 	ssr: false,
 	loading: () => (
 		<div className="h-full w-full flex items-center justify-center bg-surface">
 			<span className="mdi mdi-cube-outline animate-pulse text-4xl text-primary/50" />
 		</div>
 	),
-});
+}); */
 
 interface Model3dContent {
 	tag?: string | null;
@@ -58,15 +59,10 @@ export function ProductModelSection({ namespace, placeholderSrc }: ProductModelS
 				/>
 
 				<FadeUp delay={0.05}>
-					<div className="mt-12 sm:mt-16 relative rounded-[20px] bg-gradient-to-b from-primary-50/60 to-surface hairline card-shadow p-4 sm:p-6">
+					<div className="mt-12 sm:mt-16 relative rounded-[20px] bg-linear-to-b from-primary-50/60 to-surface hairline card-shadow p-4 sm:p-6">
 						<div className="relative overflow-hidden rounded-[15px] bg-surface hairline">
 							<ModelViewer
-								url={current}
-								aspectRatio="16 / 9"
-								enableMouseParallax={false}
-								
-								fadeIn
-								placeholderSrc={placeholderSrc ?? undefined}
+								url={current}								
 							/>
 						</div>
 

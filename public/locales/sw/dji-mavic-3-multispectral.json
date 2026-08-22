@@ -1,0 +1,179 @@
+{
+	"hero": {
+		"tag": "Droni ya Upimaji",
+		"headline": "Droni ya Upimaji wa Multispectral na Kilimo",
+		"title": "DJI Mavic 3 Multispectral (M3M)",
+		"image": "/media/equipment-sale/dji-mavic-3-multispectral/images/01.jpg",
+		"description": "Imeundwa kwa kilimo cha usahihi na uchambuzi wa GIS wa mazingira, ikiunganisha sensa za RGB na multispectral.",
+		"ctaPrimary": {
+			"label": "Ulizia Droni Hii",
+			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Mavic 3 Multispectral&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Mavic 3 Multispectral. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+		}
+	},
+	"breadcrumb": {
+		"home": "Nyumbani",
+		"section": "Uuzaji wa Vifaa",
+		"sectionHref": "/equipment-sale/equipment-catalogue"
+	},
+	"pricing": {
+		"new": {
+			"label": "Mpya Kabisa",
+			"currency": "KES",
+			"amount": 1399000
+		}
+	},
+	"categories": [
+		{
+			"name": "drones",
+			"label": "UAS (Droni)",
+			"href": "/equipment-sale/equipment-catalogue?category=drones"
+		}
+	],
+	"quickFacts": [
+		{
+			"icon": "leaf",
+			"label": "Bendi za Multispectral",
+			"value": "Kijani, Nyekundu, Red Edge, NIR"
+		},
+		{
+			"icon": "camera",
+			"label": "Sensa ya RGB",
+			"value": "MP 20"
+		},
+		{
+			"icon": "chart-line",
+			"label": "Pato Kuu",
+			"value": "Ramani za NDVI"
+		},
+		{
+			"icon": "map",
+			"label": "Inaoana na GIS",
+			"value": "ArcGIS, QGIS, Earth Engine"
+		}
+	],
+	"productOverview": {
+		"tag": "Muhtasari wa Bidhaa",
+		"headline": "Kilimo cha Usahihi Kinakutana na Uchambuzi wa GIS",
+		"images": [
+			"/media/equipment-sale/dji-mavic-3-multispectral/images/02.png",
+			"/media/equipment-sale/dji-mavic-3-multispectral/images/03.png",
+			"/media/equipment-sale/dji-mavic-3-multispectral/images/04.png",
+			"/media/equipment-sale/dji-mavic-3-multispectral/images/05.png",
+			"/media/equipment-sale/dji-mavic-3-multispectral/images/07.jpg",
+			"/media/equipment-sale/dji-mavic-3-multispectral/images/09.jpg",
+			"/media/equipment-sale/dji-mavic-3-multispectral/images/11.jpg",
+			"/media/equipment-sale/dji-mavic-3-multispectral/images/12.jpg",
+			"/media/equipment-sale/dji-mavic-3-multispectral/images/13.jpg",
+			"/media/equipment-sale/dji-mavic-3-multispectral/images/14.jpg",
+			"/media/equipment-sale/dji-mavic-3-multispectral/images/15.jpg",
+			"/media/equipment-sale/dji-mavic-3-multispectral/images/16.jpg",
+			"/media/equipment-sale/dji-mavic-3-multispectral/images/17.jpg",
+			"/media/equipment-sale/dji-mavic-3-multispectral/images/18.jpg",
+			"/media/equipment-sale/dji-mavic-3-multispectral/images/19.jpg",
+			"/media/equipment-sale/dji-mavic-3-multispectral/images/20.jpg"
+		],
+		"description": "DJI Mavic 3 Multispectral inaunganisha kamera ya RGB na sensa ya bendi nne za multispectral, kuwezesha ramani za NDVI, ufuatiliaji wa afya ya mazao, na uchambuzi wa athari za mazingira katika uruka mmoja."
+	},
+	"keyFeatures": {
+		"tag": "Mambo Muhimu",
+		"headline": "Vipengele Muhimu",
+		"description": "Uwezo wa sensa zilizoundwa kwa kazi za upimaji wa kilimo na mazingira.",
+		"items": [
+			{
+				"icon": "leaf",
+				"title": "Bendi Nne za Multispectral",
+				"description": "Kijani (nm 560), Nyekundu (nm 650), Red Edge (nm 730), Infrared Karibu (nm 860)."
+			},
+			{
+				"icon": "camera",
+				"title": "Sensa ya RGB ya MP 20",
+				"description": "Picha za RGB zenye ubora wa juu kwa orthomosaics sahihi."
+			},
+			{
+				"icon": "chart-line",
+				"title": "Ramani za NDVI",
+				"description": "Hutengeneza ramani za NDVI kwa uchambuzi wa afya ya mazao na unyevu wa udongo."
+			},
+			{
+				"icon": "file-export",
+				"title": "Pato Tayari kwa GIS",
+				"description": "Husafirisha ramani za NDVI na tabaka za GeoTIFF zinazooana na ArcGIS, QGIS, na Google Earth Engine."
+			}
+		]
+	},
+	"sensorSpecifications": {
+		"tag": "Sensa",
+		"headline": "Vipimo vya Sensa",
+		"description": "Upigaji picha wa RGB na multispectral katika mfumo mmoja wa ndege.",
+		"list": [
+			"Bendi za multispectral: Kijani (nm 560), Nyekundu (nm 650), Red Edge (nm 730), Infrared Karibu (nm 860)",
+			"Sensa ya RGB: MP 20 (kwa orthomosaics)"
+		]
+	},
+	"mappingCapabilities": {
+		"tag": null,
+		"headline": "Uwezo wa Ramani",
+		"description": "Imeundwa mahsusi kwa uchambuzi wa mimea na ardhi.",
+		"list": [
+			"NDVI (Normalized Difference Vegetation Index)",
+			"Ufuatiliaji wa afya ya mazao",
+			"Uchambuzi wa tofauti za unyevu wa udongo",
+			"Mipango ya umwagiliaji"
+		]
+	},
+	"specs": {
+		"tag": "Data ya Kiufundi",
+		"headline": "Vipimo vya Kiufundi",
+		"description": "Maelezo kamili ya kiufundi kwa DJI Mavic 3 Multispectral."
+	},
+	"surveyApplications": {
+		"tag": "Matumizi",
+		"headline": "Matumizi ya Upimaji na Muunganisho wa GIS",
+		"description": "Pale M3M inavyopinda katika kazi za kilimo na mazingira.",
+		"list": [
+			"Usimamizi wa ardhi za kilimo",
+			"Tathmini za athari za mazingira (EIA)",
+			"Ramani za misitu",
+			"Ufuatiliaji wa uharibifu wa ardhi",
+			"Pato: ramani za NDVI, tabaka za GeoTIFF",
+			"Inaoana na ArcGIS, QGIS, Google Earth Engine"
+		]
+	},
+	"cta": {
+		"tag": "Pata Nukuu",
+		"headline": "Ulizia Droni Hii",
+		"description": "Tuambie kuhusu mradi wako na upate nukuu iliyoundwa kwa ajili ya DJI Mavic 3 Multispectral.",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Tutumie Barua Pepe",
+			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Mavic 3 Multispectral&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Mavic 3 Multispectral. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+		},
+		"ctaSecondary": {
+			"icon": "whatsapp",
+			"label": "Tutumie WhatsApp",
+			"href": "https://wa.me/254701618282"
+		}
+	},
+	"relatedProducts": {
+		"tag": "Chunguza",
+		"headline": "Droni Nyingine Unazoweza Kuzipenda",
+		"description": "Gundua droni zaidi za upimaji kutoka kwenye katalogi ya SmartGrid.",
+		"items": [
+			{
+				"image": "/media/equipment-sale/dji-mavic-3-enterprise/images/02.png",
+				"label": "DJI MAVIC 3 ENTERPRISE",
+				"href": "/equipment-sale/dji-mavic-3-enterprise"
+			},
+			{
+				"image": "/media/equipment-sale/dji-mavic-3-pro/images/02.png",
+				"label": "DJI MAVIC 3 PRO",
+				"href": "/equipment-sale/dji-mavic-3-pro"
+			},
+			{
+				"image": "/media/equipment-sale/dji-matrice-350-rtk/images/02.png",
+				"label": "DJI MATRICE 350 RTK",
+				"href": "/equipment-sale/dji-matrice-350-rtk"
+			}
+		]
+	}
+}

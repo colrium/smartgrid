@@ -120,6 +120,22 @@
 					"label": "Tazama Maelezo",
 					"href": "/equipment-sale/dji-air-3s"
 				}
+			},
+			{
+				"icon": "leaf",
+				"title": "DJI Mavic 3 Multispectral",
+				"description": "Droni ya RGB + bendi nne za multispectral kwa ramani za NDVI, ufuatiliaji wa afya ya mazao, na uchambuzi wa mazingira tayari kwa GIS katika uruka mmoja.",
+				"badge": "Kipya",
+				"image": "/media/equipment-sale/dji-mavic-3-multispectral/images/01.jpg",
+				"price": {
+					"currency": "KES",
+					"amount": 1399000
+				},
+				"ctaPrimary": {
+					"icon": "launch",
+					"label": "Tazama Maelezo",
+					"href": "/equipment-sale/dji-mavic-3-multispectral"
+				}
 			}
 		]
 	},

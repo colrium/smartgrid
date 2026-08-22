@@ -1,604 +1,354 @@
-// @ts-nocheck
 "use client";
 
-import { type FC, Suspense, useRef, useLayoutEffect, useEffect, useMemo } from "react";
-import { Canvas, useFrame, useLoader, useThree, invalidate } from "@react-three/fiber";
+import { Suspense, useEffect, useRef, useCallback } from "react";
+import { Canvas } from "@react-three/fiber";
 import {
 	OrbitControls,
-	useGLTF,
-	useProgress,
-	Html,
-	Environment,
+	Bounds,
 	ContactShadows,
+	Environment,
+	Html,
+	useProgress,
+	useGLTF,
+	GizmoHelper,
+	GizmoViewport,
 } from "@react-three/drei";
-import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
-import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
-import * as THREE from "three";
+import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
+import type { Group, Mesh } from "three";
 
-export interface ViewerProps {
+/* ------------------------------------------------------------------ */
+/* Types                                                               */
+/* ------------------------------------------------------------------ */
+
+interface LightSetting {
+	intensity?: number;
+	color?: string;
+	position?: [number, number, number];
+}
+
+export interface LightConfig {
+	ambient?: LightSetting | false;
+	key?: LightSetting | false;
+	fill?: LightSetting | false;
+	rim?: LightSetting | false;
+}
+
+export interface ModelViewerProps {
+	/** URL to a .glb or .gltf file */
 	url: string;
-	width?: number | string;
-	height?: number | string;
-	aspectRatio?: string;
-	modelXOffset?: number;
-	modelYOffset?: number;
-	defaultRotationX?: number;
-	defaultRotationY?: number;
-	defaultZoom?: number;
-	minZoomDistance?: number;
-	maxZoomDistance?: number;
-	enableMouseParallax?: boolean;
-	enableManualRotation?: boolean;
-	enableHoverRotation?: boolean;
-	enableManualZoom?: boolean;
-	ambientIntensity?: number;
-	keyLightIntensity?: number;
-	fillLightIntensity?: number;
-	rimLightIntensity?: number;
-	environmentPreset?:
-		"city" | "sunset" | "night" | "dawn" | "studio" | "apartment" | "forest" | "park" | "none";
-	autoFrame?: boolean;
-	placeholderSrc?: string;
-	showScreenshotButton?: boolean;
-	fadeIn?: boolean;
+	/** Extra classes on the outer container. If given, YOU control sizing (e.g. "w-full h-[500px]") */
+	className?: string;
+	/** Disable the ground contact shadow */
+	disableShadow?: boolean;
+	/** Per-light intensity/color/position overrides, or `false` to disable a light */
+	lights?: LightConfig;
+	/** Slowly rotate the model */
 	autoRotate?: boolean;
 	autoRotateSpeed?: number;
-	onModelLoaded?: () => void;
+	/** Closest the camera may zoom in */
+	minZoom?: number;
+	/** Farthest the camera may zoom out */
+	maxZoom?: number;
+	/** Show bottom-center button controls */
+	showControls?: boolean;
+	/** Show the orientation gizmo (top-right) */
+	showAxesGizmo?: boolean;
+	/** Show the live X/Y/Z camera readout (bottom-left) */
+	showCoordinates?: boolean;
+	/** drei <Environment> preset for reflections, or false to disable */
+	environmentPreset?: string | false;
 }
 
-const isTouch =
-	typeof window !== "undefined" && ("ontouchstart" in window || navigator.maxTouchPoints > 0);
-const deg2rad = (d: number) => (d * Math.PI) / 180;
-const DECIDE = 8; // px before we decide horizontal vs vertical
-const ROTATE_SPEED = 0.005;
-const INERTIA = 0.925;
-const PARALLAX_MAG = 0.05;
-const PARALLAX_EASE = 0.12;
-const HOVER_MAG = deg2rad(6);
-const HOVER_EASE = 0.15;
-const _ORIGIN = new THREE.Vector3(0, 0, 0);
+/* ------------------------------------------------------------------ */
+/* Loader (Suspense fallback) — isolated re-renders via useProgress    */
+/* ------------------------------------------------------------------ */
 
-const Loader: FC<{ placeholderSrc?: string }> = ({ placeholderSrc }) => {
-	const { progress, active } = useProgress();
-	if (!active && placeholderSrc) return null;
+function Loader() {
+	const { progress } = useProgress();
 	return (
 		<Html center>
-			{placeholderSrc ? (
-				<img src={placeholderSrc} width={128} height={128} className="blur-lg rounded-lg" />
-			) : (
-				`${Math.round(progress)} %`
-			)}
+			<div className="flex w-36 flex-col items-center gap-2">
+				<div className="h-1 w-full overflow-hidden rounded-full bg-on-surface/10">
+					<div
+						className="h-full rounded-full bg-primary transition-[width] duration-150 ease-out"
+						style={{ width: `${progress}%` }}
+					/>
+				</div>
+				<span className="font-mono text-[11px] tabular-nums text-on-surface/60">
+					{Math.round(progress)}%
+				</span>
+			</div>
 		</Html>
 	);
-};
-
-function fitDistance(cam: THREE.PerspectiveCamera, radius: number) {
-	const vFov = (cam.fov * Math.PI) / 180;
-	const hFov = 2 * Math.atan(Math.tan(vFov / 2) * cam.aspect);
-	const fov = Math.min(vFov, hFov);
-	return (radius * 1.2) / Math.sin(fov / 2);
 }
 
-const DesktopControls: FC<{
-	pivot: THREE.Vector3;
-	min: number;
-	max: number;
-	zoomEnabled: boolean;
-}> = ({ pivot, min, max, zoomEnabled }) => {
-	const ref = useRef<any>(null);
-	useFrame(() => ref.current?.target.copy(pivot));
-	return (
-		<OrbitControls
-			ref={ref}
-			makeDefault
-			enablePan={false}
-			enableRotate={false}
-			enableZoom={zoomEnabled}
-			minDistance={min}
-			maxDistance={max}
-		/>
-	);
-};
+/* ------------------------------------------------------------------ */
+/* Model — enables shadows, then signals readiness once (no material   */
+/* opacity mutation: mutating shared/cached glTF materials per-instance*/
+/* is what previously left meshes stuck invisible).                    */
+/* ------------------------------------------------------------------ */
 
-interface ModelInnerProps {
-	url: string;
-	xOff: number;
-	yOff: number;
-	pivot: THREE.Vector3;
-	initYaw: number;
-	initPitch: number;
-	minZoom: number;
-	maxZoom: number;
-	enableMouseParallax: boolean;
-	enableManualRotation: boolean;
-	enableHoverRotation: boolean;
-	enableManualZoom: boolean;
-	autoFrame: boolean;
-	fadeIn: boolean;
-	autoRotate: boolean;
-	autoRotateSpeed: number;
-	onLoaded?: () => void;
-}
-
-const ModelInner: FC<ModelInnerProps> = ({
-	url,
-	xOff,
-	yOff,
-	pivot,
-	initYaw,
-	initPitch,
-	minZoom,
-	maxZoom,
-	enableMouseParallax,
-	enableManualRotation,
-	enableHoverRotation,
-	enableManualZoom,
-	autoFrame,
-	fadeIn,
-	autoRotate,
-	autoRotateSpeed,
-	onLoaded,
-}) => {
-	const outer = useRef<THREE.Group>(null!);
-	const inner = useRef<THREE.Group>(null!);
-	const vel = useRef({ x: 0, y: 0 });
-	const tPar = useRef({ x: 0, y: 0 });
-	const cPar = useRef({ x: 0, y: 0 });
-	const tHov = useRef({ x: 0, y: 0 });
-	const cHov = useRef({ x: 0, y: 0 });
-	const _right = useRef(new THREE.Vector3()).current;
-	const _up = useRef(new THREE.Vector3()).current;
-
-	const ext = useMemo(() => url.split(".").pop()!.toLowerCase(), [url]);
-	const Loader3D =
-		ext === "glb" || ext === "gltf" ? GLTFLoader : ext === "fbx" ? FBXLoader : OBJLoader;
-	const loaded = useLoader(Loader3D as any, url, (loader: any) => {
-		if (loader instanceof GLTFLoader) {
-			const draco = new DRACOLoader();
-			draco.setDecoderPath("https://www.gstatic.com/draco/versioned/decoders/1.5.6/");
-			loader.setDRACOLoader(draco);
-		}
-	});
-	const content = useMemo<THREE.Object3D | null>(() => {
-		if (ext === "glb" || ext === "gltf") return (loaded as any).scene.clone();
-		if (ext === "fbx" || ext === "obj") return (loaded as any).clone();
-		console.error("Unsupported format:", ext);
-		return null;
-	}, [loaded, ext]);
-
-	const pivotW = useRef(new THREE.Vector3());
-	const fitR = useRef(0);
-	const { camera, gl, size } = useThree();
-	useLayoutEffect(() => {
-		if (!content) return;
-		const g = inner.current;
-	g.updateWorldMatrix(true, true);
-
-	const sphere = new THREE.Box3().setFromObject(g).getBoundingSphere(new THREE.Sphere());
-	const s = 1 / (sphere.radius * 2);
-	g.position.set(-sphere.center.x, -sphere.center.y, -sphere.center.z);
-	g.scale.setScalar(s);
-
-	g.traverse((o: any) => {
-		if (o.isMesh) {
-			o.castShadow = true;
-			o.receiveShadow = true;
-			if (fadeIn) {
-				o.material.transparent = true;
-				o.material.opacity = 0;
-			}
-		}
-	});
-
-	// after normalization the model's visual center sits exactly at world origin
-	fitR.current = sphere.radius * s;
-	pivot.set(0, 0, 0);
-	pivotW.current.set(0, 0, 0);
-	outer.current.position.set(0, 0, 0);
-	outer.current.rotation.set(initPitch, initYaw, 0);
-
-		if (autoFrame && (camera as THREE.PerspectiveCamera).isPerspectiveCamera) {
-			fitR.current = sphere.radius * s;
-			const persp = camera as THREE.PerspectiveCamera;
-			const d = fitDistance(persp, fitR.current);
-			if (Number.isFinite(d) && d > 0) {
-				persp.position.set(pivotW.current.x, pivotW.current.y, pivotW.current.z + d);
-				persp.near = d / 10;
-				persp.far = d * 10;
-				persp.updateProjectionMatrix();
-			}
-		}
-
-		/* optional fade-in */
-		if (fadeIn) {
-			let t = 0;
-			const id = setInterval(() => {
-				t += 0.05;
-				const v = Math.min(t, 1);
-				g.traverse((o: any) => {
-					if (o.isMesh) o.material.opacity = v;
-				});
-				invalidate();
-				if (v === 1) {
-					clearInterval(id);
-					onLoaded?.();
-				}
-			}, 16);
-			return () => clearInterval(id);
-		} else {
-			onLoaded?.();
-			invalidate();
-		}
-	}, [content]);
+function Model({ url, onReady }: { url: string; onReady: () => void }) {
+	const { scene } = useGLTF(url);
+	const groupRef = useRef<Group>(null);
+	const announced = useRef(false);
 
 	useEffect(() => {
-		if (!autoFrame || !fitR.current) return;
-		if (!size.width || !size.height) return;
-		if (!(camera as THREE.PerspectiveCamera).isPerspectiveCamera) return;
-		const persp = camera as THREE.PerspectiveCamera;
-		const aspect = size.width / size.height;
-		if (!Number.isFinite(aspect) || aspect <= 0) return;
-		persp.aspect = aspect;
-		const d = fitDistance(persp, fitR.current);
-		if (!Number.isFinite(d) || d <= 0) return;
-		const dir = persp.position.clone().sub(pivotW.current).normalize();
-		if (dir.lengthSq() === 0) dir.set(0, 0, 1);
-		persp.position.copy(pivotW.current).addScaledVector(dir, d);
-		persp.near = d / 10;
-		persp.far = d * 10;
-		persp.updateProjectionMatrix();
-		invalidate();
-	}, [size.width, size.height, autoFrame]);
-
-	useEffect(() => {
-		if (!enableManualRotation) return;
-		const el = gl.domElement;
-		let drag = false;
-		let lx = 0,
-			ly = 0;
-		const down = (e: PointerEvent) => {
-			if (e.pointerType !== "mouse" && e.pointerType !== "pen") return;
-			drag = true;
-			lx = e.clientX;
-			ly = e.clientY;
-			window.addEventListener("pointerup", up);
-		};
-		const move = (e: PointerEvent) => {
-			if (!drag) return;
-			const dx = e.clientX - lx;
-			const dy = e.clientY - ly;
-			lx = e.clientX;
-			ly = e.clientY;
-			outer.current.rotation.y -= dx * ROTATE_SPEED;
-			outer.current.rotation.x -= dy * ROTATE_SPEED;
-			vel.current = { x: -dx * ROTATE_SPEED, y: -dy * ROTATE_SPEED };
-			invalidate();
-		};
-		const up = () => (drag = false);
-		el.addEventListener("pointerdown", down);
-		el.addEventListener("pointermove", move);
-		return () => {
-			el.removeEventListener("pointerdown", down);
-			el.removeEventListener("pointermove", move);
-			window.removeEventListener("pointerup", up);
-		};
-	}, [gl, enableManualRotation]);
-
-	useEffect(() => {
-		if (!isTouch) return;
-		const el = gl.domElement;
-		const pts = new Map<number, { x: number; y: number }>();
-		type Mode = "idle" | "decide" | "rotate" | "pinch";
-		let mode: Mode = "idle";
-		let sx = 0,
-			sy = 0,
-			lx = 0,
-			ly = 0,
-			startDist = 0,
-			startZ = 0;
-
-		const down = (e: PointerEvent) => {
-			if (e.pointerType !== "touch") return;
-			pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
-			if (pts.size === 1) {
-				mode = "decide";
-				sx = lx = e.clientX;
-				sy = ly = e.clientY;
-			} else if (pts.size === 2 && enableManualZoom) {
-				mode = "pinch";
-				const [p1, p2] = [...pts.values()];
-				startDist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
-				startZ = camera.position.z;
-				e.preventDefault();
-			}
-			invalidate();
-		};
-
-		const move = (e: PointerEvent) => {
-			const p = pts.get(e.pointerId);
-			if (!p) return;
-			p.x = e.clientX;
-			p.y = e.clientY;
-
-			if (mode === "decide") {
-				const dx = e.clientX - sx;
-				const dy = e.clientY - sy;
-				if (Math.abs(dx) > DECIDE || Math.abs(dy) > DECIDE) {
-					if (enableManualRotation && Math.abs(dx) > Math.abs(dy)) {
-						mode = "rotate";
-						el.setPointerCapture(e.pointerId);
-					} else {
-						mode = "idle";
-						pts.clear();
-					}
-				}
-			}
-
-			if (mode === "rotate") {
-				e.preventDefault();
-				const dx = e.clientX - lx;
-				const dy = e.clientY - ly;
-				lx = e.clientX;
-				ly = e.clientY;
-				outer.current.rotation.y -= dx * ROTATE_SPEED;
-				outer.current.rotation.x -= dy * ROTATE_SPEED;
-				vel.current = { x: -dx * ROTATE_SPEED, y: -dy * ROTATE_SPEED };
-				invalidate();
-			} else if (mode === "pinch" && pts.size === 2) {
-				e.preventDefault();
-				const [p1, p2] = [...pts.values()];
-				const d = Math.hypot(p1.x - p2.x, p1.y - p2.y);
-				const ratio = startDist / d;
-				camera.position.z = THREE.MathUtils.clamp(startZ * ratio, minZoom, maxZoom);
-				invalidate();
-			}
-		};
-
-		const up = (e: PointerEvent) => {
-			pts.delete(e.pointerId);
-			if (mode === "rotate" && pts.size === 0) mode = "idle";
-			if (mode === "pinch" && pts.size < 2) mode = "idle";
-		};
-
-		el.addEventListener("pointerdown", down, { passive: true });
-		window.addEventListener("pointermove", move, { passive: false });
-		window.addEventListener("pointerup", up, { passive: true });
-		window.addEventListener("pointercancel", up, { passive: true });
-		return () => {
-			el.removeEventListener("pointerdown", down);
-			window.removeEventListener("pointermove", move);
-			window.removeEventListener("pointerup", up);
-			window.removeEventListener("pointercancel", up);
-		};
-	}, [gl, enableManualRotation, enableManualZoom, minZoom, maxZoom]);
-
-	useEffect(() => {
-		if (isTouch) return;
-		const mm = (e: PointerEvent) => {
-			if (e.pointerType !== "mouse") return;
-			const nx = (e.clientX / window.innerWidth) * 2 - 1;
-			const ny = (e.clientY / window.innerHeight) * 2 - 1;
-			if (enableMouseParallax)
-				tPar.current = { x: -nx * PARALLAX_MAG, y: -ny * PARALLAX_MAG };
-			if (enableHoverRotation) tHov.current = { x: ny * HOVER_MAG, y: nx * HOVER_MAG };
-			invalidate();
-		};
-		window.addEventListener("pointermove", mm);
-		return () => window.removeEventListener("pointermove", mm);
-	}, [enableMouseParallax, enableHoverRotation]);
-
-	useFrame((_, dt) => {
-		let need = false;
-		cPar.current.x += (tPar.current.x - cPar.current.x) * PARALLAX_EASE;
-		cPar.current.y += (tPar.current.y - cPar.current.y) * PARALLAX_EASE;
-		const phx = cHov.current.x,
-			phy = cHov.current.y;
-		cHov.current.x += (tHov.current.x - cHov.current.x) * HOVER_EASE;
-		cHov.current.y += (tHov.current.y - cHov.current.y) * HOVER_EASE;
-
-		// camera-relative offset (stable under zoom/rotation, keeps model centered)
-		if (
-			xOff !== 0 ||
-			yOff !== 0 ||
-			Math.abs(cPar.current.x) > 1e-5 ||
-			Math.abs(cPar.current.y) > 1e-5
-		) {
-			const dist = Math.max(camera.position.length(), 1e-4);
-			const vFov = ((camera as THREE.PerspectiveCamera).fov * Math.PI) / 180;
-			const worldPerNdc = 2 * dist * Math.tan(vFov / 2);
-			_right.setFromMatrixColumn(camera.matrixWorld, 0);
-			_up.setFromMatrixColumn(camera.matrixWorld, 1);
-			outer.current.position
-				.set(0, 0, 0)
-				.addScaledVector(_right, (xOff + cPar.current.x) * worldPerNdc)
-				.addScaledVector(_up, (yOff + cPar.current.y) * worldPerNdc);
-		} else if (!outer.current.position.equals(_ORIGIN)) {
-			outer.current.position.set(0, 0, 0);
-			need = true;
-		}
-
-		outer.current.rotation.x += cHov.current.x - phx;
-		outer.current.rotation.y += cHov.current.y - phy;
-
-		if (autoRotate) {
-			outer.current.rotation.y += autoRotateSpeed * dt;
-			need = true;
-		}
-
-		outer.current.rotation.y += vel.current.x;
-		outer.current.rotation.x += vel.current.y;
-		vel.current.x *= INERTIA;
-		vel.current.y *= INERTIA;
-		if (Math.abs(vel.current.x) > 1e-4 || Math.abs(vel.current.y) > 1e-4) need = true;
-
-		if (
-			Math.abs(cPar.current.x - tPar.current.x) > 1e-4 ||
-			Math.abs(cPar.current.y - tPar.current.y) > 1e-4 ||
-			Math.abs(cHov.current.x - tHov.current.x) > 1e-4 ||
-			Math.abs(cHov.current.y - tHov.current.y) > 1e-4
-		)
-			need = true;
-
-		if (need) invalidate();
-	});
-
-	if (!content) return null;
-	return (
-		<group ref={outer}>
-			<group ref={inner}>
-				<primitive object={content} />
-			</group>
-		</group>
-	);
-};
-
-const ModelViewer: FC<ViewerProps> = ({
-	url,
-	width = "100%",
-	height = "100%",
-	aspectRatio = "1 / 1",
-	modelXOffset = 0,
-	modelYOffset = -0.3,
-	defaultRotationX = 0,
-	defaultRotationY = 0,
-	defaultZoom = 2.5,
-	minZoomDistance = 0.5,
-	maxZoomDistance = 10,
-	enableMouseParallax = false,
-	enableManualRotation = true,
-	enableHoverRotation = true,
-	enableManualZoom = true,
-	ambientIntensity = 0.8,
-	keyLightIntensity = 1,
-	fillLightIntensity = 0.7,
-	rimLightIntensity = 0.8,
-	environmentPreset = "none",
-	autoFrame = true,
-	placeholderSrc,
-	showScreenshotButton = false,
-	fadeIn = true,
-	autoRotate = false,
-	autoRotateSpeed = 0.35,
-	onModelLoaded,
-}) => {
-	useEffect(() => {
-		const ext = url.split(".").pop()?.toLowerCase();
-		if (ext === "glb" || ext === "gltf") useGLTF.preload(url);
-	}, [url]);
-	const pivot = useRef(new THREE.Vector3()).current;
-	const contactRef = useRef<THREE.Mesh>(null);
-	const rendererRef = useRef<THREE.WebGLRenderer>(null);
-	const sceneRef = useRef<THREE.Scene>(null);
-	const cameraRef = useRef<THREE.Camera>(null);
-
-	const initYaw = deg2rad(defaultRotationX);
-	const initPitch = deg2rad(defaultRotationY);
-	const camZ = Math.min(Math.max(defaultZoom, minZoomDistance), maxZoomDistance);
-
-	const capture = () => {
-		const g = rendererRef.current,
-			s = sceneRef.current,
-			c = cameraRef.current;
-		if (!g || !s || !c) return;
-		g.shadowMap.enabled = false;
-		const tmp: { l: THREE.Light; cast: boolean }[] = [];
-		s.traverse((o: any) => {
-			if (o.isLight && "castShadow" in o) {
-				tmp.push({ l: o, cast: o.castShadow });
-				o.castShadow = false;
-			}
+		scene.traverse((child) => {
+			const mesh = child as Mesh;
+			if (!mesh.isMesh) return;
+			mesh.castShadow = true;
+			mesh.receiveShadow = true;
 		});
-		if (contactRef.current) contactRef.current.visible = false;
-		g.render(s, c);
-		const urlPNG = g.domElement.toDataURL("image/png");
-		const a = document.createElement("a");
-		a.download = "model.png";
-		a.href = urlPNG;
-		a.click();
-		g.shadowMap.enabled = true;
-		tmp.forEach(({ l, cast }) => (l.castShadow = cast));
-		if (contactRef.current) contactRef.current.visible = true;
-		invalidate();
-	};
+
+		if (!announced.current) {
+			announced.current = true;
+			onReady();
+		}
+	}, [scene, onReady]);
+
+	return <primitive ref={groupRef} object={scene} />;
+}
+
+/* ------------------------------------------------------------------ */
+/* Lights                                                              */
+/* ------------------------------------------------------------------ */
+
+function Lights({ config, shadows }: { config: LightConfig; shadows: boolean }) {
+	const { ambient, key, fill, rim } = config;
 
 	return (
-		<div
-			style={{
-				width,
-				height,
-				aspectRatio,
-				minWidth: 0,
-				minHeight: 0,
-				touchAction: "pan-y pinch-zoom",
-			}}
-			className="relative"
-		>
-			
-
-			<Canvas
-				shadows
-				frameloop="demand"
-				gl={{ preserveDrawingBuffer: true }}
-				onCreated={({ gl, scene, camera }) => {
-					rendererRef.current = gl;
-					sceneRef.current = scene;
-					cameraRef.current = camera;
-					gl.toneMapping = THREE.ACESFilmicToneMapping;
-					gl.outputColorSpace = THREE.SRGBColorSpace;
-				}}
-				camera={{ fov: 50, position: [0, 0, camZ], near: 0.01, far: 100 }}
-				style={{ touchAction: "pan-y pinch-zoom" }}
-			>
-				{/*environmentPreset !== "none" && (
-					<Environment preset={environmentPreset as any} background={false} />
-				)*/}
-
-				<ambientLight intensity={ambientIntensity} />
-				<directionalLight position={[5, 5, 5]} intensity={keyLightIntensity} castShadow />
-				<directionalLight position={[-5, 2, 5]} intensity={fillLightIntensity} />
-				<directionalLight position={[0, 4, -5]} intensity={rimLightIntensity} />
-
-				<ContactShadows
-					ref={contactRef as any}
-					position={[0, -0.5, 0]}
-					opacity={0.35}
-					scale={10}
-					blur={2}
+		<>
+			{ambient !== false && (
+				<ambientLight
+					intensity={ambient?.intensity ?? 0.6}
+					color={ambient?.color ?? "#ffffff"}
 				/>
+			)}
+			{key !== false && (
+				<directionalLight
+					position={key?.position ?? [5, 6, 5]}
+					intensity={key?.intensity ?? 1.6}
+					color={key?.color ?? "#ffffff"}
+					castShadow={shadows}
+					shadow-mapSize={[1024, 1024]}
+					shadow-bias={-0.0005}
+				/>
+			)}
+			{fill !== false && (
+				<directionalLight
+					position={fill?.position ?? [-5, 2, -4]}
+					intensity={fill?.intensity ?? 0.45}
+					color={fill?.color ?? "#ffffff"}
+				/>
+			)}
+			{rim !== false && (
+				<directionalLight
+					position={rim?.position ?? [0, 4, -6]}
+					intensity={rim?.intensity ?? 0.7}
+					color={rim?.color ?? "#a8c6ff"}
+				/>
+			)}
+		</>
+	);
+}
 
-				<Suspense fallback={<Loader placeholderSrc={placeholderSrc} />}>
-					<ModelInner
-						url={url}
-						xOff={modelXOffset}
-						yOff={modelYOffset}
-						pivot={pivot}
-						initYaw={initYaw}
-						initPitch={initPitch}
-						minZoom={minZoomDistance}
-						maxZoom={maxZoomDistance}
-						enableMouseParallax={enableMouseParallax}
-						enableManualRotation={enableManualRotation}
-						enableHoverRotation={enableHoverRotation}
-						enableManualZoom={enableManualZoom}
-						autoFrame={autoFrame}
-						fadeIn={fadeIn}
+/* ------------------------------------------------------------------ */
+/* Live X/Y/Z camera readout — driven by rAF + DOM refs, no React state*/
+/* ------------------------------------------------------------------ */
+
+function useCoordinateReadout(
+	controlsRef: React.RefObject<OrbitControlsImpl | null>,
+	enabled: boolean
+) {
+	const elRef = useRef<HTMLSpanElement>(null);
+
+	useEffect(() => {
+		if (!enabled) return;
+		let raf = 0;
+		const tick = () => {
+			const cam = controlsRef.current?.object;
+			if (cam && elRef.current) {
+				elRef.current.textContent = `X ${cam.position.x.toFixed(1)}  Y ${cam.position.y.toFixed(
+					1
+				)}  Z ${cam.position.z.toFixed(1)}`;
+			}
+			raf = requestAnimationFrame(tick);
+		};
+		raf = requestAnimationFrame(tick);
+		return () => cancelAnimationFrame(raf);
+	}, [controlsRef, enabled]);
+
+	return elRef;
+}
+
+/* ------------------------------------------------------------------ */
+/* Main component                                                      */
+/* ------------------------------------------------------------------ */
+
+export default function ModelViewer({
+	url,
+	className,
+	disableShadow = false,
+	lights = {},
+	autoRotate = false,
+	autoRotateSpeed = 1.2,
+	minZoom = 1,
+	maxZoom = 12,
+	showControls = true,
+	showAxesGizmo = true,
+	showCoordinates = true,
+	environmentPreset = "city",
+}: ModelViewerProps) {
+	const controlsRef = useRef<OrbitControlsImpl | null>(null);
+	const autoRotateRef = useRef(autoRotate);
+	const autoRotateBtnRef = useRef<HTMLButtonElement>(null);
+	const canvasWrapperRef = useRef<HTMLDivElement>(null);
+
+	const coordsRef = useCoordinateReadout(controlsRef, showCoordinates);
+
+	// Ref-driven fade-in: flips a CSS class directly on the DOM node once the
+	// model has mounted. No React state, so no extra re-render on load.
+	const handleReady = useCallback(() => {
+		const el = canvasWrapperRef.current;
+		if (!el) return;
+		requestAnimationFrame(() => {
+			el.classList.remove("opacity-0");
+			el.classList.add("opacity-100");
+		});
+	}, []);
+
+	const handleReset = useCallback(() => {
+		controlsRef.current?.reset();
+	}, []);
+
+	const dolly = useCallback(
+		(factor: number) => {
+			const controls = controlsRef.current;
+			if (!controls) return;
+			const camera = controls.object;
+			const target = controls.target;
+
+			const dir = camera.position.clone().sub(target);
+			const dist = Math.min(maxZoom, Math.max(minZoom, dir.length() * factor));
+			dir.setLength(dist);
+			camera.position.copy(target.clone().add(dir));
+			controls.update();
+		},
+		[minZoom, maxZoom]
+	);
+
+	const handleZoomIn = useCallback(() => dolly(0.85), [dolly]);
+	const handleZoomOut = useCallback(() => dolly(1.15), [dolly]);
+
+	const toggleAutoRotate = useCallback(() => {
+		autoRotateRef.current = !autoRotateRef.current;
+		if (controlsRef.current) {
+			controlsRef.current.autoRotate = autoRotateRef.current;
+		}
+		autoRotateBtnRef.current?.classList.toggle("bg-accent/20", autoRotateRef.current);
+		autoRotateBtnRef.current?.classList.toggle("text-accent", autoRotateRef.current);
+	}, []);
+
+	return (
+		<div className={className ?? "relative h-[480px] w-full bg-transparent"}>
+			<div
+				ref={canvasWrapperRef}
+				className="h-full w-full opacity-0 transition-opacity duration-500 ease-out"
+			>
+				<Canvas
+					shadows={!disableShadow}
+					camera={{ fov: 45, position: [4, 3, 4], near: 0.1, far: 100 }}
+					dpr={[1, 2]}
+					gl={{ alpha: true, antialias: true }}
+					style={{ background: "transparent" }}
+				>
+					<Lights config={lights} shadows={!disableShadow} />
+
+					<Suspense fallback={<Loader />}>
+						<Bounds fit clip observe margin={1.3}>
+							<Model url={url} onReady={handleReady} />
+						</Bounds>
+						{!disableShadow && (
+							<ContactShadows
+								position={[0, -0.001, 0]}
+								opacity={0.55}
+								scale={12}
+								blur={2.4}
+								far={6}
+							/>
+						)}
+						{environmentPreset && <Environment preset={environmentPreset as never} />}
+					</Suspense>
+
+					<OrbitControls
+						ref={controlsRef}
+						makeDefault
+						enableDamping
+						dampingFactor={0.1}
+						minDistance={minZoom}
+						maxDistance={maxZoom}
 						autoRotate={autoRotate}
 						autoRotateSpeed={autoRotateSpeed}
-						onLoaded={onModelLoaded}
 					/>
-				</Suspense>
 
-				<DesktopControls
-					pivot={pivot}
-					min={minZoomDistance}
-					max={maxZoomDistance}
-					zoomEnabled={enableManualZoom}
+					{showAxesGizmo && (
+						<GizmoHelper alignment="top-right" margin={[64, 64]}>
+							<GizmoViewport
+								axisColors={["#f87171", "#4ade80", "#60a5fa"]}
+								labelColor="black"
+							/>
+						</GizmoHelper>
+					)}
+				</Canvas>
+			</div>
+
+			{showCoordinates && (
+				<span
+					ref={coordsRef}
+					className="pointer-events-none absolute bottom-3 left-3 select-none font-mono text-[11px] tabular-nums text-on-surface/50"
 				/>
-			</Canvas>
+			)}
+
+			{showControls && (
+				<div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-1 rounded-full bg-surface/70 p-1 backdrop-blur-sm">
+					<button
+						type="button"
+						onClick={handleReset}
+						className="rounded-full px-3 py-1.5 text-xs text-on-surface/70 transition-colors hover:bg-on-surface/10 hover:text-on-surface"
+					>
+						Reset
+					</button>
+					<button
+						type="button"
+						onClick={handleZoomOut}
+						aria-label="Zoom out"
+						className="rounded-full px-3 py-1.5 text-sm text-on-surface/70 transition-colors hover:bg-on-surface/10 hover:text-on-surface"
+					>
+						−
+					</button>
+					<button
+						type="button"
+						onClick={handleZoomIn}
+						aria-label="Zoom in"
+						className="rounded-full px-3 py-1.5 text-sm text-on-surface/70 transition-colors hover:bg-on-surface/10 hover:text-on-surface"
+					>
+						+
+					</button>
+					<button
+						type="button"
+						ref={autoRotateBtnRef}
+						onClick={toggleAutoRotate}
+						className={`rounded-full px-3 py-1.5 text-xs text-on-surface/70 transition-colors hover:bg-on-surface/10 hover:text-on-surface ${
+							autoRotate ? "bg-accent/20 text-accent" : ""
+						}`}
+					>
+						Rotate
+					</button>
+				</div>
+			)}
 		</div>
 	);
-};
+}
 
-export default ModelViewer;
+useGLTF.preload;

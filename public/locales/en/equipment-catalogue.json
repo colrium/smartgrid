@@ -120,6 +120,22 @@
 					"label": "View Details",
 					"href": "/equipment-sale/dji-air-3s"
 				}
+			},
+			{
+				"icon": "leaf",
+				"title": "DJI Mavic 3 Multispectral",
+				"description": "RGB + four-band multispectral drone for NDVI mapping, crop health monitoring, and GIS-ready environmental analysis in a single flight.",
+				"badge": "New",
+				"image": "/media/equipment-sale/dji-mavic-3-multispectral/images/01.jpg",
+				"price": {
+					"currency": "KES",
+					"amount": 1399000
+				},
+				"ctaPrimary": {
+					"icon": "launch",
+					"label": "View Details",
+					"href": "/equipment-sale/dji-mavic-3-multispectral"
+				}
 			}
 		]
 	},
