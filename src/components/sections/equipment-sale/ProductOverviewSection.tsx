@@ -49,17 +49,17 @@ export function ProductOverviewSection({ namespace }: ProductOverviewSectionProp
 				opacity={0.5}
 			/>
 
-			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-				<div className="max-w-3xl">
-					<FadeUp>
+			<div className="relative z-10 max-w-7xl mx-auto flex flex-col justify-center items-center px-6 sm:px-8 lg:px-12">
+				<div className="max-w-3xl ">
+					<FadeUp className="flex flex-col justify-center items-center">
 						{section.tag && <SectionTag>{section.tag}</SectionTag>}
 
-						<h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight leading-[1.1] text-ink max-w-2xl">
+						<h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight leading-[1.1] text-ink text-center max-w-2xl">
 							{section.headline}
 						</h2>
 
 						{section.description && (
-							<p className="mt-8 text-base sm:text-lg leading-relaxed text-on-surface/60 whitespace-pre-line">
+							<p className="mt-8 text-base text-center sm:text-lg leading-relaxed text-on-surface/60 whitespace-pre-line">
 								{section.description}
 							</p>
 						)}
