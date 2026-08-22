@@ -121,13 +121,13 @@ function Model({ url, onReady }: { url: string; onReady: () => void }) {
 }
 
 /* ------------------------------------------------------------------ */
-/* AutoFit — initial framing where the model's projected WIDTH fills   */
-/* the canvas (Bounds' sphere fit leaves wide models small). Measures  */
-/* the bbox in camera space, fits via hFov vs vFov, re-fits on resize, */
-/* and saves controls state so "Reset" restores this exact framing.    */
+/* AutoFit — initial framing that fills the canvas width and HOLDS at  */
+/* any yaw angle: fits the model's max horizontal (turntable) radius   */
+/* to the horizontal FOV, re-fits on resize, and saves controls state  */
+/* so "Reset" restores this exact framing.                             */
 /* ------------------------------------------------------------------ */
 
-const FIT_MARGIN = 1.08;
+const FIT_MARGIN = 1.06;
 
 function AutoFit({
 	minDistance,
@@ -152,34 +152,29 @@ function AutoFit({
 		if (box.isEmpty()) return;
 
 		const center = box.getCenter(new Vector3());
-		const radius = box.getSize(new Vector3()).length() / 2;
 
-		// Measure extents in CAMERA space so the fit matches what is seen.
-		const inv = camera.matrixWorld.clone().invert();
-		let minX = Infinity,
-			maxX = -Infinity,
-			minY = Infinity,
-			maxY = -Infinity;
-		const corner = new Vector3();
+		// Turntable-safe framing: use the largest horizontal radius from the
+		// center so the silhouette stays inside the frame at ANY yaw angle,
+		// not just the orientation present at load time.
+		let horizontalRadius = 0;
 		for (const x of [box.min.x, box.max.x]) {
-			for (const y of [box.min.y, box.max.y]) {
-				for (const z of [box.min.z, box.max.z]) {
-					corner.set(x, y, z).applyMatrix4(inv);
-					minX = Math.min(minX, corner.x);
-					maxX = Math.max(maxX, corner.x);
-					minY = Math.min(minY, corner.y);
-					maxY = Math.max(maxY, corner.y);
-				}
+			for (const z of [box.min.z, box.max.z]) {
+				horizontalRadius = Math.max(
+					horizontalRadius,
+					Math.hypot(x - center.x, z - center.z),
+				);
 			}
 		}
+		const halfHeight = (box.max.y - box.min.y) / 2;
+		const radius = Math.hypot(horizontalRadius, halfHeight);
 
 		const vFov = (camera.fov * Math.PI) / 180;
 		const hFov = 2 * Math.atan(Math.tan(vFov / 2) * camera.aspect);
 		const distance =
 			FIT_MARGIN *
 			Math.max(
-				(maxX - minX) / 2 / Math.tan(hFov / 2),
-				(maxY - minY) / 2 / Math.tan(vFov / 2),
+				horizontalRadius / Math.tan(hFov / 2),
+				halfHeight / Math.tan(vFov / 2),
 			);
 
 		const dir = camera.position.clone().sub(center).normalize();
@@ -393,7 +388,7 @@ export default function ModelViewer({
 	}, []);
 
 	return (
-		<div className={className ?? "relative min-h-[480px] w-full bg-transparent"}>
+		<div className={className ?? "relative h-[80dvh] w-full bg-transparent"}>
 			<div
 				ref={canvasWrapperRef}
 				className="h-full w-full opacity-0 transition-opacity duration-500 ease-out"
@@ -420,6 +415,7 @@ export default function ModelViewer({
 								scale={12}
 								blur={2.4}
 								far={6}
+								frames={1}
 							/>
 						)}
 						{environmentPreset && (
