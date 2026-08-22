@@ -173,9 +173,9 @@ function useCoordinateReadout(
 		const tick = () => {
 			const cam = controlsRef.current?.object;
 			if (cam && elRef.current) {
-				elRef.current.textContent = `X ${cam.position.x.toFixed(1)}  Y ${cam.position.y.toFixed(
+				elRef.current.textContent = `X: ${cam.position.x.toFixed(1)}  Y: ${cam.position.y.toFixed(
 					1
-				)}  Z ${cam.position.z.toFixed(1)}`;
+				)}  Z: ${cam.position.z.toFixed(1)}`;
 			}
 			raf = requestAnimationFrame(tick);
 		};
@@ -313,7 +313,7 @@ export default function ModelViewer({
 			{showCoordinates && (
 				<span
 					ref={coordsRef}
-					className="pointer-events-none absolute bottom-3 left-3 select-none font-mono text-[11px] tabular-nums text-on-surface/50"
+					className="pointer-events-none absolute top-3 left-3 select-none font-mono text-[9px] tabular-nums text-on-surface/50"
 				/>
 			)}
 
