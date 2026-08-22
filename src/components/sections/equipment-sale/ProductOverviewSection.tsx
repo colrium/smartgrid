@@ -5,12 +5,18 @@ import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionTag } from "@/components/SectionTag";
 import { Blob } from "@/components/sections/home/decor";
+import AccordionGallery, { AccordionGalleryItem } from "@/components/ui/AccordionGallery";
 
+interface ImageEntry {
+	url: string;
+	label?: string;
+	description?: string;
+}
 interface ProductOverviewContent {
 	tag?: string | null;
 	headline: string;
 	description?: string;
-	images?: string[] | null;
+	images?: ImageEntry[] | string[] | null;
 }
 
 interface ProductOverviewSectionProps {
@@ -23,14 +29,25 @@ export function ProductOverviewSection({ namespace }: ProductOverviewSectionProp
 		returnObjects: true,
 	}) as unknown as ProductOverviewContent;
 	const images = Array.isArray(section?.images)
-		? section.images.filter(
+		? section.images.map(image => image?.url?? image).filter(
 				(src): src is string => typeof src === "string" && src.startsWith("/"),
 			)
 		: [];
-
+    const accordionGalleryItems: AccordionGalleryItem[] = Array.isArray(section?.images)
+		? section.images.map((image, index) => ({
+				image: image?.url || image,
+				label: image?.label || undefined,
+				description: image?.description || undefined,
+				alt: image?.alt || undefined,
+				link: image?.link || undefined,
+			}))
+		: [];
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden">
-			<Blob className="w-[28rem] h-[28rem] bg-primary-200/40 -top-24 -right-24" opacity={0.5} />
+			<Blob
+				className="w-[28rem] h-[28rem] bg-primary-200/40 -top-24 -right-24"
+				opacity={0.5}
+			/>
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<div className="max-w-3xl">
@@ -49,7 +66,7 @@ export function ProductOverviewSection({ namespace }: ProductOverviewSectionProp
 					</FadeUp>
 				</div>
 
-				{images.length > 0 && (
+				{/* images.length > 0 && (
 					<div className="mt-14 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
 						{images.map((image, index) => (
 							<FadeUp key={index} delay={(index % 3) * 0.07}>
@@ -67,7 +84,12 @@ export function ProductOverviewSection({ namespace }: ProductOverviewSectionProp
 							</FadeUp>
 						))}
 					</div>
-				)}
+				) */}
+			</div>
+			<div className="relative z-10 max-w-7xl lg:max-w-[90dvw] mx-auto px-6 sm:px-8 lg:px-12 mt-12">
+				<FadeUp>
+					<AccordionGallery items={accordionGalleryItems} />
+				</FadeUp>
 			</div>
 		</section>
 	);

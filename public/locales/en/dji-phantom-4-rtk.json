@@ -5,6 +5,11 @@
 		"title": "DJI Phantom 4 RTK",
 		"image": "/media/equipment-sale/drones/dji-phantom-4-rtk/01.jpeg",
 		"description": "A benchmark survey drone, widely used in cadastral and engineering mapping.",
+		"images": [
+			"/media/equipment-sale/dji-mavic-3-pro/02.jpeg",
+			"/media/equipment-sale/dji-mavic-3-pro/03.jpeg",
+			"/media/equipment-sale/dji-mavic-3-pro/04.jpeg"
+		],
 		"ctaPrimary": {
 			"label": "Inquire About This Drone",
 			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Phantom 4 RTK&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Phantom 4 RTK. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."

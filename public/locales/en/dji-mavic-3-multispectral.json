@@ -4,11 +4,19 @@
 		"headline": "Multispectral & Agricultural Survey Drone",
 		"title": "DJI Mavic 3 Multispectral (M3M)",
 		"image": "/media/equipment-sale/dji-mavic-3-multispectral/images/01.jpg",
-		"description": "Designed for precision agriculture and environmental GIS analysis, integrating RGB and multispectral sensors.",
+		"description": "Designed for precision agriculture and environmental GIS analysis, integrating RGB and multispectral sensors.",		
 		"ctaPrimary": {
 			"label": "Inquire About This Drone",
 			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Mavic 3 Multispectral&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Mavic 3 Multispectral. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
+	},
+	"productImages": {
+		"images": [
+			"/media/equipment-sale/dji-mavic-3-multispectral/images/02.png",
+			"/media/equipment-sale/dji-mavic-3-multispectral/images/03.png",
+			"/media/equipment-sale/dji-mavic-3-multispectral/images/04.png",
+			"/media/equipment-sale/dji-mavic-3-multispectral/images/05.png"
+		]
 	},
 	"breadcrumb": {
 		"home": "Home",
@@ -55,10 +63,6 @@
 		"tag": "Product Overview",
 		"headline": "Precision Agriculture Meets GIS Analysis",
 		"images": [
-			"/media/equipment-sale/dji-mavic-3-multispectral/images/02.png",
-			"/media/equipment-sale/dji-mavic-3-multispectral/images/03.png",
-			"/media/equipment-sale/dji-mavic-3-multispectral/images/04.png",
-			"/media/equipment-sale/dji-mavic-3-multispectral/images/05.png",
 			"/media/equipment-sale/dji-mavic-3-multispectral/images/07.jpg",
 			"/media/equipment-sale/dji-mavic-3-multispectral/images/09.jpg",
 			"/media/equipment-sale/dji-mavic-3-multispectral/images/11.jpg",

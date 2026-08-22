@@ -10,6 +10,14 @@
 			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Air 3S&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Air 3S. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
+	"productImages": {
+		"images": [
+			"/media/equipment-sale/dji-air-3s/images/02.png",
+			"/media/equipment-sale/dji-air-3s/images/03.png",
+			"/media/equipment-sale/dji-air-3s/images/05.png",
+			"/media/equipment-sale/dji-air-3s/images/06.png"
+		]
+	},
 	"breadcrumb": {
 		"home": "Nyumbani",
 		"section": "Uuzaji wa Vifaa",
@@ -55,11 +63,7 @@
 		"tag": "Muhtasari wa Bidhaa",
 		"headline": "Ramani za Gharama Nafuu Bila Fursa",
 		"images": [
-			"/media/equipment-sale/dji-air-3s/images/02.png",
-			"/media/equipment-sale/dji-air-3s/images/03.png",
 			"/media/equipment-sale/dji-air-3s/images/04.png",
-			"/media/equipment-sale/dji-air-3s/images/05.png",
-			"/media/equipment-sale/dji-air-3s/images/06.png",
 			"/media/equipment-sale/dji-air-3s/images/08.png",
 			"/media/equipment-sale/dji-air-3s/images/09.png",
 			"/media/equipment-sale/dji-air-3s/images/10.png"

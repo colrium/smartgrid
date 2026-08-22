@@ -205,7 +205,9 @@ export default function Dock({
 						baseItemSize={baseItemSize}
 						label={item.label}
 					>
-						<DockIcon>{item.icon}</DockIcon>
+                        <DockIcon>{typeof item.icon === "string" ? (
+                            <span className={`mdi mdi-${item.icon}`} />
+                        ) : item.icon}</DockIcon>
 						<DockLabel>{item.label}</DockLabel>
 					</DockItem>
 				))}

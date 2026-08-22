@@ -4,11 +4,19 @@
 		"headline": "Next-Gen Mid-Range Mapping Drone",
 		"title": "DJI Air 3S",
 		"image": "/media/equipment-sale/dji-air-3s/images/01.png",
-		"description": "A next-generation evolution of the Air series, positioned as a high-performance, cost-efficient alternative to the Mavic 3 line, increasingly preferred for rapid mapping and inspection workflows.",
+		"description": "A next-generation evolution of the Air series, positioned as a high-performance, cost-efficient alternative to the Mavic 3 line, increasingly preferred for rapid mapping and inspection workflows.",		
 		"ctaPrimary": {
 			"label": "Inquire About This Drone",
 			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Air 3S&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Air 3S. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
+	},
+	"productImages": {
+		"images": [
+			"/media/equipment-sale/dji-air-3s/images/02.png",
+			"/media/equipment-sale/dji-air-3s/images/03.png",
+			"/media/equipment-sale/dji-air-3s/images/05.png",
+			"/media/equipment-sale/dji-air-3s/images/06.png"
+		]
 	},
 	"breadcrumb": {
 		"home": "Home",
@@ -55,11 +63,7 @@
 		"tag": "Product Overview",
 		"headline": "Cost-Efficient Mapping Without Compromise",
 		"images": [
-			"/media/equipment-sale/dji-air-3s/images/02.png",
-			"/media/equipment-sale/dji-air-3s/images/03.png",
 			"/media/equipment-sale/dji-air-3s/images/04.png",
-			"/media/equipment-sale/dji-air-3s/images/05.png",
-			"/media/equipment-sale/dji-air-3s/images/06.png",
 			"/media/equipment-sale/dji-air-3s/images/08.png",
 			"/media/equipment-sale/dji-air-3s/images/09.png",
 			"/media/equipment-sale/dji-air-3s/images/10.png"

@@ -27,13 +27,10 @@ const Page: NextPage<PageProps> = () => {
 			<PageHead pageName="dji-air-3s" />
 			<div className="flex flex-col min-h-screen">
 				<ProductHeroSection namespace="dji-air-3s" />
-				<ProductOverviewSection namespace="dji-air-3s" />
 				<ProductModelSection namespace="dji-air-3s" />
+				<ProductOverviewSection namespace="dji-air-3s" />
 				<ProductFeaturesSection namespace="dji-air-3s" />
-				<ProductSpecsSection
-					namespace="dji-air-3s"
-					groupKeys={SPEC_GROUP_KEYS}
-				/>
+				<ProductSpecsSection namespace="dji-air-3s" groupKeys={SPEC_GROUP_KEYS} />
 				<ProductCtaSection namespace="dji-air-3s" />
 				<ProductRelatedSection namespace="dji-air-3s" />
 			</div>

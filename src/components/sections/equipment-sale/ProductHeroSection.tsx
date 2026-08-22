@@ -82,7 +82,7 @@ export function ProductHeroSection({ namespace }: ProductHeroSectionProps) {
 		returnObjects: true,
 	}) as unknown as ProductImagesContent;
 	const cta = t(`${namespace}:cta`, { returnObjects: true }) as unknown as CtaContent;
-
+    const productImagesArr = Array.isArray(productImages?.images)? productImages.images : [];
 	const priceOptions = pricing
 		? Object.keys(pricing)
 				.map((key) => pricing[key])
@@ -90,9 +90,11 @@ export function ProductHeroSection({ namespace }: ProductHeroSectionProps) {
 		: [];
 
 	const galleryImages =
-		Array.isArray(overview?.images) && overview.images.length > 0
+		productImagesArr.length === 0 &&
+		Array.isArray(overview?.images) &&
+		overview.images.length > 0
 			? overview.images
-			: (productImages?.images ?? []);
+			: (productImagesArr ?? []);
 
 	const images = [
 		hero.image,

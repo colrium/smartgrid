@@ -32,7 +32,10 @@ export interface LightConfig {
 	fill?: LightSetting | false;
 	rim?: LightSetting | false;
 }
-
+export interface AxesGizmoColors {
+    label: string,
+    axis: [string, string, string]
+}
 export interface ModelViewerProps {
 	/** URL to a .glb or .gltf file */
 	url: string;
@@ -57,6 +60,7 @@ export interface ModelViewerProps {
 	showCoordinates?: boolean;
 	/** drei <Environment> preset for reflections, or false to disable */
 	environmentPreset?: string | false;
+	axesGizmoColors?: AxesGizmoColors;
 }
 
 /* ------------------------------------------------------------------ */
@@ -196,9 +200,10 @@ export default function ModelViewer({
 	minZoom = 1,
 	maxZoom = 12,
 	showControls = true,
-	showAxesGizmo = true,
+	showAxesGizmo = false,
 	showCoordinates = true,
 	environmentPreset = "city",
+	axesGizmoColors = {label: "black", axis: ["#f87171", "#4ade80", "#60a5fa"]},
 }: ModelViewerProps) {
 	const controlsRef = useRef<OrbitControlsImpl | null>(null);
 	const autoRotateRef = useRef(autoRotate);
@@ -295,8 +300,10 @@ export default function ModelViewer({
 					{showAxesGizmo && (
 						<GizmoHelper alignment="top-right" margin={[64, 64]}>
 							<GizmoViewport
-								axisColors={["#f87171", "#4ade80", "#60a5fa"]}
-								labelColor="black"
+								axisColors={
+									axesGizmoColors?.axis ?? ["#f87171", "#4ade80", "#60a5fa"]
+								}
+								labelColor={axesGizmoColors?.label ?? "black"}
 							/>
 						</GizmoHelper>
 					)}

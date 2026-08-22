@@ -10,6 +10,13 @@
 			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Matrice 350 RTK&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Matrice 350 RTK. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
+	"productImages": {
+		"images": [
+			"/media/equipment-sale/drones/dji-matrice-350-rtk/02.jpeg",
+			"/media/equipment-sale/drones/dji-matrice-350-rtk/03.jpeg",
+			"/media/equipment-sale/drones/dji-matrice-350-rtk/04.jpeg"
+		]
+	},
 	"breadcrumb": {
 		"home": "Home",
 		"section": "Equipment Sale",
@@ -54,11 +61,7 @@
 	"productOverview": {
 		"tag": "Product Overview",
 		"headline": "Enterprise-Grade Precision for Demanding Surveys",
-		"images": [
-			"/media/equipment-sale/drones/dji-matrice-350-rtk/02.jpeg",
-			"/media/equipment-sale/drones/dji-matrice-350-rtk/03.jpeg",
-			"/media/equipment-sale/drones/dji-matrice-350-rtk/04.jpeg"
-		],
+		"images": [],
 		"description": "The DJI Matrice 350 RTK pairs a built-in RTK/PPK GNSS module with interchangeable LiDAR and photogrammetry payloads, delivering survey-grade accuracy across dense vegetation, powerline corridors, and large-scale engineering sites."
 	},
 	"keyFeatures": {

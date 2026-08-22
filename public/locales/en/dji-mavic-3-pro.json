@@ -4,11 +4,18 @@
 		"headline": "Advanced Prosumer Mapping Platform",
 		"title": "DJI Mavic 3 Pro",
 		"image": "/media/equipment-sale/dji-mavic-3-pro/01.jpeg",
-		"description": "A high-end prosumer drone featuring a triple-camera system, bridging the gap between cinematic imaging and semi-professional geospatial data capture.",
+		"description": "A high-end prosumer drone featuring a triple-camera system, bridging the gap between cinematic imaging and semi-professional geospatial data capture.",		
 		"ctaPrimary": {
 			"label": "Inquire About This Drone",
 			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Mavic 3 Pro&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Mavic 3 Pro. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
+	},
+	"productImages": {
+		"images": [
+			"/media/equipment-sale/dji-mavic-3-pro/02.jpeg",
+			"/media/equipment-sale/dji-mavic-3-pro/03.jpeg",
+			"/media/equipment-sale/dji-mavic-3-pro/04.jpeg"
+		]
 	},
 	"breadcrumb": {
 		"home": "Home",

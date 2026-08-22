@@ -7,6 +7,7 @@ import { FadeUp } from "@/components/animations/Fade";
 import { SectionHeader } from "@/components/sections/home";
 import { Blob } from "@/components/sections/home/decor";
 import ModelViewer from "@/components/ui/ModelViewer";
+import Dock from "@/components/ui/Dock";
 
 /* const ModelViewer = dynamic(() => import("@/components/ui/ModelViewer/index"), {
 	ssr: false,
@@ -17,11 +18,17 @@ import ModelViewer from "@/components/ui/ModelViewer";
 	),
 }); */
 
+interface Model3d {
+	url: string;
+	icon?: string;
+	label?: string;
+	placeholderUrl?: string;
+}
 interface Model3dContent {
 	tag?: string | null;
 	headline?: string;
 	description?: string;
-	models?: string[] | null;
+	models?: Model3d[] | string[] | null;
 }
 
 interface ProductModelSectionProps {
@@ -35,8 +42,8 @@ export function ProductModelSection({ namespace, placeholderSrc }: ProductModelS
 		returnObjects: true,
 	}) as unknown as Model3dContent;
 	const models = Array.isArray(section?.models)
-		? section.models.filter(
-				(src): src is string => typeof src === "string" && src.startsWith("/"),
+		? section.models.map(model => model?.src || model).filter(
+				(src): src is string  => typeof src === "string" && src.startsWith("/"),
 			)
 		: [];
 
@@ -44,7 +51,14 @@ export function ProductModelSection({ namespace, placeholderSrc }: ProductModelS
 
 	if (models.length === 0) return null;
 
-	const current = models[active] ?? models[0];
+    const current = models[active] ?? models[0];
+    
+    const dockItems = section.models.map((model, index) => ({
+		icon: model?.icon || "rotate-3d",
+		label: model?.label || String(index + 1).padStart(2, "0"),
+		className: index === active? "text-primary": "",
+		onClick: () => setActive(index),
+	}));
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden">
@@ -59,15 +73,16 @@ export function ProductModelSection({ namespace, placeholderSrc }: ProductModelS
 				/>
 
 				<FadeUp delay={0.05}>
-					<div className="mt-12 sm:mt-16 relative rounded-[20px] bg-linear-to-b from-primary-50/60 to-surface hairline card-shadow p-4 sm:p-6">
-						<div className="relative overflow-hidden rounded-[15px] bg-surface hairline">
+					<div className="mt-12 sm:mt-16 relative rounded-[20px]  p-4 sm:p-6">
+						<div className="relative overflow-hidden rounded-[15px] hairline">
 							<ModelViewer
 								url={current}								
 							/>
 						</div>
 
 						{models.length > 1 && (
-							<div className="mt-4 flex flex-wrap items-center justify-center gap-2.5">
+                            <div className="mt-4 flex flex-wrap items-center justify-center gap-2.5">
+                                
 								{models.map((model, index) => (
 									<button
 										key={model + index}
@@ -80,7 +95,7 @@ export function ProductModelSection({ namespace, placeholderSrc }: ProductModelS
 												: "bg-surface hairline border-transparent text-on-surface/70 hover:border-primary/40"
 										}`}
 									>
-										<span className="mdi mdi-rotate-3d-variant text-sm" />
+										<span className="mdi mdi-rotate-3d text-sm" />
 										{String(index + 1).padStart(2, "0")}
 									</button>
 								))}

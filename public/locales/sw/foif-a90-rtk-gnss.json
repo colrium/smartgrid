@@ -10,6 +10,13 @@
 			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: FOIF A90 RTK GNSS&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for FOIF A90 RTK GNSS. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
+	"productImages": {
+		"images": [
+			"/media/equipment-sale/foif-a90-rtk-gnss/10.png",
+			"/media/equipment-sale/foif-a90-rtk-gnss/02.png",
+			"/media/equipment-sale/foif-a90-rtk-gnss/03.png"
+		]
+	},
 	"breadcrumb": {
 		"home": "Nyumbani",
 		"section": "Uuzaji wa Vifaa",
@@ -59,11 +66,7 @@
 	"productOverview": {
 		"tag": "Muhtasari wa Bidhaa",
 		"headline": "Imeundwa kwa Usahihi, Iko Tayari Shambani",
-		"images": [
-			"/media/equipment-sale/foif-a90-rtk-gnss/10.png",
-			"/media/equipment-sale/foif-a90-rtk-gnss/02.png",
-			"/media/equipment-sale/foif-a90-rtk-gnss/03.png"
-		],
+		"images": [],
 		"description": "FOIF A90 ni kipokezi cha GNSS cha mawimbi mengi, makundi mengi kilichoundwa kwa uchunguzi wa RTK wa usahihi wa juu. Hutoa utendaji imara hata katika mazingira magumu, na kuifanya kufaa kwa miradi ya cadastral, ujenzi, na uhandisi."
 	},
 	"keyFeatures": {
