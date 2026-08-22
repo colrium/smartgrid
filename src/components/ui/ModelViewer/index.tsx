@@ -1,7 +1,14 @@
 "use client";
 
-import { Suspense, useEffect, useRef, useCallback } from "react";
-import { Canvas } from "@react-three/fiber";
+import {
+	Component,
+	Suspense,
+	useEffect,
+	useRef,
+	useCallback,
+	type ReactNode,
+} from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import {
 	OrbitControls,
 	Bounds,
@@ -58,7 +65,7 @@ export interface ModelViewerProps {
 	showAxesGizmo?: boolean;
 	/** Show the live X/Y/Z camera readout (bottom-left) */
 	showCoordinates?: boolean;
-	/** drei <Environment> preset for reflections, or false to disable */
+	/** Environment preset for reflections ("city" self-hosted in /hdr), a custom files path, or false to disable */
 	environmentPreset?: string | false;
 	axesGizmoColors?: AxesGizmoColors;
 }
@@ -112,6 +119,62 @@ function Model({ url, onReady }: { url: string; onReady: () => void }) {
 	}, [scene, onReady]);
 
 	return <primitive ref={groupRef} object={scene} />;
+}
+
+/* ------------------------------------------------------------------ */
+/* Turntable — rotates the MODEL on Y, not the camera. Keeps the       */
+/* camera and ContactShadows world-anchored so the shadow stays in     */
+/* place instead of swinging around like the whole scene is spinning.  */
+/* ------------------------------------------------------------------ */
+
+function Turntable({
+	enabledRef,
+	speed,
+	children,
+}: {
+	enabledRef: React.RefObject<boolean>;
+	speed: number;
+	children: ReactNode;
+}) {
+	const groupRef = useRef<Group>(null);
+
+	useFrame((_, delta) => {
+		if (enabledRef.current && groupRef.current) {
+			// OrbitControls convention: autoRotateSpeed 2.0 ≈ one orbit per 30s.
+			groupRef.current.rotation.y += delta * ((Math.PI * speed) / 30);
+		}
+	});
+
+	return <group ref={groupRef}>{children}</group>;
+}
+
+/* ------------------------------------------------------------------ */
+/* Environment                                                         */
+/* Self-hosted HDRs: drei's <Environment preset> pulls from an         */
+/* external githack CDN which can fail ("Could not load *.hdr"),       */
+/* crashing the canvas via suspense. Local files + error boundary      */
+/* keep reflections working offline and failures non-fatal.            */
+/* ------------------------------------------------------------------ */
+
+const ENVIRONMENT_FILES: Record<string, string> = {
+	city: "/hdr/potsdamer_platz_1k.hdr",
+};
+
+function resolveEnvironmentFiles(preset: string): string {
+	return ENVIRONMENT_FILES[preset] ?? preset;
+}
+
+class EnvironmentErrorBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
+	state = { failed: false };
+
+	static getDerivedStateFromError() {
+		return { failed: true };
+	}
+
+	render() {
+		if (this.state.failed) return null;
+		return this.props.children;
+	}
 }
 
 /* ------------------------------------------------------------------ */
@@ -248,9 +311,6 @@ export default function ModelViewer({
 
 	const toggleAutoRotate = useCallback(() => {
 		autoRotateRef.current = !autoRotateRef.current;
-		if (controlsRef.current) {
-			controlsRef.current.autoRotate = autoRotateRef.current;
-		}
 		autoRotateBtnRef.current?.classList.toggle("bg-accent/20", autoRotateRef.current);
 		autoRotateBtnRef.current?.classList.toggle("text-accent", autoRotateRef.current);
 	}, []);
@@ -272,7 +332,9 @@ export default function ModelViewer({
 
 					<Suspense fallback={<Loader />}>
 						<Bounds fit clip observe margin={1.3}>
-							<Model url={url} onReady={handleReady} />
+							<Turntable enabledRef={autoRotateRef} speed={autoRotateSpeed}>
+								<Model url={url} onReady={handleReady} />
+							</Turntable>
 						</Bounds>
 						{!disableShadow && (
 							<ContactShadows
@@ -283,7 +345,11 @@ export default function ModelViewer({
 								far={6}
 							/>
 						)}
-						{environmentPreset && <Environment preset={environmentPreset as never} />}
+						{environmentPreset && (
+						<EnvironmentErrorBoundary>
+							<Environment files={resolveEnvironmentFiles(environmentPreset)} />
+						</EnvironmentErrorBoundary>
+					)}
 					</Suspense>
 
 					<OrbitControls
@@ -293,8 +359,6 @@ export default function ModelViewer({
 						dampingFactor={0.1}
 						minDistance={minZoom}
 						maxDistance={maxZoom}
-						autoRotate={autoRotate}
-						autoRotateSpeed={autoRotateSpeed}
 					/>
 
 					{showAxesGizmo && (
