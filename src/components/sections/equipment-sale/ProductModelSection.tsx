@@ -62,7 +62,10 @@ export function ProductModelSection({ namespace, placeholderSrc }: ProductModelS
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden">
-			<Blob className="w-[28rem] h-[28rem] bg-primary-100/50 -bottom-24 -left-24" opacity={0.5} />
+			<Blob
+				className="w-[28rem] h-[28rem] bg-primary-100/50 -bottom-24 -left-24"
+				opacity={0.5}
+			/>
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader
@@ -73,16 +76,13 @@ export function ProductModelSection({ namespace, placeholderSrc }: ProductModelS
 				/>
 
 				<FadeUp delay={0.05}>
-					<div className="mt-12 sm:mt-16 relative rounded-[20px] bg-linear-to-b from-primary-50/60 to-surface hairline card-shadow p-4 sm:p-6">
+					<div className="mt-12 sm:mt-16 relative p-4 sm:p-6">
 						<div className="relative overflow-hidden rounded-[15px] hairline">
-							<ModelViewer
-								url={current}								
-							/>
+							<ModelViewer url={current} />
 						</div>
 
 						{models.length > 1 && (
-                            <div className="mt-4 flex flex-wrap items-center justify-center gap-2.5">
-                                
+							<div className="mt-4 flex flex-wrap items-center justify-center gap-2.5">
 								{models.map((model, index) => (
 									<button
 										key={model + index}
