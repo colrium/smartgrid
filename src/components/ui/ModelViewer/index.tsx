@@ -8,10 +8,9 @@ import {
 	useCallback,
 	type ReactNode,
 } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import {
 	OrbitControls,
-	Bounds,
 	ContactShadows,
 	Environment,
 	Html,
@@ -21,7 +20,7 @@ import {
 	GizmoViewport,
 } from "@react-three/drei";
 import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
-import type { Group, Mesh } from "three";
+import { Box3, Vector3, type Group, type Mesh, type PerspectiveCamera } from "three";
 
 /* ------------------------------------------------------------------ */
 /* Types                                                               */
@@ -119,6 +118,84 @@ function Model({ url, onReady }: { url: string; onReady: () => void }) {
 	}, [scene, onReady]);
 
 	return <primitive ref={groupRef} object={scene} />;
+}
+
+/* ------------------------------------------------------------------ */
+/* AutoFit — initial framing where the model's projected WIDTH fills   */
+/* the canvas (Bounds' sphere fit leaves wide models small). Measures  */
+/* the bbox in camera space, fits via hFov vs vFov, re-fits on resize, */
+/* and saves controls state so "Reset" restores this exact framing.    */
+/* ------------------------------------------------------------------ */
+
+const FIT_MARGIN = 1.08;
+
+function AutoFit({
+	minDistance,
+	maxDistance,
+	children,
+}: {
+	minDistance?: number;
+	maxDistance?: number;
+	children: ReactNode;
+}) {
+	const groupRef = useRef<Group>(null);
+	const camera = useThree((s) => s.camera) as PerspectiveCamera;
+	const size = useThree((s) => s.size);
+	const controls = useThree((s) => s.controls) as unknown as OrbitControlsImpl | null;
+
+	useEffect(() => {
+		const group = groupRef.current;
+		if (!group || !controls) return;
+
+		group.updateWorldMatrix(true, true);
+		const box = new Box3().setFromObject(group);
+		if (box.isEmpty()) return;
+
+		const center = box.getCenter(new Vector3());
+		const radius = box.getSize(new Vector3()).length() / 2;
+
+		// Measure extents in CAMERA space so the fit matches what is seen.
+		const inv = camera.matrixWorld.clone().invert();
+		let minX = Infinity,
+			maxX = -Infinity,
+			minY = Infinity,
+			maxY = -Infinity;
+		const corner = new Vector3();
+		for (const x of [box.min.x, box.max.x]) {
+			for (const y of [box.min.y, box.max.y]) {
+				for (const z of [box.min.z, box.max.z]) {
+					corner.set(x, y, z).applyMatrix4(inv);
+					minX = Math.min(minX, corner.x);
+					maxX = Math.max(maxX, corner.x);
+					minY = Math.min(minY, corner.y);
+					maxY = Math.max(maxY, corner.y);
+				}
+			}
+		}
+
+		const vFov = (camera.fov * Math.PI) / 180;
+		const hFov = 2 * Math.atan(Math.tan(vFov / 2) * camera.aspect);
+		const distance =
+			FIT_MARGIN *
+			Math.max(
+				(maxX - minX) / 2 / Math.tan(hFov / 2),
+				(maxY - minY) / 2 / Math.tan(vFov / 2),
+			);
+
+		const dir = camera.position.clone().sub(center).normalize();
+		camera.position.copy(center).addScaledVector(dir, distance);
+		camera.near = Math.max(0.01, distance - radius * 2);
+		camera.far = Math.max(distance + radius * 10, 50);
+		camera.updateProjectionMatrix();
+
+		controls.target.copy(center);
+		controls.minDistance = Math.min(minDistance ?? Infinity, distance * 0.5);
+		controls.maxDistance = Math.max(maxDistance ?? 0, distance * 2.5);
+		controls.update();
+		controls.saveState();
+	}, [camera, controls, size.width, size.height, minDistance, maxDistance]);
+
+	return <group ref={groupRef}>{children}</group>;
 }
 
 /* ------------------------------------------------------------------ */
@@ -316,7 +393,7 @@ export default function ModelViewer({
 	}, []);
 
 	return (
-		<div className={className ?? "relative h-[480px] w-full bg-transparent"}>
+		<div className={className ?? "relative min-h-[480px] w-full bg-transparent"}>
 			<div
 				ref={canvasWrapperRef}
 				className="h-full w-full opacity-0 transition-opacity duration-500 ease-out"
@@ -331,11 +408,11 @@ export default function ModelViewer({
 					<Lights config={lights} shadows={!disableShadow} />
 
 					<Suspense fallback={<Loader />}>
-						<Bounds fit clip observe margin={1.3}>
+						<AutoFit minDistance={minZoom} maxDistance={maxZoom}>
 							<Turntable enabledRef={autoRotateRef} speed={autoRotateSpeed}>
 								<Model url={url} onReady={handleReady} />
 							</Turntable>
-						</Bounds>
+						</AutoFit>
 						{!disableShadow && (
 							<ContactShadows
 								position={[0, -0.001, 0]}

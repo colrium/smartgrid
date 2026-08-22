@@ -76,25 +76,7 @@ export function ProductOverviewSection({ namespace }: ProductOverviewSectionProp
 					</FadeUp>
 				</div>
 
-				{/* images.length > 0 && (
-					<div className="mt-14 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
-						{images.map((image, index) => (
-							<FadeUp key={index} delay={(index % 3) * 0.07}>
-								<div className="group relative aspect-square rounded-[20px] bg-surface hairline card-shadow p-6 sm:p-8 transition-all duration-500 hover:card-shadow-lift">
-									<div className="relative h-full w-full rounded-[15px] overflow-hidden bg-primary-50/60">
-										<Image
-											src={image}
-											alt={`${section.headline} ${index + 1}`}
-											fill
-											sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-											className="object-contain object-center transition-transform duration-700 group-hover:scale-105"
-										/>
-									</div>
-								</div>
-							</FadeUp>
-						))}
-					</div>
-				) */}
+				
 			</div>
 			<div className="relative z-10 max-w-7xl lg:max-w-[90dvw] mx-auto px-6 sm:px-8 lg:px-12 mt-12">
 				<FadeUp className="h-[80dvh]">

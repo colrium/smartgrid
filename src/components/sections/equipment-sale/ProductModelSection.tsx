@@ -67,42 +67,41 @@ export function ProductModelSection({ namespace, placeholderSrc }: ProductModelS
 				opacity={0.5}
 			/>
 
-			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-				<SectionHeader
-					tag={section.tag || undefined}
-					headline={section.headline || undefined}
-					description={section.description || undefined}
-					align="center"
-				/>
-
-				<FadeUp delay={0.05}>
-					<div className="mt-12 sm:mt-16 relative p-4 sm:p-6">
-						<div className="relative overflow-hidden rounded-[15px] hairline">
-							<ModelViewer url={current} />
-						</div>
-
-						{models.length > 1 && (
-							<div className="mt-4 flex flex-wrap items-center justify-center gap-2.5">
-								{models.map((model, index) => (
-									<button
-										key={model + index}
-										type="button"
-										onClick={() => setActive(index)}
-										aria-label={`View model ${index + 1}`}
-										className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium transition-all duration-300 cursor-pointer border ${
-											index === active
-												? "bg-primary border-primary text-surface"
-												: "bg-surface hairline border-transparent text-on-surface/70 hover:border-primary/40"
-										}`}
-									>
-										<span className="mdi mdi-rotate-3d-variant text-sm" />
-										{String(index + 1).padStart(2, "0")}
-									</button>
-								))}
-							</div>
-						)}
+			<div className="relative z-10 w-screen md:w-[90dvw] mx-auto px-6 sm:px-8 lg:px-12">
+				<div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
+					<SectionHeader
+						tag={section.tag || undefined}
+						headline={section.headline || undefined}
+						description={section.description || undefined}
+						align="center"
+					/>
+				</div>
+				<div className="w-full mt-12 sm:mt-16">
+					<div className="relative overflow-hidden rounded-[15px] h-[80dvh] hairline">
+						<ModelViewer url={current} className="h-full relative" />
 					</div>
-				</FadeUp>
+
+					{models.length > 1 && (
+						<div className="mt-4 flex flex-wrap items-center justify-center gap-2.5">
+							{models.map((model, index) => (
+								<button
+									key={model + index}
+									type="button"
+									onClick={() => setActive(index)}
+									aria-label={`View model ${index + 1}`}
+									className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium transition-all duration-300 cursor-pointer border ${
+										index === active
+											? "bg-primary border-primary text-surface"
+											: "bg-surface hairline border-transparent text-on-surface/70 hover:border-primary/40"
+									}`}
+								>
+									<span className="mdi mdi-rotate-3d-variant text-sm" />
+									{String(index + 1).padStart(2, "0")}
+								</button>
+							))}
+						</div>
+					)}
+				</div>
 			</div>
 		</section>
 	);
