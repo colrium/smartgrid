@@ -73,7 +73,7 @@ export function ProductModelSection({ namespace, placeholderSrc }: ProductModelS
 				/>
 
 				<FadeUp delay={0.05}>
-					<div className="mt-12 sm:mt-16 relative rounded-[20px]  p-4 sm:p-6">
+					<div className="mt-12 sm:mt-16 relative rounded-[20px] bg-linear-to-b from-primary-50/60 to-surface hairline card-shadow p-4 sm:p-6">
 						<div className="relative overflow-hidden rounded-[15px] hairline">
 							<ModelViewer
 								url={current}								
@@ -95,7 +95,7 @@ export function ProductModelSection({ namespace, placeholderSrc }: ProductModelS
 												: "bg-surface hairline border-transparent text-on-surface/70 hover:border-primary/40"
 										}`}
 									>
-										<span className="mdi mdi-rotate-3d text-sm" />
+										<span className="mdi mdi-rotate-3d-variant text-sm" />
 										{String(index + 1).padStart(2, "0")}
 									</button>
 								))}

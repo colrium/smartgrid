@@ -1,0 +1,39 @@
+{
+	"items": [
+		{
+			"slug": "dji-air-3s",
+			"title": "DJI Air 3S",
+			"category": "drones"
+		},
+		{
+			"slug": "dji-mavic-3-multispectral",
+			"title": "DJI Mavic 3 Multispectral",
+			"category": "drones"
+		},
+		{
+			"slug": "foif-a90-rtk-gnss",
+			"title": "FOIF A90 RTK GNSS",
+			"category": "surveying-equipment"
+		},
+		{
+			"slug": "total-station-esurvey",
+			"title": "E-Survey E3L Total Station",
+			"category": "surveying-equipment"
+		},
+		{
+			"slug": "total-station-dtm-152m",
+			"title": "DTM 152M Total Station",
+			"category": "surveying-equipment"
+		},
+		{
+			"slug": "automatic-level-bosch",
+			"title": "Bosch GOL 32D Level",
+			"category": "surveying-equipment"
+		},
+		{
+			"slug": "automatic-level-hueper",
+			"title": "Huepar ALX32 Level",
+			"category": "surveying-equipment"
+		}
+	]
+}

@@ -6,6 +6,7 @@ import { FadeUp } from "@/components/animations/Fade";
 import { SectionTag } from "@/components/SectionTag";
 import { Blob } from "@/components/sections/home/decor";
 import AccordionGallery, { AccordionGalleryItem } from "@/components/ui/AccordionGallery";
+import MorphSlider from "@/components/ui/MorphSlider";
 
 interface ImageEntry {
 	url: string;
@@ -33,7 +34,7 @@ export function ProductOverviewSection({ namespace }: ProductOverviewSectionProp
 				(src): src is string => typeof src === "string" && src.startsWith("/"),
 			)
 		: [];
-    const accordionGalleryItems: AccordionGalleryItem[] = Array.isArray(section?.images)
+    /* const accordionGalleryItems: AccordionGalleryItem[] = Array.isArray(section?.images)
 		? section.images.map((image, index) => ({
 				image: image?.url || image,
 				label: image?.label || undefined,
@@ -41,7 +42,16 @@ export function ProductOverviewSection({ namespace }: ProductOverviewSectionProp
 				alt: image?.alt || undefined,
 				link: image?.link || undefined,
 			}))
-		: [];
+		: []; */
+        const morphSliderItems = Array.isArray(section?.images)
+			? section.images.map((image, index) => ({
+					image: image?.url || image,
+					caption: image?.label || undefined
+				}))
+			: [];
+
+	if (!section?.headline) return null;
+
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden">
 			<Blob
@@ -87,8 +97,9 @@ export function ProductOverviewSection({ namespace }: ProductOverviewSectionProp
 				) */}
 			</div>
 			<div className="relative z-10 max-w-7xl lg:max-w-[90dvw] mx-auto px-6 sm:px-8 lg:px-12 mt-12">
-				<FadeUp>
-					<AccordionGallery items={accordionGalleryItems} />
+				<FadeUp className="h-[80dvh]">
+					{/* <AccordionGallery items={accordionGalleryItems} /> */}
+					<MorphSlider items={morphSliderItems} />
 				</FadeUp>
 			</div>
 		</section>

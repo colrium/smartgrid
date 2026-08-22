@@ -5,7 +5,6 @@ import { useTranslation } from "@/hooks";
 import { SectionHeader } from "./SectionHeader";
 import { FadeUp } from "@/components/animations/Fade";
 import { ParallaxDecor, Blob } from "./decor";
-import ModelViewer from "@/components/ui/ModelViewer/index.bak";
 
 interface DroneItem {
 	icon?: string | null;
