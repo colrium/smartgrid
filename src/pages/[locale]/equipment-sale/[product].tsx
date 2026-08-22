@@ -91,9 +91,9 @@ const Page: NextPage<PageProps> = ({ product, manifest }) => {
 			<PageHead pageName={product} />
 			<div className="flex flex-col min-h-screen">
 				<ProductHeroSection namespace={product} />
+				{manifest.features && <ProductFeaturesSection namespace={product} />}
 				{manifest.model && <ProductModelSection namespace={product} />}
 				{manifest.overview && <ProductOverviewSection namespace={product} />}
-				{manifest.features && <ProductFeaturesSection namespace={product} />}
 				{manifest.includedInPackage && <IncludedInPackageSection namespace={product} />}
 				{manifest.specGroups.length > 0 && (
 					<ProductSpecsSection namespace={product} groupKeys={manifest.specGroups} />

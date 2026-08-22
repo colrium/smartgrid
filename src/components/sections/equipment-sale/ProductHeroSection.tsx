@@ -106,19 +106,28 @@ export function ProductHeroSection({ namespace }: ProductHeroSectionProps) {
 
 	return (
 		<section className="relative overflow-hidden pt-44 sm:pt-52">
-			<Blob className="w-[30rem] h-[30rem] bg-primary-100/50 -top-32 -left-24" opacity={0.5} />
-			<Blob className="w-[26rem] h-[26rem] bg-primary/10 -bottom-24 -right-20" opacity={0.5} />
-
+			<Blob
+				className="w-[30rem] h-[30rem] bg-primary-100/50 -top-32 -left-24"
+				opacity={0.5}
+			/>
+			<Blob
+				className="w-[26rem] h-[26rem] bg-primary/10 -bottom-24 -right-20"
+				opacity={0.5}
+			/>
+			<Breadcrumbs
+				className="mb-8 sm:mb-10 w-full"
+				image={
+					typeof hero.image === "string" && hero.image.startsWith("/")
+						? hero.image
+						: undefined
+				}
+				items={[
+					{ label: breadcrumb.home, href: "/" },
+					{ label: breadcrumb.section, href: breadcrumb.sectionHref },
+					{ label: hero.title },
+				]}
+			/>
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pb-16 sm:pb-24">
-				<Breadcrumbs
-					className="mb-8 sm:mb-10"
-					items={[
-						{ label: breadcrumb.home, href: "/" },
-						{ label: breadcrumb.section, href: breadcrumb.sectionHref },
-						{ label: hero.title },
-					]}
-				/>
-
 				<div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 					<FadeLeft className="lg:col-span-7">
 						<ProductGallery images={images} alt={hero.title} />
@@ -126,7 +135,9 @@ export function ProductHeroSection({ namespace }: ProductHeroSectionProps) {
 
 					<FadeRight delay={0.08} className="lg:col-span-5 lg:sticky lg:top-28">
 						<div className="flex flex-col gap-6">
-							{hero.tag && <SectionTag className="justify-start">{hero.tag}</SectionTag>}
+							{hero.tag && (
+								<SectionTag className="justify-start">{hero.tag}</SectionTag>
+							)}
 
 							<h1 className="font-light tracking-tight leading-[1.05] text-4xl sm:text-5xl text-ink">
 								{hero.title}
@@ -164,8 +175,7 @@ export function ProductHeroSection({ namespace }: ProductHeroSectionProps) {
 												{price.label}
 											</span>
 											<span className="mt-1.5 block text-xl sm:text-2xl font-semibold tracking-tight text-ink">
-												{price.currency}{" "}
-												{formatAmount(price.amount)}
+												{price.currency} {formatAmount(price.amount)}
 											</span>
 										</div>
 									))}
@@ -180,7 +190,11 @@ export function ProductHeroSection({ namespace }: ProductHeroSectionProps) {
 											className="flex items-center gap-3 rounded-2xl bg-surface hairline card-shadow p-4"
 										>
 											<span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary">
-												{fact.icon && <span className={`mdi mdi-${fact.icon} text-xl`} />}
+												{fact.icon && (
+													<span
+														className={`mdi mdi-${fact.icon} text-xl`}
+													/>
+												)}
 											</span>
 											<span className="flex min-w-0 flex-col">
 												<span className="text-[11px] uppercase tracking-wider text-on-surface/50">
@@ -196,7 +210,10 @@ export function ProductHeroSection({ namespace }: ProductHeroSectionProps) {
 							)}
 
 							<div className="mt-2 flex flex-col gap-5 border-t border-ink/10 pt-6">
-								<EnquiryButtons primary={hero.ctaPrimary} secondary={cta.ctaSecondary} />
+								<EnquiryButtons
+									primary={hero.ctaPrimary}
+									secondary={cta.ctaSecondary}
+								/>
 							</div>
 						</div>
 					</FadeRight>

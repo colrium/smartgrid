@@ -51,14 +51,23 @@ export function ProductModelSection({ namespace, placeholderSrc }: ProductModelS
 
 	if (models.length === 0) return null;
 
-    const current = models[active] ?? models[0];
+	const current = models[active] ?? models[0];
+
+	// Deferred-load teaser image: explicit prop first, else the hero image.
+	const heroImage = t(`${namespace}:hero.image`) as unknown;
+	const placeholder =
+		typeof placeholderSrc === "string" && placeholderSrc.startsWith("/")
+			? placeholderSrc
+			: typeof heroImage === "string" && heroImage.startsWith("/")
+				? heroImage
+				: undefined;
     
-    const dockItems = section.models.map((model, index) => ({
+    /* const dockItems = section.models.map((model, index) => ({
 		icon: model?.icon || "rotate-3d",
 		label: model?.label || String(index + 1).padStart(2, "0"),
 		className: index === active? "text-primary": "",
 		onClick: () => setActive(index),
-	}));
+	})); */
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden">
@@ -78,7 +87,12 @@ export function ProductModelSection({ namespace, placeholderSrc }: ProductModelS
 				</div>
 				<div className="w-full mt-12 sm:mt-16">
 					<div className="relative overflow-hidden rounded-[15px] h-[80dvh] hairline">
-						<ModelViewer url={current} className="h-full relative" />
+						<ModelViewer
+							url={current}
+							className="h-full relative"
+							autoLoad={false}
+							placeholderSrc={placeholder}
+						/>
 					</div>
 
 					{models.length > 1 && (

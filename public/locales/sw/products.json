@@ -11,6 +11,11 @@
 			"category": "drones"
 		},
 		{
+			"slug": "dji-matrice-350-rtk",
+			"title": "DJI Matrice 350 RTK",
+			"category": "drones"
+		},
+		{
 			"slug": "foif-a90-rtk-gnss",
 			"title": "FOIF A90 RTK GNSS",
 			"category": "surveying-equipment"

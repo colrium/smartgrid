@@ -6,9 +6,11 @@ import {
 	useEffect,
 	useRef,
 	useCallback,
+	useState,
 	type ReactNode,
 } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import Image from "next/image";
 import {
 	OrbitControls,
 	ContactShadows,
@@ -67,6 +69,10 @@ export interface ModelViewerProps {
 	/** Environment preset for reflections ("city" self-hosted in /hdr), a custom files path, or false to disable */
 	environmentPreset?: string | false;
 	axesGizmoColors?: AxesGizmoColors;
+	/** When true (default) the model fetches on mount. When false, a teaser with a Load button defers all 3D loading until clicked. */
+	autoLoad?: boolean;
+	/** Optional product image shown blurred behind the deferred-load prompt */
+	placeholderSrc?: string;
 }
 
 /* ------------------------------------------------------------------ */
@@ -89,6 +95,48 @@ function Loader() {
 				</span>
 			</div>
 		</Html>
+	);
+}
+
+/* ------------------------------------------------------------------ */
+/* LoadPrompt — deferred-load teaser. A blurred, slowly drifting       */
+/* product image (or gradient fallback) behind a pulsing Load button.  */
+/* Nothing 3D mounts until clicked: no WebGL context, no GLB fetch.    */
+/* ------------------------------------------------------------------ */
+
+function LoadPrompt({ src, onStart }: { src?: string; onStart: () => void }) {
+	return (
+		<button
+			type="button"
+			onClick={onStart}
+			aria-label="Load interactive 3D model"
+			className="group relative flex h-full w-full cursor-pointer items-center justify-center overflow-hidden bg-linear-to-br from-primary-50/80 via-surface to-primary-100/60"
+		>
+			{src && (
+				<Image
+					src={src}
+					alt=""
+					fill
+					loading="lazy"
+					sizes="(min-width: 1024px) 60vw, 100vw"
+					className="scale-110 object-contain p-12 opacity-70 blur-2xl transition-all duration-700 ease-out group-hover:scale-105 group-hover:opacity-90 group-hover:blur-xl"
+				/>
+			)}
+
+			<span className="pointer-events-none absolute -left-16 top-1/4 h-56 w-56 rounded-full bg-primary-200/40 blur-3xl" />
+			<span className="pointer-events-none absolute -right-16 bottom-1/4 h-56 w-56 rounded-full bg-accent/20 blur-3xl" />
+
+			<span className="relative z-10 flex flex-col items-center gap-4">
+				<span className="relative flex h-16 w-16 items-center justify-center rounded-full border border-primary/30 bg-surface/80 shadow-lg backdrop-blur-md transition-transform duration-300 group-hover:scale-110">
+					<span className="mdi mdi-cube-outline text-3xl text-primary" />
+					<span className="absolute inset-0 animate-ping rounded-full border border-primary/40 opacity-25" />
+				</span>
+				<span className="rounded-full bg-primary px-5 py-2 text-xs font-medium uppercase tracking-widest text-surface shadow-md transition-colors group-hover:bg-accent">
+					<span className="mdi mdi-play-circle-outline mr-1 align-[-2px]" />
+					Load 3D Model
+				</span>
+			</span>
+		</button>
 	);
 }
 
@@ -339,11 +387,17 @@ export default function ModelViewer({
 	showCoordinates = true,
 	environmentPreset = "city",
 	axesGizmoColors = {label: "black", axis: ["#f87171", "#4ade80", "#60a5fa"]},
+	autoLoad = true,
+	placeholderSrc,
 }: ModelViewerProps) {
 	const controlsRef = useRef<OrbitControlsImpl | null>(null);
 	const autoRotateRef = useRef(autoRotate);
 	const autoRotateBtnRef = useRef<HTMLButtonElement>(null);
 	const canvasWrapperRef = useRef<HTMLDivElement>(null);
+
+	// Deferred loading: when autoLoad is false, no Canvas/GLB exists until
+	// the user hits the Load prompt.
+	const [started, setStarted] = useState(autoLoad);
 
 	const coordsRef = useCoordinateReadout(controlsRef, showCoordinates);
 
@@ -389,107 +443,113 @@ export default function ModelViewer({
 
 	return (
 		<div className={className ?? "relative h-[80dvh] w-full bg-transparent"}>
-			<div
-				ref={canvasWrapperRef}
-				className="h-full w-full opacity-0 transition-opacity duration-500 ease-out"
-			>
-				<Canvas
-					shadows={!disableShadow}
-					camera={{ fov: 45, position: [4, 3, 4], near: 0.1, far: 100 }}
-					dpr={[1, 2]}
-					gl={{ alpha: true, antialias: true }}
-					style={{ background: "transparent" }}
-				>
-					<Lights config={lights} shadows={!disableShadow} />
+			{!started ? (
+				<LoadPrompt src={placeholderSrc} onStart={() => setStarted(true)} />
+			) : (
+				<>
+					<div
+						ref={canvasWrapperRef}
+						className="h-full w-full opacity-0 transition-opacity duration-500 ease-out"
+					>
+						<Canvas
+							shadows={!disableShadow}
+							camera={{ fov: 45, position: [4, 3, 4], near: 0.1, far: 100 }}
+							dpr={[1, 2]}
+							gl={{ alpha: true, antialias: true }}
+							style={{ background: "transparent" }}
+						>
+							<Lights config={lights} shadows={!disableShadow} />
 
-					<Suspense fallback={<Loader />}>
-						<AutoFit minDistance={minZoom} maxDistance={maxZoom}>
-							<Turntable enabledRef={autoRotateRef} speed={autoRotateSpeed}>
-								<Model url={url} onReady={handleReady} />
-							</Turntable>
-						</AutoFit>
-						{!disableShadow && (
-							<ContactShadows
-								position={[0, -0.001, 0]}
-								opacity={0.55}
-								scale={12}
-								blur={2.4}
-								far={6}
-								frames={1}
+							<Suspense fallback={<Loader />}>
+								<AutoFit minDistance={minZoom} maxDistance={maxZoom}>
+									<Turntable enabledRef={autoRotateRef} speed={autoRotateSpeed}>
+										<Model url={url} onReady={handleReady} />
+									</Turntable>
+								</AutoFit>
+								{!disableShadow && (
+									<ContactShadows
+										position={[0, -0.001, 0]}
+										opacity={0.55}
+										scale={12}
+										blur={2.4}
+										far={6}
+										frames={1}
+									/>
+								)}
+								{environmentPreset && (
+									<EnvironmentErrorBoundary>
+										<Environment files={resolveEnvironmentFiles(environmentPreset)} />
+									</EnvironmentErrorBoundary>
+								)}
+							</Suspense>
+
+							<OrbitControls
+								ref={controlsRef}
+								makeDefault
+								enableDamping
+								dampingFactor={0.1}
+								minDistance={minZoom}
+								maxDistance={maxZoom}
 							/>
-						)}
-						{environmentPreset && (
-						<EnvironmentErrorBoundary>
-							<Environment files={resolveEnvironmentFiles(environmentPreset)} />
-						</EnvironmentErrorBoundary>
+
+							{showAxesGizmo && (
+								<GizmoHelper alignment="top-right" margin={[64, 64]}>
+									<GizmoViewport
+										axisColors={
+											axesGizmoColors?.axis ?? ["#f87171", "#4ade80", "#60a5fa"]
+										}
+										labelColor={axesGizmoColors?.label ?? "black"}
+									/>
+								</GizmoHelper>
+							)}
+						</Canvas>
+					</div>
+
+					{showCoordinates && (
+						<span
+							ref={coordsRef}
+							className="pointer-events-none absolute top-3 left-3 select-none font-mono text-[9px] tabular-nums text-on-surface/50"
+						/>
 					)}
-					</Suspense>
 
-					<OrbitControls
-						ref={controlsRef}
-						makeDefault
-						enableDamping
-						dampingFactor={0.1}
-						minDistance={minZoom}
-						maxDistance={maxZoom}
-					/>
-
-					{showAxesGizmo && (
-						<GizmoHelper alignment="top-right" margin={[64, 64]}>
-							<GizmoViewport
-								axisColors={
-									axesGizmoColors?.axis ?? ["#f87171", "#4ade80", "#60a5fa"]
-								}
-								labelColor={axesGizmoColors?.label ?? "black"}
-							/>
-						</GizmoHelper>
+					{showControls && (
+						<div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-1 rounded-full bg-surface/70 p-1 backdrop-blur-sm">
+							<button
+								type="button"
+								onClick={handleReset}
+								className="rounded-full px-3 py-1.5 text-xs text-on-surface/70 transition-colors hover:bg-on-surface/10 hover:text-on-surface"
+							>
+								Reset
+							</button>
+							<button
+								type="button"
+								onClick={handleZoomOut}
+								aria-label="Zoom out"
+								className="rounded-full px-3 py-1.5 text-sm text-on-surface/70 transition-colors hover:bg-on-surface/10 hover:text-on-surface"
+							>
+								−
+							</button>
+							<button
+								type="button"
+								onClick={handleZoomIn}
+								aria-label="Zoom in"
+								className="rounded-full px-3 py-1.5 text-sm text-on-surface/70 transition-colors hover:bg-on-surface/10 hover:text-on-surface"
+							>
+								+
+							</button>
+							<button
+								type="button"
+								ref={autoRotateBtnRef}
+								onClick={toggleAutoRotate}
+								className={`rounded-full px-3 py-1.5 text-xs text-on-surface/70 transition-colors hover:bg-on-surface/10 hover:text-on-surface ${
+									autoRotate ? "bg-accent/20 text-accent" : ""
+								}`}
+							>
+								Rotate
+							</button>
+						</div>
 					)}
-				</Canvas>
-			</div>
-
-			{showCoordinates && (
-				<span
-					ref={coordsRef}
-					className="pointer-events-none absolute top-3 left-3 select-none font-mono text-[9px] tabular-nums text-on-surface/50"
-				/>
-			)}
-
-			{showControls && (
-				<div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-1 rounded-full bg-surface/70 p-1 backdrop-blur-sm">
-					<button
-						type="button"
-						onClick={handleReset}
-						className="rounded-full px-3 py-1.5 text-xs text-on-surface/70 transition-colors hover:bg-on-surface/10 hover:text-on-surface"
-					>
-						Reset
-					</button>
-					<button
-						type="button"
-						onClick={handleZoomOut}
-						aria-label="Zoom out"
-						className="rounded-full px-3 py-1.5 text-sm text-on-surface/70 transition-colors hover:bg-on-surface/10 hover:text-on-surface"
-					>
-						−
-					</button>
-					<button
-						type="button"
-						onClick={handleZoomIn}
-						aria-label="Zoom in"
-						className="rounded-full px-3 py-1.5 text-sm text-on-surface/70 transition-colors hover:bg-on-surface/10 hover:text-on-surface"
-					>
-						+
-					</button>
-					<button
-						type="button"
-						ref={autoRotateBtnRef}
-						onClick={toggleAutoRotate}
-						className={`rounded-full px-3 py-1.5 text-xs text-on-surface/70 transition-colors hover:bg-on-surface/10 hover:text-on-surface ${
-							autoRotate ? "bg-accent/20 text-accent" : ""
-						}`}
-					>
-						Rotate
-					</button>
-				</div>
+				</>
 			)}
 		</div>
 	);
