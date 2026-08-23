@@ -26,14 +26,14 @@ export function LandSurveyingImagesSection() {
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={(index % 4) * 0.07}>
-							<article className="group relative aspect-[4/5] rounded-[20px] overflow-hidden bg-ink hairline card-shadow">
+							<article className="group relative aspect-[1/1] rounded-[20px] overflow-hidden bg-ink hairline card-shadow">
 								{item.image && (
 									<Image
 										src={item.image}
 										alt={item.title}
 										fill
 										sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-										className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+										className="object-scale-down object-center transition-transform duration-700 group-hover:scale-105"
 									/>
 								)}
 								<div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent" />

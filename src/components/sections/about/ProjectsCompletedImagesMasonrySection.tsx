@@ -40,7 +40,7 @@ export function ProjectsCompletedImagesMasonrySection() {
 										alt={`Project ${index + 1}`}
 										fill
 										sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-										className="object-contain object-center transition-transform duration-700 group-hover:scale-[1.04]"
+										className="object-scale-down object-center transition-transform duration-700 group-hover:scale-[1.04]"
 									/>
 								</div>
 								<figcaption className="mt-3 flex items-center justify-between px-1">
