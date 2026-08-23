@@ -45,7 +45,10 @@ export function ServicesSection() {
 	return (
 		<section id="services" className="py-24 sm:py-28 relative overflow-hidden">
 			{/* Soft institutional background shapes */}
-			<Blob className="w-[26rem] h-[26rem] bg-primary-200/40 -top-24 left-1/4" opacity={0.5} />
+			<Blob
+				className="w-[26rem] h-[26rem] bg-primary-200/40 -top-24 left-1/4"
+				opacity={0.5}
+			/>
 			<ParallaxDecor speed={0.06} className="absolute bottom-16 -right-16 z-0">
 				<Blob className="w-80 h-80 bg-primary-100/80" opacity={0.6} />
 			</ParallaxDecor>
@@ -84,12 +87,12 @@ export function ServicesSection() {
 												/>
 											}
 											iconPosition="start"
-                                            label={service.label}
-                                            classes={{
-                                                root: `rounded-full! border! p-2! mb-2! capitalize! min-h-auto! ${selected? 'bg-primary! text-surface!': 'text-primary!  border-primary/50!'}`
-                                            }}
-                                            // sx={{
-                                            //     mb: 2,
+											label={service.label}
+											classes={{
+												root: `rounded-full! border! p-2! mb-2! capitalize! min-h-auto! ${selected ? "bg-primary! text-surface!" : "text-primary!  border-primary/50!"}`,
+											}}
+											// sx={{
+											//     mb: 2,
 											// 	minHeight: "auto",
 											// 	padding: "16px 20px",
 											// 	borderRadius: "10px",
@@ -99,7 +102,7 @@ export function ServicesSection() {
 											// 		: "rgba(1, 55, 61, 0.12)",
 											// 	color: selected ? "#ffffff" : "#345a60",
 											// 	backgroundColor: selected ? "#01373d" : "transparent",
-												
+
 											// 	textTransform: "none",
 											// 	fontWeight: 500,
 											// 	fontSize: "0.95rem",
@@ -139,12 +142,11 @@ export function ServicesSection() {
 												alt={active.label}
 												fill
 												sizes="(min-width: 1024px) 55vw, 100vw"
-												className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+												className="object-fill transition-transform duration-700 ease-out group-hover:scale-105"
 											/>
 										)}
 										<div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/15 to-transparent" />
 
-										
 										<span className="absolute top-4 right-4 glass rounded-xl  text-[11px] font-semibold tabular-nums tracking-[0.14em] text-ink px-3 py-1.5">
 											{String(activeTab + 1).padStart(2, "0")}
 										</span>
@@ -174,9 +176,11 @@ export function ServicesSection() {
 											<div>
 												<h4 className="inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary mb-6">
 													<span className="h-px w-6 bg-primary/60" />
-													{t("home:services.itemsLabel", {
-														defaultValue: "What we offer",
-													}) as string}
+													{
+														t("home:services.itemsLabel", {
+															defaultValue: "What we offer",
+														}) as string
+													}
 												</h4>
 												<ul className="flex flex-col gap-4">
 													{Array.isArray(active.items) &&
@@ -200,9 +204,11 @@ export function ServicesSection() {
 											<div>
 												<h4 className="inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary mb-6">
 													<span className="h-px w-6 bg-primary/60" />
-													{t("home:services.deliverablesLabel", {
-														defaultValue: "Deliverables",
-													}) as string}
+													{
+														t("home:services.deliverablesLabel", {
+															defaultValue: "Deliverables",
+														}) as string
+													}
 												</h4>
 												<ul className="flex flex-col gap-4">
 													{Array.isArray(active.deliverables) &&
