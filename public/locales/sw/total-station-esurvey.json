@@ -33,12 +33,17 @@
 			"name": "surveying-equipment",
 			"label": "Vifaa vya Upimaji",
 			"href": "/equipment-sale/equipment-catalogue"
+		},
+        {
+			"name": "total-stations",
+			"label": "Vituo Kamili",
+			"href": "/equipment-sale/equipment-catalogue?category=total-stations"
 		}
 	],
 	"productOverview": {
 		"tag": "Muhtasari wa Bidhaa",
 		"headline": "Imeundwa kwa Usahihi, Imejengwa kwa Uzalishaji",
-		"image": "/media/equipment-sale/total-station-esurvey/06.png",
+		"images": ["/media/equipment-sale/total-station-esurvey/06.png"],
 		"description": "Kituo kamili cha utendaji wa juu kilichoundwa kwa upimaji wa usahihi, mpangilio wa ujenzi, na matumizi ya uhandisi kwa usahihi wa kuaminika na mtiririko mzuri wa kazi shambani."
 	},
 	"specs": {

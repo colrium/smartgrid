@@ -8,57 +8,9 @@ import { Blob } from "@/components/sections/home/decor";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { ProductGallery } from "./ProductGallery";
 import { EnquiryButtons } from "./EnquiryButtons";
+import { BreadcrumbContent, Category, CtaContent, PriceOption, ProductCatalogueContent, ProductHeroContent, ProductImagesContent, ProductOverviewContent, QuickFactContent } from "@/lib/types";
+import { getProductImages } from "@/lib/product";
 
-interface EnquiryCta {
-	icon?: string;
-	label: string;
-	href: string;
-}
-
-interface QuickFact {
-	icon?: string;
-	label: string;
-	value: string;
-}
-
-interface PriceOption {
-	label: string;
-	currency: string;
-	amount: number;
-}
-
-interface Category {
-	name: string;
-	label: string;
-	href: string;
-}
-
-interface ProductHeroContent {
-	tag?: string | null;
-	headline: string;
-	title: string;
-	description?: string;
-	image?: string | null;
-	ctaPrimary?: EnquiryCta | null;
-}
-
-interface BreadcrumbContent {
-	home: string;
-	section: string;
-	sectionHref: string;
-}
-
-interface ProductOverviewContent {
-	images?: string[] | null;
-}
-
-interface ProductImagesContent {
-	images?: string[] | null;
-}
-
-interface CtaContent {
-	ctaSecondary?: EnquiryCta | null;
-}
 
 interface ProductHeroSectionProps {
 	namespace: string;
@@ -69,9 +21,12 @@ const formatAmount = (amount: number) => amount.toLocaleString("en-US");
 export function ProductHeroSection({ namespace }: ProductHeroSectionProps) {
 	const { t, tObject } = useTranslation([namespace]);
 	const hero = t(`${namespace}:hero`, { returnObjects: true }) as unknown as ProductHeroContent;
-	const breadcrumb = t(`${namespace}:breadcrumb`, { returnObjects: true }) as unknown as BreadcrumbContent;
+    const breadcrumb = t(`${namespace}:breadcrumb`, { returnObjects: true }) as unknown as BreadcrumbContent;
+    const catalogue = t(`${namespace}:catalogue`, {
+		returnObjects: true,
+	}) as unknown as ProductCatalogueContent;
 	const quickFactsRaw = t(`${namespace}:quickFacts`, { returnObjects: true }) as unknown;
-	const quickFacts = Array.isArray(quickFactsRaw) ? (quickFactsRaw as QuickFact[]) : [];
+	const quickFacts = Array.isArray(quickFactsRaw) ? (quickFactsRaw as QuickFactContent[]) : [];
 	const pricing = t(`${namespace}:pricing`, { returnObjects: true }) as unknown as Record<string, PriceOption> | null;
 	const categoriesRaw = t(`${namespace}:categories`, { returnObjects: true }) as unknown;
 	const categories = Array.isArray(categoriesRaw) ? (categoriesRaw as Category[]) : [];
@@ -79,30 +34,19 @@ export function ProductHeroSection({ namespace }: ProductHeroSectionProps) {
 		returnObjects: true,
 	}) as unknown as ProductOverviewContent;
 	const productImages = t(`${namespace}:productImages`, {
-		returnObjects: true,
+        returnObjects: true,
+        default: { images: []}
 	}) as unknown as ProductImagesContent;
 	const cta = t(`${namespace}:cta`, { returnObjects: true }) as unknown as CtaContent;
-    const productImagesArr = Array.isArray(productImages?.images)? productImages.images : [];
 	const priceOptions = pricing
 		? Object.keys(pricing)
 				.map((key) => pricing[key])
 				.filter((price): price is PriceOption => Boolean(price?.amount))
 		: [];
 
-	const galleryImages =
-		productImagesArr.length === 0 &&
-		Array.isArray(overview?.images) &&
-		overview.images.length > 0
-			? overview.images
-			: (productImagesArr ?? []);
+	
 
-	const images = [
-		hero.image,
-		...(galleryImages ?? []),
-	].filter(
-		(src): src is string =>
-			typeof src === "string" && src.startsWith("/") && src !== hero.image,
-	);
+	const images = getProductImages({ hero, overview, productImages, catalogue });
 
 	return (
 		<section className="relative overflow-hidden">

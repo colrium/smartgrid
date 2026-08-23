@@ -40,6 +40,11 @@
 			"name": "surveying-equipment",
 			"label": "Surveying Equipment",
 			"href": "/equipment-sale/equipment-catalogue"
+		},
+        {
+			"name": "total-stations",
+			"label": "Total Stations",
+			"href": "/equipment-sale/equipment-catalogue?category=total-stations"
 		}
 	],
 	"specs": {

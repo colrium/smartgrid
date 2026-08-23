@@ -13,7 +13,7 @@
 	"productOverview": {
 		"tag": "Product Overview",
 		"headline": "Engineered for Precision, Built for Productivity",
-		"image": "/media/equipment-sale/total-station-esurvey/06.png",
+		"images": ["/media/equipment-sale/total-station-esurvey/06.png"],
 		"description": "High-performance total station engineered for precision surveying, construction layout, and engineering applications with reliable accuracy and efficient field workflows."
 	},
 	"breadcrumb": {
@@ -39,6 +39,11 @@
 			"name": "surveying-equipment",
 			"label": "Surveying Equipment",
 			"href": "/equipment-sale/equipment-catalogue"
+		},
+        {
+			"name": "total-stations",
+			"label": "Total Stations",
+			"href": "/equipment-sale/equipment-catalogue?category=total-stations"
 		}
 	],
 	"specs": {

@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { ProductImages, MediaImage, ProductOverviewContent, ProductCatalogueContent } from "./types";
 
 export interface CatalogueCardPrice {
 	prefix?: string | null;
@@ -12,7 +13,8 @@ export interface CatalogueCard {
 	title: string;
 	description: string;
 	badge?: string | null;
-	image?: string | null;
+    image?: string | MediaImage;
+    images: (string | MediaImage)[]
 	price?: CatalogueCardPrice | null;
 	ctaPrimary: {
 		icon?: string;
@@ -121,18 +123,18 @@ export function getCatalogueItems(locale: string): CatalogueCard[] {
 		if (!slug) continue;
 		const product = readProduct(effectiveLocale, slug);
 		if (!product) continue;
-
+        
 		const hero = (product.hero ?? {}) as {
 			title?: unknown;
 			image?: unknown;
 			description?: unknown;
-		};
-		const extra = (product.catalogue ?? {}) as {
-			icon?: unknown;
-			title?: unknown;
-			description?: unknown;
-			badge?: unknown;
-		};
+        };
+        
+		const extra = (product.catalogue ?? {}) as ProductCatalogueContent;
+        
+        let productImages: (MediaImage | string)[] = (
+			(product.productImages ?? { images: [] }) as ProductImages
+		).images;
 
 		const pricing = (product.pricing ?? null) as Record<
 			string,
@@ -152,17 +154,34 @@ export function getCatalogueItems(locale: string): CatalogueCard[] {
 		const description =
 			(typeof extra.description === "string" ? extra.description : undefined) ??
 			(typeof hero.description === "string" ? hero.description : undefined);
-		if (!title || !description) continue;
+        if (!title || !description) continue;
+        const overview = (product.overview ?? { images: [] }) as ProductOverviewContent;
+        if (extra.image) {
+            productImages.unshift(extra.image);
+        }
 
-		cards.push({
+        if (productImages.length === 0 && hero.image) {
+            productImages.unshift(hero.image);
+        }
+        if (productImages.length === 0 && overview.image) {
+			productImages.unshift(overview.image);
+        }
+        if (overview.images?.length > 0) {
+			productImages = productImages.concat(overview.images);
+		}
+        let productImage = productImages[0];
+        productImage = productImage ? productImage : null;
+        cards.push({
 			icon: typeof extra.icon === "string" ? extra.icon : null,
 			title,
 			description,
 			badge: typeof extra.badge === "string" ? extra.badge : null,
-			image: typeof hero.image === "string" ? hero.image : null,
+            image: productImage,
+            images: productImages,
 			price: cheapest
 				? {
-						prefix: priceOptions.length > 1 ? (locale === "sw" ? "Kuanzia" : "From") : null,
+						prefix:
+							priceOptions.length > 1 ? (locale === "sw" ? "Kuanzia" : "From") : null,
 						currency: cheapest.currency ?? "KES",
 						amount: cheapest.amount,
 					}

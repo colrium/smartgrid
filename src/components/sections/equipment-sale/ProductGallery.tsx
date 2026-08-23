@@ -2,9 +2,11 @@
 
 import { useCallback, useEffect, useState, type MouseEvent } from "react";
 import Image from "next/image";
-
+import {
+	MediaImage,
+} from "@/lib/types";
 interface ProductGalleryProps {
-	images: string[];
+	images: (string | MediaImage)[];
 	alt: string;
 	className?: string;
 }
@@ -42,8 +44,8 @@ export function ProductGallery({ images, alt, className = "" }: ProductGalleryPr
 	}, [active, count]);
 
 	if (count === 0) return null;
-
-	const current = images[active] ?? images[0];
+    const activeImage = images[active] ?? images[0];
+	const current = typeof activeImage === "object" ? activeImage?.url : activeImage;
 
 	return (
 		<div className={`flex flex-col gap-4 sm:gap-5 ${className}`}>
@@ -104,7 +106,7 @@ export function ProductGallery({ images, alt, className = "" }: ProductGalleryPr
 				<div className="grid grid-cols-5 gap-3">
 					{images.map((image, index) => (
 						<button
-							key={image + index}
+							key={index}
 							type="button"
 							aria-label={`Show image ${index + 1}`}
 							onClick={() => setActive(index)}
@@ -115,7 +117,7 @@ export function ProductGallery({ images, alt, className = "" }: ProductGalleryPr
 							}`}
 						>
 							<Image
-								src={image}
+								src={typeof image === 'object'? image.url : image}
 								alt={`${alt} thumbnail ${index + 1}`}
 								fill
 								sizes="120px"
