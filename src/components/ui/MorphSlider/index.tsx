@@ -29,6 +29,8 @@ export interface MorphSliderProps {
 	showControls?: boolean;
 	showIndicators?: boolean;
 	className?: string;
+	/** How images map onto the canvas: "fill" stretches to fit (no crop), "cover" preserves aspect and crops */
+	imageFit?: "cover" | "fill";
 	[key: string]: unknown;
 }
 
@@ -42,6 +44,7 @@ interface EngineOptions {
 	drift: number;
 	overlayColor: string;
 	loop: boolean;
+	fit: "cover" | "fill";
 }
 
 type GL = Renderer["gl"];
@@ -79,6 +82,7 @@ uniform float uAberration;
 uniform float uDrift;
 uniform float uTime;
 uniform float uReduce;
+uniform float uFit;
 uniform vec2 uPointer;
 uniform vec3 uOverlay;
 
@@ -190,8 +194,9 @@ void main() {
     }
   }
 
-  vec2 sC = coverUV(uvC, uResolution, uCurrentSize);
-  vec2 sN = coverUV(uvN, uResolution, uNextSize);
+  // uFit: 0 = cover (aspect-preserving, crops overflow), 1 = stretch to fill
+  vec2 sC = uFit > 0.5 ? uvC : coverUV(uvC, uResolution, uCurrentSize);
+  vec2 sN = uFit > 0.5 ? uvN : coverUV(uvN, uResolution, uNextSize);
 
   float ca = uReduce < 0.5 ? uAberration * env * 0.03 : 0.0;
 
@@ -318,10 +323,11 @@ class MorphEngine {
 				uScale: { value: opts.scale },
 				uAberration: { value: opts.aberration },
 				uDrift: { value: opts.drift },
-				uTime: { value: 0 },
-				uReduce: { value: this.reducedMotion ? 1 : 0 },
-				uPointer: { value: [0.5, 0.5] },
-				uOverlay: { value: hexToRgb(opts.overlayColor) },
+			uTime: { value: 0 },
+			uReduce: { value: this.reducedMotion ? 1 : 0 },
+			uFit: { value: opts.fit === "cover" ? 0 : 1 },
+			uPointer: { value: [0.5, 0.5] },
+			uOverlay: { value: hexToRgb(opts.overlayColor) },
 			},
 		});
 
@@ -374,6 +380,7 @@ class MorphEngine {
 		this.program.uniforms.uScale.value = opts.scale;
 		this.program.uniforms.uAberration.value = opts.aberration;
 		this.program.uniforms.uDrift.value = opts.drift;
+		this.program.uniforms.uFit.value = opts.fit === "cover" ? 0 : 1;
 		this.program.uniforms.uOverlay.value = hexToRgb(opts.overlayColor);
 	}
 
@@ -547,6 +554,7 @@ export default function MorphSlider({
 	showCaptions = true,
 	showControls = true,
 	showIndicators = true,
+	imageFit = "fill",
 	className = "",
 	...props
 }: MorphSliderProps) {
@@ -565,6 +573,7 @@ export default function MorphSlider({
 		drift,
 		overlayColor,
 		loop,
+		fit: imageFit,
 	});
 	optsRef.current = {
 		transition,
@@ -576,6 +585,7 @@ export default function MorphSlider({
 		drift,
 		overlayColor,
 		loop,
+		fit: imageFit,
 	};
 
 	useEffect(() => {

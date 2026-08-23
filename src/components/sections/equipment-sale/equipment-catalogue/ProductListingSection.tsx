@@ -6,6 +6,7 @@ import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionHeader } from "@/components/sections/home/SectionHeader";
 import { Blob } from "@/components/sections/home/decor";
+import type { MediaImage } from "@/lib/types";
 
 interface ProductCta {
 	icon?: string;
@@ -23,7 +24,7 @@ interface ProductItem {
 	icon?: string | null;
 	title: string;
 	description: string;
-	image?: string | null;
+	image?: string | MediaImage | null;
 	badge?: string | null;
 	price?: ProductPrice | null;
 	ctaPrimary?: ProductCta | null;
@@ -94,7 +95,10 @@ export function ProductListingSection({ namespace, items: propItems }: ProductLi
 }
 
 function CardBody({ item }: { item: ProductItem }) {
-	const hasImage = typeof item.image === "string" && item.image.startsWith("/");
+	const hasImage =
+		typeof item.image === "string"
+			? item.image.startsWith("/")
+			: Boolean(item.image);
 
 	return (
 		<>

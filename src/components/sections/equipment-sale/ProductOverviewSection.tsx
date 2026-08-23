@@ -78,8 +78,8 @@ export function ProductOverviewSection({ namespace }: ProductOverviewSectionProp
 
 				
 			</div>
-			<div className="relative z-10 max-w-7xl lg:max-w-[90dvw] mx-auto px-6 sm:px-8 lg:px-12 mt-12">
-				<FadeUp className="h-[80dvh]">
+			<div className="relative z-10 max-w-7xl  mx-auto px-6 sm:px-8 lg:px-12 mt-12">
+				<FadeUp className="h-[60dvh]">
 					{/* <AccordionGallery items={accordionGalleryItems} /> */}
 					<MorphSlider items={morphSliderItems} />
 				</FadeUp>
