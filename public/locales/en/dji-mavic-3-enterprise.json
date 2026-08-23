@@ -5,7 +5,6 @@
 		"title": "DJI Mavic 3 Enterprise Series",
 		"image": "/media/equipment-sale/dji-mavic-3-enterprise/01.jpeg",
 		"description": "A compact RTK-enabled drone optimized for rapid deployment mapping, ideal for topographical surveys, cadastral mapping, and small-to-medium construction projects.",
-		
 		"ctaPrimary": {
 			"label": "Inquire About This Drone",
 			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Mavic 3 Enterprise&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Mavic 3 Enterprise. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
@@ -154,23 +153,6 @@
 	"relatedProducts": {
 		"tag": "Explore",
 		"headline": "Other Drones You May Like",
-		"description": "Discover more survey drones from the SmartGrid catalogue.",
-		"items": [
-			{
-				"image": "/media/equipment-sale/dji-matrice-350-rtk/01.jpeg",
-				"label": "DJI MATRICE 350 RTK",
-				"href": "/equipment-sale/dji-matrice-350-rtk"
-			},
-			{
-				"image": "/media/equipment-sale/dji-air-3s/01.jpeg",
-				"label": "DJI AIR 3S",
-				"href": "/equipment-sale/dji-air-3s"
-			},
-			{
-				"image": "/media/equipment-sale/dji-phantom-4-rtk/01.jpeg",
-				"label": "DJI PHANTOM 4 RTK",
-				"href": "/equipment-sale/dji-phantom-4-rtk"
-			}
-		]
+		"description": "Discover more survey drones from the SmartGrid catalogue."
 	}
 }

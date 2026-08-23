@@ -127,28 +127,6 @@
 	"relatedProducts": {
 		"tag": "Chunguza",
 		"headline": "Bidhaa Nyingine Unazoweza Kuzipenda",
-		"description": "Gundua vifaa vingine vya upimaji kutoka kwenye katalogi ya SmartGrid.",
-		"items": [
-			{
-				"image": "/img/instruments/total-station-dtm-152m.jpg",
-				"label": "TOTAL STATION DTM 152M",
-				"href": "/equipment-sale/total-station-dtm-152m"
-			},
-			{
-				"image": "/img/instruments/foif-a90-rtk-gnss.png",
-				"label": "FOIF A90 RTK GNSS",
-				"href": "/equipment-sale/foif-a90-rtk-gnss"
-			},
-			{
-				"image": "/img/instruments/automatic-level-hueper.png",
-				"label": "AUTOMATIC LEVEL HUEPER",
-				"href": "/equipment-sale/automatic-level-hueper"
-			},
-			{
-				"image": "/img/instruments/automatic-level-bosch.png",
-				"label": "AUTOMATIC LEVEL BOSCH",
-				"href": "/equipment-sale/automatic-level-bosch"
-			}
-		]
+		"description": "Gundua vifaa vingine vya upimaji kutoka kwenye katalogi ya SmartGrid."
 	}
 }

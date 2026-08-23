@@ -4,6 +4,7 @@ import type { GetServerSideProps, NextPage } from "next";
 import PageHead from "@/components/Head";
 
 import { getI18nProps } from "@/lib/i18n";
+import { getRelatedProducts } from "@/lib/catalogue";
 import { ProductHeroSection } from "@/components/sections/equipment-sale/ProductHeroSection";
 import { ProductOverviewSection } from "@/components/sections/equipment-sale/ProductOverviewSection";
 import { ProductModelSection } from "@/components/sections/equipment-sale/ProductModelSection";
@@ -41,6 +42,7 @@ interface SectionManifest {
 interface PageProps {
 	product: string;
 	manifest: SectionManifest;
+	relatedItems: ReturnType<typeof getRelatedProducts>;
 }
 
 function readLocaleJson(locale: string, name: string): Record<string, unknown> | null {
@@ -85,7 +87,7 @@ function deriveManifest(productJson: Record<string, unknown>): SectionManifest {
 	};
 }
 
-const Page: NextPage<PageProps> = ({ product, manifest }) => {
+const Page: NextPage<PageProps> = ({ product, manifest, relatedItems }) => {
 	return (
 		<div className="relative">
 			<PageHead pageName={product} />
@@ -99,7 +101,7 @@ const Page: NextPage<PageProps> = ({ product, manifest }) => {
 					<ProductSpecsSection namespace={product} groupKeys={manifest.specGroups} />
 				)}
 				<ProductCtaSection namespace={product} />
-				<ProductRelatedSection namespace={product} />
+				<ProductRelatedSection namespace={product} items={relatedItems} />
 			</div>
 		</div>
 	);
@@ -121,7 +123,18 @@ export const getServerSideProps: GetServerSideProps<PageProps> = async (context)
 	const i18nProps = await getI18nProps(context, ["common", "meta", product]);
 	if (!i18nProps) return { notFound: true };
 
-	return { props: { ...i18nProps, product, manifest: deriveManifest(productJson) } };
+	return {
+		props: {
+			...i18nProps,
+			product,
+			manifest: deriveManifest(productJson),
+			relatedItems: getRelatedProducts(
+				typeof locale === "string" ? locale : "en",
+				product,
+				4,
+			),
+		},
+	};
 };
 
 export default Page;

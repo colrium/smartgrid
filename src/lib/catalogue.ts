@@ -40,6 +40,56 @@ function readProduct(locale: string, slug: string): Json | null {
 }
 
 /**
+ * Builds related-product cards for a product page, derived purely from
+ * products.json (not from per-product locale files). The current product is
+ * excluded; same-category entries come first, then remaining registry order,
+ * capped at `count`.
+ */
+export function getRelatedProducts(
+	locale: string,
+	excludeSlug: string,
+	count = 4,
+): Array<{ image: string | null; label: string; href: string }> {
+	const effectiveLocale = fs.existsSync(
+		path.join(process.cwd(), "public", "locales", locale, "products.json"),
+	)
+		? locale
+		: "en";
+
+	const registry = readLocaleJson(effectiveLocale, "products");
+	const entries = Array.isArray(registry?.items)
+		? (registry.items as { slug?: string; title?: string; category?: string }[])
+		: [];
+
+	const selfEntry = entries.find((e) => e.slug === excludeSlug);
+	const category = selfEntry?.category;
+
+	const ordered = [
+		...entries.filter((e) => e.slug !== excludeSlug && e.category === category),
+		...entries.filter((e) => e.slug !== excludeSlug && e.category !== category),
+	];
+
+	const items: Array<{ image: string | null; label: string; href: string }> = [];
+	for (const entry of ordered) {
+		if (!entry.slug) continue;
+		const product = readProduct(effectiveLocale, entry.slug);
+		if (!product) continue;
+		const hero = (product.hero ?? {}) as { title?: unknown; image?: unknown };
+		const image = typeof hero.image === "string" ? hero.image : null;
+		const title =
+			typeof hero.title === "string"
+				? hero.title
+				: typeof entry.title === "string"
+					? entry.title
+					: null;
+		if (!title) continue;
+		items.push({ image, label: title.toUpperCase(), href: `/equipment-sale/${entry.slug}` });
+		if (items.length >= count) break;
+	}
+	return items;
+}
+
+/**
  * Builds the equipment-catalogue cards from the products.json registry.
  * Each registry entry is enlisted automatically; card details come from
  * the product's own locale JSON (hero + optional `catalogue` block), so

@@ -21,14 +21,21 @@ interface RelatedProductsContent {
 
 interface ProductRelatedSectionProps {
 	namespace: string;
+	/** Server-assembled cards from the products.json registry. When absent, falls back to locale JSON items. */
+	items?: RelatedItem[];
 }
 
-export function ProductRelatedSection({ namespace }: ProductRelatedSectionProps) {
+export function ProductRelatedSection({ namespace, items: propItems }: ProductRelatedSectionProps) {
 	const { t } = useTranslation([namespace]);
 	const section = t(`${namespace}:relatedProducts`, {
 		returnObjects: true,
 	}) as unknown as RelatedProductsContent;
-	const items = Array.isArray(section?.items) ? section.items : [];
+	const items =
+		propItems && propItems.length > 0
+			? propItems
+			: Array.isArray(section?.items)
+				? section.items
+				: [];
 
 	if (items.length === 0) return null;
 

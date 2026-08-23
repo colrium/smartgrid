@@ -200,23 +200,6 @@
 	"relatedProducts": {
 		"tag": "Explore",
 		"headline": "Other Drones You May Like",
-		"description": "Discover more survey drones from the SmartGrid catalogue.",
-		"items": [
-			{
-				"image": "/media/equipment-sale/drones/dji-mavic-3-enterprise/01.jpeg",
-				"label": "DJI MAVIC 3 ENTERPRISE",
-				"href": "/equipment-sale/dji-mavic-3-enterprise"
-			},
-			{
-				"image": "/media/equipment-sale/drones/dji-mavic-3-multispectral/01.jpeg",
-				"label": "DJI MAVIC 3 MULTISPECTRAL",
-				"href": "/equipment-sale/dji-mavic-3-multispectral"
-			},
-			{
-				"image": "/media/equipment-sale/drones/dji-phantom-4-rtk/01.jpeg",
-				"label": "DJI PHANTOM 4 RTK",
-				"href": "/equipment-sale/dji-phantom-4-rtk"
-			}
-		]
+		"description": "Discover more survey drones from the SmartGrid catalogue."
 	}
 }

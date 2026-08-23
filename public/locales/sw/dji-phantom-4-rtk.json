@@ -414,23 +414,6 @@
 	"relatedProducts": {
 		"tag": "Chunguza",
 		"headline": "Droni Nyingine Unazoweza Kuzipenda",
-		"description": "Gundua droni zaidi za upimaji kutoka kwenye katalogi ya SmartGrid.",
-		"items": [
-			{
-				"image": "/media/equipment-sale/drones/dji-air-3s/01.jpeg",
-				"label": "DJI AIR 3S",
-				"href": "/equipment-sale/dji-air-3s"
-			},
-			{
-				"image": "/media/equipment-sale/drones/dji-mavic-3-enterprise/01.jpeg",
-				"label": "DJI MAVIC 3 ENTERPRISE",
-				"href": "/equipment-sale/dji-mavic-3-enterprise"
-			},
-			{
-				"image": "/media/equipment-sale/drones/dji-matrice-350-rtk/01.jpeg",
-				"label": "DJI MATRICE 350 RTK",
-				"href": "/equipment-sale/dji-matrice-350-rtk"
-			}
-		]
+		"description": "Gundua droni zaidi za upimaji kutoka kwenye katalogi ya SmartGrid."
 	}
 }

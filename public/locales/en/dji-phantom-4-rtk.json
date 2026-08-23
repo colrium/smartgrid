@@ -5,7 +5,6 @@
 		"title": "DJI Phantom 4 RTK",
 		"image": "/media/equipment-sale/dji-phantom-4-rtk/images/02-01.png",
 		"description": "A benchmark survey drone, widely used in cadastral and engineering mapping.",
-
 		"ctaPrimary": {
 			"label": "Inquire About This Drone",
 			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Phantom 4 RTK&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Phantom 4 RTK. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
@@ -110,13 +109,20 @@
 		"tag": "Camera",
 		"headline": "Camera",
 		"description": "A dedicated mapping camera built for accuracy.",
-		"list": ["20 MP, 1-inch CMOS", "Mechanical shutter", "GSD: ~2.7 cm at 100 m"]
+		"list": [
+			"20 MP, 1-inch CMOS",
+			"Mechanical shutter",
+			"GSD: ~2.7 cm at 100 m"
+		]
 	},
 	"positioningAndAccuracy": {
 		"tag": "Positioning",
 		"headline": "Accuracy",
 		"description": "Survey-grade RTK positioning built in.",
-		"list": ["Horizontal accuracy: ±1-2 cm", "Vertical accuracy: ±2-3 cm"]
+		"list": [
+			"Horizontal accuracy: ±1-2 cm",
+			"Vertical accuracy: ±2-3 cm"
+		]
 	},
 	"specs": {
 		"tag": "Tech Data",
@@ -132,8 +138,14 @@
 				"icon": "quadcopter",
 				"title": "Aircraft",
 				"items": [
-					{ "label": "Takeoff Weight", "value": "1391 g" },
-					{ "label": "Diagonal Distance", "value": "350 mm" },
+					{
+						"label": "Takeoff Weight",
+						"value": "1391 g"
+					},
+					{
+						"label": "Diagonal Distance",
+						"value": "350 mm"
+					},
 					{
 						"label": "Max Service Ceiling Above Sea Level",
 						"value": "19685 ft (6000 m)"
@@ -142,12 +154,18 @@
 						"label": "Max Ascent Speed",
 						"value": "6 m/s (automatic flight); 5 m/s (manual control)"
 					},
-					{ "label": "Max Descent Speed", "value": "3 m/s" },
+					{
+						"label": "Max Descent Speed",
+						"value": "3 m/s"
+					},
 					{
 						"label": "Max Speed",
 						"value": "31 mph / 50 kph (P-mode); 36 mph / 58 kph (A-mode)"
 					},
-					{ "label": "Max Flight Time", "value": "Approx. 30 minutes" },
+					{
+						"label": "Max Flight Time",
+						"value": "Approx. 30 minutes"
+					},
 					{
 						"label": "Operating Temperature Range",
 						"value": "32° to 104° F (0° to 40°C)"
@@ -200,9 +218,18 @@
 						"label": "Velocity Range",
 						"value": "≤31 mph (50 kph) at 6.6 ft (2 m) above ground with adequate lighting"
 					},
-					{ "label": "Altitude Range", "value": "0-33 ft (0-10 m)" },
-					{ "label": "Operating Range", "value": "0-33 ft (0-10 m)" },
-					{ "label": "Obstacle Sensing Range", "value": "2-98 ft (0.7-30 m)" },
+					{
+						"label": "Altitude Range",
+						"value": "0-33 ft (0-10 m)"
+					},
+					{
+						"label": "Operating Range",
+						"value": "0-33 ft (0-10 m)"
+					},
+					{
+						"label": "Obstacle Sensing Range",
+						"value": "2-98 ft (0.7-30 m)"
+					},
 					{
 						"label": "FOV",
 						"value": "Forward/Rear: 60° horizontal, ±27° vertical; Downward: 70° (front/rear), 50° (left/right)"
@@ -221,7 +248,10 @@
 				"icon": "camera",
 				"title": "Camera",
 				"items": [
-					{ "label": "Sensor", "value": "1-inch CMOS; Effective pixels: 20 M" },
+					{
+						"label": "Sensor",
+						"value": "1-inch CMOS; Effective pixels: 20 M"
+					},
 					{
 						"label": "Lens",
 						"value": "FOV 84°; 8.8 mm / 24 mm (35 mm format equivalent: 24 mm); f/2.8-f/11, auto focus at 1 m to infinity"
@@ -230,12 +260,30 @@
 						"label": "ISO Range",
 						"value": "Video: 100-3200 (Auto), 100-6400 (Manual); Photo: 100-3200 (Auto), 100-12800 (Manual)"
 					},
-					{ "label": "Mechanical Shutter Speed", "value": "8-1/2000 s" },
-					{ "label": "Electronic Shutter Speed", "value": "8-1/8000 s" },
-					{ "label": "Max Image Size", "value": "4864×3648 (4:3); 5472×3648 (3:2)" },
-					{ "label": "Video Recording Modes", "value": "H.264, 4K: 3840×2160 30p" },
-					{ "label": "Photo Format", "value": "JPEG" },
-					{ "label": "Video Format", "value": "MOV" },
+					{
+						"label": "Mechanical Shutter Speed",
+						"value": "8-1/2000 s"
+					},
+					{
+						"label": "Electronic Shutter Speed",
+						"value": "8-1/8000 s"
+					},
+					{
+						"label": "Max Image Size",
+						"value": "4864×3648 (4:3); 5472×3648 (3:2)"
+					},
+					{
+						"label": "Video Recording Modes",
+						"value": "H.264, 4K: 3840×2160 30p"
+					},
+					{
+						"label": "Photo Format",
+						"value": "JPEG"
+					},
+					{
+						"label": "Video Format",
+						"value": "MOV"
+					},
 					{
 						"label": "Supported File Systems",
 						"value": "FAT32 (≤32 GB); exFAT (>32 GB)"
@@ -254,25 +302,52 @@
 				"icon": "battery-charging-90",
 				"title": "Intelligent Flight Battery (PH4-5870mAh-15.2V)",
 				"items": [
-					{ "label": "Capacity", "value": "5870 mAh" },
-					{ "label": "Voltage", "value": "15.2 V" },
-					{ "label": "Battery Type", "value": "LiPo 4S" },
-					{ "label": "Energy", "value": "89.2 Wh" },
-					{ "label": "Net Weight", "value": "468 g" },
+					{
+						"label": "Capacity",
+						"value": "5870 mAh"
+					},
+					{
+						"label": "Voltage",
+						"value": "15.2 V"
+					},
+					{
+						"label": "Battery Type",
+						"value": "LiPo 4S"
+					},
+					{
+						"label": "Energy",
+						"value": "89.2 Wh"
+					},
+					{
+						"label": "Net Weight",
+						"value": "468 g"
+					},
 					{
 						"label": "Charging Temperature Range",
 						"value": "14° to 104°F (-10° to 40°C)"
 					},
-					{ "label": "Max Charging Power", "value": "160 W" }
+					{
+						"label": "Max Charging Power",
+						"value": "160 W"
+					}
 				]
 			},
 			{
 				"icon": "ev-station",
 				"title": "Intelligent Battery Charging Hub (WCH2)",
 				"items": [
-					{ "label": "Input Voltage", "value": "17.3-26.2 V" },
-					{ "label": "Output Voltage and Current", "value": "8.7 V, 6 A; 5 V, 2 A" },
-					{ "label": "Operating Temperature", "value": "41° to 104°F (5° to 40°C)" }
+					{
+						"label": "Input Voltage",
+						"value": "17.3-26.2 V"
+					},
+					{
+						"label": "Output Voltage and Current",
+						"value": "8.7 V, 6 A; 5 V, 2 A"
+					},
+					{
+						"label": "Operating Temperature",
+						"value": "41° to 104°F (5° to 40°C)"
+					}
 				]
 			},
 			{
@@ -291,10 +366,22 @@
 						"label": "Max Transmission Distance",
 						"value": "FCC/NCC: 4.3 mi (7 km); CE/MIC/KCC/SRRC: 3.1 mi (5 km), unobstructed and free of interference"
 					},
-					{ "label": "Built-in Battery", "value": "6000 mAh LiPo 2S" },
-					{ "label": "Operating Current / Voltage", "value": "1.2 A @ 7.4 V" },
-					{ "label": "Mobile Device Holder", "value": "Tablets and smartphones" },
-					{ "label": "Operating Temperature", "value": "32° to 104° F (0° to 40°C)" }
+					{
+						"label": "Built-in Battery",
+						"value": "6000 mAh LiPo 2S"
+					},
+					{
+						"label": "Operating Current / Voltage",
+						"value": "1.2 A @ 7.4 V"
+					},
+					{
+						"label": "Mobile Device Holder",
+						"value": "Tablets and smartphones"
+					},
+					{
+						"label": "Operating Temperature",
+						"value": "32° to 104° F (0° to 40°C)"
+					}
 				]
 			}
 		]
@@ -303,7 +390,11 @@
 		"tag": "Strengths",
 		"headline": "Strengths",
 		"description": "What has made the Phantom 4 RTK an enduring choice for surveyors.",
-		"list": ["Proven reliability", "High mapping accuracy", "Seamless RTK integration"]
+		"list": [
+			"Proven reliability",
+			"High mapping accuracy",
+			"Seamless RTK integration"
+		]
 	},
 	"cta": {
 		"tag": "Get a Quote",
@@ -323,23 +414,6 @@
 	"relatedProducts": {
 		"tag": "Explore",
 		"headline": "Other Drones You May Like",
-		"description": "Discover more survey drones from the SmartGrid catalogue.",
-		"items": [
-			{
-				"image": "/media/equipment-sale/drones/dji-air-3s/01.jpeg",
-				"label": "DJI AIR 3S",
-				"href": "/equipment-sale/dji-air-3s"
-			},
-			{
-				"image": "/media/equipment-sale/drones/dji-mavic-3-enterprise/01.jpeg",
-				"label": "DJI MAVIC 3 ENTERPRISE",
-				"href": "/equipment-sale/dji-mavic-3-enterprise"
-			},
-			{
-				"image": "/media/equipment-sale/drones/dji-matrice-350-rtk/01.jpeg",
-				"label": "DJI MATRICE 350 RTK",
-				"href": "/equipment-sale/dji-matrice-350-rtk"
-			}
-		]
+		"description": "Discover more survey drones from the SmartGrid catalogue."
 	}
 }

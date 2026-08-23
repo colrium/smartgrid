@@ -174,23 +174,6 @@
 	"relatedProducts": {
 		"tag": "Chunguza",
 		"headline": "Droni Nyingine Unazoweza Kuzipenda",
-		"description": "Gundua droni zaidi za upimaji kutoka kwenye katalogi ya SmartGrid.",
-		"items": [
-			{
-				"image": "/media/equipment-sale/dji-mavic-3-pro/images/02.png",
-				"label": "DJI MAVIC 3 PRO",
-				"href": "/equipment-sale/dji-mavic-3-pro"
-			},
-			{
-				"image": "/media/equipment-sale/dji-phantom-4-rtk/images/02.png",
-				"label": "DJI PHANTOM 4 RTK",
-				"href": "/equipment-sale/dji-phantom-4-rtk"
-			},
-			{
-				"image": "/media/equipment-sale/dji-mavic-3-enterprise/images/02.png",
-				"label": "DJI MAVIC 3 ENTERPRISE",
-				"href": "/equipment-sale/dji-mavic-3-enterprise"
-			}
-		]
+		"description": "Gundua droni zaidi za upimaji kutoka kwenye katalogi ya SmartGrid."
 	}
 }
