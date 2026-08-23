@@ -30,7 +30,7 @@ export function ProductCtaSection({ namespace }: ProductCtaSectionProps) {
 	}) as unknown as CtaContent;
 
 	return (
-		<section className="pb-24 sm:pb-28 relative overflow-hidden">
+		<section className="pb-24 sm:py-28 relative overflow-hidden">
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
 					<div className="relative rounded-[20px] ink-panel card-shadow overflow-hidden px-8 py-16 sm:px-12 sm:py-24 text-center">

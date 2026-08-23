@@ -128,7 +128,7 @@ function LoadPrompt({ src, onStart }: { src?: string; onStart: () => void }) {
 
 			<span className="relative z-10 flex flex-col items-center gap-4">
 				<span className="relative flex h-16 w-16 items-center justify-center rounded-full border border-primary/30 bg-surface/80 shadow-lg backdrop-blur-md transition-transform duration-300 group-hover:scale-110">
-					<span className="mdi mdi-cube-outline text-3xl text-primary" />
+					<span className="mdi mdi-rotate-3d text-3xl text-primary" />
 					<span className="absolute inset-0 animate-ping rounded-full border border-primary/40 opacity-25" />
 				</span>
 				<span className="rounded-full bg-primary px-5 py-2 text-xs font-medium uppercase tracking-widest text-surface shadow-md transition-colors group-hover:bg-accent">
