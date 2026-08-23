@@ -54,22 +54,7 @@ export function MetricsSection() {
 										delay={(index % 4) * 0.08}
 										className="h-full"
 									>
-										<div className="glass-dark rounded-xl h-full p-8 flex flex-col items-center text-center gap-4 transition-all duration-500 hover:-translate-y-1.5 hover:border-surface/30">
-											<span className="relative flex h-14 w-14 items-center justify-center">
-												
-												
-												<span className="relative flex items-center justify-center rounded-fulltext-primary-200">
-													<span
-														className={`mdi mdi-${
-															item.icon ||
-															METRIC_ICONS[
-																index % METRIC_ICONS.length
-															]
-														} text-surface/85 text-3xl`}
-													/>
-												</span>
-											</span>
-
+										<div className="relative glass-dark rounded-xl h-full p-8 flex flex-col items-center text-center gap-4 transition-all duration-500 hover:-translate-y-1.5 hover:border-surface/30 overflow-hidden">
 											<span className="text-5xl sm:text-[3.4rem] font-light text-surface tabular-nums leading-none tracking-tight">
 												<CountUp
 													to={item.value}
@@ -78,9 +63,15 @@ export function MetricsSection() {
 												/>
 											</span>
 
-											<span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-surface/55">
+											<span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-surface/75">
 												{item.name}
 											</span>
+											<span
+												className={`mdi mdi-${
+													item.icon ||
+													METRIC_ICONS[index % METRIC_ICONS.length]
+												} text-surface/10 text-[9rem] absolute bottom-6 -right-6`}
+											/>
 										</div>
 									</FadeUp>
 								))}

@@ -119,7 +119,7 @@ export function Slider({
 								alt={slide.alt || slide.title || `Slide ${index + 1}`}
 								fill
 								sizes="(min-width: 1024px) 80vw, 100vw"
-								className={`object-cover object-center ${imgClassName || ""}`}
+								className={`object-fill object-center ${imgClassName || ""}`}
 							/>
 						) : (
 							<div className="absolute inset-0 ink-panel" />

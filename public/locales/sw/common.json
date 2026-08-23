@@ -199,14 +199,14 @@
 					"label": "AUTOMATIC LEVEL HUEPER",
 					"href": "/equipment-sale/automatic-level-hueper"
 				},
-				{
-					"label": "DJI AIR 3S",
-					"href": "/equipment-sale/dji-air-3s"
-				},
-				{
-					"label": "DJI MAVIC 3 MULTISPECTRAL",
-					"href": "/equipment-sale/dji-mavic-3-multispectral"
-				},
+				// {
+				// 	"label": "DJI AIR 3S",
+				// 	"href": "/equipment-sale/dji-air-3s"
+				// },
+				// {
+				// 	"label": "DJI MAVIC 3 MULTISPECTRAL",
+				// 	"href": "/equipment-sale/dji-mavic-3-multispectral"
+				// },
 				{
 					"label": "KATALOGI YA VIFAA",
 					"href": "/equipment-sale/equipment-catalogue"
