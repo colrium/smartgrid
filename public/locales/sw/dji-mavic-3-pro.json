@@ -1,0 +1,211 @@
+{
+	"hero": {
+		"tag": "Droni ya Prosumer",
+		"headline": "Jukwaa la Kisasa la Ramani kwa Prosumer",
+		"title": "DJI Mavic 3 Pro",
+		"image": "/media/equipment-sale/dji-mavic-3-pro/images/01.png",
+		"description": "Droni ya daraja la juu ya prosumer yenye mfumo wa kamera tatu, inayounganisha upigaji picha wa kifahari na ukusanyaji wa data ya kijiografia ya nusu-taalamu.",
+		"ctaPrimary": {
+			"label": "Ulizia Droni Hii",
+			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Mavic 3 Pro&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Mavic 3 Pro. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+		}
+	},
+	"productImages": {
+		"images": [
+			"/media/equipment-sale/dji-mavic-3-pro/images/02-01.png",
+			"/media/equipment-sale/dji-mavic-3-pro/images/02-02.png",
+			"/media/equipment-sale/dji-mavic-3-pro/images/02-03.png",
+			"/media/equipment-sale/dji-mavic-3-pro/images/02-04.png",
+			"/media/equipment-sale/dji-mavic-3-pro/images/02-05.png",
+			"/media/equipment-sale/dji-mavic-3-pro/images/02-06.png",
+			"/media/equipment-sale/dji-mavic-3-pro/images/02-07.png",
+			"/media/equipment-sale/dji-mavic-3-pro/images/02-08.png"
+		]
+	},
+	"breadcrumb": {
+		"home": "Nyumbani",
+		"section": "Uuzaji wa Vifaa",
+		"sectionHref": "/equipment-sale/equipment-catalogue"
+	},
+	"pricing": {
+		"new": {
+			"label": "Mpya Kabisa",
+			"currency": "KES",
+			"amount": 1100000
+		}
+	},
+	"categories": [
+		{
+			"name": "drones",
+			"label": "Droni",
+			"href": "/equipment-sale/equipment-catalogue?category=drones"
+		}
+	],
+	"quickFacts": [
+		{
+			"icon": "camera-burst",
+			"label": "Kamera",
+			"value": "Kamera tatu, Hasselblad 4/3"
+		},
+		{
+			"icon": "video",
+			"label": "Video",
+			"value": "Hadi 5.1K / picha za MP 20"
+		},
+		{
+			"icon": "clock-outline",
+			"label": "Muda wa Kuruka",
+			"value": "~Dakika 43"
+		},
+		{
+			"icon": "wifi-strength-3",
+			"label": "Usambazaji",
+			"value": "Mfumo wa O3+ wa km 15"
+		}
+	],
+	"productOverview": {
+		"tag": "Muhtasari wa Bidhaa",
+		"headline": "Ubunifu wa Kamera Tatu kwa Kazi za Picha na Jiografia",
+		"images": [
+			"/media/equipment-sale/dji-mavic-3-pro/images/03-01.jpg",
+			"/media/equipment-sale/dji-mavic-3-pro/images/03-02.jpg",
+			"/media/equipment-sale/dji-mavic-3-pro/images/03-03.jpg",
+			"/media/equipment-sale/dji-mavic-3-pro/images/03-04.jpg",
+			"/media/equipment-sale/dji-mavic-3-pro/images/03-05.jpg"
+		],
+		"description": "DJI Mavic 3 Pro inaunganisha sensori kuu ya Hasselblad na lensi za tele za mm 70 na mm 166, ikitoa upigaji picha wa kifahari pamoja na photogrammetry inayoweza kutengeneza orthomosaic kwa nyaraka za tovuti na utafiti kabla ya ujenzi."
+	},
+	"keyFeatures": {
+		"tag": "Mambo Muhimu",
+		"headline": "Vipengele Muhimu",
+		"description": "Kinachotofautisha Mavic 3 Pro kama zana ya ramani ya prosumer.",
+		"items": [
+			{
+				"icon": "camera-burst",
+				"title": "Mpangilio wa Kamera Tatu",
+				"description": "Sensori kuu ya CMOS 4/3 ya Hasselblad pamoja na lensi ya tele ya katikati ya mm 70 na tele ya mm 166."
+			},
+			{
+				"icon": "video",
+				"title": "Ukamataji wa Ubora wa Juu",
+				"description": "Video hadi 5.1K na picha za MP 20, wigo wa mandhari ~stops 12.8, msaada wa RAW biti 12."
+			},
+			{
+				"icon": "shield-check",
+				"title": "Utambuzi wa Vikwazo Kwa Mwelekeo Wote",
+				"description": "Usalama ulioimarishwa kuruka karibu na majengo na mimea."
+			},
+			{
+				"icon": "image-multiple",
+				"title": "Uzalishaji wa Orthomosaic",
+				"description": "GSD ~cm 2-4 kwa mwinuko wa m 100, hufanya vizuri zaidi na mwingiliano wa juu (≥80/70) na GCP."
+			}
+		]
+	},
+	"model3d": {
+		"tag": "Mwingiliano wa 3D",
+		"headline": "Chunguza Mavic 3 Pro kwa 3D",
+		"description": "Buruta kuzungusha modeli na tumia gurudumu la kutanua au kidondoa kukaza.",
+		"models": [
+			"/media/equipment-sale/dji-mavic-3-pro/models/01.glb",
+			"/media/equipment-sale/dji-mavic-3-pro/models/02.glb"
+		]
+	},
+	"cameraSystem": {
+		"tag": "Kamera",
+		"headline": "Mfumo wa Kamera (Nguvu Kuu)",
+		"description": "Upigaji picha wa daraja la sinema ndani ya mwili mdogo wa prosumer.",
+		"list": [
+			"Mpangilio wa kamera tatu",
+			"CMOS 4/3 ya Hasselblad (sensor kuu)",
+			"Lensi ya tele ya katikati ya mm 70",
+			"Lensi ya tele ya mm 166",
+			"Azimia: Hadi video 5.1K / picha MP 20",
+			"Wigo wa mandhari: ~stops 12.8",
+			"Msaada wa RAW biti 12"
+		]
+	},
+	"flightPerformance": {
+		"tag": null,
+		"headline": "Utendaji wa Kuruka",
+		"description": "Mbali na mifumo ya usalama inayoaminika kwa kazi shambani.",
+		"list": [
+			"Muda wa kuruka: ~Dakika 43",
+			"Usambazaji: Mfumo wa O3+ wa km 15",
+			"Utambuzi wa vikwazo kwa mwelekeo wote"
+		]
+	},
+	"accuracyNotes": {
+		"tag": "Usahihi",
+		"headline": "Usahihi (Ukweli Muhimu)",
+		"description": "Usahihi unaotegemea GCP kwa kuwa haipo RTK iliyojengwa ndani.",
+		"list": [
+			"Bila RTK: usahihi kamili wa ~m 1-3",
+			"Kwa marekebisho ya GCP: ~cm 3-10 inawezekana"
+		]
+	},
+	"specs": {
+		"tag": "Data ya Kiufundi",
+		"headline": "Vipimo vya Kiufundi",
+		"description": "Maelezo kamili ya kiufundi kwa DJI Mavic 3 Pro."
+	},
+	"surveyApplications": {
+		"tag": "Matumizi",
+		"headline": "Matumizi ya Uhandisi",
+		"description": "Pale Mavic 3 Pro inavyofaa katika mtiririko wa kazi wa upimaji.",
+		"list": [
+			"Nyaraka za maendeleo ya tovuti (ubora wa juu wa picha)",
+			"Ramani za nyumba za biashara (uzinduzi + GIS mseto)",
+			"Utafiti kabla ya ujenzi",
+			"Uundaji wa miji (kutengeneza mesh ya 3D)"
+		]
+	},
+	"limitations": {
+		"tag": "Mapungufu",
+		"headline": "Mapungufu (Muhimu kwa Wapimaji)",
+		"description": "Mambo ya kuzingatia kabla ya kutumia droni hii kwa kazi za upimaji sahihi.",
+		"list": [
+			"Haipaswi RTK iliyojengwa ndani, inahitaji kutegemea GCP kwa kiasi kikubwa",
+			"Hana shutter ya mitambo, hatari ya distoro ya mwendo",
+			"Haifai kwa upimaji wa mipaka (cadastral)",
+			"Haifai kwa uwekaji wa miundo ya uhandisi (setting out)"
+		]
+	},
+	"cta": {
+		"tag": "Pata Nukuu",
+		"headline": "Ulizia Droni Hii",
+		"description": "Tuambie kuhusu mradi wako na upate nukuu iliyoundwa kwa ajili ya DJI Mavic 3 Pro.",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Tutumie Barua Pepe",
+			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Mavic 3 Pro&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Mavic 3 Pro. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+		},
+		"ctaSecondary": {
+			"icon": "whatsapp",
+			"label": "Tutumie WhatsApp",
+			"href": "https://wa.me/254701618282"
+		}
+	},
+	"relatedProducts": {
+		"tag": "Chunguza",
+		"headline": "Droni Nyingine Unazoweza Kuzipenda",
+		"description": "Gundua droni zaidi za upimaji kutoka kwenye katalogi ya SmartGrid.",
+		"items": [
+			{
+				"image": "/media/equipment-sale/dji-air-3s/images/02.png",
+				"label": "DJI AIR 3S",
+				"href": "/equipment-sale/dji-air-3s"
+			},
+			{
+				"image": "/media/equipment-sale/dji-mavic-3-enterprise/images/02.png",
+				"label": "DJI MAVIC 3 ENTERPRISE",
+				"href": "/equipment-sale/dji-mavic-3-enterprise"
+			},
+			{
+				"image": "/media/equipment-sale/dji-phantom-4-rtk/images/02-01.png",
+				"label": "DJI PHANTOM 4 RTK",
+				"href": "/equipment-sale/dji-phantom-4-rtk"
+			}
+		]
+	}
+}

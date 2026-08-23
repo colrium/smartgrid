@@ -3,8 +3,8 @@
 		"tag": "Prosumer Drone",
 		"headline": "Advanced Prosumer Mapping Platform",
 		"title": "DJI Mavic 3 Pro",
-		"image": "/media/equipment-sale/dji-mavic-3-pro/01.jpeg",
-		"description": "A high-end prosumer drone featuring a triple-camera system, bridging the gap between cinematic imaging and semi-professional geospatial data capture.",		
+		"image": "/media/equipment-sale/dji-mavic-3-pro/images/01.png",
+		"description": "A high-end prosumer drone featuring a triple-camera system, bridging the gap between cinematic imaging and semi-professional geospatial data capture.",
 		"ctaPrimary": {
 			"label": "Inquire About This Drone",
 			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Mavic 3 Pro&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Mavic 3 Pro. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
@@ -12,9 +12,14 @@
 	},
 	"productImages": {
 		"images": [
-			"/media/equipment-sale/dji-mavic-3-pro/02.jpeg",
-			"/media/equipment-sale/dji-mavic-3-pro/03.jpeg",
-			"/media/equipment-sale/dji-mavic-3-pro/04.jpeg"
+			"/media/equipment-sale/dji-mavic-3-pro/images/02-01.png",
+			"/media/equipment-sale/dji-mavic-3-pro/images/02-02.png",
+			"/media/equipment-sale/dji-mavic-3-pro/images/02-03.png",
+			"/media/equipment-sale/dji-mavic-3-pro/images/02-04.png",
+			"/media/equipment-sale/dji-mavic-3-pro/images/02-05.png",
+			"/media/equipment-sale/dji-mavic-3-pro/images/02-06.png",
+			"/media/equipment-sale/dji-mavic-3-pro/images/02-07.png",
+			"/media/equipment-sale/dji-mavic-3-pro/images/02-08.png"
 		]
 	},
 	"breadcrumb": {
@@ -62,9 +67,11 @@
 		"tag": "Product Overview",
 		"headline": "Triple-Camera Versatility for Visual & Geospatial Work",
 		"images": [
-			"/media/equipment-sale/dji-mavic-3-pro/02.jpeg",
-			"/media/equipment-sale/dji-mavic-3-pro/03.jpeg",
-			"/media/equipment-sale/dji-mavic-3-pro/04.jpeg"
+			"/media/equipment-sale/dji-mavic-3-pro/images/03-01.jpg",
+			"/media/equipment-sale/dji-mavic-3-pro/images/03-02.jpg",
+			"/media/equipment-sale/dji-mavic-3-pro/images/03-03.jpg",
+			"/media/equipment-sale/dji-mavic-3-pro/images/03-04.jpg",
+			"/media/equipment-sale/dji-mavic-3-pro/images/03-05.jpg"
 		],
 		"description": "The DJI Mavic 3 Pro pairs a Hasselblad main sensor with 70 mm and 166 mm tele lenses, delivering cinematic imaging alongside orthomosaic-capable photogrammetry for site documentation and pre-construction reconnaissance."
 	},
@@ -93,6 +100,15 @@
 				"title": "Orthomosaic Generation",
 				"description": "GSD ~2-4 cm at 100 m altitude, works best with high overlap (≥80/70) and GCPs."
 			}
+		]
+	},
+	"model3d": {
+		"tag": "Interactive 3D",
+		"headline": "Explore the Mavic 3 Pro in 3D",
+		"description": "Drag to rotate the model and scroll or pinch to zoom.",
+		"models": [
+			"/media/equipment-sale/dji-mavic-3-pro/models/01.glb",
+			"/media/equipment-sale/dji-mavic-3-pro/models/02.glb"
 		]
 	},
 	"cameraSystem": {
@@ -176,17 +192,17 @@
 		"description": "Discover more survey drones from the SmartGrid catalogue.",
 		"items": [
 			{
-				"image": "/media/equipment-sale/dji-air-3s/01.jpeg",
+				"image": "/media/equipment-sale/dji-air-3s/images/02.png",
 				"label": "DJI AIR 3S",
 				"href": "/equipment-sale/dji-air-3s"
 			},
 			{
-				"image": "/media/equipment-sale/dji-mavic-3-enterprise/01.jpeg",
+				"image": "/media/equipment-sale/dji-mavic-3-enterprise/images/02.png",
 				"label": "DJI MAVIC 3 ENTERPRISE",
 				"href": "/equipment-sale/dji-mavic-3-enterprise"
 			},
 			{
-				"image": "/media/equipment-sale/dji-phantom-4-rtk/01.jpeg",
+				"image": "/media/equipment-sale/dji-phantom-4-rtk/images/02-01.png",
 				"label": "DJI PHANTOM 4 RTK",
 				"href": "/equipment-sale/dji-phantom-4-rtk"
 			}

@@ -1,18 +1,18 @@
 {
 	"hero": {
-		"tag": "Survey Drone",
-		"headline": "Heavy-Lift LiDAR & High-Precision Survey Platform",
+		"tag": "Droni ya Upimaji",
+		"headline": "Jukwaa la Upimaji wa LiDAR mzito na Usahihi wa Juu",
 		"title": "DJI Matrice 350 RTK (M350 RTK)",
 		"image": "/media/equipment-sale/dji-matrice-350-rtk/images/01.jpg",
-		"description": "A flagship enterprise UAV designed for high-accuracy geospatial data acquisition, particularly for LiDAR mapping, corridor surveys, and large-scale engineering projects.",
+		"description": "UAV bora ya biashara iliyoundwa kukusanya data ya kijiografia kwa usahihi wa juu, hasa kwa ramani za LiDAR, uchunguzi wa mistari (corridor), na miradi mikubwa ya uhandisi.",
 		"ctaPrimary": {
-			"label": "Inquire About This Drone",
+			"label": "Ulizia Droni Hii",
 			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Matrice 350 RTK&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Matrice 350 RTK. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
 	"breadcrumb": {
-		"home": "Home",
-		"section": "Equipment Sale",
+		"home": "Nyumbani",
+		"section": "Uuzaji wa Vifaa",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
 	"catalogue": {
@@ -35,7 +35,7 @@
 	},
 	"pricing": {
 		"new": {
-			"label": "Brand New",
+			"label": "Mpya Kabisa",
 			"currency": "KES",
 			"amount": 5000000
 		}
@@ -43,35 +43,35 @@
 	"categories": [
 		{
 			"name": "drones",
-			"label": "Drones",
+			"label": "Droni",
 			"href": "/equipment-sale/equipment-catalogue?category=drones"
 		}
 	],
 	"quickFacts": [
 		{
 			"icon": "crosshairs-gps",
-			"label": "Positioning",
-			"value": "±1 cm + 1 ppm horizontal"
+			"label": "Uwekaji Nafasi",
+			"value": "±cm 1 + ppm 1 usawa"
 		},
 		{
 			"icon": "clock-outline",
-			"label": "Flight Time",
-			"value": "~55 minutes (no payload)"
+			"label": "Muda wa Kuruka",
+			"value": "~Dakika 55 (bila mzigo)"
 		},
 		{
 			"icon": "wifi-strength-4",
-			"label": "Transmission Range",
-			"value": "20 km (OcuSync Enterprise)"
+			"label": "Mbali ya Usambazaji",
+			"value": "km 20 (OcuSync Enterprise)"
 		},
 		{
 			"icon": "weather-windy",
-			"label": "Wind Resistance",
-			"value": "12 m/s"
+			"label": "Ustahimilivu wa Upepo",
+			"value": "m/s 12"
 		}
 	],
 	"productOverview": {
-		"tag": "Product Overview",
-		"headline": "Enterprise-Grade Precision for Demanding Surveys",
+		"tag": "Muhtasari wa Bidhaa",
+		"headline": "Usahihi wa Daraja la Biashara kwa Uchunguzi Mahututi",
 		"images": [
 			"/media/equipment-sale/dji-matrice-350-rtk/images/02-06.jpg",
 			"/media/equipment-sale/dji-matrice-350-rtk/images/02-07.jpg",
@@ -87,120 +87,120 @@
 			"/media/equipment-sale/dji-matrice-350-rtk/images/03-07.jpg",
 			"/media/equipment-sale/dji-matrice-350-rtk/images/03-08.jpg"
 		],
-		"description": "The DJI Matrice 350 RTK pairs a built-in RTK/PPK GNSS module with interchangeable LiDAR and photogrammetry payloads, delivering survey-grade accuracy across dense vegetation, powerline corridors, and large-scale engineering sites."
+		"description": "DJI Matrice 350 RTK inaunganisha moduli ya GNSS ya RTK/PPK iliyojengwa ndani na mzigo unaobadilishika wa LiDAR na photogrammetry, ikitoa usahihi wa daraja la upimaji katika maeneo yenye mimea migumu, njia za mistari ya umeme, na tovuti kubwa za uhandisi."
 	},
 	"keyFeatures": {
-		"tag": "Highlights",
-		"headline": "Key Features",
-		"description": "Everything that makes the M350 RTK the benchmark heavy-lift survey platform.",
+		"tag": "Mambo Muhimu",
+		"headline": "Vipengele Muhimu",
+		"description": "Kila kitu kinachomfanya M350 RTK kuwa kielelezo cha majukwaa ya upimaji yanayobeba mizigo mikubwa.",
 		"items": [
 			{
 				"icon": "crosshairs-gps",
-				"title": "Built-in RTK/PPK GNSS",
-				"description": "Supports Network RTK (CORS), D-RTK 2 Base Station, and PPK workflows for redundancy."
+				"title": "RTK/PPK GNSS Iliyojengwa Ndani",
+				"description": "Inaunga mkono Network RTK (CORS), Kituo cha Msingi cha D-RTK 2, na mifumo ya PPK kwa uhakika wa ziada."
 			},
 			{
 				"icon": "radar",
 				"title": "DJI Zenmuse L2 LiDAR",
-				"description": "240,000 pts/sec laser return rate with 450 m range and ≤4 cm vertical accuracy, ideal for dense vegetation and terrain penetration."
+				"description": "Kiwango cha kurudisha laser cha pts 240,000/sec, umbali wa m 450 na usahihi wima ≤cm 4, Unaofaa kwa mimea migumu na kuingia chini ya msitu."
 			},
 			{
 				"icon": "camera",
 				"title": "DJI Zenmuse P1 Photogrammetry",
-				"description": "45 MP full-frame global shutter camera delivering 1.5-3 cm GSD at 100 m altitude."
+				"description": "Kamera ya full-frame ya MP 45 yenye global shutter inayotoa GSD ya cm 1.5-3 kwa urefu wa m 100."
 			},
 			{
 				"icon": "battery-90",
-				"title": "Long Endurance",
-				"description": "Up to 55 minutes flight time, 30-45 minutes typical survey endurance with payload."
+				"title": "Muda Mrefu wa Kuruka",
+				"description": "Hadi dakika 55 za kuruka; dakika 30-45 za kawaida za upimaji na mzigo."
 			}
 		]
 	},
 	"model3d": {
-		"tag": "Interactive 3D",
-		"headline": "Explore the M350 RTK in 3D",
-		"description": "Drag to rotate the model and scroll or pinch to zoom.",
+		"tag": "Mwingiliano wa 3D",
+		"headline": "Chunguza M350 RTK kwa 3D",
+		"description": "Buruta kuzungusha modeli na tumia gurudumu la kutanua au kidondoa kukaza.",
 		"models": [
 			"/media/equipment-sale/dji-matrice-350-rtk/models/with-zenmuse-l2.glb",
 			"/media/equipment-sale/dji-matrice-350-rtk/models/without-zenmuse-l2-and-battery.glb"
 		]
 	},
 	"positioningAndAccuracy": {
-		"tag": "Positioning",
-		"headline": "Positioning & Accuracy",
-		"description": "Survey-grade GNSS positioning built into the airframe.",
+		"tag": "Uwekaji Nafasi",
+		"headline": "Uwekaji Nafasi & Usahihi",
+		"description": "GNSS ya daraja la upimaji iliyojengwa ndani ya mwili wa ndege.",
 		"list": [
-			"Built-in RTK/PPK GNSS module",
-			"Horizontal accuracy: ±1 cm + 1 ppm",
-			"Vertical accuracy: ±1.5 cm + 1 ppm",
-			"Supports Network RTK (CORS)",
-			"Supports D-RTK 2 Base Station",
-			"Supports PPK workflows for redundancy"
+			"Moduli ya GNSS ya RTK/PPK iliyojengwa ndani",
+			"Usahihi wa usawa: ±cm 1 + ppm 1",
+			"Usahihi wima: ±cm 1.5 + ppm 1",
+			"Inaunga mkono Network RTK (CORS)",
+			"Inaunga mkono Kituo cha Msingi cha D-RTK 2",
+			"Inaunga mkono mifumo ya PPK kwa uhakika wa ziada"
 		]
 	},
 	"flightPerformance": {
 		"tag": null,
-		"headline": "Flight Performance",
-		"description": "Built for extended, stable survey missions.",
+		"headline": "Utendaji wa Kuruka",
+		"description": "Imeundwa kwa misheni ndefu na imara za upimaji.",
 		"list": [
-			"Max flight time: ~55 minutes (no payload)",
-			"Typical survey endurance: 30-45 minutes (with LiDAR/camera payload)",
-			"Max transmission range: 20 km (OcuSync Enterprise)",
-			"Wind resistance: 12 m/s (critical for stable mapping)"
+			"Muda wa kuruka: ~Dakika 55 (bila mzigo)",
+			"Muda wa kawaida wa upimaji: Dakika 30-45 (na mzigo wa LiDAR/kamera)",
+			"Mbali ya usambazaji: km 20 (OcuSync Enterprise)",
+			"Ustahimilivu wa upepo: m/s 12 (muhimu kwa ramani imara)"
 		]
 	},
 	"payloadOptions": {
-		"tag": "Payloads",
-		"headline": "Payload Options (Survey-Focused)",
-		"description": "Interchangeable payloads for LiDAR mapping and photogrammetry.",
+		"tag": "Mizigo",
+		"headline": "Chaguo za Mizigo (Zinazolenga Upimaji)",
+		"description": "Mizigo inayobadilishwa kwa ramani za LiDAR na photogrammetry.",
 		"items": [
 			{
-				"label": "DJI Zenmuse L2 (LiDAR Mapping)",
-				"description": "Laser return rate 240,000 pts/sec, 450 m range, vertical accuracy ≤4 cm, integrated RGB camera for colorized point clouds. Ideal for dense vegetation mapping, powerline corridors, and terrain penetration."
+				"label": "DJI Zenmuse L2 (Ramani za LiDAR)",
+				"description": "Kiwango cha kurudisha laser cha pts 240,000/sec, umbali wa m 450, usahihi wima ≤cm 4, pamoja na kamera ya RGB kwa mawingu ya pointi yenye rangi. Inafaa kwa ramani za mimea migumu, nyaya za umeme, na kuingia chini ya msitu."
 			},
 			{
 				"label": "DJI Zenmuse P1 (Photogrammetry)",
-				"description": "45 MP full-frame sensor with global shutter (no rolling distortion). GSD ~1.5-3 cm at 100 m altitude. Accuracy: 3-5 cm absolute (with GCPs), sub-centimeter relative."
+				"description": "Sensori ya full-frame ya MP 45 yenye global shutter (isio na distoro ya rolling). GSD ~cm 1.5-3 kwa urefu wa m 100. Usahihi: cm 3-5 kamili (kwa GCP), chini ya sentimita kwa ndani."
 			}
 		]
 	},
 	"specs": {
-		"tag": "Tech Data",
-		"headline": "Technical Specifications",
-		"description": "Complete technical details for the DJI Matrice 350 RTK."
+		"tag": "Data ya Kiufundi",
+		"headline": "Vipimo vya Kiufundi",
+		"description": "Maelezo kamili ya kiufundi kwa DJI Matrice 350 RTK."
 	},
 	"surveyApplications": {
-		"tag": "Applications",
-		"headline": "Survey Applications",
-		"description": "Where the M350 RTK excels in the field.",
+		"tag": "Matumizi",
+		"headline": "Matumizi ya Upimaji",
+		"description": "Pale M350 RTK inavyofaa zaidi shambani.",
 		"list": [
-			"Engineering corridor mapping (roads, pipelines, transmission lines)",
-			"LiDAR terrain modeling (DTM under canopy)",
-			"Volumetric analysis (quarries, stockpiles)",
-			"Eliminates heavy dependence on ground control points (GCPs)",
-			"Handles large-area surveys efficiently (100-500+ hectares/day)",
-			"Integrates directly into Civil 3D, ArcGIS, Pix4D, Metashape workflows"
+			"Ramani za mistari ya uhandisi (barabara, mabomba, nyaya za umeme)",
+			"Uundaji wa mandhari kwa LiDAR (DTM chini ya msitu)",
+			"Uchambuzi wa volumu (machimbo, makusanyo)",
+			"Hupunguza kutegemea sana alama za udhibiti wa ardhi (GCP)",
+			"Hushughulikia maeneo makubwa kwa ufanisi (hektari 100-500+ kwa siku)",
+			"Huunganishwa moja kwa moja katika Civil 3D, ArcGIS, Pix4D, Metashape"
 		]
 	},
 	"cta": {
-		"tag": "Get a Quote",
-		"headline": "Inquire About This Drone",
-		"description": "Tell us about your project and get a tailored quote for the DJI Matrice 350 RTK.",
+		"tag": "Pata Nukuu",
+		"headline": "Ulizia Droni Hii",
+		"description": "Tuambie kuhusu mradi wako na upate nukuu iliyoundwa kwa ajili ya DJI Matrice 350 RTK.",
 		"ctaPrimary": {
 			"icon": "email",
-			"label": "Email Us",
+			"label": "Tutumie Barua Pepe",
 			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Matrice 350 RTK&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Matrice 350 RTK. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		},
 		"ctaSecondary": {
 			"icon": "whatsapp",
-			"label": "WhatsApp Us",
+			"label": "Tutumie WhatsApp",
 			"href": "https://wa.me/254701618282"
 		}
 	},
 	"relatedProducts": {
-		"tag": "Explore",
-		"headline": "Other Drones You May Like",
-		"description": "Discover more survey drones from the SmartGrid catalogue.",
+		"tag": "Chunguza",
+		"headline": "Droni Nyingine Unazoweza Kuzipenda",
+		"description": "Gundua droni zaidi za upimaji kutoka kwenye katalogi ya SmartGrid.",
 		"items": [
 			{
 				"image": "/media/equipment-sale/drones/dji-mavic-3-enterprise/01.jpeg",

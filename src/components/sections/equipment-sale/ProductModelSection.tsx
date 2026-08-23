@@ -85,8 +85,8 @@ export function ProductModelSection({ namespace, placeholderSrc }: ProductModelS
 						align="center"
 					/>
 				</div>
-				<div className="w-full mt-12 sm:mt-16">
-					<div className="relative overflow-hidden rounded-[15px] h-[80dvh] hairline">
+				<div className="max-w-7xl  mx-auto mt-12 sm:mt-16">
+					<div className="relative overflow-hidden rounded-[15px] h-[70dvh] hairline">
 						<ModelViewer
 							url={current}
 							className="h-full relative"
