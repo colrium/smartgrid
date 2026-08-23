@@ -195,29 +195,24 @@
 						"label": "AUTOMATIC LEVEL BOSCH",
 						"href": "/equipment-sale/automatic-level-bosch"
 					},
-				{
-					"label": "AUTOMATIC LEVEL HUEPER",
-					"href": "/equipment-sale/automatic-level-hueper"
-				},
-				// {
-				// 	"label": "DJI AIR 3S",
-				// 	"href": "/equipment-sale/dji-air-3s"
-				// },
-				// {
-				// 	"label": "DJI MAVIC 3 MULTISPECTRAL",
-				// 	"href": "/equipment-sale/dji-mavic-3-multispectral"
-				// },
-				{
-					"label": "KATALOGI YA VIFAA",
-					"href": "/equipment-sale/equipment-catalogue"
-				}
+					{
+						"label": "AUTOMATIC LEVEL HUEPER",
+						"href": "/equipment-sale/automatic-level-hueper"
+					},
+					{
+						"label": "KATALOGI YA VIFAA",
+						"href": "/equipment-sale/equipment-catalogue"
+					}
 				]
 			},
 			{ "label": "Ajira", "href": "/careers" },
 			{ "label": "Kuhusu", "href": "/about" },
 			{ "label": "Wasiliana Nasi", "href": "/contact", "type": "pill" }
 		],
-		"ctaPrimary": { "label": "Pata Nukuu", "href": "/contact?reason=request-quote#contact-form" },
+		"ctaPrimary": {
+			"label": "Pata Nukuu",
+			"href": "/contact?reason=request-quote#contact-form"
+		},
 		"ctaSecondary": { "label": "Jifunze Zaidi", "href": "/#faq" },
 		"ctaSearch": { "label": "Jifunze Zaidi", "href": "/#faq" }
 	},
@@ -236,22 +231,43 @@
 			"surveying": {
 				"heading": "Upimaji",
 				"links": [
-					{ "label": "Upimaji wa Topografia", "href": "/surveying/topographical-surveys" },
+					{
+						"label": "Upimaji wa Topografia",
+						"href": "/surveying/topographical-surveys"
+					},
 					{ "label": "Upimaji wa Cadastral", "href": "/surveying/cadastral-surveys" },
 					{ "label": "Upimaji wa Angani", "href": "/surveying/aerial-surveys" },
-					{ "label": "Upimaji wa Maeneo ya Ujenzi", "href": "/surveying/building-site-surveys" },
-					{ "label": "Radar ya Kupenya Ardhi", "href": "/surveying/ground-penetrating-radar" },
+					{
+						"label": "Upimaji wa Maeneo ya Ujenzi",
+						"href": "/surveying/building-site-surveys"
+					},
+					{
+						"label": "Radar ya Kupenya Ardhi",
+						"href": "/surveying/ground-penetrating-radar"
+					},
 					{ "label": "Upimaji wa Bathymetric", "href": "/surveying/bathymetric-surveys" }
 				]
 			},
 			"drones": {
 				"heading": "Ndege za Drone",
 				"links": [
-					{ "label": "Upimaji wa Picha za Drone", "href": "/aerial-drones/drone-imagery-surveys" },
+					{
+						"label": "Upimaji wa Picha za Drone",
+						"href": "/aerial-drones/drone-imagery-surveys"
+					},
 					{ "label": "Uchoraji wa LiDAR", "href": "/aerial-drones/lidar-mapping" },
-					{ "label": "Ufuatiliaji na Tathmini", "href": "/aerial-drones/monitoring-and-evaluation" },
-					{ "label": "Upimaji wa Volumetric", "href": "/aerial-drones/volumetric-surveys" },
-					{ "label": "Upigaji Picha na Video", "href": "/aerial-drones/photography-video-marketing" }
+					{
+						"label": "Ufuatiliaji na Tathmini",
+						"href": "/aerial-drones/monitoring-and-evaluation"
+					},
+					{
+						"label": "Upimaji wa Volumetric",
+						"href": "/aerial-drones/volumetric-surveys"
+					},
+					{
+						"label": "Upigaji Picha na Video",
+						"href": "/aerial-drones/photography-video-marketing"
+					}
 				]
 			},
 			"civil": {

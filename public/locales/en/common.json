@@ -197,22 +197,14 @@
 						"label": "AUTOMATIC LEVEL BOSCH",
 						"href": "/equipment-sale/automatic-level-bosch"
 					},
-				{
-					"label": "AUTOMATIC LEVEL HUEPER",
-					"href": "/equipment-sale/automatic-level-hueper"
-				},
-				// {
-				// 	"label": "DJI AIR 3S",
-				// 	"href": "/equipment-sale/dji-air-3s"
-				// },
-				// {
-				// 	"label": "DJI MAVIC 3 MULTISPECTRAL",
-				// 	"href": "/equipment-sale/dji-mavic-3-multispectral"
-				// },
-				{
-					"label": "EQUIPMENT CATALOGUE",
-					"href": "/equipment-sale/equipment-catalogue"
-				}
+					{
+						"label": "AUTOMATIC LEVEL HUEPER",
+						"href": "/equipment-sale/automatic-level-hueper"
+					},
+					{
+						"label": "EQUIPMENT CATALOGUE",
+						"href": "/equipment-sale/equipment-catalogue"
+					}
 				]
 			},
 			{ "label": "Careers", "href": "/careers" },
@@ -220,7 +212,10 @@
 			{ "label": "Contact Us", "href": "/contact", "type": "pill" }
 		],
 
-		"ctaPrimary": { "label": "Get a Quote", "href": "/contact?reason=request-quote#contact-form" },
+		"ctaPrimary": {
+			"label": "Get a Quote",
+			"href": "/contact?reason=request-quote#contact-form"
+		},
 		"ctaSecondary": { "label": "Learn More", "href": "/#faq" },
 		"ctaSearch": { "label": "Learn More", "href": "/#faq" }
 	},
@@ -233,28 +228,49 @@
 					{ "label": "About Us", "href": "/about" },
 					{ "label": "Careers", "href": "/careers" },
 					{ "label": "Contact Us", "href": "/contact" },
-					{ "label": "Equipment Catalogue", "href": "/equipment-sale/equipment-catalogue" }
+					{
+						"label": "Equipment Catalogue",
+						"href": "/equipment-sale/equipment-catalogue"
+					}
 				]
 			},
 			"surveying": {
 				"heading": "Surveying",
 				"links": [
-					{ "label": "Topographical Surveys", "href": "/surveying/topographical-surveys" },
+					{
+						"label": "Topographical Surveys",
+						"href": "/surveying/topographical-surveys"
+					},
 					{ "label": "Cadastral Surveys", "href": "/surveying/cadastral-surveys" },
 					{ "label": "Aerial Surveys", "href": "/surveying/aerial-surveys" },
-					{ "label": "Building Site Surveys", "href": "/surveying/building-site-surveys" },
-					{ "label": "Ground Penetrating Radar", "href": "/surveying/ground-penetrating-radar" },
+					{
+						"label": "Building Site Surveys",
+						"href": "/surveying/building-site-surveys"
+					},
+					{
+						"label": "Ground Penetrating Radar",
+						"href": "/surveying/ground-penetrating-radar"
+					},
 					{ "label": "Bathymetric Surveys", "href": "/surveying/bathymetric-surveys" }
 				]
 			},
 			"drones": {
 				"heading": "Aerial Drones",
 				"links": [
-					{ "label": "Drone Imagery Surveys", "href": "/aerial-drones/drone-imagery-surveys" },
+					{
+						"label": "Drone Imagery Surveys",
+						"href": "/aerial-drones/drone-imagery-surveys"
+					},
 					{ "label": "LiDAR Mapping", "href": "/aerial-drones/lidar-mapping" },
-					{ "label": "Monitoring & Evaluation", "href": "/aerial-drones/monitoring-and-evaluation" },
+					{
+						"label": "Monitoring & Evaluation",
+						"href": "/aerial-drones/monitoring-and-evaluation"
+					},
 					{ "label": "Volumetric Surveys", "href": "/aerial-drones/volumetric-surveys" },
-					{ "label": "Photography & Video Marketing", "href": "/aerial-drones/photography-video-marketing" }
+					{
+						"label": "Photography & Video Marketing",
+						"href": "/aerial-drones/photography-video-marketing"
+					}
 				]
 			},
 			"civil": {

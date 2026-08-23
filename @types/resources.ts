@@ -16,6 +16,12 @@ import civilsitesettingout from '../public/locales/en/civil-site-setting-out.jso
 import civilvolumetricsurveys from '../public/locales/en/civil-volumetric-surveys.json';
 import common from '../public/locales/en/common.json';
 import contact from '../public/locales/en/contact.json';
+import djiair3s from '../public/locales/en/dji-air-3s.json';
+import djimatrice350rtk from '../public/locales/en/dji-matrice-350-rtk.json';
+import djimavic3enterprise from '../public/locales/en/dji-mavic-3-enterprise.json';
+import djimavic3multispectral from '../public/locales/en/dji-mavic-3-multispectral.json';
+import djimavic3pro from '../public/locales/en/dji-mavic-3-pro.json';
+import djiphantom4rtk from '../public/locales/en/dji-phantom-4-rtk.json';
 import droneimagerysurveys from '../public/locales/en/drone-imagery-surveys.json';
 import equipmentcatalogue from '../public/locales/en/equipment-catalogue.json';
 import foifa90rtkgnss from '../public/locales/en/foif-a90-rtk-gnss.json';
@@ -28,6 +34,7 @@ import meta from '../public/locales/en/meta.json';
 import monitoringandevaluation from '../public/locales/en/monitoring-and-evaluation.json';
 import photographyvideomarketing from '../public/locales/en/photography-video-marketing.json';
 import privacy from '../public/locales/en/privacy.json';
+import products from '../public/locales/en/products.json';
 import resourcemapping from '../public/locales/en/resource-mapping.json';
 import sectionalproperties from '../public/locales/en/sectional-properties.json';
 import solarpaneldronesurveys from '../public/locales/en/solar-panel-drone-surveys.json';
@@ -57,6 +64,12 @@ const resources = {
   'civil-volumetric-surveys': civilvolumetricsurveys,
   common,
   contact,
+  'dji-air-3s': djiair3s,
+  'dji-matrice-350-rtk': djimatrice350rtk,
+  'dji-mavic-3-enterprise': djimavic3enterprise,
+  'dji-mavic-3-multispectral': djimavic3multispectral,
+  'dji-mavic-3-pro': djimavic3pro,
+  'dji-phantom-4-rtk': djiphantom4rtk,
   'drone-imagery-surveys': droneimagerysurveys,
   'equipment-catalogue': equipmentcatalogue,
   'foif-a90-rtk-gnss': foifa90rtkgnss,
@@ -69,6 +82,7 @@ const resources = {
   'monitoring-and-evaluation': monitoringandevaluation,
   'photography-video-marketing': photographyvideomarketing,
   privacy,
+  products,
   'resource-mapping': resourcemapping,
   'sectional-properties': sectionalproperties,
   'solar-panel-drone-surveys': solarpaneldronesurveys,
