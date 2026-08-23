@@ -21,6 +21,12 @@
 		"section": "Equipment Sale",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
+	"catalogue": {
+		"icon": "ruler-square",
+		"title": "E-Survey E3L Total Station",
+		"description": "2” accuracy total station with 5000m range, ideal for construction layout, boundary surveys, and topographic mapping.",
+		"badge": "Available"
+	},
 	"pricing": {
 		"new": {
 			"label": "Brand New",
@@ -84,7 +90,6 @@
 			"Engineering Projects"
 		]
 	},
-
 	"cta": {
 		"tag": "Get a Quote",
 		"headline": "Get This Equipment",
@@ -134,7 +139,6 @@
 				"label": "FOIF A90 RTK GNSS",
 				"href": "/equipment-sale/foif-a90-rtk-gnss"
 			},
-
 			{
 				"image": "/img/instruments/automatic-level-hueper.png",
 				"label": "AUTOMATIC LEVEL HUEPER",

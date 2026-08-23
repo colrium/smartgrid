@@ -19,10 +19,16 @@
 			"/media/equipment-sale/automatic-level-bosch/10.png"
 		]
 	},
-    "breadcrumb": {
+	"breadcrumb": {
 		"home": "Home",
 		"section": "Equipment Sale",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
+	},
+	"catalogue": {
+		"icon": "spirit-level",
+		"title": "Bosch GOL 32D Level",
+		"description": "32x automatic level for precise construction leveling, grading, and site works with excellent optical clarity.",
+		"badge": "New"
 	},
 	"pricing": {
 		"used": {
@@ -117,7 +123,6 @@
 		"tag": "Explore",
 		"headline": "Other Products You May Like",
 		"description": "Discover more surveying instruments from the SmartGrid catalogue.",
-
 		"items": [
 			{
 				"image": "/img/instruments/total-station-esurvey.png",
@@ -134,7 +139,6 @@
 				"label": "FOIF A90 RTK GNSS",
 				"href": "/equipment-sale/foif-a90-rtk-gnss"
 			},
-
 			{
 				"image": "/img/instruments/automatic-level-hueper.png",
 				"label": "AUTOMATIC LEVEL HUEPER",

@@ -22,6 +22,11 @@
 		"section": "Uuzaji wa Vifaa",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
+	"catalogue": {
+		"icon": "quadcopter",
+		"description": "Droni ya kisasa ya katikati ya ramani yenye mfumo wa kamera mbili, muda wa kuruka wa dakika ~40-45, na matandao imara kwa kazi za haraka za ramani na ukaguzi.",
+		"badge": "Kipya"
+	},
 	"pricing": {
 		"new": {
 			"label": "Mpya Kabisa",

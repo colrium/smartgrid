@@ -15,20 +15,24 @@
 		"section": "Equipment Sale",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
+	"catalogue": {
+		"icon": "quadcopter",
+		"description": "A flagship enterprise UAV designed for high-accuracy geospatial data acquisition, particularly for LiDAR mapping, corridor surveys, and large-scale engineering projects.",
+		"badge": "New"
+	},
 	"productImages": {
 		"images": [
 			"/media/equipment-sale/dji-matrice-350-rtk/images/02-01.png",
 			"/media/equipment-sale/dji-matrice-350-rtk/images/02-02.png",
 			"/media/equipment-sale/dji-matrice-350-rtk/images/02-03.png",
 			"/media/equipment-sale/dji-matrice-350-rtk/images/02-04.png",
-			"/media/equipment-sale/dji-matrice-350-rtk/images/02-05.png",			
+			"/media/equipment-sale/dji-matrice-350-rtk/images/02-05.png",
 			"/media/equipment-sale/dji-matrice-350-rtk/images/02-11.png",
 			"/media/equipment-sale/dji-matrice-350-rtk/images/02-12.png",
 			"/media/equipment-sale/dji-matrice-350-rtk/images/02-13.png",
 			"/media/equipment-sale/dji-matrice-350-rtk/images/02-14.png"
 		]
 	},
-
 	"pricing": {
 		"new": {
 			"label": "Brand New",
@@ -112,7 +116,6 @@
 			}
 		]
 	},
-
 	"model3d": {
 		"tag": "Interactive 3D",
 		"headline": "Explore the M350 RTK in 3D",
@@ -122,7 +125,6 @@
 			"/media/equipment-sale/dji-matrice-350-rtk/models/without-zenmuse-l2-and-battery.glb"
 		]
 	},
-
 	"positioningAndAccuracy": {
 		"tag": "Positioning",
 		"headline": "Positioning & Accuracy",

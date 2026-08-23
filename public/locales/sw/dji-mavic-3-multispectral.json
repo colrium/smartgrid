@@ -23,6 +23,12 @@
 		"section": "Uuzaji wa Vifaa",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
+	"catalogue": {
+		"icon": "leaf",
+		"title": "DJI Mavic 3 Multispectral",
+		"description": "Droni ya RGB + bendi nne za multispectral kwa ramani za NDVI, ufuatiliaji wa afya ya mazao, na uchambuzi wa mazingira tayari kwa GIS katika uruka mmoja.",
+		"badge": "Kipya"
+	},
 	"pricing": {
 		"new": {
 			"label": "Mpya Kabisa",

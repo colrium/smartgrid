@@ -15,6 +15,11 @@
 		"section": "Equipment Sale",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
+	"catalogue": {
+		"icon": "quadcopter",
+		"description": "A flagship enterprise UAV designed for high-accuracy geospatial data acquisition, particularly for LiDAR mapping, corridor surveys, and large-scale engineering projects.",
+		"badge": "Kipya"
+	},
 	"productImages": {
 		"images": [
 			"/media/equipment-sale/dji-matrice-350-rtk/images/02-01.png",

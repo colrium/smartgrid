@@ -22,6 +22,11 @@
 		"section": "Uuzaji wa Vifaa",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
+	"catalogue": {
+		"icon": "satellite",
+		"description": "Mfumo wa GNSS wa usahihi wa juu wenye msaada wa vyombo vingi ukitoa usahihi wa RTK wa sentimita kwa upimaji wa ramani na uhandisi.",
+		"badge": "Katika Hisa"
+	},
 	"pricing": {
 		"new": {
 			"label": "Mpya Kabisa",

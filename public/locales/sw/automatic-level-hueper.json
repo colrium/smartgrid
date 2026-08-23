@@ -24,6 +24,12 @@
 		"section": "Uuzaji wa Vifaa",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
+	"catalogue": {
+		"icon": "spirit-level",
+		"title": "Huepar ALX32 Level",
+		"description": "Kiwango cha kiotomatiki cha 32x cha bei nafuu kinachotoa usahihi wa kuaminika kwa ujenzi na kazi za jumla za usawazishaji.",
+		"badge": "Bajeti"
+	},
 	"pricing": {
 		"new": {
 			"label": "Mpya Kabisa",
@@ -117,7 +123,6 @@
 		"tag": "Chunguza",
 		"headline": "Bidhaa Nyingine Unazoweza Kuzipenda",
 		"description": "Gundua vifaa vingine vya upimaji kutoka kwenye katalogi ya SmartGrid.",
-
 		"items": [
 			{
 				"image": "/img/instruments/total-station-esurvey.png",

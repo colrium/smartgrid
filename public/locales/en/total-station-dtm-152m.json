@@ -22,6 +22,12 @@
 		"section": "Equipment Sale",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
+	"catalogue": {
+		"icon": "ruler-square",
+		"title": "DTM 152M Total Station",
+		"description": "Reliable and efficient total station for engineering and cadastral surveys with stable measurement performance.",
+		"badge": "Hot Deal"
+	},
 	"pricing": {
 		"new": {
 			"label": "Brand New",
@@ -145,7 +151,6 @@
 				"label": "FOIF A90 RTK GNSS",
 				"href": "/equipment-sale/foif-a90-rtk-gnss"
 			},
-
 			{
 				"image": "/img/instruments/automatic-level-hueper.png",
 				"label": "AUTOMATIC LEVEL HUEPER",

@@ -105,7 +105,7 @@ export function ProductHeroSection({ namespace }: ProductHeroSectionProps) {
 	);
 
 	return (
-		<section className="relative overflow-hidden pt-44 sm:pt-52">
+		<section className="relative overflow-hidden">
 			<Blob
 				className="w-[30rem] h-[30rem] bg-primary-100/50 -top-32 -left-24"
 				opacity={0.5}

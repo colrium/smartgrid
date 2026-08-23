@@ -24,6 +24,12 @@
 		"section": "Uuzaji wa Vifaa",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
+	"catalogue": {
+		"icon": "spirit-level",
+		"title": "Bosch GOL 32D Level",
+		"description": "Kiwango cha kiotomatiki cha 32x kwa usawazishaji sahihi wa ujenzi, usawazishaji wa ardhi, na kazi za tovuti zenye uwazi bora wa macho.",
+		"badge": "Kipya"
+	},
 	"pricing": {
 		"used": {
 			"label": "Iliyotumika Kidogo",
@@ -117,7 +123,6 @@
 		"tag": "Chunguza",
 		"headline": "Bidhaa Nyingine Unazoweza Kuzipenda",
 		"description": "Gundua vifaa vingine vya upimaji kutoka kwenye katalogi ya SmartGrid.",
-
 		"items": [
 			{
 				"image": "/img/instruments/total-station-esurvey.png",

@@ -15,6 +15,12 @@
 		"section": "Uuzaji wa Vifaa",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
+	"catalogue": {
+		"icon": "ruler-square",
+		"title": "E-Survey E3L Total Station",
+		"description": "Total station yenye usahihi wa 2” na mbalimbali ya mita 5000, bora kwa mpangilio wa ujenzi, upimaji wa mipaka, na uchoraji ramani topografia.",
+		"badge": "Inapatikana"
+	},
 	"pricing": {
 		"new": {
 			"label": "Mpya Kabisa",
@@ -96,7 +102,12 @@
 		"tag": null,
 		"headline": "Matumizi",
 		"description": "Inatumiwa kwenye kazi za topografia, mpangilio, na mipaka.",
-		"list": ["Uchunguzi wa Topografia", "Mpangilio wa Ujenzi", "Uchunguzi wa Mipaka", "Miradi ya Uhandisi"]
+		"list": [
+			"Uchunguzi wa Topografia",
+			"Mpangilio wa Ujenzi",
+			"Uchunguzi wa Mipaka",
+			"Miradi ya Uhandisi"
+		]
 	},
 	"cta": {
 		"tag": "Pata Nukuu",
@@ -117,7 +128,6 @@
 		"tag": "Chunguza",
 		"headline": "Bidhaa Nyingine Unazoweza Kuzipenda",
 		"description": "Gundua vifaa vingine vya upimaji kutoka kwenye katalogi ya SmartGrid.",
-
 		"items": [
 			{
 				"image": "/img/instruments/total-station-dtm-152m.jpg",
@@ -129,7 +139,6 @@
 				"label": "FOIF A90 RTK GNSS",
 				"href": "/equipment-sale/foif-a90-rtk-gnss"
 			},
-
 			{
 				"image": "/img/instruments/automatic-level-hueper.png",
 				"label": "AUTOMATIC LEVEL HUEPER",

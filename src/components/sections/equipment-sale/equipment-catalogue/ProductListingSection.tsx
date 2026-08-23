@@ -37,11 +37,13 @@ interface ListingHeaderContent {
 
 interface ProductListingSectionProps {
 	namespace: string;
+	/** Server-assembled cards from the products.json registry. When absent, falls back to locale JSON items. */
+	items?: ProductItem[];
 }
 
 const formatAmount = (amount: number) => amount.toLocaleString("en-US");
 
-export function ProductListingSection({ namespace }: ProductListingSectionProps) {
+export function ProductListingSection({ namespace, items: propItems }: ProductListingSectionProps) {
 	const { t } = useTranslation([namespace]);
 	const header = t(`${namespace}:catalogueOverview`, {
 		returnObjects: true,
@@ -49,7 +51,7 @@ export function ProductListingSection({ namespace }: ProductListingSectionProps)
 	const categories = t(`${namespace}:equipmentCategories`, {
 		returnObjects: true,
 	}) as unknown as { items?: ProductItem[] | null };
-	const items = Array.isArray(categories?.items) ? categories.items : [];
+	const items = propItems && propItems.length > 0 ? propItems : Array.isArray(categories?.items) ? categories.items : [];
 
 	if (items.length === 0) return null;
 

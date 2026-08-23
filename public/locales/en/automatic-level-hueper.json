@@ -19,10 +19,16 @@
 			"/media/equipment-sale/automatic-level-hueper/06.jpg"
 		]
 	},
-    "breadcrumb": {
+	"breadcrumb": {
 		"home": "Home",
 		"section": "Equipment Sale",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
+	},
+	"catalogue": {
+		"icon": "spirit-level",
+		"title": "Huepar ALX32 Level",
+		"description": "Affordable 32x automatic level offering reliable accuracy for construction and general leveling tasks.",
+		"badge": "Budget"
 	},
 	"pricing": {
 		"new": {
@@ -117,7 +123,6 @@
 		"tag": "Explore",
 		"headline": "Other Products You May Like",
 		"description": "Discover more surveying instruments from the SmartGrid catalogue.",
-
 		"items": [
 			{
 				"image": "/img/instruments/total-station-esurvey.png",

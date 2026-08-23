@@ -20,9 +20,9 @@ export function Breadcrumbs({ items, className = "", image }: BreadcrumbsProps) 
 		<nav
 			aria-label="Breadcrumb"
 			className={[
-				"relative flex flex-wrap items-center gap-2 text-xs sm:text-sm",
+				"relative flex flex-wrap items-end gap-2 text-xs sm:text-sm",
 				hasImage
-					? " min-h-120 overflow-hidden text-surface/85 card-shadow sm:min-h-64"
+					? " min-h-64 overflow-hidden text-surface/85 card-shadow md:min-h-120"
 					: "text-on-surface/55",
 				className,
 			].join(" ")}
@@ -42,7 +42,7 @@ export function Breadcrumbs({ items, className = "", image }: BreadcrumbsProps) 
 					/>
 				</>
 			)}
-			<div className="w-3xl max-w-3xl md:w-7xl md:max-w-7xl mx-auto py-5 px-2 md:px-8">
+			<div className="w-3xl max-w-3xl md:w-7xl md:max-w-7xl mx-auto py-5 pb-8 px-4 md:px-8">
 				<span
 					className={`relative z-10 flex flex-wrap items-center gap-2 ${
 						hasImage ? "[text-shadow:0_1px_2px_rgb(0_0_0/0.45)]" : ""

@@ -22,6 +22,11 @@
 		"section": "Equipment Sale",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
+	"catalogue": {
+		"icon": "quadcopter",
+		"description": "Next-gen mid-range mapping drone with a dual-camera system, ~40-45 min flight time, and stable grids for rapid mapping and inspection workflows.",
+		"badge": "New"
+	},
 	"pricing": {
 		"new": {
 			"label": "Brand New",
@@ -36,7 +41,6 @@
 			"href": "/equipment-sale/equipment-catalogue?category=drones"
 		}
 	],
-
 	"productOverview": {
 		"tag": "Product Overview",
 		"headline": "Cost-Efficient Mapping Without Compromise",
