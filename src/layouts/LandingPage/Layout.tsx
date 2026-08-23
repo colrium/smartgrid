@@ -32,7 +32,7 @@ export default function LandingPageLayout({ children, slotProps = {} }: LandingP
 
 			<div className="flex-1 -mt-35">
 				{children}
-				{/* <ChatWidget /> */}
+				<ChatWidget />
 
 				<ScrollTop querySelector="#back-to-top-anchor" />
 				<FloatingContactButtons />
