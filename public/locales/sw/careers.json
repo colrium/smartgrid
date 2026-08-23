@@ -18,7 +18,7 @@
 				"title": "Meneja wa Mradi",
 				"applicationDeadline": {
 					"label": "Tarehe ya Maombi",
-					"value": "20 April 2026"
+					"value": "20 April 2027"
 				},
 				"description": "Ongoa upangaji wa mradi, uratibu wa rasilimali, kuripoti, na utoaji wa kazi za upimaji wa taaluma nyingi na uhandisi wa kiraia.",
 				"actions": [
@@ -41,7 +41,7 @@
 				"title": "Meneja wa Mradi",
 				"applicationDeadline": {
 					"label": "Tarehe ya Mwisho ya Maombi ya Maombi",
-					"value": "8 March 2026"
+					"value": "8 March 2027"
 				},
 				"description": "Ongoa upangaji wa mradi, uratibu wa rasilimali, kuripoti, na utoaji wa kazi za upimaji wa taaluma nyingi na uhandisi wa kiraia.",
 				"actions": [
@@ -62,7 +62,7 @@
 				"title": "Mhandisi wa Kiraia",
 				"applicationDeadline": {
 					"label": "Tarehe ya Mwisho ya Maombi",
-					"value": "10 March 2026"
+					"value": "10 March 2027"
 				},
 				"description": "Simamia na uratibu utekelezaji wa kazi za uhandisi wa kiraia, kuhakikisha kufuata vipimo vya muundo, viwango vya ubora, na itifaki za usalama.",
 				"actions": [
@@ -83,7 +83,7 @@
 				"title": "Mpima Ardhi",
 				"applicationDeadline": {
 					"label": "Tarehe ya Mwisho ya Maombi",
-					"value": "15 March 2026"
+					"value": "15 March 2027"
 				},
 				"description": "Ongoa upimaji wa topografia, mipaka, cadastral, na uhandisi unaosaidia miradi ya miundombinu na ujenzi kwa viwango vya usahihi wa hali ya juu.",
 				"actions": [
@@ -104,7 +104,7 @@
 				"title": "Fundi wa Uchunguzi wa Uhandisi",
 				"applicationDeadline": {
 					"label": "Tarehe ya Mwisho ya Maombi",
-					"value": "18 March 2026"
+					"value": "18 March 2027"
 				},
 				"description": "Saidia uwekaji wa tovuti, uanzishaji wa udhibiti, upimaji wa kama-ilivyojengwa, na uthibitishaji wa upangaji kwa kutumia vifaa vya GNSS na total station.",
 				"actions": [
@@ -125,7 +125,7 @@
 				"title": "Mtaalamu wa Uchunguzi wa UAV / Drone",
 				"applicationDeadline": {
 					"label": "Tarehe ya Mwisho ya Maombi",
-					"value": "18 March 2026"
+					"value": "18 March 2027"
 				},
 				"description": "Tekeleza upimaji wa angani, photogrammetry, na ukusanyaji wa data wa LiDAR kwa ramani za korido, vipimo vya kiasi, na ufuatiliaji wa miundombinu.",
 				"actions": [
@@ -146,7 +146,7 @@
 				"title": "Mchambuzi wa GIS na Data za Anga",
 				"applicationDeadline": {
 					"label": "Tarehe ya Mwisho ya Maombi",
-					"value": "20 March 2026"
+					"value": "20 March 2027"
 				},
 				"description": "Tengeneza hifadhidata za anga, fanya uchambuzi wa jiospatiali, na uzalishe matokeo ya kitaalamu ya ramani kwa miradi ya wafadhili na miundombinu.",
 				"actions": [
@@ -167,7 +167,7 @@
 				"title": "Msamaria wa Ujenzi",
 				"applicationDeadline": {
 					"label": "Tarehe ya Mwisho ya Maombi",
-					"value": "20 March 2026"
+					"value": "20 March 2027"
 				},
 				"description": "Simamia shughuli za kila siku za ujenzi, uratibu wa wafanyakazi, ufuatiliaji wa maendeleo, na kufuata ratiba za mradi.",
 				"actions": [
@@ -188,7 +188,7 @@
 				"title": "Mpima Kiasi",
 				"applicationDeadline": {
 					"label": "Tarehe ya Mwisho ya Maombi",
-					"value": "22 March 2026"
+					"value": "22 March 2027"
 				},
 				"description": "Andaa BOQ, makadirio ya gharama, tathmini, na ripoti za ufuatiliaji wa fedha kwa miradi ya kiraia na miundombinu.",
 				"actions": [
@@ -209,7 +209,7 @@
 				"title": "Fundi wa Huduma za Chini ya Ardhi na GPR",
 				"applicationDeadline": {
 					"label": "Tarehe ya Mwisho ya Maombi",
-					"value": "22 March 2026"
+					"value": "22 March 2027"
 				},
 				"description": "Fanya ugunduzi wa huduma za chini ya ardhi, uchoraji ramani, na uandishi kwa kutumia mifumo ya GPR na electromagnetic.",
 				"actions": [
@@ -230,7 +230,7 @@
 				"title": "Afisa wa HSE",
 				"applicationDeadline": {
 					"label": "Tarehe ya Mwisho ya Maombi",
-					"value": "22 March 2026"
+					"value": "22 March 2027"
 				},
 				"description": "Hakikisha kufuata kali kwa afya ya kazini, usalama, ulinzi wa mazingira, na viwango vya utiifu katika maeneo ya miradi.",
 				"actions": [
@@ -251,7 +251,7 @@
 				"title": "Wahitimu Wanaofanya Kazi na Waombaji wa Kiwanda (Upimaji, GIS, Uhandisi wa Kiraia)",
 				"applicationDeadline": {
 					"label": "Tarehe ya Mwisho ya Maombi",
-					"value": "25 March 2026"
+					"value": "25 March 2027"
 				},
 				"description": "Fursa kwa wanafunzi na wahitimu wa hivi karibuni kupata uzoefu wa vitendo shambani na ofisini katika upimaji, uchambuzi wa jiospatiali, na miradi ya uhandisi wa kiraia.",
 				"actions": [

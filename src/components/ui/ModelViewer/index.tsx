@@ -133,7 +133,7 @@ function LoadPrompt({ src, onStart }: { src?: string; onStart: () => void }) {
 				</span>
 				<span className="rounded-full bg-primary px-5 py-2 text-xs font-medium uppercase tracking-widest text-surface shadow-md transition-colors group-hover:bg-accent">
 					<span className="mdi mdi-play-circle-outline mr-1 align-[-2px]" />
-					Load 3D Model
+					Load 3D
 				</span>
 			</span>
 		</button>
