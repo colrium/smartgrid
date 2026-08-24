@@ -41,6 +41,56 @@
 			}
 		]
 	},
+	"projectsByCountry": [
+		{
+			"name": "Kenya",
+			"totalHa": 2000,
+			"description": "Hekta 2,000 za ugawaji wa ardhi ya kilimo huko Uasin Gishu",
+			"items": []
+		},
+		{
+			"name": "Tanzania",
+			"totalHa": 5500,
+			"description": "Zaidi ya hekta 10,000 zilipimwa katika miradi ya miundombinu ya kikanda na mipango ya matumizi ya ardhi nchini Kenya, Uganda, na Tanzania",
+			"items": []
+		},
+		{
+			"name": "Uganda",
+			"totalHa": 1500,
+			"description": "Zaidi ya hekta 10,000 zilipimwa katika miradi ya miundombinu ya kikanda na mipango ya matumizi ya ardhi nchini Kenya, Uganda, na Tanzania",
+			"items": []
+		},
+		{
+			"name": "Ghana",
+			"totalHa": 3500,
+			"description": "Hekta 3,500 za urambazaji wa mashamba ya kakao huko Kumasi",
+			"items": []
+		},
+		{
+			"name": "Rwanda",
+			"totalHa": 1800,
+			"description": "Hekta 1,800 za uchambuzi wa ardhi oevu huko Bugesera",
+			"items": []
+		},
+		{
+			"name": "Afrika Kusini",
+			"totalHa": 5200,
+			"description": "Hekta 5,200 za ujazo wa uchimbaji madini huko Limpopo",
+			"items": []
+		},
+		{
+			"name": "Nigeria",
+			"totalHa": 4100,
+			"description": "Hekta 4,100 za ufuatiliaji wa upanuzi wa miji huko Abuja",
+			"items": []
+		},
+		{
+			"name": "Eneo la Afrika Mashariki",
+			"totalHa": 10000,
+			"description": "Zaidi ya hekta 10,000 zilipimwa katika miradi ya miundombinu ya kikanda na mipango ya matumizi ya ardhi nchini Kenya, Uganda, na Tanzania",
+			"items": []
+		}
+	],
 	"errors": {
 		"error": "Hitilafu",
 		"notFound": "Ukurasa haupatikani",

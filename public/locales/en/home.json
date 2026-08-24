@@ -10,10 +10,10 @@
 			"icon": "send"
 		},
 		"ctaSecondary": {
-			"label": "Explore Services",
-			"href": "/services",
+			"label": "Explore Equipments",
+			"href": "/equipment-sale/equipment-catalogue",
 			"class": " rounded-full! bg-surface!",
-			"icon": "arrow-right"
+			"icon": "shopping"
 		},
 		"location": {
 			"label": "Active across East Africa & beyond",
@@ -123,13 +123,13 @@
 			{
 				"label": "Total Stations",
 				"img": "/media/instruments/TOTAL-STATIONS.jpg",
-				"href": "/equipment-sale?category=total-stations"
+				"href": "/equipment-sale/equipment-catalogue?category=total-stations"
 			},
 
 			{
 				"label": "AUTOMATIC LEVELS",
 				"img": "/media/instruments/AUTOMATIC-LEVELS.jpg",
-				"href": "/equipment-sale?category=automatic-levels"
+				"href": "/equipment-sale/equipment-catalogue?category=automatic-levels"
 			},
 			{
 				"label": "GPR SCANNER",

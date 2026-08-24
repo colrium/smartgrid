@@ -3,7 +3,7 @@
 		"tag": "Vifaa vya Upimaji",
 		"headline": "Vyombo vya Kuaminika vya Usawazishaji",
 		"title": "Bosch GOL 32D Automatic Level",
-		"image": "/media/equipment-sale/automatic-level-bosch/03.png",
+		"image": "/media/equipment-sale/automatic-level-bosch/03.jpg",
 		"description": "Bosch GOL 32D Automatic Level ni chombo cha macho cha utendaji wa juu cha usawazishaji kilichoundwa kwa kipimo sahihi cha mwinuko katika miradi ya ujenzi na upimaji. Kimejengwa kwa uimara na usahihi, kikihakikisha utendaji wa kuaminika katika hali ngumu shambani.",
 		"ctaPrimary": {
 			"label": "Ulizia Kuhusu Kifaa Hiki",
@@ -41,6 +41,11 @@
 			"name": "surveying-equipment",
 			"label": "Vifaa vya Upimaji",
 			"href": "/equipment-sale/equipment-catalogue"
+		},
+		{
+			"name": "automatic-levels",
+			"label": "Viwango vya Kiotomatiki",
+			"href": "/equipment-sale/equipment-catalogue?category=automatic-levels"
 		}
 	],
 	"specs": {

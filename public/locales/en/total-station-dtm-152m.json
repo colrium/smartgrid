@@ -16,7 +16,7 @@
 			"/media/equipment-sale/total-station-dtm-152m/02-02.png",
 			"/media/equipment-sale/total-station-dtm-152m/02-03.jpg",
 			"/media/equipment-sale/total-station-dtm-152m/01.png",
-			"/media/equipment-sale/total-station-dtm-152m/03=01.jpg"
+			"/media/equipment-sale/total-station-dtm-152m/03-01.jpg"
 		]
 	},
 	"breadcrumb": {
@@ -43,7 +43,7 @@
 			"label": "Surveying Equipment",
 			"href": "/equipment-sale/equipment-catalogue"
 		},
-        {
+		{
 			"name": "total-stations",
 			"label": "Total Stations",
 			"href": "/equipment-sale/equipment-catalogue?category=total-stations"

@@ -42,6 +42,11 @@
 			"name": "surveying-equipment",
 			"label": "Vifaa vya Upimaji",
 			"href": "/equipment-sale/equipment-catalogue"
+		},
+		{
+			"name": "automatic-levels",
+			"label": "Viwango vya Kiotomatiki",
+			"href": "/equipment-sale/equipment-catalogue?category=automatic-levels"
 		}
 	],
 	"specs": {

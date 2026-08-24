@@ -10,28 +10,45 @@
 			"icon": "send"
 		},
 		"ctaSecondary": {
-			"label": "Chunguza Huduma",
-			"href": "/services",
+			"label": "Chunguza Vifaa",
+			"href": "/equipment-sale/equipment-catalogue",
 			"class": " rounded-full! bg-surface!",
-			"icon": "arrow-right"
+			"icon": "shopping"
 		},
 		"location": {
 			"label": "Inatumika Afrika Mashariki na kwingineko",
 			"items": [
-				{ "label": "Kenya", "code": "KE" },
-				{ "label": "Uganda", "code": "UG" },
-				{ "label": "Tanzania", "code": "TZ" },
-				{ "label": "Nigeria", "code": "NG" },
-				{ "label": "South Africa", "code": "SA" }
+				{
+					"label": "Kenya",
+					"code": "KE"
+				},
+				{
+					"label": "Uganda",
+					"code": "UG"
+				},
+				{
+					"label": "Tanzania",
+					"code": "TZ"
+				},
+				{
+					"label": "Nigeria",
+					"code": "NG"
+				},
+				{
+					"label": "South Africa",
+					"code": "SA"
+				}
 			]
 		}
 	},
-
 	"leadGenBar": {
 		"tag": "SMARTGRID SURVEYING & CIVIL ENGINEERING LTD",
 		"headline": "Ya Kuaminika. Inayoweza Kupanuka. Ya Haraka. Sahihi.",
 		"description": "Fungua njia za haraka zaidi, za gharama nafuu, na salama za upimaji ramani, vipimo na ufuatiliaji wa ekari 1000+ kwa wakati mmoja.\n Katika Smartgrid Surveying, tunageuza maono haya kuwa ukweli—kote Afrika na nje yake. Kwa droni zetu za kisasa na mbinu za upimaji wa ardhi, tunakupa data tendekevu unayohitaji, mahali pale inapohitajika. \n Smartgrid Surveying ni mshirika wako wa upimaji wa kuaminika!",
-		"link": { "label": "Wasifu wa Kampuni", "href": "/about/company-profile" },
+		"link": {
+			"label": "Wasifu wa Kampuni",
+			"href": "/about/company-profile"
+		},
 		"items": [
 			{
 				"icon": "land-fields",
@@ -46,7 +63,6 @@
 					"href": "/contact?reason=land-surveying#contact-form"
 				}
 			},
-
 			{
 				"icon": "quadcopter",
 				"label": "DRONI ZA ANGANI",
@@ -93,7 +109,21 @@
 		"mission": {
 			"title": "DHAMIRA YETU",
 			"description": "Kutoa suluhisho bunifu, za usahihi wa juu za upimaji na kazi za kirahisi zinazoimarisha ufanisi na uendelevu wa miradi."
-		}
+		},
+		"cards": [
+			{
+				"icon": "shield-outline",
+				"label": "Wataalamu Waliosajiliwa",
+				"href": "/about",
+				"description": "Cheti kamili cha Taasisi ya Wapimaji."
+			},
+			{
+				"icon": "shopping-outline",
+				"label": "Katalogi ya Vifaa",
+				"href": "/equipment-sale/equipment-catalogue",
+				"description": "Data ya kijiografia sahihi na ya kuaminika kwa kutumia GNSS za kisasa, Total Stations, na teknolojia za Drone LiDAR."
+			}
+		]
 	},
 	"surveyingInstruments": {
 		"tag": "Usahihi",
@@ -102,22 +132,24 @@
 		"items": [
 			{
 				"label": "RTK GNSS FOIF A90",
-				"img": "/media/instruments/RTK-GNSS-FOIF-A90.jpg"
+				"img": "/media/instruments/RTK-GNSS-FOIF-A90.jpg",
+				"href": "/equipment-sale/foif-a90-rtk-gnss"
 			},
 			{
 				"label": "Vituo vya Jumla (Total Stations)",
-				"img": "/media/instruments/TOTAL-STATIONS.jpg"
+				"img": "/media/instruments/TOTAL-STATIONS.jpg",
+				"href": "/equipment-sale/equipment-catalogue?category=total-stations"
 			},
-
 			{
 				"label": "VIWANGO VYA KIJIOTEGEMEA",
-				"img": "/media/instruments/AUTOMATIC-LEVELS.jpg"
+				"img": "/media/instruments/AUTOMATIC-LEVELS.jpg",
+				"href": "/equipment-sale/equipment-catalogue?category=automatic-levels"
 			},
 			{
 				"label": "SCANNER YA GPR",
 				"img": "/media/instruments/GPR-SCANNER.jpg"
 			},
-            {
+			{
 				"label": "SCANNERS ZA LASER",
 				"img": "/media/instruments/LASER-SCANNERS.jpg"
 			}
@@ -218,7 +250,7 @@
 	"keyFacts": {
 		"tag": "Mambo Muhimu",
 		"headline": null,
-        "description": "Sisi ni kampuni inayoongoza ya upimaji na uhandisi yenye uwepo mkubwa Afrika Mashariki, inayobobea katika upimaji wa ardhi, upimaji wa ramani kwa droni, na suluhisho za data za kimaeneo (geospatial). Kwa uzoefu wa miaka 5+ , tumekamilisha miradi mingi huku tukizingatia kanuni za kitaifa na mbinu bora za upimaji.",
+		"description": "Sisi ni kampuni inayoongoza ya upimaji na uhandisi yenye uwepo mkubwa Afrika Mashariki, inayobobea katika upimaji wa ardhi, upimaji wa ramani kwa droni, na suluhisho za data za kimaeneo (geospatial). Kwa uzoefu wa miaka 5+ , tumekamilisha miradi mingi huku tukizingatia kanuni za kitaifa na mbinu bora za upimaji.",
 		"items": [
 			{
 				"icon": "check-circle",
@@ -245,7 +277,7 @@
 	"coreExpertise": {
 		"tag": "Wataalam",
 		"headline": "Utaalam Wetu wa Msingi",
-        "description": "Tunabobea katika kutoa huduma za upimaji na uhandisi za ubora wa juu, tukitumia teknolojia ya kisasa na utaalam wa tasnia kutoa matokeo sahihi na ya kuaminika kwa wateja wetu.",
+		"description": "Tunabobea katika kutoa huduma za upimaji na uhandisi za ubora wa juu, tukitumia teknolojia ya kisasa na utaalam wa tasnia kutoa matokeo sahihi na ya kuaminika kwa wateja wetu.",
 		"items": [
 			{
 				"icon": null,
@@ -272,7 +304,7 @@
 	"certifications": {
 		"tag": "Imethibitishwa",
 		"headline": "Vidhibitisho Vyetu",
-        "description": "Tunajivunia kushikilia vidhibitisho kutoka mashirika yanayoheshimika, kuonyesha kujitolea kwetu kwa ubora, usalama, na taaluma katika tasnia ya upimaji na uhandisi.",
+		"description": "Tunajivunia kushikilia vidhibitisho kutoka mashirika yanayoheshimika, kuonyesha kujitolea kwetu kwa ubora, usalama, na taaluma katika tasnia ya upimaji na uhandisi.",
 		"items": [
 			{
 				"icon": null,
@@ -299,7 +331,7 @@
 	"metrics": {
 		"tag": "Kiwango",
 		"headline": "Kiwango Chetu cha Uendeshaji",
-        "description": "Tuna kiwango kikubwa cha uendeshaji, kwa uwepo katika nchi nyingi, idadi kubwa ya miradi iliyokamilishwa, na kujitolea kwa kutoa huduma za ubora wa juu kwa miaka mingi.",
+		"description": "Tuna kiwango kikubwa cha uendeshaji, kwa uwepo katika nchi nyingi, idadi kubwa ya miradi iliyokamilishwa, na kujitolea kwa kutoa huduma za ubora wa juu kwa miaka mingi.",
 		"items": [
 			{
 				"icon": "map-marker-multiple",
@@ -435,7 +467,7 @@
 					"Ramani za NDVI na Multispectral (Kilimo pekee)"
 				]
 			},
-            {
+			{
 				"featureImg": "/media/services/civil-engineering-deliverables.png",
 				"label": "Uhandisi Wa Civil",
 				"description": "Tunatoa huduma nyingi za uhandisi wa kirahisi, ikijumuisha uhandisi wa tovuti, uwekaji wa viwango vya majengo, ufungaji wa huduma za ardhini, uhandisi wa barabara kuu, uchunguzi wa stakeout, usawazishaji, uwekaji wa viwango vya kumbukumbu (benchmarking), na huduma za ujenzi. Wazao wetu hujumuisha ramani za kama ulivyojengwa, miundo ya eleza ya dijiti, viwianishi vya uwekaji, data ya 3D, kontua, mipango mkuu, mipangilio ya majengo, shapefiles za CAD, na ramani za PDF.",

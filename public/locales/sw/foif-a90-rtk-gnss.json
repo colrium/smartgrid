@@ -45,7 +45,12 @@
 		{
 			"name": "surveying-equipment",
 			"label": "Vifaa vya Upimaji",
-			"href": "/equipment-sale/equipment-catalogue"
+			"href": "/equipment-sale/equipment-catalogue?category=surveying-equipment"
+		},
+		{
+			"name": "gnss",
+			"label": "GNSS",
+			"href": "/equipment-sale/equipment-catalogue?category=gnss"
 		}
 	],
 	"quickFacts": [
@@ -189,31 +194,38 @@
 		"items": [
 			{
 				"label": "Kitengo cha Msingi",
-				"description": "Kipokezi cha A90 kimesanidiwa kama kituo cha msingi cha kutangaza masahihisho."
+				"description": "Kipokezi cha A90 kimesanidiwa kama kituo cha msingi cha kutangaza masahihisho.",
+				"icon": "satellite-uplink"
 			},
 			{
 				"label": "Kitengo cha Rover",
-				"description": "Kipokezi cha A90 kimesanidiwa kama rover kwa ukusanyaji wa data tovutini."
+				"description": "Kipokezi cha A90 kimesanidiwa kama rover kwa ukusanyaji wa data tovutini.",
+				"icon": "crosshairs-gps"
 			},
 			{
 				"label": "Kidhibiti (RC)",
-				"description": "Kidhibiti cha mkono cha kusimamia upimaji, mipangilio, na data shambani."
+				"description": "Kidhibiti cha mkono cha kusimamia upimaji, mipangilio, na data shambani.",
+				"icon": "remote"
 			},
 			{
 				"label": "Tripod",
-				"description": "Tripod imara kwa usanidi thabiti wa kituo cha msingi."
+				"description": "Tripod imara kwa usanidi thabiti wa kituo cha msingi.",
+				"icon": "tripod"
 			},
 			{
 				"label": "Redio za Ndani na Nje",
-				"description": "Chaguo za redio zilizojengewa ndani na za nje kwa usambazaji wa kuaminika wa masahihisho."
+				"description": "Chaguo za redio zilizojengewa ndani na za nje kwa usambazaji wa kuaminika wa masahihisho.",
+				"icon": "radio"
 			},
 			{
 				"label": "Fimbo ya Rover",
-				"description": "Fimbo ya fiber kaboni kwa vipimo sahihi vya RTK vya mkono."
+				"description": "Fimbo ya fiber kaboni kwa vipimo sahihi vya RTK vya mkono.",
+				"icon": "ruler"
 			},
 			{
 				"label": "Kifurushi cha Programu",
-				"description": "Programu ya kuchakata na kusimamia data yako ya upimaji."
+				"description": "Programu ya kuchakata na kusimamia data yako ya upimaji.",
+				"icon": "application-cog"
 			}
 		]
 	},
@@ -235,6 +247,10 @@
 	"relatedProducts": {
 		"tag": "Chunguza",
 		"headline": "Bidhaa Nyingine Unazoweza Kuzipenda",
-		"description": "Gundua vifaa vingine vya upimaji kutoka kwenye katalogi ya SmartGrid."
+		"description": "Gundua vifaa vingine vya upimaji kutoka kwenye katalogi ya SmartGrid.",
+		"images": [
+			"/media/equipment-sale/foif-a90-rtk-gnss/04.png",
+			"/media/equipment-sale/foif-a90-rtk-gnss/05.png"
+		]
 	}
 }
