@@ -54,7 +54,7 @@ export function SurveyingServicesSection() {
 
 									{item.href && (
 										<span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary-50 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-surface">
-											<span className="mdi mdi-arrow-right text-base transition-transform duration-300 group-hover:translate-x-0.5" />
+											<span className="mdi mdi-arrow-right text-sm" />
 										</span>
 									)}
 								</div>
