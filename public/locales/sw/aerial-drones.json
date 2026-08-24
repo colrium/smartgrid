@@ -1,0 +1,228 @@
+{
+	"hero": {
+		"headline": "Teknolojia ya UAV",
+		"title": "Droni za Hewa",
+		"image": "/media/aerial-drones/01.jpeg",
+		"description": "Iwe ni wakala wa serikali, NGO, au msanidi programu binafsi, SmartGrid Surveying ni mshirika wako wa kuaminika! Droni zetu hutoa data ya kiutendaji pale inapohitajika zaidi.\n\n Droni zimebadilisha sekta ya upimaji na sisi tuko mbele. SmartGrid Surveying hutumia droni za hewa kwa ramani, modeli za 3D, volumetrics, tathmini za mazingira, na ufuatiliaji wa maeneo makubwa au yasiyofikika. Zaidi ya ramani za kiufundi, tunatoa huduma za kitaalamu za upigaji panga wa droni kwa ajili ya ardhi ya majengo, masoko ya ujenzi, utalii, na matukio. Kwa kutumia droni zenye RTK GPS na sensa za ubora wa juu, tunakamata data sahihi ya kijiografia inayowawezesha wahandisi, wasanidi, serikali, na NGOs kufanya maamuzi bora na ya haraka. Tunatoa uchunguzi wa haraka, sahihi, na wa kina.",
+		"ctaPrimary": {
+			"label": "Pata Ushauri Wako Bure",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Consultation Request: Aerial Drone Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a free consultation about aerial drone surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+		},
+		"ctaSecondary": {
+			"label": "Anza Uchunguzi Wako wa Hewa Nasi!",
+			"href": "/aerial-drones/drone-imagery-surveys"
+		}
+	},
+
+	"services": {
+		"tag": "Uwezo wa Msingi",
+		"headline": "Huduma Zetu za Upimaji wa Hewa",
+		"description": "Gundua anuwai kamili ya huduma na matokeo yetu ya upimaji wa droni za hewa.",
+		"items": [
+			{
+				"title": "Ramani za Hewa",
+				"description": "Picha sahihi za droni kwa mipango, nyaraka, na uchambuzi.",
+				"popupContent": "SmartGrid Surveying hutoa ramani za hewa za usahihi wa juu kwa kutumia UAVs kutengeneza orthomosaics zenye jio-rejeleo, data ya topografia, na ramani msingi za daraja la mipango. Suluhisho zetu huunga mkono miundombinu, Huduma za umma, na maendeleo ya ardhi kwa kasi na usahihi usiopshindwa."
+			},
+			{
+				"title": "Ufuatiliaji wa Ujenzi",
+				"description": "Fuatilia shughuli za tovuti kwa kutumia picha za hewa thabiti za wakati halisi.",
+				"popupContent": "SmartGrid hutoa ufuatiliaji wa tovuti kwa njia za uruka wa juu wa droni zenye ubora wa juu. Uruka wetu wa kiotomatiki hutoa taarifa za macho za kila wiki, kugundua mabadiliko ya ratiba, na kuunga mkono maamuzi kwa wasimamizi wa miradi na wasanidi."
+			},
+			{
+				"title": "Ufuatiliaji wa Mazingira",
+				"description": "Ona mabadiliko ya ikolojia na fuatilia maeneo ya uhifadhi.",
+				"popupContent": "Kwa kutumia UAVs, SmartGrid hufuatilia mabadiliko ya mwonekano wa ardhi, ukataji miti, mmomonyoko, na viashiria vingine vya ikolojia. Data yetu huunga mkono tathmini za athari na ufuasi wa kanuni kwa picha za wakati zilizowekwa alama."
+			},
+			{
+				"title": "Ramani za Kilimo",
+				"description": "Data ya multispectral ya droni kwa afya ya mazao na ubunifu wa shamba.",
+				"popupContent": "SmartGrid huwawezesha wataalamu wa kilimo kwa data ya afya ya mazao, mkazo wa mimea, na mifumo ya umwagiliaji. Tunatumia uchambuzi wa NDVI na multispectral kuboresha matumizi ya pembejeo na kuongeza uvumilivu wa mavuno."
+			},
+			{
+				"title": "Modeli za 3D",
+				"description": "Modeli za 3D za kuvutia kusaidia mipango na ukaguzi.",
+				"popupContent": "Tunatengeneza modeli za 3D za mesh na muundo wa ardhi, majengo, na miundombinu. Modeli hizi ziko tayari kwa BIM na zinatumika kwa uthibitisho wa muundo, ukaguzi, na mipango ya kina."
+			},
+			{
+				"title": "Mipango ya Miundombinu",
+				"description": "Data ya njia na ardhi kwa mpangilio mahiri wa miundombinu.",
+				"popupContent": "Tunapima njia na tovuti kwa kutumia drone LiDAR na photogrammetry. Hii huhakikisha uwekaji mahiri wa barabara, mabomba, na maendeleo ya mijini huku punguzia vurugu za mazingira."
+			},
+			{
+				"title": "DTMs na DEMs",
+				"description": "Modeli za ardhi na mwinuko za kidijitali kwa kazi za hidrolojia na civil.",
+				"popupContent": "Modeli zetu za ardhi na mwinuko huwasaidia wahandisi wa civil na wataalamu wa hidrolojia kuchambua mtiririko, utulivu wa mitelemko, na upangaji wa ardhi. Tunatoa data sahihi ya mwinuko kuunga mkono miundombinu imara."
+			},
+			{
+				"title": "Mahesabu ya Volumetric",
+				"description": "Kokotoa vina za nyenzo na simamia rasilimali kwa usahihi.",
+				"popupContent": "SmartGrid hukokotoa vina za cut/fill na vipimo vya makusanyo kwa usahihi wa kiwango cha sentimita. Photogrammetry yetu ya anga hutoa matokeo ya haraka, salama, na yanayorudiwa."
+			},
+			{
+				"title": "Tathmini ya Maafa",
+				"description": "Data ya njia na ardhi kwa mpangilio mahiri wa miundombinu.",
+				"popupContent": "Baada ya mafuriko, maporomoko ya ardhi, au mitetemeko, SmartGrid hutumia droni kurekodi uharibifu kwa haraka. Data yetu huwasaidia wahudumu kupanga hatua, ugawaji wa misaada, na kupanga upya wa operesheni."
+			}
+		]
+	},
+	"droneFleet": {
+		"tag": "Ndege za Hewa",
+		"headline": "Foleni Yetu ya Droni",
+		"description": "Katika SmartGrid Surveying, tunapeleka droni za kisasa kukamata picha za hewa za ubora wa juu na data ya multispectral kwa ramani, ufuatiliaji, na upimaji sahihi.",
+		"items": [
+			{
+				"icon": "quadcopter",
+				"image": "/media/equipment-sale/dji-matrice-350-rtk/images/02-01.png",
+				"href": "/equipment-sale/dji-matrice-350-rtk",
+				"label": "DJI Matrice 300 RTK"
+			},
+			{
+				"icon": "quadcopter",
+				"image": "/media/equipment-sale/dji-air-3s/images/02.png",
+				"href": "/equipment-sale/dji-air-3s",
+				"label": "DJI Air 3S"
+			},
+			{
+				"icon": "quadcopter",
+				"image": "/media/equipment-sale/dji-mavic-3-multispectral/images/02.png",
+				"href": "/equipment-sale/dji-mavic-3-multispectral",
+				"label": "DJI Mavic 3M / 3E"
+			},
+			{
+				"icon": "quadcopter",
+				"image": "/media/equipment-sale/dji-phantom-4-rtk/images/02-01.png",
+				"href": "/equipment-sale/dji-phantom-4-rtk",
+				"label": "DJI Phantom 4 RTK"
+			}
+		]
+	},
+	"whyAerialSurveyDronesMatter": {
+		"tag": "Matumizi Makuu",
+		"headline": "Kwa Nini Droni za Upimaji wa Hewa Zina Umuhimu?",
+		"description": "Suluhisho zetu za droni hutoa maarifa muhimu katika sekta nyingi, zikibadilisha namna miradi inavyopangwa, kusimamiwa, na kufuatiliwa.",
+		"items": [
+			{
+				"icon": "map",
+				"title": "Ramani za Kina",
+				"description": "Tunatumia droni zenye LiDAR kutengeneza ramani sahihi za 3D, topografia, na matumizi ya ardhi—tukikamata maarifa kwa kiwango na uwazi uliopita njia za jadi. Data hii ya ubora wa juu huboboresha mipango, muundo, na maamuzi katika maeneo makubwa ya miradi."
+			},
+			{
+				"icon": "tree-outline",
+				"title": "Ufuatiliaji wa Mazingira",
+				"description": "Uchunguzi wetu wa droni hufuatilia mabadiliko ya mazingira kama kupotea kwa mimea, mabadiliko ya maji, na uharibifu wa ardhi—kutoa maarifa muhimu kwa uwajibikaji na mazingira. Mtazamo huu wa anga huunga mkono ufuatiliaji wa hali ya hewa, tathmini za athari, na usimamizi wa rasilimali."
+			},
+			{
+				"icon": "earth",
+				"title": "Usimamizi wa Rasilimali",
+				"description": "Uchunguzi wetu wa droni za hewa huunga mkono usimamizi bora wa rasilimali kwa kufuatilia misitu, maji, na mifumo ya matumizi ya ardhi. Njia hii inayotegemea data husaidia kutambua maeneo yanayohitaji uhifadhi au matumizi bora."
+			},
+			{
+				"icon": "leaf",
+				"title": "Kilimo cha Usahihi",
+				"description": "Tunatumia upigaji picha wa multispectral wa droni kufuatilia afya ya mazao, tofauti za udongo, na ufanisi wa umwagiliaji. Hii inawawezesha wakulima kwa data ya kiutendaji kwa kilimo cha usahihi, ikisababisha mavuno bora na gharama ndogo za pembejeo."
+			},
+			{
+				"icon": "city",
+				"title": "Mipango ya Ujenzi",
+				"description": "Uchunguzi wetu wa anga unatoa mtazamo wa juu wa ardhi, miundombinu, na mazingira—muhimu kwa uteuzi sahihi wa tovuti na uchambuzi wa uwezekano. Data hii hurahisisha mipango ya maendeleo ya mijini, mitandao ya usafiri, na matumizi bora ya ardhi."
+			},
+			{
+				"icon": "clipboard-check",
+				"title": "Tathmini ya Athari za Mazingira",
+				"description": "Tunatumia uchunguzi wa droni kufanya Tathmini sahihi za Athari za Mazingira—tukikamata data ya mwonekano wa ardhi, makazi, na mabadiliko ya ikolojia papo hapo. Hii kuruhusu mipango bora ya miradi yenye vurugu ndogo za mazingira asilia."
+			},
+			{
+				"icon": "cog",
+				"title": "Usimamizi wa Miundombinu",
+				"description": "Droni zetu hukamata picha za ubora wa juu na data ya LiDAR kutathmini hali ya tovuti za ujenzi, mali, mistari ya umeme, vituo vya ndogo, barabara, na mistari ya huduma. Hii inaruhusu ukaguzi wa kina wa miundombinu, utambuzi wa mapema wa uharibifu, na mipango ya usimamizi wa mali inayotegemea data."
+			},
+			{
+				"icon": "map-clock",
+				"title": "Ramani za Maafa",
+				"description": "SmartGrid Surveying hupeleka droni kwa haraka baada ya maafa kukamata picha za wakati halisi na ramani za 3D za maeneo yaliyoathirika. Hii inaruhusu timu za dharura kutathmini uharibifu, kupanga njia salama za ufikiaji, na kupanga kipaumbele cha misaada kwa usahihi."
+			}
+		]
+	},
+	"exploreMore": {
+		"tag": null,
+		"headline": "Chunguza zaidi...",
+		"description": "",
+		"items": [
+			{
+				"label": "Ramani za Hewa",
+				"image": "/media/aerial-drones/aerial-mapping.jpeg"
+			},
+			{
+				"label": "Modeli za 3D",
+				"image": "/media/aerial-drones/3d-models.jpeg"
+			},
+			{
+				"label": "Modeli za Ardhi na Mwinuko (DTMs & DEMs)",
+				"image": "/media/aerial-drones/digital-terrain-elevation-models.jpeg"
+			},
+			{
+				"label": "Ufuatiliaji wa Ujenzi",
+				"image": "/media/aerial-drones/construction-monitoring.jpeg"
+			},
+			{
+				"label": "Ramani za Kilimo",
+				"image": "/media/aerial-drones/agricultural-mapping.jpeg"
+			},
+			{
+				"label": "Ufuatiliaji wa Mazingira",
+				"image": "/media/aerial-drones/environmental-monitoring.png"
+			},
+			{
+				"label": "Mipango ya Miundombinu",
+				"image": "/media/aerial-drones/infrastructure-planning.jpeg"
+			},
+			{
+				"label": "Mahesabu ya Volumetric",
+				"image": "/media/aerial-drones/volumetric-calculations.jpeg"
+			}
+		]
+	},
+	"projects": {
+		"tag": "Miradi Iliyokamilika",
+		"headline": "MIRADI ILIYOFANYIKA AFRIKA",
+		"description": "Tumekamilisha uchunguzi wa droni za hewa katika nchi kadhaa za Afrika, tukiunga mkono serikali, wasanidi binafsi, na NGOs. Hizi ni baadhi ya mionekano:",
+		"images": ["/media/aerial-drones/14.jpeg", "/media/aerial-drones/07.jpeg"],
+		"items": [
+			"Kenya – hekta 2,000 kwa uzoningaji wa kilimo Uasin Gishu",
+			"Ghana – hekta 3,500 kwa ramani za shamba la cocoa Kumasi",
+			"Rwanda – hekta 1,800 za uchambuzi wa nyanda za maji Bugesera",
+			"Afrika Kusini – hekta 5,200 kwa volumetrics za migodi Limpopo",
+			"Nigeria – hekta 4,100 ufuatiliaji wa ukuaji wa miji Abuja",
+			"Mkoa wa Afrika Mashariki – Zaidi ya hekta 10,000 zimepimwa katika miradi ya miundombinu na mipango ya matumizi ya ardhi Kenya, Uganda, na Tanzania"
+		]
+	},
+	"dronePhotography": {
+		"tag": "Mbali na uchunguzi wa kiufundi",
+		"headline": "Upigaji Panga wa Droni na Hadithi za Anga",
+		"description": "Tunapuka ng'ambo ya matarajio – picha za sinema, matukio, na hadithi za kipekee za chapa kutoka angani. Unahitaji vifaa? Huduma yetu ya kukodisha droni inawapa wateja droni bora kwa ajili ya muda mfupi au mrefu, pamoja na mafunzo au usaidizi wa operator.",
+		"backgroundImage": "/media/aerial-drones/06.jpeg",
+		"items": [
+			{
+				"title": "Video za Masoko",
+				"description": "Tengeneza video za kuvutia za kibiashara na angle za kihistoria za anga. Nzuri kwa kampeni za kidijitali, matangazo, au media ya kijamii inayosimamisha mtiririko."
+			},
+			{
+				"title": "Ufunikaji wa Matukio",
+				"description": "Rekodi matukio yako kutoka juu — arusi, tamasha, mbio, na mengine. Droni zetu hutoa ufunikaji wa kipekee unaouza kila wakati."
+			},
+			{
+				"title": "Upigaji Panga wa Ubunifu",
+				"description": "Badilisha taswira yako kwa picha za anga na picha za chapa. Kwa watu maarufu, wasanii, na biashara zinazojivunia kupiga tofauti."
+			},
+			{
+				"title": "Matangazo ya Chapa ya Anga",
+				"description": "Wasilisha biashara yako kwa fly-overs laini, angle za kuvutia, na onyesho la pekee la eneo kwa hadithi na mauzo."
+			},
+			{
+				"title": "Hadithi za Sinema",
+				"description": "Tengeneza video za kuvutia za kibiashara na angle za kihistoria za anga. Nzuri kwa kampeni za kidijitali, matangazo, au media ya kijamii inayosimamisha mtiririko."
+			}
+		]
+	}
+}

@@ -1,5 +1,6 @@
 import about from '../public/locales/en/about.json';
 import aerialdronesasbuiltsurveys from '../public/locales/en/aerial-drones-as-built-surveys.json';
+import aerialdrones from '../public/locales/en/aerial-drones.json';
 import aerialsurveys from '../public/locales/en/aerial-surveys.json';
 import agriculturalndvimapping from '../public/locales/en/agricultural-ndvi-mapping.json';
 import automaticlevelbosch from '../public/locales/en/automatic-level-bosch.json';
@@ -14,6 +15,7 @@ import civilhighwaysurveys from '../public/locales/en/civil-highway-surveys.json
 import civilsiteengineering from '../public/locales/en/civil-site-engineering.json';
 import civilsitesettingout from '../public/locales/en/civil-site-setting-out.json';
 import civilvolumetricsurveys from '../public/locales/en/civil-volumetric-surveys.json';
+import civil from '../public/locales/en/civil.json';
 import common from '../public/locales/en/common.json';
 import contact from '../public/locales/en/contact.json';
 import djiair3s from '../public/locales/en/dji-air-3s.json';
@@ -48,6 +50,7 @@ import volumetricsurveys from '../public/locales/en/volumetric-surveys.json';
 const resources = {
   about,
   'aerial-drones-as-built-surveys': aerialdronesasbuiltsurveys,
+  'aerial-drones': aerialdrones,
   'aerial-surveys': aerialsurveys,
   'agricultural-ndvi-mapping': agriculturalndvimapping,
   'automatic-level-bosch': automaticlevelbosch,
@@ -62,6 +65,7 @@ const resources = {
   'civil-site-engineering': civilsiteengineering,
   'civil-site-setting-out': civilsitesettingout,
   'civil-volumetric-surveys': civilvolumetricsurveys,
+  civil,
   common,
   contact,
   'dji-air-3s': djiair3s,

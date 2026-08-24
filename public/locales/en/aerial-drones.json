@@ -1,0 +1,228 @@
+{
+	"hero": {
+		"headline": "UAV Technology",
+		"title": "Aerial Drones",
+		"image": "/media/aerial-drones/01.jpeg",
+		"description": "Whether you're a government agency, an NGO, or a private developer, Smartgrid Surveying is your trusted partner! Our drones deliver actionable data where it matters most.\n\n Drones have transformed the surveying industry and we're leading the way. Smartgrid Surveying leverages aerial drones for mapping, 3D modeling, volumetrics, environmental assessments, and monitoring large or inaccessible areas. Beyond technical mapping, we offer professional drone photography for real estate, construction marketing, tourism, and events. Using drones equipped with RTK GPS and high-resolution sensors, we capture precise geospatial data that empowers engineers, developers, governments, and NGOs to make smarter decisions, faster. We deliver fast, accurate, and detailed surveys",
+		"ctaPrimary": {
+			"label": "Get Your Free Consultation",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Consultation Request: Aerial Drone Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a free consultation about aerial drone surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+		},
+		"ctaSecondary": {
+			"label": "Start your Aerial Survey with Us!",
+			"href": "/aerial-drones/drone-imagery-surveys"
+		}
+	},
+
+	"services": {
+		"tag": "Core Capabilities",
+		"headline": "Our Aerial Surveying Services",
+		"description": "Discover our full range of aerial drone surveying services and deliverables.",
+		"items": [
+			{
+				"title": "Aerial Mapping",
+				"description": "Accurate drone-based imagery for planning, documentation, and analysis.",
+				"popupContent": "SmartGrid Surveying delivers ultra-precise aerial mapping using UAVs to generate georeferenced orthomosaics, topographic data, and planning-grade base maps. Our solutions support infrastructure, utilities, and land development with unmatched speed and accuracy."
+			},
+			{
+				"title": "Construction Monitoring",
+				"description": "Track site activity using consistent, real-time aerial visuals.",
+				"popupContent": "SmartGrid offers site monitoring through high-resolution drone flyovers. Our automated flights provide weekly visual updates, detect deviations from schedule, and support decision-making for project managers and developers."
+			},
+			{
+				"title": "Environmental Monitoring",
+				"description": "Visualize ecological change and monitor conservation areas.",
+				"popupContent": "Using UAVs, SmartGrid tracks land cover change, deforestation, erosion, and other ecological indicators. Our data supports impact assessments and regulatory compliance with repeatable, time-stamped visuals."
+			},
+			{
+				"title": "Agricultural Mapping",
+				"description": "Drone-based multispectral data for crop health and farm optimization.",
+				"popupContent": "SmartGrid empowers agronomists with data on crop health, plant stress, and irrigation patterns. We use NDVI and multispectral analysis to optimize input use and improve yield sustainability."
+			},
+			{
+				"title": "3D Modeling",
+				"description": "Photorealistic 3D models to support planning and inspections.",
+				"popupContent": "We create detailed 3D mesh and textured models of terrain, buildings, and infrastructure. These models are BIM-ready and useful for design validation, inspection, and immersive planning."
+			},
+			{
+				"title": "Infrastructure Planning",
+				"description": "Route and terrain data for smart infrastructure layout.",
+				"popupContent": "We map routes and sites using drone LiDAR and photogrammetry. This ensures smart siting of roads, pipelines, and urban developments while minimizing environmental disruption."
+			},
+			{
+				"title": "DTMs & DEMs",
+				"description": "Digital terrain and elevation models for hydrological and civil works.",
+				"popupContent": "Our terrain and elevation models help civil engineers and hydrologists analyze runoff, slope stability, and grading. We deliver precise elevation data to support resilient infrastructure."
+			},
+			{
+				"title": "Volumetric Calculations",
+				"description": "Calculate material volumes and manage resources accurately.",
+				"popupContent": "SmartGrid computes cut/fill volumes and stockpile measurements with centimeter-level accuracy. Our aerial photogrammetry offers fast, safe, and repeatable results."
+			},
+			{
+				"title": "Disaster Assessment",
+				"description": "Route and terrain data for smart infrastructure layout.",
+				"popupContent": "After floods, landslides, or earthquakes, SmartGrid uses drones to quickly document damage. Our data helps responders prioritize actions, allocate aid, and plan recovery operations."
+			}
+		]
+	},
+    "droneFleet": {
+		"tag": "Aerial Fleet",
+		"headline": "Our Drone Fleet",
+		"description": "At SmartGrid Surveying, we deploy advanced drones to capture high-resolution aerial imagery and multispectral data for accurate mapping, monitoring, and surveying.",
+		"items": [
+			{
+				"icon": "quadcopter",
+				"image": "/media/equipment-sale/dji-matrice-350-rtk/images/02-01.png",
+				"href": "/equipment-sale/dji-matrice-350-rtk",
+				"label": "DJI Matrice 300 RTK"
+			},
+			{
+				"icon": "quadcopter",
+				"image": "/media/equipment-sale/dji-air-3s/images/02.png",
+				"href": "/equipment-sale/dji-air-3s",
+				"label": "DJI Air 3S"
+			},
+			{
+				"icon": "quadcopter",
+				"image": "/media/equipment-sale/dji-mavic-3-multispectral/images/02.png",
+				"href": "/equipment-sale/dji-mavic-3-multispectral",
+				"label": "DJI Mavic 3M / 3E"
+			},
+			{
+				"icon": "quadcopter",
+				"image": "/media/equipment-sale/dji-phantom-4-rtk/images/02-01.png",
+                "href": "/equipment-sale/dji-phantom-4-rtk",
+				"label": "DJI Phantom 4 RTK"
+			}
+		]
+	},
+	"whyAerialSurveyDronesMatter": {
+		"tag": "Key Applications",
+		"headline": "Why Aerial Survey Drones Matter?",
+		"description": "Our drone solutions deliver critical insights across multiple sectors, transforming how projects are planned, managed, and monitored.",
+		"items": [
+			{
+				"icon": "map",
+				"title": "Detailed Mapping",
+				"description": "We use LiDAR-equipped drones to generate precise 3D, topographic, and land use maps—capturing insights at a scale and clarity beyond traditional methods. This high-resolution data enhances planning, design, and decision-making across large project areas."
+			},
+			{
+				"icon": "tree-outline",
+				"title": "Environmental Monitoring",
+				"description": "Our drone-based surveys monitor environmental changes like vegetation loss, water shifts, and land degradation—providing critical insights for sustainability and compliance. This aerial perspective supports climate tracking, impact assessments, and proactive resource management."
+			},
+			{
+				"icon": "earth",
+				"title": "Resource Management",
+				"description": "Our aerial drone surveys support efficient resource management by monitoring forests, water bodies, and land use patterns. This data-driven approach helps identify areas needing conservation or optimized utilization."
+			},
+			{
+				"icon": "leaf",
+				"title": "Precision Agriculture",
+				"description": "We use drone-based multispectral imaging to monitor crop health, soil variability, and irrigation efficiency. This empowers farmers with actionable data for precision agriculture, leading to optimized yields and reduced input costs."
+			},
+			{
+				"icon": "city",
+				"title": "Construction Planning",
+				"description": "Our aerial surveys deliver a high-level view of terrain, infrastructure, and environment—essential for accurate site selection and feasibility analysis. This data streamlines planning for urban development, transport networks, and effective land use."
+			},
+			{
+				"icon": "clipboard-check",
+				"title": "Environmental Impact Assessment",
+				"description": "We use drone surveys to conduct precise Environmental Impact Assessments—capturing data on land cover, habitats, and ecological changes in real time. This allows for smarter project planning with minimal disruption to natural environments."
+			},
+			{
+				"icon": "cog",
+				"title": "Infrastructure Management",
+				"description": "Our drones capture high-resolution imagery and LiDAR data to assess the condition of construction sites, assets, power lines, substations, roadways, and utility corridors. This enables detailed infrastructure audits, early detection of wear or damage, and data-driven asset management planning."
+			},
+			{
+				"icon": "map-clock",
+				"title": "Disaster Mapping",
+				"description": "SmartGrid Surveying deploys drones rapidly after disasters to capture real-time imagery and 3D maps of affected areas. This enables emergency teams to assess damage, plan safe access routes, and prioritize relief efforts with precision."
+			}
+		]
+	},
+    "exploreMore": {
+		"tag": null,
+		"headline": "Explore more...",
+		"description": "",
+		"items": [
+			{
+				"label": "Aerial Mapping",
+				"image": "/media/aerial-drones/aerial-mapping.jpeg"
+			},
+			{
+				"label": "3d models",
+				"image": "/media/aerial-drones/3d-models.jpeg"
+			},
+			{
+				"label": "Digital Terrain & Elevation Models (DTMs & DEMs)",
+				"image": "/media/aerial-drones/digital-terrain-elevation-models.jpeg"
+			},
+			{
+				"label": "Construction Monitoring",
+				"image": "/media/aerial-drones/construction-monitoring.jpeg"
+			},
+			{
+				"label": "Agricultural Mapping",
+				"image": "/media/aerial-drones/agricultural-mapping.jpeg"
+			},
+			{
+				"label": "Environmental Monitoring",
+				"image": "/media/aerial-drones/environmental-monitoring.png"
+			},
+			{
+				"label": "Infrastructure Planning",
+				"image": "/media/aerial-drones/infrastructure-planning.jpeg"
+			},
+			{
+				"label": "Volumetric calculations",
+				"image": "/media/aerial-drones/volumetric-calculations.jpeg"
+			}
+		]
+	},
+	"projects": {
+		"tag": "completed Projects",
+		"headline": "PROJECTS DONE ACROSS AFRICA",
+		"description": "We’ve completed aerial drone surveys across several African countries, supporting governments, private developers, and NGOs. Here are a few highlights:",
+		"images": ["/media/aerial-drones/14.jpeg", "/media/aerial-drones/07.jpeg"],
+		"items": [
+			"Kenya – 2,000 ha for agricultural zoning in Uasin Gishu",
+			"Ghana – 3,500 ha for cocoa plantation mapping in Kumasi",
+			"Rwanda – 1,800 ha of wetland analysis in Bugesera",
+			"South Africa – 5,200 ha for mining volumetrics in Limpopo",
+			"Nigeria – 4,100 ha urban sprawl monitoring in Abuja",
+			"East Africa Region – Over 10,000 ha surveyed across regional infrastructure and land use planning projects in Kenya, Uganda, and Tanzania"
+		]
+	},
+	"dronePhotography": {
+		"tag": "In addition to technical surveys",
+		"headline": "Drone Photography & Aerial Storytelling",
+		"description": "We fly beyond expectations – cinematic visuals, events, and immersive brand storytelling from the skies. Need equipment? Our drone rental service gives clients access to high-quality drones for short- or long-term hire, with optional training or operator support.",
+        "backgroundImage": "/media/aerial-drones/06.jpeg",
+		"items": [
+			{
+				"title": "Marketing Videos",
+				"description": "Create eye-catching promotional videos with epic aerial angles. Perfect for digital campaigns, commercials, or social media reels that stop the scroll."
+			},
+			{
+				"title": "Events Coverage",
+				"description": "Capture your moments from above — weddings, concerts, races, and more. Our drones offer dynamic coverage that brings every moment to life."
+			},
+			{
+				"title": "Creative Photoshoots",
+				"description": "Redefine your image with aerial portraiture and brand shots. For influencers, artists, and businesses who dare to shoot differently."
+			},
+			{
+				"title": "Aerial Brand Promos",
+				"description": "Introduce your business with smooth fly-overs, swooping angles, and dramatic location reveals tailored for storytelling and conversions."
+			},
+			{
+				"title": "Cinematic Storytelling",
+				"description": "Create eye-catching promotional videos with epic aerial angles. Perfect for digital campaigns, commercials, or social media reels that stop the scroll."
+			}
+		]
+	}
+}
