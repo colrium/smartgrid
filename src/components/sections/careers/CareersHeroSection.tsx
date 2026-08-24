@@ -33,7 +33,7 @@ export function CareersHeroSection() {
 
 			<span
 				aria-hidden
-				className="absolute inset-x-0 top-14 select-none pointer-events-none text-center font-mono font-bold uppercase tracking-[0.5em] text-surface/[0.06] text-[22vw] lg:text-[13rem] leading-none whitespace-nowrap"
+				className="absolute inset-x-0 top-[25%] select-none pointer-events-none text-center font-mono font-bold uppercase tracking-[0.5em] text-surface/4 text-[22vw] lg:text-[13rem] leading-none whitespace-nowrap"
 			>
 				{hero.title}
 			</span>
