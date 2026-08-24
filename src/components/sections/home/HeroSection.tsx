@@ -279,7 +279,6 @@ export default function HeroSection() {
 							propellers.push(child);
 						}
 					});
-					console.log("propellers", propellers);
 				}
 				droneGroup.add(loadedDroneMesh);
 				animate();
