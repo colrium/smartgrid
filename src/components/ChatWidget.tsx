@@ -12,7 +12,6 @@ const getTawkUrl = () => {
 const ChatWidget = () => {
 	const tawkUrl = getTawkUrl();
 
-    console.log("process.env.NODE_ENV", process.env.NODE_ENV, "tawkUrl", tawkUrl);
 
     if (!tawkUrl || process.env.NODE_ENV === "development") return null;
 
