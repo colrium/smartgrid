@@ -18,6 +18,7 @@ import {
 	Html,
 	useProgress,
 	useGLTF,
+	useAnimations,
 	GizmoHelper,
 	GizmoViewport,
 } from "@react-three/drei";
@@ -146,10 +147,28 @@ function LoadPrompt({ src, onStart }: { src?: string; onStart: () => void }) {
 /* is what previously left meshes stuck invisible).                    */
 /* ------------------------------------------------------------------ */
 
-function Model({ url, onReady }: { url: string; onReady: () => void }) {
-	const { scene } = useGLTF(url);
+/* ------------------------------------------------------------------ */
+/* Model — enables shadows, signals readiness, and wires glTF clips    */
+/* (if any) into a play/pause controller exposed to the parent.        */
+/* ------------------------------------------------------------------ */
+
+export interface AnimationController {
+	toggle: () => void;
+}
+
+function Model({
+	url,
+	onReady,
+	onAnimations,
+}: {
+	url: string;
+	onReady: () => void;
+	onAnimations: (controller: AnimationController | null) => void;
+}) {
+	const { scene, animations } = useGLTF(url);
 	const groupRef = useRef<Group>(null);
 	const announced = useRef(false);
+	const { actions } = useAnimations(animations, groupRef);
 
 	useEffect(() => {
 		scene.traverse((child) => {
@@ -159,11 +178,35 @@ function Model({ url, onReady }: { url: string; onReady: () => void }) {
 			mesh.receiveShadow = true;
 		});
 
+		const clips = Object.values(actions).filter(
+			(action): action is NonNullable<(typeof actions)[string]> => Boolean(action),
+		);
+		if (clips.length > 0) {
+			clips.forEach((action) => {
+				action.reset();
+				action.play();
+			});
+			onAnimations({
+				toggle: () => {
+					clips.forEach((action) => {
+						action.paused = !action.paused;
+					});
+				},
+			});
+		} else {
+			onAnimations(null);
+		}
+
 		if (!announced.current) {
 			announced.current = true;
 			onReady();
 		}
-	}, [scene, onReady]);
+
+		return () => {
+			Object.values(actions).forEach((action) => action?.stop());
+			onAnimations(null);
+		};
+	}, [scene, actions, onReady, onAnimations]);
 
 	return <primitive ref={groupRef} object={scene} />;
 }
@@ -399,6 +442,28 @@ export default function ModelViewer({
 	// the user hits the Load prompt.
 	const [started, setStarted] = useState(autoLoad);
 
+	// glTF clip playback (only when the loaded model ships animations).
+	const animationCtlRef = useRef<AnimationController | null>(null);
+	const [hasAnimations, setHasAnimations] = useState(false);
+	const [animPlaying, setAnimPlaying] = useState(true);
+
+	const handleAnimations = useCallback((controller: AnimationController | null) => {
+		animationCtlRef.current = controller;
+		setHasAnimations(controller !== null);
+		setAnimPlaying(controller !== null);
+	}, []);
+
+	const toggleAnimations = useCallback(() => {
+		animationCtlRef.current?.toggle();
+		setAnimPlaying((playing) => !playing);
+	}, []);
+
+	const handleClose = useCallback(() => {
+		animationCtlRef.current = null;
+		setHasAnimations(false);
+		setStarted(false);
+	}, []);
+
 	const coordsRef = useCoordinateReadout(controlsRef, showCoordinates);
 
 	// Ref-driven fade-in: flips a CSS class directly on the DOM node once the
@@ -463,7 +528,11 @@ export default function ModelViewer({
 							<Suspense fallback={<Loader />}>
 								<AutoFit minDistance={minZoom} maxDistance={maxZoom}>
 									<Turntable enabledRef={autoRotateRef} speed={autoRotateSpeed}>
-										<Model url={url} onReady={handleReady} />
+										<Model
+											url={url}
+											onReady={handleReady}
+											onAnimations={handleAnimations}
+										/>
 									</Turntable>
 								</AutoFit>
 								{!disableShadow && (
@@ -546,6 +615,29 @@ export default function ModelViewer({
 								}`}
 							>
 								Rotate
+							</button>
+							{hasAnimations && (
+								<button
+									type="button"
+									onClick={toggleAnimations}
+									aria-label={animPlaying ? "Pause animation" : "Play animation"}
+									className="rounded-full px-3 py-1.5 text-xs text-on-surface/70 transition-colors hover:bg-on-surface/10 hover:text-on-surface"
+								>
+									<span
+										className={`mdi ${animPlaying ? "mdi-pause" : "mdi-play"} align-[-1px]`}
+										aria-hidden
+									/>
+									{animPlaying ? "Pause" : "Play"}
+								</button>
+							)}
+							<button
+								type="button"
+								onClick={handleClose}
+								aria-label="Close 3D model"
+								className="rounded-full px-3 py-1.5 text-xs text-on-surface/70 transition-colors hover:bg-on-surface/10 hover:text-on-surface"
+							>
+								<span className="mdi mdi-close align-[-1px]" aria-hidden />
+								Close 3D Model
 							</button>
 						</div>
 					)}

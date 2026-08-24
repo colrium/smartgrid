@@ -4,7 +4,9 @@
 		"loading": "Inapakia...",
 		"changeLanguage": "Badili Lugha",
 		"goHome": "Nenda Nyumbani",
-		"active": "Inatumika"
+		"active": "Inatumika",
+		"openRoles": "Nafasi Zilizopo",
+		"load3d": "Pakia 3D"
 	},
 	"form": {
 		"submissionError": "Uwasilishaji umeshindwa. Tafadhali jaribu tena baadaye au wasiliana na msaada.",

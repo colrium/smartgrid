@@ -4,7 +4,9 @@
 		"loading": "Loading...",
 		"changeLanguage": "Change Language",
 		"goHome": "Go Home",
-		"active": "Active"
+		"active": "Active",
+        "openRoles": "Open Roles",
+        "load3d": "Load 3d"
 	},
 	"form": {
 		"submissionError": "Submission failed. Please try again later or contact support.",
