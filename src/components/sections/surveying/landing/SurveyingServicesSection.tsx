@@ -87,7 +87,7 @@ export function SurveyingServicesSection() {
 
 				{hasImage && (
 					<FadeUp delay={0.1}>
-						<div className="mt-14 relative aspect-[4/3] rounded-[20px] overflow-hidden bg-surface hairline card-shadow">
+						<div className="mt-14 relative aspect-[4/3] rounded-[20px] overflow-hidden p-4 bg-surface hairline card-shadow">
 							<Image
 								src={section.image as string}
 								alt={section.headline}
