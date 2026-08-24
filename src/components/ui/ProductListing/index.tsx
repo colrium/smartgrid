@@ -92,8 +92,10 @@ function applyFilterSort(
 	const corpus = new Map<ProductListingItem, string>();
 	let filtered = items;
 
-	if (category) {
-		filtered = filtered.filter((item) => item.category === category);
+    if (category) {
+        
+        filtered = filtered.filter((item) => item.category === category);
+        console.log("filtered", filtered);
 	}
 	if (tokens.length > 0) {
 		filtered = filtered.filter((item) => {
