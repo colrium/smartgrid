@@ -6,7 +6,7 @@
 		"description": "Our team delivers precise and reliable spatial data using advanced GNSS, Total Stations, and Drone LiDAR technologies — ensuring centimeter-level accuracy on every site. From Nairobi, Kiambu, Kisumu, Mombasa, and across Africa, we map and measure the land with unmatched detail to support informed design and development decisions.",
 		"ctaPrimary": {
 			"label": "Get Your Free Consultation",
-			"href": "mailto:smartgridsurveying@gmail.com"
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Consultation Request: Land Surveying&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a free consultation about land surveying. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
 	"services": {

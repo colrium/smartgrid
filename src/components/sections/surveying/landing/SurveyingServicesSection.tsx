@@ -48,7 +48,7 @@ export function SurveyingServicesSection() {
 						const card = (
 							<article className="group h-full flex flex-col gap-4 rounded-[20px] bg-surface hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
 								<div className="flex items-start justify-between gap-4">
-									<span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
+									<span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 										{item.icon && <span className={`mdi mdi-${item.icon} text-2xl`} />}
 									</span>
 
