@@ -1,0 +1,119 @@
+{
+	"hero": {
+		"headline": "Upimaji wa Ardhi — Uone Ardhi Kama Ilivyo Kweli",
+		"title": "UPIMAJI WA ARDHI",
+		"image": "/media/surveying/AG8ng.jpeg",
+		"description": "Timu yetu hutoa data sahihi na ya kuaminika ya eneo kwa kutumia teknolojia za kisasa za GNSS, Total Stations, na Drone LiDAR — kuhakikisha usahihi wa kiwango cha sentimita kwenye kila tovuti. Kutoka Nairobi, Kiambu, Kisumu, Mombasa, na kote Afrika, tunapima na kuchora ramani za ardhi kwa maelezo yasiyoshindwa kuunga mkono maamuzi ya ubunifu na maendeleo.",
+		"ctaPrimary": {
+			"label": "Pata Ushauri Wako Bure",
+			"href": "mailto:smartgridsurveying@gmail.com"
+		}
+	},
+	"services": {
+		"tag": "Huduma Zetu",
+		"headline": "Chunguza Zaidi...",
+		"image": "/media/surveying/05.png",
+		"description": "Gundua anuwai kamili ya suluhisho zetu za upimaji zilizoundwa kwa mahitaji ya mradi wako.",
+		"items": [
+			{
+				"icon": "map",
+				"title": "Uchunguzi wa Topografia",
+				"description": "Uchunguzi sahihi kwa mipango, ujenzi, mipaka, na maendeleo.",
+				"href": "/surveying/topographical-surveys"
+			},
+			{
+				"icon": "quadcopter",
+				"title": "Uchunguzi wa Droni za Hewa",
+				"description": "Tathmini sahihi za tovuti kwa miradi ya ujenzi.",
+				"href": "/surveying/aerial-surveys"
+			},
+			{
+				"icon": "office-building",
+				"title": "Uchunguzi wa Majengo na Uhandisi",
+				"description": "Mpangilio wa tovuti, ufuatiliaji, na uthibitisho wa as-built kwa usahihi na kasi.",
+				"href": "/surveying/building-site-surveys"
+			},
+			{
+				"icon": "vector-square",
+				"title": "Uchunguzi wa Cadastral",
+				"description": "Bainisha mipaka ya mali kwa usahihi na ujasiri kwa wataalamu wetu wa upimaji.",
+				"href": "/surveying/cadastral-surveys"
+			},
+			{
+				"icon": "waves",
+				"title": "Uchunguzi wa Bathymetric",
+				"description": "Ramani za kina za ardhi chini ya maji kwa bwariga, mito, maziwa, na bahari.",
+				"href": "/surveying/bathymetric-surveys"
+			},
+			{
+				"icon": "tree",
+				"title": "Ramani za Rasilimali",
+				"description": "Ramani zenye ufanisi za rasilimali kama misitu, mwonekano wa miti, na maeneo ya kilimo.",
+				"href": "/surveying/resource-mapping"
+			},
+			{
+				"icon": "layers",
+				"title": "Uchunguzi wa GIS",
+				"description": "Unganisha data za kijiografia kwa urahisi kwa uchambuzi na ramani bora za eneo.",
+				"href": "/surveying/gis-mapping"
+			}
+		]
+	},
+	"process": {
+		"tag": "Mchakato",
+		"headline": "Mchakato wa Upimaji wa Ardhi",
+		"description": "Katika SmartGrid Surveying, tunabobea upimaji wa ardhi kwa kutumia droni za hewa, vituo vya RTK Base Rover, na Total Stations kutoa suluhisho za ramani sahihi na zenye ufanisi. Droni zetu hukamata data ya juu ya ardhi, huku RTK ikihakikisha usahihi wa nafuni wa papo hapo. Kwa Total Stations zinazotoa vipimo sahihi ya umbali na pembe, tunahakikisha tathmini za kina za tovuti zenye makosa madogo. Njia hii ya kisasa huongeza ufanisi, kuboresha maamuzi, na kuhakikisha kiwango cha juu zaidi cha usahihi kwa mahitaji ya upimaji ya wateja wetu.",
+		"items": [
+			{
+				"title": "Mipango ya Kabla ya Uchunguzi",
+				"description": "Fanya tathmini kamili ya tovuti na tathini vigezo vya uruka kwa utayari wa uchunguzi wa droni."
+			},
+			{
+				"title": "Kuanzisha Udhibiti wa Ardhi",
+				"description": "Weka alama za udhibiti wa ardhi (GCPs) zenye jio-rejeleo kwa muunganisho sahihi wa data ya hewa."
+			},
+			{
+				"title": "Uendeshaji wa Ruka la Droni",
+				"description": "Tumia droni kwa njia sahihi za uruka, ukikamata picha za ubora wa juu na data ya topografia."
+			},
+			{
+				"title": "Uchakataji na Uchambuzi wa Data",
+				"description": "Chakata data ya hewa kwa programu za photogrammetry kutengeneza modeli za 3D, orthoimages, na contours."
+			},
+			{
+				"title": "Uthibitisho na Ukaguzi wa Usahihi",
+				"description": "Tumia total stations na mifumo ya RTK-GNSS kuhakiki data ya droni na kuhakikisha usahihi wa juu zaidi."
+			},
+			{
+				"title": "Matokeo ya Mwisho ya Uchunguzi",
+				"description": "Tengeneza michoro ya CAD, tabaka za GIS, na ripoti za kidijitali kwa uhandishi wa mwisho wa mradi na uchambuzi."
+			}
+		]
+	},
+	"deliverables": {
+		"tag": "Matokeo",
+		"headline": "Matokeo ya Upimaji wa Ardhi",
+		"description": "Pato sahihi, tayari kwa kuwasilisha kwa maamuzi ya mipango, hati, na uhandisi.",
+		"images": [
+			"/media/surveying/04.png",
+			"/media/surveying/01.jpg",
+			"/media/surveying/02.png",
+			"/media/surveying/06.jpg",
+			"/media/surveying/05.png",
+			"/media/surveying/03.jpg"
+		],
+		"list": [
+			"Ripoti na Ramani za Uchunguzi wa Mipaka",
+			"Ramani za Cadastral kwa Ushughulikiaji wa Hati",
+			"Wekaji wa Alama za Beacon",
+			"Ramani za Registry",
+			"Data ya Anga ya 3D (X, Y, Z)",
+			"Ramani za Topografia",
+			"Contours",
+			"Shapefiles za CAD",
+			"Ripoti za Uchunguzi",
+			"Pato za Ramani za PDF",
+			"Matokeo Mahsusi Mengine"
+		]
+	}
+}

@@ -12,36 +12,50 @@
 	"services": {
 		"tag": "Our Services",
 		"headline": "Explore More...",
-		"image": "/media/surveying/placeholder.jpg",
+		"image": "/media/surveying/05.png",
 		"description": "Discover our comprehensive range of surveying solutions tailored to your project needs.",
 		"items": [
 			{
+				"icon": "map",
 				"title": "Topographical Surveys",
-				"description": "Accurate surveys for planning, construction, boundaries, and development."
+				"description": "Accurate surveys for planning, construction, boundaries, and development.",
+				"href": "/surveying/topographical-surveys"
 			},
 			{
+				"icon": "quadcopter",
 				"title": "Aerial Drone Surveys",
-				"description": "Precise site assessments for construction projects."
+				"description": "Precise site assessments for construction projects.",
+				"href": "/surveying/aerial-surveys"
 			},
 			{
+				"icon": "office-building",
 				"title": "Building & Engineering Surveys",
-				"description": "Site layout, monitoring, and as-built verification with precision and speed."
+				"description": "Site layout, monitoring, and as-built verification with precision and speed.",
+				"href": "/surveying/building-site-surveys"
 			},
 			{
+				"icon": "vector-square",
 				"title": "Cadastral Surveys",
-				"description": "Define property boundaries precisely and confidently with expert surveyors."
+				"description": "Define property boundaries precisely and confidently with expert surveyors.",
+				"href": "/surveying/cadastral-surveys"
 			},
 			{
+				"icon": "waves",
 				"title": "Bathymetric Surveys",
-				"description": "Detailed underwater terrain mapping for dams, rivers, lakes, and oceans."
+				"description": "Detailed underwater terrain mapping for dams, rivers, lakes, and oceans.",
+				"href": "/surveying/bathymetric-surveys"
 			},
 			{
+				"icon": "tree",
 				"title": "Resource Mapping",
-				"description": "Efficient mapping of resources such as forests, tree cover, and agricultural areas."
+				"description": "Efficient mapping of resources such as forests, tree cover, and agricultural areas.",
+				"href": "/surveying/resource-mapping"
 			},
 			{
+				"icon": "layers",
 				"title": "GIS Surveys",
-				"description": "Integrate geographic data seamlessly for smarter spatial analysis and mapping."
+				"description": "Integrate geographic data seamlessly for smarter spatial analysis and mapping.",
+				"href": "/surveying/gis-mapping"
 			}
 		]
 	},
@@ -79,11 +93,11 @@
 	"deliverables": {
 		"tag": "Deliverables",
 		"headline": "Land Surveying Deliverables",
-		"description": "",
+		"description": "Accurate, submission-ready outputs for planning, titling, and engineering decisions.",
         "images": [
 			"/media/surveying/04.png",
 			"/media/surveying/01.jpg",
-			"/media/surveying/02.jpg",
+			"/media/surveying/02.png",
 			"/media/surveying/06.jpg",
 			"/media/surveying/05.png",
 			"/media/surveying/03.jpg"
