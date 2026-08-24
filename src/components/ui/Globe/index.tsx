@@ -59,7 +59,7 @@ const Globe = ({ className, placesData = [], labelDotOrientation }: GlobeProps) 
 		<div>
 			<GlobeGl
 				ref={globeEl}
-				globeImageUrl="/img/earth/themed.png"
+				globeImageUrl="/img/earth/grey.jpg"
 				bumpImageUrl="//cdn.jsdelivr.net/npm/three-globe/example/img/earth-topology.png"
 				backgroundColor="#00000000"
 				atmosphereAltitude={0.05}
