@@ -12,6 +12,14 @@
 		"tag": "Join Our Team",
 		"headline": "Current Opportunities",
 		"description": "Explore the open positions below and apply to become part of our growing team.",
+		"torLabels": {
+			"button": "View Full TOR",
+			"modalTitle": "Terms of Reference",
+			"summaryTitle": "Position Summary",
+			"dutiesTitle": "Key Duties & Responsibilities",
+			"qualificationsTitle": "Qualifications & Experience",
+			"engagementTitle": "Reporting & Engagement"
+		},
 		"featuredOpenings": [
 			{
 				"icon": "account-tie",
@@ -26,13 +34,31 @@
 						"icon": "email",
 						"label": "Apply Via Mail",
 						"href": "mailto:smartgridsurveying@gmail.com?subject=Application: Project Manager&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to apply for the Project Manager position. Please find my CV and application attached.%0D%0A%0D%0AThank you."
-					},
-					{
-						"icon": "download",
-						"label": "Download Job Description",
-						"href": "/"
 					}
-				]
+				],
+				"tor": {
+					"positionSummary": "The Project Manager provides end-to-end planning, coordination, and delivery leadership for multidisciplinary land surveying, UAV mapping, GIS, and civil works assignments, ensuring projects are delivered safely, on schedule, within budget, and to contractual quality standards.",
+					"duties": [
+						"Lead end-to-end project planning, scheduling, budgeting, and resource allocation across concurrent surveying and civil works assignments.",
+						"Mobilize and coordinate field teams, equipment logistics, and subcontractors to meet program milestones.",
+						"Act as primary client liaison; chair progress meetings and manage scope, cost, and timeline expectations.",
+						"Review technical deliverables — survey reports, plans, models, and GIS outputs — for accuracy and compliance before client submission.",
+						"Monitor project financials including invoicing, variations, and cost control; flag commercial risks early.",
+						"Enforce HSE standards and company QA/QC procedures across all active sites.",
+						"Prepare weekly and monthly progress reports, risk registers, and project closeout documentation.",
+						"Support business development through proposals, expressions of interest, and framework agreement responses."
+					],
+					"qualifications": [
+						"Bachelor's degree in Geospatial/Land Surveying Engineering, Civil Engineering, or a related discipline; a relevant Master's degree is an added advantage.",
+						"Minimum of five (5) years' progressive experience managing surveying, mapping, or infrastructure projects, preferably including donor-funded assignments (World Bank, UN, or development partners).",
+						"Working knowledge of FIDIC-type contracts, procurement processes, and donor reporting requirements.",
+						"Proficiency in project management tools (MS Project or Primavera) and standard office software.",
+						"Professional registration or membership (ISK, EBK, or PMI) is desirable.",
+						"Strong leadership, communication, and negotiation skills; fluency in English.",
+						"Willingness to travel regularly to project sites countrywide and across the region."
+					],
+					"engagement": "Full-time appointment based at head office with regular site travel. Reports directly to the Managing Director and supervises team leads across surveying, UAV, GIS, and civil works units."
+				}
 			}
 		],
 		"items": [
@@ -40,7 +66,7 @@
 				"icon": "account-tie",
 				"title": "Project Manager",
 				"applicationDeadline": {
-					"label": "Application Application Deadline",
+					"label": "Application Deadline",
 					"value": "8 March 2027"
 				},
 				"description": "Lead project planning, resource coordination, reporting, and delivery of multidisciplinary surveying and civil works assignments.",
@@ -49,13 +75,31 @@
 						"icon": "email",
 						"label": "Apply Via Mail",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Project%20Manager"
-					},
-					{
-						"icon": "download",
-						"label": "Download TOR (PDF)",
-						"href": "#"
 					}
-				]
+				],
+				"tor": {
+					"positionSummary": "The Project Manager provides end-to-end planning, coordination, and delivery leadership for multidisciplinary land surveying, UAV mapping, GIS, and civil works assignments, ensuring projects are delivered safely, on schedule, within budget, and to contractual quality standards.",
+					"duties": [
+						"Lead end-to-end project planning, scheduling, budgeting, and resource allocation across concurrent surveying and civil works assignments.",
+						"Mobilize and coordinate field teams, equipment logistics, and subcontractors to meet program milestones.",
+						"Act as primary client liaison; chair progress meetings and manage scope, cost, and timeline expectations.",
+						"Review technical deliverables — survey reports, plans, models, and GIS outputs — for accuracy and compliance before client submission.",
+						"Monitor project financials including invoicing, variations, and cost control; flag commercial risks early.",
+						"Enforce HSE standards and company QA/QC procedures across all active sites.",
+						"Prepare weekly and monthly progress reports, risk registers, and project closeout documentation.",
+						"Support business development through proposals, expressions of interest, and framework agreement responses."
+					],
+					"qualifications": [
+						"Bachelor's degree in Geospatial/Land Surveying Engineering, Civil Engineering, or a related discipline; a relevant Master's degree is an added advantage.",
+						"Minimum of five (5) years' progressive experience managing surveying, mapping, or infrastructure projects, preferably including donor-funded assignments (World Bank, UN, or development partners).",
+						"Working knowledge of FIDIC-type contracts, procurement processes, and donor reporting requirements.",
+						"Proficiency in project management tools (MS Project or Primavera) and standard office software.",
+						"Professional registration or membership (ISK, EBK, or PMI) is desirable.",
+						"Strong leadership, communication, and negotiation skills; fluency in English.",
+						"Willingness to travel regularly to project sites countrywide and across the region."
+					],
+					"engagement": "Full-time appointment based at head office with regular site travel. Reports directly to the Managing Director and supervises team leads across surveying, UAV, GIS, and civil works units."
+				}
 			},
 			{
 				"icon": "hard-hat",
@@ -70,13 +114,31 @@
 						"icon": "email",
 						"label": "Apply Via Mail",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Civil%20Engineer"
-					},
-					{
-						"icon": "download",
-						"label": "Download TOR (PDF)",
-						"href": "#"
 					}
-				]
+				],
+				"tor": {
+					"positionSummary": "The Civil Engineer supervises and coordinates the execution of civil works on assigned projects, ensuring construction conforms to approved designs, specifications, quality standards, statutory requirements, and safety protocols.",
+					"duties": [
+						"Supervise day-to-day civil works execution and coordinate subcontractors and site teams.",
+						"Interpret drawings and specifications; resolve technical queries with designers and consultants.",
+						"Establish and verify setting-out controls jointly with the survey team before works commence.",
+						"Conduct quality inspections, materials testing coordination, and enforce approved method statements.",
+						"Track physical progress against the works programme and prepare progress reports.",
+						"Manage site records including site instructions, dayworks sheets, and materials approvals.",
+						"Enforce occupational health, safety, and environmental requirements on site.",
+						"Support measurement of works and preparation of interim payment documentation."
+					],
+					"qualifications": [
+						"Bachelor's degree in Civil Engineering from a recognized institution.",
+						"Registered Graduate Engineer with EBK, working towards professional registration (PE).",
+						"Minimum of four (4) years' site supervision experience in roads, buildings, or infrastructure works.",
+						"Familiarity with Kenyan standard specifications (KeNHA, KURA, KeRRA) and contract administration.",
+						"Working knowledge of AutoCAD/Civil 3D and MS Office.",
+						"Sound understanding of OSHA 2007 requirements and site safety management.",
+						"Excellent communication, reporting, and team coordination skills."
+					],
+					"engagement": "Full-time, site-based assignment with reporting lines to the Project Manager and technical oversight from the Director of Civil Works."
+				}
 			},
 			{
 				"icon": "land-fields",
@@ -90,14 +152,32 @@
 					{
 						"icon": "email",
 						"label": "Apply Via Mail",
-						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Civil%20Engineer"
-					},
-					{
-						"icon": "download",
-						"label": "Download TOR (PDF)",
-						"href": "#"
+						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Land%20Surveyor"
 					}
-				]
+				],
+				"tor": {
+					"positionSummary": "The Land Surveyor plans and executes topographical, boundary, cadastral, engineering, and hydrographic surveys to statutory and client accuracy standards, producing submission-ready deliverables for title processing, design, and construction.",
+					"duties": [
+						"Plan, lead, and execute topographical, boundary, cadastral, and engineering surveys using GNSS RTK, total stations, and leveling equipment.",
+						"Perform cadastral surveys, beacon placements, and refixations in accordance with the Survey Act and Land Registration procedures.",
+						"Reduce, adjust, and analyze field observations; compute areas, traverses, and level networks.",
+						"Produce survey plans, beacons reports, registry index maps overlays, and CAD drawings.",
+						"Liaise with government survey offices, land registries, and clients on survey approvals and mutations.",
+						"Calibrate, maintain, and manage field instruments and accessories.",
+						"Mentor survey technicians and enforce field QA/QC and observation best practices.",
+						"Prepare comprehensive survey reports and as-built certifications."
+					],
+					"qualifications": [
+						"Bachelor's degree in Geospatial Engineering or Land Surveying from a recognized university.",
+						"Registered with ISK and licensed by EBK as a Professional/Graduate Surveyor.",
+						"Minimum of four (4) years' practical experience in cadastral and engineering surveys.",
+						"Advanced proficiency in AutoCAD, Civil 3D, Surfer, or equivalent processing software.",
+						"Hands-on expertise with GNSS receivers, robotic total stations, and digital levels.",
+						"Valid driving license and willingness to undertake extensive field travel.",
+						"High attention to detail with strong computational and report-writing ability."
+					],
+					"engagement": "Full-time position combining field and office duties. Reports to the Lead Surveyor / Project Manager within the survey operations unit."
+				}
 			},
 			{
 				"icon": "account-hard-hat",
@@ -112,13 +192,30 @@
 						"icon": "email",
 						"label": "Apply Via Mail",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Engineering%20Survey%20Technician"
-					},
-					{
-						"icon": "download",
-						"label": "Download TOR (PDF)",
-						"href": "#"
 					}
-				]
+				],
+				"tor": {
+					"positionSummary": "The Engineering Survey Technician supports engineering survey operations on construction sites, including setting-out, ground control establishment, as-built pickups, and alignment and deformation monitoring under the guidance of professional surveyors and engineers.",
+					"duties": [
+						"Assist in setting out structures, roads, pipelines, and services from approved design drawings.",
+						"Establish, observe, and maintain horizontal and vertical control networks on site.",
+						"Operate total stations, GNSS rovers, and automatic/digital levels for daily observations.",
+						"Record legible field bookings and transfer/reduce observations accurately.",
+						"Undertake as-built pickups, alignment checks, and settlement/deformation monitoring visits.",
+						"Maintain prisms, tripods, targets, and instrument calibration schedules.",
+						"Prepare simple sketches, stakeout sheets, and daily field summaries.",
+						"Comply with site safety requirements at all times."
+					],
+					"qualifications": [
+						"Diploma in Geospatial Engineering, Survey Technology, or equivalent qualification.",
+						"Minimum of two (2) years' site-based engineering survey experience.",
+						"Practical competence with total stations, GNSS RTK, and digital levels.",
+						"Basic AutoCAD literacy and accurate booking/reduction habits.",
+						"Physically fit for demanding fieldwork and comfortable working on active construction sites.",
+						"Strong safety awareness and teamwork orientation."
+					],
+					"engagement": "Full-time, site-based role. Works under the direct supervision of the Resident Engineer and Land Surveyor."
+				}
 			},
 			{
 				"icon": "quadcopter",
@@ -132,14 +229,32 @@
 					{
 						"icon": "email",
 						"label": "Apply Via Mail",
-						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Engineering%20Survey%20Technician"
-					},
-					{
-						"icon": "download",
-						"label": "Download TOR (PDF)",
-						"href": "#"
+						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20UAV%20Drone%20Survey%20Specialist"
 					}
-				]
+				],
+				"tor": {
+					"positionSummary": "The UAV / Drone Survey Specialist plans and executes drone flight operations and photogrammetric/LiDAR data acquisition, transforming aerial imagery into survey-grade mapping products for engineering, mining, agricultural, and environmental applications.",
+					"duties": [
+						"Plan UAV missions including airspace assessment, KCAA approvals, weather windows, and flight-line design.",
+						"Pilot RTK/PPK drones to capture high-overlap imagery and LiDAR point clouds per project specs.",
+						"Place and observe ground control points (GCPs) and checkpoints to required accuracies.",
+						"Process datasets in Agisoft Metashape, Pix4D, or similar to produce orthomosaics, DSM/DTM, contours, and dense point clouds.",
+						"Classify LiDAR returns and generate bare-earth models where required.",
+						"Compute stockpile and cut/fill volumes with QA against surveyed control.",
+						"Maintain airframes, sensors, batteries, and firmware; maintain flight logs and maintenance registers.",
+						"Advise on UAV regulations compliance and support tender-level technical proposals."
+					],
+					"qualifications": [
+						"Diploma/Bachelor's degree in Geospatial Engineering, Aviation Operations, or related field.",
+						"Valid KCAA Remote Pilot License (RPL) with current ratings.",
+						"Minimum of three (3) years' commercial UAV mapping experience.",
+						"Advanced proficiency in Pix4D, Agisoft Metashape, Global Mapper, or equivalent.",
+						"LiDAR data acquisition and classification experience is strongly preferred.",
+						"Working knowledge of QGIS/ArcGIS for QA and product delivery.",
+						"Strong troubleshooting ability for UAV hardware, payloads, and mission planning software."
+					],
+					"engagement": "Full-time role split between field deployment and office processing. Reports to the UAV Operations Lead / Project Manager."
+				}
 			},
 			{
 				"icon": "database-marker",
@@ -154,13 +269,30 @@
 						"icon": "email",
 						"label": "Apply Via Mail",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20GIS%20Spatial%20Data%20Analyst"
-					},
-					{
-						"icon": "download",
-						"label": "Download TOR (PDF)",
-						"href": "#"
 					}
-				]
+				],
+				"tor": {
+					"positionSummary": "The GIS & Spatial Data Analyst designs and maintains spatial databases, performs advanced geospatial analysis, and produces cartographic and reporting outputs that meet client and donor standards for infrastructure, environmental, and development projects.",
+					"duties": [
+						"Design, build, and administer geodatabases (PostGIS/File Geodatabase) for project spatial data.",
+						"Digitize, clean, attribute, and topologically validate spatial datasets from multiple sources.",
+						"Perform spatial analyses including suitability, proximity, density, terrain, and change detection.",
+						"Produce high-quality maps, map books, atlases, and dashboards for technical and executive audiences.",
+						"Publish and maintain web maps and feature services where required.",
+						"Ensure metadata completeness and compliance with donor data standards.",
+						"Automate repetitive workflows using ModelBuilder, Python (arcpy/GeoPandas), or SQL.",
+						"Train and support junior staff in GIS best practices."
+					],
+					"qualifications": [
+						"Bachelor's degree in Geomatics, GIS, Environmental Science, or related field.",
+						"Minimum of three (3) years' professional GIS experience, ideally on donor-funded projects.",
+						"Expert proficiency in ArcGIS Pro and/or QGIS.",
+						"Competence in SQL and PostGIS; Python scripting for geoprocessing is an advantage.",
+						"Excellent cartographic design and data visualization skills.",
+						"Familiarity with World Bank/UN spatial data and reporting standards is an asset."
+					],
+					"engagement": "Full-time office-based position with occasional field support. Reports to the GIS Lead / Project Manager."
+				}
 			},
 			{
 				"icon": "account-tie",
@@ -175,13 +307,30 @@
 						"icon": "email",
 						"label": "Apply Via Mail",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Construction%20Site%20Supervisor"
-					},
-					{
-						"icon": "download",
-						"label": "Download TOR (PDF)",
-						"href": "#"
 					}
-				]
+				],
+				"tor": {
+					"positionSummary": "The Construction Site Supervisor oversees daily construction activities on assigned sites, coordinating labor, plant, and materials to deliver works safely, on programme, and to specification.",
+					"duties": [
+						"Organize and supervise daily site activities, labor gangs, and plant allocation.",
+						"Interpret drawings and communicate work instructions clearly to crews.",
+						"Enforce approved method statements, ITPs, and HSE requirements including toolbox talks.",
+						"Track daily progress against the works programme and report variances promptly.",
+						"Control site materials, stores, and plant utilization to minimize waste.",
+						"Maintain site diaries, dayworks records, and photographic progress evidence.",
+						"Liaise with consultants' representatives on inspections and hold points.",
+						"Support survey teams during setting-out and as-built verification."
+					],
+					"qualifications": [
+						"Diploma or Bachelor's degree in Civil/Building Engineering or Construction Management.",
+						"Minimum of five (5) years' hands-on construction supervision experience.",
+						"Able to read structural, architectural, and services drawings.",
+						"Proven labor and subcontractor management capability.",
+						"HSE training/certification (OSHA/NITA) is preferred.",
+						"Firm, fair leadership style with strong problem-solving skills."
+					],
+					"engagement": "Full-time, site-based role. Reports to the Civil Engineer / Project Manager."
+				}
 			},
 			{
 				"icon": "cube-scan",
@@ -195,14 +344,30 @@
 					{
 						"icon": "email",
 						"label": "Apply Via Mail",
-						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Construction%20Site%20Supervisor"
-					},
-					{
-						"icon": "download",
-						"label": "Download TOR (PDF)",
-						"href": "#"
+						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Quantity%20Surveyor"
 					}
-				]
+				],
+				"tor": {
+					"positionSummary": "The Quantity Surveyor manages the commercial function of civil and infrastructure projects, preparing bills of quantities, cost estimates, valuations, and financial reports that protect project profitability and contractual compliance.",
+					"duties": [
+						"Take off quantities and prepare BOQs and cost estimates from drawings and specifications.",
+						"Prepare interim valuations, payment certificates, and final accounts.",
+						"Assess variations, claims, and subcontractor accounts.",
+						"Produce monthly cost reports, cash-flow forecasts, and profitability analyses.",
+						"Analyze material and labor rates; maintain unit-rate databases.",
+						"Evaluate tenders and support procurement negotiations.",
+						"Administer contractual correspondence relating to commercial matters."
+					],
+					"qualifications": [
+						"Bachelor's degree in Quantity Surveying or Construction Economics.",
+						"Member of IQSK; Registered Quantity Surveyor (or graduate member progressing to registration).",
+						"Minimum of four (4) years' QS experience in civil/infrastructure works.",
+						"Advanced Excel plus familiarity with CostX, Cubit, or comparable takeoff software.",
+						"Working knowledge of FIDIC/JBCC-type contract conditions.",
+						"Meticulous, analytical, and commercially astute."
+					],
+					"engagement": "Full-time position based at head office with periodic site measurement visits. Reports to the Project Manager / Commercial Director."
+				}
 			},
 			{
 				"icon": "tunnel",
@@ -217,13 +382,30 @@
 						"icon": "email",
 						"label": "Apply Via Mail",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Underground%20Utilities%20GPR%20Technician"
-					},
-					{
-						"icon": "download",
-						"label": "Download TOR (PDF)",
-						"href": "#"
 					}
-				]
+				],
+				"tor": {
+					"positionSummary": "The Underground Utilities & GPR Technician detects, locates, and documents subsurface utilities using ground penetrating radar and electromagnetic locating equipment, delivering utility mapping that safeguards excavation works and informs design.",
+					"duties": [
+						"Operate GPR systems (e.g., LMX200) and electromagnetic locators (e.g., RD8100) for utility detection.",
+						"Perform passive and active sweeps; apply appropriate frequencies and survey grids.",
+						"Mark detected utilities on-site and log positions with GPS/survey methods.",
+						"Compile utility location data into CAD/GIS layers with depth estimates and confidence codes.",
+						"QC scan results against records, manhole openings, and site verification.",
+						"Transport, configure, and maintain detection equipment.",
+						"Apply permit-to-dig and safe digging practices near live services.",
+						"Brief clients on findings, limitations, and risk areas."
+					],
+					"qualifications": [
+						"Diploma in Electrical/Civil Engineering, Geospatial Technology, or equivalent.",
+						"Minimum of two (2) years' utility surveying/SUE experience.",
+						"Certified or demonstrably competent in radiodetection and GPR operation (LMX series preferred).",
+						"Basic AutoCAD/GIS skills for compiling utility base maps.",
+						"Willing to work night shifts and confined/traffic-managed environments.",
+						"High safety consciousness around live electrical and pressurized services."
+					],
+					"engagement": "Full-time role predominantly field-based. Reports to the Utility Mapping Lead / Project Manager."
+				}
 			},
 			{
 				"icon": "clipboard-edit-outline",
@@ -238,13 +420,30 @@
 						"icon": "email",
 						"label": "Apply Via Mail",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20HSE%20Officer"
-					},
-					{
-						"icon": "download",
-						"label": "Download TOR (PDF)",
-						"href": "#"
 					}
-				]
+				],
+				"tor": {
+					"positionSummary": "The HSE Officer develops, implements, and monitors health, safety, and environmental systems across company sites, ensuring full statutory compliance and a proactive safety culture aligned with donor safeguarding requirements.",
+					"duties": [
+						"Implement and maintain project HSE plans aligned to OSHA 2007, WIBA, and client requirements.",
+						"Carry out risk assessments, develop method statements, and approve permits to work.",
+						"Conduct routine inspections, audits, and behavioral safety observations.",
+						"Deliver inductions, toolbox talks, and periodic HSE training.",
+						"Investigate incidents/near-misses and drive corrective actions to closure.",
+						"Monitor environmental safeguards including waste, effluent, and dust control.",
+						"Maintain HSE statistics, registers, and statutory returns.",
+						"Coordinate emergency preparedness drills and first aid readiness."
+					],
+					"qualifications": [
+						"Diploma/Bachelor's degree in Occupational Health & Safety or related field.",
+						"NIOSH certification; first aid and fire safety qualifications are required.",
+						"Minimum of three (3) years' HSE experience in construction/survey environments.",
+						"In-depth knowledge of OSHA 2007, WIBA 2007, and environmental regulations (NEMA).",
+						"Incident investigation training (e.g., ICAM/TapRooT) is an advantage.",
+						"Assertive yet approachable with excellent report-writing skills."
+					],
+					"engagement": "Full-time position rotating across active sites. Functionally reports to the Managing Director with dotted-line accountability to clients' HSE representatives."
+				}
 			},
 			{
 				"icon": "account-school",
@@ -259,13 +458,29 @@
 						"icon": "email",
 						"label": "Apply Via Mail",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Internship%20or%20Industrial%20Attachment"
-					},
-					{
-						"icon": "download",
-						"label": "Download TOR (PDF)",
-						"href": "#"
 					}
-				]
+				],
+				"tor": {
+					"positionSummary": "The Graduate Internship and Industrial Attachment program offers students and recent graduates structured, mentored exposure to live surveying, GIS, and civil works projects, building practical competence ahead of professional registration or employment.",
+					"duties": [
+						"Rotate through field survey, UAV, GIS, and civil works units on a planned schedule.",
+						"Assist professional staff with data capture, processing, and deliverable preparation.",
+						"Participate in setting-out, control observation, and QA/QC activities under supervision.",
+						"Complete and maintain prescribed learning logbooks and competency checklists.",
+						"Draft sections of technical reports, maps, and presentation materials.",
+						"Adhere to all HSE, ethics, and confidentiality requirements.",
+						"Present a capstone summary of learning at the end of the attachment period."
+					],
+					"qualifications": [
+						"Final-year student or graduate (within two years) in Geospatial Engineering, GIS, Civil Engineering, Construction Management, or related discipline.",
+						"Letter of introduction from the academic institution (for attachments).",
+						"Basic exposure to survey instruments, GIS software, or site works through coursework.",
+						"Eagerness to learn, take direction, and work in diverse field conditions.",
+						"Availability on a full-time basis for the duration of the program.",
+						"Integrity, punctuality, and a strong professional attitude."
+					],
+					"engagement": "Three-to-six month structured placement with mentorship from registered professionals. Performance may translate into future employment opportunities."
+				}
 			}
 		]
 	},

@@ -1,271 +1,486 @@
 {
 	"hero": {
-		"headline": "Wacha Tufanye Kazi Pamoja Kenya na Kwingineko.",
+		"headline": "Tufanye Kazi Pamoja Kenya na Nje.",
 		"title": "Ajira.",
-		"description": "SmartGrid Surveying ni kampuni ya kitaalamu ya jiospatiali na uhandisi inayotoa upimaji wa ardhi wa usahihi wa juu, ramani za UAV, GIS, ugunduzi wa huduma za chini ya ardhi, na suluhisho za miundombinu ya kiraia. Tunatafuta wataalamu wenye nidhamu na ujuzi wa kiufundi waliojitolea kwa usahihi, usalama, na ubora katika utoaji wa miradi.",
+		"description": "SmartGrid Surveying ni kampuni ya kitaalamu ya kijiografia na uhandisi inayotoa huduma za upimaji ardhi wa usahihi, ramani za UAV, GIS, utambuzi wa huduma za chini ya ardhi, na suluhisho za miundombinu ya civil. Tunatafuta wataalamu wenye nidhamu na uwezo wa kiufundi waliojitolea kwa usahihi, usalama, na ubora wa utekelezaji wa miradi.",
 		"ctaPrimary": {
-			"label": "Omba Sasa",
+			"label": "Apply Sasa",
 			"href": "mailto:smartgridsurveying@gmail.com?subject=Careers Inquiry&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to inquire about career opportunities at SmartGrid Surveying.%0D%0A%0D%0ARole of interest:%0D%0AYour name:%0D%0A%0D%0AThank you."
 		}
 	},
 	"currentOpenings": {
 		"tag": "Jiunge na Timu Yetu",
-		"headline": "Nafasi za Sasa",
-		"description": "Chunguza nafasi zilizo wazi hapa chini na uombe uwe sehemu ya timu yetu inayokua.",
+		"headline": "Fursa za Sasa",
+		"description": "Chungua nafasi zilizopo hapa chini na apply ili kuwa sehemu ya timu yetu inayokua.",
+		"torLabels": {
+			"button": "Ona TOR Kamili",
+			"modalTitle": "Vigezo vya Kazi (TOR)",
+			"summaryTitle": "Muhtasari wa Nafasi",
+			"dutiesTitle": "Majukumu Makuu na Wajibu",
+			"qualificationsTitle": "Sifa na Uzoefu",
+			"engagementTitle": "Uwajibikaji na Uhusiano"
+		},
 		"featuredOpenings": [
 			{
 				"icon": "account-tie",
-				"title": "Meneja wa Mradi",
+				"title": "Project Manager",
 				"applicationDeadline": {
 					"label": "Tarehe ya Maombi",
 					"value": "20 April 2027"
 				},
-				"description": "Ongoa upangaji wa mradi, uratibu wa rasilimali, kuripoti, na utoaji wa kazi za upimaji wa taaluma nyingi na uhandisi wa kiraia.",
+				"description": "Kiongozi wa kupanga miradi, kuratibu rasilimali, kutayarisha taarifa, na kupeleka kazi za upimaji na ujenzi wa aina mbalimbali.",
 				"actions": [
 					{
 						"icon": "email",
-						"label": "Omba Kupitia Barua Pepe",
+						"label": "Apply kwa Barua Pepe",
 						"href": "mailto:smartgridsurveying@gmail.com?subject=Application: Project Manager&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to apply for the Project Manager position. Please find my CV and application attached.%0D%0A%0D%0AThank you."
-					},
-					{
-						"icon": "download",
-						"label": "Pakua Maelezo ya Kazi",
-						"href": "/"
 					}
-				]
+				],
+				"tor": {
+					"positionSummary": "Project Manager hutoa uongozi kamili wa kupanga, kuratibu, na kupeleka miradi ya upimaji ardhi, ramani za UAV, GIS, na kazi za civil, kuhakikisha miradi inatekelezwa kwa usalama, kwa wakati, ndani ya bajeti, na kwa ubora wa makubaliano.",
+					"duties": [
+						"Kuongoza kupanga miradi, ratiba, bajeti, na ugawaji wa rasilimali kwenye kazi nyingi za upimaji na civil kwa wakati mmoja.",
+						"Kuweka timu shambani, vifaa, na wanakandarasi pamoja ili kutimiza hatua za mradi.",
+						"Kuwa kiungo kikuu cha mteja; kusimamia mikutano ya maendeleo na kusimamia matarajio ya wigo, gharama, na muda.",
+						"Kupitia matokeo ya kiufundi — ripoti za upimaji, ramani, modeli, na pato la GIS — kwa usahihi na ufuasi kabla ya kuwasilisha.",
+						"Kufuatilia fedha za mradi ikiwemo ankara, mabadiliko (variations), na udhibiti wa gharama; kutangaza hatari mapema.",
+						"Kutekeleza viwango vya HSE na taratibu za QA/QC za kampuni katika tovuti zote zinazohusika.",
+						"Kutayarisha taarifa za wiki na mwezi, rejista za hatari, na nyaraka za kufunga mradi.",
+						"Kuunga mkono maendeleo ya biashara kwa mapendekezo, expressions of interest, na majibu ya framework agreements."
+					],
+					"qualifications": [
+						"Shahada ya uzamili katika Uhandisi wa Jiografia/Upimaji, Uhandisi wa Civil, au fanya inayohusiana; shahada ya uzamili ni nyongeza.",
+						"Angalau miaka mitano (5) ya uzoefu unaoongezeka katika kusimamia miradi ya upimaji, ramani, au miundombinu, hasa miradi ya wafadhili (World Bank, UN, wenzake).",
+						"Ufahamu wa kutosha wa mikataba ya aina ya FIDIC, taratibu za ununuzi, na mahitaji ya taarifa kwa wafadhili.",
+						"Umahiri katika zana za usimamizi wa miradi (MS Project au Primavera) na programu za ofisi.",
+						"Usajili au uanachama wa kitaalamu (ISK, EBK, au PMI) ni nyongeza.",
+						"Uwezo mkubwa wa uongozi, mawasiliano, na majadiliano; ufasaha wa Kiingereza.",
+						"Utayari wa kusafiri mara kwa mara kwenda tovuti za miradi nchini na kanda."
+					],
+					"engagement": "Ajira ya muda wote ikimakini ofisi kuu na usafiri wa mara kwa mara wa tovuti. Anajibu moja kwa moja kwa Mkurugenzi Mtendaji na kusimamia viongozi wa timu katika vitengo vya upimaji, UAV, GIS, na kazi za civil."
+				}
 			}
 		],
 		"items": [
 			{
 				"icon": "account-tie",
-				"title": "Meneja wa Mradi",
+				"title": "Project Manager",
 				"applicationDeadline": {
-					"label": "Tarehe ya Mwisho ya Maombi ya Maombi",
+					"label": "Mwisho wa Maombi",
 					"value": "8 March 2027"
 				},
-				"description": "Ongoa upangaji wa mradi, uratibu wa rasilimali, kuripoti, na utoaji wa kazi za upimaji wa taaluma nyingi na uhandisi wa kiraia.",
+				"description": "Kiongozi wa kupanga miradi, kuratibu rasilimali, kutayarisha taarifa, na kupeleka kazi za upimaji na ujenzi wa aina mbalimbali.",
 				"actions": [
 					{
 						"icon": "email",
-						"label": "Omba Kupitia Barua Pepe",
+						"label": "Apply kwa Barua Pepe",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Project%20Manager"
-					},
-					{
-						"icon": "download",
-						"label": "Pakua TOR (PDF)",
-						"href": "#"
 					}
-				]
+				],
+				"tor": {
+					"positionSummary": "Project Manager hutoa uongozi kamili wa kupanga, kuratibu, na kupeleka miradi ya upimaji ardhi, ramani za UAV, GIS, na kazi za civil, kuhakikisha miradi inatekelezwa kwa usalama, kwa wakati, ndani ya bajeti, na kwa ubora wa makubaliano.",
+					"duties": [
+						"Kuongoza kupanga miradi, ratiba, bajeti, na ugawaji wa rasilimali kwenye kazi nyingi za upimaji na civil kwa wakati mmoja.",
+						"Kuweka timu shambani, vifaa, na wanakandarasi pamoja ili kutimiza hatua za mradi.",
+						"Kuwa kiungo kikuu cha mteja; kusimamia mikutano ya maendeleo na kusimamia matarajio ya wigo, gharama, na muda.",
+						"Kupitia matokeo ya kiufundi — ripoti za upimaji, ramani, modeli, na pato la GIS — kwa usahihi na ufuasi kabla ya kuwasilisha.",
+						"Kufuatilia fedha za mradi ikiwemo ankara, mabadiliko (variations), na udhibiti wa gharama; kutangaza hatari mapema.",
+						"Kutekeleza viwango vya HSE na taratibu za QA/QC za kampuni katika tovuti zote zinazohusika.",
+						"Kutayarisha taarifa za wiki na mwezi, rejista za hatari, na nyaraka za kufunga mradi.",
+						"Kuunga mkono maendeleo ya biashara kwa mapendekezo, expressions of interest, na majibu ya framework agreements."
+					],
+					"qualifications": [
+						"Shahada ya uzamili katika Uhandisi wa Jiografia/Upimaji, Uhandisi wa Civil, au fanya inayohusiana; shahada ya uzamili ni nyongeza.",
+						"Angalau miaka mitano (5) ya uzoefu unaoongezeka katika kusimamia miradi ya upimaji, ramani, au miundombinu, hasa miradi ya wafadhili (World Bank, UN, wenzake).",
+						"Ufahamu wa kutosha wa mikataba ya aina ya FIDIC, taratibu za ununuzi, na mahitaji ya taarifa kwa wafadhili.",
+						"Umahiri katika zana za usimamizi wa miradi (MS Project au Primavera) na programu za ofisi.",
+						"Usajili au uanachama wa kitaalamu (ISK, EBK, au PMI) ni nyongeza.",
+						"Uwezo mkubwa wa uongozi, mawasiliano, na majadiliano; ufasaha wa Kiingereza.",
+						"Utayari wa kusafiri mara kwa mara kwenda tovuti za miradi nchini na kanda."
+					],
+					"engagement": "Ajira ya muda wote ikimakini ofisi kuu na usafiri wa mara kwa mara wa tovuti. Anajibu moja kwa moja kwa Mkurugenzi Mtendaji na kusimamia viongozi wa timu katika vitengo vya upimaji, UAV, GIS, na kazi za civil."
+				}
 			},
 			{
 				"icon": "hard-hat",
-				"title": "Mhandisi wa Kiraia",
+				"title": "Mhandisi wa Civil",
 				"applicationDeadline": {
-					"label": "Tarehe ya Mwisho ya Maombi",
+					"label": "Mwisho wa Maombi",
 					"value": "10 March 2027"
 				},
-				"description": "Simamia na uratibu utekelezaji wa kazi za uhandisi wa kiraia, kuhakikisha kufuata vipimo vya muundo, viwango vya ubora, na itifaki za usalama.",
+				"description": "Kusimamia na kuratibu utekelezaji wa kazi za civil, kuhakikisha ufuaso wa michoro ya usanidi, viwango vya ubora, na taratibu za usalama.",
 				"actions": [
 					{
 						"icon": "email",
-						"label": "Omba Kupitia Barua Pepe",
+						"label": "Apply kwa Barua Pepe",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Civil%20Engineer"
-					},
-					{
-						"icon": "download",
-						"label": "Pakua TOR (PDF)",
-						"href": "#"
 					}
-				]
+				],
+				"tor": {
+					"positionSummary": "Mhandisi wa Civil husimamia na kuratibu utekelezaji wa kazi za civil kwenye miradi iliyopewa, kuhakikisha ujenzi unalingana na michoro iliyoidhinishwa, vipimo, viwango vya ubora, masharti ya kisheria, na taratibu za usalama.",
+					"duties": [
+						"Kusimamia utekelezaji wa kila siku wa kazi za civil na kuratibu wanakandarasi na timu za tovuti.",
+						"kutafsiri michoro na vipimo; kutatua maswali ya kiufundi na wabunifu na washauri.",
+						"Kuanzisha na kuthibitisha udhibiti wa setting-out pamoja na timu ya upimaji kabla ya kuanza kazi.",
+						"Kufanya ukaguzi wa ubora, uratibu wa vipimo vya nyenzo, na kutekeleza method statements zilizoidhinishwa.",
+						"Kufuatilia maendeleo ya kazi dhidi ya programu na kutayarisha taarifa za maendeleo.",
+						"Kusimamia kumbukumbu za tovuti ikiwemo site instructions, dayworks sheets, na idhini za nyenzo.",
+						"Kutekeleza mahitaji ya afya na usalama kazini na mazingira tovutini.",
+						"Kuunga mkono kupima kazi na kutayarisha nyaraka za malipo ya kati."
+					],
+					"qualifications": [
+						"Shahada ya uzamili katika Uhandisi wa Civil kutoka taasisi inayotambulika.",
+						"Mhandisi Aliyesajiliwa wa EBK (Graduate Engineer), akiendelea kwa usajili wa kitaalamu (PE).",
+						"Angalau miaka minne (4) ya uzoefu wa usimamizi wa kazi za barabara, majengo, au miundombinu.",
+						"Ufafanuzi wa vipimo vya Kenya (KeNHA, KURA, KeRRA) na utawala wa mikataba.",
+						"Ufahamu wa AutoCAD/Civil 3D na MS Office.",
+						"Ufahamu wa OSHA 2007 na usimamizi wa usalama tovutini.",
+						"Uwezo mzuri wa mawasiliano, taarifa, na uratibu wa timu."
+					],
+					"engagement": "Ajira ya muda wote, inayomakini tovutini. Anajibu Project Manager na upendo wa kiufundi kutoka kwa Mkurugenzi wa Kazi za Civil."
+				}
 			},
 			{
 				"icon": "land-fields",
-				"title": "Mpima Ardhi",
+				"title": "Mtaalamu wa Upimaji Ardhi",
 				"applicationDeadline": {
-					"label": "Tarehe ya Mwisho ya Maombi",
+					"label": "Mwisho wa Maombi",
 					"value": "15 March 2027"
 				},
-				"description": "Ongoa upimaji wa topografia, mipaka, cadastral, na uhandisi unaosaidia miradi ya miundombinu na ujenzi kwa viwango vya usahihi wa hali ya juu.",
+				"description": "Kuongoza uchunguzi wa topografia, mipaka, cadastral, na uhandisi unaounga mkono miradi ya miundombinu na ujenzi kwa viwango vya usahihi wa juu.",
 				"actions": [
 					{
 						"icon": "email",
-						"label": "Omba Kupitia Barua Pepe",
-						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Civil%20Engineer"
-					},
-					{
-						"icon": "download",
-						"label": "Pakua TOR (PDF)",
-						"href": "#"
+						"label": "Apply kwa Barua Pepe",
+						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Land%20Surveyor"
 					}
-				]
+				],
+				"tor": {
+					"positionSummary": "Mtaalamu wa Upimaji Ardhi hupanga na kutekeleza uchunguzi wa topografia, mipaka, cadastral, uhandisi, na hydrographic kwa viwango vya usahihi vya kisheria na vya mteja, akitoa matokeo tayari kwa kuwasilishwa kwa hati, usanidi, na ujenzi.",
+					"duties": [
+						"Kupanga, kuongoza, na kutekeleza uchunguzi wa topografia, mipaka, cadastral, na uhandisi kwa kutumia GNSS RTK, total stations, na vifaa vya leveling.",
+						"Kufanya uchunguzi wa cadastral, uwekaji wa beacon, na refixations kulingana na Survey Act na taratibu za Land Registration.",
+						"Kupunguza, kurekebisha, na kuchambua uchunguzi shambani; kukokotoa maeneo, traverses, na mitandao ya levels.",
+						"Kutengeneza ramani za upimaji, ripoti za beacon, overlays za registry index maps, na michoro ya CAD.",
+						"Kushirikiana na ofisi za serikali za upimaji, land registries, na wateja kuhusu idhini na mutations.",
+						"Kurekebisha, kutunza, na kusimamia vifaa shambani na viongezi vyake.",
+						"Kutoa mafunzo kwa wataalamu wasaidizi na kutekeleza QA/QC shambani.",
+						"Kutayarisha ripoti kamili za upimaji na uthibitisho wa as-built."
+					],
+					"qualifications": [
+						"Shahada ya uzamili katika Uhandisi wa Jiografia au Upimaji Ardhi kutoka chuo kinachotambulika.",
+						"Mwanachama wa ISK na aliyesajiliwa na EBK kama Mtaalamu/Graduate Surveyor.",
+						"Angalau miaka minne (4) ya uzoefu halisi katika uchunguzi wa cadastral na uhandisi.",
+						"Umahiri wa juu katika AutoCAD, Civil 3D, Surfer, au programu sawa za uchakataji.",
+						"Uzoefu halisi wa GNSS receivers, robotic total stations, na digital levels.",
+						"Leseni halali ya udereva na utayari wa kusafiri sana shambani.",
+						"Uangalifu wa kina na uwezo mkubwa wa kokotoo na uandishi wa ripoti."
+					],
+					"engagement": "Nafasi ya muda wote inayochanganya kazi shambani na ofisini. Anajibu Lead Surveyor / Project Manager ndani ya kitengo cha upimaji."
+				}
 			},
 			{
 				"icon": "account-hard-hat",
-				"title": "Fundi wa Uchunguzi wa Uhandisi",
+				"title": "Msaidizi wa Upimaji wa Uhandisi",
 				"applicationDeadline": {
-					"label": "Tarehe ya Mwisho ya Maombi",
+					"label": "Mwisho wa Maombi",
 					"value": "18 March 2027"
 				},
-				"description": "Saidia uwekaji wa tovuti, uanzishaji wa udhibiti, upimaji wa kama-ilivyojengwa, na uthibitishaji wa upangaji kwa kutumia vifaa vya GNSS na total station.",
+				"description": "Kusaidia setting-out ya tovuti, uanzishaji wa udhibiti, uchunguzi wa as-built, na uthibitisho wa njia kwa kutumia GNSS na vifaa vya total station.",
 				"actions": [
 					{
 						"icon": "email",
-						"label": "Omba Kupitia Barua Pepe",
+						"label": "Apply kwa Barua Pepe",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Engineering%20Survey%20Technician"
-					},
-					{
-						"icon": "download",
-						"label": "Pakua TOR (PDF)",
-						"href": "#"
 					}
-				]
+				],
+				"tor": {
+					"positionSummary": "Msaidizi wa Upimaji wa Uhandisi huunga mkono operesheni za upimaji kwenye tovuti za ujenzi, ikiwemo setting-out, uanzishaji wa udhibiti wa ardhi, ukusanyaji wa as-built, na ufuatiliaji wa alignment na deformation chini ya uongozi wa wataalamu wa upimaji na wahandisi.",
+					"duties": [
+						"Kusaidia setting-out ya majengo, barabara, mabomba, na huduma kutoka michoro iliyoidhinishwa.",
+						"Kuanzisha, kupima, na kutunza mitandao ya udhibiti wa mlalo na wima kwenye tovuti.",
+						"Kuendesha total stations, GNSS rovers, na automatic/digital levels kwa uchunguzi wa kila siku.",
+						"Kuandika kumbukumbu safi shambani na kuhamisha/kupunguza uchunguzi kwa usahihi.",
+						"Kufanya ukusanyaji wa as-built, ukaguzi wa alignment, na ziara za ufuatiliaji wa settlement/deformation.",
+						"Kutunza prisms, tripods, targets, na ratiba za calibration za vifaa.",
+						"Kutayaricha michoro rahisi, stakeout sheets, na muhtasari wa kila siku.",
+						"Kufuata mahitaji ya usalama ya tovuti wakati wote."
+					],
+					"qualifications": [
+						"Diploma katika Uhandisi wa Jiografia, Teknolojia ya Upimaji, au sifa sawa.",
+						"Angalau miaka miwili (2) ya uzoefu wa upimaji wa uhandisi tovutini.",
+						"Ujuzi halisi wa total stations, GNSS RTK, na digital levels.",
+						"Ujuzi wa msingi wa AutoCAD na tabia sahihi za booking/reduction.",
+						"Muongoza kazi ngumu shambani na starehe kufanya kazi kwenye tovuti hai za ujenzi.",
+						"Uangalifu mkubwa wa usalama na uwezo wa kufanya kazi timu."
+					],
+					"engagement": "Wadhifa wa muda wote, tovutini. Hufanya kazi chini ya usimamizi wa moja kwa moja wa Resident Engineer na Mtaalamu wa Upimaji Ardhi."
+				}
 			},
 			{
 				"icon": "quadcopter",
-				"title": "Mtaalamu wa Uchunguzi wa UAV / Drone",
+				"title": "Mtaalamu wa Upimaji wa UAV / Droni",
 				"applicationDeadline": {
-					"label": "Tarehe ya Mwisho ya Maombi",
+					"label": "Mwisho wa Maombi",
 					"value": "18 March 2027"
 				},
-				"description": "Tekeleza upimaji wa angani, photogrammetry, na ukusanyaji wa data wa LiDAR kwa ramani za korido, vipimo vya kiasi, na ufuatiliaji wa miundombinu.",
+				"description": "Kutekeleza ramani za anga, photogrammetry, na ukusanyaji wa data ya LiDAR kwa ramani za njia, volumetrics, na ufuatiliaji wa miundombinu.",
 				"actions": [
 					{
 						"icon": "email",
-						"label": "Omba Kupitia Barua Pepe",
-						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Engineering%20Survey%20Technician"
-					},
-					{
-						"icon": "download",
-						"label": "Pakua TOR (PDF)",
-						"href": "#"
+						"label": "Apply kwa Barua Pepe",
+						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20UAV%20Drone%20Survey%20Specialist"
 					}
-				]
+				],
+				"tor": {
+					"positionSummary": "Mtaalamu wa Upimaji wa UAV/Droni hupanga na kutekeleza operesheni za uruka wa droni na ukusanyaji wa data ya photogrammetric/LiDAR, akitafsiri picha za anga kuwa bidhaa za ramani daraja la upimaji kwa matumizi ya uhandisi, migodi, kilimo, na mazingira.",
+					"duties": [
+						"Kupanga misheni ya UAV ikiwemo tathmini ya airspace, idhini za KCAA, dirisha la hali ya hewa, na usanidi wa flight-lines.",
+						"Kuruca droni za RTK/PPK kukamata picha zenye overlap kubwa na mawingu ya pointi ya LiDAR kwa mujibu wa vipimo.",
+						"Kuweka na kupima ground control points (GCPs) na checkpoints kwa usahihi unaohitajika.",
+						"Kuchakata dataset katika Agisoft Metashape, Pix4D, au zinazofanana kutengeneza orthomosaics, DSM/DTM, contours, na dense point clouds.",
+						"Kugawanya returns za LiDAR na kutengeneza bare-earth models pale inapohitajika.",
+						"Kukokotoa vina za makusanyo na cut/fill kwa QA dhidi ya udhibiti uliopimwa.",
+						"Kutunza airframes, sensa, betri, na firmware; kudumisha flight logs na rejista za matunzio.",
+						"Kushauri kuhusu ufuaso wa sheria za UAV na kuunga mkono mapendekezo ya kiufundi ya tenders."
+					],
+					"qualifications": [
+						"Diploma/Shahada katika Uhandisi wa Jiografia, Operesheni za Ndege, au fanya inayohusiana.",
+						"Leseni halali ya KCAA Remote Pilot License (RPL) yenye ratings zinazohitajika.",
+						"Angalau miaka mitatu (3) ya uzoefu wa biashara ya ramani za UAV.",
+						"Umahiri wa juu katika Pix4D, Agisoft Metashape, Global Mapper, au zinazofanana.",
+						"Uzoefu wa upataji na uainishaji wa data ya LiDAR unaopendekezwa sana.",
+						"Ufahamu wa QGIS/ArcGIS kwa QA na utoaji wa bidhaa.",
+						"Uwezo mkubwa wa kutatua matatizo ya vifaa vya UAV, payloads, na programu za mission planning."
+					],
+					"engagement": "Wadhifa wa muda wote unaochanganya kupelekwa shambani na uchakataji ofisini. Anajibu UAV Operations Lead / Project Manager."
+				}
 			},
 			{
 				"icon": "database-marker",
-				"title": "Mchambuzi wa GIS na Data za Anga",
+				"title": "Mchambuzi wa GIS na Data ya Anga",
 				"applicationDeadline": {
-					"label": "Tarehe ya Mwisho ya Maombi",
+					"label": "Mwisho wa Maombi",
 					"value": "20 March 2027"
 				},
-				"description": "Tengeneza hifadhidata za anga, fanya uchambuzi wa jiospatiali, na uzalishe matokeo ya kitaalamu ya ramani kwa miradi ya wafadhili na miundombinu.",
+				"description": "Kutengeneza database za anga, kufanya uchambuzi wa kijiografia, na kutoa matokeo bora ya ramani kwa miradi ya wafadhili na miundombinu.",
 				"actions": [
 					{
 						"icon": "email",
-						"label": "Omba Kupitia Barua Pepe",
+						"label": "Apply kwa Barua Pepe",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20GIS%20Spatial%20Data%20Analyst"
-					},
-					{
-						"icon": "download",
-						"label": "Pakua TOR (PDF)",
-						"href": "#"
 					}
-				]
+				],
+				"tor": {
+					"positionSummary": "Mchambuzi wa GIS na Data ya Anga hubuni na kutunza database za anga, hufanya uchambuzi wa juu wa kijiografia, na hutengeneza matokeo ya ramani na taarifa yanayotimiza viwango vya wateja na wafadhili kwa miradi ya miundombinu, mazingira, na maendeleo.",
+					"duties": [
+						"Kubuni, kujenga, na kusimamia geodatabases (PostGIS/File Geodatabase) kwa data ya anga ya mradi.",
+						"Kudigitiza, kusafisha, kuweka attributes, na kuhakiki topolojia ya datasets za anga kutoka vyanzo mbalimbali.",
+						"Kufanya uchambuzi wa anga ikiwemo suitability, proximity, density, terrain, na change detection.",
+						"Kutengeneza ramani bora, map books, atlases, na dashboards kwa hadhira ya kiufundi na ya uongozi.",
+						"Kuchapisha na kutunza web maps na feature services pale inapohitajika.",
+						"Kuhakikisha metadata kamili na ufuaso wa viwango vya data vya wafadhili.",
+						"Kuandaa automesheni ya kazi zinazorudiwa kwa ModelBuilder, Python (arcpy/GeoPandas), au SQL.",
+						"Kutoa mafunzo na kuunga mkono watumiaji wapya katika mazoea bora ya GIS."
+					],
+					"qualifications": [
+						"Shahada ya uzamili katika Geomatics, GIS, Sayansi ya Mazingira, au fanya inayohusiana.",
+						"Angalau miaka mitatu (3) ya uzoefu wa GIS, hasa kwenye miradi ya wafadhili.",
+						"Umahiri wa ArcGIS Pro na/au QGIS.",
+						"Ujuzi wa SQL na PostGIS; uandishi wa Python wa geoprocessing ni nyongeza.",
+						"Ubunifu bora wa ramani na uwezo wa kuonyesha data kwa uwazi.",
+						"Ufahamu wa viwango vya data na taarifa za World Bank/UN ni nyongeza."
+					],
+					"engagement": "Wadhifa wa muda wote ofisini na usaidizi wa mara kwa mara shambani. Anajibu GIS Lead / Project Manager."
+				}
 			},
 			{
 				"icon": "account-tie",
-				"title": "Msamaria wa Ujenzi",
+				"title": "Msimamizi wa Tovuti ya Ujenzi",
 				"applicationDeadline": {
-					"label": "Tarehe ya Mwisho ya Maombi",
+					"label": "Mwisho wa Maombi",
 					"value": "20 March 2027"
 				},
-				"description": "Simamia shughuli za kila siku za ujenzi, uratibu wa wafanyakazi, ufuatiliaji wa maendeleo, na kufuata ratiba za mradi.",
+				"description": "Kusimamia shughuli za ujenzi za kila siku, uratibu wa wafanyakazi, ufuatiliaji wa maendeleo, na ufuaso wa ratiba za mradi.",
 				"actions": [
 					{
 						"icon": "email",
-						"label": "Omba Kupitia Barua Pepe",
+						"label": "Apply kwa Barua Pepe",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Construction%20Site%20Supervisor"
-					},
-					{
-						"icon": "download",
-						"label": "Pakua TOR (PDF)",
-						"href": "#"
 					}
-				]
+				],
+				"tor": {
+					"positionSummary": "Msimamizi wa Tovuti ya Ujenzi husimamia shughuli za ujenzi za kila siku kwenye tovuti zilizopewa, akiratibu wafanyakazi, vifaa, na nyenzo kutoa kazi kwa usalama, kwa ratiba, na kwa mujibu wa vipimo.",
+					"duties": [
+						"Kuandaa na kusimamia shughuli za kila siku, vikundi vya wafanyakazi, na ugawaji wa plant.",
+						"Kutafsiri michoro na kuwasilisha maelekezo ya kazi kwa uwazi kwa vikundi.",
+						"Kutekeleza method statements zilizoidhinishwa, ITPs, na mahitaji ya HSE ikiwemo toolbox talks.",
+						"Kufuatilia maendeleo ya kila siku dhidi ya programu na kuripoto tofauti papo hapo.",
+						"Kudhibiti nyenzo, stores, na matumizi ya plant tovutini kupunguza upotevu.",
+						"Kudumisha diaries za tovuti, kumbukumbu za dayworks, na uthibitisho wa picha za maendeleo.",
+						"Kushirikiana na wawakilishi wa washauri kwenye ukaguzi na hold points.",
+						"Kuunga mkono timu za upimaji wakati wa setting-out na uthibitisho wa as-built."
+					],
+					"qualifications": [
+						"Diploma au Shahada ya uzamili katika Uhandisi wa Civil/Ujenzi au Usimamizi wa Ujenzi.",
+						"Angalau miaka mitano (5) ya uzoefu halisi wa usimamizi wa ujenzi.",
+						"Uwezo wa kusoma michoro ya kimuundo, usanifu, na huduma.",
+						"Uwezo ulithibitishwa wa kusimamia wafanyakazi na wanakandarasi.",
+						"Mafunzo/leseni za HSE (OSHA/NITA) yanapendekezwa.",
+						"Uongozi imara na wa haki pamoja na uwezo mkubwa wa kutatua matatizo."
+					],
+					"engagement": "Wadhifa wa muda wote, tovutini. Anajibu Mhandisi wa Civil / Project Manager."
+				}
 			},
 			{
 				"icon": "cube-scan",
-				"title": "Mpima Kiasi",
+				"title": "Mtaalamu wa Quantity Surveying",
 				"applicationDeadline": {
-					"label": "Tarehe ya Mwisho ya Maombi",
+					"label": "Mwisho wa Maombi",
 					"value": "22 March 2027"
 				},
-				"description": "Andaa BOQ, makadirio ya gharama, tathmini, na ripoti za ufuatiliaji wa fedha kwa miradi ya kiraia na miundombinu.",
+				"description": "Kutayarisha BOQs, makadirio ya gharama, valuations, na taarifa za ufuatiliaji wa fedha kwa miradi ya civil na miundombinu.",
 				"actions": [
 					{
 						"icon": "email",
-						"label": "Omba Kupitia Barua Pepe",
-						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Construction%20Site%20Supervisor"
-					},
-					{
-						"icon": "download",
-						"label": "Pakua TOR (PDF)",
-						"href": "#"
+						"label": "Apply kwa Barua Pepe",
+						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Quantity%20Surveyor"
 					}
-				]
+				],
+				"tor": {
+					"positionSummary": "Mtaalamu wa Quantity Surveying husimamia kazi za biashara za miradi ya civil na miundombinu, akutayarisha bills of quantities, makadirio ya gharama, valuations, na taarifa za kifedha zinazolinda faida ya mradi na ufuaso wa mikataba.",
+					"duties": [
+						"Kupima quantities na kutayarisha BOQs na makadirio ya gharama kutoka michoro na vipimo.",
+						"Kutayarisha interim valuations, payment certificates, na final accounts.",
+						"Kutathmini variations, claims, na akaunti za wanakandarasi.",
+						"Kutayarisha taarifa za kila mwezi za gharama, cash-flow forecasts, na uchambuzi wa faida.",
+						"Kuchambua bei za nyenzo na ajira; kudumisha databases za unit rates.",
+						"Kutathmini tenders na kuunga mkono majadiliano ya ununuzi.",
+						"Kusimamia mawasiliano ya kikatiba yanayohusu mambo ya biashara."
+					],
+					"qualifications": [
+						"Shahada ya uzamili katika Quantity Surveying au Construction Economics.",
+						"Mwanachama wa IQSK; Registered Quantity Surveyor (au graduate member anayeendelea kusajiliwa).",
+						"Angalau miaka minne (4) ya uzoefu wa QS katika kazi za civil/miundombinu.",
+						"Excel ya juu pamoja na ufahamu wa CostX, Cubit, au programu sawa za takeoff.",
+						"Ufahamu wa masharti ya mikataba ya aina ya FIDIC/JBCC.",
+						"Uangalifu, uelewa wa uchambuzi, na akili ya biashara."
+					],
+					"engagement": "Wadhifa wa muda wote ofisi kuu na ziara za kupima tovutini. Anajibu Project Manager / Commercial Director."
+				}
 			},
 			{
 				"icon": "tunnel",
-				"title": "Fundi wa Huduma za Chini ya Ardhi na GPR",
+				"title": "Mtaalamu wa Huduga za Chini ya Ardhi na GPR",
 				"applicationDeadline": {
-					"label": "Tarehe ya Mwisho ya Maombi",
+					"label": "Mwisho wa Maombi",
 					"value": "22 March 2027"
 				},
-				"description": "Fanya ugunduzi wa huduma za chini ya ardhi, uchoraji ramani, na uandishi kwa kutumia mifumo ya GPR na electromagnetic.",
+				"description": "Kufanya utambuzi, ramani, na nyaraka za huduga za chini ya ardhi kwa kutumia GPR na mifumo ya electromagnetic locating.",
 				"actions": [
 					{
 						"icon": "email",
-						"label": "Omba Kupitia Barua Pepe",
+						"label": "Apply kwa Barua Pepe",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Underground%20Utilities%20GPR%20Technician"
-					},
-					{
-						"icon": "download",
-						"label": "Pakua TOR (PDF)",
-						"href": "#"
 					}
-				]
+				],
+				"tor": {
+					"positionSummary": "Mtaalamu wa Huduga za Chini ya Ardhi na GPR hutambua, kutafuta, na kurekodi huduga zilizojificha kwa kutumia ground penetrating radar na vifaa vya electromagnetic locating, akitoa ramani za huduga zinazolinda kazi za kuchimba na kusaidia usanidi.",
+					"duties": [
+						"Kuendesha mifumo ya GPR (k.m., LMX200) na locators za electromagnetic (k.m., RD8100) kwa utambuzi wa huduga.",
+						"Kufanya sweeps za passive na active; kutumia frequencies na survey grids zinazofaa.",
+						"Kuweka alama za huduga zilizogunduliwa tovutini na kurekodi nafuni kwa GPS/njia za upimaji.",
+						"Kukusanya data za mahali pa huduga kuwa tabaka za CAD/GIS zenye makadirio ya kina na confidence codes.",
+						"Kufanya QC ya matokeo ya scans dhidi ya rekodi, kufungua manholes, na uthibitisho wa tovuti.",
+						"Kubeba, kusanidi, na kutunza vifaa vya utambuzi.",
+						"Kutumia permit-to-dig na taratibu salama za kuchimba karibu na huduga hai.",
+						"Kueleza kwa wateja matokeo, vikwazo, na maeneo ya hatari."
+					],
+					"qualifications": [
+						"Diploma katika Uhandisi wa Umeme/Civil, Teknolojia ya Jiografia, au sifa sawa.",
+						"Angalau miaka miwili (2) ya uzoefu wa ramani za huduga/SUE.",
+						"Certificate au umahiri uliothibitishwa wa radiodetection na uendeshaji wa GPR (LMX series inapendekezwa).",
+						"Ujuzi wa msingi wa AutoCAD/GIS kwa kutengeneza ramani msingi za huduga.",
+						"Utayari wa kufanya kazi usiku na mazingira yanayodhibitiwa na trafiki.",
+						"Uangalifu mkubwa wa usalama karibu na umeme hai na huduga zenye shinikizo."
+					],
+					"engagement": "Wadhifa wa muda wote hasa shambani. Anajibu Utility Mapping Lead / Project Manager."
+				}
 			},
 			{
 				"icon": "clipboard-edit-outline",
 				"title": "Afisa wa HSE",
 				"applicationDeadline": {
-					"label": "Tarehe ya Mwisho ya Maombi",
+					"label": "Mwisho wa Maombi",
 					"value": "22 March 2027"
 				},
-				"description": "Hakikisha kufuata kali kwa afya ya kazini, usalama, ulinzi wa mazingira, na viwango vya utiifu katika maeneo ya miradi.",
+				"description": "Kuhakikisha ufuaso mkali wa afya na usalama kazini, ulinzi wa mazingira, na viwango vya ufuaso katika tovuti zote za miradi.",
 				"actions": [
 					{
 						"icon": "email",
-						"label": "Omba Kupitia Barua Pepe",
+						"label": "Apply kwa Barua Pepe",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20HSE%20Officer"
-					},
-					{
-						"icon": "download",
-						"label": "Pakua TOR (PDF)",
-						"href": "#"
 					}
-				]
+				],
+				"tor": {
+					"positionSummary": "Afisa wa HSE huunda, hutekeleza, na kufuatilia mifumo ya afya, usalama, na mazingira katika tovuti zote za kampuni, kuhakikisha ufuaso kamili wa kisheria na utamaduni wa usalama unaozingatia mahitaji ya wafadhili.",
+					"duties": [
+						"Kutekeleza na kutunza mipango ya HSE ya mradi inayolingana na OSHA 2007, WIBA, na mahitaji ya wateja.",
+						"Kufanya risk assessments, kuandaa method statements, na kuidhinisha permits to work.",
+						"Kufanya ukaguzi wa mara kwa mara, audits, na observations za behavioral safety.",
+						"Kutoa inductions, toolbox talks, na mafunzo ya HSE ya vipindi vilivyopangwa.",
+						"Kuchunguza ajali/karibu-ajali na kusukuma hatua za kurekebisha hadi kufunga.",
+						"Kufuatilia ulinzi wa mazingira ikiwemo taka, maji taka, na udhibiti wa vumbi.",
+						"Kudumisha takwimu za HSE, rejista, na marejesho ya kisheria.",
+						"Kuratibu drills za dharura na utayari wa first aid."
+					],
+					"qualifications": [
+						"Diploma/Shahada ya uzamili katika Afya na Usalama Kazini au fanya inayohusiana.",
+						"Certificate ya NIOSH; qualifications za first aid na zima moto zinahitajika.",
+						"Angalau miaka mitatu (3) ya uzoefu wa HSE katika ujenzi/upimaji.",
+						"Ufahamu wa kina wa OSHA 2007, WIBA 2007, na kanuni za mazingira (NEMA).",
+						"Mafunyo ya kuchunguza ajali (k.m., ICAM/TapRooT) ni nyongeza.",
+						"Mtutu lakini mkarimu mwenye uwezo mkubwa wa kuandika ripoti."
+					],
+					"engagement": "Wadhifa wa muda wote unaozunguka tovuti hai. Anajibu kwa ufanisi Mkurugenzi Mtendaji na kuwajibika kwa wawakilishi wa HSE wa wateja."
+				}
 			},
 			{
 				"icon": "account-school",
-				"title": "Wahitimu Wanaofanya Kazi na Waombaji wa Kiwanda (Upimaji, GIS, Uhandisi wa Kiraia)",
+				"title": "Wanaofuzu na Wanafunzi wa Viwanda (Upimaji, GIS, Civil)",
 				"applicationDeadline": {
-					"label": "Tarehe ya Mwisho ya Maombi",
+					"label": "Mwisho wa Maombi",
 					"value": "25 March 2027"
 				},
-				"description": "Fursa kwa wanafunzi na wahitimu wa hivi karibuni kupata uzoefu wa vitendo shambani na ofisini katika upimaji, uchambuzi wa jiospatiali, na miradi ya uhandisi wa kiraia.",
+				"description": "Fursa kwa wanafunzi na wahitaji wa hivi karibuni kupata uzoefu halisi shambani na ofisini katika upimaji, uchambuzi wa kijiografia, na miradi ya kazi za civil.",
 				"actions": [
 					{
 						"icon": "email",
-						"label": "Omba Kupitia Barua Pepe",
+						"label": "Apply kwa Barua Pepe",
 						"href": "mailto:info@smartgridsurveying.com?subject=Application%20for%20Internship%20or%20Industrial%20Attachment"
-					},
-					{
-						"icon": "download",
-						"label": "Pakua TOR (PDF)",
-						"href": "#"
 					}
-				]
+				],
+				"tor": {
+					"positionSummary": "Programu ya Graduate Internship na Industrial Attachment inatoa kwa wanafunzi na wahitaji wa hivi karibuni uzoefu ulioratibiwa na wenye ushauri wa wataalamu katika miradi halisi ya upimaji, GIS, na kazi za civil, kujenga uwezo halisi kabla ya usajili wa kitaalamu au ajira.",
+					"duties": [
+						"Kuzunguka vitengo vya upimaji shambani, UAV, GIS, na kazi za civil kwa ratiba iliyopangwa.",
+						"Kusaidia wataalamu katika ukusanyaji wa data, uchakataji, na maandalizi ya matokeo.",
+						"Kushiriki setting-out, uchunguzi wa udhibiti, na shughuli za QA/QC chini ya usimamizi.",
+						"Kukamilisha na kudumisha logbooks za kujifunza na orodha za uwezo zilizopangwa.",
+						"Kuandika sehemu za ripoti za kiufundi, ramani, na nyenzo za uwasilishaji.",
+						"Kufuata mahitaji yote ya HSE, maadili, na usiri.",
+						"Kuwasilisha muhtasari wa mwisho wa kujifunza mwishoni wa kipindi cha attachment."
+					],
+					"qualifications": [
+						"Mwanafunzi wa mwaka wa mwisho au mhitaji (ndani ya miaka miwili) katika Uhandisi wa Jiografia, GIS, Uhandisi wa Civil, Usimamizi wa Ujenzi, au fanya inayohusiana.",
+						"Barua ya utambulisho kutoka taasisi ya elimu (kwa attachments).",
+						"Uzoefu wa msingi wa vifaa vya upimaji, programu za GIS, au kazi za tovuti kutoka masomo.",
+						"Nguvu ya kujifunza, kuchukua maelekezo, na kufanya kazi katika mazingira mbalimbali shambani.",
+						"Upatikanaji wa muda wote kwa kipindi cha programu.",
+						"Uaminifu, uvivu-si, na mtazamo mkubwa wa kitaalamu."
+					],
+					"engagement": "Uwekaji wa muundo wa miezi mitatu hadi sita wenye ushauri kutoka kwa wataalamu waliyosajiliwa. Utendaji unaweza kusababisha fursa za ajira baadaye."
+				}
 			}
 		]
 	},
@@ -273,12 +488,12 @@
 		"tag": null,
 		"title": "",
 		"subtitle": "Mchakato wa Maombi",
-		"description": "Tuma CV yako na barua ya maelezo kwa <bold>info@smartgridsurveying.com<bold> ukionyesha nafasi unayoomba kwenye mstari wa mada.\n\n Waombaji walioteuliwa tu ndio watawasiliana nao. SmartGrid Surveying ni mwajiri wa fursa sawa anayejitolea kwa taaluma, uadilifu, na ubora."
+		"description": "Tuma CV yako na barua ya maombi kwa <bold>info@smartgridsurveying.com<bold> ukionyesha nafasi uliyoomba kwenye mstari wa somo.\n\n Ni wanaofuatiliwa tu watawasilishwa. SmartGrid Surveying ni mwajiri wa fursa sawa aliyejitolea kwa ubora wa kitaalamu, uadilifu, na ubora."
 	},
 	"statement": {
 		"tag": null,
 		"title": "",
-		"subtitle": "Taarifa ya Fursa Sawa na Uzingatiaji wa Wafadhili",
-		"description": "SmartGrid Surveying & Civil Works Ltd ni mwajiri wa fursa sawa. Maamuzi ya kuajiri na kuajiriwa hayafanywi kwa ubaguzi kwa msingi wa jinsia, kabila, dini, ulemavu, au asili. Tumejitolea kuzingatia sheria za kazi za kitaifa na mahitaji ya miradi inayofadhiliwa na wafadhili, ikijumuisha viwango vya Benki ya Dunia, Umoja wa Mataifa, na washirika wa maendeleo kuhusu maadili, ulinzi, na mwenendo wa kitaalamu."
+		"subtitle": "Tamko la Fursa Sawa na Ufuaso wa Wafadhili",
+		"description": "SmartGrid Surveying & Civil Works Ltd ni mwajiri wa fursa sawa. Maamuzi ya ajira hufanywa bila ubaguzi kwa msingi wa jinsia, kabila, dini, ulemavu, au asili. Tumejizatia ufuaso wa sheria za kazi za kitaifa na mahitaji ya miradi ya wafadhili, ikiwemo viwango vya World Bank, UN, na washirika wa maendeleo kuhusu maadili, safeguarding, na tabia za kitaalamu."
 	}
 }
