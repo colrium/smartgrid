@@ -6,7 +6,7 @@
 		"description": "Unlock faster, more cost-effective, and safer mapping, measurement, and monitoring of construction sites across the world. At Smartgrid Surveying, we turn this vision into reality—across Africa and beyond. With our cutting-edge drones and Land surveying techniques, we deliver the actionable data you need, exactly where it matters.",
 		"ctaPrimary": {
 			"label": "Get Your Free Consultation",
-			"href": "mailto:smartgridsurveying@gmail.com"
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Consultation Request: Civil Engineering&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a free consultation about civil engineering services. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		},
 		"ctaSecondary": {
 			"label": "Explore Our Aerial Services",
@@ -21,22 +21,26 @@
 			{
 				"icon": "road-variant",
 				"title": "Highway Surveys",
-				"description": "Initial alignment and route planning with precision GNSS."
+				"description": "Initial alignment and route planning with precision GNSS.",
+				"href": "/civil/highway-surveys"
 			},
 			{
 				"icon": "file-document",
 				"title": "As-Built Surveys",
-				"description": "Verification of constructed works against original designs."
+				"description": "Verification of constructed works against original designs.",
+				"href": "/civil/as-built-surveys"
 			},
 			{
 				"icon": "calculator",
 				"title": "Volumetric Surveys",
-				"description": "3D modeling and volume computations for stockpiles."
+				"description": "3D modeling and volume computations for stockpiles.",
+				"href": "/civil/volumetric-surveys"
 			},
 			{
 				"icon": "content-duplicate",
 				"title": "BIM & Digital Twins",
-				"description": "Integrating spatial data into your BIM workflows."
+				"description": "Integrating spatial data into your BIM workflows.",
+				"href": "/civil/bim"
 			},
 			{
 				"icon": "window-closed-variant",
@@ -46,7 +50,8 @@
 			{
 				"icon": "map-marker",
 				"title": "Site Engineering",
-				"description": "Construction layout, setting out, and geospatial monitoring."
+				"description": "Construction layout, setting out, and geospatial monitoring.",
+				"href": "/civil/site-engineering"
 			}
 		]
 	},

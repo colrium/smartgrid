@@ -396,7 +396,7 @@
 			},
 			{
 				"featureImg": "/media/services/aerial-drone-deliverables.png",
-				"label": "UCHUNGUZI WA ANGANI",
+				"label": "Uchunguzi Wa Angani",
 				"description": "Tunatoa huduma nyingi za uchunguzi wa angani, ikijumuisha uchunguzi wa picha kwa droni, upimaji ramani wa Lidar, uchunguzi wa NDVI wa kilimo, uhandisi wa kama ulivyojengwa (as-built), ufuatiliaji na tathmini, uchunguzi wa paneli za sola kwa droni, uchunguzi wa kiasi (volumetric), na uchunguzi wa taka na machimbo kwa droni. Wazao wetu hujumuisha ripoti na mipango ya uchunguzi wa mipaka, mipango ya cadastral kwa kuchakata hati miliki, monumentation ya beacons, ramani za usajili, data ya 3D (X, Y, Z), ramani za topografia, kontua, shapefiles za CAD, ripoti za uchunguzi, matokeo ya PDF, na wazao wengine maalum.",
 				"items": [
 					"Uchunguzi wa picha kwa droni",
@@ -423,7 +423,7 @@
 			},
             {
 				"featureImg": "/media/services/civil-engineering-deliverables.png",
-				"label": "UHANDISI WA KIRAHISI",
+				"label": "Uhandisi Wa Civil",
 				"description": "Tunatoa huduma nyingi za uhandisi wa kirahisi, ikijumuisha uhandisi wa tovuti, uwekaji wa viwango vya majengo, ufungaji wa huduma za ardhini, uhandisi wa barabara kuu, uchunguzi wa stakeout, usawazishaji, uwekaji wa viwango vya kumbukumbu (benchmarking), na huduma za ujenzi. Wazao wetu hujumuisha ramani za kama ulivyojengwa, miundo ya eleza ya dijiti, viwianishi vya uwekaji, data ya 3D, kontua, mipango mkuu, mipangilio ya majengo, shapefiles za CAD, na ramani za PDF.",
 				"items": [
 					"Uhandisi wa Tovuti ",

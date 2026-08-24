@@ -396,7 +396,7 @@
 			},
 			{
 				"featureImg": "/media/services/aerial-drone-deliverables.png",
-				"label": "AERIAL SURVEYS",
+				"label": "Aerial Surveys",
 				"description": "We offer a wide range of aerial surveying services, including drone imagery surveys, Lidar mapping, agricultural NDVI mapping, as-built surveys, monitoring and evaluation, solar panel drone surveys, volumetric surveys, and landfill & quarry drone surveys. Our deliverables include boundary survey reports and plans, cadastral plans for title processing, beacons monumentation, registry maps, 3D spatial data (X, Y, Z), topographical maps, contours, CAD shapefiles, survey reports, PDF map outputs, and other specialized deliverables.",
 				"items": [
 					"Drone imagery surveys",
@@ -423,7 +423,7 @@
 			},
             {
 				"featureImg": "/media/services/civil-engineering-deliverables.png",
-				"label": "CIVIL ENGINEERING",
+				"label": "Civil Engineering",
 				"description": "We offer a wide range of civil engineering services, including site engineering, building setting out, underground utilities installation, highway engineering, stake out, leveling, benchmarking, and construction services. Our deliverables include as-built maps, digital elevation models, setting out coordinates, 3D data, contours, master plans, building layouts, CAD shapefiles, and PDF maps.",
 				"items": [
 					"Site Engineering ",

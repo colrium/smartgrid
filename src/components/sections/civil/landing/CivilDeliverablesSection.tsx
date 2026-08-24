@@ -10,26 +10,23 @@ interface DeliverablesContent {
 	tag?: string | null;
 	headline: string;
 	description?: string;
-	images?: string[] | null;
+	image?: string | null;
 	list?: string[] | null;
 }
 
-export function SurveyingDeliverablesSection() {
-	const { t } = useTranslation(["surveying"]);
-	const section = t("surveying:deliverables", {
+export function CivilDeliverablesSection() {
+	const { t } = useTranslation(["civil"]);
+	const section = t("civil:deliverables", {
 		returnObjects: true,
 	}) as unknown as DeliverablesContent;
-	const images = Array.isArray(section?.images) ? section.images : [];
 	const list = Array.isArray(section?.list) ? section.list : [];
+	const hasImage = typeof section.image === "string" && section.image.startsWith("/");
 
-	if (list.length === 0 && images.length === 0) return null;
+	if (list.length === 0 && !hasImage) return null;
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
-			<Blob
-				className="w-[28rem] h-[28rem] bg-primary-100/60 -top-24 -left-24"
-				opacity={0.5}
-			/>
+			<Blob className="w-[28rem] h-[28rem] bg-primary-100/60 -top-24 -left-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader
@@ -39,7 +36,7 @@ export function SurveyingDeliverablesSection() {
 					align="center"
 				/>
 
-				<div className="mt-14 sm:mt-20 grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-16 items-start">
+				<div className="mt-14 sm:mt-20 grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-16 items-start">
 					{list.length > 0 && (
 						<FadeLeft>
 							<ul className="grid grid-cols-1 gap-3.5 rounded-[20px] bg-surface hairline card-shadow p-7 sm:p-9">
@@ -58,23 +55,18 @@ export function SurveyingDeliverablesSection() {
 						</FadeLeft>
 					)}
 
-					{images.length > 0 && (
+					{hasImage && (
 						<FadeRight delay={0.08}>
-							<div className="grid grid-cols-2 gap-4 sm:gap-5">
-								{images.map((image, index) => (
-									<div
-										key={index}
-										className={`group relative overflow-hidden rounded-[15px] bg-primary-50/60 hairline card-shadow aspect-square ${index === 0 ? "col-span-2" : ""}`}
-									>
-										<Image
-											src={image}
-											alt={`${section.headline} ${index + 1}`}
-											fill
-											sizes="(min-width: 1024px) 30vw, 50vw"
-											className="object-fill object-center transition-transform duration-700 group-hover:scale-105"
-										/>
-									</div>
-								))}
+							<div className="group relative overflow-hidden rounded-[20px] bg-primary-50/60 hairline card-shadow">
+								<div className="relative aspect-[4/5]">
+									<Image
+										src={section.image as string}
+										alt={section.headline}
+										fill
+										sizes="(min-width: 1024px) 40vw, 100vw"
+										className="object-fill object-center transition-transform duration-700 group-hover:scale-105"
+									/>
+								</div>
 							</div>
 						</FadeRight>
 					)}
@@ -84,4 +76,4 @@ export function SurveyingDeliverablesSection() {
 	);
 }
 
-export default SurveyingDeliverablesSection;
+export default CivilDeliverablesSection;
