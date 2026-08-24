@@ -1,7 +1,7 @@
 "use client";
 
 import { APIProvider, Map, useMap } from "@vis.gl/react-google-maps";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
 interface Coords {
@@ -12,9 +12,11 @@ interface Coords {
 export interface MapMarker extends Coords {
 	/** Short badge text (unused when title is present). */
 	label?: string;
-	/** Descriptive text rendered beside the mdi map-marker icon. */
+	/** Descriptive text rendered above the mdi map-marker icon. */
 	title?: string;
 	icon?: string;
+	/** Overrides the auto-generated Google Maps share link. */
+	shareUrl?: string;
 }
 
 export interface GoogleMapProps {
@@ -27,14 +29,18 @@ export interface GoogleMapProps {
 
 const DEFAULT_ICON = "mdi-map-marker";
 
+const mapsLink = (lat: number, lng: number) =>
+	`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+
 /**
  * A DOM pin projected onto the map at geographic coordinates: an mdi icon
- * plus a descriptive text chip. Recomputes its pixel position on every
- * camera change, so it tracks the map while panning/zooming.
+ * anchored at the position with its descriptive label floating above, plus
+ * a share action that copies a Google Maps link for the spot.
  */
 function ProjectedPin({ marker }: { marker: MapMarker }) {
 	const map = useMap();
 	const ref = useRef<HTMLDivElement>(null);
+	const [copied, setCopied] = useState(false);
 	const { lat, lng, title, label, icon = DEFAULT_ICON } = marker;
 
 	useEffect(() => {
@@ -67,19 +73,50 @@ function ProjectedPin({ marker }: { marker: MapMarker }) {
 		return () => listeners.forEach((listener) => listener.remove());
 	}, [map, lat, lng]);
 
+	const handleShare = async (event: React.MouseEvent) => {
+		event.stopPropagation();
+		const url = marker.shareUrl ?? mapsLink(lat, lng);
+		try {
+			await navigator.clipboard.writeText(url);
+		} catch {
+			const textarea = document.createElement("textarea");
+			textarea.value = url;
+			document.body.appendChild(textarea);
+			textarea.select();
+			document.execCommand("copy");
+			textarea.remove();
+		}
+		setCopied(true);
+		window.setTimeout(() => setCopied(false), 1600);
+	};
+
 	if (!map) return null;
 
 	return createPortal(
 		<div
 			ref={ref}
-			className="absolute left-0 top-0 z-[5] will-change-transform"
+			className="pointer-events-none absolute left-0 top-0 z-[5] will-change-transform"
 			style={{ opacity: 0 }}
 		>
 			<div className="-translate-x-1/2 -translate-y-full">
 				<div className="mb-0.5 flex justify-center">
-					<span className="whitespace-nowrap rounded-xl bg-surface/95 px-2.5 p-4 text-xs font-semibold leading-none text-ink shadow-md hairline backdrop-blur-sm">
-						{title ?? label}
-					</span>
+					<div className="pointer-events-auto flex items-center gap-1 whitespace-nowrap rounded-full bg-surface/95 py-1 pl-2.5 pr-1 shadow-md hairline backdrop-blur-sm">
+						<span className="text-xs font-semibold leading-none text-ink">{title ?? label}</span>
+						<button
+							type="button"
+							onClick={handleShare}
+							aria-label={`Share location of ${title ?? label}`}
+							title={copied ? "Link copied!" : "Share location"}
+							className={`ml-0.5 flex h-5 w-5 items-center justify-center rounded-full transition-colors duration-200 cursor-pointer ${
+								copied ? "bg-green-100 text-green-700" : "text-on-surface/50 hover:bg-primary-50 hover:text-primary"
+							}`}
+						>
+							<span
+								className={`mdi ${copied ? "mdi-check" : "mdi-share-variant"} text-[13px] leading-none`}
+								aria-hidden
+							/>
+						</button>
+					</div>
 				</div>
 				<div className="flex justify-center">
 					<span className={`mdi ${icon} text-[34px] leading-none text-primary drop-shadow-sm`} aria-hidden />
@@ -89,6 +126,40 @@ function ProjectedPin({ marker }: { marker: MapMarker }) {
 					aria-hidden
 				/>
 			</div>
+		</div>,
+		map.getDiv(),
+	);
+}
+
+/** Custom +/- zoom controls rendered inside the map container. */
+function ZoomControls({ fallbackZoom }: { fallbackZoom: number }) {
+	const map = useMap();
+	if (!map) return null;
+
+	const zoomBy = (delta: number) => {
+		const current = map.getZoom() ?? fallbackZoom;
+		map.setZoom(current + delta);
+	};
+
+	return createPortal(
+		<div className="absolute left-3 top-3 z-[6] flex flex-col overflow-hidden rounded-xl bg-surface/95 shadow-md hairline backdrop-blur-sm">
+			<button
+				type="button"
+				onClick={() => zoomBy(1)}
+				aria-label="Zoom in"
+				className="flex h-9 w-9 cursor-pointer items-center justify-center text-lg text-ink transition-colors duration-200 hover:bg-primary-50 hover:text-primary"
+			>
+				<span className="mdi mdi-plus leading-none" aria-hidden />
+			</button>
+			<span className="mx-auto block h-px w-6 bg-ink/10" aria-hidden />
+			<button
+				type="button"
+				onClick={() => zoomBy(-1)}
+				aria-label="Zoom out"
+				className="flex h-9 w-9 cursor-pointer items-center justify-center text-lg text-ink transition-colors duration-200 hover:bg-primary-50 hover:text-primary"
+			>
+				<span className="mdi mdi-minus leading-none" aria-hidden />
+			</button>
 		</div>,
 		map.getDiv(),
 	);
@@ -111,7 +182,15 @@ export default function GoogleMap({
 	return (
 		<APIProvider apiKey={apiKey}>
 			<div className={`w-full ${className}`}>
-				<Map defaultCenter={defaultCenter} defaultZoom={defaultZoom} disableDefaultUI={false}>
+				<Map
+					defaultCenter={defaultCenter}
+					defaultZoom={defaultZoom}
+					zoomControl={false}
+					streetViewControl={false}
+					mapTypeControl={false}
+					fullscreenControl={false}
+				>
+					<ZoomControls fallbackZoom={defaultZoom} />
 					{Array.isArray(markers) &&
 						markers.map((marker, i) => (
 							<ProjectedPin key={`map-pin-${i}`} marker={marker} />

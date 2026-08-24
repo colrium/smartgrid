@@ -1,1 +1,15 @@
-{}
+{
+	"hero": {
+		"headline": "SMARTGRID SURVEYING & CIVIL WORKS",
+		"title": "Company Profile",
+		"description": "Survey Smarter, Build Stronger. Building Trust and Integrity every step of the way.",
+		"ctaPrimary": {
+			"icon": "cloud-download",
+			"label": "Download Company Profile",
+			"href": "https://drive.google.com/file/d/1LuUk8Hl_J84tMHb-NKqBvs1QFdJGVTpH/view"
+		}
+	},
+	"companyProfileView": {
+		"pdfLink": "companyProfileView"
+	}
+}
