@@ -93,7 +93,22 @@
 		"mission": {
 			"title": "OUR MISSION",
 			"description": "To deliver innovative, high-precision surveying and civil works solutions that enhance the efficiency and sustainability of projects."
-		}
+		},
+        "cards": [
+			{
+				"icon": "shield-outline",
+				"label": "Licensed Experts",
+				"href": "/about",
+				"description": "Full Institution of Surveyors certification."
+			},
+			
+			{
+				"icon": "shopping-outline",
+				"label": "Equipment Catalogue",
+				"href": "/equipment-sale/equipment-catalogue",
+				"description": "Precise and reliable spatial data using advanced GNSS, Total Stations, and Drone LiDAR technologies"
+			}
+		]
 	},
 	"surveyingInstruments": {
 		"tag": "Precision",
@@ -102,16 +117,19 @@
 		"items": [
 			{
 				"label": "RTK GNSS FOIF A90",
-				"img": "/media/instruments/RTK-GNSS-FOIF-A90.jpg"
+				"img": "/media/instruments/RTK-GNSS-FOIF-A90.jpg",
+                "href": "/equipment-sale/foif-a90-rtk-gnss"
 			},
 			{
 				"label": "Total Stations",
-				"img": "/media/instruments/TOTAL-STATIONS.jpg"
+				"img": "/media/instruments/TOTAL-STATIONS.jpg",
+				"href": "/equipment-sale?category=total-stations"
 			},
 
 			{
 				"label": "AUTOMATIC LEVELS",
-				"img": "/media/instruments/AUTOMATIC-LEVELS.jpg"
+				"img": "/media/instruments/AUTOMATIC-LEVELS.jpg",
+				"href": "/equipment-sale?category=automatic-levels"
 			},
 			{
 				"label": "GPR SCANNER",

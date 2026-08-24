@@ -9,6 +9,8 @@ export interface CatalogueCardPrice {
 }
 
 export interface CatalogueCard {
+	slug: string;
+	category: string | null;
 	icon?: string | null;
 	title: string;
 	description: string;
@@ -107,7 +109,7 @@ export function getCatalogueItems(locale: string): CatalogueCard[] {
 
 	const registry = readLocaleJson(effectiveLocale, "products");
 	const entries = Array.isArray(registry?.items)
-		? (registry.items as { slug?: string }[])
+		? (registry.items as { slug?: string; category?: string }[])
 		: [];
 
 	const catalogueNs = readLocaleJson(effectiveLocale, "equipment-catalogue");
@@ -171,7 +173,10 @@ export function getCatalogueItems(locale: string): CatalogueCard[] {
 		}
         let productImage = productImages[0];
         productImage = productImage ? productImage : null;
-        cards.push({
+		const registryEntry = entries.find((e) => e.slug === slug);
+		cards.push({
+			slug,
+			category: typeof registryEntry?.category === "string" ? registryEntry.category : null,
 			icon: typeof extra.icon === "string" ? extra.icon : null,
 			title,
 			description,

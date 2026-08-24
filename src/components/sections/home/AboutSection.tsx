@@ -7,8 +7,19 @@ import ShieldIcon from "@mui/icons-material/Shield";
 import MemoryIcon from "@mui/icons-material/Memory";
 import useTranslation from "@/hooks/useTranslation";
 import { SectionTag } from "@/components/SectionTag";
+import Link from "next/link";
+
+interface AboutCardLink {
+	icon?: string | null;
+	href: string;
+    label: string;
+    description: string;
+}
 export const AboutSection: React.FC = () => {
     const { t } = useTranslation(["home"]);
+    const cards = t("home:about.cards", {
+		returnObjects: true,
+	}) as unknown as AboutCardLink[];
 	return (
 		<section id="about" className="py-28 relative  overflow-hidden">
 			<div className="max-w-7xl mx-auto px-6">
@@ -42,33 +53,25 @@ export const AboutSection: React.FC = () => {
 						</p>
 
 						<div className="pt-4 grid grid-cols-2 gap-4">
-							<div className="p-4 rounded-[15px] bg-surface hairline hover:border-primary cursor-default transition-all duration-300 hover:-translate-y-0.5 hover:card-shadow-lift flex items-start gap-3">
-								<div className="p-2.5 rounded-lg bg-primary-50 text-primary">
-									<ShieldIcon className="w-5 h-5" />
-								</div>
-								<div>
-									<h4 className="font-semibold text-sm text-ink">
-										Licensed Experts
-									</h4>
-									<p className="text-xs text-on-surface/60 mt-1 leading-relaxed">
-										Full Institution of Surveyors certification.
-									</p>
-								</div>
-							</div>
+							{cards.map((card, index) => (
+								<Link href={card.href} key={`about-card-${index}`}>
+									<div className="p-4 rounded-[15px] bg-surface hairline hover:border-primary cursor-pointer transition-all duration-300 hover:-translate-y-0.5 h-full  hover:card-shadow-lift flex items-start gap-3">
+										<div className="p-2.5 rounded-lg bg-primary-50 text-primary">
+											<span className={`mdi mdi-${card.icon}`} />
+										</div>
+										<div>
+											<h4 className="font-semibold text-sm text-ink">
+												{card.label}
+											</h4>
+											<p className="text-xs text-on-surface/60 mt-1 leading-relaxed">
+												{card.description}
+											</p>
+										</div>
+									</div>
+								</Link>
+							))}
 
-							<div className="p-4 rounded-[15px] bg-surface hairline hover:border-primary cursor-default transition-all duration-300 hover:-translate-y-0.5 hover:card-shadow-lift flex items-start gap-3">
-								<div className="p-2.5 rounded-lg bg-primary-50 text-primary">
-									<MemoryIcon className="w-5 h-5" />
-								</div>
-								<div>
-									<h4 className="font-semibold text-sm text-ink">
-										Drone & LiDAR
-									</h4>
-									<p className="text-xs text-on-surface/60 mt-1 leading-relaxed">
-										Automated high-density spatial capture.
-									</p>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 

@@ -12,9 +12,9 @@
 	},
 	"productImages": {
 		"images": [
-			"/media/equipment-sale/automatic-level-bosch/09.jpg",
+			"/media/equipment-sale/automatic-level-bosch/09.png",
 			"/media/equipment-sale/automatic-level-bosch/04.jpg",
-			"/media/equipment-sale/automatic-level-bosch/02.png",
+			"/media/equipment-sale/automatic-level-bosch/02.jpg",
 			"/media/equipment-sale/automatic-level-bosch/10.png"
 		]
 	},
@@ -41,6 +41,11 @@
 			"name": "surveying-equipment",
 			"label": "Surveying Equipment",
 			"href": "/equipment-sale/equipment-catalogue"
+		},
+		{
+			"name": "automatic-levels",
+			"label": "Automatic Levels",
+			"href": "/equipment-sale/equipment-catalogue?category=automatic-levels"
 		}
 	],
 	"specs": {

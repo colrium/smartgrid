@@ -45,7 +45,12 @@
 		{
 			"name": "surveying-equipment",
 			"label": "Surveying Equipment",
-			"href": "/equipment-sale/equipment-catalogue"
+			"href": "/equipment-sale/equipment-catalogue?category=surveying-equipment"
+		},
+        {
+			"name": "gnss",
+			"label": "GNSS",
+			"href": "/equipment-sale/equipment-catalogue?category=gnss"
 		}
 	],
 	"quickFacts": [
