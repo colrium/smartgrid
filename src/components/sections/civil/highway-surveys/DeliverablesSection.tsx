@@ -27,7 +27,7 @@ export function DeliverablesSection() {
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-					<FadeUp className="lg:col-span-6">
+					<FadeUp className="lg:col-span-5">
 						<SectionHeader tag={section.tag} headline={section.headline} />
 
 						{section.description && (
@@ -53,20 +53,20 @@ export function DeliverablesSection() {
 						)}
 					</FadeUp>
 
-					<FadeUp delay={0.1} className="lg:col-span-6">
+					<FadeUp delay={0.1} className="lg:col-span-7">
 						{section.image && (
 							<div className="relative mx-auto max-w-lg lg:max-w-none">
 								<div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/10 rounded-full blur-2xl" />
 								<div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl" />
 
 								<div className="relative bg-surface p-4 rounded-[20px] hairline card-shadow">
-									<div className="relative h-96 rounded-xl overflow-hidden bg-slate-900">
+									<div className="relative aspect-[3/4] rounded-xl overflow-hidden bg-slate-900">
 										<Image
 											src={section.image}
 											alt={section.headline}
 											fill
-											sizes="(min-width: 1024px) 50vw, 100vw"
-											className="object-cover object-center transition-transform duration-700 hover:scale-105"
+											sizes="(min-width: 720px) 50vw, 100vw"
+											className="object-fill object-center transition-transform duration-700 hover:scale-105"
 										/>
 									</div>
 								</div>

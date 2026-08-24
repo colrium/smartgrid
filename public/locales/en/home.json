@@ -266,24 +266,28 @@
         "description": "We specialize in providing high-quality surveying and engineering services, leveraging advanced technology and industry expertise to deliver accurate and reliable results for our clients.",
 		"items": [
 			{
-				"icon": null,
+				"icon": "terrain",
 				"label": "Topographical & Engineering Surveys",
-				"description": "Accurate land surveys for construction, infrastructure, and development projects."
+				"description": "Accurate land surveys for construction, infrastructure, and development projects.",
+				"href": "/surveying/topographical-surveys"
 			},
 			{
-				"icon": null,
+				"icon": "quadcopter",
 				"label": "Drone Mapping & Photogrammetry",
-				"description": "High-resolution aerial imagery and 3D mapping for precise data collection."
+				"description": "High-resolution aerial imagery and 3D mapping for precise data collection.",
+                "href": "/aerial-drones/lidar-mapping"
 			},
 			{
-				"icon": null,
+				"icon": "hard-hat",
 				"label": "Construction & Site Control",
-				"description": "Surveying services for construction layout, monitoring, and quality control."
+				"description": "Surveying services for construction layout, monitoring, and quality control.",
+				"href": "/civil/site-engineering"
 			},
 			{
-				"icon": null,
+				"icon": "bridge",
 				"label": "Infrastructure Support",
-				"description": "Surveying and engineering solutions for roads, bridges, utilities, and other infrastructure projects."
+				"description": "Surveying and engineering solutions for roads, bridges, utilities, and other infrastructure projects.",
+                "href": "/civil/highway-surveys"
 			}
 		]
 	},

@@ -280,24 +280,28 @@
 		"description": "Tunabobea katika kutoa huduma za upimaji na uhandisi za ubora wa juu, tukitumia teknolojia ya kisasa na utaalam wa tasnia kutoa matokeo sahihi na ya kuaminika kwa wateja wetu.",
 		"items": [
 			{
-				"icon": null,
+				"icon": "terrain",
 				"label": "Uchunguzi wa Topografia na Uhandisi",
-				"description": "Upimaji sahihi wa ardhi kwa ajili ya miradi ya ujenzi, miundombinu, na maendeleo."
+				"description": "Upimaji sahihi wa ardhi kwa ajili ya miradi ya ujenzi, miundombinu, na maendeleo.",
+				"href": "/surveying/topographical-surveys"
 			},
 			{
-				"icon": null,
+				"icon": "quadcopter",
 				"label": "Uchoraji Ramani kwa Droni na Photogrammetry",
-				"description": "Picha za angani za mwonekano wa juu na uchoraji ramani wa 3D kwa ukusanyaji sahihi wa data."
+				"description": "Picha za angani za mwonekano wa juu na uchoraji ramani wa 3D kwa ukusanyaji sahihi wa data.",
+				"href": "/aerial-drones/lidar-mapping"
 			},
 			{
-				"icon": null,
+				"icon": "hard-hat",
 				"label": "Ujenzi na Udhibiti wa Tovuti",
-				"description": "Huduma za upimaji kwa mpangilio wa ujenzi, ufuatiliaji, na udhibiti wa ubora."
+				"description": "Huduma za upimaji kwa mpangilio wa ujenzi, ufuatiliaji, na udhibiti wa ubora.",
+				"href": "/civil/site-engineering"
 			},
 			{
-				"icon": null,
+				"icon": "bridge",
 				"label": "Msaada wa Miundombinu",
-				"description": "Suluhisho za upimaji na uhandisi kwa barabara, madaraja, huduma za umeme, na miradi mingine ya miundombinu."
+				"description": "Suluhisho za upimaji na uhandisi kwa barabara, madaraja, huduma za umeme, na miradi mingine ya miundombinu.",
+				"href": "/civil/highway-surveys"
 			}
 		]
 	},

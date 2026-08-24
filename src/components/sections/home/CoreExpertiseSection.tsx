@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useTranslation } from "@/hooks";
 import { SectionTag } from "@/components/SectionTag";
 import { FadeUp } from "@/components/animations/Fade";
@@ -9,6 +10,7 @@ interface ExpertiseItem {
 	icon?: string | null;
 	label: string;
 	description: string;
+	href?: string;
 }
 
 const EXPERTISE_ICONS: Record<string, string> = {
@@ -28,6 +30,9 @@ export function CoreExpertiseSection() {
 	const items = t("home:coreExpertise.items", {
 		returnObjects: true,
 	}) as unknown as ExpertiseItem[];
+	const kicker = t("home:coreExpertise.label", {
+		defaultValue: "Core capability",
+	}) as string;
 
 	return (
 		<section id="core-expertise" className="py-24 sm:py-28 relative overflow-hidden">
@@ -57,47 +62,67 @@ export function CoreExpertiseSection() {
 								delay={(index % 4) * 0.08}
 								className={index % 2 === 1 ? "lg:translate-y-8" : ""}
 							>
-								<article className="group relative h-full flex flex-col rounded-[15px] border-t-2 border-ink/10 bg-surface card-shadow p-7 transition-all duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-t-primary overflow-hidden">
-									{/* watermark index */}
-									<span
-										className="absolute right-4 top-2 font-light text-5xl tracking-tight text-ink/[0.05] select-none pointer-events-none"
-										aria-hidden
+								{item.href ? (
+									<Link
+										href={item.href}
+										aria-label={item.label}
+										className="group relative h-full flex flex-col rounded-[15px] border-t-2 border-ink/10 bg-surface card-shadow p-7 transition-all duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-t-primary overflow-hidden"
 									>
-										{String(index + 1).padStart(2, "0")}
-									</span>
-
-									<div className="flex items-center justify-between mb-8">
-										<span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
-											<span
-												className={`mdi mdi-${
-													item.icon || expertiseIcon(item.label, index)
-												} text-2xl`}
-											/>
-										</span>
-										<span className="mdi mdi-arrow-up-right text-xl text-on-surface/25 -translate-x-2 translate-y-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 group-hover:text-primary" />
-									</div>
-
-									<h3 className="text-lg font-medium leading-snug text-ink mb-3">
-										{item.label}
-									</h3>
-									<p className="text-sm text-on-surface/60 leading-relaxed flex-1">
-										{item.description}
-									</p>
-
-									<span className="mt-6 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-mute">
-										
-										{
-											t("home:coreExpertise.label", {
-												defaultValue: "Core capability",
-											}) as string
-										}
-									</span>
-								</article>
+										<ExpertiseCardBody item={item} index={index} kicker={kicker} />
+									</Link>
+								) : (
+									<article className="group relative h-full flex flex-col rounded-[15px] border-t-2 border-ink/10 bg-surface card-shadow p-7 transition-all duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-t-primary overflow-hidden">
+										<ExpertiseCardBody item={item} index={index} kicker={kicker} />
+									</article>
+								)}
 							</FadeUp>
 						))}
 				</div>
 			</div>
 		</section>
+	);
+}
+
+function ExpertiseCardBody({
+	item,
+	index,
+	kicker,
+}: {
+	item: ExpertiseItem;
+	index: number;
+	kicker: string;
+}) {
+	return (
+		<>
+			{/* watermark index */}
+			<span
+				className="absolute right-4 top-2 font-light text-5xl tracking-tight text-ink/[0.05] select-none pointer-events-none"
+				aria-hidden
+			>
+				{String(index + 1).padStart(2, "0")}
+			</span>
+
+			<div className="flex items-center justify-between mb-8">
+				<span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
+					<span className={`mdi mdi-${item.icon || "hard-hat"} text-2xl`} />
+				</span>
+				<span
+					className={`mdi mdi-arrow-up-right text-xl text-on-surface/25 transition-all duration-300 group-hover:text-primary ${
+						item.href
+							? "-translate-x-2 translate-y-2 opacity-0 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100"
+							: ""
+					}`}
+					aria-hidden={!item.href}
+				/>
+			</div>
+
+			<h3 className="text-lg font-medium leading-snug text-ink mb-3">{item.label}</h3>
+			<p className="text-sm text-on-surface/60 leading-relaxed flex-1">{item.description}</p>
+
+			<span className="mt-6 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-mute">
+				{kicker}
+			</span>
+		</>
 	);
 }
 
