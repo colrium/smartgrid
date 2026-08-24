@@ -1,0 +1,411 @@
+{
+	"hero": {
+		"tag": "Droni ya Upimaji",
+		"headline": "Droni ya Photogrammetry",
+		"title": "DJI Phantom 4",
+		"image": "/media/equipment-sale/dji-phantom-4/images/banner.jpg",
+		"description": "Droni ya kielelezo cha upimaji, inayotumika sana katika upimaji wa mipaka (cadastral) na ramani za uhandisi.",
+		"ctaPrimary": {
+			"label": "Ulizia Droni Hii",
+			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Phantom 4&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Phantom 4. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+		}
+	},
+	"breadcrumb": {
+		"home": "Nyumbani",
+		"section": "Uuzaji wa Vifaa",
+		"sectionHref": "/equipment-sale/equipment-catalogue"
+	},
+	"pricing": {
+		"new": {
+			"label": "Mpya Kabisa",
+			"currency": "KES",
+			"amount": 900000
+		}
+	},
+	"categories": [
+		{
+			"name": "drones",
+			"label": "Droni",
+			"href": "/equipment-sale/equipment-catalogue?category=drones"
+		}
+	],
+	"productImages": {
+		"images": [
+			"/media/equipment-sale/dji-phantom-4/images/02-01.png",
+			"/media/equipment-sale/dji-phantom-4/images/02-02.png",
+			"/media/equipment-sale/dji-phantom-4/images/02-03.png",
+			"/media/equipment-sale/dji-phantom-4/images/02-04.png"
+		]
+	},
+	"quickFacts": [
+		{
+			"icon": "camera",
+			"label": "Kamera",
+			"value": "MP 20, CMOS ya inchi 1"
+		},
+		{
+			"icon": "crosshairs-gps",
+			"label": "Uwekaji Nafasi",
+			"value": "GNSS na uwekaji nafasi wa vision"
+		},
+		{
+			"icon": "ruler",
+			"label": "GSD",
+			"value": "~cm 2.7 kwa m 100"
+		},
+		{
+			"icon": "shield-check",
+			"label": "Rekodi",
+			"value": "Uhakika uliothibitishwa"
+		}
+	],
+	"productOverview": {
+		"tag": "Muhtasari wa Bidhaa",
+		"headline": "Droni Kielelezo cha Upimaji",
+		"images": [
+			"/media/equipment-sale/dji-phantom-4/images/03-01.jpg",
+			"/media/equipment-sale/dji-phantom-4/images/03-02.jpg",
+			"/media/equipment-sale/dji-phantom-4/images/03-03.jpg",
+			"/media/equipment-sale/dji-phantom-4/images/03-04.jpg"
+		],
+		"description": "DJI Phantom 4 bado ni chaguo lililothibitishwa na kuaminika kwa upimaji wa mipaka na ramani za uhandisi, ikichanganya kamera yenye shutter ya mitambo na uwekaji nafasi wa GNSS unaotegemewa pamoja na wa vision kwa ramani sahihi."
+	},
+	"keyFeatures": {
+		"tag": "Mambo Muhimu",
+		"headline": "Vipengele Muhimu",
+		"description": "Kwa nini Phantom 4 bado ni kielelezo cha tasnia.",
+		"items": [
+			{
+				"icon": "camera",
+				"title": "Kamera ya CMOS ya Inchi 1",
+				"description": "Azimia ya MP 20 yenye shutter ya mitambo kwa picha za ramani zisizo na distoro."
+			},
+			{
+				"icon": "crosshairs-gps",
+				"title": "Uwekaji Nafasi Unaotegemewa wa GNSS & Vision",
+				"description": "Inachanganya uwekaji nafasi wa satelaiti na wa vision kwa kupanda shimaimara na njia thabiti za kuruka shambani."
+			},
+			{
+				"icon": "shield-check",
+				"title": "Uhakika Uliothibitishwa",
+				"description": "Kiwango cha muda mrefu cha tasnia kwa upimaji wa mipaka na uhandisi."
+			},
+			{
+				"icon": "ruler",
+				"title": "Usahihi wa Juu wa Ramani",
+				"description": "GSD ya ~cm 2.7 kwa mwinuko wa m 100 kwa orthomosaic za kina."
+			}
+		]
+	},
+	"model3d": {
+		"tag": "Mwingiliano wa 3D",
+		"headline": "Chunguza Phantom 4 kwa 3D",
+		"description": "Buruta kuzungusha modeli na tumia gurudumu la kutanua au kidondoa kukaza.",
+		"models": [
+			"/media/equipment-sale/dji-phantom-4/models/01.glb"
+		]
+	},
+	"cameraSystem": {
+		"tag": "Kamera",
+		"headline": "Kamera",
+		"description": "Kamera maalum ya ramani iliyoundwa kwa usahihi.",
+		"list": [
+			"MP 20, CMOS ya inchi 1",
+			"Shutter ya mitambo",
+			"GSD: ~cm 2.7 kwa m 100"
+		]
+	},
+	"positioningAndAccuracy": {
+		"tag": "Uwekaji Nafasi",
+		"headline": "Uwekaji Nafasi",
+		"description": "GNSS ya kawaida na uwekaji nafasi wa vision (hakuna RTK iliyojengwa ndani).",
+		"list": [
+			"Usahihi wima: ±m 0.1 (vision); ±m 0.5 (GNSS)",
+			"Usahihi wa usawa: ±m 0.3 (vision); ±m 1.5 (GNSS)"
+		]
+	},
+	"specs": {
+		"tag": "Data ya Kiufundi",
+		"headline": "Vipimo vya Kiufundi",
+		"description": "Maelezo kamili ya kiufundi kwa DJI Phantom 4."
+	},
+	"detailedSpecifications": {
+		"tag": "Data Sheet Kamili",
+		"headline": "Vipimo vya Kiufundi vya Kina",
+		"description": "Vipimo kamili vya mtengenezaji kwa ndege, kamera, betri na kidhibiti cha mbali cha DJI Phantom 4.",
+		"sections": [
+			{
+				"icon": "quadcopter",
+				"title": "Ndege",
+				"items": [
+					{
+						"label": "Takeoff Weight",
+						"value": "1391 g"
+					},
+					{
+						"label": "Diagonal Distance",
+						"value": "350 mm"
+					},
+					{
+						"label": "Max Service Ceiling Above Sea Level",
+						"value": "19685 ft (6000 m)"
+					},
+					{
+						"label": "Max Ascent Speed",
+						"value": "6 m/s (automatic flight); 5 m/s (manual control)"
+					},
+					{
+						"label": "Max Descent Speed",
+						"value": "3 m/s"
+					},
+					{
+						"label": "Max Speed",
+						"value": "31 mph / 50 kph (P-mode); 36 mph / 58 kph (A-mode)"
+					},
+					{
+						"label": "Max Flight Time",
+						"value": "Approx. 30 minutes"
+					},
+					{
+						"label": "Operating Temperature Range",
+						"value": "32° to 104° F (0° to 40°C)"
+					},
+					{
+						"label": "Operating Frequency",
+						"value": "2.400-2.483 GHz (Europe, Japan, Korea); 5.725-5.850 GHz (United States, China)"
+					},
+					{
+						"label": "Transmission Power (EIRP)",
+						"value": "2.4 GHz: CE/MIC/KCC < 20 dBm; 5.8 GHz: SRRC/FCC/NCC < 26 dBm"
+					},
+					{
+						"label": "Hover Accuracy Range",
+						"value": "Vertical: ±0.1 m (vision positioning), ±0.5 m (GNSS positioning); Horizontal: ±0.3 m (vision positioning), ±1.5 m (GNSS positioning)"
+					}
+				]
+			},
+			{
+				"icon": "map-marker-path",
+				"title": "Kazi za Ramani",
+				"items": [
+					{
+						"label": "Mapping Accuracy",
+						"value": "Meets ASPRS Accuracy Standards for Digital Orthophotos Class III. Actual accuracy depends on lighting, patterns, altitude, mapping software, and other factors."
+					},
+					{
+						"label": "Ground Sample Distance (GSD)",
+						"value": "(H/36.5) cm/pixel, where H is aircraft altitude relative to the shooting scene (m)"
+					},
+					{
+						"label": "Data Acquisition Efficiency",
+						"value": "Max operating area of approx. 1 km² per single flight at 182 m altitude (GSD approx. 5 cm/pixel), meeting ASPRS Class III standards"
+					}
+				]
+			},
+			{
+				"icon": "eye-outline",
+				"title": "Mfumo wa Vision",
+				"items": [
+					{
+						"label": "Velocity Range",
+						"value": "≤31 mph (50 kph) at 6.6 ft (2 m) above ground with adequate lighting"
+					},
+					{
+						"label": "Altitude Range",
+						"value": "0-33 ft (0-10 m)"
+					},
+					{
+						"label": "Operating Range",
+						"value": "0-33 ft (0-10 m)"
+					},
+					{
+						"label": "Obstacle Sensing Range",
+						"value": "2-98 ft (0.7-30 m)"
+					},
+					{
+						"label": "FOV",
+						"value": "Forward/Rear: 60° horizontal, ±27° vertical; Downward: 70° (front/rear), 50° (left/right)"
+					},
+					{
+						"label": "Measuring Frequency",
+						"value": "Forward/Rear: 10 Hz; Downward: 20 Hz"
+					},
+					{
+						"label": "Operating Environment",
+						"value": "Surfaces with clear patterns and adequate lighting (>15 lux)"
+					}
+				]
+			},
+			{
+				"icon": "camera",
+				"title": "Kamera",
+				"items": [
+					{
+						"label": "Sensor",
+						"value": "1-inch CMOS; Effective pixels: 20 M"
+					},
+					{
+						"label": "Lens",
+						"value": "FOV 84°; 8.8 mm / 24 mm (35 mm format equivalent: 24 mm); f/2.8-f/11, auto focus at 1 m to infinity"
+					},
+					{
+						"label": "ISO Range",
+						"value": "Video: 100-3200 (Auto), 100-6400 (Manual); Photo: 100-3200 (Auto), 100-12800 (Manual)"
+					},
+					{
+						"label": "Mechanical Shutter Speed",
+						"value": "8-1/2000 s"
+					},
+					{
+						"label": "Electronic Shutter Speed",
+						"value": "8-1/8000 s"
+					},
+					{
+						"label": "Max Image Size",
+						"value": "4864×3648 (4:3); 5472×3648 (3:2)"
+					},
+					{
+						"label": "Video Recording Modes",
+						"value": "H.264, 4K: 3840×2160 30p"
+					},
+					{
+						"label": "Photo Format",
+						"value": "JPEG"
+					},
+					{
+						"label": "Video Format",
+						"value": "MOV"
+					},
+					{
+						"label": "Supported File Systems",
+						"value": "FAT32 (≤32 GB); exFAT (>32 GB)"
+					},
+					{
+						"label": "Supported SD Cards",
+						"value": "MicroSD, max capacity 128 GB. Class 10 or UHS-1 rating required, write speed ≥15 MB/s"
+					},
+					{
+						"label": "Operating Temperature Range",
+						"value": "32° to 104° F (0° to 40°C)"
+					}
+				]
+			},
+			{
+				"icon": "battery-charging-90",
+				"title": "Betri ya Kuruka yenye Akili (PH4-5870mAh-15.2V)",
+				"items": [
+					{
+						"label": "Capacity",
+						"value": "5870 mAh"
+					},
+					{
+						"label": "Voltage",
+						"value": "15.2 V"
+					},
+					{
+						"label": "Battery Type",
+						"value": "LiPo 4S"
+					},
+					{
+						"label": "Energy",
+						"value": "89.2 Wh"
+					},
+					{
+						"label": "Net Weight",
+						"value": "468 g"
+					},
+					{
+						"label": "Charging Temperature Range",
+						"value": "14° to 104°F (-10° to 40°C)"
+					},
+					{
+						"label": "Max Charging Power",
+						"value": "160 W"
+					}
+				]
+			},
+			{
+				"icon": "ev-station",
+				"title": "Kituo cha Kushitua Betri yenye Akili (WCH2)",
+				"items": [
+					{
+						"label": "Input Voltage",
+						"value": "17.3-26.2 V"
+					},
+					{
+						"label": "Output Voltage and Current",
+						"value": "8.7 V, 6 A; 5 V, 2 A"
+					},
+					{
+						"label": "Operating Temperature",
+						"value": "41° to 104°F (5° to 40°C)"
+					}
+				]
+			},
+			{
+				"icon": "remote",
+				"title": "Kidhibiti cha Mbali cha SDK",
+				"items": [
+					{
+						"label": "Operating Frequency",
+						"value": "2.400-2.483 GHz (Europe, Japan, Korea); 5.725-5.850 GHz (other countries/regions)"
+					},
+					{
+						"label": "EIRP",
+						"value": "2.4 GHz: CE/MIC/KCC < 20 dBm; 5.8 GHz: FCC/SRRC/NCC < 26 dBm"
+					},
+					{
+						"label": "Max Transmission Distance",
+						"value": "FCC/NCC: 4.3 mi (7 km); CE/MIC/KCC/SRRC: 3.1 mi (5 km), unobstructed and free of interference"
+					},
+					{
+						"label": "Built-in Battery",
+						"value": "6000 mAh LiPo 2S"
+					},
+					{
+						"label": "Operating Current / Voltage",
+						"value": "1.2 A @ 7.4 V"
+					},
+					{
+						"label": "Mobile Device Holder",
+						"value": "Tablets and smartphones"
+					},
+					{
+						"label": "Operating Temperature",
+						"value": "32° to 104° F (0° to 40°C)"
+					}
+				]
+			}
+		]
+	},
+	"strengths": {
+		"tag": "Uwezo",
+		"headline": "Uwezo",
+		"description": "Kinachofanya Phantom 4 kuwa chaguo endelevu kwa wapimaji.",
+		"list": [
+			"Uhakika uliothibitishwa",
+			"Usahihi wa juu wa ramani",
+			"Uwekaji nafasi unaotegemewa wa GNSS na vision"
+		]
+	},
+	"cta": {
+		"tag": "Pata Nukuu",
+		"headline": "Ulizia Droni Hii",
+		"description": "Tuambie kuhusu mradi wako na upate nukuu iliyoundwa kwa ajili ya DJI Phantom 4.",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Tutumie Barua Pepe",
+			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Phantom 4&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Phantom 4. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+		},
+		"ctaSecondary": {
+			"icon": "whatsapp",
+			"label": "Tutumie WhatsApp",
+			"href": "https://wa.me/254701618282"
+		}
+	},
+	"relatedProducts": {
+		"tag": "Chunguza",
+		"headline": "Droni Nyingine Unazoweza Kuzipenda",
+		"description": "Gundua droni zaidi za upimaji kutoka kwenye katalogi ya SmartGrid."
+	}
+}

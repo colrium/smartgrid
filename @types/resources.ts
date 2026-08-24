@@ -24,6 +24,7 @@ import djimavic3enterprise from '../public/locales/en/dji-mavic-3-enterprise.jso
 import djimavic3multispectral from '../public/locales/en/dji-mavic-3-multispectral.json';
 import djimavic3pro from '../public/locales/en/dji-mavic-3-pro.json';
 import djiphantom4rtk from '../public/locales/en/dji-phantom-4-rtk.json';
+import djiphantom4 from '../public/locales/en/dji-phantom-4.json';
 import droneimagerysurveys from '../public/locales/en/drone-imagery-surveys.json';
 import equipmentcatalogue from '../public/locales/en/equipment-catalogue.json';
 import foifa90rtkgnss from '../public/locales/en/foif-a90-rtk-gnss.json';
@@ -74,6 +75,7 @@ const resources = {
   'dji-mavic-3-multispectral': djimavic3multispectral,
   'dji-mavic-3-pro': djimavic3pro,
   'dji-phantom-4-rtk': djiphantom4rtk,
+  'dji-phantom-4': djiphantom4,
   'drone-imagery-surveys': droneimagerysurveys,
   'equipment-catalogue': equipmentcatalogue,
   'foif-a90-rtk-gnss': foifa90rtkgnss,

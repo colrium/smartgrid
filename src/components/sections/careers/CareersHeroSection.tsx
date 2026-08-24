@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionTag } from "@/components/SectionTag";
+import ModelViewer from "@/components/ui/ModelViewer";
 
 interface HeroCta {
 	icon?: string;
@@ -19,14 +20,12 @@ interface CareersHeroContent {
 }
 
 export function CareersHeroSection() {
-	const { t } = useTranslation(["careers"]);
+	const { t } = useTranslation(["careers", "common"]);
 	const hero = t("careers:hero", { returnObjects: true }) as unknown as CareersHeroContent;
 
 	return (
 		<section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-40 pb-24 sm:pt-44 sm:pb-28">
 			<div className="absolute inset-0 ink-panel" />
-
-			
 
 			<span className="absolute -top-32 -left-24 w-[30rem] h-[30rem] rounded-full bg-primary/25 blur-[120px] pointer-events-none" />
 			<span className="absolute -bottom-32 -right-24 w-[30rem] h-[30rem] rounded-full bg-primary/20 blur-[120px] pointer-events-none" />
@@ -59,7 +58,9 @@ export function CareersHeroSection() {
 								className="group inline-flex items-center gap-3 h-14 rounded-full bg-surface px-9 text-ink font-medium text-base transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]"
 							>
 								{hero.ctaPrimary.icon && (
-									<span className={`mdi mdi-${hero.ctaPrimary.icon} text-xl text-ink`} />
+									<span
+										className={`mdi mdi-${hero.ctaPrimary.icon} text-xl text-ink`}
+									/>
 								)}
 								{hero.ctaPrimary.label}
 								<span className="mdi mdi-arrow-right text-xl transition-transform duration-300 group-hover:translate-x-1" />
@@ -70,7 +71,9 @@ export function CareersHeroSection() {
 			</div>
 
 			<div className="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-surface/50">
-				<span className="text-[10px] uppercase tracking-[0.28em] font-semibold">Open Roles</span>
+				<span className="text-[10px] uppercase tracking-[0.28em] font-semibold">
+					{t("common:misc.openRoles")}
+				</span>
 				<span className="mdi mdi-chevron-down animate-bounce text-xl" />
 			</div>
 		</section>

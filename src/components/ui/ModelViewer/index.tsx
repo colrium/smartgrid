@@ -24,6 +24,7 @@ import {
 } from "@react-three/drei";
 import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 import { Box3, Vector3, type Group, type Mesh, type PerspectiveCamera } from "three";
+import { useTranslation } from "@/hooks";
 
 /* ------------------------------------------------------------------ */
 /* Types                                                               */
@@ -106,7 +107,8 @@ function Loader() {
 /* ------------------------------------------------------------------ */
 
 function LoadPrompt({ src, onStart }: { src?: string; onStart: () => void }) {
-	return (
+	const {t} = useTranslation(["common"])
+    return (
 		<button
 			type="button"
 			onClick={onStart}
@@ -134,7 +136,7 @@ function LoadPrompt({ src, onStart }: { src?: string; onStart: () => void }) {
 				</span>
 				<span className="rounded-full bg-primary px-5 py-2 text-xs font-medium uppercase tracking-widest text-surface shadow-md transition-colors group-hover:bg-accent">
 					<span className="mdi mdi-play-circle-outline mr-1 align-[-2px]" />
-					Load 3D
+					{t("common:misc.load3d")}
 				</span>
 			</span>
 		</button>

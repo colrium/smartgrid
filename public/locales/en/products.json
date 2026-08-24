@@ -21,6 +21,11 @@
 			"category": "drones"
 		},
 		{
+			"slug": "dji-phantom-4",
+			"title": "DJI Phantom 4",
+			"category": "drones"
+		},
+		{
 			"slug": "dji-phantom-4-rtk",
 			"title": "DJI Phantom 4 RTK",
 			"category": "drones"

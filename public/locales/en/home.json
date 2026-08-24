@@ -151,8 +151,22 @@
 			},
 			{
 				"icon": "quadcopter",
+				"img": "/media/equipment-sale/dji-mavic-3-pro/images/02-01.png",
+				"href": "/equipment-sale/dji-mavic-3-pro",
+				"label": "DJI Mavic 3 Pro",
+				"description": "The DJI Mavic 3 Pro is a versatile choice for site documentation and reconnaissance mapping, pairing a triple-camera Hasselblad system with orthomosaic-capable photogrammetry for high-detail visual capture."
+			},
+			{
+				"icon": "quadcopter",
+				"img": "/media/equipment-sale/dji-phantom-4/images/02-01.png",
+				"href": "/equipment-sale/dji-phantom-4",
+				"label": "DJI Phantom 4",
+				"description": "The DJI Phantom 4 remains a proven, reliable choice for cadastral and engineering mapping, pairing a mechanical shutter camera with dependable GNSS and vision-based positioning for accurate mapping."
+			},
+			{
+				"icon": "quadcopter",
 				"img": "/media/equipment-sale/dji-phantom-4-rtk/images/02-01.png",
-                "href": "/equipment-sale/dji-phantom-4-rtk",
+				"href": "/equipment-sale/dji-phantom-4-rtk",
 				"label": "DJI Phantom 4 RTK",
 				"description": "The DJI Phantom 4 RTK remains a proven, reliable choice for cadastral and engineering mapping, pairing a mechanical shutter camera with seamless RTK integration for high mapping accuracy."
 			}
