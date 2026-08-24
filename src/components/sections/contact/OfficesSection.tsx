@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import { useMemo } from "react";
 import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionHeader } from "@/components/sections/home/SectionHeader";
 import { Blob } from "@/components/sections/home/decor";
+import GoogleMap from "@/components/ui/GoogleMap";
 
 interface Office {
 	id?: string;
@@ -18,6 +20,8 @@ interface Office {
 	hours?: string;
 	type?: string;
 	note?: string;
+	lat?: number;
+	lng?: number;
 }
 
 interface OfficesContent {
@@ -47,6 +51,27 @@ export function OfficesSection() {
 		returnObjects: true,
 	}) as unknown as OfficesContent;
 	const offices = Array.isArray(section.items) ? section.items : [];
+
+	// Map markers for offices that carry accurate coordinates.
+	const markers = useMemo(
+		() =>
+			offices
+				.filter((o) => typeof o.lat === "number" && typeof o.lng === "number")
+				.map((o, i) => ({
+					lat: o.lat as number,
+					lng: o.lng as number,
+					label: String(i + 1),
+					title: `${o.label} — ${o.city}`,
+				})),
+		[offices]
+	);
+
+	const mapCenter = useMemo(() => {
+		if (markers.length === 0) return undefined;
+		const lat = markers.reduce((sum, m) => sum + m.lat, 0) / markers.length;
+		const lng = markers.reduce((sum, m) => sum + m.lng, 0) / markers.length;
+		return { lat, lng };
+	}, [markers]);
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
@@ -135,6 +160,19 @@ export function OfficesSection() {
 						</FadeUp>
 					))}
 				</div>
+
+				{markers.length > 0 && (
+					<FadeUp className="mt-6 sm:mt-8">
+						<div className="rounded-[20px] overflow-hidden hairline card-shadow">
+							<GoogleMap
+								markers={markers}
+								defaultCenter={mapCenter}
+								defaultZoom={11}
+								className="h-[420px] sm:h-[500px]"
+							/>
+						</div>
+					</FadeUp>
+				)}
 
 				{section.cta?.href && (
 					<FadeUp className="mt-14 sm:mt-16 flex justify-center">

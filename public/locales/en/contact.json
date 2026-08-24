@@ -68,8 +68,8 @@
 				"address_lines": [
 					"SmartGrid Surveying HQ, Nord Mall, Ruiru, Kenya"
 				],
-				"lat": -1.286389,
-				"lng": 36.821946,
+				"lat": -1.1466,
+				"lng": 36.9609,
 				"phone": "+254 10 7393023",
 				"email": "smartgridsurveying@gmail.com",
 				"hours": "Mon–Fri 08:00–17:00 EAT",
@@ -85,8 +85,8 @@
 				"address_lines": [
 					"SmartGrid Field Office, 2nd Floor, TRM Mall, Thika Rd, Nairobi, Kenya"
 				],
-				"lat": -1.2921,
-				"lng": 36.8219,
+				"lat": -1.2188769,
+				"lng": 36.8876524,
 				"phone": "+254 701 618 282",
 				"email": "smartgridsurveying@gmail.com",
 				"hours": "Mon–Fri 08:30–17:30 EAT",
@@ -117,6 +117,7 @@
 			{ "value": "request-survey", "label": "Request a survey" },
 			{ "value": "land-surveying", "label": "Land surveying" },
 			{ "value": "book-drone-survey", "label": "Book a drone survey" },
+			{ "value": "support", "label": "Support" },
 			{ "value": "privacy", "label": "Privacy & data request" },
 			{ "value": "other", "label": "Other" }
 		]
@@ -168,12 +169,12 @@
 				"required": false,
 				"type": "select",
 				"options": [
-					{ "value": "gold-aggregation", "label": "Land surveying" },
-					{ "value": "technology-partnership", "label": "Aerial surveys or equipment" },
+					{ "value": "land-surveying", "label": "Land surveying" },
+					{ "value": "aerial-surveys-or-equipment", "label": "Aerial surveys or equipment" },
 					{ "value": "gold-supply", "label": "Civil engineering" },
-					{ "value": "export-logistics", "label": "Equipment hire" },
-					{ "value": "goat-farming", "label": "Drone photography" },
-					{ "value": "horticulture", "label": "GIS mapping" },
+					{ "value": "equipment-hire", "label": "Equipment hire" },
+					{ "value": "drone-photography", "label": "Drone photography" },
+					{ "value": "gis-mapping", "label": "GIS mapping" },
 					{ "value": "multi-sector", "label": "Multiple opportunities" },
 					{ "value": "unsure", "label": "Not sure yet" }
 				]

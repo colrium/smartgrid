@@ -3,7 +3,10 @@
 		"tag": "Wasiliana Nasi",
 		"headline": "Hebu tuzungumze kuhusu mradi wako wa upimaji au uhandisi",
 		"description": "Iwe unahitaji upimaji wa ardhi, uchunguzi wa angani, uhandisi wa kiraia, ukodishaji wa vifaa, au upigaji picha kwa ndege zisizo na rubani, timu yetu iko tayari kukusaidia.",
-		"badge": { "text": "Majibu ndani ya saa 24", "status": "active" }
+		"badge": {
+			"text": "Majibu ndani ya saa 24",
+			"status": "active"
+		}
 	},
 	"talkToUs": {
 		"tag": "Fikia Nasi",
@@ -72,8 +75,8 @@
 				"address_lines": [
 					"SmartGrid Surveying HQ, Nord Mall, Ruiru, Kenya"
 				],
-				"lat": -1.286389,
-				"lng": 36.821946,
+				"lat": -1.1466,
+				"lng": 36.9609,
 				"phone": "+254 10 7393023",
 				"email": "smartgridsurveying@gmail.com",
 				"hours": "Mon–Fri 08:00–17:00 EAT",
@@ -89,8 +92,8 @@
 				"address_lines": [
 					"SmartGrid Field Office, 2nd Floor, TRM Mall, Thika Rd, Nairobi, Kenya"
 				],
-				"lat": -1.2921,
-				"lng": 36.8219,
+				"lat": -1.2188769,
+				"lng": 36.8876524,
 				"phone": "+254 701 618 282",
 				"email": "smartgridsurveying@gmail.com",
 				"hours": "Mon–Fri 08:30–17:30 EAT",
@@ -106,23 +109,74 @@
 	"contact_reasons": {
 		"label": "Tunaweza kusaidia na nini?",
 		"options": [
-			{ "value": "investment-enquiry", "label": "Omba nukuu" },
-			{ "value": "due-diligence", "label": "Omba taarifa za kampuni" },
-			{ "value": "site-visit", "label": "Panga ziara ya tovuti" },
-			{ "value": "partnership", "label": "Ushirikiano wa teknolojia / vifaa" },
-			{ "value": "gold-supply", "label": "Swali la huduma za upimaji" },
-			{ "value": "logistics", "label": "Swali la vifaa vya mradi" },
-			{ "value": "press-media", "label": "Swali la vyombo vya habari" },
-			{ "value": "compliance-legal", "label": "Uzingatiaji / kisheria" },
-			{ "value": "community", "label": "Jamii na ESG" },
-			{ "value": "careers", "label": "Kazi na ajira" },
-			{ "value": "request-quote", "label": "Omba nukuu" },
-			{ "value": "request-survey", "label": "Omba upimaji" },
-			{ "value": "land-surveying", "label": "Upimaji wa ardhi" },
-			{ "value": "book-drone-survey", "label": "Panga upimaji wa drone" },
-			{ "value": "privacy", "label": "Ombi la faragha na data" },
-			{ "value": "book-consultation", "label": "Panga Mashauriano" },
-			{ "value": "other", "label": "Nyingine" }
+			{
+				"value": "investment-enquiry",
+				"label": "Omba nukuu"
+			},
+			{
+				"value": "due-diligence",
+				"label": "Omba taarifa za kampuni"
+			},
+			{
+				"value": "site-visit",
+				"label": "Panga ziara ya tovuti"
+			},
+			{
+				"value": "partnership",
+				"label": "Ushirikiano wa teknolojia / vifaa"
+			},
+			{
+				"value": "gold-supply",
+				"label": "Swali la huduma za upimaji"
+			},
+			{
+				"value": "logistics",
+				"label": "Swali la vifaa vya mradi"
+			},
+			{
+				"value": "press-media",
+				"label": "Swali la vyombo vya habari"
+			},
+			{
+				"value": "compliance-legal",
+				"label": "Uzingatiaji / kisheria"
+			},
+			{
+				"value": "community",
+				"label": "Jamii na ESG"
+			},
+			{
+				"value": "careers",
+				"label": "Kazi na ajira"
+			},
+			{
+				"value": "request-quote",
+				"label": "Omba nukuu"
+			},
+			{
+				"value": "request-survey",
+				"label": "Omba upimaji"
+			},
+			{
+				"value": "land-surveying",
+				"label": "Upimaji wa ardhi"
+			},
+			{
+				"value": "book-drone-survey",
+				"label": "Panga upimaji wa drone"
+			},
+			{
+				"value": "privacy",
+				"label": "Ombi la faragha na data"
+			},
+			{
+				"value": "book-consultation",
+				"label": "Panga Mashauriano"
+			},
+			{
+				"value": "other",
+				"label": "Nyingine"
+			}
 		]
 	},
 	"form": {
@@ -172,14 +226,38 @@
 				"required": false,
 				"type": "select",
 				"options": [
-					{ "value": "gold-aggregation", "label": "Upimaji wa ardhi" },
-					{ "value": "technology-partnership", "label": "Uchunguzi wa angani au vifaa" },
-					{ "value": "gold-supply", "label": "Uhandisi wa kirahisi" },
-					{ "value": "export-logistics", "label": "Ukodishaji wa vifaa" },
-					{ "value": "goat-farming", "label": "Upigaji picha kwa droni" },
-					{ "value": "horticulture", "label": "Uchoraji ramani wa GIS" },
-					{ "value": "multi-sector", "label": "Fursa nyingi" },
-					{ "value": "unsure", "label": "Bado sijajua" }
+					{
+						"value": "gold-aggregation",
+						"label": "Upimaji wa ardhi"
+					},
+					{
+						"value": "technology-partnership",
+						"label": "Uchunguzi wa angani au vifaa"
+					},
+					{
+						"value": "gold-supply",
+						"label": "Uhandisi wa kirahisi"
+					},
+					{
+						"value": "export-logistics",
+						"label": "Ukodishaji wa vifaa"
+					},
+					{
+						"value": "goat-farming",
+						"label": "Upigaji picha kwa droni"
+					},
+					{
+						"value": "horticulture",
+						"label": "Uchoraji ramani wa GIS"
+					},
+					{
+						"value": "multi-sector",
+						"label": "Fursa nyingi"
+					},
+					{
+						"value": "unsure",
+						"label": "Bado sijajua"
+					}
 				]
 			},
 			"investor_tier": {
@@ -187,12 +265,27 @@
 				"placeholder": "Chagua kiwango",
 				"required": false,
 				"type": "select",
-				"show_when": { "field": "reason", "value": "investment-enquiry" },
+				"show_when": {
+					"field": "reason",
+					"value": "investment-enquiry"
+				},
 				"options": [
-					{ "value": "seed-partner", "label": "Mradi mdogo" },
-					{ "value": "strategic-partner", "label": "Mradi wa wastani" },
-					{ "value": "anchor-investor", "label": "Mradi mkubwa au mgumu" },
-					{ "value": "unsure", "label": "Bado sijajua" }
+					{
+						"value": "seed-partner",
+						"label": "Mradi mdogo"
+					},
+					{
+						"value": "strategic-partner",
+						"label": "Mradi wa wastani"
+					},
+					{
+						"value": "anchor-investor",
+						"label": "Mradi mkubwa au mgumu"
+					},
+					{
+						"value": "unsure",
+						"label": "Bado sijajua"
+					}
 				]
 			},
 			"message": {
@@ -307,7 +400,10 @@
 			}
 		],
 		"note": "Miadi zinapatikana Jumatatu–Ijumaa na zinapaswa kupangwa mapema.",
-		"cta": { "label": "Omba Ziara ya Tovuti", "href": "#contact-form" }
+		"cta": {
+			"label": "Omba Ziara ya Tovuti",
+			"href": "#contact-form"
+		}
 	},
 	"faq": {
 		"tag": "Majibu ya Haraka",

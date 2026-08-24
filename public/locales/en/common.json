@@ -153,10 +153,6 @@
 					{
 						"label": "GIS & Mapping",
 						"href": "/surveying/gis-mapping"
-					},
-					{
-						"label": "Company Profile",
-						"href": "/surveying/company-profile"
 					}
 				]
 			},
@@ -259,8 +255,20 @@
 					}
 				]
 			},
-			{ "label": "Careers", "href": "/careers" },
-			{ "label": "About", "href": "/about" },
+			{
+				"label": "About",
+				"links": [
+					{
+						"label": "About Us",
+						"href": "/about"
+					},
+					{
+						"label": "Company Profile",
+						"href": "/company-profile"
+					},
+					{ "label": "Careers", "href": "/careers" }
+				]
+			},
 			{ "label": "Contact Us", "href": "/contact", "type": "pill" }
 		],
 

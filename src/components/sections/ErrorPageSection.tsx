@@ -23,10 +23,7 @@ export default function ErrorPageSection({
 }: ErrorPageSectionProps) {
 	return (
 		<section className="relative flex flex-col justify-center min-h-screen overflow-hidden px-6 py-24 md:px-8 md:py-48">
-			<div
-				className="absolute inset-0 pointer-events-none"
-				
-			/>
+			<div className="absolute inset-0 pointer-events-none" />
 			<div className="relative z-10 mx-auto flex max-w-[980px] flex-col items-start">
 				<div className="inline-flex rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-xs uppercase tracking-[0.12em] text-primary">
 					{statusLabel}
@@ -54,17 +51,17 @@ export default function ErrorPageSection({
 				<div className="mt-10 flex flex-col gap-3 sm:flex-row">
 					<Link
 						href="/"
-						className="inline-flex items-center justify-center gap-2 rounded-full border border-primary bg-primary px-6 py-3 text-sm font-medium text-surface transition-all hover:bg-transparent"
+						className="inline-flex items-center justify-center gap-2 rounded-full  border border-primary/30 bg-transparent px-6 py-3 text-sm font-medium text-primary transition-all hover:border-surface hover:text-surface hover:bg-primary"
 					>
-						<ArrowBackIcon fontSize="small" />
+						<span className="mdi mdi-arrow-left " />
 						{homeLabel}
 					</Link>
 					<Link
-						href="/contact"
-						className="inline-flex items-center justify-center gap-2 rounded-full  border border-primary/30 bg-transparent px-6 py-3 text-sm font-medium text-primary transition-all hover:border-primary hover:bg-primary/10"
+						href="/contact?reason"
+						className="inline-flex items-center justify-center gap-2 rounded-full  border border-accent/30 bg-transparent px-6 py-3 text-sm font-medium text-accent transition-all hover:border-surface hover:text-surface hover:bg-accent"
 					>
-						<MailOutlinedIcon fontSize="small" />
 						{contactLabel}
+						<span className="mdi mdi-send " />
 					</Link>
 				</div>
 			</div>

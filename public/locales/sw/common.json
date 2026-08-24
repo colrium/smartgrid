@@ -151,10 +151,6 @@
 					{
 						"label": "GIS na Ramani",
 						"href": "/surveying/gis-mapping"
-					},
-					{
-						"label": "Wasifu wa Kampuni",
-						"href": "/surveying/company-profile"
 					}
 				]
 			},
@@ -257,8 +253,20 @@
 					}
 				]
 			},
-			{ "label": "Ajira", "href": "/careers" },
-			{ "label": "Kuhusu", "href": "/about" },
+			{
+				"label": "About",
+				"links": [
+					{
+						"label": "Kutuhusu",
+						"href": "/about"
+					},
+					{
+						"label": "Wasifu wa Kampuni",
+						"href": "/company-profile"
+					},
+					{ "label": "Ajira", "href": "/careers" }
+				]
+			},
 			{ "label": "Wasiliana Nasi", "href": "/contact", "type": "pill" }
 		],
 		"ctaPrimary": {
