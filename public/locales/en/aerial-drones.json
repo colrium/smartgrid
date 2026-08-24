@@ -38,6 +38,7 @@
 				"title": "Agricultural Mapping",
 				"description": "Drone-based multispectral data for crop health and farm optimization.",
 				"popupContent": "SmartGrid empowers agronomists with data on crop health, plant stress, and irrigation patterns. We use NDVI and multispectral analysis to optimize input use and improve yield sustainability."
+
 			},
 			{
 				"title": "3D Modeling",
@@ -151,7 +152,8 @@
 		"items": [
 			{
 				"label": "Aerial Mapping",
-				"image": "/media/aerial-drones/aerial-mapping.jpeg"
+				"image": "/media/aerial-drones/aerial-mapping.jpeg",
+                "href": "/aerial-drones/lidar-mapping"
 			},
 			{
 				"label": "3d models",
@@ -163,15 +165,18 @@
 			},
 			{
 				"label": "Construction Monitoring",
-				"image": "/media/aerial-drones/construction-monitoring.jpeg"
+				"image": "/media/aerial-drones/construction-monitoring.jpeg",
+                "href": "/aerial-drones/as-built-surveys"
 			},
 			{
 				"label": "Agricultural Mapping",
-				"image": "/media/aerial-drones/agricultural-mapping.jpeg"
+				"image": "/media/aerial-drones/agricultural-mapping.jpeg",
+                "href": "/aerial-drones/agricultural-ndvi-mapping"
 			},
 			{
 				"label": "Environmental Monitoring",
-				"image": "/media/aerial-drones/environmental-monitoring.png"
+				"image": "/media/aerial-drones/environmental-monitoring.png",
+                "href": "/aerial-drones/monitoring-and-evaluation"
 			},
 			{
 				"label": "Infrastructure Planning",
@@ -179,7 +184,8 @@
 			},
 			{
 				"label": "Volumetric calculations",
-				"image": "/media/aerial-drones/volumetric-calculations.jpeg"
+				"image": "/media/aerial-drones/volumetric-calculations.jpeg",
+                "href": "/aerial-drones/landfill-quarry-drone-surveys"
 			}
 		]
 	},

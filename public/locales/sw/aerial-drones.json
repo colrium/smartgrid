@@ -151,7 +151,8 @@
 		"items": [
 			{
 				"label": "Ramani za Hewa",
-				"image": "/media/aerial-drones/aerial-mapping.jpeg"
+				"image": "/media/aerial-drones/aerial-mapping.jpeg",
+				"href": "/aerial-drones/lidar-mapping"
 			},
 			{
 				"label": "Modeli za 3D",
@@ -163,15 +164,18 @@
 			},
 			{
 				"label": "Ufuatiliaji wa Ujenzi",
-				"image": "/media/aerial-drones/construction-monitoring.jpeg"
+				"image": "/media/aerial-drones/construction-monitoring.jpeg",
+				"href": "/aerial-drones/as-built-surveys"
 			},
 			{
 				"label": "Ramani za Kilimo",
-				"image": "/media/aerial-drones/agricultural-mapping.jpeg"
+				"image": "/media/aerial-drones/agricultural-mapping.jpeg",
+				"href": "/aerial-drones/agricultural-ndvi-mapping"
 			},
 			{
 				"label": "Ufuatiliaji wa Mazingira",
-				"image": "/media/aerial-drones/environmental-monitoring.png"
+				"image": "/media/aerial-drones/environmental-monitoring.png",
+				"href": "/aerial-drones/monitoring-and-evaluation"
 			},
 			{
 				"label": "Mipango ya Miundombinu",
@@ -179,7 +183,8 @@
 			},
 			{
 				"label": "Mahesabu ya Volumetric",
-				"image": "/media/aerial-drones/volumetric-calculations.jpeg"
+				"image": "/media/aerial-drones/volumetric-calculations.jpeg",
+				"href": "/aerial-drones/landfill-quarry-drone-surveys"
 			}
 		]
 	},
