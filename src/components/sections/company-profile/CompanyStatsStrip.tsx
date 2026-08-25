@@ -29,9 +29,7 @@ export function CompanyStatsStrip() {
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={index * 0.06}>
 							<div
-								className={`flex flex-col items-center text-center gap-2.5 px-6 py-9 ${
-									index > 0 ? "border-l border-surface/10" : ""
-								}`}
+								className={`flex flex-col items-center text-center gap-2.5 px-6 py-9 `}
 							>
 								<span className="flex h-20 w-20 items-center justify-center rounded-xl hover:bg-surface/10 text-surface">
 									{item.icon && <span className={`mdi mdi-${item.icon} text-4xl`} />}
