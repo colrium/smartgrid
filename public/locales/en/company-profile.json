@@ -9,7 +9,149 @@
 			"href": "https://drive.google.com/file/d/1LuUk8Hl_J84tMHb-NKqBvs1QFdJGVTpH/view"
 		}
 	},
+	"stats": {
+		"items": [
+			{
+				"icon": "map",
+				"value": "10,000+",
+				"label": "Hectares Surveyed Across Africa"
+			},
+			{
+				"icon": "earth",
+				"value": "7+",
+				"label": "Countries Served"
+			},
+			{
+				"icon": "quadcopter",
+				"value": "4+",
+				"label": "Advanced UAV Platforms"
+			},
+			{
+				"icon": "target",
+				"value": "cm-Level",
+				"label": "Positioning Accuracy"
+			}
+		]
+	},
+	"about": {
+		"tag": "Who We Are",
+		"headline": "A Geospatial & Engineering Partner You Can Build On",
+		"image": "/img/logo.svg",
+		"description": "SmartGrid Surveying & Civil Works Ltd is a professional geospatial and engineering firm delivering precision land surveying, UAV mapping, GIS analysis, underground utility detection, and civil infrastructure solutions.\n\n From our base in Nairobi we serve government agencies, NGOs, private developers, and donor-funded programmes across Kenya and Africa — combining cutting-edge RTK GNSS, drone LiDAR, and total station technologies with disciplined project management to turn spatial data into confident decisions.",
+		"points": [
+			"Licensed professional surveyors and engineers (EBK / ISK registered)",
+			"Donor-compliant delivery aligned to World Bank and UN standards",
+			"In-house UAV fleet with KCAA-certified remote pilots",
+			"Proven track record across 7+ African countries"
+		]
+	},
+	"missionVision": {
+		"tag": "Our Foundation",
+		"headline": "Mission, Vision & Core Values",
+		"items": [
+			{
+				"icon": "flag-variant-outline",
+				"title": "Our Mission",
+				"description": "To deliver precise, reliable, and actionable geospatial and engineering solutions that empower informed design, development, and land governance decisions."
+			},
+			{
+				"icon": "eye-outline",
+				"title": "Our Vision",
+				"description": "To be Africa's most trusted surveying and civil engineering partner — where every decision is built on accurate spatial data and uncompromising integrity."
+			},
+			{
+				"icon": "diamond-outline",
+				"title": "Core Values",
+				"description": "Accuracy in every measurement. Integrity in every engagement. Safety on every site. Innovation in every workflow. Professionalism in every deliverable."
+			}
+		]
+	},
+	"services": {
+		"tag": "What We Do",
+		"headline": "Integrated Service Capabilities",
+		"description": "One partner across the full project lifecycle — from reconnaissance to final deliverables.",
+		"items": [
+			{
+				"icon": "map",
+				"title": "Land Surveying",
+				"description": "Topographical, cadastral, and boundary surveys with centimeter-level accuracy.",
+				"href": "/surveying/topographical-surveys"
+			},
+			{
+				"icon": "quadcopter",
+				"title": "Aerial Drone Surveys",
+				"description": "UAV photogrammetry and LiDAR mapping, volumetrics, and monitoring.",
+				"href": "/aerial-drones/drone-imagery-surveys"
+			},
+			{
+				"icon": "layers",
+				"title": "GIS & Spatial Analysis",
+				"description": "Spatial databases, NDVI analytics, and cartographic deliverables.",
+				"href": "/surveying/gis-mapping"
+			},
+			{
+				"icon": "tunnel",
+				"title": "Underground Utility Detection",
+				"description": "GPR and electromagnetic locating for safe excavation and design.",
+				"href": "/surveying/ground-penetrating-radar"
+			},
+			{
+				"icon": "office-building",
+				"title": "Civil & Engineering Surveys",
+				"description": "Setting out, as-built verification, and construction monitoring.",
+				"href": "/civil/site-engineering"
+			},
+			{
+				"icon": "calculator",
+				"title": "Volumetric Analysis",
+				"description": "Stockpile quantities and cut/fill computations for mining and construction.",
+				"href": "/civil/volumetric-surveys"
+			}
+		]
+	},
+	"whyUs": {
+		"tag": "Why SmartGrid",
+		"headline": "The SmartGrid Difference",
+		"description": "Clients choose us because precision is not a promise — it is a procedure.",
+		"items": [
+			{
+				"icon": "certificate-outline",
+				"title": "Certified Professionals",
+				"description": "EBK-registered engineers, ISK-licensed surveyors, and KCAA-certified pilots on every engagement."
+			},
+			{
+				"icon": "cellphone-link",
+				"title": "Advanced Technology",
+				"description": "RTK GNSS networks, robotic total stations, drone LiDAR, and GPR — calibrated and field-proven."
+			},
+			{
+				"icon": "shield-check-outline",
+				"title": "Donor-Compliant Processes",
+				"description": "QA/QC, ethics, and safeguarding procedures aligned to World Bank, UN, and development partner standards."
+			},
+			{
+				"icon": "hard-hat",
+				"title": "Safety Without Compromise",
+				"description": "Dedicated HSE officers, method statements, and statutory compliance on every site."
+			},
+			{
+				"icon": "compass-outline",
+				"title": "Pan-African Reach",
+				"description": "Mobilization experience across Kenya, Uganda, Tanzania, Ghana, Rwanda, Nigeria, and South Africa."
+			},
+			{
+				"icon": "file-document-check-outline",
+				"title": "Submission-Ready Deliverables",
+				"description": "CAD drawings, GIS layers, survey reports, and title-ready documentation delivered right the first time."
+			}
+		]
+	},
 	"companyProfileView": {
-		"pdfLink": "companyProfileView"
+		"tag": "Company Profile Document",
+		"headline": "Read the Full Profile",
+		"description": "Browse our complete company profile below — capabilities, experience, equipment, and references. You can also download it for sharing.",
+		"pdfLink": "https://drive.google.com/file/d/1LuUk8Hl_J84tMHb-NKqBvs1QFdJGVTpH/preview",
+		"downloadLabel": "Open / Download PDF",
+		"viewerTitle": "SmartGrid Surveying & Civil Works — Company Profile"
 	}
 }

@@ -1,0 +1,157 @@
+{
+	"hero": {
+		"headline": "SMARTGRID SURVEYING & CIVIL WORKS",
+		"title": "Wasifu wa Kampuni",
+		"description": "Pima kwa Akili, Jenga kwa Nguvu. Kujenga Uaminifu na Uadilifu katika kila hatua.",
+		"ctaPrimary": {
+			"icon": "cloud-download",
+			"label": "Pakua Wasifu wa Kampuni",
+			"href": "https://drive.google.com/file/d/1LuUk8Hl_J84tMHb-NKqBvs1QFdJGVTpH/view"
+		}
+	},
+	"stats": {
+		"items": [
+			{
+				"icon": "map",
+				"value": "10,000+",
+				"label": "Hekta Zimepimwa Barani Afrika"
+			},
+			{
+				"icon": "earth",
+				"value": "7+",
+				"label": "Nchi Zilizohudumiwa"
+			},
+			{
+				"icon": "quadcopter",
+				"value": "4+",
+				"label": "Jukwaa za UAV za Kisasa"
+			},
+			{
+				"icon": "target",
+				"value": "Kiwango cha cm",
+				"label": "Usahihi wa Uwekaji Nafasi"
+			}
+		]
+	},
+	"about": {
+		"tag": "Sisi ni Nani",
+		"headline": "Mshirika wa Kijiografia na Uhandisi Unaoweza Kutegemewa",
+		"image": "/media/surveying/AG8ng.jpeg",
+		"description": "SmartGrid Surveying & Civil Works Ltd ni kampuni ya kitaalamu ya kijiografia na uhandisi inayotoa huduma za upimaji ardhi wa usahihi, ramani za UAV, uchambuzi wa GIS, utambuzi wa huduga za chini ya ardhi, na suluhisho za miundombinu ya civil.\n\n Kutoka ofisi yetu jijini Nairobi tunahudumia wakala za serikali, NGOs, wasanidi binafsi, na miradi ya wafadhili barani Kenya na Afrika — tukichanganya teknolojia za kisasa za RTK GNSS, drone LiDAR, na total stations pamoja na usimamizi mwepesi wa mradi ili kugeuza data ya anga kuwa maamuzi yenye uhakika.",
+		"points": [
+			"Wataalamu waliosajiliwa wa upimaji na uhandisi (EBK / ISK)",
+			"Utekelezaji unaotimiza masharti ya wafadhili kwa mujibu wa viwango vya World Bank na UN",
+			"Foleni ya droni ya ndani yenye rubani wa KCAA waliosajiliwa",
+			"Rekodi iliyothibitishwa katika nchi zaidi ya 7 za Afrika"
+		]
+	},
+	"missionVision": {
+		"tag": "Msingi Wetu",
+		"headline": "Dhamira, Maono na Maadili ya Msingi",
+		"items": [
+			{
+				"icon": "flag-variant-outline",
+				"title": "Dhamira Yetu",
+				"description": "Kutoa suluhisho sahihi, za kuaminika, na za kiutendaji za kijiografia na uhandisi zinazowezesha maamuzi bora ya usanidi, maendeleo, na utawala wa ardhi."
+			},
+			{
+				"icon": "eye-outline",
+				"title": "Maono Yetu",
+				"description": "Kuwa mshirika wa kuaminika zaidi wa upimaji na uhandisi wa civil barani Afrika — ambapo kila maamuzi hujengwa juu ya data sahihi ya anga na uadilifu usio na mabadiliko."
+			},
+			{
+				"icon": "diamond-outline",
+				"title": "Maadili ya Msingi",
+				"description": "Usahihi katika kila kipimo. Uadilifu katika kila uhusiano. Usalama kwenye kila tovuti. Ubunifu katika kila mchakato. Utaalamu katika kila matokeo."
+			}
+		]
+	},
+	"services": {
+		"tag": "Tunachofanya",
+		"headline": "Uwezo Kamili wa Huduma",
+		"description": "Mshirika mmoja katika mzunguko mzima wa mradi — kutoka utafiti hadi matokeo ya mwisho.",
+		"items": [
+			{
+				"icon": "map",
+				"title": "Upimaji Ardhi",
+				"description": "Uchunguzi wa topografia, cadastral, na mipaka kwa usahihi wa kiwango cha sentimita.",
+				"href": "/surveying/topographical-surveys"
+			},
+			{
+				"icon": "quadcopter",
+				"title": "Uchunguzi wa Droni za Hewa",
+				"description": "Photogrammetry ya UAV na ramani za LiDAR, volumetrics, na ufuatiliaji.",
+				"href": "/aerial-drones/drone-imagery-surveys"
+			},
+			{
+				"icon": "layers",
+				"title": "GIS na Uchambuzi wa Anga",
+				"description": "Database za anga, uchambuzi wa NDVI, na matokeo ya ramani.",
+				"href": "/surveying/gis-mapping"
+			},
+			{
+				"icon": "tunnel",
+				"title": "Utambuzi wa Huduga za Chini ya Ardhi",
+				"description": "GPR na utambuzi wa electromagnetic kwa kuchimba salama na usanidi.",
+				"href": "/surveying/ground-penetrating-radar"
+			},
+			{
+				"icon": "office-building",
+				"title": "Upimaji wa Civil na Uhandisi",
+				"description": "Setting out, uthibitisho wa as-built, na ufuatiliaji wa ujenzi.",
+				"href": "/civil/site-engineering"
+			},
+			{
+				"icon": "calculator",
+				"title": "Uchambuzi wa Volumetric",
+				"description": "Vina za makusanyo na mahesabu ya cut/fill kwa migodi na ujenzi.",
+				"href": "/civil/volumetric-surveys"
+			}
+		]
+	},
+	"whyUs": {
+		"tag": "Kwa Nini SmartGrid",
+		"headline": "Tofauti ya SmartGrid",
+		"description": "Wateja hutuchagua kwa sababu usahihi si ahadi — ni taratibu.",
+		"items": [
+			{
+				"icon": "certificate-outline",
+				"title": "Wataalamu Waliosajiliwa",
+				"description": "Wahandisi waliosajiliwa na EBK, wapimaji wenye leseni za ISK, na rubani waliosajiliwa na KCAA kwenye kila kazi."
+			},
+			{
+				"icon": "cellphone-link",
+				"title": "Teknolojia ya Kisasa",
+				"description": "Mitandao ya RTK GNSS, robotic total stations, drone LiDAR, na GPR — vilivyorekebishwa navilivyothibitika shambani."
+			},
+			{
+				"icon": "shield-check-outline",
+				"title": "Taratibu Zinazotimiza Masharti ya Wafadhili",
+				"description": "Tararibu za QA/QC, maadili, na safeguarding zinazolingana na viwango vya World Bank, UN, na washirika wa maendeleo."
+			},
+			{
+				"icon": "hard-hat",
+				"title": "Usalama Bila Fursa",
+				"description": "Maafisa wa HSE waliotengwa, method statements, na ufuaso wa kisheria kwenye kila tovuti."
+			},
+			{
+				"icon": "compass-outline",
+				"title": "Ufikiaji Pan-Afrika",
+				"description": "Uzoefu wa kupeleka timu nchini Kenya, Uganda, Tanzania, Ghana, Rwanda, Nigeria, na Afrika Kusini."
+			},
+			{
+				"icon": "file-document-check-outline",
+				"title": "Matokeo Tayari kwa Kuwasilisha",
+				"description": "Michoro ya CAD, tabaka za GIS, ripoti za upimaji, na nyaraka tayari kwa hati zikifika sahii mara ya kwanza."
+			}
+		]
+	},
+	"companyProfileView": {
+		"tag": "Nyaraka za Wasifu wa Kampuni",
+		"headline": "Soma Wasifu Kamili",
+		"description": "Vinjari wasifu wetu kamili wa kampuni hapa chini — uwezo, uzoefu, vifaa, na marejeleo. Unaweza pia kupakua kwa ajili ya kushirikisha wengine.",
+		"pdfLink": "https://drive.google.com/file/d/1LuUk8Hl_J84tMHb-NKqBvs1QFdJGVTpH/preview",
+		"downloadLabel": "Fungua / Pakua PDF",
+		"viewerTitle": "SmartGrid Surveying & Civil Works — Wasifu wa Kampuni"
+	}
+}
