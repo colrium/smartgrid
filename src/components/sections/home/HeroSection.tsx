@@ -88,11 +88,39 @@ const drone3dProps = new Map([
 			],
 		},
 	],
+	[
+		"/models/dji-matrice-300.glb",
+		{
+			propellorsAxis: "y",
+			scale: [0.55, 0.55, 0.55],
+			position: [-0.015, 0, 0.225],
+			propellors: [
+				"DJI_M300_helice1_Grey_0",
+				"DJI_M300_helice1002_Grey_0",
+				"DJI_M300_helice1003_Grey_0",
+				"DJI_M300_helice1004_Grey_0",
+			],
+		},
+	],
+	[
+		"/models/dji-matrice-300-optimized.glb",
+		{
+			propellorsAxis: "y",
+			scale: [0.55, 0.55, 0.55],
+			position: [-0.015, 0, 0.225],
+			propellors: [
+				"DJI_M300_helice1_Grey_0",
+				"DJI_M300_helice1002_Grey_0",
+				"DJI_M300_helice1003_Grey_0",
+				"DJI_M300_helice1004_Grey_0",
+			],
+		},
+	],
 ]);
 /* const drone3dKeys = Array.from(drone3dProps.keys());
 const drone3dFile = drone3dKeys[Math.floor(Math.random() * drone3dKeys.length)]; */
 
-const drone3dFile = "/models/DJI_Matrice_M210_RTK.glb";
+const drone3dFile = "/models/dji-matrice-300-optimized.glb";
 interface CtaItem {
 	label: string;
 	href?: string;
@@ -300,7 +328,8 @@ export default function HeroSection() {
 					});
 				}
 				droneGroup.add(loadedDroneMesh);
-				animate();
+                animate();
+                // renderer.render(scene, camera);
 			},
 			undefined,
 			(error) => {
