@@ -4,7 +4,12 @@
 		"title": "Accurate Site Data for Design, Planning & Construction",
 		"subTitle": "Leading Land and Aerial surveying in Kenya.",
 		"description": "Leading Land and Aerial surveying in Kenya.",
-        "image": "/media/surveying/topographical/AG8ng.jpeg"
+        "image": "/media/surveying/topographical/AG8ng.jpeg",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Request a Topographical Survey Quote Today",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Topographical Survey&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for a Topographical Survey. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0APlot size:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+		}
 	},
 	"whatIs": {
 		"tag": "The Foundation of Every Project",

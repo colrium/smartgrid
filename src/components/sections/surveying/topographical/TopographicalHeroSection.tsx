@@ -1,9 +1,16 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionTag } from "@/components/SectionTag";
+
+interface TopoHeroCta {
+	icon?: string;
+	label: string;
+	href: string;
+}
 
 interface TopoHeroContent {
 	headline: string;
@@ -11,6 +18,7 @@ interface TopoHeroContent {
 	subTitle: string;
 	description: string;
 	image: string;
+	ctaPrimary?: TopoHeroCta | null;
 }
 
 export function TopographicalHeroSection() {
@@ -49,6 +57,19 @@ export function TopographicalHeroSection() {
 						<p className="mt-6 max-w-2xl text-base sm:text-lg text-surface/70 leading-relaxed">
 							{hero.subTitle || hero.description}
 						</p>
+					)}
+
+					{hero.ctaPrimary?.href && (
+						<Link
+							href={hero.ctaPrimary.href}
+							className="group mt-8 inline-flex items-center gap-3 h-14 rounded-full bg-primary px-8 text-surface font-medium text-base transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_42px_-10px_rgba(0,151,178,0.7)]"
+						>
+							{hero.ctaPrimary.icon && (
+								<span className={`mdi mdi-${hero.ctaPrimary.icon} text-xl`} />
+							)}
+							{hero.ctaPrimary.label}
+							<span className="mdi mdi-arrow-right text-xl transition-transform duration-300 group-hover:translate-x-1" />
+						</Link>
 					)}
 				</FadeUp>
 			</div>
