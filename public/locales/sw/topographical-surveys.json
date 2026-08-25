@@ -1,10 +1,99 @@
 {
 	"hero": {
-		"headline": "Uchunguzi wa Topografia",
-		"title": "Vipimo Sahihi. Haraka. Uchunguzi wa Kuaminika.",
-		"subTitle": "Uchunguzi wa Nchi Kavu na Angani unaoongoza nchini Kenya.",
-		"description": "Uchunguzi wa Nchi Kavu na Angani unaoongoza nchini Kenya.",
-		"image": "/media/surveying/topographical/AG8ng.jpeg"
+		"headline": "Uchunguzi wa Topografia Kenya, Afrika Mashariki na Zaidi",
+		"title": "Data Sahihi ya Tovuti kwa Usanidi, Upangaji na Ujenzi",
+		"subTitle": "Kiongozi katika upimaji wa Ardhi na Hewa Kenya.",
+		"description": "Kiongozi katika upimaji wa Ardhi na Hewa Kenya.",
+        "image": "/media/surveying/topographical/AG8ng.jpeg"
+	},
+	"whatIs": {
+		"tag": "Msingi wa Kila Mradi",
+		"headline": "Uchunguzi wa Topografia ni Nini?",
+		"description": "Uchunguzi wa topografia hutoa uwakilishi wa kina wa ardhi yako — ukikamata mwinuko, contours, vipengele vya asili, na miundo iliyopo ardhini kama ilivyo. Ni msingi wa miradi yote ya usanidi wa uhandisi na ujenzi, ukipa waanachitecture, wahandisi, na wapangaji data sahihi ya tovuti wanayohitaji kusanidi kwa uhakika."
+	},
+	"whenYouNeed": {
+		"tag": "Matumizi",
+		"headline": "Linahitaji Uchunguzi wa Topografia lini?",
+		"description": "Kutoka rasimu ya kwanza ya usanidi hadi idhini ya mwisho ya kaunti, uchunguzi sahihi wa topografia una msingi wa kila maamuzi makubwa kwenye mradi wako.",
+		"items": [
+			{
+				"icon": "drafting-compass",
+				"title": "Kabla ya usanidi wa usanifu au civil",
+				"description": "Kutoa viwango sahihi vya ardhi na vipengele vya tovuti kwa kazi sahihi ya usanidi."
+			},
+			{
+				"icon": "file-certificate-outline",
+				"title": "Kabla ya idhini za ujenzi",
+				"description": "Inahitajika kwa michoro ya kuwasilisha na ufuaso wa mamlaka za mipango."
+			},
+			{
+				"icon": "road-variant",
+				"title": "Kwa usanidi wa barabara, miundombinu, na mifereji",
+				"description": "Huwezesha alignment sahihi, grading, na upangaji wa maji ya mvua."
+			},
+			{
+				"icon": "land-fields",
+				"title": "Kwa maendeleo ya ardhi na kugawanya",
+				"description": "Hufafanua ardhi, njia za kufikia, na uwezekano wa mpangilio kwa mipango na idhini."
+			},
+			{
+				"icon": "office-building-marker",
+				"title": "Idhini za NCA na Mipango ya Kimwili",
+				"children": [
+					{
+						"title": "Kabla ya kuwasilisha michoro ya usanifu na kimuundo kwa idhini ya Kaunti (PPA2 / Development Permission)",
+						"description": "Inahitajika kuunga mkono maombi ya mipango chini ya Serikali za Kaunti na mahitaji ya ufuaso wa Physical and Land Use Planning Act, kuhakikisha muktadha sahihi wa tovuti, njia za kufikia, na uwekaji wa majengo."
+					},
+					{
+						"title": "Kabla ya kutoa idhini ya ujenzi na usajili wa mradi wa NCA",
+						"description": "Huunda sehemu ya nyaraka za kiufundi zinazohitajika kwa usajili wa mradi wa NCA, pamoja na michoro iliyoidhinishwa, BoQs, na nyaraka za ushauri wa wataalamu."
+					},
+					{
+						"title": "Kwa mawasilisho ya usanidi wa miundombinu (barabara, mifereji, maji, na mpangilio wa huduga)",
+						"description": "Inatumika na wahandisi na washauri kuunga mkono ufuaso wa usanidi na viwango vya kisheria vya grading, udhibiti wa mifereji, na alignment ya huduga."
+					},
+					{
+						"title": "Kwa maombi ya kugawanya ardhi, kuunganisha, na mipango ya maendeleo",
+						"description": "Inahitajika kwa maandalizi na idhini ya mutation plans, kuhakikisha ufuaso wa mahitaji ya Survey of Kenya na mipango ya kimwili ya Kaunti kabla ya uthibitisho wa ramani za upimaji."
+					}
+				]
+			}
+		]
+	},
+	"whatYouGet": {
+		"tag": "Matokeo",
+		"headline": "Unachopata",
+		"description": "Kila uchunguzi wa topografia hutolewa kwa jumla kamili, tayari kwa uhandisi.",
+		"items": [
+			"Ramani ya kina ya topografia yenye vipengele",
+			"Ramani za contour (intervals kubwa na ndogo)",
+			"Michoro ya CAD (tayari kwa AutoCAD)",
+			"Digital Terrain Models (DTM)",
+			"Data ya kuratibu XYZ, spot levels na vipengele vya tovuti",
+			"Ripoti ya uchunguzi"
+		]
+	},
+	"cost": {
+		"tag": "Bei",
+		"headline": "Gharama ya Uchunguzi wa Topografia Kenya",
+		"description": "Bei ya uchunguzi wa topografia huathiriwa na hali za tovuti na kiwango cha maelezo kinachohitajika kwa madhumuni ya uhandisi na idhini. Kila mradi hutathminiwa kwa kipekee kuhakikisha bei sahihi na inayofaa kwa madhumuni.",
+		"factorsTitle": "Mambo Makuu ya Gharama",
+		"factors": [
+			"Ukubwa wa tovuti na msongamano wa matumizi ya ardhi (ploti ndogo dhidi ya maendeleo makubwa)",
+			"Ugumu wa ardhi (ardhi tambarare, mitelemko, au maeneo yajengwa sana)",
+			"Urahisi wa kufikia tovuti (njia za barabara, mwonekano wa mimea, hali za usalama)",
+			"Usahihi na matokeo yanayohitajika (contours za msingi dhidi ya datasets kamili za uhandisi kama DTM/DSM na muunganisho wa CAD)"
+		],
+		"priceRangeTitle": "Kiwango cha Kawaida cha Bei",
+		"priceRange": "KES 50,000 – 300,000+",
+		"priceRangeNote": "Kiwango hiki kinatumika kwa miradi mingi ya makazi, biashara, na miundombinu ya wastani Nairobi, Kiambu na Kenya kwa ujumla. Maendeleo makubwa, ardhi ngumu, au uchunguzi wa usahihi wa juu wa uhandisi unaweza kuzidi kiwango hiki.",
+		"influencesTitle": "Kinachoathiri Bei ya Mwisho kwa Wateja Wetu",
+		"influences": [
+			"Gharama ya kupeleka vifaa tovutini",
+			"Ikiwa ramani za droni zinahitajika",
+			"Kiwango cha maelezo kinachohitajika kwa idhini ya kaunti au usanidi wa uhandisi",
+			"Muunganisho na mchakato wa GIS, CAD, au BIM"
+		]
 	},
 	"section1": {
 		"tag": "Uchunguzi wa Topografia",

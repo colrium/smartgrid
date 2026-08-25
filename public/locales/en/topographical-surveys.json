@@ -1,10 +1,99 @@
 {
 	"hero": {
-		"headline": "Topographical Surveys",
-		"title": "Accurate Measurements. Fast. Reliable Surveys.",
+		"headline": "Topographical Surveys in Kenya, East Africa and Beyond",
+		"title": "Accurate Site Data for Design, Planning & Construction",
 		"subTitle": "Leading Land and Aerial surveying in Kenya.",
 		"description": "Leading Land and Aerial surveying in Kenya.",
         "image": "/media/surveying/topographical/AG8ng.jpeg"
+	},
+	"whatIs": {
+		"tag": "The Foundation of Every Project",
+		"headline": "What is a Topographical Survey?",
+		"description": "A topographical survey provides a detailed representation of your land — capturing elevations, contours, natural features, and existing structures as they exist on the ground. It is the foundation of all engineering design and construction projects, giving architects, engineers, and planners the accurate site data they need to design with confidence."
+	},
+	"whenYouNeed": {
+		"tag": "Use Cases",
+		"headline": "When Do You Need a Topographical Survey?",
+		"description": "From the first design sketch to final county approval, an accurate topographical survey underpins every critical decision on your project.",
+		"items": [
+			{
+				"icon": "drafting-compass",
+				"title": "Before architectural or civil design",
+				"description": "To provide accurate ground levels and site features for precise design work."
+			},
+			{
+				"icon": "file-certificate-outline",
+				"title": "Before construction approvals",
+				"description": "Required for submission drawings and compliance with planning authorities."
+			},
+			{
+				"icon": "road-variant",
+				"title": "For road, infrastructure, and drainage design",
+				"description": "Enables proper alignment, grading, and stormwater planning."
+			},
+			{
+				"icon": "land-fields",
+				"title": "For land development and subdivision",
+				"description": "Defines terrain, access, and layout feasibility for planning and approvals."
+			},
+			{
+				"icon": "office-building-marker",
+				"title": "NCA and Physical Planning approvals",
+				"children": [
+					{
+						"title": "Before submission of architectural and structural drawings for County approval (PPA2 / Development Permission)",
+						"description": "Required to support planning applications under County Governments and Physical and Land Use Planning Act compliance requirements, ensuring accurate site context, access, and building positioning."
+					},
+					{
+						"title": "Before issuance of construction approval and NCA project registration",
+						"description": "Forms part of the technical documentation required for NCA project registration, alongside approved drawings, BoQs, and consultant engagement documents."
+					},
+					{
+						"title": "For infrastructure design submissions (roads, drainage, water, and utility layouts)",
+						"description": "Used by engineers and consultants to support design compliance with statutory standards for grading, drainage control, and service alignment."
+					},
+					{
+						"title": "For land subdivision, amalgamation, and development planning applications",
+						"description": "Required for preparation and approval of mutation plans, ensuring compliance with Survey of Kenya and County physical planning requirements before survey plan authentication."
+					}
+				]
+			}
+		]
+	},
+	"whatYouGet": {
+		"tag": "Deliverables",
+		"headline": "What You Get",
+		"description": "Every topographical survey is delivered as a complete, engineering-ready package.",
+		"items": [
+			"Detailed features topographical map",
+			"Contour maps (major & minor intervals)",
+			"CAD drawings (AutoCAD-ready)",
+			"Digital Terrain Models (DTM)",
+			"XYZ coordinates data, spot levels and site features",
+			"Survey report"
+		]
+	},
+	"cost": {
+		"tag": "Pricing",
+		"headline": "Topographical Survey Cost in Kenya",
+		"description": "Topographical survey pricing is influenced by site conditions and the level of detail required for engineering and approval purposes. Each project is assessed individually to ensure accurate and fit-for-purpose pricing.",
+		"factorsTitle": "Key Cost Factors",
+		"factors": [
+			"Site size and land use intensity (small plots vs large developments)",
+			"Terrain complexity (flat land, slopes, or heavily built-up areas)",
+			"Site accessibility (road access, vegetation cover, security conditions)",
+			"Required accuracy and deliverables (basic contours vs full engineering datasets such as DTM/DSM and CAD integration)"
+		],
+		"priceRangeTitle": "Typical Price Range",
+		"priceRange": "KES 50,000 – 300,000+",
+		"priceRangeNote": "This range applies to most residential, commercial, and mid-scale infrastructure projects across Nairobi, Kiambu and Kenya extensively. Large-scale developments, complex terrain, or high-precision engineering surveys may fall above this range.",
+		"influencesTitle": "What Influences Final Pricing for Our Clients",
+		"influences": [
+			"Mobilization cost to site",
+			"Whether drone mapping is required",
+			"Level of detail required for county approval or design engineering",
+			"Integration with GIS, CAD, or BIM workflows"
+		]
 	},
 	"section1": {
 		"tag": "Topographical Surveying",

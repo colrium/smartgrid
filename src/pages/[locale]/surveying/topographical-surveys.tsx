@@ -4,6 +4,10 @@ import PageHead from "@/components/Head";
 import { getI18nProps } from "@/lib/i18n";
 import {
 	TopographicalHeroSection,
+	WhatIsTopographicalSection,
+	WhenYouNeedSection,
+	WhatYouGetSection,
+	TopographicalCostSection,
 	IntroSection,
 	WhatWeOfferSection,
 	DetailedSurveysSection,
@@ -22,6 +26,10 @@ const Page: NextPage<PageProps> = () => {
 			<PageHead pageName="topographical-surveys" />
 			<div className="flex flex-col min-h-screen">
 				<TopographicalHeroSection />
+				<WhatIsTopographicalSection />
+				<WhenYouNeedSection />
+				<WhatYouGetSection />
+				<TopographicalCostSection />
 				<IntroSection />
 				<WhatWeOfferSection />
 				<DetailedSurveysSection />
