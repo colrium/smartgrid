@@ -66,14 +66,33 @@ const drone3dProps = new Map([
 			propellorsAxis: "z",
 			scale: [0.15, 0.15, 0.15],
 			position: [0, -0.2, 0],
-			propellors: ["Cube_001_Black02_0", "Cube_002_Black02_0", "Cube_003_Black02_0", "Cube_004_Black02_0"],
+			propellors: [
+				"Cube_001_Black02_0",
+				"Cube_002_Black02_0",
+				"Cube_003_Black02_0",
+				"Cube_004_Black02_0",
+			],
+		},
+	],
+	[
+		"/models/DJI_Matrice_M210_RTK.glb",
+		{
+			propellorsAxis: "z",
+			scale: [0.015, 0.015, 0.015],
+			position: [0, -0.2, 0.9],
+			propellors: [
+				"vrtula_1007_Material3358_0_0",
+				"vrtula_1014_Material3180_0_0",
+				"vrtula_1005_Material3356_0_0",
+				"vrtula_1006_Material3357_0_0",
+			],
 		},
 	],
 ]);
 /* const drone3dKeys = Array.from(drone3dProps.keys());
 const drone3dFile = drone3dKeys[Math.floor(Math.random() * drone3dKeys.length)]; */
 
-const drone3dFile = "/models/drone_low_poly.glb";
+const drone3dFile = "/models/DJI_Matrice_M210_RTK.glb";
 interface CtaItem {
 	label: string;
 	href?: string;
