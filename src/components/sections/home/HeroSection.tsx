@@ -79,7 +79,7 @@ const drone3dProps = new Map([
 		{
 			propellorsAxis: "z",
 			scale: [0.015, 0.015, 0.015],
-			position: [0, -0.2, 0.9],
+			position: [-0.14415, 0.155, 0.95],
 			propellors: [
 				"vrtula_1007_Material3358_0_0",
 				"vrtula_1014_Material3180_0_0",
