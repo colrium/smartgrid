@@ -8,6 +8,7 @@ export type MorphTransition = "melt" | "ripple" | "shear" | "swirl";
 export interface MorphItem {
 	image: string;
 	caption?: string;
+	description?: string;
 }
 
 export interface MorphSliderProps {
@@ -681,7 +682,7 @@ export default function MorphSlider({
 	);
 
 	const hasCaptions = items.some((item) => item.caption);
-
+    const hasDescriptions = items.some((item) => item.description);
 	return (
 		<div
 			className={`relative w-full h-full overflow-hidden select-none bg-[#0c0c0e] ${className}`.trim()}
@@ -707,26 +708,39 @@ export default function MorphSlider({
 				onKeyDown={onKeyDown}
 			/>
 
-			{showCaptions && hasCaptions && (
+			{showCaptions && (hasCaptions || hasDescriptions) && (
 				<div
 					className="morph-slider-caption pointer-events-none absolute bottom-[22px] left-[22px] z-[2] grid max-w-[70%]"
 					aria-live="polite"
 				>
-					{items.map((item, i) =>
-						item.caption ? (
-							<span
-								key={i}
-								aria-hidden={i === index ? undefined : true}
-								className={`morph-slider-caption-text pointer-events-none inline-block rounded-[10px] bg-[rgba(10,10,12,0.42)] px-[14px] py-[8px] text-[15px] font-semibold tracking-[0.01em] text-white backdrop-blur-[8px] [grid-area:1/1] [justify-self:start] [transition:opacity_var(--ms-swap)_cubic-bezier(0.16,1,0.3,1),transform_var(--ms-swap)_cubic-bezier(0.16,1,0.3,1),filter_var(--ms-swap)_cubic-bezier(0.16,1,0.3,1)] ${
-									i === index
-										? "opacity-100 [transform:translateY(0)] [filter:blur(0)]"
-										: "opacity-0 [transform:translateY(12px)] [filter:blur(6px)]"
-								}`}
-							>
-								{item.caption}
-							</span>
-						) : null
-					)}
+					{items.map((item, i) => (
+						<div className="flex-col gap-8 px-3.5 py-2 " key={i}>
+							{item.caption && (
+								<span
+									aria-hidden={i === index ? undefined : true}
+									className={`morph-slider-caption-text pointer-events-none inline-block rounded-[10px] bg-[rgba(10,10,12,0.42)] px-3.5 py-2 text-[15px] font-semibold tracking-[0.01em] text-white backdrop-blur-sm [grid-area:1/1] [justify-self:start] [transition:opacity_var(--ms-swap)_cubic-bezier(0.16,1,0.3,1),transform_var(--ms-swap)_cubic-bezier(0.16,1,0.3,1),filter_var(--ms-swap)_cubic-bezier(0.16,1,0.3,1)] ${
+										i === index
+											? "opacity-100 [transform:translateY(0)] [filter:blur(0)]"
+											: "opacity-0 [transform:translateY(12px)] [filter:blur(6px)]"
+									}`}
+								>
+									{item.caption}
+								</span>
+							)}
+							{item.description && (
+								<span
+									aria-hidden={i === index ? undefined : true}
+									className={`morph-slider-caption-text pointer-events-none inline-block rounded-[10px] bg-[rgba(10,10,12,0.42)] text-sm text-white backdrop-blur-sm [grid-area:1/1] [justify-self:start] [transition:opacity_var(--ms-swap)_cubic-bezier(0.16,1,0.3,1),transform_var(--ms-swap)_cubic-bezier(0.16,1,0.3,1),filter_var(--ms-swap)_cubic-bezier(0.16,1,0.3,1)] ${
+										i === index
+											? "opacity-100 [transform:translateY(0)] [filter:blur(0)]"
+											: "opacity-0 [transform:translateY(12px)] [filter:blur(6px)]"
+									}`}
+								>
+									{item.description}
+								</span>
+							)}
+						</div>
+					))}
 				</div>
 			)}
 

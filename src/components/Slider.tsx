@@ -18,6 +18,7 @@ interface SliderProps {
 	showDots?: boolean;
 	className?: string;
 	imgClassName?: string;
+	containerClassName?: string;
 }
 
 const SLIDE_VARIANTS = {
@@ -39,8 +40,9 @@ export function Slider({
 	autoplay = 0,
 	showArrows = true,
 	showDots = true,
-    className = "",
-    imgClassName=""
+	className = "",
+	imgClassName = "",
+	containerClassName="",
 }: SliderProps) {
 	const count = slides.length;
 	const [index, setIndex] = useState(0);
@@ -54,7 +56,7 @@ export function Slider({
 			setDirection(dir);
 			setIndex((current) => (next + count) % count);
 		},
-		[count],
+		[count]
 	);
 
 	const next = useCallback(() => go(index + 1, 1), [go, index]);
@@ -101,7 +103,9 @@ export function Slider({
 				touchStartX.current = null;
 			}}
 		>
-			<div className="relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-[21/10] overflow-hidden rounded-[20px] hairline card-shadow bg-surface">
+			<div
+				className={`relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-[21/10] overflow-hidden rounded-[20px] hairline card-shadow bg-surface ${containerClassName}`}
+			>
 				<AnimatePresence initial={false} custom={direction} mode="popLayout">
 					<motion.div
 						key={index}
@@ -124,7 +128,9 @@ export function Slider({
 						) : (
 							<div className="absolute inset-0 ink-panel" />
 						)}
-                        {(slide.title || slide.description) && (<div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />)}
+						{(slide.title || slide.description) && (
+							<div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
+						)}
 
 						{(slide.title || slide.description) && (
 							<div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">

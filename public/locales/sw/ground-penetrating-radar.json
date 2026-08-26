@@ -3,6 +3,43 @@
 		"headline": "GROUND PENETRATING RADAR",
 		"title": "Huduma za Uchunguzi wa GPR",
 		"image": "/media/surveying/ground-penetrating-radar/hero.png",
+		"images": [
+			{
+				"url": "/media/surveying/ground-penetrating-radar/hero.png",
+				"label": "LMX200",
+				"description": "The LMX200 GPR system with SmartCart® – the industry standard for utility locating, concrete scanning, and subsurface imaging."
+			},
+			{
+				"url": "/media/surveying/ground-penetrating-radar/16.jpeg",
+				"label": "Non-Destructive",
+				"description": "Non-invasive subsurface investigation that preserves infrastructure integrity while delivering accurate underground data."
+			},
+			{
+				"url": "/media/surveying/ground-penetrating-radar/05.jpeg",
+				"label": "Deep Detection",
+				"description": "Penetrates up to 8 meters (26 feet) depth, capturing rebar, conduits, voids, and utility lines with high-resolution clarity."
+			},
+			{
+				"url": "/media/surveying/ground-penetrating-radar/gpr-16.jpeg",
+				"label": "Portable & Rugged",
+				"description": "Lightweight, collapsible design with IP65-rated weather resistance – built for demanding job sites and easy transport."
+			},
+			{
+				"url": "/media/surveying/ground-penetrating-radar/gpr-03.jpeg",
+				"label": "GPS-Integrated Mapping",
+				"description": "Built-in GPS and DMI (Distance Measurement Instrument) for precise georeferencing and seamless GIS data export."
+			},
+			{
+				"url": "/media/surveying/ground-penetrating-radar/data-integration.png",
+				"label": "Immediate Results",
+				"description": "Real-time data processing with on-screen visualization – enabling instant field decisions and rapid site assessment."
+			},
+			{
+				"url": "/media/surveying/ground-penetrating-radar/topographical-mapping.png",
+				"label": "Advanced Analysis Software",
+				"description": "Powerful post-processing software with 3D visualization, slice generation, and automated reporting tools."
+			}
+		],
 		"browseAll": {
 			"label": "Tazama Huduma Zote",
 			"href": "/surveying"
@@ -61,6 +98,7 @@
 	"overview": {
 		"tag": "Muhtasari",
 		"headline": "Uchunguzi wa Ground Penetrating Radar Kenya",
+		"image": "/media/surveying/ground-penetrating-radar/gpr-lmx-200.gif",
 		"paragraphs": [
 			"Uchunguzi wa Ground Penetrating Radar (GPR) hutumia miale ya electromagnetic kutambua na kupanga ramani za huduga zilizojificha, mashimo, rebar, na kasoro za chini ya ardhi bila kuchimba. GPR ni zana kuu ya ramani za huduga kabla ya kuchimba, upimaji wa zege, na utambuzi wa mashimo kwenye tovuti za ujenzi Nairobi na zaidi.",
 			"SmartGrid Surveying hutumia mifumo ya GPR ya daraja la GSSI yenye waendeshaji wenye uzoefu, kutoa matokeo ya awali siku hiyo hiyo na ripoti za kina zenye michoro tayari kwa CAD.",

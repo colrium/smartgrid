@@ -3,11 +3,12 @@
 import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionHeader } from "@/components/sections/home";
-
+import Image from "next/image";
 interface OverviewContent {
 	tag?: string | null;
 	headline: string;
-	paragraphs?: string[] | null;
+    paragraphs?: string[] | null;
+    image?: string | null;
 }
 
 export function GprOverviewSection() {
@@ -16,12 +17,28 @@ export function GprOverviewSection() {
 		returnObjects: true,
 	}) as unknown as OverviewContent;
 	const paragraphs = Array.isArray(section?.paragraphs) ? section.paragraphs : [];
-
+    const hasImage = typeof section.image === "string" && section.image.startsWith("/");
 	if (paragraphs.length === 0) return null;
 
 	return (
 		<section id="overview" className="scroll-mt-36 py-20 sm:py-24 relative overflow-hidden">
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+				{hasImage && (
+					<FadeUp delay={0.08}>
+						<div className="relative rounded-3xl overflow-hidden bg-primary-50/60 hairline card-shadow">
+							<div className="relative aspect-5/3">
+								<Image
+									src={section.image as string}
+									alt={section.headline}
+									fill
+									priority
+									sizes="(min-width: 720px) 50vw, 100vw"
+									className="object-fill object-center"
+								/>
+							</div>
+						</div>
+					</FadeUp>
+				)}
 				<SectionHeader
 					tag={section.tag || undefined}
 					headline={section.headline}

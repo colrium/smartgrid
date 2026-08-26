@@ -36,7 +36,10 @@ export function GprDeliverablesSection() {
 		}));
 
 	return (
-		<section id="deliverables" className="scroll-mt-36 py-20 sm:py-24 relative overflow-hidden bg-surface">
+		<section
+			id="deliverables"
+			className="scroll-mt-36 py-20 sm:py-24 relative overflow-hidden bg-surface"
+		>
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader
 					tag={section.tag || undefined}
@@ -66,7 +69,14 @@ export function GprDeliverablesSection() {
 					{slides.length > 0 && (
 						<FadeRight delay={0.08}>
 							<div className="rounded-[20px] bg-surface hairline card-shadow p-4">
-								<Slider slides={slides} autoplay={5000} showArrows showDots imgClassName="object-cover!" />
+								<Slider
+									slides={slides}
+									autoplay={5000}
+									showArrows
+									showDots
+									imgClassName="object-fill!"
+									containerClassName=" aspect-5/3!"
+								/>
 							</div>
 						</FadeRight>
 					)}

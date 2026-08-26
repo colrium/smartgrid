@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useTranslation } from "@/hooks";
 import { FadeLeft, FadeRight } from "@/components/animations/Fade";
 import { Blob } from "@/components/sections/home/decor";
+import { MediaImage } from "@/lib/types";
+import Slider from "@/components/Slider";
 
 interface GprCta {
 	icon?: string;
@@ -21,6 +23,7 @@ interface GprHeroContent {
 	headline?: string;
 	title: string;
 	image?: string | null;
+	images?: string[] | MediaImage[];
 	browseAll?: BrowseLink | null;
 	description?: string;
 	ctaPrimary?: GprCta | null;
@@ -33,10 +36,24 @@ export function GprServiceHero() {
 		returnObjects: true,
 	}) as unknown as GprHeroContent;
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");
-
+    const images = Array.isArray(hero?.images) ? hero.images : [];
+    const slides = images
+		.filter((item) => {
+			const url = typeof item === "object" ? item.url : item;
+			return typeof url === "string" && url.startsWith("/");
+		})
+		.map((item, index) => ({
+			image: (typeof item === "object" ? item.url : item) as string,
+			alt: (typeof item === "object" ? item.label : item) ?? "GPR",
+			title: (typeof item === "object" ? item.label : null) ?? "GPR",
+			description: (typeof item === "object" ? item.description : null) ?? `Ground Penetrating Radar ${index+1}`,
+        }));
 	return (
 		<section className="relative overflow-hidden pt-40 sm:pt-44 pb-10">
-			<Blob className="w-[26rem] h-[26rem] bg-primary-100/50 -top-24 -right-20" opacity={0.5} />
+			<Blob
+				className="w-[26rem] h-[26rem] bg-primary-100/50 -top-24 -right-20"
+				opacity={0.5}
+			/>
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -81,7 +98,9 @@ export function GprServiceHero() {
 											className="inline-flex items-center gap-2.5 h-12 rounded-full bg-emerald-600 px-7 text-white text-sm font-medium transition-all duration-300 hover:bg-emerald-700"
 										>
 											{hero.ctaSecondary.icon && (
-												<span className={`mdi mdi-${hero.ctaSecondary.icon} text-lg`} />
+												<span
+													className={`mdi mdi-${hero.ctaSecondary.icon} text-lg`}
+												/>
 											)}
 											{hero.ctaSecondary.label}
 										</a>
@@ -92,20 +111,33 @@ export function GprServiceHero() {
 					</FadeLeft>
 
 					<FadeRight delay={0.08}>
-						{hasImage && (
+						{slides.length > 0 && (
+							<FadeRight delay={0.08}>
+								
+									<Slider
+										slides={slides}
+										autoplay={5000}
+										showArrows
+										showDots
+										imgClassName="object-fill!"
+										containerClassName=" aspect-3/4!"
+									/>
+							</FadeRight>
+						)}
+						{/*hasImage && (
 							<div className="relative rounded-[24px] overflow-hidden bg-primary-50/60 hairline card-shadow">
-								<div className="relative aspect-[4/3]">
+								<div className="relative aspect-[3/4]">
 									<Image
 										src={hero.image as string}
 										alt={hero.title}
 										fill
 										priority
-										sizes="(min-width: 1024px) 50vw, 100vw"
-										className="object-cover object-center"
+										sizes="(min-width: 720px) 50vw, 100vw"
+										className="object-fill object-center"
 									/>
 								</div>
 							</div>
-						)}
+						)*/}
 					</FadeRight>
 				</div>
 			</div>

@@ -190,8 +190,8 @@ export default function HeroSection() {
 			},
 			{ threshold: 0 } // Triggers as soon as it fully leaves or partially enters
 		);
-        observer.observe(containerRef.current);
-		
+		observer.observe(containerRef.current);
+
 		// --- Scene Setup ---
 		const scene = new THREE.Scene();
 		const camera = new THREE.PerspectiveCamera(
@@ -272,7 +272,71 @@ export default function HeroSection() {
 		});
 		const particles = new THREE.Points(pGeometry, pMaterial);
 		scene.add(particles);
+		/*
+		// --- Procedural GNSS Receiver (Background Left) ---
+		const gnssGroup = new THREE.Group();
+		gnssGroup.position.set(-8, -1.2, -5); // Positioned back and left
 
+		// Survey Pole
+		const poleGeo = new THREE.CylinderGeometry(0.05, 0.05, 4, 16);
+		const poleMat = new THREE.MeshStandardMaterial({
+			color: 0x888888,
+			metalness: 0.9,
+			roughness: 0.2,
+		});
+		const pole = new THREE.Mesh(poleGeo, poleMat);
+		gnssGroup.add(pole);
+
+		 // GNSS Receiver Head
+		const headGeo = new THREE.CylinderGeometry(0.35, 0.35, 0.3, 32);
+		const headMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.1 });
+		const head = new THREE.Mesh(headGeo, headMat);
+		head.position.y = 2.15; // Set atop the pole
+		gnssGroup.add(head);
+
+		// GNSS Accent Ring (Often blue or yellow)
+		const ringGeo = new THREE.CylinderGeometry(0.36, 0.36, 0.05, 32);
+		const ringMat = new THREE.MeshStandardMaterial({ color: 0x0077ff, roughness: 0.4 });
+		const ring = new THREE.Mesh(ringGeo, ringMat);
+		ring.position.y = 2.05;
+		gnssGroup.add(ring);
+
+		scene.add(gnssGroup); */
+		// --- Procedural Wireframe GNSS Receiver (FOIF A90 Shape) ---
+		/* const gnssGroup = new THREE.Group();
+		gnssGroup.position.set(-8, -1.2, -5);
+
+		// Wireframe Material
+		const wireMat = new THREE.MeshBasicMaterial({
+			color: 0x77ccee,
+			wireframe: true,
+			transparent: true,
+			opacity: 0.5,
+		});
+
+		// Survey Pole
+		const poleGeo = new THREE.CylinderGeometry(0.04, 0.04, 4.5, 12);
+		const pole = new THREE.Mesh(poleGeo, wireMat);
+		gnssGroup.add(pole);
+
+		// FOIF A90 Lathe Profile
+		const points = [];
+		points.push(new THREE.Vector2(0, 0.25)); // Top center of dome
+		points.push(new THREE.Vector2(0.28, 0.22)); // Dome edge
+		points.push(new THREE.Vector2(0.35, 0.15)); // Top of bumper ring
+		points.push(new THREE.Vector2(0.35, 0.05)); // Bottom of bumper ring
+		points.push(new THREE.Vector2(0.12, -0.15)); // Tapered conical base
+		points.push(new THREE.Vector2(0.12, -0.25)); // Base mount straight cylinder
+		points.push(new THREE.Vector2(0, -0.25)); // Bottom center
+
+		const headGeo = new THREE.LatheGeometry(points, 24);
+		const head = new THREE.Mesh(headGeo, wireMat);
+		// Position at the top of the 4.5 unit pole
+		head.position.y = 2.25 + 0.25;
+		gnssGroup.add(head);
+
+		scene.add(gnssGroup);
+ */
 		// --- Drone Container Group ---
 		const droneGroup = new THREE.Group();
 		droneGroup.position.set(0, 3.5, 0);
@@ -328,8 +392,8 @@ export default function HeroSection() {
 					});
 				}
 				droneGroup.add(loadedDroneMesh);
-                animate();
-                // renderer.render(scene, camera);
+				animate();
+				// renderer.render(scene, camera);
 			},
 			undefined,
 			(error) => {
@@ -360,9 +424,9 @@ export default function HeroSection() {
 		let animId: number;
 
 		function animate() {
-            animId = requestAnimationFrame(animate);
-            // If not in the viewport, skip all calculations and rendering!
-            if (!isInViewport) return;
+			animId = requestAnimationFrame(animate);
+			// If not in the viewport, skip all calculations and rendering!
+			if (!isInViewport) return;
 			const t = clock.getElapsedTime();
 
 			// Lerp mouse variables for butter-smooth animation despite debounced events

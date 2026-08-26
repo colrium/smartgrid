@@ -3,6 +3,43 @@
 		"headline": "GROUND PENETRATING RADAR",
 		"title": "GPR Survey Services",
 		"image": "/media/surveying/ground-penetrating-radar/hero.png",
+		"images": [
+			{
+				"url": "/media/surveying/ground-penetrating-radar/hero.png",
+				"label": "LMX200",
+				"description": "The LMX200 GPR system with SmartCart® – the industry standard for utility locating, concrete scanning, and subsurface imaging."
+			},
+			{
+				"url": "/media/surveying/ground-penetrating-radar/16.jpeg",
+				"label": "Non-Destructive",
+				"description": "Non-invasive subsurface investigation that preserves infrastructure integrity while delivering accurate underground data."
+			},
+			{
+				"url": "/media/surveying/ground-penetrating-radar/05.jpeg",
+				"label": "Deep Detection",
+				"description": "Penetrates up to 8 meters (26 feet) depth, capturing rebar, conduits, voids, and utility lines with high-resolution clarity."
+			},
+			{
+				"url": "/media/surveying/ground-penetrating-radar/gpr-16.jpeg",
+				"label": "Portable & Rugged",
+				"description": "Lightweight, collapsible design with IP65-rated weather resistance – built for demanding job sites and easy transport."
+			},
+			{
+				"url": "/media/surveying/ground-penetrating-radar/gpr-03.jpeg",
+				"label": "GPS-Integrated Mapping",
+				"description": "Built-in GPS and DMI (Distance Measurement Instrument) for precise georeferencing and seamless GIS data export."
+			},
+			{
+				"url": "/media/surveying/ground-penetrating-radar/data-integration.png",
+				"label": "Immediate Results",
+				"description": "Real-time data processing with on-screen visualization – enabling instant field decisions and rapid site assessment."
+			},
+			{
+				"url": "/media/surveying/ground-penetrating-radar/topographical-mapping.png",
+				"label": "Advanced Analysis Software",
+				"description": "Powerful post-processing software with 3D visualization, slice generation, and automated reporting tools."
+			}
+		],
 		"browseAll": {
 			"label": "Browse All Services",
 			"href": "/surveying"
@@ -43,6 +80,7 @@
 	"overview": {
 		"tag": "Overview",
 		"headline": "Ground Penetrating Radar Survey in Kenya",
+        "image": "/media/surveying/ground-penetrating-radar/gpr-lmx-200.gif",        
 		"paragraphs": [
 			"Ground Penetrating Radar (GPR) surveys use electromagnetic pulses to detect and map buried utilities, voids, rebar, and subsurface anomalies without excavation. GPR is the primary tool for pre-excavation utility mapping, concrete scanning, and void detection across construction sites in Nairobi and beyond.",
 			"SmartGrid Surveying uses GSSI-class GPR systems with experienced operators, delivering same-day preliminary findings and detailed reports with CAD-ready drawings.",
@@ -109,36 +147,7 @@
 			"GPR survey report"
 		],
 		"images": [
-			{
-				"image": "/media/surveying/ground-penetrating-radar/gpr-01.jpeg",
-				"title": "Field Scan",
-				"description": "Real-time GPR profiling across an urban site showing utility corridors."
-			},
-			{
-				"image": "/media/surveying/ground-penetrating-radar/gpr-07.jpeg",
-				"title": "Corridor Mapping",
-				"description": "High-density transects collected for thorough subsurface coverage."
-			},
-			{
-				"image": "/media/surveying/ground-penetrating-radar/gpr-10.jpeg",
-				"title": "Shallow Utility Detection",
-				"description": "Clear identification of shallow cables and conduits prior to excavation."
-			},
-			{
-				"image": "/media/surveying/ground-penetrating-radar/gpr-12.jpeg",
-				"title": "Deep Anomaly Profiling",
-				"description": "Detecting deeper voids and buried structures with enhanced penetration."
-			},
-			{
-				"image": "/media/surveying/ground-penetrating-radar/gpr-09.jpeg",
-				"title": "RTK Integration",
-				"description": "Synchronised GNSS positioning providing centimeter-accurate geolocation."
-			},
-			{
-				"image": "/media/surveying/ground-penetrating-radar/gpr-14.jpeg",
-				"title": "Data Interpretation",
-				"description": "Post-processed slices and maps ready for engineering workflows."
-			}
+			
 		]
 	},
 	"technology": {

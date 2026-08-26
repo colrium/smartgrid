@@ -35,7 +35,7 @@ export function GprHeroSection() {
 					fill
 					priority
 					sizes="100vw"
-					className="object-cover object-center"
+					className="object-fill object-center"
 				/>
 			) : (
 				<div className="absolute inset-0 ink-panel" />
