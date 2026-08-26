@@ -84,7 +84,7 @@ export function GprServiceHero() {
 									{hero.ctaPrimary?.href && (
 										<Link
 											href={hero.ctaPrimary.href}
-											className="group inline-flex items-center gap-2.5 h-12 rounded-full bg-ink px-7 text-surface text-sm font-medium transition-all duration-300 hover:bg-primary"
+											className="group inline-flex items-center gap-2.5 h-12 rounded-full bg-primary px-7 text-surface text-sm font-medium transition-all duration-300 hover:bg-primary-700"
 										>
 											{hero.ctaPrimary.label}
 											<span className="mdi mdi-arrow-right text-lg transition-transform duration-300 group-hover:translate-x-1" />

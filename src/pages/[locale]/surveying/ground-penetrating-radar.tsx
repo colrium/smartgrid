@@ -12,6 +12,7 @@ import {
 	GprDeliverablesSection,
 	GprTechnologySection,
 	GprFaqSection,
+	FeaturedProjectsSection,
 } from "@/components/sections/surveying/ground-penetrating-radar";
 
 type PageProps = {
@@ -31,6 +32,7 @@ const Page: NextPage<PageProps> = () => {
 				<GprApplicationsSection />
 				<GprDeliverablesSection />
 				<GprTechnologySection />
+				<FeaturedProjectsSection />
 				<GprFaqSection />
 			</div>
 		</div>

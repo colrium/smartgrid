@@ -111,7 +111,7 @@
 		"items": [
 			{
 				"icon": "pipe",
-				"title": "Pre-Excavation Utility Detection",
+				"title": "Utility Detection",
 				"description": "Locate buried power lines, water lines, and telecoms before breaking ground."
 			},
 			{
@@ -120,19 +120,29 @@
 				"description": "Locate rebar, post-tension cables, and voids within slabs and walls."
 			},
 			{
-				"icon": "alert-octagon-outline",
-				"title": "Void & Sinkhole Detection",
-				"description": "Identify subsurface voids under roads and structures."
+				"icon": "leaf",
+				"title": "Environmental Survey",
+				"description": "Map subsurface contamination, landfill boundaries, and groundwater interfaces."
 			},
 			{
-				"icon": "road-variant",
-				"title": "Pavement Layer Analysis",
-				"description": "Measure road layer thicknesses and subbase condition."
+				"icon": "bridge",
+				"title": "Bridge Deck Inspection",
+				"description": "Assess concrete deck condition, rebar corrosion, and delamination non-destructively."
+			},
+			{
+				"icon": "gavel",
+				"title": "Forensics & Law",
+				"description": "Locate clandestine graves, buried evidence, and hidden structures for investigations."
+			},
+			{
+				"icon": "water-outline",
+				"title": "Flood Zone Mapping",
+				"description": "Map subsurface water tables, voids, and flow paths for flood risk assessment."
 			},
 			{
 				"icon": "shovel",
-				"title": "Archaeology & Environmental",
-				"description": "Non-invasive subsurface investigation of cultural and environmental features."
+				"title": "Archeology and Geotechnical Testing",
+				"description": "Locate buried cultural features and assess soil stratigraphy non-invasively."
 			}
 		]
 	},
@@ -219,5 +229,42 @@
 			"label": "Contact Us",
 			"href": "/contact"
 		}
+	},
+	"featuredProjects": {
+		"tag": "Featured Projects",
+		"headline": "Featured Projects Across Kenya",
+		"description": "Real-world GPR deployments delivering actionable subsurface intelligence.",
+		"items": [
+			{
+				"title": "Utility Mapping – Nairobi CBD",
+				"used": "LMX200 Ground Penetrating Radar integrated with RTK-GNSS positioning.",
+				"objective": "Detect and map existing underground utilities before foundation excavation.",
+				"result": "Successfully identified fiber optics, power conduits, and storm drains — preventing costly conflicts during construction."
+			},
+			{
+				"title": "Pipeline Integrity Survey – Kisumu",
+				"used": "LMX200 GPR for non-destructive assessment of aging municipal water lines.",
+				"objective": "Identify voids, pipe fractures, and leakage zones along the corridor.",
+				"result": "Detected subsurface anomalies consistent with leakage and pipe deterioration, enabling targeted maintenance."
+			},
+			{
+				"title": "Archaeological Site Survey – Tharaka Nithi",
+				"used": "LMX200 GPR combined with drone-based topographical mapping.",
+				"objective": "Locate buried cultural features without intrusive excavation.",
+				"result": "Mapped subsurface stone alignments and structural remains while preserving site integrity."
+			},
+			{
+				"title": "Highway Expansion Risk Mapping – Nakuru",
+				"used": "LMX200 GPR in corridor scanning mode synchronized with GNSS data.",
+				"objective": "Identify underground utilities and potential weak zones ahead of road widening works.",
+				"result": "Provided high-resolution GPR profiles highlighting voids and buried services, improving design safety margins."
+			},
+			{
+				"title": "Industrial Site Clearance – Mombasa",
+				"used": "LMX200 Ground Penetrating Radar for pre-redevelopment clearance verification.",
+				"objective": "Confirm absence of buried tanks, debris, or metallic hazards across a decommissioned port depot.",
+				"result": "Verified the site as clear of subsurface obstructions, supporting safe redevelopment and compliance certification."
+			}
+		]
 	}
 }

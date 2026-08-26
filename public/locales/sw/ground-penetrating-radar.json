@@ -98,10 +98,9 @@
 	"overview": {
 		"tag": "Muhtasari",
 		"headline": "Uchunguzi wa Ground Penetrating Radar Kenya",
-		"image": "/media/surveying/ground-penetrating-radar/gpr-lmx-200.gif",
 		"paragraphs": [
 			"Uchunguzi wa Ground Penetrating Radar (GPR) hutumia miale ya electromagnetic kutambua na kupanga ramani za huduga zilizojificha, mashimo, rebar, na kasoro za chini ya ardhi bila kuchimba. GPR ni zana kuu ya ramani za huduga kabla ya kuchimba, upimaji wa zege, na utambuzi wa mashimo kwenye tovuti za ujenzi Nairobi na zaidi.",
-			"SmartGrid Surveying hutumia mifumo ya GPR ya daraja la GSSI yenye waendeshaji wenye uzoefu, kutoa matokeo ya awali siku hiyo hiyo na ripoti za kina zenye michoro tayari kwa CAD.",
+			"SmartGrid Surveying hutumia mifumo ya GSSI-class GPR yenye waendeshaji wenye uzoefu, kutoa matokeo ya awali siku hiyo hiyo na ripoti za kina zenye michoro tayari kwa CAD.",
 			"Unatafuta uchunguzi wa GPR karibu nawe? Timu zetu za GPR ziko Nairobi na hupeleka huduma nchini kote — Kiambu, Nakuru, Kisumu, Mombasa — na ombi kubwa la maombi huwekwa ratiba ndani ya saa 24."
 		]
 	},
@@ -115,7 +114,7 @@
 			},
 			{
 				"title": "Upataji wa Data ya GPR",
-				"description": "Uscanaji wa mfumo wa GPR katika maeneo ya uchunguzi kwa kutumia frequencies zilizorekebishwa zinazolingana na mahitaji ya kina."
+				"description": "Uscanaji wa mfumo wa GPR katika maeneo ya uchunguzi kwa kutumia antennas zilizorekebishwa zinazolingana na mahitaji ya kina."
 			},
 			{
 				"title": "Tafsiri ya Radargram na Ramani",
@@ -125,11 +124,12 @@
 	},
 	"applications": {
 		"tag": "Matumizi",
-		"headline": "Sekta za uhandisi na matumizi tunayohudumia",
+		"headline": "Sekta za uhandesi na matumizi tunayohudumia",
+		"description": "Gundua anuwai kamili ya huduma na matokeo yetu ya upimaji wa droni za hewa.",
 		"items": [
 			{
 				"icon": "pipe",
-				"title": "Utambuzi wa Huduga Kabla ya Kuchimba",
+				"title": "Utambuzi wa Huduga",
 				"description": "Kutafuta mistari ya umeme, maji, na telecom zilizojificha kabla ya kuchimba."
 			},
 			{
@@ -138,19 +138,29 @@
 				"description": "Kutafuta rebar, kanda za post-tension, na mashimo ndani ya slabs na kuta."
 			},
 			{
-				"icon": "alert-octagon-outline",
-				"title": "Utambuzi wa Mashimo na Sinkholes",
-				"description": "Kutambua mashimo ya chini ya ardhi chini ya barabara na miundo."
+				"icon": "leaf",
+				"title": "Uchunguzi wa Mazingira",
+				"description": "Ramani ya uchafuzi chini ya ardhi, mipaka ya maziwa ya taka, na miungano ya maji chini ya ardhi."
 			},
 			{
-				"icon": "road-variant",
-				"title": "Uchambuzi wa Tabaka za Barabara",
-				"description": "Kupima unene wa tabaka za barabara na hali ya subbase."
+				"icon": "bridge",
+				"title": "Uchunguzi wa Zege ya Daraja",
+				"description": "Thibitisha hali ya zege la kongowe, uchafuzi wa rebar, na upasulaji bila uharibifu."
+			},
+			{
+				"icon": "gavel",
+				"title": "Forensics & Law",
+				"description": "Kutafuta makaburi siri, ushahidi uliowekwa chini ya ardhi, na miundo iliyofichwa kwa uchunguzi."
+			},
+			{
+				"icon": "water-outline",
+				"title": "Ramani za Maeneo ya Maafa ya Maji",
+				"description": "Ramani ya maji ya chini ya ardhi, mashimo, na njia za mtiririko kwa tathmini ya hatari ya maafa."
 			},
 			{
 				"icon": "shovel",
-				"title": "Kakiolojia na Mazingira",
-				"description": "Uchunguzi usioharibu wa vitu vya kihistoria na vya mazingira chini ya ardhi."
+				"title": "Arkeolojia na Uchunguzi wa Geotechnical",
+				"description": "Kutafuta vipengele vya kitamaduni vilivyokowwa na kutathmini mfululiko wa udongo bila uchimbuzi."
 			}
 		]
 	},
@@ -227,7 +237,7 @@
 				"icon": "crosshairs-gps",
 				"image": "/media/surveying/ground-penetrating-radar/topographical-mapping.png",
 				"title": "Uwekaji Nafuni wa GPS/GNSS",
-				"description": "Jiografia sahihi ya RTK ya kila huduga na kasoro iliyotambuliwa."
+				"description": "Jiografia sahihi wa RTK ya kila huduga na kasoro iliyotambuliwa."
 			}
 		]
 	},
@@ -241,7 +251,7 @@
 			},
 			{
 				"question": "GPR inaweza kufikia kina gani katika udongo wa Kenya?",
-				"answer": "Kina cha utambuzi kinategemea aina ya udongo. Katika mchanga au udongo wa volkeno tunafikia kina cha mita 3-8, huku udongo mwitu wa udongo unapunguza ishara na kupunguza kina hadi mita 1-2. Pale malengo ya kina yanapatarajiwa, tunatumia antennas za chini na kuchanganya GPR na vitambuzi vya electromagnetic."
+				"answer": "Kina cha utambuzi kinategemea aina ya udongo. Katika mchanga au udongo wa volkeno tunafikia kina cha mita 3-8, huku udongo mwitu wa udongo unapunguza ishara na kupunguza kina hadi 1-2 mita. Pale malengo ya kina yanapatarajiwa, tunatumia antennas za chini na kuchanganya GPR na vitambuzi vya electromagnetic."
 			},
 			{
 				"question": "Je, GPR inafanya kazi kupitia zege?",
@@ -266,5 +276,42 @@
 			"label": "Wasiliana Nasi",
 			"href": "/contact"
 		}
+	},
+	"featuredProjects": {
+		"tag": "Miradi Iliyokua",
+		"headline": "Miradi Iliyofanyika Kenya",
+		"description": "Miradi halisi ya GPR iliyotokea Kenya inayotoa maarifa ya chini ya ardhi.",
+		"items": [
+			{
+				"title": "Ramani ya Huduga – Nairobi CBD",
+				"used": "LMX200 Ground Penetrating Radar iliyounganishwa na RTK-GNSS positioning.",
+				"objective": "Kutambua na kupanga ramani huduga zilizopo chini ya ardhi kabla ya kuchimba misingi.",
+				"result": "Kutambua kwa mafanikio fiber optics, mabomu ya umbe, na mifereji ya mvua — kuzuia migogoro ya gharama wakati wa ujenzi."
+			},
+			{
+				"title": "Uchunguzi wa Uimara wa Mabomba – Kisumu",
+				"used": "LMX200 GPR kwa tathmini isiyoharibu ya mabomba ya maji ya kitaalamu ya jiji.",
+				"objective": "Kutambua mashimo, mifwafwa ya mabomba, na sehemu za mchakato wa maji pamoja na barabara.",
+				"result": "Kugundua kasoro za chini ya ardhi zilizo fanana na mchakato na mifwafwa ya mabomba, ikisaidia matengenezo ya lengo."
+			},
+			{
+				"title": "Uchunguzi wa Eneo la Kiakolojia – Tharaka Nithi",
+				"used": "LMX200 GPR iliyochanganywa na ramani za juu ya droni.",
+				"objective": "Kutafuta vipengele vya kitamaduni vilivyokowwa bila uchimbuzi uharibifu.",
+				"result": "Ramani za mwelekeo wa mawe na miundo ya kimwili iliyowekwa chini ya ardhi huku akiba hali ya tovuti."
+			},
+			{
+				"title": "Uchambuzi wa Hatari ya Upanuzi wa Barabara – Nakuru",
+				"used": "LMX200 GPR kwa mode ya uscanaji wa korido iliyolingana na data ya GNSS.",
+				"objective": "Kutambua huduga za chini ya ardhi na maeneo dhaifu kabla ya kapanuzi wa barabara.",
+				"result": "Kutolewa viwango vya GPR vya kina vya juu vya mashimo na huduga zilizojificha, ikiboresha mipaka ya usalama wa muundo."
+			},
+			{
+				"title": "Usafi wa Tovuti ya Kiwandani – Mombasa",
+				"used": "LMX200 Ground Penetrating Radar kwa uthibitisho wa awali wa usafi wa ujenzi.",
+				"objective": "Kuthibitisha kutokuwepo kwa tanki zilizokowwa, mabaki, au hatari ya metalliki kwenye depo ya banda iliyochomwa.",
+				"result": "Uthibitisho wa tovuti kuwa hakuna vikingilio vya chini ya ardhi, ikisaidia ujenzi upya salama na uthibitisho wa ufuasi."
+			}
+		]
 	}
 }
