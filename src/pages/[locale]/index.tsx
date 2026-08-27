@@ -17,6 +17,7 @@ import {
 	CtaSection,
 	TrusteesSection,
 	MetricsSection,
+    IndustriesWeServeSection,
 } from "@/components/sections/home";
 
 interface PageProps {
@@ -39,7 +40,8 @@ const Page: NextPage<PageProps> = () => {
 				</div>
 				<SurveyingInstrumentsSection />
 				<DronesSection />
-				<ServicesSection />
+                <ServicesSection />
+                <IndustriesWeServeSection />
 				<div className="flex flex-col  w-full">
 					<WhyChooseUsSection />
 
