@@ -459,7 +459,7 @@ export default function HeroSection() {
 			// Spin the propellers
 			propellers.forEach((prop, index) => {
 				const direction = index % 2 === 0 ? 1 : -1;
-				prop.rotation[propellorsAxis] += 0.9 * direction;
+				prop.rotation[propellorsAxis] += 2 * direction;
 			});
 
 			scanner.rotation.y += 0.005;
@@ -563,12 +563,12 @@ export default function HeroSection() {
 						{ctaSecondary?.href && (
 							<Link
 								href={ctaSecondary.href}
-								className="group inline-flex items-center gap-3 h-14 rounded-full border border-accent/20 shadow-2xl px-8 text-accent font-medium text-base transition-all duration-300 "
+								className="group inline-flex items-center gap-3 h-14 bg-accent rounded-full border border-accent/20 shadow-2xl px-8 text-surface font-medium text-base transition-all duration-300 "
 							>
 								{ctaSecondary.label}
 								{ctaSecondary.icon ? (
 									<span
-										className={`mdi mdi-${ctaSecondary.icon} text-lg text-accent transition-transform group-hover:translate-x-1`}
+										className={`mdi mdi-${ctaSecondary.icon} text-lg text-urface transition-transform group-hover:translate-x-1`}
 									/>
 								) : (
 									<span className="h-1.5 w-1.5 rounded-full bg-primary-200" />
