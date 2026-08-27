@@ -132,7 +132,7 @@
 				"icon": "book-check",
 				"label": "Meet regulatory and approval requirements"
 			},
-            {
+			{
 				"icon": "notebook-check",
 				"label": "Accelerate project timelines with precise data"
 			}
@@ -168,11 +168,11 @@
 				"label": "LASER SCANNERS",
 				"img": "/media/instruments/LASER-SCANNERS.jpg"
 			},
-            {
+			{
 				"label": "BOSCH D-TECT 200C",
 				"img": "/media/home/bosch-d-tect-200c.jpg"
 			},
-            {
+			{
 				"label": "3D rotating LiDAR Scanner",
 				"img": "/media/home/3d-rotating-lidar-scanner.jpg"
 			}
@@ -217,13 +217,6 @@
 				"href": "/equipment-sale/dji-phantom-4",
 				"label": "DJI Phantom 4",
 				"description": "The DJI Phantom 4 remains a proven, reliable choice for cadastral and engineering mapping, pairing a mechanical shutter camera with dependable GNSS and vision-based positioning for accurate mapping."
-			},
-			{
-				"icon": "quadcopter",
-				"img": "/media/equipment-sale/dji-phantom-4-rtk/images/02-01.png",
-				"href": "/equipment-sale/dji-phantom-4-rtk",
-				"label": "DJI Phantom 4 RTK",
-				"description": "The DJI Phantom 4 RTK remains a proven, reliable choice for cadastral and engineering mapping, pairing a mechanical shutter camera with seamless RTK integration for high mapping accuracy."
 			}
 		]
 	},
@@ -445,81 +438,105 @@
 				"featureImg": "/media/services/land-surveying-deliverables.png",
 				"label": "Land Surveying",
 				"description": "We provide a wide range of land surveying services, including topographical surveys, boundary surveys, sectional properties, building site surveys, resource mapping, bathymetric surveys, hydrographic surveys, and GIS mapping. Our deliverables include boundary survey reports and plans, cadastral plans for title processing, beacons monumentation, registry maps, 3D spatial data (X, Y, Z), topographical maps, contours, CAD shapefiles, survey reports, PDF map outputs, and other specialized deliverables.",
-				"items": [
-					"Topographical surveys",
-					"Boundary Surveys",
-					"Sectional Properties",
-					"Building Sites surveys",
-					"Resource mapping",
-					"Bathymetric survey / Hydrographic survey",
-					"GIS Mapping"
-				],
-				"deliverables": [
-					"Boundary Survey Reports & Plans",
-					"Cadastral Plans for Title Processing",
-					"Beacons Monumentation",
-					"Registry Maps",
-					"3D Spatial Data (X, Y, Z)",
-					"Topographical Maps",
-					"Contours",
-					"CAD Shapefiles",
-					"Survey Reports",
-					"PDF Map Outputs",
-					"Other Specialized Deliverables"
-				]
+				"whatWeOffer": {
+					"label": "What we offer",
+					"description": "",
+					"items": [
+						"Topographical surveys",
+						"Boundary Surveys",
+						"Sectional Properties",
+						"Building Sites surveys",
+						"Resource mapping",
+						"Bathymetric survey / Hydrographic survey",
+						"GIS Mapping"
+					]
+				},
+				"deliverables": {
+					"label": "Deliverables",
+					"description": "Every project is delivered with professional, ready-to-use outputs tailored to the project needs:",
+					"items": [
+						"Boundary Survey Reports & Plans",
+						"Cadastral Plans for Title Processing",
+						"Beacons Monumentation",
+						"Registry Maps",
+						"3D Spatial Data (X, Y, Z)",
+						"Topographical Maps",
+						"Contours",
+						"CAD Shapefiles",
+						"Survey Reports",
+						"PDF Map Outputs",
+						"Other Specialized Deliverables"
+					]
+				}
 			},
 			{
 				"featureImg": "/media/services/aerial-drone-deliverables.png",
 				"label": "Aerial Surveys",
 				"description": "We offer a wide range of aerial surveying services, including drone imagery surveys, Lidar mapping, agricultural NDVI mapping, as-built surveys, monitoring and evaluation, solar panel drone surveys, volumetric surveys, and landfill & quarry drone surveys. Our deliverables include boundary survey reports and plans, cadastral plans for title processing, beacons monumentation, registry maps, 3D spatial data (X, Y, Z), topographical maps, contours, CAD shapefiles, survey reports, PDF map outputs, and other specialized deliverables.",
-				"items": [
-					"Drone imagery surveys",
-					"Lidar Mapping",
-					"Agricultural NDVI Mapping",
-					"As built surveys",
-					"Monitoring and Evaluation",
-					"Solar Panel Drone Surveys",
-					"Volumetric Surveys",
-					"Landfill & Quarry Drone Surveys"
-				],
-				"deliverables": [
-					"Orthorectified Imagery (Geo-Referenced) + Raw images",
-					"Orthomosaic Maps (Geo-Referenced)",
-					"Digital Elevation Models (DTM, DSM)",
-					"Contours",
-					"3D Point Clouds (X, Y, Z)",
-					"Topographical Maps",
-					"CAD Shapefiles",
-					"Volumetric Analysis Reports",
-					"Survey Reports",
-					"NDVI & Multispectral Maps (Agriculture only)"
-				]
+                "whatWeOffer": {
+					"label": "What we offer",
+					"description": "",
+					"items": [
+						"Drone imagery surveys",
+						"Lidar Mapping",
+						"Agricultural NDVI Mapping",
+						"As built surveys",
+						"Monitoring and Evaluation",
+						"Solar Panel Drone Surveys",
+						"Volumetric Surveys",
+						"Landfill & Quarry Drone Surveys"
+					]
+				},
+				"deliverables": {
+					"label": "Deliverables",
+					"description": "Every project is delivered with professional, ready-to-use outputs tailored to the project needs:",
+					"items": [
+						"Orthorectified Imagery (Geo-Referenced) + Raw images",
+						"Orthomosaic Maps (Geo-Referenced)",
+						"Digital Elevation Models (DTM, DSM)",
+						"Contours",
+						"3D Point Clouds (X, Y, Z)",
+						"Topographical Maps",
+						"CAD Shapefiles",
+						"Volumetric Analysis Reports",
+						"Survey Reports",
+						"NDVI & Multispectral Maps (Agriculture only)"
+					]
+				}
 			},
 			{
 				"featureImg": "/media/services/civil-engineering-deliverables.png",
 				"label": "Civil Engineering",
 				"description": "We offer a wide range of civil engineering services, including site engineering, building setting out, underground utilities installation, highway engineering, stake out, leveling, benchmarking, and construction services. Our deliverables include as-built maps, digital elevation models, setting out coordinates, 3D data, contours, master plans, building layouts, CAD shapefiles, and PDF maps.",
-				"items": [
-					"Site Engineering ",
-					"Buildings Setting Out",
-					"Underground utilities (Water lines, sanitation lines, electrical lines)",
-					"Highway engineering",
-					"Stake out",
-					"Leveling",
-					"Benchmarking",
-					"Construction services"
-				],
-				"deliverables": [
-					"AS-BUILT Maps",
-					"Digital Elevation Models (DSM, DTM)",
-					"Setting Out Coordinates",
-					"3D DATA (X, Y, Z)",
-					"Contours",
-					"Master Plans",
-					"Buildings Layout / BIM",
-					"CAD Shapefiles",
-					"PDF Map"
-				]
+                "whatWeOffer": {
+					"label": "What we offer",
+					"description": "",
+					"items": [
+                        "Site Engineering ",
+                        "Buildings Setting Out",
+                        "Underground utilities (Water lines, sanitation lines, electrical lines)",
+                        "Highway engineering",
+                        "Stake out",
+                        "Leveling",
+                        "Benchmarking",
+                        "Construction services"
+                    ]
+				},
+				"deliverables": {
+					"label": "Deliverables",
+					"description": "Every project is delivered with professional, ready-to-use outputs tailored to the project needs:",
+					"items": [
+						"AS-BUILT Maps",
+						"Digital Elevation Models (DSM, DTM)",
+						"Setting Out Coordinates",
+						"3D DATA (X, Y, Z)",
+						"Contours",
+						"Master Plans",
+						"Buildings Layout / BIM",
+						"CAD Shapefiles",
+						"PDF Map"
+					]
+				}
 			}
 		]
 	},

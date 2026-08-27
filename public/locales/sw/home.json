@@ -230,13 +230,6 @@
 				"href": "/equipment-sale/dji-phantom-4",
 				"label": "DJI Phantom 4",
 				"description": "DJI Phantom 4 bado ni chaguo lililothibitishwa na la kutegemeka kwa upimaji wa kadastral na uhandisi, ikichanganya kamera ya shutter ya kimitambo na uwekaji nafasi unaotegemewa wa GNSS na vision kwa ramani sahihi."
-			},
-			{
-				"icon": "quadcopter",
-				"img": "/media/equipment-sale/dji-phantom-4-rtk/images/02-01.png",
-				"href": "/equipment-sale/dji-phantom-4-rtk",
-				"label": "DJI Phantom 4 RTK",
-				"description": "Droni ya DJI Phantom 4 RTK bado ni chaguo lililothibitishwa na la kutegemeka kwa upimaji wa kadastral na uhandisi, ikiunganisha kamera ya shutter ya kimitambo na muunganisho mzuri wa RTK kwa usahihi wa hali ya juu wa upimaji ramani."
 			}
 		]
 	},
