@@ -81,10 +81,10 @@ export const AboutSection: React.FC = () => {
 							<div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl" />
 
 							<div className="relative bg-surface p-4 rounded-[20px] hairline card-shadow">
-								<div className="relative h-96 rounded-xl overflow-hidden bg-slate-900 group">
+								<div className="relative aspect-4/5 rounded-xl overflow-hidden bg-slate-900 group">
 									{/* Abstract Representation of Pointcloud / Surveying Mesh */}
 									<div
-										className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-80"
+										className="absolute inset-0 bg-fill bg-center transition-transform duration-700 group-hover:scale-105 opacity-80"
 										style={{
 											backgroundImage: `url("${t("home:about.featureImg.url")}")`,
 										}}

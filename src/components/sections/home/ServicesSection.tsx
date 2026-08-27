@@ -11,13 +11,19 @@ import { useTheme } from "@mui/material/styles";
 import { useTranslation } from "@/hooks";
 import { SectionHeader } from "./SectionHeader";
 import { ParallaxDecor, Blob } from "./decor";
+import { Trans } from "react-i18next";
 
+interface SeviceItemList {
+	label: string;
+	description: string;
+	items: string[];
+}
 interface ServiceItem {
 	featureImg: string;
 	label: string;
 	description: string;
-	items: string[];
-	deliverables: string[];
+	whatWeOffer: SeviceItemList;
+	deliverables: SeviceItemList;
 }
 
 const SERVICE_ICONS: Record<string, string> = {
@@ -44,7 +50,6 @@ export function ServicesSection() {
 
 	return (
 		<section id="services" className="py-24 sm:py-28 relative overflow-hidden">
-			{/* Soft institutional background shapes */}
 			<Blob
 				className="w-[26rem] h-[26rem] bg-primary-200/40 -top-24 left-1/4"
 				opacity={0.5}
@@ -91,34 +96,6 @@ export function ServicesSection() {
 											classes={{
 												root: `rounded-full! border! p-2! mb-2! capitalize! min-h-auto! ${selected ? "bg-primary! text-surface!" : "text-primary!  border-primary/50!"}`,
 											}}
-											// sx={{
-											//     mb: 2,
-											// 	minHeight: "auto",
-											// 	padding: "16px 20px",
-											// 	borderRadius: "10px",
-											// 	border: "1px solid",
-											// 	borderColor: selected
-											// 		? "#01373d"
-											// 		: "rgba(1, 55, 61, 0.12)",
-											// 	color: selected ? "#ffffff" : "#345a60",
-											// 	backgroundColor: selected ? "#01373d" : "transparent",
-
-											// 	textTransform: "none",
-											// 	fontWeight: 500,
-											// 	fontSize: "0.95rem",
-											// 	justifyContent: "flex-start",
-											// 	transition:
-											// 		"all 250ms cubic-bezier(0.16, 1, 0.3, 1)",
-											// 	"& .MuiTab-iconWrapper": { marginRight: "10px" },
-											// 	"&:hover": {
-											// 		borderColor: "#0097b2",
-											// 		color: selected ? "#ffffff" : "#0097b2",
-											// 		backgroundColor: selected
-											// 			? "#01373d"
-											// 			: "rgba(0, 151, 178, 0.06)",
-											// 	},
-											// 	"&:active": { transform: "scale(0.985)" },
-											// }}
 										/>
 									);
 								})}
@@ -159,9 +136,7 @@ export function ServicesSection() {
 											</div>
 											<span className="hidden sm:flex h-11 w-11 shrink-0 items-center justify-center rounded-lg glass text-primary">
 												<span
-													className={`mdi mdi-${itemToIcon(
-														active.label
-													)} text-xl`}
+													className={`mdi mdi-${itemToIcon(active.label)} text-xl`}
 												/>
 											</span>
 										</div>
@@ -173,7 +148,7 @@ export function ServicesSection() {
 										</p>
 
 										<div className="grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-12">
-											<div>
+											{/* <div>
 												<h4 className="inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary mb-6">
 													<span className="h-px w-6 bg-primary/60" />
 													{
@@ -190,12 +165,45 @@ export function ServicesSection() {
 																className="group/li flex items-start gap-3 text-sm text-on-surface/75 leading-relaxed"
 															>
 																<span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-primary-50 text-primary transition-all duration-300 group-hover/li:bg-primary group-hover/li:text-surface">
+																	<span className="mdi mdi-check text-sm" aria-hidden />
+																</span>
+																<span>{s}</span>
+															</li>
+														))}
+												</ul>
+											</div> */}
+											<div>
+												<h4 className="inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary mb-6">
+													<span className="h-px w-6 bg-primary/60" />
+													{active.whatWeOffer?.label
+														? t("home:services.whatWeOfferLabel", {
+																defaultValue:
+																	active.whatWeOffer.label,
+																returnObjects: false,
+															})
+														: t("home:services.whatWeOfferLabel", {
+																defaultValue: "What We Offer",
+															})}
+												</h4>
+												{active.whatWeOffer?.description && (
+													<p className="my-4 text-on-surface/75">
+														{active.whatWeOffer?.description}
+													</p>
+												)}
+												<ul className="flex flex-col gap-4">
+													{active.whatWeOffer?.items &&
+														active.whatWeOffer.items.map((d, i) => (
+															<li
+																key={i}
+																className="group/li flex items-start gap-3 text-sm text-on-surface/75 leading-relaxed"
+															>
+																<span className="mt-0.5 text-primary/70">
 																	<span
-																		className="mdi mdi-check text-sm"
+																		className="mdi mdi-check text-base"
 																		aria-hidden
 																	/>
 																</span>
-																<span>{s}</span>
+																<span>{d}</span>
 															</li>
 														))}
 												</ul>
@@ -204,15 +212,24 @@ export function ServicesSection() {
 											<div>
 												<h4 className="inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary mb-6">
 													<span className="h-px w-6 bg-primary/60" />
-													{
-														t("home:services.deliverablesLabel", {
-															defaultValue: "Deliverables",
-														}) as string
-													}
+													{active.deliverables?.label
+														? t("home:services.deliverablesLabel", {
+																defaultValue:
+																	active.deliverables.label,
+																returnObjects: false,
+															})
+														: t("home:services.deliverablesLabel", {
+																defaultValue: "Deliverables",
+															})}
 												</h4>
+												{active.deliverables?.description && (
+													<p className="my-4 text-on-surface/75">
+														{active.deliverables?.description}
+													</p>
+												)}
 												<ul className="flex flex-col gap-4">
-													{Array.isArray(active.deliverables) &&
-														active.deliverables.map((d, i) => (
+													{active.deliverables?.items &&
+														active.deliverables.items.map((d, i) => (
 															<li
 																key={i}
 																className="group/li flex items-start gap-3 text-sm text-on-surface/75 leading-relaxed"

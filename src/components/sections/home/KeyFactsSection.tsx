@@ -51,7 +51,7 @@ export function KeyFactsSection() {
 								className={`text-base sm:text-lg leading-relaxed max-w-2xl mx-auto text-on-surface/60`}
 							>
 								{t("home:keyFacts.description") as string}
-							</p>
+                            </p>
 						</div>
 						<div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 p-6 sm:p-8 lg:p-10">
 							{Array.isArray(items) &&
@@ -62,8 +62,7 @@ export function KeyFactsSection() {
 									>
 										{/* Sealed medallion */}
 										<span className="relative mb-6 flex h-14 w-14 items-center justify-center">
-											{/* <span className="absolute inset-0 rounded-full border border-ink/15 group-hover:border-primary/60 transition-colors duration-300" />
-											<span className="absolute inset-1.5 rounded-full border border-dashed border-ink/20 group-hover:rotate-180 transition-transform duration-[1200ms] ease-out" /> */}
+											
 											<span className="relative flex h-9 w-9 items-center justify-center rounded-full bg-surface text-primary shadow-sm">
 												<span
 													className={`mdi mdi-${
@@ -81,10 +80,6 @@ export function KeyFactsSection() {
 											{item.description}
 										</p>
 
-										{/* <span className="mt-6 inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-ink/35">
-											<span className="h-1 w-1 rounded-full bg-primary" />
-											{String(index + 1).padStart(2, "0")}
-										</span> */}
 									</div>
 								))}
 						</div>
