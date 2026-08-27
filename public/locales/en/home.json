@@ -21,8 +21,8 @@
 				{ "label": "Kenya", "code": "KE" },
 				{ "label": "Uganda", "code": "UG" },
 				{ "label": "Tanzania", "code": "TZ" },
-                { "label": "Nigeria", "code": "NG" },
-                { "label": "South Africa", "code": "SA" }
+				{ "label": "Nigeria", "code": "NG" },
+				{ "label": "South Africa", "code": "SA" }
 			]
 		}
 	},
@@ -30,7 +30,7 @@
 	"leadGenBar": {
 		"tag": "SMARTGRID SURVEYING & CIVIL ENGINEERING LTD",
 		"headline": "Reliable. Scalable. Fast. Accurate.",
-        "title": "Engineering-Grade Surveying & Geospatial Solutions Across Kenya and East Africa",
+		"title": "Engineering-Grade Surveying & Geospatial Solutions Across Kenya and East Africa",
 		"description": "At SmartGrid Surveying, we don’t just measure land—we deliver <bold>accurate, decision-ready spatial data</bold> that engineers, developers, and project managers rely on to plan, design, and execute with confidence.\n\n From <bold>topographical surveys and cadastral mapping</bold> to <bold>drone mapping, LiDAR, and underground utility detection</bold>, we provide end-to-end geospatial solutions tailored for modern construction and infrastructure projects",
 		"link": { "label": "Company Profile", "href": "/about/company-profile" },
 		"items": [
@@ -95,14 +95,14 @@
 			"title": "OUR MISSION",
 			"description": "To deliver innovative, high-precision surveying and civil works solutions that enhance the efficiency and sustainability of projects."
 		},
-        "cards": [
+		"cards": [
 			{
 				"icon": "shield-outline",
 				"label": "Licensed Experts",
 				"href": "/about",
 				"description": "Full Institution of Surveyors certification."
 			},
-			
+
 			{
 				"icon": "shopping-outline",
 				"label": "Equipment Catalogue",
@@ -110,6 +110,34 @@
 				"description": "Precise and reliable spatial data using advanced GNSS, Total Stations, and Drone LiDAR technologies"
 			}
 		]
+	},
+	"planningInfographic": {
+		"tag": "Planning a Project?",
+		"headline": "Start With Accurate Ground Data",
+		"description": "Before you design, build, or invest, you need reliable surveying data. We help you:",
+		"benefits": [
+			{
+				"icon": "cash-check",
+				"label": "Eliminate costly design errors"
+			},
+			{
+				"icon": "map-check",
+				"label": "Avoid boundary disputes and legal delays"
+			},
+			{
+				"icon": "invoice-check",
+				"label": "Reduce construction risks"
+			},
+			{
+				"icon": "book-check",
+				"label": "Meet regulatory and approval requirements"
+			},
+            {
+				"icon": "notebook-check",
+				"label": "Accelerate project timelines with precise data"
+			}
+		],
+		"closingStatement": "<bold>Whether you're a developer, engineer, contractor, or landowner—our data ensures your project starts right.</bold>"
 	},
 	"surveyingInstruments": {
 		"tag": "Precision",
@@ -119,7 +147,7 @@
 			{
 				"label": "RTK GNSS FOIF A90",
 				"img": "/media/instruments/RTK-GNSS-FOIF-A90.jpg",
-                "href": "/equipment-sale/foif-a90-rtk-gnss"
+				"href": "/equipment-sale/foif-a90-rtk-gnss"
 			},
 			{
 				"label": "Total Stations",
@@ -128,7 +156,7 @@
 			},
 
 			{
-				"label": "AUTOMATIC LEVELS",
+				"label": "Automatic Levels",
 				"img": "/media/instruments/AUTOMATIC-LEVELS.jpg",
 				"href": "/equipment-sale/equipment-catalogue?category=automatic-levels"
 			},
@@ -136,9 +164,17 @@
 				"label": "GPR SCANNER",
 				"img": "/media/instruments/GPR-SCANNER.jpg"
 			},
-            {
+			{
 				"label": "LASER SCANNERS",
 				"img": "/media/instruments/LASER-SCANNERS.jpg"
+			},
+            {
+				"label": "BOSCH D-TECT 200C",
+				"img": "/media/home/bosch-d-tect-200c.jpg"
+			},
+            {
+				"label": "3D rotating LiDAR Scanner",
+				"img": "/media/home/3d-rotating-lidar-scanner.jpg"
 			}
 		]
 	},
@@ -237,7 +273,7 @@
 	"keyFacts": {
 		"tag": "Key Facts",
 		"headline": null,
-        "description": "We are a leading surveying and engineering company with a strong presence in East Africa, specializing in land surveying, drone mapping, and geospatial data solutions. With over 5 years of experience, we have successfully completed numerous projects while adhering to national regulations and survey best practices.",
+		"description": "We are a leading surveying and engineering company with a strong presence in East Africa, specializing in land surveying, drone mapping, and geospatial data solutions. With over 5 years of experience, we have successfully completed numerous projects while adhering to national regulations and survey best practices.",
 		"items": [
 			{
 				"icon": "check-circle",
@@ -264,7 +300,7 @@
 	"coreExpertise": {
 		"tag": "Experts",
 		"headline": "Our Core Expertise",
-        "description": "We specialize in providing high-quality surveying and engineering services, leveraging advanced technology and industry expertise to deliver accurate and reliable results for our clients.",
+		"description": "We specialize in providing high-quality surveying and engineering services, leveraging advanced technology and industry expertise to deliver accurate and reliable results for our clients.",
 		"items": [
 			{
 				"icon": "terrain",
@@ -276,7 +312,7 @@
 				"icon": "quadcopter",
 				"label": "Drone Mapping & Photogrammetry",
 				"description": "High-resolution aerial imagery and 3D mapping for precise data collection.",
-                "href": "/aerial-drones/lidar-mapping"
+				"href": "/aerial-drones/lidar-mapping"
 			},
 			{
 				"icon": "hard-hat",
@@ -288,14 +324,14 @@
 				"icon": "bridge",
 				"label": "Infrastructure Support",
 				"description": "Surveying and engineering solutions for roads, bridges, utilities, and other infrastructure projects.",
-                "href": "/civil/highway-surveys"
+				"href": "/civil/highway-surveys"
 			}
 		]
 	},
 	"certifications": {
 		"tag": "Certified",
 		"headline": "Our Certifications",
-        "description": "We are proud to hold certifications from reputable organizations, demonstrating our commitment to quality, safety, and professionalism in the surveying and engineering industry.",
+		"description": "We are proud to hold certifications from reputable organizations, demonstrating our commitment to quality, safety, and professionalism in the surveying and engineering industry.",
 		"items": [
 			{
 				"icon": null,
@@ -322,7 +358,7 @@
 	"metrics": {
 		"tag": "Scale",
 		"headline": "Our Operational Scale",
-        "description": "We have a strong operational scale, with a presence in multiple countries, a large number of projects completed, and a commitment to delivering high-quality services over the years.",
+		"description": "We have a strong operational scale, with a presence in multiple countries, a large number of projects completed, and a commitment to delivering high-quality services over the years.",
 		"items": [
 			{
 				"icon": "map-marker-multiple",
@@ -400,6 +436,7 @@
 			}
 		]
 	},
+
 	"services": {
 		"tag": "Services",
 		"headline": "Our Services",
@@ -458,7 +495,7 @@
 					"NDVI & Multispectral Maps (Agriculture only)"
 				]
 			},
-            {
+			{
 				"featureImg": "/media/services/civil-engineering-deliverables.png",
 				"label": "Civil Engineering",
 				"description": "We offer a wide range of civil engineering services, including site engineering, building setting out, underground utilities installation, highway engineering, stake out, leveling, benchmarking, and construction services. Our deliverables include as-built maps, digital elevation models, setting out coordinates, 3D data, contours, master plans, building layouts, CAD shapefiles, and PDF maps.",

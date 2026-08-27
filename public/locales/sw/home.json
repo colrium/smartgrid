@@ -125,6 +125,34 @@
 			}
 		]
 	},
+	"planningInfographic": {
+		"tag": "Mpango wa Mradi?",
+		"headline": "Anza na Data Sahihi ya Ardhi",
+		"description": "Kabla ya kusana, kujenga, au kuwekeza, unahitaji data sahihi ya upimaji. Tunakusaidia:",
+		"benefits": [
+            {
+				"icon": "cash-check",
+				"label": "Kuepuka makosa ya gharama ya usanidi"
+			},
+			{
+				"icon": "map-check",
+				"label": "Kuepuka migogoro ya mipaka na matatizo ya kisheria"
+			},
+			{
+				"icon": "invoice-check",
+				"label": "Kupunguza hatari za ujenzi"
+			},
+			{
+				"icon": "book-check",
+				"label": "Kutimiza mahitaji ya kisheria na ya idhini"
+			},
+            {
+				"icon": "package-check",
+				"label": "Kupelekeza mipango ya mradi kwa data sahihi"
+			}
+		],
+		"closingStatement": "<bold>Iwe wewe ni msanidi, mhandisi, mfanyabiashara, au mmiliki wa ardhi—data yetu inahakikisha mradi wako unaanza vizuri.</bold>"
+	},
 	"surveyingInstruments": {
 		"tag": "Usahihi",
 		"headline": "Vyombo Vyetu vya Upimaji",
@@ -152,6 +180,14 @@
 			{
 				"label": "SCANNERS ZA LASER",
 				"img": "/media/instruments/LASER-SCANNERS.jpg"
+			},
+			{
+				"label": "BOSCH D-TECT 200C",
+				"img": "/media/home/bosch-d-tect-200c.jpg"
+			},
+			{
+				"label": "3D Scanner ya LiDAR inayozungukaD",
+				"img": "/media/home/3d-rotating-lidar-scanner.jpg"
 			}
 		]
 	},
@@ -413,6 +449,7 @@
 			}
 		]
 	},
+
 	"services": {
 		"tag": "Huduma",
 		"headline": "Huduma Zetu",

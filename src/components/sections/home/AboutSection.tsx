@@ -70,13 +70,11 @@ export const AboutSection: React.FC = () => {
 									</div>
 								</Link>
 							))}
-
-							
 						</div>
 					</div>
 
 					{/* Right Kinetic Visual Frame */}
-					<div className="lg:col-span-6">
+					<div className="lg:col-span-6 -order-1 lg:order-2">
 						<div className="relative mx-auto max-w-md lg:max-w-none">
 							{/* Decorative Backdrop Elements */}
 							<div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/10 rounded-full blur-2xl" />
