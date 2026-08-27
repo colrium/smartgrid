@@ -23,7 +23,7 @@ export const AboutSection: React.FC = () => {
 	return (
 		<section id="about" className="py-28 relative  overflow-hidden">
 			<div className="max-w-7xl mx-auto px-6">
-				<div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+				<div className="grid lg:grid-cols-12 gap-16 items-center">
 					{/* Left Narrative */}
 					<div className="lg:col-span-6 space-y-6">
 						<SectionTag className="text-primary">{t("home:about.tag")}</SectionTag>

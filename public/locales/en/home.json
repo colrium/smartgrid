@@ -30,7 +30,8 @@
 	"leadGenBar": {
 		"tag": "SMARTGRID SURVEYING & CIVIL ENGINEERING LTD",
 		"headline": "Reliable. Scalable. Fast. Accurate.",
-		"description": "Unlock faster, more cost-effective, and safer mapping, measurement, and monitoring of 1000+ Acres at a time.  \nAt Smartgrid Surveying, we turn this vision into reality—across Africa and beyond. With our cutting-edge drones and Land surveying techniques, we deliver the actionable data you need, exactly where it matters. \n Smartgrid Surveying is your trusted surveying partner!",
+        "title": "Engineering-Grade Surveying & Geospatial Solutions Across Kenya and East Africa",
+		"description": "At SmartGrid Surveying, we don’t just measure land—we deliver <bold>accurate, decision-ready spatial data</bold> that engineers, developers, and project managers rely on to plan, design, and execute with confidence.\n\n From <bold>topographical surveys and cadastral mapping</bold> to <bold>drone mapping, LiDAR, and underground utility detection</bold>, we provide end-to-end geospatial solutions tailored for modern construction and infrastructure projects",
 		"link": { "label": "Company Profile", "href": "/about/company-profile" },
 		"items": [
 			{
@@ -77,14 +78,14 @@
 	},
 	"about": {
 		"tag": "About Us",
-		"headline": "From Surveying Field Data to Final Design.",
-		"description": "SmartGrid delivers the Clarity and Accuracy your project needs.",
+		"headline": "From Surveying Field data, Designing and Construction Phase.",
+		"description": "Change to: Smartgrid surveying delivers Accurate XYZ data, for smarter decisions within your project. ",
 		"featureImg": {
-			"url": "/media/field/AG8ngQW.jpeg",
+			"url": "/media/home/field-doperators.jpg",
 			"alt": "Surveying Field Data",
 			"caption": "Field Operations",
-			"title": "High-Density Terrestrial Laser Scanning",
-			"description": "SmartGrid delivers the Clarity and Accuracy your project needs."
+			"title": "Highly Detailed Topographical and GPR surveys",
+			"description": "SmartGrid surveying delivers 1cm accuracy to your project needs"
 		},
 		"whoWeAre": {
 			"title": "WHO WE ARE",
