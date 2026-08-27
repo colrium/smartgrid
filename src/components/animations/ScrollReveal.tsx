@@ -669,7 +669,16 @@ export function CountUp({
 	className,
 }: CountUpProps) {
 	const { ref, inView } = useReveal(margin, once);
-	const [display, setDisplay] = useState(format ? format(from) : from.toFixed(decimals));
+	// Write text directly to the DOM node — avoids ~60 React re-renders/sec
+	// per counter during the animation. Visual output is identical.
+	const valueRef = useRef<HTMLSpanElement>(null);
+
+	useEffect(() => {
+		const node = valueRef.current;
+		if (node) {
+			node.textContent = format ? format(from) : from.toFixed(decimals);
+		}
+	}, [format, from, decimals]);
 
 	useEffect(() => {
 		if (!inView) return;
@@ -688,7 +697,11 @@ export function CountUp({
 			// Ease-out cubic
 			const eased = 1 - Math.pow(1 - t, 3);
 			const current = from + (to - from) * eased;
-			setDisplay(format ? format(current) : current.toFixed(decimals));
+			if (valueRef.current) {
+				valueRef.current.textContent = format
+					? format(current)
+					: current.toFixed(decimals);
+			}
 			if (t < 1) requestAnimationFrame(tick);
 		};
 
@@ -698,7 +711,7 @@ export function CountUp({
 
 	return (
 		<span ref={ref} className={className}>
-			{display}
+			<span ref={valueRef}>{format ? format(from) : from.toFixed(decimals)}</span>
 		</span>
 	);
 }
