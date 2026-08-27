@@ -17,6 +17,7 @@ import civilsitesettingout from '../public/locales/en/civil-site-setting-out.jso
 import civilvolumetricsurveys from '../public/locales/en/civil-volumetric-surveys.json';
 import civil from '../public/locales/en/civil.json';
 import common from '../public/locales/en/common.json';
+import companyprofile from '../public/locales/en/company-profile.json';
 import contact from '../public/locales/en/contact.json';
 import djiair3s from '../public/locales/en/dji-air-3s.json';
 import djimatrice350rtk from '../public/locales/en/dji-matrice-350-rtk.json';
@@ -68,6 +69,7 @@ const resources = {
   'civil-volumetric-surveys': civilvolumetricsurveys,
   civil,
   common,
+  'company-profile': companyprofile,
   contact,
   'dji-air-3s': djiair3s,
   'dji-matrice-350-rtk': djimatrice350rtk,

@@ -10,6 +10,7 @@ export { ServicesSection } from "./ServicesSection";
 export { CtaSection } from "./CtaSection";
 export { TrusteesSection } from "./TrusteesSection";
 export { PlanningInfographicSection } from "./PlanningInfographicSection";
+export { IndustriesWeServeSection } from "./IndustriesWeServeSection";
 
 export { default as SurveyingInstrumentsSectionDefault } from "./SurveyingInstrumentsSection";
 export { default as DronesSectionDefault } from "./DronesSection";
@@ -22,3 +23,4 @@ export { default as ServicesSectionDefault } from "./ServicesSection";
 export { default as CtaSectionDefault } from "./CtaSection";
 export { default as TrusteesSectionDefault } from "./TrusteesSection";
 export { default as PlanningInfographicSectionDefault } from "./PlanningInfographicSection";
+export { default as IndustriesWeServeSectionDefault } from "./IndustriesWeServeSection";

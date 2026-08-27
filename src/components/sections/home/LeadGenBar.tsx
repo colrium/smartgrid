@@ -6,6 +6,7 @@ import Button from "@mui/material/Button";
 import Link from "next/link";
 import { SectionTag } from "@/components/SectionTag";
 import { FadeUp } from "@/components/animations/Fade";
+import { Trans } from "react-i18next";
 interface LeadGenItemLink {
 	href: string;
 	label: string;
@@ -26,7 +27,7 @@ const LeadGenBar: React.FC<{ className?: string }> = ({ className }) => {
     const leadGenItems = t("home:leadGenBar.items", { returnObjects: true }) as unknown as LeadGenItem[];
 
     return (
-		<FadeUp>
+		<FadeUp viewport={{ once: true, margin: "0px" }}>
 			<section className={`relative  ${className || ""}`}>
 				<div className="absolute -top-6 -left-6 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
 				<div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl pointer-events-none"></div>
@@ -39,8 +40,18 @@ const LeadGenBar: React.FC<{ className?: string }> = ({ className }) => {
 							<h2 className="text-3xl sm:text-5xl font-light tracking-tight text-ink leading-tight whitespace-pre-line max-w-3xl">
 								{t("home:leadGenBar.headline")}
 							</h2>
+
 							<p className="text-md text-center text-on-surface/60 max-w-2xl font-normal leading-relaxed mb-10 sm:mb-16 whitespace-pre-line">
-								{t("home:leadGenBar.description")}
+								<Trans
+									// @ts-expect-error
+									i18nKey={["home:leadGenBar.description"]}
+									defaults=""
+									components={{
+										accent: <span className="text-accent" />,
+										primary: <span className="text-primary" />,
+										bold: <b />,
+									}}
+								/>
 							</p>
 						</div>
 						<div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">

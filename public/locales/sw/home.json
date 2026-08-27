@@ -1,8 +1,8 @@
 {
 	"hero": {
 		"badge": "Usahihi wa Uhandisi",
-		"headline": "Pima Kwa <primary>Umaalimu</primary>, Jenga kwa <accent>Nguvu</accent>.",
-		"description": "Kiongozi wa Upimaji wa Ardhi na Angani Afrika kwa Teknolojia ya Kisasa",
+		"headline": "Pima <primary>Kwa Akili</primary>, Jenga <accent>Kwa Nguvu</accent>.",
+		"description": "Kuongoza Upimaji wa Ardhi na Angani wa Afrika kwa Teknolojia ya Juu ya Vifaa",
 		"ctaPrimary": {
 			"label": "Omba Upimaji",
 			"href": "/contact?reason=request-survey#contact-form",
@@ -10,52 +10,35 @@
 			"icon": "send"
 		},
 		"ctaSecondary": {
-			"label": "Chunguza Vifaa",
+			"label": "Gundua Vifaa",
 			"href": "/equipment-sale/equipment-catalogue",
 			"class": " rounded-full! bg-surface!",
 			"icon": "shopping"
 		},
 		"location": {
-			"label": "Inatumika Afrika Mashariki na kwingineko",
+			"label": "Tunafanya kazi katika Afrika Mashariki na kwingineko",
 			"items": [
-				{
-					"label": "Kenya",
-					"code": "KE"
-				},
-				{
-					"label": "Uganda",
-					"code": "UG"
-				},
-				{
-					"label": "Tanzania",
-					"code": "TZ"
-				},
-				{
-					"label": "Nigeria",
-					"code": "NG"
-				},
-				{
-					"label": "South Africa",
-					"code": "SA"
-				}
+				{ "label": "Kenya", "code": "KE" },
+				{ "label": "Uganda", "code": "UG" },
+				{ "label": "Tanzania", "code": "TZ" },
+				{ "label": "Nigeria", "code": "NG" },
+				{ "label": "Afrika Kusini", "code": "SA" }
 			]
 		}
 	},
 	"leadGenBar": {
 		"tag": "SMARTGRID SURVEYING & CIVIL ENGINEERING LTD",
-		"headline": "Ya Kuaminika. Inayoweza Kupanuka. Ya Haraka. Sahihi.",
-		"description": "Fungua njia za haraka zaidi, za gharama nafuu, na salama za upimaji ramani, vipimo na ufuatiliaji wa ekari 1000+ kwa wakati mmoja.\n Katika Smartgrid Surveying, tunageuza maono haya kuwa ukweli—kote Afrika na nje yake. Kwa droni zetu za kisasa na mbinu za upimaji wa ardhi, tunakupa data tendekevu unayohitaji, mahali pale inapohitajika. \n Smartgrid Surveying ni mshirika wako wa upimaji wa kuaminika!",
-		"link": {
-			"label": "Wasifu wa Kampuni",
-			"href": "/about/company-profile"
-		},
+		"headline": "Inaaminika. Inaweza kupanuka. Haraka. Sahihi.",
+		"title": "Upimaji wa Kiwango cha Uhandisi na Suluhisho za Kijiografia Katika Kenya na Afrika Mashariki",
+		"description": "Katika SmartGrid Surveying, hatupimi ardhi tu—tunatoa <bold>data sahihi ya anga iliyo tayari kwa maamuzi</bold> ambayo wahandisi, wasan razvoj, na wasimamizi wa miradi wanategemea kupanga, kubuni, na kutekeleza kwa ujasiri.\n\nKuanzia <bold>upimaji wa topografia na ramani za cadastral</bold> hadi <bold>ramani za ndege zisizo na rubani, LiDAR, na ugunduzi wa huduma za chini ya ardhi</bold>, tunatoa suluhisho kamili za kijiografia zilizoundwa kwa ajili ya miradi ya kisasa ya ujenzi na miundombinu.",
+		"link": { "label": "Wasifu wa Kampuni", "href": "/about/company-profile" },
 		"items": [
 			{
 				"icon": "land-fields",
 				"label": "UPIMAJI WA ARDHI",
-				"description": "Upimaji sahihi wa topografia, mipaka, cadastral, GIS, na uhandisi kwa teknolojia ya kisasa zaidi.",
+				"description": "Upimaji sahihi wa topografia, mipaka, cadastral, GIS, na uhandisi unaoendeshwa na teknolojia ya kisasa.",
 				"more": {
-					"label": "Chunguza zaidi",
+					"label": "Gundua zaidi",
 					"href": "/surveying"
 				},
 				"action": {
@@ -65,27 +48,27 @@
 			},
 			{
 				"icon": "quadcopter",
-				"label": "DRONI ZA ANGANI",
-				"description": "Picha za angani na kilimo za mwonekano wa juu, upimaji ramani wa 3D, na data ya topografia kwa haraka na usalama zaidi.",
+				"label": "NDEGE ZISIZO NA RUBANI ZA ANGANI",
+				"description": "Picha za ubora wa juu za angani na kilimo, ramani za 3D, na data ya topografia iliyotolewa kwa haraka na salama.",
 				"more": {
-					"label": "Chunguza zaidi",
+					"label": "Gundua zaidi",
 					"href": "/aerial-drones"
 				},
 				"action": {
-					"label": "Panga upimaji wa droni",
+					"label": "Oda upimaji wa ndege isiyo na rubani",
 					"href": "/contact?reason=book-drone-survey#contact-form"
 				}
 			},
 			{
 				"icon": "hard-hat",
-				"label": "UHANDISI WA KIRAHISI",
-				"description": "Mpangilio wa tovuti za ujenzi na majengo, ufuatiliaji, na uthibitisho wa kama ulivyojengwa kwa usahihi na haraka.",
+				"label": "UHANDISI WA MIUNDOMBINU",
+				"description": "Mpangilio wa tovuti za ujenzi na majengo, ufuatiliaji, na uthibitishaji wa 'as-built' kwa usahihi na kasi.",
 				"more": {
-					"label": "Chunguza zaidi",
+					"label": "Gundua zaidi",
 					"href": "/civil"
 				},
 				"action": {
-					"label": "Shirikiana nasi.",
+					"label": "Shirikiana nasi",
 					"href": "mailto:smartgridsurveying@gmail.com?subject=Partnership Inquiry&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'm interested in partnering with SmartGrid Surveying.%0D%0A%0D%0AOrganization:%0D%0AProposal details:%0D%0A%0D%0AThank you."
 				}
 			}
@@ -93,70 +76,70 @@
 	},
 	"about": {
 		"tag": "Kuhusu Sisi",
-		"headline": "Kutoka Data ya Uwanjani hadi Muundo wa Mwisho.",
-		"description": "SmartGrid hutoa Uwazi na Usahihi unaohitaji mradi wako.",
+		"headline": "Kutoka Data ya Upimaji wa Uwanjani, Awamu ya Kubuni na Ujenzi.",
+		"description": "Smartgrid surveying inatoa data sahihi ya XYZ, kwa maamuzi bora ndani ya mradi wako.",
 		"featureImg": {
-			"url": "/media/field/AG8ngQW.jpeg",
-			"alt": "Data ya Uwanjani ya Upimaji",
-			"caption": "Operesheni za Uwanjani",
-			"title": "Uchanganuzi wa Laser wa Nchi Kavu wenye Msongamano wa Juu",
-			"description": "SmartGrid hutoa Uwazi na Usahihi unaohitaji mradi wako."
+			"url": "/media/home/field-doperators.jpg",
+			"alt": "Data ya Upimaji wa Uwanjani",
+			"caption": "Shughuli za Uwanjani",
+			"title": "Upimaji wa Topografia na GPR wa kina sana",
+			"description": "SmartGrid surveying inatoa usahihi wa 1cm kwa mahitaji ya mradi wako"
 		},
 		"whoWeAre": {
-			"title": "SISI NI AKINA NANI",
-			"description": "Katika SmartGrid surveying na Engineering, tunabobea katika mbinu za kisasa za Upimaji wa Ardhi na Kazi za Kirahisi nchini Kenya, Uganda, Tanzania na Afrika, kuhakikisha usahihi, ufanisi, na uaminifu katika kila mradi. Utaalam wetu katika ramani ya GIS, upimaji wa droni, na uchambuzi wa gridi ya umeme husaidia kuboresha mipango ya miundombinu, wakati huduma zetu za uhandisi wa kirahisi zinaweka msingi wa maendeleo endelevu."
+			"title": "TULIYE NANI",
+			"description": "Katika SmartGrid surveying and Engineering, tunabobea katika mbinu za juu za Upimaji wa Ardhi na Kazi za Miundombinu nchini Kenya, Uganda, Tanzania na Afrika, kuhakikisha usahihi, ufanisi, na kutegemewa katika kila mradi. Utaalamu wetu katika ramani za GIS, upimaji wa ndege zisizo na rubani, na uchambuzi wa gridi ya nishati husaidia kuboresha mipango ya miundombinu, huku huduma zetu za uhandisi wa miundombinu zikiweka msingi wa maendeleo endelevu."
 		},
 		"mission": {
 			"title": "DHAMIRA YETU",
-			"description": "Kutoa suluhisho bunifu, za usahihi wa juu za upimaji na kazi za kirahisi zinazoimarisha ufanisi na uendelevu wa miradi."
+			"description": "Kutoa suluhisho bunifu, za usahihi wa juu za upimaji na kazi za miundombinu zinazoongeza ufanisi na uendelevu wa miradi."
 		},
 		"cards": [
 			{
 				"icon": "shield-outline",
-				"label": "Wataalamu Waliosajiliwa",
+				"label": "Wataalamu Wenye Leseni",
 				"href": "/about",
-				"description": "Cheti kamili cha Taasisi ya Wapimaji."
+				"description": "Uthibitisho kamili wa Taasisi ya Wapimaji."
 			},
 			{
 				"icon": "shopping-outline",
 				"label": "Katalogi ya Vifaa",
 				"href": "/equipment-sale/equipment-catalogue",
-				"description": "Data ya kijiografia sahihi na ya kuaminika kwa kutumia GNSS za kisasa, Total Stations, na teknolojia za Drone LiDAR."
+				"description": "Data sahihi na ya kuaminika ya anga kwa kutumia teknolojia za GNSS, Total Stations, na Drone LiDAR"
 			}
 		]
 	},
 	"planningInfographic": {
-		"tag": "Mpango wa Mradi?",
+		"tag": "Unapanga Mradi?",
 		"headline": "Anza na Data Sahihi ya Ardhi",
-		"description": "Kabla ya kusana, kujenga, au kuwekeza, unahitaji data sahihi ya upimaji. Tunakusaidia:",
+		"description": "Kabla ya kubuni, kujenga, au kuwekeza, unahitaji data ya upimaji ya kuaminika. Tunakusaidia:",
 		"benefits": [
-            {
+			{
 				"icon": "cash-check",
-				"label": "Kuepuka makosa ya gharama ya usanidi"
+				"label": "Ondoa makosa ya kubuni yenye gharama kubwa"
 			},
 			{
 				"icon": "map-check",
-				"label": "Kuepuka migogoro ya mipaka na matatizo ya kisheria"
+				"label": "Epuka migogoro ya mipaka na ucheleweshaji wa kisheria"
 			},
 			{
 				"icon": "invoice-check",
-				"label": "Kupunguza hatari za ujenzi"
+				"label": "Punguza hatari za ujenzi"
 			},
 			{
 				"icon": "book-check",
-				"label": "Kutimiza mahitaji ya kisheria na ya idhini"
+				"label": "Kukidhi mahitaji ya udhibiti na idhini"
 			},
-            {
-				"icon": "package-check",
-				"label": "Kupelekeza mipango ya mradi kwa data sahihi"
+			{
+				"icon": "notebook-check",
+				"label": "Harakisha ratiba za mradi kwa data sahihi"
 			}
 		],
-		"closingStatement": "<bold>Iwe wewe ni msanidi, mhandisi, mfanyabiashara, au mmiliki wa ardhi—data yetu inahakikisha mradi wako unaanza vizuri.</bold>"
+		"closingStatement": "<bold>Iwe wewe ni msan razvoj, mhandisi, mkandarasi, au mmiliki wa ardhi—data yetu inahakikisha mradi wako unaanza vizuri.</bold>"
 	},
 	"surveyingInstruments": {
 		"tag": "Usahihi",
 		"headline": "Vyombo Vyetu vya Upimaji",
-		"description": "Tunatumia vifaa vya kisasa, vilivyopimwa, na sahihi ili kuhakikisha kila sehemu ni sahihi na ya kuaminika kwa miradi yako ya ujenzi na uhandisi kote Kenya na nje.",
+		"description": "Tunatumia vifaa vya kisasa, vilivyorekebishwa, na sahihi ili kuhakikisha kila sehemu ni sahihi na ya kuaminika kwa miradi yako ya ujenzi na uhandisi nchini Kenya na kwingineko.",
 		"items": [
 			{
 				"label": "RTK GNSS FOIF A90",
@@ -164,21 +147,21 @@
 				"href": "/equipment-sale/foif-a90-rtk-gnss"
 			},
 			{
-				"label": "Vituo vya Jumla (Total Stations)",
+				"label": "Total Stations",
 				"img": "/media/instruments/TOTAL-STATIONS.jpg",
 				"href": "/equipment-sale/equipment-catalogue?category=total-stations"
 			},
 			{
-				"label": "VIWANGO VYA KIJIOTEGEMEA",
+				"label": "Automatic Levels",
 				"img": "/media/instruments/AUTOMATIC-LEVELS.jpg",
 				"href": "/equipment-sale/equipment-catalogue?category=automatic-levels"
 			},
 			{
-				"label": "SCANNER YA GPR",
+				"label": "KICHAGUZI CHA GPR",
 				"img": "/media/instruments/GPR-SCANNER.jpg"
 			},
 			{
-				"label": "SCANNERS ZA LASER",
+				"label": "VICHAGUZI VYA LASER",
 				"img": "/media/instruments/LASER-SCANNERS.jpg"
 			},
 			{
@@ -186,158 +169,193 @@
 				"img": "/media/home/bosch-d-tect-200c.jpg"
 			},
 			{
-				"label": "3D Scanner ya LiDAR inayozungukaD",
+				"label": "Kichanganuzi cha LiDAR cha 3D kinachozunguka",
 				"img": "/media/home/3d-rotating-lidar-scanner.jpg"
 			}
 		]
 	},
 	"drones": {
-		"tag": "Meli ya Droni",
-		"headline": "Droni Zetu",
-		"description": "Tunatuma droni za kisasa kukusanya picha za angani za mwonekano wa juu, data ya RGB / LiDAR na data ya multispectral kwa Upimaji wa ramani sahihi, ufuatiliaji, mipango, upimaji, na uhandisi.",
+		"tag": "Mel ya Ndege zisizo na Rubani",
+		"headline": "Ndege Zetu Zisizo na Rubani",
+		"description": "Tunatumia ndege za kisasa zisizo na rubani kupiga picha za ubora wa juu za angani za RGB / LiDAR na data ya multispectral kwa ajili ya Ramani Sahihi, Ufuatiliaji, Mipango, Upimaji, na Uhandisi.",
 		"items": [
 			{
 				"icon": "quadcopter",
 				"img": "/media/equipment-sale/dji-matrice-350-rtk/images/02-01.png",
 				"href": "/equipment-sale/dji-matrice-350-rtk",
 				"label": "DJI Matrice 300 RTK",
-				"description": "DJI Matrice 300 RTK ni droni inayoweza kubadilika na yenye nguvu iliyoundwa kwa matumizi ya viwandani, ikijumuisha upimaji, ramani, na ukaguzi. Inawezesha safari za ndege za kisasa, maisha marefu ya betri, na uwezo wa kubeba malipo mbalimbali, na kuifanya kuwa bora kwa matumizi ya kitaalamu katika mazingira magumu."
+				"description": "DJI Matrice 300 RTK ni ndege isiyo na rubani yenye matumizi mengi na nguvu iliyoundwa kwa ajili ya matumizi ya viwandani, ikijumuisha upimaji, ramani, na ukaguzi. Ina uwezo wa juu wa kuruka, maisha marefu ya betri, na uwezo wa kubeba mizigo mbalimbali, na kuifanya kuwa bora kwa matumizi ya kitaalamu katika mazingira magumu."
 			},
 			{
 				"icon": "quadcopter",
 				"img": "/media/equipment-sale/dji-air-3s/images/02.png",
 				"href": "/equipment-sale/dji-air-3s",
 				"label": "DJI Air 3S",
-				"description": "DJI Air 3S ni droni ndogo na inayobebeka inayotoa uwezo wa upigaji picha za angani na video za ubora wa juu. Ina mfumo wa kamera mbili, muda mrefu wa ndege, na hali za ndege za akili, na kuifanya kufaa kwa matumizi ya kitaalamu na ya burudani."
+				"description": "DJI Air 3S ni ndege ndogo na rahisi kubeba inayotoa uwezo wa juu wa upigaji picha na video za angani. Ina mfumo wa kamera mbili, muda mrefu wa kuruka, na njia za kuruka za akili, na kuifanya kuwa inafaa kwa matumizi ya kitaalamu na burudani."
 			},
 			{
 				"icon": "quadcopter",
 				"img": "/media/equipment-sale/dji-mavic-3-multispectral/images/02.png",
 				"href": "/equipment-sale/dji-mavic-3-multispectral",
 				"label": "DJI Mavic 3M / 3E",
-				"description": "DJI Mavic 3M / 3E ni droni nyepesi na inayobebeka inayotoa uwezo bora wa upigaji picha za angani. Ina kamera ya mwonekano wa juu, vitambuzi vya kuepuka vizuizi, na hali za ndege za akili, na kuifanya kuwa bora kwa kunasa picha na video za kuvutia kutoka angani."
+				"description": "DJI Mavic 3M / 3E ni ndege nyepesi na rahisi kubeba inayotoa uwezo bora wa upigaji picha za angani. Ina kamera ya ubora wa juu, vitambuzi vya kuepuka vizuizi, na njia za kuruka za akili, na kuifanya kuwa bora kwa kupiga picha na video za kuvutia kutoka angani."
 			},
 			{
 				"icon": "quadcopter",
 				"img": "/media/equipment-sale/dji-mavic-3-pro/images/02-01.png",
 				"href": "/equipment-sale/dji-mavic-3-pro",
 				"label": "DJI Mavic 3 Pro",
-				"description": "DJI Mavic 3 Pro ni chaguo la mseto kwa nyaraka za tovuti na ramani za utafiti, ikichanganya mfumo wa Hasselblad wa kamera tatu na photogrammetry inayoweza kutengeneza orthomosaic kwa ukamataji wa picha za kina."
+				"description": "DJI Mavic 3 Pro ni chaguo hodari kwa ajili ya kuandika hati za tovuti na ramani za uchunguzi, ikichanganya mfumo wa kamera tatu wa Hasselblad na fotogrammetria yenye uwezo wa orthomosaic kwa ajili ya upigaji picha wa kina na wa ubora wa juu."
 			},
 			{
 				"icon": "quadcopter",
 				"img": "/media/equipment-sale/dji-phantom-4/images/02-01.png",
 				"href": "/equipment-sale/dji-phantom-4",
 				"label": "DJI Phantom 4",
-				"description": "DJI Phantom 4 bado ni chaguo lililothibitishwa na la kutegemeka kwa upimaji wa kadastral na uhandisi, ikichanganya kamera ya shutter ya kimitambo na uwekaji nafasi unaotegemewa wa GNSS na vision kwa ramani sahihi."
+				"description": "DJI Phantom 4 bado ni chaguo lililothibitishwa na la kuaminika kwa ajili ya ramani za cadastral na uhandisi, ikichanganya kamera ya shutter ya mitambo na GNSS ya kuaminika na uwekaji wa msingi wa maono kwa ajili ya ramani sahihi."
 			}
 		]
 	},
 	"whyChooseUs": {
-		"tag": "Kwa Nini Utuchague",
+		"tag": "Kwa Nini Uchague Sisi",
 		"headline": "Suluhisho bora za upimaji na uhandisi.",
-		"description": "Tunachanganya teknolojia ya kisasa na uzoefu mpana ili kutoa suluhisho bora za upimaji na uhandisi.",
+		"description": "Tunachanganya teknolojia ya kisasa na uzoefu mkubwa ili kutoa suluhisho bora za upimaji na uhandisi.",
 		"items": [
 			{
 				"icon": "check-circle",
-				"name": "Utaalam",
-				"label": "Utaalam katika Upimaji wa Gridi ya Umeme na Kazi za Kirahisi",
-				"description": "Timu yetu ya wataalamu walio na leseni inaleta uzoefu mpana katika upimaji na uhandisi wa kirahisi."
+				"name": "Utaalamu",
+				"label": "Utaalamu katika Upimaji wa Gridi ya Nishati na Kazi za Miundombinu",
+				"description": "Timu yetu ya wataalamu wenye leseni ina uzoefu mkubwa katika upimaji na uhandisi wa miundombinu."
 			},
 			{
 				"icon": "check-circle",
 				"name": "Teknolojia ya Kisasa",
-				"label": "Matumizi ya Teknolojia za Droni na GIS",
-				"description": "Tunatumia vyombo na teknolojia za kisasa zaidi za upimaji na droni kwa ukusanyaji wa data sahihi na bora."
+				"label": "Matumizi ya Teknolojia za Ndege zisizo na Rubani na GIS",
+				"description": "Tunatumia vyombo vya kisasa vya upimaji na teknolojia ya ndege zisizo na rubani kwa ajili ya kukusanya data sahihi na kwa ufanisi."
 			},
 			{
 				"icon": "check-circle",
 				"name": "Huduma Kamili",
 				"label": "Huduma Kamili",
-				"description": "Kutoka upimaji wa ardhi hadi uhandisi wa kirahisi, tunatoa huduma nyingi kukidhi mahitaji ya mradi wako."
+				"description": "Kuanzia upimaji wa ardhi hadi uhandisi wa miundombinu, tunatoa huduma mbalimbali ili kukidhi mahitaji ya mradi wako."
 			},
 			{
 				"icon": "check-circle",
-				"name": "Udhibiti wa Ubora",
+				"name": "Uhakiki wa Ubora",
 				"label": "Kujitolea kwa Ubora na Ubunifu",
-				"description": "Tunazingatia viwango vikali vya ubora na kuendelea kufanya ubunifu ili kutoa suluhisho bora kwa wateja wetu."
+				"description": "Tunafuata viwango vikali vya ubora na tunaendelea kubuni suluhisho bora kwa wateja wetu."
 			},
 			{
 				"icon": "check-circle",
-				"name": "Mbinu Inayozingatia Mteja",
-				"label": "Mbinu Inayozingatia Mteja",
-				"description": "Tunatanguliza mahitaji ya wateja wetu, kuhakikisha mawasiliano ya wazi na suluhisho maalum kwa kila mradi."
+				"name": "Mbinu Inayoweka Mteja Kwanza",
+				"label": "Mbinu Inayoweka Mteja Kwanza",
+				"description": "Tunatanguliza mahitaji ya wateja wetu, kuhakikisha mawasiliano wazi na suluhisho maalum kwa kila mradi."
 			},
 			{
 				"icon": "check-circle",
-				"name": "Rekodi Imara",
-				"label": "Rekodi Imara ya Ufanisi",
-				"description": "Tuna rekodi imara ya kutoa miradi yenye mafanikio kwa wakati na ndani ya bajeti."
+				"name": "Rekodi Iliyothibitishwa",
+				"label": "Rekodi Iliyothibitishwa",
+				"description": "Tuna rekodi iliyothibitishwa ya kutoa miradi iliyofanikiwa kwa wakati na ndani ya bajeti."
+			}
+		]
+	},
+	"industriesWeServe": {
+		"tag": "Sekta",
+		"headline": "Sekta Tunazohudumia",
+		"description": "Kuanzia viwanja vidogo vya ardhi hadi miradi mikubwa ya miundombinu—mifumo yetu inaweza kupanuka kulingana na mahitaji yako. Tunafanya kazi na sekta zifuatazo:",
+		"items": [
+			{
+				"icon": "home-outline",
+				"label": "Mali isiyohamishika"
+			},
+			{
+				"icon": "hard-hat",
+				"label": "Miundombinu na Ujenzi"
+			},
+			{
+				"icon": "road-variant",
+				"label": "Miundombinu ya Barabara"
+			},
+			{
+				"icon": "account-multiple-outline",
+				"label": "Wasan razvoj Binafsi"
+			},
+			{
+				"icon": "city",
+				"label": "Serikali"
+			},
+			{
+				"icon": "earth-outline",
+				"label": "Mashirika Yasiyo ya Kiserikali (NGOs)"
+			},
+			{
+				"icon": "flash-outline",
+				"label": "Kampuni za Huduma na Nishati"
 			}
 		]
 	},
 	"keyFacts": {
 		"tag": "Mambo Muhimu",
 		"headline": null,
-		"description": "Sisi ni kampuni inayoongoza ya upimaji na uhandisi yenye uwepo mkubwa Afrika Mashariki, inayobobea katika upimaji wa ardhi, upimaji wa ramani kwa droni, na suluhisho za data za kimaeneo (geospatial). Kwa uzoefu wa miaka 5+ , tumekamilisha miradi mingi huku tukizingatia kanuni za kitaifa na mbinu bora za upimaji.",
+		"description": "Sisi ni kampuni inayoongoza ya upimaji na uhandisi yenye uwepo mkubwa katika Afrika Mashariki, maalumu katika upimaji wa ardhi, ramani za ndege zisizo na rubani, na suluhisho za data ya kijiografia. Kwa uzoefu wa zaidi ya miaka 5, tumekamilisha miradi mingi kwa mafanikio huku tukizingatia kanuni za kitaifa na mbinu bora za upimaji.",
 		"items": [
 			{
 				"icon": "check-circle",
-				"label": "Upatikanaji wa Kikanda",
-				"description": "Operesheni za Afrika Mashariki nchini Kenya, Uganda, Tanzania, Rwanda na maeneo ya jirani."
+				"label": "Ufikiaji wa Kikanda",
+				"description": "Shughuli za Afrika Mashariki katika Kenya, Uganda, Tanzania, Rwanda na maeneo jirani."
 			},
 			{
 				"icon": "check-circle",
-				"label": "Umaalumu",
-				"description": "Upimaji wa ardhi, uchoraji ramani kwa droni na suluhisho za data za kimaeneo."
+				"label": "Utaalamu",
+				"description": "Upimaji wa ardhi, ramani za ndege zisizo na rubani na suluhisho za data ya kijiografia."
 			},
 			{
 				"icon": "check-circle",
 				"label": "Uzoefu",
-				"description": "Miaka 5+ ya kutoa data sahihi za kiwango cha uhandisi."
+				"description": "Miaka 5+ ya kutoa data ya anga ya kiwango cha uhandisi."
 			},
 			{
 				"icon": "check-circle",
 				"label": "Viwango",
-				"description": "Uzingatiaji wa kanuni za kitaifa na mbinu bora za upimaji."
+				"description": "Kufuata kanuni za kitaifa na mbinu bora za upimaji."
 			}
 		]
 	},
 	"coreExpertise": {
-		"tag": "Wataalam",
-		"headline": "Utaalam Wetu wa Msingi",
-		"description": "Tunabobea katika kutoa huduma za upimaji na uhandisi za ubora wa juu, tukitumia teknolojia ya kisasa na utaalam wa tasnia kutoa matokeo sahihi na ya kuaminika kwa wateja wetu.",
+		"tag": "Wataalamu",
+		"headline": "Utaalamu Wetu wa Msingi",
+		"description": "Tunabobea katika kutoa huduma za ubora wa juu za upimaji na uhandisi, kwa kutumia teknolojia ya kisasa na utaalamu wa sekta ili kutoa matokeo sahihi na ya kuaminika kwa wateja wetu.",
 		"items": [
 			{
 				"icon": "terrain",
-				"label": "Uchunguzi wa Topografia na Uhandisi",
+				"label": "Upimaji wa Topografia na Uhandisi",
 				"description": "Upimaji sahihi wa ardhi kwa ajili ya miradi ya ujenzi, miundombinu, na maendeleo.",
 				"href": "/surveying/topographical-surveys"
 			},
 			{
 				"icon": "quadcopter",
-				"label": "Uchoraji Ramani kwa Droni na Photogrammetry",
-				"description": "Picha za angani za mwonekano wa juu na uchoraji ramani wa 3D kwa ukusanyaji sahihi wa data.",
+				"label": "Ramani za Ndege zisizo na Rubani na Photogrammetria",
+				"description": "Picha za ubora wa juu za angani na ramani za 3D kwa ajili ya kukusanya data sahihi.",
 				"href": "/aerial-drones/lidar-mapping"
 			},
 			{
 				"icon": "hard-hat",
-				"label": "Ujenzi na Udhibiti wa Tovuti",
-				"description": "Huduma za upimaji kwa mpangilio wa ujenzi, ufuatiliaji, na udhibiti wa ubora.",
+				"label": "Udhibiti wa Tovuti na Ujenzi",
+				"description": "Huduma za upimaji kwa ajili ya mpangilio wa ujenzi, ufuatiliaji, na udhibiti wa ubora.",
 				"href": "/civil/site-engineering"
 			},
 			{
 				"icon": "bridge",
 				"label": "Msaada wa Miundombinu",
-				"description": "Suluhisho za upimaji na uhandisi kwa barabara, madaraja, huduma za umeme, na miradi mingine ya miundombinu.",
+				"description": "Suluhisho za upimaji na uhandisi kwa ajili ya barabara, madaraja, huduma, na miradi mingine ya miundombinu.",
 				"href": "/civil/highway-surveys"
 			}
 		]
 	},
 	"certifications": {
 		"tag": "Imethibitishwa",
-		"headline": "Vidhibitisho Vyetu",
-		"description": "Tunajivunia kushikilia vidhibitisho kutoka mashirika yanayoheshimika, kuonyesha kujitolea kwetu kwa ubora, usalama, na taaluma katika tasnia ya upimaji na uhandisi.",
+		"headline": "Vyeti Vyetu",
+		"description": "Tunajivunia kushikilia vyeti kutoka kwa mashirika yenye sifa, kuonyesha kujitolea kwetu kwa ubora, usalama, na taaluma katika sekta ya upimaji na uhandisi.",
 		"items": [
 			{
 				"icon": null,
@@ -347,24 +365,24 @@
 			{
 				"icon": null,
 				"name": "NEMA",
-				"label": "Uzingatiaji wa Mazingira"
+				"label": "Ufuasi wa Mazingira"
 			},
 			{
 				"icon": null,
 				"name": "NCA",
-				"label": "Mamlaka ya ujenzi"
+				"label": "Mamlaka ya Ujenzi"
 			},
 			{
 				"icon": null,
 				"name": "SOK",
-				"label": "Uchunguzi wa Kenya"
+				"label": "Upimaji wa Kenya"
 			}
 		]
 	},
 	"metrics": {
 		"tag": "Kiwango",
 		"headline": "Kiwango Chetu cha Uendeshaji",
-		"description": "Tuna kiwango kikubwa cha uendeshaji, kwa uwepo katika nchi nyingi, idadi kubwa ya miradi iliyokamilishwa, na kujitolea kwa kutoa huduma za ubora wa juu kwa miaka mingi.",
+		"description": "Tuna kiwango kikubwa cha uendeshaji, tukiwa na uwepo katika nchi nyingi, idadi kubwa ya miradi iliyokamilika, na kujitolea kutoa huduma za ubora wa juu kwa miaka mingi.",
 		"items": [
 			{
 				"icon": "map-marker-multiple",
@@ -373,7 +391,7 @@
 			},
 			{
 				"icon": "clipboard-check",
-				"name": "Miradi",
+				"name": "Mradi",
 				"value": 250
 			},
 			{
@@ -442,7 +460,6 @@
 			}
 		]
 	},
-
 	"services": {
 		"tag": "Huduma",
 		"headline": "Huduma Zetu",
@@ -450,96 +467,120 @@
 			{
 				"featureImg": "/media/services/land-surveying-deliverables.png",
 				"label": "Upimaji wa Ardhi",
-				"description": "Tunatoa huduma nyingi za upimaji wa ardhi, ikijumuisha uchunguzi wa topografia, uchunguzi wa mipaka, mali za sehemu, uchunguzi wa tovuti za majengo, upimaji wa rasilimali, uchunguzi wa bathymetric, uchunguzi wa hydrographic, na ushirika wa GIS. Wazao wetu hujumuisha ripoti na mipango ya uchunguzi wa mipaka, mipango ya cadastral kwa kuchakata hati miliki, monumentation ya beacons, ramani za usajili, data ya 3D (X, Y, Z), ramani za topografia, kontua, shapefiles za CAD, ripoti za uchunguzi, matokeo ya PDF, na wazao wengine maalum.",
-				"items": [
-					"Uchunguzi wa Topografia",
-					"Uchunguzi wa Mipaka",
-					"Mali za Sehemu",
-					"Uchunguzi wa Tovuti za Majengo",
-					"Upimaji wa Rasilimali",
-					"Uchunguzi wa Bathymetric / Hydrographic",
-					"Uchoraji Ramani wa GIS"
-				],
-				"deliverables": [
-					"Ripoti na Mipango ya Uchunguzi wa Mipaka",
-					"Mipango ya Cadastral kwa Uchakataji wa Hati Miliki",
-					"Monumentation ya Beacons",
-					"Ramani za Usajili",
-					"Data ya 3D (X, Y, Z)",
-					"Ramani za Topografia",
-					"Kontua",
-					"Shapefiles za CAD",
-					"Ripoti za Uchunguzi",
-					"Matokeo ya PDF",
-					"Wazao Wengine Maalum"
-				]
+				"description": "Tunatoa huduma mbalimbali za upimaji wa ardhi, ikiwa ni pamoja na upimaji wa topografia, upimaji wa mipaka, mali za sehemu, upimaji wa tovuti za ujenzi, ramani ya rasilimali, upimaji wa bathymetric, upimaji wa hydrographic, na ramani ya GIS. Matokeo yetu yanajumuisha ripoti na mipango ya upimaji wa mipaka, mipango ya cadastral kwa ajili ya usindikaji wa hati miliki, uwekaji wa alama za mipaka, ramani za rejesta, data ya 3D ya anga (X, Y, Z), ramani za topografia, kontua, shapefiles za CAD, ripoti za upimaji, matokeo ya ramani za PDF, na matokeo mengine maalumu.",
+				"whatWeOffer": {
+					"label": "Tunachotoa",
+					"description": "",
+					"items": [
+						"Upimaji wa topografia",
+						"Upimaji wa mipaka",
+						"Mali za sehemu",
+						"Upimaji wa tovuti za ujenzi",
+						"Ramani ya rasilimali",
+						"Upimaji wa bathymetric / Upimaji wa hydrographic",
+						"Ramani ya GIS"
+					]
+				},
+				"deliverables": {
+					"label": "Matokeo",
+					"description": "Kila mradi unatolewa kwa matokeo ya kitaalamu, tayari kutumika yaliyoundwa kulingana na mahitaji ya mradi:",
+					"items": [
+						"Ripoti na Mipango ya Upimaji wa Mipaka",
+						"Mipango ya Cadastral kwa Ajili ya Usindikaji wa Hati Miliki",
+						"Uwekaji wa Alama za Mipaka",
+						"Ramani za Rejesta",
+						"Data ya 3D ya Anga (X, Y, Z)",
+						"Ramani za Topografia",
+						"Kontua",
+						"Shapefiles za CAD",
+						"Ripoti za Upimaji",
+						"Matokeo ya Ramani za PDF",
+						"Matokeo Mengine Maalumu"
+					]
+				}
 			},
 			{
 				"featureImg": "/media/services/aerial-drone-deliverables.png",
-				"label": "Uchunguzi Wa Angani",
-				"description": "Tunatoa huduma nyingi za uchunguzi wa angani, ikijumuisha uchunguzi wa picha kwa droni, upimaji ramani wa Lidar, uchunguzi wa NDVI wa kilimo, uhandisi wa kama ulivyojengwa (as-built), ufuatiliaji na tathmini, uchunguzi wa paneli za sola kwa droni, uchunguzi wa kiasi (volumetric), na uchunguzi wa taka na machimbo kwa droni. Wazao wetu hujumuisha ripoti na mipango ya uchunguzi wa mipaka, mipango ya cadastral kwa kuchakata hati miliki, monumentation ya beacons, ramani za usajili, data ya 3D (X, Y, Z), ramani za topografia, kontua, shapefiles za CAD, ripoti za uchunguzi, matokeo ya PDF, na wazao wengine maalum.",
-				"items": [
-					"Uchunguzi wa picha kwa droni",
-					"Upimaji ramani wa Lidar",
-					"Uchunguzi wa NDVI wa kilimo",
-					"Uchunguzi wa kama ulivyojengwa (As built)",
-					"Ufuatiliaji na Tathmini",
-					"Uchunguzi wa panela za sola kwa droni",
-					"Uchunguzi wa kiasi (Volumetric)",
-					"Uchunguzi wa taka na machimbo kwa droni"
-				],
-				"deliverables": [
-					"Picha za Orthorectified (Zirizidhishwa) + Picha mbichi",
-					"Ramani za Orthomosaic (Zirizidhishwa)",
-					"Miundo ya Eleza ya Dijiti (DTM, DSM)",
-					"Kontua",
-					"Mwiko wa Point za 3D (X, Y, Z)",
-					"Ramani za Topografia",
-					"Shapefiles za CAD",
-					"Ripoti za Uchambuzi wa Kiasi",
-					"Ripoti za Uchunguzi",
-					"Ramani za NDVI na Multispectral (Kilimo pekee)"
-				]
+				"label": "Upimaji wa Angani",
+				"description": "Tunatoa huduma mbalimbali za upimaji wa angani, ikiwa ni pamoja na upimaji wa picha za ndege zisizo na rubani, ramani ya Lidar, ramani ya NDVI ya kilimo, upimaji wa 'as built', ufuatiliaji na tathmini, upimaji wa paneli za jua kwa ndege zisizo na rubani, upimaji wa kiasi (volumetric), na upimaji wa dampo na machimbo kwa ndege zisizo na rubani. Matokeo yetu yanajumuisha ripoti na mipango ya upimaji wa mipaka, mipango ya cadastral kwa ajili ya usindikaji wa hati miliki, uwekaji wa alama za mipaka, ramani za rejesta, data ya 3D ya anga (X, Y, Z), ramani za topografia, kontua, shapefiles za CAD, ripoti za upimaji, matokeo ya ramani za PDF, na matokeo mengine maalumu.",
+				"whatWeOffer": {
+					"label": "Tunachotoa",
+					"description": "",
+					"items": [
+						"Upimaji wa picha za ndege zisizo na rubani",
+						"Ramani ya Lidar",
+						"Ramani ya NDVI ya Kilimo",
+						"Upimaji wa 'as built'",
+						"Ufuatiliaji na Tathmini",
+						"Upimaji wa Paneli za Jua kwa Ndege zisizo na rubani",
+						"Upimaji wa Kiasi (Volumetric)",
+						"Upimaji wa Dampo na Machimbo kwa Ndege zisizo na rubani"
+					]
+				},
+				"deliverables": {
+					"label": "Matokeo",
+					"description": "Kila mradi unatolewa kwa matokeo ya kitaalamu, tayari kutumika yaliyoundwa kulingana na mahitaji ya mradi:",
+					"items": [
+						"Picha za Orthorectified (Zilizopangwa Kijiografia) + Picha Ghafi",
+						"Ramani za Orthomosaic (Zilizopangwa Kijiografia)",
+						"Miundo ya Elevation ya Dijiti (DTM, DSM)",
+						"Kontua",
+						"Mawingu ya Pointi za 3D (X, Y, Z)",
+						"Ramani za Topografia",
+						"Shapefiles za CAD",
+						"Ripoti za Uchambuzi wa Kiasi (Volumetric)",
+						"Ripoti za Upimaji",
+						"Ramani za NDVI na Multispectral (Kilimo pekee)"
+					]
+				}
 			},
 			{
 				"featureImg": "/media/services/civil-engineering-deliverables.png",
-				"label": "Uhandisi Wa Civil",
-				"description": "Tunatoa huduma nyingi za uhandisi wa kirahisi, ikijumuisha uhandisi wa tovuti, uwekaji wa viwango vya majengo, ufungaji wa huduma za ardhini, uhandisi wa barabara kuu, uchunguzi wa stakeout, usawazishaji, uwekaji wa viwango vya kumbukumbu (benchmarking), na huduma za ujenzi. Wazao wetu hujumuisha ramani za kama ulivyojengwa, miundo ya eleza ya dijiti, viwianishi vya uwekaji, data ya 3D, kontua, mipango mkuu, mipangilio ya majengo, shapefiles za CAD, na ramani za PDF.",
-				"items": [
-					"Uhandisi wa Tovuti ",
-					"Uwekaji wa Viwango vya Majengo",
-					"Huduma za ardhini (Mifereji ya maji, usafi, nyaya za umeme)",
-					"Uhandisi wa barabara kuu",
-					"Uchunguzi wa stakeout",
-					"Usawazishaji (Leveling)",
-					"Uwekaji wa viwango vya kumbukumbu (Benchmarking)",
-					"Huduma za ujenzi"
-				],
-				"deliverables": [
-					"Ramani za AS-BUILT",
-					"Miundo ya Eleza ya Dijiti (DSM, DTM)",
-					"Viwianishi vya Uwekaji",
-					"DATA YA 3D (X, Y, Z)",
-					"Kontua",
-					"Mipango Mkuu",
-					"Mipangilio ya Majengo / BIM",
-					"Shapefiles za CAD",
-					"Ramani ya PDF"
-				]
+				"label": "Uhandisi wa Miundombinu",
+				"description": "Tunatoa huduma mbalimbali za uhandisi wa miundombinu, ikiwa ni pamoja na uhandisi wa tovuti, uwekaji wa majengo, uwekaji wa huduma za chini ya ardhi, uhandisi wa barabara kuu, uwekaji alama, upimaji wa viwango, uwekaji wa alama za kumbukumbu, na huduma za ujenzi. Matokeo yetu yanajumuisha ramani za 'as-built', miundo ya elevation ya dijiti, kuratibu za uwekaji, data ya 3D, kontua, mipango mikuu, mipango ya majengo, shapefiles za CAD, na ramani za PDF.",
+				"whatWeOffer": {
+					"label": "Tunachotoa",
+					"description": "",
+					"items": [
+						"Uhandisi wa Tovuti",
+						"Uwekaji wa Majengo",
+						"Huduma za chini ya ardhi (Mabomba ya maji, mabomba ya maji taka, nyaya za umeme)",
+						"Uhandisi wa Barabara kuu",
+						"Uwekaji alama",
+						"Upimaji wa viwango",
+						"Uwekaji wa alama za kumbukumbu",
+						"Huduma za ujenzi"
+					]
+				},
+				"deliverables": {
+					"label": "Matokeo",
+					"description": "Kila mradi unatolewa kwa matokeo ya kitaalamu, tayari kutumika yaliyoundwa kulingana na mahitaji ya mradi:",
+					"items": [
+						"Ramani za AS-BUILT",
+						"Miundo ya Elevation ya Dijiti (DSM, DTM)",
+						"Kuratibu za Uwekaji",
+						"DATA YA 3D (X, Y, Z)",
+						"Kontua",
+						"Mipango Mikuu",
+						"Mipango ya Majengo / BIM",
+						"Shapefiles za CAD",
+						"Ramani za PDF"
+					]
+				}
 			}
 		]
 	},
 	"cta": {
-		"tag": "Tushirikiane",
-		"headline": "Upimaji sahihi na uhandisi, tayari unapohitaji.",
-		"description": "Kutoka kiwanja kimoja hadi ekari 1000+, wapimaji na marubani wetu wako tayari kutoa data ya haraka, sahihi na tendekevu — kote Afrika Mashariki na nje.",
+		"tag": "Tufanye kazi pamoja",
+		"headline": "Upimaji sahihi na uhandisi, tayari ukiwa tayari.",
+		"description": "Kutoka shimo moja hadi ekari 1000+, wapimaji na marubani wetu wako tayari kutoa data ya haraka, sahihi na inayoweza kutekelezeka — katika Afrika Mashariki na kwingineko.",
 		"primary": {
 			"label": "Omba Upimaji",
 			"href": "/contact?reason=request-survey#contact-form",
 			"icon": "send"
 		},
 		"secondary": {
-			"label": "Ongea na Mtaalam",
+			"label": "Ongea na Mtaalamu",
 			"href": "mailto:smartgridsurveying@gmail.com?subject=Talk to an Expert&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to talk to an expert about a surveying project.%0D%0A%0D%0AName:%0D%0AService of interest:%0D%0AMessage:%0D%0A%0D%0AThank you.",
 			"icon": "email"
 		}

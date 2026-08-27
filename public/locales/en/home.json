@@ -263,6 +263,41 @@
 			}
 		]
 	},
+	"industriesWeServe": {
+		"tag": "Industries",
+		"headline": "Industries We Serve",
+		"description": "From small land parcels to large-scale infrastructure projects—our systems scale to your needs. We work with the following industries:",
+		"items": [
+			{
+				"icon": "home-outline",
+				"label": "Real Estate"
+			},
+			{
+				"icon": "hard-hat",
+				"label": "Civil & Construction"
+			},
+			{
+				"icon": "road-variant",
+				"label": "Road Infrastructure"
+			},
+			{
+				"icon": "account-multiple-outline",
+				"label": "Private Developers"
+			},
+			{
+				"icon": "city",
+				"label": "Government"
+			},
+			{
+				"icon": "earth-outline",
+				"label": "NGOs"
+			},
+			{
+				"icon": "flash-outline",
+				"label": "Utility & Energy Companies"
+			}
+		]
+	},
 	"keyFacts": {
 		"tag": "Key Facts",
 		"headline": null,
