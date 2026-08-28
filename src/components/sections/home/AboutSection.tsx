@@ -51,7 +51,7 @@ export const AboutSection: React.FC = () => {
 							{t("home:about.mission.description")}
 						</p>
 
-						<div className="pt-4 grid grid-cols-2 gap-4">
+						<div className="pt-4 grid  grid grid-cols-1 md:grid-cols-2 gap-4">
 							{cards.map((card, index) => (
 								<Link href={card.href} key={`about-card-${index}`}>
 									<div className="p-4 rounded-[15px] bg-surface hairline hover:border-primary cursor-pointer transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-0.5 h-full hover:card-shadow-lift flex items-start gap-3">
@@ -98,7 +98,8 @@ export const AboutSection: React.FC = () => {
 										src={t("home:about.featureImg.url")}
 										alt={t("home:about.featureImg.alt")}
 										fill
-										sizes="(min-width: 1024px) 384px, 100vw"
+										quality={70}
+										sizes="(min-width: 1024px) 384px, min(100vw, 448px)"
 										className="object-cover object-top transition-transform duration-700 group-hover:scale-105 opacity-80"
 									/>
 									<div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/25 to-transparent" />

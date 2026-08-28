@@ -137,6 +137,16 @@ export default function HeroScene() {
 	useEffect(() => {
 		const container = containerRef.current;
 		if (!container) return;
+
+		// --- Low-end device guard ---
+		// The full-window WebGL scene is far too heavy for low-core / low-memory
+		// devices (and software rasterizers) — skip it entirely there; the hero
+		// content and fixed instrument frame carry the design on their own.
+		const nav = navigator as Navigator & { deviceMemory?: number };
+		const isLowEndDevice =
+			(nav.hardwareConcurrency ?? 8) <= 4 || (nav.deviceMemory ?? 8) <= 4;
+		if (isLowEndDevice) return;
+
 		// --- Viewport Observer ---
 		let isInViewport = true;
 		const observer = new IntersectionObserver(
@@ -380,12 +390,19 @@ export default function HeroScene() {
 
 		// --- Animation Loop ---
 		const clock = new THREE.Clock();
+		// Cap to ~30fps and skip entirely when the tab is hidden — continuous
+		// full-window rendering saturates low-end CPUs and delays LCP.
+		const FRAME_INTERVAL = 1000 / 30;
+		let lastFrameTime = 0;
 		let animId: number;
 
-		function animate() {
+		function animate(now: number) {
 			animId = requestAnimationFrame(animate);
-			// If not in the viewport, skip all calculations and rendering!
-			if (!isInViewport) return;
+			// If off-screen or the tab is hidden, skip all calculations and rendering!
+			if (!isInViewport || document.hidden) return;
+			const frameElapsed = now - lastFrameTime;
+			if (frameElapsed < FRAME_INTERVAL) return;
+			lastFrameTime = now - (frameElapsed % FRAME_INTERVAL);
 			const t = clock.getElapsedTime();
 
 			// Lerp mouse variables for butter-smooth animation
@@ -438,7 +455,7 @@ export default function HeroScene() {
 
 		// Start rendering immediately — the grid/particles/scanner are visible
 		// while the drone model streams in.
-		animate();
+		animId = requestAnimationFrame(animate);
 
 		// --- Cleanup ---
 		return () => {

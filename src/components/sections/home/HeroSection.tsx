@@ -3,10 +3,10 @@
 
 import { useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import Link from "next/link";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useLenis } from "lenis/react";
-import Head from "next/head";
 import { useTranslation } from "@/hooks";
 import { Trans } from "next-i18next/pages";
 import { ButtonProps } from "@mui/material/Button";
@@ -15,8 +15,6 @@ import { FadeUp, FadeRight, FadeLeft } from "@/components/animations/Fade";
 // Three.js + loaders (~500-700KB) stay out of the initial page bundle:
 // the WebGL scene is code-split and mounted client-side only.
 const HeroScene = dynamic(() => import("./HeroScene"), { ssr: false });
-
-const DRONE_MODEL_URL = "/models/dji-matrice-300-optimized.glb";
 
 interface CtaItem {
 	label: string;
@@ -75,12 +73,6 @@ export default function HeroSection() {
 			ref={heroRef}
 			className="relative min-h-[90dvh] flex items-center justify-center pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-32 overflow-hidden"
 		>
-			{/* Start fetching the drone model early — the scene consumes it as
-			    soon as it mounts. */}
-			<Head>
-				<link rel="preload" as="fetch" href={DRONE_MODEL_URL} crossOrigin="anonymous" />
-			</Head>
-
 			{/* WebGL Background (code-split, client-only) */}
 			<HeroScene />
 
@@ -154,14 +146,16 @@ export default function HeroSection() {
 								<div className="flex items-center gap-3">
 									<div className="flex -space-x-2">
 										{Array.isArray(location.items) &&
-											location.items.map((item: LocationTagItem, index: number) => (
-												<div
-													className="w-9 h-9 rounded-full bg-primary/20 border-2 border-surface flex items-center justify-center text-xs font-bold text-primary"
-													key={index}
-												>
-													{item.code}
-												</div>
-											))}
+											location.items.map(
+												(item: LocationTagItem, index: number) => (
+													<div
+														className="w-9 h-9 rounded-full bg-primary/20 border-2 border-surface flex items-center justify-center text-xs font-bold text-primary"
+														key={index}
+													>
+														{item.code}
+													</div>
+												)
+											)}
 									</div>
 									<span className="text-sm text-on-surface/50 font-medium">
 										{location.label}
@@ -177,13 +171,35 @@ export default function HeroSection() {
 			</div>
 
 			<motion.div
-				className={`rounded-3xl  fixed right-0 md:-right-1 lg:-right-8 bottom-0 overflow-hidden h-2/3 w-1/3 bg-[url('/img/instruments/total-station-color.webp')] bg-cover bg-no-repeat z-0`}
+				className={`rounded-3xl fixed  -right-40 md:-right-20 lg:-right-8 bottom-0 overflow-hidden w-80 md:w-100 lg:w-140 aspect-3/4 z-0`}
 				style={{ opacity: colorOpacity }}
-			/>
+			>
+				{/* LCP element — priority + high fetch priority so it is discovered
+				    in the initial document and requested ahead of everything else. */}
+				<Image
+					src="/img/instruments/total-station-color.webp"
+					alt=""
+					fill
+					priority
+					fetchPriority="high"
+					layout="fill"
+					objectFit="cover"
+				/>
+			</motion.div>
 			<motion.div
-				className={`rounded-3xl  fixed right-0 md:-right-1 lg:-right-8 bottom-0 overflow-hidden h-2/3 w-1/3 bg-[url('/img/instruments/total-station-wireframe.svg')] bg-cover bg-no-repeat`}
+				className={`rounded-3xl  fixed -right-40 md:-right-20 lg:-right-8 bottom-0 overflow-hidden w-80 md:w-100 lg:w-140 aspect-3/4`}
 				style={{ opacity: wireframeOpacity }}
-			/>
+			>
+				<Image
+					src="/img/instruments/total-station-wireframe.svg"
+					alt=""
+					fill
+					priority
+					fetchPriority="high"
+					sizes="33vw"
+					className="object-scale-down"
+				/>
+			</motion.div>
 		</section>
 	);
 }
