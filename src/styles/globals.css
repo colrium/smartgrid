@@ -91,6 +91,7 @@
 
 body {
     background: theme("colors.background");
+    color: var(--color-ink-soft);
 }
 
 html {

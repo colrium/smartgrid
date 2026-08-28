@@ -45,18 +45,19 @@ export default function HeroSection() {
 	// the animated full-window canvas would otherwise saturate the CPU during
 	// load (the dominant Total Blocking Time + LCP delay in Lighthouse). The
 	// hero content and fixed instrument frame carry the design on their own.
-	const [sceneEnabled, setSceneEnabled] = useState(false);
+	const [sceneEnabled, setSceneEnabled] = useState(true);
 
-	useEffect(() => {
+	/* useEffect(() => {
 		const nav = navigator as Navigator & { deviceMemory?: number };
 		const supported =
 			!window.matchMedia("(pointer: coarse)").matches &&
 			!window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
 			window.innerWidth > 768 &&
 			(nav.hardwareConcurrency ?? 8) > 4 &&
-			(nav.deviceMemory ?? 8) > 4;
+            (nav.deviceMemory ?? 8) > 4;
+        
 		if (supported) setSceneEnabled(true);
-	}, []);
+	}, []); */
 
 	const { t } = useTranslation(["home"]);
 	const ctaPrimary = t("home:hero.ctaPrimary", { returnObjects: true }) as CtaItem;
@@ -85,7 +86,7 @@ export default function HeroSection() {
 	}, []);
 
 	const colorOpacity = useTransform(scrollYPercentage, [10, 30], [1, 0]);
-	const wireframeOpacity = useTransform(scrollYPercentage, [10, 30], [0, 0.5]);
+	const wireframeOpacity = useTransform(scrollYPercentage, [10, 30], [0, 0.4]);
 
 	return (
 		<section
@@ -196,14 +197,14 @@ export default function HeroSection() {
 				{/* LCP element — priority + high fetch priority so it is discovered
 				    in the initial document and requested ahead of everything else. */}
 				<Image
-					src="/img/instruments/total-station-color.webp"
-					alt=""
+					src="/img/instruments/total-station-color.png"
+					alt="total-station-color"
 					fill
-					priority
-					fetchPriority="high"
+					// priority
+					// fetchPriority="high"
 					layout="fill"
-					objectFit="cover"
 					sizes="(min-width: 1024px) 560px, (min-width: 768px) 400px, 320px"
+					className="object-scale-down"
 				/>
 			</motion.div>
 			<motion.div
@@ -212,10 +213,10 @@ export default function HeroSection() {
 			>
 				<Image
 					src="/img/instruments/total-station-wireframe.svg"
-					alt=""
+					alt="total-station-wireframe"
 					fill
-					priority
-					fetchPriority="high"
+					// priority
+					// fetchPriority="high"
 					sizes="(min-width: 1024px) 560px, (min-width: 768px) 400px, 320px"
 					className="object-scale-down"
 				/>

@@ -136,6 +136,8 @@ export default function HeroScene() {
 
 	useEffect(() => {
 		const container = containerRef.current;
+
+        console.log("container", container);
 		if (!container) return;
 
 		// --- Low-end device guard ---
@@ -144,7 +146,9 @@ export default function HeroScene() {
 		// content and fixed instrument frame carry the design on their own.
 		const nav = navigator as Navigator & { deviceMemory?: number };
 		const isLowEndDevice =
-			(nav.hardwareConcurrency ?? 8) <= 4 || (nav.deviceMemory ?? 8) <= 4;
+            (nav.hardwareConcurrency ?? 8) <= 4 || (nav.deviceMemory ?? 8) <= 4;
+        
+        console.log("isLowEndDevice", isLowEndDevice);
 		if (isLowEndDevice) return;
 
 		// --- Viewport Observer ---
@@ -467,17 +471,18 @@ export default function HeroScene() {
 		const idleWindow = window as Window & {
 			requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
 		};
-		const scheduleLoopStart = () => {
+        const scheduleLoopStart = () => {
+            console.log("scheduleLoopStart called");
 			if (idleWindow.requestIdleCallback) {
 				idleWindow.requestIdleCallback(startLoop, { timeout: 3000 });
 			} else {
 				setTimeout(startLoop, 200);
 			}
-		};
+        };
 		if (document.readyState === "complete") {
 			scheduleLoopStart();
 		} else {
-			window.addEventListener("load", scheduleLoopStart, { once: true });
+			window.addEventListener("load", scheduleLoopStart);
 		}
 
 		// --- Cleanup ---
@@ -502,12 +507,10 @@ export default function HeroScene() {
 	}, []);
 
 	return (
-		<div
+        <div
+            id="hero-scene"
 			ref={containerRef}
 			className="absolute inset-0 z-0 opacity-80 pointer-events-auto"
 		/>
 	);
 }
-
-// Adding this non-React export breaks Fast Refresh for this specific module
-export const disableFastRefresh = true;

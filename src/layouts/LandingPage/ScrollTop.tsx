@@ -5,63 +5,79 @@ import Fab from "@mui/material/Fab";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Fade from "@mui/material/Fade";
 import { useTranslation } from "@/hooks";
-
-interface Props {
-	/**
-	 * Injected by the documentation to work in an iframe.
-	 * You won't need it on your project.
-	 */
-	window?: () => Window;
+import { motion, useMotionValue, useTransform, HTMLMotionProps } from "framer-motion";
+import { useLenis } from "lenis/react";
+interface Props extends HTMLMotionProps<"button"> {
 	children?: React.ReactElement<unknown>;
-	querySelector: string;
+	querySelector?: string;
+	anchorRef?: React.RefObject<HTMLDivElement | null>;
+	threshold?: number; //scroll ratio
 }
 
-const ScrollTop = (props: Props) => {
-	const { children, window, querySelector = "#back-to-top-anchor" } = props;
+const ScrollTop = ({
+	children,
+	querySelector,
+	anchorRef,
+	threshold = 0.2,
+	style = {},
+	className = "",
+	...rest
+}: Props) => {
 	const { t } = useTranslation("common");
-	const trigger = useScrollTrigger({
-		target: window ? window() : undefined,
-		disableHysteresis: true,
-		threshold: 100,
-	});
+	const thresholdReached = useMotionValue(0);
+    const lenis = useLenis();
+	useLenis(
+		({ scroll, limit }) => {
+			const show = scroll / limit >= threshold ? 1 : 0;
+			const showing = thresholdReached.get();
+			if (showing !== show) {
+				thresholdReached.set(show);
+			}
+		},
+		[threshold]
+	);
+	const scale = useTransform(thresholdReached, [0, 1], [0, 1]);
 
-	const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
-		const anchor = ((event.target as HTMLDivElement).ownerDocument || document).querySelector(
-			querySelector
-		);
-
-		if (anchor) {
-			anchor.scrollIntoView({
-				block: "center",
-				behavior: "smooth",
+    const handleClick = React.useCallback((event: React.MouseEvent<HTMLElement>) => {
+        
+		let anchorElem = anchorRef?.current;
+        if (!anchorElem && querySelector) {
+			anchorElem = ((event.target as HTMLElement).ownerDocument || document).querySelector(
+							querySelector
+						);
+		}
+		if (lenis && anchorElem) {
+			// 3. Trigger the smooth animation
+			lenis.scrollTo(anchorElem, {
+				duration: 1.5, // Animation duration in seconds
+				offset: 0, // Offset from the top (useful for sticky headers)
+				easing: (t) => 1 - Math.pow(1 - t, 4), // Custom easing function (EaseOutQuart)
+				immediate: false, // Set to true to bypass animation entirely
 			});
 		}
-	};
+        else if (anchorElem) {
+			anchorElem.scrollIntoView({
+				block: "center",
+				behavior: "smooth",
+				inline: "nearest",
+			});
+		}
+	}, [anchorRef?.current]);
 
 	return (
-		<Fade in={trigger}>
-			<Box
-				onClick={handleClick}
-				role="presentation"
-				sx={{
-					position: "fixed",
-					bottom: 80,
-					right: 24,
-					zIndex: (theme) => theme.zIndex.speedDial,
-				}}
-			>
-				<Fab
-                    size="small"
-                    color="primary"
-					aria-label={t("common:chat.scrollTopLabel", {
-						defaultValue: "Scroll back to top",
-					})}
-				>
-					<KeyboardArrowUpIcon />
-				</Fab>
-				{children}
-			</Box>
-		</Fade>
+		<motion.button
+			data-ripple-dark="true"
+			className={` h-10 max-h-[40px] w-10 max-w-[40px] rounded-full bg-surface p-1 border border-transparent text-center text-md text-ink hover:text-primary transition-all shadow-sm  hover:shadow-lg focus:bg-surface focus:shadow-none active:bg-surface hover:bg-surface active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none cursor-pointer ${className}`}
+			type="button"
+			onClick={handleClick}
+			style={{ ...style, scale: scale }}
+			aria-label={t("common:chat.scrollTopLabel", {
+				defaultValue: "Scroll back to top",
+			})}
+			{...rest}
+		>
+			{children ?? <span className="mdi mdi-chevron-up text-inherit" />}
+		</motion.button>
 	);
 };
 
