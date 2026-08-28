@@ -28,7 +28,7 @@ const LeadGenBar: React.FC<{ className?: string }> = ({ className }) => {
     const leadGenItems = t("home:leadGenBar.items", { returnObjects: true }) as unknown as LeadGenItem[];
 
     return (
-		<FadeUp viewport={{ once: true, margin: "0px" }}>
+		<FadeUp >
 			<section className={`relative  ${className || ""}`}>
 				<div
 					className="absolute -top-6 -left-6 w-64 h-64 bg-primary/10 rounded-full pointer-events-none"
