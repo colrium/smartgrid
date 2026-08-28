@@ -16,7 +16,7 @@ const ChatWidget = () => {
     if (!tawkUrl || process.env.NODE_ENV === "development") return null;
 
 	return (
-		<Script id="tawk-to-widget" strategy="afterInteractive">
+		<Script id="tawk-to-widget" strategy="lazyOnload">
 			{`
 				window.Tawk_API = window.Tawk_API || {};
 				window.Tawk_API.customStyle = {

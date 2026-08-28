@@ -1,5 +1,4 @@
 
-import "@mdi/font/css/materialdesignicons.min.css";
 import "@/styles/globals.css";
 import { appWithTranslation } from "next-i18next/pages";
 import {  type ReactElement } from "react";
@@ -19,15 +18,21 @@ import type { LenisRef } from "lenis/react";
 import { cancelFrame, frame } from "framer-motion";
 import { useEffect, useRef } from "react";
 
-const plusJakarta = Plus_Jakarta_Sans({
+const fontSans = Plus_Jakarta_Sans({
 	subsets: ["latin"],
-	variable: "--font-mono",
+	variable: "--font-display", // display variable for special purpose
+
 	display: "swap",
 });
 
-const googleSansFlex = localFont({
-	src: "../fonts/google-sans-flex-latin-400-normal.woff2",
-	variable: "--font-sans", // Define the custom CSS variable
+const fontSansSerif = localFont({
+	src: "../fonts/GoogleSansFlex/google-sans-flex-latin-400-normal.woff2",
+	variable: "--font-sans-serif", // sans-serif variable for body (no decorative feet)
+	display: "swap",
+});
+const fontDisplay = localFont({
+	src: "../fonts/Brother1816/Brother-1816-Regular.woff2",
+	variable: "--font-sans", // sans variable for headers (decorative feet)
 	display: "swap",
 });
 
@@ -50,12 +55,29 @@ function App({ Component, pageProps }: AppPropsWithLayout) {
 		return () => cancelFrame(update);
 	}, []);
 
+	useEffect(() => {
+		// Load the MDI icon-font stylesheet at runtime instead of shipping it in
+		// the document <head>: it is ~19 KB gz of purely decorative glyph rules,
+		// and keeping it out of the initial document removes it from the
+		// render-blocking critical path. The @font-face inside the file uses
+		// `font-display: swap`, so glyphs paint without FOIT once the cached
+		// stylesheet + font arrive.
+		const MDI_STYLES_ID = "mdi-stylesheet";
+		if (document.getElementById(MDI_STYLES_ID)) return;
+		const link = document.createElement("link");
+		link.id = MDI_STYLES_ID;
+		link.rel = "stylesheet";
+		link.href = "/fonts/materialdesignicons.css";
+		document.head.appendChild(link);
+	}, []);
+
+
     
     
     return (
 		<AppCacheProvider {...pageProps}>
 			<main
-				className={`flex flex-col min-h-screen relative  ${plusJakarta.variable} ${googleSansFlex.variable} font-sans`}
+				className={`flex flex-col min-h-screen relative  ${fontSans.variable} ${fontSansSerif.variable} ${fontDisplay.variable} font-sans`}
 			>
 				<ThemeProvider theme={theme}>
 					<CssBaseline />

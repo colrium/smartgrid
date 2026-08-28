@@ -453,13 +453,37 @@ export default function HeroScene() {
 
 		window.addEventListener("resize", onResize);
 
-		// Start rendering immediately — the grid/particles/scanner are visible
-		// while the drone model streams in.
-		animId = requestAnimationFrame(animate);
+		// Defer the first render until the window has fully loaded and the main
+		// thread is idle — first-draw work (shader compilation, GL uploads)
+		// would otherwise compete with hydration and LCP during page load. The
+		// grid/particles/scanner appear a beat after load; the drone streams in
+		// alongside as before.
+		let loopStarted = false;
+		const startLoop = () => {
+			if (loopStarted) return;
+			loopStarted = true;
+			animId = requestAnimationFrame(animate);
+		};
+		const idleWindow = window as Window & {
+			requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
+		};
+		const scheduleLoopStart = () => {
+			if (idleWindow.requestIdleCallback) {
+				idleWindow.requestIdleCallback(startLoop, { timeout: 3000 });
+			} else {
+				setTimeout(startLoop, 200);
+			}
+		};
+		if (document.readyState === "complete") {
+			scheduleLoopStart();
+		} else {
+			window.addEventListener("load", scheduleLoopStart, { once: true });
+		}
 
 		// --- Cleanup ---
 		return () => {
 			cancelAnimationFrame(animId);
+			window.removeEventListener("load", scheduleLoopStart);
 			observer.disconnect();
 			window.removeEventListener("mousemove", onMouseMove);
 			window.removeEventListener("resize", onResize);

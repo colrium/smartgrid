@@ -1,54 +1,73 @@
 "use client";
+import React, { useEffect, useRef, useState } from "react";
 
-import { motion, HTMLMotionProps } from "framer-motion";
-
-interface FadeUpProps extends HTMLMotionProps<"div"> {
+interface FadeProps {
 	children: React.ReactNode;
 	delay?: number;
 	className?: string;
 }
 
-export function FadeUp({ children, delay = 0, className = "", ...props }: FadeUpProps) {
-	return (
-		<motion.div
-			initial={{ opacity: 0, y: 36 }}
-			whileInView={{ opacity: 1, y: 0 }}
-			viewport={{ once: true, margin: "-50px" }}
-			transition={{ duration: 0.7, delay }}
-			className={className}
-			{...props}
-		>
-			{children}
-		</motion.div>
-	);
+type Cb = () => void;
+let observer: IntersectionObserver | null = null;
+const callbacks = new WeakMap<Element, Cb>();
+
+function getObserver() {
+	if (!observer) {
+		observer = new IntersectionObserver(
+			(entries) => {
+				for (const entry of entries) {
+					if (entry.isIntersecting) {
+						callbacks.get(entry.target)?.();
+						observer!.unobserve(entry.target);
+						callbacks.delete(entry.target);
+					}
+				}
+			},
+			{ threshold: 0.1, rootMargin: "0px 0px -10% 0px" }
+		);
+	}
+	return observer;
 }
 
-export function FadeLeft({ children, delay = 0, className = "", ...props }: FadeUpProps) {
-	return (
-		<motion.div
-			initial={{ opacity: 0, x: -50 }}
-			whileInView={{ opacity: 1, x: 0 }}
-			viewport={{ once: true }}
-			transition={{ duration: 0.7, delay }}
-			className={className}
-			{...props}
-		>
-			{children}
-		</motion.div>
-	);
+function useReveal<T extends HTMLElement>() {
+	const ref = useRef<T>(null);
+	const [visible, setVisible] = useState(false);
+
+	useEffect(() => {
+		const el = ref.current;
+		if (!el) return;
+		const obs = getObserver();
+		callbacks.set(el, () => setVisible(true));
+		obs.observe(el);
+		return () => {
+			obs.unobserve(el);
+			callbacks.delete(el);
+		};
+	}, []);
+
+	return { ref, visible };
 }
 
-export function FadeRight({ children, delay = 0, className = "", ...props }: FadeUpProps) {
-	return (
-		<motion.div
-			initial={{ opacity: 0, x: 50 }}
-			whileInView={{ opacity: 1, x: 0 }}
-			viewport={{ once: true }}
-			transition={{ duration: 0.7, delay }}
-			className={className}
-			{...props}
-		>
-			{children}
-		</motion.div>
-	);
+function makeFade(hiddenTransform: string) {
+	return function FadeComponent({ children, delay = 0, className = "" }: FadeProps) {
+		const { ref, visible } = useReveal<HTMLDivElement>();
+		return (
+			<div
+				ref={ref}
+				className={`transition-all duration-700 ease-out will-change-transform ${
+					visible
+						? "opacity-100 translate-x-0 translate-y-0"
+						: `opacity-0 ${hiddenTransform}`
+				} ${className}`}
+				style={{ transitionDelay: `${delay}ms` }}
+			>
+				{children}
+			</div>
+		);
+	};
 }
+
+export const FadeUp = makeFade("translate-y-6");
+export const FadeDown = makeFade("-translate-y-6");
+export const FadeLeft = makeFade("translate-x-6");
+export const FadeRight = makeFade("-translate-x-6");

@@ -1,30 +1,8 @@
 @import "tailwindcss";
 @theme {
-    --font-sans: var(--font-google-sans); 
-}
-@theme {
+    --font-sans-serif: var(--font-google-sans);
+    
     --color-primary: #0097b2;
-    --color-secondary: #000000;
-    --color-accent: #947e5e;
-
-    --color-gmail: #C5221F;
-    --color-calendly: #006bff;
-    --color-whatsapp: #25d366;
-
-    --color-accent-50: #f4f2ef;
-    --color-accent-100: #e8e3dc;
-    --color-accent-200: #d4cbbf;
-    --color-accent-300: #c1b4a2;
-    --color-accent-400: #ac9a81;
-    --color-accent-500: #947e5e;
-    --color-accent-600: #79674d;
-    --color-accent-700: #5f513c;
-    --color-accent-800: #443a2b;
-    --color-accent-900: #29231a;
-
-    --color-paper: #ffffff;
-    --color-mute: #80a5ac;
-
     --color-primary-50: #e5f6f8;
     --color-primary-100: #ccecef;
     --color-primary-200: #99d9df;
@@ -35,6 +13,32 @@
     --color-primary-700: #00677a;
     --color-primary-800: #004f5e;
     --color-primary-900: #003742;
+    --color-secondary: #000000;
+    
+
+    
+
+    --color-accent: #975604;
+    --color-accent-50: #f8eedd;
+        --color-accent-100: #f0dab1;
+        --color-accent-200: #e3bc72;
+        --color-accent-300: #d5993a;
+        --color-accent-400: #ab7204;
+        --color-accent-500: #975604;
+        --color-accent-600: #814b04;
+        --color-accent-700: #633a03;
+        --color-accent-800: #472902;
+        --color-accent-900: #291801;
+
+    --color-paper: #ffffff;
+    --color-mute: #80a5ac;
+
+    
+
+
+    --color-gmail: #C5221F;
+        --color-calendly: #006bff;
+        --color-whatsapp: #25d366;
 
     --color-surface: #ffffff;
     --color-surface-tint: #ececec;
@@ -76,8 +80,8 @@
     --color-on-surface-800: color-mix(in srgb, var(--color-on-surface) 68%, white 32%);
     --color-on-surface-900: color-mix(in srgb, var(--color-on-surface) 64%, white 36%);
 
-    --font-sans: var(--google-sans);
-    --font-mono: var(--font-mono);
+    --font-sans-serif: var(--google-sans);
+    --font-sans: var(--font-sans);
 }
 
 :root {
@@ -94,19 +98,19 @@ html {
     font-weight: 400;
 }
 main * {
-    font-family: var(--font-sans),
+    font-family: var(--font-sans-serif),
             ui-sans-serif,
             system-ui;
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-mono),
+    font-family: var(--font-sans),
         ui-monospace,
         SFMono-Regular;
 }
 
 
 .font-body {
-    font-family: var(--font-sans),
+    font-family: var(--font-sans-serif),
         ui-sans-serif,
         system-ui;
 }

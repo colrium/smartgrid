@@ -1,7 +1,7 @@
 // @ts-nocheck
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
@@ -39,6 +39,25 @@ interface Location {
 export default function HeroSection() {
 	const heroRef = useRef<HTMLElement>(null);
 
+	// WebGL scene is only for capable desktop-class devices. Deciding here —
+	// not inside HeroScene — means the ~600 KB three.js chunk is never even
+	// fetched on touch devices / small viewports / low-core hardware, where
+	// the animated full-window canvas would otherwise saturate the CPU during
+	// load (the dominant Total Blocking Time + LCP delay in Lighthouse). The
+	// hero content and fixed instrument frame carry the design on their own.
+	const [sceneEnabled, setSceneEnabled] = useState(false);
+
+	useEffect(() => {
+		const nav = navigator as Navigator & { deviceMemory?: number };
+		const supported =
+			!window.matchMedia("(pointer: coarse)").matches &&
+			!window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+			window.innerWidth > 768 &&
+			(nav.hardwareConcurrency ?? 8) > 4 &&
+			(nav.deviceMemory ?? 8) > 4;
+		if (supported) setSceneEnabled(true);
+	}, []);
+
 	const { t } = useTranslation(["home"]);
 	const ctaPrimary = t("home:hero.ctaPrimary", { returnObjects: true }) as CtaItem;
 	const ctaSecondary = t("home:hero.ctaSecondary", { returnObjects: true }) as CtaItem;
@@ -73,8 +92,8 @@ export default function HeroSection() {
 			ref={heroRef}
 			className="relative min-h-[90dvh] flex items-center justify-center pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-32 overflow-hidden"
 		>
-			{/* WebGL Background (code-split, client-only) */}
-			<HeroScene />
+			{/* WebGL Background (code-split, client-only, capable devices only) */}
+			{sceneEnabled && <HeroScene />}
 
 			{/* Content Overlay */}
 			<div className="relative z-10 mx-auto w-full min-h-full max-w-7xl px-6 sm:px-8 lg:px-12 xl:px-16 py-10 sm:py-14 lg:py-20 grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 xl:gap-24 items-center pointer-events-none">
@@ -88,7 +107,7 @@ export default function HeroSection() {
 					</FadeLeft>
 
 					<FadeRight delay={0.1} className="reveal active">
-						<h1 className="text-5xl sm:text-7xl lg:text-8xl font-semibold tracking-tight text-ink leading-[1.05] mb-8 sm:mb-10 lg:mb-12 whitespace-pre-line">
+						<h1 className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight text-ink leading-[1.05] mb-8 sm:mb-10 lg:mb-12 whitespace-pre-line">
 							<Trans
 								i18nKey={["home:hero.headline"]}
 								defaults="Survey <primary>Smarter</primary>, Build Stronger"
@@ -184,6 +203,7 @@ export default function HeroSection() {
 					fetchPriority="high"
 					layout="fill"
 					objectFit="cover"
+					sizes="(min-width: 1024px) 560px, (min-width: 768px) 400px, 320px"
 				/>
 			</motion.div>
 			<motion.div
@@ -196,7 +216,7 @@ export default function HeroSection() {
 					fill
 					priority
 					fetchPriority="high"
-					sizes="33vw"
+					sizes="(min-width: 1024px) 560px, (min-width: 768px) 400px, 320px"
 					className="object-scale-down"
 				/>
 			</motion.div>

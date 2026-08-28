@@ -1,29 +1,32 @@
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import { Fab, Tooltip } from "@mui/material";
 import { useTranslation } from "@/hooks";
 
-const fallbackWhatsAppNumber = "256700000001";
 
 const getWhatsAppNumber = () => {
-	const configuredNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || fallbackWhatsAppNumber;
+    const configuredNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
+    if (!configuredNumber || configuredNumber?.trim?.().length < 4) {
+        return;
+    }
 	return configuredNumber.replace(/\D/g, "");
 };
 
 const FloatingContactButtons = () => {
 	const { t } = useTranslation("common");
 	const phoneNumber = getWhatsAppNumber();
-	const message = t("common:chat.whatsappMessage", {
-		defaultValue: "Hello SmartGrid Hub Hub, I would like to speak with your team.",
-	});
-	const label = t("common:chat.whatsappLabel", {
-		defaultValue: "Chat on WhatsApp",
-	});
+	
 
 	if (!phoneNumber) return null;
 
-	const href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-
-	return (
+	
+    const message = t("common:chat.whatsappMessage", {
+		defaultValue: "Hello, I would like to speak with your team.",
+	});
+	const label = t("common:chat.whatsappLabel", {
+		defaultValue: "Chat on WhatsApp",
+    });
+    const href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    
+    return (        
 		<Tooltip title={label} placement="left">
 			<Fab
 				component="a"
@@ -38,7 +41,7 @@ const FloatingContactButtons = () => {
 					root: "fixed! bottom-4! right-4! z-[9999] text-surface! bg-[#25D366]! hover:bg-[#1DA851]!",
 				}}
 			>
-				<WhatsAppIcon />
+				<span className="mdi mdi-whatsapp" />
 			</Fab>
 		</Tooltip>
 	);

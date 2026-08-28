@@ -9,7 +9,11 @@ import { useTranslation } from "@/hooks";
 export default function PageTransitionLoader() {
 	const router = useRouter();
 	const { t } = useTranslation(["common", "meta"]);
-	const [loading, setLoading] = useState(true);
+	// Start hidden: the full-screen blurred overlay must never cover the
+	// initial page load — its backdrop-filter is expensive on low-end devices
+	// and it delays the first paint of real content (LCP). It is only shown
+	// for client-side route transitions.
+	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
 		let hideTimer: ReturnType<typeof setTimeout> | undefined;
@@ -26,8 +30,6 @@ export default function PageTransitionLoader() {
 		router.events.on("routeChangeStart", show);
 		router.events.on("routeChangeComplete", hide);
 		router.events.on("routeChangeError", hide);
-
-		if (router.isReady) hide();
 
 		return () => {
 			router.events.off("routeChangeStart", show);

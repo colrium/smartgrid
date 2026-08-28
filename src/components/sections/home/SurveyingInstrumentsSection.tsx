@@ -50,11 +50,11 @@ export function SurveyingInstrumentsSection() {
 										href={item.href}
 										className="group relative block h-64 sm:h-80 overflow-hidden rounded-2xl hairline bg-surface card-shadow transition-[transform,box-shadow,border-color] duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-primary-300"
 									>
-										<InstrumentCardBody item={item} />
+										<InstrumentCardBody item={item} wide={index === 0} />
 									</Link>
 								) : (
 									<article className="group relative h-64 sm:h-80 overflow-hidden rounded-2xl hairline bg-surface card-shadow transition-[transform,box-shadow,border-color] duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-primary-300">
-										<InstrumentCardBody item={item} />
+										<InstrumentCardBody item={item} wide={index === 0} />
 									</article>
 								)}
 							</FadeUp>
@@ -65,7 +65,7 @@ export function SurveyingInstrumentsSection() {
 	);
 }
 
-function InstrumentCardBody({ item }: { item: InstrumentItem }) {
+function InstrumentCardBody({ item, wide = false }: { item: InstrumentItem; wide?: boolean }) {
 	return (
 		<>
 			{item.img && (
@@ -73,7 +73,12 @@ function InstrumentCardBody({ item }: { item: InstrumentItem }) {
 					src={item.img}
 					alt={item.label}
 					fill
-					sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+					sizes={
+						wide
+							? "(min-width: 1024px) 50vw, calc(100vw - 3rem)"
+							: "(min-width: 1024px) 25vw, (min-width: 640px) calc(50vw - 3rem), calc(100vw - 3rem)"
+					}
+					quality={60}
 					className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
 				/>
 			)}
