@@ -3,11 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import Box from "@mui/material/Box";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { useTheme } from "@mui/material/styles";
 import { useTranslation } from "@/hooks";
 import { SectionHeader } from "./SectionHeader";
 import { ParallaxDecor, Blob } from "./decor";
@@ -41,9 +36,6 @@ export function ServicesSection() {
 	const items = t("home:services.items", { returnObjects: true }) as unknown as ServiceItem[];
 	const [activeTab, setActiveTab] = useState(0);
 
-	const theme = useTheme();
-	const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-
 	if (!Array.isArray(items) || items.length === 0) return null;
 
 	const active = items[Math.min(activeTab, items.length - 1)];
@@ -67,46 +59,48 @@ export function ServicesSection() {
 				<div className="mt-14 sm:mt-20 rounded-[20px] pale-panel hairline card-shadow overflow-hidden p-6 sm:p-10 lg:p-12">
 					<div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
 						{/* Selector */}
-						<Box className="lg:col-span-4 lg:sticky lg:top-28">
-							<Tabs
-								value={activeTab}
-								onChange={(_e, value: number) => setActiveTab(value)}
-								orientation={isMobile ? "horizontal" : "vertical"}
-								variant={isMobile ? "scrollable" : "standard"}
-								scrollButtons={false}
-								sx={{
-									"& .MuiTabs-flexContainer": { gap: "10px" },
-									"& .MuiTabs-indicator": { display: "none" },
-								}}
+						<div className="lg:col-span-4 lg:sticky lg:top-28">
+							<div
+								role="tablist"
+								aria-label="Services"
+								aria-orientation="vertical"
+								className="flex gap-2.5 overflow-x-auto pb-1 lg:flex-col lg:overflow-visible lg:pb-0"
 							>
 								{items.map((service, index) => {
 									const selected = activeTab === index;
 									return (
-										<Tab
+										<button
 											key={index}
-											value={index}
-											disableRipple
-											icon={
-												<span
-													className={`mdi mdi-${itemToIcon(service.label)} text-xl`}
-												/>
-											}
-											iconPosition="start"
-											label={service.label}
-											classes={{
-												root: `rounded-full! border! p-2! mb-2! capitalize! min-h-auto! ${selected ? "bg-primary! text-surface!" : "text-primary!  border-primary/50!"}`,
-											}}
-										/>
+											type="button"
+											role="tab"
+											id={`service-tab-${index}`}
+											aria-selected={selected}
+											aria-controls="service-panel"
+											onClick={() => setActiveTab(index)}
+											className={`flex shrink-0 items-center gap-2 rounded-full border p-2 text-sm capitalize transition-colors duration-300 lg:mb-2 ${
+												selected
+													? "bg-primary text-surface"
+													: "text-primary border-primary/50 hover:bg-primary/5"
+											}`}
+										>
+											<span
+												className={`mdi mdi-${itemToIcon(service.label)} text-xl`}
+											/>
+											<span className="whitespace-nowrap">{service.label}</span>
+										</button>
 									);
 								})}
-							</Tabs>
-						</Box>
+							</div>
+						</div>
 
 						{/* Panel */}
-						<Box className="lg:col-span-8">
+						<div className="lg:col-span-8">
 							<AnimatePresence mode="wait">
 								<motion.div
 									key={activeTab}
+									id="service-panel"
+									role="tabpanel"
+									aria-labelledby={`service-tab-${activeTab}`}
 									initial={{ opacity: 0, y: 20 }}
 									animate={{ opacity: 1, y: 0 }}
 									exit={{ opacity: 0, y: -12 }}
@@ -249,7 +243,7 @@ export function ServicesSection() {
 									</div>
 								</motion.div>
 							</AnimatePresence>
-						</Box>
+						</div>
 					</div>
 				</div>
 			</div>

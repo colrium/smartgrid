@@ -66,12 +66,12 @@ export function CoreExpertiseSection() {
 									<Link
 										href={item.href}
 										aria-label={item.label}
-										className="group relative h-full flex flex-col rounded-[15px] border-t-2 border-ink/10 bg-surface card-shadow p-7 transition-all duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-t-primary overflow-hidden"
+										className="group relative h-full flex flex-col rounded-[15px] border-t-2 border-ink/10 bg-surface card-shadow p-7 transition-[transform,box-shadow,border-color] duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-t-primary overflow-hidden"
 									>
 										<ExpertiseCardBody item={item} index={index} kicker={kicker} />
 									</Link>
 								) : (
-									<article className="group relative h-full flex flex-col rounded-[15px] border-t-2 border-ink/10 bg-surface card-shadow p-7 transition-all duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-t-primary overflow-hidden">
+									<article className="group relative h-full flex flex-col rounded-[15px] border-t-2 border-ink/10 bg-surface card-shadow p-7 transition-[transform,box-shadow,border-color] duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-t-primary overflow-hidden">
 										<ExpertiseCardBody item={item} index={index} kicker={kicker} />
 									</article>
 								)}
@@ -107,7 +107,7 @@ function ExpertiseCardBody({
 					<span className={`mdi mdi-${item.icon || "hard-hat"} text-2xl`} />
 				</span>
 				<span
-					className={`mdi mdi-arrow-up-right text-xl text-on-surface/25 transition-all duration-300 group-hover:text-primary ${
+					className={`mdi mdi-arrow-up-right text-xl text-on-surface/25 transition-[color,transform,opacity] duration-300 group-hover:text-primary ${
 						item.href
 							? "-translate-x-2 translate-y-2 opacity-0 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100"
 							: ""

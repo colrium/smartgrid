@@ -48,12 +48,12 @@ export function SurveyingInstrumentsSection() {
 								{item.href ? (
 									<Link
 										href={item.href}
-										className="group relative block h-64 sm:h-80 overflow-hidden rounded-2xl hairline bg-surface card-shadow transition-all duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-primary-300"
+										className="group relative block h-64 sm:h-80 overflow-hidden rounded-2xl hairline bg-surface card-shadow transition-[transform,box-shadow,border-color] duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-primary-300"
 									>
 										<InstrumentCardBody item={item} />
 									</Link>
 								) : (
-									<article className="group relative h-64 sm:h-80 overflow-hidden rounded-2xl hairline bg-surface card-shadow transition-all duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-primary-300">
+									<article className="group relative h-64 sm:h-80 overflow-hidden rounded-2xl hairline bg-surface card-shadow transition-[transform,box-shadow,border-color] duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-primary-300">
 										<InstrumentCardBody item={item} />
 									</article>
 								)}
@@ -86,7 +86,7 @@ function InstrumentCardBody({ item }: { item: InstrumentItem }) {
 				<h3 className="flex items-end justify-between gap-3 text-xl sm:text-2xl font-light uppercase tracking-tight text-surface leading-none">
 					{item.label}
 					{item.href && (
-						<span className="mdi mdi-arrow-right shrink-0 text-primary-200 text-lg -translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+						<span className="mdi mdi-arrow-right shrink-0 text-primary-200 text-lg -translate-x-2 opacity-0 transition-[transform,opacity] duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
 					)}
 				</h3>
 			</div>

@@ -38,14 +38,14 @@ export function TrusteesSection() {
 					{Array.isArray(items) &&
 						items.map((item, index) => (
 							<FadeUp key={item.logoUrl} delay={(index % 5) * 0.08}>
-								<div className="group h-20 sm:h-24 rounded-[15px] hairline bg-surface card-shadow px-6 sm:px-8 flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:card-shadow-lift hover:border-primary">
+								<div className="group h-20 sm:h-24 rounded-[15px] hairline bg-surface card-shadow px-6 sm:px-8 flex items-center justify-center transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:card-shadow-lift hover:border-primary">
 									<div className="relative w-full h-full max-w-full">
 										<Image
 											src={item.logoUrl}
 											alt={item.label}
 											fill
 											sizes="(min-width: 1024px) 20vw, (min-width: 640px) 33vw, 50vw"
-											className="object-contain grayscale opacity-75 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+											className="object-contain grayscale opacity-75 transition-[filter,opacity] duration-300 group-hover:grayscale-0 group-hover:opacity-100"
 										/>
 									</div>
 								</div>

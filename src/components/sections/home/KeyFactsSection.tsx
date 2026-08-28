@@ -4,7 +4,6 @@ import { useTranslation } from "@/hooks";
 import { SectionTag } from "@/components/SectionTag";
 import { FadeUp } from "@/components/animations/Fade";
 import { ParallaxDecor, Blob } from "./decor";
-import { SectionHeader } from "./SectionHeader";
 
 interface KeyFactItem {
 	icon?: string | null;
@@ -58,7 +57,7 @@ export function KeyFactsSection() {
 								items.map((item, index) => (
 									<div
 										key={index}
-										className="group glass rounded-xl p-8 flex flex-col items-center text-center transition-all duration-500 hover:-translate-y-1.5 hover:card-shadow-lift"
+										className="group glass rounded-xl p-8 flex flex-col items-center text-center transition-[transform,box-shadow] duration-500 hover:-translate-y-1.5 hover:card-shadow-lift"
 									>
 										{/* Sealed medallion */}
 										<span className="relative mb-6 flex h-14 w-14 items-center justify-center">

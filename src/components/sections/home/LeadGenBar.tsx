@@ -2,7 +2,6 @@
 
 import React from "react";
 import { useTranslation } from "@/hooks";
-import Button from "@mui/material/Button";
 import Link from "next/link";
 import { SectionTag } from "@/components/SectionTag";
 import { FadeUp } from "@/components/animations/Fade";
@@ -19,7 +18,9 @@ interface LeadGenItem {
     action?: LeadGenItemLink;
 }
 
-
+// Soft radial falloff used instead of an expensive CSS blur filter.
+const GLOW_MASK =
+	"radial-gradient(closest-side, black 30%, transparent 72%)";
 
 const LeadGenBar: React.FC<{ className?: string }> = ({ className }) => {
     
@@ -29,8 +30,14 @@ const LeadGenBar: React.FC<{ className?: string }> = ({ className }) => {
     return (
 		<FadeUp viewport={{ once: true, margin: "0px" }}>
 			<section className={`relative  ${className || ""}`}>
-				<div className="absolute -top-6 -left-6 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
-				<div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl pointer-events-none"></div>
+				<div
+					className="absolute -top-6 -left-6 w-64 h-64 bg-primary/10 rounded-full pointer-events-none"
+					style={{ WebkitMaskImage: GLOW_MASK, maskImage: GLOW_MASK }}
+				/>
+				<div
+					className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full pointer-events-none"
+					style={{ WebkitMaskImage: GLOW_MASK, maskImage: GLOW_MASK }}
+				/>
 				<div
 					className={`py-14 sm:py-20 relative z-20 my-12 rounded-[20px] pale-panel-soft hairline card-shadow overflow-hidden`}
 				>
@@ -59,8 +66,7 @@ const LeadGenBar: React.FC<{ className?: string }> = ({ className }) => {
 								leadGenItems.map((item, index) => (
 									<div
 										key={index}
-										className="glass rounded-xl gap-4 py-10 md:px-7 text-center md:text-left flex flex-col items-center h-full transition-all duration-500 "
-										style={{ transitionDelay: `${index * 100}ms` }}
+										className="glass rounded-xl gap-4 py-10 md:px-7 text-center md:text-left flex flex-col items-center h-full"
 									>
 										<span className="flex h-14 w-14 items-center justify-center text-mute mb-6">
 											<span className={`mdi mdi-${item.icon} text-7xl`} />
@@ -74,25 +80,21 @@ const LeadGenBar: React.FC<{ className?: string }> = ({ className }) => {
 										</p>
 
 										{item?.more?.href && (
-											<Button
-												component={Link}
+											<Link
 												href={item.more.href}
-												endIcon={<span className="mdi mdi-arrow-right" />}
-												className="!normal-case text-accent! rounded-lg!"
+												className="inline-flex min-h-10 items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-accent transition-colors duration-300 hover:bg-accent/10"
 											>
 												{item.more.label}
-											</Button>
+												<span className="mdi mdi-arrow-right text-lg" aria-hidden />
+											</Link>
 										)}
 										{item.action?.href && (
-											<Button
-												component={Link}
+											<Link
 												href={item.action.href}
-												variant="outlined"
-												color="primary"
-												className="!normal-case rounded-full!"
+												className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-primary/50 px-4 py-2 text-sm font-medium text-primary transition-colors duration-300 hover:bg-primary/5"
 											>
 												{item.action.label}
-											</Button>
+											</Link>
 										)}
 									</div>
 								))}

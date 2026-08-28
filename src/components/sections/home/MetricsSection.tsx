@@ -26,8 +26,20 @@ export function MetricsSection() {
 				<FadeUp>
 					<div className="relative rounded-[20px] ink-panel card-shadow overflow-hidden px-8 py-16 sm:px-12 sm:py-20">
 						{/* authoritative glows + watermark */}
-						<span className="absolute -top-24 -right-20 w-80 h-80 rounded-full bg-primary/40 blur-[90px] pointer-events-none" />
-						<span className="absolute -bottom-28 -left-16 w-80 h-80 rounded-full bg-gold-300/25 blur-[90px] pointer-events-none" />
+						<span
+							className="absolute -top-24 -right-20 w-80 h-80 rounded-full bg-primary/40 pointer-events-none"
+							style={{
+								WebkitMaskImage: "radial-gradient(closest-side, black 30%, transparent 72%)",
+								maskImage: "radial-gradient(closest-side, black 30%, transparent 72%)",
+							}}
+						/>
+						<span
+							className="absolute -bottom-28 -left-16 w-80 h-80 rounded-full bg-gold-300/25 pointer-events-none"
+							style={{
+								WebkitMaskImage: "radial-gradient(closest-side, black 30%, transparent 72%)",
+								maskImage: "radial-gradient(closest-side, black 30%, transparent 72%)",
+							}}
+						/>
 						<span
 							className="absolute -left-4 bottom-0 font-light tracking-tighter text-[13rem] leading-none text-surface/10 select-none pointer-events-none"
 							aria-hidden
@@ -54,7 +66,7 @@ export function MetricsSection() {
 										delay={(index % 4) * 0.08}
 										className="h-full"
 									>
-										<div className="relative glass-dark rounded-xl h-full p-8 flex flex-col items-center text-center gap-4 transition-all duration-500 hover:-translate-y-1.5 hover:border-surface/30 overflow-hidden">
+										<div className="relative glass-dark rounded-xl h-full p-8 flex flex-col items-center text-center gap-4 transition-[transform,border-color] duration-500 hover:-translate-y-1.5 hover:border-surface/30 overflow-hidden">
 											<span className="text-5xl sm:text-[3.4rem] font-light text-surface tabular-nums leading-none tracking-tight">
 												<CountUp
 													to={item.value}

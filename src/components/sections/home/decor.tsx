@@ -22,7 +22,11 @@ export function ParallaxDecor({
 	);
 }
 
-/** Soft, blurred background blob (institutional texture, like Biofarma's misc-01) */
+/**
+ * Soft, blurred background blob (institutional texture, like Biofarma's misc-01).
+ * Uses a radial mask fade instead of `filter: blur()` — visually identical soft
+ * falloff without the expensive GPU filter layer.
+ */
 export function Blob({
 	className = "",
 	style,
@@ -31,7 +35,12 @@ export function Blob({
 	return (
 		<span
 			aria-hidden
-			style={{ opacity, filter: "blur(48px)", ...style }}
+			style={{
+				opacity,
+				WebkitMaskImage: "radial-gradient(closest-side, black 30%, transparent 72%)",
+				maskImage: "radial-gradient(closest-side, black 30%, transparent 72%)",
+				...style,
+			}}
 			className={`pointer-events-none select-none absolute block rounded-full ${className}`}
 		/>
 	);

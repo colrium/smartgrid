@@ -47,7 +47,7 @@ export function PlanningInfographicSection() {
 					{Array.isArray(section.benefits) &&
 						section.benefits.map((benefit, index) => (
 							<FadeUp key={index} delay={index * 0.07} className="h-full ">
-								<div className="group h-full p-6 inline-block bg-surface rounded-[20px]  hairline card-shadow hover:card-shadow-lift hover:border-primary transition-all duration-500 relative overflow-clip">
+								<div className="group h-full p-6 inline-block bg-surface rounded-[20px]  hairline card-shadow hover:card-shadow-lift hover:border-primary transition-[box-shadow,border-color] duration-500 relative overflow-clip">
 									<div className="relative h-full flex flex-col gap-3 z-10 ">
 										<span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 											<span className={`mdi mdi-${benefit.icon} text-2xl`} />

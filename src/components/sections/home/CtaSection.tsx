@@ -22,8 +22,20 @@ export function CtaSection() {
 				<FadeUp>
 					<div className="relative rounded-[20px] ink-panel card-shadow overflow-hidden px-8 py-16 sm:px-12 sm:py-24 text-center">
 						{/* authoritative glows + watermark */}
-						<span className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary-300/30 blur-[90px] pointer-events-none" />
-						<span className="absolute -bottom-28 -left-20 w-72 h-72 rounded-full bg-primary/30 blur-[90px] pointer-events-none" />
+						<span
+							className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary-300/30 pointer-events-none"
+							style={{
+								WebkitMaskImage: "radial-gradient(closest-side, black 30%, transparent 72%)",
+								maskImage: "radial-gradient(closest-side, black 30%, transparent 72%)",
+							}}
+						/>
+						<span
+							className="absolute -bottom-28 -left-20 w-72 h-72 rounded-full bg-primary/30 pointer-events-none"
+							style={{
+								WebkitMaskImage: "radial-gradient(closest-side, black 30%, transparent 72%)",
+								maskImage: "radial-gradient(closest-side, black 30%, transparent 72%)",
+							}}
+						/>
 						<span
 							className="absolute -bottom-10 right-4 font-light tracking-tighter text-[11rem] leading-none text-surface/[0.03] select-none pointer-events-none hidden sm:block"
 							aria-hidden
@@ -50,7 +62,7 @@ export function CtaSection() {
 								{primary?.href && (
 									<Link
 										href={primary.href}
-										className="group inline-flex items-center gap-3 h-14 rounded-full bg-surface px-8 text-ink font-medium text-base transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]"
+										className="group inline-flex items-center gap-3 h-14 rounded-full bg-surface px-8 text-ink font-medium text-base transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]"
 									>
 										<span className="h-1.5 w-1.5 rounded-full bg-primary transition-transform duration-300 group-hover:scale-125" />
 										{primary.label}
@@ -64,7 +76,7 @@ export function CtaSection() {
 								{secondary?.href && (
 									<Link
 										href={secondary.href}
-										className="inline-flex items-center gap-2.5 h-14 rounded-full border border-surface/30 px-8 text-surface text-base transition-all duration-300 hover:border-surface hover:bg-surface/10"
+										className="inline-flex items-center gap-2.5 h-14 rounded-full border border-surface/30 px-8 text-surface text-base transition-[border-color,background-color] duration-300 hover:border-surface hover:bg-surface/10"
 									>
 										{secondary.icon ? (
 											<span
