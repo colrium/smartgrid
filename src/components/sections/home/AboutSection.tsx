@@ -3,8 +3,7 @@
 "use client";
 
 import React from "react";
-import ShieldIcon from "@mui/icons-material/Shield";
-import MemoryIcon from "@mui/icons-material/Memory";
+import Image from "next/image";
 import useTranslation from "@/hooks/useTranslation";
 import { SectionTag } from "@/components/SectionTag";
 import Link from "next/link";
@@ -55,7 +54,7 @@ export const AboutSection: React.FC = () => {
 						<div className="pt-4 grid grid-cols-2 gap-4">
 							{cards.map((card, index) => (
 								<Link href={card.href} key={`about-card-${index}`}>
-									<div className="p-4 rounded-[15px] bg-surface hairline hover:border-primary cursor-pointer transition-all duration-300 hover:-translate-y-0.5 h-full  hover:card-shadow-lift flex items-start gap-3">
+									<div className="p-4 rounded-[15px] bg-surface hairline hover:border-primary cursor-pointer transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-0.5 h-full hover:card-shadow-lift flex items-start gap-3">
 										<div className="p-2.5 rounded-lg bg-primary-50 text-primary">
 											<span className={`mdi mdi-${card.icon}`} />
 										</div>
@@ -77,17 +76,30 @@ export const AboutSection: React.FC = () => {
 					<div className="lg:col-span-6 -order-1 lg:order-2">
 						<div className="relative mx-auto max-w-md lg:max-w-none">
 							{/* Decorative Backdrop Elements */}
-							<div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/10 rounded-full blur-2xl" />
-							<div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl" />
+							<div
+								className="absolute -top-6 -left-6 w-32 h-32"
+								style={{
+									background:
+										"radial-gradient(closest-side, rgba(0,151,178,0.10), transparent 70%)",
+								}}
+							/>
+							<div
+								className="absolute -bottom-6 -right-6 w-32 h-32"
+								style={{
+									background:
+										"radial-gradient(closest-side, rgba(0,151,178,0.20), transparent 70%)",
+								}}
+							/>
 
 							<div className="relative bg-surface p-4 rounded-[20px] hairline card-shadow">
 								<div className="relative aspect-4/5 rounded-xl overflow-hidden bg-slate-900 group">
 									{/* Abstract Representation of Pointcloud / Surveying Mesh */}
-									<div
-										className="absolute inset-0 bg-fill bg-center transition-transform duration-700 group-hover:scale-105 opacity-80"
-										style={{
-											backgroundImage: `url("${t("home:about.featureImg.url")}")`,
-										}}
+									<Image
+										src={t("home:about.featureImg.url")}
+										alt={t("home:about.featureImg.alt")}
+										fill
+										sizes="(min-width: 1024px) 384px, 100vw"
+										className="object-cover object-top transition-transform duration-700 group-hover:scale-105 opacity-80"
 									/>
 									<div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/25 to-transparent" />
 
