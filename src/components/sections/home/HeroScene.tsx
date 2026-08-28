@@ -137,7 +137,6 @@ export default function HeroScene() {
 	useEffect(() => {
 		const container = containerRef.current;
 
-        console.log("container", container);
 		if (!container) return;
 
 		// --- Low-end device guard ---
@@ -148,8 +147,7 @@ export default function HeroScene() {
 		const isLowEndDevice =
             (nav.hardwareConcurrency ?? 8) <= 4 || (nav.deviceMemory ?? 8) <= 4;
         
-        console.log("isLowEndDevice", isLowEndDevice);
-		if (isLowEndDevice) return;
+		// if (isLowEndDevice) return;
 
 		// --- Viewport Observer ---
 		let isInViewport = true;
@@ -472,7 +470,6 @@ export default function HeroScene() {
 			requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
 		};
         const scheduleLoopStart = () => {
-            console.log("scheduleLoopStart called");
 			if (idleWindow.requestIdleCallback) {
 				idleWindow.requestIdleCallback(startLoop, { timeout: 3000 });
 			} else {

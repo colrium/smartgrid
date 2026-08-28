@@ -95,7 +95,7 @@ function applyFilterSort(
     if (category) {
         
         filtered = filtered.filter((item) => item.category === category);
-        console.log("filtered", filtered);
+        // console.log("filtered", filtered);
 	}
 	if (tokens.length > 0) {
 		filtered = filtered.filter((item) => {
