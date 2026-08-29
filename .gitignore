@@ -60,3 +60,5 @@ next-env.d.ts
 # Backups and Experimental versions
 *.bak*
 *.experimental*
+#AI
+.freebuff
