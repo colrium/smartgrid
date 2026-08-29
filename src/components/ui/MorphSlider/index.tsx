@@ -608,7 +608,7 @@ export default function MorphSlider({
 			engine.destroy();
 			engineRef.current = null;
 		};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+		 
 	}, [items, startIndex]);
 
 	const handleNext = useCallback(() => engineRef.current?.next(), []);

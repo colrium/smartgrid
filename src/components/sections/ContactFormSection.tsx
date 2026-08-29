@@ -1,7 +1,4 @@
-import { FormEvent, useEffect, useMemo, useState } from "react";
-import { useRouter } from "next/router";
 import { useTranslation } from "@/hooks";
-import SendIcon from "@mui/icons-material/Send";
 import ContactForm from "../forms/ContactForm";
 import { SectionTag } from "../SectionTag";
 

@@ -2,14 +2,12 @@ import { useEffect, useMemo } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useTranslation, useSetState } from "@/hooks";
-import SendIcon from "@mui/icons-material/Send";
-import TextField from "@mui/material/TextField";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import InputLabel from "@mui/material/InputLabel";
-import FormControl from "@mui/material/FormControl";
-import Checkbox from "@mui/material/Checkbox";
-import FormControlLabel from "@mui/material/FormControlLabel";
+import { TextField } from "@/components/ui/TextField";
+import { Select } from "@/components/ui/Select";
+import { MenuItem } from "@/components/ui/MenuItem";
+import { Checkbox } from "@/components/ui/Checkbox";
+import { FormControlLabel } from "@/components/ui/FormControlLabel";
+import { Button } from "@/components/ui/Button";
 import { useForm } from "@formspree/react";
 
 type Country = { code?: string; name: string; flag?: string };
@@ -139,8 +137,6 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
 			<div className=" p-6 md:p-8 grid gap-5">
 				<div className="grid md:grid-cols-2 gap-5">
 					<TextField
-						fullWidth
-						variant="outlined"
 						name="first_name"
 						label={fields.first_name.label}
 						placeholder={fields.first_name.placeholder}
@@ -151,8 +147,6 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
 						}
 					/>
 					<TextField
-						fullWidth
-						variant="outlined"
 						name="last_name"
 						label={fields.last_name.label}
 						placeholder={fields.last_name.placeholder}
@@ -165,8 +159,6 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
 				</div>
 				<div className="grid md:grid-cols-2 gap-5">
 					<TextField
-						fullWidth
-						variant="outlined"
 						name="email"
 						type="email"
 						label={fields.email.label}
@@ -178,8 +170,6 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
 						}
 					/>
 					<TextField
-						fullWidth
-						variant="outlined"
 						name="phone"
 						type="tel"
 						label={fields.phone.label}
@@ -192,101 +182,87 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
 					/>
 				</div>
 				<div className="grid md:grid-cols-2 gap-5">
-					<FormControl fullWidth>
-						<InputLabel>{fields.country.label}</InputLabel>
-						<Select
-							label={fields.country.label}
-							name="country"
-							required={fields.country.required}
-							value={values.country}
-							onChange={(event) =>
-								setValues((current) => ({ ...current, country: event.target.value }))
-							}
-							displayEmpty
-						>
-							<MenuItem value="" disabled>
-								{fields.country.placeholder}
+					<Select
+						label={fields.country.label}
+						name="country"
+						required={fields.country.required}
+						value={values.country}
+						onChange={(event) =>
+							setValues((current) => ({ ...current, country: event.target.value }))
+						}
+						displayEmpty
+					>
+						<MenuItem value="" disabled>
+							{fields.country.placeholder}
+						</MenuItem>
+						{countries.map((country) => (
+							<MenuItem key={country} value={country}>
+								{country}
 							</MenuItem>
-							{countries.map((country) => (
-								<MenuItem key={country} value={country}>
-									{country}
-								</MenuItem>
-							))}
-						</Select>
-					</FormControl>
-					<FormControl fullWidth>
-						<InputLabel>{fields.reason.label}</InputLabel>
-						<Select
-							label={fields.reason.label}
-							name="reason"
-							required={fields.reason.required}
-							value={values.reason}
-							onChange={(event) =>
-								setValues((current) => ({ ...current, reason: event.target.value }))
-							}
-							displayEmpty
-						>
-							<MenuItem value="" disabled>
-								{fields.reason.placeholder}
+						))}
+					</Select>
+					<Select
+						label={fields.reason.label}
+						name="reason"
+						required={fields.reason.required}
+						value={values.reason}
+						onChange={(event) =>
+							setValues((current) => ({ ...current, reason: event.target.value }))
+						}
+						displayEmpty
+					>
+						<MenuItem value="" disabled>
+							{fields.reason.placeholder}
+						</MenuItem>
+						{reasons.map((reason) => (
+							<MenuItem key={reason.value} value={reason.value}>
+								{reason.label}
 							</MenuItem>
-							{reasons.map((reason) => (
-								<MenuItem key={reason.value} value={reason.value}>
-									{reason.label}
-								</MenuItem>
-							))}
-						</Select>
-					</FormControl>
+						))}
+					</Select>
 				</div>
 				{["investment-enquiry", "due-diligence", "partnership"].includes(values.reason) && (
-					<FormControl fullWidth>
-						<InputLabel>{fields.opportunity.label}</InputLabel>
-						<Select
-							label={fields.opportunity.label}
-							name="opportunity"
-							value={values.opportunity}
-							onChange={(event) =>
-								setValues((current) => ({ ...current, opportunity: event.target.value }))
-							}
-							displayEmpty
-						>
-							<MenuItem value="" disabled>
-								{fields.opportunity.placeholder}
+					<Select
+						label={fields.opportunity.label}
+						name="opportunity"
+						value={values.opportunity}
+						onChange={(event) =>
+							setValues((current) => ({ ...current, opportunity: event.target.value }))
+						}
+						displayEmpty
+					>
+						<MenuItem value="" disabled>
+							{fields.opportunity.placeholder}
+						</MenuItem>
+						{opportunityOptions.map((opportunity) => (
+							<MenuItem key={opportunity.value} value={opportunity.value}>
+								{opportunity.label}
 							</MenuItem>
-							{opportunityOptions.map((opportunity) => (
-								<MenuItem key={opportunity.value} value={opportunity.value}>
-									{opportunity.label}
-								</MenuItem>
-							))}
-						</Select>
-					</FormControl>
+						))}
+					</Select>
 				)}
 				{values.reason === "investment-enquiry" &&
 					values.opportunity === "gold-aggregation" && (
-						<FormControl fullWidth>
-							<InputLabel>{fields.investor_tier.label}</InputLabel>
-							<Select
-								label={fields.investor_tier.label}
-								name="investor_tier"
-								value={values.tier}
-								onChange={(event) =>
-									setValues((current) => ({ ...current, tier: event.target.value }))
-								}
-								displayEmpty
-							>
-								<MenuItem value="" disabled>
-									{fields.investor_tier.placeholder}
+						<Select
+							label={fields.investor_tier.label}
+							name="investor_tier"
+							value={values.tier}
+							onChange={(event) =>
+								setValues((current) => ({ ...current, tier: event.target.value }))
+							}
+							displayEmpty
+						>
+							<MenuItem value="" disabled>
+								{fields.investor_tier.placeholder}
+							</MenuItem>
+							{tierOptions.map((tier) => (
+								<MenuItem key={tier.value} value={tier.value}>
+									{tier.label}
 								</MenuItem>
-								{tierOptions.map((tier) => (
-									<MenuItem key={tier.value} value={tier.value}>
-										{tier.label}
-									</MenuItem>
-								))}
-							</Select>
-						</FormControl>
+							))}
+						</Select>
 					)}
 				<TextField
-					fullWidth
-					variant="outlined"
 					name="message"
 					multiline
 					rows={fields.message.rows ?? 5}
@@ -338,16 +314,19 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
 					}
 					label={<span className="text-sm text-on-surface-800">{fields.newsletter.label}</span>}
 				/>
-				<button
+				<Button
 					type="submit"
+					variant="contained"
+					color="primary"
+					rounded="full"
 					disabled={formspree.submitting}
-					className="inline-flex items-center justify-center gap-2 bg-primary text-surface font-medium px-7 py-3.5 rounded-full border border-primary transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+					className="px-7! py-3.5!"
+					endIcon={<span className="mdi mdi-send text-xl" aria-hidden="true" />}
 				>
 					{formspree.submitting
 						? t("common:form.sending")
 						: t("contact:form.submit_label")}
-					<SendIcon fontSize="small" />
-				</button>
+				</Button>
 			</div>
 		</form>
 	);

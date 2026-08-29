@@ -8,7 +8,6 @@
 import 'i18next'
 
 // resources.ts file is generated with `npm run toc`
-import resources from './resources.ts'
 
 type TranslationValue = string | TranslationObject;
 interface TranslationObject {

@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "@/hooks";
 import { SectionHeader } from "./SectionHeader";
 import { ParallaxDecor, Blob } from "./decor";
-import { Trans } from "react-i18next";
 
 interface SeviceItemList {
 	label: string;

@@ -9,7 +9,6 @@ import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useLenis } from "lenis/react";
 import { useTranslation } from "@/hooks";
 import { Trans } from "next-i18next/pages";
-import { ButtonProps } from "@mui/material/Button";
 import { FadeUp, FadeRight, FadeLeft } from "@/components/animations/Fade";
 import ScrollIndicator from "@/components/ui/ScrollIndicator";
 
@@ -17,13 +16,24 @@ import ScrollIndicator from "@/components/ui/ScrollIndicator";
 // the WebGL scene is code-split and mounted client-side only.
 const HeroScene = dynamic(() => import("./HeroScene"), { ssr: false });
 
+// Local button token types (replacing the removed MUI ButtonProps types).
+type ButtonVariant = "text" | "contained" | "outlined";
+type ButtonColor =
+	| "inherit"
+	| "primary"
+	| "secondary"
+	| "success"
+	| "error"
+	| "info"
+	| "warning";
+
 interface CtaItem {
 	label: string;
 	href?: string;
 	icon?: string;
 	class?: string;
-	variant?: ButtonProps["variant"];
-	color?: ButtonProps["color"];
+	variant?: ButtonVariant;
+	color?: ButtonColor;
 }
 interface LocationTagItem {
 	label: string;
@@ -206,7 +216,6 @@ export default function HeroSection() {
 					fill
 					priority
 					fetchPriority="high"
-					layout="fill"
 					sizes="(min-width: 1024px) 560px, (min-width: 768px) 400px, 320px"
 					className="object-scale-down"
 				/>

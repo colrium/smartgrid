@@ -8,7 +8,7 @@ import useTranslation from "@/hooks/useTranslation";
 import { SectionTag } from "@/components/SectionTag";
 import Link from "next/link";
 import { FadeUp } from "@/components/animations/ScrollReveal";
-import { FadeLeft, FadeRight } from "@/components/animations/Fade";
+import { FadeLeft } from "@/components/animations/Fade";
 
 interface AboutCardLink {
 	icon?: string | null;

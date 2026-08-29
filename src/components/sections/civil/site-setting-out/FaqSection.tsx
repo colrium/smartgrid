@@ -5,7 +5,7 @@ import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { Blob } from "@/components/sections/home/decor";
 import { SectionTag } from "@/components/SectionTag";
-import { IconButton } from "@mui/material";
+import { IconButton } from "@/components/ui/IconButton";
 
 interface FaqItem {
 	icon?: string;
@@ -73,7 +73,7 @@ export function FaqSection() {
 											</span>
 										</span>
 
-										<IconButton size="small" LinkComponent={"span"}>
+										<IconButton as="span" size="small" aria-hidden="true">
 											<span
 												className={`mdi mdi-${
 													isOpen ? "close text-red-700" : "plus"

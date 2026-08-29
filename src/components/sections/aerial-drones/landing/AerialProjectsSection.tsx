@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useTranslation } from "@/hooks";
 import { FadeLeft, FadeRight } from "@/components/animations/Fade";
 import { SectionHeader } from "@/components/sections/home";

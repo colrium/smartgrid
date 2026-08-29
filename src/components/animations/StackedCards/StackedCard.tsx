@@ -1,8 +1,6 @@
 "use client";
 import Image from "next/image";
 import { useTransform, motion, useScroll, MotionValue } from "framer-motion";
-import { useRef } from "react";
-import { Typography } from "@mui/material";
 
 interface StackedCardProps {
 	i: number;
@@ -49,9 +47,9 @@ const StackedCard = ({
 				style={{ backgroundColor: color, scale, top: `calc( ${i * 10}px)` }}
 				className="flex flex-col relative lg:min-h-[70vh] w-full rounded-xl p-8 lg:p-[50px] origin-top"
 			>
-				<Typography variant="h4" className="text-center text-[28px] m-0">
+				<h4 className="m-0 text-center text-2xl font-semibold leading-8 text-[28px]">
 					{title}
-				</Typography>
+				</h4>
 
 				<div className="flex flex-col lg:flex-row h-[50vh] mt-[20px] gap-[20px] md:mt-[50px] md:gap-[50px]">
 					<div className="lg:w-[40%] relative top-[10%]">

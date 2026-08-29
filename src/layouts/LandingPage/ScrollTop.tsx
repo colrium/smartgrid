@@ -1,9 +1,4 @@
 import * as React from "react";
-import useScrollTrigger from "@mui/material/useScrollTrigger";
-import Box from "@mui/material/Box";
-import Fab from "@mui/material/Fab";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import Fade from "@mui/material/Fade";
 import { useTranslation } from "@/hooks";
 import { motion, useMotionValue, useTransform, HTMLMotionProps } from "framer-motion";
 import { useLenis } from "lenis/react";

@@ -1,13 +1,9 @@
-import React, { useState, useEffect } from "react";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import MuiLink from "@mui/material/Link";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { useRouter } from "next/router";
+import { Button } from "@/components/ui/Button";
+import { Menu } from "@/components/ui/Menu";
+import { MenuItem } from "@/components/ui/MenuItem";
 
 export interface NavBarLink {
 	label: string;
@@ -34,34 +30,50 @@ export default function NavMenu({
 	const router = useRouter();
 	const [anchorMap, setAnchorMap] = useState<Record<number, HTMLElement | null>>({});
 	const [openMenuIndex, setOpenMenuIndex] = useState<number | null>(null);
+	const closeTimer = useRef<number | null>(null);
 
 	const handleOpen = (index: number, el: HTMLElement | null) => {
 		setAnchorMap((s) => ({ ...s, [index]: el }));
 		setOpenMenuIndex(index);
 	};
 
+	const cancelClose = () => {
+		if (closeTimer.current !== null) {
+			window.clearTimeout(closeTimer.current);
+			closeTimer.current = null;
+		}
+	};
+
 	const handleClose = (index?: number) => {
+		cancelClose();
 		if (typeof index === "number") {
 			setAnchorMap((s) => ({ ...s, [index]: null }));
 		} else {
 			setAnchorMap({});
-			setOpenMenuIndex(null);
 		}
 		setOpenMenuIndex(null);
 	};
+
+	// Small grace period before closing hover-opened submenus so the pointer
+	// can travel across the gap between the item and the popup.
+	const scheduleClose = (index: number) => {
+		cancelClose();
+		closeTimer.current = window.setTimeout(() => handleClose(index), 120);
+	};
+
 	useEffect(() => {
-		const closeDropdown = () => {};
-		router.events.on("routeChangeStart", handleClose);
+		const closeDropdown = () => handleClose();
+		router.events.on("routeChangeStart", closeDropdown);
 
 		return () => {
-			router.events.off("routeChangeStart", handleClose);
+			router.events.off("routeChangeStart", closeDropdown);
 		};
 	}, []);
 	const menuClassName =
 		variant === "dark" ? "bg-ink-soft/95! text-surface!" : "bg-surface/95! text-ink!";
 	if (horizontal) {
 		return (
-			<Box className="hidden lg:flex flex-1 lg:grow lg:gap-4 lg:items-center lg:justify-end">
+			<div className="hidden lg:flex flex-1 lg:grow lg:gap-4 lg:items-center lg:justify-end">
 				{items.map((item, i) => {
 					if (item.excludeOnMainNav) return null;
 
@@ -69,10 +81,19 @@ export default function NavMenu({
 						const anchorEl = anchorMap[i] || null;
 
 						return (
-							<Box key={`nav-${i}`}>
+							<div key={`nav-${i}`}>
 								<Button
-									onClick={(e) => handleOpen(i, e.currentTarget)}
-									endIcon={<KeyboardArrowDownIcon />}
+									onClick={(e) => {
+										cancelClose();
+										if (openMenuIndex === i) {
+											handleClose(i);
+										} else {
+											handleOpen(i, e.currentTarget);
+										}
+									}}
+									endIcon={
+										<span className="mdi mdi-chevron-down text-xl" aria-hidden="true" />
+									}
 									color="inherit"
 									size="small"
 									variant="text"
@@ -91,13 +112,8 @@ export default function NavMenu({
 									onClose={() => handleClose(i)}
 									anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
 									transformOrigin={{ vertical: "top", horizontal: "center" }}
-									slotProps={{
-										paper: {
-											className: `rounded-xl! hairline transition-all duration-500 ${menuClassName} backdrop-blur-lg! card-shadow `,
-											style: { marginTop: 10 },
-											sx: { minWidth: { xs: 220, sm: 260 } },
-										},
-									}}
+									className={`rounded-xl hairline transition-all duration-500 ${menuClassName} backdrop-blur-lg card-shadow`}
+									style={{ marginTop: 10, minWidth: 260 }}
 								>
 									<NavMenu
 										items={item.links}
@@ -105,31 +121,26 @@ export default function NavMenu({
 										localizePath={localizePath}
 									/>
 								</Menu>
-							</Box>
+							</div>
 						);
 					}
 
 					return (
-						<Button
-							component={Link}
-							color="inherit"
-							size="small"
-							variant="text"
-							disableElevation
-							className={`text-sm mr-4 no-underline! capitalize! font-medium tracking-tight relative transition-colors after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-0 after:transition-all after:duration-300 hover:after:w-full ${
+						<Link
+							href={localizePath(item.href, locale)}
+							locale={false}
+							key={`nav-${i}`}
+							className={`mr-4 inline-flex cursor-pointer select-none items-center justify-center px-[5px] py-1 text-sm no-underline! capitalize! font-medium tracking-tight relative transition-colors after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-0 after:transition-all after:duration-300 hover:after:w-full ${
 								variant === "dark"
 									? "text-surface hover:text-primary-300 after:bg-primary-300"
 									: "text-on-surface hover:text-primary-500 after:bg-primary"
 							}`}
-							href={localizePath(item.href, locale)}
-							locale={false}
-							key={`nav-${i}`}
 						>
 							{item.label}
-						</Button>
+						</Link>
 					);
 				})}
-			</Box>
+			</div>
 		);
 	}
 
@@ -143,34 +154,33 @@ export default function NavMenu({
 					const anchorEl = anchorMap[i] || null;
 
 					return (
-						<Box key={`submenu-${i}`}>
+						<div key={`submenu-${i}`} className="relative">
 							<MenuItem
-								onMouseEnter={(e) => handleOpen(i, e.currentTarget as HTMLElement)}
-								onMouseLeave={() => handleClose(i)}
-								sx={{ display: "flex", justifyContent: "space-between", gap: 1 }}
+								onMouseEnter={(e) => {
+									cancelClose();
+									handleOpen(i, e.currentTarget);
+								}}
+								onMouseLeave={() => scheduleClose(i)}
 								className="text-sm font-medium tracking-tight text-ink hover:bg-primary-50"
 							>
-								<Box
-									component="span"
-									sx={{ display: "flex", alignItems: "center", gap: 1 }}
-								>
+								<span className="flex items-center gap-2">
 									{item.href && (
-										<MuiLink
-											component={Link}
+										<Link
 											href={localizePath(item.href, locale)}
 											locale={false}
 											onClick={() => handleClose()}
-											className="no-underline py-1 px-2 hover:text-primary rounded-md"
-											color="inherit"
-											underline="none"
+											className="no-underline py-1 px-2 hover:text-primary rounded-md text-inherit"
 										>
 											{item.label}
-										</MuiLink>
+										</Link>
 									)}
 									{!item.href && item.label}
-								</Box>
+								</span>
 
-								<ChevronRightIcon fontSize="small" className="text-primary" />
+								<span
+									className="mdi mdi-chevron-right text-xl text-primary"
+									aria-hidden="true"
+								/>
 							</MenuItem>
 
 							<Menu
@@ -179,14 +189,10 @@ export default function NavMenu({
 								onClose={() => handleClose(i)}
 								anchorOrigin={{ vertical: "top", horizontal: "right" }}
 								transformOrigin={{ vertical: "top", horizontal: "left" }}
-								slotProps={{
-									paper: {
-										className:
-											"rounded-xl hairline bg-surface/95! backdrop-blur-md! card-shadow",
-										style: { marginLeft: 8 },
-										sx: { minWidth: 220 },
-									},
-								}}
+								onMouseEnter={cancelClose}
+								onMouseLeave={() => scheduleClose(i)}
+								className="rounded-xl hairline bg-surface/95! backdrop-blur-md! card-shadow"
+								style={{ marginLeft: 8, minWidth: 220 }}
 							>
 								<NavMenu
 									items={item.links}
@@ -194,17 +200,16 @@ export default function NavMenu({
 									localizePath={localizePath}
 								/>
 							</Menu>
-						</Box>
+						</div>
 					);
 				}
 
 				return (
 					<MenuItem
 						key={`item-${i}`}
+						href={localizePath(item.href, locale)}
 						onClick={() => handleClose()}
 						className="text-sm font-medium tracking-tight text-ink hover:bg-primary-50"
-						component={Link}
-						href={localizePath(item.href, locale)}
 					>
 						{item.label}
 					</MenuItem>

@@ -1,10 +1,8 @@
-import { useCallback, useEffect, useRef, useState } from "react";
 import {
 	motion,
 	useScroll,
 	useTransform,
 	useSpring,
-	AnimatePresence,
 	cubicBezier,
 } from "framer-motion";
 type ScrollYProgress = ReturnType<typeof useScroll>["scrollYProgress"];

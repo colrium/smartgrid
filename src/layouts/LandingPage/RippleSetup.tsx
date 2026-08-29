@@ -3,23 +3,51 @@
 import Ripple from "@/lib/ripple";
 import { useEffect } from "react";
 
-export default function RippleSetup() {
+/**
+ * Wires the ripple effect to every element carrying `data-ripple-light` or
+ * `data-ripple-dark`. Uses a single delegated document listener instead of
+ * per-element listeners, so ripple elements mounted later (menus, drawers,
+ * dynamically rendered buttons) are picked up automatically.
+ */
+export default function RippleSetup(): null {
 	useEffect(() => {
 		const ripple = new Ripple();
 
-		const lightEls = document.querySelectorAll<HTMLElement>('[data-ripple-light="true"]');
-		const darkEls = document.querySelectorAll<HTMLElement>('[data-ripple-dark="true"]');
+		const handleMouseUp = (event: MouseEvent) => {
+			const target = event.target as HTMLElement | null;
+			if (!target) {
+				return;
+			}
+			const lightEl = target.closest<HTMLElement>('[data-ripple-light="true"]');
+			const darkEl = target.closest<HTMLElement>('[data-ripple-dark="true"]');
 
-		const lightHandler = (event: Event) => ripple.create(event as MouseEvent, "light");
-		const darkHandler = (event: Event) => ripple.create(event as MouseEvent, "dark");
+			// When both variants nest, the innermost element wins.
+			let el: HTMLElement | null = null;
+			let color: "light" | "dark" = "light";
+			if (lightEl && darkEl) {
+				if (darkEl.contains(lightEl)) {
+					el = lightEl;
+					color = "light";
+				} else {
+					el = darkEl;
+					color = "dark";
+				}
+			} else if (lightEl) {
+				el = lightEl;
+				color = "light";
+			} else if (darkEl) {
+				el = darkEl;
+				color = "dark";
+			}
 
-		lightEls.forEach((el) => el.addEventListener("mouseup", lightHandler));
-		darkEls.forEach((el) => el.addEventListener("mouseup", darkHandler));
-
-		return () => {
-			lightEls.forEach((el) => el.removeEventListener("mouseup", lightHandler));
-			darkEls.forEach((el) => el.removeEventListener("mouseup", darkHandler));
+			if (!el) {
+				return;
+			}
+			ripple.create(Object.assign({}, event, { currentTarget: el }) as MouseEvent, color);
 		};
+
+		document.addEventListener("mouseup", handleMouseUp);
+		return () => document.removeEventListener("mouseup", handleMouseUp);
 	}, []);
 
 	return null;

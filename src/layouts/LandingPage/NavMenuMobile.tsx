@@ -1,12 +1,7 @@
-import React from "react";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import MuiLink from "@mui/material/Link";
+"use client";
+
 import Link from "next/link";
-import Box from "@mui/material/Box";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import { Accordion, AccordionDetails, AccordionSummary } from "@/components/ui/Accordion";
 
 export interface NavBarLink {
 	label: string;
@@ -31,7 +26,7 @@ export default function NavMenuMobile({
 	expanded = false,
 }: Props) {
 	return (
-		<Box>
+		<div>
 			{items.map((item, i) => {
 				if (item.excludeOnMainNav) return null;
 
@@ -40,86 +35,58 @@ export default function NavMenuMobile({
 						<Accordion
 							key={`mobile-submenu-${i}`}
 							defaultExpanded={expanded}
-							disableGutters
 							square
-							sx={{
-								background: "transparent",
-								boxShadow: "none",
-								"&::before": { display: "none" },
-							}}
+							className="bg-transparent! shadow-none!"
 						>
 							<AccordionSummary
-								expandIcon={<ExpandMoreIcon className="text-on-surface/55" />}
-								sx={{
-									minHeight: 40,
-									px: 1.5,
-									"&.MuiAccordionSummary-root": { minHeight: 40 },
-									"&.Mui-expanded": { minHeight: 40, my: 0 },
-									"& .MuiAccordionSummary-content": { my: 0.5 },
-								}}
-								className=" hover:bg-primary-50"
+								expandIcon={
+									<span
+										className="mdi mdi-chevron-down text-xl text-on-surface/55"
+										aria-hidden="true"
+									/>
+								}
+								className="min-h-10 px-3 hover:bg-primary-50"
 							>
-								<Box
-									sx={{ display: "flex", alignItems: "center", gap: 1 }}
-									className=" text-ink"
-								>
+								<span className="flex items-center gap-2 text-ink">
 									{item.href && (
-										<MuiLink
-											component={Link}
+										<Link
 											href={localizePath(item.href, locale)}
 											locale={false}
 											onClick={onNavigate}
-											color="inherit"
-											underline="none"
-											className="no-underline py-1 px-2 hover:text-primary rounded-md"
+											className="no-underline py-1 px-2 hover:text-primary rounded-md text-inherit"
 										>
 											{item.label}
-										</MuiLink>
+										</Link>
 									)}
 									{!item.href && item.label}
-								</Box>
+								</span>
 							</AccordionSummary>
-							<AccordionDetails sx={{ p: 0.5, pl: 1 }}>
-								<Box sx={{ display: "flex", flexDirection: "column" }}>
+							<AccordionDetails className="p-1 pl-2">
+								<div className="flex flex-col">
 									<NavMenuMobile
 										items={item.links}
 										locale={locale}
 										localizePath={localizePath}
 										onNavigate={onNavigate}
 									/>
-								</Box>
+								</div>
 							</AccordionDetails>
 						</Accordion>
 					);
 				}
 
 				return (
-					<MuiLink
-						component={Link}
+					<Link
 						key={`mobile-item-${i}`}
 						href={localizePath(item.href, locale)}
 						locale={false}
 						onClick={onNavigate}
-						color="inherit"
-						underline="none"
-						sx={{
-							display: "flex",
-							alignItems: "center",
-							gap: 1,
-							py: 1,
-							px: 1.5,
-							my: 0.5,
-							borderRadius: 1,
-							"&:hover": {
-								backgroundColor: "rgba(0, 0, 0, 0.05)",
-							},
-						}}
-						className=" text-ink hover:text-primary hover:bg-primary-50"
+						className="flex items-center gap-2 rounded-md py-2 px-3 my-1 text-ink no-underline transition-colors duration-200 hover:text-primary hover:bg-primary-50"
 					>
 						{item.label}
-					</MuiLink>
+					</Link>
 				);
 			})}
-		</Box>
+		</div>
 	);
 }

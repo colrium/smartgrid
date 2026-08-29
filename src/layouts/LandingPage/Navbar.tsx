@@ -1,20 +1,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import IconButton from "@mui/material/IconButton";
-import MenuItem from "@mui/material/MenuItem";
-import Drawer from "@mui/material/Drawer";
 import { useTranslation } from "@/hooks";
 import { useLenis } from "lenis/react";
 import { useRouter } from "next/router";
 import useSetState from "@/hooks/useSetState";
-import { Avatar } from "@mui/material";
+import { Avatar } from "@/components/ui/Avatar";
+import { Drawer } from "@/components/ui/Drawer";
+import { IconButton } from "@/components/ui/IconButton";
+import { Menu } from "@/components/ui/Menu";
+import { MenuItem } from "@/components/ui/MenuItem";
 import NavMenu from "./NavMenu";
 import NavMenuMobile from "./NavMenuMobile";
 
@@ -136,7 +131,8 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 	};
 
 	const handleLanguageMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-		setState({ languageMenuAnchor: event.currentTarget });
+		// Toggle: clicking the avatar while the menu is open closes it.
+		setState({ languageMenuAnchor: state.languageMenuAnchor ? null : event.currentTarget });
 	};
 
 	const handleLanguageMenuClose = () => {
@@ -161,22 +157,11 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 
 	return (
 		<>
-			<AppBar
-				position="sticky"
-				// 'elevation={0}' removes the default shadow for a cleaner look
-				elevation={0}
-				color="transparent"
-				classes={{
-					root: "px-4 md:px-8 bg-transparent! transition-all duration-500",
-				}}
-			>
-				<Container
-					maxWidth="lg"
-					classes={{
-						root: `mt-3 mb-1 rounded-3xl backdrop-blur-lg! transition-all duration-500 ${
-							isDark ? "bg-ink-soft/85! text-surface!" : "bg-surface/85! text-ink!"
-						} ${state.isWindowScrolled ? "card-shadow-lift" : "card-shadow"}`,
-					}}
+			<header className="sticky top-0 z-[1100] w-full bg-transparent px-4 md:px-8 transition-all duration-500">
+				<div
+					className={`mx-auto mt-3 mb-1 w-full max-w-[1200px] rounded-3xl px-4 backdrop-blur-lg transition-all duration-500 ${
+						isDark ? "bg-ink-soft/85 text-surface" : "bg-surface/85 text-ink"
+					} ${state.isWindowScrolled ? "card-shadow-lift" : "card-shadow"}`}
 				>
 					<div
 						className={`hidden lg:flex items-center justify-between gap-8 px-2 pt-3.5 pb-3 text-xs  transition-all duration-500 ${
@@ -208,14 +193,13 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 						</div>
 					</div>
 
-					<Toolbar disableGutters className={`bg-transparent! `}>
+					<nav className="flex min-h-14 items-center bg-transparent lg:min-h-16">
 						<IconButton
 							onClick={handleDrawerToggle}
-							classes={{ root: "lg:hidden! mr-4!" }}
-							sx={{ color: "inherit" }}
+							className="mr-4 lg:hidden"
 							aria-label="Menu"
 						>
-							<MenuIcon />
+							<span className="mdi mdi-menu text-2xl" aria-hidden="true" />
 						</IconButton>
 
 						<Link href="/" className="flex items-center gap-2">
@@ -250,12 +234,11 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 							variant={isDark ? "dark" : "light"}
 						/>
 
-						<Box className="lg:hidden grow" />
-						<Box className="flex items-center gap-2">
+						<div className="grow lg:hidden" />
+						<div className="flex items-center gap-2">
 							<Avatar
 								onClick={handleLanguageMenuOpen}
-								className="mx-4  cursor-pointer"
-								sx={{ width: 24, height: 24 }}
+								className="mx-4 h-6 w-6 cursor-pointer"
 								src={localeObj.flag}
 								alt={localeObj.label}
 								title={t("common:misc.changeLanguage")}
@@ -264,13 +247,9 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 								anchorEl={state.languageMenuAnchor}
 								open={Boolean(state.languageMenuAnchor)}
 								onClose={handleLanguageMenuClose}
-								slotProps={{
-									paper: {
-										className: `rounded-xl! hairline transition-all duration-500 ${menuClassName} backdrop-blur-lg! card-shadow `,
-										style: { marginTop: 10 },
-										sx: { minWidth: { xs: 120, sm: 160 } },
-									},
-								}}
+								anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+								className={`rounded-xl hairline transition-all duration-500 ${menuClassName} backdrop-blur-lg card-shadow`}
+								style={{ marginTop: 10, minWidth: 160 }}
 							>
 								{Array.isArray(locales) &&
 									locales.map((locale) => (
@@ -278,7 +257,6 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 											key={locale.code}
 											onClick={() => handleLanguageSelect(locale.code)}
 											selected={router.locale === locale.code}
-											// disabled={router.locale === locale.code}
 										>
 											<Image
 												className="mr-2"
@@ -291,27 +269,20 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 										</MenuItem>
 									))}
 							</Menu>
-						</Box>
-					</Toolbar>
-				</Container>
-			</AppBar>
+						</div>
+					</nav>
+				</div>
+			</header>
 
 			{/* Mobile Drawer */}
 			<Drawer
 				anchor="left"
 				open={state.drawerOpen}
-				className="block lg:hidden"
 				onClose={handleDrawerToggle}
-				classes={{
-					paper: "bg-surface/95! backdrop-blur-lg! hairline! border-t! shadow-xl",
-				}}
+				wrapperClassName="lg:hidden"
+				panelClassName="bg-surface/95! backdrop-blur-lg! hairline! border-t! shadow-xl p-2"
 			>
-				<Box
-					sx={{
-						width: 280,
-						p: 2,
-					}}
-				>
+				<div>
 					<div className="flex justify-between items-center mb-6">
 						<Link href="/" className="flex items-center gap-2">
 							<Image
@@ -335,8 +306,8 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 							</div>
 						</Link>
 						{/* Close Button */}
-						<IconButton onClick={handleDrawerToggle} size="small">
-							<span className="mdi mdi-close text-red-900" />
+						<IconButton onClick={handleDrawerToggle} size="small" aria-label="Close menu">
+							<span className="mdi mdi-close text-red-900" aria-hidden="true" />
 						</IconButton>
 					</div>
 
@@ -347,7 +318,7 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 						localizePath={localizePath}
 						onNavigate={handleDrawerToggle}
 					/>
-				</Box>
+				</div>
 			</Drawer>
 		</>
 	);

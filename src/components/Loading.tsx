@@ -1,15 +1,11 @@
-import { Box, CircularProgress, Typography } from '@mui/material';
+import { CircularProgress } from "@/components/ui/CircularProgress";
+import type { ReactElement } from "react";
 
-export default function Loading({ message = 'Loading...' }: { message?: string }) {
+export default function Loading({ message = "Loading..." }: { message?: string }): ReactElement {
 	return (
-        <div className="flex flex-col items-center justify-center min-h-screen gap-2">
-            <CircularProgress />
-            <Typography
-                variant="body2"
-                color="text.secondary"
-            >
-                {message}
-            </Typography>
-        </div>
+		<div className="flex min-h-screen flex-col items-center justify-center gap-2">
+			<CircularProgress />
+			<p className="text-sm text-ink-soft/70">{message}</p>
+		</div>
 	);
 }

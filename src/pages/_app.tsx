@@ -3,10 +3,6 @@ import "@/styles/globals.css";
 import { appWithTranslation } from "next-i18next/pages";
 import {  type ReactElement } from "react";
 import { useRouter } from 'next/router';
-import { AppCacheProvider } from "@mui/material-nextjs/v15-pagesRouter";
-import i18n from 'i18next'
-import { ThemeProvider, CssBaseline } from "@mui/material";
-import theme from "@/theme/theme";
 import i18nextConfig from "../../next-i18next.config";
 import type { AppPropsWithLayout } from "@/types/next";
 import LandingPageLayout from "@/layouts/LandingPage/Layout";
@@ -60,19 +56,13 @@ function App({ Component, pageProps }: AppPropsWithLayout) {
 
     
     
-    return (        
-		<AppCacheProvider {...pageProps}>
-			<main
-				className={`flex flex-col min-h-screen relative  ${fontSans.variable} ${fontSansSerif.variable} ${fontDisplay.variable} font-sans`}
-			>
-				<ThemeProvider theme={theme}>
-					<CssBaseline />
-					<PageTransitionLoader />
-					{renderPageWithLayout(<Component {...pageProps} />)}
-					
-				</ThemeProvider>
-			</main>
-		</AppCacheProvider>
+    return (
+		<main
+			className={`flex flex-col min-h-screen relative  ${fontSans.variable} ${fontSansSerif.variable} ${fontDisplay.variable} font-sans`}
+		>
+			<PageTransitionLoader />
+			{renderPageWithLayout(<Component {...pageProps} />)}
+		</main>
 	);
 }
 

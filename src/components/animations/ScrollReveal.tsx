@@ -641,7 +641,7 @@ export function Stagger({
 //    when it enters the viewport. Pass a formatter for currency, %, etc.
 // ══════════════════════════════════════════════════════════════════════════════
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export interface CountUpProps {
 	/** Target value */

@@ -9,7 +9,7 @@ const nextUtilsConfig = () => {
     ? process.env.NEXTJS_TSCONFIG_PATH
     : './tsconfig.json'
 
-  // eslint-disable-next-line no-console
+   
   console.warn(
     `${pc.green('warn  -')} experimental.esmExternals is ${
       esmExternals ? 'enabled' : 'disabled'

@@ -1,6 +1,4 @@
 import Link from "next/link";
-import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
-import GavelIcon from "@mui/icons-material/Gavel";
 
 type LegalSection = {
 	title: string;
@@ -34,7 +32,7 @@ export default function LegalPageSection({
 			<div className="relative z-10 max-w-[980px] mx-auto px-6 md:px-8">
 				<div className="mb-12">
 					<span className="inline-flex items-center gap-2 text-xs tracking-[0.14em] uppercase text-primary mb-4">
-						<GavelIcon fontSize="small" />
+						<span className="mdi mdi-gavel text-xl" aria-hidden="true" />
 						{label}
 					</span>
 					<h1 className="text-[clamp(2.7rem,6vw,5.4rem)] leading-[0.96] tracking-tight text-on-surface-800 max-w-[820px]">
@@ -87,7 +85,7 @@ export default function LegalPageSection({
 						className="inline-flex items-center justify-center gap-2 rounded border border-primary bg-primary px-6 py-3 text-sm font-medium text-surface hover:bg-primary transition-all"
 					>
 						{contactLabel}
-						<ArrowOutwardIcon fontSize="small" />
+						<span className="mdi mdi-arrow-top-right text-xl" aria-hidden="true" />
 					</Link>
 				</div>
 			</div>

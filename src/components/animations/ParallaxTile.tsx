@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform, useSpring, useInView, cubicBezier } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 
 // ─── Parallax image tile ──────────────────────────────────────────────────────

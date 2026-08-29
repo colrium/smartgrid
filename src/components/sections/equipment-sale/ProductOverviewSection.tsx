@@ -1,11 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionTag } from "@/components/SectionTag";
 import { Blob } from "@/components/sections/home/decor";
-import AccordionGallery, { AccordionGalleryItem } from "@/components/ui/AccordionGallery";
 import MorphSlider from "@/components/ui/MorphSlider";
 
 interface ImageEntry {
