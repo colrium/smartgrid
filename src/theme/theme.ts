@@ -1,30 +1,12 @@
 import { createTheme } from "@mui/material/styles";
 
-const brand = {
-	50: "#e5f6f8",
-	100: "#ccecef",
-	200: "#99d9df",
-	300: "#66c5cf",
-	400: "#33b2bf",
-	500: "#0097b2", // primary
-	600: "#007f96",
-	700: "#00677a",
-	800: "#004f5e",
-	900: "#003742",
-};
 
-const fontSans = 'var(--font-sans-serif), "Inter", "Roboto", "Helvetica", "Arial", sans-serif';
-const fontDisplay =
-	'var(--font-sans), "Inter", "Roboto", "Helvetica", "Arial", sans-serif';
 
 const theme = createTheme({
 	palette: {
 		mode: "light",
 		primary: {
-			main: brand[500],
-			light: brand[300],
-			dark: brand[700],
-			contrastText: "#ffffff",
+			main: "#0097b2",
 		},
 		secondary: {
 			main: "#000000",
@@ -128,6 +110,4 @@ const theme = createTheme({
 		borderRadius: 20,
 	},
 });
-
-export { brand };
 export default theme;
