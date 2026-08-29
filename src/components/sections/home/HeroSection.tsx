@@ -11,6 +11,7 @@ import { useTranslation } from "@/hooks";
 import { Trans } from "next-i18next/pages";
 import { ButtonProps } from "@mui/material/Button";
 import { FadeUp, FadeRight, FadeLeft } from "@/components/animations/Fade";
+import ScrollIndicator from "@/components/ui/ScrollIndicator";
 
 // Three.js + loaders (~500-700KB) stay out of the initial page bundle:
 // the WebGL scene is code-split and mounted client-side only.
@@ -91,7 +92,7 @@ export default function HeroSection() {
 	return (
 		<section
 			ref={heroRef}
-			className="relative min-h-[90dvh] flex items-center justify-center pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-32 overflow-hidden"
+			className="relative min-h-screen flex items-center justify-center pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-32 overflow-hidden"
 		>
 			{/* WebGL Background (code-split, client-only, capable devices only) */}
 			{sceneEnabled && <HeroScene />}
@@ -132,7 +133,7 @@ export default function HeroSection() {
 						{ctaPrimary?.href && (
 							<Link
 								href={ctaPrimary.href}
-								className="group inline-flex items-center gap-3 h-14 rounded-full bg-primary shadow-2xl px-8 text-surface font-medium text-base transition-all duration-300 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]"
+								className="group inline-flex items-center gap-3 h-14 rounded-full bg-primary shadow-2xl px-8 text-surface shadow-primary-200 font-medium text-base transition-all duration-300 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]"
 							>
 								<span className="h-1.5 w-1.5 rounded-full bg-surface transition-transform duration-300 group-hover:scale-125" />
 								{ctaPrimary.label}
@@ -147,7 +148,8 @@ export default function HeroSection() {
 						{ctaSecondary?.href && (
 							<Link
 								href={ctaSecondary.href}
-								className="group inline-flex items-center gap-3 h-14 bg-accent rounded-full border border-accent/20 shadow-2xl px-8 text-surface font-medium text-base transition-all duration-300 "
+								className="group inline-flex items-center gap-3 h-14 bg-accent rounded-full border border-accent/20 shadow-accent-200 shadow-2xl px-8 text-surface font-medium text-base transition-all duration-300 "
+								data-ripple-light="true"
 							>
 								{ctaSecondary.label}
 								{ctaSecondary.icon ? (
@@ -189,7 +191,9 @@ export default function HeroSection() {
 				{/* Right Column */}
 				<div className="lg:col-span-2 pointer-events-auto" />
 			</div>
-
+			<div className="absolute bottom-0 left-1/2 -translate-x-1/2 p-4 flex">
+				<ScrollIndicator />
+			</div>
 			<motion.div
 				className={`rounded-3xl fixed  -right-40 md:-right-20 lg:-right-8 bottom-0 overflow-hidden w-80 md:w-100 lg:w-140 aspect-3/4 z-0`}
 				style={{ opacity: colorOpacity }}
@@ -200,8 +204,8 @@ export default function HeroSection() {
 					src="/img/instruments/total-station-color.png"
 					alt="total-station-color"
 					fill
-					// priority
-					// fetchPriority="high"
+					priority
+					fetchPriority="high"
 					layout="fill"
 					sizes="(min-width: 1024px) 560px, (min-width: 768px) 400px, 320px"
 					className="object-scale-down"
@@ -215,8 +219,8 @@ export default function HeroSection() {
 					src="/img/instruments/total-station-wireframe.svg"
 					alt="total-station-wireframe"
 					fill
-					// priority
-					// fetchPriority="high"
+					priority
+					fetchPriority="high"
 					sizes="(min-width: 1024px) 560px, (min-width: 768px) 400px, 320px"
 					className="object-scale-down"
 				/>

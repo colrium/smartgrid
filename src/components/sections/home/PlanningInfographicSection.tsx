@@ -46,10 +46,14 @@ export function PlanningInfographicSection() {
 				<div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 sm:gap-6">
 					{Array.isArray(section.benefits) &&
 						section.benefits.map((benefit, index) => (
-							<FadeUp key={index} delay={index * 0.07} className="h-full min-h-50 w-full">
+							<FadeUp
+								key={index}
+								delay={index * 0.07}
+								className="h-full min-h-50 w-full"
+							>
 								<div className="group h-full w-full p-6 pt-8 inline-block bg-surface rounded-[20px]  hairline card-shadow hover:card-shadow-lift hover:border-primary transition-[box-shadow,border-color] duration-500 relative overflow-clip">
 									<div className="relative h-full flex flex-col gap-3 z-10 ">
-										<span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
+										<span className="flex h-11 w-11 items-center justify-center rounded-xl  text-mute transition-colors duration-300 group-hover:bg-primary-50 group-hover:text-ink">
 											<span className={`mdi mdi-${benefit.icon} text-2xl`} />
 										</span>
 
@@ -62,7 +66,7 @@ export function PlanningInfographicSection() {
 									</div>
 									<div className={`absolute -bottom-6 -right-8`}>
 										<span
-											className={`mdi mdi-check-circle text-9xl text-on-surface/3 `}
+											className={`mdi mdi-${benefit.icon} text-9xl text-on-surface/3 `}
 										/>
 									</div>
 								</div>

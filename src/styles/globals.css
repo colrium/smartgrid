@@ -104,7 +104,7 @@ main * {
             system-ui;
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-sans),
+    font-family: var(--font-sans-serif),
         ui-monospace,
         SFMono-Regular;
 }
@@ -178,23 +178,6 @@ select option {
    
         background: radial-gradient(at 60% 60%, rgba(0, 162, 212, 0.028) 0%, rgba(0, 0, 0, 0) 33%);
         filter: blur(40px);
-}
-.golden-shine {
-    line-height: 1;
-    text-align: center;
-    background: linear-gradient(90deg, rgb(62, 186, 165) 0%, rgb(32, 195, 236) 20%, rgb(62, 157, 186) 39%, rgb(139, 214, 248) 50%, rgb(62, 171, 186) 60%, rgb(32, 188, 236) 80%, rgb(62, 161, 186) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gold-shine 10s infinite alternate;
-    background-size: 200%;
-    background-position: left;
-
-}
-
-@keyframes gold-shine {
-    to {
-        background-position: right
-    }
 }
 
 @layer components {
@@ -440,6 +423,25 @@ select option {
 @utility ink-panel {
     background: linear-gradient(225deg, #01373d 0%, #004f5e 55%, #0097b2 130%);
 }
+@keyframes scroll-line {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    70% {
+        transform: translateY(10px);
+        opacity: 0.2;
+    }
+
+    100% {
+        transform: translateY(12px);
+        opacity: 0;
+    }
+}
+
+.animate-scroll-line {
+    animation: scroll-line 1.5s ease-out infinite; }
 
 ::-webkit-scrollbar {
     width: 8px;

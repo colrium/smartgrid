@@ -212,8 +212,8 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 						<IconButton
 							onClick={handleDrawerToggle}
 							classes={{ root: "lg:hidden! mr-4!" }}
-                            sx={{ color: "inherit" }}
-                            aria-label="Menu"
+							sx={{ color: "inherit" }}
+							aria-label="Menu"
 						>
 							<MenuIcon />
 						</IconButton>
@@ -228,14 +228,14 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 							/>
 							<div className="flex flex-col mr-2 leading-tight">
 								<h6
-									className={`flex uppercase font-semibold tracking-wide  no-underline transition-all duration-500 ${
+									className={`flex uppercase font-semibold tracking-wide font-display no-underline transition-all duration-500 ${
 										isDark ? "text-surface" : "text-ink"
 									}`}
 								>
 									{t("meta:site.title")}
 								</h6>
 								<span
-									className={`capitalize hidden lg:flex font-bold text-[8px] no-underline transition-all duration-500 ${accentColor}`}
+									className={`capitalize hidden  lg:flex font-bold text-[7px] no-underline transition-all duration-500 ${accentColor}`}
 								>
 									{t("meta:site.subtitle")}
 								</span>
@@ -323,24 +323,19 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 							/>
 							<div className="flex flex-col mr-2 leading-tight">
 								<h6
-									className={`flex uppercase font-semibold tracking-wide  no-underline transition-all duration-500 ${
-										isDark ? "text-surface" : "text-ink"
-									}`}
+									className={`flex uppercase font-semibold font-display tracking-wide  no-underline transition-all duration-500 text-ink`}
 								>
 									{t("meta:site.title")}
 								</h6>
 								<span
-									className={`capitalize hidden lg:flex font-bold text-[8px] no-underline transition-all duration-500 ${accentColor}`}
+									className={`capitalize hidden lg:flex font-bold text-[7px] no-underline transition-all duration-500 ${accentColor}`}
 								>
 									{t("meta:site.subtitle")}
 								</span>
 							</div>
 						</Link>
 						{/* Close Button */}
-						<IconButton
-							onClick={handleDrawerToggle}
-							size="small"
-						>
+						<IconButton onClick={handleDrawerToggle} size="small">
 							<span className="mdi mdi-close text-red-900" />
 						</IconButton>
 					</div>

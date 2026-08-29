@@ -44,7 +44,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-*.bak*
+
 
 # IDE
 .idea
@@ -52,3 +52,7 @@ next-env.d.ts
 
 #Logs
 **/*.log
+
+# Custom
+*.bak*
+*.experimental*

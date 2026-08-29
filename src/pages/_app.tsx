@@ -17,9 +17,8 @@ import localFont from "next/font/local";
 import { useEffect } from "react";
 
 const fontSans = Plus_Jakarta_Sans({
-	subsets: ["latin"],
-	variable: "--font-display", // display variable for special purpose
-
+	subsets: ["latin"],	
+	variable: "--font-sans", // sans variable for headers (decorative feet)
 	display: "swap",
 });
 
@@ -30,7 +29,7 @@ const fontSansSerif = localFont({
 });
 const fontDisplay = localFont({
 	src: "../fonts/Brother1816/Brother-1816-Regular.woff2",
-	variable: "--font-sans", // sans variable for headers (decorative feet)
+	variable: "--font-display", // display variable for special purpose
 	display: "swap",
 });
 

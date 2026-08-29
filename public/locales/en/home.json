@@ -3,17 +3,15 @@
 		"badge": "Engineering Precision",
 		"headline": "Survey <primary>Smarter</primary>, Build <accent>Stronger</accent>.",
 		"description": "Leading Africa's Land and Aerial Surveying with Advanced equipment Technology",
-		"ctaPrimary": {
+        "ctaPrimary": {
 			"label": "Request a Survey",
 			"href": "/contact?reason=request-survey#contact-form",
-			"class": " rounded-full!",
 			"icon": "send"
 		},
 		"ctaSecondary": {
-			"label": "Explore Equipments",
-			"href": "/equipment-sale/equipment-catalogue",
-			"class": " rounded-full! bg-surface!",
-			"icon": "shopping"
+			"label": "Talk to an Expert",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Talk to an Expert&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to talk to an expert about a surveying project.%0D%0A%0D%0AName:%0D%0AService of interest:%0D%0AMessage:%0D%0A%0D%0AThank you.",
+			"icon": "email"
 		},
 		"location": {
 			"label": "Active across East Africa & beyond",
@@ -22,6 +20,7 @@
 				{ "label": "Uganda", "code": "UG" },
 				{ "label": "Tanzania", "code": "TZ" },
 				{ "label": "Nigeria", "code": "NG" },
+				{ "label": "Ghana", "code": "GH" },
 				{ "label": "South Africa", "code": "SA" }
 			]
 		}

@@ -76,7 +76,7 @@ export default function PageTransitionLoader() {
 						</div>
 
 						<div className="flex flex-col items-center gap-1.5">
-							<span className="font-mono font-semibold uppercase tracking-[0.28em] text-on-surface text-sm sm:text-base">
+							<span className="font-display font-semibold uppercase tracking-[0.28em] text-on-surface text-sm sm:text-base">
 								{t("meta:site.title")}
 							</span>
 							<span className="text-[10px] uppercase tracking-[0.18em] text-accent-600">

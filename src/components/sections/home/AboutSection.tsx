@@ -7,6 +7,8 @@ import Image from "next/image";
 import useTranslation from "@/hooks/useTranslation";
 import { SectionTag } from "@/components/SectionTag";
 import Link from "next/link";
+import { FadeUp } from "@/components/animations/ScrollReveal";
+import { FadeLeft, FadeRight } from "@/components/animations/Fade";
 
 interface AboutCardLink {
 	icon?: string | null;
@@ -24,50 +26,57 @@ export const AboutSection: React.FC = () => {
 			<div className="max-w-7xl mx-auto px-6">
 				<div className="grid lg:grid-cols-12 gap-16 items-center">
 					{/* Left Narrative */}
+
 					<div className="lg:col-span-6 space-y-6">
-						<SectionTag className="text-primary">{t("home:about.tag")}</SectionTag>
+						<FadeUp>
+							<SectionTag className="text-primary">{t("home:about.tag")}</SectionTag>
 
-						<h2 className="text-3xl sm:text-5xl font-light tracking-tight text-ink leading-tight">
-							{t("home:about.headline")}
-						</h2>
+							<h2 className="text-3xl sm:text-5xl font-light tracking-tight text-ink leading-tight">
+								{t("home:about.headline")}
+							</h2>
 
-						<p className="text-on-surface/60 leading-relaxed text-base sm:text-lg">
-							{t("home:about.description")}
-						</p>
+							<p className="text-on-surface/60 leading-relaxed text-base sm:text-lg">
+								{t("home:about.description")}
+							</p>
+						</FadeUp>
+						<FadeUp>
+							<h3 className="text-xl sm:text-2xl font-medium tracking-tight text-primary leading-tight pt-2">
+								{t("home:about.whoWeAre.title")}
+							</h3>
 
-						<h3 className="text-xl sm:text-2xl font-medium tracking-tight text-primary leading-tight pt-2">
-							{t("home:about.whoWeAre.title")}
-						</h3>
+							<p className="text-on-surface/60 leading-relaxed text-sm sm:text-base">
+								{t("home:about.whoWeAre.description")}
+							</p>
+						</FadeUp>
+						<FadeUp>
+							<h3 className="text-xl sm:text-2xl font-medium tracking-tight text-primary leading-tight pt-2">
+								{t("home:about.mission.title")}
+							</h3>
 
-						<p className="text-on-surface/60 leading-relaxed text-sm sm:text-base">
-							{t("home:about.whoWeAre.description")}
-						</p>
-
-						<h3 className="text-xl sm:text-2xl font-medium tracking-tight text-primary leading-tight pt-2">
-							{t("home:about.mission.title")}
-						</h3>
-
-						<p className="text-on-surface/60 leading-relaxed text-sm sm:text-base">
-							{t("home:about.mission.description")}
-						</p>
+							<p className="text-on-surface/60 leading-relaxed text-sm sm:text-base">
+								{t("home:about.mission.description")}
+							</p>
+						</FadeUp>
 
 						<div className="pt-4 grid  grid grid-cols-1 md:grid-cols-2 gap-4">
 							{cards.map((card, index) => (
-								<Link href={card.href} key={`about-card-${index}`}>
-									<div className="p-4 rounded-[15px] bg-surface hairline hover:border-primary cursor-pointer transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-0.5 h-full hover:card-shadow-lift flex items-start gap-3">
-										<div className="p-2.5 rounded-lg bg-primary-50 text-primary">
-											<span className={`mdi mdi-${card.icon}`} />
+								<FadeUp key={`about-card-${index}`} delay={(index % 3) * 0.1}>
+									<Link href={card.href}>
+										<div className="p-4 rounded-[15px] bg-surface hairline hover:border-primary cursor-pointer transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-0.5 h-full hover:card-shadow-lift flex items-start gap-3">
+											<div className="p-2.5 rounded-lg bg-primary-50 text-primary">
+												<span className={`mdi mdi-${card.icon}`} />
+											</div>
+											<div>
+												<h4 className="font-semibold text-sm text-ink">
+													{card.label}
+												</h4>
+												<p className="text-xs text-on-surface/60 mt-1 leading-relaxed">
+													{card.description}
+												</p>
+											</div>
 										</div>
-										<div>
-											<h4 className="font-semibold text-sm text-ink">
-												{card.label}
-											</h4>
-											<p className="text-xs text-on-surface/60 mt-1 leading-relaxed">
-												{card.description}
-											</p>
-										</div>
-									</div>
-								</Link>
+									</Link>
+								</FadeUp>
 							))}
 						</div>
 					</div>
@@ -90,33 +99,34 @@ export const AboutSection: React.FC = () => {
 										"radial-gradient(closest-side, rgba(0,151,178,0.20), transparent 70%)",
 								}}
 							/>
+							<FadeLeft>
+								<div className="relative bg-surface p-4 rounded-[20px] hairline card-shadow">
+									<div className="relative aspect-4/5 rounded-xl overflow-hidden bg-slate-900 group">
+										{/* Abstract Representation of Pointcloud / Surveying Mesh */}
+										<Image
+											src={t("home:about.featureImg.url")}
+											alt={t("home:about.featureImg.alt")}
+											fill
+											quality={70}
+											sizes="(min-width: 1024px) 384px, min(100vw, 448px)"
+											className="object-cover object-top transition-transform duration-700 group-hover:scale-105 opacity-80"
+										/>
+										<div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/25 to-transparent" />
 
-							<div className="relative bg-surface p-4 rounded-[20px] hairline card-shadow">
-								<div className="relative aspect-4/5 rounded-xl overflow-hidden bg-slate-900 group">
-									{/* Abstract Representation of Pointcloud / Surveying Mesh */}
-									<Image
-										src={t("home:about.featureImg.url")}
-										alt={t("home:about.featureImg.alt")}
-										fill
-										quality={70}
-										sizes="(min-width: 1024px) 384px, min(100vw, 448px)"
-										className="object-cover object-top transition-transform duration-700 group-hover:scale-105 opacity-80"
-									/>
-									<div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/25 to-transparent" />
-
-									<div className="absolute bottom-6 left-6 right-6 text-surface">
-										<span className="text-xs font-mono text-primary-200 uppercase font-bold tracking-wider">
-											{t("home:about.featureImg.caption")}
-										</span>
-										<h3 className="text-xl font-light mt-1">
-											{t("home:about.featureImg.title")}
-										</h3>
-										<p className="text-xs text-surface/70 mt-2 leading-relaxed">
-											{t("home:about.featureImg.description")}
-										</p>
+										<div className="absolute bottom-6 left-6 right-6 text-surface">
+											<span className="text-xs font-mono text-primary-200 uppercase font-bold tracking-wider">
+												{t("home:about.featureImg.caption")}
+											</span>
+											<h3 className="text-xl font-light mt-1">
+												{t("home:about.featureImg.title")}
+											</h3>
+											<p className="text-xs text-surface/70 mt-2 leading-relaxed">
+												{t("home:about.featureImg.description")}
+											</p>
+										</div>
 									</div>
 								</div>
-							</div>
+							</FadeLeft>
 						</div>
 					</div>
 				</div>

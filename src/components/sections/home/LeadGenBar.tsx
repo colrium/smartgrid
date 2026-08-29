@@ -28,20 +28,20 @@ const LeadGenBar: React.FC<{ className?: string }> = ({ className }) => {
     const leadGenItems = t("home:leadGenBar.items", { returnObjects: true }) as unknown as LeadGenItem[];
 
     return (
-		<FadeUp >
-			<section className={`relative  ${className || ""}`}>
-				<div
-					className="absolute -top-6 -left-6 w-64 h-64 bg-primary/10 rounded-full pointer-events-none"
-					style={{ WebkitMaskImage: GLOW_MASK, maskImage: GLOW_MASK }}
-				/>
-				<div
-					className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full pointer-events-none"
-					style={{ WebkitMaskImage: GLOW_MASK, maskImage: GLOW_MASK }}
-				/>
-				<div
-					className={`py-14 sm:py-20 relative z-20 my-12 rounded-[20px] pale-panel-soft hairline card-shadow overflow-hidden`}
-				>
-					<div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+		<section className={`relative  ${className || ""}`}>
+			<div
+				className="absolute -top-6 -left-6 w-64 h-64 bg-primary/10 rounded-full pointer-events-none"
+				style={{ WebkitMaskImage: GLOW_MASK, maskImage: GLOW_MASK }}
+			/>
+			<div
+				className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full pointer-events-none"
+				style={{ WebkitMaskImage: GLOW_MASK, maskImage: GLOW_MASK }}
+			/>
+			<div
+				className={`py-14 sm:py-20 relative z-20 my-12 rounded-[20px] pale-panel-soft hairline card-shadow overflow-hidden`}
+			>
+				<div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+					<FadeUp>
 						<div className="flex flex-col items-center gap-4">
 							<SectionTag>{t("home:leadGenBar.tag")}</SectionTag>
 							<h2 className="text-3xl sm:text-5xl font-light tracking-tight text-ink leading-tight whitespace-pre-line max-w-3xl">
@@ -61,13 +61,13 @@ const LeadGenBar: React.FC<{ className?: string }> = ({ className }) => {
 								/>
 							</p>
 						</div>
-						<div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
-							{Array.isArray(leadGenItems) &&
-								leadGenItems.map((item, index) => (
-									<div
-										key={index}
-										className="glass rounded-xl gap-4 py-10 md:px-7 text-center md:text-left flex flex-col items-center h-full"
-									>
+					</FadeUp>
+
+					<div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+						{Array.isArray(leadGenItems) &&
+							leadGenItems.map((item, index) => (
+								<FadeUp key={index} delay={(index % 3) * 0.08}>
+									<div className="glass rounded-xl gap-4 py-10 md:px-7 text-center md:text-left flex flex-col items-center h-full">
 										<span className="flex h-14 w-14 items-center justify-center text-mute mb-6">
 											<span className={`mdi mdi-${item.icon} text-7xl`} />
 										</span>
@@ -85,7 +85,10 @@ const LeadGenBar: React.FC<{ className?: string }> = ({ className }) => {
 												className="inline-flex min-h-10 items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-accent transition-colors duration-300 hover:bg-accent/10"
 											>
 												{item.more.label}
-												<span className="mdi mdi-arrow-right text-lg" aria-hidden />
+												<span
+													className="mdi mdi-arrow-right text-lg"
+													aria-hidden
+												/>
 											</Link>
 										)}
 										{item.action?.href && (
@@ -97,12 +100,12 @@ const LeadGenBar: React.FC<{ className?: string }> = ({ className }) => {
 											</Link>
 										)}
 									</div>
-								))}
-						</div>
+								</FadeUp>
+							))}
 					</div>
 				</div>
-			</section>
-		</FadeUp>
+			</div>
+		</section>
 	);
 };
 export default LeadGenBar;
