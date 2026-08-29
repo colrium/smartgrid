@@ -154,6 +154,7 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 	const accentColor = isDark ? "text-accent-200" : "text-accent-700";
     const hoverColor = isDark ? "hover:text-primary-300" : "hover:text-primary";
     const menuClassName = isDark ? "bg-ink-soft/95! text-surface!" : "bg-surface/95! text-ink!";
+    
 
 	return (
 		<>
@@ -247,8 +248,8 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 								anchorEl={state.languageMenuAnchor}
 								open={Boolean(state.languageMenuAnchor)}
 								onClose={handleLanguageMenuClose}
-								anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
-								className={`rounded-xl hairline transition-all duration-500 ${menuClassName} backdrop-blur-lg card-shadow`}
+								anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+								className={`rounded-lg transition-all duration-500 ${menuClassName} backdrop-blur-lg card-shadow p-2 `}
 								style={{ marginTop: 10, minWidth: 160 }}
 							>
 								{Array.isArray(locales) &&
@@ -280,10 +281,10 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 				open={state.drawerOpen}
 				onClose={handleDrawerToggle}
 				wrapperClassName="lg:hidden"
-				panelClassName="bg-surface/95! backdrop-blur-lg! hairline! border-t! shadow-xl p-2"
+				panelClassName="bg-surface/95! backdrop-blur-lg! border-e! border-ink/10! shadow-xl p-2"
 			>
 				<div>
-					<div className="flex justify-between items-center mb-6">
+					<div className="flex justify-between items-center border-b border-ink/10 pb-4 mb-5">
 						<Link href="/" className="flex items-center gap-2">
 							<Image
 								className="flex lg:mr-1"

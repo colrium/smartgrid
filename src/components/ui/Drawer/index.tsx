@@ -58,7 +58,7 @@ export function Drawer({
 				role="dialog"
 				aria-modal="true"
 				className={[
-					"absolute top-0 h-full w-[280px] max-w-[85vw] bg-surface shadow-2xl transition-transform duration-300 ease-out",
+					"absolute top-0 h-full w-[280px] max-w-[85vw] overflow-y-auto bg-surface shadow-2xl transition-transform duration-300 ease-out",
 					anchor === "left" ? "left-0" : "right-0",
 					open
 						? "translate-x-0"

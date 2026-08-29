@@ -79,14 +79,14 @@ export default function PageTransitionLoader() {
 							<span className="font-display font-semibold uppercase tracking-[0.28em] text-on-surface text-sm sm:text-base">
 								{t("meta:site.title")}
 							</span>
-							<span className="text-[10px] uppercase tracking-[0.18em] text-accent-600">
+							<span className="text-[7px] text-accent-600">
 								{t("meta:site.subtitle")}
 							</span>
 						</div>
 
 						<div className="mt-2 flex items-center gap-3">
-							<span className="h-5 w-5 rounded-full border-2 border-surface/20 border-t-primary-300 animate-spin" />
-							<span className="text-xs uppercase tracking-[0.2em] text-primary/70">
+							<span className="h-5 w-5 rounded-full border-2 border-primary-50 border-t-primary-300 animate-spin" />
+							<span className="text-[7px] text-primary/70">
 								{t("common:misc.loading")}
 							</span>
 						</div>

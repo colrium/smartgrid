@@ -69,8 +69,8 @@ export function Menu({
 			return;
 		}
 		const rect = anchorEl.getBoundingClientRect();
-		const ao = { vertical: "bottom", horizontal: "left", ...anchorOrigin } as Required<MenuOrigin>;
-		const to = { vertical: "top", horizontal: "left", ...transformOrigin } as Required<MenuOrigin>;
+		const ao = { vertical: "bottom", horizontal: "center", ...anchorOrigin } as Required<MenuOrigin>;
+		const to = { vertical: "top", horizontal: "center", ...transformOrigin } as Required<MenuOrigin>;
 
 		const top =
 			ao.vertical === "bottom"

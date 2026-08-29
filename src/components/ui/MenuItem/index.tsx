@@ -22,10 +22,10 @@ export function MenuItem({
 	...rest
 }: MenuItemProps): ReactElement {
 	const classes = [
-		"flex w-full cursor-pointer select-none items-center justify-between gap-3 px-4 py-2 text-left text-sm leading-6 text-ink outline-none transition-colors duration-200",
+		"flex w-full cursor-pointer  select-none items-center justify-between gap-3 rounded-lg px-4 py-2 text-left text-sm outline-none transition-colors duration-200",
 		disabled
 			? "pointer-events-none opacity-40"
-			: "hover:bg-primary-50 focus-visible:bg-primary-50",
+			: "hover:bg-primary/10 focus-visible:bg-primary/10",
 		selected && !disabled ? "bg-primary/10" : "",
 		className,
 	]

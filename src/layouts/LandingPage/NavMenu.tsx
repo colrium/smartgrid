@@ -68,9 +68,10 @@ export default function NavMenu({
 		return () => {
 			router.events.off("routeChangeStart", closeDropdown);
 		};
-	}, []);
-	const menuClassName =
-		variant === "dark" ? "bg-ink-soft/95! text-surface!" : "bg-surface/95! text-ink!";
+    }, []);
+    const isDark = variant === "dark";
+	const menuClassName = isDark ? "bg-ink-soft/95 text-surface" : "bg-surface/95";
+    const menuItemClassName = isDark ? "text-surface" : "text-ink";
 	if (horizontal) {
 		return (
 			<div className="hidden lg:flex flex-1 lg:grow lg:gap-4 lg:items-center lg:justify-end">
@@ -97,7 +98,7 @@ export default function NavMenu({
 									color="inherit"
 									size="small"
 									variant="text"
-									className={`text-sm mr-4 no-underline! capitalize! font-medium tracking-tight relative transition-colors after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-0 after:transition-all after:duration-300 hover:after:w-full ${
+									className={`text-sm mr-4 no-underline! capitalize!  relative transition-colors after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-0 after:transition-all after:duration-300 rounded-md hover:after:w-full ${
 										variant === "dark"
 											? "text-surface hover:text-primary-300 after:bg-primary-300"
 											: "text-ink hover:text-primary-500 after:bg-primary"
@@ -112,13 +113,16 @@ export default function NavMenu({
 									onClose={() => handleClose(i)}
 									anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
 									transformOrigin={{ vertical: "top", horizontal: "center" }}
-									className={`rounded-xl hairline transition-all duration-500 ${menuClassName} backdrop-blur-lg card-shadow`}
+									className={`rounded-lg border transition-all duration-500 ${menuClassName} backdrop-blur-lg card-shadow p-2 ${
+										variant === "dark" ? "border-white/10" : "border-ink/10"
+									}`}
 									style={{ marginTop: 10, minWidth: 260 }}
 								>
 									<NavMenu
 										items={item.links}
 										locale={locale}
-										localizePath={localizePath}
+                                        localizePath={localizePath}
+                                        variant={variant}
 									/>
 								</Menu>
 							</div>
@@ -130,7 +134,7 @@ export default function NavMenu({
 							href={localizePath(item.href, locale)}
 							locale={false}
 							key={`nav-${i}`}
-							className={`mr-4 inline-flex cursor-pointer select-none items-center justify-center px-[5px] py-1 text-sm no-underline! capitalize! font-medium tracking-tight relative transition-colors after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-0 after:transition-all after:duration-300 hover:after:w-full ${
+							className={`mr-4 inline-flex cursor-pointer select-none items-center justify-center px-[5px] py-1 text-sm no-underline! capitalize!  relative transition-colors after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-0 after:transition-all after:duration-300 hover:after:w-full ${
 								variant === "dark"
 									? "text-surface hover:text-primary-300 after:bg-primary-300"
 									: "text-on-surface hover:text-primary-500 after:bg-primary"
@@ -161,7 +165,7 @@ export default function NavMenu({
 									handleOpen(i, e.currentTarget);
 								}}
 								onMouseLeave={() => scheduleClose(i)}
-								className="text-sm font-medium tracking-tight text-ink hover:bg-primary-50"
+								className={`text-sm  tracking-tight hover:text-primary ${menuItemClassName}`}
 							>
 								<span className="flex items-center gap-2">
 									{item.href && (
@@ -169,7 +173,7 @@ export default function NavMenu({
 											href={localizePath(item.href, locale)}
 											locale={false}
 											onClick={() => handleClose()}
-											className="no-underline py-1 px-2 hover:text-primary rounded-md text-inherit"
+											className="no-underline py-1 px-2  rounded-md text-inherit"
 										>
 											{item.label}
 										</Link>
@@ -178,7 +182,7 @@ export default function NavMenu({
 								</span>
 
 								<span
-									className="mdi mdi-chevron-right text-xl text-primary"
+									className="mdi mdi-chevron-right text-xl text-inherit"
 									aria-hidden="true"
 								/>
 							</MenuItem>
@@ -191,13 +195,14 @@ export default function NavMenu({
 								transformOrigin={{ vertical: "top", horizontal: "left" }}
 								onMouseEnter={cancelClose}
 								onMouseLeave={() => scheduleClose(i)}
-								className="rounded-xl hairline bg-surface/95! backdrop-blur-md! card-shadow"
+								className="rounded-lg border border-ink/10 bg-surface/95! backdrop-blur-md! card-shadow p-2"
 								style={{ marginLeft: 8, minWidth: 220 }}
 							>
 								<NavMenu
 									items={item.links}
 									locale={locale}
 									localizePath={localizePath}
+									variant={variant}
 								/>
 							</Menu>
 						</div>
@@ -209,7 +214,7 @@ export default function NavMenu({
 						key={`item-${i}`}
 						href={localizePath(item.href, locale)}
 						onClick={() => handleClose()}
-						className="text-sm font-medium tracking-tight text-ink hover:bg-primary-50"
+						className={`text-sm  ${menuItemClassName}`}
 					>
 						{item.label}
 					</MenuItem>

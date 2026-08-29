@@ -75,7 +75,7 @@ export default function FooterInk() {
 								height={40}
 							/>
 							<span className="flex flex-col leading-tight">
-								<span className="text-xl font-semibold tracking-wide text-surface uppercase">
+								<span className="text-xl font-display font-semibold tracking-wide text-surface uppercase">
 									{title}
 								</span>
 								<span className="mt-0.5 text-[9px] uppercase tracking-[0.28em] text-primary-300">

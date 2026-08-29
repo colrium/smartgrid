@@ -56,10 +56,10 @@ export default function FooterLight() {
 								height={36}
 							/>
 							<span className="flex flex-col leading-tight">
-								<span className="text-xl font-semibold tracking-wide text-ink uppercase">
+								<span className="text-xl font-semibold font-display tracking-wide text-ink uppercase">
 									{title}
 								</span>
-								<span className="mt-0.5 text-[9px] uppercase tracking-[0.28em] text-accent">
+								<span className="mt-0.5 text-[7px]  text-accent">
 									{subtitle}
 								</span>
 							</span>

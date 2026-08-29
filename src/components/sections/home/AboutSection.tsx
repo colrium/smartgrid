@@ -107,7 +107,6 @@ export const AboutSection: React.FC = () => {
 											src={t("home:about.featureImg.url")}
 											alt={t("home:about.featureImg.alt")}
 											fill
-											quality={70}
 											sizes="(min-width: 1024px) 384px, min(100vw, 448px)"
 											className="object-cover object-top transition-transform duration-700 group-hover:scale-105 opacity-80"
 										/>

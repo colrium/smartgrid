@@ -334,7 +334,7 @@ export default function HeroScene() {
 		// --- Load GLB Drone Model ---
 		let mixer: THREE.AnimationMixer | null = null;
 		const dracoLoader = new DRACOLoader();
-		dracoLoader.setDecoderPath("https://www.gstatic.com/draco/versioned/decoders/1.5.6/");
+		dracoLoader.setDecoderPath("/draco/");
 
 		const gltfLoader = new GLTFLoader();
 		gltfLoader.setDRACOLoader(dracoLoader);
