@@ -5,7 +5,6 @@ import {
 	cloneElement,
 	isValidElement,
 	useId,
-	useRef,
 	useState,
 } from "react";
 import type {
@@ -185,7 +184,10 @@ export function Select({
 }: SelectProps): ReactElement {
 	const autoId = useId();
 	const fieldId = id ?? autoId;
-	const fieldRef = useRef<HTMLButtonElement>(null);
+	// anchorEl is kept in state (not a ref) so it can be read during render
+	// and passed to Menu without violating React's "no refs during render" rule.
+	// The callback ref on the <button> below populates it.
+	const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
 	const [open, setOpen] = useState(false);
 	const [focused, setFocused] = useState(false);
 
@@ -290,7 +292,7 @@ export function Select({
 		<div className={`${fullWidth ? "w-full " : ""}${className}`}>
 			<div className={variant === "standard" ? "relative z-0" : "relative"}>
 				<button
-					ref={fieldRef}
+					ref={setAnchorEl}
 					id={fieldId}
 					type="button"
 					role="combobox"
@@ -342,11 +344,11 @@ export function Select({
 			</div>
 			<Menu
 				open={open}
-				anchorEl={fieldRef.current}
+				anchorEl={anchorEl}
 				onClose={() => setOpen(false)}
 				anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
 				transformOrigin={{ vertical: "top", horizontal: "left" }}
-				style={{ marginTop: 8, minWidth: fieldRef.current?.offsetWidth }}
+				style={{ marginTop: 8 }}
 				className="max-h-60 overflow-y-auto rounded-[20px] border border-ink/10 bg-surface py-1.5 card-shadow"
 				role="listbox"
 			>

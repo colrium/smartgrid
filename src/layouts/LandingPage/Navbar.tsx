@@ -93,6 +93,7 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 		}
 		const localizedPath = localizePath(router.asPath, newLocale);
 
+		// eslint-disable-next-line react-hooks/immutability
 		document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000; SameSite=Lax`;
 		await i18n.changeLanguage(newLocale);
 		await router.replace(localizedPath, undefined, { locale: false });
