@@ -31,7 +31,6 @@ module.exports = {
 		const productSlugs = productPagesSlugs;
 		const productRoutes = productSlugs.map((slug) => `/equipment-sale/${slug}`);
 		const allRoutes = [...staticRoutes, ...productRoutes];
-		console.log("staticRoutes", staticRoutes);
 		const paths = [];
 		for (const route of allRoutes) {
 			for (const locale of locales) {
@@ -41,7 +40,6 @@ module.exports = {
 		return paths;
 	},
     transform: async (config, urlPath) => {
-        console.log("transform input:", urlPath);
 		const segments = urlPath.split("/").filter(Boolean);
 		const hasLocalePrefix = locales.includes(segments[0]);
 		const routeWithoutLocale = hasLocalePrefix ? "/" + segments.slice(1).join("/") : urlPath; // already locale-less (auto-crawled entry) — leave as-is
@@ -56,6 +54,10 @@ module.exports = {
 			alternateRefs: locales.map((l) => ({
 				href: `${config.siteUrl}/${l}${normalizedRoute === "/" ? "" : normalizedRoute}`,
 				hreflang: l,
+				// next-sitemap re-appends the page path (field.loc) to every alternate
+				// href unless hrefIsAbsolute is set, which produced doubled urls like
+				// /sw/terms-of-use/sw/terms-of-use - mark our fully-qualified hrefs as absolute.
+				hrefIsAbsolute: true,
 			})),
 		};
 	},
