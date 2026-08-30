@@ -6,22 +6,32 @@ const locales = i18nextConfig?.i18n?.locales || ["en"];
 const defaultLocale = i18nextConfig?.i18n?.defaultLocale || "en";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://smartgridsurveying.com";
 
+const staticPagesSlugs = getStaticPagesSlugs();
+const productPagesSlugs = getProductSlugs();
 module.exports = {
 	siteUrl, // your environment domain, no trailing slash
 	generateRobotsTxt: true,
 	generateIndexSitemap: false, // only needed for very large sites (many thousands of URLs)
 	sitemapSize: 5000,
-	exclude: ["/api/*", "/404", "/500", "/[locale]/404", "/[locale]/500", "/[locale]/*"],
+	exclude: [
+		"/api/*",
+		"/404",
+		"/500",
+		"/[locale]/*",
+		...staticPagesSlugs,
+		...staticPagesSlugs.map((s) => `${s}/*`),
+		...locales.flatMap((l) => [`/${l}`, `/${l}/*`]), // block ALL auto-crawled locale pages
+	],
 	robotsTxtOptions: {
 		policies: [{ userAgent: "*", allow: "/" }],
 		additionalSitemaps: [`${siteUrl}/sitemap.xml`],
 	},
 	additionalPaths: async (config) => {
-		const staticRoutes = ["", ...getStaticPagesSlugs()];
-		const productSlugs = getProductSlugs();
+		const staticRoutes = ["", ...staticPagesSlugs];
+		const productSlugs = productPagesSlugs;
 		const productRoutes = productSlugs.map((slug) => `/equipment-sale/${slug}`);
 		const allRoutes = [...staticRoutes, ...productRoutes];
-
+		console.log("staticRoutes", staticRoutes);
 		const paths = [];
 		for (const route of allRoutes) {
 			for (const locale of locales) {
@@ -30,18 +40,21 @@ module.exports = {
 		}
 		return paths;
 	},
-	transform: async (config, path) => {
-		const locale = path.split("/")[1];
-		const routeWithoutLocale = path.replace(`/${locale}`, "") || "/";
-		const isProduct = routeWithoutLocale.startsWith("/equipment-sale/");
+    transform: async (config, urlPath) => {
+        console.log("transform input:", urlPath);
+		const segments = urlPath.split("/").filter(Boolean);
+		const hasLocalePrefix = locales.includes(segments[0]);
+		const routeWithoutLocale = hasLocalePrefix ? "/" + segments.slice(1).join("/") : urlPath; // already locale-less (auto-crawled entry) — leave as-is
+		const normalizedRoute = routeWithoutLocale === "" ? "/" : routeWithoutLocale;
+		const isProduct = normalizedRoute.startsWith("/equipment-sale/");
 
 		return {
-			loc: path,
+			loc: urlPath,
 			changefreq: isProduct ? "weekly" : config.changefreq,
-			priority: routeWithoutLocale === "/" ? 1.0 : isProduct ? 0.8 : config.priority,
+			priority: normalizedRoute === "/" ? 1.0 : isProduct ? 0.8 : config.priority,
 			lastmod: new Date().toISOString(),
 			alternateRefs: locales.map((l) => ({
-				href: `${config.siteUrl}/${l}${routeWithoutLocale === "/" ? "" : routeWithoutLocale}`,
+				href: `${config.siteUrl}/${l}${normalizedRoute === "/" ? "" : normalizedRoute}`,
 				hreflang: l,
 			})),
 		};
