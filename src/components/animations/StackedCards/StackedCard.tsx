@@ -22,7 +22,6 @@ const StackedCard = ({
 	title,
 	description,
 	src,
-	url,
 	color,
 	progress,
 	range,

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useCallback, useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Button } from "@/components/ui/Button";
@@ -37,22 +37,25 @@ export default function NavMenu({
 		setOpenMenuIndex(index);
 	};
 
-	const cancelClose = () => {
+	const cancelClose = useCallback(() => {
 		if (closeTimer.current !== null) {
 			window.clearTimeout(closeTimer.current);
 			closeTimer.current = null;
 		}
-	};
+	}, []);
 
-	const handleClose = (index?: number) => {
-		cancelClose();
-		if (typeof index === "number") {
-			setAnchorMap((s) => ({ ...s, [index]: null }));
-		} else {
-			setAnchorMap({});
-		}
-		setOpenMenuIndex(null);
-	};
+	const handleClose = useCallback(
+		(index?: number) => {
+			cancelClose();
+			if (typeof index === "number") {
+				setAnchorMap((s) => ({ ...s, [index]: null }));
+			} else {
+				setAnchorMap({});
+			}
+			setOpenMenuIndex(null);
+		},
+		[cancelClose],
+	);
 
 	// Small grace period before closing hover-opened submenus so the pointer
 	// can travel across the gap between the item and the popup.
@@ -68,7 +71,7 @@ export default function NavMenu({
 		return () => {
 			router.events.off("routeChangeStart", closeDropdown);
 		};
-    }, []);
+	}, [router.events, handleClose]);
     const isDark = variant === "dark";
 	const menuClassName = isDark ? "bg-ink-soft/95 text-surface" : "bg-surface/95";
     const menuItemClassName = isDark ? "text-surface" : "text-ink";

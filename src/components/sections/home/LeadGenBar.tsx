@@ -24,7 +24,7 @@ const GLOW_MASK =
 
 const LeadGenBar: React.FC<{ className?: string }> = ({ className }) => {
     
-    const { t, i18n } = useTranslation(["home"]);
+    const { t } = useTranslation(["home"]);
     const leadGenItems = t("home:leadGenBar.items", { returnObjects: true }) as unknown as LeadGenItem[];
 
     return (

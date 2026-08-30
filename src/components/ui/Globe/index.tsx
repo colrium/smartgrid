@@ -1,6 +1,6 @@
 // @ts-nocheck
 import GlobeGl, { GlobeMethods, GlobeProps } from "react-globe.gl";
-import { useEffect, useRef,  } from "react";
+import { useEffect, useMemo, useRef,  } from "react";
 import { useSetState, useTranslation } from "@/hooks";
 import { useBreakpoint } from "@/hooks/useWindowSize";
 
@@ -41,7 +41,7 @@ const sizes = {
 	xl: 600,
 };
 
-const Globe = ({ className, placesData = [], labelDotOrientation, ...rest }: GlobeProps & GlobeProps) => {
+const Globe = ({ labelDotOrientation, ...rest }: GlobeProps & GlobeProps) => {
 	const globeEl = useRef<GlobeMethods | undefined>(undefined);
     const [state, setState] = useSetState({ loading: false, countriesFeatures: [], altitude: 0.05 });
     const { t } = useTranslation(["common"]);
@@ -49,7 +49,12 @@ const Globe = ({ className, placesData = [], labelDotOrientation, ...rest }: Glo
 		returnObjects: true,
 	}) as unknown as ProjectByCountry[];
 
-    const countriesNames = projectsByCountry.map((c) => c.name.toLocaleLowerCase());
+    // Memoized so the fetch effect below only re-runs when the country list
+    // actually changes, not on every render.
+    const countriesNames = useMemo(
+        () => projectsByCountry.map((c) => c.name.toLocaleLowerCase()),
+        [projectsByCountry],
+    );
     const dataByCountry = projectsByCountry.reduce((acc, c) => {
         acc[c.name.toLocaleLowerCase()] = {
 			totalHa: c.totalHa,
@@ -81,8 +86,8 @@ const Globe = ({ className, placesData = [], labelDotOrientation, ...rest }: Glo
 					countriesFeatures,
 				});
             })
-            .catch(e => setState({laoding: false}));
-	}, []);
+            .catch(() => setState({ loading: false }));
+	}, [countriesNames, setState]);
 
 	return (
 		<div>

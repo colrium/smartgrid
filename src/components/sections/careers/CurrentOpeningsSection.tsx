@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionHeader } from "@/components/sections/home/SectionHeader";
@@ -399,8 +399,14 @@ export function CurrentOpeningsSection() {
 		returnObjects: true,
 	}) as unknown as CurrentOpeningsContent;
 
-	const [mounted, setMounted] = useState(false);
-	useEffect(() => setMounted(true), []);
+	// Hydration-safe "mounted" flag: false during SSR + hydration, true after.
+	// Lets date formatting / "deadline passed" checks render stable markup on
+	// the server and only specialize on the client after mount.
+	const mounted = useSyncExternalStore(
+		() => () => undefined,
+		() => true,
+		() => false,
+	);
 
 	const [activeTor, setActiveTor] = useState<Opening | null>(null);
 

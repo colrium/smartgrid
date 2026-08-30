@@ -139,16 +139,6 @@ export default function HeroScene() {
 
 		if (!container) return;
 
-		// --- Low-end device guard ---
-		// The full-window WebGL scene is far too heavy for low-core / low-memory
-		// devices (and software rasterizers) — skip it entirely there; the hero
-		// content and fixed instrument frame carry the design on their own.
-		const nav = navigator as Navigator & { deviceMemory?: number };
-		const isLowEndDevice =
-            (nav.hardwareConcurrency ?? 8) <= 4 || (nav.deviceMemory ?? 8) <= 4;
-        
-		// if (isLowEndDevice) return;
-
 		// --- Viewport Observer ---
 		let isInViewport = true;
 		const observer = new IntersectionObserver(

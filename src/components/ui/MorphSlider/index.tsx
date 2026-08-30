@@ -576,7 +576,23 @@ export default function MorphSlider({
 		loop,
 		fit: imageFit,
 	});
-	optsRef.current = {
+
+	// Keep the engine's options in sync after commit — the engine reads them
+	// lazily via getOptions() whenever it starts a transition.
+	useEffect(() => {
+		optsRef.current = {
+			transition,
+			duration,
+			ease,
+			intensity,
+			scale,
+			aberration,
+			drift,
+			overlayColor,
+			loop,
+			fit: imageFit,
+		};
+	}, [
 		transition,
 		duration,
 		ease,
@@ -586,8 +602,8 @@ export default function MorphSlider({
 		drift,
 		overlayColor,
 		loop,
-		fit: imageFit,
-	};
+		imageFit,
+	]);
 
 	useEffect(() => {
 		if (!containerRef.current) return undefined;

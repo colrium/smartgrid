@@ -47,9 +47,7 @@ export interface RevealProps {
 // ─── Shared eases ─────────────────────────────────────────────────────────────
 
 const EXPO = cubicBezier(0.16, 1, 0.3, 1);
-const CIRC = cubicBezier(0.85, 0, 0.15, 1);
 const BACK = cubicBezier(0.34, 1.56, 0.64, 1); // slight overshoot
-const SLIDE = cubicBezier(0.77, 0, 0.175, 1);
 const SLOW = cubicBezier(0.25, 0.46, 0.45, 0.94);
 
 // ─── Helper: shared inView + transition ──────────────────────────────────────
@@ -508,11 +506,6 @@ export function MaskReveal({
 
 	const isHorizontal = direction === "right" || direction === "left";
 	const axis = isHorizontal ? "to right" : "to bottom";
-
-	// We animate a CSS gradient mask from fully hidden to fully visible
-	const hiddenMask = isHorizontal
-		? `linear-gradient(${axis}, transparent 0%, transparent 0%, transparent 100%)`
-		: `linear-gradient(${axis}, transparent 0%, transparent 0%, transparent 100%)`;
 
 	// Revealed: the gradient wipes from the entry side to full opacity
 	const startOpaque = direction === "right" || direction === "down";

@@ -19,7 +19,7 @@ interface ProductHeroSectionProps {
 const formatAmount = (amount: number) => amount.toLocaleString("en-US");
 
 export function ProductHeroSection({ namespace }: ProductHeroSectionProps) {
-	const { t, tObject } = useTranslation([namespace]);
+	const { t } = useTranslation([namespace]);
 	const hero = t(`${namespace}:hero`, { returnObjects: true }) as unknown as ProductHeroContent;
     const breadcrumb = t(`${namespace}:breadcrumb`, { returnObjects: true }) as unknown as BreadcrumbContent;
     const catalogue = t(`${namespace}:catalogue`, {

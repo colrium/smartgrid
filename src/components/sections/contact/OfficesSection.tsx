@@ -50,7 +50,12 @@ export function OfficesSection() {
 	const section = t("contact:offices", {
 		returnObjects: true,
 	}) as unknown as OfficesContent;
-	const offices = Array.isArray(section.items) ? section.items : [];
+	// Memoized so the `markers` useMemo below doesn't get a fresh array (and
+	// recompute) on every render.
+	const offices = useMemo(
+		() => (Array.isArray(section.items) ? section.items : []),
+		[section.items],
+	);
 
 	// Map markers for offices that carry accurate coordinates.
 	const markers = useMemo(

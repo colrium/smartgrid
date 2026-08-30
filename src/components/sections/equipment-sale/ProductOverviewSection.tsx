@@ -27,11 +27,6 @@ export function ProductOverviewSection({ namespace }: ProductOverviewSectionProp
 	const section = t(`${namespace}:productOverview`, {
 		returnObjects: true,
 	}) as unknown as ProductOverviewContent;
-	const images = Array.isArray(section?.images)
-		? section.images.map(image => image?.url?? image).filter(
-				(src): src is string => typeof src === "string" && src.startsWith("/"),
-			)
-		: [];
     /* const accordionGalleryItems: AccordionGalleryItem[] = Array.isArray(section?.images)
 		? section.images.map((image, index) => ({
 				image: image?.url || image,
@@ -42,7 +37,7 @@ export function ProductOverviewSection({ namespace }: ProductOverviewSectionProp
 			}))
 		: []; */
         const morphSliderItems = Array.isArray(section?.images)
-			? section.images.map((image, index) => ({
+			? section.images.map((image) => ({
 					image: image?.url || image,
 					caption: image?.label || undefined
 				}))

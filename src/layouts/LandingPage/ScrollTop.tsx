@@ -57,7 +57,7 @@ const ScrollTop = ({
 				inline: "nearest",
 			});
 		}
-	}, [anchorRef?.current]);
+	}, [anchorRef, lenis, querySelector]);
 
 	return (
 		<motion.button

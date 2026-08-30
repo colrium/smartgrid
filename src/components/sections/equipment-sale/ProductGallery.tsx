@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState, type MouseEvent } from "react";
+import { useCallback, useState, type MouseEvent } from "react";
 import Image from "next/image";
 import {
 	MediaImage,
@@ -25,7 +25,7 @@ export function ProductGallery({ images, alt, className = "" }: ProductGalleryPr
 	const go = useCallback(
 		(next: number) => {
 			if (count <= 1) return;
-			setActive((current) => (next + count) % count);
+			setActive((_current) => (next + count) % count);
 		},
 		[count],
 	);
@@ -39,12 +39,11 @@ export function ProductGallery({ images, alt, className = "" }: ProductGalleryPr
 
 	const handleMouseLeave = () => setZoom(null);
 
-	useEffect(() => {
-		if (active >= count) setActive(0);
-	}, [active, count]);
-
 	if (count === 0) return null;
-    const activeImage = images[active] ?? images[0];
+	// Derive (don't sync) the visible index so a shrunken `images` array can
+	// never leave `active` pointing past the end of the list.
+	const activeIndex = active < count ? active : 0;
+	const activeImage = images[activeIndex] ?? images[0];
 	const current = typeof activeImage === "object" ? activeImage?.url : activeImage;
 
 	return (
@@ -68,7 +67,7 @@ export function ProductGallery({ images, alt, className = "" }: ProductGalleryPr
 				<div className="relative z-10 h-full w-full p-6 sm:p-8">
 					<Image
 						src={current}
-						alt={`${alt} - image ${active + 1}`}
+						alt={`${alt} - image ${activeIndex + 1}`}
 						fill
 						sizes="(min-width: 1024px) 45vw, 100vw"
 						className="object-contain object-center transition-transform duration-300 ease-out"
@@ -76,7 +75,7 @@ export function ProductGallery({ images, alt, className = "" }: ProductGalleryPr
 							transformOrigin: zoom ? `${zoom.x}% ${zoom.y}%` : "50% 50%",
 							transform: zoom?.active ? "scale(1.8)" : undefined,
 						}}
-						priority={active === 0}
+						priority={activeIndex === 0}
 					/>
 				</div>
 
@@ -85,7 +84,7 @@ export function ProductGallery({ images, alt, className = "" }: ProductGalleryPr
 						<button
 							type="button"
 							aria-label="Previous image"
-							onClick={() => go(active - 1)}
+							onClick={() => go(activeIndex - 1)}
 							className="absolute left-4 top-1/2 -translate-y-1/2 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-surface/85 text-ink shadow-md backdrop-blur transition-colors duration-300 hover:bg-primary hover:text-surface cursor-pointer"
 						>
 							<span className="mdi mdi-chevron-left text-2xl" />
@@ -93,7 +92,7 @@ export function ProductGallery({ images, alt, className = "" }: ProductGalleryPr
 						<button
 							type="button"
 							aria-label="Next image"
-							onClick={() => go(active + 1)}
+							onClick={() => go(activeIndex + 1)}
 							className="absolute right-4 top-1/2 -translate-y-1/2 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-surface/85 text-ink shadow-md backdrop-blur transition-colors duration-300 hover:bg-primary hover:text-surface cursor-pointer"
 						>
 							<span className="mdi mdi-chevron-right text-2xl" />
@@ -111,7 +110,7 @@ export function ProductGallery({ images, alt, className = "" }: ProductGalleryPr
 							aria-label={`Show image ${index + 1}`}
 							onClick={() => setActive(index)}
 							className={`relative aspect-square overflow-hidden rounded-xl bg-surface transition-all duration-300 cursor-pointer ${
-								index === active
+								index === activeIndex
 									? "ring-2 ring-primary border-transparent"
 									: "hairline hover:border-primary/50"
 							}`}

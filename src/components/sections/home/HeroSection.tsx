@@ -56,7 +56,7 @@ export default function HeroSection() {
 	// the animated full-window canvas would otherwise saturate the CPU during
 	// load (the dominant Total Blocking Time + LCP delay in Lighthouse). The
 	// hero content and fixed instrument frame carry the design on their own.
-	const [sceneEnabled, setSceneEnabled] = useState(true);
+	const [sceneEnabled] = useState(true);
 
 	/* useEffect(() => {
 		const nav = navigator as Navigator & { deviceMemory?: number };
@@ -76,12 +76,13 @@ export default function HeroSection() {
 	const location = t("home:hero.location", { returnObjects: true }) as Location;
 	const scrollYPercentage = useMotionValue(0);
 
-	// Hero height is cached and only re-measured on resize — reading
-	// clientHeight on every scroll frame would force layout thrash.
-	let heroHeight = 900;
+	// Hero height is cached in a ref (so the Lenis callback reads the latest
+	// measurement without re-subscribing) and only re-measured on resize —
+	// reading clientHeight on every scroll frame would force layout thrash.
+	const heroHeightRef = useRef(900);
 	useLenis(
 		({ scroll }) => {
-			const progressPercentage = (scroll / heroHeight) * 100;
+			const progressPercentage = (scroll / heroHeightRef.current) * 100;
 			scrollYPercentage.set(progressPercentage);
 		},
 		[]
@@ -89,7 +90,7 @@ export default function HeroSection() {
 
 	useEffect(() => {
 		const measure = () => {
-			heroHeight = (heroRef.current?.clientHeight || 900) * 2;
+			heroHeightRef.current = (heroRef.current?.clientHeight || 900) * 2;
 		};
 		measure();
 		window.addEventListener("resize", measure);

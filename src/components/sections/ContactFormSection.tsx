@@ -2,29 +2,6 @@ import { useTranslation } from "@/hooks";
 import ContactForm from "../forms/ContactForm";
 import { SectionTag } from "../SectionTag";
 
-type Option = { value: string; label: string };
-type Field = {
-	label: string;
-	placeholder?: string;
-	required?: boolean;
-	type: string;
-	rows?: number;
-	options?: Option[];
-};
-
-type ReasonState = {
-	reason: string;
-	opportunity: string;
-	tier: string;
-	sent: boolean;
-	loading: boolean;
-	error: string | null;
-};
-
-function inputClassName() {
-	return "w-full rounded bg-surface border border-primary/15 px-4 py-3 text-sm text-on-surface-800 outline-none transition focus:border-primary placeholder:text-on-surface-800/35";
-}
-
 export default function ContactFormSection() {
 	const { t } = useTranslation(["contact", "common"]);
 	

@@ -4,8 +4,6 @@ type SetStateActionFunc<S> = (prevState: S) => Partial<S>;
 type SetStateAction<S> = Partial<S> | SetStateActionFunc<S>;
 type SetStateCallback = () => void;
 
-type ReducerState<S> = S extends object ? S : Record<string, unknown>;
-
 function useSetState<S extends object>(initialState: S) {
 	const callbackRef = useRef<SetStateCallback | undefined>(undefined);
 	const [state, dispatch] = useReducer((prevState: S, action: SetStateAction<S>): S => {

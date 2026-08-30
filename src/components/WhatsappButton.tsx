@@ -1,6 +1,4 @@
 import { useTranslation } from "@/hooks";
-import { useId } from "react";
-
 
 const getWhatsAppNumber = () => {
     const configuredNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
@@ -13,7 +11,6 @@ const getWhatsAppNumber = () => {
 const WhatsappButton = ({ className = "", ...rest }: React.ComponentProps<"a">) => {
 	const { t } = useTranslation("common");
 	const phoneNumber = getWhatsAppNumber();
-    const tooltipId = useId()
 
 	if (!phoneNumber) return null;
 

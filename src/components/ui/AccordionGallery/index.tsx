@@ -267,6 +267,7 @@ const AccordionGallery = ({
 									willChange: "transform, filter",
 								}}
 							>
+								{/* eslint-disable-next-line @next/next/no-img-element -- media is pan/zoom-animated via direct transforms and may be an arbitrary/external URL; next/image's optimizer adds no value here */}
 								<img
 									src={item.image}
 									alt={item.alt || item.label || ""}

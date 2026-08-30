@@ -24,7 +24,6 @@ export function PlanningInfographicSection() {
 	const section = t("home:planningInfographic", {
 		returnObjects: true,
 	}) as unknown as PlanningContent;
-	const benefits = Array.isArray(section?.benefits) ? section.benefits : [];
 
 	if (!section.headline) return null;
 

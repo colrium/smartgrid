@@ -3,11 +3,16 @@ import pluginNext from 'eslint-config-next';
 import pluginUnusedImports from 'eslint-plugin-unused-imports';
 
 export default defineConfig([
-  ...pluginNext.flat(),
-  {
-    plugins: {
-      'unused-imports': pluginUnusedImports,
-    },
+	...pluginNext.flat(),
+	{
+		// Vendored static assets are never part of the app bundle — skip linting
+		// them (public/draco ships minified third-party decoder output).
+		ignores: ["public/**"],
+	},
+	{
+		plugins: {
+			"unused-imports": pluginUnusedImports,
+		},
     rules: {
       'unused-imports/no-unused-imports': 'error',
       'unused-imports/no-unused-vars': [

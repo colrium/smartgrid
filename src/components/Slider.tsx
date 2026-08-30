@@ -54,7 +54,7 @@ export function Slider({
 		(next: number, dir: number) => {
 			if (count <= 1) return;
 			setDirection(dir);
-			setIndex((current) => (next + count) % count);
+			setIndex((_current) => (next + count) % count);
 		},
 		[count]
 	);

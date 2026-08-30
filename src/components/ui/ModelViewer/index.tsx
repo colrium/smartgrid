@@ -222,6 +222,66 @@ function Model({
 
 const FIT_MARGIN = 1.06;
 
+/**
+ * Imperative initial framing, run outside React's reactive graph: fits the
+ * model's max horizontal (turntable) radius to the horizontal FOV so the
+ * silhouette stays inside the frame at ANY yaw angle, re-fits on resize, and
+ * saves controls state so "Reset" restores this exact framing.
+ *
+ * Lives at module scope on purpose — the three.js camera/controls are mutable,
+ * non-reactive objects obtained from the R3F store, and mutating them here
+ * (not during render) is the sanctioned pattern for imperative scene setup.
+ */
+function applyAutoFit(
+	camera: PerspectiveCamera,
+	controls: OrbitControlsImpl,
+	group: Group,
+	minDistance?: number,
+	maxDistance?: number,
+): void {
+	group.updateWorldMatrix(true, true);
+	const box = new Box3().setFromObject(group);
+	if (box.isEmpty()) return;
+
+	const center = box.getCenter(new Vector3());
+
+	// Turntable-safe framing: use the largest horizontal radius from the
+	// center so the silhouette stays inside the frame at ANY yaw angle,
+	// not just the orientation present at load time.
+	let horizontalRadius = 0;
+	for (const x of [box.min.x, box.max.x]) {
+		for (const z of [box.min.z, box.max.z]) {
+			horizontalRadius = Math.max(
+				horizontalRadius,
+				Math.hypot(x - center.x, z - center.z),
+			);
+		}
+	}
+	const halfHeight = (box.max.y - box.min.y) / 2;
+	const radius = Math.hypot(horizontalRadius, halfHeight);
+
+	const vFov = (camera.fov * Math.PI) / 180;
+	const hFov = 2 * Math.atan(Math.tan(vFov / 2) * camera.aspect);
+	const distance =
+		FIT_MARGIN *
+		Math.max(
+			horizontalRadius / Math.tan(hFov / 2),
+			halfHeight / Math.tan(vFov / 2),
+		);
+
+	const dir = camera.position.clone().sub(center).normalize();
+	camera.position.copy(center).addScaledVector(dir, distance);
+	camera.near = Math.max(0.01, distance - radius * 2);
+	camera.far = Math.max(distance + radius * 10, 50);
+	camera.updateProjectionMatrix();
+
+	controls.target.copy(center);
+	controls.minDistance = Math.min(minDistance ?? Infinity, distance * 0.5);
+	controls.maxDistance = Math.max(maxDistance ?? 0, distance * 2.5);
+	controls.update();
+	controls.saveState();
+}
+
 function AutoFit({
 	minDistance,
 	maxDistance,
@@ -240,47 +300,7 @@ function AutoFit({
 		const group = groupRef.current;
 		if (!group || !controls) return;
 
-		group.updateWorldMatrix(true, true);
-		const box = new Box3().setFromObject(group);
-		if (box.isEmpty()) return;
-
-		const center = box.getCenter(new Vector3());
-
-		// Turntable-safe framing: use the largest horizontal radius from the
-		// center so the silhouette stays inside the frame at ANY yaw angle,
-		// not just the orientation present at load time.
-		let horizontalRadius = 0;
-		for (const x of [box.min.x, box.max.x]) {
-			for (const z of [box.min.z, box.max.z]) {
-				horizontalRadius = Math.max(
-					horizontalRadius,
-					Math.hypot(x - center.x, z - center.z),
-				);
-			}
-		}
-		const halfHeight = (box.max.y - box.min.y) / 2;
-		const radius = Math.hypot(horizontalRadius, halfHeight);
-
-		const vFov = (camera.fov * Math.PI) / 180;
-		const hFov = 2 * Math.atan(Math.tan(vFov / 2) * camera.aspect);
-		const distance =
-			FIT_MARGIN *
-			Math.max(
-				horizontalRadius / Math.tan(hFov / 2),
-				halfHeight / Math.tan(vFov / 2),
-			);
-
-		const dir = camera.position.clone().sub(center).normalize();
-		camera.position.copy(center).addScaledVector(dir, distance);
-		camera.near = Math.max(0.01, distance - radius * 2);
-		camera.far = Math.max(distance + radius * 10, 50);
-		camera.updateProjectionMatrix();
-
-		controls.target.copy(center);
-		controls.minDistance = Math.min(minDistance ?? Infinity, distance * 0.5);
-		controls.maxDistance = Math.max(maxDistance ?? 0, distance * 2.5);
-		controls.update();
-		controls.saveState();
+		applyAutoFit(camera, controls, group, minDistance, maxDistance);
 	}, [camera, controls, size.width, size.height, minDistance, maxDistance]);
 
 	return <group ref={groupRef}>{children}</group>;

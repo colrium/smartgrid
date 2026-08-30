@@ -3,7 +3,6 @@
 import { useRef } from "react";
 import { motion, useInView, cubicBezier } from "framer-motion"; 
 const EXPO = cubicBezier(0.16, 1, 0.3, 1);
-const SLOW = cubicBezier(0.25, 0.46, 0.45, 0.94);
 
 export default function ClipReveal({
 	children,

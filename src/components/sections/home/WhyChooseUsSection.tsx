@@ -12,15 +12,6 @@ interface WhyChooseUsItem {
 	description: string;
 }
 
-const FALLBACK_ICONS = [
-	"account-tie",
-	"access-point",
-	"briefcase-check",
-	"shield-check",
-	"emoticon-happy",
-	"trophy",
-];
-
 export function WhyChooseUsSection() {
 	const { t } = useTranslation(["home"]);
 	const items = t("home:whyChooseUs.items", {

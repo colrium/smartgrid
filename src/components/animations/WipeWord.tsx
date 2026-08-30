@@ -3,12 +3,9 @@ import {
 	useScroll,
 	useTransform,
 	useSpring,
-	cubicBezier,
 } from "framer-motion";
 type ScrollYProgress = ReturnType<typeof useScroll>["scrollYProgress"];
 // ─── Eases ───────────────────────────────────────────────────────────────────
-const EXPO = cubicBezier(0.16, 1, 0.3, 1);
-const SLIDE = cubicBezier(0.77, 0, 0.175, 1);
 // ─── Scroll-wipe word reveal (orange or black) ────────────────────────────────
 //
 //  How it works:

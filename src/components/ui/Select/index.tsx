@@ -298,6 +298,7 @@ export function Select({
 					role="combobox"
 					aria-haspopup="listbox"
 					aria-expanded={open}
+					aria-controls={open ? `${fieldId}-listbox` : undefined}
 					aria-describedby={helperText ? `${fieldId}-helper` : undefined}
 					data-empty={atRest ? "true" : undefined}
 					data-float={shouldFloat ? "true" : undefined}
@@ -351,6 +352,7 @@ export function Select({
 				style={{ marginTop: 8 }}
 				className="max-h-60 overflow-y-auto rounded-[20px] border border-ink/10 bg-surface py-1.5 card-shadow"
 				role="listbox"
+				id={`${fieldId}-listbox`}
 			>
 				{options.map((option) =>
 					cloneElement(option.element, {

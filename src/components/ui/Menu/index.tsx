@@ -32,6 +32,8 @@ export type MenuProps = {
 	style?: CSSProperties;
 	/** ARIA role for the popup container. Defaults to "menu". */
 	role?: string;
+	/** Optional id for the popup container (e.g. for aria-controls wiring). */
+	id?: string;
 	children?: ReactNode;
 	onMouseEnter?: MouseEventHandler<HTMLDivElement>;
 	onMouseLeave?: MouseEventHandler<HTMLDivElement>;
@@ -57,6 +59,7 @@ export function Menu({
 	className = "",
 	style,
 	role = "menu",
+	id,
 	children,
 	onMouseEnter,
 	onMouseLeave,
@@ -138,6 +141,7 @@ export function Menu({
 	return createPortal(
 		<div
 			ref={menuRef}
+			id={id}
 			role={role}
 			onMouseEnter={onMouseEnter}
 			onMouseLeave={onMouseLeave}

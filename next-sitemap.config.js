@@ -66,7 +66,7 @@ function getStaticPagesSlugs() {
 	const filePath = path.join(process.cwd(), "public", "locales", defaultLocale, "meta.json");
     const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
     
-    return [...(new Set(Object.entries(data.pages).reduce((acc, [key, props]) => {
+    return [...(new Set(Object.entries(data.pages).reduce((acc, [, props]) => {
         const slug = `${props.slug?.startsWith?.("/") ? "" : "/"}${props.slug || ""}`;
         // acc = acc.concat([slug, `/[locale]${slug}`])
         acc = acc.concat([slug]);

@@ -3,11 +3,6 @@ import { useRouter } from 'next/router'
 import languageDetector from './languageDetector'
 import i18nextConfig from '../../next-i18next.config'
 
-type LanguageDetector = {
-  detect: () => string
-  cache: (lng: string) => void
-}
-
 const supportedLocales = i18nextConfig?.i18n?.locales ?? []
 const defaultLocale = i18nextConfig?.i18n?.defaultLocale ?? 'en'
 

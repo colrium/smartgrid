@@ -100,7 +100,7 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 	};
 
 	useLenis(
-		({ scroll, limit }) => {
+		({ scroll }) => {
             const progress = (scroll / window.innerHeight) * 100;
             const isWindowScrolled = progress >= 2;
             if (isWindowScrolled !== state.isWindowScrolled) {

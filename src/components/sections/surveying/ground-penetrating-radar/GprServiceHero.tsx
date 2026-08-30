@@ -34,7 +34,6 @@ export function GprServiceHero() {
 	const hero = t("ground-penetrating-radar:hero", {
 		returnObjects: true,
 	}) as unknown as GprHeroContent;
-	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");
     const images = Array.isArray(hero?.images) ? hero.images : [];
     const slides = images
 		.filter((item) => {

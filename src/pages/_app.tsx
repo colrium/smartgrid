@@ -2,7 +2,6 @@
 import "@/styles/globals.css";
 import { appWithTranslation } from "next-i18next/pages";
 import {  type ReactElement } from "react";
-import { useRouter } from 'next/router';
 import i18nextConfig from "../../next-i18next.config";
 import type { AppPropsWithLayout } from "@/types/next";
 import LandingPageLayout from "@/layouts/LandingPage/Layout";
@@ -32,10 +31,8 @@ const fontDisplay = localFont({
 
 const withLandingPageLayout = (page: ReactElement) => <LandingPageLayout>{page}</LandingPageLayout>;
 function App({ Component, pageProps }: AppPropsWithLayout) {
-    const router = useRouter();
     const renderPageWithLayout = Component.getLayout ?? withLandingPageLayout;
-    const locale = router.locale as string;
-    
+
 
 	useEffect(() => {
 		// Load the MDI icon-font stylesheet at runtime instead of shipping it in

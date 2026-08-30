@@ -13,18 +13,6 @@ interface ExpertiseItem {
 	href?: string;
 }
 
-const EXPERTISE_ICONS: Record<string, string> = {
-	"topographical & engineering surveys": "terrain",
-	"drone mapping & photogrammetry": "quadcopter",
-	"construction & site control": "hard-hat",
-	"infrastructure support": "bridge",
-};
-
-const DEFAULT_ICONS = ["terrain", "quadcopter", "hard-hat", "bridge"];
-
-const expertiseIcon = (label: string, index: number) =>
-	EXPERTISE_ICONS[label.trim().toLowerCase()] || DEFAULT_ICONS[index % DEFAULT_ICONS.length];
-
 export function CoreExpertiseSection() {
 	const { t } = useTranslation(["home"]);
 	const items = t("home:coreExpertise.items", {

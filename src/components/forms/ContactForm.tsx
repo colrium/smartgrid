@@ -95,7 +95,7 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
 			opportunity: opportunity || current.opportunity,
 			tier: tier || current.tier,
 		}));
-	}, [opportunityQuery, reasonQuery, tierQuery]);
+	}, [opportunityQuery, reasonQuery, tierQuery, setValues]);
 
 	const tierOptions = useMemo(() => fields.investor_tier.options ?? [], [fields]);
 
@@ -104,7 +104,7 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
 		if (formspree.succeeded) {
 			setValues(initialValues);
 		}
-	}, [formspree.succeeded]);
+	}, [formspree.succeeded, setValues]);
 
 	const consentPrefix = fields.consent.label_prefix ?? fields.consent.label;
 	const consentSuffix = fields.consent.label_suffix ?? "";
