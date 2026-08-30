@@ -15,7 +15,6 @@ import {
 	OrbitControls,
 	ContactShadows,
 	Environment,
-	Html,
 	useProgress,
 	useGLTF,
 	useAnimations,
@@ -78,14 +77,47 @@ export interface ModelViewerProps {
 }
 
 /* ------------------------------------------------------------------ */
-/* Loader (Suspense fallback) — isolated re-renders via useProgress    */
+/* LoadingOverlay — rendered OUTSIDE the Canvas (and outside the       */
+/* opacity-0 canvas wrapper), because drei's useProgress() is a global */
+/* zustand store hook that does not require R3F context. The previous  */
+/* Suspense fallback lived inside the fade-in wrapper, so the progress */
+/* indicator was invisible during the whole GLB fetch.                 */
 /* ------------------------------------------------------------------ */
 
-function Loader() {
-	const { progress } = useProgress();
+function LoadingOverlay({ ready }: { ready: boolean }) {
+	const { active, progress } = useProgress();
+	const boxRef = useRef<HTMLDivElement>(null);
+
+	// Ref-driven visibility (no setState): toggles the CSS classes directly,
+	// same imperative pattern the canvas wrapper fade-in uses.
+	useEffect(() => {
+		const el = boxRef.current;
+		if (!el) return;
+		const loading = active && progress < 100 && !ready;
+		if (!loading) {
+			el.classList.remove("opacity-100");
+			el.classList.add("opacity-0");
+			el.setAttribute("aria-hidden", "true");
+			return;
+		}
+		// Small delay so near-instant cached loads don't flash the overlay.
+		const timer = setTimeout(() => {
+			el.classList.remove("opacity-0");
+			el.classList.add("opacity-100");
+			el.setAttribute("aria-hidden", "false");
+		}, 200);
+		return () => clearTimeout(timer);
+	}, [active, progress, ready]);
+
 	return (
-		<Html center>
-			<div className="flex w-36 flex-col items-center gap-2">
+		<div
+			ref={boxRef}
+			role="status"
+			aria-live="polite"
+			aria-hidden="true"
+			className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center opacity-0 transition-opacity duration-300 ease-out"
+		>
+			<div className="flex w-36 flex-col items-center gap-2 rounded-xl bg-surface/70 p-4 backdrop-blur-sm">
 				<div className="h-1 w-full overflow-hidden rounded-full bg-on-surface/10">
 					<div
 						className="h-full rounded-full bg-primary transition-[width] duration-150 ease-out"
@@ -96,7 +128,7 @@ function Loader() {
 					{Math.round(progress)}%
 				</span>
 			</div>
-		</Html>
+		</div>
 	);
 }
 
@@ -169,7 +201,7 @@ function Model({
 }) {
 	const { scene, animations } = useGLTF(url);
 	const groupRef = useRef<Group>(null);
-	const announced = useRef(false);
+	const announcedFor = useRef<string | null>(null);
 	const { actions } = useAnimations(animations, groupRef);
 
 	useEffect(() => {
@@ -199,8 +231,8 @@ function Model({
 			onAnimations(null);
 		}
 
-		if (!announced.current) {
-			announced.current = true;
+		if (announcedFor.current !== url) {
+			announcedFor.current = url;
 			onReady();
 		}
 
@@ -208,7 +240,7 @@ function Model({
 			Object.values(actions).forEach((action) => action?.stop());
 			onAnimations(null);
 		};
-	}, [scene, actions, onReady, onAnimations]);
+	}, [scene, actions, onReady, onAnimations, url]);
 
 	return <primitive ref={groupRef} object={scene} />;
 }
@@ -464,6 +496,11 @@ export default function ModelViewer({
 	// the user hits the Load prompt.
 	const [started, setStarted] = useState(autoLoad);
 
+	// URL of the GLB that has resolved and mounted; gates the LoadingOverlay
+	// (ready = the *current* url has finished) so a still-loading HDR
+	// environment cannot re-show the overlay over the model.
+	const [readyUrl, setReadyUrl] = useState<string | null>(null);
+
 	// glTF clip playback (only when the loaded model ships animations).
 	const animationCtlRef = useRef<AnimationController | null>(null);
 	const [hasAnimations, setHasAnimations] = useState(false);
@@ -483,21 +520,24 @@ export default function ModelViewer({
 	const handleClose = useCallback(() => {
 		animationCtlRef.current = null;
 		setHasAnimations(false);
+		setReadyUrl(null);
 		setStarted(false);
 	}, []);
 
 	const coordsRef = useCoordinateReadout(controlsRef, showCoordinates);
 
 	// Ref-driven fade-in: flips a CSS class directly on the DOM node once the
-	// model has mounted. No React state, so no extra re-render on load.
+	// model has mounted. No React state, so no extra re-render on load — except
+	// the single modelReady flip that hides the loading overlay.
 	const handleReady = useCallback(() => {
+		setReadyUrl(url);
 		const el = canvasWrapperRef.current;
 		if (!el) return;
 		requestAnimationFrame(() => {
 			el.classList.remove("opacity-0");
 			el.classList.add("opacity-100");
 		});
-	}, []);
+	}, [url]);
 
 	const handleReset = useCallback(() => {
 		controlsRef.current?.reset();
@@ -534,6 +574,7 @@ export default function ModelViewer({
 				<LoadPrompt src={placeholderSrc} onStart={() => setStarted(true)} />
 			) : (
 				<>
+					<LoadingOverlay ready={readyUrl === url} />
 					<div
 						ref={canvasWrapperRef}
 						className="h-full w-full opacity-0 transition-opacity duration-500 ease-out"
@@ -547,7 +588,7 @@ export default function ModelViewer({
 						>
 							<Lights config={lights} shadows={!disableShadow} />
 
-							<Suspense fallback={<Loader />}>
+							<Suspense fallback={null}>
 								<AutoFit minDistance={minZoom} maxDistance={maxZoom}>
 									<Turntable enabledRef={autoRotateRef} speed={autoRotateSpeed}>
 										<Model
@@ -567,6 +608,11 @@ export default function ModelViewer({
 										frames={1}
 									/>
 								)}
+							</Suspense>
+
+							{/* Separate boundary: HDR loading must never re-hide an
+							    already-resolved model nor re-trigger the overlay. */}
+							<Suspense fallback={null}>
 								{environmentPreset && (
 									<EnvironmentErrorBoundary>
 										<Environment files={resolveEnvironmentFiles(environmentPreset)} />
@@ -669,4 +715,3 @@ export default function ModelViewer({
 	);
 }
 
-useGLTF.preload;
