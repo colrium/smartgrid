@@ -45,7 +45,7 @@ export function CompanyAboutSection() {
 
 				<FadeRight delay={0.08} className="lg:col-span-4">
 					{hasImage && (
-						<div className="relative rounded-[20px] overflow-hidden bg-surface  mb-8">
+						<div className="relative rounded-[20px] overflow-hidden   mb-8">
 							<div className="relative aspect-square">
 								<Image
 									src={section.image as string}

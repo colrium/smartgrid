@@ -151,7 +151,7 @@ export function Menu({
 					top: position?.top,
 					left: position?.left,
 					transform: position?.transform,
-					zIndex: 1300,
+					zIndex: 9999,
 					minWidth: position ? Math.max(position.anchorWidth, 0) : undefined,
 					...style,
 				} as CSSProperties

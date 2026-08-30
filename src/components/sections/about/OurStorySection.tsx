@@ -31,7 +31,7 @@ export function OurStorySection() {
 							<div className="relative mx-auto max-w-sm">
 								{/* <div className="absolute inset-6 bg-primary/15 rounded-full blur-3xl" /> */}
 								<div className="relative p-8 sm:p-10">
-									<div className="relative aspect-square rounded-[15px] overflow-hidden bg-primary-50/60">
+									<div className="relative aspect-square rounded-[15px] overflow-hidden ">
 										<Image
 											src={section.image as string}
 											alt={section.headline}

@@ -39,7 +39,7 @@ export default function FooterLight() {
 	}) as unknown) as SocialChannel[];
 
 	return (
-		<footer className="relative z-50 overflow-hidden border-t bg-surface hairline">
+		<footer className="relative z-[9999] overflow-hidden border-t bg-surface hairline">
 			<div
 				aria-hidden
 				className="pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full bg-primary-100/60 blur-3xl"

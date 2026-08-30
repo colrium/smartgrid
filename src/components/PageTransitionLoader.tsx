@@ -44,7 +44,7 @@ export default function PageTransitionLoader() {
 			{loading && (
 				<motion.div
 					key="page-transition-loader"
-					className="fixed inset-0 z-10000 flex flex-col items-center justify-center"
+					className="fixed inset-0 z-[9999] flex flex-col items-center justify-center"
 					exit={{ opacity: 0, transition: { duration: 0.5, ease: "easeInOut" } }}
 				>
 					<div className="absolute inset-0 bg-surface/85 backdrop-blur-3xl" />

@@ -47,7 +47,7 @@ export function Drawer({
 	return createPortal(
 		<div
 			aria-hidden={!open}
-			className={`fixed inset-0 z-[1200] ${wrapperClassName}`}
+			className={`fixed inset-0 z-[99999] ${wrapperClassName}`}
 		>
 			<div
 				onClick={onClose}

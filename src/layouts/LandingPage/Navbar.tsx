@@ -159,7 +159,7 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 
 	return (
 		<>
-			<header className="sticky top-0 z-[1100] w-full bg-transparent px-4 md:px-8 transition-all duration-500">
+			<header className="sticky top-0 z-[9999] w-full bg-transparent px-4 md:px-8 transition-all duration-500">
 				<div
 					className={`mx-auto mt-3 mb-1 w-full max-w-[1200px] rounded-3xl px-4 backdrop-blur-lg transition-all duration-500 ${
 						isDark ? "bg-ink-soft/85 text-surface" : "bg-surface/85 text-ink"
