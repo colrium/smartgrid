@@ -575,8 +575,15 @@ export default function ModelViewer({
 			) : (
 				<>
 					<LoadingOverlay ready={readyUrl === url} />
+					{/* Lenis opt-out (wheel-scoped): root-mode Lenis hijacks plain
+					    wheel events for page scrolling, so zooming the model only
+					    worked while holding Ctrl (Lenis ignores ctrl+wheel). This
+					    attribute makes Lenis skip wheel events over the viewer so
+					    OrbitControls receives them — hover + scroll = zoom. Touch
+					    behavior is intentionally left unchanged. */}
 					<div
 						ref={canvasWrapperRef}
+						data-lenis-prevent-wheel
 						className="h-full w-full opacity-0 transition-opacity duration-500 ease-out"
 					>
 						<Canvas
