@@ -34,14 +34,14 @@ const LeadGenBar: React.FC<{ className?: string }> = ({ className }) => {
 				style={{ WebkitMaskImage: GLOW_MASK, maskImage: GLOW_MASK }}
 			/>
 			<div
-				className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full pointer-events-none"
+				className="absolute -bottom-32 -right-32 w-96 h-120 bg-primary/10 rounded-full pointer-events-none"
 				style={{ WebkitMaskImage: GLOW_MASK, maskImage: GLOW_MASK }}
 			/>
 			<div
 				className={`py-14 sm:py-20 relative z-20 my-12 rounded-[20px] pale-panel-soft hairline card-shadow overflow-hidden`}
 			>
 				<div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-					<FadeUp>
+					<FadeUp viewport={{ amount: 0.01, margin: "0px 0px 0% 0px" }}>
 						<div className="flex flex-col items-center gap-4">
 							<SectionTag>{t("home:leadGenBar.tag")}</SectionTag>
 							<h2 className="text-3xl sm:text-5xl font-light tracking-tight text-ink leading-tight whitespace-pre-line max-w-3xl">

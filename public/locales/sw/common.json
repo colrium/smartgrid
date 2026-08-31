@@ -123,6 +123,8 @@
 	],
 	"nav": {
 		"logo": "/img/logo.svg",
+		"logo_dark": "/img/logo-dark.svg",
+		"logo_light": "/img/logo-light-color.svg",
 		"logo_alt": "SmartGrid",
 		"links": [
 			{

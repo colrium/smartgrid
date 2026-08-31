@@ -4,6 +4,7 @@ import {
 	Component,
 	Suspense,
 	useEffect,
+	useMemo,
 	useRef,
 	useCallback,
 	useState,
@@ -20,9 +21,17 @@ import {
 	useAnimations,
 	GizmoHelper,
 	GizmoViewport,
+	SoftShadows,
 } from "@react-three/drei";
 import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
-import { Box3, Vector3, type Group, type Mesh, type PerspectiveCamera } from "three";
+import {
+	Box3,
+	Vector3,
+	type DirectionalLight,
+	type Group,
+	type Mesh,
+	type PerspectiveCamera,
+} from "three";
 import { useTranslation } from "@/hooks";
 
 /* ------------------------------------------------------------------ */
@@ -45,14 +54,37 @@ export interface AxesGizmoColors {
     label: string,
     axis: [string, string, string]
 }
+
+/**
+ * World-space bounds of the loaded model, measured once it mounts. Shadows and
+ * the key light anchor to these so GLBs that are not modeled around the origin
+ * still get correct grounding, lighting and shadow coverage.
+ */
+export interface ModelBounds {
+	/** Center of the model's bounding box (x, y, z) */
+	center: [number, number, number];
+	/** World Y of the model's lowest point */
+	bottom: number;
+	/** Full bounding radius: horizontal (turntable) radius merged with half the height */
+	radius: number;
+	/** Horizontal (turntable) radius only — the model's footprint on the ground */
+	footprint: number;
+	/** Full height of the bounding box */
+	height: number;
+}
 export interface ModelViewerProps {
 	/** URL to a .glb or .gltf file */
 	url: string;
 	/** Extra classes on the outer container. If given, YOU control sizing (e.g. "w-full h-[500px]") */
 	className?: string;
-	/** Disable the ground contact shadow */
+	/** Disable all shadows: contact blob, shadow catcher and key-light shadows */
 	disableShadow?: boolean;
-	/** Per-light intensity/color/position overrides, or `false` to disable a light */
+	/**
+	 * Per-light intensity/color/position overrides, or `false` to disable a
+	 * light. The key light is the only shadow caster: with no explicit position
+	 * it is placed relative to the model center and its shadow frustum is
+	 * fitted to the model bounds.
+	 */
 	lights?: LightConfig;
 	/** Slowly rotate the model */
 	autoRotate?: boolean;
@@ -194,10 +226,12 @@ function Model({
 	url,
 	onReady,
 	onAnimations,
+	onBounds,
 }: {
 	url: string;
 	onReady: () => void;
 	onAnimations: (controller: AnimationController | null) => void;
+	onBounds: (bounds: ModelBounds) => void;
 }) {
 	const { scene, animations } = useGLTF(url);
 	const groupRef = useRef<Group>(null);
@@ -211,6 +245,35 @@ function Model({
 			mesh.castShadow = true;
 			mesh.receiveShadow = true;
 		});
+
+		// Measure the mounted model so shadows/lighting can anchor to where the
+		// GLB actually sits in world space (the scene is rendered as-is, never
+		// re-centered, so off-origin assets keep their authored placement).
+		const group = groupRef.current;
+		if (group) {
+			group.updateWorldMatrix(true, true);
+			const box = new Box3().setFromObject(group);
+			if (!box.isEmpty()) {
+				const center = box.getCenter(new Vector3());
+				let footprint = 0;
+				for (const x of [box.min.x, box.max.x]) {
+					for (const z of [box.min.z, box.max.z]) {
+						footprint = Math.max(
+							footprint,
+							Math.hypot(x - center.x, z - center.z),
+						);
+					}
+				}
+				const halfHeight = (box.max.y - box.min.y) / 2;
+				onBounds({
+					center: [center.x, center.y, center.z],
+					bottom: box.min.y,
+					radius: Math.max(0.25, Math.hypot(footprint, halfHeight)),
+					footprint: Math.max(0.25, footprint),
+					height: Math.max(0.1, box.max.y - box.min.y),
+				});
+			}
+		}
 
 		const clips = Object.values(actions).filter(
 			(action): action is NonNullable<(typeof actions)[string]> => Boolean(action),
@@ -240,7 +303,7 @@ function Model({
 			Object.values(actions).forEach((action) => action?.stop());
 			onAnimations(null);
 		};
-	}, [scene, actions, onReady, onAnimations, url]);
+	}, [scene, actions, onReady, onAnimations, onBounds, url]);
 
 	return <primitive ref={groupRef} object={scene} />;
 }
@@ -398,7 +461,83 @@ class EnvironmentErrorBoundary extends Component<{ children: ReactNode }, { fail
 /* Lights                                                              */
 /* ------------------------------------------------------------------ */
 
-function Lights({ config, shadows }: { config: LightConfig; shadows: boolean }) {
+/**
+ * Key light — the only shadow caster. With no explicit position it is placed
+ * relative to the model center, it always aims at the model (not the world
+ * origin), and its orthographic shadow frustum is fitted to the measured
+ * bounds so large models don't clip and small models don't waste shadow-map
+ * resolution. normalBias scales with the model to keep self-shadow acne off
+ * thin geometry.
+ */
+function KeyLight({
+	setting,
+	shadows,
+	bounds,
+}: {
+	setting?: LightSetting;
+	shadows: boolean;
+	bounds: ModelBounds | null;
+}) {
+	const lightRef = useRef<DirectionalLight>(null);
+
+	const position = useMemo<[number, number, number]>(
+		() =>
+			setting?.position ?? [
+				(bounds?.center[0] ?? 0) + 5,
+				(bounds?.center[1] ?? 0) + 6,
+				(bounds?.center[2] ?? 0) + 5,
+			],
+		[setting, bounds],
+	);
+
+	useEffect(() => {
+		const light = lightRef.current;
+		if (!light || !bounds) return;
+
+		// Aim at the model. directionalLight.target is not scene-attached, so
+		// its world matrix must be refreshed manually for the change to count.
+		const center = new Vector3(...bounds.center);
+		light.target.position.copy(center);
+		light.target.updateMatrixWorld();
+
+		// Fit the orthographic shadow camera around the bounding sphere.
+		const extent = bounds.radius * 2;
+		const distance = light.position.distanceTo(center);
+		const shadowCam = light.shadow.camera;
+		shadowCam.left = -extent;
+		shadowCam.right = extent;
+		shadowCam.top = extent;
+		shadowCam.bottom = -extent;
+		shadowCam.near = Math.max(0.1, distance - extent * 1.25);
+		shadowCam.far = distance + extent * 1.25;
+		shadowCam.updateProjectionMatrix();
+
+		light.shadow.normalBias = Math.max(0.005, bounds.radius * 0.01);
+		light.shadow.needsUpdate = true;
+	}, [bounds, position]);
+
+	return (
+		<directionalLight
+			ref={lightRef}
+			position={position}
+			intensity={setting?.intensity ?? 1.6}
+			color={setting?.color ?? "#ffffff"}
+			castShadow={shadows}
+			shadow-mapSize={[1024, 1024]}
+			shadow-bias={-0.0002}
+		/>
+	);
+}
+
+function Lights({
+	config,
+	shadows,
+	bounds,
+}: {
+	config: LightConfig;
+	shadows: boolean;
+	bounds: ModelBounds | null;
+}) {
 	const { ambient, key, fill, rim } = config;
 
 	return (
@@ -409,16 +548,7 @@ function Lights({ config, shadows }: { config: LightConfig; shadows: boolean }) 
 					color={ambient?.color ?? "#ffffff"}
 				/>
 			)}
-			{key !== false && (
-				<directionalLight
-					position={key?.position ?? [5, 6, 5]}
-					intensity={key?.intensity ?? 1.6}
-					color={key?.color ?? "#ffffff"}
-					castShadow={shadows}
-					shadow-mapSize={[1024, 1024]}
-					shadow-bias={-0.0005}
-				/>
-			)}
+			{key !== false && <KeyLight setting={key} shadows={shadows} bounds={bounds} />}
 			{fill !== false && (
 				<directionalLight
 					position={fill?.position ?? [-5, 2, -4]}
@@ -434,6 +564,30 @@ function Lights({ config, shadows }: { config: LightConfig; shadows: boolean }) 
 				/>
 			)}
 		</>
+	);
+}
+
+/**
+ * Shadow catcher — an invisible ground plane under the model that receives
+ * the key light's real shadow. ShadowMaterial renders only the shadowed
+ * texels and stays transparent everywhere else, so the canvas' transparent
+ * background (and whatever the page puts behind it) is preserved.
+ */
+function ShadowCatcher({ bounds }: { bounds: ModelBounds }) {
+	const size = bounds.radius * 5;
+	// Sits below the model and below the ContactShadows plane so the two
+	// transparent planes never z-fight.
+	const y = bounds.bottom - Math.max(0.01, bounds.radius * 0.01);
+
+	return (
+		<mesh
+			rotation-x={-Math.PI / 2}
+			position={[bounds.center[0], y, bounds.center[2]]}
+			receiveShadow
+		>
+			<planeGeometry args={[size, size]} />
+			<shadowMaterial transparent opacity={0.4} color="#000000" />
+		</mesh>
 	);
 }
 
@@ -470,11 +624,14 @@ function useCoordinateReadout(
 /* Main component                                                      */
 /* ------------------------------------------------------------------ */
 
+/** Stable empty config so the `lights` prop identity never churns per render. */
+const DEFAULT_LIGHTS: LightConfig = {};
+
 export default function ModelViewer({
 	url,
 	className,
 	disableShadow = false,
-	lights = {},
+	lights = DEFAULT_LIGHTS,
 	autoRotate = false,
 	autoRotateSpeed = 1.2,
 	minZoom = 1,
@@ -501,6 +658,10 @@ export default function ModelViewer({
 	// environment cannot re-show the overlay over the model.
 	const [readyUrl, setReadyUrl] = useState<string | null>(null);
 
+	// World-space bounds of the loaded model — anchors the contact shadow, the
+	// shadow catcher and the key light to where the GLB actually sits.
+	const [bounds, setBounds] = useState<ModelBounds | null>(null);
+
 	// glTF clip playback (only when the loaded model ships animations).
 	const animationCtlRef = useRef<AnimationController | null>(null);
 	const [hasAnimations, setHasAnimations] = useState(false);
@@ -521,6 +682,7 @@ export default function ModelViewer({
 		animationCtlRef.current = null;
 		setHasAnimations(false);
 		setReadyUrl(null);
+		setBounds(null);
 		setStarted(false);
 	}, []);
 
@@ -529,6 +691,8 @@ export default function ModelViewer({
 	// Ref-driven fade-in: flips a CSS class directly on the DOM node once the
 	// model has mounted. No React state, so no extra re-render on load — except
 	// the single modelReady flip that hides the loading overlay.
+	const handleBounds = useCallback((next: ModelBounds) => setBounds(next), []);
+
 	const handleReady = useCallback(() => {
 		setReadyUrl(url);
 		const el = canvasWrapperRef.current;
@@ -568,6 +732,20 @@ export default function ModelViewer({
 		autoRotateBtnRef.current?.classList.toggle("text-accent", autoRotateRef.current);
 	}, []);
 
+	// Contact shadow placement/quality derived from the measured bounds, with
+	// origin-anchored fallbacks for the brief period before the model mounts.
+	// Width tracks the footprint while blur stays fixed, so the soft spread
+	// stays a consistent fraction of the model size at any GLB scale.
+	const contactPosition: [number, number, number] = bounds
+		? [
+				bounds.center[0],
+				bounds.bottom - Math.max(0.001, bounds.footprint * 0.002),
+				bounds.center[2],
+			]
+		: [0, -0.001, 0];
+	const contactScale = bounds ? bounds.footprint * 5 : 12;
+	const contactFar = bounds ? Math.max(1.5, bounds.height * 1.4) : 6;
+
 	return (
 		<div className={className ?? "relative h-[80dvh] w-full bg-transparent"}>
 			{!started ? (
@@ -593,7 +771,7 @@ export default function ModelViewer({
 							gl={{ alpha: true, antialias: true }}
 							style={{ background: "transparent" }}
 						>
-							<Lights config={lights} shadows={!disableShadow} />
+							<Lights config={lights} shadows={!disableShadow} bounds={bounds} />
 
 							<Suspense fallback={null}>
 								<AutoFit minDistance={minZoom} maxDistance={maxZoom}>
@@ -602,17 +780,27 @@ export default function ModelViewer({
 											url={url}
 											onReady={handleReady}
 											onAnimations={handleAnimations}
+											onBounds={handleBounds}
 										/>
 									</Turntable>
 								</AutoFit>
+								{/* The key light's real shadow needs a receiver: an
+								    invisible ground plane at the model's base. */}
+								{/* PCSS soft shadows: patches the shadow shader so
+								    penumbras widen with distance from the contact point
+								    (contact-hardening). It disposes/recompiles materials
+								    on mount/unmount — keep it stably mounted. */}
+								{!disableShadow && <SoftShadows size={40} samples={12} focus={0} />}
+								{!disableShadow && bounds && <ShadowCatcher bounds={bounds} />}
 								{!disableShadow && (
 									<ContactShadows
-										position={[0, -0.001, 0]}
-										opacity={0.55}
-										scale={12}
+										position={contactPosition}
+										opacity={0.4}
+										scale={contactScale}
 										blur={2.4}
-										far={6}
-										frames={1}
+										far={contactFar}
+										frames={Infinity}
+										resolution={1024}
 									/>
 								)}
 							</Suspense>

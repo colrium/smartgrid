@@ -61,11 +61,11 @@ export function WhatWeOfferSection() {
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={(index % 3) * 0.08}>
 							<article className="group relative h-full flex flex-col p-8 rounded-[20px] bg-surface hairline card-shadow transition-all duration-500 hover:card-shadow-lift hover:border-primary">
-								<span className="p-3 rounded-xl bg-primary-50 text-mute transition-colors duration-300 group-hover:bg-primary group-hover:text-surface self-center">
+								<span className="p-2 rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface self-center">
 									<span
 										className={`mdi mdi-${
 											FALLBACK_ICONS[index % FALLBACK_ICONS.length]
-										} text-3xl`}
+										} text-2xl`}
 									/>
 								</span>
 

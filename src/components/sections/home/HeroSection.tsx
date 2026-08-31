@@ -144,7 +144,7 @@ export default function HeroSection() {
 						{ctaPrimary?.href && (
 							<Link
 								href={ctaPrimary.href}
-								className="group inline-flex items-center gap-3 h-14 rounded-full bg-primary shadow-2xl px-8 text-surface shadow-primary-200 font-medium text-base transition-all duration-300 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]"
+								className="group inline-flex items-center gap-3 h-14 rounded-full bg-primary shadow-lg hover:shadow-2xl px-8 text-surface shadow-primary-100 hover:shadow-primary-200  font-medium text-base transition-all duration-300 "
 							>
 								<span className="h-1.5 w-1.5 rounded-full bg-surface transition-transform duration-300 group-hover:scale-125" />
 								{ctaPrimary.label}
@@ -159,7 +159,7 @@ export default function HeroSection() {
 						{ctaSecondary?.href && (
 							<Link
 								href={ctaSecondary.href}
-								className="group inline-flex items-center gap-3 h-14 bg-accent rounded-full border border-accent/20 shadow-accent-200 shadow-2xl px-8 text-surface font-medium text-base transition-all duration-300 "
+								className="group inline-flex items-center gap-3 h-14 bg-accent rounded-full  shadow-accent-100 hover:shadow-accent-200  shadow-lg hover:shadow-2xl px-8 text-surface font-medium text-base transition-all duration-300 "
 								data-ripple-light="true"
 							>
 								{ctaSecondary.label}

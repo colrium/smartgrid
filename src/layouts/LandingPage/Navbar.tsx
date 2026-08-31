@@ -207,7 +207,7 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 						<Link href="/" className="flex items-center gap-2">
 							<Image
 								className="flex lg:mr-1"
-								src={t("common:nav.logo")}
+								src={t(isDark ? "common:nav.logo_light" : "common:nav.logo")}
 								alt={t("common:nav.logo_alt")}
 								width={32}
 								height={32}
@@ -259,11 +259,12 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 											key={locale.code}
 											onClick={() => handleLanguageSelect(locale.code)}
 											selected={router.locale === locale.code}
+											className="justify-start"
 										>
 											<Image
-												className="mr-2"
-												width={14}
-												height={10}
+												className="mr-1 rounded-full"
+												width={16}
+												height={16}
 												src={locale.flag}
 												alt={locale.label}
 											/>
@@ -308,7 +309,11 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 							</div>
 						</Link>
 						{/* Close Button */}
-						<IconButton onClick={handleDrawerToggle} size="small" aria-label="Close menu">
+						<IconButton
+							onClick={handleDrawerToggle}
+							size="small"
+							aria-label="Close menu"
+						>
 							<span className="mdi mdi-close text-red-900" aria-hidden="true" />
 						</IconButton>
 					</div>
