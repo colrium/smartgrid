@@ -3,7 +3,7 @@
 		"badge": "Usahihi wa Uhandisi",
 		"headline": "Pima <primary>Kwa Akili</primary>, Jenga <accent>Kwa Nguvu</accent>.",
 		"description": "Kuongoza Upimaji wa Ardhi na Angani wa Afrika kwa Teknolojia ya Juu ya Vifaa",
-        "ctaPrimary": {
+		"ctaPrimary": {
 			"label": "Omba Upimaji",
 			"href": "/contact?reason=request-survey#contact-form",
 			"icon": "send"
@@ -477,7 +477,10 @@
 						"Upimaji wa tovuti za ujenzi",
 						"Ramani ya rasilimali",
 						"Upimaji wa bathymetric / Upimaji wa hydrographic",
-						"Ramani ya GIS"
+						"Ramani ya GIS",
+						"Upimaji wa GPR (Rada ya Kupenya Ardhini)",
+						"Upimaji wa Cadastral",
+						"Upimaji wa Kuweka Alama"
 					]
 				},
 				"deliverables": {

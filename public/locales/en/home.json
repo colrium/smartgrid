@@ -482,7 +482,10 @@
 						"Building Sites surveys",
 						"Resource mapping",
 						"Bathymetric survey / Hydrographic survey",
-						"GIS Mapping"
+						"GIS Mapping",
+                        "GPR (Ground Penetrating Radar) Surveys",
+                        "Cadastral Surveys",
+                        "Staking Out Surveys"
 					]
 				},
 				"deliverables": {
