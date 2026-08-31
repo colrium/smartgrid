@@ -629,7 +629,7 @@
 		"tag": "Ushauri wa Bure",
 		"headline": "Huji wapi unapoanza? Ongea na mpimaji.",
 		"description": "Tuambie kuhusu tovuti yako na lengo lako — tutakupendekeza upimaji sahihi, vifaa sahihi, na bajeti ya uwazi. Bila wajibu, bila maneno magumu.",
-		"watermark": "map-marker-radius",
+		"watermark": "hard-hat",
 		"primary": {
 			"label": "Ongea na Mpimaji",
 			"href": "/contact?reason=talk-to-surveyor#contact-form",

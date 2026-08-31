@@ -635,7 +635,7 @@
 		"tag": "Free Consultation",
 		"headline": "Not sure where to start? Talk to a surveyor.",
 		"description": "Tell us about your site and your goal — we'll recommend the right survey, the right instruments, and a realistic budget. No obligation, no jargon.",
-		"watermark": "map-marker-radius",
+		"watermark": "hard-hat",
 		"primary": {
 			"label": "Talk to a Surveyor",
 			"href": "/contact?reason=talk-to-surveyor#contact-form",
