@@ -118,6 +118,7 @@
 			{ "value": "land-surveying", "label": "Land surveying" },
 			{ "value": "book-drone-survey", "label": "Book a drone survey" },
 			{ "value": "support", "label": "Support" },
+			{ "value": "talk-to-surveyor", "label": "Talk to a surveyor" },
 			{ "value": "privacy", "label": "Privacy & data request" },
 			{ "value": "other", "label": "Other" }
 		]

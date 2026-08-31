@@ -82,7 +82,7 @@ export function ServicesSection() {
 											className={`flex shrink-0 items-center gap-2 rounded-full p-2 px-6 text-sm capitalize justify-center transition-colors duration-300 cursor-pointer lg:mb-2 ${
 												selected
 													? "bg-primary text-surface"
-													: "text-primary bg-primary-50 hover:bg-primary-100"
+													: "text-primary bg-primary-50 hover:bg-primary-200"
 											}`}
 										>
 											<span

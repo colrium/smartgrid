@@ -37,9 +37,9 @@ interface ProjectByCountry {
 	description: string;
 }
 const sizes = {
-	xs: 360,
-	sm: 420,
-	md: 500,
+	xs: 440,
+	sm: 460,
+	md: 520,
 	lg: 600,
 	xl: 600,
 };
@@ -103,7 +103,7 @@ const ProjectsGlobe = ({ labelDotOrientation, width, height, globeOffset, ...res
 
 	const widthVal = width || size;
 	const heightVal = height || size;
-	const globeOffsetVal = globeOffset || [-(widthVal * 0.1), -(heightVal * 0.1)];
+	const globeOffsetVal = globeOffset || [-(widthVal * 0.15), -(heightVal * 0.1)];
 
 	
 

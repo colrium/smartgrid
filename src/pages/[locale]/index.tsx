@@ -16,8 +16,12 @@ import {
 	ServicesSection,
 	CtaSection,
 	TrusteesSection,
-	MetricsSection,
-    IndustriesWeServeSection,
+	// MetricsSection,
+	IndustriesWeServeSection,
+	SurveyCostSection,
+	CoverageAreaSection,
+	FaqSection,
+	ActionCtaSection,
 } from "@/components/sections/home";
 
 interface PageProps {
@@ -40,16 +44,24 @@ const Page: NextPage<PageProps> = () => {
 				</div>
 				<SurveyingInstrumentsSection />
 				<DronesSection />
-                <ServicesSection />
-                <IndustriesWeServeSection />
+
+				<ActionCtaSection contentKey="actionCtaSurveyor" />
+
+				<ServicesSection />
+				<IndustriesWeServeSection />
 				<div className="flex flex-col  w-full">
 					<WhyChooseUsSection />
 
 					<CoreExpertiseSection />
+
+					<SurveyCostSection />
+					<CoverageAreaSection />
+					<FaqSection />
+					<ActionCtaSection contentKey="actionCtaEngineer" />
+					<KeyFactsSection />
 					<CertificationsSection />
 					<TrusteesSection />
-					<KeyFactsSection />
-					<MetricsSection />
+					{/* <MetricsSection /> */}
 				</div>
 
 				<CtaSection />

@@ -19,7 +19,7 @@ export function WhyChooseUsSection() {
 	}) as unknown as WhyChooseUsItem[];
 
 	return (
-		<section id="why-choose-us" className="py-24 sm:py-28 relative overflow-hidden bg-surface">
+		<section id="why-choose-us" className="py-24 sm:py-28 relative overflow-hidden ">
 			{/* Soft institutional background shapes */}
 			<Blob className="w-[26rem] h-[26rem] bg-primary-200/40 -top-20 right-0" opacity={0.5} />
 			<ParallaxDecor speed={-0.06} className="absolute bottom-24 -left-20 z-0">
@@ -29,7 +29,7 @@ export function WhyChooseUsSection() {
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
 					{/* Sticky manifesto header */}
-					<FadeUp className="lg:col-span-5 lg:sticky lg:top-28 self-start">
+					<FadeUp className="lg:col-span-4 lg:sticky lg:top-28 self-start">
 						<SectionHeader
 							tag={t("home:whyChooseUs.tag") as string}
 							headline={t("home:whyChooseUs.headline") as string}
@@ -45,11 +45,11 @@ export function WhyChooseUsSection() {
 					</FadeUp>
 
 					{/* Editorial list */}
-					<div className="lg:col-span-7">
+					<div className="lg:col-span-8 rounded-[20px] pale-panel hairline card-shadow py-8">
 						{Array.isArray(items) &&
 							items.map((item, index) => (
 								<FadeUp key={index} delay={index * 0.05}>
-									<div className="group border-t border-ink/10 py-7 sm:py-8 flex items-start gap-6 sm:gap-8 transition-colors duration-300 hover:bg-surface/60 px-1 sm:px-3 -mx-1 sm:-mx-3">
+									<div className="group  py-7 sm:py-8 flex items-start gap-6 sm:gap-8 transition-colors duration-300 hover:bg-surface/60 px-1 sm:px-9 ">
 										<span className="pt-1 text-sm font-semibold tabular-nums tracking-[0.14em] text-primary">
 											{String(index + 1).padStart(2, "0")}
 										</span>
@@ -68,8 +68,6 @@ export function WhyChooseUsSection() {
 												{item.description}
 											</p>
 										</div>
-
-										
 									</div>
 								</FadeUp>
 							))}

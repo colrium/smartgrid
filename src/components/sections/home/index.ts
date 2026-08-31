@@ -11,6 +11,10 @@ export { CtaSection } from "./CtaSection";
 export { TrusteesSection } from "./TrusteesSection";
 export { PlanningInfographicSection } from "./PlanningInfographicSection";
 export { IndustriesWeServeSection } from "./IndustriesWeServeSection";
+export { SurveyCostSection } from "./SurveyCostSection";
+export { CoverageAreaSection } from "./CoverageAreaSection";
+export { FaqSection } from "./FaqSection";
+export { ActionCtaSection } from "./ActionCtaSection";
 
 export { default as SurveyingInstrumentsSectionDefault } from "./SurveyingInstrumentsSection";
 export { default as DronesSectionDefault } from "./DronesSection";
@@ -24,3 +28,7 @@ export { default as CtaSectionDefault } from "./CtaSection";
 export { default as TrusteesSectionDefault } from "./TrusteesSection";
 export { default as PlanningInfographicSectionDefault } from "./PlanningInfographicSection";
 export { default as IndustriesWeServeSectionDefault } from "./IndustriesWeServeSection";
+export { default as SurveyCostSectionDefault } from "./SurveyCostSection";
+export { default as CoverageAreaSectionDefault } from "./CoverageAreaSection";
+export { default as FaqSectionDefault } from "./FaqSection";
+export { default as ActionCtaSectionDefault } from "./ActionCtaSection";
