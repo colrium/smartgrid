@@ -29,7 +29,7 @@
 		"tag": "SMARTGRID SURVEYING & CIVIL ENGINEERING LTD",
 		"headline": "Inaaminika. Inaweza kupanuka. Haraka. Sahihi.",
 		"title": "Upimaji wa Kiwango cha Uhandisi na Suluhisho za Kijiografia Katika Kenya na Afrika Mashariki",
-		"description": "Katika SmartGrid Surveying, hatupimi ardhi tu—tunatoa <bold>data sahihi ya anga iliyo tayari kwa maamuzi</bold> ambayo wahandisi, wasan razvoj, na wasimamizi wa miradi wanategemea kupanga, kubuni, na kutekeleza kwa ujasiri.\n\nKuanzia <bold>upimaji wa topografia na ramani za cadastral</bold> hadi <bold>ramani za ndege zisizo na rubani, LiDAR, na ugunduzi wa huduma za chini ya ardhi</bold>, tunatoa suluhisho kamili za kijiografia zilizoundwa kwa ajili ya miradi ya kisasa ya ujenzi na miundombinu.",
+		"description": "Katika SmartGrid Surveying, hatupimi ardhi tu—tunatoa <bold>data sahihi ya anga iliyo tayari kwa maamuzi</bold> ambayo wahandisi, wasanidi, na wasimamizi wa miradi wanategemea kupanga, kubuni, na kutekeleza kwa ujasiri.\n\nKuanzia <bold>upimaji wa topografia na ramani za cadastral</bold> hadi <bold>ramani za ndege zisizo na rubani, LiDAR, na ugunduzi wa huduma za chini ya ardhi</bold>, tunatoa suluhisho kamili za kijiografia zilizoundwa kwa ajili ya miradi ya kisasa ya ujenzi na miundombinu.",
 		"link": { "label": "Wasifu wa Kampuni", "href": "/about/company-profile" },
 		"items": [
 			{
@@ -133,7 +133,7 @@
 				"label": "Harakisha ratiba za mradi kwa data sahihi"
 			}
 		],
-		"closingStatement": "<bold>Iwe wewe ni msan razvoj, mhandisi, mkandarasi, au mmiliki wa ardhi—data yetu inahakikisha mradi wako unaanza vizuri.</bold>"
+		"closingStatement": "<bold>Iwe wewe ni msanidi, mhandisi, mkandarasi, au mmiliki wa ardhi—data yetu inahakikisha mradi wako unaanza vizuri.</bold>"
 	},
 	"surveyingInstruments": {
 		"tag": "Usahihi",
@@ -221,40 +221,40 @@
 		"description": "Tunachanganya teknolojia ya kisasa na uzoefu mkubwa ili kutoa suluhisho bora za upimaji na uhandisi.",
 		"items": [
 			{
-				"icon": "check-circle",
-				"name": "Utaalamu",
-				"label": "Utaalamu katika Upimaji wa Gridi ya Nishati na Kazi za Miundombinu",
-				"description": "Timu yetu ya wataalamu wenye leseni ina uzoefu mkubwa katika upimaji na uhandisi wa miundombinu."
+				"icon": "crosshairs",
+				"name": "engineeringAccuracy",
+				"label": "Usahihi wa Kiuhandisi",
+				"description": "Tunatumia RTK GNSS, Total Stations, na Mifumo ya Ndege zisizo na Rubani kutoa usahihi wa sentimita."
 			},
 			{
-				"icon": "check-circle",
-				"name": "Teknolojia ya Kisasa",
-				"label": "Matumizi ya Teknolojia za Ndege zisizo na Rubani na GIS",
-				"description": "Tunatumia vyombo vya kisasa vya upimaji na teknolojia ya ndege zisizo na rubani kwa ajili ya kukusanya data sahihi na kwa ufanisi."
+				"icon": "radar",
+				"name": "modernTechnology",
+				"label": "Teknolojia ya Kisasa",
+				"description": "Kuanzia ramani ya LiDAR hadi ugunduzi wa huduma za GPR, tunatumia zana za kisasa kwa mazingira magumu."
 			},
 			{
-				"icon": "check-circle",
-				"name": "Huduma Kamili",
-				"label": "Huduma Kamili",
-				"description": "Kuanzia upimaji wa ardhi hadi uhandisi wa miundombinu, tunatoa huduma mbalimbali ili kukidhi mahitaji ya mradi wako."
+				"icon": "timer-sand",
+				"name": "fastTurnaround",
+				"label": "Utekelezaji wa Haraka",
+				"description": "Mifumo bora ya kazi inahakikisha uwasilishaji kwa wakati bila kuathiri ubora."
 			},
 			{
-				"icon": "check-circle",
-				"name": "Uhakiki wa Ubora",
+				"icon": "clipboard-check",
+				"name": "projectFocused",
+				"label": "Mbinu Inayolenga Mradi",
+				"description": "Tunalinganisha matokeo yetu na mahitaji ya kubuni, ujenzi, na idhini—sio data ghafi tu."
+			},
+			{
+				"icon": "account-group",
+				"name": "trustedExperience",
+				"label": "Uzoefu wa Kuaminika",
+				"description": "Timu yetu ina uzoefu wa moja kwa moja wa uwanjani katika miradi ya miundombinu, mali isiyohamishika, na uhandisi katika Afrika Mashariki."
+			},
+			{
+				"icon": "shield-check",
+				"name": "commitmentQuality",
 				"label": "Kujitolea kwa Ubora na Ubunifu",
 				"description": "Tunafuata viwango vikali vya ubora na tunaendelea kubuni suluhisho bora kwa wateja wetu."
-			},
-			{
-				"icon": "check-circle",
-				"name": "Mbinu Inayoweka Mteja Kwanza",
-				"label": "Mbinu Inayoweka Mteja Kwanza",
-				"description": "Tunatanguliza mahitaji ya wateja wetu, kuhakikisha mawasiliano wazi na suluhisho maalum kwa kila mradi."
-			},
-			{
-				"icon": "check-circle",
-				"name": "Rekodi Iliyothibitishwa",
-				"label": "Rekodi Iliyothibitishwa",
-				"description": "Tuna rekodi iliyothibitishwa ya kutoa miradi iliyofanikiwa kwa wakati na ndani ya bajeti."
 			}
 		]
 	},
@@ -265,31 +265,38 @@
 		"items": [
 			{
 				"icon": "home-outline",
-				"label": "Mali isiyohamishika"
+				"label": "Mali isiyohamishika",
+				"description": "Tathmini za tovuti, mipango ya ugawaji, na ramani za cadastral kwa ajili ya maendeleo ya mali."
 			},
 			{
 				"icon": "hard-hat",
-				"label": "Miundombinu na Ujenzi"
+				"label": "Miundombinu na Ujenzi",
+				"description": "Msaada wa upimaji kwa mpangilio wa tovuti, ufuatiliaji, na udhibiti wa ujenzi."
 			},
 			{
 				"icon": "road-variant",
-				"label": "Miundombinu ya Barabara"
+				"label": "Miundombinu ya Barabara",
+				"description": "Upimaji wa mwelekeo, uthibitishaji wa 'as-built', na ramani za korido kwa miradi ya barabara."
 			},
 			{
 				"icon": "account-multiple-outline",
-				"label": "Wasan razvoj Binafsi"
+				"label": "Wasanidi Binafsi",
+				"description": "Upimaji wa upembuzi yakinifu, msaada wa mipango mikuu, na ramani za viwanja kwa wasanidi."
 			},
 			{
 				"icon": "city",
-				"label": "Serikali"
+				"label": "Serikali",
+				"description": "Ramani za ufuasi, upimaji wa miradi ya umma, na msaada wa mipango ya miundombinu."
 			},
 			{
 				"icon": "domain",
-				"label": "Mashirika Yasiyo ya Kiserikali (NGOs)"
+				"label": "Mashirika Yasiyo ya Kiserikali (NGOs)",
+				"description": "Ramani za jamii, tathmini za rasilimali, na huduma za ufuatiliaji wa miradi."
 			},
 			{
 				"icon": "flash-outline",
-				"label": "Kampuni za Huduma na Nishati"
+				"label": "Kampuni za Huduma na Nishati",
+				"description": "Ramani za huduma, upimaji wa mitandao, na msaada wa usimamizi wa mali kwa miradi ya nishati."
 			}
 		]
 	},
@@ -348,6 +355,11 @@
 				"label": "Msaada wa Miundombinu",
 				"description": "Suluhisho za upimaji na uhandisi kwa ajili ya barabara, madaraja, huduma, na miradi mingine ya miundombinu.",
 				"href": "/civil/highway-surveys"
+			},
+			{
+				"icon": "radar",
+				"label": "Rada ya Kupenya Ardhini (GPR)",
+				"description": "Ugunduzi na ramani ya huduma za chini ya ardhi ili kupata huduma na miundo iliyozikwa."
 			}
 		]
 	},

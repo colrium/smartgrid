@@ -48,7 +48,7 @@ const sizes = {
 
 const ProjectsGlobe = ({ labelDotOrientation, width, height, globeOffset, ...rest }: ProjectsGlobeProps & GlobeProps) => {
 	const globeEl = useRef<GlobeMethods | undefined>(undefined);
-	const primaryColorRef = useRef<string | null>(null);
+	const _primaryColorRef = useRef<string | null>(null);
 	const [state, setState] = useSetState({
 		loading: false,
 		countriesFeatures: [],

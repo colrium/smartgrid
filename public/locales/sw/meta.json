@@ -7,184 +7,239 @@
 	},
 	"pages": {
 		"home": {
+			"slug": "/",
 			"title": "Nyumbani",
-			"meta_description": "{{site_title}} hutoa huduma za kisasa za upimaji wa ardhi na angani, uchoraji ramani wa GIS, na uhandisi wa kirahisi kote Kenya na Afrika."
+			"meta_description": "{{site_title}} hutoa huduma za kisasa za upimaji wa ardhi na angani, uchoraji ramani wa GIS, na uhandisi wa kirahisi kote Kenya na Afrika.",
+			"og_image": "/media/home/field-doperators.jpg"
 		},
 		"about": {
 			"title": "Kuhusu Sisi",
 			"meta_description": "Jifunze zaidi kuhusu {{site_title}}, utaalam wetu wa upimaji na uhandisi wa kirahisi, dhamira, na kujitolea kwetu kwa usahihi kote Afrika.",
-			"og_image": "/media/og-about.jpg"
+			"og_image": "/media/about/01.jpeg"
 		},
 		"contact": {
 			"page_title": "Wasiliana",
 			"meta_description": "Wasiliana na timu ya {{site_title}} kujadili upimaji wa ardhi, uchunguzi wa angani, uhandisi wa kirahisi, ukodishaji wa vifaa, au upigaji picha kwa ndege zisizo na rubani.",
-			"og_image": "/media/og-contact.jpg"
+			"og_image": "/media/field/AG8ngQW.jpeg"
 		},
 
 		"privacy_policy": {
 			"page_title": "Sera ya Faragha",
 			"meta_description": "Jifunze jinsi {{site_title}} inavyoshughulikia taarifa zinazowasilishwa kupitia tovuti yetu na fomu za mawasiliano.",
-			"og_image": "/media/og-privacy.jpg"
+			"og_image": "/media/about/01.jpeg"
 		},
 		"terms_of_use": {
 			"page_title": "Masharti ya Matumizi",
 			"meta_description": "Angalia masharti ya matumizi ya tovuti na huduma za {{site_title}}.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/about/01.jpeg"
+		},
+		"surveying": {
+			"slug": "/surveying",
+			"page_title": "Upimaji wa Ardhi",
+			"meta_description": "Upimaji wa ardhi nchini Kenya na Afrika — data sahihi na ya kuaminika ya eneo kwa kutumia GNSS, Total Stations, na Drone LiDAR kwa usahihi wa kiwango cha sentimita.",
+			"og_image": "/media/surveying/AG8ng.jpeg"
 		},
 		"topographical-surveys": {
 			"page_title": "Uchunguzi wa Topografia",
 			"meta_description": "Uchunguzi wa Topografia — Ona Ardhi Jinsi Ilivyo",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/surveying/topographical/3d-data-collection.jpeg"
 		},
 		"building-site-surveys": {
 			"page_title": "Uchunguzi wa Kiwanja cha Ujenzi",
 			"meta_description": "Uchunguzi wa usahihi kwa ajili ya ujenzi bora — uchunguzi wa kiwanja, upangaji na mpangilio wa ujenzi, uchunguzi wa mali na huduma za chini ya ardhi.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/surveying/building-site-surveys/AG8ng.jpeg"
 		},
 		"sectional-properties": {
 			"page_title": "Mali za Sehemu",
 			"meta_description": "Uchunguzi wa mali za sehemu ulioidhinishwa (mipango ya strata) — mipango ya hatimiliki ya sehemu, uchunguzi wa vitengo, ukaguzi wa mipaka na uvamizi, na uchanganuzi wa 3D wa as-built.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/surveying/sectional-properties/sectional-title-plans.jpeg"
 		},
 		"cadastral-surveys": {
 			"page_title": "Uchunguzi wa Cadastral",
 			"meta_description": "Uchunguzi wa cadastral na mipaka — jua mipaka yako na ujenge kwa ujasiri. Mistari sahihi ya mali, utambuzi wa uvamizi na kuzuia migogoro.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/surveying/cadastral-surveys/AG8ng.jpg"
 		},
 		"aerial-surveys": {
 			"page_title": "Uchunguzi wa Angani",
 			"meta_description": "Uchunguzi wa angani kwa ndege zisizo na rubani — vipimo sahihi, vya haraka na vya kuaminika. Orthomosaic, mifano ya 3D, DTMs na DEMs, uchambuzi wa kiasi, na ufuatiliaji wa ujenzi kote Afrika.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/surveying/aerial-surveys/3d-models.jpeg"
 		},
 		"ground-penetrating-radar": {
 			"page_title": "Rada ya Kupenya Ardhi",
 			"meta_description": "Ugunduzi wa kisasa wa huduma za chini ya ardhi na uchoraji ramani wa chini ya ardhi — uchunguzi wa GPR usioharibu kwa LMX200 kwa miradi ya ujenzi, uhandisi, na miundombinu.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/surveying/ground-penetrating-radar/gpr-01.jpeg"
 		},
 		"resource-mapping": {
 			"page_title": "Uchoraji Ramani wa Rasilimali",
 			"meta_description": "Akili ya kijiografia ya kimfumo kwa kila sekta — kilimo cha usahihi, huduma, madini, ujenzi, uhifadhi wa mazingira, na kukabiliana na maafa kupitia uchoraji ramani wa gridi.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/surveying/resource-mapping/hero.jpg"
 		},
 		"bathymetric-surveys": {
 			"page_title": "Uchunguzi wa Bathymetric",
 			"meta_description": "Uchoraji ramani sahihi wa chini ya maji kwa mabwawa, maziwa, mito na bahari — uchunguzi wa kina na ardhi ya chini ya maji kwa madhumuni ya uhandisi, mazingira, na mipango.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-01.jpg"
 		},
 		"gis-mapping": {
 			"page_title": "Uchoraji Ramani wa GIS",
 			"meta_description": "GIS, uchoraji ramani na vihisishi vya mbali — photogrammetry ya UAV, uchoraji wa LiDAR, uchambuzi wa multispectral na uundaji wa DEM. Data sahihi ya kijiografia kwa miradi ya upangaji, uhandisi, na mazingira.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/surveying/gis-mapping/gis-mapping-01.jpg"
+		},
+		"aerial-drones": {
+			"slug": "/aerial-drones",
+			"page_title": "Droni za Hewa",
+			"meta_description": "Uchunguzi wa droni za hewa kwa ramani, mifano ya 3D, volumetrics, tathmini za mazingira, na ufuatiliaji wa maeneo makubwa au yasiyofikika barani Afrika.",
+			"og_image": "/media/aerial-drones/01.jpeg"
 		},
 		"drone-imagery-surveys": {
 			"page_title": "Uchunguzi wa Picha za Ndege Zisizo na Rubani",
 			"meta_description": "Uchunguzi wa picha za ndege zisizo na rubani — kuaminika, kupanuka, haraka na nguvu. Chora ramani, pima, na fuatilia zaidi ya ekari 1000 kwa wakati mmoja kwa ndege za kisasa kote Afrika.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-01.jpg"
 		},
 		"lidar-mapping": {
 			"page_title": "Uchoraji Ramani wa LiDAR",
 			"meta_description": "Huduma za uchoraji ramani wa LiDAR — kuaminika, kupanuka, haraka na nguvu. Point clouds za usahihi wa juu, DEMs, na mifano ya 3D kwa ujenzi, madini, misitu, na kilimo.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/aerial-drones/lidar-mapping/lidar-mapping-01.png"
 		},
 		"agricultural-ndvi-mapping": {
 			"page_title": "Uchoraji Ramani wa NDVI wa Kilimo",
 			"meta_description": "Kubadilisha kilimo kwa akili ya angani — uchoraji ramani wa NDVI na multispectral kwa ndege zisizo na rubani kwa afya ya mazao, uchambuzi wa umwagiliaji, na makadirio ya mavuno.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/aerial-drones/agricultural-ndvi-mapping/agricultural-ndvi-mapping-01.jpg"
 		},
 		"aerial-drones-as-built-surveys": {
 			"page_title": "Uchunguzi wa As-Built",
 			"meta_description": "Kuongoza mapinduzi ya upimaji wa ardhi na angani barani Afrika — uchunguzi wa as-built kwa ndege zisizo na rubani kwa ramani sahihi, kasi, na ujumuishaji usio na mshono wa CAD/BIM.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/aerial-drones/aerial-drones-as-built-surveys/01.jpg"
 		},
 		"monitoring-and-evaluation": {
 			"page_title": "Ufuatiliaji na Tathmini",
 			"meta_description": "Ufuatiliaji na tathmini ya usahihi kwa ndege zisizo na rubani kwa uendelevu, uhifadhi, na kufuata kanuni — uchambuzi wa NDVI, uchoraji ramani wa mabonde, upigaji picha wa joto, na zaidi.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/aerial-drones/monitoring-and-evaluation/01.jpg"
 		},
 		"solar-panel-drone-surveys": {
 			"page_title": "Uchunguzi wa Ndege wa Paneli za Sola",
 			"meta_description": "Uchunguzi wa paneli za sola unaoendeshwa na ndege zisizo na rubani — picha za mwonekano wa juu, data ya ardhi ya 3D, na uchambuzi wa joto kuboresha utendaji wa sola na kuongeza ROI.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/aerial-drones/solar-panel-drone-surveys/01.jpg"
 		},
 		"volumetric-surveys": {
 			"page_title": "Uchunguzi wa Kiasi",
 			"meta_description": "Uchunguzi wa kiasi kwa busara zaidi — kiasi cha mrundikano kinachowezeshwa na ndege zisizo na rubani, kiasi cha kukata/kujaza, ufuatiliaji wa machimbo, na mizani ya tovuti kwa usahihi wa kiwango cha sentimita.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/aerial-drones/volumetric-surveys/01.jpg"
 		},
 		"landfill-quarry-drone-surveys": {
 			"page_title": "Uchunguzi wa Ndege wa Mashimo ya Taka na Machimbo",
 			"meta_description": "Uchunguzi wa ndege wa mashimo ya taka na machimbo — uchoraji ramani, kipimo, na ufuatiliaji wa haraka, salama, na sahihi zaidi wa zaidi ya ekari 1000 kwa wakati mmoja kote Afrika.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/aerial-drones/landfill-quarry-drone-surveys/01.jpg"
 		},
 		"photography-video-marketing": {
 			"page_title": "Upigaji Picha na Uuzaji wa Video",
 			"meta_description": "Upigaji picha wa kampuni na uuzaji wa video wa ndege zisizo na rubani — taswira za sinema kwa kampeni, matukio, maonyesho ya mali, ukaguzi, na usimulizi wa utendaji.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/aerial-drones/photography-video-marketing/01.jpg"
+		},
+		"civil": {
+			"slug": "/civil",
+			"page_title": "Uhandisi wa Civil",
+			"meta_description": "Ramani, kipimo, na ufuatiliaji wa tovuti za ujenzi kwa haraka, kwa gharama nafuu na kwa usalama zaidi — data ya droni na upimaji unayoweza kutumia kwa maamuzi ya kuegemea.",
+			"og_image": "/media/civil/01.jpeg"
 		},
 		"civil-highway-surveys": {
 			"page_title": "Uchunguzi wa Barabara Kuu",
 			"meta_description": "Suluhisho za uchunguzi wa barabara kuu — upangaji, kubuni, ujenzi, na uendeshaji wa miundombinu ya barabara kwa picha za angani, LiDAR, GNSS, na upimaji wa kawaida.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/civil/highway-surveys/01.jpg"
 		},
 		"civil-as-built-surveys": {
 			"page_title": "Uchunguzi wa As-Built",
 			"meta_description": "Kamata hali halisi, ya sasa ya mazingira yaliyojengwa — uchunguzi wa as-built wa ndege zisizo na rubani, LiDAR, na photogrammetry kwa usahihi wa kiwango cha sentimita kwa BIM, CAD, na kufuata kanuni.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/civil/as-built-surveys/01.jpg"
 		},
-"civil-volumetric-surveys": {
+		"civil-volumetric-surveys": {
 			"page_title": "Uchunguzi wa Kiasi",
 			"meta_description": "Uchunguzi wa kiasi kwa busara zaidi — kiasi cha mrundikano kinachowezeshwa na ndege zisizo na rubani, kiasi cha kukata/kujaza, ufuatiliaji wa machimbo, na mizani ya tovuti kwa usahihi wa kiwango cha sentimita.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/civil/volumetric-surveys/01.jpg"
 		},
 		"civil-bim": {
 			"page_title": "Muundo wa Taarifa za Ujenzi (BIM)",
 			"meta_description": "Muundo wa Taarifa za Ujenzi katika upimaji wa uhandisi — data ya ndege zisizo na rubani na kijiografia inajumuishwa na mtiririko wa kazi wa BIM kwa ukamataji wa uhalisia, uundaji wa mifano ya 3D, ugunduzi wa migongano, na usimamizi wa mali.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/civil/bim/01.jpg"
 		},
 		"civil-site-engineering": {
 			"page_title": "Uchunguzi wa Uhandisi wa Tovuti",
 			"meta_description": "Chunguza kwa busara, jenga kwa nguvu — uchunguzi wa uhandisi wa tovuti unaowezeshwa na ndege zisizo na rubani kwa ramani za topografia, hesabu za kukata na kujaza, ufuatiliaji wa maendeleo ya ujenzi, na uhakikisho wa ubora.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/civil/site-engineering/01.jpg"
 		},
 		"civil-site-setting-out": {
 			"page_title": "Uwekaji wa Alama za Tovuti",
 			"meta_description": "Uchunguzi wa staking out na setting out — kutafsiri mibuni kuwa pointi sahihi za kimwili tovutini kwa usahihi wa kiwango cha sentimita wa GNSS kwa majengo, barabara, na miundombinu.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/civil/site-setting-out/01.jpg"
+		},
+		"dji-air-3s": {
+			"page_title": "DJI Air 3S",
+			"meta_description": "Mageuzi ya kizazi kipya cha mfululizo wa Air — droni ya ramani ya utendaji wa juu na gharama nafuu, mbadala unaopendwa zaidi kuliko mfululizo wa Mavic 3.",
+			"og_image": "/media/equipment-sale/dji-air-3s/images/01.png"
+		},
+		"dji-mavic-3-multispectral": {
+			"page_title": "DJI Mavic 3 Multispectral (M3M)",
+			"meta_description": "Imeundwa kwa kilimo cha usahihi na uchambuzi wa GIS wa mazingira, ikiunganisha sensa za RGB na multispectral.",
+			"og_image": "/media/equipment-sale/dji-mavic-3-multispectral/images/01.png"
+		},
+		"dji-mavic-3-pro": {
+			"page_title": "DJI Mavic 3 Pro",
+			"meta_description": "Droni ya daraja la juu ya prosumer yenye mfumo wa kamera tatu, inayounganisha upigaji picha wa kifahari na ukusanyaji wa data ya kijiografia ya nusu-taalamu.",
+			"og_image": "/media/equipment-sale/dji-mavic-3-pro/images/01.png"
+		},
+		"dji-matrice-350-rtk": {
+			"page_title": "DJI Matrice 350 RTK (M350 RTK)",
+			"meta_description": "UAV bora ya biashara iliyoundwa kukusanya data ya kijiografia kwa usahihi wa juu — hasa kwa ramani za LiDAR, uchunguzi wa mistari, na miradi mikubwa ya uhandisi.",
+			"og_image": "/media/equipment-sale/dji-matrice-350-rtk/images/01.png"
+		},
+		"dji-phantom-4": {
+			"page_title": "DJI Phantom 4",
+			"meta_description": "Droni ya kielelezo cha upimaji, inayotumika sana katika upimaji wa mipaka (cadastral) na ramani za uhandisi.",
+			"og_image": "/media/equipment-sale/dji-phantom-4/images/banner.jpg"
+		},
+		"dji-phantom-4-rtk": {
+			"page_title": "DJI Phantom 4 RTK",
+			"meta_description": "Droni ya kielelezo cha upimaji wa photogrammetry yenye RTK — inayotumika sana katika upimaji wa mipaka (cadastral) na ramani za uhandisi.",
+			"og_image": "/media/equipment-sale/dji-phantom-4-rtk/images/02-01.png"
 		},
 		"foif-a90-rtk-gnss": {
 			"page_title": "FOIF A90 RTK GNSS",
 			"meta_description": "Kipokezi cha RTK GNSS cha usahihi wa juu wa mawimbi mengi na makundi mengi — bora kwa miradi ya cadastral, ujenzi, na uhandisi.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/equipment-sale/foif-a90-rtk-gnss/01.png"
 		},
 		"total-station-esurvey": {
 			"page_title": "Total Station E-Survey",
 			"meta_description": "Vituo kamili vya E-Survey vya utendaji wa juu kwa vipimo vya kuaminika vya pembe na umbali katika miradi ya ujenzi, cadastral, na uhandisi.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/equipment-sale/total-station-esurvey/01.png"
 		},
 		"total-station-dtm-152m": {
 			"page_title": "Total Station DTM 152M",
 			"meta_description": "Kituo kamili cha usahihi wa juu kwa uchunguzi wa kuhitajika — vipimo sahihi kwa ujenzi, uhandisi, na matumizi ya uchunguzi wa cadastral.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/equipment-sale/total-station-dtm-152m/01.png"
 		},
 		"automatic-level-bosch": {
 			"page_title": "Kiwango cha Kiotomatiki cha Bosch GOL 32D",
 			"meta_description": "Chombo cha kiwango cha macho cha utendaji wa juu kwa kipimo sahihi cha mwinuko katika miradi ya ujenzi na upimaji — imara, sahihi, na ya kuaminika shambani.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/equipment-sale/automatic-level-bosch/03.jpg"
 		},
 		"automatic-level-hueper": {
 			"page_title": "Kiwango cha Kiotomatiki cha Huepar ALX32",
 			"meta_description": "Chombo cha usawazishaji cha macho cha usahihi wa juu kwa matumizi ya ujenzi na upimaji — ukuzaji wa 32x na fidia ya kiotomatiki ya kuaminika kwa usahihi thabiti shambani.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/equipment-sale/automatic-level-hueper/01.png"
 		},
 		"equipment-catalogue": {
 			"page_title": "Katalogi ya Vifaa",
 			"meta_description": "Kagua anuwai ya vifaa vya upimaji na uhandisi vya kuaminika, vilivyosawazishwa na sahihi vya SmartGrid Surveying — mifumo ya GNSS, total station, na viwango vya kiotomatiki.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/equipment-sale/equipment-catalogue/01.jpg"
 		},
 		"careers": {
 			"page_title": "Ajira",
 			"meta_description": "Jiunge na SmartGrid Surveying — chunguza nafasi zilizo wazi katika upimaji wa ardhi, ramani za UAV, GIS, uhandisi wa kiraia, na zaidi. Omba sasa kwa nafasi za sasa nchini Kenya na kwingineko.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/home/field-doperators.jpg"
+		},
+		"company-profile": {
+			"page_title": "Wasifu wa Kampuni",
+			"meta_description": "Kutoka ofisi yetu ya Nairobi tunahudumia wakala za serikali, NGO, wasanidi binafsi, na miradi ya wadau wa fedha nchini Kenya na Afrika — tukichanganya teknolojia za RTK GNSS, droni LiDAR, na total station pamoja na usimamizi mzuri wa miradi kubadilisha data ya eneo kuwa maamuzi sahihi.",
+			"og_image": "/media/about/01.jpeg"
 		}
 	},
 	"company": {

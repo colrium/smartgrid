@@ -9,194 +9,268 @@
 		"home": {
 			"slug": "/",
 			"title": "Home",
-			"meta_description": "{{site_title}} provides advanced land and aerial surveying, GIS mapping, and civil engineering services across Kenya and Africa."
+			"meta_description": "{{site_title}} provides advanced land and aerial surveying, GIS mapping, and civil engineering services across Kenya and Africa.",
+			"og_image": "/media/home/field-doperators.jpg"
 		},
 		"about": {
 			"slug": "/about",
 			"title": "About Us",
 			"meta_description": "Learn more about {{site_title}}, our surveying and civil engineering expertise, mission, and commitment to precision across Africa.",
-			"og_image": "/media/og-about.jpg"
+			"og_image": "/media/about/01.jpeg"
 		},
 		"contact": {
 			"slug": "/contact",
 			"page_title": "Contact",
 			"meta_description": "Get in touch with the {{site_title}} team to discuss land surveying, aerial surveys, civil engineering, equipment hire, or drone photography.",
-			"og_image": "/media/og-contact.jpg"
+			"og_image": "/media/field/AG8ngQW.jpeg"
 		},
 
 		"privacy_policy": {
 			"slug": "/privacy-policy",
 			"page_title": "Privacy Policy",
 			"meta_description": "Learn about how {{site_title}} handles information submitted through our website and contact forms.",
-			"og_image": "/media/og-privacy.jpg"
+			"og_image": "/media/about/01.jpeg"
 		},
 		"terms_of_use": {
 			"slug": "/terms-of-use",
 			"page_title": "Terms of Use",
 			"meta_description": "Review the terms of use for {{site_title}}'s website and services.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/about/01.jpeg"
+		},
+		"surveying": {
+			"slug": "/surveying",
+			"page_title": "Land Surveying",
+			"meta_description": "Land surveying across Kenya and Africa — precise, reliable spatial data using advanced GNSS, Total Stations, and Drone LiDAR for centimeter-level accuracy.",
+			"og_image": "/media/surveying/AG8ng.jpeg"
 		},
 		"topographical-surveys": {
 			"slug": "/surveying/topographical-surveys",
 			"page_title": "Topographical surveys",
 			"meta_description": "Topographical Surveying — See the Land as It Truly Is",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/surveying/topographical/3d-data-collection.jpeg"
 		},
 		"building-site-surveys": {
 			"slug": "/surveying/building-site-surveys",
 			"page_title": "Building site surveys",
 			"meta_description": "Precision Surveys for Smarter Construction — building site surveys, construction staking & layout, as-built and underground utility surveys.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/surveying/building-site-surveys/AG8ng.jpeg"
 		},
 		"sectional-properties": {
 			"slug": "/surveying/sectional-properties",
 			"page_title": "Sectional Properties",
 			"meta_description": "Certified sectional property surveys (strata plans) — sectional title plans, unit surveys, boundary & encroachment checks, and 3D as-built scanning.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/surveying/sectional-properties/sectional-title-plans.jpeg"
 		},
 		"cadastral-surveys": {
 			"slug": "/surveying/cadastral-surveys",
 			"page_title": "Cadastral surveys",
 			"meta_description": "Cadastral & boundary surveys — know your boundaries and build with confidence. Accurate property lines, encroachment identification and dispute prevention.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/surveying/cadastral-surveys/AG8ng.jpg"
 		},
 		"aerial-surveys": {
 			"slug": "/surveying/aerial-surveys",
 			"page_title": "Aerial surveys",
 			"meta_description": "Aerial drone surveys — accurate measurements, fast and reliable. Orthomosaics, 3D models, DTMs & DEMs, volumetric analysis, and construction monitoring across Africa.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/surveying/aerial-surveys/3d-models.jpeg"
 		},
 		"ground-penetrating-radar": {
 			"slug": "/surveying/ground-penetrating-radar",
 			"page_title": "Ground Penetrating Radar",
 			"meta_description": "Advanced subsurface utility detection and underground mapping — non-destructive GPR surveys with the LMX200 for construction, engineering, and infrastructure projects.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/surveying/ground-penetrating-radar/gpr-01.jpeg"
 		},
 		"resource-mapping": {
 			"slug": "/surveying/resource-mapping",
 			"page_title": "Resource Mapping",
 			"meta_description": "Systematic spatial intelligence for every sector — precision agriculture, utilities, mining, construction, environmental conservation, and disaster response through grid-based mapping.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/surveying/resource-mapping/hero.jpg"
 		},
 		"bathymetric-surveys": {
 			"slug": "/surveying/bathymetric-surveys",
 			"page_title": "Bathymetric Surveys",
 			"meta_description": "Precision underwater mapping for dams, lakes, rivers & oceans — sonar-based depth and terrain surveys for engineering, environmental, and planning purposes.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-01.jpg"
 		},
 		"gis-mapping": {
 			"slug": "/surveying/gis-mapping",
 			"page_title": "GIS Mapping",
 			"meta_description": "GIS, mapping & remote sensing — UAV photogrammetry, LiDAR mapping, multispectral analysis and DEM creation. Precise spatial data for planning, engineering, and environmental projects.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/surveying/gis-mapping/gis-mapping-01.jpg"
+		},
+		"aerial-drones": {
+			"slug": "/aerial-drones",
+			"page_title": "Aerial Drones",
+			"meta_description": "Aerial drone surveys for mapping, 3D models, volumetrics, environmental assessment, and monitoring of large or inaccessible sites across Africa.",
+			"og_image": "/media/aerial-drones/01.jpeg"
 		},
 		"drone-imagery-surveys": {
 			"slug": "/aerial-drones/drone-imagery-surveys",
 			"page_title": "Drone Imagery Surveys",
 			"meta_description": "Drone imagery surveys — reliable, scalable, fast and powerful. Map, measure, and monitor 1000+ acres at a time with cutting-edge drones across Africa.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-01.jpg"
 		},
 		"lidar-mapping": {
 			"slug": "/aerial-drones/lidar-mapping",
 			"page_title": "LiDAR Mapping",
 			"meta_description": "LiDAR mapping services — reliable, scalable, fast and powerful. High-accuracy point clouds, DEMs, and 3D models for construction, mining, forestry, and agriculture.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/aerial-drones/lidar-mapping/lidar-mapping-01.png"
 		},
 		"agricultural-ndvi-mapping": {
 			"slug": "/aerial-drones/agricultural-ndvi-mapping",
 			"page_title": "Agricultural NDVI Mapping",
 			"meta_description": "Transforming agriculture with aerial intelligence — drone-based NDVI and multispectral mapping for crop health, irrigation analysis, and yield estimation.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/aerial-drones/agricultural-ndvi-mapping/agricultural-ndvi-mapping-01.jpg"
 		},
 		"aerial-drones-as-built-surveys": {
 			"slug": "/aerial-drones/aerial-drones-as-built-surveys",
 			"page_title": "As-Built Surveys",
 			"meta_description": "Leading Africa's land and aerial surveying revolution — drone-based as-built surveys with precision mapping, speed, and seamless CAD/BIM integration.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/aerial-drones/aerial-drones-as-built-surveys/01.jpg"
 		},
 		"monitoring-and-evaluation": {
 			"slug": "/aerial-drones/monitoring-and-evaluation",
 			"page_title": "Monitoring & Evaluation",
 			"meta_description": "Precision-driven drone monitoring and evaluation for sustainability, conservation, and compliance — NDVI analysis, watershed mapping, thermal imaging, and more.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/aerial-drones/monitoring-and-evaluation/01.jpg"
 		},
 		"solar-panel-drone-surveys": {
 			"slug": "/aerial-drones/solar-panel-drone-surveys",
 			"page_title": "Solar Panel Drone Surveys",
 			"meta_description": "Drone-powered solar panel surveys — high-resolution imagery, 3D terrain data, and thermal analytics to optimize solar performance and maximize ROI.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/aerial-drones/solar-panel-drone-surveys/01.jpg"
 		},
 		"volumetric-surveys": {
 			"slug": "/aerial-drones/volumetric-surveys",
 			"page_title": "Volumetric Surveys",
 			"meta_description": "Volumetric surveys done smarter — drone-enabled stockpile volumes, cut/fill quantities, quarry monitoring, and site balances with centimeter-level accuracy.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/aerial-drones/volumetric-surveys/01.jpg"
 		},
 		"landfill-quarry-drone-surveys": {
 			"slug": "/aerial-drones/landfill-quarry-drone-surveys",
 			"page_title": "Landfill & Quarry Drone Surveys",
 			"meta_description": "Landfill and quarry drone surveys — faster, safer, and more accurate mapping, measurement, and monitoring of 1000+ acres at a time across Africa.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/aerial-drones/landfill-quarry-drone-surveys/01.jpg"
 		},
 		"photography-video-marketing": {
 			"slug": "/aerial-drones/photography-video-marketing",
 			"page_title": "Photography & Video Marketing",
 			"meta_description": "Corporate drone photography and video marketing — cinematic visuals for campaigns, events, property showcases, inspections, and executive storytelling.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/aerial-drones/photography-video-marketing/01.jpg"
+		},
+		"civil": {
+			"slug": "/civil",
+			"page_title": "Civil Engineering",
+			"meta_description": "Faster, more cost-effective, and safer mapping, measurement, and monitoring of construction sites — drone and surveying data you can act on.",
+			"og_image": "/media/civil/01.jpeg"
 		},
 		"civil-highway-surveys": {
 			"slug": "/civil/highway-surveys",
 			"page_title": "Highway Surveys",
 			"meta_description": "Highway surveys solutions — planning, design, construction, and operation of road infrastructure with aerial imaging, LiDAR, GNSS, and conventional surveying.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/civil/highway-surveys/01.jpg"
 		},
 		"civil-as-built-surveys": {
 			"slug": "/civil/as-built-surveys",
 			"page_title": "As-Built Surveys",
 			"meta_description": "Capture the true, current state of built environments — drone, LiDAR, and photogrammetry as-built surveys with centimeter-level accuracy for BIM, CAD, and compliance.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/civil/as-built-surveys/01.jpg"
 		},
 		"civil-volumetric-surveys": {
 			"slug": "/civil/volumetric-surveys",
 			"page_title": "Volumetric Surveys",
 			"meta_description": "Volumetric surveys done smarter — drone-enabled stockpile volumes, cut/fill quantities, quarry monitoring, and site balances with centimeter-level accuracy.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/civil/volumetric-surveys/01.jpg"
 		},
 		"civil-bim": {
 			"slug": "/civil/bim",
 			"page_title": "Building Information Modelling (BIM)",
 			"meta_description": "Building Information Modelling in engineering surveying — drone and geospatial data integrated with BIM workflows for reality capture, 3D site modeling, clash detection, and asset management.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/civil/bim/01.jpg"
 		},
 		"civil-site-engineering": {
 			"slug": "/civil/site-engineering",
 			"page_title": "Site Engineering Surveys",
 			"meta_description": "Survey smarter, build stronger — drone-enabled site engineering surveys for topographic mapping, cut & fill calculations, construction progress monitoring, and quality assurance.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/civil/site-engineering/01.jpg"
 		},
 		"civil-site-setting-out": {
 			"slug": "/civil/site-setting-out",
 			"page_title": "Site Setting Out",
 			"meta_description": "Staking out and setting out surveys — translating designs into accurate physical points on-site with centimeter-level GNSS accuracy for buildings, roads, and infrastructure.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/civil/site-setting-out/01.jpg"
+		},
+		"dji-air-3s": {
+			"page_title": "DJI Air 3S",
+			"meta_description": "A next-generation evolution of the Air series — a high-performance, cost-efficient mapping drone and an increasingly popular alternative to the Mavic 3 line.",
+			"og_image": "/media/equipment-sale/dji-air-3s/images/01.png"
+		},
+		"dji-mavic-3-multispectral": {
+			"page_title": "DJI Mavic 3 Multispectral (M3M)",
+			"meta_description": "Designed for precision agriculture and environmental GIS analysis, integrating RGB and multispectral sensors.",
+			"og_image": "/media/equipment-sale/dji-mavic-3-multispectral/images/01.png"
+		},
+		"dji-mavic-3-pro": {
+			"page_title": "DJI Mavic 3 Pro",
+			"meta_description": "A high-end prosumer drone featuring a triple-camera system, bridging the gap between cinematic imaging and semi-professional geospatial data capture.",
+			"og_image": "/media/equipment-sale/dji-mavic-3-pro/images/01.png"
+		},
+		"dji-matrice-350-rtk": {
+			"page_title": "DJI Matrice 350 RTK (M350 RTK)",
+			"meta_description": "A flagship enterprise UAV for high-accuracy geospatial data acquisition — LiDAR mapping, corridor surveys, and large-scale engineering projects.",
+			"og_image": "/media/equipment-sale/dji-matrice-350-rtk/images/01.png"
+		},
+		"dji-phantom-4": {
+			"page_title": "DJI Phantom 4",
+			"meta_description": "A benchmark survey drone, widely used in cadastral and engineering mapping.",
+			"og_image": "/media/equipment-sale/dji-phantom-4/images/banner.jpg"
+		},
+		"dji-phantom-4-rtk": {
+			"page_title": "DJI Phantom 4 RTK",
+			"meta_description": "A benchmark photogrammetry survey drone with centimeter-level RTK positioning, widely used in cadastral and engineering mapping.",
+			"og_image": "/media/equipment-sale/dji-phantom-4-rtk/images/02-01.png"
+		},
+		"foif-a90-rtk-gnss": {
+			"page_title": "FOIF A90 RTK GNSS",
+			"meta_description": "The FOIF A90 RTK GNSS system delivers centimeter-level accuracy for all your surveying needs. Designed for reliability and performance in the field.",
+			"og_image": "/media/equipment-sale/foif-a90-rtk-gnss/01.png"
+		},
+		"total-station-esurvey": {
+			"page_title": "Total Station E-Survey",
+			"meta_description": "A range of E-Survey total stations designed for reliable angle and distance measurements in construction, cadastral, and engineering projects.",
+			"og_image": "/media/equipment-sale/total-station-esurvey/01.png"
+		},
+		"total-station-dtm-152m": {
+			"page_title": "Total Station DTM 152M",
+			"meta_description": "The DTM 152M Total Station is a reliable, high-precision surveying instrument designed for efficient field operations and accurate measurements.",
+			"og_image": "/media/equipment-sale/total-station-dtm-152m/01.png"
+		},
+		"automatic-level-bosch": {
+			"page_title": "Bosch GOL 32D Automatic Level",
+			"meta_description": "The Bosch GOL 32D Automatic Level is a high-performance optical leveling instrument designed for precise elevation measurement in construction.",
+			"og_image": "/media/equipment-sale/automatic-level-bosch/03.jpg"
+		},
+		"automatic-level-hueper": {
+			"page_title": "Huepar ALX32 Automatic Level",
+			"meta_description": "The Huepar ALX32 Automatic Level is a precision optical leveling instrument for construction and surveying, with 32x magnification and automatic compensation.",
+			"og_image": "/media/equipment-sale/automatic-level-hueper/01.png"
 		},
 		"equipment-catalogue": {
 			"slug": "/equipment-sale/equipment-catalogue",
 			"page_title": "Equipment Catalogue",
 			"meta_description": "Browse SmartGrid Surveying's range of reliable, calibrated, and accurate surveying and engineering equipment — GNSS systems, total stations, and automatic levels.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/equipment-sale/equipment-catalogue/01.jpg"
 		},
 		"careers": {
 			"slug": "/careers",
 			"page_title": "Careers",
 			"meta_description": "Join SmartGrid Surveying — explore open positions across land surveying, UAV mapping, GIS, civil engineering, and more. Apply now for current opportunities in Kenya and beyond.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/home/field-doperators.jpg"
 		},
 		"company-profile": {
 			"slug": "/company-profile",
 			"page_title": "Company Profile",
 			"meta_description": "From our base in Nairobi we serve government agencies, NGOs, private developers, and donor-funded programmes across Kenya and Africa — combining cutting-edge RTK GNSS, drone LiDAR, and total station technologies with disciplined project management to turn spatial data into confident decisions.",
-			"og_image": "/media/og-terms.jpg"
+			"og_image": "/media/about/01.jpeg"
 		}
 	},
 	"company": {

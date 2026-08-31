@@ -225,40 +225,40 @@
 		"description": "We combine cutting-edge technology with extensive experience to deliver exceptional surveying and engineering solutions.",
 		"items": [
 			{
-				"icon": "check-circle",
-				"name": "Expertise",
-				"label": "Expertise in Power Grid Surveying & Civil Works",
-				"description": "Our team of licensed professionals brings extensive experience in surveying and civil engineering."
+				"icon": "crosshairs",
+				"name": "engineeringAccuracy",
+				"label": "Engineering Accuracy",
+				"description": "We use RTK GNSS, Total Stations, and Drone Systems to deliver centimeter-level precision."
 			},
 			{
-				"icon": "check-circle",
-				"name": "Advanced Technology",
-				"label": "Use of Drone & GIS Technologies",
-				"description": "We utilize the latest surveying instruments and drone technology for accurate and efficient data collection."
+				"icon": "radar",
+				"name": "modernTechnology",
+				"label": "Modern Technology",
+				"description": "From LiDAR mapping to GPR utility detection, we deploy advanced tools for complex environments."
 			},
 			{
-				"icon": "check-circle",
-				"name": "Comprehensive Services",
-				"label": "Comprehensive Services",
-				"description": "From land surveying to civil engineering, we offer a wide range of services to meet your project needs."
+				"icon": "timer-sand",
+				"name": "fastTurnaround",
+				"label": "Fast Turnaround",
+				"description": "Efficient workflows ensure timely delivery without compromising quality."
 			},
 			{
-				"icon": "check-circle",
-				"name": "Quality Assurance",
+				"icon": "clipboard-check",
+				"name": "projectFocused",
+				"label": "Project-Focused Approach",
+				"description": "We align our outputs with design, construction, and approval requirements-not just raw data."
+			},
+			{
+				"icon": "account-group",
+				"name": "trustedExperience",
+				"label": "Trusted Experience",
+				"description": "Our team brings hands-on field experience across infrastructure, real estate, and engineering projects in East Africa."
+			},
+			{
+				"icon": "shield-check",
+				"name": "commitmentQuality",
 				"label": "Commitment to Quality & Innovation",
 				"description": "We adhere to strict quality standards and continuously innovate to provide the best solutions for our clients."
-			},
-			{
-				"icon": "check-circle",
-				"name": "Client-Centric Approach",
-				"label": "Client-Centric Approach",
-				"description": "We prioritize our clients' needs, ensuring clear communication and tailored solutions for every project."
-			},
-			{
-				"icon": "check-circle",
-				"name": "Proven Track Record",
-				"label": "Proven Track Record",
-				"description": "We have a proven track record of delivering successful projects on time and within budget."
 			}
 		]
 	},
@@ -269,31 +269,38 @@
 		"items": [
 			{
 				"icon": "home-outline",
-				"label": "Real Estate"
+				"label": "Real Estate",
+				"description": "Site assessments, subdivision planning, and cadastral mapping for property development."
 			},
 			{
 				"icon": "hard-hat",
-				"label": "Civil & Construction"
+				"label": "Civil & Construction",
+				"description": "Surveying support for site layout, monitoring, and construction control."
 			},
 			{
 				"icon": "road-variant",
-				"label": "Road Infrastructure"
+				"label": "Road Infrastructure",
+				"description": "Alignment surveys, as-built verification, and corridor mapping for road projects."
 			},
 			{
 				"icon": "account-multiple-outline",
-				"label": "Private Developers"
+				"label": "Private Developers",
+				"description": "Feasibility surveys, master-planning support, and parcel mapping for developers."
 			},
 			{
 				"icon": "city",
-				"label": "Government"
+				"label": "Government",
+				"description": "Compliance mapping, public project surveys, and infrastructure planning support."
 			},
 			{
 				"icon": "domain",
-				"label": "NGOs"
+				"label": "NGOs",
+				"description": "Community mapping, resource assessments, and project monitoring services."
 			},
 			{
 				"icon": "flash-outline",
-				"label": "Utility & Energy Companies"
+				"label": "Utility & Energy Companies",
+				"description": "Utility mapping, network surveys, and asset management support for energy projects."
 			}
 		]
 	},
@@ -341,6 +348,7 @@
 				"description": "High-resolution aerial imagery and 3D mapping for precise data collection.",
 				"href": "/aerial-drones/lidar-mapping"
 			},
+
 			{
 				"icon": "hard-hat",
 				"label": "Construction & Site Control",
@@ -352,6 +360,11 @@
 				"label": "Infrastructure Support",
 				"description": "Surveying and engineering solutions for roads, bridges, utilities, and other infrastructure projects.",
 				"href": "/civil/highway-surveys"
+			},
+			{
+				"icon": "radar",
+				"label": "Ground Penetrating Radar (GPR)",
+				"description": "Subsurface utility detection and mapping to locate buried services and structures."
 			}
 		]
 	},
