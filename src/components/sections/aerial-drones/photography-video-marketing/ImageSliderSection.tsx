@@ -17,9 +17,16 @@ export function ImageSliderSection() {
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden">
-			<div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
+			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
-					<Slider slides={slides} autoplay={5000} showArrows showDots />
+					<Slider
+						slides={slides}
+						autoplay={5000}
+						showArrows
+						showDots
+
+						containerClassName="aspect-[5/3]! sm:aspect-[5/3] lg:aspect-[5/3]"
+					/>
 				</FadeUp>
 			</div>
 		</section>

@@ -57,17 +57,17 @@ export function SectorSection({
 					{images.slice(0, 2).map((src, index) => (
 						<div
 							key={index}
-							className={`relative overflow-hidden rounded-[20px] hairline bg-surface card-shadow ${
+							className={`relative overflow-hidden rounded-[20px] bg-slate-900 aspect-4/3 card-shadow ${
 								index === 0 ? "mt-6" : "-mt-6"
 							}`}
 						>
-							<div className="relative aspect-[3/4] bg-slate-900">
+							<div className="relative  w-full h-full">
 								<Image
 									src={src}
 									alt={`${section.headline} ${index + 1}`}
 									fill
 									sizes="(min-width: 1024px) 25vw, 50vw"
-									className="object-cover object-center transition-transform duration-700 hover:scale-105"
+									className="object-fill object-center transition-transform duration-700 hover:scale-105"
 								/>
 							</div>
 						</div>

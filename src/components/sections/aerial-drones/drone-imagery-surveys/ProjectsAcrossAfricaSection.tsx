@@ -107,7 +107,7 @@ export function ProjectsAcrossAfricaSection() {
 									key={index}
 									className="relative overflow-hidden rounded-[20px] hairline bg-surface card-shadow"
 								>
-									<div className="relative aspect-[16/10] bg-slate-900">
+									<div className="relative aspect-16/10 bg-slate-900">
 										<Image
 											src={src}
 											alt={`${section.headline} ${index + 1}`}

@@ -17,14 +17,14 @@ export function GprHighlightsBar() {
 	if (!Array.isArray(items) || items.length === 0) return null;
 
 	return (
-		<section className="relative py-8 border-y border-ink/5 bg-surface">
+		<section className="relative py-8">
 			<div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
 					<div className="flex flex-wrap items-center justify-center gap-3">
 						{items.map((item, index) => (
 							<span
 								key={index}
-								className="inline-flex items-center gap-2 rounded-full bg-primary-50 px-5 py-2.5 text-xs font-medium text-primary"
+								className="inline-flex items-center gap-2 rounded-full bg-surface-50 px-5 py-2.5 text-xs font-medium text-mute"
 							>
 								{item.icon && <span className={`mdi mdi-${item.icon} text-base`} />}
 								{item.label}

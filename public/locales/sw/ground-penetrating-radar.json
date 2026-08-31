@@ -175,36 +175,9 @@
 			"Ripoti ya uchunguzi wa GPR"
 		],
 		"images": [
-			{
-				"image": "/media/surveying/ground-penetrating-radar/gpr-01.jpeg",
-				"title": "Scan Shambani",
-				"description": "Upimaji wa GPR wa wakati halisi kwenye tovuti ya mijini ukionyesha njia za huduga."
-			},
-			{
-				"image": "/media/surveying/ground-penetrating-radar/gpr-07.jpeg",
-				"title": "Ramani za Njia",
-				"description": "Transects zenye msongamano wa juu kwa ufunikaji kamili wa chini ya ardhi."
-			},
-			{
-				"image": "/media/surveying/ground-penetrating-radar/gpr-10.jpeg",
-				"title": "Utambuzi wa Huduga za Juu",
-				"description": "Utambuzi wazi wa waya na conduits za juu kabla ya kuchimba."
-			},
-			{
-				"image": "/media/surveying/ground-penetrating-radar/gpr-12.jpeg",
-				"title": "Wasifu wa Kasoro za Kina",
-				"description": "Kutambua mashimo ya kina na miundo iliyojificha kwa nguvu zaidi ya kuingia."
-			},
-			{
-				"image": "/media/surveying/ground-penetrating-radar/gpr-09.jpeg",
-				"title": "Muunganisho wa RTK",
-				"description": "Uwekaji nafuni wa GNSS uliosawazishwa kutoa usahihi wa sentimita."
-			},
-			{
-				"image": "/media/surveying/ground-penetrating-radar/gpr-14.jpeg",
-				"title": "Tafsiri ya Data",
-				"description": "Slices na ramani zilizochakatwa tayari kwa mchakato wa uhandisi."
-			}
+			"/media/surveying/ground-penetrating-radar/data-integration.png",
+			"/media/surveying/ground-penetrating-radar/gpr-02.png",
+			"/media/surveying/ground-penetrating-radar/topographical-mapping.png"
 		]
 	},
 	"technology": {

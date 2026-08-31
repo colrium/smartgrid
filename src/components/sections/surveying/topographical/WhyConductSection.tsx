@@ -39,7 +39,7 @@ export function WhyConductSection() {
 				<div className="mt-14 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={(index % 3) * 0.08}>
-							<article className="group relative h-full border-t-2 border-primary/20 bg-surface hairline card-shadow rounded-b-[20px] p-8 transition-all duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-t-primary">
+							<article className="group relative h-full  bg-surface hairline card-shadow rounded-[20px] p-8 transition-all duration-500 ">
 								<div className="flex items-center justify-between gap-4">
 									<span className="text-sm font-semibold tabular-nums tracking-[0.14em] text-primary">
 										{String(index + 1).padStart(2, "0")}

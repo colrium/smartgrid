@@ -17,10 +17,7 @@ export function GprJumpNav() {
 	if (!Array.isArray(items) || items.length === 0) return null;
 
 	return (
-		<nav
-			aria-label="Section navigation"
-			className="sticky top-[72px] z-30 bg-surface/90 backdrop-blur border-b border-ink/5"
-		>
+		<nav aria-label="Section navigation" className="sticky top-[72px] z-30 ">
 			<div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
 					<div className="flex items-center gap-1 overflow-x-auto py-3 -mx-1">
@@ -28,7 +25,7 @@ export function GprJumpNav() {
 							<a
 								key={index}
 								href={item.href}
-								className="shrink-0 rounded-full px-4 py-1.5 text-xs font-medium text-on-surface/60 transition-colors duration-300 hover:bg-primary-50 hover:text-primary"
+								className="shrink-0 rounded-full px-4 py-1.5 text-xs font-medium text-on-surface transition-colors duration-300 bg-primary-50 hover:bg-primary-100 hover:text-primary"
 							>
 								{item.label}
 							</a>

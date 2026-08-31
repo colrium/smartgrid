@@ -157,7 +157,9 @@
 			"GPR survey report"
 		],
 		"images": [
-			
+			"/media/surveying/ground-penetrating-radar/data-integration.png",
+            "/media/surveying/ground-penetrating-radar/gpr-02.png",
+            "/media/surveying/ground-penetrating-radar/topographical-mapping.png"
 		]
 	},
 	"technology": {

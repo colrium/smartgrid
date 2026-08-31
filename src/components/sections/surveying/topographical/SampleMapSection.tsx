@@ -27,7 +27,10 @@ export function SampleMapSection() {
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden">
-			<Blob className="w-[26rem] h-[26rem] bg-primary-100/60 -bottom-24 -left-24" opacity={0.5} />
+			<Blob
+				className="w-[26rem] h-[26rem] bg-primary-100/60 -bottom-24 -left-24"
+				opacity={0.5}
+			/>
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader
@@ -39,7 +42,7 @@ export function SampleMapSection() {
 				<div className="mt-14 sm:mt-20 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 					{/* Highlights list */}
 					<FadeUp className="lg:col-span-5">
-						<div className="relative rounded-r-[20px] border-l-2 border-primary bg-surface hairline p-8 sm:p-10 card-shadow">
+						<div className="relative rounded-[20px] card-shadow border-primary bg-surface p-8 sm:p-10 ">
 							<span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
 								<span className="h-1.5 w-1.5 rounded-full bg-primary" />
 								{section.map?.title}

@@ -40,7 +40,7 @@ export function GprMethodologySection() {
 						<FadeUp key={index} delay={index * 0.08}>
 							<article className="relative flex flex-col items-center text-center gap-4 px-4">
 								<div className="relative">
-									<span className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-surface">
+									<span className="flex h-16 w-16 items-center justify-center rounded-full bg-primary-50 text-primary">
 										<span className={`mdi mdi-${METHOD_ICONS[index % METHOD_ICONS.length]} text-2xl`} />
 									</span>
 									<span className="absolute -top-1.5 -right-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-ink text-[10px] font-semibold text-surface">
