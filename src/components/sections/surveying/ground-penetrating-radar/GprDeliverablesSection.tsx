@@ -4,18 +4,14 @@ import { useTranslation } from "@/hooks";
 import { FadeLeft, FadeRight } from "@/components/animations/Fade";
 import { SectionHeader } from "@/components/sections/home";
 import Slider from "@/components/Slider";
+import { MediaImage } from "@/lib/types";
 
-interface DeliverableImage {
-	image?: string | null;
-	title?: string;
-	description?: string;
-}
 
 interface DeliverablesContent {
 	tag?: string | null;
 	headline: string;
 	list?: string[] | null;
-	images?: DeliverableImage[] | null;
+	images?: MediaImage[] | null;
 }
 
 export function GprDeliverablesSection() {
@@ -28,11 +24,18 @@ export function GprDeliverablesSection() {
 
 	if (list.length === 0 && images.length === 0) return null;
 
-	const slides = images
-		.filter((item) => typeof item.image === "string" && item.image.startsWith("/"))
-		.map((item) => ({
-			image: item.image as string,
-			alt: item.title ?? "GPR deliverable",
+    const slides = images
+		.filter((item) => {
+			const url = typeof item === "object" ? item.url : item;
+			return typeof url === "string" && url.startsWith("/");
+		})
+		.map((item, index) => ({
+			image: (typeof item === "object" ? item.url : item) as string,
+			alt: (typeof item === "object" ? item.label : item) ?? "GPR",
+			title: (typeof item === "object" ? item.label : null) ?? null,
+			description:
+				(typeof item === "object" ? item.description : null) ??
+				null,
 		}));
 
 	return (
@@ -68,16 +71,15 @@ export function GprDeliverablesSection() {
 
 					{slides.length > 0 && (
 						<FadeRight delay={0.08}>
-							<div className="rounded-[20px] bg-surface hairline card-shadow p-4">
+							
 								<Slider
 									slides={slides}
 									autoplay={5000}
 									showArrows
 									showDots
 									imgClassName="object-fill!"
-									containerClassName=" aspect-5/3!"
+									containerClassName=" aspect-square!"
 								/>
-							</div>
 						</FadeRight>
 					)}
 				</div>
