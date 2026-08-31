@@ -359,7 +359,8 @@
 			{
 				"icon": "radar",
 				"label": "Rada ya Kupenya Ardhini (GPR)",
-				"description": "Ugunduzi na ramani ya huduma za chini ya ardhi ili kupata huduma na miundo iliyozikwa."
+				"description": "Ugunduzi na ramani ya huduma za chini ya ardhi ili kupata huduma na miundo iliyozikwa.",
+				"href": "/surveying/ground-penetrating-radar"
 			}
 		]
 	},

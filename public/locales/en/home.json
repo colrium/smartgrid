@@ -364,7 +364,8 @@
 			{
 				"icon": "radar",
 				"label": "Ground Penetrating Radar (GPR)",
-				"description": "Subsurface utility detection and mapping to locate buried services and structures."
+				"description": "Subsurface utility detection and mapping to locate buried services and structures.",
+                "href": "/surveying/ground-penetrating-radar"
 			}
 		]
 	},
@@ -476,7 +477,192 @@
 			}
 		]
 	},
+	"surveyCostInKenya": {
+		"tag": "Budget Planning",
+		"headline": "How Much Does a Survey Cost in Kenya?",
+		"description": "The honest answer: it depends — but not by mystery. A few site realities shape every quotation we issue, and knowing them puts you in control of the budget conversation.",
+		"factors": {
+			"label": "Survey costs depend on:",
+			"items": [
+				{
+					"icon": "ruler-square-compass",
+					"label": "Project size and terrain",
+					"description": "Acres to cover, slopes, vegetation, and how much ground the crew must walk."
+				},
+				{
+					"icon": "map-search-outline",
+					"label": "Type of survey required",
+					"description": "A boundary retracement, a design topo, and a drone orthomosaic are different jobs."
+				},
+				{
+					"icon": "map-marker-path",
+					"label": "Location and accessibility",
+					"description": "Distance, road access, and how easily instruments reach every corner of the site."
+				}
+			]
+		},
+		"ranges": {
+			"label": "Typical ranges",
+			"hint": "Tap a survey type to explore what shapes its price",
+			"items": [
+				{
+					"icon": "vector-square",
+					"label": "Boundary Surveys",
+					"price": 30000,
+					"pricePrefix": "From KES",
+					"tagline": "Know exactly where your land ends",
+					"description": "Property lines, encroachments, and beacons — the survey that keeps neighbours friendly and titles clean.",
+					"includes": [
+						"Boundary delineation & beacon placement",
+						"Registry maps & title processing support",
+						"Dispute-proof survey documentation"
+					]
+				},
+				{
+					"icon": "terrain",
+					"label": "Topographical Surveys",
+					"price": 50000,
+					"pricePrefix": "From KES",
+					"tagline": "The ground truth behind every design",
+					"description": "Contours, features, and elevations your architect and engineer will build on — literally.",
+					"includes": [
+						"Contours & spot levels",
+						"Features & utilities mapping",
+						"CAD-ready engineering deliverables"
+					]
+				},
+				{
+					"icon": "quadcopter",
+					"label": "Drone Mapping",
+					"price": 25000,
+					"pricePrefix": "From KES",
+					"tagline": "1000+ acres in a fraction of the time",
+					"description": "Orthomosaics, 3D models, and volumetrics captured from the sky — fast, safe, and centimeter-accurate.",
+					"includes": [
+						"Orthomosaics & 3D models",
+						"Volumetric analysis & cut/fill",
+						"Rapid same-week turnaround"
+					]
+				}
+			]
+		},
+		"disclaimer": "Typical starting ranges only — every site is different. Size, terrain, and access shape the final figure on your quotation.",
+		"cta": {
+			"label": "Get a Custom Quotation",
+			"href": "/contact?reason=custom-quotation#contact-form",
+			"icon": "invoice-text"
+		},
+		"secondaryCta": {
+			"label": "Talk to a Surveyor",
+			"href": "/contact?reason=talk-to-surveyor#contact-form",
+			"icon": "account-voice"
+		}
+	},
+	"coverageArea": {
+		"tag": "Coverage Area",
+		"headline": "From Our Nairobi Base to the Wider East Africa",
+		"description": "We have a strong operational scale — a presence in multiple countries, hundreds of projects completed, and a commitment to delivering high-quality services over the years. If your site is in the region, chances are we've already mapped next door.",
+		"hqPin": "HQ — Ruiru, Nairobi",
+		"stats": [
+			{ "icon": "map-marker-multiple", "value": 7, "suffix": "+", "label": "Countries covered" },
+			{ "icon": "clipboard-check", "value": 250, "suffix": "+", "label": "Projects completed" },
+			{ "icon": "timer-check", "value": 5, "suffix": "+", "label": "Years in the field" }
+		],
+		"groups": [
+			{
+				"icon": "home-city",
+				"label": "Core Counties",
+				"description": "Where we're based and most active — fastest mobilisation and the sharpest local knowledge.",
+				"items": ["Nairobi", "Kiambu", "Machakos", "Kajiado"]
+			},
+			{
+				"icon": "city",
+				"label": "Major Cities",
+				"description": "Full crews and equipment regularly deployed to Kenya's key urban centres.",
+				"items": ["Mombasa", "Kisumu", "Nakuru"]
+			},
+			{
+				"icon": "earth",
+				"label": "East Africa & Beyond",
+				"description": "Cross-border assignments across the region — when drones fly, borders barely matter.",
+				"items": ["Uganda", "Tanzania", "Somalia & wider East Africa"]
+			}
+		],
+		"note": "Working somewhere off the grid? We deploy. Tell us where your site is."
+	},
 
+	"faq": {
+		"tag": "FAQ",
+		"headline": "Frequently Asked Questions",
+		"description": "Straight answers from the field — the things clients ask us before commissioning their first survey.",
+		"items": [
+			{
+				"question": "Do I need a survey before construction?",
+				"answer": "Yes — and it's the cheapest insurance you'll ever buy. A topographical survey feeds your architectural designs, engineering plans, and county approvals, and it surfaces site realities (slopes, utilities, boundary positions) before they become costly change orders. Building on assumptions is the most expensive mistake in construction."
+			},
+			{
+				"question": "How long does a survey take?",
+				"answer": "Most projects take 1–3 days of fieldwork and 2–7 days of processing and drafting, depending on the size of the site, the terrain, and the deliverables you need. We confirm a clear timeline with your quotation — and flag any delays early, not at handover."
+			},
+			{
+				"question": "Can you detect underground utilities?",
+				"answer": "Yes. We use Ground Penetrating Radar (GPR) — including the LMX200 — alongside utility mapping techniques to locate buried water lines, power cables, and other infrastructure before you excavate. It protects your crew, your budget, and your programme."
+			},
+			{
+				"question": "How much will my survey cost?",
+				"answer": "Boundary surveys start from KES 30,000+, topographical surveys from KES 50,000+, and drone mapping from KES 25,000+. Because every site is different, we price on size, terrain, and accessibility — request a custom quotation and we'll turn it around quickly."
+			},
+			{
+				"question": "Which areas do you cover?",
+				"answer": "We're based in Nairobi (Ruiru) and work across Kiambu, Machakos, Kajiado, Mombasa, Kisumu, and Nakuru — with full crews regularly deploying to Uganda, Tanzania, Somalia, and the wider East Africa region."
+			},
+			{
+				"question": "What deliverables will I receive?",
+				"answer": "Professional, ready-to-use outputs: topographical maps and contours, boundary and cadastral plans, 3D point clouds, DEM/DSM models, CAD shapefiles, orthomosaics, volumetric reports, and signed survey reports — formatted for engineers, architects, and approval authorities."
+			}
+		],
+		"stillCurious": {
+			"label": "Still curious?",
+			"description": "Every site tells a story — we answer with data.",
+			"cta": {
+				"label": "Talk to a Surveyor",
+				"href": "/contact?reason=faq#contact-form",
+				"icon": "forum"
+			}
+		}
+	},
+	"actionCtaSurveyor": {
+		"tag": "Free Consultation",
+		"headline": "Not sure where to start? Talk to a surveyor.",
+		"description": "Tell us about your site and your goal — we'll recommend the right survey, the right instruments, and a realistic budget. No obligation, no jargon.",
+		"watermark": "map-marker-radius",
+		"primary": {
+			"label": "Talk to a Surveyor",
+			"href": "/contact?reason=talk-to-surveyor#contact-form",
+			"icon": "account-voice"
+		},
+		"secondary": {
+			"label": "See Typical Pricing",
+			"href": "#survey-cost",
+			"icon": "cash-multiple"
+		}
+	},
+	"actionCtaEngineer": {
+		"tag": "Build on Certainty",
+		"headline": "Engage an engineer for your next milestone.",
+		"description": "Setting out, site engineering, as-built verification — put an engineer-grade eye on your project from ground-break to handover.",
+		"watermark": "bridge",
+		"primary": {
+			"label": "Engage an Engineer",
+			"href": "/contact?reason=engage-engineer#contact-form",
+			"icon": "hard-hat"
+		},
+		"secondary": {
+			"label": "Explore Civil Services",
+			"href": "/civil",
+			"icon": "arrow-right"
+		}
+	},
 	"services": {
 		"tag": "Services",
 		"headline": "Our Services",

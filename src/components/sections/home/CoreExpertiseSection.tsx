@@ -42,13 +42,13 @@ export function CoreExpertiseSection() {
 					</div>
 				</FadeUp>
 
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6">
 					{Array.isArray(items) &&
 						items.map((item, index) => (
 							<FadeUp
 								key={index}
 								delay={(index % 4) * 0.08}
-								className={index % 2 === 1 ? "lg:translate-y-8" : ""}
+								// className={index % 2 === 1 ? "lg:translate-y-8" : ""}
 							>
 								{item.href ? (
 									<Link
