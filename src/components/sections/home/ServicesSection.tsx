@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "@/hooks";
 import { SectionHeader } from "./SectionHeader";
 import { ParallaxDecor, Blob } from "./decor";
+import { FadeUp } from "@/components/animations/Fade";
 
 interface SeviceItemList {
 	label: string;
@@ -50,10 +51,12 @@ export function ServicesSection() {
 			</ParallaxDecor>
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-				<SectionHeader
-					tag={t("home:services.tag") as string}
-					headline={t("home:services.headline") as string}
-				/>
+				<FadeUp>
+					<SectionHeader
+						tag={t("home:services.tag") as string}
+						headline={t("home:services.headline") as string}
+					/>
+				</FadeUp>
 
 				<div className="mt-14 sm:mt-20 rounded-[20px] pale-panel hairline card-shadow overflow-hidden p-6 sm:p-10 lg:p-12">
 					<div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
@@ -76,16 +79,18 @@ export function ServicesSection() {
 											aria-selected={selected}
 											aria-controls="service-panel"
 											onClick={() => setActiveTab(index)}
-											className={`flex shrink-0 items-center gap-2 rounded-full border p-2 text-sm capitalize transition-colors duration-300 lg:mb-2 ${
+											className={`flex shrink-0 items-center gap-2 rounded-full p-2 px-6 text-sm capitalize justify-center transition-colors duration-300 cursor-pointer lg:mb-2 ${
 												selected
 													? "bg-primary text-surface"
-													: "text-primary border-primary/50 hover:bg-primary/5"
+													: "text-primary bg-primary-50 hover:bg-primary-100"
 											}`}
 										>
 											<span
 												className={`mdi mdi-${itemToIcon(service.label)} text-xl`}
 											/>
-											<span className="whitespace-nowrap">{service.label}</span>
+											<span className="whitespace-nowrap">
+												{service.label}
+											</span>
 										</button>
 									);
 								})}
@@ -105,43 +110,45 @@ export function ServicesSection() {
 									exit={{ opacity: 0, y: -12 }}
 									transition={{ duration: 0.4, ease: PANEL_EASE }}
 								>
-									<div className="group relative h-56 sm:h-120 lg:h-200 rounded-[15px] hairline overflow-hidden bg-surface card-shadow">
-										{active.featureImg && (
-											<Image
-												src={active.featureImg}
-												alt={active.label}
-												fill
-												sizes="(min-width: 1024px) 55vw, 100vw"
-												className="object-fill transition-transform duration-700 ease-out group-hover:scale-105"
-											/>
-										)}
-										<div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/15 to-transparent" />
-
-										<span className="absolute top-4 right-4 glass rounded-xl  text-[11px] font-semibold tabular-nums tracking-[0.14em] text-ink px-3 py-1.5">
-											{String(activeTab + 1).padStart(2, "0")}
-										</span>
-
-										<div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 flex items-end justify-between gap-4">
-											<div>
-												<h3 className="text-2xl sm:text-3xl font-light uppercase tracking-tight text-surface leading-tight">
-													{active.label}
-												</h3>
-											</div>
-											<span className="hidden sm:flex h-11 w-11 shrink-0 items-center justify-center rounded-lg glass text-primary">
-												<span
-													className={`mdi mdi-${itemToIcon(active.label)} text-xl`}
+									<FadeUp>
+										<div className="group relative aspect-3/4 rounded-[15px] hairline overflow-hidden bg-surface card-shadow">
+											{active.featureImg && (
+												<Image
+													src={active.featureImg}
+													alt={active.label}
+													fill
+													sizes="(min-width: 1024px) 55vw, 100vw"
+													className="object-fill transition-transform duration-700 ease-out group-hover:scale-105"
 												/>
+											)}
+											<div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/15 to-transparent" />
+
+											<span className="absolute top-4 right-4 glass rounded-xl  text-[11px] font-semibold tabular-nums tracking-[0.14em] text-ink px-3 py-1.5">
+												{String(activeTab + 1).padStart(2, "0")}
 											</span>
+
+											<div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 flex items-end justify-between gap-4">
+												<div>
+													<h3 className="text-2xl sm:text-3xl font-light uppercase tracking-tight text-surface leading-tight">
+														{active.label}
+													</h3>
+												</div>
+												<span className="hidden sm:flex h-11 w-11 shrink-0 items-center justify-center rounded-lg glass text-primary">
+													<span
+														className={`mdi mdi-${itemToIcon(active.label)} text-xl`}
+													/>
+												</span>
+											</div>
 										</div>
-									</div>
+									</FadeUp>
+									<FadeUp>
+										<div className="mt-8 sm:mt-10">
+											<p className="text-sm sm:text-base text-on-surface/65 leading-relaxed mb-8 sm:mb-10">
+												{active.description}
+											</p>
 
-									<div className="mt-8 sm:mt-10">
-										<p className="text-sm sm:text-base text-on-surface/65 leading-relaxed mb-8 sm:mb-10">
-											{active.description}
-										</p>
-
-										<div className="grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-12">
-											{/* <div>
+											<div className="grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-12">
+												{/* <div>
 												<h4 className="inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary mb-6">
 													<span className="h-px w-6 bg-primary/60" />
 													{
@@ -165,81 +172,84 @@ export function ServicesSection() {
 														))}
 												</ul>
 											</div> */}
-											<div>
-												<h4 className="inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary mb-6">
-													<span className="h-px w-6 bg-primary/60" />
-													{active.whatWeOffer?.label
-														? t("home:services.whatWeOfferLabel", {
-																defaultValue:
-																	active.whatWeOffer.label,
-																returnObjects: false,
-															})
-														: t("home:services.whatWeOfferLabel", {
-																defaultValue: "What We Offer",
-															})}
-												</h4>
-												{active.whatWeOffer?.description && (
-													<p className="my-4 text-on-surface/75">
-														{active.whatWeOffer?.description}
-													</p>
-												)}
-												<ul className="flex flex-col gap-4">
-													{active.whatWeOffer?.items &&
-														active.whatWeOffer.items.map((d, i) => (
-															<li
-																key={i}
-																className="group/li flex items-start gap-3 text-sm text-on-surface/75 leading-relaxed"
-															>
-																<span className="mt-0.5 text-primary/70">
-																	<span
-																		className="mdi mdi-check text-base"
-																		aria-hidden
-																	/>
-																</span>
-																<span>{d}</span>
-															</li>
-														))}
-												</ul>
-											</div>
+												<div>
+													<h4 className="inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary mb-6">
+														<span className="h-px w-6 bg-primary/60" />
+														{active.whatWeOffer?.label
+															? t("home:services.whatWeOfferLabel", {
+																	defaultValue:
+																		active.whatWeOffer.label,
+																	returnObjects: false,
+																})
+															: t("home:services.whatWeOfferLabel", {
+																	defaultValue: "What We Offer",
+																})}
+													</h4>
+													{active.whatWeOffer?.description && (
+														<p className="my-4 text-on-surface/75">
+															{active.whatWeOffer?.description}
+														</p>
+													)}
+													<ul className="flex flex-col gap-4">
+														{active.whatWeOffer?.items &&
+															active.whatWeOffer.items.map((d, i) => (
+																<li
+																	key={i}
+																	className="group/li flex items-start gap-3 text-sm text-on-surface/75 leading-relaxed"
+																>
+																	<span className="mt-0.5 text-primary/70">
+																		<span
+																			className="mdi mdi-check text-base"
+																			aria-hidden
+																		/>
+																	</span>
+																	<span>{d}</span>
+																</li>
+															))}
+													</ul>
+												</div>
 
-											<div>
-												<h4 className="inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary mb-6">
-													<span className="h-px w-6 bg-primary/60" />
-													{active.deliverables?.label
-														? t("home:services.deliverablesLabel", {
-																defaultValue:
-																	active.deliverables.label,
-																returnObjects: false,
-															})
-														: t("home:services.deliverablesLabel", {
-																defaultValue: "Deliverables",
-															})}
-												</h4>
-												{active.deliverables?.description && (
-													<p className="my-4 text-on-surface/75">
-														{active.deliverables?.description}
-													</p>
-												)}
-												<ul className="flex flex-col gap-4">
-													{active.deliverables?.items &&
-														active.deliverables.items.map((d, i) => (
-															<li
-																key={i}
-																className="group/li flex items-start gap-3 text-sm text-on-surface/75 leading-relaxed"
-															>
-																<span className="mt-0.5 text-primary/70">
-																	<span
-																		className="mdi mdi-file-document-check-outline text-base"
-																		aria-hidden
-																	/>
-																</span>
-																<span>{d}</span>
-															</li>
-														))}
-												</ul>
+												<div>
+													<h4 className="inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary mb-6">
+														<span className="h-px w-6 bg-primary/60" />
+														{active.deliverables?.label
+															? t("home:services.deliverablesLabel", {
+																	defaultValue:
+																		active.deliverables.label,
+																	returnObjects: false,
+																})
+															: t("home:services.deliverablesLabel", {
+																	defaultValue: "Deliverables",
+																})}
+													</h4>
+													{active.deliverables?.description && (
+														<p className="my-4 text-on-surface/75">
+															{active.deliverables?.description}
+														</p>
+													)}
+													<ul className="flex flex-col gap-4">
+														{active.deliverables?.items &&
+															active.deliverables.items.map(
+																(d, i) => (
+																	<li
+																		key={i}
+																		className="group/li flex items-start gap-3 text-sm text-on-surface/75 leading-relaxed"
+																	>
+																		<span className="mt-0.5 text-primary/70">
+																			<span
+																				className="mdi mdi-file-document-check-outline text-base"
+																				aria-hidden
+																			/>
+																		</span>
+																		<span>{d}</span>
+																	</li>
+																)
+															)}
+													</ul>
+												</div>
 											</div>
 										</div>
-									</div>
+									</FadeUp>
 								</motion.div>
 							</AnimatePresence>
 						</div>
