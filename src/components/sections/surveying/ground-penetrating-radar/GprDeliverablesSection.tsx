@@ -29,7 +29,7 @@ export function GprDeliverablesSection() {
 			const url = typeof item === "object" ? item.url : item;
 			return typeof url === "string" && url.startsWith("/");
 		})
-		.map((item, index) => ({
+		.map((item, _index) => ({
 			image: (typeof item === "object" ? item.url : item) as string,
 			alt: (typeof item === "object" ? item.label : item) ?? "GPR",
 			title: (typeof item === "object" ? item.label : null) ?? null,

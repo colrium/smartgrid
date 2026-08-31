@@ -23,7 +23,7 @@ export function CtaSection() {
 					<div className="relative rounded-[20px] ink-panel card-shadow overflow-hidden px-8 py-16 sm:px-12 sm:py-24 text-center">
 						{/* authoritative glows + watermark */}
 						<span
-							className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary-300/30 pointer-events-none"
+							className="absolute -top-24 -right-24 w-120 h-120 rounded-full bg-primary-300/20 pointer-events-none"
 							style={{
 								WebkitMaskImage: "radial-gradient(closest-side, black 30%, transparent 72%)",
 								maskImage: "radial-gradient(closest-side, black 30%, transparent 72%)",

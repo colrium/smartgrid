@@ -306,22 +306,22 @@
 		"description": "Sisi ni kampuni inayoongoza ya upimaji na uhandisi yenye uwepo mkubwa katika Afrika Mashariki, maalumu katika upimaji wa ardhi, ramani za ndege zisizo na rubani, na suluhisho za data ya kijiografia. Kwa uzoefu wa zaidi ya miaka 5, tumekamilisha miradi mingi kwa mafanikio huku tukizingatia kanuni za kitaifa na mbinu bora za upimaji.",
 		"items": [
 			{
-				"icon": "check-circle",
+				"icon": "map-marker-radius",
 				"label": "Ufikiaji wa Kikanda",
 				"description": "Shughuli za Afrika Mashariki katika Kenya, Uganda, Tanzania, Rwanda na maeneo jirani."
 			},
 			{
-				"icon": "check-circle",
+				"icon": "satellite-variant",
 				"label": "Utaalamu",
 				"description": "Upimaji wa ardhi, ramani za ndege zisizo na rubani na suluhisho za data ya kijiografia."
 			},
 			{
-				"icon": "check-circle",
+				"icon": "clock-check-outline",
 				"label": "Uzoefu",
 				"description": "Miaka 5+ ya kutoa data ya anga ya kiwango cha uhandisi."
 			},
 			{
-				"icon": "check-circle",
+				"icon": "shield-check-outline",
 				"label": "Viwango",
 				"description": "Kufuata kanuni za kitaifa na mbinu bora za upimaji."
 			}

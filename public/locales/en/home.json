@@ -310,22 +310,22 @@
 		"description": "We are a leading surveying and engineering company with a strong presence in East Africa, specializing in land surveying, drone mapping, and geospatial data solutions. With over 5 years of experience, we have successfully completed numerous projects while adhering to national regulations and survey best practices.",
 		"items": [
 			{
-				"icon": "check-circle",
+				"icon": "map-marker-radius",
 				"label": "Regional Coverage",
 				"description": "East Africa operations across Kenya, Uganda, Tanzania, Rwanda & surrounding regions."
 			},
 			{
-				"icon": "check-circle",
+				"icon": "satellite-variant",
 				"label": "Specialization",
 				"description": "Land surveying, drone mapping & geospatial data solutions."
 			},
 			{
-				"icon": "check-circle",
+				"icon": "clock-check-outline",
 				"label": "Experience",
 				"description": "5+ years delivering engineering-grade spatial data."
 			},
 			{
-				"icon": "check-circle",
+				"icon": "shield-check-outline",
 				"label": "Standards",
 				"description": "Compliance with national regulations and survey best practices."
 			}

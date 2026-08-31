@@ -94,6 +94,14 @@ body {
     color: var(--color-ink-soft);
 }
 
+/* Prevent any element from creating a horizontal document scrollbar.
+   `clip` (unlike `hidden`) does not create a scroll container, so
+   position: sticky and window-based smooth scrolling (Lenis) keep working. */
+html,
+body {
+    overflow-x: clip;
+}
+
 html {
     font-size: 14px;
     font-weight: 400;
