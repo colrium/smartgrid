@@ -54,12 +54,12 @@ export function CoreExpertiseSection() {
 									<Link
 										href={item.href}
 										aria-label={item.label}
-										className="group relative h-full flex flex-col rounded-[15px] border-t-2 border-ink/10 bg-surface card-shadow p-7 transition-[transform,box-shadow,border-color] duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-t-primary overflow-hidden"
+										className="group relative h-full flex flex-col rounded-[15px] border-t-2 border-ink/10 bg-surface card-shadow p-7 transition-[transform,box-shadow,border-color] duration-500  hover:card-shadow-lift  overflow-hidden"
 									>
 										<ExpertiseCardBody item={item} index={index} kicker={kicker} />
 									</Link>
 								) : (
-									<article className="group relative h-full flex flex-col rounded-[15px] border-t-2 border-ink/10 bg-surface card-shadow p-7 transition-[transform,box-shadow,border-color] duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-t-primary overflow-hidden">
+									<article className="group relative h-full flex flex-col rounded-[15px] border-t-2 border-ink/10 bg-surface card-shadow p-7 transition-[transform,box-shadow,border-color] duration-500  overflow-hidden">
 										<ExpertiseCardBody item={item} index={index} kicker={kicker} />
 									</article>
 								)}
@@ -94,14 +94,16 @@ function ExpertiseCardBody({
 				<span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 					<span className={`mdi mdi-${item.icon || "hard-hat"} text-2xl`} />
 				</span>
-				<span
-					className={`mdi mdi-arrow-up-right text-xl text-on-surface/25 transition-[color,transform,opacity] duration-300 group-hover:text-primary ${
-						item.href
-							? "-translate-x-2 translate-y-2 opacity-0 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100"
-							: ""
-					}`}
-					aria-hidden={!item.href}
-				/>
+				{item.href && (
+					<span
+						className={`mdi mdi-arrow-up-right text-xl text-on-surface/25 transition-[color,transform,opacity] duration-300 group-hover:text-primary ${
+							item.href
+								? "-translate-x-2 translate-y-2 opacity-0 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100"
+								: ""
+						}`}
+						aria-hidden={!item.href}
+					/>
+				)}
 			</div>
 
 			<h3 className="text-lg font-medium leading-snug text-ink mb-3">{item.label}</h3>

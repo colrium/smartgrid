@@ -472,6 +472,191 @@
 			}
 		]
 	},
+	"surveyCostInKenya": {
+		"tag": "Mpango wa Bajeti",
+		"headline": "Upimaji Unagharimu Kiasi Gani Kenya?",
+		"description": "Jibu la kweli: inategemea — lakini si kwa siri. Uhalisia mdogo wa tovuti yako unaounda kila nukuu tunayotoa, na kuujua hukuweka wewe mwenyewe mwenye udhibiti wa mazungumzo ya bajeti.",
+		"factors": {
+			"label": "Gharama za upimaji hutegemea:",
+			"items": [
+				{
+					"icon": "ruler-square-compass",
+					"label": "Ukubwa wa mradi na mazingira ya ardhi",
+					"description": "Eka za kufunikwa, mitelemko, mimea, na umbali ambao timu inapaswa kutembea."
+				},
+				{
+					"icon": "map-search-outline",
+					"label": "Aina ya upimaji unaohitajika",
+					"description": "Uchunguzi wa mipaka, topografia ya kubuni, na orthomosaic ya droni ni kazi tofauti kabisa."
+				},
+				{
+					"icon": "map-marker-path",
+					"label": "Mahali na ufikivu",
+					"description": "Umbali, hali ya barabara, na urahisi wa vifaa kufika kila kona ya tovuti."
+				}
+			]
+		},
+		"ranges": {
+			"label": "Masafa ya kawaida",
+			"hint": "Gusa aina ya upimaji ili kuchunguza kinachounda bei yake",
+			"items": [
+				{
+					"icon": "vector-square",
+					"label": "Upimaji wa Mipaka",
+					"price": 30000,
+					"pricePrefix": "Kuanzia KES",
+					"tagline": "Jua hasa ardhi yako inaishia wapi",
+					"description": "Mistari ya mali, uvamizi, na nguzo za kudumu — upimaji unaofanya majirani kuwa marafiki na hatimiliki kuwa safi.",
+					"includes": [
+						"Kutambua mipaka na kuweka nguzo",
+						"Ramani za rejesta na msaada wa hatimiliki",
+						"Nyaraka za upimaji zisizo na migogoro"
+					]
+				},
+				{
+					"icon": "terrain",
+					"label": "Upimaji wa Topografia",
+					"price": 50000,
+					"pricePrefix": "Kuanzia KES",
+					"tagline": "Ukweli wa ardhi ulioko nyuma ya kila kubuni",
+					"description": "Kontua, vitu vilivyo, na mitelemko ambayo mwanamajengo na mhandisi wako watajenga juu yake — kwa maana halisi.",
+					"includes": [
+						"Kontua na viwango vya maeneo",
+						"Ramani za vitu na huduma za chini ya ardhi",
+						"Matokeo yaliyo tayari kwa CAD"
+					]
+				},
+				{
+					"icon": "quadcopter",
+					"label": "Ramani kwa Droni",
+					"price": 25000,
+					"pricePrefix": "Kuanzia KES",
+					"tagline": "Ekari 1000+ kwa sehemu ndogo ya muda",
+					"description": "Orthomosaic, mifano ya 3D, na uchambuzi wa kiasi kutoka angani — kwa haraka, kwa usalama, na kwa usahihi wa sentimita.",
+					"includes": [
+						"Orthomosaic na mifano ya 3D",
+						"Uchambuzi wa kiasi na kukata/kujaza",
+						"Kuhitaji kwa haraka ndani ya wiki moja"
+					]
+				}
+			]
+		},
+		"disclaimer": "Ni masafa ya kuanzia tu — kila tovuti ni tofauti. Ukubwa, mazingira, na ufikivu vinaunda thamani ya mwisho kwenye nukuu yako.",
+		"cta": {
+			"label": "Pata Nukuu Maalum",
+			"href": "/contact?reason=custom-quotation#contact-form",
+			"icon": "invoice-text"
+		},
+		"secondaryCta": {
+			"label": "Ongea na Mpimaji",
+			"href": "/contact?reason=talk-to-surveyor#contact-form",
+			"icon": "account-voice"
+		}
+	},
+	"coverageArea": {
+		"tag": "Eneo la Ufunikaji",
+		"headline": "Kutoka Makao Yetu ya Nairobi hadi Afrika Mashariki pana",
+		"description": "Tuna uwezo mkubwa wa uendeshaji — uwepo katika nchi nyingi, miradi mamia iliyokamilika, na dhamira ya kutoa huduma za ubora wa juu kupitia miaka. Ikiwa tovuti yako iko katika mkoa huu, kwa hakika tumechora ramani ya jirani yako.",
+		"hqPin": "Makao Makuu — Ruiru, Nairobi",
+		"stats": [
+			{ "icon": "map-marker-multiple", "value": 7, "suffix": "+", "label": "Nchi zilizofunikwa" },
+			{ "icon": "clipboard-check", "value": 250, "suffix": "+", "label": "Miradi iliyokamilika" },
+			{ "icon": "timer-check", "value": 5, "suffix": "+", "label": "Miaka uwanjani" }
+		],
+		"groups": [
+			{
+				"icon": "home-city",
+				"label": "Kaunti Kuu",
+				"description": "Tulikotoa na tunaofanya kazi zaidi — kuhamasisha kwa haraka na maarifa ya ndani bora.",
+				"items": ["Nairobi", "Kiambu", "Machakos", "Kajiado"]
+			},
+			{
+				"icon": "city",
+				"label": "Miji Mikuu",
+				"description": "Timu kamili na vifaa vinapelekwa mara kwa mara katika miji mikuu ya Kenya.",
+				"items": ["Mombasa", "Kisumu", "Nakuru"]
+			},
+			{
+				"icon": "earth",
+				"label": "Afrika Mashariki na Nje",
+				"description": "Kazi za kuvuka mipaka katika mkoa huu — droni zikipaa, mipaka haipingani nazo sana.",
+				"items": ["Uganda", "Tanzania", "Somalia na Afrika Mashariki pana"]
+			}
+		],
+		"note": "Unafanya kazi sehemu isiyo kwenye ramani? Tunawasili. Tuambie tovuti yako iko wapi."
+	},
+	"faq": {
+		"tag": "Maswali",
+		"headline": "Maswali Yanayoulizwa Mara Kwa Mara",
+		"description": "Majibu ya moja kwa moja kutoka uwanjani — mambo wateja hutuuliza kabla ya kuagiza upimaji wao wa kwanza.",
+		"items": [
+			{
+				"question": "Je, nahitaji upimaji kabla ya ujenzi?",
+				"answer": "Ndiyo — na ni bima nafuu zaidi utakayonunua. Upimaji wa topografia unaendesha michoro ya usanifu, mipango ya uhandisi, na idhini za kaunti, na unafichua hali halisi za tovuti (mtelemko, huduma za chini ya ardhi, nafasi ya mipaka) kabla hazijawa mabadiliko ya gharama kubwa. Kujenga kwa dhana ni kosa la ghali zaidi ujenzeni."
+			},
+			{
+				"question": "Upimaji huchukua muda gani?",
+				"answer": "Miradi mingi huchukua siku 1–3 za kazi uwanjani na siku 2–7 za kuchakata na kuchora, kulingana na ukubwa wa tovuti, mazingira, na matokeo unayohitaji. Tunathibitisha ratiba wazi na nukuu yako — na tunaonya ucheleweshaji mapema, si wakati wa kusaini."
+			},
+			{
+				"question": "Mnaweza kugundua huduma za chini ya ardhi?",
+				"answer": "Ndiyo. Tunatumia Rada ya Kupenya Ardhi (GPR) — ikiwemo LMX200 — pamoja na mbinu za ramani za huduma kutambua miundombinu yaliyozikwa kama mabomba ya maji na nyaya za umeme kabla ya kuchimba. Inalinda timu yako, bajeti yako, na ratiba yako."
+			},
+			{
+				"question": "Upimaji wangu utagharimu kiasi gani?",
+				"answer": "Upimaji wa mipaka huanza KES 30,000+, topografia KES 50,000+, na ramani kwa droni KES 25,000+. Kwa kuwa kila tovuti ni tofauti, tunabei kwa ukubwa, mazingira, na ufikivu — omba nukuu maalum nasi tuitolee haraka."
+			},
+			{
+				"question": "Mnafunika maeneo gani?",
+				"answer": "Makao yetu ni Nairobi (Ruiru) na tunafanya kazi Kiambu, Machakos, Kajiado, Mombasa, Kisumu, na Nakuru — na timu kamili inapelekwa mara kwa mara Uganda, Tanzania, Somalia, na mkoa mzima wa Afrika Mashariki."
+			},
+			{
+				"question": "Nitapata matokeo gani?",
+				"answer": "Matokeo ya kitaalamu yaliyo tayari kutumika: ramani za topografia na kontua, mipango ya mipaka na cadastral, mawingu ya pointi za 3D, mifano ya DEM/DSM, shapefiles za CAD, orthomosaic, ripoti za kiasi, na ripoti za upimaji zilizosainiwa — zilizopangwa kwa wahandisi, waakitekti, na wamiliki wa idhini."
+			}
+		],
+		"stillCurious": {
+			"label": "Bado una maswali?",
+			"description": "Kila tovuti ina hadithi — sisi tunajibu kwa data.",
+			"cta": {
+				"label": "Ongea na Mpimaji",
+				"href": "/contact?reason=faq#contact-form",
+				"icon": "forum"
+			}
+		}
+	},
+	"actionCtaSurveyor": {
+		"tag": "Ushauri wa Bure",
+		"headline": "Huji wapi unapoanza? Ongea na mpimaji.",
+		"description": "Tuambie kuhusu tovuti yako na lengo lako — tutakupendekeza upimaji sahihi, vifaa sahihi, na bajeti ya uwazi. Bila wajibu, bila maneno magumu.",
+		"watermark": "map-marker-radius",
+		"primary": {
+			"label": "Ongea na Mpimaji",
+			"href": "/contact?reason=talk-to-surveyor#contact-form",
+			"icon": "account-voice"
+		},
+		"secondary": {
+			"label": "Ona Masafa ya Kawaida",
+			"href": "#survey-cost",
+			"icon": "cash-multiple"
+		}
+	},
+	"actionCtaEngineer": {
+		"tag": "Jenga kwa Uhakika",
+		"headline": "Wasilisha mhandisi kwa hatua yako ijayo.",
+		"description": "Uwekaji alama, uhandisi wa tovuti, uthibitishaji wa as-built — weka jicho la kiwango cha uhandisi kwenye mradi wako kutoka kuvunja ardhi hadi kusaini.",
+		"watermark": "bridge",
+		"primary": {
+			"label": "Wasilisha Mhandisi",
+			"href": "/contact?reason=engage-engineer#contact-form",
+			"icon": "hard-hat"
+		},
+		"secondary": {
+			"label": "Chunguza Huduma za Civil",
+			"href": "/civil",
+			"icon": "arrow-right"
+		}
+	},
 	"services": {
 		"tag": "Huduma",
 		"headline": "Huduma Zetu",
