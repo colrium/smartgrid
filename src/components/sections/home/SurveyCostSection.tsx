@@ -135,13 +135,13 @@ export function SurveyCostSection(): ReactElement | null {
 											aria-pressed={isActive}
 											className={`flex flex-col items-center gap-2 rounded-[15px] px-2 py-4 text-center transition-all duration-300 ${
 												isActive
-													? "bg-ink text-surface card-shadow -translate-y-0.5"
-													: "bg-surface/70 hairline text-ink hover:bg-surface hover:-translate-y-0.5"
+													? "bg-primary text-surface card-shadow -translate-y-0.5"
+													: "bg-surface/70 cursor-pointer hairline text-ink hover:bg-surface hover:-translate-y-0.5"
 											}`}
 										>
 											<span
 												className={`mdi mdi-${item.icon} text-2xl ${
-													isActive ? "text-primary-200" : "text-primary"
+													isActive ? "text-surface" : "text-primary"
 												}`}
 											/>
 											<span className="text-[11px] sm:text-xs font-semibold leading-tight">
@@ -211,7 +211,7 @@ export function SurveyCostSection(): ReactElement | null {
 								{content.cta?.href && (
 									<Link
 										href={content.cta.href}
-										className="group inline-flex items-center justify-center gap-3 h-12 rounded-full bg-ink px-7 text-surface font-medium text-sm transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:card-shadow-lift w-full sm:w-auto"
+										className="group inline-flex items-center justify-center gap-3 h-12 rounded-full bg-primary px-7 text-surface font-medium text-sm transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:card-shadow-lift w-full sm:w-auto"
 									>
 										<span className="h-1.5 w-1.5 rounded-full bg-primary-200 transition-transform duration-300 group-hover:scale-125" />
 										{content.cta.label}
