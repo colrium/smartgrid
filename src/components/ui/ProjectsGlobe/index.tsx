@@ -46,13 +46,26 @@ const sizes = {
 
 
 
-const ProjectsGlobe = ({ labelDotOrientation, width, height, globeOffset, ...rest }: ProjectsGlobeProps & GlobeProps) => {
+const ProjectsGlobe = ({
+	labelDotOrientation,
+	width,
+	height,
+	polygonsData,
+	...rest
+}: ProjectsGlobeProps & GlobeProps) => {
+	const containerRef = useRef<HTMLDivElement | null>(null);
 	const globeEl = useRef<GlobeMethods | undefined>(undefined);
 	const _primaryColorRef = useRef<string | null>(null);
+	const breakpoint = useBreakpoint();
+	const size = sizes[breakpoint];
+	const widthVal = width || size;
+	const heightVal = height || size;
 	const [state, setState] = useSetState({
 		loading: false,
 		countriesFeatures: [],
 		altitude: 0.05,
+		width: widthVal,
+		height: heightVal,
 	});
 	const { t } = useTranslation(["common"]);
 	const projectsByCountry = t("common:projectsByCountry", {
@@ -64,8 +77,8 @@ const ProjectsGlobe = ({ labelDotOrientation, width, height, globeOffset, ...res
 	const countriesNames = useMemo(
 		() => projectsByCountry.map((c) => c.name.toLocaleLowerCase()),
 		[projectsByCountry]
-    );
-    
+	);
+
 	const dataByCountry = projectsByCountry.reduce((acc, c) => {
 		acc[c.name.toLocaleLowerCase()] = {
 			totalHa: c.totalHa,
@@ -73,8 +86,6 @@ const ProjectsGlobe = ({ labelDotOrientation, width, height, globeOffset, ...res
 		};
 		return acc;
 	}, {});
-	const breakpoint = useBreakpoint();
-	const size = sizes[breakpoint];
 
 	const fetchData = () => {
 		setState({ loading: true });
@@ -96,19 +107,28 @@ const ProjectsGlobe = ({ labelDotOrientation, width, height, globeOffset, ...res
 			// Auto-rotate
 			globeEl.current.controls().autoRotate = false;
 			globeEl.current.controls().autoRotateSpeed = 0.1;
-			globeEl.current.controls().enableZoom = false;
+            globeEl.current.controls().enableZoom = false;
+            globeEl.current.pointOfView({ lat: -1.1466, lng: 36.9609 });
+        }
+        if (!polygonsData) {
+            fetchData();
 		}
-		fetchData();
-	}, []);
-
-	const widthVal = width || size;
-	const heightVal = height || size;
-	const globeOffsetVal = globeOffset || [-(widthVal * 0.15), -(heightVal * 0.1)];
-
-	
+		
+		const updateSize = () => {
+			if (containerRef.current) {
+				setState({
+					width: containerRef.current.offsetWidth,
+					height: containerRef.current.offsetHeight,
+				});
+			}
+		};
+		updateSize();
+		window.addEventListener("resize", updateSize);
+		return () => window.removeEventListener("resize", updateSize);
+	}, [polygonsData]);
 
 	return (
-		<div className="w-full h-full relative">
+		<div className="w-full h-full" ref={containerRef}>
 			{state.loading && (
 				<div
 					className={`absolute inset-0 text-center flex items-center bg-surface/10 text-primary justify-center w-[${widthVal}px] h-[${widthVal}px] md:w-100 md:h-100 lg:w-130 lg:h-130`}
@@ -126,7 +146,7 @@ const ProjectsGlobe = ({ labelDotOrientation, width, height, globeOffset, ...res
 								cy="12"
 								r="10"
 								stroke="currentColor"
-								stroke-width="4"
+								strokeWidth="4"
 							></circle>
 							<path
 								className="opacity-75"
@@ -143,7 +163,9 @@ const ProjectsGlobe = ({ labelDotOrientation, width, height, globeOffset, ...res
 				globeImageUrl="/img/earth/earth-blue-marble.jpg"
 				bumpImageUrl="/img/earth/earth-topology.jpg"
 				backgroundColor="#00000000"
-				atmosphereAltitude={0.05}
+				atmosphereAltitude={0}
+				pointLat={-1.1466}
+				pointLng={36.9609}
 				atmosphereColor="#00000000"
 				polygonsData={state.countriesFeatures}
 				polygonStrokeColor={() => "rgba(39, 212, 243, 1)"}
@@ -165,9 +187,8 @@ const ProjectsGlobe = ({ labelDotOrientation, width, height, globeOffset, ...res
 						</div>
 					</div>
 				)}
-				globeOffset={globeOffsetVal}
-				width={widthVal}
-				height={heightVal}
+				width={state.width}
+				height={state.height}
 				showAtmosphere={false}
 				labelColor={() => "#27d4f3"}
 				labelText={"country"}

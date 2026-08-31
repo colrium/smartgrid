@@ -26,7 +26,7 @@ const ProjectsGlobe = dynamic(() => import("@/components/ui/ProjectsGlobe"), {
 						cy="12"
 						r="10"
 						stroke="currentColor"
-						stroke-width="4"
+						strokeWidth="4"
 					></circle>
 					<path
 						className="opacity-75"
@@ -103,14 +103,14 @@ export function CoverageAreaSection(): ReactElement | null {
 				</FadeUp>
 				<div className="pale-panel mt-8 hairline card-shadow p-6 rounded-[20px]">
 					<div className="w-full block relative ">
-						<div className="mx-auto w-120">
+						<div className="mx-auto w-100 aspect-square">
 							<ProjectsGlobe globeImageUrl="/img/earth/earth-light.jpg" />
 						</div>
 					</div>
 
 					{/* Pulsing HQ pin */}
 					{content.hqPin && (
-						<FadeUp delay={0.1} className="-mt-32 ">
+						<FadeUp delay={0.1} className="-mt-2 ">
 							<div className="flex justify-center">
 								<div className="inline-flex items-center gap-3 rounded-full  px-6 py-3">
 									<span className="relative flex h-3 w-3">
