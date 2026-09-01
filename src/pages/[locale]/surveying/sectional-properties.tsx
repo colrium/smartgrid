@@ -14,7 +14,7 @@ import {
 	TimelineSection,
 	RegistrationCtaSection,
 	SectionalFaqSection,
-	SocialsSection,
+	// SocialsSection,
 } from "@/components/sections/surveying/sectional-properties";
 
 type PageProps = {
@@ -35,9 +35,10 @@ const Page: NextPage<PageProps> = () => {
 				<SectionalDeliverablesSection />
 				<WhoNeedsSection />
 				<TimelineSection />
-				<RegistrationCtaSection />
+
 				<SectionalFaqSection />
-				<SocialsSection />
+				{/* <SocialsSection /> */}
+				<RegistrationCtaSection />
 			</div>
 		</div>
 	);

@@ -22,7 +22,7 @@
 		"description": "Kutoka rasimu ya kwanza ya usanidi hadi idhini ya mwisho ya kaunti, uchunguzi sahihi wa topografia una msingi wa kila maamuzi makubwa kwenye mradi wako.",
 		"items": [
 			{
-				"icon": "drafting-compass",
+				"icon": "math-compass",
 				"title": "Kabla ya usanidi wa usanifu au civil",
 				"description": "Kutoa viwango sahihi vya ardhi na vipengele vya tovuti kwa kazi sahihi ya usanidi."
 			},
