@@ -37,7 +37,7 @@ export function ConsultationSection(): ReactElement {
 	const steps = Array.isArray(section?.steps) ? section.steps : [];
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
+		<section className="py-24 sm:py-28 relative overflow-hidden ">
 			<Blob className="w-[26rem] h-[26rem] bg-primary-100/60 -top-24 -right-24" opacity={0.5} />
 			<Blob className="w-[20rem] h-[20rem] bg-primary-200/40 -bottom-24 -left-24" opacity={0.5} />
 
@@ -56,9 +56,9 @@ export function ConsultationSection(): ReactElement {
 							{section.ctaPrimary?.href && (
 								<Link
 									href={section.ctaPrimary.href}
-									className="group inline-flex items-center gap-3 h-14 rounded-full bg-ink px-8 text-surface font-medium text-base transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]"
+									className="group inline-flex items-center gap-3 h-14 rounded-full bg-primary px-8 text-surface font-medium text-base transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]"
 								>
-									<span className="h-1.5 w-1.5 rounded-full bg-primary-300 transition-transform duration-300 group-hover:scale-125" />
+									<span className="h-1.5 w-1.5 rounded-full bg-surface transition-transform duration-300 group-hover:scale-125" />
 									{section.ctaPrimary.label}
 									{section.ctaPrimary.icon && (
 										<span className={`mdi mdi-${section.ctaPrimary.icon} text-lg transition-transform duration-300 group-hover:scale-110`} />

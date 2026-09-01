@@ -47,7 +47,7 @@ export function DeliverablesSection(): ReactElement {
 	if (items.length === 0) return <></>;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
+		<section className="py-24 sm:py-28 relative overflow-hidden">
 			<Blob
 				className="w-[28rem] h-[28rem] bg-primary-200/40 -top-24 -right-24"
 				opacity={0.5}
