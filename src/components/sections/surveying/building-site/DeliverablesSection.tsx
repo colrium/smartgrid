@@ -63,11 +63,11 @@ export function DeliverablesSection(): ReactElement {
 
 				<div className="mt-14 sm:mt-20 grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-8 lg:gap-12 items-stretch">
 					<FadeLeft className="h-full">
-						<div className="relative h-full min-h-[22rem] overflow-hidden rounded-[20px] ink-panel card-shadow p-8 sm:p-10">
+						<div className="relative h-full min-h-[22rem] overflow-hidden rounded-[20px] pale-panel card-shadow p-8 sm:p-10">
 							<span className="absolute -top-20 -right-20 w-60 h-60 rounded-full bg-primary-300/30 blur-[90px] pointer-events-none" />
 							<span className="absolute -bottom-16 -left-10 w-48 h-48 rounded-full bg-primary/25 blur-[80px] pointer-events-none" />
 							<span
-								className={`absolute -bottom-6 right-6 font-light tracking-tighter text-[9rem] leading-none text-surface/5 select-none pointer-events-none mdi mdi-${active?.icon ?? FALLBACK_ICONS[activeIndex % FALLBACK_ICONS.length]}`}
+								className={`absolute -bottom-6 -right-6 font-light tracking-tighter text-[16rem] leading-none text-ink/5 select-none pointer-events-none mdi mdi-${active?.icon ?? FALLBACK_ICONS[activeIndex % FALLBACK_ICONS.length]}`}
 								aria-hidden
 							/>
 
@@ -75,47 +75,47 @@ export function DeliverablesSection(): ReactElement {
 								<div key={activeIndex} className="relative flex h-full flex-col">
 									<div className="flex items-center justify-between gap-4">
 										{section.liveLabel && (
-											<span className="inline-flex items-center gap-2 rounded-full bg-surface/10 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary-200 hairline-dark">
-												<span className="h-1.5 w-1.5 rounded-full bg-primary-300 animate-pulse" />
+											<span className="inline-flex items-center gap-2 rounded-full bg-ink-soft/5 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary-400 hairline-dark">
+												<span className="h-1.5 w-1.5 rounded-full bg-primary-600 animate-pulse" />
 												{section.liveLabel}
 											</span>
 										)}
-										<span className="text-2xl text-primary-200/70">
+										<span className="text-2xl text-primary-600/70">
 											{String(activeIndex + 1).padStart(2, "0")} /{" "}
 											{String(items.length).padStart(2, "0")}
 										</span>
 									</div>
 
 									<div className="mt-8 flex items-center gap-4">
-										<span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-surface/10 text-surface hairline-dark">
+										<span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-ink/10 text-ink hairline">
 											<span
 												className={`mdi mdi-${active.icon ?? FALLBACK_ICONS[activeIndex % FALLBACK_ICONS.length]} text-2xl`}
 											/>
 										</span>
-										<h3 className="text-2xl sm:text-3xl font-light tracking-tight text-surface leading-tight">
+										<h3 className="text-2xl sm:text-3xl font-light tracking-tight text-ink leading-tight">
 											{active.title}
 										</h3>
 									</div>
 
 									{active.format && (
-										<div className="mt-5 inline-flex self-start items-center gap-2 rounded-full bg-accent/20 text-accent-200 px-4 py-1.5 text-xs font-semibold tracking-wide hairline-dark">
+										<div className="mt-5 inline-flex self-start items-center gap-2 rounded-full bg-accent/20 text-accent-700 px-4 py-1.5 text-xs font-semibold tracking-wide hairline-dark">
 											<span className="mdi mdi-file-outline text-sm" />
 											{active.format}
 										</div>
 									)}
 
-									<p className="mt-6 text-sm sm:text-base text-surface/65 leading-relaxed max-w-xl">
+									<p className="mt-6 text-sm sm:text-base text-ink/65 leading-relaxed max-w-xl">
 										{active.description}
 									</p>
 
 									{checks.length > 0 && (
-										<div className="mt-auto pt-8 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 text-xs text-surface/45">
+										<div className="mt-auto pt-8 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 text-xs text-ink/75">
 											{checks.map((check, index) => (
 												<span
 													key={index}
 													className="inline-flex items-center gap-2"
 												>
-													<span className="mdi mdi-check-circle-outline text-primary-200" />
+													<span className="mdi mdi-check-circle-outline text-primary-500" />
 													{check}
 												</span>
 											))}
@@ -137,6 +137,7 @@ export function DeliverablesSection(): ReactElement {
 											? "border-primary bg-primary-50 card-shadow-lift"
 											: "hairline bg-paper card-shadow hover:border-primary/40 hover:card-shadow-lift"
 									}`}
+									data-ripple-light="true"
 								>
 									<span
 										className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-colors duration-300 ${

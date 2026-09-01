@@ -42,7 +42,10 @@ export function TechnologyStackSection(): ReactElement {
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden">
-			<Blob className="w-[26rem] h-[26rem] bg-primary-100/70 -top-24 -left-24" opacity={0.5} />
+			<Blob
+				className="w-[26rem] h-[26rem] bg-primary-100/70 -top-24 -left-24"
+				opacity={0.5}
+			/>
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader
@@ -59,7 +62,7 @@ export function TechnologyStackSection(): ReactElement {
 							delay={(index % 3) * 0.07}
 							className="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1.334rem)]"
 						>
-							<article className="group relative h-full overflow-hidden rounded-2xl hairline bg-surface card-shadow p-7 transition-all duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-primary">
+							<article className="group relative h-full overflow-hidden rounded-2xl hairline bg-surface card-shadow p-7 transition-all duration-500  hover:card-shadow-lift hover:border-primary">
 								<span
 									className="absolute -top-10 -right-10 w-36 h-36 rounded-full bg-primary-100/50 blur-[70px] transition-all duration-500 group-hover:bg-primary-100/80"
 									aria-hidden
@@ -71,7 +74,7 @@ export function TechnologyStackSection(): ReactElement {
 											className={`mdi mdi-${item.icon ?? FALLBACK_ICONS[index % FALLBACK_ICONS.length]} text-2xl`}
 										/>
 									</span>
-									<span className="flex items-end gap-1" aria-hidden>
+									{/* <span className="flex items-end gap-1" aria-hidden>
 										{[0, 1, 2].map((bar) => (
 											<span
 												key={bar}
@@ -84,7 +87,7 @@ export function TechnologyStackSection(): ReactElement {
 												}`}
 											/>
 										))}
-									</span>
+									</span> */}
 								</div>
 
 								<h3 className="relative mt-6 text-lg font-medium tracking-tight text-ink leading-snug">
@@ -99,6 +102,7 @@ export function TechnologyStackSection(): ReactElement {
 									<Link
 										href={item.href}
 										className="relative mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary-700"
+										data-ripple-light="true"
 									>
 										<span className="mdi mdi-arrow-top-right text-sm" />
 										{section.learnMore}

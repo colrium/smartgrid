@@ -106,13 +106,13 @@ export function AccuracyMattersSection(): ReactElement {
 
 						{section.solution && (
 							<FadeUp delay={0.1}>
-								<div className="relative overflow-hidden rounded-[20px] ink-panel card-shadow p-8 sm:p-10 shimmer-t shimmer-gold-200">
+								<div className="relative overflow-hidden rounded-[20px] pale-panel card-shadow p-8 sm:p-10  border border-primary/10 ">
 									<span className="absolute -top-16 -right-16 w-56 h-56 rounded-full bg-primary-300/30 blur-[80px] pointer-events-none" />
 									<div className="relative flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-8">
-										<span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-surface/10 text-surface hairline-dark">
+										<span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-ink-soft/10 text-ink hairline-dark">
 											<span className="mdi mdi-crosshairs-gps text-2xl" />
 										</span>
-										<p className="text-base sm:text-lg leading-relaxed text-surface/80">
+										<p className="text-base sm:text-lg leading-relaxed text-ink/80">
 											{section.solution}
 										</p>
 									</div>

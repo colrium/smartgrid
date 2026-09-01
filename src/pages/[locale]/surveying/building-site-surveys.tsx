@@ -32,12 +32,12 @@ const Page: NextPage<PageProps> = () => {
 				<BuildSmarterSection />
 				<ProcessSection />
 				<AccuracyMattersSection />
+				<ActionCtaBand />
 				<DeliverablesSection />
 				<TechnologyStackSection />
 				<ConsultationSection />
 				<ExploreMoreSection />
 				<SiteCtaSection />
-				<ActionCtaBand />
 			</div>
 		</div>
 	);
