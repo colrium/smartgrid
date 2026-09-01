@@ -20,8 +20,8 @@ interface HeroContent {
 }
 
 export function HeroSection() {
-	const { t } = useTranslation(["civil-highway-surveys"]);
-	const hero = t("civil-highway-surveys:hero", {
+	const { t } = useTranslation(["civil/highway-surveys"]);
+	const hero = t("civil/highway-surveys:hero", {
 		returnObjects: true,
 	}) as unknown as HeroContent;
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");

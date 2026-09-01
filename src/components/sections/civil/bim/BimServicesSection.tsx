@@ -18,8 +18,8 @@ interface BimServicesContent {
 }
 
 export function BimServicesSection() {
-	const { t } = useTranslation(["civil-bim"]);
-	const section = t("civil-bim:bimServices", {
+	const { t } = useTranslation(["civil/bim"]);
+	const section = t("civil/bim:bimServices", {
 		returnObjects: true,
 	}) as unknown as BimServicesContent;
 	const items = Array.isArray(section.items) ? section.items : [];

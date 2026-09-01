@@ -19,8 +19,8 @@ interface ApplicationsContent {
 }
 
 export function ApplicationsSection() {
-	const { t } = useTranslation(["civil-as-built-surveys"]);
-	const section = t("civil-as-built-surveys:applications", {
+	const { t } = useTranslation(["civil/as-built-surveys"]);
+	const section = t("civil/as-built-surveys:applications", {
 		returnObjects: true,
 	}) as unknown as ApplicationsContent;
 	const items = Array.isArray(section.items) ? section.items : [];

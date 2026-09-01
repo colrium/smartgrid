@@ -19,8 +19,8 @@ interface CtaContent {
 }
 
 export function CtaSection() {
-	const { t } = useTranslation(["civil-volumetric-surveys"]);
-	const section = t("civil-volumetric-surveys:cta", {
+	const { t } = useTranslation(["civil/volumetric-surveys"]);
+	const section = t("civil/volumetric-surveys:cta", {
 		returnObjects: true,
 	}) as unknown as CtaContent;
 

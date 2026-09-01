@@ -20,8 +20,8 @@ interface ExploreMoreContent {
 }
 
 export function ExploreMoreSection() {
-	const { t } = useTranslation(["civil-site-engineering"]);
-	const section = t("civil-site-engineering:exploreMore", {
+	const { t } = useTranslation(["civil/site-engineering"]);
+	const section = t("civil/site-engineering:exploreMore", {
 		returnObjects: true,
 	}) as unknown as ExploreMoreContent;
 	const items = Array.isArray(section.items) ? section.items : [];

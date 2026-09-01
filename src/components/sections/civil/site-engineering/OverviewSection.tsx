@@ -14,8 +14,8 @@ interface OverviewContent {
 }
 
 export function OverviewSection() {
-	const { t } = useTranslation(["civil-site-engineering"]);
-	const section = t("civil-site-engineering:overview", {
+	const { t } = useTranslation(["civil/site-engineering"]);
+	const section = t("civil/site-engineering:overview", {
 		returnObjects: true,
 	}) as unknown as OverviewContent;
 

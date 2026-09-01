@@ -21,8 +21,8 @@ interface ProcessContent {
 }
 
 export function CivilProcessSection() {
-	const { t } = useTranslation(["civil"]);
-	const section = t("civil:process", { returnObjects: true }) as unknown as ProcessContent;
+	const { t } = useTranslation(["civil/landing"]);
+	const section = t("civil/landing:process", { returnObjects: true }) as unknown as ProcessContent;
 	const items = Array.isArray(section?.items) ? section.items : [];
 	const hasImage = typeof section.image === "string" && section.image.startsWith("/");
 

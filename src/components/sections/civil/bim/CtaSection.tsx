@@ -19,8 +19,8 @@ interface CtaContent {
 }
 
 export function CtaSection() {
-	const { t } = useTranslation(["civil-bim"]);
-	const section = t("civil-bim:cta", { returnObjects: true }) as unknown as CtaContent;
+	const { t } = useTranslation(["civil/bim"]);
+	const section = t("civil/bim:cta", { returnObjects: true }) as unknown as CtaContent;
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden">

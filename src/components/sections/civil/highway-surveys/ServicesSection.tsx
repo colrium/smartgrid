@@ -18,8 +18,8 @@ interface ServicesContent {
 }
 
 export function ServicesSection() {
-	const { t } = useTranslation(["civil-highway-surveys"]);
-	const section = t("civil-highway-surveys:services", {
+	const { t } = useTranslation(["civil/highway-surveys"]);
+	const section = t("civil/highway-surveys:services", {
 		returnObjects: true,
 	}) as unknown as ServicesContent;
 	const items = Array.isArray(section.items) ? section.items : [];

@@ -18,8 +18,8 @@ interface InstrumentsContent {
 }
 
 export function OurInstrumentsSection() {
-	const { t } = useTranslation(["civil-site-setting-out"]);
-	const section = t("civil-site-setting-out:ourInstruments", {
+	const { t } = useTranslation(["civil/site-setting-out"]);
+	const section = t("civil/site-setting-out:ourInstruments", {
 		returnObjects: true,
 	}) as unknown as InstrumentsContent;
 	const items = Array.isArray(section.items) ? section.items : [];

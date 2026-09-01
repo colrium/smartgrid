@@ -15,8 +15,8 @@ interface DeliverablesContent {
 }
 
 export function DeliverablesSection() {
-	const { t } = useTranslation(["civil-highway-surveys"]);
-	const section = t("civil-highway-surveys:highwaySurveyDeliverables", {
+	const { t } = useTranslation(["civil/highway-surveys"]);
+	const section = t("civil/highway-surveys:highwaySurveyDeliverables", {
 		returnObjects: true,
 	}) as unknown as DeliverablesContent;
 	const items = Array.isArray(section.items) ? section.items : [];

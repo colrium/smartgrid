@@ -41,8 +41,8 @@ function renderDescription(text: string): ReactNode[] {
 }
 
 export function HeroSection() {
-	const { t } = useTranslation(["civil-site-engineering"]);
-	const hero = t("civil-site-engineering:hero", {
+	const { t } = useTranslation(["civil/site-engineering"]);
+	const hero = t("civil/site-engineering:hero", {
 		returnObjects: true,
 	}) as unknown as HeroContent;
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");

@@ -17,8 +17,8 @@ interface TextSectionProps {
 }
 
 export function TextSection({ sectionKey, tone = "default" }: TextSectionProps) {
-	const { t } = useTranslation(["civil-as-built-surveys"]);
-	const section = t(`civil-as-built-surveys:${sectionKey}`, {
+	const { t } = useTranslation(["civil/as-built-surveys"]);
+	const section = t(`civil/as-built-surveys:${sectionKey}`, {
 		returnObjects: true,
 	}) as unknown as TextSectionContent;
 

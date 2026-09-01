@@ -25,7 +25,7 @@ const Page: NextPage<PageProps> = () => {
 	);
 };
 export const getServerSideProps: GetServerSideProps = async (context) => {
-	const i18nProps = await getI18nProps(context, ["common", "meta", "civil-bim"]);
+	const i18nProps = await getI18nProps(context, ["common", "meta", "civil/bim"]);
 
 	if (!i18nProps) return { notFound: true };
 

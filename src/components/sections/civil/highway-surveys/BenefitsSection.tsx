@@ -19,8 +19,8 @@ interface BenefitsContent {
 }
 
 export function BenefitsSection() {
-	const { t } = useTranslation(["civil-highway-surveys"]);
-	const section = t("civil-highway-surveys:benefitsOfHighwaySurveys", {
+	const { t } = useTranslation(["civil/highway-surveys"]);
+	const section = t("civil/highway-surveys:benefitsOfHighwaySurveys", {
 		returnObjects: true,
 	}) as unknown as BenefitsContent;
 	const items = Array.isArray(section.items) ? section.items : [];

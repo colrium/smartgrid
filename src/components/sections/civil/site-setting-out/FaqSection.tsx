@@ -21,8 +21,8 @@ interface FaqContent {
 }
 
 export function FaqSection() {
-	const { t } = useTranslation(["civil-site-setting-out"]);
-	const section = t("civil-site-setting-out:faq", {
+	const { t } = useTranslation(["civil/site-setting-out"]);
+	const section = t("civil/site-setting-out:faq", {
 		returnObjects: true,
 	}) as unknown as FaqContent;
 	const [openIndex, setOpenIndex] = useState<number | null>(0);

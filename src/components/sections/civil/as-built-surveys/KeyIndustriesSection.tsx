@@ -19,8 +19,8 @@ interface IndustriesContent {
 }
 
 export function KeyIndustriesSection() {
-	const { t } = useTranslation(["civil-as-built-surveys"]);
-	const section = t("civil-as-built-surveys:keyIndustries", {
+	const { t } = useTranslation(["civil/as-built-surveys"]);
+	const section = t("civil/as-built-surveys:keyIndustries", {
 		returnObjects: true,
 	}) as unknown as IndustriesContent;
 	const items = Array.isArray(section.items) ? section.items : [];

@@ -14,8 +14,8 @@ interface SplitContent {
 }
 
 export function PrecisionVolumetricAnalysisSection() {
-	const { t } = useTranslation(["civil-volumetric-surveys"]);
-	const section = t("civil-volumetric-surveys:precisionVolumetricAnalysis", {
+	const { t } = useTranslation(["civil/volumetric-surveys"]);
+	const section = t("civil/volumetric-surveys:precisionVolumetricAnalysis", {
 		returnObjects: true,
 	}) as unknown as SplitContent;
 

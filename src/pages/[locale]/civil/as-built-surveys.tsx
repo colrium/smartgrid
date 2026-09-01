@@ -33,7 +33,7 @@ const Page: NextPage<PageProps> = () => {
 	);
 };
 export const getServerSideProps: GetServerSideProps = async (context) => {
-	const i18nProps = await getI18nProps(context, ["common", "meta", "civil-as-built-surveys"]);
+	const i18nProps = await getI18nProps(context, ["common", "meta", "civil/as-built-surveys"]);
 
 	if (!i18nProps) return { notFound: true };
 

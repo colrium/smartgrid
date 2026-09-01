@@ -18,8 +18,8 @@ interface SolutionsContent {
 }
 
 export function AsBuiltSolutionsSection() {
-	const { t } = useTranslation(["civil-as-built-surveys"]);
-	const section = t("civil-as-built-surveys:asBuiltSolutions", {
+	const { t } = useTranslation(["civil/as-built-surveys"]);
+	const section = t("civil/as-built-surveys:asBuiltSolutions", {
 		returnObjects: true,
 	}) as unknown as SolutionsContent;
 	const items = Array.isArray(section.items) ? section.items : [];

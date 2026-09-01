@@ -19,8 +19,8 @@ interface CtaContent {
 }
 
 export function CtaSection() {
-	const { t } = useTranslation(["civil-site-engineering"]);
-	const section = t("civil-site-engineering:cta", {
+	const { t } = useTranslation(["civil/site-engineering"]);
+	const section = t("civil/site-engineering:cta", {
 		returnObjects: true,
 	}) as unknown as CtaContent;
 

@@ -12,8 +12,8 @@ interface TextSectionContent {
 }
 
 export function OverviewSection() {
-	const { t } = useTranslation(["civil-highway-surveys"]);
-	const section = t("civil-highway-surveys:overview", {
+	const { t } = useTranslation(["civil/highway-surveys"]);
+	const section = t("civil/highway-surveys:overview", {
 		returnObjects: true,
 	}) as unknown as TextSectionContent;
 
