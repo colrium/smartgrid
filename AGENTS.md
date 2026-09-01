@@ -29,7 +29,7 @@ engineering-grade land, aerial, and civil surveying services across Kenya and Ea
 - **Image optimization:** `next/image` with AVIF→WebP, quality 60/75.
 
 ## Supported Locales
-`en` (default), `de`, `sw`, `fr`, `pt` — configured in `next-i18next.config.js`.
+`en` (default), `sw` — configured in `next-i18next.config.js`.
 
 ## Directory Layout (key areas)
 ```

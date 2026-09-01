@@ -8,8 +8,13 @@ import {
 	BuildSmarterSection,
 	SiteEngineeringSection,
 	ProcessSection,
+	AccuracyMattersSection,
+	DeliverablesSection,
+	TechnologyStackSection,
+	ConsultationSection,
 	ExploreMoreSection,
 	SiteCtaSection,
+	ActionCtaBand,
 } from "@/components/sections/surveying/building-site";
 
 type PageProps = {
@@ -26,8 +31,13 @@ const Page: NextPage<PageProps> = () => {
 				<SiteEngineeringSection />
 				<BuildSmarterSection />
 				<ProcessSection />
+				<AccuracyMattersSection />
+				<DeliverablesSection />
+				<TechnologyStackSection />
+				<ConsultationSection />
 				<ExploreMoreSection />
 				<SiteCtaSection />
+				<ActionCtaBand />
 			</div>
 		</div>
 	);

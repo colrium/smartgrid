@@ -3,11 +3,17 @@
 		"headline": "BUILDING & ENGINEERING SURVEYS",
 		"title": "Survey Smarter, Build Stronger",
 		"image": "/media/surveying/building-site-surveys/AG8ng.jpeg",
-		"description": "Leading Africa's Land and Aerial Surveying Revolution",
+		"description": "We deliver centimeter-accurate boundary surveys, topographical mapping, and engineering control data for developers, landowners,and infrastructure projects across Kenya.",
 		"ctaPrimary": {
             "label": "Get Your Free Consultation",
             "href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Building Site Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Building Site Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
-        }
+        },
+        "footnoteItems": [
+			"RTK GNSS",
+			"Licensed Survey Workflow",
+			"Drone Mapping",
+			"CAD Deliverables"
+		]
 	},
 	"section1": {
 		"tag": "Smarter Construction",
@@ -95,6 +101,187 @@
 				"description": "Generate CAD drawings, GIS layers, and digital reports for final project handover and analysis."
 			}
 		]
+	},
+	"accuracyMatters": {
+		"tag": "Survey Accuracy Kenya",
+		"headline": "Why Accuracy Matters",
+		"description": "In land development, a 5–10 cm error can lead to boundary disputes, design misalignment, construction rework,and legal delays.",
+		"solution": "At SmartGrid Surveying, we eliminate uncertainty by combining GNSS RTK positioning, robotic total stations,and UAV photogrammetry workflows.",
+		"items": [
+			{
+				"title": "Boundary Disputes",
+				"description": "Millimeter drift on a boundary line can trigger a costly boundary dispute survey Kenya-wide — protecting titles, neighbors,and investments.",
+				"icon": "vector-polyline",
+				"stat": "5–10 cm"
+			},
+			{
+				"title": "Design Misalignment",
+				"description": "Models built on approximate ground data force field revisions that ripple through budgets — engineering survey precision keeps CAD,and BIM in true position.",
+				"icon": "ruler-square-compass",
+				"stat": "±2 cm"
+			},
+			{
+				"title": "Construction Rework",
+				"description": "Wrong coordinates mean poured foundations, relocated services,and aborted works. Accurate control networks cut rework,and keep programs moving.",
+				"icon": "hammer-wrench",
+				"stat": "0 rework"
+			},
+			{
+				"title": "Legal Delays",
+				"description": "Cadastral survey Nairobi approvals stall when plans don't match the ground. We deliver evidence-grade data that moves permits forward.",
+				"icon": "scale-balance",
+				"stat": "Faster permits"
+			}
+		],
+		"keywords": [
+			"Boundary Dispute Survey Kenya",
+			"Cadastral Survey Nairobi",
+			"Engineering Survey Precision",
+			"Survey Accuracy Kenya"
+		]
+	},
+	"deliverables": {
+		"tag": "Project Outputs",
+		"headline": "Deliverables You Receive",
+		"description": "Every engagement closes with a complete, engineer-ready data package — exported in open formats that feed straight into CAD, GIS,and construction management tools.",
+		"liveLabel": "Live data package",
+		"checks": [
+			"Georeferenced",
+			"Project-ready",
+			"Open formats"
+		],
+		"items": [
+			{
+				"title": "CAD Drawings",
+				"format": "DWG / DXF",
+				"icon": "vector-square",
+				"description": "Layer-ready drawings for architects, engineers,and drafters — georeferenced to the project coordinate system."
+			},
+			{
+				"title": "PDF Survey Plans",
+				"format": "PDF",
+				"icon": "file-pdf-box",
+				"description": "Print-ready, scale-correct plans for approvals, permitting,and record keeping."
+			},
+			{
+				"title": "Contour Maps",
+				"format": "0.5m / 1m",
+				"icon": "map-marker-path",
+				"description": "Precision contours at 0.5 m or 1 m vertical intervals for grading, drainage,and earthworks design."
+			},
+			{
+				"title": "Orthomosaic Maps",
+				"format": "GeoTIFF",
+				"icon": "image-filter-hdr",
+				"description": "Scale-correct aerial imagery mosaics that double as site basemaps for planning and monitoring."
+			},
+			{
+				"title": "Point Cloud Data",
+				"format": "LAS / LAZ",
+				"icon": "axis-z-arrow",
+				"description": "Millions of georeferenced points ready for volumetric analysis, BIM,and 3D modelling."
+			},
+			{
+				"title": "Coordinate Tables",
+				"format": "Excel",
+				"icon": "table-large",
+				"description": "Structured point lists — boundaries, pegs, control,and setting-out coordinates — readable by any field team."
+			},
+			{
+				"title": "GIS Layers",
+				"format": "Shapefile / GeoJSON",
+				"icon": "layers-triple",
+				"description": "Query-ready spatial layers that drop straight into QGIS, ArcGIS, or any web map stack."
+			},
+			{
+				"title": "Survey Report",
+				"format": "Signed & Stamped",
+				"icon": "file-certificate",
+				"description": "A professional, legally-compliant report documenting the methodology, accuracy,and results."
+			}
+		]
+	},
+	"technology": {
+		"tag": "Technology Stack",
+		"headline": "Surveying Technology We Use",
+		"description": "An integrated GNSS, total station, drone, LiDAR,and GPR toolkit — matched to each terrain, accuracy class,and deliverable.",
+		"learnMore": "Learn more",
+		"items": [
+			{
+				"title": "FOIF A90 RTK GNSS System",
+				"icon": "satellite-variant",
+				"href": "/equipment-sale/foif-a90-rtk-gnss",
+				"description": "Centimeter-level GNSS RTK positioning for boundary, control,and stakeout work in real time."
+			},
+			{
+				"title": "Robotic Total Stations",
+				"icon": "telescope",
+				"description": "High-precision angle-and-distance measurement for tight urban sites,and engineering control."
+			},
+			{
+				"title": "UAV Mapping (DJI Matrice Series)",
+				"icon": "quadcopter",
+				"href": "/equipment-sale/dji-matrice-350-rtk",
+				"description": "Enterprise drone platforms capturing high-resolution imagery for large-area mapping,and monitoring."
+			},
+			{
+				"title": "LiDAR & Photogrammetry Processing",
+				"icon": "chart-bell-curve-cumulative",
+				"description": "Advanced point-cloud,and 3D modelling pipelines that turn raw captures into survey-grade products."
+			},
+			{
+				"title": "GPR Subsurface Utility Mapping",
+				"icon": "radar",
+				"href": "/surveying/ground-penetrating-radar",
+				"description": "Non-destructive ground penetrating radar that sees buried utilities before the excavator arrives."
+			}
+		]
+	},
+	"consultation": {
+		"tag": "Technology-Assisted Consultation",
+		"headline": "Request a Technology-Assisted Survey Consultation",
+		"description": "Tell us about your land, site, or project — we'll match you with the right instrument mix, a licensed workflow,and a fixed, transparent quote.",
+		"stepsLabel": "What happens next",
+		"ctaPrimary": {
+			"label": "Request My Consultation",
+			"href": "/contact?reason=engage-engineer#contact-form",
+			"icon": "calendar-check"
+		},
+		"ctaSecondary": {
+			"label": "Email the Survey Team",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Technology-Assisted Survey Consultation&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a technology-assisted survey consultation. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+			"icon": "email-outline"
+		},
+		"steps": [
+			{
+				"title": "Share Your Site Details",
+				"description": "Location, size, terrain,and what you plan to build."
+			},
+			{
+				"title": "Get a Technology Match",
+				"description": "We propose the optimal GNSS, drone, station, or GPR mix for your accuracy needs."
+			},
+			{
+				"title": "Receive a Fixed Quote",
+				"description": "A transparent timeline, deliverable list,and price — no surprises."
+			}
+		]
+	},
+	"actionCtaEngineer": {
+		"tag": "Build on Certainty",
+		"headline": "Every structure deserves a foundation of verified ground truth.",
+		"description": "Talk to a SmartGrid engineer about your site,and we'll recommend the right survey technology, workflow,and deliverables to keep your project on schedule,and on budget.",
+		"watermark": "hard-hat",
+		"primary": {
+			"label": "Talk to an Engineer",
+			"href": "/contact?reason=engage-engineer#contact-form",
+			"icon": "hard-hat"
+		},
+		"secondary": {
+			"label": "Explore Surveying Services",
+			"href": "/surveying",
+			"icon": "arrow-right"
+		}
 	},
 	"exploreMore": {
 		"tag": null,

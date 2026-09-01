@@ -5,6 +5,11 @@ export { SiteEngineeringSection } from "./SiteEngineeringSection";
 export { SiteCtaSection } from "./SiteCtaSection";
 export { ProcessSection } from "./ProcessSection";
 export { ExploreMoreSection } from "./ExploreMoreSection";
+export { AccuracyMattersSection } from "./AccuracyMattersSection";
+export { DeliverablesSection } from "./DeliverablesSection";
+export { TechnologyStackSection } from "./TechnologyStackSection";
+export { ConsultationSection } from "./ConsultationSection";
+export { ActionCtaBand } from "./ActionCtaBand";
 
 export { default as BuildingSiteHeroSectionDefault } from "./BuildingSiteHeroSection";
 export { default as IntroSectionDefault } from "./IntroSection";
@@ -13,3 +18,8 @@ export { default as SiteEngineeringSectionDefault } from "./SiteEngineeringSecti
 export { default as SiteCtaSectionDefault } from "./SiteCtaSection";
 export { default as ProcessSectionDefault } from "./ProcessSection";
 export { default as ExploreMoreSectionDefault } from "./ExploreMoreSection";
+export { default as AccuracyMattersSectionDefault } from "./AccuracyMattersSection";
+export { default as DeliverablesSectionDefault } from "./DeliverablesSection";
+export { default as TechnologyStackSectionDefault } from "./TechnologyStackSection";
+export { default as ConsultationSectionDefault } from "./ConsultationSection";
+export { default as ActionCtaBandDefault } from "./ActionCtaBand";

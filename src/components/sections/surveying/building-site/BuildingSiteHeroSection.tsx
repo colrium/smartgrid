@@ -16,6 +16,7 @@ interface BuildingHeroContent {
 	image?: string | null;
 	description: string;
 	ctaPrimary?: HeroCta | null;
+	footnoteItems?: string[];
 }
 
 export function BuildingSiteHeroSection() {
@@ -72,6 +73,17 @@ export function BuildingSiteHeroSection() {
 								<span className="mdi mdi-arrow-right text-xl text-ink transition-transform duration-300 group-hover:translate-x-1" />
 							</Link>
 						</div>
+					)}
+
+					{Array.isArray(hero.footnoteItems) && hero.footnoteItems.length > 0 && (
+						<ul className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-3">
+							{hero.footnoteItems.map((item, index) => (
+								<li key={index} className="flex items-center gap-2.5 text-xs sm:text-sm font-medium tracking-wide text-surface/60">
+									<span className="h-1.5 w-1.5 rounded-full bg-primary-300/90" />
+									{item}
+								</li>
+							))}
+						</ul>
 					)}
 				</FadeUp>
 			</div>

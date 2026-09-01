@@ -3,11 +3,17 @@
 		"headline": "UCHUNGUZI WA UJENZI NA UHANDISI",
 		"title": "Pima Kwa Umaalimu, Jenga kwa Nguvu",
 		"image": "/media/surveying/building-site-surveys/AG8ng.jpeg",
-		"description": "Kiongozi wa Mapinduzi ya Uchunguzi wa Ardhi na Angani Afrika",
+		"description": "Tunatoa uchunguzi wa mipaka wenye usahihi wa sentimita, ramani za topografia,and data ya udhibiti wa uhandisi kwa watengenezaji,wamiliki wa ardhi,and miradi ya miundombinu kote Kenya.",
 		"ctaPrimary": {
 			"label": "Pata Ushauri Wako wa Bure",
 			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Building Site Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Building Site Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
-		}
+		},
+		"footnoteItems": [
+			"RTK GNSS",
+			"Licensed Survey Workflow",
+			"Drone Mapping",
+			"CAD Deliverables"
+		]
 	},
 	"section1": {
 		"tag": "Ujenzi Bora",
@@ -94,6 +100,187 @@
 				"description": "Tengeneza michoro za CAD, tabaka za GIS, na ripoti za dijiti kwa makabidhiano ya mwisho ya mradi na uchambuzi."
 			}
 		]
+	},
+	"accuracyMatters": {
+		"tag": "Usahihi wa Upimaji Kenya",
+		"headline": "Kwa Nini Usahihi Ni Muhimu",
+		"description": "Katika maendeleo ya ardhi, kosa la 5–10 cm linaweza kusababisha migogoro ya mipaka, kupotoka kwa muundo, kurudia kazi ya ujenzi, na ucheleweshaji wa kisheria.",
+		"solution": "Katika SmartGrid Surveying, tunaondoa kutokuwa na uhakika kwa kuchanganya mifumo ya GNSS RTK, total stations za robotiki, na mifumo ya upigaji picha kwa droni.",
+		"items": [
+			{
+				"title": "Migogoro ya Mipaka",
+				"description": "Kupotoka kwa milimita kwenye mstari wa mpaka kunaweza kusababisha uchunguzi wa mipaka wenye gharama kote Kenya — kulinda hati za ardhi, majirani, na uwekezaji.",
+				"icon": "vector-polyline",
+				"stat": "5–10 cm"
+			},
+			{
+				"title": "Kupotoka kwa Muundo",
+				"description": "Miundo iliyojengwa juu ya data isiyo sahihi hulazimisha marekebisho ya shambani ambayo hupiga bajeti — usahihi wa upimaji wa uhandisi huweka CAD na BIM katika nafasi sahihi.",
+				"icon": "ruler-square-compass",
+				"stat": "±2 cm"
+			},
+			{
+				"title": "Kurudia Kazi ya Ujenzi",
+				"description": "Viwianishio visivyo sahihi vinamaanisha misingi iliyomwagwa, huduma zilizohamishwa, na kazi iliyoachwa. Mitandao sahihi ya udhibiti inapunguza kurudia kazi na kuendeleza programu.",
+				"icon": "hammer-wrench",
+				"stat": "Hakuna kurudia"
+			},
+			{
+				"title": "Ucheleweshaji wa Kisheria",
+				"description": "Uidhinishaji wa uchunguzi wa kadastral Nairobi husimama mipango isipolingana na ardhi. Tunatoa data yenye ushahidi inayosogeza vibali mbele.",
+				"icon": "scale-balance",
+				"stat": "Vibali vya haraka"
+			}
+		],
+		"keywords": [
+			"Uchunguzi wa Migogoro ya Mipaka Kenya",
+			"Uchunguzi wa Kadastral Nairobi",
+			"Usahihi wa Upimaji wa Uhandisi",
+			"Usahihi wa Upimaji Kenya"
+		]
+	},
+	"deliverables": {
+		"tag": "Bidhaa za Mradi",
+		"headline": "Bidhaa Unazopokea",
+		"description": "Kila shughuli inafungwa kwa kifurushi kamili cha data kilicho tayari kwa wahandisi — kinasafirishwa katika miundo wazi inayoingia moja kwa moja kwenye zana za CAD,GIS, na usimamizi wa ujenzi.",
+		"liveLabel": "Kifurushi cha data cha moja kwa moja",
+		"checks": [
+			"Imerejelewa kijiografia",
+			"Iko tayari kwa mradi",
+			"Miundo wazi"
+		],
+		"items": [
+			{
+				"title": "Michoro ya CAD",
+				"format": "DWG / DXF",
+				"icon": "vector-square",
+				"description": "Michoro iliyo tayari kwa tabaka kwa wasanifu, wahandisi, na wachora — iliyorejelewa kijiografia kwenye mfumo wa viwianishio vya mradi."
+			},
+			{
+				"title": "Mipango ya PDF ya Upimaji",
+				"format": "PDF",
+				"icon": "file-pdf-box",
+				"description": "Mipango iliyo tayari kuchapishwa, yenye mizani sahihi kwa uidhinishaji, vibali, na kumbukumbu."
+			},
+			{
+				"title": "Ramani za Kontua",
+				"format": "0.5m / 1m",
+				"icon": "map-marker-path",
+				"description": "Kontua za usahihi kwa vipindi vya wima vya 0.5 m au 1 m kwa muundo wa grading, mifereji, na udongo."
+			},
+			{
+				"title": "Ramani za Orthomosaic",
+				"format": "GeoTIFF",
+				"icon": "image-filter-hdr",
+				"description": "Picha za angani zenye mizani sahihi zinazotumika kama ramani za msingi za kiwanja kwa upangaji na ufuatiliaji."
+			},
+			{
+				"title": "Data ya Point Cloud",
+				"format": "LAS / LAZ",
+				"icon": "axis-z-arrow",
+				"description": "Mamilioni ya pointi zilizorejelewa kijiografia ziko tayari kwa uchambuzi wa ujazo,BIM, na uundaji wa mifano ya 3D."
+			},
+			{
+				"title": "Majedwali ya Viwianishio",
+				"format": "Excel",
+				"icon": "table-large",
+				"description": "Orodha za pointi zilizopangwa — mipaka, vigingi, udhibiti, na viwianishio vya uwekaji alama — zinazosomika na timu yoyote ya shambani."
+			},
+			{
+				"title": "Tabaka za GIS",
+				"format": "Shapefile / GeoJSON",
+				"icon": "layers-triple",
+				"description": "Tabaka za anga ziko tayari kwa uchunguzi zinazoingia moja kwa moja kwenye QGIS, ArcGIS, au mrundikano wowote wa ramani za wavuti."
+			},
+			{
+				"title": "Ripoti ya Upimaji",
+				"format": "Imesainiwa na Kuhitimishwa",
+				"icon": "file-certificate",
+				"description": "Ripoti ya kitaalamu, inayozingatia sheria, Inayoandika mbinu, usahihi, na matokeo."
+			}
+		]
+	},
+	"technology": {
+		"tag": "Mfumo wa Teknolojia",
+		"headline": "Teknolojia ya Upimaji Tunayotumia",
+		"description": "Zana jumuishi za GNSS, total station, droni, LiDAR, na GPR — zinazolingana na kila ardhi, kiwango cha usahihi, na bidhaa.",
+		"learnMore": "Jifunze zaidi",
+		"items": [
+			{
+				"title": "Mfumo wa FOIF A90 RTK GNSS",
+				"icon": "satellite-variant",
+				"href": "/equipment-sale/foif-a90-rtk-gnss",
+				"description": "Nafasi ya GNSS RTK ya usahihi wa kiwango cha sentimita kwa kazi za mipaka, udhibiti, na uwekaji alama kwa wakati halisi."
+			},
+			{
+				"title": "Total Stations za Robotiki",
+				"icon": "telescope",
+				"description": "Kipimo cha pembe na umbali cha usahihi wa juu kwa tovuti za mijini zilizobana na udhibiti wa uhandisi."
+			},
+			{
+				"title": "Uchoraji Ramani kwa Droni (Msururu wa DJI Matrice)",
+				"icon": "quadcopter",
+				"href": "/equipment-sale/dji-matrice-350-rtk",
+				"description": "Majukwaa ya droni za biashara yanayonasa taswira za azimio la juu kwa uchoraji wa ramani za maeneo makubwa na ufuatiliaji."
+			},
+			{
+				"title": "Usindikaji wa LiDAR na Photogrammetry",
+				"icon": "chart-bell-curve-cumulative",
+				"description": "Mifumo ya kisasa ya point cloud na uundaji wa mifano ya 3D inayogeuzia ukamataji ghafi bidhaa za kiwango cha upimaji."
+			},
+			{
+				"title": "Uchoraji Ramani wa Huduma za Chini ya Ardhi kwa GPR",
+				"icon": "radar",
+				"href": "/surveying/ground-penetrating-radar",
+				"description": "Rada ya kupenya ardhini isiyo na uharibifu inayoona huduma zilizozikwa kabla ya kuchimba."
+			}
+		]
+	},
+	"consultation": {
+		"tag": "Ushauri Unaosaidiwa na Teknolojia",
+		"headline": "Omba Ushauri wa Upimaji Unaosaidiwa na Teknolojia",
+		"description": "Tuambie kuhusu ardhi yako, kiwanja chako, au mradi wako — tutakulinganisha na mchanganyiko sahihi wa zana, mfumo wa kazi ulioidhinishwa, na bei iliyo wazi na isiyobadilika.",
+		"stepsLabel": "Kinachofuata baadaye",
+		"ctaPrimary": {
+			"label": "Omba Ushauri Wangu",
+			"href": "/contact?reason=engage-engineer#contact-form",
+			"icon": "calendar-check"
+		},
+		"ctaSecondary": {
+			"label": "Tumia Barua Pepe kwa Timu ya Upimaji",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Technology-Assisted Survey Consultation&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a technology-assisted survey consultation. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+			"icon": "email-outline"
+		},
+		"steps": [
+			{
+				"title": "Shiriki Maelezo ya Kiwanja Chako",
+				"description": "Eneo, ukubwa, ardhi, na unachopanga kujenga."
+			},
+			{
+				"title": "Pata Ulinganishaji wa Teknolojia",
+				"description": "Tunapendekeza mchanganyiko bora wa GNSS, droni, total station, au GPR kwa mahitaji yako ya usahihi."
+			},
+			{
+				"title": "Pokea Bei Isiyobadilika",
+				"description": "Muda ulio wazi, orodha ya bidhaa, na bei — bila mshangazo."
+			}
+		]
+	},
+	"actionCtaEngineer": {
+		"tag": "Jenga kwa Uhakika",
+		"headline": "Kila muundo unastahili msingi wa ukweli uliothibitishwa.",
+		"description": "Ongea na mhandisi wa SmartGrid kuhusu kiwanja chako, na tutapendekeza teknolojia sahihi ya upimaji, mfumo wa kazi, na bidhaa zinazohakikisha mradi wako unakamilika kwa wakati na bajeti.",
+		"watermark": "hard-hat",
+		"primary": {
+			"label": "Ongea na Mhandisi",
+			"href": "/contact?reason=engage-engineer#contact-form",
+			"icon": "hard-hat"
+		},
+		"secondary": {
+			"label": "Chunguza Huduma za Upimaji",
+			"href": "/surveying",
+			"icon": "arrow-right"
+		}
 	},
 	"exploreMore": {
 		"tag": null,
