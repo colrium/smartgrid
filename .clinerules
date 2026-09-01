@@ -21,8 +21,7 @@
   port 3000. Start one only for manual verification, then stop/terminate it. Never leave it running.
 - **Never commit secrets.** `.env.local` is gitignored. Only `.env.example` is versioned.
 - **i18n discipline.** Any edit to a locale JSON must be applied to every locale that has a
-  corresponding file. Text → translate; URLs/slugs/hrefs/codes → copy verbatim. Re-run
-  `npm run toc` after adding namespaces.
+  corresponding file. Text → translate; URLs/slugs/hrefs/codes → copy verbatim.
 
 ## Coding Standards (must follow)
 - Functional components with **explicit return types** (`function X(): ReactElement`).
@@ -43,7 +42,6 @@
 | `npm run lint`     | ESLint (fails on any warning)               |
 | `npm run lint:fix` | Auto-fix lint issues                        |
 | `npm run typecheck`| `tsc --noEmit`                              |
-| `npm run toc`      | Regenerate `@types/resources.ts` (i18n)     |
 | `npm run typegen`  | Sanity schema extract + typegen             |
 
 ## Constraints / Guardrails

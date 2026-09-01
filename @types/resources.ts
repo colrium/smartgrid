@@ -9,13 +9,13 @@ import bathymetricsurveys from '../public/locales/en/bathymetric-surveys.json';
 import buildingsitesurveys from '../public/locales/en/building-site-surveys.json';
 import cadastralsurveys from '../public/locales/en/cadastral-surveys.json';
 import careers from '../public/locales/en/careers.json';
-import civilasbuiltsurveys from '../public/locales/en/civil-as-built-surveys.json';
-import civilbim from '../public/locales/en/civil-bim.json';
-import civilhighwaysurveys from '../public/locales/en/civil-highway-surveys.json';
-import civilsiteengineering from '../public/locales/en/civil-site-engineering.json';
-import civilsitesettingout from '../public/locales/en/civil-site-setting-out.json';
-import civilvolumetricsurveys from '../public/locales/en/civil-volumetric-surveys.json';
-import civil from '../public/locales/en/civil.json';
+import civilasbuiltsurveys from '../public/locales/en/civil/as-built-surveys.json';
+import civilbim from '../public/locales/en/civil/bim.json';
+import civilhighwaysurveys from '../public/locales/en/civil/highway-surveys.json';
+import civilsiteengineering from '../public/locales/en/civil/site-engineering.json';
+import civilsitesettingout from '../public/locales/en/civil/site-setting-out.json';
+import civilvolumetricsurveys from '../public/locales/en/civil/volumetric-surveys.json';
+import civillanding from '../public/locales/en/civil/landing.json';
 import common from '../public/locales/en/common.json';
 import companyprofile from '../public/locales/en/company-profile.json';
 import contact from '../public/locales/en/contact.json';
@@ -48,6 +48,10 @@ import topographicalsurveys from '../public/locales/en/topographical-surveys.jso
 import totalstationdtm152m from '../public/locales/en/total-station-dtm-152m.json';
 import totalstationesurvey from '../public/locales/en/total-station-esurvey.json';
 import volumetricsurveys from '../public/locales/en/volumetric-surveys.json';
+import asbuiltsurveys from '../public/locales/en/civil/as-built-surveys.json';
+import bim from '../public/locales/en/civil/bim.json';
+import highwaysurveys from '../public/locales/en/civil/highway-surveys.json';
+
 
 const resources = {
   about,
@@ -66,8 +70,8 @@ const resources = {
   'civil-highway-surveys': civilhighwaysurveys,
   'civil-site-engineering': civilsiteengineering,
   'civil-site-setting-out': civilsitesettingout,
-  'civil-volumetric-surveys': civilvolumetricsurveys,
-  civil,
+'civil-volumetric-surveys': civilvolumetricsurveys,
+'civil-landing': civillanding,
   common,
   'company-profile': companyprofile,
   contact,
@@ -99,7 +103,11 @@ const resources = {
   'topographical-surveys': topographicalsurveys,
   'total-station-dtm-152m': totalstationdtm152m,
   'total-station-esurvey': totalstationesurvey,
-  'volumetric-surveys': volumetricsurveys
+  'volumetric-surveys': volumetricsurveys,
+  'as-built-surveys': asbuiltsurveys,
+  bim,
+  'highway-surveys': highwaysurveys,
+  
 } as const;
 
 export default resources;

@@ -5,9 +5,14 @@ import { getI18nProps } from "@/lib/i18n";
 import {
 	SectionalHeroSection,
 	IntroSection,
+	WhatIsSection,
 	ServicesImageSection,
 	ServicesDetailSection,
 	ProcessSection,
+	SectionalDeliverablesSection,
+	WhoNeedsSection,
+	TimelineSection,
+	RegistrationCtaSection,
 	SectionalFaqSection,
 	SocialsSection,
 } from "@/components/sections/surveying/sectional-properties";
@@ -23,9 +28,14 @@ const Page: NextPage<PageProps> = () => {
 			<div className="flex flex-col min-h-screen">
 				<SectionalHeroSection />
 				<IntroSection />
+				<WhatIsSection />
 				<ServicesImageSection />
 				<ServicesDetailSection />
 				<ProcessSection />
+				<SectionalDeliverablesSection />
+				<WhoNeedsSection />
+				<TimelineSection />
+				<RegistrationCtaSection />
 				<SectionalFaqSection />
 				<SocialsSection />
 			</div>

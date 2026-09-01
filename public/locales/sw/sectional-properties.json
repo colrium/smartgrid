@@ -2,7 +2,16 @@
 	"hero": {
 		"headline": "Mali za Sehemu, Mipango na Vitengo.",
 		"image": "/media/surveying/sectional-properties/AG8ng.jpg",
-		"description": "Kiongozi wa Mapinduzi ya Uchunguzi wa Ardhi na Angani Afrika"
+		"description": "Uchunguzi wa Mali za Sehemu na Maandalizi ya Mipango ya Sehemu Kenya.\n\nTunaandaa mipango ya sehemu iliyorejelewa kijiografia kwa vyumba vya kufikia, ofisi, na maendeleo ya matumizi mchanganyiko kwa ajili ya usajili chini ya Sheria ya Mali za Sehemu, 2020.",
+		"ctaPrimary": {
+			"label": "Omba Nukuu ya Uchunguzi wa Mali za Sehemu",
+			"href": "mailto:info@smartgridsurveying.com?subject=Request%20for%20Sectional%20Property%20Survey%20Quote&body=Dear%20SmartGrid%20Surveying%20Team,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20quotation%20for%20a%20Sectional%20Property%20Survey.%20Please%20find%20my%20project%20details%20below:%0D%0A%0D%0AProject%20Name:%20%0D%0ALocation:%20%0D%0AProperty%20Type:%20(e.g.%20apartment,%20commercial,%20mixed-use)%0D%0ANumber%20of%20Units:%20%0D%0AAdditional%20Information:%20%0D%0A%0D%0AThank%20you.%0D%0A%0D%0ABest%20regards,%0D%0A[Your%20Full%20Name]%0D%0A[Your%20Phone%20Number]"
+		},
+		"ctaSecondary": {
+			"label": "WhatsApp kwa Ukaguzi wa Uzingatiaji",
+			"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20a%20sectional%20properties%20compliance%20review%20for%20my%20development.%20Please%20advise%20on%20the%20next%20steps.",
+			"icon": "whatsapp"
+		}
 	},
 	"section1": {
 		"tag": "Uchunguzi wa mali za sehemu ulioidhinishwa",
@@ -13,24 +22,128 @@
 			"href": "/aerial-drones/drone-imagery-surveys"
 		}
 	},
+	"whatIs": {
+		"tag": "Sheria ya Mali za Sehemu, 2020",
+		"headline": "Mali za Sehemu ni nini?",
+		"description": "Mali ya sehemu ni jengo lililogawanywa katika vitengo vinavyomilikiwa kibinafsi (vyumba vya kufikia, ofisi, maduka) ambapo kila mmiliki hupata hati ya umiliki na kushiriki maeneo ya pamoja.",
+		"diagramLabel": "Uchunguzi wa Mali za Sehemu — Mgawanyo wa Umiliki",
+		"items": [
+			{
+				"icon": "door-open",
+				"title": "Umiliki wa Kitengo Binafsi",
+				"points": [
+					"Kila chumba au kitengo cha ofisi kinamilikiwa kibinafsi.",
+					"Hati ya umiliki inatolewa kwa kitengo hicho mahususi.",
+					"Mmiliki ana haki za kipekee za kukaa, kukodisha, au kuuza kitengo chake."
+				]
+			},
+			{
+				"icon": "elevator",
+				"title": "Umiliki wa Mali ya Pamoja",
+				"points": [
+					"Nafasi zinazoshirikiwa kama makoridori, lifti, bustani, maegesho na maeneo ya mapumziko.",
+					"Vinamilikiwa pamoja na wamiliki wote wa vitengo.",
+					"Husimamiwa kwa pamoja kupitia chama cha wamiliki."
+				]
+			},
+			{
+				"icon": "chart-donut",
+				"title": "Mgawanyo wa Kipengele cha Kitengo (Unit Factor)",
+				"points": [
+					"Huamua hisa ya kila mmiliki katika mali ya pamoja.",
+					"Inatokana na ukubwa au thamani ya kitengo ikilinganishwa na maendeleo yote."
+				],
+				"impactsLabel": "Huathiri:",
+				"impacts": [
+					"Mchango wa gharama za matunzio",
+					"Haki za kupiga kura katika chama",
+					"Hisa ya mali ya pamoja"
+				]
+			}
+		]
+	},
+	"whatIs": {
+		"tag": "Sheria ya Mali za Sehemu, 2020",
+		"headline": "Mali ya Sehemu ni nini?",
+		"description": "Mali ya sehemu ni jengo lijigawanywalo vitengo vinavyomilikiwa kibinafsi (apartmenti, ofisi, maduka) ambapo kila mmiliki hupata hati ya umiliki na kushiriki maeneo ya pamoja.",
+		"diagramLabel": "Uchunguzi wa Mali za Sehemu — Mgawanyo wa Umiliki",
+		"items": [
+			{
+				"icon": "door-open",
+				"title": "Umiliki wa Kitengo Binafsi",
+				"points": [
+					"Kila apartmenti/ofisi inamilikiwa kibinafsi.",
+					"Hati ya umiliki inatolewa kwa kitengo husika.",
+					"Mmiliki ana haki za kipekee za kukaa, kupangisha, au kuuza kitengo chake."
+				]
+			},
+			{
+				"icon": "elevator",
+				"title": "Umiliki wa Mali ya Pamoja",
+				"points": [
+					"Nafasi za pamoja kama magati, lifti, bustani, maegesho na maeneo ya mapumziko.",
+					"Milikiwa kwa pamoja na wamiliki wote wa vitengo.",
+					"Isimamiwe kwa pamoja kupitia chama cha wamiliki."
+				]
+			},
+			{
+				"icon": "chart-donut",
+				"title": "Mgawanyo wa Mambo ya Vitengo",
+				"points": [
+					"Huamua hisa ya kila mmiliki katika mali ya pamoja.",
+					"Inatokana na ukubwa/thamani ya kitengo ikilinganishwa na maendeleo yote."
+				],
+				"impactsLabel": "Athari:",
+				"impacts": [
+					"Mchango kwa gharama za matunzo",
+					"Haki za kupiga kura katika chama",
+					"Hisa ya mali ya pamoja"
+				]
+			}
+		]
+	},
 	"process": {
 		"tag": "Mchakato",
 		"headline": "Mchakato wa Uchunguzi wa Mali za Sehemu",
-		"description": "",
+		"description": "Hatua saba zilizothibitishwa zinachukua jengo lako kutoka ziara ya kwanza hadi mpango wa sehemu uliowasilishwa — kila wakati unajua ni wapi mpango wako ulipo.",
 		"items": [
 			{
-				"label": "Uchunguzi wa awali wa tovuti",
-				"description": "Ziara ya tovuti, pima udhibiti na uhakiki mipaka na alama ya jengo."
+				"label": "Mkusanyiko wa Data za Tovuti na Jengo",
+				"description": "Tunatembelea tovuti kunasa alama ya jengo, kuthibitisha hati-kuu na kukusanya nyaraka zilizopo za usanifu.",
+				"phase": "FIELD"
 			},
 			{
-				"label": "Uchunguzi wa kina wa vitengo",
-				"description": "Tumia total station / GNSS na uchanganuzi wa laser pale inapohitajika kunasa ukubwa sahihi wa sakafu na urefu wa dari."
+				"label": "Uhakiki na Uthibitisho wa Mipango ya Usanifu",
+				"description": "Michoro iliyoidhinishwa hulinganishwa na muundo halisi na uidhinisho vya kaunti kabla ya kuanza vipimo.",
+				"phase": "OFFICE"
 			},
 			{
-				"label": "Utayarishaji wa mipango",
-				"description": "Toa mipango ya sehemu (CAD), ratiba za vitengo, mahesabu ya maeneo na mipango ya PDF na uthibitisho."
+				"label": "Uchunguzi wa Shamba na Uwekaji wa Udhibiti (GNSS RTK)",
+				"description": "Vipokezi vya GNSS RTK na total stations za roboti huweka udhibiti uliorejelewa kijiografia unaounganishwa na alama za rejesta.",
+				"phase": "FIELD"
+			},
+			{
+				"label": "Ufafanuzi na Upimaji wa Vitengo",
+				"description": "Kila kitengo kinapimwa — sakafu, kuta na madaraja — ukirekebisha mipaka kwa mujibu wa Sehemu ya 10 ya Sheria.",
+				"phase": "FIELD"
+			},
+			{
+				"label": "Kurejelewa Kijiografia na Ugawaji wa Kuratibu",
+				"description": "Kuratibu zinazolingana na rejesta zinapewa kwa kila kitengo na mali ya pamoja.",
+				"phase": "OFFICE"
+			},
+			{
+				"label": "Uchoraji wa Mpango wa Sehemu (CAD)",
+				"description": "Mpango wa sehemu unachorwa kwa CAD ukiwa na ratiba ya vitengo, vipengele vya vitengo na ukubwa wa mali ya pamoja.",
+				"phase": "OFFICE"
+			},
+			{
+				"label": "Wasilishaji kwa Usajili",
+				"description": "Mpango uliosainiwa unawasilishwa kwa mamlaka ya upimaji, na tunaunga mkono usajili kupitia Ardhisasa.",
+				"phase": "REGISTRY"
 			}
 		],
+		"outcome": "Mpango wa sehemu umesajiliwa — hati za vitengo binafsi zinatolewa.",
 		"ctaPrimary": {
 			"label": "Omba Nukuu",
 			"href": "mailto:info@smartgridsurveying.com?subject=Request%20for%20Sectional%20Property%20Survey%20Quote&body=Dear%20SmartGrid%20Surveying%20Team,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20quotation%20for%20a%20Sectional%20Property%20Survey.%20Please%20find%20my%20project%20details%20below:%0D%0A%0D%0AProject%20Name:%20%0D%0ALocation:%20%0D%0AProperty%20Type:%20(e.g.%20apartment,%20commercial,%20mixed-use)%0D%0ANumber%20of%20Units:%20%0D%0AAdditional%20Information:%20%0D%0A%0D%0AThank%20you.%0D%0A%0D%0ABest%20regards,%0D%0A[Your%20Full%20Name]%0D%0A[Your%20Phone%20Number]"
@@ -89,6 +202,167 @@
 				"description": "Uchanganuzi wa laser (LiDAR ya ardhini) kwa majengo ya orofa nyingi na jiometri ngumu — point clouds za haraka na za kina."
 			}
 		]
+	},
+	"deliverables": {
+		"tag": "Unachopokea",
+		"headline": "Matokeo Unayopokea",
+		"description": "Kila kifurushi cha mpango wa sehemu huandaliwa kwa ajiliya ukubaliaji wa ofisi ya rejesta ya ardhi — CAD, PDF na ratiba katika muundo unaoatarajiwa na rejesta.",
+		"liveLabel": "Kifurushi cha matokeo",
+		"checks": [
+			"Imesainiwa na kupewa mohoro na mchunguzi aliyoidhinishwa",
+			"Muundo tayari kwa rejesta",
+			"Data zinazooana na Ardhisasa"
+		],
+		"items": [
+			{
+				"title": "Mpango wa Sehemu Uliyosajiliwa",
+				"format": "CAD + PDF",
+				"icon": "vector-square",
+				"image": "/media/surveying/sectional-properties/sectional-title-plans.jpeg",
+				"description": "Mpango wa sehemu ulioidhinishwa uliochorwa kwa CAD na kutolewa kama PDF iliyosainiwa, tayari kwa kuwasilishwa ofisini."
+			},
+			{
+				"title": "Mipaka ya Vitengo na Ramani za Sakafu",
+				"format": "Sakafu kwa sakafu",
+				"icon": "floor-plan",
+				"image": "/media/surveying/sectional-properties/unit-surveys-area-schedules.jpeg",
+				"description": "Ufafanuzi wazi wa kila kitengo — sakafu, kuta na madaraja — pamoja na maeneo ya wavu na jumla yaliyohesabiwa kwa kila ngazi."
+			},
+			{
+				"title": "Kuratibu Zilizorejelewa Kijiografia",
+				"format": "Udhibiti wa rejesta",
+				"icon": "crosshairs-gps",
+				"description": "Vipimo vya vitengo na mali ya pamoja vimelifungwa kwa alama za rejesta ya kitaifa kwa ukubaliaji wa ofisi ya uchunguzi na Ardhisasa."
+			},
+			{
+				"title": "Ratiba ya Kipengele cha Kitengo",
+				"format": "Excel + PDF",
+				"icon": "table-large",
+				"description": "Hisa ya uwiano ya kila mmiliki katika mali ya pamoja — ada za matunzio na haki za kupiga kura zinahesabiwa kwa usawa."
+			},
+			{
+				"title": "Ripoti ya Uchunguzi kwa Rejesta ya Ardhi",
+				"format": "Ripoti iliyosainiwa",
+				"icon": "file-certificate",
+				"description": "Ripoti ya maelezo na mchunguzi aliyoidhinishwa inayoelezea mbinu, udhibiti, mipaka na urahisi wa njia."
+			},
+			{
+				"title": "Msaada wa Kuwasilisha Ardhisasa",
+				"format": "Uwasilishaji wa kidijitali",
+				"icon": "cloud-upload-outline",
+				"description": "Tunaandaa na kupakia data ya mpango katika muundo unaoatarajiwa na Ardhisasa, na tunafuatilia faili hadi usajili."
+			}
+		]
+	},
+	"whoNeeds": {
+		"tag": "Tunayehudumia",
+		"headline": "Nani Anahitaji Uchunguzi wa Sehemu?",
+		"description": "Ikiwa mradi wako unamalizia kwa vitengo vinavyomilikiwa kibinafsi, unahitaji mpango wa sehemu — na ukianza mapema katika mpango wako, usajili huenda laini zaidi.",
+		"linkLabel": "Anza hapa",
+		"items": [
+			{
+				"icon": "city",
+				"title": "Wasanidi wa Miradi ya Nyumba",
+				"description": "Sajili maendeleo ya vyumba vya kufikia na matumizi mchanganyiko ili kila kitengo kiwe na hati yake inayouzwa.",
+				"href": "/contact?reason=request-survey#contact-form"
+			},
+			{
+				"icon": "home-city",
+				"title": "Wamiliki wa Majengo ya Vyumba vya Kufikia",
+				"description": "Badilisha majengo ya leasehold ya muda mrefu kuwa hatimiliki za sehemu unazoweza kuuza au kuweka rehani kitengo kwa kitengo.",
+				"href": "/contact?reason=request-survey#contact-form"
+			},
+			{
+				"icon": "drafting-compass",
+				"title": "Wasanifu Majengo na Wapangaji",
+				"description": "Linganisha michoro iliyoidhinishwa na mipaka ya vitengo kabla ya kufunga muundo — tunathibitisha ulichochora.",
+				"href": "/surveying"
+			},
+			{
+				"icon": "gavel",
+				"title": "Mashirika ya Sheria ya Kubadilisha Mali",
+				"description": "Badilisha makodisho ya muda mrefu kuwa hatimiliki za sehemu kwa uthibitisho wa uchunguzi tayari kwa rejesta.",
+				"href": "/contact?reason=compliance-legal#contact-form"
+			},
+			{
+				"icon": "domain",
+				"title": "Mashirika ya Usimamizi wa Mali",
+				"description": "Simamia vipengele vya vitengo, michango ya matunzio na mali ya pamoja kwa ratiba zilizoidhinishwa.",
+				"href": "/contact?reason=services-enquiry#contact-form"
+			},
+			{
+				"icon": "office-building",
+				"title": "Miradi ya Ujenzi Iliyoidhinishwa na Kaunti",
+				"description": "Funga maendeleo ya orofa nyingi kwa mpango wa sehemu unaoendana na muundo ulioidhinishwa na kaunti.",
+				"href": "/civil"
+			}
+		]
+	},
+	"timeline": {
+		"tag": "Panga mapema",
+		"headline": "Muda & Matumizi Tarajiwa",
+		"description": "Maandalizi ya kawaida ya mpango wa sehemu: siku 7–21 kutegemea ugumu wa jengo. Majengo makubwa au yenye jiometri ngumu huchukua muda mrefu; majengo ya kawaida huharakisha.",
+		"barLabel": "Dirisha la kawaida la maandalizi",
+		"startLabel": "Siku ya 1",
+		"endLabel": "Siku ya 21",
+		"costNote": "Gharama hupangiwa kwa jengo — idadi ya vitengo, orofa na hali ya nyaraka huamia ada ya mwisho.",
+		"stages": [
+			{
+				"label": "Mkusanyiko wa Data",
+				"range": "Siku ya 1–2",
+				"days": 2
+			},
+			{
+				"label": "Uhakiki wa Mpango",
+				"range": "Siku ya 3–4",
+				"days": 2
+			},
+			{
+				"label": "Uchunguzi wa Shamba na Udhibiti",
+				"range": "Siku ya 5–7",
+				"days": 3
+			},
+			{
+				"label": "Ufafanuzi wa Vitengo",
+				"range": "Siku ya 8–10",
+				"days": 3
+			},
+			{
+				"label": "Kurejelewa Kijiografia",
+				"range": "Siku ya 11–13",
+				"days": 3
+			},
+			{
+				"label": "Uchoraji wa CAD",
+				"range": "Siku ya 14–18",
+				"days": 5
+			},
+			{
+				"label": "Wasilishaji",
+				"range": "Siku ya 19–21",
+				"days": 3
+			}
+		],
+		"ctaEmail": {
+			"label": "Omba Muda Halisi kwa Mradi Wako",
+			"href": "mailto:info@smartgridsurveying.com?subject=Request%20Exact%20Timeline%20for%20My%20Sectional%20Plan&body=Dear%20SmartGrid%20Surveying%20Team,%0D%0A%0D%0AI%20would%20like%20an%20exact%20timeline%20estimate%20for%20preparing%20a%20sectional%20plan.%0D%0A%0D%0AProject%20Name:%20%0D%0ALocation:%20%0D%0ANumber%20of%20Units:%20%0D%0ANumber%20of%20Floors:%20%0D%0A%0D%0AThank%20you."
+		}
+	},
+	"registrationCta": {
+		"tag": "Tuko tayari unapokuwa tayari",
+		"headline": "Anza Usajili wa Mpango Wako wa Sehemu",
+		"description": "Tutumie maelezo ya jengo lako nasi tutathibitisha uhalali chini ya Sheria ya Mali za Sehemu, 2020 — kisha tutaandaa, turejele kijiografia na kuwasilisha mpango kwa niaba yako.",
+		"watermark": "domain",
+		"primary": {
+			"label": "Omba Nukuu ya Uchunguzi wa Mali za Sehemu",
+			"href": "mailto:info@smartgridsurveying.com?subject=Request%20for%20Sectional%20Property%20Survey%20Quote&body=Dear%20SmartGrid%20Surveying%20Team,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20quotation%20for%20a%20Sectional%20Property%20Survey.%20Please%20find%20my%20project%20details%20below:%0D%0A%0D%0AProject%20Name:%20%0D%0ALocation:%20%0D%0AProperty%20Type:%20(e.g.%20apartment,%20commercial,%20mixed-use)%0D%0ANumber%20of%20Units:%20%0D%0AAdditional%20Information:%20%0D%0A%0D%0AThank%20you.%0D%0A%0D%0ABest%20regards,%0D%0A[Your%20Full%20Name]%0D%0A[Your%20Phone%20Number]",
+			"icon": "arrow-right"
+		},
+		"secondary": {
+			"label": "WhatsApp kwa Ukaguzi wa Uzingatiaji",
+			"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20a%20sectional%20properties%20compliance%20review%20for%20my%20development.%20Please%20advise%20on%20the%20next%20steps.",
+			"icon": "whatsapp"
+		}
 	},
 	"faq": {
 		"tag": null,

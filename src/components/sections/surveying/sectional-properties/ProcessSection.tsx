@@ -1,97 +1,129 @@
 "use client";
 
-import Link from "next/link";
+import type { ReactElement } from "react";
+
 import { useTranslation } from "@/hooks";
 import { SectionHeader } from "@/components/sections/home";
 import { FadeUp } from "@/components/animations/Fade";
 import { Blob } from "@/components/sections/home/decor";
 
-interface ProcessStep {
-	label: string;
-	description: string;
-}
-
-interface ProcessCta {
-	label: string;
-	href: string;
+interface ProcessItem {
+	label?: string;
+	description?: string;
+	phase?: string | null;
 }
 
 interface ProcessContent {
 	tag?: string | null;
-	headline: string;
+	headline?: string;
 	description?: string;
-	items: ProcessStep[];
-	ctaPrimary?: ProcessCta | null;
-	ctaSecondary?: ProcessCta | null;
+	items?: ProcessItem[];
+	outcome?: string;
 }
 
-export function ProcessSection() {
+const PHASE_STYLES: Record<string, { chip: string; icon: string }> = {
+	FIELD: {
+		chip: "border-primary-400/40 bg-primary-400/10 text-primary-200",
+		icon: "map-marker-radius",
+	},
+	OFFICE: {
+		chip: "border-accent-300/40 bg-accent-300/10 text-accent-300",
+		icon: "desktop-mac-dashboard",
+	},
+	REGISTRY: {
+		chip: "border-whatsapp/40 bg-whatsapp/10 text-whatsapp",
+		icon: "office-building-marker",
+	},
+};
+
+const PHASE_FALLBACK = PHASE_STYLES.FIELD;
+
+export function ProcessSection(): ReactElement {
 	const { t } = useTranslation(["sectional-properties"]);
 	const section = t("sectional-properties:process", {
 		returnObjects: true,
 	}) as unknown as ProcessContent;
-	const steps = Array.isArray(section.items) ? section.items : [];
+	const items = Array.isArray(section?.items) ? section.items : [];
+
+	if (items.length === 0) return <></>;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
-			<Blob className="w-[26rem] h-[26rem] bg-primary-100/60 -bottom-24 -right-24" opacity={0.5} />
+		<section className="ink-panel py-24 sm:py-28 relative overflow-hidden">
+			<Blob
+				className="w-[30rem] h-[30rem] bg-primary-400/15 -bottom-40 -left-40"
+				opacity={0.35}
+			/>
 
-			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+			<div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader
-					tag={section.tag}
-					headline={section.headline}
-					description={section.description}
+					tag={section.tag || undefined}
+					headline={section.headline ?? ""}
+					description={section.description || undefined}
+					tone="dark"
 					align="center"
 				/>
 
-				<div className="mt-14 sm:mt-20 grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
-					{steps.map((step, index) => (
-						<FadeUp key={index} delay={index * 0.08}>
-							<article className="group relative h-full overflow-hidden rounded-2xl hairline bg-paper card-shadow transition-all duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-primary-300 p-8">
-								<span className="absolute -right-3 -top-6 font-light tracking-tighter text-[7rem] leading-none text-primary/[0.06] select-none pointer-events-none">
-									{String(index + 1).padStart(2, "0")}
-								</span>
+				<div className="relative mt-16 sm:mt-20">
+					<div
+						aria-hidden
+						className="absolute left-4 lg:left-1/2 lg:-translate-x-1/2 top-2 bottom-2 w-px bg-gradient-to-b from-primary-400/0 via-primary-400/50 to-accent-400/70"
+					/>
+					<ol className="space-y-10 lg:space-y-14">
+						{items.map((item, index) => {
+							const phase =
+								PHASE_STYLES[(item.phase ?? "").toUpperCase()] ?? PHASE_FALLBACK;
+							const alignLeft = index % 2 === 0;
 
-								<div className="relative flex items-center gap-3">
-									<span className="inline-flex items-center justify-center h-9 w-9 rounded-full bg-primary-50 text-primary text-sm font-semibold tabular-nums">
-										{index + 1}
-									</span>
-									<span className="h-px flex-1 bg-ink/10" />
-								</div>
+							return (
+								<li key={index} className="relative">
+									<FadeUp delay={Math.min(index * 0.05, 0.3)}>
+										<div
+											className={`relative flex items-start gap-5 pl-14 lg:pl-0 ${
+												alignLeft
+													? "lg:pr-[calc(50%+2.75rem)]"
+													: "lg:pl-[calc(50%+2.75rem)]"
+												}`}
+										>
+											<span className="absolute left-0 lg:left-1/2 lg:-translate-x-1/2 top-1 inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary-400/50 bg-ink-soft text-[11px] font-semibold text-surface shadow-[0_0_0_6px_rgba(0,151,178,0.12)]">
+												{String(index + 1).padStart(2, "0")}
+											</span>
 
-								<h3 className="relative mt-6 text-lg sm:text-xl font-medium tracking-tight text-ink leading-snug">
-									{step.label}
-								</h3>
-								<p className="relative mt-3 text-sm text-on-surface/60 leading-relaxed">
-									{step.description}
-								</p>
-							</article>
-						</FadeUp>
-					))}
+											<div className="flex-1 rounded-[18px] border border-surface/10 bg-surface/5 p-6 sm:p-7 backdrop-blur-sm transition-colors duration-300 hover:border-primary-400/30">
+												<div className="flex flex-wrap items-center justify-between gap-3">
+													{item.phase && (
+														<span
+															className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] ${phase.chip}`}
+														>
+															<span className={`mdi mdi-${phase.icon} text-xs`} />
+															{item.phase}
+														</span>
+													)}
+													<span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-surface/30">
+														Step {String(index + 1).padStart(2, "0")}
+													</span>
+												</div>
+												<h3 className="mt-4 text-lg sm:text-xl font-medium tracking-tight text-surface leading-snug">
+													{item.label}
+												</h3>
+												<p className="mt-2.5 text-sm leading-relaxed text-surface/60">
+													{item.description}
+												</p>
+											</div>
+										</div>
+									</FadeUp>
+								</li>
+							);
+						})}
+					</ol>
 				</div>
 
-				{(section.ctaPrimary?.href || section.ctaSecondary?.href) && (
-					<FadeUp delay={0.2} className="mt-14 sm:mt-16">
-						<div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-							{section.ctaPrimary?.href && (
-								<Link
-									href={section.ctaPrimary.href}
-									className="group inline-flex items-center gap-3 h-14 rounded-full bg-primary text-surface px-8 font-medium text-base transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.45)]"
-								>
-									<span className="h-1.5 w-1.5 rounded-full bg-surface transition-transform duration-300 group-hover:scale-125" />
-									{section.ctaPrimary.label}
-									<span className="mdi mdi-arrow-right text-xl transition-transform duration-300 group-hover:translate-x-1" />
-								</Link>
-							)}
-							{section.ctaSecondary?.href && (
-								<Link
-									href={section.ctaSecondary.href}
-									className="inline-flex items-center gap-3 h-14 rounded-full border border-ink/15 bg-surface px-8 text-ink font-medium text-base transition-all duration-300 hover:border-primary hover:text-primary"
-								>
-									<span className="h-1.5 w-1.5 rounded-full bg-primary" />
-									{section.ctaSecondary.label}
-								</Link>
-							)}
+				{section.outcome && (
+					<FadeUp>
+						<div className="relative mt-14 flex justify-center">
+							<div className="inline-flex flex-wrap items-center justify-center gap-3 rounded-full border border-whatsapp/30 bg-whatsapp/10 px-7 py-3.5 text-sm sm:text-base font-medium text-surface text-center">
+								<span className="mdi mdi-check-decagram text-xl text-whatsapp" />
+								{section.outcome}
+							</div>
 						</div>
 					</FadeUp>
 				)}

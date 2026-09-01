@@ -2,7 +2,16 @@
 	"hero": {
 		"headline": "Sectional Properties, Plans and Units.",
 		"image": "/media/surveying/sectional-properties/AG8ng.jpg",
-		"description": "Leading Africa's Land and Aerial Surveying Revolution"
+		"description": "Sectional Property Surveys & Sectional Plan Preparation in Kenya.\n\nWe prepare geo-referenced sectional plans for apartments, offices, and mixed-use developments for registration under the Sectional Properties Act, 2020.",
+		"ctaPrimary": {
+			"label": "Request Sectional Survey Quote",
+			"href": "mailto:info@smartgridsurveying.com?subject=Request%20for%20Sectional%20Property%20Survey%20Quote&body=Dear%20SmartGrid%20Surveying%20Team,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20quotation%20for%20a%20Sectional%20Property%20Survey.%20Please%20find%20my%20project%20details%20below:%0D%0A%0D%0AProject%20Name:%20%0D%0ALocation:%20%0D%0AProperty%20Type:%20(e.g.%20apartment,%20commercial,%20mixed-use)%0D%0ANumber%20of%20Units:%20%0D%0AAdditional%20Information:%20%0D%0A%0D%0AThank%20you.%0D%0A%0D%0ABest%20regards,%0D%0A[Your%20Full%20Name]%0D%0A[Your%20Phone%20Number]"
+		},
+		"ctaSecondary": {
+			"label": "WhatsApp for Compliance Review",
+			"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20a%20sectional%20properties%20compliance%20review%20for%20my%20development.%20Please%20advise%20on%20the%20next%20steps.",
+			"icon": "whatsapp"
+		}
 		
 	},
 	"section1": {
@@ -14,24 +23,88 @@
 			"href": "/aerial-drones/drone-imagery-surveys"
 		}
 	},
+	"whatIs": {
+		"tag": "Sectional Properties Act, 2020",
+		"headline": "What is Sectional Property?",
+		"description": "A sectional property is a building divided into individually owned units (apartments, offices, shops) where each owner receives a title deed and shares common areas.",
+		"diagramLabel": "Sectional Properties Survey — Ownership Breakdown",
+		"items": [
+			{
+				"icon": "door-open",
+				"title": "Private Unit Ownership",
+				"points": [
+					"Each apartment/office unit is individually owned.",
+					"A title deed is issued for the specific unit.",
+					"The owner has exclusive rights to occupy, lease, or sell their unit."
+				]
+			},
+			{
+				"icon": "elevator",
+				"title": "Common Property Ownership",
+				"points": [
+					"Shared spaces like corridors, lifts, gardens, parking, and recreational areas.",
+					"Jointly owned by all unit holders.",
+					"Managed collectively through the owners' association."
+				]
+			},
+			{
+				"icon": "chart-donut",
+				"title": "Unit Factor Allocation",
+				"points": [
+					"Determines each owner's share in common property.",
+					"Based on unit size/value relative to the whole development."
+				],
+				"impactsLabel": "Impacts:",
+				"impacts": [
+					"Contribution to maintenance costs",
+					"Voting rights in the association",
+					"Share of common property"
+				]
+			}
+		]
+	},
 	"process": {
 		"tag": "Process",
 		"headline": "Sectional Property Survey Process",
-        "description": "",
+        "description": "Seven verified stages take your building from the first site visit to a lodged sectional plan — you always know exactly where your plan stands.",
         "items": [
-            {
-				"label": "Site reconnaissance",
-				"description": "Site visit, measure control and verify boundaries and building footprint."
+			{
+				"label": "Site & Building Data Collection",
+				"description": "We visit the site to capture the building footprint, verify the mother title and gather existing architectural documents.",
+				"phase": "FIELD"
 			},
-            {
-				"label": "Detailed unit surveys",
-				"description": "Use total station / GNSS and laser scanning where required to capture accurate floor extents and ceiling heights."
+			{
+				"label": "Architectural Plan Review & Verification",
+				"description": "Approved drawings are cross-checked against the physical structure and county approvals before any measurement begins.",
+				"phase": "OFFICE"
 			},
-            {
-				"label": "Plan production",
-				"description": "Produce sectional plans (CAD), unit schedules, area calculations and PDF plans with certification."
+			{
+				"label": "Field Survey & Control Establishment (GNSS RTK)",
+				"description": "GNSS RTK receivers and robotic total stations establish geo-referenced control tied to registry beacons.",
+				"phase": "FIELD"
+			},
+			{
+				"label": "Unit Delineation & Measurement",
+				"description": "Every unit is measured — floors, walls and ceilings — fixing boundaries in line with Section 10 of the Act.",
+				"phase": "FIELD"
+			},
+			{
+				"label": "Geo-referencing & Coordinate Assignment",
+				"description": "Registry-aligned coordinates are assigned to each unit and to the common property.",
+				"phase": "OFFICE"
+			},
+			{
+				"label": "Sectional Plan Drafting (CAD)",
+				"description": "The sectional plan is drafted in CAD with the unit schedule, unit factors and common-property extents.",
+				"phase": "OFFICE"
+			},
+			{
+				"label": "Submission for Registration",
+				"description": "The signed plan is lodged with the survey authority, and we support registration through Ardhisasa.",
+				"phase": "REGISTRY"
 			}
         ],
+        "outcome": "Sectional plan registered — individual unit titles issue.",
 		"ctaPrimary": {
 			"label": "Request a Quote",
 			"href": "mailto:info@smartgridsurveying.com?subject=Request%20for%20Sectional%20Property%20Survey%20Quote&body=Dear%20SmartGrid%20Surveying%20Team,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20quotation%20for%20a%20Sectional%20Property%20Survey.%20Please%20find%20my%20project%20details%20below:%0D%0A%0D%0AProject%20Name:%20%0D%0ALocation:%20%0D%0AProperty%20Type:%20(e.g.%20apartment,%20commercial,%20mixed-use)%0D%0ANumber%20of%20Units:%20%0D%0AAdditional%20Information:%20%0D%0A%0D%0AThank%20you.%0D%0A%0D%0ABest%20regards,%0D%0A[Your%20Full%20Name]%0D%0A[Your%20Phone%20Number]"
@@ -90,6 +163,139 @@
 			    "description": "Laser scanning (terrestrial LiDAR) for multi-storey complexes and complex geometries — rapid, detailed point clouds."
 		    }
         ]
+	},
+	"deliverables": {
+		"tag": "What you receive",
+		"headline": "Deliverables You Receive",
+		"description": "Every sectional plan package is prepared for lands-registry acceptance — CAD, PDF and schedules in the formats the registry expects.",
+		"liveLabel": "Deliverable package",
+		"checks": [
+			"Signed & stamped by a licensed surveyor",
+			"Registry-ready formats",
+			"Ardhisasa-compatible data"
+		],
+		"items": [
+			{
+				"title": "Registered Sectional Plan",
+				"format": "CAD + PDF",
+				"icon": "vector-square",
+				"image": "/media/surveying/sectional-properties/sectional-title-plans.jpeg",
+				"description": "The certified sectional plan drafted in CAD and issued as a signed PDF, ready for lodgement at the survey office."
+			},
+			{
+				"title": "Unit Boundaries & Floor Layouts",
+				"format": "Floor by floor",
+				"icon": "floor-plan",
+				"image": "/media/surveying/sectional-properties/unit-surveys-area-schedules.jpeg",
+				"description": "Clear delineation of every unit — floors, walls and ceilings — with net and gross floor areas computed per level."
+			},
+			{
+				"title": "Geo-referenced Coordinates",
+				"format": "Registry control",
+				"icon": "crosshairs-gps",
+				"description": "Unit and common-property corners tied to national registry beacons for survey-office and Ardhisasa acceptance."
+			},
+			{
+				"title": "Unit Factor Schedule",
+				"format": "Excel + PDF",
+				"icon": "table-large",
+				"description": "Each owner's proportional share of the common property — maintenance levies and voting rights computed fairly."
+			},
+			{
+				"title": "Survey Report for Lands Registry",
+				"format": "Signed report",
+				"icon": "file-certificate",
+				"description": "A narrative report by the licensed surveyor documenting methodology, control, boundaries and easements."
+			},
+			{
+				"title": "Support for Ardhisasa Submission",
+				"format": "Digital lodgement",
+				"icon": "cloud-upload-outline",
+				"description": "We prepare and upload the plan data in the format Ardhisasa expects, and follow the file through to registration."
+			}
+		]
+	},
+	"whoNeeds": {
+		"tag": "Who we serve",
+		"headline": "Who Needs Sectional Surveys?",
+		"description": "If your project ends in individually owned units, you need a sectional plan — and the earlier it enters your programme, the smoother registration goes.",
+		"linkLabel": "Start here",
+		"items": [
+			{
+				"icon": "city",
+				"title": "Real Estate Developers",
+				"description": "Register apartment and mixed-use developments so every unit carries its own marketable title.",
+				"href": "/contact?reason=request-survey#contact-form"
+			},
+			{
+				"icon": "home-city",
+				"title": "Apartment Block Owners",
+				"description": "Convert long-term leasehold buildings into sectional titles you can sell or mortgage unit by unit.",
+				"href": "/contact?reason=request-survey#contact-form"
+			},
+			{
+				"icon": "drafting-compass",
+				"title": "Architects & Planners",
+				"description": "Align approved drawings with unit boundaries before design freeze — we verify what you have drawn.",
+				"href": "/surveying"
+			},
+			{
+				"icon": "gavel",
+				"title": "Legal Firms Handling Property Conversion",
+				"description": "Convert long-term leases to sectional titles with registry-ready survey evidence and boundary verification.",
+				"href": "/contact?reason=compliance-legal#contact-form"
+			},
+			{
+				"icon": "domain",
+				"title": "Property Management Companies",
+				"description": "Administer unit factors, maintenance contributions and common property with certified schedules.",
+				"href": "/contact?reason=services-enquiry#contact-form"
+			},
+			{
+				"icon": "office-building",
+				"title": "County-Approved Construction Projects",
+				"description": "Close out multi-storey developments with a sectional plan that matches the county-approved structure.",
+				"href": "/civil"
+			}
+		]
+	},
+	"timeline": {
+		"tag": "Plan ahead",
+		"headline": "Timeline & Cost Expectation",
+		"description": "Typical sectional plan preparation: 7–21 days depending on building complexity. Larger or geometrically complex buildings sit at the upper end; single-block apartments move faster.",
+		"barLabel": "Typical preparation window",
+		"startLabel": "Day 1",
+		"endLabel": "Day 21",
+		"costNote": "Cost is quoted per building — unit count, number of floors and documentation status determine the final fee.",
+		"stages": [
+			{ "label": "Data Collection", "range": "Days 1–2", "days": 2 },
+			{ "label": "Plan Review", "range": "Days 3–4", "days": 2 },
+			{ "label": "Field Survey & Control", "range": "Days 5–7", "days": 3 },
+			{ "label": "Unit Delineation", "range": "Days 8–10", "days": 3 },
+			{ "label": "Geo-referencing", "range": "Days 11–13", "days": 3 },
+			{ "label": "CAD Drafting", "range": "Days 14–18", "days": 5 },
+			{ "label": "Submission", "range": "Days 19–21", "days": 3 }
+		],
+		"ctaEmail": {
+			"label": "Request Exact Timeline for Your Project",
+			"href": "mailto:info@smartgridsurveying.com?subject=Request%20Exact%20Timeline%20for%20My%20Sectional%20Plan&body=Dear%20SmartGrid%20Surveying%20Team,%0D%0A%0D%0AI%20would%20like%20an%20exact%20timeline%20estimate%20for%20preparing%20a%20sectional%20plan.%0D%0A%0D%0AProject%20Name:%20%0D%0ALocation:%20%0D%0ANumber%20of%20Units:%20%0D%0ANumber%20of%20Floors:%20%0D%0A%0D%0AThank%20you."
+		}
+	},
+	"registrationCta": {
+		"tag": "Ready when you are",
+		"headline": "Start Your Sectional Plan Registration",
+		"description": "Send us your building details and we will confirm eligibility under the Sectional Properties Act, 2020 — then prepare, geo-reference and lodge the plan on your behalf.",
+		"watermark": "domain",
+		"primary": {
+			"label": "Request Sectional Survey Quote",
+			"href": "mailto:info@smartgridsurveying.com?subject=Request%20for%20Sectional%20Property%20Survey%20Quote&body=Dear%20SmartGrid%20Surveying%20Team,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20quotation%20for%20a%20Sectional%20Property%20Survey.%20Please%20find%20my%20project%20details%20below:%0D%0A%0D%0AProject%20Name:%20%0D%0ALocation:%20%0D%0AProperty%20Type:%20(e.g.%20apartment,%20commercial,%20mixed-use)%0D%0ANumber%20of%20Units:%20%0D%0AAdditional%20Information:%20%0D%0A%0D%0AThank%20you.%0D%0A%0D%0ABest%20regards,%0D%0A[Your%20Full%20Name]%0D%0A[Your%20Phone%20Number]",
+			"icon": "arrow-right"
+		},
+		"secondary": {
+			"label": "WhatsApp for Compliance Review",
+			"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20a%20sectional%20properties%20compliance%20review%20for%20my%20development.%20Please%20advise%20on%20the%20next%20steps.",
+			"icon": "whatsapp"
+		}
 	},
 
 	"faq": {

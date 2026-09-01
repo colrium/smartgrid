@@ -21,7 +21,6 @@ export default function Link(props: LinkProps): ReactElement {
 		replace,
 		scroll,
 		shallow,
-		passHref = true,
 		prefetch,
 		locale,
 		legacyBehavior,
@@ -39,14 +38,12 @@ export default function Link(props: LinkProps): ReactElement {
 				replace={replace}
 				scroll={scroll}
 				shallow={shallow}
-				passHref={passHref}
 				prefetch={prefetch}
 				locale={locale}
 				legacyBehavior={legacyBehavior}
+                target={target} rel={rel} {...anchorProps}
 			>
-				<a target={target} rel={rel} {...anchorProps}>
-					{children}
-				</a>
+				{children}
 			</NextLink>
 		);
 	}
