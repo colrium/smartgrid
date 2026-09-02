@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { useTranslation } from "@/hooks";
 import { FadeLeft, FadeRight } from "@/components/animations/Fade";
 import { Blob } from "@/components/sections/home/decor";
@@ -27,6 +28,32 @@ interface GprHeroContent {
 	description?: string;
 	ctaPrimary?: GprCta | null;
 	ctaSecondary?: GprCta | null;
+}
+
+function renderDescription(text: string): ReactNode[] {
+	const nodes: ReactNode[] = [];
+	const parts = text.split(/(<bold>|<\/bold>)/g);
+	let bold = false;
+	for (const part of parts) {
+		if (part === "<bold>") {
+			bold = true;
+			continue;
+		}
+		if (part === "</bold>") {
+			bold = false;
+			continue;
+		}
+		nodes.push(
+			bold ? (
+				<strong key={nodes.length} className="font-semibold text-ink">
+					{part}
+				</strong>
+			) : (
+				part
+			),
+		);
+	}
+	return nodes;
 }
 
 export function GprServiceHero() {
@@ -72,8 +99,8 @@ export function GprServiceHero() {
 							</h1>
 
 							{hero.description && (
-								<p className="max-w-xl text-sm sm:text-base text-on-surface/60 leading-relaxed">
-									{hero.description}
+								<p className="max-w-xl text-sm sm:text-base text-on-surface/60 leading-relaxed whitespace-pre-line">
+									{renderDescription(hero.description)}
 								</p>
 							)}
 
@@ -90,18 +117,15 @@ export function GprServiceHero() {
 									)}
 
 									{hero.ctaSecondary?.href && (
-										<a
+										<Link
 											href={hero.ctaSecondary.href}
-											target="_blank"
-											className="inline-flex items-center gap-2.5 h-12 rounded-full bg-emerald-600 px-7 text-white text-sm font-medium transition-all duration-300 hover:bg-emerald-700"
+											className="inline-flex items-center gap-2.5 h-12 rounded-full border border-ink/15 px-7 text-ink text-sm font-medium transition-all duration-300 hover:border-primary hover:text-primary"
 										>
 											{hero.ctaSecondary.icon && (
-												<span
-													className={`mdi mdi-${hero.ctaSecondary.icon} text-lg`}
-												/>
+												<span className={`mdi mdi-${hero.ctaSecondary.icon} text-lg text-primary`} />
 											)}
 											{hero.ctaSecondary.label}
-										</a>
+										</Link>
 									)}
 								</div>
 							)}

@@ -1,7 +1,7 @@
 {
 	"hero": {
 		"headline": "GROUND PENETRATING RADAR",
-		"title": "Huduma za Uchunguzi wa GPR",
+		"title": "Uchunguzi wa Ground Penetrating Radar (GPR) & Uhandisi wa Huduma za Chini ya Ardhi (SUE) nchini Kenya",
 		"image": "/media/surveying/ground-penetrating-radar/hero.png",
 		"images": [
 			{
@@ -31,7 +31,7 @@
 			},
 			{
 				"url": "/media/surveying/ground-penetrating-radar/data-integration.png",
-				"label": "Immediate Results",
+				"label": "Real Time Results",
 				"description": "Real-time data processing with on-screen visualization – enabling instant field decisions and rapid site assessment."
 			},
 			{
@@ -44,15 +44,31 @@
 			"label": "Tazama Huduma Zote",
 			"href": "/surveying"
 		},
-		"description": "Huduma za Ground Penetrating Radar (GPR) kwa utambuzi usioharibu na ramani za huduga zilizojificha, mashimo, tanki, na miundo ya chini ya ardhi barani Kenya.",
+		"description": "<bold>Ramani Sahihi za Huduma za Chini ya Ardhi Kabla ya Kuchimba, Kubuni, au Kujenga</bold>\n\nTunatoa <bold>uchunguzi wa Ground Penetrating Radar (GPR) wa mwonekano wa juu</bold> kwa kutumia mifumo ya hali ya juu ya LMX200 iliyounganishwa na RTK GNSS kutambua, kupanga ramani, na kuthibitisha huduma za chini ya ardhi kwa usahihi wa darasa la uhandisi nchini Kenya na Afrika Mashariki.\n\n<bold>Epuka hatari za kuchimba. Zuia kupigwa kwa huduma. Jenga kwa ujasiri.</bold>",
 		"ctaPrimary": {
 			"label": "Omba Nukuu",
 			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Ground Penetrating Radar&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Ground Penetrating Radar. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		},
 		"ctaSecondary": {
-			"icon": "whatsapp",
-			"label": "Mawasiliano ya Haraka",
-			"href": "https://wa.me/254701618282"
+			"icon": "calendar-check",
+			"label": "Panga Uchunguzi wa GPR",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Book a GPR Utility Scan&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a GPR utility scan on my site.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AArea to scan (approx):%0D%0ASubject of concern (utilities / voids / rebar):%0D%0APreferred date:%0D%0A%0D%0AThank you."
+		}
+	},
+	"technicalCta": {
+		"tag": "Pendekezo la Kiufundi",
+		"headline": "Omba Pendekezo la Kiufundi (Majibu ya Saa 24)",
+		"description": "Tutumie maelezo ya tovuti yako — ufikiaji, eneo, na mahangaiko ya huduma — nasi tutapokea pendekezo la kiufundi la GPR / SUE lenye mbinu, matokeo na bei ndani ya saa 24.",
+		"watermark": "file-document-outline",
+		"primary": {
+			"label": "Omba Pendekezo la Kiufundi",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Technical Proposal Request: GPR & SUE&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like a technical proposal for a GPR / subsurface utility engineering survey.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AArea to survey:%0D%0AUtility concerns:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+			"icon": "file-document-outline"
+		},
+		"secondary": {
+			"label": "WhatsApp Mtaalamu wa GPR",
+			"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20request%20a%20GPR%20technical%20proposal.",
+			"icon": "whatsapp"
 		}
 	},
 	"highlights": [
@@ -75,7 +91,7 @@
 			"href": "#overview"
 		},
 		{
-			"label": "Mbinu",
+			"label": "Mtiririko",
 			"href": "#methodology"
 		},
 		{
@@ -83,12 +99,40 @@
 			"href": "#applications"
 		},
 		{
+			"label": "Tunachogundua",
+			"href": "#detect"
+		},
+		{
 			"label": "Matokeo",
 			"href": "#deliverables"
 		},
 		{
+			"label": "Viwango vya SUE",
+			"href": "#sue"
+		},
+		{
+			"label": "Vikwazo",
+			"href": "#limitations"
+		},
+		{
+			"label": "Kabla vs Baada",
+			"href": "#before-after"
+		},
+		{
 			"label": "Teknolojia",
 			"href": "#technology"
+		},
+		{
+			"label": "Miradi",
+			"href": "#projects"
+		},
+		{
+			"label": "Kwa Ufupi",
+			"href": "#summary"
+		},
+		{
+			"label": "Anza",
+			"href": "#get-started"
 		},
 		{
 			"label": "Maswali",
@@ -105,79 +149,304 @@
 		]
 	},
 	"methodology": {
-		"tag": "Mbinu Yetu",
-		"headline": "Kutoa ubora kupitia mchakato uliothibitishwa wa hatua tatu",
+		"tag": "Mtiririko Wetu wa Kazi wa GPR",
+		"headline": "Mtiririko Wetu wa Kazi wa Uchunguzi wa GPR (Mbinu ya Kiwango cha Uhandisi)",
+		"description": "Tunafuata mbinu iliyopangwa ya Uhandisi wa Huduma za Chini ya Ardhi (SUE):",
 		"items": [
 			{
-				"title": "Maandalizi ya Tovuti na Utafiti wa Kabla",
-				"description": "Kupitia rekodi za huduga na michoro ya tovuti kupanga mistari ya scan na grid ya ufunikaji."
+				"title": "Maandalizi ya Tovuti na Somo la Dawati la Huduma",
+				"points": [
+					"Kagua michoro zilizopo za huduma",
+					"Tambua maeneo ya hatari na kubuni gridi ya scan",
+					"Uanzishaji wa gridi ya uchunguzi"
+				]
 			},
 			{
 				"title": "Upataji wa Data ya GPR",
-				"description": "Uscanaji wa mfumo wa GPR katika maeneo ya uchunguzi kwa kutumia antennas zilizorekebishwa zinazolingana na mahitaji ya kina."
+				"points": [
+					"Uscanaji wa mfumo wa LMX200 wa mzunguko mwingi",
+					"Ukusanyaji wa data ya XYZ ya RTK",
+					"Gridi mnene au uscanaji wa korido"
+				]
 			},
 			{
-				"title": "Tafsiri ya Radargram na Ramani",
-				"description": "Uchambuzi wa data ya GPR kutambua saini za huduga, kina, na alignment, zikisafirishwa kwenda michoro ya CAD na ripoti."
+				"title": "Tafsiri ya Radargrams na Ramani",
+				"points": [
+					"Uchambuzi wa saini za hyperbola",
+					"Kuweka slices za kina na uainishaji wa kasoro",
+					"Kulinganisha na manholes na rekodi",
+					"Michoro za CAD, GIS, PDF na zilizogeoreferensiwa"
+				]
 			}
 		]
 	},
 	"applications": {
 		"tag": "Matumizi",
 		"headline": "Sekta za uhandesi na matumizi tunayohudumia",
-		"description": "Gundua anuwai kamili ya huduma na matokeo yetu ya upimaji wa droni za hewa.",
 		"items": [
 			{
-				"icon": "pipe",
-				"title": "Utambuzi wa Huduga",
-				"description": "Kutafuta mistari ya umeme, maji, na telecom zilizojificha kabla ya kuchimba."
+				"icon": "road-variant",
+				"title": "Miundombinu & Uhandisi",
+				"points": [
+					"Korido za barabara za KeNHA",
+					"Maboresho ya mijini ya KURA",
+					"Miradi ya miundombinu ya kaunti"
+				]
+			},
+			{
+				"icon": "transmission-tower",
+				"title": "Huduma & Nishati",
+				"points": [
+					"Mitandao ya usambazaji wa umeme",
+					"Vituo vidogo vya nishati na mistari ya usambazaji"
+				]
+			},
+			{
+				"icon": "water-pump",
+				"title": "Mamlaka za Maji & Mifereji",
+				"points": [
+					"Maboresho ya mifereji ya maji",
+					"Ukarabati wa mifereji ya maji machafu"
+				]
 			},
 			{
 				"icon": "office-building",
-				"title": "Uscanaji wa Zege",
-				"description": "Kutafuta rebar, kanda za post-tension, na mashimo ndani ya slabs na kuta."
+				"title": "Mali Isiyohamishika & Ujenzi",
+				"points": [
+					"Maendeleo ya majengo marefu",
+					"Miradi ya ugawaji wa viwanja"
+				]
 			},
 			{
-				"icon": "leaf",
-				"title": "Uchunguzi wa Mazingira",
-				"description": "Ramani ya uchafuzi chini ya ardhi, mipaka ya maziwa ya taka, na miungano ya maji chini ya ardhi."
+				"icon": "router-wireless",
+				"title": "Mitandao ya Telecom & Fiber",
+				"points": [
+					"Mipango ya kupeleka fiber",
+					"Ramani za mifereji ya dti"
+				]
 			},
 			{
-				"icon": "bridge",
-				"title": "Uchunguzi wa Zege ya Daraja",
-				"description": "Thibitisha hali ya zege la kongowe, uchafuzi wa rebar, na upasulaji bila uharibifu."
-			},
-			{
-				"icon": "gavel",
-				"title": "Forensics & Law",
-				"description": "Kutafuta makaburi siri, ushahidi uliowekwa chini ya ardhi, na miundo iliyofichwa kwa uchunguzi."
-			},
-			{
-				"icon": "water-outline",
-				"title": "Ramani za Maeneo ya Maafa ya Maji",
-				"description": "Ramani ya maji ya chini ya ardhi, mashimo, na njia za mtiririko kwa tathmini ya hatari ya maafa."
-			},
-			{
-				"icon": "shovel",
-				"title": "Arkeolojia na Uchunguzi wa Geotechnical",
-				"description": "Kutafuta vipengele vya kitamaduni vilivyokowwa na kutathmini mfululiko wa udongo bila uchimbuzi."
+				"icon": "mine",
+				"title": "Madini & Geotechnical",
+				"points": [
+					"Utambuzi wa mashimo, mwimo na hatari za kijiolojia",
+					"Ufuatiliaji kabla ya mlipuko na ujenzi"
+				]
 			}
 		]
 	},
 	"deliverables": {
-		"tag": "Matokeo",
-		"headline": "Unachopokelewa mwishoni wa kila mradi",
-		"list": [
-			"Michoro ya mpangilio wa huduga zilizotambuliwa",
-			"Tafsiri za GPR radargram",
-			"Wasifu wa kina wa huduga",
-			"Ramani za huduga zenye kuratibu",
-			"Ripoti ya uchunguzi wa GPR"
+		"tag": "Matokeo Unayopokea",
+		"headline": "Matokeo Unayopokea",
+		"description": "Hatuchambui tu — tunatoa matokeo tayari kwa uhandisi:",
+		"liveLabel": "Kifurushi cha matokeo",
+		"checks": [
+			"Imethibitishwa kwa udhibiti wa taifa",
+			"Inaendana na CAD & GIS",
+			"Miundo tayari kwa uhandisi"
 		],
-		"images": [
-			"/media/surveying/ground-penetrating-radar/data-integration.png",
-			"/media/surveying/ground-penetrating-radar/gpr-02.png",
-			"/media/surveying/ground-penetrating-radar/topographical-mapping.png"
+		"items": [
+			{
+				"title": "Ramani za Huduma Zilizogeoreferensiwa",
+				"format": "DWG / DXF / SHP",
+				"icon": "map-marker-path",
+				"description": "Kila huduma iliyotambuliwa imewekwa kwenye mpango uliogeoreferensiwa unaoweza kuingia moja kwa moja kwenye CAD au GIS kwa mradi."
+			},
+			{
+				"title": "Miundo ya 3D ya Ufafanuzi wa Chini ya Ardhi",
+				"format": "3D inayoingiliana",
+				"icon": "cube-outline",
+				"description": "Ufafanuzi wa 3D wa mabomba, nyaya, mashimo na miundo iliyofichwa ili kusaidia mradi usio na mgongano."
+			},
+			{
+				"title": "Ripoti ya Uchambuzi wa Mgongano wa Huduma",
+				"format": "Ripoti + Mpango",
+				"icon": "vector-combine",
+				"description": "Inabainisha huduma zinazopishana na migongano ya mradi kabla ya kuwa mashangazo ya gharama kubwa."
+			},
+			{
+				"title": "Jedwali za Ukadiriaji wa Kina na Uainishaji",
+				"format": "XLSX / PDF",
+				"icon": "table-large",
+				"description": "Kina, ukubwa na viwango vya uthubutu kwa kila lengo — tayari kwa saini ya uhandisi."
+			},
+			{
+				"title": "Datasets Tayari za GIS",
+				"format": "ArcGIS / QGIS",
+				"icon": "database-outline",
+				"description": "Shapefile na geodatabase zenye sifa nyingi zinazoungana na mifumo yako iliyopo ya usimamizi wa mali."
+			},
+			{
+				"title": "Ramani za Hatari za Ujenzi",
+				"format": "Mpangilio wa ramani",
+				"icon": "shield-alert-outline",
+				"description": "Maeneo ya hatari yaliyorangiwa huonyesha mahali uchimbaji unahitaji uangalifu zaidi, ulinzi au taarifa za mbinu."
+			},
+			{
+				"title": "Ripoti ya Kiufundi Tayari kwa Mteja",
+				"format": "PDF",
+				"icon": "file-pdf-box",
+				"description": "Ripoti iliyosainiwa, huru inayorekodi mbinu, matokeo, radargrams na mapendekezo."
+			}
+		]
+	},
+	"detectCaps": {
+		"tag": "Uwezo wa GPR",
+		"headline": "Tunachogundua (Uwezo wa GPR)",
+		"description": "Malengo ya chini ya ardhi yanayotambuliwa kwa mwonekano wa juu wa LMX200 + muunganisho wa RTK-GNSS:",
+		"items": [
+			{
+				"icon": "pipe",
+				"title": "Mabomba ya Chuma",
+				"note": "GI na Asbestos"
+			},
+			{
+				"icon": "barrel-outline",
+				"title": "Mabomba Yasiyo ya Chuma",
+				"note": "PVC, HDPE"
+			},
+			{
+				"icon": "cable-data",
+				"title": "Mifereji ya Umeme",
+				"note": "PVC, EML"
+			},
+			{
+				"icon": "access-point-network",
+				"title": "Mifereji ya Telecom na Njia za Fiber",
+				"note": "Uelekeo wa dti na fiber"
+			},
+			{
+				"icon": "circle-multiple",
+				"title": "Mashimo, Mifereji na Kasoro",
+				"note": "Hatari za chini ya ardhi"
+			},
+			{
+				"icon": "archive-outline",
+				"title": "Miundombinu Iliyoachwa",
+				"note": "Tanki za zamani, nyaya na vyumba"
+			}
+		]
+	},
+	"sue": {
+		"tag": "Uzingatiaji",
+		"headline": "Uzingatiaji wa Uhandisi wa Huduma za Chini ya Ardhi (SUE)",
+		"description": "Tunatumia viwango vya kimataifa vya SUE kwa kila mradi wa ramani za huduma — kuwapa wahandisi imani ya kuchimba kwa usalama:",
+		"levels": [
+			{
+				"icon": "file-search-outline",
+				"level": "SUE Level D",
+				"title": "Rekodi na Masomo ya Dawati",
+				"description": "Kukusanya as-builts zilizopo na rekodi za huduma kujenga picha ya hatari kabla ya kazi ya shamba."
+			},
+			{
+				"icon": "map-outline",
+				"level": "SUE Level C",
+				"title": "Ubunifu wa Huduma wa Uso",
+				"description": "Kutafuta na kurekodi vipengele vinavyoonekana — manholes, vali, nguzo — na kuvilinganisha na rekodi."
+			},
+			{
+				"icon": "radar",
+				"level": "SUE Level B",
+				"title": "Ugunduzi wa GPR & Kijiografia",
+				"description": "Kutumia GPR na vitambuzi vya EM kutambua, kupanga na kuainisha huduma zilizofichwa bila kuchimba."
+			},
+			{
+				"icon": "shovel",
+				"level": "SUE Level A",
+				"title": "Uthibitisho wa Kimwili (Potholing)",
+				"description": "Kufunua huduma kwa usalama kuthibitisha kina halisi, ukubwa na nyenzo kabla ya ujenzi."
+			}
+		],
+		"note": "Inahakikisha imani ya darasa la uhandisi kabla ya uchimbaji"
+	},
+	"limitations": {
+		"tag": "Uwazi",
+		"headline": "Vikwazo vya Kiufundi (Uwazi Unaoweza Kuaminiwa)",
+		"description": "Utendaji wa Ground Penetrating Radar unategemea hali ya tovuti. Tunakwambia hasa unachopaswa kutarajia:",
+		"items": [
+			{
+				"icon": "earth",
+				"title": "Udongo wa Clay",
+				"description": "Clay nzito hupunguza mawimbi ya redio na hudhibiti kina cha uenezaji."
+			},
+			{
+				"icon": "grid-large",
+				"title": "Kuimarisha kwa Rebar Msongamano",
+				"description": "Rebar na mesh zilizokusanyika husababisha mtawanyiko wa mawimbi na clutter ndani ya zege."
+			},
+			{
+				"icon": "water-outline",
+				"title": "Ardhi yenye Maji",
+				"description": "Unyevu mwingi wa udongo hubadilisha mwitikio wa dielectric na unaweza kuficha saini za malengo."
+			},
+			{
+				"icon": "arrow-down-bold",
+				"title": "Kina cha Juu cha Ufanisi",
+				"description": "Kina cha kawaida cha utambuzi kinatofautiana kati ya 0.5m – 4m kulingana na udongo na usanidi wa antenna."
+			}
+		],
+		"note": "Tunachanganya GPR na vitambuzi vya EM na uthibitisho wa tovuti kuboresha kuegemea.",
+		"noteIcon": "check-decagram"
+	},
+	"beforeAfter": {
+		"tag": "Kabla vs Baada",
+		"headline": "Kabla vs Baada ya Uchunguzi wa GPR",
+		"flipHint": "Gusa kadi ili kuiburudisha",
+		"before": {
+			"label": "KABLA YA SMARTGRID",
+			"tagline": "Bila uchunguzi wa huduma wa GPR",
+			"items": [
+				"Huduma za chini ya ardhi zisizojulikana",
+				"Hatari ya kuchimba",
+				"Kutokuwa na uhakika wa mradi",
+				"Kuongezeka kwa gharama na ucheleweshaji"
+			]
+		},
+		"after": {
+			"label": "BAADA YA SMARTGRID",
+			"tagline": "Pamoja na uchunguzi wa GPR wa SmartGrid",
+			"items": [
+				"Ramani ya huduma iliyothibitishwa",
+				"Kupungua kwa hatari ya ujenzi",
+				"Uelekeo sahihi wa mradi",
+				"Idhini na utekelezaji wa haraka"
+			]
+		}
+	},
+	"summary": {
+		"tag": "Uchunguzi wa GPR na Ramani za Huduma nchini Kenya",
+		"headline": "Uchunguzi wa GPR na Ramani za Huduma nchini Kenya | Uhandisi wa Huduma za Chini ya Ardhi (SUE)",
+		"description": "Huduma za kitaalamu za Ground Penetrating Radar (GPR) nchini Kenya kwa ramani za huduma, usalama wa ujenzi, na uhandisi wa chini ya ardhi. Mifumo ya RTK-GNSS + LMX200.",
+		"chips": [
+			"Mifumo ya LMX200 + RTK-GNSS",
+			"Usafirishaji nchini kote",
+			"Matokeo ya darasa la uhandisi"
+		]
+	},
+	"finalCta": {
+		"tag": "Anza Uchunguzi Wako",
+		"headline": "Uko Tayari Kupunguza Hatari ya Mradi Wako?",
+		"description": "Pata Usaidizi wa Kitaalamu wa Ramani za Huduma Leo",
+		"note": "Tunajibu ndani ya masaa machache na tunaweza kuhamasisha timu za shamba haraka.",
+		"actions": [
+			{
+				"icon": "calendar-check",
+				"label": "Panga Uchunguzi wa Tovuti",
+				"description": "Panga timu ya shamba kwenye tovuti yako.",
+				"href": "mailto:smartgridsurveying@gmail.com?subject=Book Site Survey: GPR & SUE&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a GPR site survey.%0D%0A%0D%0ALocation:%0D%0ASite size:%0D%0APreferred date:%0D%0A%0D%0AThank you."
+			},
+			{
+				"icon": "email-fast-outline",
+				"label": "Omba Nukuu ya Uhandisi",
+				"description": "Wigo na bei za kina kwa tovuti yako.",
+				"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Ground Penetrating Radar&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Ground Penetrating Radar. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+			},
+			{
+				"icon": "whatsapp",
+				"label": "WhatsApp Timu ya Uchunguzi",
+				"description": "Majibu ya haraka kutoka kwa mtaalamu wa GPR.",
+				"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20talk%20to%20the%20GPR%20survey%20team."
+			}
 		]
 	},
 	"technology": {

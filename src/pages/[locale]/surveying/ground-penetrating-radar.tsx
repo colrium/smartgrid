@@ -4,15 +4,22 @@ import PageHead from "@/components/Head";
 import { getI18nProps } from "@/lib/i18n";
 import {
 	GprServiceHero,
+	GprTechnicalProposalCta,
 	GprHighlightsBar,
 	GprJumpNav,
 	GprOverviewSection,
 	GprMethodologySection,
 	GprApplicationsSection,
+	GprDetectSection,
 	GprDeliverablesSection,
+	GprSueComplianceSection,
+	GprLimitationsSection,
+	GprBeforeAfterSection,
 	GprTechnologySection,
-	GprFaqSection,
+	GprSummarySection,
+	GprFinalCtaSection,
 	FeaturedProjectsSection,
+	GprFaqSection,
 } from "@/components/sections/surveying/ground-penetrating-radar";
 
 type PageProps = {
@@ -25,14 +32,21 @@ const Page: NextPage<PageProps> = () => {
 			<PageHead pageName="ground-penetrating-radar" />
 			<div className="flex flex-col min-h-screen">
 				<GprServiceHero />
+				<GprTechnicalProposalCta />
 				<GprHighlightsBar />
 				<GprJumpNav />
 				<GprOverviewSection />
 				<GprMethodologySection />
 				<GprApplicationsSection />
+				<GprDetectSection />
 				<GprDeliverablesSection />
+				<GprSueComplianceSection />
+				<GprLimitationsSection />
+				<GprBeforeAfterSection />
 				<GprTechnologySection />
 				<FeaturedProjectsSection />
+				<GprSummarySection />
+				<GprFinalCtaSection />
 				<GprFaqSection />
 			</div>
 		</div>

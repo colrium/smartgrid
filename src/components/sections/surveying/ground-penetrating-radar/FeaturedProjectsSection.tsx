@@ -29,7 +29,7 @@ export function FeaturedProjectsSection() {
 	if (items.length === 0) return null;
 
 	return (
-		<section className="py-20 sm:py-24 relative overflow-hidden bg-surface">
+		<section id="projects" className="scroll-mt-36 py-20 sm:py-24 relative overflow-hidden bg-surface">
 			<Blob className="w-[28rem] h-[28rem] bg-primary-100/60 -top-24 -right-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">

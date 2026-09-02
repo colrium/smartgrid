@@ -176,10 +176,6 @@ export function AerialServicesSection(): ReactElement {
 							className="relative w-full max-w-xl overflow-hidden rounded-[20px] bg-surface p-8 sm:p-10 card-shadow-lift"
 							onClick={(e) => e.stopPropagation()}
 						>
-							<span
-								aria-hidden
-								className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-primary/0 via-primary to-primary/0"
-							/>
 							<button
 								type="button"
 								aria-label="Close"

@@ -1,7 +1,7 @@
 {
 	"hero": {
 		"headline": "GROUND PENETRATING RADAR",
-		"title": "GPR Survey Services",
+		"title": "Ground Penetrating Radar (GPR) & Subsurface Utility Engineering (SUE) in Kenya",
 		"image": "/media/surveying/ground-penetrating-radar/hero.png",
 		"images": [
 			{
@@ -31,7 +31,7 @@
 			},
 			{
 				"url": "/media/surveying/ground-penetrating-radar/data-integration.png",
-				"label": "Immediate Results",
+				"label": "Real Time Results",
 				"description": "Real-time data processing with on-screen visualization – enabling instant field decisions and rapid site assessment."
 			},
 			{
@@ -44,15 +44,31 @@
 			"label": "Browse All Services",
 			"href": "/surveying"
 		},
-		"description": "Ground Penetrating Radar (GPR) survey services for non-destructive detection and mapping of buried utilities, voids, tanks, and subsurface structures across Kenya.",
+		"description": "<bold>Accurate Underground Utility Mapping Before You Dig, Design, or Build</bold>\n\nWe provide <bold>high-resolution Ground Penetrating Radar (GPR) surveys</bold> using advanced LMX200 systems integrated with RTK GNSS to detect, map, and validate underground utilities with engineering-grade accuracy across Kenya and East Africa.\n\n<bold>Avoid excavation risks. Prevent utility strikes. Build with confidence.</bold>",
 		"ctaPrimary": {
 			"label": "Request a Quote",
 			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Ground Penetrating Radar&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Ground Penetrating Radar. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		},
 		"ctaSecondary": {
-			"icon": "whatsapp",
-			"label": "Quick Contact",
-			"href": "https://wa.me/254701618282"
+			"icon": "calendar-check",
+			"label": "Book a GPR Utility Scan",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Book a GPR Utility Scan&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a GPR utility scan on my site.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AArea to scan (approx):%0D%0ASubject of concern (utilities / voids / rebar):%0D%0APreferred date:%0D%0A%0D%0AThank you."
+		}
+	},
+	"technicalCta": {
+		"tag": "Technical Proposal",
+		"headline": "Request Technical Proposal (24hr Turnaround)",
+		"description": "Send us your site details — access, area, and utility concerns — and receive a scoped GPR / SUE technical proposal with methodology, deliverables and pricing within 24 hours.",
+		"watermark": "file-document-outline",
+		"primary": {
+			"label": "Request Technical Proposal",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Technical Proposal Request: GPR & SUE&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like a technical proposal for a GPR / subsurface utility engineering survey.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AArea to survey:%0D%0AUtility concerns:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+			"icon": "file-document-outline"
+		},
+		"secondary": {
+			"label": "WhatsApp a GPR Specialist",
+			"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20request%20a%20GPR%20technical%20proposal.",
+			"icon": "whatsapp"
 		}
 	},
 	"highlights": [
@@ -66,15 +82,22 @@
 		},
 		{
 			"icon": "clock-fast",
-			"label": "Immediate Results"
+			"label": "Real Time Results"
 		}
 	],
 	"jumpNav": [
 		{ "label": "Overview", "href": "#overview" },
-		{ "label": "Methodology", "href": "#methodology" },
+		{ "label": "Workflow", "href": "#methodology" },
 		{ "label": "Applications", "href": "#applications" },
+		{ "label": "What We Detect", "href": "#detect" },
 		{ "label": "Deliverables", "href": "#deliverables" },
+		{ "label": "SUE Compliance", "href": "#sue" },
+		{ "label": "Limitations", "href": "#limitations" },
+		{ "label": "Before vs After", "href": "#before-after" },
 		{ "label": "Technology", "href": "#technology" },
+		{ "label": "Projects", "href": "#projects" },
+		{ "label": "Summary", "href": "#summary" },
+		{ "label": "Get Started", "href": "#get-started" },
 		{ "label": "FAQs", "href": "#faqs" }
 	],
 	"overview": {
@@ -88,20 +111,34 @@
 		]
 	},
 	"methodology": {
-		"tag": "Our Methodology",
-		"headline": "Delivering excellence through a proven three-stage workflow",
+		"tag": "Our GPR Survey Workflow",
+		"headline": "Our GPR Survey Workflow (Engineering Standard Method)",
+		"description": "We follow a structured Subsurface Utility Engineering (SUE) approach:",
 		"items": [
 			{
-				"title": "Site Preparation & Desktop Study",
-				"description": "Review available utility records and site drawings to plan GPR scan lines and grid coverage."
+				"title": "Site Preparation & Utility Desk Study",
+				"points": [
+					"Review existing utility drawings",
+					"Identify risk zones & scan grid design",
+					"Survey grid establishment"
+				]
 			},
 			{
 				"title": "GPR Data Acquisition",
-				"description": "Systematic GPR scanning across survey areas using calibrated antenna frequencies suited to detection depth requirements."
+				"points": [
+					"Multi-frequency systematic LMX200 scanning",
+					"RTK XYZ data collection",
+					"Dense grid or corridor-based scanning"
+				]
 			},
 			{
-				"title": "Radargram Interpretation & Mapping",
-				"description": "Analysis of GPR data to identify utility signatures, depths, and alignments, exported into CAD drawings and reports."
+				"title": "Radargrams Interpretation & Mapping",
+				"points": [
+					"Hyperbola signatures analysis",
+					"Depth slicing & anomaly classification",
+					"Cross-check with manholes & records",
+					"CAD, GIS, PDF & georeferenced drawings"
+				]
 			}
 		]
 	},
@@ -110,56 +147,268 @@
 		"headline": "Industry sectors and use cases we serve",
 		"items": [
 			{
-				"icon": "pipe",
-				"title": "Utility Detection",
-				"description": "Locate buried power lines, water lines, and telecoms before breaking ground."
+				"icon": "road-variant",
+				"title": "Infrastructure & Engineering",
+				"points": [
+					"KeNHA road corridors",
+					"KURA urban upgrades",
+					"County infrastructure projects"
+				]
+			},
+			{
+				"icon": "transmission-tower",
+				"title": "Utilities & Energy",
+				"points": [
+					"Power transmission networks",
+					"Substations & distribution lines"
+				]
+			},
+			{
+				"icon": "water-pump",
+				"title": "Water & Sewer Authorities",
+				"points": [
+					"Pipeline upgrades",
+					"Sewer rehabilitation"
+				]
 			},
 			{
 				"icon": "office-building",
-				"title": "Concrete Scanning",
-				"description": "Locate rebar, post-tension cables, and voids within slabs and walls."
+				"title": "Real Estate & Construction",
+				"points": [
+					"High-rise developments",
+					"Subdivision projects"
+				]
 			},
 			{
-				"icon": "leaf",
-				"title": "Environmental Survey",
-				"description": "Map subsurface contamination, landfill boundaries, and groundwater interfaces."
+				"icon": "router-wireless",
+				"title": "Telecom & Fiber Networks",
+				"points": [
+					"Fiber rollout plans",
+					"Duct mapping"
+				]
 			},
 			{
-				"icon": "bridge",
-				"title": "Bridge Deck Inspection",
-				"description": "Assess concrete deck condition, rebar corrosion, and delamination non-destructively."
-			},
-			{
-				"icon": "gavel",
-				"title": "Forensics & Law",
-				"description": "Locate clandestine graves, buried evidence, and hidden structures for investigations."
-			},
-			{
-				"icon": "water-outline",
-				"title": "Flood Zone Mapping",
-				"description": "Map subsurface water tables, voids, and flow paths for flood risk assessment."
-			},
-			{
-				"icon": "shovel",
-				"title": "Archeology and Geotechnical Testing",
-				"description": "Locate buried cultural features and assess soil stratigraphy non-invasively."
+				"icon": "mine",
+				"title": "Mining & Geotechnical",
+				"points": [
+					"Void, subsidence & geohazard detection",
+					"Pre-blast & construction monitoring"
+				]
 			}
 		]
 	},
 	"deliverables": {
-		"tag": "Deliverables",
-		"headline": "What you receive at the end of every project",
-		"list": [
-			"Utility detection layout drawings",
-			"GPR radargram interpretations",
-			"Utility depth profiles",
-			"Marked service plans with coordinates",
-			"GPR survey report"
+		"tag": "Deliverables You Receive",
+		"headline": "Deliverables You Receive",
+		"description": "We don't just scan — we deliver engineering-ready outputs:",
+		"liveLabel": "Deliverable package",
+		"checks": [
+			"Georeferenced to national control",
+			"CAD & GIS compatible",
+			"Engineering-ready formats"
 		],
-		"images": [
-			"/media/surveying/ground-penetrating-radar/data-integration.png",
-            "/media/surveying/ground-penetrating-radar/gpr-02.png",
-            "/media/surveying/ground-penetrating-radar/topographical-mapping.png"
+		"items": [
+			{
+				"title": "Geo-referenced Utility Maps",
+				"format": "DWG / DXF / SHP",
+				"icon": "map-marker-path",
+				"description": "Every detected utility plotted on a georeferenced plan you can drop straight into CAD or GIS for design."
+			},
+			{
+				"title": "3D Subsurface Interpretation Models",
+				"format": "Interactive 3D",
+				"icon": "cube-outline",
+				"description": "Depth-sliced 3D visualisation of buried pipes, cables, voids and structures to support clash-free design."
+			},
+			{
+				"title": "Utility Conflict Analysis Report",
+				"format": "Report + Plan",
+				"icon": "vector-combine",
+				"description": "Identifies overlapping utilities and design conflicts before they become costly site surprises."
+			},
+			{
+				"title": "Depth Estimation & Classification Tables",
+				"format": "XLSX / PDF",
+				"icon": "table-large",
+				"description": "Tabulated depth, size and confidence classes for every target — ready for engineering sign-off."
+			},
+			{
+				"title": "GIS-Ready Datasets",
+				"format": "ArcGIS / QGIS",
+				"icon": "database-outline",
+				"description": "Attribute-rich shapefiles and geodatabases that integrate into your existing asset management systems."
+			},
+			{
+				"title": "Construction Risk Maps",
+				"format": "Plan overlay",
+				"icon": "shield-alert-outline",
+				"description": "Colour-coded risk zones highlight where excavation needs extra care, protection or method statements."
+			},
+			{
+				"title": "Client-Ready Technical Report",
+				"format": "PDF",
+				"icon": "file-pdf-box",
+				"description": "A signed, standalone report documenting methodology, findings, radargrams and recommendations."
+			}
+		]
+	},
+	"detectCaps": {
+		"tag": "Capabilities",
+		"headline": "What We Detect (GPR Capabilities)",
+		"description": "Subsurface targets identified with high-resolution LMX200 + RTK-GNSS integration:",
+		"items": [
+			{
+				"icon": "pipe",
+				"title": "Metallic Pipes",
+				"note": "GI & Asbestos"
+			},
+			{
+				"icon": "barrel-outline",
+				"title": "Non-Metallic Pipes",
+				"note": "PVC, HDPE"
+			},
+			{
+				"icon": "cable-data",
+				"title": "Electrical Conduits",
+				"note": "PVC, EML"
+			},
+			{
+				"icon": "access-point-network",
+				"title": "Telecom Ducts & Fiber Routes",
+				"note": "Duct & fiber alignments"
+			},
+			{
+				"icon": "circle-multiple",
+				"title": "Voids, Trenches & Anomalies",
+				"note": "Subsurface hazards"
+			},
+			{
+				"icon": "archive-outline",
+				"title": "Abandoned Infrastructure",
+				"note": "Old tanks, cables & chambers"
+			}
+		]
+	},
+	"sue": {
+		"tag": "Compliance",
+		"headline": "Subsurface Utility Engineering (SUE) Compliance",
+		"description": "We apply international SUE standards to every utility mapping project — giving engineers the confidence to excavate safely:",
+		"levels": [
+			{
+				"icon": "file-search-outline",
+				"level": "SUE Level D",
+				"title": "Records & Desk Studies",
+				"description": "Compile existing as-builts and utility records to build an initial risk picture before fieldwork."
+			},
+			{
+				"icon": "map-outline",
+				"level": "SUE Level C",
+				"title": "Surface Utility Mapping",
+				"description": "Locate and record visible surface features — manholes, valves, poles — and correlate them with records."
+			},
+			{
+				"icon": "radar",
+				"level": "SUE Level B",
+				"title": "GPR & Geophysical Detection",
+				"description": "Deploy GPR and EM locators to detect, map and classify buried utilities without excavation."
+			},
+			{
+				"icon": "shovel",
+				"level": "SUE Level A",
+				"title": "Physical Verification (Potholing)",
+				"description": "Safely expose utilities to confirm exact depth, size and material before construction."
+			}
+		],
+		"note": "Ensures engineering-grade confidence before excavation"
+	},
+	"limitations": {
+		"tag": "Transparency",
+		"headline": "Technical Limitations (Transparency You Can Trust)",
+		"description": "Ground Penetrating Radar performance depends on site conditions. We tell you exactly what to expect:",
+		"items": [
+			{
+				"icon": "earth",
+				"title": "Clay Soils",
+				"description": "Heavy clay attenuates the radar signal and reduces effective penetration depth."
+			},
+			{
+				"icon": "grid-large",
+				"title": "Dense Reinforcement",
+				"description": "Concentrated rebar and mesh cause signal scattering and clutter inside concrete."
+			},
+			{
+				"icon": "water-outline",
+				"title": "Wet Ground",
+				"description": "High soil moisture changes the dielectric response and can mask target signatures."
+			},
+			{
+				"icon": "arrow-down-bold",
+				"title": "Maximum Effective Depth",
+				"description": "Typical detection depth varies between 0.5m – 4m depending on soil and antenna configuration."
+			}
+		],
+		"note": "We combine GPR with EM locating & site verification to improve reliability.",
+		"noteIcon": "check-decagram"
+	},
+	"beforeAfter": {
+		"tag": "Before vs After",
+		"headline": "Before vs After GPR Survey",
+		"flipHint": "Tap the card to flip",
+		"before": {
+			"label": "BEFORE SMARTGRID",
+			"tagline": "Without a GPR utility survey",
+			"items": [
+				"Unknown underground utilities",
+				"Excavation risk",
+				"Design uncertainty",
+				"Cost overruns & delays"
+			]
+		},
+		"after": {
+			"label": "AFTER SMARTGRID",
+			"tagline": "With a SmartGrid GPR survey",
+			"items": [
+				"Verified underground map",
+				"Reduced construction risk",
+				"Accurate design alignment",
+				"Faster approvals & execution"
+			]
+		}
+	},
+	"summary": {
+		"tag": "GPR Survey & Utility Mapping in Kenya",
+		"headline": "GPR Survey & Utility Mapping in Kenya | Subsurface Utility Engineering (SUE)",
+		"description": "Professional Ground Penetrating Radar (GPR) services in Kenya for utility mapping, construction safety, and subsurface engineering. RTK-GNSS + LMX200 systems.",
+		"chips": [
+			"LMX200 + RTK-GNSS systems",
+			"Countywide mobilization",
+			"Engineering-grade outputs"
+		]
+	},
+	"finalCta": {
+		"tag": "Start Your Survey",
+		"headline": "Ready to De-Risk Your Project?",
+		"description": "Get Professional Utility Mapping Support Today",
+		"note": "We respond within hours and can mobilize field teams quickly.",
+		"actions": [
+			{
+				"icon": "calendar-check",
+				"label": "Book Site Survey",
+				"description": "Schedule a field team at your site.",
+				"href": "mailto:smartgridsurveying@gmail.com?subject=Book Site Survey: GPR & SUE&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a GPR site survey.%0D%0A%0D%0ALocation:%0D%0ASite size:%0D%0APreferred date:%0D%0A%0D%0AThank you."
+			},
+			{
+				"icon": "email-fast-outline",
+				"label": "Request Engineering Quote",
+				"description": "Detailed scope & pricing for your site.",
+				"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Ground Penetrating Radar&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Ground Penetrating Radar. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+			},
+			{
+				"icon": "whatsapp",
+				"label": "WhatsApp Survey Team",
+				"description": "Fast answers from a GPR specialist.",
+				"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20talk%20to%20the%20GPR%20survey%20team."
+			}
 		]
 	},
 	"technology": {

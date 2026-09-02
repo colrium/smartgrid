@@ -31,6 +31,8 @@ interface DeliverablesProps {
 	ns: string;
 	/** key of the deliverables block inside the namespace (defaults to "deliverables") */
 	baseKey?: string;
+	/** id applied to the wrapping <section> (e.g. for anchor/jump-nav links) */
+	id?: string;
 	/** extra classes for the wrapping <section> (e.g. background tokens) */
 	className?: string;
 }
@@ -57,7 +59,12 @@ const toImageSrc = (image?: MediaImage | string | null): string | null => {
  * next to the selectable list of deliverables. Deliverables may optionally
  * carry an image (`MediaImage | string`) which is shown in the preview.
  */
-export function Deliverables({ ns, baseKey = "deliverables", className = "" }: DeliverablesProps): ReactElement {
+export function Deliverables({
+	ns,
+	baseKey = "deliverables",
+	id,
+	className = "",
+}: DeliverablesProps): ReactElement {
 	const { t } = useTranslation([ns]);
 	const section = t(`${ns}:${baseKey}`, {
 		returnObjects: true,
@@ -71,7 +78,10 @@ export function Deliverables({ ns, baseKey = "deliverables", className = "" }: D
 	if (items.length === 0) return <></>;
 
 	return (
-		<section className={`py-24 sm:py-28 relative overflow-hidden ${className}`.trim()}>
+		<section
+			id={id}
+			className={`py-24 sm:py-28 relative overflow-hidden ${className}`.trim()}
+		>
 			<Blob
 				className="w-[28rem] h-[28rem] bg-primary-200/40 -top-24 -right-24"
 				opacity={0.5}
