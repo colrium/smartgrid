@@ -9,7 +9,7 @@ import { Deliverables } from "@/components/sections/Deliverables";
  * reusable <Deliverables /> explorer (content: building-site-surveys:deliverables).
  */
 export function DeliverablesSection(): ReactElement {
-	return <Deliverables ns="building-site-surveys" />;
+	return <Deliverables ns="surveying/building-site-surveys" />;
 }
 
 export default DeliverablesSection;

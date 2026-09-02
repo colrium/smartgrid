@@ -18,7 +18,7 @@ interface TextSectionProps {
 
 export function TextSection({ sectionKey, tone = "default" }: TextSectionProps) {
 	const { t } = useTranslation(["aerial-drones/monitoring-and-evaluation"]);
-	const section = t(`monitoring-and-evaluation:${sectionKey}`, {
+	const section = t(`aerial-drones/monitoring-and-evaluation:${sectionKey}`, {
 		returnObjects: true,
 	}) as unknown as TextSectionContent;
 
