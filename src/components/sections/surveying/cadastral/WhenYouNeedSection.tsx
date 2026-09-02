@@ -75,8 +75,8 @@ export function WhenYouNeedSection(): ReactElement {
 									</div>
 								</div>
 								{section.imageBadge && (
-									<div className="absolute bottom-0 left-1/2 -translate-x-1/2  inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-xs font-medium text-surface card-shadow">
-										<span className="mdi mdi-shield-check text-sm text-surface" />
+									<div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex items-center text-center gap-2 rounded-full bg-accent px-3 py-2.5 text-[9px] text-surface card-shadow">
+										<span className="mdi mdi-shield-check text-md text-surface" />
 										{section.imageBadge}
 									</div>
 								)}
