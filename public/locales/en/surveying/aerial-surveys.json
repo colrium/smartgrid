@@ -1,13 +1,27 @@
 {
 	"hero": {
 		"headline": "AERIAL SURVEYS",
-		"title": "Accurate measurements. Fast. Reliable surveys.",
+		"title": "Aerial Drone Surveying in Kenya, Uganda, Tanzania and beyond",
 		"image": "/media/surveying/aerial-surveys/AG8ng.jpeg",
-		"description": "Leading Africa's Land and Aerial Surveying Revolution",
+		"description": "Survey-Grade Mapping for Engineering, Construction & Infrastructure Projects Across Africa and beyond.",
 		"ctaPrimary": {
-			"label": "Get Your Free Consultation",
-			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Aerial Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Aerial Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
-		}
+			"label": "Get a Drone Survey Quote (24-Hour Response)",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Drone Survey (24-Hour Response)&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like a drone survey quotation. Please respond within 24 hours.%0D%0A%0D%0AProject name:%0D%0ALocation (County / Country):%0D%0AArea to survey (hectares):%0D%0AService needed (mapping / LiDAR / volumetrics / NDVI):%0D%0ADeliverables required:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+		},
+		"footnoteItems": [
+			{
+				"icon": "shield-check",
+				"text": "KCAA-Compliant UAV Operations"
+			},
+			{
+				"icon": "crosshairs-gps",
+				"text": "RTK / LiDAR Accuracy ±2–5cm"
+			},
+			{
+				"icon": "map-marker-radius",
+				"text": "Kenya, Uganda & East Africa Coverage"
+			}
+		]
 	},
 	"section1": {
 		"tag": "Your trusted partner",
@@ -115,20 +129,299 @@
 		]
 	},
 	"deliverables": {
-		"tag": "What you get",
-		"headline": "Aerial Drone Deliverables",
-		"image": "/media/surveying/aerial-surveys/aerial-drone-deliverables.png",
+		"tag": "What you receive",
+		"headline": "What You Receive From a Drone Survey Project",
+		"description": "Every engagement closes with a complete, engineer-ready data package — exported in open formats that feed straight into CAD, GIS and construction management tools.",
+		"liveLabel": "Deliverable package",
+		"checks": [
+			"Georeferenced to national control",
+			"Engineer-ready formats",
+			"Open data — no vendor lock-in"
+		],
 		"items": [
-			"Orthorectified Imagery (Geo-Referenced) + Raw images",
-			"Orthomosaic Maps (Geo-Referenced)",
-			"Digital Elevation Models (DTM, DSM)",
-			"Contours",
-			"3D Point Clouds (X, Y, Z)",
-			"Topographical Maps",
-			"CAD Shapefiles",
-			"Volumetric Analysis Reports",
-			"Survey Reports",
-			"NDVI & Multispectral Maps (Agriculture only)"
+			{
+				"title": "Orthomosaic Maps",
+				"format": "GeoTIFF / JPEG tiles",
+				"icon": "google-earth",
+				"description": "High-resolution, georeferenced aerial base maps that stitch the entire site into one accurate image — ideal for planning, measuring and reporting."
+			},
+			{
+				"title": "Digital Elevation Models (DTM & DSM)",
+				"format": "GeoTIFF raster",
+				"icon": "image-filter-hdr",
+				"description": "Bare-earth terrain and surface models for grading, drainage design, cut/fill planning and 3D site visualisation."
+			},
+			{
+				"title": "Contour Maps",
+				"format": "0.25m – 1m intervals",
+				"icon": "vector-bezier",
+				"description": "Design-ready contour lines at engineering intervals, generated from calibrated elevation data and delivered in CAD and GIS formats."
+			},
+			{
+				"title": "LiDAR Point Clouds",
+				"format": "LAS / LAZ",
+				"icon": "axis-z-arrow",
+				"description": "Dense, classified point clouds that penetrate vegetation for true-ground elevations — ready for pipelines, corridors and forested sites."
+			},
+			{
+				"title": "Volumetric Calculations",
+				"format": "Cut/Fill + Stockpile reports",
+				"icon": "cube-outline",
+				"description": "Cut/fill comparisons against design surfaces and stockpile volumes computed to centimetre-level accuracy for mining and construction."
+			},
+			{
+				"title": "NDVI & Multispectral Analysis",
+				"format": "NDVI map",
+				"icon": "leaf",
+				"description": "Crop-health and vegetation-index maps that expose plant stress, irrigation issues and yield patterns across large farms."
+			},
+			{
+				"title": "CAD Drawings",
+				"format": "DWG, DXF, LandXML",
+				"icon": "file-cad",
+				"description": "Engineer-ready CAD packages — contours, breaklines, surfaces and alignments organised on your coordinate system and layers."
+			},
+			{
+				"title": "Survey Accuracy Report",
+				"format": "RMS Error + GCP report",
+				"icon": "clipboard-check-outline",
+				"description": "A signed QA/QC report documenting GCPs, checkpoints and RMS errors — the evidence your approvals and designs rely on."
+			}
+		]
+	},
+	"whyDroneSurveys": {
+		"tag": "Why Drone Surveys",
+		"headline": "Why Engineers & Developers in Kenya Use Drone Surveys",
+		"description": "Drone surveying has become the default choice for engineering, construction and land development teams that need reliable data on tight timelines.",
+		"items": [
+			{
+				"icon": "speedometer",
+				"stat": "10x",
+				"title": "10x Faster than Ground Surveying",
+				"description": "Cover 200+ hectares/day with RTK drones — corridor and site surveys that used to take weeks now take days."
+			},
+			{
+				"icon": "cash-multiple",
+				"title": "Lower Project Costs",
+				"description": "Reduce field time, manpower, and rework risk — one flight team replaces weeks of ground crews."
+			},
+			{
+				"icon": "crosshairs-gps",
+				"title": "Engineering-Grade Accuracy",
+				"description": "GNSS-controlled + GCP calibrated outputs meet engineering tolerances for design and construction."
+			},
+			{
+				"icon": "file-cad",
+				"title": "Construction Ready Deliverables",
+				"description": "CAD, DWG, LandXML, DSM/DTM, contour-ready outputs that drop straight into your design workflow."
+			},
+			{
+				"icon": "drone",
+				"title": "Works in Hard-to-Reach Sites",
+				"description": "Quarries, rivers, flood zones, large estates — mapped safely without sending crews into hazardous terrain."
+			}
+		]
+	},
+	"workflow": {
+		"tag": "Field-to-Design Pipeline",
+		"headline": "Our Drone Survey Workflow",
+		"description": "A transparent, seven-stage aerial pipeline — from the first scope call to CAD/GIS handover, you always know where your project stands.",
+		"outcomeLabel": "Engineering-ready data, on your desk",
+		"steps": [
+			{
+				"icon": "clipboard-list-outline",
+				"label": "Site Assessment & Scope Definition",
+				"description": "We review your drawings or brief, define the survey area, accuracy class and deliverables, and confirm access and timing."
+			},
+			{
+				"icon": "google-maps",
+				"label": "Flight Planning & Regulatory Clearance (KCAA)",
+				"description": "Flight lines, altitudes and overlap are planned, and KCAA permissions and airspace clearance are secured before mobilisation."
+			},
+			{
+				"icon": "crosshairs-gps",
+				"label": "Ground Control Point (GCP) Setup",
+				"description": "GNSS-measured GCPs and checkpoints are placed across the site to calibrate the model and independently verify accuracy."
+			},
+			{
+				"icon": "quadcopter",
+				"label": "UAV Data Capture (RGB / LiDAR / Multispectral)",
+				"description": "RTK-controlled UAV flights capture high-overlap imagery, LiDAR returns or multispectral bands depending on your scope."
+			},
+			{
+				"icon": "cube-scan",
+				"label": "Photogrammetry & Point Cloud Processing",
+				"description": "Imagery is processed into dense point clouds, orthomosaics and elevation models on reference-controlled workflows."
+			},
+			{
+				"icon": "clipboard-check-outline",
+				"label": "QA/QC Accuracy Validation (RMS Report)",
+				"description": "Independent checkpoints are compared against the model and documented in an RMS error report for engineering sign-off."
+			},
+			{
+				"icon": "file-cad",
+				"label": "CAD / GIS Deliverables & Client Handover",
+				"description": "Final DWG/DXF, LandXML, GeoTIFF and GIS packages are organised into a project folder and handed over with a walkthrough."
+			}
+		],
+		"ctaNote": "See exactly what your team will receive — orthomosaics, point clouds, CAD files and accuracy reports from a real project.",
+		"cta": {
+			"label": "Request a Sample Deliverable Folder",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Request: Sample Drone Survey Deliverable Folder&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to receive a sample deliverable folder to review your drone survey outputs.%0D%0A%0D%0AName:%0D%0AOrganisation:%0D%0AEmail:%0D%0AProject type:%0D%0A%0D%0AThank you.",
+			"icon": "download"
+		}
+	},
+	"industries": {
+		"tag": "Industry Use Cases",
+		"headline": "Aerial Surveys for Key Industries in Kenya",
+		"description": "From national road corridors to county master plans — our drone data supports the decisions that shape Kenya's built environment.",
+		"items": [
+			{
+				"icon": "road-variant",
+				"title": "Roads & Infrastructure (KeNHA / KURA projects)",
+				"description": "Corridor mapping, earthwork quantities and progress documentation for highway and urban road programmes.",
+				"href": "/civil/highway-surveys"
+			},
+			{
+				"icon": "domain",
+				"title": "Construction & Real Estate Developers",
+				"description": "Weekly progress flights, as-built verification and marketing visuals that keep projects and stakeholders aligned.",
+				"href": "/aerial-drones/monitoring-and-evaluation"
+			},
+			{
+				"icon": "transmission-tower",
+				"title": "Energy & Power Lines (KETRACO, mini-grids)",
+				"description": "LiDAR corridor surveys, vegetation clearance analysis and line-route planning for transmission and distribution.",
+				"href": "/aerial-drones/lidar-mapping"
+			},
+			{
+				"icon": "pickaxe",
+				"title": "Mining & Quarry Volumetrics",
+				"description": "Monthly stockpile volumes, pit progression and safety inspections — without stopping operations.",
+				"href": "/aerial-drones/volumetric-surveys"
+			},
+			{
+				"icon": "sprout",
+				"title": "Agriculture & Precision Farming",
+				"description": "NDVI crop-health mapping, irrigation planning and plantation zoning across thousands of hectares.",
+				"href": "/aerial-drones/agricultural-ndvi-mapping"
+			},
+			{
+				"icon": "bank",
+				"title": "Government & County Planning",
+				"description": "Base maps, land-use surveys and GIS datasets that inform county spatial plans and infrastructure budgets.",
+				"href": "/surveying/gis-mapping"
+			},
+			{
+				"icon": "forest",
+				"title": "NGOs & Environmental Monitoring",
+				"description": "Deforestation tracking, catchment surveys and repeatable, time-stamped evidence for conservation programmes.",
+				"href": "/surveying/resource-mapping"
+			}
+		]
+	},
+	"industryCta": {
+		"tag": "Tailored Proposals",
+		"headline": "Get Industry-Specific Survey Proposal",
+		"description": "Roads, energy, mining, agriculture or county planning — tell us your sector and we will scope the flights, deliverables and accuracy class your project needs.",
+		"watermark": "map-marker-path",
+		"primary": {
+			"label": "Request Industry Proposal",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Industry-Specific Survey Proposal Request&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like an industry-specific drone survey proposal.%0D%0A%0D%0AIndustry / Sector:%0D%0AOrganisation:%0D%0AProject location:%0D%0AArea to survey (hectares):%0D%0AService needed:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+			"icon": "email-fast-outline"
+		},
+		"secondary": {
+			"label": "WhatsApp Our Team",
+			"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20an%20industry-specific%20drone%20survey%20proposal.",
+			"icon": "whatsapp"
+		}
+	},
+	"techStack": {
+		"tag": "Our Technology Stack",
+		"headline": "Survey Technology We Use",
+		"description": "Engineer-grade hardware and software — every deliverable is produced on platforms your technical team already trusts.",
+		"items": [
+			{
+				"icon": "quadcopter",
+				"title": "DJI Matrice 350 RTK",
+				"note": "Flagship RTK flight platform for LiDAR and heavy payloads",
+				"href": "/equipment-sale/dji-matrice-350-rtk"
+			},
+			{
+				"icon": "drone",
+				"title": "DJI Phantom 4 RTK",
+				"note": "High-accuracy photogrammetry and corridor mapping",
+				"href": "/equipment-sale/dji-phantom-4-rtk"
+			},
+			{
+				"icon": "radar",
+				"title": "LiDAR UAV Systems",
+				"note": "Vegetation-penetrating elevation for corridors and forestry"
+			},
+			{
+				"icon": "crosshairs-gps",
+				"title": "FOIF A90 GNSS RTK",
+				"note": "Ground control, GCP measurement and stakeout",
+				"href": "/equipment-sale/foif-a90-rtk-gnss"
+			},
+			{
+				"icon": "cube-scan",
+				"title": "Pix4D / Agisoft Metashape",
+				"note": "Photogrammetry, point clouds and orthomosaic production"
+			},
+			{
+				"icon": "map-legend",
+				"title": "AutoCAD Civil 3D / ArcGIS Pro / QGIS",
+				"note": "Design-ready CAD and GIS deliverables on your standards"
+			}
+		]
+	},
+	"capabilityCta": {
+		"tag": "For Tenders & Prequalification",
+		"headline": "Request Technical Capability Statement (PDF)",
+		"description": "Equipment lists, accuracy standards, KCAA compliance, insurance and past project references — everything procurement teams need to prequalify SmartGrid Surveying.",
+		"watermark": "file-pdf-box",
+		"primary": {
+			"label": "Request the Capability Statement",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Request: Technical Capability Statement (PDF)&body=Hi SmartGrid Surveying,%0D%0A%0D%0APlease send your Technical Capability Statement (PDF).%0D%0A%0D%0AName:%0D%0AOrganisation:%0D%0AEmail:%0D%0ATender / Project name:%0D%0A%0D%0AThank you.",
+			"icon": "file-pdf-box"
+		},
+		"secondary": {
+			"label": "View Company Profile",
+			"href": "/about",
+			"icon": "domain"
+		}
+	},
+	"finalCta": {
+		"tag": "Start Your Aerial Survey",
+		"headline": "Need Accurate Drone Mapping for Your Project?",
+		"description": "Get engineering-grade aerial survey data delivered within timelines aligned to construction, design, and approval workflows.",
+		"actionsLabel": "Choose your action:",
+		"actions": [
+			{
+				"icon": "cash-multiple",
+				"label": "Get Instant Quote",
+				"description": "24-hour response on scoped projects.",
+				"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Drone Survey (24-Hour Response)&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like a drone survey quotation. Please respond within 24 hours.%0D%0A%0D%0AProject name:%0D%0ALocation (County / Country):%0D%0AArea to survey (hectares):%0D%0AService needed (mapping / LiDAR / volumetrics / NDVI):%0D%0ADeliverables required:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+			},
+			{
+				"icon": "whatsapp",
+				"label": "WhatsApp Survey Engineer",
+				"description": "Talk to the team flying the drones.",
+				"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20talk%20to%20a%20drone%20survey%20engineer."
+			},
+			{
+				"icon": "clipboard-text-outline",
+				"label": "Request Tender Proposal",
+				"description": "Formal proposals for tenders & RFQs.",
+				"href": "mailto:smartgridsurveying@gmail.com?subject=Tender Proposal Request: Drone Survey Services&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a tender proposal for drone survey services.%0D%0A%0D%0ATender / Project name:%0D%0AOrganisation:%0D%0AScope summary:%0D%0ADeadline:%0D%0A%0D%0AThank you."
+			},
+			{
+				"icon": "calendar-check",
+				"label": "Book Site Visit",
+				"description": "Walk the site with our flight team.",
+				"href": "mailto:smartgridsurveying@gmail.com?subject=Site Visit Booking: Drone Survey&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a site visit for a drone survey.%0D%0A%0D%0ALocation (County / Area):%0D%0ASite size:%0D%0APreferred date & time:%0D%0A%0D%0AThank you."
+			}
 		]
 	},
 	"projects": {

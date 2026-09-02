@@ -57,6 +57,19 @@ public/                           # assets, fonts, img, geojson, locales/{lang}/
 - Use the **`@/*`** path alias (maps to `./src/*`).
 - Component exports: prefer named exports; default exports allowed for page sections.
 
+## Codex Operating Instructions
+- Treat this file as Codex's repository-level base instruction file. It supplements the
+  project context above; avoid duplicating these rules in a second agent instruction file.
+- Ground work in the repository. If an important requirement is genuinely ambiguous or cannot
+  be discovered from the codebase, ask one concrete question before taking a risky direction.
+- Edit the real localized page under `src/pages/[locale]/`; root page files are route proxies.
+- Make requested, in-scope local changes autonomously. Ask for confirmation before destructive
+  actions, external writes, purchases, or material scope expansion.
+- Preserve unrelated work in a dirty working tree. Never commit secrets; `.env.local` remains
+  untracked and only `.env.example` may be versioned.
+- After a substantive change, run `npm run lint`, `npm run typecheck`, and `npm run build`.
+  Check port 3000 before starting a dev server, and terminate any server started for verification.
+
 ## Internationalization Rules
 - Adding/changing a key in any `public/locales/<locale>/*.json` must be **mirrored across all locale files**
   that have a corresponding file (`en`, `de`, `sw`, `fr`, `pt`).
@@ -85,7 +98,7 @@ public/                           # assets, fonts, img, geojson, locales/{lang}/
 - Run `lint`, `typecheck`, and `build` after any substantial change.
 
 ## Environment
-- Copy `.env.example` → `.env.local`. Required: Sanity project id/dataset/api version,
+- if a .env or .env.local file does not exist, copy `.env.example` → `.env`. Required: Sanity project id/dataset/api version,
   Formspree form id, Google Analytics id. Optional: `SANITY_API_TOKEN`, Tawk.to, WhatsApp,
   Google Maps.
 - Env vars are validated at runtime by Zod (`src/lib/env.ts`); invalid values crash startup

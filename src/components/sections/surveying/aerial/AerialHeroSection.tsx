@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactElement } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "@/hooks";
@@ -11,20 +12,27 @@ interface HeroCta {
 	href: string;
 }
 
+interface HeroFootnoteItem {
+	icon?: string | null;
+	text: string;
+}
+
 interface AerialHeroContent {
 	headline: string;
 	title: string;
 	description?: string;
 	image?: string | null;
 	ctaPrimary?: HeroCta | null;
+	footnoteItems?: HeroFootnoteItem[] | null;
 }
 
-export function AerialHeroSection() {
+export function AerialHeroSection(): ReactElement {
 	const { t } = useTranslation(["surveying/aerial-surveys"]);
 	const hero = t("surveying/aerial-surveys:hero", {
 		returnObjects: true,
 	}) as unknown as AerialHeroContent;
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");
+	const footnoteItems = Array.isArray(hero?.footnoteItems) ? hero.footnoteItems : [];
 
 	return (
 		<section className="relative min-h-[86dvh] flex items-end overflow-hidden pb-14 sm:pb-20">
@@ -49,7 +57,7 @@ export function AerialHeroSection() {
 						{hero.headline}
 					</SectionTag>
 
-					<h1 className="mt-5 max-w-4xl font-light tracking-tight leading-[1.05] text-4xl sm:text-6xl lg:text-7xl text-surface">
+					<h1 className="mt-5 max-w-4xl font-light tracking-tight leading-[1.05] text-4xl sm:text-5xl lg:text-6xl text-surface">
 						{hero.title}
 					</h1>
 
@@ -70,6 +78,22 @@ export function AerialHeroSection() {
 								<span className="mdi mdi-arrow-right text-xl text-ink transition-transform duration-300 group-hover:translate-x-1" />
 							</Link>
 						</div>
+					)}
+
+					{footnoteItems.length > 0 && (
+						<ul className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-3">
+							{footnoteItems.map((item, index) => (
+								<li
+									key={index}
+									className="inline-flex items-center gap-2 text-xs sm:text-sm text-surface/75"
+								>
+									<span
+										className={`mdi mdi-${item.icon || "check-circle"} text-base text-primary-300`}
+									/>
+									{item.text}
+								</li>
+							))}
+						</ul>
 					)}
 				</FadeUp>
 			</div>

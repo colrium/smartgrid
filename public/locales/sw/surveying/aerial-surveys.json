@@ -1,13 +1,27 @@
 {
 	"hero": {
 		"headline": "UCHUNGUZI WA ANGANI",
-		"title": "Vipimo sahihi. Haraka. Uchunguzi wa kuaminika.",
+		"title": "Uchunguzi wa Drone wa Angani nchini Kenya, Uganda, Tanzania na zaidi",
 		"image": "/media/surveying/aerial-surveys/AG8ng.jpeg",
-		"description": "Kuongoza Mapinduzi ya Upimaji wa Ardhi na Angani Afrika",
+		"description": "Ramani za Darasa la Uchunguzi kwa Miradi ya Uhandisi, Ujenzi & Miundombinu Barani Afrika na zaidi.",
 		"ctaPrimary": {
-			"label": "Pata Ushauri Wako Bure",
-			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Aerial Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Aerial Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
-		}
+			"label": "Pata Nukuu ya Uchunguzi wa Drone (Majibu ya Masaa 24)",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Drone Survey (24-Hour Response)&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like a drone survey quotation. Please respond within 24 hours.%0D%0A%0D%0AProject name:%0D%0ALocation (County / Country):%0D%0AArea to survey (hectares):%0D%0AService needed (mapping / LiDAR / volumetrics / NDVI):%0D%0ADeliverables required:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+		},
+		"footnoteItems": [
+			{
+				"icon": "shield-check",
+				"text": "Uendeshaji wa UAV Unaozingatia KCAA"
+			},
+			{
+				"icon": "crosshairs-gps",
+				"text": "Usahihi wa RTK / LiDAR ±2–5cm"
+			},
+			{
+				"icon": "map-marker-radius",
+				"text": "Ufunikaji wa Kenya, Uganda & Afrika Mashariki"
+			}
+		]
 	},
 	"section1": {
 		"tag": "Mshirika wako wa kuaminika",
@@ -54,31 +68,31 @@
 			},
 			{
 				"title": "DTMs na DEMs",
-				"description": "Mifano ya kidijitali ya ardhi na mwinuko kwa kazi za maji na uhandisi wa kirahisi.",
-				"popupContent": "Mifano yetu ya ardhi na mwinuko huwasaidia wahandisi wa kirahisi na wataalamu wa maji kuchambua mtiririko wa maji, utulivu wa mteremko, na ujazo. Tunatoa data sahihi ya mwinuko kusaidia miundombinu thabiti."
+				"description": "Mifano ya kidijitali ya ardhi na mwinuko kwa kazi za maji na ujenzi wa madini.",
+				"popupContent": "Mifano yetu ya ardhi na mwinuko huwasaidia wahandisi wa madini na wataalamu wa maji kuchambua mkondo, utulivu wa pwani, na kupanga. Tunatoa data sahihi ya mwinuko kuunga mkono miundombinu imara."
 			},
 			{
-				"title": "Hesabu za Kiasi (Volumetric)",
-				"description": "Hesabu kiasi cha nyenzo na kusimamia rasilimali kwa usahihi.",
-				"popupContent": "SmartGrid hukokotoa kiasi cha cut/fill na vipimo vya hisa kwa usahihi wa kiwango cha sentimita. Photogrammetry yetu ya angani hutoa matokeo ya haraka, salama, na yanayorudiwa."
+				"title": "Hesabu za Kiasi",
+				"description": "Kokotoa vipimo vya vifaa na udhibiti rasilimali kwa usahihi.",
+				"popupContent": "SmartGrid inakokotoa kiasi cha kuchonga/kujaza na vipimo vya matundu ya akiba kwa usahihi wa kiwango cha sentimita. Photogrammetry yetu ya angani inatoa matokeo ya haraka, salama, na yanayorudiwa."
 			},
 			{
 				"title": "Tathmini ya Maafa",
 				"description": "Data ya njia na ardhi kwa mpangilio bora wa miundombinu.",
-				"popupContent": "Baada ya mafuriko, maporomoko ya ardhi, au matetemeko ya ardhi, SmartGrid hutumia ndege zisizo na rubani kuhariri uharibifu haraka. Data yetu huwasaidia wahudumu kutanguliza hatua, kugawa misaada, na kupanga shughuli za uokoaji."
+				"popupContent": "Baada ya mafuriko, walanguku, au mitetemeko, SmartGrid inatumia drone kurekodi uharibifu kwa haraka. Data yetu huwasaidia wahudumu kupanga vipaumbele, kugawanya msaada, na kupanga urejesho."
 			}
 		]
 	},
 	"precision": {
 		"tag": "Usahihi",
-		"headline": "Macho Angani, Usahihi Duniani",
-		"description": "Katika SmartGrid Surveying, suluhisho zetu za uchunguzi wa angani kwa ndege zisizo na rubani hutoa picha za mwonekano wa juu, uchoraji ramani wa topografia, na uchambuzi wa kiasi kwa usahihi na kasi isiyo na kifani. Kuanzia mashamba makubwa hadi miundombinu ya mijini, teknolojia yetu ya ndege zisizo na rubani hukamata data haraka, salama, na kwa gharama nafuu—haswa katika maeneo magumu kufikia au mapana. \n\n Tumekamilisha uchunguzi wa angani katika sekta nyingi katika nchi 10+ za Afrika, tukihudumia wasanidi ardhi, serikali, kampuni za madini, na biashara za kilimo.",
+		"headline": "Jicho Angani, Usahihi Ardhini",
+		"description": "Katika SmartGrid Surveying, suluhisho zetu za uchunguzi wa drone wa angani hutoa picha za mwonekano wa juu, ramani za topografia, na uchambuzi wa kiasi kwa usahihi na kasi isio na mfano. Kutoka mashamba makubwa hadi miundombinu ya mijini, teknolojia yetu ya drone inakamata data kwa haraka, kwa usalama, na kwa gharama nafuu — hasa katika maeneo magumu kufikia au mapana. \n\n Tumekamilisha uchunguzi wa drone wa angani katika sekta nyingi katika nchi 10+ za Afrika, tukihudumia wasanidi wa ardhi, serikali, kampuni za madini, na wamiliki wa biashara za kilimo.",
 		"image": "/media/surveying/aerial-surveys/drone-piloting.jpeg"
 	},
 	"aerialSurveying": {
 		"tag": "",
 		"headline": "Uchunguzi wa Angani",
-		"description": "Ndege zisizo na rubani zimebadilisha tasnia ya upimaji—na tunaongoza. Smartgrid Surveying hutumia ndege zisizo na rubani kwa uchoraji ramani, muundo wa 3D, kiasi, tathmini za mazingira, na ufuatiliaji wa maeneo makubwa au magumu kufikia. Zaidi ya uchoraji ramani wa kiufundi, tunatoa upigaji picha wa kitaalamu kwa mali isiyohamishika, uuzaji wa ujenzi, utalii, na matukio. Kwa kutumia ndege zisizo na rubani zenye RTK GPS na sensorer za mwonekano wa juu, tunakamata data ya kijiografia sahihi inayowawezesha wahandisi, wasanidi, serikali, na NGO kufanya maamuzi bora, haraka. \n\n Tunatoa uchunguzi wa haraka, sahihi, na wa kina kwa:",
+		"description": "Drone zimebadilisha sekta ya uchunguzi — na sisi tuko mbele. Smartgrid Surveying inatumia drone wa angani kwa uchoraji ramani, uundaji wa mifano ya 3D, vipimo vya kiasi, tathmini za mazingira, na ufuatiliaji wa maeneo makubwa au yasiyofikika. Mbali na uchoraji ramani wa kiufundi, tunatoa huduma za kitaalamu za upigaji picha wa angani kwa ajili ya mali isiyohamishika, uuzaji wa ujenzi, utalii, na matukio. Kwa kutumia ndege zisizo na rubani zenye RTK GPS na sensorer za mwonekano wa juu, tunakamata data ya kijiografia sahihi inayowawezesha wahandisi, wasanidi, serikali, na NGO kufanya maamuzi bora, haraka. \n\n Tunatoa uchunguzi wa haraka, sahihi, na wa kina kwa:",
 		"items": [
 			{
 				"label": "Uchoraji Ramani wa Angani",
@@ -115,20 +129,299 @@
 		]
 	},
 	"deliverables": {
-		"tag": "Unachopata",
-		"headline": "Bidhaa za Uchunguzi wa Angani",
-		"image": "/media/surveying/aerial-surveys/aerial-drone-deliverables.png",
+		"tag": "Unachopokea",
+		"headline": "Unachopokea Kutoka kwa Mradi wa Uchunguzi wa Drone",
+		"description": "Kila uhusiano hufungwa na kifurushi kamili cha data tayari kwa uhandisi — zinalemazwa kwa miundo wazi inayolisha moja kwa moja kwenye zana za CAD, GIS na usimamizi wa ujenzi.",
+		"liveLabel": "Kifurushi cha bidhaa",
+		"checks": [
+			"Imeunganishwa kwa udhibiti wa kitaifa",
+			"Miundo tayari kwa uhandisi",
+			"Data wazi — hakuna kufungwa na muuzaji"
+		],
 		"items": [
-			"Picha Zilizosahihishwa (Zenye Marejeleo ya Kijiografia) + Picha Mbichi",
-			"Ramani za Orthomosaic (Zenye Marejeleo ya Kijiografia)",
-			"Mifano ya Kidijitali ya Mwinuko (DTM, DSM)",
-			"Mistari ya Contour",
-			"Point Clouds za 3D (X, Y, Z)",
-			"Ramani za Topografia",
-			"Shapefiles za CAD",
-			"Ripoti za Uchambuzi wa Kiasi",
-			"Ripoti za Uchunguzi",
-			"Ramani za NDVI na Multispectral (Kilimo tu)"
+			{
+				"title": "Ramani za Orthomosaic",
+				"format": "GeoTIFF / vipande vya JPEG",
+				"icon": "google-earth",
+				"description": "Ramani za msingi za angani zenye mwonekano wa juu na marejeleo ya kijiografia zinazounganisha tovuti yote kuwa picha moja sahihi — nzuri kwa kupanga, kupima na kuripoti."
+			},
+			{
+				"title": "Mifano ya Kidijitali ya Mwinuko (DTM & DSM)",
+				"format": "Rasteri ya GeoTIFF",
+				"icon": "image-filter-hdr",
+				"description": "Mifano ya ardhi tupu na uso kwa kupanga, mradi wa mifereji, kupanga kuchonga/kujaza na kuona tovuti kwa 3D."
+			},
+			{
+				"title": "Ramani za Contour",
+				"format": "Mipangilio ya 0.25m – 1m",
+				"icon": "vector-bezier",
+				"description": "Mistari ya contour tayari kwa usanidi kwa vipimo vya uhandisi, iliyotokana na data ya mwinuko iliyosawazishwa na kuletwa kwa miundo ya CAD na GIS."
+			},
+			{
+				"title": "Point Clouds za LiDAR",
+				"format": "LAS / LAZ",
+				"icon": "axis-z-arrow",
+				"description": "Point clouds mnene zilizopangwa zinazovuka miani kwa mwinuko wa ardhi halisi — tayari kwa mabomba, njia na misitu."
+			},
+			{
+				"title": "Hesabu za Kiasi",
+				"format": "Ripoti za Kuchonga/Kujaza + Matundu",
+				"icon": "cube-outline",
+				"description": "Ulinganishaji wa kuchonga/kujaza dhidi ya uso wa usanidi na vipimo vya matundu ya akiba kwa usahihi wa sentimita kwa madini na ujenzi."
+			},
+			{
+				"title": "Uchambuzi wa NDVI & Multispectral",
+				"format": "Ramani ya NDVI",
+				"icon": "leaf",
+				"description": "Ramani za afya ya mazao na kipimo cha mimea zinazoonyesha mkazo wa mimea, matatizo ya umwagiliaji na mifumo ya mavuno kwenye mashamba makubwa."
+			},
+			{
+				"title": "Michoro ya CAD",
+				"format": "DWG, DXF, LandXML",
+				"icon": "file-cad",
+				"description": "Vifurushi vya CAD tayari kwa uhandisi — contours, breaklines, uso na alignments zilizopangwa kwenye mfumo wako wa kuradiani na tabaka."
+			},
+			{
+				"title": "Ripoti ya Usahihi wa Uchunguzi",
+				"format": "Ripoti ya RMS + GCP",
+				"icon": "clipboard-check-outline",
+				"description": "Ripoti ya QA/QC iliyosainiwa inayorekodi GCP, checkpoints na makosa ya RMS — ushahidi ambao uidhinishaji na michoro yako unategemea."
+			}
+		]
+	},
+	"whyDroneSurveys": {
+		"tag": "Kwa Nini Drone",
+		"headline": "Kwa Nini Wahandisi & Wasanidi nchini Kenya Wanatumia Uchunguzi wa Drone",
+		"description": "Uchunguzi wa drone umekuwa chaguo la kawaida kwa timu za uhandisi, ujenzi na maendeleo ya ardhi zinazohitaji data ya kuaminika kwenye ratiba za mkazo.",
+		"items": [
+			{
+				"icon": "speedometer",
+				"stat": "10x",
+				"title": "Haraka 10x kuliko Uchunguzi wa Ardhini",
+				"description": "Funikilia hekta 200+/siku kwa drone za RTK — uchunguzi wa njia na tovuti uliokuwa huchukua wiki sasa huchukua siku."
+			},
+			{
+				"icon": "cash-multiple",
+				"title": "Gharama Nafuu za Mradi",
+				"description": "Punguza muda wa shamba, wafanyakazi, na hatari ya kufanya upya — timu moja ya ndege inabadilisha wiki za kikosi cha ardhini."
+			},
+			{
+				"icon": "crosshairs-gps",
+				"title": "Usahihi wa Darasa la Uhandisi",
+				"description": "Matokeo yaliyodhibitiwa na GNSS + kaliyabrishwa na GCP yanakidhi viwango vya uhandisi kwa usanidi na ujenzi."
+			},
+			{
+				"icon": "file-cad",
+				"title": "Bidhaa Tayari kwa Ujenzi",
+				"description": "CAD, DWG, LandXML, DSM/DTM, matokeo tayari ya contour yanayofanya kazi moja kwa moja kwenye mtiririko wako wa usanidi."
+			},
+			{
+				"icon": "drone",
+				"title": "Inafanya Kazi Maeneo Yasiyofikika",
+				"description": "Madeni, mito, maeneo ya mafuriko, mashamba makubwa — yanaramaniwa kwa usalama bila kutuma makosi maeneo hatarini."
+			}
+		]
+	},
+	"workflow": {
+		"tag": "Mstari wa Shamba-hadi-Usanidi",
+		"headline": "Mtiririko Wetu wa Kazi wa Uchunguzi wa Drone",
+		"description": "Mstari wa angani wa hatua saba ulio wazi — kutoka wito wa kwanza wa wigo hadi uhandishaji wa CAD/GIS, unajua wakati wowote mradi wako upo wapi.",
+		"outcomeLabel": "Data tayari kwa uhandisi, kwenye dawati lako",
+		"steps": [
+			{
+				"icon": "clipboard-list-outline",
+				"label": "Tathmini ya Tovuti & Ufafanuzi wa Wigo",
+				"description": "Tunakagua michoro yako au maelezo ya kazi, tufafanue eneo la uchunguzi, darasa la usahihi na bidhaa, na kuthibitisha ufikiaji na muda."
+			},
+			{
+				"icon": "google-maps",
+				"label": "Kupanga Ndege & Idhini ya Udhibiti (KCAA)",
+				"description": "Mistari ya ndege, mwinuko na mwingiliko hupangwa, na idhini za KCAA na ufungaji wa anga hupatikana kabla ya usafiri."
+			},
+			{
+				"icon": "crosshairs-gps",
+				"label": "Kuweka Vidhibiti vya Ardhi (GCP)",
+				"description": "GCP na checkpoints zilipimwa kwa GNSS htiwekwa kote tovuti kualiibrisha mfano na kuthibitisha usahihi kwa uhuru."
+			},
+			{
+				"icon": "quadcopter",
+				"label": "Ukamataji wa Data wa UAV (RGB / LiDAR / Multispectral)",
+				"description": "Ndege za RTK ziliodhibitiwa hukamata picha za mwingiliko wa juu, majibu ya LiDAR au bendi za multispectral kulingana na wigo wako."
+			},
+			{
+				"icon": "cube-scan",
+				"label": "Photogrammetry & Uchakataji wa Point Cloud",
+				"description": "Picha huchakatwa kuwa point clouds mnene, orthomosaics na mifano ya mwinuko kwenye mtiririko uliodhibitiwa na marejeleo."
+			},
+			{
+				"icon": "clipboard-check-outline",
+				"label": "Uthibitisho wa Usahihi wa QA/QC (Ripoti ya RMS)",
+				"description": "Checkpoints huru zinalinganishwa na mfano na kurekodiwa kwenye ripoti ya makosa ya RMS kwa saini ya uhandisi."
+			},
+			{
+				"icon": "file-cad",
+				"label": "Bidhaa za CAD / GIS & Uhandishaji kwa Mteja",
+				"description": "Vifurushi vya mwisho vya DWG/DXF, LandXML, GeoTIFF na GIS vinapangwa kwenye folda ya mradi na kuhandishiwa pamoja na maelezo."
+			}
+		],
+		"ctaNote": "Ona hasa timu yako itakachopokea — orthomosaics, point clouds, faili za CAD na ripoti za usahihi kutoka kwa mradi halisi.",
+		"cta": {
+			"label": "Omba Folda ya Mfano wa Bidhaa",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Request: Sample Drone Survey Deliverable Folder&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to receive a sample deliverable folder to review your drone survey outputs.%0D%0A%0D%0AName:%0D%0AOrganisation:%0D%0AEmail:%0D%0AProject type:%0D%0A%0D%0AThank you.",
+			"icon": "download"
+		}
+	},
+	"industries": {
+		"tag": "Matumizi kwa Sekta",
+		"headline": "Uchunguzi wa Angani kwa Sekta Muhimu nchini Kenya",
+		"description": "Kutoka njia za kitaifa hadi mipango ya master ya kaunti — data yetu ya drone inaunga mkono maamuzi yanayounda mazingira ya ujenzi ya Kenya.",
+		"items": [
+			{
+				"icon": "road-variant",
+				"title": "Barabara & Miundombinu (Miradi ya KeNHA / KURA)",
+				"description": "Ramani za njia, vipimo vya udongo na nyaraka za maendeleo kwa miradi ya barabara kuu na za mjini.",
+				"href": "/civil/highway-surveys"
+			},
+			{
+				"icon": "domain",
+				"title": "Ujenzi & Wasanidi wa Mali Isiyohamishika",
+				"description": "Ndege za maendeleo za kila wiki, uthibitisho wa as-built na picha za masoko zinazoweka miradi na wadau sawa.",
+				"href": "/aerial-drones/monitoring-and-evaluation"
+			},
+			{
+				"icon": "transmission-tower",
+				"title": "Nishati & Mistari ya Umeme (KETRACO, gridi ndogo)",
+				"description": "Uchunguzi wa LiDAR wa njia, uchambuzi wa ufukwe wa miani na kupanga njia ya mistari kwa usambazaji.",
+				"href": "/aerial-drones/lidar-mapping"
+			},
+			{
+				"icon": "pickaxe",
+				"title": "Madini & Vipimo vya Machimbuko",
+				"description": "Vipimo vya matundu ya kila mwezi, maendeleo ya shimo na ukaguzi wa usalama — bila kusimamisha shughuli.",
+				"href": "/aerial-drones/volumetric-surveys"
+			},
+			{
+				"icon": "sprout",
+				"title": "Kilimo & Kilimo cha Usahihi",
+				"description": "Ramani za afya ya mazao za NDVI, kupanga umwagiliaji na ugawaji wa mashamba kwa hekta elfu kadhaa.",
+				"href": "/aerial-drones/agricultural-ndvi-mapping"
+			},
+			{
+				"icon": "bank",
+				"title": "Serikali & Upangaji wa Kaunti",
+				"description": "Ramani za msingi, uchunguzi wa matumizi ya ardhi na dataset za GIS zinazoarifu mipango ya anga ya kaunti na bajeti za miundombinu.",
+				"href": "/surveying/gis-mapping"
+			},
+			{
+				"icon": "forest",
+				"title": "NGO & Ufuatiliaji wa Mazingira",
+				"description": "Ufuatiliaji wa ukataji miti, uchunguzi wa makondo ya maji na ushahidi unaorudiwa, wenye alama za muda kwa programu za uhifadhi.",
+				"href": "/surveying/resource-mapping"
+			}
+		]
+	},
+	"industryCta": {
+		"tag": "Mapendekezo Maalum",
+		"headline": "Pata Pendekezo la Uchunguzi kwa Sekta Yako",
+		"description": "Barabara, nishati, madini, kilimo au upangaji wa kaunti — tuambie sekta yako nasi tutaweka wigo wa ndege, bidhaa na darasa la usahihi mradi wako unahitaji.",
+		"watermark": "map-marker-path",
+		"primary": {
+			"label": "Omba Pendekezo la Sekta",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Industry-Specific Survey Proposal Request&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like an industry-specific drone survey proposal.%0D%0A%0D%0AIndustry / Sector:%0D%0AOrganisation:%0D%0AProject location:%0D%0AArea to survey (hectares):%0D%0AService needed:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+			"icon": "email-fast-outline"
+		},
+		"secondary": {
+			"label": "WhatsApp Timu Yetu",
+			"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20an%20industry-specific%20drone%20survey%20proposal.",
+			"icon": "whatsapp"
+		}
+	},
+	"techStack": {
+		"tag": "Teknolojia Yetu",
+		"headline": "Teknolojia ya Uchunguzi Tunayotumia",
+		"description": "Vifaa na programu za darasa la uhandisi — kila bidhaa inatengenezwa kwenye majukwaa timu yako ya kiufundi inayoyaamini.",
+		"items": [
+			{
+				"icon": "quadcopter",
+				"title": "DJI Matrice 350 RTK",
+				"note": "Jukwaa kuu la ndege la RTK kwa LiDAR na mizigo nzito",
+				"href": "/equipment-sale/dji-matrice-350-rtk"
+			},
+			{
+				"icon": "drone",
+				"title": "DJI Phantom 4 RTK",
+				"note": "Photogrammetry ya usahihi wa juu na ramani za njia",
+				"href": "/equipment-sale/dji-phantom-4-rtk"
+			},
+			{
+				"icon": "radar",
+				"title": "Mifumo ya LiDAR ya UAV",
+				"note": "Mwinuko unaoingia kwenye miani kwa njia na misitu"
+			},
+			{
+				"icon": "crosshairs-gps",
+				"title": "FOIF A90 GNSS RTK",
+				"note": "Udhibiti wa ardhi, kupima GCP na stakeout",
+				"href": "/equipment-sale/foif-a90-rtk-gnss"
+			},
+			{
+				"icon": "cube-scan",
+				"title": "Pix4D / Agisoft Metashape",
+				"note": "Photogrammetry, point clouds na utengenezaji wa orthomosaic"
+			},
+			{
+				"icon": "map-legend",
+				"title": "AutoCAD Civil 3D / ArcGIS Pro / QGIS",
+				"note": "Bidhaa za CAD na GIS tayari kwa usanidi kwa viwango vyako"
+			}
+		]
+	},
+	"capabilityCta": {
+		"tag": "Kwa Tendero & Uhalalishaji",
+		"headline": "Omba Taarifa ya Uwezo wa Kiufundi (PDF)",
+		"description": "Orodha za vifaa, viwango vya usahihi, uzingatiaji wa KCAA, bima na marejeo ya miradi iliyopita — kila kitu timu za ununuzi wanahitaji kuhalalisha SmartGrid Surveying.",
+		"watermark": "file-pdf-box",
+		"primary": {
+			"label": "Omba Taarifa ya Uwezo",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Request: Technical Capability Statement (PDF)&body=Hi SmartGrid Surveying,%0D%0A%0D%0APlease send your Technical Capability Statement (PDF).%0D%0A%0D%0AName:%0D%0AOrganisation:%0D%0AEmail:%0D%0ATender / Project name:%0D%0A%0D%0AThank you.",
+			"icon": "file-pdf-box"
+		},
+		"secondary": {
+			"label": "Tazama Wasifu wa Kampuni",
+			"href": "/about",
+			"icon": "domain"
+		}
+	},
+	"finalCta": {
+		"tag": "Anza Uchunguzi Wako wa Angani",
+		"headline": "Unahitaji Ramani Sahihi ya Drone kwa Mradi Wako?",
+		"description": "Pata data ya uchunguzi wa angani ya darasa la uhandisi iliyolelewa ndani ya muda uliopangwa kulingana na mifumo ya ujenzi, usanidi, na uidhinishaji.",
+		"actionsLabel": "Chagua hatua yako:",
+		"actions": [
+			{
+				"icon": "cash-multiple",
+				"label": "Pata Nukuu ya Haraka",
+				"description": "Majibu ya masaa 24 kwa miradi iliyo na wigo.",
+				"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Drone Survey (24-Hour Response)&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like a drone survey quotation. Please respond within 24 hours.%0D%0A%0D%0AProject name:%0D%0ALocation (County / Country):%0D%0AArea to survey (hectares):%0D%0AService needed (mapping / LiDAR / volumetrics / NDVI):%0D%0ADeliverables required:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+			},
+			{
+				"icon": "whatsapp",
+				"label": "WhatsApp Mhandisi wa Uchunguzi",
+				"description": "Zungumza na timu inayoruka drone.",
+				"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20talk%20to%20a%20drone%20survey%20engineer."
+			},
+			{
+				"icon": "clipboard-text-outline",
+				"label": "Omba Pendekezo la Tendero",
+				"description": "Mapendekezo rasmi kwa tendero & RFQ.",
+				"href": "mailto:smartgridsurveying@gmail.com?subject=Tender Proposal Request: Drone Survey Services&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a tender proposal for drone survey services.%0D%0A%0D%0ATender / Project name:%0D%0AOrganisation:%0D%0AScope summary:%0D%0ADeadline:%0D%0A%0D%0AThank you."
+			},
+			{
+				"icon": "calendar-check",
+				"label": "Panga Ziara ya Tovuti",
+				"description": "Tembea tovuti na timu yetu ya ndege.",
+				"href": "mailto:smartgridsurveying@gmail.com?subject=Site Visit Booking: Drone Survey&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a site visit for a drone survey.%0D%0A%0D%0ALocation (County / Area):%0D%0ASite size:%0D%0APreferred date & time:%0D%0A%0D%0AThank you."
+			}
 		]
 	},
 	"projects": {
