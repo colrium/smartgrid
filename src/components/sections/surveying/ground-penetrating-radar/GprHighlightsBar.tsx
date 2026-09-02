@@ -9,8 +9,8 @@ interface HighlightItem {
 }
 
 export function GprHighlightsBar() {
-	const { t } = useTranslation(["ground-penetrating-radar"]);
-	const items = (t("ground-penetrating-radar:highlights", {
+	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
+	const items = (t("surveying/ground-penetrating-radar:highlights", {
 		returnObjects: true,
 	}) as unknown as HighlightItem[]) ?? [];
 

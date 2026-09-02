@@ -19,8 +19,8 @@ interface ServicesContent {
 }
 
 export function QuarryServicesItemsSection() {
-	const { t } = useTranslation(["landfill-quarry-drone-surveys"]);
-	const section = t("landfill-quarry-drone-surveys:quarryServicesItems", {
+	const { t } = useTranslation(["aerial-drones/landfill-quarry-drone-surveys"]);
+	const section = t("aerial-drones/landfill-quarry-drone-surveys:quarryServicesItems", {
 		returnObjects: true,
 	}) as unknown as ServicesContent;
 	const items = Array.isArray(section.items) ? section.items : [];

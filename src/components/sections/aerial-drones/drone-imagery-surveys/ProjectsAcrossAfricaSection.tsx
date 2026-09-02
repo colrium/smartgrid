@@ -51,8 +51,8 @@ interface ProjectsContent {
 }
 
 export function ProjectsAcrossAfricaSection() {
-	const { t } = useTranslation(["drone-imagery-surveys"]);
-	const section = t("drone-imagery-surveys:projectsAcrossAfrica", {
+	const { t } = useTranslation(["aerial-drones/drone-imagery-surveys"]);
+	const section = t("aerial-drones/drone-imagery-surveys:projectsAcrossAfrica", {
 		returnObjects: true,
 	}) as unknown as ProjectsContent;
 	const items = Array.isArray(section.items) ? section.items : [];

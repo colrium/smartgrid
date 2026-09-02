@@ -20,8 +20,8 @@ interface IntroContent {
 }
 
 export function IntroSection() {
-	const { t } = useTranslation(["volumetric-surveys"]);
-	const section = t("volumetric-surveys:intro", {
+	const { t } = useTranslation(["aerial-drones/volumetric-surveys"]);
+	const section = t("aerial-drones/volumetric-surveys:intro", {
 		returnObjects: true,
 	}) as unknown as IntroContent;
 

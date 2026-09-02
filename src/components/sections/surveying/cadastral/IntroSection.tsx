@@ -14,8 +14,8 @@ interface IntroContent {
 }
 
 export function IntroSection() {
-	const { t } = useTranslation(["cadastral-surveys"]);
-	const section = t("cadastral-surveys:whatsABoundarySurvey", {
+	const { t } = useTranslation(["surveying/cadastral-surveys"]);
+	const section = t("surveying/cadastral-surveys:whatsABoundarySurvey", {
 		returnObjects: true,
 	}) as unknown as IntroContent;
 

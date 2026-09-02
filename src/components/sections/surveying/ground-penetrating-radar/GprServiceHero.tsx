@@ -30,8 +30,8 @@ interface GprHeroContent {
 }
 
 export function GprServiceHero() {
-	const { t } = useTranslation(["ground-penetrating-radar"]);
-	const hero = t("ground-penetrating-radar:hero", {
+	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
+	const hero = t("surveying/ground-penetrating-radar:hero", {
 		returnObjects: true,
 	}) as unknown as GprHeroContent;
     const images = Array.isArray(hero?.images) ? hero.images : [];

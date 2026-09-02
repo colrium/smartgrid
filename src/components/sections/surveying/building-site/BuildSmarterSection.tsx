@@ -20,8 +20,8 @@ interface BuildSmarterContent {
 }
 
 export function BuildSmarterSection() {
-	const { t } = useTranslation(["building-site-surveys"]);
-	const section = t("building-site-surveys:section2", {
+	const { t } = useTranslation(["surveying/building-site-surveys"]);
+	const section = t("surveying/building-site-surveys:section2", {
 		returnObjects: true,
 	}) as unknown as BuildSmarterContent;
 

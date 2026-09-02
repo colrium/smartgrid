@@ -24,7 +24,7 @@ export function LidarSplitSection({
 	imagePosition = "right",
 	tone = "default",
 }: LidarSplitSectionProps) {
-	const { t } = useTranslation(["lidar-mapping"]);
+	const { t } = useTranslation(["aerial-drones/lidar-mapping"]);
 	const section = t(`lidar-mapping:${sectionKey}`, {
 		returnObjects: true,
 	}) as unknown as LidarSplitContent;

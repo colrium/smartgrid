@@ -18,8 +18,8 @@ interface ProcessContent {
 }
 
 export function ProcessSection() {
-	const { t } = useTranslation(["agricultural-ndvi-mapping"]);
-	const section = t("agricultural-ndvi-mapping:process", {
+	const { t } = useTranslation(["aerial-drones/agricultural-ndvi-mapping"]);
+	const section = t("aerial-drones/agricultural-ndvi-mapping:process", {
 		returnObjects: true,
 	}) as unknown as ProcessContent;
 	const items = Array.isArray(section.items) ? section.items : [];

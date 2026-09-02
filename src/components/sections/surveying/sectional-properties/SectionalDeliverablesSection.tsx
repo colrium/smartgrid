@@ -9,7 +9,7 @@ import { Deliverables } from "@/components/sections/Deliverables";
  * reusable <Deliverables /> explorer (content: sectional-properties:deliverables).
  */
 export function SectionalDeliverablesSection(): ReactElement {
-	return <Deliverables ns="sectional-properties" className="bg-surface" />;
+	return <Deliverables ns="surveying/sectional-properties" className="bg-surface" />;
 }
 
 export default SectionalDeliverablesSection;

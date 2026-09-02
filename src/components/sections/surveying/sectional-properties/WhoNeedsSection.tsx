@@ -24,8 +24,8 @@ interface WhoNeedsContent {
 }
 
 export function WhoNeedsSection(): ReactElement {
-	const { t } = useTranslation(["sectional-properties"]);
-	const section = t("sectional-properties:whoNeeds", {
+	const { t } = useTranslation(["surveying/sectional-properties"]);
+	const section = t("surveying/sectional-properties:whoNeeds", {
 		returnObjects: true,
 	}) as unknown as WhoNeedsContent;
 	const items = Array.isArray(section?.items) ? section.items : [];

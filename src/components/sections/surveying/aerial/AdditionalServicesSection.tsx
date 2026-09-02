@@ -13,8 +13,8 @@ interface AdditionalServicesContent {
 }
 
 export function AdditionalServicesSection() {
-	const { t } = useTranslation(["aerial-surveys"]);
-	const section = t("aerial-surveys:additionalServices", {
+	const { t } = useTranslation(["surveying/aerial-surveys"]);
+	const section = t("surveying/aerial-surveys:additionalServices", {
 		returnObjects: true,
 	}) as unknown as AdditionalServicesContent;
 	const items = Array.isArray(section.items) ? section.items : [];

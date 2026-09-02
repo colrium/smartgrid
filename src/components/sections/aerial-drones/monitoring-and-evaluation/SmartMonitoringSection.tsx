@@ -28,8 +28,8 @@ interface SmartMonitoringContent {
 }
 
 export function SmartMonitoringSection() {
-	const { t } = useTranslation(["monitoring-and-evaluation"]);
-	const section = t("monitoring-and-evaluation:smartMonitoringAndEval", {
+	const { t } = useTranslation(["aerial-drones/monitoring-and-evaluation"]);
+	const section = t("aerial-drones/monitoring-and-evaluation:smartMonitoringAndEval", {
 		returnObjects: true,
 	}) as unknown as SmartMonitoringContent;
 	const items = Array.isArray(section.items) ? section.items : [];

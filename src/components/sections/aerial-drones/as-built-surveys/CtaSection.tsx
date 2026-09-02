@@ -20,8 +20,8 @@ interface CtaContent {
 }
 
 export function CtaSection() {
-	const { t } = useTranslation(["aerial-drones-as-built-surveys"]);
-	const section = t("aerial-drones-as-built-surveys:ctaSection", {
+	const { t } = useTranslation(["aerial-drones/aerial-drones-as-built-surveys"]);
+	const section = t("aerial-drones/aerial-drones-as-built-surveys:ctaSection", {
 		returnObjects: true,
 	}) as unknown as CtaContent;
 	const images = Array.isArray(section.images) ? section.images : [];

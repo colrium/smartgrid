@@ -18,8 +18,8 @@ interface HowItWorksContent {
 }
 
 export function HowItWorksSection() {
-	const { t } = useTranslation(["lidar-mapping"]);
-	const section = t("lidar-mapping:howItWorks", {
+	const { t } = useTranslation(["aerial-drones/lidar-mapping"]);
+	const section = t("aerial-drones/lidar-mapping:howItWorks", {
 		returnObjects: true,
 	}) as unknown as HowItWorksContent;
 	const items = Array.isArray(section.items) ? section.items : [];

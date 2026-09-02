@@ -20,8 +20,8 @@ interface FaqContent {
 }
 
 export function SectionalFaqSection() {
-	const { t } = useTranslation(["sectional-properties"]);
-	const section = t("sectional-properties:faq", {
+	const { t } = useTranslation(["surveying/sectional-properties"]);
+	const section = t("surveying/sectional-properties:faq", {
 		returnObjects: true,
 	}) as unknown as FaqContent;
 	const [openIndex, setOpenIndex] = useState<number | null>(0);

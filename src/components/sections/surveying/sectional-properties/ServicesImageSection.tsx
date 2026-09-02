@@ -20,8 +20,8 @@ interface ServicesImageContent {
 }
 
 export function ServicesImageSection() {
-	const { t } = useTranslation(["sectional-properties"]);
-	const section = t("sectional-properties:sectionalServices", {
+	const { t } = useTranslation(["surveying/sectional-properties"]);
+	const section = t("surveying/sectional-properties:sectionalServices", {
 		returnObjects: true,
 	}) as unknown as ServicesImageContent;
 	const items = Array.isArray(section.items) ? section.items : [];

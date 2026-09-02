@@ -33,8 +33,8 @@ const FALLBACK_ICONS = [
 ];
 
 export function WhatWeOfferSection() {
-	const { t } = useTranslation(["landfill-quarry-drone-surveys"]);
-	const section = t("landfill-quarry-drone-surveys:whatWeOffer", {
+	const { t } = useTranslation(["aerial-drones/landfill-quarry-drone-surveys"]);
+	const section = t("aerial-drones/landfill-quarry-drone-surveys:whatWeOffer", {
 		returnObjects: true,
 	}) as unknown as WhatWeOfferContent;
 	const items = Array.isArray(section.items) ? section.items : [];

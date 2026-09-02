@@ -17,8 +17,8 @@ interface ProcessContent {
 }
 
 export function ProcessSection() {
-	const { t } = useTranslation(["aerial-drones-as-built-surveys"]);
-	const section = t("aerial-drones-as-built-surveys:process", {
+	const { t } = useTranslation(["aerial-drones/aerial-drones-as-built-surveys"]);
+	const section = t("aerial-drones/aerial-drones-as-built-surveys:process", {
 		returnObjects: true,
 	}) as unknown as ProcessContent;
 	const items = Array.isArray(section.items) ? section.items : [];

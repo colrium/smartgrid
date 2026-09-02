@@ -14,8 +14,8 @@ interface WhatIsContent {
 }
 
 export function WhatIsTopographicalSection() {
-	const { t } = useTranslation(["topographical-surveys"]);
-	const section = t("topographical-surveys:whatIs", {
+	const { t } = useTranslation(["surveying/topographical-surveys"]);
+	const section = t("surveying/topographical-surveys:whatIs", {
 		returnObjects: true,
 	}) as unknown as WhatIsContent;
 	const hasImage = typeof section.image === "string" && section.image.startsWith("/");

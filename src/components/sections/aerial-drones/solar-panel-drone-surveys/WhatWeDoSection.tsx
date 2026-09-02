@@ -19,8 +19,8 @@ interface WhatWeDoContent {
 }
 
 export function WhatWeDoSection() {
-	const { t } = useTranslation(["solar-panel-drone-surveys"]);
-	const section = t("solar-panel-drone-surveys:whatWeDo", {
+	const { t } = useTranslation(["aerial-drones/solar-panel-drone-surveys"]);
+	const section = t("aerial-drones/solar-panel-drone-surveys:whatWeDo", {
 		returnObjects: true,
 	}) as unknown as WhatWeDoContent;
 	const items = Array.isArray(section.items) ? section.items : [];

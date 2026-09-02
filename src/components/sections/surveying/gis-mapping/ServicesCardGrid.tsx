@@ -30,7 +30,7 @@ export function ServicesCardGrid({
 	columns = 4,
 	tone = "default",
 }: ServicesCardGridProps) {
-	const { t } = useTranslation(["gis-mapping"]);
+	const { t } = useTranslation(["surveying/gis-mapping"]);
 	const section = t(`gis-mapping:${sectionKey}`, {
 		returnObjects: true,
 	}) as unknown as ServicesGridContent;

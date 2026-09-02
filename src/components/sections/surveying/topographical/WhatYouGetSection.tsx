@@ -13,8 +13,8 @@ interface WhatYouGetContent {
 }
 
 export function WhatYouGetSection() {
-	const { t } = useTranslation(["topographical-surveys"]);
-	const section = t("topographical-surveys:whatYouGet", {
+	const { t } = useTranslation(["surveying/topographical-surveys"]);
+	const section = t("surveying/topographical-surveys:whatYouGet", {
 		returnObjects: true,
 	}) as unknown as WhatYouGetContent;
 	const items = Array.isArray(section?.items) ? section.items : [];

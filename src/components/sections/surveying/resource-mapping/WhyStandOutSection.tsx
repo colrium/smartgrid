@@ -19,8 +19,8 @@ interface WhyStandOutContent {
 }
 
 export function WhyStandOutSection() {
-	const { t } = useTranslation(["resource-mapping"]);
-	const section = t("resource-mapping:whySmartGridStandsOut", {
+	const { t } = useTranslation(["surveying/resource-mapping"]);
+	const section = t("surveying/resource-mapping:whySmartGridStandsOut", {
 		returnObjects: true,
 	}) as unknown as WhyStandOutContent;
 	const items = Array.isArray(section.items) ? section.items : [];

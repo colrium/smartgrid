@@ -20,8 +20,8 @@ interface LidarHeroContent {
 }
 
 export function LidarHeroSection() {
-	const { t } = useTranslation(["lidar-mapping"]);
-	const hero = t("lidar-mapping:hero", {
+	const { t } = useTranslation(["aerial-drones/lidar-mapping"]);
+	const hero = t("aerial-drones/lidar-mapping:hero", {
 		returnObjects: true,
 	}) as unknown as LidarHeroContent;
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");

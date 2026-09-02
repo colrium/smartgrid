@@ -20,8 +20,8 @@ interface GprHeroContent {
 }
 
 export function GprHeroSection() {
-	const { t } = useTranslation(["ground-penetrating-radar"]);
-	const hero = t("ground-penetrating-radar:hero", {
+	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
+	const hero = t("surveying/ground-penetrating-radar:hero", {
 		returnObjects: true,
 	}) as unknown as GprHeroContent;
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");

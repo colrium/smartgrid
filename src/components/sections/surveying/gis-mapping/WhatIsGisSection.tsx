@@ -19,8 +19,8 @@ interface WhatIsGisContent {
 }
 
 export function WhatIsGisSection() {
-	const { t } = useTranslation(["gis-mapping"]);
-	const section = t("gis-mapping:whatIsGis", {
+	const { t } = useTranslation(["surveying/gis-mapping"]);
+	const section = t("surveying/gis-mapping:whatIsGis", {
 		returnObjects: true,
 	}) as unknown as WhatIsGisContent;
 

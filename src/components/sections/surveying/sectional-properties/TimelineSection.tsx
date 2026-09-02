@@ -37,8 +37,8 @@ const TONE_SEGMENTS = [
 ];
 
 export function TimelineSection(): ReactElement {
-	const { t } = useTranslation(["sectional-properties"]);
-	const section = t("sectional-properties:timeline", {
+	const { t } = useTranslation(["surveying/sectional-properties"]);
+	const section = t("surveying/sectional-properties:timeline", {
 		returnObjects: true,
 	}) as unknown as TimelineContent;
 	const stages = Array.isArray(section?.stages) ? section.stages : [];

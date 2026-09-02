@@ -19,8 +19,8 @@ interface IntroContent {
 }
 
 export function IntroSection() {
-	const { t } = useTranslation(["sectional-properties"]);
-	const section = t("sectional-properties:section1", {
+	const { t } = useTranslation(["surveying/sectional-properties"]);
+	const section = t("surveying/sectional-properties:section1", {
 		returnObjects: true,
 	}) as unknown as IntroContent;
 

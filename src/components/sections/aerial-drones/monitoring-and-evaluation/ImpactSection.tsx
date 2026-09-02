@@ -20,8 +20,8 @@ interface ImpactContent {
 const FALLBACK_ICONS = ["water", "sprout", "home-flood"];
 
 export function ImpactSection() {
-	const { t } = useTranslation(["monitoring-and-evaluation"]);
-	const section = t("monitoring-and-evaluation:impact", {
+	const { t } = useTranslation(["aerial-drones/monitoring-and-evaluation"]);
+	const section = t("aerial-drones/monitoring-and-evaluation:impact", {
 		returnObjects: true,
 	}) as unknown as ImpactContent;
 	const items = Array.isArray(section.items) ? section.items : [];

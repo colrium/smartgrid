@@ -19,8 +19,8 @@ function socialMeta(url: string): { label: string; icon: string } {
 }
 
 export function SocialsSection() {
-	const { t } = useTranslation(["sectional-properties"]);
-	const socials = t("sectional-properties:socials.items", {
+	const { t } = useTranslation(["surveying/sectional-properties"]);
+	const socials = t("surveying/sectional-properties:socials.items", {
 		returnObjects: true,
 	}) as unknown as SocialItem[];
 	const items = Array.isArray(socials) ? socials : [];

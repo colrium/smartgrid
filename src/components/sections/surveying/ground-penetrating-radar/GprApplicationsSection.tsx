@@ -17,8 +17,8 @@ interface ApplicationsContent {
 }
 
 export function GprApplicationsSection() {
-	const { t } = useTranslation(["ground-penetrating-radar"]);
-	const section = t("ground-penetrating-radar:applications", {
+	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
+	const section = t("surveying/ground-penetrating-radar:applications", {
 		returnObjects: true,
 	}) as unknown as ApplicationsContent;
 	const items = Array.isArray(section?.items) ? section.items : [];

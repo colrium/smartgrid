@@ -26,8 +26,8 @@ interface FaqsContent {
 }
 
 export function GprFaqSection() {
-	const { t } = useTranslation(["ground-penetrating-radar"]);
-	const section = t("ground-penetrating-radar:faqs", {
+	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
+	const section = t("surveying/ground-penetrating-radar:faqs", {
 		returnObjects: true,
 	}) as unknown as FaqsContent;
 	const items = Array.isArray(section?.items) ? section.items : [];

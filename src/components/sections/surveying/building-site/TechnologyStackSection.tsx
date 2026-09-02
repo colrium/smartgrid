@@ -32,8 +32,8 @@ const FALLBACK_ICONS = [
 ];
 
 export function TechnologyStackSection(): ReactElement {
-	const { t } = useTranslation(["building-site-surveys"]);
-	const section = t("building-site-surveys:technology", {
+	const { t } = useTranslation(["surveying/building-site-surveys"]);
+	const section = t("surveying/building-site-surveys:technology", {
 		returnObjects: true,
 	}) as unknown as TechnologyContent;
 	const items = Array.isArray(section?.items) ? section.items : [];

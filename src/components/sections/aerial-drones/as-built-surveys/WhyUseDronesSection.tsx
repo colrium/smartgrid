@@ -22,8 +22,8 @@ interface WhyDronesContent {
 const FALLBACK_ICONS = ["vector-triangle", "speedometer", "leaf", "layers-triple"];
 
 export function WhyUseDronesSection() {
-	const { t } = useTranslation(["aerial-drones-as-built-surveys"]);
-	const section = t("aerial-drones-as-built-surveys:whyUseDrones", {
+	const { t } = useTranslation(["aerial-drones/aerial-drones-as-built-surveys"]);
+	const section = t("aerial-drones/aerial-drones-as-built-surveys:whyUseDrones", {
 		returnObjects: true,
 	}) as unknown as WhyDronesContent;
 	const items = Array.isArray(section.items) ? section.items : [];

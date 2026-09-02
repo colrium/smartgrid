@@ -20,8 +20,8 @@ interface BathymetricHeroContent {
 }
 
 export function BathymetricHeroSection() {
-	const { t } = useTranslation(["bathymetric-surveys"]);
-	const hero = t("bathymetric-surveys:hero", {
+	const { t } = useTranslation(["surveying/bathymetric-surveys"]);
+	const hero = t("surveying/bathymetric-surveys:hero", {
 		returnObjects: true,
 	}) as unknown as BathymetricHeroContent;
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");

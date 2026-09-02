@@ -44,8 +44,8 @@ interface ProjectsContent {
 }
 
 export function AerialProjectsSection() {
-	const { t } = useTranslation(["aerial-drones"]);
-	const section = t("aerial-drones:projects", {
+	const { t } = useTranslation(["aerial-drones/landing"]);
+	const section = t("aerial-drones/landing:projects", {
 		returnObjects: true,
 	}) as unknown as ProjectsContent;
 	const items = Array.isArray(section?.items) ? section.items : [];

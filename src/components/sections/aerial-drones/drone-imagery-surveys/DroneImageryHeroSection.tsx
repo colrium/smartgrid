@@ -20,8 +20,8 @@ interface DroneImageryHeroContent {
 }
 
 export function DroneImageryHeroSection() {
-	const { t } = useTranslation(["drone-imagery-surveys"]);
-	const hero = t("drone-imagery-surveys:hero", {
+	const { t } = useTranslation(["aerial-drones/drone-imagery-surveys"]);
+	const hero = t("aerial-drones/drone-imagery-surveys:hero", {
 		returnObjects: true,
 	}) as unknown as DroneImageryHeroContent;
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");

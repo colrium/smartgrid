@@ -12,8 +12,8 @@ interface OverviewContent {
 }
 
 export function GprOverviewSection() {
-	const { t } = useTranslation(["ground-penetrating-radar"]);
-	const section = t("ground-penetrating-radar:overview", {
+	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
+	const section = t("surveying/ground-penetrating-radar:overview", {
 		returnObjects: true,
 	}) as unknown as OverviewContent;
 	const paragraphs = Array.isArray(section?.paragraphs) ? section.paragraphs : [];

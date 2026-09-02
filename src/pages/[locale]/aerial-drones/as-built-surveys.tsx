@@ -33,7 +33,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 	const i18nProps = await getI18nProps(context, [
 		"common",
 		"meta",
-		"aerial-drones-as-built-surveys",
+		"aerial-drones/aerial-drones-as-built-surveys",
 	]);
 
 	if (!i18nProps) return { notFound: true };

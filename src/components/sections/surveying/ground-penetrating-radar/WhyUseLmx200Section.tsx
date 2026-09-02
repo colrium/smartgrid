@@ -21,8 +21,8 @@ interface WhyUseContent {
 }
 
 export function WhyUseLmx200Section() {
-	const { t } = useTranslation(["ground-penetrating-radar"]);
-	const section = t("ground-penetrating-radar:whyUseLmx200", {
+	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
+	const section = t("surveying/ground-penetrating-radar:whyUseLmx200", {
 		returnObjects: true,
 	}) as unknown as WhyUseContent;
 	const items = Array.isArray(section.items) ? section.items : [];

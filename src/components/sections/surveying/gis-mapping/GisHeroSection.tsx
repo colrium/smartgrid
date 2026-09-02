@@ -20,8 +20,8 @@ interface GisHeroContent {
 }
 
 export function GisHeroSection() {
-	const { t } = useTranslation(["gis-mapping"]);
-	const hero = t("gis-mapping:hero", {
+	const { t } = useTranslation(["surveying/gis-mapping"]);
+	const hero = t("surveying/gis-mapping:hero", {
 		returnObjects: true,
 	}) as unknown as GisHeroContent;
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");

@@ -19,8 +19,8 @@ interface TechnologyContent {
 }
 
 export function GprTechnologySection() {
-	const { t } = useTranslation(["ground-penetrating-radar"]);
-	const section = t("ground-penetrating-radar:technology", {
+	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
+	const section = t("surveying/ground-penetrating-radar:technology", {
 		returnObjects: true,
 	}) as unknown as TechnologyContent;
 	const items = Array.isArray(section?.items) ? section.items : [];

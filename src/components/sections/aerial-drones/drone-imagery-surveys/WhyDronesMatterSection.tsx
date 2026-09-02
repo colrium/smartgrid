@@ -14,8 +14,8 @@ interface WhyDronesMatterContent {
 }
 
 export function WhyDronesMatterSection() {
-	const { t } = useTranslation(["drone-imagery-surveys"]);
-	const section = t("drone-imagery-surveys:whyDronesMatter", {
+	const { t } = useTranslation(["aerial-drones/drone-imagery-surveys"]);
+	const section = t("aerial-drones/drone-imagery-surveys:whyDronesMatter", {
 		returnObjects: true,
 	}) as unknown as WhyDronesMatterContent;
 

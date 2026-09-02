@@ -20,8 +20,8 @@ interface AerialHeroContent {
 }
 
 export function AerialHeroSection() {
-	const { t } = useTranslation(["aerial-surveys"]);
-	const hero = t("aerial-surveys:hero", {
+	const { t } = useTranslation(["surveying/aerial-surveys"]);
+	const hero = t("surveying/aerial-surveys:hero", {
 		returnObjects: true,
 	}) as unknown as AerialHeroContent;
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");

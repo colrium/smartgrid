@@ -32,8 +32,8 @@ const FALLBACK_ICONS = [
 ];
 
 export function AerialServicesSection() {
-	const { t } = useTranslation(["aerial-surveys"]);
-	const section = t("aerial-surveys:whatWeOffer", {
+	const { t } = useTranslation(["surveying/aerial-surveys"]);
+	const section = t("surveying/aerial-surveys:whatWeOffer", {
 		returnObjects: true,
 	}) as unknown as AerialServicesContent;
 	const items = Array.isArray(section.items) ? section.items : [];

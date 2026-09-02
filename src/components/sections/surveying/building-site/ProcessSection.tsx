@@ -18,8 +18,8 @@ interface ProcessContent {
 }
 
 export function ProcessSection() {
-	const { t } = useTranslation(["building-site-surveys"]);
-	const section = t("building-site-surveys:process", {
+	const { t } = useTranslation(["surveying/building-site-surveys"]);
+	const section = t("surveying/building-site-surveys:process", {
 		returnObjects: true,
 	}) as unknown as ProcessContent;
 	const steps = Array.isArray(section.items) ? section.items : [];

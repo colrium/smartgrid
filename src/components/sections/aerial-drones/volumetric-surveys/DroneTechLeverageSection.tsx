@@ -14,8 +14,8 @@ interface SplitContent {
 }
 
 export function DroneTechLeverageSection() {
-	const { t } = useTranslation(["volumetric-surveys"]);
-	const section = t("volumetric-surveys:droneTechLeverage", {
+	const { t } = useTranslation(["aerial-drones/volumetric-surveys"]);
+	const section = t("aerial-drones/volumetric-surveys:droneTechLeverage", {
 		returnObjects: true,
 	}) as unknown as SplitContent;
 

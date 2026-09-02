@@ -32,8 +32,8 @@ const FALLBACK_ICONS = [
 ];
 
 export function WhatWeOfferSection() {
-	const { t } = useTranslation(["drone-imagery-surveys"]);
-	const section = t("drone-imagery-surveys:whatWeOffer", {
+	const { t } = useTranslation(["aerial-drones/drone-imagery-surveys"]);
+	const section = t("aerial-drones/drone-imagery-surveys:whatWeOffer", {
 		returnObjects: true,
 	}) as unknown as DroneServicesContent;
 	const items = Array.isArray(section.items) ? section.items : [];

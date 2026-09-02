@@ -20,8 +20,8 @@ interface BuildingHeroContent {
 }
 
 export function BuildingSiteHeroSection() {
-	const { t } = useTranslation(["building-site-surveys"]);
-	const hero = t("building-site-surveys:hero", {
+	const { t } = useTranslation(["surveying/building-site-surveys"]);
+	const hero = t("surveying/building-site-surveys:hero", {
 		returnObjects: true,
 	}) as unknown as BuildingHeroContent;
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");

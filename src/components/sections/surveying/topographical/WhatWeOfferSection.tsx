@@ -23,8 +23,8 @@ const FALLBACK_ICONS = [
 ];
 
 export function WhatWeOfferSection() {
-	const { t } = useTranslation(["topographical-surveys"]);
-	const section = t("topographical-surveys:whatWeOffer", {
+	const { t } = useTranslation(["surveying/topographical-surveys"]);
+	const section = t("surveying/topographical-surveys:whatWeOffer", {
 		returnObjects: true,
 	}) as unknown as OfferContent;
 	const items = Array.isArray(section.items) ? section.items : [];

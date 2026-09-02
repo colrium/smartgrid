@@ -19,8 +19,8 @@ interface MattersContent {
 }
 
 export function WhyDronesMatterSection() {
-	const { t } = useTranslation(["aerial-drones"]);
-	const section = t("aerial-drones:whyAerialSurveyDronesMatter", {
+	const { t } = useTranslation(["aerial-drones/landing"]);
+	const section = t("aerial-drones/landing:whyAerialSurveyDronesMatter", {
 		returnObjects: true,
 	}) as unknown as MattersContent;
 	const items = Array.isArray(section?.items) ? section.items : [];

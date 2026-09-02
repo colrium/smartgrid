@@ -21,8 +21,8 @@ interface VolHeroContent {
 }
 
 export function HeroSection() {
-	const { t } = useTranslation(["volumetric-surveys"]);
-	const hero = t("volumetric-surveys:hero", {
+	const { t } = useTranslation(["aerial-drones/volumetric-surveys"]);
+	const hero = t("aerial-drones/volumetric-surveys:hero", {
 		returnObjects: true,
 	}) as unknown as VolHeroContent;
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");

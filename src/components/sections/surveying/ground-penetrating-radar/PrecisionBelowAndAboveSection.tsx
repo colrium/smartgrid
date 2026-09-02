@@ -12,8 +12,8 @@ interface PrecisionBelowAndAboveContent {
 }
 
 export function PrecisionBelowAndAboveSection() {
-	const { t } = useTranslation(["ground-penetrating-radar"]);
-	const section = t("ground-penetrating-radar:precisionBelowAndAbove", {
+	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
+	const section = t("surveying/ground-penetrating-radar:precisionBelowAndAbove", {
 		returnObjects: true,
 	}) as unknown as PrecisionBelowAndAboveContent;
 

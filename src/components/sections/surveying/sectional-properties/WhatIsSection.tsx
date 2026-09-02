@@ -27,8 +27,8 @@ const CARD_ICONS = ["door-open", "elevator", "chart-donut"];
 const CARD_NUMBERS = ["01", "02", "03"];
 
 export function WhatIsSection(): ReactElement {
-	const { t } = useTranslation(["sectional-properties"]);
-	const section = t("sectional-properties:whatIs", {
+	const { t } = useTranslation(["surveying/sectional-properties"]);
+	const section = t("surveying/sectional-properties:whatIs", {
 		returnObjects: true,
 	}) as unknown as WhatIsContent;
 	const items = Array.isArray(section?.items) ? section.items : [];

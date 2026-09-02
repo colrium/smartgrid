@@ -19,8 +19,8 @@ interface SampleMapContent {
 }
 
 export function SampleMapSection() {
-	const { t } = useTranslation(["topographical-surveys"]);
-	const section = t("topographical-surveys:sampleTopographicalMap", {
+	const { t } = useTranslation(["surveying/topographical-surveys"]);
+	const section = t("surveying/topographical-surveys:sampleTopographicalMap", {
 		returnObjects: true,
 	}) as unknown as SampleMapContent;
 	const highlights = Array.isArray(section.map?.items) ? section.map.items : [];

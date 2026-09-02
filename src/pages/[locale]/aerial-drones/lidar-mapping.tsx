@@ -35,7 +35,11 @@ const Page: NextPage<PageProps> = () => {
 	);
 };
 export const getServerSideProps: GetServerSideProps = async (context) => {
-	const i18nProps = await getI18nProps(context, ["common", "meta", "lidar-mapping"]);
+	const i18nProps = await getI18nProps(context, [
+		"common",
+		"meta",
+		"aerial-drones/lidar-mapping",
+	]);
 
 	if (!i18nProps) return { notFound: true };
 

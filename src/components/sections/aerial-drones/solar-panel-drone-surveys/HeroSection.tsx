@@ -21,8 +21,8 @@ interface SolarHeroContent {
 }
 
 export function HeroSection() {
-	const { t } = useTranslation(["solar-panel-drone-surveys"]);
-	const hero = t("solar-panel-drone-surveys:hero", {
+	const { t } = useTranslation(["aerial-drones/solar-panel-drone-surveys"]);
+	const hero = t("aerial-drones/solar-panel-drone-surveys:hero", {
 		returnObjects: true,
 	}) as unknown as SolarHeroContent;
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");

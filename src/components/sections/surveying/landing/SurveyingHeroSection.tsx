@@ -20,8 +20,8 @@ interface SurveyingHeroContent {
 }
 
 export function SurveyingHeroSection() {
-	const { t } = useTranslation(["surveying"]);
-	const hero = t("surveying:hero", { returnObjects: true }) as unknown as SurveyingHeroContent;
+	const { t } = useTranslation(["surveying/landing"]);
+	const hero = t("surveying/landing:hero", { returnObjects: true }) as unknown as SurveyingHeroContent;
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");
 
 	return (

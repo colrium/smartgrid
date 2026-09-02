@@ -19,8 +19,8 @@ interface AerialSurveyingContent {
 }
 
 export function AerialSurveyingSection() {
-	const { t } = useTranslation(["aerial-surveys"]);
-	const section = t("aerial-surveys:aerialSurveying", {
+	const { t } = useTranslation(["surveying/aerial-surveys"]);
+	const section = t("surveying/aerial-surveys:aerialSurveying", {
 		returnObjects: true,
 	}) as unknown as AerialSurveyingContent;
 	const items = Array.isArray(section.items) ? section.items : [];

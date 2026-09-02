@@ -22,8 +22,8 @@ interface TopoHeroContent {
 }
 
 export function TopographicalHeroSection() {
-	const { t } = useTranslation(["topographical-surveys"]);
-	const hero = t("topographical-surveys:hero", {
+	const { t } = useTranslation(["surveying/topographical-surveys"]);
+	const hero = t("surveying/topographical-surveys:hero", {
 		returnObjects: true,
 	}) as unknown as TopoHeroContent;
 

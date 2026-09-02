@@ -15,8 +15,8 @@ interface DeliverablesContent {
 }
 
 export function GprDeliverablesSection() {
-	const { t } = useTranslation(["ground-penetrating-radar"]);
-	const section = t("ground-penetrating-radar:deliverables", {
+	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
+	const section = t("surveying/ground-penetrating-radar:deliverables", {
 		returnObjects: true,
 	}) as unknown as DeliverablesContent;
 	const list = Array.isArray(section?.list) ? section.list : [];

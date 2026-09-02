@@ -25,7 +25,7 @@ const Page: NextPage<PageProps> = () => {
 	);
 };
 export const getServerSideProps: GetServerSideProps = async (context) => {
-	const i18nProps = await getI18nProps(context, ["common", "meta", "agricultural-ndvi-mapping"]);
+	const i18nProps = await getI18nProps(context, ["common", "meta", "aerial-drones/agricultural-ndvi-mapping"]);
 
 	if (!i18nProps) return { notFound: true };
 

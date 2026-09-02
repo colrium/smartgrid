@@ -21,8 +21,8 @@ interface WhatWeDoContent {
 }
 
 export function WhatWeDoSection() {
-	const { t } = useTranslation(["ground-penetrating-radar"]);
-	const section = t("ground-penetrating-radar:whatWeDo", {
+	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
+	const section = t("surveying/ground-penetrating-radar:whatWeDo", {
 		returnObjects: true,
 	}) as unknown as WhatWeDoContent;
 	const items = Array.isArray(section.items) ? section.items : [];

@@ -20,8 +20,8 @@ interface CadastralHeroContent {
 }
 
 export function CadastralHeroSection() {
-	const { t } = useTranslation(["cadastral-surveys"]);
-	const hero = t("cadastral-surveys:hero", {
+	const { t } = useTranslation(["surveying/cadastral-surveys"]);
+	const hero = t("surveying/cadastral-surveys:hero", {
 		returnObjects: true,
 	}) as unknown as CadastralHeroContent;
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");

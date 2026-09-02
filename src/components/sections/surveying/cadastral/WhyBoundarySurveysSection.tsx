@@ -21,8 +21,8 @@ interface WhyContent {
 const FALLBACK_ICONS = ["scale-balance", "account-hard-hat", "shield-sun", "receipt-text-check"];
 
 export function WhyBoundarySurveysSection() {
-	const { t } = useTranslation(["cadastral-surveys"]);
-	const section = t("cadastral-surveys:whyBoundarySurveys", {
+	const { t } = useTranslation(["surveying/cadastral-surveys"]);
+	const section = t("surveying/cadastral-surveys:whyBoundarySurveys", {
 		returnObjects: true,
 	}) as unknown as WhyContent;
 	const items = Array.isArray(section.items) ? section.items : [];

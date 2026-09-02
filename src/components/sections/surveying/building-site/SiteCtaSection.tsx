@@ -18,8 +18,8 @@ interface SiteCtaContent {
 }
 
 export function SiteCtaSection() {
-	const { t } = useTranslation(["building-site-surveys"]);
-	const section = t("building-site-surveys:cta", {
+	const { t } = useTranslation(["surveying/building-site-surveys"]);
+	const section = t("surveying/building-site-surveys:cta", {
 		returnObjects: true,
 	}) as unknown as SiteCtaContent;
 

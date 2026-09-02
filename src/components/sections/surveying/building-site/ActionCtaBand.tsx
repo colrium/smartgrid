@@ -23,8 +23,8 @@ interface ActionCtaContent {
 }
 
 export function ActionCtaBand(): ReactElement {
-	const { t } = useTranslation(["building-site-surveys"]);
-	const content = t("building-site-surveys:actionCtaEngineer", {
+	const { t } = useTranslation(["surveying/building-site-surveys"]);
+	const content = t("surveying/building-site-surveys:actionCtaEngineer", {
 		returnObjects: true,
 	}) as unknown as ActionCtaContent;
 

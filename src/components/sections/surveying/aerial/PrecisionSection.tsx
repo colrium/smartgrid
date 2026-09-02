@@ -14,8 +14,8 @@ interface PrecisionContent {
 }
 
 export function PrecisionSection() {
-	const { t } = useTranslation(["aerial-surveys"]);
-	const section = t("aerial-surveys:precision", {
+	const { t } = useTranslation(["surveying/aerial-surveys"]);
+	const section = t("surveying/aerial-surveys:precision", {
 		returnObjects: true,
 	}) as unknown as PrecisionContent;
 

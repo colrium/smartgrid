@@ -18,8 +18,8 @@ interface CtaContent {
 }
 
 export function CtaSection() {
-	const { t } = useTranslation(["monitoring-and-evaluation"]);
-	const section = t("monitoring-and-evaluation:cta", {
+	const { t } = useTranslation(["aerial-drones/monitoring-and-evaluation"]);
+	const section = t("aerial-drones/monitoring-and-evaluation:cta", {
 		returnObjects: true,
 	}) as unknown as CtaContent;
 

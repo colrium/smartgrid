@@ -15,8 +15,8 @@ interface DeliverablesContent {
 }
 
 export function SurveyingDeliverablesSection() {
-	const { t } = useTranslation(["surveying"]);
-	const section = t("surveying:deliverables", {
+	const { t } = useTranslation(["surveying/landing"]);
+	const section = t("surveying/landing:deliverables", {
 		returnObjects: true,
 	}) as unknown as DeliverablesContent;
 	const images = Array.isArray(section?.images) ? section.images : [];

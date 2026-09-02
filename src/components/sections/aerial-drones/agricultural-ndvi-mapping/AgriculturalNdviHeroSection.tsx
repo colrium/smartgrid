@@ -20,8 +20,8 @@ interface AgriHeroContent {
 }
 
 export function AgriculturalNdviHeroSection() {
-	const { t } = useTranslation(["agricultural-ndvi-mapping"]);
-	const hero = t("agricultural-ndvi-mapping:hero", {
+	const { t } = useTranslation(["aerial-drones/agricultural-ndvi-mapping"]);
+	const hero = t("aerial-drones/agricultural-ndvi-mapping:hero", {
 		returnObjects: true,
 	}) as unknown as AgriHeroContent;
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");

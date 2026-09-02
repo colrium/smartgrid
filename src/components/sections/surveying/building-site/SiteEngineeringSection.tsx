@@ -27,8 +27,8 @@ const FALLBACK_ICONS = [
 ];
 
 export function SiteEngineeringSection() {
-	const { t } = useTranslation(["building-site-surveys"]);
-	const section = t("building-site-surveys:siteEngineeringSurveys", {
+	const { t } = useTranslation(["surveying/building-site-surveys"]);
+	const section = t("surveying/building-site-surveys:siteEngineeringSurveys", {
 		returnObjects: true,
 	}) as unknown as EngineeringContent;
 	const items = Array.isArray(section.items) ? section.items : [];

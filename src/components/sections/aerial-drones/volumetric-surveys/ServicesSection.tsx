@@ -19,8 +19,8 @@ interface ServicesContent {
 }
 
 export function ServicesSection() {
-	const { t } = useTranslation(["volumetric-surveys"]);
-	const section = t("volumetric-surveys:services", {
+	const { t } = useTranslation(["aerial-drones/volumetric-surveys"]);
+	const section = t("aerial-drones/volumetric-surveys:services", {
 		returnObjects: true,
 	}) as unknown as ServicesContent;
 	const items = Array.isArray(section.items) ? section.items : [];

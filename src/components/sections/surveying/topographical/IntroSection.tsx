@@ -12,8 +12,8 @@ interface IntroContent {
 }
 
 export function IntroSection() {
-	const { t } = useTranslation(["topographical-surveys"]);
-	const section = t("topographical-surveys:section1", {
+	const { t } = useTranslation(["surveying/topographical-surveys"]);
+	const section = t("surveying/topographical-surveys:section1", {
 		returnObjects: true,
 	}) as unknown as IntroContent;
 

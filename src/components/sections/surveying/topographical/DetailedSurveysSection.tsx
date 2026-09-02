@@ -20,8 +20,8 @@ interface DetailedContent {
 }
 
 export function DetailedSurveysSection() {
-	const { t } = useTranslation(["topographical-surveys"]);
-	const section = t("topographical-surveys:detailedTopographicalSurveys", {
+	const { t } = useTranslation(["surveying/topographical-surveys"]);
+	const section = t("surveying/topographical-surveys:detailedTopographicalSurveys", {
 		returnObjects: true,
 	}) as unknown as DetailedContent;
 	const items = Array.isArray(section.items) ? section.items : [];

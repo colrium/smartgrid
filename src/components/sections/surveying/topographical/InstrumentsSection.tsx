@@ -19,8 +19,8 @@ interface InstrumentsContent {
 }
 
 export function InstrumentsSection() {
-	const { t } = useTranslation(["topographical-surveys"]);
-	const section = t("topographical-surveys:surveyingInstruments", {
+	const { t } = useTranslation(["surveying/topographical-surveys"]);
+	const section = t("surveying/topographical-surveys:surveyingInstruments", {
 		returnObjects: true,
 	}) as unknown as InstrumentsContent;
 	const items = Array.isArray(section.items) ? section.items : [];

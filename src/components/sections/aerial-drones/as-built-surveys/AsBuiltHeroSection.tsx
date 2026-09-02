@@ -19,8 +19,8 @@ interface AsBuiltHeroContent {
 }
 
 export function AsBuiltHeroSection() {
-	const { t } = useTranslation(["aerial-drones-as-built-surveys"]);
-	const hero = t("aerial-drones-as-built-surveys:hero", {
+	const { t } = useTranslation(["aerial-drones/aerial-drones-as-built-surveys"]);
+	const hero = t("aerial-drones/aerial-drones-as-built-surveys:hero", {
 		returnObjects: true,
 	}) as unknown as AsBuiltHeroContent;
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");

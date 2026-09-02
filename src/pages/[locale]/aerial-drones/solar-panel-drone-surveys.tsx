@@ -27,7 +27,7 @@ const Page: NextPage<PageProps> = () => {
 	);
 };
 export const getServerSideProps: GetServerSideProps = async (context) => {
-	const i18nProps = await getI18nProps(context, ["common", "meta", "solar-panel-drone-surveys"]);
+	const i18nProps = await getI18nProps(context, ["common", "meta", "aerial-drones/solar-panel-drone-surveys"]);
 
 	if (!i18nProps) return { notFound: true };
 

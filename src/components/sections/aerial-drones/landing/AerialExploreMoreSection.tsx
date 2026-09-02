@@ -20,8 +20,8 @@ interface ExploreContent {
 }
 
 export function AerialExploreMoreSection() {
-	const { t } = useTranslation(["aerial-drones"]);
-	const section = t("aerial-drones:exploreMore", {
+	const { t } = useTranslation(["aerial-drones/landing"]);
+	const section = t("aerial-drones/landing:exploreMore", {
 		returnObjects: true,
 	}) as unknown as ExploreContent;
 	const items = Array.isArray(section?.items) ? section.items : [];

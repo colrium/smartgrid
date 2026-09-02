@@ -25,8 +25,8 @@ interface WhenYouNeedContent {
 }
 
 export function WhenYouNeedSection() {
-	const { t } = useTranslation(["topographical-surveys"]);
-	const section = t("topographical-surveys:whenYouNeed", {
+	const { t } = useTranslation(["surveying/topographical-surveys"]);
+	const section = t("surveying/topographical-surveys:whenYouNeed", {
 		returnObjects: true,
 	}) as unknown as WhenYouNeedContent;
 	const items = Array.isArray(section?.items) ? section.items : [];

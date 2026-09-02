@@ -37,8 +37,8 @@ const FALLBACK_ICONS = [
 ];
 
 export function ServicesSection() {
-	const { t } = useTranslation(["photography-video-marketing"]);
-	const section = t("photography-video-marketing:services", {
+	const { t } = useTranslation(["aerial-drones/photography-video-marketing"]);
+	const section = t("aerial-drones/photography-video-marketing:services", {
 		returnObjects: true,
 	}) as unknown as ServicesContent;
 	const items = Array.isArray(section.items) ? section.items : [];

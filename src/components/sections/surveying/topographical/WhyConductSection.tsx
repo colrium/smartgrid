@@ -18,8 +18,8 @@ interface WhyContent {
 }
 
 export function WhyConductSection() {
-	const { t } = useTranslation(["topographical-surveys"]);
-	const section = t("topographical-surveys:whyConductSurvey", {
+	const { t } = useTranslation(["surveying/topographical-surveys"]);
+	const section = t("surveying/topographical-surveys:whyConductSurvey", {
 		returnObjects: true,
 	}) as unknown as WhyContent;
 	const items = Array.isArray(section.items) ? section.items : [];

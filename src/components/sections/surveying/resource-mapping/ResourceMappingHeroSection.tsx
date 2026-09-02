@@ -20,8 +20,8 @@ interface ResourceMappingHeroContent {
 }
 
 export function ResourceMappingHeroSection() {
-	const { t } = useTranslation(["resource-mapping"]);
-	const hero = t("resource-mapping:hero", {
+	const { t } = useTranslation(["surveying/resource-mapping"]);
+	const hero = t("surveying/resource-mapping:hero", {
 		returnObjects: true,
 	}) as unknown as ResourceMappingHeroContent;
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");

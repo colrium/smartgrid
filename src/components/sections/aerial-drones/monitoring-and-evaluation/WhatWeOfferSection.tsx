@@ -21,8 +21,8 @@ interface WhatWeOfferContent {
 }
 
 export function WhatWeOfferSection() {
-	const { t } = useTranslation(["monitoring-and-evaluation"]);
-	const section = t("monitoring-and-evaluation:whatWeOffer", {
+	const { t } = useTranslation(["aerial-drones/monitoring-and-evaluation"]);
+	const section = t("aerial-drones/monitoring-and-evaluation:whatWeOffer", {
 		returnObjects: true,
 	}) as unknown as WhatWeOfferContent;
 	const items = Array.isArray(section.items) ? section.items : [];

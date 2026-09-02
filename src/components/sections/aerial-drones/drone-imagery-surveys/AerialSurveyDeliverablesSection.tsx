@@ -20,8 +20,8 @@ interface DeliverablesContent {
 }
 
 export function AerialSurveyDeliverablesSection() {
-	const { t } = useTranslation(["drone-imagery-surveys"]);
-	const section = t("drone-imagery-surveys:aerialSurveyDeliverables", {
+	const { t } = useTranslation(["aerial-drones/drone-imagery-surveys"]);
+	const section = t("aerial-drones/drone-imagery-surveys:aerialSurveyDeliverables", {
 		returnObjects: true,
 	}) as unknown as DeliverablesContent;
 	const items = Array.isArray(section.items) ? section.items : [];

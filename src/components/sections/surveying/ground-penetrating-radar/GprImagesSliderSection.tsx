@@ -17,8 +17,8 @@ interface GprImagesSliderContent {
 }
 
 export function GprImagesSliderSection() {
-	const { t } = useTranslation(["ground-penetrating-radar"]);
-	const section = t("ground-penetrating-radar:gprImagesSlider", {
+	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
+	const section = t("surveying/ground-penetrating-radar:gprImagesSlider", {
 		returnObjects: true,
 	}) as unknown as GprImagesSliderContent;
 	const items = Array.isArray(section.items) ? section.items : [];

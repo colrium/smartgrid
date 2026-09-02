@@ -39,7 +39,7 @@ const Page: NextPage<PageProps> = () => {
 	);
 };
 export const getServerSideProps: GetServerSideProps = async (context) => {
-	const i18nProps = await getI18nProps(context, ["common", "meta", "ground-penetrating-radar"]);
+	const i18nProps = await getI18nProps(context, ["common", "meta", "surveying/ground-penetrating-radar"]);
 
 	if (!i18nProps) return { notFound: true };
 

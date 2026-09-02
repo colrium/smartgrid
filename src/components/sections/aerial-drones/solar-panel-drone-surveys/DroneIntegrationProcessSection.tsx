@@ -19,8 +19,8 @@ interface ProcessContent {
 }
 
 export function DroneIntegrationProcessSection() {
-	const { t } = useTranslation(["solar-panel-drone-surveys"]);
-	const section = t("solar-panel-drone-surveys:droneIntegrationProcess", {
+	const { t } = useTranslation(["aerial-drones/solar-panel-drone-surveys"]);
+	const section = t("aerial-drones/solar-panel-drone-surveys:droneIntegrationProcess", {
 		returnObjects: true,
 	}) as unknown as ProcessContent;
 	const items = Array.isArray(section.items) ? section.items : [];

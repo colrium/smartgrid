@@ -9,8 +9,8 @@ interface SliderSectionContent {
 }
 
 export function ImageSliderSection() {
-	const { t } = useTranslation(["photography-video-marketing"]);
-	const section = t("photography-video-marketing:imageSlider", {
+	const { t } = useTranslation(["aerial-drones/photography-video-marketing"]);
+	const section = t("aerial-drones/photography-video-marketing:imageSlider", {
 		returnObjects: true,
 	}) as unknown as SliderSectionContent;
 	const slides = Array.isArray(section.items) ? section.items : [];

@@ -21,8 +21,8 @@ interface MAndEHeroContent {
 }
 
 export function HeroSection() {
-	const { t } = useTranslation(["monitoring-and-evaluation"]);
-	const hero = t("monitoring-and-evaluation:hero", {
+	const { t } = useTranslation(["aerial-drones/monitoring-and-evaluation"]);
+	const hero = t("aerial-drones/monitoring-and-evaluation:hero", {
 		returnObjects: true,
 	}) as unknown as MAndEHeroContent;
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");

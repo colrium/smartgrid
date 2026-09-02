@@ -14,8 +14,8 @@ interface Lmx200FeaturesContent {
 }
 
 export function Lmx200FeaturesSection() {
-	const { t } = useTranslation(["ground-penetrating-radar"]);
-	const section = t("ground-penetrating-radar:lmx200Features", {
+	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
+	const section = t("surveying/ground-penetrating-radar:lmx200Features", {
 		returnObjects: true,
 	}) as unknown as Lmx200FeaturesContent;
 

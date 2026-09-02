@@ -22,8 +22,8 @@ interface FleetContent {
 }
 
 export function DroneFleetSection() {
-	const { t } = useTranslation(["aerial-drones"]);
-	const section = t("aerial-drones:droneFleet", {
+	const { t } = useTranslation(["aerial-drones/landing"]);
+	const section = t("aerial-drones/landing:droneFleet", {
 		returnObjects: true,
 	}) as unknown as FleetContent;
 	const items = Array.isArray(section?.items) ? section.items : [];

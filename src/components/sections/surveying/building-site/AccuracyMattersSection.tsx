@@ -31,8 +31,8 @@ const FALLBACK_ICONS = [
 ];
 
 export function AccuracyMattersSection(): ReactElement {
-	const { t } = useTranslation(["building-site-surveys"]);
-	const section = t("building-site-surveys:accuracyMatters", {
+	const { t } = useTranslation(["surveying/building-site-surveys"]);
+	const section = t("surveying/building-site-surveys:accuracyMatters", {
 		returnObjects: true,
 	}) as unknown as AccuracyContent;
 	const items = Array.isArray(section?.items) ? section.items : [];

@@ -25,8 +25,8 @@ const FALLBACK_ICONS = [
 ];
 
 export function OurCapabilitiesSection() {
-	const { t } = useTranslation(["monitoring-and-evaluation"]);
-	const section = t("monitoring-and-evaluation:ourCapabilities", {
+	const { t } = useTranslation(["aerial-drones/monitoring-and-evaluation"]);
+	const section = t("aerial-drones/monitoring-and-evaluation:ourCapabilities", {
 		returnObjects: true,
 	}) as unknown as CapabilitiesContent;
 	const items = Array.isArray(section.items) ? section.items : [];

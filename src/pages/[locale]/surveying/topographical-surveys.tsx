@@ -41,7 +41,11 @@ const Page: NextPage<PageProps> = () => {
 	);
 };
 export const getServerSideProps: GetServerSideProps = async (context) => {
-	const i18nProps = await getI18nProps(context, ["common", "meta", "topographical-surveys"]);
+	const i18nProps = await getI18nProps(context, [
+		"common",
+		"meta",
+		"surveying/topographical-surveys",
+	]);
 
 	if (!i18nProps) return { notFound: true };
 

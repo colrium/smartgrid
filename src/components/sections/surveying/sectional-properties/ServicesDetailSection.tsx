@@ -25,8 +25,8 @@ const FALLBACK_ICONS = [
 ];
 
 export function ServicesDetailSection() {
-	const { t } = useTranslation(["sectional-properties"]);
-	const section = t("sectional-properties:sectionalPropertyServices", {
+	const { t } = useTranslation(["surveying/sectional-properties"]);
+	const section = t("surveying/sectional-properties:sectionalPropertyServices", {
 		returnObjects: true,
 	}) as unknown as ServicesDetailContent;
 	const items = Array.isArray(section.items) ? section.items : [];

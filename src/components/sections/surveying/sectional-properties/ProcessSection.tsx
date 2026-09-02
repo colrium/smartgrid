@@ -39,8 +39,8 @@ const PHASE_STYLES: Record<string, { chip: string; icon: string }> = {
 const PHASE_FALLBACK = PHASE_STYLES.FIELD;
 
 export function ProcessSection(): ReactElement {
-	const { t } = useTranslation(["sectional-properties"]);
-	const section = t("sectional-properties:process", {
+	const { t } = useTranslation(["surveying/sectional-properties"]);
+	const section = t("surveying/sectional-properties:process", {
 		returnObjects: true,
 	}) as unknown as ProcessContent;
 	const items = Array.isArray(section?.items) ? section.items : [];

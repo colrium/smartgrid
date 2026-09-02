@@ -20,8 +20,8 @@ interface FeaturedProjectsContent {
 }
 
 export function FeaturedProjectsSection() {
-	const { t } = useTranslation(["ground-penetrating-radar"]);
-	const section = t("ground-penetrating-radar:featuredProjects", {
+	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
+	const section = t("surveying/ground-penetrating-radar:featuredProjects", {
 		returnObjects: true,
 	}) as unknown as FeaturedProjectsContent;
 	const items = Array.isArray(section?.items) ? section.items : [];

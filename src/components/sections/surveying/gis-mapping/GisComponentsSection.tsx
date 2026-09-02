@@ -18,8 +18,8 @@ interface GisComponentsContent {
 }
 
 export function GisComponentsSection() {
-	const { t } = useTranslation(["gis-mapping"]);
-	const section = t("gis-mapping:gisComponents", {
+	const { t } = useTranslation(["surveying/gis-mapping"]);
+	const section = t("surveying/gis-mapping:gisComponents", {
 		returnObjects: true,
 	}) as unknown as GisComponentsContent;
 	const list = Array.isArray(section.list) ? section.list : [];

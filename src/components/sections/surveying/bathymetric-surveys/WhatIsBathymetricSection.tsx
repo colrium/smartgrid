@@ -14,8 +14,8 @@ interface WhatIsBathymetricContent {
 }
 
 export function WhatIsBathymetricSection() {
-	const { t } = useTranslation(["bathymetric-surveys"]);
-	const section = t("bathymetric-surveys:whatIsBathymetricSurveys", {
+	const { t } = useTranslation(["surveying/bathymetric-surveys"]);
+	const section = t("surveying/bathymetric-surveys:whatIsBathymetricSurveys", {
 		returnObjects: true,
 	}) as unknown as WhatIsBathymetricContent;
 

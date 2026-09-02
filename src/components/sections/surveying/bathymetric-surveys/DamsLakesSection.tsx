@@ -21,8 +21,8 @@ interface DamsLakesContent {
 }
 
 export function DamsLakesSection() {
-	const { t } = useTranslation(["bathymetric-surveys"]);
-	const section = t("bathymetric-surveys:damsLakesSeaOcean", {
+	const { t } = useTranslation(["surveying/bathymetric-surveys"]);
+	const section = t("surveying/bathymetric-surveys:damsLakesSeaOcean", {
 		returnObjects: true,
 	}) as unknown as DamsLakesContent;
 	const items = Array.isArray(section.items) ? section.items : [];

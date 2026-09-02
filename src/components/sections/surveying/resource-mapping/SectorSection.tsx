@@ -31,8 +31,8 @@ export function SectorSection({
 	imagePosition = "right",
 	tone = "default",
 }: SectorSectionProps) {
-	const { t } = useTranslation(["resource-mapping"]);
-	const section = t(`resource-mapping:${sectionKey}`, {
+	const { t } = useTranslation(["surveying/resource-mapping"]);
+	const section = t(`surveying/resource-mapping:${sectionKey}`, {
 		returnObjects: true,
 	}) as unknown as SectorContent;
 	const items = Array.isArray(section.items) ? section.items : [];

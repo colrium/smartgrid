@@ -18,8 +18,8 @@ interface MethodologyContent {
 const METHOD_ICONS = ["clipboard-text-search-outline", "radar", "chart-timeline-variant"];
 
 export function GprMethodologySection() {
-	const { t } = useTranslation(["ground-penetrating-radar"]);
-	const section = t("ground-penetrating-radar:methodology", {
+	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
+	const section = t("surveying/ground-penetrating-radar:methodology", {
 		returnObjects: true,
 	}) as unknown as MethodologyContent;
 	const items = Array.isArray(section?.items) ? section.items : [];

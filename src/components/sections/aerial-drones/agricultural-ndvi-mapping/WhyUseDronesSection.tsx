@@ -21,8 +21,8 @@ interface WhyUseContent {
 }
 
 export function WhyUseDronesSection() {
-	const { t } = useTranslation(["agricultural-ndvi-mapping"]);
-	const section = t("agricultural-ndvi-mapping:whyUseDronesInAgriculture", {
+	const { t } = useTranslation(["aerial-drones/agricultural-ndvi-mapping"]);
+	const section = t("aerial-drones/agricultural-ndvi-mapping:whyUseDronesInAgriculture", {
 		returnObjects: true,
 	}) as unknown as WhyUseContent;
 	const items = Array.isArray(section.items) ? section.items : [];

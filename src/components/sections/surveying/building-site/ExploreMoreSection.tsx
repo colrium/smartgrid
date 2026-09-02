@@ -19,8 +19,8 @@ interface ExploreContent {
 }
 
 export function ExploreMoreSection() {
-	const { t } = useTranslation(["building-site-surveys"]);
-	const section = t("building-site-surveys:exploreMore", {
+	const { t } = useTranslation(["surveying/building-site-surveys"]);
+	const section = t("surveying/building-site-surveys:exploreMore", {
 		returnObjects: true,
 	}) as unknown as ExploreContent;
 	const items = Array.isArray(section.items) ? section.items : [];

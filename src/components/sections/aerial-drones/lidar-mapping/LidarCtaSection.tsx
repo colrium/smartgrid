@@ -25,8 +25,8 @@ function normalizeHref(href?: string): string | undefined {
 }
 
 export function LidarCtaSection() {
-	const { t } = useTranslation(["lidar-mapping"]);
-	const section = t("lidar-mapping:ctaSection", {
+	const { t } = useTranslation(["aerial-drones/lidar-mapping"]);
+	const section = t("aerial-drones/lidar-mapping:ctaSection", {
 		returnObjects: true,
 	}) as unknown as LidarCtaContent;
 	const ctaHref = normalizeHref(section.ctaPrimary?.href);

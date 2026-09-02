@@ -34,8 +34,8 @@ function BulletList({ items }: { items: string[] }) {
 }
 
 export function TopographicalCostSection() {
-	const { t } = useTranslation(["topographical-surveys"]);
-	const section = t("topographical-surveys:cost", {
+	const { t } = useTranslation(["surveying/topographical-surveys"]);
+	const section = t("surveying/topographical-surveys:cost", {
 		returnObjects: true,
 	}) as unknown as CostContent;
 	const factors = Array.isArray(section?.factors) ? section.factors : [];

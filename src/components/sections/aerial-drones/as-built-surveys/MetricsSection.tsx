@@ -13,8 +13,8 @@ interface MetricsContent {
 }
 
 export function MetricsSection() {
-	const { t } = useTranslation(["aerial-drones-as-built-surveys"]);
-	const section = t("aerial-drones-as-built-surveys:metrics", {
+	const { t } = useTranslation(["aerial-drones/aerial-drones-as-built-surveys"]);
+	const section = t("aerial-drones/aerial-drones-as-built-surveys:metrics", {
 		returnObjects: true,
 	}) as unknown as MetricsContent;
 	const items = Array.isArray(section.items) ? section.items : [];

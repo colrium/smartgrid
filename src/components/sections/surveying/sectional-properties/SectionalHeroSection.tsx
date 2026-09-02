@@ -22,8 +22,8 @@ interface SectionalHeroContent {
 }
 
 export function SectionalHeroSection() {
-	const { t } = useTranslation(["sectional-properties"]);
-	const hero = t("sectional-properties:hero", {
+	const { t } = useTranslation(["surveying/sectional-properties"]);
+	const hero = t("surveying/sectional-properties:hero", {
 		returnObjects: true,
 	}) as unknown as SectionalHeroContent;
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");

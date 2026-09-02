@@ -30,8 +30,8 @@ interface ConsultationContent {
 }
 
 export function ConsultationSection(): ReactElement {
-	const { t } = useTranslation(["building-site-surveys"]);
-	const section = t("building-site-surveys:consultation", {
+	const { t } = useTranslation(["surveying/building-site-surveys"]);
+	const section = t("surveying/building-site-surveys:consultation", {
 		returnObjects: true,
 	}) as unknown as ConsultationContent;
 	const steps = Array.isArray(section?.steps) ? section.steps : [];

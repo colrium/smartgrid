@@ -22,8 +22,8 @@ interface RegistrationCtaContent {
 }
 
 export function RegistrationCtaSection(): ReactElement {
-	const { t } = useTranslation(["sectional-properties"]);
-	const section = t("sectional-properties:registrationCta", {
+	const { t } = useTranslation(["surveying/sectional-properties"]);
+	const section = t("surveying/sectional-properties:registrationCta", {
 		returnObjects: true,
 	}) as unknown as RegistrationCtaContent;
 

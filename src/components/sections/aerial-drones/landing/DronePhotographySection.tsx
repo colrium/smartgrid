@@ -19,8 +19,8 @@ interface PhotographyContent {
 }
 
 export function DronePhotographySection() {
-	const { t } = useTranslation(["aerial-drones"]);
-	const section = t("aerial-drones:dronePhotography", {
+	const { t } = useTranslation(["aerial-drones/landing"]);
+	const section = t("aerial-drones/landing:dronePhotography", {
 		returnObjects: true,
 	}) as unknown as PhotographyContent;
 	const items = Array.isArray(section?.items) ? section.items : [];

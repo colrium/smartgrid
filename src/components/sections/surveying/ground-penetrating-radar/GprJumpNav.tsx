@@ -9,8 +9,8 @@ interface JumpNavItem {
 }
 
 export function GprJumpNav() {
-	const { t } = useTranslation(["ground-penetrating-radar"]);
-	const items = (t("ground-penetrating-radar:jumpNav", {
+	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
+	const items = (t("surveying/ground-penetrating-radar:jumpNav", {
 		returnObjects: true,
 	}) as unknown as JumpNavItem[]) ?? [];
 

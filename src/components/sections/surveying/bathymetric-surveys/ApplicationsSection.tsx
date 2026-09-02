@@ -21,8 +21,8 @@ interface ApplicationsContent {
 }
 
 export function ApplicationsSection() {
-	const { t } = useTranslation(["bathymetric-surveys"]);
-	const section = t("bathymetric-surveys:applications", {
+	const { t } = useTranslation(["surveying/bathymetric-surveys"]);
+	const section = t("surveying/bathymetric-surveys:applications", {
 		returnObjects: true,
 	}) as unknown as ApplicationsContent;
 	const items = Array.isArray(section.items) ? section.items : [];
