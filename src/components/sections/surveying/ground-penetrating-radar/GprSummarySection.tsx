@@ -3,6 +3,7 @@
 import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionHeader } from "@/components/sections/home";
+import { ReactElement } from "react";
 
 interface SummaryContent {
 	tag?: string | null;
