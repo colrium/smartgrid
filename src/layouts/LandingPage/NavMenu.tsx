@@ -101,11 +101,12 @@ export default function NavMenu({
 									color="inherit"
 									size="small"
 									variant="text"
-									className={`text-sm mr-4 no-underline! capitalize!  relative transition-colors after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-0 after:transition-all after:duration-300 rounded-md hover:after:w-full ${
+									className={`text-sm! mr-4 no-underline! capitalize!  relative transition-colors after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-0 after:transition-all after:duration-300 rounded-md hover:after:w-full ${
 										variant === "dark"
 											? "text-surface hover:text-primary-300 after:bg-primary-300"
 											: "text-ink hover:text-primary-500 after:bg-primary"
-									}`}
+                                        }`}
+                                    data-ripple-dark="true"
 								>
 									{item.label}
 								</Button>
@@ -116,7 +117,7 @@ export default function NavMenu({
 									onClose={() => handleClose(i)}
 									anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
 									transformOrigin={{ vertical: "top", horizontal: "center" }}
-									className={`rounded-lg border transition-all duration-500 ${menuClassName} backdrop-blur-lg card-shadow p-2 ${
+									className={`rounded-lg border transition-[top] duration-500 ${menuClassName} backdrop-blur-lg card-shadow p-2 ${
 										variant === "dark" ? "border-white/10" : "border-ink/10"
 									}`}
 									style={{ marginTop: 10, minWidth: 260 }}
