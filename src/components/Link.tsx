@@ -17,16 +17,8 @@ const isInternalLink = (href: NextLinkProps["href"]): boolean => {
 export default function Link(props: LinkProps): ReactElement {
 	const {
 		href,
-		as,
-		replace,
-		scroll,
-		shallow,
-		prefetch,
-		locale,
-		legacyBehavior,
 		children,
 		target,
-		rel,
 		...anchorProps
 	} = props;
 
@@ -34,14 +26,8 @@ export default function Link(props: LinkProps): ReactElement {
 		return (
 			<NextLink
 				href={href}
-				as={as}
-				replace={replace}
-				scroll={scroll}
-				shallow={shallow}
-				prefetch={prefetch}
-				locale={locale}
-				legacyBehavior={legacyBehavior}
-                target={target} rel={rel} {...anchorProps}
+                target={target}
+                {...anchorProps}
 			>
 				{children}
 			</NextLink>
@@ -49,7 +35,7 @@ export default function Link(props: LinkProps): ReactElement {
 	}
 
 	return (
-		<a href={typeof href === "string" ? href : undefined} target={target} rel={rel} {...anchorProps}>
+		<a href={typeof href === "string" ? href : undefined} target={target || "blank"} {...anchorProps}>
 			{children}
 		</a>
 	);
