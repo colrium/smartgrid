@@ -21,9 +21,9 @@
 		"import-locales": "tsx scripts/import-locales.ts",
 		"sync-locales": "tsx scripts/sync-locales.ts",
 		"nuke:install": "rimraf ./node_modules ./package-lock.json",
-		"toc": "i18next-resources-for-ts toc -i ./public/locales/en -o ./@types/resources.ts",
-		"merge": "i18next-resources-for-ts merge -i ./public/locales/en -o ./@types/resources.json",
-		"interface": "i18next-resources-for-ts interface -i ./public/locales/en -o ./@types/resources.d.ts",
+		"toc": "i18next-cli types",
+		"merge": "i18next-cli types",
+		"interface": "i18next-cli types",
 		"typegen": "sanity schema extract && sanity typegen generate"
 	},
 	"dependencies": {
