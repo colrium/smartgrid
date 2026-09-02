@@ -46,8 +46,8 @@ const Page: NextPage<PageProps> = () => {
 				<GprTechnologySection />
 				<FeaturedProjectsSection />
 				<GprSummarySection />
-				<GprFinalCtaSection />
 				<GprFaqSection />
+				<GprFinalCtaSection />
 			</div>
 		</div>
 	);

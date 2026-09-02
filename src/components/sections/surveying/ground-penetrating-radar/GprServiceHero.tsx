@@ -138,7 +138,7 @@ export function GprServiceHero() {
 								
 									<Slider
 										slides={slides}
-										autoplay={5000}
+										autoplay={15000}
 										showArrows
 										showDots
 										imgClassName="object-fill!"

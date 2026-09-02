@@ -5,22 +5,22 @@
 		"image": "/media/surveying/ground-penetrating-radar/hero.png",
 		"images": [
 			{
-				"url": "/media/surveying/ground-penetrating-radar/hero.png",
+				"url": "/media/surveying/ground-penetrating-radar/gpr-20.jpeg",
 				"label": "LMX200",
 				"description": "The LMX200 GPR system with SmartCart® – the industry standard for utility locating, concrete scanning, and subsurface imaging."
 			},
 			{
-				"url": "/media/surveying/ground-penetrating-radar/16.jpeg",
+				"url": "/media/surveying/ground-penetrating-radar/gpr-22.jpeg",
 				"label": "Non-Destructive",
 				"description": "Non-invasive subsurface investigation that preserves infrastructure integrity while delivering accurate underground data."
 			},
 			{
-				"url": "/media/surveying/ground-penetrating-radar/05.jpeg",
+				"url": "/media/surveying/ground-penetrating-radar/gpr-21.jpeg",
 				"label": "Deep Detection",
 				"description": "Penetrates up to 8 meters (26 feet) depth, capturing rebar, conduits, voids, and utility lines with high-resolution clarity."
 			},
 			{
-				"url": "/media/surveying/ground-penetrating-radar/gpr-16.jpeg",
+				"url": "/media/surveying/ground-penetrating-radar/gpr-22.jpeg",
 				"label": "Portable & Rugged",
 				"description": "Lightweight, collapsible design with IP65-rated weather resistance – built for demanding job sites and easy transport."
 			},
@@ -30,14 +30,44 @@
 				"description": "Built-in GPS and DMI (Distance Measurement Instrument) for precise georeferencing and seamless GIS data export."
 			},
 			{
-				"url": "/media/surveying/ground-penetrating-radar/data-integration.png",
-				"label": "Real Time Results",
-				"description": "Real-time data processing with on-screen visualization – enabling instant field decisions and rapid site assessment."
+				"url": "/media/surveying/ground-penetrating-radar/gpr-22.jpeg",
+				"label": "Real-Time Data Display",
+				"description": "Live on-screen radargrams with adjustable depth and gain settings for instant field analysis and decision-making."
 			},
 			{
-				"url": "/media/surveying/ground-penetrating-radar/topographical-mapping.png",
-				"label": "Advanced Analysis Software",
-				"description": "Powerful post-processing software with 3D visualization, slice generation, and automated reporting tools."
+				"url": "/media/surveying/ground-penetrating-radar/gpr-23.jpeg",
+				"label": "Multi-Frequency Antenna",
+				"description": "Dual-frequency (200 MHz & 500 MHz) antenna support for balancing depth penetration and near-surface resolution in one system."
+			},
+			{
+				"url": "/media/surveying/ground-penetrating-radar/gpr-07.jpeg",
+				"label": "Utility Mapping",
+				"description": "Accurately maps metal and non-metallic utilities including PVC, asbestos-cement, and fiber-optic cables beneath pavements."
+			},
+			{
+				"url": "/media/surveying/ground-penetrating-radar/gpr-19.jpeg",
+				"label": "Concrete Scanning",
+				"description": "Identifies rebar, post-tension cables, conduits, and voids within concrete slabs – essential for safe core drilling and cutting."
+			},
+			{
+				"url": "/media/surveying/ground-penetrating-radar/gpr-18.jpeg",
+				"label": "Void & Sinkhole Detection",
+				"description": "Detects subsurface voids, cavities, and sinkhole precursors to prevent structural failures and enhance site safety."
+			},
+			{
+				"url": "/media/surveying/ground-penetrating-radar/gpr-16.jpeg",
+				"label": "Asphalt Thickness Measurement",
+				"description": "Measures pavement and asphalt layer thickness with millimeter accuracy for quality control and road rehabilitation projects."
+			},
+			{
+				"url": "/media/surveying/ground-penetrating-radar/gpr-15.jpeg",
+				"label": "Environmental & Geotechnical Surveys",
+				"description": "Maps soil strata, water table levels, and buried contamination plumes for environmental assessments and geotechnical investigations."
+			},
+			{
+				"url": "/media/surveying/ground-penetrating-radar/gpr-11.jpeg",
+				"label": "Data Processing & 3D Visualization",
+				"description": "Advanced post-processing software with 3D slice-view and depth-slice animation for comprehensive subsurface interpretation and reporting."
 			}
 		],
 		"browseAll": {
