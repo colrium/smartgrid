@@ -9,36 +9,462 @@
 			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Cadastral Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Cadastral Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
-	"section1": {
+	"whatsABoundarySurvey": {
 		"tag": "Jenga kwa Ujasiri",
 		"headline": "Ni nini uchunguzi wa mipaka?",
-		"image": "/media/surveying/cadastral-surveys/01-02.jpg",
+		"image": "/media/surveying/cadastral-surveys/AG8ngQ.png",
 		"description": "Uchunguzi wa mipaka huamua mistari ya kisheria ya mali ya kiwanja cha ardhi. Kwa kutumia GPS ya kisasa, total stations, na rekodi za kihistoria za ardhi, SmartGrid Surveying hutoa ramani sahihi sana zinazofafanua mipaka ya mali na kutambua uvamizi au hitilafu zozote."
 	},
-	"whyBoundarySurveys": {
-		"tag": null,
-		"headline": "Kwa Nini Uchunguzi wa Mipaka Ni Muhimu? ",
-		"description": "",
+	"postHeroCta": {
+		"tag": "Uchunguzi wa Cadastral nchini Kenya",
+		"headline": "Uchunguzi wa Cadastral nchini Kenya kwa Hati Miliki, Ugawaji wa Viwanja na Uthibitisho wa Mipaka",
+		"description": "Uchunguzi sahihi wa mipaka kwa viwango vya usajili, ulioandaliwa na wachunguzi walioidhinishwa na kutayarishwa kwa uwasilishaji wa Ardhisasa — kwa wanunuzi, wamiliki wa ardhi na wasanidi miradi.",
+		"ctaPrimary": {
+			"label": "Zungumza na Mchunguzi",
+			"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20talk%20to%20a%20surveyor%20about%20a%20cadastral%20survey.",
+			"icon": "whatsapp"
+		},
+		"ctaSecondary": {
+			"label": "Tuma Ombi",
+			"href": "/contact",
+			"icon": "email-fast-outline"
+		}
+	},
+	"whenYouNeed": {
+		"tag": "Unapohitaji",
+		"headline": "Unapohitaji Uchunguzi wa Cadastral",
+		"description": "Kuanzia uthibitisho wa hati hadi suluhisho la migogoro — hivi ni muda ambao uchunguzi wa mipaka ulioidhinishwa unalinda ardhi yako, pesa yako na nyaraka zako.",
+		"image": "/media/surveying/cadastral-surveys/01-02.jpg",
+		"imageBadge": "Sheria ya Upimaji Sura ya 299 · Tayari kwa Ardhisasa",
 		"items": [
 			{
+				"icon": "file-certificate-outline",
+				"title": "Kununua Ardhi / Kuhakiki Hati Miliki",
+				"description": "Thibitisha kuwa kiwanja kilichopo ardhini kinaendana na ramani ya hati na rekodi za usajili — kabla ya kulipa shilingi hata moja."
+			},
+			{
+				"icon": "grid-large",
+				"title": "Kugawa Viwanja",
+				"description": "Gawa kiwanja kisheria kuwa vitengo vinavyouzwa kwa ramani za ugawaji zilizoidhinishwa, uchunguzi wa mutation na beacon mpya."
+			},
+			{
 				"icon": "scale-balance",
-				"title": "Epuka migogoro ya kisheria",
-				"description": "Zuia migogoro ya gharama kubwa ya mistari ya mali na majirani kwa kuhakikisha utambuzi sahihi wa mipaka."
+				"title": "Kutatua Migogoro ya Kisheria ya Mipaka",
+				"description": "Ushahidi wa mipaka unaofaa mahakamani na beacon zilizohuishwa upya kutatua mistari ya umiliki na wamiliki jirani."
 			},
 			{
 				"icon": "account-hard-hat",
-				"title": "Hakikisha Uzingatiaji wa Ujenzi",
-				"description": "Jenga ndani ya mipaka yako iliyofafanuliwa kisheria ili kukidhi mahitaji ya ukandaji na kanuni."
+				"title": "Kujiandaa kwa Idhini ya Ujenzi",
+				"description": "Takwimu za mipaka zilizothibitishwa ambazo kaunti, benki na mamlaka huhitaji kabla ya kuidhinisha ramani za ujenzi.",
+				"href": "/surveying/building-site-surveys"
 			},
 			{
-				"icon": "shield-sun",
+				"icon": "domain",
+				"title": "Usajili wa Mali ya Kipande (Ghorofa)",
+				"description": "Uamuzi wa mipaka ya vitengo na ramani za sectional kwa usajili wa ghorofa na maeneo ya matumizi mchanganyiko.",
+				"href": "/surveying/sectional-properties"
+			},
+			{
+				"icon": "shield-sun-outline",
 				"title": "Linda Uwekezaji Wako",
-				"description": "Jua hasa unachomiliki kabla ya kununua, kuuza, au kuendeleza ardhi."
+				"description": "Jua hasa unachomiliki kabla ya kununua, kuuza, kuweka rehani au kuendeleza ardhi."
 			},
 			{
-				"icon": "receipt-text-check",
+				"icon": "fence",
 				"title": "Suluhisha Uvamizi",
-				"description": "Tambua miundo au masuala ya ua yanayopishana na uchukue hatua za kurekebisha kabla ya kuwa matatizo makubwa."
+				"description": "Gundua ua, miundo na haki za njia zinazopishana mapema — na uzirekebishe kabla ya kuwa migogoro ya kisheria au miamala iliyosimama."
+			}
+		]
+	},
+	"process": {
+		"tag": "Inavyofanya Kazi",
+		"headline": "Mchakato wa Uchunguzi wa Mipaka — Kutoka Ziara ya Tovuti hadi Idhini ya Kaunti",
+		"description": "Mtiririko wa kazi wa hati sita ulio wazi. Unajua wakati wowote kiwanja chako kiko katika hatua gani na kinachofuata hasa.",
+		"outcomeLabel": "Imesajiliwa, ina hati & haina migogoro",
+		"steps": [
+			{
+				"icon": "file-search-outline",
+				"label": "Ziara ya Tovuti & Ukaguzi wa Nyaraka",
+				"description": "Tunatembea kiwanja pamoja nawe, tunakagua hati miliki, ramani ya hati na uchunguzi wa awali, na kurekodi makazi na maboresho yaliyopo."
+			},
+			{
+				"icon": "database-search-outline",
+				"label": "Uthibitisho wa Usajili (Ardhisasa / RIM)",
+				"description": "Rekodi za kiwanja zinapatikana na kulinganishwa na Ramani ya Faharasa ya Usajili (RIM) na hifadhidata ya Ardhisasa ili kuthibitisha mipaka ya kisheria."
+			},
+			{
+				"icon": "satellite-variant",
+				"label": "Uchunguzi wa Shamba wa GNSS (RTK Control)",
+				"description": "Uchunguzi wa RTK GNSS na total station unaanzisha mtandao wa udhibiti uliounganishwa na gridi ya kitaifa kwa usahihi wa kiwango cha sentimita."
+			},
+			{
+				"icon": "map-marker-check",
+				"label": "Kuweka Beacon & Uthibitisho wa Mipaka",
+				"description": "Kona za mipaka zinakokotolewa, zinathibitishwa na wamiliki jirani, na beacon za kudura zinawekwa au kurekebishwa ardhini."
+			},
+			{
+				"icon": "ruler-square-compass",
+				"label": "Maandalizi ya Ramani & Kokotoo",
+				"description": "Uchunguzi unapunguzwa na kurekebishwa; eneo, traverses na ramani za mwisho zinakokotolewa na kukaguliwa na mchunguzi aliyeidhinishwa."
+			},
+			{
+				"icon": "clipboard-check-outline",
+				"label": "Uwasilishaji & Idhini ya Kaunti",
+				"description": "Nyaraka za cadastral zilizokusanyika zinawasilishwa kwa usajili (Ardhisasa) na ofisi za kaunti kwa idhini na usajili."
+			}
+		]
+	},
+	"processCta": {
+		"tag": "Anza Sasa",
+		"headline": "Anza Mchakato Wako wa Uchunguzi Leo",
+		"description": "Tutumie maelezo ya kiwanja chako — namba ya hati, eneo na ukubwa — nasi tutakupangia hatua halisi za uchunguzi, gharama na idhini za ardhi yako.",
+		"ctaPrimary": {
+			"label": "Omba Mpango Wako wa Uchunguzi",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Survey Process Request: Cadastral Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to start the cadastral survey process for my parcel.%0D%0A%0D%0ALocation (County / Area):%0D%0ATitle deed or parcel number:%0D%0AApproximate size (acres):%0D%0AService needed (boundary / subdivision / dispute):%0D%0A%0D%0AThank you.",
+			"icon": "email-fast-outline"
+		},
+		"ctaSecondary": {
+			"label": "WhatsApp Mchunguzi",
+			"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20start%20a%20cadastral%20survey%20process%20for%20my%20parcel.",
+			"icon": "whatsapp"
+		},
+		"chips": [
+			"Wachunguzi walioidhinishwa",
+			"Uwasilishaji tayari kwa Ardhisasa",
+			"Inazingatia ISK"
+		]
+	},
+	"cost": {
+		"tag": "Mwongozo wa Gharama",
+		"headline": "Gharama ya Uchunguzi wa Cadastral nchini Kenya",
+		"description": "Bei za kielelezo kwa uchunguzi wa cadastral na mipaka. Kila kiwanja hunukuliwa baada ya ukaguzi wa usajili — hakuna malipo yaliyofichwa, hakuna mashangazo.",
+		"featuredLabel": "Iliyohitajiwa Zaidi",
+		"tiers": [
+			{
+				"icon": "home-outline",
+				"title": "Kiwanja Ndogo cha Makazi",
+				"price": "KES 15,000 – 80,000",
+				"note": "Uthibitisho wa mipaka, ubadilishaji wa beacon na taarifa za uchunguzi zilizo tayari kwa hati kwa viwanja vya kawaida vya makazi.",
+				"features": [
+					"Utafutaji wa usajili & ukaguzi wa ramani ya hati",
+					"Beacon za mipaka zinawekwa au kurekebishwa",
+					"Taarifa ya uchunguzi iliyosainiwa kwa rekodi zako"
+				]
+			},
+			{
+				"icon": "grid-large",
+				"title": "Miradi ya Ugawaji",
+				"price": "Nukuu kwa mradi",
+				"priceUnit": "kuanzia KES 10,000 kwa kila kitengo",
+				"note": "Mtiririko kamili wa ugawaji kutoka idhini ya mipango hadi ramani za ugawaji zilizoidhinishwa na usajili kwa kila kitengo.",
+				"features": [
+					"Kubuni ugawaji & mawasiliano ya mipango",
+					"Uchunguzi wa mutation & beacon mpya kwa kila kitengo",
+					"Nyaraka tayari kwa uwasilishaji wa Ardhisasa"
+				],
+				"featured": true
+			},
+			{
+				"icon": "land-fields",
+				"title": "Mashamba Makubwa",
+				"price": "Bei maalum ya uhandisi",
+				"note": "Mashamba ya vipande vingi, ranchi na ardhi ya taasisi vinapangwa na timu za miradi maalum na mitandao ya udhibiti.",
+				"features": [
+					"Mtandao wa udhibiti wa GNSS kote shambani",
+					"Upatanishaji wa mipaka wa vipande vyote",
+					"Mchunguzi aliyeidhinishwa & timu ya mradi maalum"
+				]
+			}
+		],
+		"cta": {
+			"label": "Pata Bei Sahihi kwa Kiwanja Chako",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Pricing Request: Cadastral Survey&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like accurate pricing for a cadastral survey on my parcel.%0D%0A%0D%0ALocation (County / Area):%0D%0ATitle deed or parcel number:%0D%0AApproximate size (acres):%0D%0AService needed (boundary / subdivision / dispute):%0D%0A%0D%0AThank you.",
+			"icon": "cash-multiple"
+		}
+	},
+	"timeline": {
+		"tag": "Muda Unachukua",
+		"headline": "Uchunguzi wa Cadastral Huchukua Muda Gani?",
+		"description": "Muda wa uchunguzi unategemea idhini za usajili na ugumu wa kiwanja. Hii ni ya kweli ya kupanga nayo.",
+		"scaleNote": "Urefu wa mstari unaonyesha muda wa juu wa kawaida wa kila huduma.",
+		"items": [
+			{
+				"icon": "calendar-clock",
+				"title": "Uchunguzi wa Kawaida",
+				"range": "Siku 7–21",
+				"minDays": 7,
+				"maxDays": 21,
+				"description": "Uthibitisho wa mipaka na kuweka beacon, kulingana na idhini za usajili na ufikiaji wa kiwanja."
+			},
+			{
+				"icon": "grid-large",
+				"title": "Ugawaji",
+				"range": "Wiki 2–6",
+				"minDays": 14,
+				"maxDays": 42,
+				"description": "Idhini ya mipango, uchunguzi wa mutation, idhini ya ramani na usajili wa vitengo vipya."
+			},
+			{
+				"icon": "gavel",
+				"title": "Suluhisho la Migogoro",
+				"range": "Inategemea ugumu",
+				"description": "Migogoro ya mahakama au ya kifamilia hudumu muda mrefu — ubora wa ushahidi unaamua kasi ya kutatuliwa."
+			}
+		],
+		"note": "Chelezo karibu daima hutoka kwa foleni za usajili na nyaraka zilizokosekana — tunayatatua zote mbili kabla ya kazi ya shamba kuanza.",
+		"cta": {
+			"label": "Angalia Muda wa Ardhi Yako Leo",
+			"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20know%20the%20timeline%20for%20a%20cadastral%20survey%20on%20my%20land.",
+			"icon": "whatsapp"
+		}
+	},
+	"compliance": {
+		"tag": "Uzingatiaji wa Kisheria & Udhibiti",
+		"headline": "Uzingatiaji wa Kisheria & Ardhisasa Unaweza Kutegemea",
+		"description": "Kila uchunguzi wa cadastral tunaoleta hutekelezwa chini ya sheria zinazosimamia ardhi nchini Kenya — hivyo nyaraka zako zinapita ukaguzi kwa usajili, benki na mahakama.",
+		"checklistTitle": "Orodha ya uthibitisho ya SmartGrid",
+		"checklist": [
+			{
+				"icon": "gavel",
+				"title": "Sheria ya Usajili wa Ardhi, 2012",
+				"description": "Uchunguzi ulioandaliwa kwa usajili chini ya Sheria inayosimamia hati miliki, mipaka ya vipande na uhamisho nchini Kenya."
+			},
+			{
+				"icon": "seal",
+				"title": "Sheria ya Upimaji, Sura ya 299",
+				"description": "Kazi zote za shamba, kokotoo na ramani zinazingatia Sheria ya Upimaji na Kanuni zake — zikisainiwa na mchunguzi aliyeidhinishwa."
+			},
+			{
+				"icon": "earth",
+				"title": "Mahitaji ya Uwasilishaji wa Ardhisasa",
+				"description": "Matokeo yamepakitiwa kwa viwango vya uwasilishaji wa kidijitali vya Ardhisasa: takwimu zilizogeoreferensiwa, ramani za hati na nyaraka za ziada."
+			},
+			{
+				"icon": "city",
+				"title": "Mchakato wa Idhini ya Kaunti",
+				"description": "Tunashirikiana na ofisi za mipango za kaunti kwa idhini za ugawaji na uidhinishaji wa maendeleo yanayohusiana na uchunguzi wako."
+			},
+			{
+				"icon": "account-check-outline",
+				"title": "Uzingatiaji wa ISK & Mchunguzi Aliyeidhinishwa",
+				"description": "Kazi hutekelezwa na kusainiwa na mchunguzi aliyeandikishwa na aliyeidhinishwa wa Taasisi ya Wapimaji Ardhi Kenya (ISK)."
+			}
+		],
+		"relatedLabel": "Miongozo mingine ya uzingatiaji",
+		"related": [
+			{
+				"label": "Sheria ya Mali ya Kipande, 2020",
+				"href": "/surveying/sectional-properties"
+			},
+			{
+				"label": "Uchunguzi wa Ujenzi & Uhandisi wa Tovuti",
+				"href": "/surveying/building-site-surveys"
+			},
+			{
+				"label": "Uchunguzi wa Topografia kwa Mpango",
+				"href": "/surveying/topographical-surveys"
+			}
+		]
+	},
+	"caseStudy": {
+		"tag": "Kesi Uliyofanya · Kaunti ya Kiambu",
+		"headline": "Uchunguzi wa Ugawaji wa Kiambu – Kiwanja cha Eka 40",
+		"subtitle": "Usajili wa Hati & Utatuzi wa Migogoro ya Mipaka Kwa Kutumia Uchunguzi sahihi wa GNSS",
+		"overview": {
+			"label": "01 · Muhtasari wa Mradi",
+			"paragraphs": [
+				"Kiwanja cha eka 40 katika Kaunti ya Kiambu kilihitaji ugawaji rasmi, uthibitisho wa cadastral, na utatuzi wa migogoro ya muda mrefu ya mipaka kati ya wamiliki jirani."
+			],
+			"criticalTitle": "Mradi huu ulikuwa muhimu kwa:",
+			"critical": [
+				"Uchakataji wa hati miliki chini ya mahitaji ya usajili wa ardhi ya Kenya",
+				"Kutatua madai ya mipaka yanayopishana",
+				"Kuandaa ramani za ugawaji zinazotetea kisheria",
+				"Kuwezesha maendeleo na mauzo ya ardhi siku zijazo"
+			],
+			"deployNote": "SmartGrid Surveying ilitumia RTK GNSS, mitandao ya udhibiti ya total station, na mtiririko wa upatanishaji wa usajili kurejesha usahihi wa kimwili na uwazi wa kisheria.",
+			"deployIcon": "satellite-variant"
+		},
+		"challenge": {
+			"label": "02 · Changamoto (Hali ya Awali)",
+			"intro": "Tovuti ilikuwa na utata mwingi:",
+			"items": [
+				"Tafsiri zinazopingana za mipaka kati ya wamiliki wa ardhi",
+				"Ramani ya usajili iliyopitilizaaje (tofauti za ramani za hati)",
+				"Beacon za mipaka zilizopotea au zilizoharibika",
+				"Madai ya vipande yanayopishana katika ugawaji jirani",
+				"Ukosefu wa udhibiti uliogeoreferensiwa unaounganishwa na mifumo ya kisasa ya kuradiani"
+			],
+			"images": [
+				
+				{
+					"src": "/media/surveying/cadastral-surveys/02-02.jpg",
+					"alt": "Beacon ya mipaka iliyoharibika ikisubiri kuanzishwa upya kwenye tovuti"
+				},
+				{
+					"src": "/media/surveying/cadastral-surveys/02-03.jpg",
+					"alt": "Vipande jirani vinavyopishana na madai katika Kaunti ya Kiambu"
+				},
+                {
+					"src": "/media/surveying/cadastral-surveys/02-01.jpg",
+					"alt": "Mstari wa mipaka uliokuzwa na usio na alama kwenye kiwanja cha Kiambu kabla ya uchunguzi"
+				},
+			]
+		},
+		"methodology": {
+			"label": "03 · Mbinu ya Uchunguzi & Mtiririko wa GPS",
+			"intro": "Mtiririko wa kazi wa kiwango cha uhandisi ulio na muundo ulitumika kuhakikisha usahihi wa kisheria na wa kimwili kwa kuzingatia viwango vya cadastral vya Kenya na mahitaji ya Ardhisasa.",
+			"steps": [
+				{
+					"title": "Hatua ya 1: Somo la Dawati & Upatikanaji wa Usajili",
+					"points": [
+						"RIM ya awali (Ramani ya Faharasa ya Usajili) ilipatikana",
+						"Ramani za hati za kihistoria na marejeo ya vipande yilikaguliwa",
+						"Kutosiana katika mwelekeo wa mipaka kulitambuliwa"
+					]
+				},
+				{
+					"title": "Hatua ya 2: Kuanzishwa kwa Mtandao wa Udhibiti",
+					"points": [
+						"Kituo cha RTK GNSS kiliwekwa kwenye alama imara",
+						"Vidhibiti vikuu viliwekwa kwenye kona za kiwanja",
+						"Total station ilitumika kwa udhibiti mnene katika maeneo yenye vizuizi"
+					]
+				},
+				{
+					"title": "Hatua ya 3: Ujenzi Upya wa Mipaka Shambani",
+					"points": [
+						"Mzingo uliotembelewa na wamiliki wa ardhi na mashahidi",
+						"Beacon zilizopo zilitambuliwa na alama zilizopotea zilirejeshwa",
+						"Vidhibiti vya kuradiani vya msongamano wa juu vilirekodiwa"
+					]
+				},
+				{
+					"title": "Hatua ya 4: Uchakataji wa Takwimu & Marekebisho",
+					"points": [
+						"Kubadilishwa kuradiani kwenye mfumo wa UTM Arc 1960",
+						" Marekebisho ya squares madogo ya mtandao wa udhibiti",
+						"Uwekaji juu wa takwimu za usajili wa cadastral"
+					]
+				},
+				{
+					"title": "Hatua ya 5: Kubuni Ugawaji & Rasimu ya Kisheria",
+					"points": [
+						"Ugawaji wa vipande kulingana na vitengo vilivyokubaliwa vya umiliki",
+						"Uzalishaji wa kurasa za ramani za ugawaji",
+						"Maandalizi ya uwasilishaji kwa usajili wa ardhi"
+					]
+				}
+			],
+			"images": [
+				{
+					"src": "/media/surveying/cadastral-surveys/03-01.jpg",
+					"alt": "Kipokea cha RTK GNSS kilichowekwa juu ya kidhibiti kwenye kiwanja"
+				},
+				{
+					"src": "/media/surveying/cadastral-surveys/03-02.jpg",
+					"alt": "Mchunguzi akithibitisha beacon ya mipaka iliyorejeshwa shambani"
+				}
+			]
+		},
+		"outcome": {
+			"label": "04 · Matokeo (Hali ya Baadaye)",
+			"intro": "Uingiliaji ulisababisha muundo wa cadastral uliotatuliwa kikamilifu na uwazi wa kisheria na wa kimwili.",
+			"deliverablesTitle": "Matokeo Makuu",
+			"deliverables": [
+				"Ramani sahihi ya ugawaji iliyoidhinishwa kwa usajili",
+				"Beacon za mipaka zilizorejeshwa na kuthibitishwa",
+				"Kuondolewa kwa madai ya vipande yanayopishana",
+				"Hifadhi ya takwimu za cadastral iliogeoreferensiwa kidijitali",
+				"Nyaraka tayari kwa uwasilishaji zinazozingatia Ardhisasa"
+			]
+		},
+		"impact": {
+			"label": "05 · Athari ya Mradi",
+			"items": [
+				{
+					"icon": "handshake-outline",
+					"text": "Migogoro imetatuliwa bila kuongezeka kwa kesi mahakamani"
+				},
+				{
+					"icon": "file-check-outline",
+					"text": "Imewezesha uchakataji rasmi wa hati kwa vitengo vyote vilivyogawanywa"
+				},
+				{
+					"icon": "trending-up",
+					"text": "Uwezo wa thamani ya ardhi umeongezeka kutokana na uwazi wa kisheria"
+				},
+				{
+					"icon": "database-outline",
+					"text": "Imetoa hifadhi ya kuduru ya jioreferensi kwa maendeleo ya siku zijazo"
+				},
+				{
+					"icon": "shield-check",
+					"text": "Hatari kwa wanunuzi na wasanidi miradi imepungua"
+				}
+			]
+		},
+		"techSummary": {
+			"label": "06 · Muhtasari wa Kiufundi",
+			"componentHeader": "Kipengele",
+			"specHeader": "Maelezo",
+			"rows": [
+				{
+					"component": "Mfumo wa Uchunguzi",
+					"specification": "RTK GNSS + Total Station"
+				},
+				{
+					"component": "Mfumo wa Kuradiani",
+					"specification": "Arc 1960 / UTM Zone 37S"
+				},
+				{
+					"component": "Mbinu",
+					"specification": "Ujenzi Upya wa Cadastral + Upatanishaji wa Mipaka"
+				},
+				{
+					"component": "Matokeo",
+					"specification": "Ramani ya Ugawaji + Beacon Zilizothibitishwa"
+				},
+				{
+					"component": "Uzingatiaji",
+					"specification": "Sheria ya Ardhi ya Kenya + Sheria ya Upimaji Sura ya 299"
+				}
+			]
+		},
+		"engineeringNote": {
+			"label": "07 · Kumbukumbu ya Mwisho ya Uhandisi",
+			"text": "Mradi huu unaonyesha jinsi uchunguzi wa kisasa wa cadastral unaotumia GNSS unavyoondoa utata katika mipaka ya umiliki wa ardhi huku ukidumisha uzingatiaji wa mifumo ya usajili wa ardhi ya Kenya. SmartGrid Surveying inaunganisha usahihi wa shamba + akili ya kijiografia ya kisheria kubadilisha ardhi inayogombaniwa kuwa mali zinazosajiliwa na tayari kwa uwekezaji."
+		}
+	},
+	"finalCta": {
+		"tag": "Hatua Zifuatazo",
+		"headline": "Uko Tayari kulinda Mipaka ya Ardhi Yako?",
+		"description": "Epuka migogoro ya gharama kubwa na ucheleweshaji wa uchakataji wa hati.",
+		"actionsLabel": "Chagua hatua yako:",
+		"actions": [
+			{
+				"icon": "calendar-check",
+				"label": "Panga Ziara ya Tovuti",
+				"description": "Tembea kiwanja chako na mchunguzi aliyeidhinishwa.",
+				"href": "mailto:smartgridsurveying@gmail.com?subject=Site Visit Booking: Cadastral Survey&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a site visit for a cadastral survey.%0D%0A%0D%0ALocation (County / Area):%0D%0AParcel size:%0D%0APreferred date & time:%0D%0A%0D%0AThank you."
+			},
+			{
+				"icon": "cash-multiple",
+				"label": "Pata Nukuu ya Uchunguzi",
+				"description": "Bei sahihi baada ya ukaguzi wa usajili.",
+				"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Cadastral Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Cadastral Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+			},
+			{
+				"icon": "whatsapp",
+				"label": "WhatsApp Mchunguzi Sasa",
+				"description": "Majibu ya haraka kutoka kwa mchunguzi halisi.",
+				"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20talk%20to%20a%20surveyor%20about%20my%20land%20boundaries."
+			},
+			{
+				"icon": "map-search-outline",
+				"label": "Angalia Uwezekano wa Kiwanja",
+				"description": "Tunathibitisha hali ya usajili kabla ya kununua.",
+				"href": "/contact"
 			}
 		]
 	}

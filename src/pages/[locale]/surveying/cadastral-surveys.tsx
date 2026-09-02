@@ -4,8 +4,16 @@ import PageHead from "@/components/Head";
 import { getI18nProps } from "@/lib/i18n";
 import {
 	CadastralHeroSection,
-	IntroSection,
-	WhyBoundarySurveysSection,
+	PostHeroCtaSection,
+	// IntroSection,
+	WhenYouNeedSection,
+	ProcessFlowSection,
+	ProcessCtaSection,
+	CostSection,
+	TimelineSection,
+	ComplianceSection,
+	CaseStudySection,
+	FinalCtaSection,
 } from "@/components/sections/surveying/cadastral";
 
 type PageProps = {
@@ -18,8 +26,16 @@ const Page: NextPage<PageProps> = () => {
 			<PageHead pageName="cadastral-surveys" />
 			<div className="flex flex-col min-h-screen">
 				<CadastralHeroSection />
-				<IntroSection />
-				<WhyBoundarySurveysSection />
+				<PostHeroCtaSection />
+				{/* <IntroSection /> */}
+				<WhenYouNeedSection />
+				<ProcessFlowSection />
+				<ProcessCtaSection />
+				<CostSection />
+				<TimelineSection />
+				<ComplianceSection />
+				<CaseStudySection />
+				<FinalCtaSection />
 			</div>
 		</div>
 	);

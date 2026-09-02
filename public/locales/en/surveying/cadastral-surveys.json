@@ -12,33 +12,458 @@
 	"whatsABoundarySurvey": {
 		"tag": "Build Confidently",
 		"headline": "What is a boundary survey?",
-		"image": "/media/surveying/cadastral-surveys/01-02.jpg",
+		"image": "/media/surveying/cadastral-surveys/AG8ngQ.png",
 		"description": "A boundary survey determines the legal property lines of a parcel of land. Using advanced GPS, total stations, and historical land records, SmartGrid Surveying provides highly accurate maps that define property limits and identify any encroachments or discrepancies."
 	},
-	"whyBoundarySurveys": {
-		"tag": null,
-		"headline": "Why Are Boundary Surveys Essential? ",
-		"description": "",
+	"postHeroCta": {
+		"tag": "Cadastral Surveys in Kenya",
+		"headline": "Cadastral Surveys in Kenya for Title Deeds, Subdivision & Boundary Verification",
+		"description": "Registry-accurate boundary surveys prepared by licensed surveyors and packaged for Ardhisasa submission — for buyers, landowners and developers.",
+		"ctaPrimary": {
+			"label": "Talk to a Surveyor",
+			"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20talk%20to%20a%20surveyor%20about%20a%20cadastral%20survey.",
+			"icon": "whatsapp"
+		},
+		"ctaSecondary": {
+			"label": "Send a Request",
+			"href": "/contact",
+			"icon": "email-fast-outline"
+		}
+	},
+	"whenYouNeed": {
+		"tag": "When You Need It",
+		"headline": "When You Need a Cadastral Survey",
+		"description": "From title verification to dispute resolution — these are the moments a licensed boundary survey protects your land, your money and your paperwork.",
+		"image": "/media/surveying/cadastral-surveys/01-02.jpg",
+		"imageBadge": "Survey Act Cap 299 · Ardhisasa-ready",
 		"items": [
 			{
-                "icon": "scale-balance",
-				"title": "Avoid legal disputes",
-				"description": "Prevent costly property line conflicts with neighbors by ensuring accurate boundary identification."
+				"icon": "file-certificate-outline",
+				"title": "Buying Land / Verifying a Title Deed",
+				"description": "Confirm the parcel on the ground matches the deed plan and registry records — before you pay a single shilling."
+			},
+			{
+				"icon": "grid-large",
+				"title": "Subdividing Plots",
+				"description": "Legally split a parcel into saleable units with approved subdivision plans, mutation survey and new beacons."
+			},
+			{
+				"icon": "scale-balance",
+				"title": "Resolving Legal Boundary Disputes",
+				"description": "Court-ready boundary evidence and re-established beacons to settle ownership lines with adjoining owners."
 			},
 			{
 				"icon": "account-hard-hat",
-				"title": "Ensure Construction Compliance",
-				"description": "Build within your legally defined property limits to meet zoning and regulatory requirements."
+				"title": "Preparing for Construction Approval",
+				"description": "Certified boundary data that counties, banks and authorities expect before approving building plans.",
+				"href": "/surveying/building-site-surveys"
 			},
 			{
-				"icon": "shield-sun",
+				"icon": "domain",
+				"title": "Sectional Property Registration (Apartments)",
+				"description": "Unit boundary determination and sectional plans for apartment and mixed-use registrations.",
+				"href": "/surveying/sectional-properties"
+			},
+			{
+				"icon": "shield-sun-outline",
 				"title": "Protect Your Investment",
-				"description": "Know exactly what you own before buying, selling, or developing land."
+				"description": "Know exactly what you own before buying, selling, mortgaging or developing land."
 			},
 			{
-				"icon": "receipt-text-check",
+				"icon": "fence",
 				"title": "Resolve Encroachments",
-				"description": "Identify overlapping structures or fencing issues and take corrective action before they become major problems."
+				"description": "Detect overlapping fences, structures and access rights early — and correct them before they escalate into legal battles or stalled transactions."
+			}
+		]
+	},
+	"process": {
+		"tag": "How It Works",
+		"headline": "Boundary Survey Process — From Site Visit to County Approval",
+		"description": "A transparent, six-step cadastral workflow. You always know which stage your parcel is in and exactly what happens next.",
+		"outcomeLabel": "Registered, titled & dispute-free",
+		"steps": [
+			{
+				"icon": "file-search-outline",
+				"label": "Site Visit & Document Review",
+				"description": "We walk the parcel with you, review the title deed, deed plan and prior surveys, and record existing occupation and improvements."
+			},
+			{
+				"icon": "database-search-outline",
+				"label": "Registry (Ardhisasa / RIM) Verification",
+				"description": "Parcel records are retrieved and cross-checked against the Registry Index Map (RIM) and the Ardhisasa cadastral database to confirm the legal boundaries."
+			},
+			{
+				"icon": "satellite-variant",
+				"label": "GNSS Field Survey (RTK Control)",
+				"description": "RTK GNSS and total station observations establish a control network tied to the national grid for centimetre-level accuracy."
+			},
+			{
+				"icon": "map-marker-check",
+				"label": "Beaconing & Boundary Confirmation",
+				"description": "Boundary corners are computed, confirmed with adjoining owners, and permanent beacons are placed or re-fixed on the ground."
+			},
+			{
+				"icon": "ruler-square-compass",
+				"label": "Plan Preparation & Computation",
+				"description": "Observations are reduced and adjusted; areas, traverses and final survey plans are computed and checked by a licensed surveyor."
+			},
+			{
+				"icon": "clipboard-check-outline",
+				"label": "Submission & County Approval",
+				"description": "The compiled cadastral documentation is lodged with the registry (Ardhisasa) and county offices for approval and registration."
+			}
+		]
+	},
+	"processCta": {
+		"tag": "Start Now",
+		"headline": "Start Your Survey Process Today",
+		"description": "Send us your parcel details — title deed number, location and size — and we will map out the exact survey steps, costs and approvals for your land.",
+		"ctaPrimary": {
+			"label": "Request Your Survey Plan",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Survey Process Request: Cadastral Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to start the cadastral survey process for my parcel.%0D%0A%0D%0ALocation (County / Area):%0D%0ATitle deed or parcel number:%0D%0AApproximate size (acres):%0D%0AService needed (boundary / subdivision / dispute):%0D%0A%0D%0AThank you.",
+			"icon": "email-fast-outline"
+		},
+		"ctaSecondary": {
+			"label": "WhatsApp a Surveyor",
+			"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20start%20a%20cadastral%20survey%20process%20for%20my%20parcel.",
+			"icon": "whatsapp"
+		},
+		"chips": [
+			"Licensed surveyors",
+			"Ardhisasa-ready submissions",
+			"ISK compliant"
+		]
+	},
+	"cost": {
+		"tag": "Cost Guidance",
+		"headline": "Cadastral Survey Cost in Kenya",
+		"description": "Indicative pricing for cadastral and boundary surveys. Every parcel is quoted after a registry check — no hidden charges, no surprises.",
+		"featuredLabel": "Most Requested",
+		"tiers": [
+			{
+				"icon": "home-outline",
+				"title": "Small Residential Plot",
+				"price": "KES 15,000 – 80,000",
+				"note": "Boundary verification, beacon replacement and title-ready survey reports for standard residential parcels.",
+				"features": [
+					"Registry search & deed plan check",
+					"Boundary beacons placed or re-fixed",
+					"Signed survey report for your records"
+				]
+			},
+			{
+				"icon": "grid-large",
+				"title": "Subdivision Projects",
+				"price": "Project-based quotation",
+				"priceUnit": "from KES 10,000 per unit",
+				"note": "Full subdivision workflow from planning consent to registry-approved subdivision plans for every unit.",
+				"features": [
+					"Subdivision design & planning liaison",
+					"Mutation survey & new beacons per unit",
+					"Submission-ready Ardhisasa documentation"
+				],
+				"featured": true
+			},
+			{
+				"icon": "land-fields",
+				"title": "Large Estates",
+				"price": "Custom engineering pricing",
+				"note": "Multi-parcel estates, ranches and institutional land scoped with dedicated project teams and control networks.",
+				"features": [
+					"GNSS control network across the estate",
+					"Boundary reconciliation of all parcels",
+					"Dedicated licensed surveyor & project team"
+				]
+			}
+		],
+		"cta": {
+			"label": "Get Accurate Pricing for Your Parcel",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Pricing Request: Cadastral Survey&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like accurate pricing for a cadastral survey on my parcel.%0D%0A%0D%0ALocation (County / Area):%0D%0ATitle deed or parcel number:%0D%0AApproximate size (acres):%0D%0AService needed (boundary / subdivision / dispute):%0D%0A%0D%0AThank you.",
+			"icon": "cash-multiple"
+		}
+	},
+	"timeline": {
+		"tag": "Timelines",
+		"headline": "How Long Does a Cadastral Survey Take?",
+		"description": "Survey duration depends on registry approvals and parcel complexity. Here is what to realistically plan for.",
+		"scaleNote": "Bar length shows the typical maximum duration of each service.",
+		"items": [
+			{
+				"icon": "calendar-clock",
+				"title": "Standard Survey",
+				"range": "7–21 days",
+				"minDays": 7,
+				"maxDays": 21,
+				"description": "Boundary verification and beaconing, depending on registry approvals and access to the parcel."
+			},
+			{
+				"icon": "grid-large",
+				"title": "Subdivision",
+				"range": "2–6 weeks",
+				"minDays": 14,
+				"maxDays": 42,
+				"description": "Planning consent, mutation survey, plan approval and registration of the new units."
+			},
+			{
+				"icon": "gavel",
+				"title": "Dispute Resolution",
+				"range": "Depends on complexity",
+				"description": "Court or family-mediated disputes take longer — evidence quality determines how fast they settle."
+			}
+		],
+		"note": "Delays almost always come from registry queues and missing documents — we pre-clear both before fieldwork starts.",
+		"cta": {
+			"label": "Check Timeline for Your Land Today",
+			"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20know%20the%20timeline%20for%20a%20cadastral%20survey%20on%20my%20land.",
+			"icon": "whatsapp"
+		}
+	},
+	"compliance": {
+		"tag": "Legal & Regulatory Compliance",
+		"headline": "Legal & Ardhisasa Compliance You Can Rely On",
+		"description": "Every cadastral survey we deliver is executed under the statutes that govern land in Kenya — so your documents survive scrutiny at the registry, the bank and the court.",
+		"checklistTitle": "The SmartGrid compliance checklist",
+		"checklist": [
+			{
+				"icon": "gavel",
+				"title": "Land Registration Act, 2012",
+				"description": "Surveys prepared for registration under the Act governing title deeds, parcel boundaries and transfers in Kenya."
+			},
+			{
+				"icon": "seal",
+				"title": "Survey Act, Cap 299",
+				"description": "All fieldwork, computations and plans conform to the Survey Act and its Regulations — signed by a licensed surveyor."
+			},
+			{
+				"icon": "earth",
+				"title": "Ardhisasa Cadastral Submission Requirements",
+				"description": "Deliverables are packaged to Ardhisasa digital lodgement standards: georeferenced data, deed plans and supporting documents."
+			},
+			{
+				"icon": "city",
+				"title": "County Approval Process",
+				"description": "We liaise with county planning offices for subdivision consents and development approvals tied to your survey."
+			},
+			{
+				"icon": "account-check-outline",
+				"title": "ISK Compliance & Licensed Surveyor",
+				"description": "Work is executed and signed off by an Institution of Surveyors of Kenya (ISK) registered, licensed surveyor."
+			}
+		],
+		"relatedLabel": "Related compliance guides",
+		"related": [
+			{
+				"label": "Sectional Properties Act, 2020",
+				"href": "/surveying/sectional-properties"
+			},
+			{
+				"label": "Construction & Site Engineering Surveys",
+				"href": "/surveying/building-site-surveys"
+			},
+			{
+				"label": "Topographical Surveys for Planning",
+				"href": "/surveying/topographical-surveys"
+			}
+		]
+	},
+	"caseStudy": {
+		"tag": "Case Study · Kiambu County",
+		"headline": "Kiambu Subdivision Survey – 40-Acre Parcel",
+		"subtitle": "Title Registration & Boundary Dispute Resolution Using High-Precision GNSS Surveying",
+		"overview": {
+			"label": "01 · Project Overview",
+			"paragraphs": [
+				"A 40-acre parcel in Kiambu County required formal subdivision, cadastral verification, and resolution of long-standing boundary disputes between adjoining landowners."
+			],
+			"criticalTitle": "The project was critical for:",
+			"critical": [
+				"Title deed processing under Kenyan land registry requirements",
+				"Resolving overlapping boundary claims",
+				"Preparing legally defensible subdivision plans",
+				"Enabling future development and land sales"
+			],
+			"deployNote": "SmartGrid Surveying deployed RTK GNSS, total station control networks, and registry reconciliation workflows to restore spatial accuracy and legal clarity.",
+			"deployIcon": "satellite-variant"
+		},
+		"challenge": {
+			"label": "02 · The Challenge (Before Condition)",
+			"intro": "The site presented multiple complications:",
+			"items": [
+				"Conflicting boundary interpretations between landowners",
+				"Outdated registry map (deed plan discrepancies)",
+				"Missing or disturbed boundary beacons",
+				"Overlapping parcel claims in adjacent subdivisions",
+				"Lack of georeferenced control tied to modern coordinate systems"
+			],
+			"images": [
+				{
+					"src": "/media/surveying/cadastral-surveys/02-02.jpg",
+					"alt": "Disturbed boundary beacon awaiting re-establishment on site"
+				},
+				{
+					"src": "/media/surveying/cadastral-surveys/02-03.jpg",
+					"alt": "Adjoining parcels with overlapping claims in Kiambu County"
+				},
+				{
+					"src": "/media/surveying/cadastral-surveys/02-01.jpg",
+					"alt": "Overgrown and unmarked boundary line on the Kiambu parcel before the survey"
+				}
+			]
+		},
+		"methodology": {
+			"label": "03 · Survey Methodology & GPS Workflow",
+			"intro": "A structured engineering-grade workflow was applied to ensure legal and spatial accuracy in compliance with Kenyan cadastral standards and Ardhisasa requirements.",
+			"steps": [
+				{
+					"title": "Step 1: Desk Study & Registry Retrieval",
+					"points": [
+						"Retrieved original RIM (Registry Index Map)",
+						"Reviewed historical deed plans and parcel references",
+						"Identified inconsistencies in boundary alignments"
+					]
+				},
+				{
+					"title": "Step 2: Establishment of Control Network",
+					"points": [
+						"RTK GNSS base station setup on stable benchmark",
+						"Primary control points established across parcel corners",
+						"Total station used for dense control in obstructed zones"
+					]
+				},
+				{
+					"title": "Step 3: Field Boundary Reconstruction",
+					"points": [
+						"Walked perimeter with landowners and witnesses",
+						"Identified existing beacons and restored missing markers",
+						"Captured high-density coordinate points"
+					]
+				},
+				{
+					"title": "Step 4: Data Processing & Adjustment",
+					"points": [
+						"Coordinate transformation into UTM Arc 1960 system",
+						"Least squares adjustment of control network",
+						"Overlay with cadastral registry data"
+					]
+				},
+				{
+					"title": "Step 5: Subdivision Design & Legal Drafting",
+					"points": [
+						"Parcel segmentation based on agreed ownership units",
+						"Generation of subdivision plan sheets",
+						"Preparation for submission to land registry"
+					]
+				}
+			],
+			"images": [
+				{
+					"src": "/media/surveying/cadastral-surveys/03-01.jpg",
+					"alt": "RTK GNSS receiver set up over a control point on the parcel"
+				},
+				{
+					"src": "/media/surveying/cadastral-surveys/03-02.jpg",
+					"alt": "Surveyor confirming a restored boundary beacon in the field"
+				}
+			]
+		},
+		"outcome": {
+			"label": "04 · Outcome (After Condition)",
+			"intro": "The intervention resulted in a fully resolved cadastral structure with legal and spatial clarity.",
+			"deliverablesTitle": "Key Deliverables",
+			"deliverables": [
+				"Accurate subdivision plan approved for registration",
+				"Restored and verified boundary beacons",
+				"Elimination of overlapping parcel claims",
+				"Digitally georeferenced cadastral dataset",
+				"Submission-ready Ardhisasa-compliant documentation"
+			]
+		},
+		"impact": {
+			"label": "05 · Project Impact",
+			"items": [
+				{
+					"icon": "handshake-outline",
+					"text": "Dispute resolved without litigation escalation"
+				},
+				{
+					"icon": "file-check-outline",
+					"text": "Enabled formal title processing for all subdivided units"
+				},
+				{
+					"icon": "trending-up",
+					"text": "Increased land valuation potential due to legal clarity"
+				},
+				{
+					"icon": "database-outline",
+					"text": "Provided a permanent geospatial reference dataset for future developments"
+				},
+				{
+					"icon": "shield-check",
+					"text": "Reduced risk exposure for buyers and developers"
+				}
+			]
+		},
+		"techSummary": {
+			"label": "06 · Technical Summary",
+			"componentHeader": "Component",
+			"specHeader": "Specification",
+			"rows": [
+				{
+					"component": "Survey System",
+					"specification": "RTK GNSS + Total Station"
+				},
+				{
+					"component": "Coordinate System",
+					"specification": "Arc 1960 / UTM Zone 37S"
+				},
+				{
+					"component": "Methodology",
+					"specification": "Cadastral Reconstruction + Boundary Reconciliation"
+				},
+				{
+					"component": "Output",
+					"specification": "Subdivision Plan + Verified Beacons"
+				},
+				{
+					"component": "Compliance",
+					"specification": "Kenyan Land Act + Survey Act Cap 299"
+				}
+			]
+		},
+		"engineeringNote": {
+			"label": "07 · Final Engineering Note",
+			"text": "This project demonstrates how modern GNSS-based cadastral surveying eliminates ambiguity in land ownership boundaries while ensuring compliance with Kenyan land registration frameworks. SmartGrid Surveying integrates field precision + legal geospatial intelligence to convert disputed land into registrable, investment-ready assets."
+		}
+	},
+	"finalCta": {
+		"tag": "Next Steps",
+		"headline": "Ready to Secure Your Land Boundaries?",
+		"description": "Avoid costly disputes and delays in title processing.",
+		"actionsLabel": "Choose your action:",
+		"actions": [
+			{
+				"icon": "calendar-check",
+				"label": "Book Site Visit",
+				"description": "Walk your parcel with a licensed surveyor.",
+				"href": "mailto:smartgridsurveying@gmail.com?subject=Site Visit Booking: Cadastral Survey&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a site visit for a cadastral survey.%0D%0A%0D%0ALocation (County / Area):%0D%0AParcel size:%0D%0APreferred date & time:%0D%0A%0D%0AThank you."
+			},
+			{
+				"icon": "cash-multiple",
+				"label": "Get Survey Quote",
+				"description": "Accurate pricing after a registry check.",
+				"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Cadastral Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Cadastral Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+			},
+			{
+				"icon": "whatsapp",
+				"label": "WhatsApp Surveyor Now",
+				"description": "Fast answers from a real surveyor.",
+				"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20talk%20to%20a%20surveyor%20about%20my%20land%20boundaries."
+			},
+			{
+				"icon": "map-search-outline",
+				"label": "Check Parcel Feasibility",
+				"description": "We verify registry status before you buy.",
+				"href": "/contact"
 			}
 		]
 	}

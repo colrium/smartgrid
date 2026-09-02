@@ -181,208 +181,79 @@ select option {
 }
 
 
-
-.layout-gradient-bg {
-   
-        background: radial-gradient(at 60% 60%, rgba(0, 162, 212, 0.028) 0%, rgba(0, 0, 0, 0) 33%);
-        filter: blur(40px);
-}
-
-@layer components {
-
-    /* ===================== */
-    /*    SHARED BASE        */
-    /* ===================== */
-
-    [class*="shimmer-"]::before,
-    [class*="shimmer-"]::after {
-        content: "";
-        position: absolute;
-        opacity: var(--shimmer-opacity);
-        pointer-events: none;
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
     }
 
-    /* ===================== */
-    /*    EDGES              */
-    /* ===================== */
-
-    .shimmer-top,
-    .shimmer-t {
-        position: relative;
-    }
-
-    .shimmer-top,
-    .shimmer-t::before {
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, var(--shimmer-color), transparent);
-    }
-
-    .shimmer-bottom,
-    .shimmer-b {
-        position: relative;
-    }
-
-    .shimmer-bottom,
-    .shimmer-b::before {
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, var(--shimmer-color), transparent);
-    }
-
-    .shimmer-left,
-    .shimmer-l {
-        position: relative;
-    }
-
-    .shimmer-left,
-    .shimmer-l::before {
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: 1px;
-        background: linear-gradient(180deg, transparent, var(--shimmer-color), transparent);
-    }
-
-    .shimmer-right,
-    .shimmer-r {
-        position: relative;
-    }
-
-    .shimmer-right,
-    .shimmer-r::before {
-        top: 0;
-        bottom: 0;
-        right: 0;
-        width: 1px;
-        background: linear-gradient(180deg, transparent, var(--shimmer-color), transparent);
-    }
-
-    /* x: left + right */
-    .shimmer-x {
-        position: relative;
-    }
-
-    .shimmer-x::before {
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: 1px;
-        background: linear-gradient(180deg, transparent, var(--shimmer-color), transparent);
-    }
-
-    .shimmer-x::after {
-        top: 0;
-        bottom: 0;
-        right: 0;
-        width: 1px;
-        background: linear-gradient(180deg, transparent, var(--shimmer-color), transparent);
-    }
-
-    /* y: top + bottom */
-    .shimmer-y {
-        position: relative;
-    }
-
-    .shimmer-y::before {
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, var(--shimmer-color), transparent);
-    }
-
-    .shimmer-y::after {
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, var(--shimmer-color), transparent);
-    }
-
-    /* ===================== */
-    /*    COLOR INTENSITIES  */
-    /* ===================== */
-    .shimmer-gold-50 {
-        --shimmer-color: var(--color-primary-50);
-    }
-
-    .shimmer-gold-100 {
-        --shimmer-color: var(--color-primary-100);
-    }
-
-    .shimmer-gold-200 {
-        --shimmer-color: var(--color-primary-200);
-    }
-
-    .shimmer-gold-300 {
-        --shimmer-color: var(--color-primary-300);
-    }
-
-    .shimmer-gold-400 {
-        --shimmer-color: var(--color-primary-400);
-    }
-
-    .shimmer-gold-500 {
-        --shimmer-color: var(--color-primary-500);
-    }
-
-    .shimmer-gold-600 {
-        --shimmer-color: var(--color-primary-600);
-    }
-
-    .shimmer-gold-700 {
-        --shimmer-color: var(--color-primary-700);
-    }
-
-    .shimmer-gold-800 {
-        --shimmer-color: var(--color-primary-800);
-    }
-
-    .shimmer-gold-900 {
-        --shimmer-color: var(--color-primary-900);
-    }
-
-    /* ===================== */
-    /*    OPACITY VARIANTS   */
-    /* ===================== */
-
-    .shimmer-subtle {
-        --shimmer-opacity: 0.25;
-    }
-
-    .shimmer-soft {
-        --shimmer-opacity: 0.40;
-    }
-
-    .shimmer-medium {
-        --shimmer-opacity: 0.55;
-    }
-
-    .shimmer-strong {
-        --shimmer-opacity: 0.75;
-    }
-
-    .shimmer-full {
-        --shimmer-opacity: 1;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-.reveal-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: opacity, transform;
+@keyframes fade-down {
+    from {
+        opacity: 0;
+        transform: translateY(-24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.reveal-on-scroll.is-visible {
-    opacity: 1;
-    transform: translateY(0); }
+@keyframes fade-left {
+    from {
+        opacity: 0;
+        transform: translateX(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-right {
+    from {
+        opacity: 0;
+        transform: translateX(-24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-up,
+.fade-down,
+.fade-left,
+.fade-right {
+    animation-timeline: view(block 5%);
+    animation-range: entry 0% cover 30%;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    will-change: transform, opacity;
+}
+
+.fade-up {
+    animation-name: fade-up;
+}
+
+.fade-down {
+    animation-name: fade-down;
+}
+
+.fade-left {
+    animation-name: fade-left;
+}
+
+.fade-right {
+    animation-name: fade-right; }
 
 /* ==================================== */
 /*   GLASS + INSTITUTIONAL UTILITIES    */
