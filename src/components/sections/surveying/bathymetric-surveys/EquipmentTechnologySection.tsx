@@ -24,7 +24,10 @@ export function EquipmentTechnologySection(): ReactElement {
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden">
-			<Blob className="w-[28rem] h-[28rem] bg-primary-100/60 -bottom-24 -left-24" opacity={0.5} />
+			<Blob
+				className="w-[28rem] h-[28rem] bg-primary-100/60 -bottom-24 -left-24"
+				opacity={0.5}
+			/>
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -46,11 +49,11 @@ export function EquipmentTechnologySection(): ReactElement {
 								{images.slice(0, 4).map((src, index) => (
 									<div
 										key={index}
-										className={`relative overflow-hidden rounded-[20px] bg-surface card-shadow ${
+										className={`relative overflow-hidden aspect-3/4 rounded-[20px]!  card-shadow bg-slate-900 ${
 											index % 2 === 0 ? "mt-6" : "-mt-6"
 										}`}
 									>
-										<div className="relative aspect-[3/4] bg-slate-900">
+										<div className="relative aspect-3/4 rounded-[20px]!  card-shadow bg-slate-900">
 											<Image
 												src={src}
 												alt={`${section.headline} ${index + 1}`}
