@@ -67,5 +67,4 @@ next-env.d.ts
 kilo.jsonc
 
 # Verification files
-tc*.txt
-lint-ts.txt
+*.txt

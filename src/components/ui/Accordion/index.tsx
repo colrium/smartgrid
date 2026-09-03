@@ -56,7 +56,7 @@ export function Accordion({
 		<AccordionContext.Provider value={{ open, toggle }}>
 			<div
 				className={[
-					"overflow-hidden rounded-[20px] bg-surface shadow-sm",
+					"overflow-hidden rounded-c bg-surface shadow-sm",
 					square ? "rounded-none!" : "",
 					className,
 				]

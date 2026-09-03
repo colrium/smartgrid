@@ -38,7 +38,7 @@ const LeadGenBar: React.FC<{ className?: string }> = ({ className }) => {
 				style={{ WebkitMaskImage: GLOW_MASK, maskImage: GLOW_MASK }}
 			/>
 			<div
-				className={`py-14 sm:py-20 relative z-20 my-12 rounded-[20px] pale-panel-soft hairline card-shadow overflow-hidden`}
+				className={`py-14 sm:py-20 relative z-20 my-12 rounded-c pale-panel-soft hairline card-shadow overflow-hidden`}
 			>
 				<div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 					<FadeUp viewport={{ amount: 0.01, margin: "0px 0px 0% 0px" }}>

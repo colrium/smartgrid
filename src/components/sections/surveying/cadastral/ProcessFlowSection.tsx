@@ -70,7 +70,7 @@ export function ProcessFlowSection(): ReactElement {
 												: "lg:col-start-2 lg:row-start-1 lg:pl-16"
 										}`}
 									>
-										<article className="group relative h-full overflow-hidden rounded-[20px] bg-surface hairline card-shadow p-6 sm:p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
+										<article className="group relative h-full overflow-hidden rounded-c bg-surface hairline card-shadow p-6 sm:p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
 											<span
 												aria-hidden
 												className={`absolute -top-5 font-light tracking-tighter text-[5.5rem] leading-none text-primary/[0.06] select-none pointer-events-none ${

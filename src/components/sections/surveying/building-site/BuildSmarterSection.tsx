@@ -40,7 +40,7 @@ export function BuildSmarterSection() {
 					</FadeUp>
 
 					<FadeUp delay={0.1} className="lg:col-span-6">
-						<div className="relative rounded-[20px] ink-panel card-shadow overflow-hidden px-8 py-10 sm:px-10 sm:py-12">
+						<div className="relative rounded-c ink-panel card-shadow overflow-hidden px-8 py-10 sm:px-10 sm:py-12">
 							<span className="absolute -top-20 -right-16 w-60 h-60 rounded-full bg-primary-300/30 blur-[80px] pointer-events-none" />
 							<span className="absolute -bottom-16 -left-12 w-52 h-52 rounded-full bg-primary/30 blur-[80px] pointer-events-none" />
 

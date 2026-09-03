@@ -56,7 +56,7 @@ export function TalkToUsSection() {
 						<FadeUp key={index} delay={(index % 3) * 0.07}>
 							<a
 								href={contact.href}
-								className="relative group flex flex-col gap-6 h-full rounded-[20px] bg-surface overflow-hidden hairline card-shadow p-7 sm:p-8 transition-all duration-500 hover:card-shadow-lift hover:border-primary"
+								className="relative group flex flex-col gap-6 h-full rounded-c bg-surface overflow-hidden hairline card-shadow p-7 sm:p-8 transition-all duration-500 hover:card-shadow-lift hover:border-primary"
 								target="_blank"
 							>
 								<div className="flex items-center justify-between">

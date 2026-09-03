@@ -59,7 +59,7 @@ export function AerialDronesServicesSection() {
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={(index % 3) * 0.07} className="h-full">
 							<article
-								className="group h-full flex flex-col gap-4 rounded-[20px] bg-surface hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary"
+								className="group h-full flex flex-col gap-4 rounded-c bg-surface hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary"
 								onClick={() => item.popupContent && setOpen(index)}
 							>
 								<div className="flex items-start justify-between gap-4">
@@ -99,7 +99,7 @@ export function AerialDronesServicesSection() {
 					aria-label={items[open].title}
 				>
 					<div
-						className="relative w-full max-w-xl rounded-[20px] bg-surface hairline card-shadow p-8 sm:p-10 max-h-[85vh] overflow-y-auto"
+						className="relative w-full max-w-xl rounded-c bg-surface hairline card-shadow p-8 sm:p-10 max-h-[85vh] overflow-y-auto"
 						onClick={(e) => e.stopPropagation()}
 					>
 						<button

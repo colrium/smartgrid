@@ -45,7 +45,7 @@ export function DataAccuracySection(): ReactElement {
 				<div className="mt-14 sm:mt-20 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
 					{/* Factors affecting accuracy */}
 					<FadeUp className="h-full">
-						<article className="relative h-full flex flex-col rounded-[20px] bg-paper hairline card-shadow p-7 sm:p-8">
+						<article className="relative h-full flex flex-col rounded-c bg-paper hairline card-shadow p-7 sm:p-8">
 							<h3 className="text-lg sm:text-xl font-semibold tracking-tight text-ink leading-snug">
 								Factors Affecting Accuracy
 							</h3>
@@ -66,7 +66,7 @@ export function DataAccuracySection(): ReactElement {
 
 					{/* Typical accuracy levels */}
 					<FadeUp delay={0.1} className="h-full">
-						<article className="relative h-full flex flex-col rounded-[20px] bg-paper hairline card-shadow p-7 sm:p-8">
+						<article className="relative h-full flex flex-col rounded-c bg-paper hairline card-shadow p-7 sm:p-8">
 							<h3 className="text-lg sm:text-xl font-semibold tracking-tight text-ink leading-snug">
 								Typical Accuracy Levels
 							</h3>

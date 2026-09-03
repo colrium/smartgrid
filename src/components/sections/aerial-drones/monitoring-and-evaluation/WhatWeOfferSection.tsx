@@ -45,7 +45,7 @@ export function WhatWeOfferSection() {
 							{leadImages.map((src, index) => (
 								<div
 									key={index}
-									className="relative h-64 sm:h-80 rounded-[20px] overflow-hidden hairline"
+									className="relative h-64 sm:h-80 rounded-c overflow-hidden hairline"
 								>
 									<Image
 										src={src}
@@ -63,7 +63,7 @@ export function WhatWeOfferSection() {
 				<div className="mt-12 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={(index % 4) * 0.06}>
-							<article className="group relative flex flex-col rounded-[20px] overflow-hidden bg-surface hairline card-shadow transition-all duration-500 hover:card-shadow-lift hover:border-primary">
+							<article className="group relative flex flex-col rounded-c overflow-hidden bg-surface hairline card-shadow transition-all duration-500 hover:card-shadow-lift hover:border-primary">
 								{item.image && (
 									<div className="relative h-40 overflow-hidden">
 										<Image

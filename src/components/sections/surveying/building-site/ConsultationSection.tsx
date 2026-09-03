@@ -80,7 +80,7 @@ export function ConsultationSection(): ReactElement {
 					</FadeUp>
 
 					<FadeUp delay={0.1} className="lg:col-span-6">
-						<div className="relative rounded-[20px] hairline bg-paper card-shadow p-8 sm:p-10 overflow-hidden">
+						<div className="relative rounded-c hairline bg-paper card-shadow p-8 sm:p-10 overflow-hidden">
 							<span
 								className="absolute -top-8 -right-6 font-light tracking-tighter text-[8rem] leading-none text-primary/[0.05] select-none pointer-events-none"
 								aria-hidden

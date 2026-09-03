@@ -20,7 +20,7 @@ export function CtaSection() {
 		<section id="cta" className="pb-24 sm:pb-28 relative overflow-hidden">
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
-					<div className="relative rounded-[20px] ink-panel card-shadow overflow-hidden px-8 py-16 sm:px-12 sm:py-24 text-center">
+					<div className="relative rounded-c ink-panel card-shadow overflow-hidden px-8 py-16 sm:px-12 sm:py-24 text-center">
 						{/* authoritative glows + watermark */}
 						<span
 							className="absolute -top-24 -right-24 w-120 h-120 rounded-full bg-primary-300/20 pointer-events-none"

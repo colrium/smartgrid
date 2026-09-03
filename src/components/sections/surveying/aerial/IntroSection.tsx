@@ -64,7 +64,7 @@ export function IntroSection(): ReactElement {
 
 					{/* Right — briefing card */}
 					<FadeUp delay={0.12} className="lg:col-span-6">
-						<div className="relative overflow-hidden rounded-[20px] bg-surface hairline card-shadow p-8 sm:p-10">
+						<div className="relative overflow-hidden rounded-c bg-surface hairline card-shadow p-8 sm:p-10">
 							
 							<span
 								aria-hidden

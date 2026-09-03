@@ -66,7 +66,7 @@ export function AerialSurveyingSection() {
 				<div className="mt-14 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={(index % 3) * 0.08}>
-							<article className="group relative h-full flex flex-col p-8 rounded-[20px] bg-surface hairline card-shadow transition-all duration-500 hover:card-shadow-lift hover:border-primary">
+							<article className="group relative h-full flex flex-col p-8 rounded-c bg-surface hairline card-shadow transition-all duration-500 hover:card-shadow-lift hover:border-primary">
 								<span className="p-3 rounded-xl bg-primary-50 text-mute transition-colors duration-300 self-center">
 									<span
 										className={`mdi mdi-${
@@ -114,7 +114,7 @@ export function AerialSurveyingSection() {
 							animate={{ opacity: 1, y: 0, scale: 1 }}
 							exit={{ opacity: 0, y: 24, scale: 0.97 }}
 							transition={{ duration: 0.25 }}
-							className="relative w-full max-w-xl rounded-[20px] bg-surface p-8 sm:p-10 card-shadow-lift"
+							className="relative w-full max-w-xl rounded-c bg-surface p-8 sm:p-10 card-shadow-lift"
 							onClick={(e) => e.stopPropagation()}
 						>
 							<button

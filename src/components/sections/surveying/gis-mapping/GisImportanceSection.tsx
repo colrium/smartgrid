@@ -47,7 +47,7 @@ export function GisImportanceSection(): ReactElement {
 
 						return (
 							<FadeUp key={index} delay={(index % 4) * 0.07} className="h-full">
-								<article className="group relative h-full flex flex-col rounded-[20px] bg-paper hairline card-shadow p-6 sm:p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
+								<article className="group relative h-full flex flex-col rounded-c bg-paper hairline card-shadow p-6 sm:p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
 									<span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 										<span className={`mdi mdi-${item.icon || "map-marker-radius"} text-2xl`} />
 									</span>

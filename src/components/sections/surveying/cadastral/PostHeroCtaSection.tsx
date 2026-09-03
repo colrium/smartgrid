@@ -34,7 +34,7 @@ export function PostHeroCtaSection(): ReactElement {
 		<section className="pt-14 sm:pt-20 pb-4 relative overflow-hidden">
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
-					<div className="group/band relative rounded-[20px] bg-paper hairline card-shadow overflow-hidden px-8 py-10 sm:px-12 sm:py-12 shimmer-t shimmer-gold-200">
+					<div className="group/band relative rounded-c bg-paper hairline card-shadow overflow-hidden px-8 py-10 sm:px-12 sm:py-12 shimmer-t shimmer-gold-200">
 						<Blob className="w-72 h-72 bg-primary-100/70 -top-24 -right-16" opacity={0.6} />
 
 						<div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:gap-12">

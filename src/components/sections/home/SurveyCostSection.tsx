@@ -108,7 +108,7 @@ export function SurveyCostSection(): ReactElement | null {
 
 					{/* Interactive estimate explorer */}
 					<FadeUp delay={0.1} className="lg:col-span-7 h-full">
-						<div className="relative h-full rounded-[20px] pale-panel hairline card-shadow overflow-hidden p-6 sm:p-8">
+						<div className="relative h-full rounded-c pale-panel hairline card-shadow overflow-hidden p-6 sm:p-8">
 							<Blob className="w-64 h-64 bg-primary-100/90 -top-16 -right-16" opacity={0.7} />
 
 							<div className="relative flex flex-wrap items-center justify-between gap-3">

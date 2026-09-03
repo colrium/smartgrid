@@ -42,7 +42,7 @@ export function FaqSection() {
 				</div>
 
 				<FadeUp className="mt-14 sm:mt-20 max-w-4xl mx-auto">
-					<div className="rounded-[20px] bg-surface hairline card-shadow overflow-hidden">
+					<div className="rounded-c bg-surface hairline card-shadow overflow-hidden">
 						{items.map((item, index) => {
 							const isOpen = openIndex === index;
 							return (

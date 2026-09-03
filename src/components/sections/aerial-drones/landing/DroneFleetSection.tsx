@@ -46,7 +46,7 @@ export function DroneFleetSection() {
 					{items.map((item, index) => {
 						const hasImage = typeof item.image === "string" && item.image.startsWith("/");
 						const card = (
-							<article className="group h-full flex flex-col rounded-[20px] bg-surface hairline card-shadow p-5 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
+							<article className="group h-full flex flex-col rounded-c bg-surface hairline card-shadow p-5 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
 								<div className="relative aspect-square rounded-[15px] overflow-hidden bg-primary-50/60">
 									{hasImage && (
 										<Image

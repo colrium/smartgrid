@@ -194,7 +194,7 @@ function OpeningCard({
 	if (featured) {
 		return (
 			<FadeUp>
-				<article className="relative rounded-[20px] ink-panel card-shadow overflow-hidden p-8 sm:p-10 lg:p-12">
+				<article className="relative rounded-c ink-panel card-shadow overflow-hidden p-8 sm:p-10 lg:p-12">
 					<span className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary-300/30 blur-[90px] pointer-events-none" />
 
 					<div className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -250,7 +250,7 @@ function OpeningCard({
 
 	return (
 		<FadeUp>
-			<article className="group h-full flex flex-col rounded-[20px] bg-surface hairline card-shadow p-7 sm:p-8 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
+			<article className="group h-full flex flex-col rounded-c bg-surface hairline card-shadow p-7 sm:p-8 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
 				<div className="flex items-start justify-between gap-4">
 					<span className="h-14 w-14 rounded-2xl bg-primary-50 text-primary flex items-center justify-center transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
 						{opening.icon && <span className={`mdi mdi-${opening.icon} text-2xl`} />}
@@ -308,7 +308,7 @@ function TorModal({ opening, labels, onClose }: TorModalProps) {
 			aria-label={`${labels.modalTitle}: ${opening.title}`}
 		>
 			<div
-				className="relative w-full max-w-2xl rounded-[20px] bg-surface hairline card-shadow max-h-[85vh] flex flex-col overflow-hidden"
+				className="relative w-full max-w-2xl rounded-c bg-surface hairline card-shadow max-h-[85vh] flex flex-col overflow-hidden"
 				onClick={(e) => e.stopPropagation()}
 			>
 				<button

@@ -85,8 +85,8 @@ const triggerGeometryClasses: Record<SelectVariant, Record<SelectSize, string>> 
 		medium: "rounded-t-[20px] border-0 border-b-2 px-2.5 pb-2.5 pt-5 gap-1.5",
 	},
 	outlined: {
-		small: "relative z-10 rounded-[20px] px-2.5 pb-1.5 pt-3 gap-1.5",
-		medium: "relative z-10 rounded-[20px] px-2.5 pb-2.5 pt-4 gap-1.5",
+		small: "relative z-10 rounded-c px-2.5 pb-1.5 pt-3 gap-1.5",
+		medium: "relative z-10 rounded-c px-2.5 pb-2.5 pt-4 gap-1.5",
 	},
 	standard: {
 		small: "border-0 border-b-2 px-0 py-2 gap-1.5",
@@ -279,7 +279,7 @@ export function Select({
 		// Fieldset wraps the trigger, draws the border, and (via its invisible
 		// legend) produces the true clipped-notch effect with no background
 		// colour tricks. aria-hidden because the <label> is the accessible name.
-		"pointer-events-none absolute inset-0 z-0 m-0 rounded-[20px] border px-3 transition-all duration-200",
+		"pointer-events-none absolute inset-0 z-0 m-0 rounded-c border px-3 transition-all duration-200",
 		state.outline,
 		"peer-focus:border-2",
 		"peer-disabled:border-ink/10",
@@ -350,7 +350,7 @@ export function Select({
 				anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
 				transformOrigin={{ vertical: "top", horizontal: "left" }}
 				style={{ marginTop: 8 }}
-				className="max-h-60 overflow-y-auto rounded-[20px] border border-ink/10 bg-surface py-1.5 card-shadow"
+				className="max-h-60 overflow-y-auto rounded-c border border-ink/10 bg-surface py-1.5 card-shadow"
 				role="listbox"
 				id={`${fieldId}-listbox`}
 			>

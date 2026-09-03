@@ -96,7 +96,7 @@ export function GprFaqSection() {
 
 				{section.cta?.href && (
 					<FadeUp delay={0.1}>
-						<div className="mt-14 relative rounded-[20px] ink-panel card-shadow overflow-hidden px-8 py-12 sm:px-12 text-center">
+						<div className="mt-14 relative rounded-c ink-panel card-shadow overflow-hidden px-8 py-12 sm:px-12 text-center">
 							<span className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-primary-300/30 blur-[90px] pointer-events-none" />
 							<span className="absolute -bottom-24 -left-16 w-56 h-56 rounded-full bg-primary/30 blur-[90px] pointer-events-none" />
 

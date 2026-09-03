@@ -20,7 +20,7 @@ export function EqualOpportunityStatementSection() {
 		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
-					<div className="rounded-[20px] bg-surface hairline card-shadow p-8 sm:p-10 lg:p-12">
+					<div className="rounded-c bg-surface hairline card-shadow p-8 sm:p-10 lg:p-12">
 						<div className="flex items-start gap-5">
 							<span className="hidden sm:inline-flex h-12 w-12 shrink-0 rounded-2xl bg-primary-50 text-primary items-center justify-center">
 								<span className="mdi mdi-scale-balance text-2xl" />

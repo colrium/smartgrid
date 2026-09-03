@@ -35,7 +35,7 @@ export function ProcessCtaSection(): ReactElement {
 		<section className="pb-24 sm:pb-28 relative overflow-hidden">
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
-					<div className="group/band relative rounded-[20px] ink-panel card-shadow overflow-hidden px-8 py-14 sm:px-12 sm:py-16 text-center shimmer-t shimmer-gold-200">
+					<div className="group/band relative rounded-c ink-panel card-shadow overflow-hidden px-8 py-14 sm:px-12 sm:py-16 text-center shimmer-t shimmer-gold-200">
 						<span
 							aria-hidden
 							className="mdi mdi-vector-square absolute -right-10 -top-12 text-[12rem] leading-none text-surface/[0.05] select-none pointer-events-none transition-transform duration-700 group-hover/band:rotate-6 group-hover/band:scale-105"

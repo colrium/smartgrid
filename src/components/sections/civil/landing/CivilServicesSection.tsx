@@ -42,7 +42,7 @@ export function CivilServicesSection() {
 				<div className="mt-14 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
 					{items.map((item, index) => {
 						const card = (
-							<article className="group h-full flex flex-col gap-4 rounded-[20px] bg-surface hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
+							<article className="group h-full flex flex-col gap-4 rounded-c bg-surface hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
 								<div className="flex items-start justify-between gap-4">
 									<span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary-50 text-mute transition-colors duration-300 group-hover:bg-surface group-hover:text-primary">
 										{item.icon && (

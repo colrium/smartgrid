@@ -87,7 +87,7 @@ export function ProductSpecsSection({ namespace, groupKeys }: ProductSpecsSectio
 
 					<FadeUp delay={0.05}>
 						{current && (
-							<article className="rounded-[20px] bg-surface hairline card-shadow p-7 sm:p-10">
+							<article className="rounded-c bg-surface hairline card-shadow p-7 sm:p-10">
 								<div className="flex items-center justify-between gap-4 border-b border-ink/10 pb-6">
 									<h3 className="text-xl sm:text-2xl tracking-tight text-ink">
 										{current.headline}

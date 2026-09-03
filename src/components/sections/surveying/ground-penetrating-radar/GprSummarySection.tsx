@@ -25,7 +25,7 @@ export function GprSummarySection(): ReactElement {
 		<section id="summary" className="scroll-mt-36 py-20 sm:py-24 relative overflow-hidden">
 			<div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
-					<div className="relative overflow-hidden rounded-[20px] pale-panel hairline card-shadow px-8 py-12 sm:px-12 sm:py-14 text-center">
+					<div className="relative overflow-hidden rounded-c pale-panel hairline card-shadow px-8 py-12 sm:px-12 sm:py-14 text-center">
 						<SectionHeader
 							tag={section.tag || undefined}
 							headline={section.headline}

@@ -101,7 +101,7 @@ export function CoverageAreaSection(): ReactElement | null {
 						align="center"
 					/>
 				</FadeUp>
-				<div className="pale-panel mt-8 hairline card-shadow p-6 rounded-[20px]">
+				<div className="pale-panel mt-8 hairline card-shadow p-6 rounded-c">
 					<div className="w-full block relative ">
 						<div className="mx-auto w-100 aspect-square">
 							<ProjectsGlobe globeImageUrl="/img/earth/earth-light.jpg" />
@@ -158,7 +158,7 @@ export function CoverageAreaSection(): ReactElement | null {
 				<div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
 					{groups.map((group, index) => (
 						<FadeUp key={group.label} delay={0.08 * index} className="h-full">
-							<article className="group h-full flex flex-col gap-4 rounded-[20px] bg-surface hairline card-shadow p-7 transition-[box-shadow,border-color,transform] duration-500 hover:card-shadow-lift hover:border-primary hover:-translate-y-1">
+							<article className="group h-full flex flex-col gap-4 rounded-c bg-surface hairline card-shadow p-7 transition-[box-shadow,border-color,transform] duration-500 hover:card-shadow-lift hover:border-primary hover:-translate-y-1">
 								<span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 									<span className={`mdi mdi-${group.icon} text-2xl`} />
 								</span>

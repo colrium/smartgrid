@@ -56,7 +56,7 @@ export function TopographicalCostSection() {
 				<div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
 					{factors.length > 0 && (
 						<FadeLeft className="h-full">
-							<article className="h-full flex flex-col gap-6 rounded-[20px] bg-surface hairline card-shadow p-8">
+							<article className="h-full flex flex-col gap-6 rounded-c bg-surface hairline card-shadow p-8">
 								<h3 className="text-lg font-semibold tracking-tight text-ink">
 									{section.factorsTitle}
 								</h3>
@@ -67,7 +67,7 @@ export function TopographicalCostSection() {
 
 					{influences.length > 0 && (
 						<FadeRight delay={0.08} className="h-full">
-							<article className="h-full flex flex-col gap-6 rounded-[20px] bg-surface hairline card-shadow p-8">
+							<article className="h-full flex flex-col gap-6 rounded-c bg-surface hairline card-shadow p-8">
 								<h3 className="text-lg font-semibold tracking-tight text-ink">
 									{section.influencesTitle}
 								</h3>
@@ -79,7 +79,7 @@ export function TopographicalCostSection() {
 
 				{section.priceRange && (
 					<FadeUp delay={0.1}>
-						<div className="mt-8 relative rounded-[20px] bg-surface hairline card-shadow overflow-hidden px-8 py-12 sm:px-12 text-center">
+						<div className="mt-8 relative rounded-c bg-surface hairline card-shadow overflow-hidden px-8 py-12 sm:px-12 text-center">
 							<span className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-primary-100/60 blur-[90px] pointer-events-none" />
 							<span className="absolute -bottom-24 -left-16 w-56 h-56 rounded-full bg-primary-200/40 blur-[90px] pointer-events-none" />
 

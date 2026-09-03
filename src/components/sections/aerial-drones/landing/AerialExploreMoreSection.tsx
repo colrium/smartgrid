@@ -44,12 +44,12 @@ export function AerialExploreMoreSection() {
 							{item.href ? (
 								<Link
 									href={item.href}
-									className="group relative block aspect-[4/5] overflow-hidden rounded-[20px] bg-primary-50/60 hairline card-shadow transition-all duration-500 hover:card-shadow-lift"
+									className="group relative block aspect-[4/5] overflow-hidden rounded-c bg-primary-50/60 hairline card-shadow transition-all duration-500 hover:card-shadow-lift"
 								>
 									<TileContent item={item} linked />
 								</Link>
 							) : (
-								<article className="group relative aspect-[4/5] overflow-hidden rounded-[20px] bg-primary-50/60 hairline card-shadow transition-all duration-500 hover:card-shadow-lift">
+								<article className="group relative aspect-[4/5] overflow-hidden rounded-c bg-primary-50/60 hairline card-shadow transition-all duration-500 hover:card-shadow-lift">
 									<TileContent item={item} />
 								</article>
 							)}

@@ -49,11 +49,11 @@ export function EquipmentTechnologySection(): ReactElement {
 								{images.slice(0, 4).map((src, index) => (
 									<div
 										key={index}
-										className={`relative overflow-hidden aspect-3/4 rounded-[20px]!  card-shadow bg-slate-900 ${
+										className={`relative overflow-hidden aspect-3/4 rounded-c!  card-shadow bg-slate-900 ${
 											index % 2 === 0 ? "mt-6" : "-mt-6"
 										}`}
 									>
-										<div className="relative aspect-3/4 rounded-[20px]!  card-shadow bg-slate-900">
+										<div className="relative aspect-3/4 rounded-c!  card-shadow bg-slate-900">
 											<Image
 												src={src}
 												alt={`${section.headline} ${index + 1}`}

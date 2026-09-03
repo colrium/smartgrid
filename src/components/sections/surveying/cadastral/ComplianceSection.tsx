@@ -100,7 +100,7 @@ export function ComplianceSection(): ReactElement {
 					<div className="lg:col-span-7 space-y-4">
 						{checklist.map((item, index) => (
 							<FadeUp key={index} delay={(index % 3) * 0.08}>
-								<article className="group flex items-start gap-5 rounded-[20px] bg-paper hairline card-shadow p-6 sm:p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary/40">
+								<article className="group flex items-start gap-5 rounded-c bg-paper hairline card-shadow p-6 sm:p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary/40">
 									<span className="text-lg font-light tabular-nums tracking-wider text-primary/60 pt-0.5">
 										{String(index + 1).padStart(2, "0")}
 									</span>

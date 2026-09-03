@@ -76,7 +76,7 @@ export function AerialFinalCtaSection(): ReactElement {
 									<Link
 										key={index}
 										href={action.href}
-										className="group flex flex-col items-center gap-4 rounded-[20px] bg-surface/[0.05] hairline-dark p-7 text-center transition-all duration-500 hover:-translate-y-1.5 hover:bg-surface/10 hover:border-primary-300/50"
+										className="group flex flex-col items-center gap-4 rounded-c bg-surface/[0.05] hairline-dark p-7 text-center transition-all duration-500 hover:-translate-y-1.5 hover:bg-surface/10 hover:border-primary-300/50"
 									>
 										{/* <motion.span
 											animate={{ y: [0, -12, 0] }}

@@ -35,7 +35,7 @@ export function KeyFactsSection(): ReactElement | null {
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp delay={0.08}>
-					<div className="relative rounded-[20px] pale-panel hairline card-shadow overflow-hidden">
+					<div className="relative rounded-c pale-panel hairline card-shadow overflow-hidden">
 						{/* texture + watermark */}
 						<ParallaxDecor speed={0.06} className="absolute -top-16 -right-16 z-0">
 							<Blob className="w-72 h-72 bg-primary-100/90" opacity={0.7} />

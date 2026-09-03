@@ -39,7 +39,7 @@ export function CivilDeliverablesSection() {
 				<div className="mt-14 sm:mt-20 grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-16 items-start">
 					{list.length > 0 && (
 						<FadeLeft>
-							<ul className="grid grid-cols-1 gap-3.5 rounded-[20px] bg-surface hairline card-shadow p-7 sm:p-9">
+							<ul className="grid grid-cols-1 gap-3.5 rounded-c bg-surface hairline card-shadow p-7 sm:p-9">
 								{list.map((item, index) => (
 									<li
 										key={index}
@@ -57,7 +57,7 @@ export function CivilDeliverablesSection() {
 
 					{hasImage && (
 						<FadeRight delay={0.08}>
-							<div className="group relative overflow-hidden rounded-[20px] bg-primary-50/60 hairline card-shadow">
+							<div className="group relative overflow-hidden rounded-c bg-primary-50/60 hairline card-shadow">
 								<div className="relative aspect-[4/5]">
 									<Image
 										src={section.image as string}

@@ -27,7 +27,7 @@ export function ServicesByImagesSection() {
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={(index % 4) * 0.07}>
-							<article className="group relative aspect-[3/4] rounded-[20px] overflow-hidden bg-ink hairline card-shadow">
+							<article className="group relative aspect-[3/4] rounded-c overflow-hidden bg-ink hairline card-shadow">
 								{item.image && (
 									<Image
 										src={item.image}

@@ -43,7 +43,7 @@ export function CivilProcessSection() {
 				<div className="mt-14 sm:mt-20 grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-16 items-start">
 					{hasImage && (
 						<FadeLeft className="lg:sticky lg:top-28">
-							<div className="relative overflow-hidden rounded-[20px] bg-surface hairline card-shadow">
+							<div className="relative overflow-hidden rounded-c bg-surface hairline card-shadow">
 								<div className="relative aspect-square">
 									<Image
 										src={section.image as string}
@@ -71,7 +71,7 @@ export function CivilProcessSection() {
 							{items.map((item, index) => (
 								<li
 									key={index}
-									className="group relative flex gap-5 rounded-[20px] bg-surface hairline card-shadow p-6 transition-all duration-500 hover:card-shadow-lift hover:border-primary"
+									className="group relative flex gap-5 rounded-c bg-surface hairline card-shadow p-6 transition-all duration-500 hover:card-shadow-lift hover:border-primary"
 								>
 									<div className="flex flex-col items-center">
 										<span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary-50 text-mute transition-colors duration-300 group-hover:bg-surface group-hover:text-primary">

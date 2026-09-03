@@ -61,7 +61,7 @@ export function GprMethodologySection() {
 										</span>
 
 										<FadeUp delay={index * 0.06} className="flex-1 min-w-0">
-											<article className="group relative overflow-hidden rounded-[20px] bg-paper hairline card-shadow p-6 sm:p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
+											<article className="group relative overflow-hidden rounded-c bg-paper hairline card-shadow p-6 sm:p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
 												<span
 													aria-hidden
 													className="absolute -right-3 -top-6 font-light tracking-tighter text-[6rem] leading-none text-primary/[0.05] select-none pointer-events-none"

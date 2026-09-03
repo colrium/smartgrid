@@ -24,7 +24,7 @@ export function MetricsSection() {
 		<section id="metrics" className="py-24 sm:py-28 relative overflow-hidden">
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
-					<div className="relative rounded-[20px] ink-panel card-shadow overflow-hidden px-8 py-16 sm:px-12 sm:py-20">
+					<div className="relative rounded-c ink-panel card-shadow overflow-hidden px-8 py-16 sm:px-12 sm:py-20">
 						{/* authoritative glows + watermark */}
 						<span
 							className="absolute -top-24 -right-20 w-80 h-80 rounded-full bg-primary/40 pointer-events-none"

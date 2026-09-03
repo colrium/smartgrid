@@ -69,7 +69,7 @@ export function DronePhotographySection() {
 				<div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={(index % 3) * 0.07} className="h-full">
-							<article className="group h-full flex flex-col gap-3 rounded-[20px] bg-surface/10 border border-surface/20 backdrop-blur-md p-7 transition-all duration-500 hover:bg-surface hover:border-primary hover:card-shadow-lift">
+							<article className="group h-full flex flex-col gap-3 rounded-c bg-surface/10 border border-surface/20 backdrop-blur-md p-7 transition-all duration-500 hover:bg-surface hover:border-primary hover:card-shadow-lift">
 								<span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/20 text-primary-300 transition-colors duration-300 group-hover:bg-primary-50 group-hover:text-primary">
 									<span className="mdi mdi-camera-retake-outline text-xl" />
 								</span>

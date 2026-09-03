@@ -53,7 +53,7 @@ export function WhatIsSection(): ReactElement {
 						/>
 
 						<figure className="mt-10 max-w-sm">
-							<div className="relative rounded-[20px] pale-panel hairline card-shadow p-6 sm:p-7">
+							<div className="relative rounded-c pale-panel hairline card-shadow p-6 sm:p-7">
 								{section.diagramLabel && (
 									<span className="absolute -top-3.5 left-6 inline-flex items-center gap-2 rounded-full bg-ink px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-surface card-shadow">
 										<span className="mdi mdi-domain text-sm text-primary-300" />
@@ -119,7 +119,7 @@ export function WhatIsSection(): ReactElement {
 					<div className="flex flex-col gap-5">
 						{items.map((item, index) => (
 							<FadeUp key={index} delay={index * 0.08}>
-								<article className="group relative overflow-hidden rounded-[20px] pale-panel hairline card-shadow p-7 sm:p-8 transition-shadow duration-300 hover:card-shadow-lift">
+								<article className="group relative overflow-hidden rounded-c pale-panel hairline card-shadow p-7 sm:p-8 transition-shadow duration-300 hover:card-shadow-lift">
 									<span className="absolute -top-10 -right-10 h-32 w-32 rounded-full bg-primary-50 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
 									<div className="relative flex items-start gap-5">
 										<span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary-50 text-primary hairline transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">

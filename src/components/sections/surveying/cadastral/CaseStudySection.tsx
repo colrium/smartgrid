@@ -176,7 +176,7 @@ export function CaseStudySection(): ReactElement {
 
 								{(overview.critical ?? []).length > 0 && (
 									<div className="lg:col-span-5">
-										<div className="h-full rounded-[20px] bg-paper hairline card-shadow p-7">
+										<div className="h-full rounded-c bg-paper hairline card-shadow p-7">
 											{overview.criticalTitle && (
 												<p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink/50">
 													{overview.criticalTitle}
@@ -258,7 +258,7 @@ export function CaseStudySection(): ReactElement {
 										return (
 											<article
 												key={index}
-												className={`rounded-[20px] bg-paper hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift ${
+												className={`rounded-c bg-paper hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift ${
 													isWide ? "sm:col-span-2" : ""
 												}`}
 											>
@@ -308,7 +308,7 @@ export function CaseStudySection(): ReactElement {
 					{outcome && (
 						<FadeUp>
 							<BlockLabel label={outcome.label} />
-							<div className="mt-8 rounded-[20px] bg-primary-50/60 hairline card-shadow p-7 sm:p-9">
+							<div className="mt-8 rounded-c bg-primary-50/60 hairline card-shadow p-7 sm:p-9">
 								{outcome.intro && (
 									<p className="text-base sm:text-lg text-ink/80 leading-relaxed max-w-3xl">
 										{outcome.intro}
@@ -360,7 +360,7 @@ export function CaseStudySection(): ReactElement {
 					{techSummary && (techSummary.rows ?? []).length > 0 && (
 						<FadeUp>
 							<BlockLabel label={techSummary.label} />
-							<div className="mt-8 overflow-x-auto rounded-[20px] hairline card-shadow bg-paper">
+							<div className="mt-8 overflow-x-auto rounded-c hairline card-shadow bg-paper">
 								<table className="w-full min-w-[34rem] border-collapse text-left">
 									<thead>
 										<tr className="bg-ink text-surface">
@@ -390,7 +390,7 @@ export function CaseStudySection(): ReactElement {
 
 					{engineeringNote && (
 						<FadeUp>
-							<div className="group/band relative overflow-hidden rounded-[20px] pale-panel card-shadow p-8 sm:p-10 shimmer-t shimmer-gold-200">
+							<div className="group/band relative overflow-hidden rounded-c pale-panel card-shadow p-8 sm:p-10 shimmer-t shimmer-gold-200">
 								<span
 									aria-hidden
 									className="mdi mdi-format-quote-close absolute -right-4 -top-8 text-[12rem] leading-none text-primary-100 select-none pointer-events-none"

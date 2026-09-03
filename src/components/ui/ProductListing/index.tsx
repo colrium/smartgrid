@@ -188,12 +188,12 @@ export function ProductListing({
 							{item.ctaPrimary?.href ? (
 								<Link
 									href={item.ctaPrimary.href}
-									className="group flex h-full flex-col overflow-hidden rounded-[20px] bg-surface hairline card-shadow transition-all duration-500 hover:card-shadow-lift hover:border-primary"
+									className="group flex h-full flex-col overflow-hidden rounded-c bg-surface hairline card-shadow transition-all duration-500 hover:card-shadow-lift hover:border-primary"
 								>
 									<CardBody item={item} />
 								</Link>
 							) : (
-								<article className="group flex h-full flex-col overflow-hidden rounded-[20px] bg-surface hairline card-shadow transition-all duration-500 hover:card-shadow-lift hover:border-primary">
+								<article className="group flex h-full flex-col overflow-hidden rounded-c bg-surface hairline card-shadow transition-all duration-500 hover:card-shadow-lift hover:border-primary">
 									<CardBody item={item} />
 								</article>
 							)}

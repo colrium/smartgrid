@@ -34,7 +34,7 @@ export function GprTechnicalProposalCta(): ReactElement {
 		<section className="pt-4 sm:pt-6 pb-14 sm:pb-16 relative overflow-hidden">
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
-					<div className="group/band relative rounded-[20px] ink-panel card-shadow overflow-hidden px-8 py-12 sm:px-12 sm:py-14 shimmer-t shimmer-gold-200">
+					<div className="group/band relative rounded-c ink-panel card-shadow overflow-hidden px-8 py-12 sm:px-12 sm:py-14 shimmer-t shimmer-gold-200">
 						{content.watermark && (
 							<span
 								aria-hidden

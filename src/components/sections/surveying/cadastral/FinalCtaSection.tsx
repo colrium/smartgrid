@@ -75,7 +75,7 @@ export function FinalCtaSection(): ReactElement {
 									<Link
 										key={index}
 										href={action.href}
-										className="group flex flex-col gap-3 rounded-[20px] bg-surface/[0.05] hairline-dark p-6 text-left transition-all duration-500 hover:-translate-y-1.5 hover:bg-surface/10 hover:border-primary-300/50"
+										className="group flex flex-col gap-3 rounded-c bg-surface/[0.05] hairline-dark p-6 text-left transition-all duration-500 hover:-translate-y-1.5 hover:bg-surface/10 hover:border-primary-300/50"
 									>
 										<span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-primary-200 transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 											<span className={`mdi mdi-${action.icon || "arrow-right"} text-xl`} />

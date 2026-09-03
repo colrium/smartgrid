@@ -81,7 +81,7 @@ export function LandSurveyingSection() {
 				<div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={(index % 3) * 0.07}>
-							<article className="h-full flex flex-col gap-3 rounded-[20px] bg-surface hairline card-shadow p-7 sm:p-8 transition-all duration-500 hover:card-shadow-lift">
+							<article className="h-full flex flex-col gap-3 rounded-c bg-surface hairline card-shadow p-7 sm:p-8 transition-all duration-500 hover:card-shadow-lift">
 								<span className="h-10 w-10 rounded-xl bg-primary-50 text-primary flex items-center justify-center">
 									<span className="mdi mdi-check text-lg" />
 								</span>

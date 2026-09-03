@@ -81,7 +81,7 @@ export function ProjectsAcrossAfricaSection() {
 				<div className="-mt-10 sm:-mt-32 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={(index % 3) * 0.07}>
-							<article className="group relative h-full flex flex-col gap-4 rounded-[20px] bg-surface hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
+							<article className="group relative h-full flex flex-col gap-4 rounded-c bg-surface hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
 								{item.icon && (
 									<span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 										<span className={`mdi mdi-${item.icon} text-lg`} />
@@ -105,7 +105,7 @@ export function ProjectsAcrossAfricaSection() {
 							{images.slice(0, 2).map((src, index) => (
 								<div
 									key={index}
-									className="relative overflow-hidden rounded-[20px] hairline bg-surface card-shadow"
+									className="relative overflow-hidden rounded-c hairline bg-surface card-shadow"
 								>
 									<div className="relative aspect-16/10 bg-slate-900">
 										<Image

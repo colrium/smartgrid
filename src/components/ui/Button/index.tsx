@@ -108,7 +108,7 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(function Button(props
 		"disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none",
 		variantClasses[variant][color],
 		sizeClasses[variant][size],
-		rounded === "full" ? "rounded-full" : "rounded-[20px]",
+		rounded === "full" ? "rounded-full" : "rounded-c",
 		fullWidth ? "w-full" : "",
 		disableElevation ? "shadow-none! hover:shadow-none!" : "",
 		className,

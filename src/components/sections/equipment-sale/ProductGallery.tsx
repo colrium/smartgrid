@@ -49,7 +49,7 @@ export function ProductGallery({ images, alt, className = "" }: ProductGalleryPr
 	return (
 		<div className={`flex flex-col gap-4 sm:gap-5 ${className}`}>
 			<div
-				className={`group relative aspect-square overflow-hidden rounded-[20px] bg-surface hairline card-shadow ${
+				className={`group relative aspect-square overflow-hidden rounded-c bg-surface hairline card-shadow ${
 					zoom?.active ? "cursor-zoom-in" : "cursor-default"
 				}`}
 				onMouseMove={handleMouseMove}

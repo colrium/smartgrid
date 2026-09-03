@@ -42,7 +42,7 @@ export function SampleMapSection() {
 				<div className="mt-14 sm:mt-20 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 					{/* Highlights list */}
 					<FadeUp className="lg:col-span-5">
-						<div className="relative rounded-[20px] card-shadow border-primary bg-surface p-8 sm:p-10 ">
+						<div className="relative rounded-c card-shadow border-primary bg-surface p-8 sm:p-10 ">
 							<span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
 								<span className="h-1.5 w-1.5 rounded-full bg-primary" />
 								{section.map?.title}
@@ -75,7 +75,7 @@ export function SampleMapSection() {
 								<div className="absolute -top-6 -right-6 w-32 h-32 bg-primary/10 rounded-full blur-2xl" />
 								<div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl" />
 
-								<figure className="relative bg-surface p-4 rounded-[20px] hairline card-shadow overflow-hidden">
+								<figure className="relative bg-surface p-4 rounded-c hairline card-shadow overflow-hidden">
 									<div className="relative h-[28rem] rounded-xl overflow-hidden bg-slate-900">
 										<Image
 											src={section.map.image}

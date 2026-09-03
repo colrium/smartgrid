@@ -45,7 +45,7 @@ export function WhyChooseUsSection() {
 					</FadeUp>
 
 					{/* Editorial list */}
-					<div className="lg:col-span-8 rounded-[20px] pale-panel hairline card-shadow py-8">
+					<div className="lg:col-span-8 rounded-c pale-panel hairline card-shadow py-8">
 						{Array.isArray(items) &&
 							items.map((item, index) => (
 								<FadeUp key={index} delay={index * 0.05}>

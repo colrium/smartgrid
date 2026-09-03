@@ -63,7 +63,7 @@ export function WhenYouNeedSection(): ReactElement {
 					{section.image && (
 						<FadeUp className="lg:col-span-5 pb-6">
 							<div className="relative">
-								<div className="relative bg-surface p-4 rounded-[20px] hairline card-shadow">
+								<div className="relative bg-surface p-4 rounded-c hairline card-shadow">
 									<div className="relative aspect-4/5 rounded-xl overflow-hidden bg-slate-900">
 										<Image
 											src={section.image}
@@ -95,7 +95,7 @@ export function WhenYouNeedSection(): ReactElement {
 
 							const card = (
 								<article
-									className={`group relative h-full rounded-[20px] bg-paper hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift ${
+									className={`group relative h-full rounded-c bg-paper hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift ${
 										isLinked ? "hover:border-primary cursor-pointer" : ""
 									} ${isWide ? "sm:col-span-2 sm:flex sm:items-center sm:gap-7" : "flex flex-col gap-3"}`}
 								>

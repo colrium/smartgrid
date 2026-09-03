@@ -70,7 +70,7 @@ export function ImpactAcrossAfricaSection() {
 						{hasImage && (
 							<div className="relative">
 								<div className="absolute -inset-4 bg-primary/10 rounded-[28px] blur-2xl" />
-								<div className="relative aspect-square rounded-[20px] overflow-hidden hairline card-shadow">
+								<div className="relative aspect-square rounded-c overflow-hidden hairline card-shadow">
 									{/* <Image
 										src={section.image as string}
 										alt={section.headline}
@@ -93,7 +93,7 @@ export function ImpactAcrossAfricaSection() {
 						/>
 
 						{whyChooseUs && (
-							<div className="mt-10 rounded-[20px] bg-surface hairline card-shadow p-7 sm:p-8">
+							<div className="mt-10 rounded-c bg-surface hairline card-shadow p-7 sm:p-8">
 								<div className="flex items-center gap-4">
 									{whyChooseUs.icon && (
 										<span className="h-12 w-12 rounded-2xl bg-primary-50 text-primary flex items-center justify-center">

@@ -58,7 +58,7 @@ export function ServicesSection(): ReactElement | null {
 					/>
 				</FadeUp>
 
-				<div className="mt-14 sm:mt-20 rounded-[20px] pale-panel hairline card-shadow overflow-hidden p-6 sm:p-10 lg:p-12">
+				<div className="mt-14 sm:mt-20 rounded-c pale-panel hairline card-shadow overflow-hidden p-6 sm:p-10 lg:p-12">
 					<div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
 						{/* Selector - segmented control on mobile/tablet, folder list on desktop */}
 						<div className="lg:col-span-4 lg:sticky lg:top-28">

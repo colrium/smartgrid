@@ -59,7 +59,7 @@ export function DeliverablesSection() {
 								<div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/10 rounded-full blur-2xl" />
 								<div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl" />
 
-								<div className="relative bg-surface p-4 rounded-[20px] hairline card-shadow">
+								<div className="relative bg-surface p-4 rounded-c hairline card-shadow">
 									<div className="relative aspect-[3/4] rounded-xl overflow-hidden bg-slate-900">
 										<Image
 											src={section.image}

@@ -97,7 +97,7 @@ export function Deliverables({
 
 				<div className="mt-14 sm:mt-20 grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-8 lg:gap-12 items-stretch">
 					<FadeLeft className="h-full">
-						<div className="relative h-full min-h-[22rem] overflow-hidden rounded-[20px] pale-panel card-shadow p-8 sm:p-10">
+						<div className="relative h-full min-h-[22rem] overflow-hidden rounded-c pale-panel card-shadow p-8 sm:p-10">
 							<span className="absolute -top-20 -right-20 w-60 h-60 rounded-full bg-primary-300/30 blur-[90px] pointer-events-none" />
 							<span className="absolute -bottom-16 -left-10 w-48 h-48 rounded-full bg-primary/25 blur-[80px] pointer-events-none" />
 							{!activeImage && (

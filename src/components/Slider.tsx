@@ -104,7 +104,7 @@ export function Slider({
 			}}
 		>
 			<div
-				className={`relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-[21/10] overflow-hidden rounded-[20px] hairline card-shadow bg-surface ${containerClassName}`}
+				className={`relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-[21/10] overflow-hidden rounded-c hairline card-shadow bg-surface ${containerClassName}`}
 			>
 				<AnimatePresence initial={false} custom={direction} mode="popLayout">
 					<motion.div

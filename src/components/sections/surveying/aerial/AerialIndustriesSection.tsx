@@ -60,7 +60,7 @@ export function AerialIndustriesSection(): ReactElement {
 
 						const card = (
 							<article
-								className={`group relative h-full rounded-[20px] bg-surface hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift ${
+								className={`group relative h-full rounded-c bg-surface hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift ${
 									isLinked ? "hover:border-primary cursor-pointer" : ""
 								} ${isWide ? "lg:col-span-3 lg:flex lg:items-center lg:gap-8" : "flex flex-col"}`}
 							>

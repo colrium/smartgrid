@@ -90,7 +90,7 @@ export function AerialProjectsSection() {
 								{/* images.map((image, index) => (
 									<div
 										key={index}
-										className="group relative aspect-[16/10] overflow-hidden rounded-[20px] bg-primary-50/60 hairline card-shadow"
+										className="group relative aspect-[16/10] overflow-hidden rounded-c bg-primary-50/60 hairline card-shadow"
 									>
 										<Image
 											src={image}

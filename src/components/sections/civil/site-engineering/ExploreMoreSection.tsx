@@ -42,7 +42,7 @@ export function ExploreMoreSection() {
 						<FadeUp key={index} delay={(index % 3) * 0.07}>
 							{item.href ? (
 								<Link href={item.href}>
-									<article className="group relative h-64 sm:h-72 rounded-[20px] overflow-hidden card-shadow hairline">
+									<article className="group relative h-64 sm:h-72 rounded-c overflow-hidden card-shadow hairline">
 										{item.image && (
 											<Image
 												src={item.image}
@@ -63,7 +63,7 @@ export function ExploreMoreSection() {
 									</article>
 								</Link>
 							) : (
-								<article className="group relative h-64 sm:h-72 rounded-[20px] overflow-hidden card-shadow hairline">
+								<article className="group relative h-64 sm:h-72 rounded-c overflow-hidden card-shadow hairline">
 									{item.image && (
 										<Image
 											src={item.image}

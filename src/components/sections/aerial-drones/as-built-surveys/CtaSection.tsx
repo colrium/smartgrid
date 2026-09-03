@@ -36,7 +36,7 @@ export function CtaSection() {
 					<FadeUp>
 						<div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-14 sm:mb-16">
 							{images.map((src, index) => (
-								<div key={index} className="relative h-52 sm:h-60 rounded-[20px] overflow-hidden">
+								<div key={index} className="relative h-52 sm:h-60 rounded-c overflow-hidden">
 									<Image
 										src={src}
 										alt=""

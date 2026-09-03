@@ -53,7 +53,7 @@ export function DamsLakesSection() {
 								{images.slice(0, 2).map((src, index) => (
 									<div
 										key={index}
-										className={`relative overflow-hidden aspect-3/4 rounded-[20px]!  card-shadow bg-slate-900 ${
+										className={`relative overflow-hidden aspect-3/4 rounded-c!  card-shadow bg-slate-900 ${
 											index === 0 ? "mt-6" : "-mt-6"
 										}`}
 									>
@@ -76,7 +76,7 @@ export function DamsLakesSection() {
 				<div className="mt-14 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={(index % 3) * 0.08}>
-							<article className="group relative h-full flex flex-col gap-4 rounded-[20px] bg-surface hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
+							<article className="group relative h-full flex flex-col gap-4 rounded-c bg-surface hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
 								{item.icon && (
 									<span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 										<span className={`mdi mdi-${item.icon} text-lg`} />

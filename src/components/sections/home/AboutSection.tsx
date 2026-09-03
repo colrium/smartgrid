@@ -100,7 +100,7 @@ export const AboutSection: React.FC = () => {
 								}}
 							/>
 							<FadeLeft>
-								<div className="relative bg-surface p-4 rounded-[20px] hairline card-shadow">
+								<div className="relative bg-surface p-4 rounded-c hairline card-shadow">
 									<div className="relative aspect-4/5 rounded-xl overflow-hidden bg-slate-900 group">
 										{/* Abstract Representation of Pointcloud / Surveying Mesh */}
 										<Image

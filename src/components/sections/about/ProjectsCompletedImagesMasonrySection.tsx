@@ -33,7 +33,7 @@ export function ProjectsCompletedImagesMasonrySection() {
 				<div className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
 					{images.map((image, index) => (
 						<FadeUp key={index} delay={(index % 3) * 0.07}>
-							<figure className="group relative aspect-[4/3] overflow-hidden rounded-[20px] bg-primary-50/40 hairline card-shadow p-3 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
+							<figure className="group relative aspect-[4/3] overflow-hidden rounded-c bg-primary-50/40 hairline card-shadow p-3 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
 								<div className="relative h-full w-full overflow-hidden rounded-[13px] bg-white">
 									<Image
 										src={image}

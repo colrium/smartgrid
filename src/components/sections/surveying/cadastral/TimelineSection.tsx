@@ -60,7 +60,7 @@ export function TimelineSection(): ReactElement {
 
 						return (
 							<FadeUp key={index} delay={index * 0.07}>
-								<article className="rounded-[20px] bg-surface hairline card-shadow p-6 sm:p-8 transition-all duration-500 hover:card-shadow-lift">
+								<article className="rounded-c bg-surface hairline card-shadow p-6 sm:p-8 transition-all duration-500 hover:card-shadow-lift">
 									<div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-7">
 										<div className="flex items-start gap-4 sm:flex-1 sm:min-w-0">
 											<span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary">

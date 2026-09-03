@@ -43,7 +43,7 @@ export function WhatIsTopographicalSection() {
 
 				<FadeRight delay={0.08} className="lg:col-span-5">
 					{hasImage && (
-						<div className="relative rounded-[20px] overflow-hidden bg-surface hairline card-shadow">
+						<div className="relative rounded-c overflow-hidden bg-surface hairline card-shadow">
 							<div className="relative aspect-[4/3]">
 								<Image
 									src={section.image as string}

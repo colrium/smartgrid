@@ -12,7 +12,7 @@ export function ProductCard({ image, label, href, className = "" }: ProductCardP
 	return (
 		<Link
 			href={href}
-			className={`group block h-full rounded-[20px] bg-surface hairline card-shadow p-5 transition-all duration-500 hover:card-shadow-lift hover:border-primary ${className}`}
+			className={`group block h-full rounded-c bg-surface hairline card-shadow p-5 transition-all duration-500 hover:card-shadow-lift hover:border-primary ${className}`}
 		>
 			<div className="relative aspect-square rounded-[15px] overflow-hidden bg-primary-50/60">
 				{image && (

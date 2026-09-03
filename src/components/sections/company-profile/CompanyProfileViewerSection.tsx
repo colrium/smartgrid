@@ -36,7 +36,7 @@ export function CompanyProfileViewerSection() {
 				/>
 
 				<FadeUp delay={0.05}>
-					<div className="mt-12 sm:mt-16 rounded-[20px] bg-surface hairline card-shadow p-3 sm:p-4">
+					<div className="mt-12 sm:mt-16 rounded-c bg-surface hairline card-shadow p-3 sm:p-4">
 						<div className="relative rounded-[15px] overflow-hidden bg-primary-50/40 hairline">
 							<iframe
 								src={section.pdfLink}

@@ -45,7 +45,7 @@ export function ApplicationProcessSection() {
 				<span className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary-300/10 blur-[90px] pointer-events-none" />
 				<span className="absolute bottom-2 -left-20 w-72 h-72 rounded-full bg-primary/10 blur-[90px] pointer-events-none" />
 				<FadeUp>
-					<div className="relative rounded-[20px] card-panel   overflow-hidden px-8 py-16 sm:px-12 sm:py-24 text-center">
+					<div className="relative rounded-c card-panel   overflow-hidden px-8 py-16 sm:px-12 sm:py-24 text-center">
 						<div className="relative flex flex-col items-center gap-6">
 							{section.subtitle && (
 								<h2 className="font-light tracking-tight leading-[1.08] text-3xl sm:text-5xl text-on-surface">

@@ -46,7 +46,7 @@ export function OurInstrumentsSection() {
 				<div className="mt-14 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={(index % 3) * 0.07}>
-							<article className="group relative h-64 sm:h-72 rounded-[20px] overflow-hidden card-shadow hairline">
+							<article className="group relative h-64 sm:h-72 rounded-c overflow-hidden card-shadow hairline">
 								{item.image && (
 									<Image
 										src={item.image}

@@ -57,7 +57,7 @@ export function FaqSection(): ReactElement | null {
 						/>
 
 						{content.stillCurious?.cta?.href && (
-							<div className="relative rounded-[20px] ink-panel card-shadow overflow-hidden p-7">
+							<div className="relative rounded-c ink-panel card-shadow overflow-hidden p-7">
 								<span
 									aria-hidden
 									className={`mdi mdi-${

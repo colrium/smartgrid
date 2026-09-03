@@ -38,7 +38,7 @@ export function WhyBathymetricCriticalSection(): ReactElement {
 				<div className="mt-14 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
 					{applications.map((app, index) => (
 						<FadeUp key={index} delay={index * 0.06} className="h-full">
-							<article className="group relative h-full flex flex-col gap-4 rounded-[20px] bg-paper hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
+							<article className="group relative h-full flex flex-col gap-4 rounded-c bg-paper hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
 								<div className="flex items-start gap-3">
 									<span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
 										<span className="mdi mdi-check text-sm" />

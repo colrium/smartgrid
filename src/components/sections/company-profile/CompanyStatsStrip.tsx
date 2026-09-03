@@ -25,7 +25,7 @@ export function CompanyStatsStrip() {
 	return (
 		<section className="relative z-10 -mt-4 pb-8">
 			<div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-				<div className="grid grid-cols-2 lg:grid-cols-4 rounded-[20px] ink-panel card-shadow overflow-hidden">
+				<div className="grid grid-cols-2 lg:grid-cols-4 rounded-c ink-panel card-shadow overflow-hidden">
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={index * 0.06}>
 							<div

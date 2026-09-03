@@ -71,7 +71,7 @@ export function AerialServicesSection(): ReactElement {
 								className={`h-full ${span}`}
 							>
 								<article
-									className={`group relative h-full overflow-hidden rounded-[20px] hairline card-shadow transition-all duration-500hover:card-shadow-lift hover:border-primary ${
+									className={`group relative h-full overflow-hidden rounded-c hairline card-shadow transition-all duration-500hover:card-shadow-lift hover:border-primary ${
 										featured
 											? "bg-gradient-to-br from-primary-50/80 via-paper to-paper"
 											: "bg-paper"
@@ -173,7 +173,7 @@ export function AerialServicesSection(): ReactElement {
 							role="dialog"
 							aria-modal="true"
 							aria-label={active.title}
-							className="relative w-full max-w-xl overflow-hidden rounded-[20px] bg-surface p-8 sm:p-10 card-shadow-lift"
+							className="relative w-full max-w-xl overflow-hidden rounded-c bg-surface p-8 sm:p-10 card-shadow-lift"
 							onClick={(e) => e.stopPropagation()}
 						>
 							<button

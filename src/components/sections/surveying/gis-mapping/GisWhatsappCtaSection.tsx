@@ -33,7 +33,7 @@ export function GisWhatsappCtaSection(): ReactElement {
 		<section className="pb-14 sm:pb-16 relative overflow-hidden">
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
-					<div className="relative rounded-[20px] bg-surface hairline card-shadow overflow-hidden px-8 py-10 sm:px-12 sm:py-12">
+					<div className="relative rounded-c bg-surface hairline card-shadow overflow-hidden px-8 py-10 sm:px-12 sm:py-12">
 						<span
 							aria-hidden
 							className="pointer-events-none absolute -right-10 -bottom-14 select-none text-[11rem] leading-none text-whatsapp/[0.07] mdi mdi-whatsapp"
