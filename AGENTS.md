@@ -56,6 +56,11 @@ public/                           # assets, fonts, img, geojson, locales/{lang}/
 - **No unused imports** (ESLint `unused-imports/no-unused-imports: error`).
 - Use the **`@/*`** path alias (maps to `./src/*`).
 - Component exports: prefer named exports; default exports allowed for page sections.
+- **`ink-panel` is reserved for CTA sections only.** The dark `ink-panel` gradient utility must
+  appear exclusively on call-to-action sections/bands (book, quote, contact, WhatsApp, email).
+  Content sections, cards, tiles, and highlights must not use it — style them with light tokens
+  (`bg-surface`, `bg-paper`, `pale-panel`, or the default page background). When a dark surface
+  is genuinely required outside a CTA (e.g. hero image fallbacks, dark tiles), use solid `bg-ink`.
 
 ## Codex Operating Instructions
 - Treat this file as Codex's repository-level base instruction file. It supplements the
@@ -67,8 +72,10 @@ public/                           # assets, fonts, img, geojson, locales/{lang}/
   actions, external writes, purchases, or material scope expansion.
 - Preserve unrelated work in a dirty working tree. Never commit secrets; `.env.local` remains
   untracked and only `.env.example` may be versioned.
-- After a substantive change, run `npm run lint`, `npm run typecheck`, and `npm run build`.
-  Check port 3000 before starting a dev server, and terminate any server started for verification.
+- Verification scales with the size of the change: small edits (≤300 changed lines) → run
+  `npm run lint`; large edits (>300 changed lines) → run the full build verification
+  (`npm run lint`, `npm run typecheck`, `npm run build`). Check port 3000 before starting a dev
+  server, and terminate any server started for verification.
 
 ## Internationalization Rules
 - Adding/changing a key in any `public/locales/<locale>/*.json` must be **mirrored across all locale files**
@@ -95,7 +102,9 @@ public/                           # assets, fonts, img, geojson, locales/{lang}/
 - `npm run lint:fix` — auto-fix lint issues.
 - **Before starting a dev server:** check whether one is already running on port 3000; do not
   start a second. Stop and terminate it after verifications.
-- Run `lint`, `typecheck`, and `build` after any substantial change.
+- **Verification effort scales with change size:** small edits (≤300 changed lines) →
+  `npm run lint` is sufficient; large edits (>300 changed lines) → run the full build
+  verification (`npm run lint`, `npm run typecheck`, `npm run build`).
 
 ## Environment
 - if a .env or .env.local file does not exist, copy `.env.example` → `.env`. Required: Sanity project id/dataset/api version,

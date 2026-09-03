@@ -256,43 +256,35 @@
 		"logos": [
 			{
 				"image": "/media/surveying/gis-mapping/03-05.png",
-				"label": "ArcGIS",
-				"tone": "dark"
+				"label": "ArcGIS"
 			},
 			{
 				"image": "/media/surveying/gis-mapping/03-04.png",
-				"label": "Esri",
-				"tone": "light"
+				"label": "Esri"
 			},
 			{
 				"image": "/media/surveying/gis-mapping/03-01.png",
-				"label": "Agisoft Metashape",
-				"tone": "dark"
+				"label": "Agisoft Metashape"
 			},
 			{
 				"image": "/media/surveying/gis-mapping/03-08.png",
-				"label": "Trimble",
-				"tone": "dark"
+				"label": "Trimble"
 			},
 			{
 				"image": "/media/surveying/gis-mapping/03-07.png",
-				"label": "PIX4Dmapper",
-				"tone": "dark"
+				"label": "PIX4Dmapper"
 			},
 			{
 				"image": "/media/surveying/gis-mapping/03-02.png",
-				"label": "Blue Marble Geographics",
-				"tone": "light"
+				"label": "Blue Marble Geographics"
 			},
 			{
 				"image": "/media/surveying/gis-mapping/03-06.png",
-				"label": "ArcGIS Pro",
-				"tone": "dark"
+				"label": "ArcGIS Pro"
 			},
 			{
 				"image": "/media/surveying/gis-mapping/03-03.png",
-				"label": "Esri",
-				"tone": "light"
+				"label": "Esri"
 			}
 		]
 	},

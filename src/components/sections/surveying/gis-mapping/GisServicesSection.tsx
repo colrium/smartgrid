@@ -5,6 +5,7 @@ import type { ReactElement } from "react";
 import { useTranslation } from "@/hooks";
 import { SectionHeader } from "@/components/sections/home";
 import { FadeUp } from "@/components/animations/Fade";
+import { Blob } from "@/components/sections/home/decor";
 
 interface ServiceItem {
 	icon?: string | null;
@@ -29,22 +30,18 @@ export function GisServicesSection(): ReactElement {
 	if (items.length === 0) return <></>;
 
 	return (
-		<section id="gis-services" className="scroll-mt-36 relative overflow-hidden ink-panel py-24 sm:py-28">
+		<section id="gis-services" className="scroll-mt-36 py-24 sm:py-28 relative overflow-hidden">
 			<span
 				aria-hidden
-				className="pointer-events-none absolute -top-16 -right-16 select-none font-light leading-none text-[18rem] text-surface/5 mdi mdi-layers-triple"
+				className="pointer-events-none absolute -top-16 -right-16 select-none font-light leading-none text-[18rem] text-primary/5 mdi mdi-layers-triple"
 			/>
-			<span
-				aria-hidden
-				className="pointer-events-none absolute -bottom-32 -left-24 w-96 h-96 rounded-full bg-primary/20 blur-[110px]"
-			/>
+			<Blob className="w-[28rem] h-[28rem] bg-primary-100/60 -top-24 -left-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader
 					tag={section.tag || undefined}
 					headline={section.headline}
 					description={section.description || undefined}
-					tone="dark"
 					align="center"
 				/>
 
@@ -55,25 +52,25 @@ export function GisServicesSection(): ReactElement {
 						return (
 							<FadeUp key={index} delay={(index % 3) * 0.07} className="h-full">
 								<article
-									className={`group relative h-full flex flex-col rounded-[20px] bg-surface/[0.05] hairline-dark p-7 transition-all duration-500 hover:-translate-y-1 hover:bg-surface/10 hover:border-primary-300/50 ${
+									className={`group relative h-full flex flex-col rounded-c bg-surface hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary ${
 										items.length % 2 !== 0 && index === items.length - 1
 											? "sm:col-span-2 lg:col-span-1"
 											: ""
 									}`}
 								>
 									<div className="flex items-center justify-between gap-4">
-										<span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary-200 transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
+										<span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 											<span className={`mdi mdi-${item.icon || "layers-outline"} text-2xl`} />
 										</span>
 										<span
 											aria-hidden
-											className="text-4xl font-light leading-none tracking-tighter text-surface/15 transition-colors duration-500 group-hover:text-primary-200/40"
+											className="text-4xl font-light leading-none tracking-tighter text-primary/15 transition-colors duration-500 group-hover:text-primary/40"
 										>
 											{String(index + 1).padStart(2, "0")}
 										</span>
 									</div>
 
-									<h3 className="mt-6 text-lg font-semibold tracking-tight text-surface leading-snug">
+									<h3 className="mt-6 text-lg font-semibold tracking-tight text-ink leading-snug">
 										{item.title}
 									</h3>
 
@@ -82,11 +79,11 @@ export function GisServicesSection(): ReactElement {
 											{features.map((feature, fIndex) => (
 												<li
 													key={fIndex}
-													className="flex items-start gap-2.5 rounded-lg bg-surface/[0.04] px-3 py-2 text-sm leading-snug text-surface/75"
+													className="flex items-start gap-2.5 rounded-lg bg-ink-50/30 px-3 py-2 text-sm leading-snug text-ink-500"
 												>
 													<span
 														aria-hidden
-														className="mdi mdi-check-bold text-sm text-primary-300 shrink-0 mt-0.5"
+														className="mdi mdi-check-bold text-sm text-primary shrink-0 mt-0.5"
 													/>
 													{feature}
 												</li>

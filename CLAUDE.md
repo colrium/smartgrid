@@ -44,7 +44,9 @@ npm run typegen          # Sanity schema + typegen
   locales, run `npm run toc` to refresh types.
 - **Equipment/product:** add to `public/locales/en/products.json` (registry) + a per-product
   locale JSON (e.g. `dji-mavic-3-pro.json`); the catalogue is built from these.
-- **Before committing:** `npm run lint && npm run typecheck && npm run build`.
+- **Before committing:** verification scales with change size — small edits (≤300 changed
+  lines) → `npm run lint`; large edits (>300 changed lines) → full build verification
+  (`npm run lint && npm run typecheck && npm run build`).
 - **i18n sync:** every locale file that exists for `en` must exist for `de, sw, fr, pt` with
   the same keys; URLs/slugs/codes are copied verbatim, text is translated.
 
@@ -55,4 +57,8 @@ npm run typegen          # Sanity schema + typegen
   SEO via `<PageHead pageName="..." />`.
 - Performance: code-split heavy libs (`dynamic(..., { ssr: false })`); `priority` +
   `fetchPriority="high"` on LCP hero images; lazy-load off-screen images.
+- **`ink-panel` is reserved for CTA sections only** (book/quote/contact/WhatsApp/email bands).
+  Content sections, cards, and tiles must not use it — style them with light tokens
+  (`bg-surface`, `bg-paper`, `pale-panel`, or the default page background). Use solid `bg-ink`
+  when a dark surface is genuinely required outside a CTA (e.g. hero image fallbacks).
 - See `AGENTS.md` for the full canonical standards and project context.

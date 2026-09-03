@@ -50,7 +50,7 @@ export function GisProjectImpactSection(): ReactElement {
 								>
 									{String(index + 1).padStart(2, "0")}
 								</span>
-								<div className="mt-auto flex flex-col gap-3">
+								<div className="flex flex-col gap-3">
 									<span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 										<span className={`mdi mdi-${item.icon || "trending-up"} text-lg`} />
 									</span>

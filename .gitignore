@@ -65,3 +65,7 @@ next-env.d.ts
 .next-verify
 .kilo
 kilo.jsonc
+
+# Verification files
+tc*.txt
+lint-ts.txt

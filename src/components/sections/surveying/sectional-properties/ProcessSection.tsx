@@ -23,15 +23,15 @@ interface ProcessContent {
 
 const PHASE_STYLES: Record<string, { chip: string; icon: string }> = {
 	FIELD: {
-		chip: "border-primary-400/40 bg-primary-400/10 text-primary-200",
+		chip: "border-primary/30 bg-primary-50 text-primary-700",
 		icon: "map-marker-radius",
 	},
 	OFFICE: {
-		chip: "border-accent-300/40 bg-accent-300/10 text-accent-300",
+		chip: "border-accent/30 bg-accent-50 text-accent-700",
 		icon: "desktop-mac-dashboard",
 	},
 	REGISTRY: {
-		chip: "border-whatsapp/40 bg-whatsapp/10 text-whatsapp",
+		chip: "border-whatsapp/30 bg-whatsapp/10 text-green-700",
 		icon: "office-building-marker",
 	},
 };
@@ -48,10 +48,10 @@ export function ProcessSection(): ReactElement {
 	if (items.length === 0) return <></>;
 
 	return (
-		<section className="ink-panel py-24 sm:py-28 relative overflow-hidden">
+		<section className="bg-surface py-24 sm:py-28 relative overflow-hidden">
 			<Blob
-				className="w-[30rem] h-[30rem] bg-primary-400/15 -bottom-40 -left-40"
-				opacity={0.35}
+				className="w-[30rem] h-[30rem] bg-primary-100/60 -bottom-40 -left-40"
+				opacity={0.5}
 			/>
 
 			<div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -59,14 +59,13 @@ export function ProcessSection(): ReactElement {
 					tag={section.tag || undefined}
 					headline={section.headline ?? ""}
 					description={section.description || undefined}
-					tone="dark"
 					align="center"
 				/>
 
 				<div className="relative mt-16 sm:mt-20">
 					<div
 						aria-hidden
-						className="absolute left-4 lg:left-1/2 lg:-translate-x-1/2 top-2 bottom-2 w-px bg-gradient-to-b from-primary-400/0 via-primary-400/50 to-accent-400/70"
+						className="absolute left-4 lg:left-1/2 lg:-translate-x-1/2 top-2 bottom-2 w-px bg-gradient-to-b from-primary/0 via-primary/40 to-accent/50"
 					/>
 					<ol className="space-y-10 lg:space-y-14">
 						{items.map((item, index) => {
@@ -84,11 +83,11 @@ export function ProcessSection(): ReactElement {
 													: "lg:pl-[calc(50%+2.75rem)]"
 												}`}
 										>
-											<span className="absolute left-0 lg:left-1/2 lg:-translate-x-1/2 top-1 inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary-400/50 bg-ink-soft text-[11px] font-semibold text-surface shadow-[0_0_0_6px_rgba(0,151,178,0.12)]">
+											<span className="absolute left-0 lg:left-1/2 lg:-translate-x-1/2 top-1 inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary/30 bg-surface text-[11px] font-semibold text-primary shadow-[0_0_0_6px_rgba(0,151,178,0.08)]">
 												{String(index + 1).padStart(2, "0")}
 											</span>
 
-											<div className="flex-1 rounded-[18px] border border-surface/10 bg-surface/5 p-6 sm:p-7 backdrop-blur-sm transition-colors duration-300 hover:border-primary-400/30">
+											<div className="flex-1 rounded-[18px] bg-surface hairline card-shadow p-6 sm:p-7 transition-colors duration-300 hover:border-primary/40">
 												<div className="flex flex-wrap items-center justify-between gap-3">
 													{item.phase && (
 														<span
@@ -98,14 +97,14 @@ export function ProcessSection(): ReactElement {
 															{item.phase}
 														</span>
 													)}
-													<span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-surface/30">
+													<span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-on-surface/30">
 														Step {String(index + 1).padStart(2, "0")}
 													</span>
 												</div>
-												<h3 className="mt-4 text-lg sm:text-xl font-medium tracking-tight text-surface leading-snug">
+												<h3 className="mt-4 text-lg sm:text-xl font-medium tracking-tight text-ink leading-snug">
 													{item.label}
 												</h3>
-												<p className="mt-2.5 text-sm leading-relaxed text-surface/60">
+												<p className="mt-2.5 text-sm leading-relaxed text-on-surface/60">
 													{item.description}
 												</p>
 											</div>
@@ -120,7 +119,7 @@ export function ProcessSection(): ReactElement {
 				{section.outcome && (
 					<FadeUp>
 						<div className="relative mt-14 flex justify-center">
-							<div className="inline-flex flex-wrap items-center justify-center gap-3 rounded-full border border-whatsapp/30 bg-whatsapp/10 px-7 py-3.5 text-sm sm:text-base font-medium text-surface text-center">
+							<div className="inline-flex flex-wrap items-center justify-center gap-3 rounded-full border border-whatsapp/40 bg-whatsapp/10 px-7 py-3.5 text-sm sm:text-base font-medium text-ink/80 text-center">
 								<span className="mdi mdi-check-decagram text-xl text-whatsapp" />
 								{section.outcome}
 							</div>

@@ -5,6 +5,7 @@ import type { ReactElement } from "react";
 import { useTranslation } from "@/hooks";
 import { SectionHeader } from "@/components/sections/home";
 import { FadeUp } from "@/components/animations/Fade";
+import { Blob } from "@/components/sections/home/decor";
 
 interface IndustryItem {
 	icon?: string | null;
@@ -29,18 +30,18 @@ export function GisIndustriesSection(): ReactElement {
 	if (items.length === 0) return <></>;
 
 	return (
-		<section className="relative overflow-hidden ink-panel py-24 sm:py-28">
+		<section className="py-24 sm:py-28 relative overflow-hidden">
 			<span
 				aria-hidden
-				className="pointer-events-none absolute -bottom-20 -right-12 select-none font-light leading-none text-[18rem] text-surface/5 mdi mdi-earth"
+				className="pointer-events-none absolute -bottom-20 -right-12 select-none font-light leading-none text-[18rem] text-primary/5 mdi mdi-earth"
 			/>
+			<Blob className="w-[26rem] h-[26rem] bg-primary-100/60 -top-24 -right-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader
 					tag={section.tag || undefined}
 					headline={section.headline}
 					description={section.description || undefined}
-					tone="dark"
 					align="center"
 				/>
 
@@ -50,26 +51,26 @@ export function GisIndustriesSection(): ReactElement {
 
 						return (
 							<FadeUp key={index} delay={(index % 2) * 0.08} className="h-full">
-								<article className="group relative h-full flex flex-col rounded-[20px] bg-surface/[0.05] hairline-dark p-7 sm:p-8 transition-all duration-500 hover:bg-surface/10 hover:border-primary-300/50">
+								<article className="group relative h-full flex flex-col rounded-c bg-surface hairline card-shadow p-7 sm:p-8 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
 									<div className="flex items-center gap-4">
-										<span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary-200 transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
+										<span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 											<span className={`mdi mdi-${item.icon || "account-group"} text-2xl`} />
 										</span>
-										<h3 className="text-lg sm:text-xl font-semibold tracking-tight text-surface leading-snug">
+										<h3 className="text-lg sm:text-xl font-semibold tracking-tight text-ink leading-snug">
 											{item.title}
 										</h3>
 									</div>
 
 									{features.length > 0 && (
-										<ul className="mt-6 flex flex-col gap-3">
+										<ul className="mt-6 flex flex-wrap gap-2.5">
 											{features.map((feature, fIndex) => (
 												<li
 													key={fIndex}
-													className="flex items-start gap-3 rounded-xl bg-surface/[0.04] hairline-dark px-4 py-3 text-sm leading-snug text-surface/80"
+													className="inline-flex items-center gap-2 rounded-full bg-ink-50 px-4 py-2 text-sm font-medium text-ink/80"
 												>
 													<span
 														aria-hidden
-														className="mdi mdi-check-circle-outline text-base text-primary-300 shrink-0 mt-0.5"
+														className="mdi mdi-check-circle-outline text-base text-primary"
 													/>
 													{feature}
 												</li>

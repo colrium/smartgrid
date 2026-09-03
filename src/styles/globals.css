@@ -1,7 +1,14 @@
 @import "tailwindcss";
 @theme {
     --font-sans-serif: var(--font-google-sans);
-    
+  
+    --radius-c: 20px;
+    --radius-cxs: 5px;
+    --radius-csm: 10px;
+    --radius-cmd: 15px;
+    --radius-clg: 25px;
+    --radius-cxl: 30px;
+
     --color-primary: #0097b2;
     --color-primary-50: #e5f6f8;
     --color-primary-100: #ccecef;
@@ -66,6 +73,8 @@
         --color-ink-700: #01262a;
         --color-ink-800: #011a1d;
         --color-ink-900: #000f11;
+    
+    --color-warning: #ffb900;
     
 }
 

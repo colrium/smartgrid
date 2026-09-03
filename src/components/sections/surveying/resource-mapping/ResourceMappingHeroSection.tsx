@@ -40,7 +40,7 @@ export function ResourceMappingHeroSection() {
 					className="object-cover object-center"
 				/>
 			) : (
-				<div className="absolute inset-0 ink-panel" />
+				<div className="absolute inset-0 bg-ink" />
 			)}
 			<div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/30" />
 			<div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-ink/40" />

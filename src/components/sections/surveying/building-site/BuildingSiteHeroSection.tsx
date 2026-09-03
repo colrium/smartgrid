@@ -29,7 +29,7 @@ export function BuildingSiteHeroSection() {
 	return (
 		<section className="relative min-h-[86dvh] flex items-end overflow-hidden pb-14 sm:pb-20">
 			{/* Institutional panel background (falls back to gradients when no image url) */}
-			<div className="absolute inset-0 ink-panel" />
+			<div className="absolute inset-0 bg-ink" />
 			<span className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary-300/30 blur-[90px] pointer-events-none" />
 			<span className="absolute -bottom-28 -left-20 w-72 h-72 rounded-full bg-primary/30 blur-[90px] pointer-events-none" />
 			<span

@@ -33,7 +33,7 @@ export function GisDataAccuracySection(): ReactElement {
 	if (factors.length === 0 && levels.length === 0) return <></>;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
+		<section className="py-24 sm:py-28 relative overflow-hidden ">
 			<Blob className="w-[28rem] h-[28rem] bg-primary-100/60 -top-24 -left-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -46,7 +46,7 @@ export function GisDataAccuracySection(): ReactElement {
 				<div className="mt-14 sm:mt-20 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
 					{/* Quality control measures */}
 					<FadeUp className="h-full">
-						<article className="relative h-full flex flex-col rounded-[20px] bg-paper hairline card-shadow p-7 sm:p-8">
+						<article className="relative overflow-hidden h-full flex flex-col rounded-[20px] bg-paper hairline card-shadow p-7 sm:p-8">
 							<span
 								aria-hidden
 								className="pointer-events-none absolute -right-4 -bottom-10 select-none text-[9rem] leading-none text-primary/5 mdi mdi-checkbox-multiple-marked-outline"
@@ -73,7 +73,7 @@ export function GisDataAccuracySection(): ReactElement {
 
 					{/* Typical accuracy levels */}
 					<FadeUp delay={0.1} className="h-full">
-						<article className="relative h-full flex flex-col rounded-[20px] bg-paper hairline card-shadow p-7 sm:p-8">
+						<article className="relative overflow-hidden h-full flex flex-col rounded-[20px] bg-paper hairline card-shadow p-7 sm:p-8">
 							<span
 								aria-hidden
 								className="pointer-events-none absolute -right-4 -bottom-10 select-none text-[9rem] leading-none text-primary/5 mdi mdi-crosshairs-gps"
@@ -87,7 +87,7 @@ export function GisDataAccuracySection(): ReactElement {
 								{levels.map((level, index) => (
 									<div
 										key={index}
-										className="group relative flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-5 rounded-xl bg-ink-soft/30 hairline transition-all duration-300 hover:bg-ink-soft/50 hover:border-primary/30"
+										className="group relative flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-5 rounded-xl bg-ink-50/50 transition-all duration-300 hover:bg-ink-50"
 									>
 										<div className="flex items-center gap-3">
 											<span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary-50 text-primary group-hover:bg-primary group-hover:text-surface transition-colors">
@@ -95,13 +95,13 @@ export function GisDataAccuracySection(): ReactElement {
 											</span>
 											<div>
 												<p className="text-base font-medium text-ink">{level.label}</p>
-												<p className="text-sm text-on-surface/50">{level.accuracy}</p>
+												<p className="text-sm text-ink-400">{level.accuracy}</p>
 											</div>
 										</div>
-										<span
+										{/* <span
 											aria-hidden
 											className="mdi mdi-arrow-right text-primary group-hover:translate-x-1 transition-transform"
-										/>
+										/> */}
 									</div>
 								))}
 							</div>

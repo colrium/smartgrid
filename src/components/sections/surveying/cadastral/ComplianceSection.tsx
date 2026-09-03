@@ -6,6 +6,7 @@ import { useTranslation } from "@/hooks";
 import Link from "@/components/Link";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionTag } from "@/components/SectionTag";
+import { Blob } from "@/components/sections/home/decor";
 
 interface ChecklistItem {
 	icon?: string | null;
@@ -39,14 +40,11 @@ export function ComplianceSection(): ReactElement {
 	if (!section?.headline && checklist.length === 0) return <></>;
 
 	return (
-		<section className="relative overflow-hidden ink-panel py-24 sm:py-28">
+		<section className="relative overflow-hidden bg-surface py-24 sm:py-28">
+			<Blob className="w-[26rem] h-[26rem] bg-primary-100/60 -top-24 -right-24" opacity={0.5} />
 			<span
 				aria-hidden
-				className="pointer-events-none absolute -bottom-16 -right-10 select-none font-light leading-none tracking-tighter text-[16rem] sm:text-[22rem] text-surface/5 mdi mdi-gavel"
-			/>
-			<span
-				aria-hidden
-				className="pointer-events-none absolute -top-24 -left-24 w-96 h-96 rounded-full bg-primary/25 blur-[100px]"
+				className="pointer-events-none absolute -bottom-16 -right-10 select-none font-light leading-none tracking-tighter text-[16rem] sm:text-[22rem] text-primary/5 mdi mdi-gavel"
 			/>
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -54,20 +52,20 @@ export function ComplianceSection(): ReactElement {
 					<div className="lg:col-span-5 lg:sticky lg:top-28">
 						<FadeUp>
 							{section.tag && (
-								<SectionTag dark>
+								<SectionTag>
 									{section.tag}
 								</SectionTag>
 							)}
-							<h2 className="mt-5 font-light tracking-tight leading-[1.08] text-3xl sm:text-4xl text-surface">
+							<h2 className="mt-5 font-light tracking-tight leading-[1.08] text-3xl sm:text-4xl text-ink">
 								{section.headline}
 							</h2>
 							{section.description && (
-								<p className="mt-6 text-base sm:text-lg leading-relaxed text-surface/65">
+								<p className="mt-6 text-base sm:text-lg leading-relaxed text-on-surface/65">
 									{section.description}
 								</p>
 							)}
 							{section.checklistTitle && (
-								<p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-primary-200">
+								<p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
 									{section.checklistTitle}
 								</p>
 							)}
@@ -77,7 +75,7 @@ export function ComplianceSection(): ReactElement {
 							<FadeUp delay={0.15}>
 								<div className="mt-8">
 									{section.relatedLabel && (
-										<p className="text-[11px] font-medium uppercase tracking-[0.18em] text-surface/40">
+										<p className="text-[11px] font-medium uppercase tracking-[0.18em] text-on-surface/40">
 											{section.relatedLabel}
 										</p>
 									)}
@@ -86,11 +84,11 @@ export function ComplianceSection(): ReactElement {
 											<Link
 												key={index}
 												href={link.href}
-												className="group inline-flex items-center gap-2 rounded-full border border-surface/20 px-4 py-2 text-xs font-medium text-surface/80 transition-[border-color,background-color] duration-300 hover:border-primary-300 hover:bg-surface/5"
+												className="group inline-flex items-center gap-2 rounded-full border border-ink/15 px-4 py-2 text-xs font-medium text-ink/80 transition-[border-color,background-color] duration-300 hover:border-primary hover:bg-primary-50/50"
 											>
-												<span className="mdi mdi-book-open-page-variant text-sm text-primary-200" />
+												<span className="mdi mdi-book-open-page-variant text-sm text-primary" />
 												{link.label}
-												<span className="mdi mdi-arrow-top-right text-sm text-surface/40 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary-200" />
+												<span className="mdi mdi-arrow-top-right text-sm text-on-surface/40 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary" />
 											</Link>
 										))}
 									</div>
@@ -102,19 +100,19 @@ export function ComplianceSection(): ReactElement {
 					<div className="lg:col-span-7 space-y-4">
 						{checklist.map((item, index) => (
 							<FadeUp key={index} delay={(index % 3) * 0.08}>
-								<article className="group flex items-start gap-5 rounded-[20px] bg-surface/[0.04] hairline-dark p-6 sm:p-7 transition-colors duration-500 hover:bg-surface/[0.07]">
-									<span className="text-lg font-light tabular-nums tracking-wider text-primary-200/80 pt-0.5">
+								<article className="group flex items-start gap-5 rounded-[20px] bg-paper hairline card-shadow p-6 sm:p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary/40">
+									<span className="text-lg font-light tabular-nums tracking-wider text-primary/60 pt-0.5">
 										{String(index + 1).padStart(2, "0")}
 									</span>
-									<span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary-200 transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
+									<span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 										<span className={`mdi mdi-${item.icon || "shield-check"} text-xl`} />
 									</span>
 									<div className="min-w-0">
-										<h3 className="text-base sm:text-lg font-medium tracking-tight text-surface leading-snug">
+										<h3 className="text-base sm:text-lg font-medium tracking-tight text-ink leading-snug">
 											{item.title}
 										</h3>
 										{item.description && (
-											<p className="mt-2 text-sm text-surface/60 leading-relaxed">
+											<p className="mt-2 text-sm text-on-surface/60 leading-relaxed">
 												{item.description}
 											</p>
 										)}

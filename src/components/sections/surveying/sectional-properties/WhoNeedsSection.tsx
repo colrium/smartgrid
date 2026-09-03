@@ -33,10 +33,10 @@ export function WhoNeedsSection(): ReactElement {
 	if (items.length === 0) return <></>;
 
 	return (
-		<section className="ink-panel py-24 sm:py-28 relative overflow-hidden">
+		<section className="bg-surface py-24 sm:py-28 relative overflow-hidden">
 			<Blob
-				className="w-[26rem] h-[26rem] bg-accent-400/10 -top-32 -right-32"
-				opacity={0.3}
+				className="w-[26rem] h-[26rem] bg-primary-100/60 -top-32 -right-32"
+				opacity={0.5}
 			/>
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -44,7 +44,6 @@ export function WhoNeedsSection(): ReactElement {
 					tag={section.tag || undefined}
 					headline={section.headline ?? ""}
 					description={section.description || undefined}
-					tone="dark"
 				/>
 
 				<div className="mt-14 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
@@ -52,21 +51,21 @@ export function WhoNeedsSection(): ReactElement {
 						<FadeUp key={index} delay={(index % 3) * 0.07}>
 							<Link
 								href={item.href ?? "/contact"}
-								className="group flex h-full flex-col rounded-[18px] border border-surface/10 bg-surface/5 p-6 sm:p-7 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary-400/40 hover:bg-surface/[0.08]"
+								className="group flex h-full flex-col rounded-[18px] bg-paper hairline card-shadow p-6 sm:p-7 transition-all duration-300 hover:-translate-y-1 hover:card-shadow-lift hover:border-primary"
 							>
-								<span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-primary-400/25 bg-primary-400/10 text-primary-200 transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
+								<span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 									<span
 										className={`mdi mdi-${item.icon ?? "account-group"} text-xl`}
 									/>
 								</span>
-								<h3 className="mt-5 text-lg font-medium tracking-tight text-surface leading-snug">
+								<h3 className="mt-5 text-lg font-medium tracking-tight text-ink leading-snug">
 									{item.title}
 								</h3>
-								<p className="mt-2.5 text-sm leading-relaxed text-surface/60">
+								<p className="mt-2.5 text-sm leading-relaxed text-on-surface/60">
 									{item.description}
 								</p>
 								{section.linkLabel && (
-									<span className="mt-auto pt-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-primary-200">
+									<span className="mt-auto pt-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-primary">
 										{section.linkLabel}
 										<span className="mdi mdi-arrow-right text-sm transition-transform duration-300 group-hover:translate-x-1" />
 									</span>

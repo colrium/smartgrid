@@ -79,21 +79,21 @@ export function TopographicalCostSection() {
 
 				{section.priceRange && (
 					<FadeUp delay={0.1}>
-						<div className="mt-8 relative rounded-[20px] ink-panel card-shadow overflow-hidden px-8 py-12 sm:px-12 text-center">
-							<span className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-primary-300/30 blur-[90px] pointer-events-none" />
-							<span className="absolute -bottom-24 -left-16 w-56 h-56 rounded-full bg-primary/30 blur-[90px] pointer-events-none" />
+						<div className="mt-8 relative rounded-[20px] bg-surface hairline card-shadow overflow-hidden px-8 py-12 sm:px-12 text-center">
+							<span className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-primary-100/60 blur-[90px] pointer-events-none" />
+							<span className="absolute -bottom-24 -left-16 w-56 h-56 rounded-full bg-primary-200/40 blur-[90px] pointer-events-none" />
 
 							<div className="relative flex flex-col items-center gap-4">
 								{section.priceRangeTitle && (
-									<p className="text-[11px] uppercase tracking-widest text-white/55">
+									<p className="text-[11px] uppercase tracking-widest text-primary">
 										{section.priceRangeTitle}
 									</p>
 								)}
-								<p className="font-light tracking-tight text-3xl sm:text-5xl text-white">
+								<p className="font-light tracking-tight text-3xl sm:text-5xl text-ink">
 									{section.priceRange}
 								</p>
 								{section.priceRangeNote && (
-									<p className="text-sm text-white/65 leading-relaxed max-w-2xl">
+									<p className="text-sm text-on-surface/60 leading-relaxed max-w-2xl">
 										{section.priceRangeNote}
 									</p>
 								)}

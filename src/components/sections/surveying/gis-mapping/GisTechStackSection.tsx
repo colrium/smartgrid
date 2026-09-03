@@ -6,12 +6,11 @@ import type { ReactElement } from "react";
 import { useTranslation } from "@/hooks";
 import { SectionHeader } from "@/components/sections/home";
 import { FadeUp } from "@/components/animations/Fade";
-import { Blob } from "@/components/sections/home/decor";
+import { Blob, ParallaxDecor } from "@/components/sections/home/decor";
 
 interface TechLogo {
 	image?: string | null;
 	label?: string | null;
-	tone?: "dark" | "light" | string | null;
 }
 
 interface TechStackContent {
@@ -21,6 +20,16 @@ interface TechStackContent {
 	tools?: string[] | null;
 	logos?: TechLogo[] | null;
 }
+
+/** Icons paired with the tool list order (component-side fallbacks keep the locale JSON lean). */
+const TOOL_ICONS = [
+	"layers-triple",
+	"database-outline",
+	"quadcopter",
+	"crosshairs-gps",
+	"satellite-variant",
+	"robot-outline",
+];
 
 export function GisTechStackSection(): ReactElement {
 	const { t } = useTranslation(["surveying/gis-mapping"]);
@@ -33,8 +42,11 @@ export function GisTechStackSection(): ReactElement {
 	if (tools.length === 0 && logos.length === 0) return <></>;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
+		<section className="py-24 sm:py-28 relative overflow-hidden">
 			<Blob className="w-[28rem] h-[28rem] bg-primary-200/40 -top-24 -right-24" opacity={0.5} />
+			<ParallaxDecor speed={-0.06} className="absolute bottom-16 -left-24 z-0">
+				<Blob className="w-72 h-72 bg-primary-100/80" opacity={0.6} />
+			</ParallaxDecor>
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader
@@ -44,74 +56,70 @@ export function GisTechStackSection(): ReactElement {
 					align="center"
 				/>
 
-				<div className="mt-14 sm:mt-20 grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10 items-stretch">
-					{/* Tools checklist */}
-					{tools.length > 0 && (
-						<FadeUp className="lg:col-span-2 h-full">
-							<article className="relative h-full flex flex-col rounded-[20px] bg-paper hairline card-shadow p-7 sm:p-8">
-								<span
-									aria-hidden
-									className="pointer-events-none absolute -right-6 -bottom-10 select-none text-[9rem] leading-none text-primary/5 mdi mdi-tools"
-								/>
-								<ul className="relative flex flex-col gap-4">
-									{tools.map((tool, index) => (
-										<li
-											key={index}
-											className="flex items-start gap-3 rounded-xl bg-surface/70 hairline px-4 py-3 transition-colors duration-300 hover:border-primary/40"
-										>
-											<span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-												<span className="mdi mdi-check-circle-outline text-sm" />
-											</span>
-											<span className="text-sm sm:text-base font-medium text-ink/85 leading-snug">
-												{tool}
-											</span>
-										</li>
-									))}
-								</ul>
-							</article>
-						</FadeUp>
-					)}
-
-					{/* Logo wall */}
-					{logos.length > 0 && (
-						<div className="lg:col-span-3 grid grid-cols-2 sm:grid-cols-4 gap-4">
-							{logos.map((logo, index) => {
-								const src = typeof logo.image === "string" ? logo.image : "";
-								if (!src) return null;
-								const isDark = logo.tone !== "light";
-
-								return (
-									<FadeUp key={src} delay={(index % 4) * 0.06} className="h-full">
-										<article
-											className={`group relative h-full flex flex-col items-center justify-center gap-3 rounded-2xl overflow-hidden p-4 aspect-[4/3] transition-all duration-500 hover:-translate-y-1 ${
-												isDark
-													? "ink-panel hairline-dark card-shadow hover:card-shadow-lift"
-													: "bg-surface hairline card-shadow hover:card-shadow-lift hover:border-primary"
-											}`}
-										>
-											<span className="relative flex-1 w-full flex items-center justify-center">
-												<Image
-													src={src}
-													alt={logo.label || "Geospatial tool"}
-													fill
-													sizes="(min-width: 640px) 20vw, 40vw"
-													className="object-contain p-2 transition-transform duration-500 group-hover:scale-105"
-												/>
-											</span>
+				{/* Tool capability pills */}
+				{tools.length > 0 && (
+					<ul className="mt-12 sm:mt-14 flex flex-wrap items-center justify-center gap-3 sm:gap-3.5">
+						{tools.map((tool, index) => (
+							<li key={index}>
+								<FadeUp delay={Math.min(index * 0.05, 0.25)}>
+									<span className="group inline-flex items-center gap-3 rounded-full bg-paper hairline card-shadow py-2 pl-2 pr-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/50 hover:card-shadow-lift">
+										<span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 											<span
-												className={`text-[10px] font-semibold uppercase tracking-[0.16em] text-center leading-tight ${
-													isDark ? "text-surface/50" : "text-on-surface/40"
-												}`}
-											>
-												{logo.label}
-											</span>
-										</article>
-									</FadeUp>
-								);
-							})}
-						</div>
-					)}
-				</div>
+												className={`mdi mdi-${TOOL_ICONS[index % TOOL_ICONS.length]} text-lg`}
+											/>
+										</span>
+										<span className="text-sm font-medium text-ink/85 leading-snug">
+											{tool}
+										</span>
+									</span>
+								</FadeUp>
+							</li>
+						))}
+					</ul>
+				)}
+
+				{/* Software & hardware logo bento */}
+				{logos.length > 0 && (
+					<div className="mt-10 sm:mt-12 grid grid-cols-2 lg:grid-cols-4 auto-rows-[7rem] sm:auto-rows-[8.5rem] lg:auto-rows-[9.5rem] gap-4">
+						{logos.map((logo, index) => {
+							const src = typeof logo.image === "string" ? logo.image : "";
+							if (!src) return null;
+							const isFeature = index === 0;
+							const isWide = index === logos.length - 1 && logos.length > 4;
+
+							return (
+								<FadeUp
+									key={src}
+									delay={(index % 4) * 0.06}
+									className={
+										isFeature ? "col-span-2 row-span-2" : isWide ? "col-span-2" : ""
+									}
+								>
+									<article
+										className={`group relative h-full w-full flex flex-col items-center justify-center gap-2.5 rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-500 hover:-translate-y-1 ${
+											isFeature
+												? "pale-panel hairline card-shadow hover:card-shadow-lift hover:border-primary/40"
+												: "bg-surface hairline card-shadow hover:card-shadow-lift hover:border-primary"
+										}`}
+									>
+										<span className="relative flex-1 w-full flex items-center justify-center">
+											<Image
+												src={src}
+												alt={logo.label || "Geospatial tool"}
+												fill
+												sizes="(min-width: 1024px) 25vw, 50vw"
+												className="object-contain p-3 transition-transform duration-500 group-hover:scale-105"
+											/>
+										</span>
+										<span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-center leading-tight text-on-surface/40 transition-colors duration-300 group-hover:text-primary">
+											{logo.label}
+										</span>
+									</article>
+								</FadeUp>
+							);
+						})}
+					</div>
+				)}
 			</div>
 		</section>
 	);

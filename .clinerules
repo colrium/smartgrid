@@ -15,8 +15,10 @@
 - **Find the real file.** Pages live in `src/pages/[locale]/...`; the root `src/pages/*.tsx` files
   are thin re-export proxies — edit the `[locale]` source, not the proxy. Components live in
   `src/components/...`; layouts in `src/layouts/LandingPage/`.
-- **Validate with the toolchain.** After making changes run `npm run lint`, `npm run typecheck`,
-  then `npm run build`. Do not consider a task complete until these pass.
+- **Validate with the toolchain.** Verification scales with the size of the change: for small
+  edits (≤300 changed lines) run `npm run lint`; for large edits (>300 changed lines) run the
+  full build verification — `npm run lint`, `npm run typecheck`, then `npm run build`. Do not
+  consider a task complete until the applicable checks pass.
 - **Mind the dev server.** Before starting one, check whether a server is already running on
   port 3000. Start one only for manual verification, then stop/terminate it. Never leave it running.
 - **Never commit secrets.** `.env.local` is gitignored. Only `.env.example` is versioned.
@@ -33,6 +35,10 @@
 - **No unused imports** (`eslint-plugin-unused-imports` is an error).
 - Use the **`@/*`** alias (→ `./src/*`); import `useTranslation` from `@/hooks`; use
   `@/components/Link` and `<PageHead pageName="..." />`.
+- **`ink-panel` is reserved for CTA sections only** (book/quote/contact/WhatsApp/email bands).
+  Content sections, cards, and tiles must not use it — style them with light tokens
+  (`bg-surface`, `bg-paper`, `pale-panel`, or the default page background). Use solid `bg-ink`
+  when a dark surface is genuinely required outside a CTA (e.g. hero image fallbacks).
 
 ## Commands Cline Should Know
 | Command            | What it does                                |

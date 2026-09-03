@@ -116,7 +116,7 @@ export function GisBeforeAfterSection(): ReactElement {
 									className={`relative w-full cursor-pointer overflow-hidden select-none rounded-[20px] p-8 sm:p-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
 										isBefore
 											? "bg-paper hairline card-shadow"
-											: "ink-panel card-shadow"
+											: "bg-ink card-shadow"
 									}`}
 								>
 									<span
