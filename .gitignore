@@ -61,5 +61,7 @@ next-env.d.ts
 *.bak*
 *.experimental*
 #AI
-/.freebuff
-/.next-verify
+.freebuff
+.next-verify
+.kilo
+kilo.jsonc
