@@ -250,7 +250,7 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 								open={Boolean(state.languageMenuAnchor)}
 								onClose={handleLanguageMenuClose}
 								anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-								className={`rounded-lg transition-all duration-500 ${menuClassName} backdrop-blur-lg card-shadow p-2 `}
+								className={`rounded-lg transition-[top] duration-500 ${menuClassName} backdrop-blur-lg card-shadow p-2 `}
 								style={{ marginTop: 10, minWidth: 160 }}
 							>
 								{Array.isArray(locales) &&
