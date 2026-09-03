@@ -41,27 +41,19 @@ export default function FooterInk() {
 	return (
 		<footer className="relative z-50 overflow-hidden bg-ink text-surface">
 			{/* Decorative grid + glows */}
+			
 			<div
 				aria-hidden
-				className="pointer-events-none absolute inset-0"
-				style={{
-					backgroundImage:
-						"radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px)",
-					backgroundSize: "30px 30px",
-				}}
-			/>
-			<div
-				aria-hidden
-				className="pointer-events-none absolute -top-28 -right-28 h-96 w-96 rounded-full bg-primary/25 blur-3xl"
+				className="pointer-events-none absolute -top-28 -right-28 h-96 w-96 rounded-full bg-primary/5 blur-3xl"
 			/>
 			<div
 				aria-hidden
 				className="pointer-events-none absolute -bottom-32 -left-24 h-[28rem] w-[28rem] rounded-full bg-primary-700/20 blur-3xl"
 			/>
-			<span
+			{/* <span
 				aria-hidden
 				className="pointer-events-none absolute -right-10 bottom-10 mdi mdi-map-marker-radius text-[20rem] leading-none text-surface opacity-[0.03]"
-			/>
+			/> */}
 
 			<div className="relative z-10 mx-auto max-w-7xl px-6 pt-20 pb-10 sm:px-8 lg:px-12">
 				{/* Brand + link columns */}
@@ -69,7 +61,7 @@ export default function FooterInk() {
 					<div className="lg:col-span-4">
 						<Link href="/" className="inline-flex items-center gap-3">
 							<Image
-								src={t("common:nav.logo")}
+								src={t("common:nav.logo_light")}
 								alt={t("common:nav.logo_alt")}
 								width={40}
 								height={40}
@@ -78,7 +70,7 @@ export default function FooterInk() {
 								<span className="text-xl font-display font-semibold tracking-wide text-surface uppercase">
 									{title}
 								</span>
-								<span className="mt-0.5 text-[9px] uppercase tracking-[0.28em] text-primary-300">
+								<span className="mt-0.5 text-[9px] uppercase text-accent-300">
 									{subtitle}
 								</span>
 							</span>

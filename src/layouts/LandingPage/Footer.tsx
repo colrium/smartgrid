@@ -5,6 +5,9 @@ export type FooterVariant = "ink" | "light";
 
 export const FOOTER_VARIANT: FooterVariant = "light";
 
-export default function Footer() {
-	return FOOTER_VARIANT === "ink" ? <FooterInk /> : <FooterLight />;
+export interface FooterProps {
+    variant?: FooterVariant
+}
+export default function Footer({ variant = FOOTER_VARIANT }: FooterProps) {
+	return variant === "ink" ? <FooterInk /> : <FooterLight />;
 }

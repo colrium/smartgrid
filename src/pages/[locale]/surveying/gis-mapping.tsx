@@ -42,12 +42,12 @@ const Page: NextPage<PageProps> = () => {
 				<GisTechStackSection />
 				<GisWhatsappCtaSection />
 				<GisComponentsSection />
-				<GisWhySmartgridSection />
-				<GisAnalystCtaSection />
+				<GisWhySmartgridSection />				
 				<GisDataAccuracySection />
 				<GisBeforeAfterSection />
 				<GisProjectImpactSection />
 				<GisRelatedServicesSection />
+                <GisAnalystCtaSection />
 			</div>
 		</div>
 	);
