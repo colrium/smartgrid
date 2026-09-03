@@ -4,6 +4,14 @@ import PageHead from "@/components/Head";
 import { getI18nProps } from "@/lib/i18n";
 import {
 	ResourceMappingHeroSection,
+	WhatIsResourceMappingSection,
+	TypesOfResourceMappingSection,
+	ResourceMappingWorkflowSection,
+	ResourceMappingDeliverablesSection,
+	WhoUsesResourceMappingSection,
+	ResourceMappingTechStackSection,
+	DataAccuracySection,
+	FinalCtaSection,
 	AgricultureSection,
 	UtilitiesEnergySection,
 	QuarryMiningSection,
@@ -23,6 +31,8 @@ const Page: NextPage<PageProps> = () => {
 			<PageHead pageName="resource-mapping" />
 			<div className="flex flex-col min-h-screen">
 				<ResourceMappingHeroSection />
+				<WhatIsResourceMappingSection />
+				<TypesOfResourceMappingSection />
 				<AgricultureSection />
 				<UtilitiesEnergySection />
 				<QuarryMiningSection />
@@ -30,6 +40,12 @@ const Page: NextPage<PageProps> = () => {
 				<EnvironmentalConservationSection />
 				<DisasterRiskReductionSection />
 				<WhyStandOutSection />
+				<ResourceMappingWorkflowSection />
+				<ResourceMappingDeliverablesSection />
+				<WhoUsesResourceMappingSection />
+				<ResourceMappingTechStackSection />
+				<DataAccuracySection />
+				<FinalCtaSection />
 			</div>
 		</div>
 	);

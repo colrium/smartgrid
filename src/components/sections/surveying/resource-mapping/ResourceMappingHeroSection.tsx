@@ -9,6 +9,7 @@ import { SectionTag } from "@/components/SectionTag";
 interface HeroCta {
 	label: string;
 	href: string;
+	icon?: string;
 }
 
 interface ResourceMappingHeroContent {
@@ -17,6 +18,7 @@ interface ResourceMappingHeroContent {
 	description?: string;
 	image?: string | null;
 	ctaPrimary?: HeroCta | null;
+	ctaSecondary?: HeroCta | null;
 }
 
 export function ResourceMappingHeroSection() {
@@ -59,18 +61,31 @@ export function ResourceMappingHeroSection() {
 						</p>
 					)}
 
-					{hero.ctaPrimary?.href && (
-						<div className="mt-10">
+					<div className="mt-10 flex flex-col sm:flex-row gap-4">
+						{hero.ctaPrimary?.href && (
 							<Link
 								href={hero.ctaPrimary.href}
-								className="group inline-flex items-center gap-3 h-14 rounded-full bg-surface px-8 text-ink font-medium text-base transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]"
+								className="group inline-flex items-center justify-center gap-3 h-14 rounded-full bg-surface px-8 text-ink font-medium text-base transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]"
 							>
 								<span className="h-1.5 w-1.5 rounded-full bg-primary transition-transform duration-300 group-hover:scale-125" />
 								{hero.ctaPrimary.label}
 								<span className="mdi mdi-arrow-right text-xl text-ink transition-transform duration-300 group-hover:translate-x-1" />
 							</Link>
-						</div>
-					)}
+						)}
+						{hero.ctaSecondary?.href && (
+							<Link
+								href={hero.ctaSecondary.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="group inline-flex items-center justify-center gap-3 h-14 rounded-full border-2 border-surface/30 bg-transparent px-8 text-surface font-medium text-base transition-all duration-300 hover:bg-surface/10 hover:border-primary"
+							>
+								{hero.ctaSecondary.icon && (
+									<span className={`mdi mdi-${hero.ctaSecondary.icon} text-xl transition-transform duration-300 group-hover:scale-110`} />
+								)}
+								{hero.ctaSecondary.label}
+							</Link>
+						)}
+					</div>
 				</FadeUp>
 			</div>
 		</section>
