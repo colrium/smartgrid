@@ -68,8 +68,13 @@ export function BeforeAfterFlipCard({
 									? isAfter
 										? "text-success-700"
 										: "text-warning-700"
-									: "text-on-surface/45 hover:text-ink"
-							}`}
+									: "text-on-surface/45"
+							}
+                                    ${
+										key === "after"
+											? " hover:text-success-700"
+											: " hover:text-warning-700"
+									}`}
 						>
 							{isActive && (
 								<motion.span
@@ -106,18 +111,14 @@ export function BeforeAfterFlipCard({
 						tabIndex={0}
 						aria-pressed={isAfter}
 						aria-label={flipHint ?? "Toggle before / after"}
-						className={`relative w-full cursor-pointer overflow-hidden select-none rounded-c p-8 sm:p-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
-							isBefore
-								? "bg-warning-50/50 hairline card-shadow"
-								: "bg-success-50 card-shadow"
-						}`}
+						className={`relative w-full cursor-pointer overflow-hidden select-none rounded-c p-8 sm:p-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background bg-surface`}
 					>
 						<span
 							aria-hidden
 							className={`absolute z-0 -right-8 -bottom-24 mdi text-[16rem] ${
 								isBefore
-									? `mdi-${beforeIcon} text-warning-400/10`
-									: `mdi-${afterIcon}  text-success-400/10 ${afterWatermarkClass ?? ""}`
+									? `mdi-${beforeIcon} text-warning-200/10`
+									: `mdi-${afterIcon}  text-success-300/10 ${afterWatermarkClass ?? ""}`
 							}
 							}`}
 						/>
@@ -139,7 +140,7 @@ export function BeforeAfterFlipCard({
 									/>
 									{active?.label ?? (isBefore ? "BEFORE" : "AFTER")}
 								</span>
-								<div className="w-12 h-12 bg-ink-100/30 p-2 rounded-full flex items-center justify-center">
+								<div className={`w-12 h-12 ${isBefore? "bg-warning-300/20" : "bg-success-300/20"} p-2 rounded-full flex items-center justify-center`}>
 									<span
 										aria-hidden
 										className={`mdi text-2xl ${
@@ -152,11 +153,7 @@ export function BeforeAfterFlipCard({
 							</div>
 
 							{active?.tagline && (
-								<p
-									className={`mt-5 text-sm font-medium ${
-										isBefore ? "text-on-surface/50" : "text-success-700/60"
-									}`}
-								>
+								<p className={`mt-5 text-sm font-medium text-ink/80`}>
 									{active.tagline}
 								</p>
 							)}
