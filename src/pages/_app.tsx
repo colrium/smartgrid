@@ -10,6 +10,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import { useEffect } from "react";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const fontSans = Plus_Jakarta_Sans({
 	subsets: ["latin"],	
@@ -60,6 +61,7 @@ function App({ Component, pageProps }: AppPropsWithLayout) {
 			<PageTransitionLoader />
 			{renderPageWithLayout(<Component {...pageProps} />)}
 			<Analytics />
+			<SpeedInsights />
 		</main>
 	);
 }
