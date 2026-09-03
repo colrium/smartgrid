@@ -74,7 +74,7 @@ export function DataAccuracySection(): ReactElement {
 								{levels.map((level, index) => (
 									<div
 										key={index}
-										className="group relative flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-5 rounded-xl bg-ink-soft/30 hairline transition-all duration-300 hover:bg-ink-soft/50 hover:border-primary/30"
+										className="group relative flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-5 rounded-xl bg-ink-50/30 transition-all duration-300 hover:bg-ink-50/80 hover:border-primary/30"
 									>
 										<div className="flex items-center gap-3">
 											<span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary-50 text-primary group-hover:bg-primary group-hover:text-surface transition-colors">
@@ -85,7 +85,7 @@ export function DataAccuracySection(): ReactElement {
 												<p className="text-sm text-on-surface/50">{level.accuracy}</p>
 											</div>
 										</div>
-										<span className="mdi mdi-arrow-right text-primary group-hover:translate-x-1 transition-transform" />
+										{/* <span className="mdi mdi-arrow-right text-primary group-hover:translate-x-1 transition-transform" /> */}
 									</div>
 								))}
 							</div>

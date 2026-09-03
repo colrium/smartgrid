@@ -352,7 +352,7 @@
 				"description": "Drones equipped with multispectral cameras collect data across every grid cell, detecting stress, disease, or nutrient deficiencies early."
 			},
 			{
-				"icon": "soil-analysis",
+				"icon": "water-opacity",
 				"title": "Soil Analysis & Zoning",
 				"description": "Elevation and surface models generated through SmartGrid frameworks assist in creating drainage and irrigation zones."
 			},
@@ -482,7 +482,7 @@
 				"description": "Build high-resolution DEMs to simulate water flow, slope instability, or fire spread patterns."
 			},
 			{
-				"icon": "image-compare",
+				"icon": "home-flood",
 				"title": "Damage Assessment",
 				"description": "Conduct post-event surveys using the same SmartGrid flight plans to compare pre- and post-disaster conditions."
 			},

@@ -6692,7 +6692,7 @@ export default interface Resources {
   "title": "Crop Health Monitoring"
 }, {
   "description": "Elevation and surface models generated through SmartGrid frameworks assist in creating drainage and irrigation zones.",
-  "icon": "soil-analysis",
+  "icon": "water-opacity",
   "title": "Soil Analysis & Zoning"
 }, {
   "description": "By mapping yield zones and growth patterns consistently over time, SmartGrid Surveying improves planning for sowing and harvesting.",
@@ -6730,7 +6730,7 @@ export default interface Resources {
   "title": "Hazard Mapping & Risk Modeling"
 }, {
   "description": "Conduct post-event surveys using the same SmartGrid flight plans to compare pre- and post-disaster conditions.",
-  "icon": "image-compare",
+  "icon": "home-flood",
   "title": "Damage Assessment"
 }, {
   "description": "Prioritize reconstruction efforts using accurate, up-to-date geospatial data with full area coverage.",
