@@ -1,12 +1,12 @@
 {
 	"hero": {
 		"headline": "UCHUNGUZI WA BATHYMETRIC",
-		"title": "Uchoraji Ramani Sahihi wa Chini ya Maji kwa Mabwawa, Maziwa, Mito na Bahari",
+		"title": "HUDUMA ZA UCHUNGUZI WA BATHYMETRIC & HYDROGRAPHIC NCHINI KENYA",
 		"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-01.jpg",
-		"description": "Kwa kutumia vifaa vya kisasa vya sonar na ujumuishaji wa GPS, SmartGrid Surveying huchora kina na topografia ya maji — kutoa data muhimu kwa madhumuni ya uhandisi, mazingira, na upangaji.",
+		"description": "Uchoraji Ramani wa Chini ya Maji wa Hali ya Juu kwa Mabwawa, Mito, Maziwa & Uhandisi wa Pwani nchini Kenya na zaidi.\n\nTunatoa uchunguzi wa bathymetric na hydrographic wa usahihi wa juu kwa kutumia mifumo ya kipimo cha kina cha sonar vilivyojumuishwa na uwekezaji wa GNSS RTK kuchaoraji ramani ardhi ya chini ya maji kwa miradi ya uhandisi, mazingira, na miundombinu kote Kenya na Afrika Mashariki.\n\nKutoka mabwawa hadi mito na mifereji — tunachora ramani yale yaliyopo chini ya uso.",
 		"ctaPrimary": {
-			"label": "Pata Ushauri Wako Bure",
-			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Bathymetric Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Bathymetric Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+			"label": "Omba Ushauri wa Uchunguzi wa Bathymetric",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Request Bathymetric Survey Consultation&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a Bathymetric Survey Consultation. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
 	"whatIsBathymetricSurveys": {
@@ -14,6 +14,202 @@
 		"headline": "Uchunguzi wa Bathymetric ni Nini?",
 		"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-09.png",
 		"description": "Uchunguzi wa bathymetric unahusisha kupima kina cha maji na kuchora ardhi ya chini ya maji. Mbinu hii ni muhimu kwa kuelewa viwango vya mashapo, kiasi cha maji, na hatari za chini ya maji. Inasaidia ujenzi salama, usimamizi bora wa rasilimali za maji, na ulinzi wa mazingira makini. SmartGrid Surveying hutumia echo sounders za mwonekano wa juu, mifumo ya uwekaji ya GNSS, na boti za uchunguzi zinazodhibitiwa kwa mbali kufikia maeneo ya maji ya kina kifupi na yaliyozuiliwa kwa usalama na ufanisi."
+	},
+	"whyBathymetricCritical": {
+		"tag": "Kwanini Ni Muhimu Kenya",
+		"headline": "Kwanini Uchunguzi wa Bathymetric Ni Muhimu nchini Kenya",
+		"description": "Miundombinu ya maji ya Kenya inategemea data sahihi ya chini ya maji kwa:",
+		"applications": [
+			"Usalama wa mabwawa na ufuatiliaji wa kimuundo",
+			"Uchambuzi wa uwezo wa hifadhi na siltation ya mifereji",
+			"Mipango ya nishati ya umeme ya maji (miradi ya KenGen)",
+			"Uundaji wa mfano wa hatari ya mafuriko",
+			"Usimamizi wa rasilimali za maji (WRMA / Mamlaka za Maji)",
+			"Muundo wa daraja na misingi",
+			"Utafiti wa uhandisi wa maziwa & mito"
+		]
+	},
+	"bathymetricWorkflow": {
+		"tag": "Mchakato wa Kiwango cha Uhandisi",
+		"headline": "MCHAKATO WETU WA UCHUNGUZI WA HYDROGRAPHIC",
+		"description": "Mwelekeo ulio na muundo wa uchunguzi chini ya maji kwa matokeo ya kiwango cha uhandisi:",
+		"steps": [
+			{
+				"label": "1. Mpangilio wa Mradi & Tathmini ya Kiotu cha Maji",
+				"description": "Uchunguzi wa tovuti\nMatakwa ya kina & uchoraji ramani wa hatari\nMpangilio wa mstari wa uchunguzi",
+				"phase": "PLANNING"
+			},
+			{
+				"label": "2. Uwekezaji wa Kudhibiti GNSS",
+				"description": "Uwekaji wa RTK GNSS\nUpatanisho wa datum ya wima\nVipimo vya kudhibiti sahil",
+				"phase": "CONTROL"
+			},
+			{
+				"label": "3. Kukusanya Data ya Bathymetric",
+				"description": "Uchunguzi wa sonar ya single-beam\nSafari za meli ya uchunguzi\nUrejesha endelevu wa kina",
+				"phase": "ACQUISITION"
+			},
+			{
+				"label": "4. Uchakataji wa Data & Usahihisho",
+				"description": "Usahihisho ya mwendo wa sauti\nMarekebisho ya kiwango cha maji / mwendo wa pewa\nUondoa kelele",
+				"phase": "PROCESSING"
+			},
+			{
+				"label": "5. Uundaji wa Mfano wa Uso",
+				"description": "Gride za bathymetric (DEM)\nUundaji wa kontura za kina\nUundaji wa mfano wa 3D wa uso wa chini ya maji",
+				"phase": "MODELLING"
+			},
+			{
+				"label": "6. Matokeo ya Mwisho",
+				"description": "Ripoti ya hydrographic inayotumika na uhandisi",
+				"phase": "DELIVERY"
+			}
+		],
+		"outcome": "Dataset kamili ya hydrographic tayari kwa muundo wa uhandisi & maamuzi"
+	},
+	"equipmentTechnology": {
+		"tag": "Vifaa na Teknolojia",
+		"headline": "VIFAA NA TEKNOLOJIA",
+		"description": "Tunatumia:\n\n• Echo sounders za mwonekano wa juu (mifumo ya single beam)\n• Mifumo ya uwekaji wa GNSS RTK\n• Boti za uchunguzi kwa ufikiaji wa maji ya kina na ya kina\n• Programu ya GIS na uundaji wa mfano wa hydrographic\n\nRejea ya kijiografia ya ardhi + maji inahakikisha uendelevu kamili wa ardhi.",
+		"images": [
+			"/media/surveying/bathymetric-surveys/03-01.jpeg",
+			"/media/surveying/bathymetric-surveys/03-02.jpeg",
+			"/media/surveying/bathymetric-surveys/03-03.jpeg",
+			"/media/surveying/bathymetric-surveys/03-04.jpeg"
+		]
+	},
+	"deliverables": {
+		"tag": "Unavyopokea",
+		"headline": "UNVYOPOKEA (MATOKEO)",
+		"description": "Matokeo ya hydrographic ya kiwango cha uhandisi:",
+		"liveLabel": "Pakeji ya matokeo",
+		"checks": [
+			"Usahihi wa kiwango cha uhandisi",
+			"Muundo unaolingana na GIS na CAD",
+			"Matokeo yaliyothibitishwa na mchunguzi"
+		],
+		"items": [
+			{
+				"title": "Ramani za kontura za bathymetric",
+				"format": "CAD / GIS",
+				"icon": "map-legend",
+				"description": "Ramani za kontura za kina za kina katika muundo wa CAD na GIS kwa muundo wa uhandisi na upangaji."
+			},
+			{
+				"title": "Mifano ya Kijitali ya Kina (DDM / DEM)",
+				"format": "GeoTIFF / ASC",
+				"icon": "axis-z-arrow-lock",
+				"description": "Mifano ya kijitali ya kina ya mwonekano wa juu na DEMs kwa hesabu za kiasi na onyesho ya 3D."
+			},
+			{
+				"title": "Hesabu za kiasi & uwezo wa mifereji",
+				"format": "Excel + PDF",
+				"icon": "cube-outline",
+				"description": "Hesabu sahihi za uwezo wa hifadhi na kiasi cha mifereji na mianyo ya kiwango-kihifadhi."
+			},
+			{
+				"title": "Ripoti za uchambuzi wa sedimentation",
+				"format": "Ripoti ya PDF",
+				"icon": "chart-histogram",
+				"description": "Uchambuzi kamili wa sedimentation na hesabu za upotevu wa kiasi na makadirio ya mwendo."
+			},
+			{
+				"title": "Mifano ya cross-section ya chini ya mito/mabwawa",
+				"format": "CAD / PDF",
+				"icon": "vector-square",
+				"description": "Mifano ya kina ya cross-section inayoonya ardhi ya chini ya maji kwa uchambuzi wa uhandisi."
+			},
+			{
+				"title": "Dataset za uchunguzi zilizorejea eneo",
+				"format": "SHP / DWG",
+				"icon": "database-outline",
+				"description": "Dataset kamili zilizorejea eneo katika muundo wa Shapefile na DWG kwa ujumuishaji wa GIS."
+			},
+			{
+				"title": "Ripoti ya kiufundi ya hydrographic",
+				"format": "PDF",
+				"icon": "file-document-outline",
+				"description": "Ripoti kamili ya kiufundi na mbinu, matokeo, maoni ya usahihi, na mapendekezo."
+			}
+		]
+	},
+	"whySmartGridBathymetric": {
+		"tag": "Faida Zetu",
+		"headline": "KWA NINI SMARTGRID BATHYMETRIC SURVEYS",
+		"items": [
+			"Uchoraji ramani wa sonar uliounganishwa na GNSS",
+			"Matokeo ya usahihi wa kiwango cha uhandisi",
+			"Mobilizasi haraka nchini Kenya",
+			"Inayolingana na GIS, CAD & mifano ya hydrological",
+			"Mchakato wa uchunguzi wa ardhi + chini ya maji uliounganishwa",
+			"Imetumiwa kwa miradi ya miundombinu na mazingira"
+		]
+	},
+	"technicalLimitations": {
+		"tag": "Uwazi",
+		"headline": "VIPINGAMIZI VYA KIUFUNDI (KUJENGA AMANA)",
+		"description": "Usahihi wa bathymetric unategemea:",
+		"factors": [
+			"Kivuli na uwazi wa maji",
+			"Kipimo cha kina na frequency ya sonar",
+			"Utulivu wa mwendo wa meli",
+			"Hali ya upepo na uso"
+		],
+		"outputs": [
+			"Usahihi wa kina: kipimo cha sentimita hadi desimita (kulingana na hali)",
+			"Uundaji wa mfano wa 3D wa uso unayowezekana kwa matumizi ya uhandisi"
+		]
+	},
+	"beforeAfter": {
+		"tag": "Onyesho la Thamani",
+		"headline": "KABLA vs BADA YA THAMANI YA UCHUNGUZI",
+		"flipHint": "Bofya au gusa kugeuza",
+		"before": {
+			"label": "KABLA YA SMARTGRID",
+			"tagline": "Ardhi ya chini ya maji isiyojulikana = hatari ya uhandisi",
+			"items": [
+				"Uwezo wa mifereji haujulikani",
+				"Mkusanyiko wa mashapo haujachorwa ramani",
+				"Wasawazaji wa uhandisi wengi",
+				"Hatari ya mafuriko haijulikani"
+			]
+		},
+		"after": {
+			"label": "BADA YA SMARTGRID",
+			"tagline": "Maamuzi yaliyodumishwa na data kwa miundombinu ya maji",
+			"items": [
+				"Mfano sahihi wa ardhi ya chini ya maji",
+				"Uwezo wa bwawa/mifereji ulithibitishwa",
+				"Sedimentation imekadiria",
+				"Maamuzi ya uhandisi yaliyodumishwa na data"
+			]
+		}
+	},
+	"finalCta": {
+		"tag": "Tayari Wakati Wote",
+		"headline": "TAYARI KUCHUNGUZA KIOTU CHAKO CHA MAJI?",
+		"description": "Tunajibu kwa haraka mahitaji ya uchunguzi ya uhandisi na mazingira ya dharura.",
+		"note": "Mobilizasi haraka • Uwanja wote Kenya • Matokeo ya kiwango cha uhandisi",
+		"actions": [
+			{
+				"icon": "email-outline",
+				"label": "Omba Bei ya Bathymetric",
+				"description": "Pata muhtasari wa kina na muda na bei",
+				"href": "mailto:smartgridsurveying@gmail.com?subject=Request Bathymetric Quote&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a Bathymetric Survey Quote. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+			},
+			{
+				"icon": "calendar-clock",
+				"label": "Book Site Inspection",
+				"description": "Panga ziara ya tovuti na timu yetu ya uchunguzi wa hydrographic",
+				"href": "mailto:smartgridsurveying@gmail.com?subject=Book Site Inspection&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a site inspection for a Bathymetric Survey. Please get in touch to discuss.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0A%0D%0AThank you."
+			},
+			{
+				"icon": "whatsapp",
+				"label": "WhatsApp Mhandisi wa Hydrographic",
+				"description": "Mazungumzo ya papo hapo na timu yetu ya kiufundi",
+				"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20speak%20with%20a%20hydrographic%20engineer%20about%20bathymetric%20survey%20for%20my%20project.%20Please%20advise%20on%20next%20steps."
+			}
+		]
 	},
 	"damsLakesSeaOcean": {
 		"tag": "Miundombinu ya Maji na Mazingira",
@@ -58,7 +254,7 @@
 	},
 	"applications": {
 		"tag": "Matumizi Muhimu",
-		"headline": "Matumizi Yetu ya Uchunguzi wa Bathymetric katika SmartGrid Surveying",
+		"headline": "Matumizi Yetu ya Uchunguzi wa Bathymetric katika SmartGrid Surveying",		
 		"description": "",
 		"items": [
 			{

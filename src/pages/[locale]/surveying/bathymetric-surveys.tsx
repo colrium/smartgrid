@@ -5,6 +5,14 @@ import { getI18nProps } from "@/lib/i18n";
 import {
 	BathymetricHeroSection,
 	WhatIsBathymetricSection,
+	WhyBathymetricCriticalSection,
+	BathymetricWorkflowSection,
+	EquipmentTechnologySection,
+	BathymetricDeliverablesSection,
+	WhySmartGridBathymetricSection,
+	TechnicalLimitationsSection,
+	BathymetricBeforeAfterSection,
+	FinalCtaSection,
 	DamsLakesSection,
 	ApplicationsSection,
 } from "@/components/sections/surveying/bathymetric-surveys";
@@ -20,8 +28,16 @@ const Page: NextPage<PageProps> = () => {
 			<div className="flex flex-col min-h-screen">
 				<BathymetricHeroSection />
 				<WhatIsBathymetricSection />
+				<WhyBathymetricCriticalSection />
+				<BathymetricWorkflowSection />
+				<EquipmentTechnologySection />
+				<BathymetricDeliverablesSection />
+				<WhySmartGridBathymetricSection />
+				<TechnicalLimitationsSection />
 				<DamsLakesSection />
 				<ApplicationsSection />
+				<BathymetricBeforeAfterSection />
+				<FinalCtaSection />
 			</div>
 		</div>
 	);

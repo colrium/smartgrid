@@ -54,9 +54,9 @@ export function BathymetricHeroSection() {
 					</h1>
 
 					{hero.description && (
-						<p className="mt-6 max-w-2xl text-base sm:text-lg text-surface/70 leading-relaxed">
+						<div className="mt-6 max-w-2xl whitespace-pre-line text-base sm:text-lg text-surface/70 leading-relaxed">
 							{hero.description}
-						</p>
+						</div>
 					)}
 
 					{hero.ctaPrimary?.href && (
