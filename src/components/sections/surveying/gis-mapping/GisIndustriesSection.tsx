@@ -5,7 +5,6 @@ import type { ReactElement } from "react";
 import { useTranslation } from "@/hooks";
 import { SectionHeader } from "@/components/sections/home";
 import { FadeUp } from "@/components/animations/Fade";
-import { Blob } from "@/components/sections/home/decor";
 
 interface IndustryItem {
 	icon?: string | null;
@@ -31,11 +30,8 @@ export function GisIndustriesSection(): ReactElement {
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden">
-			<span
-				aria-hidden
-				className="pointer-events-none absolute -bottom-20 -right-12 select-none font-light leading-none text-[18rem] text-primary/5 mdi mdi-earth"
-			/>
-			<Blob className="w-[26rem] h-[26rem] bg-primary-100/60 -top-24 -right-24" opacity={0.5} />
+			
+			
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader

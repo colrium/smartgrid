@@ -5,7 +5,6 @@ import type { ReactElement } from "react";
 import { useTranslation } from "@/hooks";
 import { SectionHeader } from "@/components/sections/home";
 import { FadeUp } from "@/components/animations/Fade";
-import { Blob } from "@/components/sections/home/decor";
 
 interface ServiceItem {
 	icon?: string | null;
@@ -31,11 +30,7 @@ export function GisServicesSection(): ReactElement {
 
 	return (
 		<section id="gis-services" className="scroll-mt-36 py-24 sm:py-28 relative overflow-hidden">
-			<span
-				aria-hidden
-				className="pointer-events-none absolute -top-16 -right-16 select-none font-light leading-none text-[18rem] text-primary/5 mdi mdi-layers-triple"
-			/>
-			<Blob className="w-[28rem] h-[28rem] bg-primary-100/60 -top-24 -left-24" opacity={0.5} />
+			
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader

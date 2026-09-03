@@ -5,7 +5,6 @@ import type { ReactElement } from "react";
 import { useTranslation } from "@/hooks";
 import { SectionHeader } from "@/components/sections/home";
 import { FadeUp } from "@/components/animations/Fade";
-import { Blob } from "@/components/sections/home/decor";
 
 interface WhyItem {
 	icon?: string | null;
@@ -30,8 +29,6 @@ export function GisWhySmartgridSection(): ReactElement {
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
-			<Blob className="w-[26rem] h-[26rem] bg-primary-100/60 -top-20 -left-24" opacity={0.5} />
-			<Blob className="w-[20rem] h-[20rem] bg-primary-200/40 -bottom-24 -right-20" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader
