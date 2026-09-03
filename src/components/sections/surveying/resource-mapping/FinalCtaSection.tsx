@@ -45,11 +45,7 @@ export function FinalCtaSection(): ReactElement {
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
 					<div className="flex flex-col items-center text-center">
-						{section.tag && (
-							<SectionTag dark>
-								{section.tag}
-							</SectionTag>
-						)}
+						{section.tag && <SectionTag dark>{section.tag}</SectionTag>}
 						<h2 className="mt-5 font-light tracking-tight leading-[1.08] text-3xl sm:text-4xl lg:text-5xl text-surface max-w-3xl">
 							{section.headline}
 						</h2>
@@ -69,6 +65,7 @@ export function FinalCtaSection(): ReactElement {
 				{actions.length > 0 && (
 					<FadeUp delay={0.12}>
 						<div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
+							
 							{actions.map((action, index) => (
 								<Link
 									key={index}
@@ -76,7 +73,9 @@ export function FinalCtaSection(): ReactElement {
 									className="group flex flex-col items-center gap-3 rounded-c bg-surface/[0.05] hairline-dark p-7 text-center transition-all duration-500 hover:-translate-y-1.5 hover:bg-surface/10 hover:border-primary-300/50"
 								>
 									<span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/15 text-primary-200 transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
-										<span className={`mdi mdi-${action.icon || "email-outline"} text-2xl`} />
+										<span
+											className={`mdi mdi-${action.icon || "email-outline"} text-2xl`}
+										/>
 									</span>
 									<span className="text-base font-semibold tracking-tight text-surface leading-snug">
 										{action.label}
