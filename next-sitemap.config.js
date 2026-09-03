@@ -4,7 +4,10 @@ const fs = require("fs");
 const i18nextConfig = require("./next-i18next.config");
 const locales = i18nextConfig?.i18n?.locales || ["en"];
 const defaultLocale = i18nextConfig?.i18n?.defaultLocale || "en";
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://smartgridsurveying.com";
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://smartgridsurveying.com").replace(
+	/\/+$/,
+	""
+);
 
 const staticPagesSlugs = getStaticPagesSlugs();
 const productPagesSlugs = getProductSlugs();
@@ -24,7 +27,9 @@ module.exports = {
 	],
 	robotsTxtOptions: {
 		policies: [{ userAgent: "*", allow: "/" }],
-		additionalSitemaps: [`${siteUrl}/sitemap.xml`],
+		// additionalSitemaps only needed for extra sitemaps (news/image/video),
+		// additionalSitemaps: [`${siteUrl}/sitemap.xml`],
+		// the main sitemap.xml is added automatically
 	},
 	additionalPaths: async (config) => {
 		const staticRoutes = ["", ...staticPagesSlugs];
@@ -39,7 +44,7 @@ module.exports = {
 		}
 		return paths;
 	},
-    transform: async (config, urlPath) => {
+	transform: async (config, urlPath) => {
 		const segments = urlPath.split("/").filter(Boolean);
 		const hasLocalePrefix = locales.includes(segments[0]);
 		const routeWithoutLocale = hasLocalePrefix ? "/" + segments.slice(1).join("/") : urlPath; // already locale-less (auto-crawled entry) — leave as-is

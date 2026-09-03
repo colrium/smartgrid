@@ -1,22 +1,152 @@
 {
 	"hero": {
 		"headline": "GIS, MAPPING & REMOTE SENSING",
-		"title": "Survey Smarter, Build Stronger",
+		"title": "GIS MAPPING & SPATIAL DATA INTELLIGENCE IN KENYA",
 		"image": "/media/surveying/gis-mapping/gis-mapping-01.jpg",
-		"description": "Leading Africa's Land and Aerial Surveying Revolution. SmartGrid Surveying provides precise GIS and remote sensing services — from UAV photogrammetry, LiDAR mapping, to multispectral analysis and DEM creation.",
+		"description": "<bold>Turn Location Data into Actionable Engineering, Planning & Infrastructure Intelligence.</bold>\n\nWe provide <bold>advanced GIS mapping services in Kenya, Uganda, Ethiopia, Tanzania and East Africa</bold>, integrating drone data, satellite imagery, and field survey datasets to deliver accurate, decision-ready spatial intelligence for governments, engineers, utilities, and developers.",
+		"footnoteItems": [
+			"From raw coordinates",
+			"To intelligent maps",
+			"To real-world decisions"
+		],
 		"ctaPrimary": {
-			"label": "Get Your Free Consultation",
-			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: GIS Mapping&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for GIS Mapping. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+			"label": "Request GIS Mapping Proposal",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Request GIS Mapping Proposal&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a GIS Mapping Proposal. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
 	"whatIsGis": {
 		"tag": "Spatial Intelligence",
-		"headline": "Geographic Information Systems (GIS)",
-		"description": "At Smartgrid Surveying, we use GIS technology to bring data to life. By combining geographic science with cutting-edge mapping tools, we transform layers of data into actionable insights that power smarter decisions for governments, businesses, and communities across Africa and beyond. GIS (Geographic Information Systems) is a powerful technology that links location data with attributes, allowing users to visualize, analyze, and interpret spatial relationships. From urban planning to agriculture, GIS empowers you to see the bigger picture — and all the critical details.",
-        "ctaPrimary": {
-			"label": "Request GIS & RS services!",
-			"href": "/aerial-drones/drone-imagery-surveys"
+		"headline": "What is GIS Mapping?",
+		"description": "Geographic Information Systems (GIS) is a technology that:",
+		"items": [
+			{
+				"icon": "map-marker-plus",
+				"title": "Captures spatial data"
+			},
+			{
+				"icon": "chart-donut",
+				"title": "Analyzes geographic relationships"
+			},
+			{
+				"icon": "map",
+				"title": "Visualizes data as interactive maps"
+			},
+			{
+				"icon": "bullseye-arrow",
+				"title": "Supports engineering and planning decisions"
+			}
+		],
+		"closingStatement": "In simple terms:\nGIS turns survey data into <bold>intelligent decision systems</bold>"
+	},
+	"consultationCta": {
+		"tag": "GIS Consultation",
+		"headline": "Book a GIS Consultation",
+		"description": "Tell us about your site, assets, or datasets — a GIS specialist will map the fastest route from raw survey data to decision-ready maps and systems.",
+		"watermark": "calendar-check",
+		"primary": {
+			"label": "Book a GIS Consultation",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Book a GIS Consultation&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a GIS consultation.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AScope (mapping / analysis / dashboards):%0D%0APreferred date & time:%0D%0A%0D%0AThank you."
+		},
+		"secondary": {
+			"label": "Browse All Surveying Services",
+			"href": "/surveying",
+			"icon": "compass-outline"
 		}
+	},
+	"whyGisCritical": {
+		"tag": "Why It Matters",
+		"headline": "Why GIS Mapping is Critical in Kenya",
+		"description": "GIS is now essential in:",
+		"items": [
+			{
+				"icon": "road-variant",
+				"title": "Infrastructure Development",
+				"features": [
+					"Road planning (KeNHA / KURA projects)",
+					"Utility network mapping",
+					"Urban expansion planning"
+				]
+			},
+			{
+				"icon": "bank",
+				"title": "Government & County Planning",
+				"features": [
+					"CIDP development",
+					"Land use zoning",
+					"Asset management systems"
+				]
+			},
+			{
+				"icon": "forest",
+				"title": "Environmental Management",
+				"features": [
+					"Deforestation monitoring",
+					"Flood risk mapping",
+					"Wetland protection"
+				]
+			},
+			{
+				"icon": "transmission-tower",
+				"title": "Utilities & Energy",
+				"features": [
+					"Water distribution mapping",
+					"Electrical grid planning",
+					"Fiber optic network design"
+				]
+			}
+		]
+	},
+	"gisServices": {
+		"tag": "GIS Solutions",
+		"headline": "GIS Services",
+		"description": "Decision-ready spatial products and systems, engineered from survey-grade data.",
+		"items": [
+			{
+				"icon": "vector-polygon",
+				"title": "Land & Infrastructure GIS",
+				"features": [
+					"Parcel mapping & cadastral integration",
+					"Road network mapping",
+					"Utility infrastructure mapping"
+				]
+			},
+			{
+				"icon": "quadcopter",
+				"title": "Drone-Based GIS Mapping",
+				"features": [
+					"Orthomosaics",
+					"3D terrain modeling",
+					"Volumetric calculations"
+				]
+			},
+			{
+				"icon": "leaf",
+				"title": "Environmental GIS",
+				"features": [
+					"Land use / land cover mapping",
+					"Flood risk modeling",
+					"Environmental impact mapping"
+				]
+			},
+			{
+				"icon": "city-variant-outline",
+				"title": "Urban Planning GIS",
+				"features": [
+					"City growth analysis",
+					"Zoning & land use planning",
+					"Informal settlement mapping"
+				]
+			},
+			{
+				"icon": "monitor-dashboard",
+				"title": "Custom GIS Systems",
+				"features": [
+					"Web GIS dashboards",
+					"Asset management systems",
+					"Spatial databases for enterprises"
+				]
+			}
+		]
 	},
 	"remoteSensingSolutions": {
 		"tag": "Advanced Data Capture",
@@ -68,11 +198,124 @@
 			}
 		]
 	},
+	"industries": {
+		"tag": "Who We Serve",
+		"headline": "Industries",
+		"description": "Spatial intelligence delivered to the standards of governments, contractors, utilities, and development partners.",
+		"items": [
+			{
+				"icon": "account-group",
+				"title": "Government & Public Sector",
+				"features": [
+					"County governments (all 47 counties)",
+					"National land & planning agencies",
+					"Infrastructure ministries"
+				]
+			},
+			{
+				"icon": "excavator",
+				"title": "Engineering & Construction Firms",
+				"features": [
+					"EPC contractors",
+					"Road & infrastructure consultants",
+					"Urban developers"
+				]
+			},
+			{
+				"icon": "transmission-tower",
+				"title": "Utilities & Energy",
+				"features": [
+					"Power transmission companies",
+					"Water service boards",
+					"Telecom infrastructure providers"
+				]
+			},
+			{
+				"icon": "handshake-outline",
+				"title": "NGOs & Development Agencies",
+				"features": [
+					"World Bank funded projects",
+					"UN agencies",
+					"Environmental programs"
+				]
+			}
+		]
+	},
+	"techStack": {
+		"tag": "Technology Stack",
+		"headline": "Technology Stack",
+		"description": "We use industry-grade geospatial tools:",
+		"tools": [
+			"ArcGIS Pro / ArcGIS Online",
+			"QGIS / PostGIS",
+			"UAV photogrammetry systems",
+			"RTK GNSS integration",
+			"Remote sensing & satellite analysis",
+			"AI-assisted classification models"
+		],
+		"logos": [
+			{
+				"image": "/media/surveying/gis-mapping/03-05.png",
+				"label": "ArcGIS",
+				"tone": "dark"
+			},
+			{
+				"image": "/media/surveying/gis-mapping/03-04.png",
+				"label": "Esri",
+				"tone": "light"
+			},
+			{
+				"image": "/media/surveying/gis-mapping/03-01.png",
+				"label": "Agisoft Metashape",
+				"tone": "dark"
+			},
+			{
+				"image": "/media/surveying/gis-mapping/03-08.png",
+				"label": "Trimble",
+				"tone": "dark"
+			},
+			{
+				"image": "/media/surveying/gis-mapping/03-07.png",
+				"label": "PIX4Dmapper",
+				"tone": "dark"
+			},
+			{
+				"image": "/media/surveying/gis-mapping/03-02.png",
+				"label": "Blue Marble Geographics",
+				"tone": "light"
+			},
+			{
+				"image": "/media/surveying/gis-mapping/03-06.png",
+				"label": "ArcGIS Pro",
+				"tone": "dark"
+			},
+			{
+				"image": "/media/surveying/gis-mapping/03-03.png",
+				"label": "Esri",
+				"tone": "light"
+			}
+		]
+	},
+	"whatsappCta": {
+		"tag": "Instant Support",
+		"headline": "WhatsApp a GIS Specialist",
+		"description": "Skip the back-and-forth — chat directly with our GIS team about datasets, deliverables, timelines, or pricing.",
+		"note": "Typical response time: under 1 hour during working hours.",
+		"cta": {
+			"label": "WhatsApp a GIS Specialist",
+			"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20speak%20with%20a%20GIS%20specialist%20about%20my%20project.%20Please%20advise%20on%20next%20steps.",
+			"icon": "whatsapp"
+		}
+	},
 	"gisComponents": {
 		"tag": "Technology Stack",
 		"headline": "GIS Components",
 		"description": "Our GIS solutions integrate hardware, software, data, people, and methods to create comprehensive spatial analysis and mapping systems.",
-        "list": [
+		"lifecycle": {
+			"title": "GIS",
+			"subtitle": "Lifecycle"
+		},
+		"list": [
             {
                 "title": "Hardware",
                 "description": "Physical tools like computers, servers, GPS devices, and drones that support GIS operations."
@@ -94,5 +337,180 @@
 				"description": "Standardized procedures and analytical techniques used in GIS workflows for accurate decision-making."
 			}
         ]
+	},
+	"whySmartgrid": {
+		"tag": "Why SmartGrid",
+		"headline": "Why SmartGrid GIS Services",
+		"description": "One team from field survey to final geospatial system — accuracy carried through every layer.",
+		"items": [
+			{
+				"icon": "routes",
+				"title": "Survey-to-GIS integrated workflow"
+			},
+			{
+				"icon": "crosshairs-gps",
+				"title": "High-accuracy spatial data processing"
+			},
+			{
+				"icon": "ruler-square-compass",
+				"title": "Engineering-grade outputs (not just maps)"
+			},
+			{
+				"icon": "clock-fast",
+				"title": "Fast turnaround (project dependent)"
+			},
+			{
+				"icon": "puzzle",
+				"title": "Compatible with CAD, BIM, GIS systems"
+			},
+			{
+				"icon": "shield-check",
+				"title": "Built for government & donor compliance"
+			}
+		]
+	},
+	"analystCta": {
+		"tag": "GIS Support Desk",
+		"headline": "Talk to a GIS Analyst",
+		"description": "From data audits to enterprise GIS deployment — get expert guidance on scope, accuracy, and deliverables before you commit.",
+		"actions": [
+			{
+				"icon": "whatsapp",
+				"label": "Chat on WhatsApp",
+				"description": "Quick answers from the GIS team",
+				"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20talk%20to%20a%20GIS%20analyst%20about%20my%20project."
+			},
+			{
+				"icon": "email-outline",
+				"label": "Email the GIS Team",
+				"description": "Detailed briefs, data samples & proposals",
+				"href": "mailto:smartgridsurveying@gmail.com?subject=Talk to a GIS Analyst&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to talk to a GIS analyst about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AWhat do you need help with?%0D%0A%0D%0AThank you."
+			},
+			{
+				"icon": "calendar-check",
+				"label": "Book a Consultation",
+				"description": "A focused scoping session with a specialist",
+				"href": "mailto:smartgridsurveying@gmail.com?subject=Book a GIS Consultation&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a GIS consultation.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AScope (mapping / analysis / dashboards):%0D%0APreferred date & time:%0D%0A%0D%0AThank you."
+			}
+		]
+	},
+	"dataAccuracy": {
+		"tag": "Quality Assurance",
+		"headline": "Data Accuracy & Quality Control in GIS",
+		"ensureTitle": "We ensure:",
+		"factors": [
+			"Coordinate system standardization (UTM / local grid)",
+			"Error checking & topology validation",
+			"Ground control point verification",
+			"Positional accuracy reporting"
+		],
+		"levelsTitle": "Typical accuracy:",
+		"levels": [
+			{
+				"icon": "quadcopter",
+				"label": "Drone mapping",
+				"accuracy": "2–5 cm"
+			},
+			{
+				"icon": "crosshairs-gps",
+				"label": "GNSS control",
+				"accuracy": "Sub-decimetre to cm level"
+			},
+			{
+				"icon": "satellite-variant",
+				"label": "Satellite data",
+				"accuracy": "0.3 m – 10 m depending on source"
+			}
+		]
+	},
+	"beforeAfter": {
+		"tag": "Before vs After",
+		"headline": "Before vs After GIS Implementation",
+		"flipHint": "Tap to compare",
+		"before": {
+			"label": "BEFORE SMARTGRID",
+			"tagline": "Managing projects without a centralized GIS",
+			"items": [
+				"Scattered spatial data",
+				"No centralized mapping system",
+				"Planning based on assumptions",
+				"High project uncertainty"
+			]
+		},
+		"after": {
+			"label": "AFTER SMARTGRID",
+			"tagline": "Running projects on a SmartGrid geospatial foundation",
+			"items": [
+				"Centralized geospatial database",
+				"Clear spatial decision-making",
+				"Optimized infrastructure planning",
+				"Reduced engineering risk"
+			]
+		}
+	},
+	"projectImpact": {
+		"tag": "Outcomes",
+		"headline": "Typical Project Impact",
+		"description": "GIS mapping enables:",
+		"items": [
+			{
+				"icon": "file-check-outline",
+				"title": "Faster infrastructure planning approvals"
+			},
+			{
+				"icon": "pencil-ruler",
+				"title": "Reduced design errors"
+			},
+			{
+				"icon": "map-legend",
+				"title": "Improved land administration systems"
+			},
+			{
+				"icon": "sprout",
+				"title": "Better environmental compliance"
+			},
+			{
+				"icon": "chart-line",
+				"title": "Smarter investment decisions"
+			}
+		]
+	},
+	"relatedServices": {
+		"tag": "Keep Exploring",
+		"headline": "Related Services",
+		"description": "Combine GIS with:",
+		"bottomNote": "Every service feeds your GIS — build one integrated spatial database.",
+		"items": [
+			{
+				"icon": "quadcopter",
+				"title": "Drone surveying",
+				"href": "/surveying/aerial-surveys"
+			},
+			{
+				"icon": "map",
+				"title": "Topographic mapping",
+				"href": "/surveying/topographical-surveys"
+			},
+			{
+				"icon": "tree-outline",
+				"title": "Resource mapping",
+				"href": "/surveying/resource-mapping"
+			},
+			{
+				"icon": "waves",
+				"title": "Bathymetric surveys",
+				"href": "/surveying/bathymetric-surveys"
+			},
+			{
+				"icon": "radar",
+				"title": "Ground Penetrating Radar (GPR)",
+				"href": "/surveying/ground-penetrating-radar"
+			},
+			{
+				"icon": "tunnel",
+				"title": "Subsurface Utility Engineering (SUE)",
+				"href": "/surveying/ground-penetrating-radar"
+			}
+		]
 	}
 }

@@ -56,6 +56,16 @@
 
     --color-ink: #01373d;
     --color-ink-soft: #345a60;
+    --color-ink-50: #e5edee;
+        --color-ink-100: #bfd6d8;
+        --color-ink-200: #8fb8bc;
+        --color-ink-300: #5c979d;
+        --color-ink-400: #2c6b71;
+        --color-ink-500: #01373d;
+        --color-ink-600: #013035;
+        --color-ink-700: #01262a;
+        --color-ink-800: #011a1d;
+        --color-ink-900: #000f11;
     
 }
 

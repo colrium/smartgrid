@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionTag } from "@/components/SectionTag";
@@ -15,8 +16,46 @@ interface GisHeroContent {
 	headline: string;
 	title: string;
 	description?: string;
+	footnoteItems?: string[] | null;
 	image?: string | null;
 	ctaPrimary?: HeroCta | null;
+}
+
+/** Render "\n\n"-separated paragraphs with inline <bold> segments (dark background). */
+function renderDescription(text: string): ReactNode[] {
+	const paragraphs = text.split(/\n+/).filter(Boolean);
+
+	return paragraphs.map((paragraph, pIndex) => {
+		const parts = paragraph.split(/(<bold>|<\/bold>)/g);
+		let bold = false;
+		const nodes: ReactNode[] = [];
+
+		for (const part of parts) {
+			if (part === "<bold>") {
+				bold = true;
+				continue;
+			}
+			if (part === "</bold>") {
+				bold = false;
+				continue;
+			}
+			nodes.push(
+				bold ? (
+					<strong key={nodes.length} className="font-semibold text-surface">
+						{part}
+					</strong>
+				) : (
+					part
+				),
+			);
+		}
+
+		return (
+			<span key={pIndex} className={pIndex > 0 ? "mt-4 block" : "block"}>
+				{nodes}
+			</span>
+		);
+	});
 }
 
 export function GisHeroSection() {
@@ -25,6 +64,7 @@ export function GisHeroSection() {
 		returnObjects: true,
 	}) as unknown as GisHeroContent;
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");
+	const footnoteItems = Array.isArray(hero.footnoteItems) ? hero.footnoteItems : [];
 
 	return (
 		<section className="relative min-h-[86dvh] flex items-end overflow-hidden pb-14 sm:pb-20">
@@ -34,6 +74,7 @@ export function GisHeroSection() {
 					alt={hero.headline || hero.title}
 					fill
 					priority
+					fetchPriority="high"
 					sizes="100vw"
 					className="object-cover object-center"
 				/>
@@ -49,14 +90,32 @@ export function GisHeroSection() {
 						{hero.headline}
 					</SectionTag>
 
-					<h1 className="mt-5 max-w-4xl font-light tracking-tight leading-[1.05] text-4xl sm:text-6xl lg:text-7xl text-surface">
+					<h1 className="mt-5 max-w-4xl font-light tracking-tight leading-[1.08] text-3xl sm:text-5xl lg:text-6xl text-surface">
 						{hero.title}
 					</h1>
 
 					{hero.description && (
 						<p className="mt-6 max-w-2xl text-base sm:text-lg text-surface/70 leading-relaxed">
-							{hero.description}
+							{renderDescription(hero.description)}
 						</p>
+					)}
+
+					{footnoteItems.length > 0 && (
+						<div className="mt-8 inline-flex flex-wrap items-center gap-x-3 gap-y-2 rounded-full bg-surface/10 hairline-dark px-5 py-3 backdrop-blur-sm">
+							{footnoteItems.map((item, index) => (
+								<span key={index} className="inline-flex items-center gap-3">
+									{index > 0 && (
+										<span
+											aria-hidden
+											className="mdi mdi-arrow-right text-base text-primary-200"
+										/>
+									)}
+									<span className="text-xs sm:text-sm font-medium tracking-wide text-surface/80">
+										{item}
+									</span>
+								</span>
+							))}
+						</div>
 					)}
 
 					{hero.ctaPrimary?.href && (

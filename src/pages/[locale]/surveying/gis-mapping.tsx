@@ -5,9 +5,21 @@ import { getI18nProps } from "@/lib/i18n";
 import {
 	GisHeroSection,
 	WhatIsGisSection,
-	RemoteSensingSection,
-	MappingServicesSection,
+	GisConsultationCtaSection,
+	GisImportanceSection,
+	GisServicesSection,
+	// RemoteSensingSection,
+	// MappingServicesSection,
+	GisIndustriesSection,
+	GisTechStackSection,
+	GisWhatsappCtaSection,
 	GisComponentsSection,
+	GisWhySmartgridSection,
+	GisAnalystCtaSection,
+	GisDataAccuracySection,
+	GisBeforeAfterSection,
+	GisProjectImpactSection,
+	GisRelatedServicesSection,
 } from "@/components/sections/surveying/gis-mapping";
 
 type PageProps = {
@@ -21,9 +33,21 @@ const Page: NextPage<PageProps> = () => {
 			<div className="flex flex-col min-h-screen">
 				<GisHeroSection />
 				<WhatIsGisSection />
-				<RemoteSensingSection />
-				<MappingServicesSection />
+				<GisConsultationCtaSection />
+				<GisImportanceSection />
+				<GisServicesSection />
+				{/* <RemoteSensingSection />
+				<MappingServicesSection /> */}
+				<GisIndustriesSection />
+				<GisTechStackSection />
+				<GisWhatsappCtaSection />
 				<GisComponentsSection />
+				<GisWhySmartgridSection />
+				<GisAnalystCtaSection />
+				<GisDataAccuracySection />
+				<GisBeforeAfterSection />
+				<GisProjectImpactSection />
+				<GisRelatedServicesSection />
 			</div>
 		</div>
 	);

@@ -1,12 +1,19 @@
 import { z } from 'zod'
 
 const envSchema = z.object({
-  NEXT_PUBLIC_SANITY_PROJECT_ID: z.string().nonempty('NEXT_PUBLIC_SANITY_PROJECT_ID is required'),
-  NEXT_PUBLIC_SANITY_DATASET: z.string().nonempty('NEXT_PUBLIC_SANITY_DATASET is required'),
-  NEXT_PUBLIC_SANITY_API_VERSION: z.string().default('2024-01-01'),
-  NEXT_PUBLIC_SANITY_USE_CDN: z.coerce.boolean().default(true),
-  SANITY_API_TOKEN: z.string().optional(),
-})
+	NEXT_PUBLIC_SITE_URL: z.string().nonempty("NEXT_PUBLIC_SANITY_PROJECT_ID is required"),
+	NEXT_PUBLIC_SANITY_PROJECT_ID: z.string().nonempty("NEXT_PUBLIC_SANITY_PROJECT_ID is required"),
+	NEXT_PUBLIC_SANITY_DATASET: z.string().nonempty("NEXT_PUBLIC_SANITY_DATASET is required"),
+	NEXT_PUBLIC_SANITY_API_VERSION: z.string().default("2024-01-01"),
+	NEXT_PUBLIC_SANITY_USE_CDN: z.coerce.boolean().default(true),
+	SANITY_API_TOKEN: z.string().optional(),
+	NEXT_PUBLIC_WHATSAPP_NUMBER: z.string().optional().default(null),
+	NEXT_PUBLIC_TAWK_PROPERTY_ID: z.string().optional().default(null),
+	NEXT_PUBLIC_TAWK_WIDGET_ID: z.string().optional().default(null),
+    NEXT_PUBLIC_GA_MEASUREMENT_ID: z.string().optional().default(null),
+	NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: z.string().optional(),
+	ANALYZE: z.coerce.boolean().default(false),
+});
 
 const parsedEnv = envSchema.safeParse(process.env)
 
@@ -18,3 +25,5 @@ if (!parsedEnv.success) {
 }
 
 export const env = parsedEnv.data
+
+export default env;

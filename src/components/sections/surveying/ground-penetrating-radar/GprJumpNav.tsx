@@ -11,9 +11,13 @@ interface JumpNavItem {
 
 export function GprJumpNav(): ReactElement {
 	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
-	const items = (t("surveying/ground-penetrating-radar:jumpNav", {
-		returnObjects: true,
-	}) as unknown as JumpNavItem[]) ?? [];
+	const items = useMemo(
+		() =>
+			(t("surveying/ground-penetrating-radar:jumpNav", {
+				returnObjects: true,
+			}) as unknown as JumpNavItem[]) ?? [],
+		[t],
+	);
 	const lenis = useLenis();
 	const [activeId, setActiveId] = useState<string>("");
 

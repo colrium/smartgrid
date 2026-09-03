@@ -1,22 +1,152 @@
 {
 	"hero": {
 		"headline": "GIS, UCHORAJI RAMANI NA VIHISISHI VYA MBALI",
-		"title": "Pima Kwa Umaalimu, Jenga kwa Nguvu",
+		"title": "RAMANI ZA GIS NA AKILI YA DATA YA KIJIOGRAFIA KENYA",
 		"image": "/media/surveying/gis-mapping/gis-mapping-01.jpg",
-		"description": "Kuongoza Mapinduzi ya Upimaji wa Ardhi na Angani Afrika. SmartGrid Surveying hutoa huduma sahihi za GIS na vihisishi vya mbali — kutoka photogrammetry ya UAV, uchoraji wa LiDAR, hadi uchambuzi wa multispectral na uundaji wa DEM.",
+		"description": "<bold>Geuza Data ya Eneo kuwa Akili ya Uhandisi, Upangaji na Miundombinu Inayoweza Kutumika.</bold>\n\nTunatoa <bold>huduma za hali ya juu za ramani za GIS nchini Kenya, Uganda, Ethiopia, Tanzania na Afrika Mashariki</bold>, tukichanganya data za droni, picha za satelaiti, na vipimo vya uwanja ili kutoa taarifa sahihi za kijografia zinazowezesha maamuzi kwa serikali, wahandisi, huduma za umma, na wasanidi.",
+		"footnoteItems": [
+			"Kutoka vipimo ghafi",
+			"Kwenda ramani zenye akili",
+			"Kwenda maamuzi ya ulimwengu halisi"
+		],
 		"ctaPrimary": {
-			"label": "Pata Ushauri Wako Bure",
-			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: GIS Mapping&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for GIS Mapping. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+			"label": "Omba Pendekezo la Ramani za GIS",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Request GIS Mapping Proposal&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a GIS Mapping Proposal. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
 	"whatIsGis": {
 		"tag": "Akili ya Kijiografia",
-		"headline": "Mifumo ya Taarifa za Kijiografia (GIS)",
-		"description": "Katika Smartgrid Surveying, tunatumia teknolojia ya GIS kuleta data hai. Kwa kuchanganya sayansi ya kijiografia na zana za kisasa za uchoraji ramani, tunageuza tabaka za data kuwa maarifa yanayoweza kuchukuliwa hatua ambayo huwezesha maamuzi bora kwa serikali, biashara, na jamii kote Afrika na nje yake. GIS (Mifumo ya Taarifa za Kijiografia) ni teknolojia yenye nguvu inayounganisha data ya eneo na sifa, ikiruhusu watumiaji kuona, kuchambua, na kufasiri uhusiano wa kijiografia. Kutoka upangaji wa miji hadi kilimo, GIS hukuwezesha kuona picha kubwa — na maelezo yote muhimu.",
-		"ctaPrimary": {
-			"label": "Omba huduma za GIS na RS!",
-			"href": "/aerial-drones/drone-imagery-surveys"
+		"headline": "Ramani za GIS ni nini?",
+		"description": "Mifumo ya Taarifa za Kijiografia (GIS) ni teknolojia inayofanya yafuatayo:",
+		"items": [
+			{
+				"icon": "map-marker-plus",
+				"title": "Hukamata data ya eneo"
+			},
+			{
+				"icon": "chart-donut",
+				"title": "Huchambua uhusiano wa kijiografia"
+			},
+			{
+				"icon": "map",
+				"title": "Huonyesha data kama ramani za mwingiliano"
+			},
+			{
+				"icon": "bullseye-arrow",
+				"title": "Inaunga mkono maamuzi ya uhandisi na upangaji"
+			}
+		],
+		"closingStatement": "Kwa maneno rahisi:\nInageuza data za upimaji kuwa <bold>mifumo mahiri ya maamuzi</bold>"
+	},
+	"consultationCta": {
+		"tag": "Ushauri wa GIS",
+		"headline": "Panga Ushauri wa GIS",
+		"description": "Tuambie kuhusu eneo lako, mali, au data — mtaalamu wa GIS atapanga njia ya haraka zaidi kutoka data ghafi za upimaji hadi ramani na mifumo inayowezesha maamuzi.",
+		"watermark": "calendar-check",
+		"primary": {
+			"label": "Panga Ushauri wa GIS",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Book a GIS Consultation&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a GIS consultation.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AScope (mapping / analysis / dashboards):%0D%0APreferred date & time:%0D%0A%0D%0AThank you."
+		},
+		"secondary": {
+			"label": "Tazama Huduma Zote za Upimaji",
+			"href": "/surveying",
+			"icon": "compass-outline"
 		}
+	},
+	"whyGisCritical": {
+		"tag": "Kwa Nini Ni Muhimu",
+		"headline": "Kwa Nini Ramani za GIS ni Muhimu Kenya",
+		"description": "GIS ni muhimu sasa katika:",
+		"items": [
+			{
+				"icon": "road-variant",
+				"title": "Maendeleo ya Miundombinu",
+				"features": [
+					"Upangaji wa barabara (miradi ya KeNHA / KURA)",
+					"Ramani za mtandao wa huduma",
+					"Upangaji wa ukuaji wa miji"
+				]
+			},
+			{
+				"icon": "bank",
+				"title": "Serikali na Upangaji wa Kaunti",
+				"features": [
+					"Maendeleo ya CIDP",
+					"Ugawaji wa matumizi ya ardhi",
+					"Mifumo ya usimamizi wa mali"
+				]
+			},
+			{
+				"icon": "forest",
+				"title": "Usimamizi wa Mazingira",
+				"features": [
+					"Ufuatiliaji wa ukataji miti",
+					"Ramani za hatari za mafuriko",
+					"Ulinzi wa nyanda za maji"
+				]
+			},
+			{
+				"icon": "transmission-tower",
+				"title": "Huduma na Nishati",
+				"features": [
+					"Ramani za usambazaji wa maji",
+					"Upangaji wa gridi ya umeme",
+					"Ubunifu wa mtandao wa fiber optic"
+				]
+			}
+		]
+	},
+	"gisServices": {
+		"tag": "Suluhisho za GIS",
+		"headline": "Huduma za GIS",
+		"description": "Bidhaa na mifumo ya kijografia inayowezesha maamuzi, iliyojengwa kutoka kwa data sahihi za upimaji.",
+		"items": [
+			{
+				"icon": "vector-polygon",
+				"title": "GIS ya Ardhi na Miundombinu",
+				"features": [
+					"Ramani ya vipande na kuunganisha kadastra",
+					"Ramani za mtandao wa barabara",
+					"Ramani za miundombinu ya huduma"
+				]
+			},
+			{
+				"icon": "quadcopter",
+				"title": "Ramani za GIS kwa Droni",
+				"features": [
+					"Orthomosaiki",
+					"Uundaji wa mifano ya 3D ya ardhi",
+					"Mahesabu ya kiasi"
+				]
+			},
+			{
+				"icon": "leaf",
+				"title": "GIS ya Mazingira",
+				"features": [
+					"Ramani za matumizi/kifuniko cha ardhi",
+					"Uigaji wa hatari za mafuriko",
+					"Ramani za athari za mazingira"
+				]
+			},
+			{
+				"icon": "city-variant-outline",
+				"title": "GIS ya Upangaji wa Miji",
+				"features": [
+					"Uchambuzi wa ukuaji wa miji",
+					"Upangaji wa ugawaji na matumizi ya ardhi",
+					"Ramani za makazi yasiyo rasmi"
+				]
+			},
+			{
+				"icon": "monitor-dashboard",
+				"title": "Mifumo Maalum ya GIS",
+				"features": [
+					"Dashibodi za Web GIS",
+					"Mifumo ya usimamizi wa mali",
+					"Hifadhidata za kijografia kwa makampuni"
+				]
+			}
+		]
 	},
 	"remoteSensingSolutions": {
 		"tag": "Ukusanyaji wa Data wa Kisasa",
@@ -67,10 +197,123 @@
 			}
 		]
 	},
+	"industries": {
+		"tag": "Tunawahudumia Nani",
+		"headline": "Sekta",
+		"description": "Akili ya kijografia inayotolewa kwa viwango vya serikali, wakandarasi, huduma za umma, na wadau wa maendeleo.",
+		"items": [
+			{
+				"icon": "account-group",
+				"title": "Serikali na Sekta ya Umma",
+				"features": [
+					"Serikali za kaunti (kaunti zote 47)",
+					"Mamlaka za kitaifa za ardhi na upangaji",
+					"Wizara za miundombinu"
+				]
+			},
+			{
+				"icon": "excavator",
+				"title": "Kampuni za Uhandisi na Ujenzi",
+				"features": [
+					"Wakandarasi wa EPC",
+					"Washauri wa barabara na miundombinu",
+					"Wasanidi wa miji"
+				]
+			},
+			{
+				"icon": "transmission-tower",
+				"title": "Huduma na Nishati",
+				"features": [
+					"Kampuni za usambazaji wa umeme",
+					"Mabodi ya huduma za maji",
+					"Watoaji wa miundombinu ya mawasiliano"
+				]
+			},
+			{
+				"icon": "handshake-outline",
+				"title": "Mashirika ya NGO na Maendeleo",
+				"features": [
+					"Miradi inayofadhiliwa na Benki ya Dunia",
+					"Mashirika ya UN",
+					"Programu za mazingira"
+				]
+			}
+		]
+	},
+	"techStack": {
+		"tag": "Msururu wa Teknolojia",
+		"headline": "Msururu wa Teknolojia",
+		"description": "Tunatumia zana za kijiografia za kiwango cha tasnia:",
+		"tools": [
+			"ArcGIS Pro / ArcGIS Online",
+			"QGIS / PostGIS",
+			"Mifumo ya photogrammetry ya UAV",
+			"Ujumuishaji wa RTK GNSS",
+			"Uchambuzi wa vihisishi vya mbali na satelaiti",
+			"Mifano ya ainisho inayosaidiwa na AI"
+		],
+		"logos": [
+			{
+				"image": "/media/surveying/gis-mapping/03-05.png",
+				"label": "ArcGIS",
+				"tone": "dark"
+			},
+			{
+				"image": "/media/surveying/gis-mapping/03-04.png",
+				"label": "Esri",
+				"tone": "light"
+			},
+			{
+				"image": "/media/surveying/gis-mapping/03-01.png",
+				"label": "Agisoft Metashape",
+				"tone": "dark"
+			},
+			{
+				"image": "/media/surveying/gis-mapping/03-08.png",
+				"label": "Trimble",
+				"tone": "dark"
+			},
+			{
+				"image": "/media/surveying/gis-mapping/03-07.png",
+				"label": "PIX4Dmapper",
+				"tone": "dark"
+			},
+			{
+				"image": "/media/surveying/gis-mapping/03-02.png",
+				"label": "Blue Marble Geographics",
+				"tone": "light"
+			},
+			{
+				"image": "/media/surveying/gis-mapping/03-06.png",
+				"label": "ArcGIS Pro",
+				"tone": "dark"
+			},
+			{
+				"image": "/media/surveying/gis-mapping/03-03.png",
+				"label": "Esri",
+				"tone": "light"
+			}
+		]
+	},
+	"whatsappCta": {
+		"tag": "Msaada wa Papo Hapo",
+		"headline": "Tuma WhatsApp kwa Mtaalamu wa GIS",
+		"description": "Ruka hatua za muda mrefu — wasiliana moja kwa moja na timu yetu ya GIS kuhusu data, matokeo, muda, au bei.",
+		"note": "Muda wa kawaida wa kujibu: chini ya saa 1 saa za kazi.",
+		"cta": {
+			"label": "Tuma WhatsApp kwa Mtaalamu wa GIS",
+			"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20speak%20with%20a%20GIS%20specialist%20about%20my%20project.%20Please%20advise%20on%20next%20steps.",
+			"icon": "whatsapp"
+		}
+	},
 	"gisComponents": {
 		"tag": "Msururu wa Teknolojia",
 		"headline": "Vipengele vya GIS",
 		"description": "Suluhisho zetu za GIS zinajumuisha maunzi, programu, data, watu, na mbinu kuunda mifumo kamili ya uchambuzi wa kijiografia na uchoraji ramani.",
+		"lifecycle": {
+			"title": "GIS",
+			"subtitle": "Mzunguko"
+		},
 		"list": [
 			{
 				"title": "Maunzi",
@@ -91,6 +334,181 @@
 			{
 				"title": "Mbinu",
 				"description": "Taratibu sanifu na mbinu za uchambuzi zinazotumika katika michakato ya GIS kwa uamuzi sahihi."
+			}
+		]
+	},
+	"whySmartgrid": {
+		"tag": "Kwa Nini SmartGrid",
+		"headline": "Kwa Nini Huduma za GIS za SmartGrid",
+		"description": "Timu moja kutoka uwanja hadi mfumo wa mwisho wa kijografia — usahihi unahifadhiwa katika kila tabaka.",
+		"items": [
+			{
+				"icon": "routes",
+				"title": "Mtiririko uliounganisha wa upimaji hadi GIS"
+			},
+			{
+				"icon": "crosshairs-gps",
+				"title": "Uchakataji wa data ya kijografia wa usahihi wa juu"
+			},
+			{
+				"icon": "ruler-square-compass",
+				"title": "Matokeo ya kiwango cha uhandisi (si ramani tu)"
+			},
+			{
+				"icon": "clock-fast",
+				"title": "Kasi ya utekelezaji (inategemea mradi)"
+			},
+			{
+				"icon": "puzzle",
+				"title": "Inaoana na mifumo ya CAD, BIM, GIS"
+			},
+			{
+				"icon": "shield-check",
+				"title": "Imejengwa kwa utii wa serikali na wafadhili"
+			}
+		]
+	},
+	"analystCta": {
+		"tag": "Dawati la Msaada GIS",
+		"headline": "Zungumza na Mchambuzi wa GIS",
+		"description": "Kutoka ukaguzi wa data hadi uwekaji wa GIS kwa makampuni — pata miongozo ya kitaalamu kuhusu wigo, usahihi, na matokeo kabla ya kuanza.",
+		"actions": [
+			{
+				"icon": "whatsapp",
+				"label": "Zungumza WhatsApp",
+				"description": "Majibu ya haraka kutoka timu ya GIS",
+				"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20talk%20to%20a%20GIS%20analyst%20about%20my%20project."
+			},
+			{
+				"icon": "email-outline",
+				"label": "Barua pepe kwa Timu ya GIS",
+				"description": "Maelezo kamili, sampuli za data na mapendekezo",
+				"href": "mailto:smartgridsurveying@gmail.com?subject=Talk to a GIS Analyst&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to talk to a GIS analyst about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AWhat do you need help with?%0D%0A%0D%0AThank you."
+			},
+			{
+				"icon": "calendar-check",
+				"label": "Panga Ushauri",
+				"description": "Kipindi cha kupanga na mtaalamu",
+				"href": "mailto:smartgridsurveying@gmail.com?subject=Book a GIS Consultation&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a GIS consultation.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AScope (mapping / analysis / dashboards):%0D%0APreferred date & time:%0D%0A%0D%0AThank you."
+			}
+		]
+	},
+	"dataAccuracy": {
+		"tag": "Uhakiki wa Ubora",
+		"headline": "Usahihi wa Data na Udhibiti wa Ubora katika GIS",
+		"ensureTitle": "Tunahakikisha:",
+		"factors": [
+			"Usanifu wa mfumo wa kuratibu (UTM / gridi ya ndani)",
+			"Ukaguzi wa makosa na uhakiki wa topology",
+			"Uthibitisho wa pointi za udhibiti za ardhini",
+			"Ripoti za usahihi wa nafasi"
+		],
+		"levelsTitle": "Usahihi wa kawaida:",
+		"levels": [
+			{
+				"icon": "quadcopter",
+				"label": "Ramani za droni",
+				"accuracy": "2–5 cm"
+			},
+			{
+				"icon": "crosshairs-gps",
+				"label": "Udhibiti wa GNSS",
+				"accuracy": "Chini ya desimita hadi kiwango cha sm"
+			},
+			{
+				"icon": "satellite-variant",
+				"label": "Data ya satelaiti",
+				"accuracy": "0.3 m – 10 m kulingana na chanzo"
+			}
+		]
+	},
+	"beforeAfter": {
+		"tag": "Kabla dhidi ya Baada",
+		"headline": "Kabla dhidi ya Baada ya Kutekeleza GIS",
+		"flipHint": "Bonyeza kulinganisha",
+		"before": {
+			"label": "KABLA YA SMARTGRID",
+			"tagline": "Kusimamia miradi bila GIS ya kati",
+			"items": [
+				"Data ya kijografia iliyotawanyika",
+				"Hakuna mfumo wa ramani wa kati",
+				"Upangaji kutokana na dhana",
+				"Hatari kubwa ya mradi"
+			]
+		},
+		"after": {
+			"label": "BAADA YA SMARTGRID",
+			"tagline": "Kuendesha miradi kwa msingi wa kijografia wa SmartGrid",
+			"items": [
+				"Hifadhidata ya kijografia ya kati",
+				"Maamuzi wazi ya kijografia",
+				"Upangaji bora wa miundombinu",
+				"Hatari ndogo ya uhandisi"
+			]
+		}
+	},
+	"projectImpact": {
+		"tag": "Matokeo",
+		"headline": "Athari ya Kawaida ya Mradi",
+		"description": "Ramani za GIS huwezesha:",
+		"items": [
+			{
+				"icon": "file-check-outline",
+				"title": "Idhini za haraka za upangaji wa miundombinu"
+			},
+			{
+				"icon": "pencil-ruler",
+				"title": "Makosa madogo ya ubunifu"
+			},
+			{
+				"icon": "map-legend",
+				"title": "Mifumo bora ya usimamizi wa ardhi"
+			},
+			{
+				"icon": "sprout",
+				"title": "Utiifu bora wa mazingira"
+			},
+			{
+				"icon": "chart-line",
+				"title": "Maamuzi mahiri ya uwekezaji"
+			}
+		]
+	},
+	"relatedServices": {
+		"tag": "Endelea Kuchunguza",
+		"headline": "Huduma Zinazohusiana",
+		"description": "Changanya GIS na:",
+		"bottomNote": "Kila huduma huongeza GIS yako — jenga hifadhidata moja ya kijografia.",
+		"items": [
+			{
+				"icon": "quadcopter",
+				"title": "Uchunguzi wa droni",
+				"href": "/surveying/aerial-surveys"
+			},
+			{
+				"icon": "map",
+				"title": "Ramani za topografia",
+				"href": "/surveying/topographical-surveys"
+			},
+			{
+				"icon": "tree-outline",
+				"title": "Ramani za rasilimali",
+				"href": "/surveying/resource-mapping"
+			},
+			{
+				"icon": "waves",
+				"title": "Uchunguzi wa Bathymetric",
+				"href": "/surveying/bathymetric-surveys"
+			},
+			{
+				"icon": "radar",
+				"title": "Rada ya Kupenya Ardhini (GPR)",
+				"href": "/surveying/ground-penetrating-radar"
+			},
+			{
+				"icon": "tunnel",
+				"title": "Uhandisi wa Huduma za Chini ya Ardhi (SUE)",
+				"href": "/surveying/ground-penetrating-radar"
 			}
 		]
 	}
