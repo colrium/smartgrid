@@ -124,7 +124,7 @@ export function BathymetricBeforeAfterSection(): ReactElement {
 										className={`absolute z-0 -right-8 -bottom-24 mdi text-[16rem] ${
 											isBefore
 												? "mdi-alert-circle text-amber-200/10"
-												: "mdi-mower text-green-50/10"
+												: "mdi-ferry text-green-50/10"
 										}`}
 									/>
 									<div className="flex flex-col">
@@ -150,7 +150,7 @@ export function BathymetricBeforeAfterSection(): ReactElement {
 												className={`mdi text-2xl ${
 													isBefore
 														? "mdi-alert-circle text-yellow-500/60"
-														: "mdi-mower text-surface-300/70"
+														: "mdi-ferry text-surface-300/70"
 												}`}
 											/>
 										</div>
