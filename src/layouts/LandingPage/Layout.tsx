@@ -49,7 +49,7 @@ export default function LandingPageLayout({ children, slotProps = {} }: LandingP
 				<div className="flex-1 -mt-35">
 					{children}
 					<ChatWidget />
-					<div className="fixed right-6 bottom-8 z-[9999] flex flex-col gap-2 items-center justify-center">
+					<div className="fixed right-6 bottom-8 z-[999999] flex flex-col gap-2 items-center justify-center">
 						<ScrollTop anchorRef={backToTopAnchorRef} />
 						<WhatsappButton />
 					</div>
