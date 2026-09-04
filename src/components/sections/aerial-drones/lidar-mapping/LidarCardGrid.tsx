@@ -24,7 +24,7 @@ interface LidarCardGridProps {
 
 export function LidarCardGrid({ sectionKey, tone = "default" }: LidarCardGridProps) {
 	const { t } = useTranslation(["aerial-drones/lidar-mapping"]);
-	const section = t(`lidar-mapping:${sectionKey}`, {
+	const section = t(`aerial-drones/lidar-mapping:${sectionKey}`, {
 		returnObjects: true,
 	}) as unknown as LidarCardsContent;
 	const items = Array.isArray(section.items) ? section.items : [];
