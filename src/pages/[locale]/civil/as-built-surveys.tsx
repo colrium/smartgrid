@@ -2,6 +2,7 @@ import type { GetServerSideProps, NextPage } from "next";
 import PageHead from "@/components/Head";
 
 import { getI18nProps } from "@/lib/i18n";
+import { Deliverables } from "@/components/sections/Deliverables";
 import {
 	HeroSection,
 	WhatAreAsBuiltSurveysSection,
@@ -28,6 +29,7 @@ const Page: NextPage<PageProps> = () => {
 				<MaxProductivityMinGuessworkSection />
 				<ApplicationsSection />
 				<ActionableInsightsSection />
+				<Deliverables ns="civil/as-built-surveys" className="bg-surface" />
 			</div>
 		</div>
 	);

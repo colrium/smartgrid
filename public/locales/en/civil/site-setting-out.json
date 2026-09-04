@@ -122,5 +122,54 @@
 				"description": "You can contact SmartGrid Surveying via WhatsApp, email, or phone. We will schedule a site visit, provide a quotation, and outline the survey plan tailored to your project."
 			}
 		]
+	},
+	"deliverables": {
+		"tag": "Setting Out Outputs",
+		"headline": "Site Setting Out Deliverables",
+		"description": "Everything your crew needs to build exactly to design:",
+		"liveLabel": "Deliverable package",
+		"checks": [
+			"Derived from approved designs",
+			"Checked against site control",
+			"Licensed surveyor supervision"
+		],
+		"items": [
+			{
+				"title": "Pegged & Marked Positions",
+				"format": "On-site",
+				"icon": "map-marker-check",
+				"description": "Buildings, roads, services and boundaries physically pegged from approved design coordinates."
+			},
+			{
+				"title": "Setting-Out Coordinate Sheets",
+				"format": "CSV / PDF",
+				"icon": "table-large",
+				"description": "Checked coordinate schedules for every stakeout point, referenced to site control."
+			},
+			{
+				"title": "Offset Lines & Reference Marks",
+				"format": "On-site",
+				"icon": "vector-square",
+				"description": "Batter boards, offset lines and reference marks that preserve alignment throughout the works."
+			},
+			{
+				"title": "Setting-Out Drawings",
+				"format": "DWG / PDF",
+				"icon": "file-cad",
+				"description": "Annotated drawings showing pegged positions, offsets and control points for site records."
+			},
+			{
+				"title": "Benchmarks & Datum Levels",
+				"format": "PDF",
+				"icon": "axis-z-arrow",
+				"description": "Vertical control established on site and documented for levels, gradients and finishes."
+			},
+			{
+				"title": "Verification & As-Built Checks",
+				"format": "PDF",
+				"icon": "clipboard-check-outline",
+				"description": "Post-construction checks confirming completed works match the approved setting out."
+			}
+		]
 	}
 }

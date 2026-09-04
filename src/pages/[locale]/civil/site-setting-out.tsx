@@ -2,6 +2,7 @@ import type { GetServerSideProps, NextPage } from "next";
 import PageHead from "@/components/Head";
 
 import { getI18nProps } from "@/lib/i18n";
+import { Deliverables } from "@/components/sections/Deliverables";
 import {
 	HeroSection,
 	OurServicesSection,
@@ -21,6 +22,7 @@ const Page: NextPage<PageProps> = () => {
 				<HeroSection />
 				<OurServicesSection />
 				<OurInstrumentsSection />
+				<Deliverables ns="civil/site-setting-out" className="bg-surface" />
 				<FaqSection />
 			</div>
 		</div>

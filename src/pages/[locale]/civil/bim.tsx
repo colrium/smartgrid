@@ -2,6 +2,7 @@ import type { GetServerSideProps, NextPage } from "next";
 import PageHead from "@/components/Head";
 
 import { getI18nProps } from "@/lib/i18n";
+import { Deliverables } from "@/components/sections/Deliverables";
 import {
 	HeroSection,
 	BimServicesSection,
@@ -19,6 +20,7 @@ const Page: NextPage<PageProps> = () => {
 			<div className="flex flex-col min-h-screen">
 				<HeroSection />
 				<BimServicesSection />
+				<Deliverables ns="civil/bim" className="bg-surface" />
 				<CtaSection />
 			</div>
 		</div>

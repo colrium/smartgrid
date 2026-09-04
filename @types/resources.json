@@ -1720,6 +1720,44 @@ export default interface Resources {
 }],
       "tag": "What we do"
     },
+    "deliverables": {
+      "checks": ["Georeferenced to national control", "Engineer-ready formats", "Audit-ready documentation"],
+      "description": "Complete as-built documentation for handover, verification and records:",
+      "headline": "As-Built Survey Deliverables",
+      "items": [{
+  "description": "Documented comparison of constructed works against design, with evidence for engineering sign-off and records.",
+  "format": "PDF",
+  "icon": "clipboard-check-outline",
+  "title": "As-Built Verification Reports"
+}, {
+  "description": "Scheduled captures that track construction progress against programme milestones and payment applications.",
+  "format": "PDF / Web",
+  "icon": "chart-timeline-variant",
+  "title": "Progress Survey Reports"
+}, {
+  "description": "Spatially accurate models of constructed works ready for BIM integration and facilities management.",
+  "format": "CAD / IFC",
+  "icon": "cube-outline",
+  "title": "3D As-Built Models"
+}, {
+  "description": "High-resolution, georeferenced aerial imagery documenting site conditions at every capture date.",
+  "format": "GeoTIFF / JPEG",
+  "icon": "image-filter-hdr",
+  "title": "Orthomosaic Maps & Imagery"
+}, {
+  "description": "Quantified differences between design and as-built surfaces, including earthwork and material quantities.",
+  "format": "Excel / PDF",
+  "icon": "chart-histogram",
+  "title": "Deviation & Quantity Analysis"
+}, {
+  "description": "Design-versus-as-built overlays and geo-referenced datasets that plug straight into CAD and GIS workflows.",
+  "format": "DWG / SHP",
+  "icon": "vector-square",
+  "title": "CAD Overlays & GIS Datasets"
+}],
+      "liveLabel": "Deliverable package",
+      "tag": "Project Outputs"
+    },
     "hero": {
       "ctaPrimary": {
         "href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Civil As-Built Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Civil As-Built Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
@@ -1801,6 +1839,44 @@ export default interface Resources {
       "description": "",
       "headline": "Ready to Elevate Your Infrastructure with BIM?",
       "tag": "Let’s Collaborate"
+    },
+    "deliverables": {
+      "checks": ["IFC & native formats", "LOD mapped to project needs", "Consistent coordinate systems"],
+      "description": "Survey-grade data modelled for BIM workflows and digital twins:",
+      "headline": "BIM & Digital Twin Deliverables",
+      "items": [{
+  "description": "Existing-conditions models generated from point clouds and classified to your required level of development.",
+  "format": "IFC / RVT",
+  "icon": "cube-outline",
+  "title": "Scan-to-BIM Models"
+}, {
+  "description": "Clean, geo-referenced scans with control registration, ready for direct use in BIM authoring tools.",
+  "format": "RCP / E57 / LAS",
+  "icon": "vector-square",
+  "title": "Registered Point Clouds"
+}, {
+  "description": "Construction-stage models updated with field verification for handover, operations and maintenance.",
+  "format": "IFC / RVT",
+  "icon": "domain",
+  "title": "As-Built BIM Models"
+}, {
+  "description": "Design-versus-built comparisons with quantified deviations for engineering review and resolution.",
+  "format": "PDF / Excel",
+  "icon": "chart-histogram",
+  "title": "Deviation & Clash Reports"
+}, {
+  "description": "Plans, sections and elevations extracted from the model for permits, tenders and site use.",
+  "format": "DWG / PDF",
+  "icon": "file-document-outline",
+  "title": "2D Documentation"
+}, {
+  "description": "Geo-referenced datasets that feed web maps, dashboards and digital twin platforms.",
+  "format": "Web / GIS",
+  "icon": "earth",
+  "title": "Digital Twin Datasets"
+}],
+      "liveLabel": "Deliverable package",
+      "tag": "BIM Outputs"
     },
     "hero": {
       "ctaSecondary": {
@@ -2022,6 +2098,44 @@ export default interface Resources {
       "headline": "Need High-Precision Surveys for Your Next Build?",
       "tag": "Let’s Collaborate"
     },
+    "deliverables": {
+      "checks": ["Tied to national grid control", "Instrument-ready formats", "Licensed surveyor sign-off"],
+      "description": "Precise data products that keep site works on control:",
+      "headline": "Site Engineering Deliverables",
+      "items": [{
+  "description": "GNSS and total-station control networks with adjustment reports tied to the national grid.",
+  "format": "PDF / CSV",
+  "icon": "crosshairs-gps",
+  "title": "Control Networks & Reports"
+}, {
+  "description": "Stakeout schedules for structures, roads and services, formatted for total stations and GNSS rovers.",
+  "format": "CSV / DWG",
+  "icon": "map-marker-radius",
+  "title": "Setting-Out Coordinates"
+}, {
+  "description": "Levels, gradients and elevations for earthworks, drainage and paving operations.",
+  "format": "PDF / DWG",
+  "icon": "axis-z-arrow",
+  "title": "Level & Gradient Surveys"
+}, {
+  "description": "Interim quantities measured against design surfaces to support valuations and claims.",
+  "format": "Excel / PDF",
+  "icon": "chart-histogram",
+  "title": "Progress & Quantity Surveys"
+}, {
+  "description": "3D grade models prepared for GPS machine control on plant and compaction equipment.",
+  "format": "DXF / CALS",
+  "icon": "bulldozer",
+  "title": "Machine Control Models"
+}, {
+  "description": "Positioning, level and dimensional compliance documentation for practical completion.",
+  "format": "PDF",
+  "icon": "file-certificate",
+  "title": "Compliance & Handover Documents"
+}],
+      "liveLabel": "Deliverable package",
+      "tag": "Engineering Outputs"
+    },
     "exploreMore": {
       "description": "",
       "headline": "Explore more...",
@@ -2065,6 +2179,44 @@ export default interface Resources {
     }
   },
   "civil/site-setting-out": {
+    "deliverables": {
+      "checks": ["Derived from approved designs", "Checked against site control", "Licensed surveyor supervision"],
+      "description": "Everything your crew needs to build exactly to design:",
+      "headline": "Site Setting Out Deliverables",
+      "items": [{
+  "description": "Buildings, roads, services and boundaries physically pegged from approved design coordinates.",
+  "format": "On-site",
+  "icon": "map-marker-check",
+  "title": "Pegged & Marked Positions"
+}, {
+  "description": "Checked coordinate schedules for every stakeout point, referenced to site control.",
+  "format": "CSV / PDF",
+  "icon": "table-large",
+  "title": "Setting-Out Coordinate Sheets"
+}, {
+  "description": "Batter boards, offset lines and reference marks that preserve alignment throughout the works.",
+  "format": "On-site",
+  "icon": "vector-square",
+  "title": "Offset Lines & Reference Marks"
+}, {
+  "description": "Annotated drawings showing pegged positions, offsets and control points for site records.",
+  "format": "DWG / PDF",
+  "icon": "file-cad",
+  "title": "Setting-Out Drawings"
+}, {
+  "description": "Vertical control established on site and documented for levels, gradients and finishes.",
+  "format": "PDF",
+  "icon": "axis-z-arrow",
+  "title": "Benchmarks & Datum Levels"
+}, {
+  "description": "Post-construction checks confirming completed works match the approved setting out.",
+  "format": "PDF",
+  "icon": "clipboard-check-outline",
+  "title": "Verification & As-Built Checks"
+}],
+      "liveLabel": "Deliverable package",
+      "tag": "Setting Out Outputs"
+    },
     "faq": {
       "description": "",
       "headline": "Frequently Asked Questions",
@@ -2182,6 +2334,44 @@ export default interface Resources {
       "description": "Contact SmartGrid Surveying for a custom drone volume survey that saves time, reduces risk, and delivers results.",
       "headline": "Need Accurate Volumetric Data for Your Site?",
       "tag": "Let’s Collaborate"
+    },
+    "deliverables": {
+      "checks": ["Traceable methodology", "Repeatable survey surfaces", "GIS & CAD compatible"],
+      "description": "Audit-ready volumes and quantities for earthworks and stockpiles:",
+      "headline": "Volumetric Survey Deliverables",
+      "items": [{
+  "description": "Cut and fill quantities with surfaces, methodology and tolerance clearly documented.",
+  "format": "PDF / Excel",
+  "icon": "chart-histogram",
+  "title": "Volume Calculation Reports"
+}, {
+  "description": "Individual and cumulative stockpile volumes, with densities applied on request.",
+  "format": "PDF / Excel",
+  "icon": "image-filter-hdr",
+  "title": "Stockpile Volume Surveys"
+}, {
+  "description": "Base and comparison surfaces that make every volume computation repeatable and defensible.",
+  "format": "GeoTIFF / DWG",
+  "icon": "axis-z-arrow-lock",
+  "title": "Surface Models (DTM / DSM)"
+}, {
+  "description": "Contour plans of pre- and post-works terrain for design, records and compliance.",
+  "format": "DWG / PDF",
+  "icon": "map-legend",
+  "title": "Contour & Elevation Maps"
+}, {
+  "description": "Periodic cut and fill movement reports aligned to payment applications and programmes.",
+  "format": "PDF",
+  "icon": "chart-timeline-variant",
+  "title": "Progress Earthwork Reports"
+}, {
+  "description": "Surfaces, contours and volumes exported in open formats for CAD and GIS workflows.",
+  "format": "DWG / SHP",
+  "icon": "database-outline",
+  "title": "CAD & GIS Data Packages"
+}],
+      "liveLabel": "Deliverable package",
+      "tag": "Project Outputs"
     },
     "hero": {
       "ctaPrimary": {

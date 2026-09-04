@@ -2,6 +2,7 @@ import type { GetServerSideProps, NextPage } from "next";
 import PageHead from "@/components/Head";
 
 import { getI18nProps } from "@/lib/i18n";
+import { Deliverables } from "@/components/sections/Deliverables";
 import {
 	HeroSection,
 	MaxProductivityMinGuessworkSection,
@@ -25,6 +26,7 @@ const Page: NextPage<PageProps> = () => {
 				<PrecisionVolumetricAnalysisSection />
 				<ServicesSection />
 				<ClarityAndControlSection />
+				<Deliverables ns="civil/volumetric-surveys" className="bg-surface" />
 				<CtaSection />
 			</div>
 		</div>
