@@ -79,7 +79,7 @@ public/                           # assets, fonts, img, geojson, locales/{lang}/
 
 ## Internationalization Rules
 - Adding/changing a key in any `public/locales/<locale>/*.json` must be **mirrored across all locale files**
-  that have a corresponding file (`en`, `de`, `sw`, `fr`, `pt`).
+  that have a corresponding file (`en`, `sw`).
   - For **text** → translate into the target language.
   - For **values** (URLs, slugs, hrefs, codes, IDs, numbers, image paths) → copy the exact value verbatim.
 - Every new page namespace gets a JSON file per locale (e.g. `home.json`, `about.json`).

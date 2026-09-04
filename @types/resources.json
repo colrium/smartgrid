@@ -5446,9 +5446,9 @@ export default interface Resources {
         "page_title": "FOIF A90 RTK GNSS"
       },
       "gis-mapping": {
-        "meta_description": "GIS, mapping & remote sensing — UAV photogrammetry, LiDAR mapping, multispectral analysis and DEM creation. Precise spatial data for planning, engineering, and environmental projects.",
+        "meta_description": "Turn location data into actionable engineering, planning & infrastructure intelligence. Advanced GIS mapping services in Kenya, Uganda, Ethiopia, Tanzania and East Africa — integrating drone data, satellite imagery, and field survey datasets for decision-ready spatial intelligence.",
         "og_image": "/media/surveying/gis-mapping/gis-mapping-01.jpg",
-        "page_title": "GIS Mapping",
+        "page_title": "GIS Mapping & Spatial Data Intelligence in Kenya",
         "slug": "/surveying/gis-mapping"
       },
       "ground-penetrating-radar": {
@@ -5816,21 +5816,173 @@ export default interface Resources {
 }],
       "tag": ""
     },
+    "capabilityCta": {
+      "description": "Equipment lists, accuracy standards, KCAA compliance, insurance and past project references — everything procurement teams need to prequalify SmartGrid Surveying.",
+      "headline": "Request Technical Capability Statement (PDF)",
+      "primary": {
+        "href": "mailto:smartgridsurveying@gmail.com?subject=Request: Technical Capability Statement (PDF)&body=Hi SmartGrid Surveying,%0D%0A%0D%0APlease send your Technical Capability Statement (PDF).%0D%0A%0D%0AName:%0D%0AOrganisation:%0D%0AEmail:%0D%0ATender / Project name:%0D%0A%0D%0AThank you.",
+        "icon": "file-pdf-box",
+        "label": "Request the Capability Statement"
+      },
+      "secondary": {
+        "href": "/about",
+        "icon": "domain",
+        "label": "View Company Profile"
+      },
+      "tag": "For Tenders & Prequalification",
+      "watermark": "file-pdf-box"
+    },
     "deliverables": {
-      "headline": "Aerial Drone Deliverables",
-      "image": "/media/surveying/aerial-surveys/aerial-drone-deliverables.png",
-      "items": ["Orthorectified Imagery (Geo-Referenced) + Raw images", "Orthomosaic Maps (Geo-Referenced)", "Digital Elevation Models (DTM, DSM)", "Contours", "3D Point Clouds (X, Y, Z)", "Topographical Maps", "CAD Shapefiles", "Volumetric Analysis Reports", "Survey Reports", "NDVI & Multispectral Maps (Agriculture only)"],
-      "tag": "What you get"
+      "checks": ["Georeferenced to national control", "Engineer-ready formats", "Open data — no vendor lock-in"],
+      "description": "Every engagement closes with a complete, engineer-ready data package — exported in open formats that feed straight into CAD, GIS and construction management tools.",
+      "headline": "What You Receive From a Drone Survey Project",
+      "items": [{
+  "description": "High-resolution, georeferenced aerial base maps that stitch the entire site into one accurate image — ideal for planning, measuring and reporting.",
+  "format": "GeoTIFF / JPEG tiles",
+  "icon": "google-earth",
+  "title": "Orthomosaic Maps"
+}, {
+  "description": "Bare-earth terrain and surface models for grading, drainage design, cut/fill planning and 3D site visualisation.",
+  "format": "GeoTIFF raster",
+  "icon": "image-filter-hdr",
+  "title": "Digital Elevation Models (DTM & DSM)"
+}, {
+  "description": "Design-ready contour lines at engineering intervals, generated from calibrated elevation data and delivered in CAD and GIS formats.",
+  "format": "0.25m – 1m intervals",
+  "icon": "vector-bezier",
+  "title": "Contour Maps"
+}, {
+  "description": "Dense, classified point clouds that penetrate vegetation for true-ground elevations — ready for pipelines, corridors and forested sites.",
+  "format": "LAS / LAZ",
+  "icon": "axis-z-arrow",
+  "title": "LiDAR Point Clouds"
+}, {
+  "description": "Cut/fill comparisons against design surfaces and stockpile volumes computed to centimetre-level accuracy for mining and construction.",
+  "format": "Cut/Fill + Stockpile reports",
+  "icon": "cube-outline",
+  "title": "Volumetric Calculations"
+}, {
+  "description": "Crop-health and vegetation-index maps that expose plant stress, irrigation issues and yield patterns across large farms.",
+  "format": "NDVI map",
+  "icon": "leaf",
+  "title": "NDVI & Multispectral Analysis"
+}, {
+  "description": "Engineer-ready CAD packages — contours, breaklines, surfaces and alignments organised on your coordinate system and layers.",
+  "format": "DWG, DXF, LandXML",
+  "icon": "file-cad",
+  "title": "CAD Drawings"
+}, {
+  "description": "A signed QA/QC report documenting GCPs, checkpoints and RMS errors — the evidence your approvals and designs rely on.",
+  "format": "RMS Error + GCP report",
+  "icon": "clipboard-check-outline",
+  "title": "Survey Accuracy Report"
+}],
+      "liveLabel": "Deliverable package",
+      "tag": "What you receive"
+    },
+    "finalCta": {
+      "actions": [{
+  "description": "24-hour response on scoped projects.",
+  "href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Drone Survey (24-Hour Response)&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like a drone survey quotation. Please respond within 24 hours.%0D%0A%0D%0AProject name:%0D%0ALocation (County / Country):%0D%0AArea to survey (hectares):%0D%0AService needed (mapping / LiDAR / volumetrics / NDVI):%0D%0ADeliverables required:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+  "icon": "cash-multiple",
+  "label": "Get Instant Quote"
+}, {
+  "description": "Talk to the team flying the drones.",
+  "href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20talk%20to%20a%20drone%20survey%20engineer.",
+  "icon": "whatsapp",
+  "label": "WhatsApp Survey Engineer"
+}, {
+  "description": "Formal proposals for tenders & RFQs.",
+  "href": "mailto:smartgridsurveying@gmail.com?subject=Tender Proposal Request: Drone Survey Services&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a tender proposal for drone survey services.%0D%0A%0D%0ATender / Project name:%0D%0AOrganisation:%0D%0AScope summary:%0D%0ADeadline:%0D%0A%0D%0AThank you.",
+  "icon": "clipboard-text-outline",
+  "label": "Request Tender Proposal"
+}, {
+  "description": "Walk the site with our flight team.",
+  "href": "mailto:smartgridsurveying@gmail.com?subject=Site Visit Booking: Drone Survey&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a site visit for a drone survey.%0D%0A%0D%0ALocation (County / Area):%0D%0ASite size:%0D%0APreferred date & time:%0D%0A%0D%0AThank you.",
+  "icon": "calendar-check",
+  "label": "Book Site Visit"
+}],
+      "actionsLabel": "Choose your action:",
+      "description": "Get engineering-grade aerial survey data delivered within timelines aligned to construction, design, and approval workflows.",
+      "headline": "Need Accurate Drone Mapping for Your Project?",
+      "tag": "Start Your Aerial Survey"
     },
     "hero": {
       "ctaPrimary": {
-        "href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Aerial Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Aerial Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
-        "label": "Get Your Free Consultation"
+        "href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Drone Survey (24-Hour Response)&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like a drone survey quotation. Please respond within 24 hours.%0D%0A%0D%0AProject name:%0D%0ALocation (County / Country):%0D%0AArea to survey (hectares):%0D%0AService needed (mapping / LiDAR / volumetrics / NDVI):%0D%0ADeliverables required:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+        "label": "Get a Drone Survey Quote (24-Hour Response)"
       },
-      "description": "Leading Africa's Land and Aerial Surveying Revolution",
+      "description": "Survey-Grade Mapping for Engineering, Construction & Infrastructure Projects Across Africa and beyond.",
+      "footnoteItems": [{
+  "icon": "shield-check",
+  "text": "KCAA-Compliant UAV Operations"
+}, {
+  "icon": "crosshairs-gps",
+  "text": "RTK / LiDAR Accuracy ±2–5cm"
+}, {
+  "icon": "map-marker-radius",
+  "text": "Kenya, Uganda & East Africa Coverage"
+}],
       "headline": "AERIAL SURVEYS",
       "image": "/media/surveying/aerial-surveys/AG8ng.jpeg",
-      "title": "Accurate measurements. Fast. Reliable surveys."
+      "title": "Aerial Drone Surveying in Kenya, Uganda, Tanzania and beyond"
+    },
+    "industries": {
+      "description": "From national road corridors to county master plans — our drone data supports the decisions that shape Kenya's built environment.",
+      "headline": "Aerial Surveys for Key Industries in Kenya",
+      "items": [{
+  "description": "Corridor mapping, earthwork quantities and progress documentation for highway and urban road programmes.",
+  "href": "/civil/highway-surveys",
+  "icon": "road-variant",
+  "title": "Roads & Infrastructure (KeNHA / KURA projects)"
+}, {
+  "description": "Weekly progress flights, as-built verification and marketing visuals that keep projects and stakeholders aligned.",
+  "href": "/aerial-drones/monitoring-and-evaluation",
+  "icon": "domain",
+  "title": "Construction & Real Estate Developers"
+}, {
+  "description": "LiDAR corridor surveys, vegetation clearance analysis and line-route planning for transmission and distribution.",
+  "href": "/aerial-drones/lidar-mapping",
+  "icon": "transmission-tower",
+  "title": "Energy & Power Lines (KETRACO, mini-grids)"
+}, {
+  "description": "Monthly stockpile volumes, pit progression and safety inspections — without stopping operations.",
+  "href": "/aerial-drones/volumetric-surveys",
+  "icon": "pickaxe",
+  "title": "Mining & Quarry Volumetrics"
+}, {
+  "description": "NDVI crop-health mapping, irrigation planning and plantation zoning across thousands of hectares.",
+  "href": "/aerial-drones/agricultural-ndvi-mapping",
+  "icon": "sprout",
+  "title": "Agriculture & Precision Farming"
+}, {
+  "description": "Base maps, land-use surveys and GIS datasets that inform county spatial plans and infrastructure budgets.",
+  "href": "/surveying/gis-mapping",
+  "icon": "bank",
+  "title": "Government & County Planning"
+}, {
+  "description": "Deforestation tracking, catchment surveys and repeatable, time-stamped evidence for conservation programmes.",
+  "href": "/surveying/resource-mapping",
+  "icon": "forest",
+  "title": "NGOs & Environmental Monitoring"
+}],
+      "tag": "Industry Use Cases"
+    },
+    "industryCta": {
+      "description": "Roads, energy, mining, agriculture or county planning — tell us your sector and we will scope the flights, deliverables and accuracy class your project needs.",
+      "headline": "Get Industry-Specific Survey Proposal",
+      "primary": {
+        "href": "mailto:smartgridsurveying@gmail.com?subject=Industry-Specific Survey Proposal Request&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like an industry-specific drone survey proposal.%0D%0A%0D%0AIndustry / Sector:%0D%0AOrganisation:%0D%0AProject location:%0D%0AArea to survey (hectares):%0D%0AService needed:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+        "icon": "email-fast-outline",
+        "label": "Request Industry Proposal"
+      },
+      "secondary": {
+        "href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20an%20industry-specific%20drone%20survey%20proposal.",
+        "icon": "whatsapp",
+        "label": "WhatsApp Our Team"
+      },
+      "tag": "Tailored Proposals",
+      "watermark": "map-marker-path"
     },
     "precision": {
       "description": "At SmartGrid Surveying, our aerial drone survey solutions offer high-resolution imagery, topographic mapping, and volumetric analysis with unmatched accuracy and speed. From vast farmlands to urban infrastructure, our drone technology captures data quickly, safely, and cost-effectively—especially in hard-to-reach or expansive areas. \n\n We’ve completed aerial drone surveys across multiple sectors in 10+ African countries, serving land developers, governments, mining companies, and agribusinesses.",
@@ -5853,6 +6005,39 @@ export default interface Resources {
       "description": "Whether you're a government agency, an NGO, or a private developer, Smartgrid Surveying is your trusted partner! \n Our drones deliver actionable data where it matters most. ",
       "headline": "Reliable. Scalable. Fast. Effective.",
       "tag": "Your trusted partner"
+    },
+    "techStack": {
+      "description": "Engineer-grade hardware and software — every deliverable is produced on platforms your technical team already trusts.",
+      "headline": "Survey Technology We Use",
+      "items": [{
+  "href": "/equipment-sale/dji-matrice-350-rtk",
+  "icon": "quadcopter",
+  "note": "Flagship RTK flight platform for LiDAR and heavy payloads",
+  "title": "DJI Matrice 350 RTK"
+}, {
+  "href": "/equipment-sale/dji-phantom-4-rtk",
+  "icon": "drone",
+  "note": "High-accuracy photogrammetry and corridor mapping",
+  "title": "DJI Phantom 4 RTK"
+}, {
+  "icon": "radar",
+  "note": "Vegetation-penetrating elevation for corridors and forestry",
+  "title": "LiDAR UAV Systems"
+}, {
+  "href": "/equipment-sale/foif-a90-rtk-gnss",
+  "icon": "crosshairs-gps",
+  "note": "Ground control, GCP measurement and stakeout",
+  "title": "FOIF A90 GNSS RTK"
+}, {
+  "icon": "cube-scan",
+  "note": "Photogrammetry, point clouds and orthomosaic production",
+  "title": "Pix4D / Agisoft Metashape"
+}, {
+  "icon": "map-legend",
+  "note": "Design-ready CAD and GIS deliverables on your standards",
+  "title": "AutoCAD Civil 3D / ArcGIS Pro / QGIS"
+}],
+      "tag": "Our Technology Stack"
     },
     "whatWeOffer": {
       "headline": "Our Aerial Surveying Services",
@@ -5894,6 +6079,74 @@ export default interface Resources {
   "title": "Disaster Assessment"
 }],
       "tag": "Services"
+    },
+    "whyDroneSurveys": {
+      "description": "Drone surveying has become the default choice for engineering, construction and land development teams that need reliable data on tight timelines.",
+      "headline": "Why Engineers & Developers in Kenya Use Drone Surveys",
+      "items": [{
+  "description": "Cover 200+ hectares/day with RTK drones — corridor and site surveys that used to take weeks now take days.",
+  "icon": "speedometer",
+  "stat": "10x",
+  "title": "10x Faster than Ground Surveying"
+}, {
+  "description": "Reduce field time, manpower, and rework risk — one flight team replaces weeks of ground crews.",
+  "icon": "cash-multiple",
+  "title": "Lower Project Costs"
+}, {
+  "description": "GNSS-controlled + GCP calibrated outputs meet engineering tolerances for design and construction.",
+  "icon": "crosshairs-gps",
+  "title": "Engineering-Grade Accuracy"
+}, {
+  "description": "CAD, DWG, LandXML, DSM/DTM, contour-ready outputs that drop straight into your design workflow.",
+  "icon": "file-cad",
+  "title": "Construction Ready Deliverables"
+}, {
+  "description": "Quarries, rivers, flood zones, large estates — mapped safely without sending crews into hazardous terrain.",
+  "icon": "drone",
+  "title": "Works in Hard-to-Reach Sites"
+}],
+      "tag": "Why Drone Surveys"
+    },
+    "workflow": {
+      "cta": {
+        "href": "mailto:smartgridsurveying@gmail.com?subject=Request: Sample Drone Survey Deliverable Folder&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to receive a sample deliverable folder to review your drone survey outputs.%0D%0A%0D%0AName:%0D%0AOrganisation:%0D%0AEmail:%0D%0AProject type:%0D%0A%0D%0AThank you.",
+        "icon": "download",
+        "label": "Request a Sample Deliverable Folder"
+      },
+      "ctaNote": "See exactly what your team will receive — orthomosaics, point clouds, CAD files and accuracy reports from a real project.",
+      "description": "A transparent, seven-stage aerial pipeline — from the first scope call to CAD/GIS handover, you always know where your project stands.",
+      "headline": "Our Drone Survey Workflow",
+      "outcomeLabel": "Engineering-ready data, on your desk",
+      "steps": [{
+  "description": "We review your drawings or brief, define the survey area, accuracy class and deliverables, and confirm access and timing.",
+  "icon": "clipboard-list-outline",
+  "label": "Site Assessment & Scope Definition"
+}, {
+  "description": "Flight lines, altitudes and overlap are planned, and KCAA permissions and airspace clearance are secured before mobilisation.",
+  "icon": "google-maps",
+  "label": "Flight Planning & Regulatory Clearance (KCAA)"
+}, {
+  "description": "GNSS-measured GCPs and checkpoints are placed across the site to calibrate the model and independently verify accuracy.",
+  "icon": "crosshairs-gps",
+  "label": "Ground Control Point (GCP) Setup"
+}, {
+  "description": "RTK-controlled UAV flights capture high-overlap imagery, LiDAR returns or multispectral bands depending on your scope.",
+  "icon": "quadcopter",
+  "label": "UAV Data Capture (RGB / LiDAR / Multispectral)"
+}, {
+  "description": "Imagery is processed into dense point clouds, orthomosaics and elevation models on reference-controlled workflows.",
+  "icon": "cube-scan",
+  "label": "Photogrammetry & Point Cloud Processing"
+}, {
+  "description": "Independent checkpoints are compared against the model and documented in an RMS error report for engineering sign-off.",
+  "icon": "clipboard-check-outline",
+  "label": "QA/QC Accuracy Validation (RMS Report)"
+}, {
+  "description": "Final DWG/DXF, LandXML, GeoTIFF and GIS packages are organised into a project folder and handed over with a walkthrough.",
+  "icon": "file-cad",
+  "label": "CAD / GIS Deliverables & Client Handover"
+}],
+      "tag": "Field-to-Design Pipeline"
     }
   },
   "surveying/bathymetric-surveys": {
@@ -5943,6 +6196,52 @@ export default interface Resources {
 }],
       "tag": "Key Applications"
     },
+    "bathymetricWorkflow": {
+      "description": "Structured underwater survey pipeline for engineering-grade deliverables:",
+      "headline": "OUR HYDROGRAPHIC SURVEY WORKFLOW",
+      "outcome": "Complete hydrographic dataset ready for engineering design & decision-making",
+      "steps": [{
+  "description": "Site reconnaissance\nDepth expectations & hazard mapping\nSurvey line planning",
+  "label": "1. Project Planning & Waterbody Assessment",
+  "phase": "PLANNING"
+}, {
+  "description": "RTK GNSS positioning\nVertical datum alignment\nShoreline control points",
+  "label": "2. GNSS Control Setup",
+  "phase": "CONTROL"
+}, {
+  "description": "Single-beam sonar scanning\nSurvey vessel transects\nContinuous depth logging",
+  "label": "3. Bathymetric Data Acquisition",
+  "phase": "ACQUISITION"
+}, {
+  "description": "Sound velocity corrections\nWater level / tidal adjustments\nNoise filtering",
+  "label": "4. Data Processing & Correction",
+  "phase": "PROCESSING"
+}, {
+  "description": "Bathymetric grids (DEM)\nDepth contour generation\n3D underwater surface modelling",
+  "label": "5. Surface Modelling",
+  "phase": "MODELLING"
+}, {
+  "description": "Engineering-ready hydrographic report",
+  "label": "6. Final Deliverables",
+  "phase": "DELIVERY"
+}],
+      "tag": "Engineering Grade Process"
+    },
+    "beforeAfter": {
+      "after": {
+        "items": ["Accurate underwater terrain model", "Verified dam/reservoir capacity", "Sedimentation quantified", "Engineering decisions backed by data"],
+        "label": "AFTER SMARTGRID",
+        "tagline": "Data-driven decisions for water infrastructure"
+      },
+      "before": {
+        "items": ["Unknown reservoir capacity", "Unmapped sediment buildup", "High engineering uncertainty", "Flood risk unknown"],
+        "label": "BEFORE SMARTGRID",
+        "tagline": "Unknown underwater terrain = engineering risk"
+      },
+      "flipHint": "Click or tap to flip",
+      "headline": "BEFORE vs AFTER SURVEY VALUE",
+      "tag": "Value Demonstration"
+    },
     "damsLakesSeaOcean": {
       "description": "Our expertise is especially critical for the management and maintenance of dams, lakes, sea, and oceans. We provide data that helps clients:",
       "headline": "DAMS, LAKES, SEA & OCEAN",
@@ -5974,21 +6273,110 @@ export default interface Resources {
 }],
       "tag": "Water Infrastructure & Environment"
     },
+    "deliverables": {
+      "checks": ["Engineering-grade accuracy", "GIS & CAD compatible formats", "Surveyor-certified deliverables"],
+      "description": "Engineering-grade hydrographic outputs:",
+      "headline": "WHAT YOU RECEIVE (DELIVERABLES)",
+      "items": [{
+  "description": "Detailed depth contour maps in CAD and GIS formats for engineering design and planning.",
+  "format": "CAD / GIS",
+  "icon": "map-legend",
+  "title": "Bathymetric contour maps"
+}, {
+  "description": "High-resolution digital depth models and DEMs for volume calculations and 3D visualization.",
+  "format": "GeoTIFF / ASC",
+  "icon": "axis-z-arrow-lock",
+  "title": "Digital Depth Models (DDM / DEM)"
+}, {
+  "description": "Accurate reservoir capacity and volume calculations with stage-storage curves.",
+  "format": "Excel + PDF",
+  "icon": "cube-outline",
+  "title": "Reservoir volume & capacity calculations"
+}, {
+  "description": "Comprehensive sedimentation analysis with volume loss calculations and rate estimates.",
+  "format": "PDF Report",
+  "icon": "chart-histogram",
+  "title": "Sedimentation analysis reports"
+}, {
+  "description": "Detailed cross-section profiles showing underwater terrain for engineering analysis.",
+  "format": "CAD / PDF",
+  "icon": "vector-square",
+  "title": "Cross-section profiles of river/dam beds"
+}, {
+  "description": "Complete geo-referenced datasets in Shapefile and DWG formats for GIS integration.",
+  "format": "SHP / DWG",
+  "icon": "database-outline",
+  "title": "Geo-referenced survey datasets"
+}, {
+  "description": "Full technical report with methodology, results, accuracy statements, and recommendations.",
+  "format": "PDF",
+  "icon": "file-document-outline",
+  "title": "Technical hydrographic report"
+}],
+      "liveLabel": "Deliverable package",
+      "tag": "What You Receive"
+    },
+    "equipmentTechnology": {
+      "description": "We deploy:\n\n• High-resolution echo sounders (single beam systems)\n• GNSS RTK positioning systems\n• Survey boats for shallow & deep water access\n• GIS & hydrographic modelling software\n\nIntegrated land + water geospatial reference ensures full terrain continuity.",
+      "headline": "EQUIPMENT & TECHNOLOGY",
+      "images": ["/media/surveying/bathymetric-surveys/03-01.jpeg", "/media/surveying/bathymetric-surveys/03-02.jpeg", "/media/surveying/bathymetric-surveys/03-03.jpeg", "/media/surveying/bathymetric-surveys/03-04.jpeg"],
+      "tag": "Equipment & Technology"
+    },
+    "finalCta": {
+      "actions": [{
+  "description": "Receive a detailed proposal with scope, timeline, and pricing",
+  "href": "mailto:smartgridsurveying@gmail.com?subject=Request Bathymetric Quote&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a Bathymetric Survey Quote. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+  "icon": "email-outline",
+  "label": "Request Bathymetric Quote"
+}, {
+  "description": "Schedule a site visit with our hydrographic survey team",
+  "href": "mailto:smartgridsurveying@gmail.com?subject=Book Site Inspection&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a site inspection for a Bathymetric Survey. Please get in touch to discuss.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0A%0D%0AThank you.",
+  "icon": "calendar-clock",
+  "label": "Book Site Inspection"
+}, {
+  "description": "Instant chat with our technical team",
+  "href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20speak%20with%20a%20hydrographic%20engineer%20about%20bathymetric%20survey%20for%20my%20project.%20Please%20advise%20on%20next%20steps.",
+  "icon": "whatsapp",
+  "label": "WhatsApp Hydrographic Engineer"
+}],
+      "description": "We respond quickly to urgent engineering and environmental survey needs.",
+      "headline": "READY TO SURVEY YOUR WATER BODY?",
+      "note": "Rapid mobilisation • Kenya-wide coverage • Engineering-grade deliverables",
+      "tag": "Ready When You Are"
+    },
     "hero": {
       "ctaPrimary": {
-        "href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Bathymetric Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Bathymetric Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
-        "label": "Get Your Free Consultation"
+        "href": "mailto:smartgridsurveying@gmail.com?subject=Request Bathymetric Survey Consultation&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a Bathymetric Survey Consultation. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+        "label": "Request Bathymetric Survey Consultation"
       },
-      "description": "Using advanced sonar equipment and GPS integration, SmartGrid Surveying maps the depth and topography of water bodies—delivering vital data for engineering, environmental, and planning purposes.",
+      "description": "Advanced Underwater Mapping for Dams, Rivers, Lakes & Coastal Engineering in Kenya and beyond.\n\nWe offer high-precision bathymetric and hydrographic surveys using sonar-based depth measurement systems integrated with GNSS RTK positioning to map underwater terrain for engineering, environmental, and infrastructure projects across Kenya and East Africa.\n\nFrom dams to rivers and reservoirs — we map what lies beneath the surface.",
       "headline": "BATHYMETRIC SURVEYS",
       "image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-01.jpg",
-      "title": "Precision Underwater Mapping for Dams, Lakes, Rivers & Oceans"
+      "title": "BATHYMETRIC & HYDROGRAPHIC SURVEY SERVICES IN KENYA"
+    },
+    "technicalLimitations": {
+      "description": "Bathymetric accuracy depends on:",
+      "factors": ["Water turbidity and clarity", "Depth range and sonar frequency", "Vessel movement stability", "Wind and surface conditions"],
+      "headline": "TECHNICAL LIMITATIONS (TRUST BUILDER)",
+      "outputs": ["Depth accuracy: centimetre to decimetre range (depending on conditions)", "Full 3D surface modelling achievable for engineering use"],
+      "tag": "Transparency"
     },
     "whatIsBathymetricSurveys": {
       "description": "Bathymetric surveys involve measuring the depth of water bodies and charting the underwater terrain. This technique is crucial for understanding sediment levels, water volume, and underwater hazards. It supports safer construction, better water resource management, and proactive environmental protection. SmartGrid Surveying uses high-resolution echo sounders, GNSS positioning systems, and remote-controlled survey boats to access shallow and restricted water zones safely and efficiently.",
       "headline": "What is Bathymetric Surveys?",
       "image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-09.png",
       "tag": "Underwater Topography"
+    },
+    "whyBathymetricCritical": {
+      "applications": ["Dam safety and structural monitoring", "Reservoir capacity and siltation analysis", "Hydropower planning (KenGen projects)", "Flood risk modelling", "Water resource management (WRMA / Water Authorities)", "Bridge and foundation design", "Lake & river engineering studies"],
+      "description": "Kenya's water infrastructure depends on accurate underwater data for:",
+      "headline": "Why Bathymetric Surveys Are Critical in Kenya",
+      "tag": "Why It Matters in Kenya"
+    },
+    "whySmartGridBathymetric": {
+      "headline": "WHY SMARTGRID BATHYMETRIC SURVEYS",
+      "items": ["GNSS-integrated sonar mapping", "Engineering-grade accuracy outputs", "Fast mobilisation across Kenya", "Compatible with GIS, CAD & hydrological models", "Integrated land + underwater surveying workflow", "Trusted for infrastructure & environmental projects"],
+      "tag": "Our Advantages"
     }
   },
   "surveying/building-site-surveys": {
@@ -6249,6 +6637,208 @@ export default interface Resources {
     }
   },
   "surveying/cadastral-surveys": {
+    "caseStudy": {
+      "challenge": {
+        "images": [{
+  "alt": "Disturbed boundary beacon awaiting re-establishment on site",
+  "src": "/media/surveying/cadastral-surveys/02-02.jpg"
+}, {
+  "alt": "Adjoining parcels with overlapping claims in Kiambu County",
+  "src": "/media/surveying/cadastral-surveys/02-03.jpg"
+}, {
+  "alt": "Overgrown and unmarked boundary line on the Kiambu parcel before the survey",
+  "src": "/media/surveying/cadastral-surveys/02-01.jpg"
+}],
+        "intro": "The site presented multiple complications:",
+        "items": ["Conflicting boundary interpretations between landowners", "Outdated registry map (deed plan discrepancies)", "Missing or disturbed boundary beacons", "Overlapping parcel claims in adjacent subdivisions", "Lack of georeferenced control tied to modern coordinate systems"],
+        "label": "02 · The Challenge (Before Condition)"
+      },
+      "engineeringNote": {
+        "label": "07 · Final Engineering Note",
+        "text": "This project demonstrates how modern GNSS-based cadastral surveying eliminates ambiguity in land ownership boundaries while ensuring compliance with Kenyan land registration frameworks. SmartGrid Surveying integrates field precision + legal geospatial intelligence to convert disputed land into registrable, investment-ready assets."
+      },
+      "headline": "Kiambu Subdivision Survey – 40-Acre Parcel",
+      "impact": {
+        "items": [{
+  "icon": "handshake-outline",
+  "text": "Dispute resolved without litigation escalation"
+}, {
+  "icon": "file-check-outline",
+  "text": "Enabled formal title processing for all subdivided units"
+}, {
+  "icon": "trending-up",
+  "text": "Increased land valuation potential due to legal clarity"
+}, {
+  "icon": "database-outline",
+  "text": "Provided a permanent geospatial reference dataset for future developments"
+}, {
+  "icon": "shield-check",
+  "text": "Reduced risk exposure for buyers and developers"
+}],
+        "label": "05 · Project Impact"
+      },
+      "methodology": {
+        "images": [{
+  "alt": "RTK GNSS receiver set up over a control point on the parcel",
+  "src": "/media/surveying/cadastral-surveys/03-01.jpg"
+}, {
+  "alt": "Surveyor confirming a restored boundary beacon in the field",
+  "src": "/media/surveying/cadastral-surveys/03-02.jpg"
+}],
+        "intro": "A structured engineering-grade workflow was applied to ensure legal and spatial accuracy in compliance with Kenyan cadastral standards and Ardhisasa requirements.",
+        "label": "03 · Survey Methodology & GPS Workflow",
+        "steps": [{
+  "points": ["Retrieved original RIM (Registry Index Map)", "Reviewed historical deed plans and parcel references", "Identified inconsistencies in boundary alignments"],
+  "title": "Step 1: Desk Study & Registry Retrieval"
+}, {
+  "points": ["RTK GNSS base station setup on stable benchmark", "Primary control points established across parcel corners", "Total station used for dense control in obstructed zones"],
+  "title": "Step 2: Establishment of Control Network"
+}, {
+  "points": ["Walked perimeter with landowners and witnesses", "Identified existing beacons and restored missing markers", "Captured high-density coordinate points"],
+  "title": "Step 3: Field Boundary Reconstruction"
+}, {
+  "points": ["Coordinate transformation into UTM Arc 1960 system", "Least squares adjustment of control network", "Overlay with cadastral registry data"],
+  "title": "Step 4: Data Processing & Adjustment"
+}, {
+  "points": ["Parcel segmentation based on agreed ownership units", "Generation of subdivision plan sheets", "Preparation for submission to land registry"],
+  "title": "Step 5: Subdivision Design & Legal Drafting"
+}]
+      },
+      "outcome": {
+        "deliverables": ["Accurate subdivision plan approved for registration", "Restored and verified boundary beacons", "Elimination of overlapping parcel claims", "Digitally georeferenced cadastral dataset", "Submission-ready Ardhisasa-compliant documentation"],
+        "deliverablesTitle": "Key Deliverables",
+        "intro": "The intervention resulted in a fully resolved cadastral structure with legal and spatial clarity.",
+        "label": "04 · Outcome (After Condition)"
+      },
+      "overview": {
+        "critical": ["Title deed processing under Kenyan land registry requirements", "Resolving overlapping boundary claims", "Preparing legally defensible subdivision plans", "Enabling future development and land sales"],
+        "criticalTitle": "The project was critical for:",
+        "deployIcon": "satellite-variant",
+        "deployNote": "SmartGrid Surveying deployed RTK GNSS, total station control networks, and registry reconciliation workflows to restore spatial accuracy and legal clarity.",
+        "label": "01 · Project Overview",
+        "paragraphs": ["A 40-acre parcel in Kiambu County required formal subdivision, cadastral verification, and resolution of long-standing boundary disputes between adjoining landowners."]
+      },
+      "subtitle": "Title Registration & Boundary Dispute Resolution Using High-Precision GNSS Surveying",
+      "tag": "Case Study · Kiambu County",
+      "techSummary": {
+        "componentHeader": "Component",
+        "label": "06 · Technical Summary",
+        "rows": [{
+  "component": "Survey System",
+  "specification": "RTK GNSS + Total Station"
+}, {
+  "component": "Coordinate System",
+  "specification": "Arc 1960 / UTM Zone 37S"
+}, {
+  "component": "Methodology",
+  "specification": "Cadastral Reconstruction + Boundary Reconciliation"
+}, {
+  "component": "Output",
+  "specification": "Subdivision Plan + Verified Beacons"
+}, {
+  "component": "Compliance",
+  "specification": "Kenyan Land Act + Survey Act Cap 299"
+}],
+        "specHeader": "Specification"
+      }
+    },
+    "compliance": {
+      "checklist": [{
+  "description": "Surveys prepared for registration under the Act governing title deeds, parcel boundaries and transfers in Kenya.",
+  "icon": "gavel",
+  "title": "Land Registration Act, 2012"
+}, {
+  "description": "All fieldwork, computations and plans conform to the Survey Act and its Regulations — signed by a licensed surveyor.",
+  "icon": "seal",
+  "title": "Survey Act, Cap 299"
+}, {
+  "description": "Deliverables are packaged to Ardhisasa digital lodgement standards: georeferenced data, deed plans and supporting documents.",
+  "icon": "earth",
+  "title": "Ardhisasa Cadastral Submission Requirements"
+}, {
+  "description": "We liaise with county planning offices for subdivision consents and development approvals tied to your survey.",
+  "icon": "city",
+  "title": "County Approval Process"
+}, {
+  "description": "Work is executed and signed off by an Institution of Surveyors of Kenya (ISK) registered, licensed surveyor.",
+  "icon": "account-check-outline",
+  "title": "ISK Compliance & Licensed Surveyor"
+}],
+      "checklistTitle": "The SmartGrid compliance checklist",
+      "description": "Every cadastral survey we deliver is executed under the statutes that govern land in Kenya — so your documents survive scrutiny at the registry, the bank and the court.",
+      "headline": "Legal & Ardhisasa Compliance You Can Rely On",
+      "related": [{
+  "href": "/surveying/sectional-properties",
+  "label": "Sectional Properties Act, 2020"
+}, {
+  "href": "/surveying/building-site-surveys",
+  "label": "Construction & Site Engineering Surveys"
+}, {
+  "href": "/surveying/topographical-surveys",
+  "label": "Topographical Surveys for Planning"
+}],
+      "relatedLabel": "Related compliance guides",
+      "tag": "Legal & Regulatory Compliance"
+    },
+    "cost": {
+      "cta": {
+        "href": "mailto:smartgridsurveying@gmail.com?subject=Pricing Request: Cadastral Survey&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like accurate pricing for a cadastral survey on my parcel.%0D%0A%0D%0ALocation (County / Area):%0D%0ATitle deed or parcel number:%0D%0AApproximate size (acres):%0D%0AService needed (boundary / subdivision / dispute):%0D%0A%0D%0AThank you.",
+        "icon": "cash-multiple",
+        "label": "Get Accurate Pricing for Your Parcel"
+      },
+      "description": "Indicative pricing for cadastral and boundary surveys. Every parcel is quoted after a registry check — no hidden charges, no surprises.",
+      "featuredLabel": "Most Requested",
+      "headline": "Cadastral Survey Cost in Kenya",
+      "tag": "Cost Guidance",
+      "tiers": [{
+  "features": ["Registry search & deed plan check", "Boundary beacons placed or re-fixed", "Signed survey report for your records"],
+  "icon": "home-outline",
+  "note": "Boundary verification, beacon replacement and title-ready survey reports for standard residential parcels.",
+  "price": "KES 15,000 – 80,000",
+  "title": "Small Residential Plot"
+}, {
+  "featured": true,
+  "features": ["Subdivision design & planning liaison", "Mutation survey & new beacons per unit", "Submission-ready Ardhisasa documentation"],
+  "icon": "grid-large",
+  "note": "Full subdivision workflow from planning consent to registry-approved subdivision plans for every unit.",
+  "price": "Project-based quotation",
+  "priceUnit": "from KES 10,000 per unit",
+  "title": "Subdivision Projects"
+}, {
+  "features": ["GNSS control network across the estate", "Boundary reconciliation of all parcels", "Dedicated licensed surveyor & project team"],
+  "icon": "land-fields",
+  "note": "Multi-parcel estates, ranches and institutional land scoped with dedicated project teams and control networks.",
+  "price": "Custom engineering pricing",
+  "title": "Large Estates"
+}]
+    },
+    "finalCta": {
+      "actions": [{
+  "description": "Walk your parcel with a licensed surveyor.",
+  "href": "mailto:smartgridsurveying@gmail.com?subject=Site Visit Booking: Cadastral Survey&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a site visit for a cadastral survey.%0D%0A%0D%0ALocation (County / Area):%0D%0AParcel size:%0D%0APreferred date & time:%0D%0A%0D%0AThank you.",
+  "icon": "calendar-check",
+  "label": "Book Site Visit"
+}, {
+  "description": "Accurate pricing after a registry check.",
+  "href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Cadastral Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Cadastral Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+  "icon": "cash-multiple",
+  "label": "Get Survey Quote"
+}, {
+  "description": "Fast answers from a real surveyor.",
+  "href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20talk%20to%20a%20surveyor%20about%20my%20land%20boundaries.",
+  "icon": "whatsapp",
+  "label": "WhatsApp Surveyor Now"
+}, {
+  "description": "We verify registry status before you buy.",
+  "href": "/contact",
+  "icon": "map-search-outline",
+  "label": "Check Parcel Feasibility"
+}],
+      "actionsLabel": "Choose your action:",
+      "description": "Avoid costly disputes and delays in title processing.",
+      "headline": "Ready to Secure Your Land Boundaries?",
+      "tag": "Next Steps"
+    },
     "hero": {
       "ctaPrimary": {
         "href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Cadastral Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Cadastral Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
@@ -6259,39 +6849,230 @@ export default interface Resources {
       "image": "/media/surveying/cadastral-surveys/AG8ng.jpg",
       "title": "Know Your Boundaries, Build with Confidence"
     },
+    "postHeroCta": {
+      "ctaPrimary": {
+        "href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20talk%20to%20a%20surveyor%20about%20a%20cadastral%20survey.",
+        "icon": "whatsapp",
+        "label": "Talk to a Surveyor"
+      },
+      "ctaSecondary": {
+        "href": "/contact",
+        "icon": "email-fast-outline",
+        "label": "Send a Request"
+      },
+      "description": "Registry-accurate boundary surveys prepared by licensed surveyors and packaged for Ardhisasa submission — for buyers, landowners and developers.",
+      "headline": "Cadastral Surveys in Kenya for Title Deeds, Subdivision & Boundary Verification",
+      "tag": "Cadastral Surveys in Kenya"
+    },
+    "process": {
+      "description": "A transparent, six-step cadastral workflow. You always know which stage your parcel is in and exactly what happens next.",
+      "headline": "Boundary Survey Process — From Site Visit to County Approval",
+      "outcome": "Registered, titled & dispute-free",
+      "steps": [{
+  "description": "We walk the parcel with you, review the title deed, deed plan and prior surveys, and record existing occupation and improvements.",
+  "icon": "file-search-outline",
+  "label": "Site Visit & Document Review",
+  "phase": "PLANNING"
+}, {
+  "description": "Parcel records are retrieved and cross-checked against the Registry Index Map (RIM) and the Ardhisasa cadastral database to confirm the legal boundaries.",
+  "icon": "database-search-outline",
+  "label": "Registry (Ardhisasa / RIM) Verification",
+  "phase": "CONTROL"
+}, {
+  "description": "RTK GNSS and total station observations establish a control network tied to the national grid for centimetre-level accuracy.",
+  "icon": "satellite-variant",
+  "label": "GNSS Field Survey (RTK Control)",
+  "phase": "ACQUISITION"
+}, {
+  "description": "Boundary corners are computed, confirmed with adjoining owners, and permanent beacons are placed or re-fixed on the ground.",
+  "icon": "map-marker-check",
+  "label": "Beaconing & Boundary Confirmation",
+  "phase": "VALIDATION"
+}, {
+  "description": "Observations are reduced and adjusted; areas, traverses and final survey plans are computed and checked by a licensed surveyor.",
+  "icon": "ruler-square-compass",
+  "label": "Plan Preparation & Computation",
+  "phase": "PROCESSING"
+}, {
+  "description": "The compiled cadastral documentation is lodged with the registry (Ardhisasa) and county offices for approval and registration.",
+  "icon": "clipboard-check-outline",
+  "label": "Submission & County Approval",
+  "phase": "DELIVERY"
+}],
+      "tag": "How It Works"
+    },
+    "processCta": {
+      "chips": ["Licensed surveyors", "Ardhisasa-ready submissions", "ISK compliant"],
+      "ctaPrimary": {
+        "href": "mailto:smartgridsurveying@gmail.com?subject=Survey Process Request: Cadastral Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to start the cadastral survey process for my parcel.%0D%0A%0D%0ALocation (County / Area):%0D%0ATitle deed or parcel number:%0D%0AApproximate size (acres):%0D%0AService needed (boundary / subdivision / dispute):%0D%0A%0D%0AThank you.",
+        "icon": "email-fast-outline",
+        "label": "Request Your Survey Plan"
+      },
+      "ctaSecondary": {
+        "href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20start%20a%20cadastral%20survey%20process%20for%20my%20parcel.",
+        "icon": "whatsapp",
+        "label": "WhatsApp a Surveyor"
+      },
+      "description": "Send us your parcel details — title deed number, location and size — and we will map out the exact survey steps, costs and approvals for your land.",
+      "headline": "Start Your Survey Process Today",
+      "tag": "Start Now"
+    },
+    "timeline": {
+      "cta": {
+        "href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20know%20the%20timeline%20for%20a%20cadastral%20survey%20on%20my%20land.",
+        "icon": "whatsapp",
+        "label": "Check Timeline for Your Land Today"
+      },
+      "description": "Survey duration depends on registry approvals and parcel complexity. Here is what to realistically plan for.",
+      "headline": "How Long Does a Cadastral Survey Take?",
+      "items": [{
+  "description": "Boundary verification and beaconing, depending on registry approvals and access to the parcel.",
+  "icon": "calendar-clock",
+  "maxDays": 21,
+  "minDays": 7,
+  "range": "7–21 days",
+  "title": "Standard Survey"
+}, {
+  "description": "Planning consent, mutation survey, plan approval and registration of the new units.",
+  "icon": "grid-large",
+  "maxDays": 42,
+  "minDays": 14,
+  "range": "2–6 weeks",
+  "title": "Subdivision"
+}, {
+  "description": "Court or family-mediated disputes take longer — evidence quality determines how fast they settle.",
+  "icon": "gavel",
+  "range": "Depends on complexity",
+  "title": "Dispute Resolution"
+}],
+      "note": "Delays almost always come from registry queues and missing documents — we pre-clear both before fieldwork starts.",
+      "scaleNote": "Bar length shows the typical maximum duration of each service.",
+      "tag": "Timelines"
+    },
     "whatsABoundarySurvey": {
       "description": "A boundary survey determines the legal property lines of a parcel of land. Using advanced GPS, total stations, and historical land records, SmartGrid Surveying provides highly accurate maps that define property limits and identify any encroachments or discrepancies.",
       "headline": "What is a boundary survey?",
       "image": "/media/surveying/cadastral-surveys/AG8ngQ.png",
       "tag": "Build Confidently"
     },
-    "whyBoundarySurveys": {
-      "description": "",
-      "headline": "Why Are Boundary Surveys Essential? ",
+    "whenYouNeed": {
+      "description": "From title verification to dispute resolution — these are the moments a licensed boundary survey protects your land, your money and your paperwork.",
+      "headline": "When You Need a Cadastral Survey",
+      "image": "/media/surveying/cadastral-surveys/01-02.jpg",
+      "imageBadge": "Survey Act Cap 299 · Ardhisasa-ready",
       "items": [{
-  "description": "Prevent costly property line conflicts with neighbors by ensuring accurate boundary identification.",
+  "description": "Confirm the parcel on the ground matches the deed plan and registry records — before you pay a single shilling.",
+  "icon": "file-certificate-outline",
+  "title": "Buying Land / Verifying a Title Deed"
+}, {
+  "description": "Legally split a parcel into saleable units with approved subdivision plans, mutation survey and new beacons.",
+  "icon": "grid-large",
+  "title": "Subdividing Plots"
+}, {
+  "description": "Court-ready boundary evidence and re-established beacons to settle ownership lines with adjoining owners.",
   "icon": "scale-balance",
-  "title": "Avoid legal disputes"
+  "title": "Resolving Legal Boundary Disputes"
 }, {
-  "description": "Build within your legally defined property limits to meet zoning and regulatory requirements.",
+  "description": "Certified boundary data that counties, banks and authorities expect before approving building plans.",
+  "href": "/surveying/building-site-surveys",
   "icon": "account-hard-hat",
-  "title": "Ensure Construction Compliance"
+  "title": "Preparing for Construction Approval"
 }, {
-  "description": "Know exactly what you own before buying, selling, or developing land.",
-  "icon": "shield-sun",
+  "description": "Unit boundary determination and sectional plans for apartment and mixed-use registrations.",
+  "href": "/surveying/sectional-properties",
+  "icon": "domain",
+  "title": "Sectional Property Registration (Apartments)"
+}, {
+  "description": "Know exactly what you own before buying, selling, mortgaging or developing land.",
+  "icon": "shield-sun-outline",
   "title": "Protect Your Investment"
 }, {
-  "description": "Identify overlapping structures or fencing issues and take corrective action before they become major problems.",
-  "icon": "receipt-text-check",
+  "description": "Detect overlapping fences, structures and access rights early — and correct them before they escalate into legal battles or stalled transactions.",
+  "icon": "fence",
   "title": "Resolve Encroachments"
 }],
-      "tag": null
+      "tag": "When You Need It"
     }
   },
   "surveying/gis-mapping": {
+    "analystCta": {
+      "actions": [{
+  "description": "Quick answers from the GIS team",
+  "href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20talk%20to%20a%20GIS%20analyst%20about%20my%20project.",
+  "icon": "whatsapp",
+  "label": "Chat on WhatsApp"
+}, {
+  "description": "Detailed briefs, data samples & proposals",
+  "href": "mailto:smartgridsurveying@gmail.com?subject=Talk to a GIS Analyst&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to talk to a GIS analyst about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AWhat do you need help with?%0D%0A%0D%0AThank you.",
+  "icon": "email-outline",
+  "label": "Email the GIS Team"
+}, {
+  "description": "A focused scoping session with a specialist",
+  "href": "mailto:smartgridsurveying@gmail.com?subject=Book a GIS Consultation&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a GIS consultation.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AScope (mapping / analysis / dashboards):%0D%0APreferred date & time:%0D%0A%0D%0AThank you.",
+  "icon": "calendar-check",
+  "label": "Book a Consultation"
+}],
+      "description": "From data audits to enterprise GIS deployment — get expert guidance on scope, accuracy, and deliverables before you commit.",
+      "headline": "Talk to a GIS Analyst",
+      "tag": "GIS Support Desk"
+    },
+    "beforeAfter": {
+      "after": {
+        "items": ["Centralized geospatial database", "Clear spatial decision-making", "Optimized infrastructure planning", "Reduced engineering risk"],
+        "label": "AFTER SMARTGRID",
+        "tagline": "Running projects on a SmartGrid geospatial foundation"
+      },
+      "before": {
+        "items": ["Scattered spatial data", "No centralized mapping system", "Planning based on assumptions", "High project uncertainty"],
+        "label": "BEFORE SMARTGRID",
+        "tagline": "Managing projects without a centralized GIS"
+      },
+      "flipHint": "Tap to compare",
+      "headline": "Before vs After GIS Implementation",
+      "tag": "Before vs After"
+    },
+    "consultationCta": {
+      "description": "Tell us about your site, assets, or datasets — a GIS specialist will map the fastest route from raw survey data to decision-ready maps and systems.",
+      "headline": "Book a GIS Consultation",
+      "primary": {
+        "href": "mailto:smartgridsurveying@gmail.com?subject=Book a GIS Consultation&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a GIS consultation.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AScope (mapping / analysis / dashboards):%0D%0APreferred date & time:%0D%0A%0D%0AThank you.",
+        "label": "Book a GIS Consultation"
+      },
+      "secondary": {
+        "href": "/surveying",
+        "icon": "compass-outline",
+        "label": "Browse All Surveying Services"
+      },
+      "tag": "GIS Consultation",
+      "watermark": "calendar-check"
+    },
+    "dataAccuracy": {
+      "ensureTitle": "We ensure:",
+      "factors": ["Coordinate system standardization (UTM / local grid)", "Error checking & topology validation", "Ground control point verification", "Positional accuracy reporting"],
+      "headline": "Data Accuracy & Quality Control in GIS",
+      "levels": [{
+  "accuracy": "2–5 cm",
+  "icon": "quadcopter",
+  "label": "Drone mapping"
+}, {
+  "accuracy": "Sub-decimetre to cm level",
+  "icon": "crosshairs-gps",
+  "label": "GNSS control"
+}, {
+  "accuracy": "0.3 m – 10 m depending on source",
+  "icon": "satellite-variant",
+  "label": "Satellite data"
+}],
+      "levelsTitle": "Typical accuracy:",
+      "tag": "Quality Assurance"
+    },
     "gisComponents": {
       "description": "Our GIS solutions integrate hardware, software, data, people, and methods to create comprehensive spatial analysis and mapping systems.",
       "headline": "GIS Components",
+      "lifecycle": {
+        "subtitle": "Lifecycle",
+        "title": "GIS"
+      },
       "list": [{
   "description": "Physical tools like computers, servers, GPS devices, and drones that support GIS operations.",
   "title": "Hardware"
@@ -6310,15 +7091,64 @@ export default interface Resources {
 }],
       "tag": "Technology Stack"
     },
+    "gisServices": {
+      "description": "Decision-ready spatial products and systems, engineered from survey-grade data.",
+      "headline": "GIS Services",
+      "items": [{
+  "features": ["Parcel mapping & cadastral integration", "Road network mapping", "Utility infrastructure mapping"],
+  "icon": "vector-polygon",
+  "title": "Land & Infrastructure GIS"
+}, {
+  "features": ["Orthomosaics", "3D terrain modeling", "Volumetric calculations"],
+  "icon": "quadcopter",
+  "title": "Drone-Based GIS Mapping"
+}, {
+  "features": ["Land use / land cover mapping", "Flood risk modeling", "Environmental impact mapping"],
+  "icon": "leaf",
+  "title": "Environmental GIS"
+}, {
+  "features": ["City growth analysis", "Zoning & land use planning", "Informal settlement mapping"],
+  "icon": "city-variant-outline",
+  "title": "Urban Planning GIS"
+}, {
+  "features": ["Web GIS dashboards", "Asset management systems", "Spatial databases for enterprises"],
+  "icon": "monitor-dashboard",
+  "title": "Custom GIS Systems"
+}],
+      "tag": "GIS Solutions"
+    },
     "hero": {
       "ctaPrimary": {
-        "href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: GIS Mapping&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for GIS Mapping. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
-        "label": "Get Your Free Consultation"
+        "href": "mailto:smartgridsurveying@gmail.com?subject=Request GIS Mapping Proposal&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a GIS Mapping Proposal. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+        "label": "Request GIS Mapping Proposal"
       },
-      "description": "Leading Africa's Land and Aerial Surveying Revolution. SmartGrid Surveying provides precise GIS and remote sensing services — from UAV photogrammetry, LiDAR mapping, to multispectral analysis and DEM creation.",
+      "description": "<bold>Turn Location Data into Actionable Engineering, Planning & Infrastructure Intelligence.</bold>\n\nWe provide <bold>advanced GIS mapping services in Kenya, Uganda, Ethiopia, Tanzania and East Africa</bold>, integrating drone data, satellite imagery, and field survey datasets to deliver accurate, decision-ready spatial intelligence for governments, engineers, utilities, and developers.",
+      "footnoteItems": ["From raw coordinates", "To intelligent maps", "To real-world decisions"],
       "headline": "GIS, MAPPING & REMOTE SENSING",
       "image": "/media/surveying/gis-mapping/gis-mapping-01.jpg",
-      "title": "Survey Smarter, Build Stronger"
+      "title": "GIS MAPPING & SPATIAL DATA INTELLIGENCE IN KENYA"
+    },
+    "industries": {
+      "description": "Spatial intelligence delivered to the standards of governments, contractors, utilities, and development partners.",
+      "headline": "Industries",
+      "items": [{
+  "features": ["County governments (all 47 counties)", "National land & planning agencies", "Infrastructure ministries"],
+  "icon": "account-group",
+  "title": "Government & Public Sector"
+}, {
+  "features": ["EPC contractors", "Road & infrastructure consultants", "Urban developers"],
+  "icon": "excavator",
+  "title": "Engineering & Construction Firms"
+}, {
+  "features": ["Power transmission companies", "Water service boards", "Telecom infrastructure providers"],
+  "icon": "transmission-tower",
+  "title": "Utilities & Energy"
+}, {
+  "features": ["World Bank funded projects", "UN agencies", "Environmental programs"],
+  "icon": "handshake-outline",
+  "title": "NGOs & Development Agencies"
+}],
+      "tag": "Who We Serve"
     },
     "mappingServices": {
       "description": "SmartGrid Surveying provides precise GIS and remote sensing services — from UAV photogrammetry, LiDAR mapping, to multispectral analysis and DEM creation. We deliver accurate spatial data to support planning, engineering, and environmental projects across Kenya and Africa.",
@@ -6337,6 +7167,58 @@ export default interface Resources {
   "title": "DEM & DSM Production"
 }],
       "tag": "Core Capabilities"
+    },
+    "projectImpact": {
+      "description": "GIS mapping enables:",
+      "headline": "Typical Project Impact",
+      "items": [{
+  "icon": "file-check-outline",
+  "title": "Faster infrastructure planning approvals"
+}, {
+  "icon": "pencil-ruler",
+  "title": "Reduced design errors"
+}, {
+  "icon": "map-legend",
+  "title": "Improved land administration systems"
+}, {
+  "icon": "sprout",
+  "title": "Better environmental compliance"
+}, {
+  "icon": "chart-line",
+  "title": "Smarter investment decisions"
+}],
+      "tag": "Outcomes"
+    },
+    "relatedServices": {
+      "bottomNote": "Every service feeds your GIS — build one integrated spatial database.",
+      "description": "Combine GIS with:",
+      "headline": "Related Services",
+      "items": [{
+  "href": "/surveying/aerial-surveys",
+  "icon": "quadcopter",
+  "title": "Drone surveying"
+}, {
+  "href": "/surveying/topographical-surveys",
+  "icon": "map",
+  "title": "Topographic mapping"
+}, {
+  "href": "/surveying/resource-mapping",
+  "icon": "tree-outline",
+  "title": "Resource mapping"
+}, {
+  "href": "/surveying/bathymetric-surveys",
+  "icon": "waves",
+  "title": "Bathymetric surveys"
+}, {
+  "href": "/surveying/ground-penetrating-radar",
+  "icon": "radar",
+  "title": "Ground Penetrating Radar (GPR)"
+}, {
+  "href": "/surveying/ground-penetrating-radar",
+  "icon": "tunnel",
+  "title": "Subsurface Utility Engineering (SUE)"
+}],
+      "tag": "Keep Exploring"
     },
     "remoteSensingSolutions": {
       "description": "SmartGrid Surveying provides precise GIS and remote sensing services — from UAV photogrammetry, LiDAR mapping, to multispectral analysis and DEM creation. We deliver accurate spatial data to support planning, engineering, and environmental projects across Kenya and Africa.",
@@ -6360,55 +7242,231 @@ export default interface Resources {
 }],
       "tag": "Advanced Data Capture"
     },
+    "techStack": {
+      "description": "We use industry-grade geospatial tools:",
+      "headline": "Technology Stack",
+      "logos": [{
+  "image": "/media/surveying/gis-mapping/03-05.png",
+  "label": "ArcGIS"
+}, {
+  "image": "/media/surveying/gis-mapping/03-04.png",
+  "label": "Esri"
+}, {
+  "image": "/media/surveying/gis-mapping/03-01.png",
+  "label": "Agisoft Metashape"
+}, {
+  "image": "/media/surveying/gis-mapping/03-08.png",
+  "label": "Trimble"
+}, {
+  "image": "/media/surveying/gis-mapping/03-07.png",
+  "label": "PIX4Dmapper"
+}, {
+  "image": "/media/surveying/gis-mapping/03-02.png",
+  "label": "Blue Marble Geographics"
+}, {
+  "image": "/media/surveying/gis-mapping/03-06.png",
+  "label": "ArcGIS Pro"
+}, {
+  "image": "/media/surveying/gis-mapping/03-03.png",
+  "label": "Esri"
+}],
+      "tag": "Technology Stack",
+      "tools": ["ArcGIS Pro / ArcGIS Online", "QGIS / PostGIS", "UAV photogrammetry systems", "RTK GNSS integration", "Remote sensing & satellite analysis", "AI-assisted classification models"]
+    },
     "whatIsGis": {
-      "ctaPrimary": {
-        "href": "/aerial-drones/drone-imagery-surveys",
-        "label": "Request GIS & RS services!"
-      },
-      "description": "At Smartgrid Surveying, we use GIS technology to bring data to life. By combining geographic science with cutting-edge mapping tools, we transform layers of data into actionable insights that power smarter decisions for governments, businesses, and communities across Africa and beyond. GIS (Geographic Information Systems) is a powerful technology that links location data with attributes, allowing users to visualize, analyze, and interpret spatial relationships. From urban planning to agriculture, GIS empowers you to see the bigger picture — and all the critical details.",
-      "headline": "Geographic Information Systems (GIS)",
+      "closingStatement": "In simple terms:\nGIS turns survey data into <bold>intelligent decision systems</bold>",
+      "description": "Geographic Information Systems (GIS) is a technology that:",
+      "headline": "What is GIS Mapping?",
+      "items": [{
+  "icon": "map-marker-plus",
+  "title": "Captures spatial data"
+}, {
+  "icon": "chart-donut",
+  "title": "Analyzes geographic relationships"
+}, {
+  "icon": "map",
+  "title": "Visualizes data as interactive maps"
+}, {
+  "icon": "bullseye-arrow",
+  "title": "Supports engineering and planning decisions"
+}],
       "tag": "Spatial Intelligence"
+    },
+    "whatsappCta": {
+      "cta": {
+        "href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20speak%20with%20a%20GIS%20specialist%20about%20my%20project.%20Please%20advise%20on%20next%20steps.",
+        "icon": "whatsapp",
+        "label": "WhatsApp a GIS Specialist"
+      },
+      "description": "Skip the back-and-forth — chat directly with our GIS team about datasets, deliverables, timelines, or pricing.",
+      "headline": "WhatsApp a GIS Specialist",
+      "note": "Typical response time: under 1 hour during working hours.",
+      "tag": "Instant Support"
+    },
+    "whyGisCritical": {
+      "description": "GIS is now essential in:",
+      "headline": "Why GIS Mapping is Critical in Kenya",
+      "items": [{
+  "features": ["Road planning (KeNHA / KURA projects)", "Utility network mapping", "Urban expansion planning"],
+  "icon": "road-variant",
+  "title": "Infrastructure Development"
+}, {
+  "features": ["CIDP development", "Land use zoning", "Asset management systems"],
+  "icon": "bank",
+  "title": "Government & County Planning"
+}, {
+  "features": ["Deforestation monitoring", "Flood risk mapping", "Wetland protection"],
+  "icon": "forest",
+  "title": "Environmental Management"
+}, {
+  "features": ["Water distribution mapping", "Electrical grid planning", "Fiber optic network design"],
+  "icon": "transmission-tower",
+  "title": "Utilities & Energy"
+}],
+      "tag": "Why It Matters"
+    },
+    "whySmartgrid": {
+      "description": "One team from field survey to final geospatial system — accuracy carried through every layer.",
+      "headline": "Why SmartGrid GIS Services",
+      "items": [{
+  "icon": "routes",
+  "title": "Survey-to-GIS integrated workflow"
+}, {
+  "icon": "crosshairs-gps",
+  "title": "High-accuracy spatial data processing"
+}, {
+  "icon": "ruler-square-compass",
+  "title": "Engineering-grade outputs (not just maps)"
+}, {
+  "icon": "clock-fast",
+  "title": "Fast turnaround (project dependent)"
+}, {
+  "icon": "puzzle",
+  "title": "Compatible with CAD, BIM, GIS systems"
+}, {
+  "icon": "shield-check",
+  "title": "Built for government & donor compliance"
+}],
+      "tag": "Why SmartGrid"
     }
   },
   "surveying/ground-penetrating-radar": {
     "applications": {
       "headline": "Industry sectors and use cases we serve",
       "items": [{
-  "description": "Locate buried power lines, water lines, and telecoms before breaking ground.",
-  "icon": "pipe",
-  "title": "Utility Detection"
+  "icon": "road-variant",
+  "points": ["KeNHA road corridors", "KURA urban upgrades", "County infrastructure projects"],
+  "title": "Infrastructure & Engineering"
 }, {
-  "description": "Locate rebar, post-tension cables, and voids within slabs and walls.",
+  "icon": "transmission-tower",
+  "points": ["Power transmission networks", "Substations & distribution lines"],
+  "title": "Utilities & Energy"
+}, {
+  "icon": "water-pump",
+  "points": ["Pipeline upgrades", "Sewer rehabilitation"],
+  "title": "Water & Sewer Authorities"
+}, {
   "icon": "office-building",
-  "title": "Concrete Scanning"
+  "points": ["High-rise developments", "Subdivision projects"],
+  "title": "Real Estate & Construction"
 }, {
-  "description": "Map subsurface contamination, landfill boundaries, and groundwater interfaces.",
-  "icon": "leaf",
-  "title": "Environmental Survey"
+  "icon": "router-wireless",
+  "points": ["Fiber rollout plans", "Duct mapping"],
+  "title": "Telecom & Fiber Networks"
 }, {
-  "description": "Assess concrete deck condition, rebar corrosion, and delamination non-destructively.",
-  "icon": "bridge",
-  "title": "Bridge Deck Inspection"
-}, {
-  "description": "Locate clandestine graves, buried evidence, and hidden structures for investigations.",
-  "icon": "gavel",
-  "title": "Forensics & Law"
-}, {
-  "description": "Map subsurface water tables, voids, and flow paths for flood risk assessment.",
-  "icon": "water-outline",
-  "title": "Flood Zone Mapping"
-}, {
-  "description": "Locate buried cultural features and assess soil stratigraphy non-invasively.",
-  "icon": "shovel",
-  "title": "Archeology and Geotechnical Testing"
+  "icon": "mine",
+  "points": ["Void, subsidence & geohazard detection", "Pre-blast & construction monitoring"],
+  "title": "Mining & Geotechnical"
 }],
       "tag": "Applications"
     },
+    "beforeAfter": {
+      "after": {
+        "items": ["Verified underground map", "Reduced construction risk", "Accurate design alignment", "Faster approvals & execution"],
+        "label": "AFTER SMARTGRID",
+        "tagline": "With a SmartGrid GPR survey"
+      },
+      "before": {
+        "items": ["Unknown underground utilities", "Excavation risk", "Design uncertainty", "Cost overruns & delays"],
+        "label": "BEFORE SMARTGRID",
+        "tagline": "Without a GPR utility survey"
+      },
+      "flipHint": "Tap the card to flip",
+      "headline": "Before vs After GPR Survey",
+      "tag": "Before vs After"
+    },
     "deliverables": {
-      "headline": "What you receive at the end of every project",
-      "images": ["/media/surveying/ground-penetrating-radar/data-integration.png", "/media/surveying/ground-penetrating-radar/gpr-02.png", "/media/surveying/ground-penetrating-radar/topographical-mapping.png"],
-      "list": ["Utility detection layout drawings", "GPR radargram interpretations", "Utility depth profiles", "Marked service plans with coordinates", "GPR survey report"],
-      "tag": "Deliverables"
+      "checks": ["Georeferenced to national control", "CAD & GIS compatible", "Engineering-ready formats"],
+      "description": "We don't just scan — we deliver engineering-ready outputs:",
+      "headline": "Deliverables You Receive",
+      "items": [{
+  "description": "Every detected utility plotted on a georeferenced plan you can drop straight into CAD or GIS for design.",
+  "format": "DWG / DXF / SHP",
+  "icon": "map-marker-path",
+  "title": "Geo-referenced Utility Maps"
+}, {
+  "description": "Depth-sliced 3D visualisation of buried pipes, cables, voids and structures to support clash-free design.",
+  "format": "Interactive 3D",
+  "icon": "cube-outline",
+  "title": "3D Subsurface Interpretation Models"
+}, {
+  "description": "Identifies overlapping utilities and design conflicts before they become costly site surprises.",
+  "format": "Report + Plan",
+  "icon": "vector-combine",
+  "title": "Utility Conflict Analysis Report"
+}, {
+  "description": "Tabulated depth, size and confidence classes for every target — ready for engineering sign-off.",
+  "format": "XLSX / PDF",
+  "icon": "table-large",
+  "title": "Depth Estimation & Classification Tables"
+}, {
+  "description": "Attribute-rich shapefiles and geodatabases that integrate into your existing asset management systems.",
+  "format": "ArcGIS / QGIS",
+  "icon": "database-outline",
+  "title": "GIS-Ready Datasets"
+}, {
+  "description": "Colour-coded risk zones highlight where excavation needs extra care, protection or method statements.",
+  "format": "Plan overlay",
+  "icon": "shield-alert-outline",
+  "title": "Construction Risk Maps"
+}, {
+  "description": "A signed, standalone report documenting methodology, findings, radargrams and recommendations.",
+  "format": "PDF",
+  "icon": "file-pdf-box",
+  "title": "Client-Ready Technical Report"
+}],
+      "liveLabel": "Deliverable package",
+      "tag": "Deliverables You Receive"
+    },
+    "detectCaps": {
+      "description": "Subsurface targets identified with high-resolution LMX200 + RTK-GNSS integration:",
+      "headline": "What We Detect (GPR Capabilities)",
+      "items": [{
+  "icon": "pipe",
+  "note": "GI & Asbestos",
+  "title": "Metallic Pipes"
+}, {
+  "icon": "barrel-outline",
+  "note": "PVC, HDPE",
+  "title": "Non-Metallic Pipes"
+}, {
+  "icon": "cable-data",
+  "note": "PVC, EML",
+  "title": "Electrical Conduits"
+}, {
+  "icon": "access-point-network",
+  "note": "Duct & fiber alignments",
+  "title": "Telecom Ducts & Fiber Routes"
+}, {
+  "icon": "circle-multiple",
+  "note": "Subsurface hazards",
+  "title": "Voids, Trenches & Anomalies"
+}, {
+  "icon": "archive-outline",
+  "note": "Old tanks, cables & chambers",
+  "title": "Abandoned Infrastructure"
+}],
+      "tag": "Capabilities"
     },
     "faqs": {
       "cta": {
@@ -6470,6 +7528,28 @@ export default interface Resources {
 }],
       "tag": "Featured Projects"
     },
+    "finalCta": {
+      "actions": [{
+  "description": "Schedule a field team at your site.",
+  "href": "mailto:smartgridsurveying@gmail.com?subject=Book Site Survey: GPR & SUE&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a GPR site survey.%0D%0A%0D%0ALocation:%0D%0ASite size:%0D%0APreferred date:%0D%0A%0D%0AThank you.",
+  "icon": "calendar-check",
+  "label": "Book Site Survey"
+}, {
+  "description": "Detailed scope & pricing for your site.",
+  "href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Ground Penetrating Radar&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Ground Penetrating Radar. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+  "icon": "email-fast-outline",
+  "label": "Request Engineering Quote"
+}, {
+  "description": "Fast answers from a GPR specialist.",
+  "href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20talk%20to%20the%20GPR%20survey%20team.",
+  "icon": "whatsapp",
+  "label": "WhatsApp Survey Team"
+}],
+      "description": "Get Professional Utility Mapping Support Today",
+      "headline": "Ready to De-Risk Your Project?",
+      "note": "We respond within hours and can mobilize field teams quickly.",
+      "tag": "Start Your Survey"
+    },
     "hero": {
       "browseAll": {
         "href": "/surveying",
@@ -6480,43 +7560,67 @@ export default interface Resources {
         "label": "Request a Quote"
       },
       "ctaSecondary": {
-        "href": "https://wa.me/254701618282",
-        "icon": "whatsapp",
-        "label": "Quick Contact"
+        "href": "mailto:smartgridsurveying@gmail.com?subject=Book a GPR Utility Scan&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a GPR utility scan on my site.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AArea to scan (approx):%0D%0ASubject of concern (utilities / voids / rebar):%0D%0APreferred date:%0D%0A%0D%0AThank you.",
+        "icon": "calendar-check",
+        "label": "Book a GPR Utility Scan"
       },
-      "description": "Ground Penetrating Radar (GPR) survey services for non-destructive detection and mapping of buried utilities, voids, tanks, and subsurface structures across Kenya.",
+      "description": "<bold>Accurate Underground Utility Mapping Before You Dig, Design, or Build</bold>\n\nWe provide <bold>high-resolution Ground Penetrating Radar (GPR) surveys</bold> using advanced LMX200 systems integrated with RTK GNSS to detect, map, and validate underground utilities with engineering-grade accuracy across Kenya and East Africa.\n\n<bold>Avoid excavation risks. Prevent utility strikes. Build with confidence.</bold>",
       "headline": "GROUND PENETRATING RADAR",
       "image": "/media/surveying/ground-penetrating-radar/hero.png",
       "images": [{
   "description": "The LMX200 GPR system with SmartCart® – the industry standard for utility locating, concrete scanning, and subsurface imaging.",
   "label": "LMX200",
-  "url": "/media/surveying/ground-penetrating-radar/hero.png"
+  "url": "/media/surveying/ground-penetrating-radar/gpr-20.jpeg"
 }, {
   "description": "Non-invasive subsurface investigation that preserves infrastructure integrity while delivering accurate underground data.",
   "label": "Non-Destructive",
-  "url": "/media/surveying/ground-penetrating-radar/16.jpeg"
+  "url": "/media/surveying/ground-penetrating-radar/gpr-22.jpeg"
 }, {
   "description": "Penetrates up to 8 meters (26 feet) depth, capturing rebar, conduits, voids, and utility lines with high-resolution clarity.",
   "label": "Deep Detection",
-  "url": "/media/surveying/ground-penetrating-radar/05.jpeg"
+  "url": "/media/surveying/ground-penetrating-radar/gpr-21.jpeg"
 }, {
   "description": "Lightweight, collapsible design with IP65-rated weather resistance – built for demanding job sites and easy transport.",
   "label": "Portable & Rugged",
-  "url": "/media/surveying/ground-penetrating-radar/gpr-16.jpeg"
+  "url": "/media/surveying/ground-penetrating-radar/gpr-22.jpeg"
 }, {
   "description": "Built-in GPS and DMI (Distance Measurement Instrument) for precise georeferencing and seamless GIS data export.",
   "label": "GPS-Integrated Mapping",
   "url": "/media/surveying/ground-penetrating-radar/gpr-03.jpeg"
 }, {
-  "description": "Real-time data processing with on-screen visualization – enabling instant field decisions and rapid site assessment.",
-  "label": "Immediate Results",
-  "url": "/media/surveying/ground-penetrating-radar/data-integration.png"
+  "description": "Live on-screen radargrams with adjustable depth and gain settings for instant field analysis and decision-making.",
+  "label": "Real-Time Data Display",
+  "url": "/media/surveying/ground-penetrating-radar/gpr-22.jpeg"
 }, {
-  "description": "Powerful post-processing software with 3D visualization, slice generation, and automated reporting tools.",
-  "label": "Advanced Analysis Software",
-  "url": "/media/surveying/ground-penetrating-radar/topographical-mapping.png"
+  "description": "Dual-frequency (200 MHz & 500 MHz) antenna support for balancing depth penetration and near-surface resolution in one system.",
+  "label": "Multi-Frequency Antenna",
+  "url": "/media/surveying/ground-penetrating-radar/gpr-23.jpeg"
+}, {
+  "description": "Accurately maps metal and non-metallic utilities including PVC, asbestos-cement, and fiber-optic cables beneath pavements.",
+  "label": "Utility Mapping",
+  "url": "/media/surveying/ground-penetrating-radar/gpr-07.jpeg"
+}, {
+  "description": "Identifies rebar, post-tension cables, conduits, and voids within concrete slabs – essential for safe core drilling and cutting.",
+  "label": "Concrete Scanning",
+  "url": "/media/surveying/ground-penetrating-radar/gpr-19.jpeg"
+}, {
+  "description": "Detects subsurface voids, cavities, and sinkhole precursors to prevent structural failures and enhance site safety.",
+  "label": "Void & Sinkhole Detection",
+  "url": "/media/surveying/ground-penetrating-radar/gpr-18.jpeg"
+}, {
+  "description": "Measures pavement and asphalt layer thickness with millimeter accuracy for quality control and road rehabilitation projects.",
+  "label": "Asphalt Thickness Measurement",
+  "url": "/media/surveying/ground-penetrating-radar/gpr-16.jpeg"
+}, {
+  "description": "Maps soil strata, water table levels, and buried contamination plumes for environmental assessments and geotechnical investigations.",
+  "label": "Environmental & Geotechnical Surveys",
+  "url": "/media/surveying/ground-penetrating-radar/gpr-15.jpeg"
+}, {
+  "description": "Advanced post-processing software with 3D slice-view and depth-slice animation for comprehensive subsurface interpretation and reporting.",
+  "label": "Data Processing & 3D Visualization",
+  "url": "/media/surveying/ground-penetrating-radar/gpr-11.jpeg"
 }],
-      "title": "GPR Survey Services"
+      "title": "Ground Penetrating Radar (GPR) & Subsurface Utility Engineering (SUE) in Kenya"
     },
     "highlights": [{
   "icon": "shield-check-outline",
@@ -6526,46 +7630,141 @@ export default interface Resources {
   "label": "Deep Detection"
 }, {
   "icon": "clock-fast",
-  "label": "Immediate Results"
+  "label": "Real Time Results"
 }],
     "jumpNav": [{
   "href": "#overview",
   "label": "Overview"
 }, {
   "href": "#methodology",
-  "label": "Methodology"
+  "label": "Workflow"
 }, {
   "href": "#applications",
   "label": "Applications"
 }, {
+  "href": "#detect",
+  "label": "What We Detect"
+}, {
   "href": "#deliverables",
   "label": "Deliverables"
+}, {
+  "href": "#sue",
+  "label": "SUE Compliance"
+}, {
+  "href": "#limitations",
+  "label": "Limitations"
+}, {
+  "href": "#before-after",
+  "label": "Before vs After"
 }, {
   "href": "#technology",
   "label": "Technology"
 }, {
+  "href": "#projects",
+  "label": "Projects"
+}, {
+  "href": "#summary",
+  "label": "Summary"
+}, {
+  "href": "#get-started",
+  "label": "Get Started"
+}, {
   "href": "#faqs",
   "label": "FAQs"
 }],
-    "methodology": {
-      "headline": "Delivering excellence through a proven three-stage workflow",
+    "limitations": {
+      "description": "Ground Penetrating Radar performance depends on site conditions. We tell you exactly what to expect:",
+      "headline": "Technical Limitations (Transparency You Can Trust)",
       "items": [{
-  "description": "Review available utility records and site drawings to plan GPR scan lines and grid coverage.",
-  "title": "Site Preparation & Desktop Study"
+  "description": "Heavy clay attenuates the radar signal and reduces effective penetration depth.",
+  "icon": "earth",
+  "title": "Clay Soils"
 }, {
-  "description": "Systematic GPR scanning across survey areas using calibrated antenna frequencies suited to detection depth requirements.",
+  "description": "Concentrated rebar and mesh cause signal scattering and clutter inside concrete.",
+  "icon": "grid-large",
+  "title": "Dense Reinforcement"
+}, {
+  "description": "High soil moisture changes the dielectric response and can mask target signatures.",
+  "icon": "water-outline",
+  "title": "Wet Ground"
+}, {
+  "description": "Typical detection depth varies between 0.5m – 4m depending on soil and antenna configuration.",
+  "icon": "arrow-down-bold",
+  "title": "Maximum Effective Depth"
+}],
+      "note": "We combine GPR with EM locating & site verification to improve reliability.",
+      "noteIcon": "check-decagram",
+      "tag": "Transparency"
+    },
+    "methodology": {
+      "description": "We follow a structured Subsurface Utility Engineering (SUE) approach:",
+      "headline": "Our GPR Survey Workflow (Engineering Standard Method)",
+      "items": [{
+  "points": ["Review existing utility drawings", "Identify risk zones & scan grid design", "Survey grid establishment"],
+  "title": "Site Preparation & Utility Desk Study"
+}, {
+  "points": ["Multi-frequency systematic LMX200 scanning", "RTK XYZ data collection", "Dense grid or corridor-based scanning"],
   "title": "GPR Data Acquisition"
 }, {
-  "description": "Analysis of GPR data to identify utility signatures, depths, and alignments, exported into CAD drawings and reports.",
-  "title": "Radargram Interpretation & Mapping"
+  "points": ["Hyperbola signatures analysis", "Depth slicing & anomaly classification", "Cross-check with manholes & records", "CAD, GIS, PDF & georeferenced drawings"],
+  "title": "Radargrams Interpretation & Mapping"
 }],
-      "tag": "Our Methodology"
+      "tag": "Our GPR Survey Workflow"
     },
     "overview": {
       "headline": "Ground Penetrating Radar Survey in Kenya",
       "image": "/media/surveying/ground-penetrating-radar/gpr-lmx-200.gif",
       "paragraphs": ["Ground Penetrating Radar (GPR) surveys use electromagnetic pulses to detect and map buried utilities, voids, rebar, and subsurface anomalies without excavation. GPR is the primary tool for pre-excavation utility mapping, concrete scanning, and void detection across construction sites in Nairobi and beyond.", "SmartGrid Surveying uses GSSI-class GPR systems with experienced operators, delivering same-day preliminary findings and detailed reports with CAD-ready drawings.", "Searching for a ground penetrating radar survey near you? Our GPR teams are based in Nairobi and dispatch across Kenya — Kiambu, Nakuru, Kisumu, Mombasa — with most requests mobilized within 24 hours."],
       "tag": "Overview"
+    },
+    "sue": {
+      "description": "We apply international SUE standards to every utility mapping project — giving engineers the confidence to excavate safely:",
+      "headline": "Subsurface Utility Engineering (SUE) Compliance",
+      "levels": [{
+  "description": "Compile existing as-builts and utility records to build an initial risk picture before fieldwork.",
+  "icon": "file-search-outline",
+  "level": "SUE Level D",
+  "title": "Records & Desk Studies"
+}, {
+  "description": "Locate and record visible surface features — manholes, valves, poles — and correlate them with records.",
+  "icon": "map-outline",
+  "level": "SUE Level C",
+  "title": "Surface Utility Mapping"
+}, {
+  "description": "Deploy GPR and EM locators to detect, map and classify buried utilities without excavation.",
+  "icon": "radar",
+  "level": "SUE Level B",
+  "title": "GPR & Geophysical Detection"
+}, {
+  "description": "Safely expose utilities to confirm exact depth, size and material before construction.",
+  "icon": "shovel",
+  "level": "SUE Level A",
+  "title": "Physical Verification (Potholing)"
+}],
+      "note": "Ensures engineering-grade confidence before excavation",
+      "tag": "Compliance"
+    },
+    "summary": {
+      "chips": ["LMX200 + RTK-GNSS systems", "Countywide mobilization", "Engineering-grade outputs"],
+      "description": "Professional Ground Penetrating Radar (GPR) services in Kenya for utility mapping, construction safety, and subsurface engineering. RTK-GNSS + LMX200 systems.",
+      "headline": "GPR Survey & Utility Mapping in Kenya | Subsurface Utility Engineering (SUE)",
+      "tag": "GPR Survey & Utility Mapping in Kenya"
+    },
+    "technicalCta": {
+      "description": "Send us your site details — access, area, and utility concerns — and receive a scoped GPR / SUE technical proposal with methodology, deliverables and pricing within 24 hours.",
+      "headline": "Request Technical Proposal (24hr Turnaround)",
+      "primary": {
+        "href": "mailto:smartgridsurveying@gmail.com?subject=Technical Proposal Request: GPR & SUE&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like a technical proposal for a GPR / subsurface utility engineering survey.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AArea to survey:%0D%0AUtility concerns:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+        "icon": "file-document-outline",
+        "label": "Request Technical Proposal"
+      },
+      "secondary": {
+        "href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20request%20a%20GPR%20technical%20proposal.",
+        "icon": "whatsapp",
+        "label": "WhatsApp a GPR Specialist"
+      },
+      "tag": "Technical Proposal",
+      "watermark": "file-document-outline"
     },
     "technology": {
       "headline": "Industry-leading equipment and software",
@@ -6720,6 +7919,70 @@ export default interface Resources {
 }],
       "tag": "Construction & Engineering"
     },
+    "dataAccuracy": {
+      "description": "Accuracy depends on:",
+      "factors": ["Sensor type (drone, GNSS, satellite)", "Ground control point density", "Terrain complexity", "Vegetation cover"],
+      "headline": "Data Accuracy & Method Transparency",
+      "levels": [{
+  "accuracy": "2–5 cm resolution",
+  "label": "Drone orthomosaics"
+}, {
+  "accuracy": "sub-decimetre accuracy",
+  "label": "GNSS field data"
+}, {
+  "accuracy": "0.3m – 10m depending on source",
+  "label": "Satellite data"
+}],
+      "tag": "Accuracy & Transparency"
+    },
+    "deliverables": {
+      "checks": ["Engineering-grade accuracy", "Registry-ready formats", "GIS & CAD compatible"],
+      "description": "We deliver decision-ready geospatial intelligence, not just maps:",
+      "headline": "Deliverables You Receive",
+      "items": [{
+  "description": "Complete spatial databases with topology, attributes, and metadata ready for enterprise GIS deployment.",
+  "format": "GeoPackage / File Geodatabase",
+  "icon": "database-outline",
+  "title": "Geo-referenced GIS databases"
+}, {
+  "description": "Seamless, georectified orthomosaics at 2–5 cm resolution for precise measurement and visual reference.",
+  "format": "GeoTIFF / COG",
+  "icon": "image-filter-hdr",
+  "title": "High-resolution orthomosaics"
+}, {
+  "description": "Bare-earth DEMs and surface DSMs with contour extraction for terrain analysis and engineering design.",
+  "format": "GeoTIFF / ASC",
+  "icon": "axis-z-arrow-lock",
+  "title": "Digital Elevation Models (DEM/DSM)"
+}, {
+  "description": "Standardized LULC classifications following FAO/ISO schemes with accuracy assessment reports.",
+  "format": "Shapefile / GeoJSON",
+  "icon": "map-legend",
+  "title": "Land use / land cover classification maps"
+}, {
+  "description": "Quantified resource inventories with spatial attributes for planning, valuation, and reporting.",
+  "format": "CSV / Excel / Geodatabase",
+  "icon": "clipboard-list-outline",
+  "title": "Resource inventory datasets"
+}, {
+  "description": "Optional hosted web maps with layer toggles, measurement tools, and stakeholder sharing.",
+  "format": "ArcGIS Online / Mapbox / Custom",
+  "icon": "map-marker-radius",
+  "title": "Interactive Web GIS maps"
+}, {
+  "description": "Thematic map atlases with legends, scale bars, coordinate grids, and methodology appendices.",
+  "format": "PDF / Print-ready",
+  "icon": "file-pdf-box",
+  "title": "Engineering-grade PDF reports"
+}, {
+  "description": "Clean, layered CAD drawings with proper line weights, text styles, and coordinate systems.",
+  "format": "DWG / DXF",
+  "icon": "vector-square",
+  "title": "CAD-ready drawings for planners & engineers"
+}],
+      "liveLabel": "Deliverable package",
+      "tag": "What you receive"
+    },
     "disasterRiskReduction": {
       "description": "In areas prone to floods, landslides, or conflict, SmartGrid Surveying offers rapid, structured data collection to support planning and response.",
       "headline": "Disaster Risk Reduction & Emergency Response",
@@ -6758,15 +8021,42 @@ export default interface Resources {
 }],
       "tag": "Environmental Conservation"
     },
+    "finalCta": {
+      "actions": [{
+  "description": "Receive a detailed proposal with scope, timeline, and pricing",
+  "href": "mailto:smartgridsurveying@gmail.com?subject=Request Resource Mapping Proposal&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a Resource Mapping Proposal. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+  "icon": "email-outline",
+  "label": "Request Proposal (24H Response)"
+}, {
+  "description": "30-min discovery call with a senior GIS engineer",
+  "href": "mailto:smartgridsurveying@gmail.com?subject=Book GIS Consultation&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a GIS consultation for my project. Please get in touch to discuss.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0A%0D%0AThank you.",
+  "icon": "calendar-clock",
+  "label": "Book GIS Consultation"
+}, {
+  "description": "Instant chat with our technical team",
+  "href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20speak%20with%20a%20GIS%20engineer%20about%20resource%20mapping%20for%20my%20project.%20Please%20advise%20on%20next%20steps.",
+  "icon": "whatsapp",
+  "label": "WhatsApp GIS Engineer"
+}],
+      "description": "We help you transform raw geographic areas into actionable intelligence for planning, engineering, and investment decisions.",
+      "headline": "Get Expert GIS Support Today",
+      "note": "24-hour response guarantee • No obligation • Free initial consultation",
+      "tag": "Get Expert GIS Support"
+    },
     "hero": {
       "ctaPrimary": {
-        "href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Resource Mapping&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Resource Mapping. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
-        "label": "Get Your Free Consultation"
+        "href": "mailto:smartgridsurveying@gmail.com?subject=Request Resource Mapping Proposal&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a Resource Mapping Proposal. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+        "label": "Request Resource Mapping Proposal (24H Response)"
+      },
+      "ctaSecondary": {
+        "href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20speak%20with%20a%20GIS%20specialist%20about%20resource%20mapping%20for%20my%20project.%20Please%20advise%20on%20next%20steps.",
+        "icon": "whatsapp",
+        "label": "WhatsApp GIS Specialist"
       },
       "description": "SmartGrid Surveying enables precision agriculture, utilities management, mining, construction, environmental conservation, and disaster response through uniform, repeatable, and scalable grid-based mapping.",
       "headline": "RESOURCE MAPPING",
       "image": "/media/surveying/resource-mapping/hero.jpg",
-      "title": "Systematic Spatial Intelligence for Every Sector"
+      "title": "Land, Infrastructure & Natural Resources into Actionable Geospatial Intelligence data"
     },
     "quarryMining": {
       "description": "SmartGrid Surveying provides a systematic method to monitor extraction sites and surrounding environments, delivering the spatial intelligence needed to operate efficiently and responsibly.",
@@ -6787,6 +8077,96 @@ export default interface Resources {
 }],
       "tag": "Mining & Extraction"
     },
+    "resourceMappingWorkflow": {
+      "description": "We follow a structured geospatial production pipeline:",
+      "headline": "Our Resource Mapping Workflow (Engineering Grade)",
+      "outcome": "Engineering-grade geospatial deliverables ready for planning, design & decision-making",
+      "steps": [{
+  "description": "Client requirements analysis\nArea of interest (AOI) definition\nData acquisition strategy",
+  "icon": "clipboard-text",
+  "label": "1. Project Definition & Data Planning",
+  "phase": "PLANNING"
+}, {
+  "description": "UAV drone surveys (RGB, multispectral, LiDAR)\nGNSS field data collection\nSatellite imagery integration\nExisting cadastral & base map integration",
+  "icon": "drone",
+  "label": "2. Data Acquisition",
+  "phase": "ACQUISITION"
+}, {
+  "description": "Orthomosaic generation\nDEM / DSM / contour extraction\nSpatial classification (land use / land cover)\nFeature extraction & digitization",
+  "icon": "layers-triple",
+  "label": "3. Data Processing & GIS Modeling",
+  "phase": "PROCESSING"
+}, {
+  "description": "Resource distribution modelling\nSuitability analysis\nChange detection (time-series analysis)\nHydrology & terrain modelling",
+  "icon": "chart-timeline-variant",
+  "label": "4. Spatial Analysis",
+  "phase": "ANALYSIS"
+}, {
+  "description": "Ground truthing\nCross-check with survey control points\nAccuracy assessment reports",
+  "icon": "check-circle-outline",
+  "label": "5. Quality Control & Validation",
+  "phase": "VALIDATION"
+}, {
+  "description": "GIS database (GeoPackage / File Geodatabase)\nCAD drawings (DWG / DXF)\nPDF thematic maps\nWeb GIS layers (optional)",
+  "icon": "download-box",
+  "label": "6. Final Delivery",
+  "phase": "DELIVERY"
+}],
+      "tag": "Engineering Grade"
+    },
+    "techStack": {
+      "description": "Industry-leading tools and platforms for engineering-grade deliverables",
+      "headline": "Technology Stack We Use",
+      "items": [{
+  "href": "/aerial-drones/drone-imagery-surveys",
+  "icon": "drone",
+  "note": "DJI enterprise systems",
+  "title": "UAV Drone Photogrammetry"
+}, {
+  "icon": "cube-scan",
+  "note": "Airborne & terrestrial laser scanning",
+  "title": "LiDAR & DEM Modelling"
+}, {
+  "icon": "crosshairs-gps",
+  "note": "Centimetre-level ground control",
+  "title": "RTK GNSS Survey Integration"
+}, {
+  "icon": "map-legend",
+  "note": "Enterprise GIS & spatial databases",
+  "title": "ArcGIS / QGIS / PostGIS"
+}, {
+  "icon": "satellite-variant",
+  "note": "Multi-spectral & SAR data processing",
+  "title": "Remote Sensing & Satellite Analysis"
+}, {
+  "icon": "robot-outline",
+  "note": "Automated feature extraction & LULC",
+  "title": "AI-assisted Classification Models"
+}],
+      "tag": "Technology Stack"
+    },
+    "typesOfResourceMapping": {
+      "categories": [{
+  "icon": "earth",
+  "items": ["Forest cover & biomass estimation", "Wetland & water resource mapping", "Wildlife habitat mapping", "Land degradation analysis"],
+  "title": "Natural Resource Mapping"
+}, {
+  "icon": "factory",
+  "items": ["Roads, bridges, utilities", "Water pipelines & sewer systems", "Electrical transmission networks", "Telecom infrastructure mapping"],
+  "title": "Infrastructure & Asset Mapping"
+}, {
+  "icon": "tractor-variant",
+  "items": ["Crop health (NDVI / multispectral)", "Soil productivity zones", "Irrigation planning maps", "Yield prediction modelling"],
+  "title": "Agricultural Resource Mapping"
+}, {
+  "icon": "city-variant",
+  "items": ["Settlement expansion analysis", "Zoning & planning maps", "Informal settlement mapping", "Urban growth modelling"],
+  "title": "Urban & Land Use Mapping"
+}],
+      "description": "Comprehensive geospatial intelligence across four core domains",
+      "headline": "Types of Resource Mapping We Deliver",
+      "tag": "Our Expertise"
+    },
     "utilitiesEnergySmartInfrastructure": {
       "description": "Utilities and energy providers benefit from SmartGrid Surveying's systematic, scalable approach to mapping vast and often remote networks.",
       "headline": "Utilities, Energy & Smart Infrastructure",
@@ -6805,6 +8185,59 @@ export default interface Resources {
   "title": "Asset Management & Maintenance"
 }],
       "tag": "Utilities & Energy"
+    },
+    "whatIsResourceMapping": {
+      "closingStatement": "It turns unknown landscapes into measurable, decision-ready datasets",
+      "description": "Resource mapping is the process of capturing, analyzing, and visualizing physical and natural resources in a geospatial system to support planning, management, and decision-making.",
+      "headline": "What is Resource Mapping?",
+      "items": [{
+  "description": "Forests, water bodies, soils, land cover",
+  "icon": "tree-outline",
+  "title": "Natural Resources"
+}, {
+  "description": "Roads, utilities, pipelines, buildings",
+  "icon": "road-variant",
+  "title": "Infrastructure Assets"
+}, {
+  "description": "Crop zones, productivity mapping",
+  "icon": "sprout-outline",
+  "title": "Agricultural Systems"
+}, {
+  "description": "Wetlands, erosion zones, habitats",
+  "icon": "leaf-maple",
+  "title": "Environmental Features"
+}, {
+  "description": "Settlement patterns, zoning systems",
+  "icon": "city-variant",
+  "title": "Urban & Rural Land Use"
+}],
+      "tag": "What we do"
+    },
+    "whoUsesResourceMapping": {
+      "categories": [{
+  "icon": "city",
+  "items": ["County Governments (47 counties)", "Ministries of Lands, Water & Environment", "Planning & infrastructure departments"],
+  "title": "Government & Public Sector"
+}, {
+  "icon": "bridge",
+  "items": ["Road contractors (KeNHA / KURA projects)", "EPC contractors", "Construction companies"],
+  "title": "Infrastructure & Engineering Firms"
+}, {
+  "icon": "transmission-tower",
+  "items": ["Water service boards", "Power transmission companies", "Renewable energy developers"],
+  "title": "Utilities & Energy"
+}, {
+  "icon": "earth",
+  "items": ["UN agencies", "World Bank funded projects", "Climate & environmental programs"],
+  "title": "NGOs & Development Agencies"
+}, {
+  "icon": "briefcase",
+  "items": ["Real estate developers", "Mining companies", "Agricultural estates"],
+  "title": "Private Sector"
+}],
+      "description": "Trusted by public and private sector leaders across East Africa",
+      "headline": "Who Uses Our Resource Mapping Services?",
+      "tag": "Who we serve"
     },
     "whySmartGridStandsOut": {
       "description": "",

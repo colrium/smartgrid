@@ -80,37 +80,43 @@
 		"tag": "How It Works",
 		"headline": "Boundary Survey Process — From Site Visit to County Approval",
 		"description": "A transparent, six-step cadastral workflow. You always know which stage your parcel is in and exactly what happens next.",
-		"outcomeLabel": "Registered, titled & dispute-free",
+		"outcome": "Registered, titled & dispute-free",
 		"steps": [
 			{
 				"icon": "file-search-outline",
 				"label": "Site Visit & Document Review",
-				"description": "We walk the parcel with you, review the title deed, deed plan and prior surveys, and record existing occupation and improvements."
+				"description": "We walk the parcel with you, review the title deed, deed plan and prior surveys, and record existing occupation and improvements.",
+				"phase": "PLANNING"
 			},
 			{
 				"icon": "database-search-outline",
 				"label": "Registry (Ardhisasa / RIM) Verification",
-				"description": "Parcel records are retrieved and cross-checked against the Registry Index Map (RIM) and the Ardhisasa cadastral database to confirm the legal boundaries."
+				"description": "Parcel records are retrieved and cross-checked against the Registry Index Map (RIM) and the Ardhisasa cadastral database to confirm the legal boundaries.",
+				"phase": "CONTROL"
 			},
 			{
 				"icon": "satellite-variant",
 				"label": "GNSS Field Survey (RTK Control)",
-				"description": "RTK GNSS and total station observations establish a control network tied to the national grid for centimetre-level accuracy."
+				"description": "RTK GNSS and total station observations establish a control network tied to the national grid for centimetre-level accuracy.",
+				"phase": "ACQUISITION"
 			},
 			{
 				"icon": "map-marker-check",
 				"label": "Beaconing & Boundary Confirmation",
-				"description": "Boundary corners are computed, confirmed with adjoining owners, and permanent beacons are placed or re-fixed on the ground."
+				"description": "Boundary corners are computed, confirmed with adjoining owners, and permanent beacons are placed or re-fixed on the ground.",
+				"phase": "VALIDATION"
 			},
 			{
 				"icon": "ruler-square-compass",
 				"label": "Plan Preparation & Computation",
-				"description": "Observations are reduced and adjusted; areas, traverses and final survey plans are computed and checked by a licensed surveyor."
+				"description": "Observations are reduced and adjusted; areas, traverses and final survey plans are computed and checked by a licensed surveyor.",
+				"phase": "PROCESSING"
 			},
 			{
 				"icon": "clipboard-check-outline",
 				"label": "Submission & County Approval",
-				"description": "The compiled cadastral documentation is lodged with the registry (Ardhisasa) and county offices for approval and registration."
+				"description": "The compiled cadastral documentation is lodged with the registry (Ardhisasa) and county offices for approval and registration.",
+				"phase": "DELIVERY"
 			}
 		]
 	},
