@@ -51,5 +51,54 @@
 			"label": "Get in Touch",
 			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Building Information Modelling (BIM)&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Building Information Modelling (BIM). Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
+	},
+	"deliverables": {
+		"tag": "BIM Outputs",
+		"headline": "BIM & Digital Twin Deliverables",
+		"description": "Survey-grade data modelled for BIM workflows and digital twins:",
+		"liveLabel": "Deliverable package",
+		"checks": [
+			"IFC & native formats",
+			"LOD mapped to project needs",
+			"Consistent coordinate systems"
+		],
+		"items": [
+			{
+				"title": "Scan-to-BIM Models",
+				"format": "IFC / RVT",
+				"icon": "cube-outline",
+				"description": "Existing-conditions models generated from point clouds and classified to your required level of development."
+			},
+			{
+				"title": "Registered Point Clouds",
+				"format": "RCP / E57 / LAS",
+				"icon": "vector-square",
+				"description": "Clean, geo-referenced scans with control registration, ready for direct use in BIM authoring tools."
+			},
+			{
+				"title": "As-Built BIM Models",
+				"format": "IFC / RVT",
+				"icon": "domain",
+				"description": "Construction-stage models updated with field verification for handover, operations and maintenance."
+			},
+			{
+				"title": "Deviation & Clash Reports",
+				"format": "PDF / Excel",
+				"icon": "chart-histogram",
+				"description": "Design-versus-built comparisons with quantified deviations for engineering review and resolution."
+			},
+			{
+				"title": "2D Documentation",
+				"format": "DWG / PDF",
+				"icon": "file-document-outline",
+				"description": "Plans, sections and elevations extracted from the model for permits, tenders and site use."
+			},
+			{
+				"title": "Digital Twin Datasets",
+				"format": "Web / GIS",
+				"icon": "earth",
+				"description": "Geo-referenced datasets that feed web maps, dashboards and digital twin platforms."
+			}
+		]
 	}
 }

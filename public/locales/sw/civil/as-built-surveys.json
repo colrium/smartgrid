@@ -118,5 +118,54 @@
 		"tag": "Maarifa Yanayoweza Kutekelezwa",
 		"headline": "Maarifa Mahiri, Yanayowasilishwa Dijitali!",
 		"description": "Kwa kuoanisha data ya ndege zisizo na rubani na mbinu za upimaji na usindikaji wa GIS, tunabadilisha data mbichi ya angani kuwa maarifa yanayoweza kutekelezwa. Ona mkengeuko, weka alama za kutofautiana, na ulete uwazi kwenye mtiririko wako wa kazi wa ujenzi—yote kwenye jukwaa moja lisilo na mshono."
+	},
+	"deliverables": {
+		"tag": "Matokeo ya Mradi",
+		"headline": "Matokeo ya Uchunguzi wa As-Built",
+		"description": "Nyaraka kamili za as-built kwa uhamishaji, uthibitisho na kumbukumbu:",
+		"liveLabel": "Kifurushi cha matokeo",
+		"checks": [
+			"Imeelezwa kwa udhibiti wa kitaifa",
+			"Miundo tayari kwa uhandisi",
+			"Nyaraka tayari kwa ukaguzi"
+		],
+		"items": [
+			{
+				"title": "Ripoti za Uthibitisho wa As-Built",
+				"format": "PDF",
+				"icon": "clipboard-check-outline",
+				"description": "Ulinganisho uliorekodiwa wa kazi zilizojengwa dhidi ya usanifu, na ushahidi kwa idhini ya uhandisi na kumbukumbu."
+			},
+			{
+				"title": "Ripoti za Maendeleo ya Uchunguzi",
+				"format": "PDF / Web",
+				"icon": "chart-timeline-variant",
+				"description": "Ukamataji uliopangwa unafuatilia maendeleo ya ujenzi dhidi ya hatua za programu na maombi ya malipo."
+			},
+			{
+				"title": "Modeli za 3D za As-Built",
+				"format": "CAD / IFC",
+				"icon": "cube-outline",
+				"description": "Modeli za kiwango cha anga za kazi zilizojengwa tayari kwa kuunganishwa na BIM na usimamizi wa vifaa."
+			},
+			{
+				"title": "Ramani za Orthomosaic na Picha",
+				"format": "GeoTIFF / JPEG",
+				"icon": "image-filter-hdr",
+				"description": "Picha za angani za ubora wa juu zilizoelezwa kijiografia zinazorekodi hali ya tovuti kila ukamataji."
+			},
+			{
+				"title": "Uchambuzi wa Tofauti na Wingi",
+				"format": "Excel / PDF",
+				"icon": "chart-histogram",
+				"description": "Tofauti zilizopimwa kati ya usanifu na nyuso za as-built, pamoja na wingi wa ardhi na vifaa."
+			},
+			{
+				"title": "Mistari ya CAD na Seti za Data za GIS",
+				"format": "DWG / SHP",
+				"icon": "vector-square",
+				"description": "Mistari ya usanifu dhidi ya as-built na seti za data zilizoelezwa kijiografia zinazoingia moja kwa moja kwenye CAD na GIS."
+			}
+		]
 	}
 }

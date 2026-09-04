@@ -122,5 +122,54 @@
 				"description": "Unaweza kuwasiliana na SmartGrid Surveying kupitia WhatsApp, barua pepe, au simu. Tutapanga ziara ya tovuti, kutoa makadirio, na kuelezea mpango wa uchunguzi ulioundwa kwa mradi wako."
 			}
 		]
+	},
+	"deliverables": {
+		"tag": "Matokeo ya Setting Out",
+		"headline": "Matokeo ya Setting Out ya Tovuti",
+		"description": "Kila kitu ambacho timu yako inahitaji kujenga kikamilifu kama usanifu:",
+		"liveLabel": "Kifurushi cha matokeo",
+		"checks": [
+			"Imetokana na michoro iliyoidhinishwa",
+			"Imekaguliwa dhidi ya udhibiti wa tovuti",
+			"Usimamizi wa mchunguzi aliyeidhinishwa"
+		],
+		"items": [
+			{
+				"title": "Nafasi Zilizowekwa Alama",
+				"format": "Tovutini",
+				"icon": "map-marker-check",
+				"description": "Majengo, barabara, huduma na mipaka vimewekewa alama ardhini kutoka kwa kuratibu za usanifu."
+			},
+			{
+				"title": "Majedwali ya Kuratibu za Setting-Out",
+				"format": "CSV / PDF",
+				"icon": "table-large",
+				"description": "Ratiba ya kuratibu iliyokaguliwa kwa kila hatua ya stakeout, ikirejelea udhibiti wa tovuti."
+			},
+			{
+				"title": "Mistari ya Offset na Alama za Rejea",
+				"format": "Tovutini",
+				"icon": "vector-square",
+				"description": "Batter boards, mistari ya offset na alama za rejea zinazohifadhi mwelekeo katika kazi zote."
+			},
+			{
+				"title": "Michoro ya Setting-Out",
+				"format": "DWG / PDF",
+				"icon": "file-cad",
+				"description": "Michoro iliyoainishwa inayoonyesha nafasi zilizowekwa alama, offset na pointi za udhibiti kwa kumbukumbu."
+			},
+			{
+				"title": "Benchmarks na Viwango vya Mwinuko",
+				"format": "PDF",
+				"icon": "axis-z-arrow",
+				"description": "Udhibiti wa wima ulioanzishwa tovutini na kurekodiwa kwa mwinuko, mteremko na kumaliza."
+			},
+			{
+				"title": "Uthibitisho na Ukaguzi wa As-Built",
+				"format": "PDF",
+				"icon": "clipboard-check-outline",
+				"description": "Ukaguzi wa baada ya ujenzi unaothibitisha kazi zilizokamilika zinalingana na setting out iliyoidhinishwa."
+			}
+		]
 	}
 }

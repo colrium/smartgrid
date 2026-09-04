@@ -150,5 +150,54 @@
 		"tag": "Actionable Insights",
 		"headline": "Smart Insights, Delivered Digitally!",
 		"description": "Pairing drone data with surveying techniques and GIS processing, we convert raw aerial data into actionable insights. Visualize deviations, flag inconsistencies, and bring clarity to your construction workflows—all in one seamless platform."
+	},
+	"deliverables": {
+		"tag": "Project Outputs",
+		"headline": "As-Built Survey Deliverables",
+		"description": "Complete as-built documentation for handover, verification and records:",
+		"liveLabel": "Deliverable package",
+		"checks": [
+			"Georeferenced to national control",
+			"Engineer-ready formats",
+			"Audit-ready documentation"
+		],
+		"items": [
+			{
+				"title": "As-Built Verification Reports",
+				"format": "PDF",
+				"icon": "clipboard-check-outline",
+				"description": "Documented comparison of constructed works against design, with evidence for engineering sign-off and records."
+			},
+			{
+				"title": "Progress Survey Reports",
+				"format": "PDF / Web",
+				"icon": "chart-timeline-variant",
+				"description": "Scheduled captures that track construction progress against programme milestones and payment applications."
+			},
+			{
+				"title": "3D As-Built Models",
+				"format": "CAD / IFC",
+				"icon": "cube-outline",
+				"description": "Spatially accurate models of constructed works ready for BIM integration and facilities management."
+			},
+			{
+				"title": "Orthomosaic Maps & Imagery",
+				"format": "GeoTIFF / JPEG",
+				"icon": "image-filter-hdr",
+				"description": "High-resolution, georeferenced aerial imagery documenting site conditions at every capture date."
+			},
+			{
+				"title": "Deviation & Quantity Analysis",
+				"format": "Excel / PDF",
+				"icon": "chart-histogram",
+				"description": "Quantified differences between design and as-built surfaces, including earthwork and material quantities."
+			},
+			{
+				"title": "CAD Overlays & GIS Datasets",
+				"format": "DWG / SHP",
+				"icon": "vector-square",
+				"description": "Design-versus-as-built overlays and geo-referenced datasets that plug straight into CAD and GIS workflows."
+			}
+		]
 	}
 }

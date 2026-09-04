@@ -91,5 +91,54 @@
 				"title": "Evaluation and monitoring"
 			}
 		]
+	},
+	"deliverables": {
+		"tag": "Engineering Outputs",
+		"headline": "Site Engineering Deliverables",
+		"description": "Precise data products that keep site works on control:",
+		"liveLabel": "Deliverable package",
+		"checks": [
+			"Tied to national grid control",
+			"Instrument-ready formats",
+			"Licensed surveyor sign-off"
+		],
+		"items": [
+			{
+				"title": "Control Networks & Reports",
+				"format": "PDF / CSV",
+				"icon": "crosshairs-gps",
+				"description": "GNSS and total-station control networks with adjustment reports tied to the national grid."
+			},
+			{
+				"title": "Setting-Out Coordinates",
+				"format": "CSV / DWG",
+				"icon": "map-marker-radius",
+				"description": "Stakeout schedules for structures, roads and services, formatted for total stations and GNSS rovers."
+			},
+			{
+				"title": "Level & Gradient Surveys",
+				"format": "PDF / DWG",
+				"icon": "axis-z-arrow",
+				"description": "Levels, gradients and elevations for earthworks, drainage and paving operations."
+			},
+			{
+				"title": "Progress & Quantity Surveys",
+				"format": "Excel / PDF",
+				"icon": "chart-histogram",
+				"description": "Interim quantities measured against design surfaces to support valuations and claims."
+			},
+			{
+				"title": "Machine Control Models",
+				"format": "DXF / CALS",
+				"icon": "bulldozer",
+				"description": "3D grade models prepared for GPS machine control on plant and compaction equipment."
+			},
+			{
+				"title": "Compliance & Handover Documents",
+				"format": "PDF",
+				"icon": "file-certificate",
+				"description": "Positioning, level and dimensional compliance documentation for practical completion."
+			}
+		]
 	}
 }

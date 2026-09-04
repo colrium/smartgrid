@@ -71,5 +71,54 @@
 			"label": "Request a volumetric Survey",
 			"href": "mailto:contact@smartgridsurveying.com?subject=Quote Request: Volumetric Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Volumetric Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
+	},
+	"deliverables": {
+		"tag": "Project Outputs",
+		"headline": "Volumetric Survey Deliverables",
+		"description": "Audit-ready volumes and quantities for earthworks and stockpiles:",
+		"liveLabel": "Deliverable package",
+		"checks": [
+			"Traceable methodology",
+			"Repeatable survey surfaces",
+			"GIS & CAD compatible"
+		],
+		"items": [
+			{
+				"title": "Volume Calculation Reports",
+				"format": "PDF / Excel",
+				"icon": "chart-histogram",
+				"description": "Cut and fill quantities with surfaces, methodology and tolerance clearly documented."
+			},
+			{
+				"title": "Stockpile Volume Surveys",
+				"format": "PDF / Excel",
+				"icon": "image-filter-hdr",
+				"description": "Individual and cumulative stockpile volumes, with densities applied on request."
+			},
+			{
+				"title": "Surface Models (DTM / DSM)",
+				"format": "GeoTIFF / DWG",
+				"icon": "axis-z-arrow-lock",
+				"description": "Base and comparison surfaces that make every volume computation repeatable and defensible."
+			},
+			{
+				"title": "Contour & Elevation Maps",
+				"format": "DWG / PDF",
+				"icon": "map-legend",
+				"description": "Contour plans of pre- and post-works terrain for design, records and compliance."
+			},
+			{
+				"title": "Progress Earthwork Reports",
+				"format": "PDF",
+				"icon": "chart-timeline-variant",
+				"description": "Periodic cut and fill movement reports aligned to payment applications and programmes."
+			},
+			{
+				"title": "CAD & GIS Data Packages",
+				"format": "DWG / SHP",
+				"icon": "database-outline",
+				"description": "Surfaces, contours and volumes exported in open formats for CAD and GIS workflows."
+			}
+		]
 	}
 }

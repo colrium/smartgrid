@@ -50,5 +50,54 @@
 			"label": "Wasiliana Nasi",
 			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Building Information Modelling (BIM)&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Building Information Modelling (BIM). Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
+	},
+	"deliverables": {
+		"tag": "Matokeo ya BIM",
+		"headline": "Matokeo ya BIM na Digital Twin",
+		"description": "Data ya kiwango cha uchunguzi imemodeliwa kwa mchakato wa BIM na digital twins:",
+		"liveLabel": "Kifurushi cha matokeo",
+		"checks": [
+			"Miundo ya IFC na asili",
+			"LOD iliyopangwa kwa mahitaji ya mradi",
+			"Mifumo ya kuratibu inayoendana"
+		],
+		"items": [
+			{
+				"title": "Modeli za Scan-to-BIM",
+				"format": "IFC / RVT",
+				"icon": "cube-outline",
+				"description": "Modeli za hali iliyopo zinazotokana na point clouds zilizainishwa kwa kiwango cha maendeleo kinachohitajika."
+			},
+			{
+				"title": "Point Clouds Zilizosajiliwa",
+				"format": "RCP / E57 / LAS",
+				"icon": "vector-square",
+				"description": "Uchunguzi safi ulioelezwa kijiografia na usajili wa udhibiti, tayari kwa zana za uandishi wa BIM."
+			},
+			{
+				"title": "Modeli za BIM za As-Built",
+				"format": "IFC / RVT",
+				"icon": "domain",
+				"description": "Modeli za hatua ya ujenzi zilizosasishwa kwa uthibitisho wa shamba kwa uhamishaji, uendeshaji na matunzo."
+			},
+			{
+				"title": "Ripoti za Tofauti na Clash",
+				"format": "PDF / Excel",
+				"icon": "chart-histogram",
+				"description": "Ulinganisho wa usanifu dhidi ya lililojengwa na tofauti zilizopimwa kwa uhakiki na utatuzi wa uhandisi."
+			},
+			{
+				"title": "Nyaraka za 2D",
+				"format": "DWG / PDF",
+				"icon": "file-document-outline",
+				"description": "Ramani, sehemu na mwinuko yaliyotolewa kutoka kwa modeli kwa leseni, zabuni na matumizi ya tovuti."
+			},
+			{
+				"title": "Seti za Data za Digital Twin",
+				"format": "Web / GIS",
+				"icon": "earth",
+				"description": "Seti za data zilizoelezwa kijiografia zinazolisha ramani za mtandao, dashibodi na majukwaa ya digital twin."
+			}
+		]
 	}
 }

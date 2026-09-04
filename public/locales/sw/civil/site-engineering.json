@@ -91,5 +91,54 @@
 				"title": "Tathmini na ufuatiliaji"
 			}
 		]
+	},
+	"deliverables": {
+		"tag": "Matokeo ya Uhandisi",
+		"headline": "Matokeo ya Uhandisi wa Tovuti",
+		"description": "Bidhaa za data sahihi zinazoweka kazi za tovuti kwenye udhibiti:",
+		"liveLabel": "Kifurushi cha matokeo",
+		"checks": [
+			"Imefungwa kwa udhibiti wa gridi ya kitaifa",
+			"Miundo tayari kwa vifaa",
+			"Saini ya mchunguzi aliyeidhinishwa"
+		],
+		"items": [
+			{
+				"title": "Mitandao ya Udhibiti na Ripoti",
+				"format": "PDF / CSV",
+				"icon": "crosshairs-gps",
+				"description": "Mitandao ya udhibiti ya GNSS na total station pamoja na ripoti za marekebisho zilizounganishwa na gridi ya kitaifa."
+			},
+			{
+				"title": "Kuratibu za Setting-Out",
+				"format": "CSV / DWG",
+				"icon": "map-marker-radius",
+				"description": "Ratiba ya stakeout kwa majengo, barabara na huduma, iliyoandaliwa kwa total station na GNSS rovers."
+			},
+			{
+				"title": "Uchunguzi wa Mwinuko na Mteremko",
+				"format": "PDF / DWG",
+				"icon": "axis-z-arrow",
+				"description": "Mwinuko, mteremko na urefu kwa kazi za ardhi, mifereji na uwekaji wa lami."
+			},
+			{
+				"title": "Uchunguzi wa Maendeleo na Wingi",
+				"format": "Excel / PDF",
+				"icon": "chart-histogram",
+				"description": "Wingi wa kati uliopimwa dhidi ya nyuso za usanifu kuunga mkono tathmini na madai."
+			},
+			{
+				"title": "Modeli za Udhibiti wa Mashine",
+				"format": "DXF / CALS",
+				"icon": "bulldozer",
+				"description": "Modeli za 3D za grado zilizoandaliwa kwa udhibiti wa GPS wa mashine na vifaa vya kufinya."
+			},
+			{
+				"title": "Nyaraka za Ufuasi na Uhamishaji",
+				"format": "PDF",
+				"icon": "file-certificate",
+				"description": "Nyaraka za ufuasi wa nafasi, mwinuko na vipimo kwa ukamilishaji wa vitendo."
+			}
+		]
 	}
 }
