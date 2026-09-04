@@ -97,17 +97,67 @@
 		"tag": "Deliverables",
 		"headline": "Engineering Deliverables",
 		"description": "Accurate outputs for planning and engineering decisions.",
-		"image": "/media/civil/07.png",
-		"list": [
-			"AS - BUILT Maps",
-			"Digital Elevation Models (DSM, DTM)",
-			"Setting Out Coordinates",
-			"3D DATA (X, Y, Z)",
-			"Contours",
-			"Master plans",
-			"Buildings Layout / BIM",
-			"CAD Shapefiles",
-			"PDF Map"
+		"liveLabel": "Deliverable package",
+		"checks": [
+			"Engineer-ready formats",
+			"CAD & GIS compatible",
+			"Site-verified accuracy"
+		],
+		"items": [
+			{
+				"title": "AS - BUILT Maps",
+				"format": "PDF / DWG",
+				"icon": "file-document",
+				"description": "As-constructed maps verifying completed works for handover and records."
+			},
+			{
+				"title": "Digital Elevation Models (DSM, DTM)",
+				"format": "GeoTIFF",
+				"icon": "image-filter-hdr",
+				"description": "Surface and terrain models for grading, volumes, and drainage design."
+			},
+			{
+				"title": "Setting Out Coordinates",
+				"format": "CSV / DXF",
+				"icon": "crosshairs-gps",
+				"description": "Exact positions for structures and services, ready for stakeout."
+			},
+			{
+				"title": "3D DATA (X, Y, Z)",
+				"format": "CSV / DWG",
+				"icon": "axis-z-arrow",
+				"description": "Three-dimensional positional data for machine control and design verification."
+			},
+			{
+				"title": "Contours",
+				"format": "DWG / DXF",
+				"icon": "chart-bell-curve",
+				"description": "Contours at engineering intervals for earthworks and levels."
+			},
+			{
+				"title": "Master plans",
+				"format": "PDF / DWG",
+				"icon": "map",
+				"description": "Composite site plans consolidating layouts, services, and levels."
+			},
+			{
+				"title": "Buildings Layout / BIM",
+				"format": "IFC / DWG",
+				"icon": "office-building",
+				"description": "BIM-ready layouts and geometry for coordinated construction."
+			},
+			{
+				"title": "CAD Shapefiles",
+				"format": "SHP / DWG",
+				"icon": "vector-square",
+				"description": "GIS shapefiles and CAD layers for engineering workflows."
+			},
+			{
+				"title": "PDF Map",
+				"format": "PDF",
+				"icon": "file-pdf-box",
+				"description": "Print-ready map exports for site teams and documentation."
+			}
 		]
 	}
 }

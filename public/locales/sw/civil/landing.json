@@ -97,17 +97,67 @@
 		"tag": "Matokeo",
 		"headline": "Matokeo ya Uhandisi",
 		"description": "Pato sahihi kwa maamuzi ya mipango na uhandisi.",
-		"image": "/media/civil/07.png",
-		"list": [
-			"Ramani za AS-BUILT",
-			"Modeli za Mwinuko wa Kidijitali (DSM, DTM)",
-			"Kuratibu za Setting Out",
-			"Data ya 3D (X, Y, Z)",
-			"Contours",
-			"Mipango Kuu",
-			"Mipango wa Majengo / BIM",
-			"Shapefiles za CAD",
-			"Ramani za PDF"
+		"liveLabel": "Furushi la Matokeo",
+		"checks": [
+			"Fomati tayari kwa wahandisi",
+			"Zinazoendana na CAD na GIS",
+			"Usahihi uliothibitishwa kwenye tovuti"
+		],
+		"items": [
+			{
+				"title": "Ramani za AS-BUILT",
+				"format": "PDF / DWG",
+				"icon": "file-document",
+				"description": "Ramani za kazi zilizojengwa zinazothibitisha ukamilishaji kwa kukabidhi na kumbukumbu."
+			},
+			{
+				"title": "Modeli za Mwinuko wa Kidijitali (DSM, DTM)",
+				"format": "GeoTIFF",
+				"icon": "image-filter-hdr",
+				"description": "Mifano ya uso na ardhi kwa daraja, vina, na kubuni mifereji."
+			},
+			{
+				"title": "Kuratibu za Setting Out",
+				"format": "CSV / DXF",
+				"icon": "crosshairs-gps",
+				"description": "Nafuni kamili za majengo na huduma, tayari kwa kuweka alama."
+			},
+			{
+				"title": "Data ya 3D (X, Y, Z)",
+				"format": "CSV / DWG",
+				"icon": "axis-z-arrow",
+				"description": "Data ya nafuni ya pande tatu kwa machine control na uthibitisho wa kubuni."
+			},
+			{
+				"title": "Contours",
+				"format": "DWG / DXF",
+				"icon": "chart-bell-curve",
+				"description": "Kontua kwa vipindi vya uhandisi kwa ujenzi wa ardhi na viwango."
+			},
+			{
+				"title": "Mipango Kuu",
+				"format": "PDF / DWG",
+				"icon": "map",
+				"description": "Mipango ya tovuti inayounganisha mipangilio, huduma, na viwango."
+			},
+			{
+				"title": "Mipango wa Majengo / BIM",
+				"format": "IFC / DWG",
+				"icon": "office-building",
+				"description": "Mipangilio na jiometri tayari kwa BIM kwa ujenzi ulioratibiwa."
+			},
+			{
+				"title": "Shapefiles za CAD",
+				"format": "SHP / DWG",
+				"icon": "vector-square",
+				"description": "Shapefiles za GIS na tabaka za CAD kwa michoro ya uhandisi."
+			},
+			{
+				"title": "Ramani za PDF",
+				"format": "PDF",
+				"icon": "file-pdf-box",
+				"description": "Ramani tayari kuchapishwa kwa timu za tovuti na nyaraka."
+			}
 		]
 	}
 }

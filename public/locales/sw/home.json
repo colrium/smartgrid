@@ -683,19 +683,80 @@
 				},
 				"deliverables": {
 					"label": "Matokeo",
+					"liveLabel": "Muhtasari wa Matokeo",
 					"description": "Kila mradi unatolewa kwa matokeo ya kitaalamu, tayari kutumika yaliyoundwa kulingana na mahitaji ya mradi:",
+					"checks": [
+						"Tayari kuwasilishwa",
+						"Zinazoendana na CAD na GIS",
+						"Zimetiliwa sahihi na wapimaji walioidhinishwa"
+					],
 					"items": [
-						"Ripoti na Mipango ya Upimaji wa Mipaka",
-						"Mipango ya Cadastral kwa Ajili ya Usindikaji wa Hati Miliki",
-						"Uwekaji wa Alama za Mipaka",
-						"Ramani za Rejesta",
-						"Data ya 3D ya Anga (X, Y, Z)",
-						"Ramani za Topografia",
-						"Kontua",
-						"Shapefiles za CAD",
-						"Ripoti za Upimaji",
-						"Matokeo ya Ramani za PDF",
-						"Matokeo Mengine Maalumu"
+						{
+							"title": "Ripoti na Mipango ya Upimaji wa Mipaka",
+							"format": "PDF / Mipango iliyochapishwa",
+							"icon": "vector-square",
+							"description": "Ripoti na mipango zilizotiliwa sahihi zinazofafanua mipaka ya kiwanja kwa miamala, maendeleo, na kutatua migogoro."
+						},
+						{
+							"title": "Mipango ya Cadastral kwa Ajili ya Usindikaji wa Hati Miliki",
+							"format": "Muundo wa Survey of Kenya",
+							"icon": "file-certificate",
+							"description": "Mipango ya cadastral inayokidhi mahitaji ya rejesta, tayari kuwasilishwa kwa ofisi ya ardhi kwa kutolewa kwa hati."
+						},
+						{
+							"title": "Uwekaji wa Alama za Mipaka",
+							"format": "Kwenye tovuti",
+							"icon": "map-marker-radius",
+							"description": "Alama za mipaka zinazodumu zilizowekwa na kurejelewa kwa usahihi wa upimaji, kulinda pembe za kiwanja chako."
+						},
+						{
+							"title": "Ramani za Rejesta",
+							"format": "Nakala zilizothibitishwa",
+							"icon": "map",
+							"description": "Ramani za rejesta na vichupo vilivyothibitishwa kwa uthibitisho wa kiwanja na ukaguzi wa kina."
+						},
+						{
+							"title": "Data ya 3D ya Anga (X, Y, Z)",
+							"format": "CSV / DWG",
+							"icon": "axis-z-arrow",
+							"description": "Kuratibu za nafuni tayari kwa kubuni, hifadhidata za GIS, na mtiririko wa kazi wa machine-control."
+						},
+						{
+							"title": "Ramani za Topografia",
+							"format": "DWG / PDF",
+							"icon": "image-filter-hdr",
+							"description": "Ramani zenye vipengele vya ardhi, huduma, majengo, na viwango kwa mipango na kubuni kwa uhandisi."
+						},
+						{
+							"title": "Kontua",
+							"format": "DWG / DXF",
+							"icon": "chart-bell-curve",
+							"description": "Kontua za vipindi kuu na ndogo kwa upangaji wa daraja, mifereji, na michoro ya ujenzi."
+						},
+						{
+							"title": "Shapefiles za CAD",
+							"format": "SHP / DWG",
+							"icon": "layers-triple",
+							"description": "Shapefiles tayari kwa GIS na tabaka za CAD zinazoingia moja kwa moja kwenye michoro na ramani zako."
+						},
+						{
+							"title": "Ripoti za Upimaji",
+							"format": "PDF",
+							"icon": "file-document",
+							"description": "Muhtasari wa mbinu, vifaa, na usahihi uliotiliwa sahihi na mtaalamu wa upimaji aliyoidhinishwa kwa idhini na kumbukumbu."
+						},
+						{
+							"title": "Matokeo ya Ramani za PDF",
+							"format": "PDF",
+							"icon": "file-pdf-box",
+							"description": "Utoaji wa ramani zilizopangwa na zenye vipimo kwa kushirikisha wateja, washauri, na mamlaka za idhini."
+						},
+						{
+							"title": "Matokeo Mengine Maalumu",
+							"format": "Kwa ombi",
+							"icon": "table-large",
+							"description": "Pato maalumu - volumetrics, ripoti za ufuatiliaji, data ya kuweka alama - zilizoundwa kwa mradi wako."
+						}
 					]
 				}
 			},
@@ -719,18 +780,74 @@
 				},
 				"deliverables": {
 					"label": "Matokeo",
+					"liveLabel": "Muhtasari wa Matokeo",
 					"description": "Kila mradi unatolewa kwa matokeo ya kitaalamu, tayari kutumika yaliyoundwa kulingana na mahitaji ya mradi:",
+					"checks": [
+						"Pato lililopangwa kijiografia",
+						"Tayari kwa CAD, GIS na BIM",
+						"Matokeo ya haraka"
+					],
 					"items": [
-						"Picha za Orthorectified (Zilizopangwa Kijiografia) + Picha Ghafi",
-						"Ramani za Orthomosaic (Zilizopangwa Kijiografia)",
-						"Miundo ya Elevation ya Dijiti (DTM, DSM)",
-						"Kontua",
-						"Mawingu ya Pointi za 3D (X, Y, Z)",
-						"Ramani za Topografia",
-						"Shapefiles za CAD",
-						"Ripoti za Uchambuzi wa Kiasi (Volumetric)",
-						"Ripoti za Upimaji",
-						"Ramani za NDVI na Multispectral (Kilimo pekee)"
+						{
+							"title": "Picha za Orthorectified (Zilizopangwa Kijiografia) + Picha Ghafi",
+							"format": "GeoTIFF / JPEG",
+							"icon": "quadcopter",
+							"description": "Picha za angani zilizopangwa kijiografia pamoja na framu ghafi zilizokamatwa kwenye kila uruka."
+						},
+						{
+							"title": "Ramani za Orthomosaic (Zilizopangwa Kijiografia)",
+							"format": "GeoTIFF / KMZ",
+							"icon": "map",
+							"description": "Mosalamba yenye kupimika bila mapumziko, yaliyounganishwa kutoka framu mamia zilizopangwa kijiografia."
+						},
+						{
+							"title": "Miundo ya Elevation ya Dijiti (DTM, DSM)",
+							"format": "GeoTIFF",
+							"icon": "image-filter-hdr",
+							"description": "Mifano ya ardhi tupu na uso wa ardhi kwa uchambuzi wa topografia, mifereji, na upangaji wa kukata-kujaza."
+						},
+						{
+							"title": "Kontua",
+							"format": "DWG / DXF",
+							"icon": "chart-bell-curve",
+							"description": "Kontua za vector zilizotengenezwa kutoka photogrammetry au LiDAR, tayari kwa daraja na kubuni."
+						},
+						{
+							"title": "Mawingu ya Pointi za 3D (X, Y, Z)",
+							"format": "LAS / LAZ",
+							"icon": "cube-scan",
+							"description": "Mawingu ya pointi yenye msongamano na ugawaji sahihi kwa kupima, kuunda mifano, na kutambua vipengele."
+						},
+						{
+							"title": "Ramani za Topografia",
+							"format": "DWG / PDF / SHP",
+							"icon": "map-marker-path",
+							"description": "Ramani za topografia zenye vipengele vilivyopangwa kwa michoro ya uhandisi, mipango, na GIS."
+						},
+						{
+							"title": "Shapefiles za CAD",
+							"format": "SHP / DWG",
+							"icon": "layers-triple",
+							"description": "Shapefiles za GIS na tabaka za CAD zinazoingia moja kwa moja kwenye mazingira yako ya michoro."
+						},
+						{
+							"title": "Ripoti za Uchambuzi wa Kiasi (Volumetric)",
+							"format": "Excel / PDF",
+							"icon": "table-large",
+							"description": "Vina vya makusanyo, machimbo, na ujenzi vilivyopimwa kwa uhakika wa kiwango cha upimaji."
+						},
+						{
+							"title": "Ripoti za Upimaji",
+							"format": "PDF",
+							"icon": "file-document",
+							"description": "Muhtasari wa mbinu, vifaa, na usahihi unaooambatana na kila furushi la uchunguzi wa angani."
+						},
+						{
+							"title": "Ramani za NDVI na Multispectral (Kilimo pekee)",
+							"format": "GeoTIFF / PDF",
+							"icon": "tree",
+							"description": "Viashiria vya afya ya mazao kutoka kwa picha za multispectral kwa kuongoza umwagiliaji, pembejeo, na mavuno."
+						}
 					]
 				}
 			},
@@ -754,17 +871,68 @@
 				},
 				"deliverables": {
 					"label": "Matokeo",
+					"liveLabel": "Muhtasari wa Matokeo",
 					"description": "Kila mradi unatolewa kwa matokeo ya kitaalamu, tayari kutumika yaliyoundwa kulingana na mahitaji ya mradi:",
+					"checks": [
+						"Usahihi wa kiwango cha uhandisi",
+						"Fomati tayari kwa ujenzi",
+						"Uthibitisho wa as-built"
+					],
 					"items": [
-						"Ramani za AS-BUILT",
-						"Miundo ya Elevation ya Dijiti (DSM, DTM)",
-						"Kuratibu za Uwekaji",
-						"DATA YA 3D (X, Y, Z)",
-						"Kontua",
-						"Mipango Mikuu",
-						"Mipango ya Majengo / BIM",
-						"Shapefiles za CAD",
-						"Ramani za PDF"
+						{
+							"title": "Ramani za AS-BUILT",
+							"format": "PDF / DWG",
+							"icon": "file-document",
+							"description": "Ramani za kazi zilizojengwa zinazothibitisha kuwa kazi zinalingana na michoro iliyoidhinishwa kwa kukabidhi na kumbukumbu."
+						},
+						{
+							"title": "Miundo ya Elevation ya Dijiti (DSM, DTM)",
+							"format": "GeoTIFF",
+							"icon": "image-filter-hdr",
+							"description": "Mifano ya uso na ardhi inayosaidia upangaji wa daraja, mifereji, na ukaguzi wa vina."
+						},
+						{
+							"title": "Kuratibu za Uwekaji",
+							"format": "CSV / DXF",
+							"icon": "crosshairs-gps",
+							"description": "Nafuni sahihi za majengo, barabara, na huduma - tayari kwa kuweka alama kwenye tovuti."
+						},
+						{
+							"title": "DATA YA 3D (X, Y, Z)",
+							"format": "CSV / DWG",
+							"icon": "axis-z-arrow",
+							"description": "Data ya nafuni ya pande tatu kwa machine control, kuunda mifano, na uthibitisho wa kubuni."
+						},
+						{
+							"title": "Kontua",
+							"format": "DWG / DXF",
+							"icon": "chart-bell-curve",
+							"description": "Kontua kwa vipindi vya uhandisi kwa ujenzi wa ardhi, viwango, na kubuni mifereji."
+						},
+						{
+							"title": "Mipango Mikuu",
+							"format": "PDF / DWG",
+							"icon": "map",
+							"description": "Mipango ya tovuti inayounganisha mipangilio, huduma, na viwango kwa maendeleo yote."
+						},
+						{
+							"title": "Mipango ya Majengo / BIM",
+							"format": "IFC / DWG",
+							"icon": "office-building",
+							"description": "Mipangilio ya majengo na jiometri tayari kwa BIM kwa uratibu kati ya timu za kubuni na ujenzi."
+						},
+						{
+							"title": "Shapefiles za CAD",
+							"format": "SHP / DWG",
+							"icon": "vector-square",
+							"description": "Shapefiles za GIS na tabaka za CAD zinazoingia moja kwa moja kwenye michoro yako ya uhandisi."
+						},
+						{
+							"title": "Ramani za PDF",
+							"format": "PDF",
+							"icon": "file-pdf-box",
+							"description": "Utoaji wa ramani tayari kuchapishwa kwa timu za tovuti, washauri, na nyaraka za mradi."
+						}
 					]
 				}
 			}

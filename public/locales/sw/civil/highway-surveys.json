@@ -89,18 +89,68 @@
 	"highwaySurveyDeliverables": {
 		"tag": "Matokeo ya Mradi",
 		"headline": "Matokeo ya Uchunguzi wa Barabara Kuu",
-		"image": "/media/civil/highway-surveys/03.png",
 		"description": "Tunatoa vifurushi kamili vya data vilivyoundwa kwa mtiririko wa kazi wa uhandisi wa barabara kuu na ujenzi.",
+		"liveLabel": "Furushi la Matokeo",
+		"checks": [
+			"Usahihi wa kiwango cha kubuni",
+			"Zinazoendana na CAD na GIS",
+			"Ufunikaji wa njia nzima"
+		],
 		"items": [
-			"Ramani za As-Built",
-			"Mifano ya Mwinuko wa Dijitali (DSM, DTM)",
-			"Viambatanisho vya Kuweka",
-			"Data ya Anga ya 3D (X, Y, Z)",
-			"Ramani za Contour",
-			"Mipango Mikuu Kamili",
-			"Mipangilio ya Majengo na Ujumuishaji wa BIM",
-			"Shapefiles Zinazoendana na CAD na GIS",
-			"Utoaji wa Ramani za PDF za Kitaalamu"
+			{
+				"title": "Ramani za As-Built",
+				"format": "PDF / DWG",
+				"icon": "file-document",
+				"description": "Ramani za njia zilizojengwa zinazothibitisha kazi zilizokamilika dhidi ya kubuni iliyoidhinishwa."
+			},
+			{
+				"title": "Mifano ya Mwinuko wa Dijitali (DSM, DTM)",
+				"format": "GeoTIFF",
+				"icon": "image-filter-hdr",
+				"description": "Mifano ya ardhi na uso kwa upangaji wa daraja, mifereji, na usawazishaji wa ujenzi kwenye njia."
+			},
+			{
+				"title": "Viambatanisho vya Kuweka",
+				"format": "CSV / DXF",
+				"icon": "crosshairs-gps",
+				"description": "Nafuni ya mistari ya katikati, mikunjano, na majengo tayari kwa kuweka alama na machine control."
+			},
+			{
+				"title": "Data ya Anga ya 3D (X, Y, Z)",
+				"format": "CSV / DWG",
+				"icon": "axis-z-arrow",
+				"description": "Data ya nafuni ya njia nzima kwa uthibitisho wa kubuni na mtiririko wa kazi wa digital twin."
+			},
+			{
+				"title": "Ramani za Contour",
+				"format": "DWG / DXF",
+				"icon": "chart-bell-curve",
+				"description": "Kontua kwa vipindi vya kubuni vinavyosaidia daraja, kukata-kujaza, na uchambuzi wa mifereji."
+			},
+			{
+				"title": "Mipango Mikuu Kamili",
+				"format": "PDF / DWG",
+				"icon": "map",
+				"description": "Mipango ya njia inayounganisha upangaji, ROW, huduma, na maeneo ya kuingia."
+			},
+			{
+				"title": "Mipangilio ya Majengo na Ujumuishaji wa BIM",
+				"format": "IFC / DWG",
+				"icon": "office-building",
+				"description": "Jiometri na mipangilio tayari kwa BIM kwa viunganishi, majengo, na mali za barabara."
+			},
+			{
+				"title": "Shapefiles Zinazoendana na CAD na GIS",
+				"format": "SHP / DWG",
+				"icon": "layers-triple",
+				"description": "Vifurushi vya data vinavyoingia moja kwa moja kwenye mazingira ya kubuni ya CAD na GIS."
+			},
+			{
+				"title": "Utoaji wa Ramani za PDF za Kitaalamu",
+				"format": "PDF",
+				"icon": "file-pdf-box",
+				"description": "Mipango na wasifu tayari kuchapishwa kwa zabuni, idhini, na timu za tovuti."
+			}
 		]
 	}
 }

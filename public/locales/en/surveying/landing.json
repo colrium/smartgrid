@@ -94,26 +94,79 @@
 		"tag": "Deliverables",
 		"headline": "Land Surveying Deliverables",
 		"description": "Accurate, submission-ready outputs for planning, titling, and engineering decisions.",
-        "images": [
-			"/media/surveying/04.png",
-			"/media/surveying/01.jpg",
-			"/media/surveying/02.png",
-			"/media/surveying/06.jpg",
-			"/media/surveying/05.png",
-			"/media/surveying/03.jpg"
+		"liveLabel": "Deliverable package",
+		"checks": [
+			"Submission-ready",
+			"Registry-compliant",
+			"CAD & GIS compatible"
 		],
-		"list": [
-			"Boundary Survey Reports & Plans",
-			"Cadastral Plans for Title Processing",
-			"Beacons Monumentation",
-			"Registry Maps",
-			"3D Spatial Data (X, Y, Z)",
-			"Topographical Maps",
-			"Contours",
-			"CAD Shapefiles",
-			"Survey Reports",
-			"PDF Map Outputs",
-			"Other Specialized Deliverables"
+		"items": [
+			{
+				"title": "Boundary Survey Reports & Plans",
+				"format": "PDF / Printed plans",
+				"icon": "vector-square",
+				"description": "Signed reports and plans defining parcel boundaries for transactions and development."
+			},
+			{
+				"title": "Cadastral Plans for Title Processing",
+				"format": "Survey of Kenya format",
+				"icon": "file-certificate",
+				"description": "Registry-compliant plans prepared for title issuance at the land registry."
+			},
+			{
+				"title": "Beacons Monumentation",
+				"format": "On-site",
+				"icon": "map-marker-radius",
+				"description": "Durable boundary beacons placed and referenced to survey accuracy."
+			},
+			{
+				"title": "Registry Maps",
+				"format": "Certified copies",
+				"icon": "map",
+				"description": "Certified registry index maps and extracts for parcel verification."
+			},
+			{
+				"title": "3D Spatial Data (X, Y, Z)",
+				"format": "CSV / DWG",
+				"icon": "axis-z-arrow",
+				"description": "Positional coordinates ready for design, GIS, and machine-control workflows."
+			},
+			{
+				"title": "Topographical Maps",
+				"format": "DWG / PDF",
+				"icon": "image-filter-hdr",
+				"description": "Feature-coded maps of terrain, utilities, structures, and levels."
+			},
+			{
+				"title": "Contours",
+				"format": "DWG / DXF",
+				"icon": "chart-bell-curve",
+				"description": "Major and minor interval contours for grading and drainage design."
+			},
+			{
+				"title": "CAD Shapefiles",
+				"format": "SHP / DWG",
+				"icon": "layers-triple",
+				"description": "GIS-ready shapefiles and CAD layers for drafting and mapping."
+			},
+			{
+				"title": "Survey Reports",
+				"format": "PDF",
+				"icon": "file-document",
+				"description": "Methodology, equipment, and accuracy summary signed by licensed surveyors."
+			},
+			{
+				"title": "PDF Map Outputs",
+				"format": "PDF",
+				"icon": "file-pdf-box",
+				"description": "Print-ready, scaled exports for clients and approval authorities."
+			},
+			{
+				"title": "Other Specialized Deliverables",
+				"format": "On request",
+				"icon": "table-large",
+				"description": "Custom outputs - volumetrics, monitoring, setting-out data - on request."
+			}
 		]
 	}
 }

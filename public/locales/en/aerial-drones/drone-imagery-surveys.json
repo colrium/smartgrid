@@ -70,46 +70,60 @@
 		"tag": "Data Outputs",
 		"headline": "Aerial Surveys Deliverables",
 		"description": "Our drone‑based surveying solutions enhance decision‑making for construction, engineering, land administration, and environmental monitoring. We capture accurate geospatial data using advanced UAV platforms equipped with RGB, LiDAR, and thermal sensors. All outputs are optimized for use within GIS, CAD, BIM, and engineering workflows.",
+		"liveLabel": "Deliverable preview",
+		"checks": [
+			"Geo-referenced & survey-grade",
+			"GIS / CAD / BIM ready",
+			"KCAA-compliant operations"
+		],
 		"items": [
 			{
 				"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-04.jpg",
 				"title": "Orthomosaics",
-				"description": "GeoTIFF / JPEG + Raw images"
+				"format": "GeoTIFF / JPEG + Raw images",
+				"description": "Seamless, measurement-ready aerial maps stitched from hundreds of georeferenced frames."
 			},
 			{
 				"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-06.jpg",
 				"title": "DTM / DSM",
-				"description": "LAS / TIFF"
+				"format": "LAS / TIFF",
+				"description": "Bare-earth and surface elevation models for terrain, drainage, and cut-fill analysis."
 			},
 			{
 				"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-13.jpg",
 				"title": "3D Mesh",
-				"description": "OBJ / FBX"
+				"format": "OBJ / FBX",
+				"description": "Photorealistic textured models of sites and structures for visualization and inspections."
 			},
 			{
 				"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-07.jpg",
 				"title": "Contour Maps",
-				"description": "DWG / DXF"
+				"format": "DWG / DXF",
+				"description": "Vector contours ready to drop into CAD for grading and engineering design."
 			},
 			{
 				"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-14.jpg",
 				"title": "3D Point Clouds",
-				"description": "LAS / LAZ"
+				"format": "LAS / LAZ",
+				"description": "Dense classified point clouds for accurate measurement and feature extraction."
 			},
 			{
 				"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-05.png",
 				"title": "Topographical Maps",
-				"description": "DWG / PDF / SHP"
+				"format": "DWG / PDF / SHP",
+				"description": "Feature-coded topographic maps prepared for engineering and planning workflows."
 			},
 			{
 				"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-08.jpg",
 				"title": "NDVI & Multispectral Maps",
-				"description": "Vegetation health and multispectral analysis"
+				"format": "GeoTIFF / PDF",
+				"description": "Crop-health indices from multispectral captures guiding irrigation, inputs, and yield decisions."
 			},
 			{
 				"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-15.jpg",
 				"title": "Survey Reports",
-				"description": "PDF"
+				"format": "PDF",
+				"description": "Signed methodology and accuracy summary accompanying every deliverable package."
 			}
 		]
 	},

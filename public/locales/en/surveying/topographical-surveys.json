@@ -69,13 +69,49 @@
 		"tag": "Deliverables",
 		"headline": "What You Get",
 		"description": "Every topographical survey is delivered as a complete, engineering-ready package.",
+		"liveLabel": "Deliverable package",
+		"checks": [
+			"Engineering-ready",
+			"AutoCAD compatible",
+			"Approval-ready formats"
+		],
 		"items": [
-			"Detailed features topographical map",
-			"Contour maps (major & minor intervals)",
-			"CAD drawings (AutoCAD-ready)",
-			"Digital Terrain Models (DTM)",
-			"XYZ coordinates data, spot levels and site features",
-			"Survey report"
+			{
+				"title": "Detailed features topographical map",
+				"format": "DWG / PDF",
+				"icon": "map",
+				"description": "Feature-rich map of the site: boundaries, structures, utilities, and levels."
+			},
+			{
+				"title": "Contour maps (major & minor intervals)",
+				"format": "DWG / DXF",
+				"icon": "chart-bell-curve",
+				"description": "Contours at major and minor intervals for design and earthworks."
+			},
+			{
+				"title": "CAD drawings (AutoCAD-ready)",
+				"format": "DWG",
+				"icon": "ruler-square",
+				"description": "Layered CAD drawings that open directly in AutoCAD and civil design tools."
+			},
+			{
+				"title": "Digital Terrain Models (DTM)",
+				"format": "GeoTIFF",
+				"icon": "image-filter-hdr",
+				"description": "Digital terrain models for cut-fill, drainage, and 3D site analysis."
+			},
+			{
+				"title": "XYZ coordinates data, spot levels and site features",
+				"format": "CSV",
+				"icon": "crosshairs-gps",
+				"description": "Coordinates, spot levels, and coded features ready for engineering use."
+			},
+			{
+				"title": "Survey report",
+				"format": "PDF",
+				"icon": "file-document",
+				"description": "Signed report covering methodology, controls, and accuracy."
+			}
 		]
 	},
 	"cost": {

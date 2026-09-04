@@ -314,41 +314,51 @@ export default interface Resources {
   },
   "aerial-drones/drone-imagery-surveys": {
     "aerialSurveyDeliverables": {
+      "checks": ["Geo-referenced & survey-grade", "GIS / CAD / BIM ready", "KCAA-compliant operations"],
       "description": "Our drone‑based surveying solutions enhance decision‑making for construction, engineering, land administration, and environmental monitoring. We capture accurate geospatial data using advanced UAV platforms equipped with RGB, LiDAR, and thermal sensors. All outputs are optimized for use within GIS, CAD, BIM, and engineering workflows.",
       "headline": "Aerial Surveys Deliverables",
       "items": [{
-  "description": "GeoTIFF / JPEG + Raw images",
+  "description": "Seamless, measurement-ready aerial maps stitched from hundreds of georeferenced frames.",
+  "format": "GeoTIFF / JPEG + Raw images",
   "image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-04.jpg",
   "title": "Orthomosaics"
 }, {
-  "description": "LAS / TIFF",
+  "description": "Bare-earth and surface elevation models for terrain, drainage, and cut-fill analysis.",
+  "format": "LAS / TIFF",
   "image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-06.jpg",
   "title": "DTM / DSM"
 }, {
-  "description": "OBJ / FBX",
+  "description": "Photorealistic textured models of sites and structures for visualization and inspections.",
+  "format": "OBJ / FBX",
   "image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-13.jpg",
   "title": "3D Mesh"
 }, {
-  "description": "DWG / DXF",
+  "description": "Vector contours ready to drop into CAD for grading and engineering design.",
+  "format": "DWG / DXF",
   "image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-07.jpg",
   "title": "Contour Maps"
 }, {
-  "description": "LAS / LAZ",
+  "description": "Dense classified point clouds for accurate measurement and feature extraction.",
+  "format": "LAS / LAZ",
   "image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-14.jpg",
   "title": "3D Point Clouds"
 }, {
-  "description": "DWG / PDF / SHP",
+  "description": "Feature-coded topographic maps prepared for engineering and planning workflows.",
+  "format": "DWG / PDF / SHP",
   "image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-05.png",
   "title": "Topographical Maps"
 }, {
-  "description": "Vegetation health and multispectral analysis",
+  "description": "Crop-health indices from multispectral captures guiding irrigation, inputs, and yield decisions.",
+  "format": "GeoTIFF / PDF",
   "image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-08.jpg",
   "title": "NDVI & Multispectral Maps"
 }, {
-  "description": "PDF",
+  "description": "Signed methodology and accuracy summary accompanying every deliverable package.",
+  "format": "PDF",
   "image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-15.jpg",
   "title": "Survey Reports"
 }],
+      "liveLabel": "Deliverable preview",
       "tag": "Data Outputs"
     },
     "drones": {
@@ -1932,10 +1942,56 @@ export default interface Resources {
       "title": "Highway Surveys Solutions"
     },
     "highwaySurveyDeliverables": {
+      "checks": ["Design-grade accuracy", "CAD & GIS compatible", "Corridor-wide coverage"],
       "description": "We deliver comprehensive data packages tailored for highway engineering and construction workflows.",
       "headline": "Highway Surveys Deliverables",
-      "image": "/media/civil/highway-surveys/03.png",
-      "items": ["As-Built Maps", "Digital Elevation Models (DSM, DTM)", "Setting Out Coordinates", "3D Spatial Data (X, Y, Z)", "Contour Maps", "Comprehensive Master Plans", "Building Layouts & BIM Integration", "CAD and GIS-Compatible Shapefiles", "Professional PDF Map Exports"],
+      "items": [{
+  "description": "As-constructed corridor maps verifying completed works against the approved design.",
+  "format": "PDF / DWG",
+  "icon": "file-document",
+  "title": "As-Built Maps"
+}, {
+  "description": "Terrain and surface models for grading, drainage design, and earthworks balances along the route.",
+  "format": "GeoTIFF",
+  "icon": "image-filter-hdr",
+  "title": "Digital Elevation Models (DSM, DTM)"
+}, {
+  "description": "Centerline, curve, and structure positions ready for stakeout and machine control.",
+  "format": "CSV / DXF",
+  "icon": "crosshairs-gps",
+  "title": "Setting Out Coordinates"
+}, {
+  "description": "Corridor-wide positional data for design verification and digital twin workflows.",
+  "format": "CSV / DWG",
+  "icon": "axis-z-arrow",
+  "title": "3D Spatial Data (X, Y, Z)"
+}, {
+  "description": "Contours at design intervals supporting grading, cut-fill, and drainage analysis.",
+  "format": "DWG / DXF",
+  "icon": "chart-bell-curve",
+  "title": "Contour Maps"
+}, {
+  "description": "Consolidated route plans aligning alignment, ROW, utilities, and access points.",
+  "format": "PDF / DWG",
+  "icon": "map",
+  "title": "Comprehensive Master Plans"
+}, {
+  "description": "BIM-ready geometry and layouts for interchanges, structures, and roadside assets.",
+  "format": "IFC / DWG",
+  "icon": "office-building",
+  "title": "Building Layouts & BIM Integration"
+}, {
+  "description": "Data packages that plug straight into CAD and GIS design environments.",
+  "format": "SHP / DWG",
+  "icon": "layers-triple",
+  "title": "CAD and GIS-Compatible Shapefiles"
+}, {
+  "description": "Print-ready plan and profile exports for tenders, approvals, and site teams.",
+  "format": "PDF",
+  "icon": "file-pdf-box",
+  "title": "Professional PDF Map Exports"
+}],
+      "liveLabel": "Deliverable package",
       "tag": "Project Outputs"
     },
     "overview": {
@@ -1973,10 +2029,56 @@ export default interface Resources {
   },
   "civil/landing": {
     "deliverables": {
+      "checks": ["Engineer-ready formats", "CAD & GIS compatible", "Site-verified accuracy"],
       "description": "Accurate outputs for planning and engineering decisions.",
       "headline": "Engineering Deliverables",
-      "image": "/media/civil/07.png",
-      "list": ["AS - BUILT Maps", "Digital Elevation Models (DSM, DTM)", "Setting Out Coordinates", "3D DATA (X, Y, Z)", "Contours", "Master plans", "Buildings Layout / BIM", "CAD Shapefiles", "PDF Map"],
+      "items": [{
+  "description": "As-constructed maps verifying completed works for handover and records.",
+  "format": "PDF / DWG",
+  "icon": "file-document",
+  "title": "AS - BUILT Maps"
+}, {
+  "description": "Surface and terrain models for grading, volumes, and drainage design.",
+  "format": "GeoTIFF",
+  "icon": "image-filter-hdr",
+  "title": "Digital Elevation Models (DSM, DTM)"
+}, {
+  "description": "Exact positions for structures and services, ready for stakeout.",
+  "format": "CSV / DXF",
+  "icon": "crosshairs-gps",
+  "title": "Setting Out Coordinates"
+}, {
+  "description": "Three-dimensional positional data for machine control and design verification.",
+  "format": "CSV / DWG",
+  "icon": "axis-z-arrow",
+  "title": "3D DATA (X, Y, Z)"
+}, {
+  "description": "Contours at engineering intervals for earthworks and levels.",
+  "format": "DWG / DXF",
+  "icon": "chart-bell-curve",
+  "title": "Contours"
+}, {
+  "description": "Composite site plans consolidating layouts, services, and levels.",
+  "format": "PDF / DWG",
+  "icon": "map",
+  "title": "Master plans"
+}, {
+  "description": "BIM-ready layouts and geometry for coordinated construction.",
+  "format": "IFC / DWG",
+  "icon": "office-building",
+  "title": "Buildings Layout / BIM"
+}, {
+  "description": "GIS shapefiles and CAD layers for engineering workflows.",
+  "format": "SHP / DWG",
+  "icon": "vector-square",
+  "title": "CAD Shapefiles"
+}, {
+  "description": "Print-ready map exports for site teams and documentation.",
+  "format": "PDF",
+  "icon": "file-pdf-box",
+  "title": "PDF Map"
+}],
+      "liveLabel": "Deliverable package",
       "tag": "Deliverables"
     },
     "hero": {
@@ -5239,9 +5341,66 @@ export default interface Resources {
       "headline": "Our Services",
       "items": [{
   "deliverables": {
+    "checks": ["Submission-ready", "CAD & GIS compatible", "Signed by licensed surveyors"],
     "description": "Every project is delivered with professional, ready-to-use outputs tailored to the project needs:",
-    "items": ["Boundary Survey Reports & Plans", "Cadastral Plans for Title Processing", "Beacons Monumentation", "Registry Maps", "3D Spatial Data (X, Y, Z)", "Topographical Maps", "Contours", "CAD Shapefiles", "Survey Reports", "PDF Map Outputs", "Other Specialized Deliverables"],
-    "label": "Deliverables"
+    "items": [{
+  "description": "Signed reports and plans defining parcel boundaries for transactions, development, and dispute resolution.",
+  "format": "PDF / Printed plans",
+  "icon": "vector-square",
+  "title": "Boundary Survey Reports & Plans"
+}, {
+  "description": "Registry-compliant cadastral plans prepared for submission to the land registry for title issuance.",
+  "format": "Survey of Kenya format",
+  "icon": "file-certificate",
+  "title": "Cadastral Plans for Title Processing"
+}, {
+  "description": "Durable boundary beacons placed and referenced to survey accuracy, protecting your parcel corners.",
+  "format": "On-site",
+  "icon": "map-marker-radius",
+  "title": "Beacons Monumentation"
+}, {
+  "description": "Certified registry index maps and extracts for parcel verification and due diligence.",
+  "format": "Certified copies",
+  "icon": "map",
+  "title": "Registry Maps"
+}, {
+  "description": "Positional coordinates ready for design, GIS databases, and machine-control workflows.",
+  "format": "CSV / DWG",
+  "icon": "axis-z-arrow",
+  "title": "3D Spatial Data (X, Y, Z)"
+}, {
+  "description": "Feature-coded maps of terrain, utilities, structures, and levels for planning and engineering design.",
+  "format": "DWG / PDF",
+  "icon": "image-filter-hdr",
+  "title": "Topographical Maps"
+}, {
+  "description": "Major and minor interval contours for grading, drainage, and earthworks design.",
+  "format": "DWG / DXF",
+  "icon": "chart-bell-curve",
+  "title": "Contours"
+}, {
+  "description": "GIS-ready shapefiles and CAD layers that drop straight into drafting and mapping workflows.",
+  "format": "SHP / DWG",
+  "icon": "layers-triple",
+  "title": "CAD Shapefiles"
+}, {
+  "description": "Methodology, equipment, and accuracy summary signed by a licensed surveyor for approvals and records.",
+  "format": "PDF",
+  "icon": "file-document",
+  "title": "Survey Reports"
+}, {
+  "description": "Print-ready, scaled map exports for sharing with clients, consultants, and approval authorities.",
+  "format": "PDF",
+  "icon": "file-pdf-box",
+  "title": "PDF Map Outputs"
+}, {
+  "description": "Custom outputs - volumetrics, monitoring reports, setting-out data - tailored to your project.",
+  "format": "On request",
+  "icon": "table-large",
+  "title": "Other Specialized Deliverables"
+}],
+    "label": "Deliverables",
+    "liveLabel": "Deliverable preview"
   },
   "description": "We provide a wide range of land surveying services, including topographical surveys, boundary surveys, sectional properties, building site surveys, resource mapping, bathymetric surveys, hydrographic surveys, and GIS mapping. Our deliverables include boundary survey reports and plans, cadastral plans for title processing, beacons monumentation, registry maps, 3D spatial data (X, Y, Z), topographical maps, contours, CAD shapefiles, survey reports, PDF map outputs, and other specialized deliverables.",
   "featureImg": "/media/services/land-surveying-deliverables.png",
@@ -5253,9 +5412,61 @@ export default interface Resources {
   }
 }, {
   "deliverables": {
+    "checks": ["Geo-referenced outputs", "CAD, GIS & BIM ready", "Fast turnaround"],
     "description": "Every project is delivered with professional, ready-to-use outputs tailored to the project needs:",
-    "items": ["Orthorectified Imagery (Geo-Referenced) + Raw images", "Orthomosaic Maps (Geo-Referenced)", "Digital Elevation Models (DTM, DSM)", "Contours", "3D Point Clouds (X, Y, Z)", "Topographical Maps", "CAD Shapefiles", "Volumetric Analysis Reports", "Survey Reports", "NDVI & Multispectral Maps (Agriculture only)"],
-    "label": "Deliverables"
+    "items": [{
+  "description": "Georeferenced aerial imagery alongside the raw frames captured during every flight.",
+  "format": "GeoTIFF / JPEG",
+  "icon": "quadcopter",
+  "title": "Orthorectified Imagery (Geo-Referenced) + Raw images"
+}, {
+  "description": "Seamless, measurement-ready mosaics stitched from hundreds of georeferenced frames.",
+  "format": "GeoTIFF / KMZ",
+  "icon": "map",
+  "title": "Orthomosaic Maps (Geo-Referenced)"
+}, {
+  "description": "Bare-earth and surface elevation models for terrain analysis, drainage, and cut-fill planning.",
+  "format": "GeoTIFF",
+  "icon": "image-filter-hdr",
+  "title": "Digital Elevation Models (DTM, DSM)"
+}, {
+  "description": "Vector contours generated from photogrammetry or LiDAR, ready for grading and design.",
+  "format": "DWG / DXF",
+  "icon": "chart-bell-curve",
+  "title": "Contours"
+}, {
+  "description": "Dense classified point clouds for accurate measurement, modelling, and feature extraction.",
+  "format": "LAS / LAZ",
+  "icon": "cube-scan",
+  "title": "3D Point Clouds (X, Y, Z)"
+}, {
+  "description": "Feature-coded topographic maps prepared for engineering, planning, and GIS workflows.",
+  "format": "DWG / PDF / SHP",
+  "icon": "map-marker-path",
+  "title": "Topographical Maps"
+}, {
+  "description": "GIS shapefiles and CAD layers that integrate directly into your drafting environment.",
+  "format": "SHP / DWG",
+  "icon": "layers-triple",
+  "title": "CAD Shapefiles"
+}, {
+  "description": "Quantified stockpile, quarry, and earthwork volumes with survey-grade confidence.",
+  "format": "Excel / PDF",
+  "icon": "table-large",
+  "title": "Volumetric Analysis Reports"
+}, {
+  "description": "Methodology, equipment, and accuracy summary accompanying every aerial survey package.",
+  "format": "PDF",
+  "icon": "file-document",
+  "title": "Survey Reports"
+}, {
+  "description": "Crop-health indices from multispectral captures to guide irrigation, inputs, and yield decisions.",
+  "format": "GeoTIFF / PDF",
+  "icon": "tree",
+  "title": "NDVI & Multispectral Maps (Agriculture only)"
+}],
+    "label": "Deliverables",
+    "liveLabel": "Deliverable preview"
   },
   "description": "We offer a wide range of aerial surveying services, including drone imagery surveys, Lidar mapping, agricultural NDVI mapping, as-built surveys, monitoring and evaluation, solar panel drone surveys, volumetric surveys, and landfill & quarry drone surveys. Our deliverables include boundary survey reports and plans, cadastral plans for title processing, beacons monumentation, registry maps, 3D spatial data (X, Y, Z), topographical maps, contours, CAD shapefiles, survey reports, PDF map outputs, and other specialized deliverables.",
   "featureImg": "/media/services/aerial-drone-deliverables.png",
@@ -5267,9 +5478,56 @@ export default interface Resources {
   }
 }, {
   "deliverables": {
+    "checks": ["Engineering-grade accuracy", "Construction-ready formats", "As-built verification"],
     "description": "Every project is delivered with professional, ready-to-use outputs tailored to the project needs:",
-    "items": ["AS-BUILT Maps", "Digital Elevation Models (DSM, DTM)", "Setting Out Coordinates", "3D DATA (X, Y, Z)", "Contours", "Master Plans", "Buildings Layout / BIM", "CAD Shapefiles", "PDF Map"],
-    "label": "Deliverables"
+    "items": [{
+  "description": "As-constructed maps verifying that works match the approved designs for handover and records.",
+  "format": "PDF / DWG",
+  "icon": "file-document",
+  "title": "AS-BUILT Maps"
+}, {
+  "description": "Surface and terrain models supporting grading, drainage design, and quantity checks.",
+  "format": "GeoTIFF",
+  "icon": "image-filter-hdr",
+  "title": "Digital Elevation Models (DSM, DTM)"
+}, {
+  "description": "Precise positions for structures, roads, and services - ready for stakeout on site.",
+  "format": "CSV / DXF",
+  "icon": "crosshairs-gps",
+  "title": "Setting Out Coordinates"
+}, {
+  "description": "Three-dimensional positional data for machine control, modelling, and design verification.",
+  "format": "CSV / DWG",
+  "icon": "axis-z-arrow",
+  "title": "3D DATA (X, Y, Z)"
+}, {
+  "description": "Contours at engineering intervals for earthworks, levels, and drainage design.",
+  "format": "DWG / DXF",
+  "icon": "chart-bell-curve",
+  "title": "Contours"
+}, {
+  "description": "Composite site plans consolidating layouts, services, and levels for the whole development.",
+  "format": "PDF / DWG",
+  "icon": "map",
+  "title": "Master Plans"
+}, {
+  "description": "Building layouts and BIM-ready geometry for coordination across design and construction teams.",
+  "format": "IFC / DWG",
+  "icon": "office-building",
+  "title": "Buildings Layout / BIM"
+}, {
+  "description": "GIS shapefiles and CAD layers that drop straight into your engineering workflows.",
+  "format": "SHP / DWG",
+  "icon": "vector-square",
+  "title": "CAD Shapefiles"
+}, {
+  "description": "Print-ready map exports for site teams, consultants, and project documentation.",
+  "format": "PDF",
+  "icon": "file-pdf-box",
+  "title": "PDF Map"
+}],
+    "label": "Deliverables",
+    "liveLabel": "Deliverable preview"
   },
   "description": "We offer a wide range of civil engineering services, including site engineering, building setting out, underground utilities installation, highway engineering, stake out, leveling, benchmarking, and construction services. Our deliverables include as-built maps, digital elevation models, setting out coordinates, 3D data, contours, master plans, building layouts, CAD shapefiles, and PDF maps.",
   "featureImg": "/media/services/civil-engineering-deliverables.png",
@@ -7987,10 +8245,66 @@ export default interface Resources {
   },
   "surveying/landing": {
     "deliverables": {
+      "checks": ["Submission-ready", "Registry-compliant", "CAD & GIS compatible"],
       "description": "Accurate, submission-ready outputs for planning, titling, and engineering decisions.",
       "headline": "Land Surveying Deliverables",
-      "images": ["/media/surveying/04.png", "/media/surveying/01.jpg", "/media/surveying/02.png", "/media/surveying/06.jpg", "/media/surveying/05.png", "/media/surveying/03.jpg"],
-      "list": ["Boundary Survey Reports & Plans", "Cadastral Plans for Title Processing", "Beacons Monumentation", "Registry Maps", "3D Spatial Data (X, Y, Z)", "Topographical Maps", "Contours", "CAD Shapefiles", "Survey Reports", "PDF Map Outputs", "Other Specialized Deliverables"],
+      "items": [{
+  "description": "Signed reports and plans defining parcel boundaries for transactions and development.",
+  "format": "PDF / Printed plans",
+  "icon": "vector-square",
+  "title": "Boundary Survey Reports & Plans"
+}, {
+  "description": "Registry-compliant plans prepared for title issuance at the land registry.",
+  "format": "Survey of Kenya format",
+  "icon": "file-certificate",
+  "title": "Cadastral Plans for Title Processing"
+}, {
+  "description": "Durable boundary beacons placed and referenced to survey accuracy.",
+  "format": "On-site",
+  "icon": "map-marker-radius",
+  "title": "Beacons Monumentation"
+}, {
+  "description": "Certified registry index maps and extracts for parcel verification.",
+  "format": "Certified copies",
+  "icon": "map",
+  "title": "Registry Maps"
+}, {
+  "description": "Positional coordinates ready for design, GIS, and machine-control workflows.",
+  "format": "CSV / DWG",
+  "icon": "axis-z-arrow",
+  "title": "3D Spatial Data (X, Y, Z)"
+}, {
+  "description": "Feature-coded maps of terrain, utilities, structures, and levels.",
+  "format": "DWG / PDF",
+  "icon": "image-filter-hdr",
+  "title": "Topographical Maps"
+}, {
+  "description": "Major and minor interval contours for grading and drainage design.",
+  "format": "DWG / DXF",
+  "icon": "chart-bell-curve",
+  "title": "Contours"
+}, {
+  "description": "GIS-ready shapefiles and CAD layers for drafting and mapping.",
+  "format": "SHP / DWG",
+  "icon": "layers-triple",
+  "title": "CAD Shapefiles"
+}, {
+  "description": "Methodology, equipment, and accuracy summary signed by licensed surveyors.",
+  "format": "PDF",
+  "icon": "file-document",
+  "title": "Survey Reports"
+}, {
+  "description": "Print-ready, scaled exports for clients and approval authorities.",
+  "format": "PDF",
+  "icon": "file-pdf-box",
+  "title": "PDF Map Outputs"
+}, {
+  "description": "Custom outputs - volumetrics, monitoring, setting-out data - on request.",
+  "format": "On request",
+  "icon": "table-large",
+  "title": "Other Specialized Deliverables"
+}],
+      "liveLabel": "Deliverable package",
       "tag": "Deliverables"
     },
     "hero": {
@@ -8882,9 +9196,41 @@ export default interface Resources {
       "tag": "Services"
     },
     "whatYouGet": {
+      "checks": ["Engineering-ready", "AutoCAD compatible", "Approval-ready formats"],
       "description": "Every topographical survey is delivered as a complete, engineering-ready package.",
       "headline": "What You Get",
-      "items": ["Detailed features topographical map", "Contour maps (major & minor intervals)", "CAD drawings (AutoCAD-ready)", "Digital Terrain Models (DTM)", "XYZ coordinates data, spot levels and site features", "Survey report"],
+      "items": [{
+  "description": "Feature-rich map of the site: boundaries, structures, utilities, and levels.",
+  "format": "DWG / PDF",
+  "icon": "map",
+  "title": "Detailed features topographical map"
+}, {
+  "description": "Contours at major and minor intervals for design and earthworks.",
+  "format": "DWG / DXF",
+  "icon": "chart-bell-curve",
+  "title": "Contour maps (major & minor intervals)"
+}, {
+  "description": "Layered CAD drawings that open directly in AutoCAD and civil design tools.",
+  "format": "DWG",
+  "icon": "ruler-square",
+  "title": "CAD drawings (AutoCAD-ready)"
+}, {
+  "description": "Digital terrain models for cut-fill, drainage, and 3D site analysis.",
+  "format": "GeoTIFF",
+  "icon": "image-filter-hdr",
+  "title": "Digital Terrain Models (DTM)"
+}, {
+  "description": "Coordinates, spot levels, and coded features ready for engineering use.",
+  "format": "CSV",
+  "icon": "crosshairs-gps",
+  "title": "XYZ coordinates data, spot levels and site features"
+}, {
+  "description": "Signed report covering methodology, controls, and accuracy.",
+  "format": "PDF",
+  "icon": "file-document",
+  "title": "Survey report"
+}],
+      "liveLabel": "Deliverable package",
       "tag": "Deliverables"
     },
     "whenYouNeed": {

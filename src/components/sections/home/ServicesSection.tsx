@@ -7,6 +7,7 @@ import { useTranslation } from "@/hooks";
 import { SectionHeader } from "./SectionHeader";
 import { ParallaxDecor, Blob } from "./decor";
 import { FadeUp } from "@/components/animations/Fade";
+import { DeliverablesExplorer, type DeliverablesContent } from "@/components/sections/Deliverables";
 
 interface SeviceItemList {
 	label: string;
@@ -18,7 +19,7 @@ interface ServiceItem {
 	label: string;
 	description: string;
 	whatWeOffer: SeviceItemList;
-	deliverables: SeviceItemList;
+	deliverables: DeliverablesContent & { label?: string };
 }
 
 const SERVICE_ICONS: Record<string, string> = {
@@ -39,6 +40,8 @@ export function ServicesSection(): ReactElement | null {
 	if (!Array.isArray(items) || items.length === 0) return null;
 
 	const active = items[Math.min(activeTab, items.length - 1)];
+	const deliverables = active?.deliverables;
+	const hasDeliverables = Array.isArray(deliverables?.items) && deliverables.items.length > 0;
 
 	return (
 		<section id="services" className="py-24 sm:py-28 relative overflow-hidden">
@@ -82,14 +85,14 @@ export function ServicesSection(): ReactElement | null {
 												selected
 													? "bg-ink text-surface card-shadow lg:bg-surface lg:text-ink"
 													: "bg-surface/70 hairline text-ink hover:bg-surface hover:-translate-y-0.5"
-												}`}
+											}`}
 										>
 											<span
 												className={`inline-flex h-9 w-9 items-center justify-center rounded-xl transition-colors duration-300 ${
 													selected
 														? "bg-primary/25 text-primary-200 lg:bg-primary-50 lg:text-primary"
 														: "bg-primary-50 text-primary"
-													}`}
+												}`}
 											>
 												<span
 													className={`mdi mdi-${itemToIcon(service.label)} text-xl`}
@@ -136,7 +139,10 @@ export function ServicesSection(): ReactElement | null {
 												/>
 											)}
 											{/* Survey reticle corner brackets */}
-											<span aria-hidden className="pointer-events-none absolute inset-4 z-10">
+											<span
+												aria-hidden
+												className="pointer-events-none absolute inset-4 z-10"
+											>
 												<span className="absolute left-0 top-0 h-5 w-5 rounded-tl-md border-l-2 border-t-2 border-surface/60" />
 												<span className="absolute right-0 top-0 h-5 w-5 rounded-tr-md border-r-2 border-t-2 border-surface/60" />
 												<span className="absolute bottom-0 left-0 h-5 w-5 rounded-bl-md border-b-2 border-l-2 border-surface/60" />
@@ -168,64 +174,33 @@ export function ServicesSection(): ReactElement | null {
 												{active.description}
 											</p>
 
-											<div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10">
-												<div>
-													<h4 className="inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary mb-6">
-														<span className="h-px w-6 bg-primary/60" />
-														{active.whatWeOffer?.label || "What we offer"}
-													</h4>
-													{active.whatWeOffer?.description && (
-														<p className="my-4 text-sm text-on-surface/70 leading-relaxed">
-															{active.whatWeOffer?.description}
-														</p>
-													)}
-													<ul className="flex flex-col gap-3">
-														{active.whatWeOffer?.items &&
-															active.whatWeOffer.items.map((d, i) => (
-																<li
-																	key={i}
-																	className="group/li flex items-start gap-3 rounded-xl bg-surface/70 hairline px-4 py-3 text-sm text-on-surface/75 leading-relaxed transition-colors duration-300 hover:border-primary/40"
-																>
-																	<span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-primary-50 text-primary transition-colors duration-300 group-hover/li:bg-primary group-hover/li:text-surface">
-																		<span
-																			className="mdi mdi-check text-xs"
-																			aria-hidden
-																		/>
-																	</span>
-																	<span>{d}</span>
-																</li>
-															))}
-													</ul>
-												</div>
-
-												<div>
-													<h4 className="inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary mb-6">
-														<span className="h-px w-6 bg-primary/60" />
-														{active.deliverables?.label || "Deliverables"}
-													</h4>
-													{active.deliverables?.description && (
-														<p className="my-4 text-sm text-on-surface/70 leading-relaxed">
-															{active.deliverables?.description}
-														</p>
-													)}
-													<ul className="flex flex-col gap-3">
-														{active.deliverables?.items &&
-															active.deliverables.items.map((d, i) => (
-																<li
-																	key={i}
-																	className="group/li flex items-start gap-3 rounded-xl bg-surface/70 hairline px-4 py-3 text-sm text-on-surface/75 leading-relaxed transition-colors duration-300 hover:border-primary/40"
-																>
-																	<span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-primary-50 text-primary transition-colors duration-300 group-hover/li:bg-primary group-hover/li:text-surface">
-																		<span
-																			className="mdi mdi-file-document-check-outline text-xs"
-																			aria-hidden
-																		/>
-																	</span>
-																	<span>{d}</span>
-																</li>
-															))}
-													</ul>
-												</div>
+											<div>
+												<h4 className="inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary mb-6">
+													<span className="h-px w-6 bg-primary/60" />
+													{active.whatWeOffer?.label || "What we offer"}
+												</h4>
+												{active.whatWeOffer?.description && (
+													<p className="my-4 text-sm text-on-surface/70 leading-relaxed">
+														{active.whatWeOffer?.description}
+													</p>
+												)}
+												<ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+													{active.whatWeOffer?.items &&
+														active.whatWeOffer.items.map((d, i) => (
+															<li
+																key={i}
+																className="group/li flex items-start gap-3 rounded-xl bg-surface/70 hairline px-4 py-3 text-sm text-on-surface/75 leading-relaxed transition-colors duration-300 hover:border-primary/40"
+															>
+																<span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-primary-50 text-primary transition-colors duration-300 group-hover/li:bg-primary group-hover/li:text-surface">
+																	<span
+																		className="mdi mdi-check text-xs"
+																		aria-hidden
+																	/>
+																</span>
+																<span>{d}</span>
+															</li>
+														))}
+												</ul>
 											</div>
 										</div>
 									</FadeUp>
@@ -234,6 +209,28 @@ export function ServicesSection(): ReactElement | null {
 						</div>
 					</div>
 				</div>
+
+				{/* Service deliverables — reusable interactive explorer (components/sections/Deliverables) */}
+				{hasDeliverables && (
+					<div key={activeTab} className="mt-12 sm:mt-16">
+						<FadeUp>
+							<div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-3">
+								<h3 className="inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
+									<span className="h-px w-6 bg-primary/60" aria-hidden />
+									{active.label} — {deliverables?.label || "Deliverables"}
+								</h3>
+								{deliverables?.description && (
+									<p className="max-w-xl text-sm text-on-surface/60 leading-relaxed">
+										{deliverables.description}
+									</p>
+								)}
+							</div>
+						</FadeUp>
+						<div className="mt-8 sm:mt-10">
+							<DeliverablesExplorer content={deliverables} />
+						</div>
+					</div>
+				)}
 			</div>
 		</section>
 	);
