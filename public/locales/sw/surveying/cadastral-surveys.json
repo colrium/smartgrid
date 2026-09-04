@@ -80,37 +80,43 @@
 		"tag": "Inavyofanya Kazi",
 		"headline": "Mchakato wa Uchunguzi wa Mipaka — Kutoka Ziara ya Tovuti hadi Idhini ya Kaunti",
 		"description": "Mtiririko wa kazi wa hati sita ulio wazi. Unajua wakati wowote kiwanja chako kiko katika hatua gani na kinachofuata hasa.",
-		"outcomeLabel": "Imesajiliwa, ina hati & haina migogoro",
+		"outcome": "Imesajiliwa, ina hati & haina migogoro",
 		"steps": [
 			{
 				"icon": "file-search-outline",
 				"label": "Ziara ya Tovuti & Ukaguzi wa Nyaraka",
-				"description": "Tunatembea kiwanja pamoja nawe, tunakagua hati miliki, ramani ya hati na uchunguzi wa awali, na kurekodi makazi na maboresho yaliyopo."
+				"description": "Tunatembea kiwanja pamoja nawe, tunakagua hati miliki, ramani ya hati na uchunguzi wa awali, na kurekodi makazi na maboresho yaliyopo.",
+				"phase": "PLANNING"
 			},
 			{
 				"icon": "database-search-outline",
 				"label": "Uthibitisho wa Usajili (Ardhisasa / RIM)",
-				"description": "Rekodi za kiwanja zinapatikana na kulinganishwa na Ramani ya Faharasa ya Usajili (RIM) na hifadhidata ya Ardhisasa ili kuthibitisha mipaka ya kisheria."
+				"description": "Rekodi za kiwanja zinapatikana na kulinganishwa na Ramani ya Faharasa ya Usajili (RIM) na hifadhidata ya Ardhisasa ili kuthibitisha mipaka ya kisheria.",
+				"phase": "CONTROL"
 			},
 			{
 				"icon": "satellite-variant",
 				"label": "Uchunguzi wa Shamba wa GNSS (RTK Control)",
-				"description": "Uchunguzi wa RTK GNSS na total station unaanzisha mtandao wa udhibiti uliounganishwa na gridi ya kitaifa kwa usahihi wa kiwango cha sentimita."
+				"description": "Uchunguzi wa RTK GNSS na total station unaanzisha mtandao wa udhibiti uliounganishwa na gridi ya kitaifa kwa usahihi wa kiwango cha sentimita.",
+				"phase": "ACQUISITION"
 			},
 			{
 				"icon": "map-marker-check",
 				"label": "Kuweka Beacon & Uthibitisho wa Mipaka",
-				"description": "Kona za mipaka zinakokotolewa, zinathibitishwa na wamiliki jirani, na beacon za kudura zinawekwa au kurekebishwa ardhini."
+				"description": "Kona za mipaka zinakokotolewa, zinathibitishwa na wamiliki jirani, na beacon za kudura zinawekwa au kurekebishwa ardhini.",
+				"phase": "VALIDATION"
 			},
 			{
 				"icon": "ruler-square-compass",
 				"label": "Maandalizi ya Ramani & Kokotoo",
-				"description": "Uchunguzi unapunguzwa na kurekebishwa; eneo, traverses na ramani za mwisho zinakokotolewa na kukaguliwa na mchunguzi aliyeidhinishwa."
+				"description": "Uchunguzi unapunguzwa na kurekebishwa; eneo, traverses na ramani za mwisho zinakokotolewa na kukaguliwa na mchunguzi aliyeidhinishwa.",
+				"phase": "PROCESSING"
 			},
 			{
 				"icon": "clipboard-check-outline",
 				"label": "Uwasilishaji & Idhini ya Kaunti",
-				"description": "Nyaraka za cadastral zilizokusanyika zinawasilishwa kwa usajili (Ardhisasa) na ofisi za kaunti kwa idhini na usajili."
+				"description": "Nyaraka za cadastral zilizokusanyika zinawasilishwa kwa usajili (Ardhisasa) na ofisi za kaunti kwa idhini na usajili.",
+				"phase": "DELIVERY"
 			}
 		]
 	},

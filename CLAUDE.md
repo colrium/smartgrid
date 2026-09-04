@@ -3,7 +3,7 @@
 ## Project Overview
 **SmartGrid Surveying & Civil Engineering Ltd** landing site.
 Next.js 16 (Pages Router) + TypeScript + Tailwind CSS v4. Internationalization with
-`next-i18next` (locales: `en, de, sw, fr, pt`). Content from Sanity CMS and
+`next-i18next` (locales: `en, sw`). Content from Sanity CMS and
 `public/locales/*/....json`.
 
 ## Key Files
@@ -47,7 +47,7 @@ npm run typegen          # Sanity schema + typegen
 - **Before committing:** verification scales with change size — small edits (≤300 changed
   lines) → `npm run lint`; large edits (>300 changed lines) → full build verification
   (`npm run lint && npm run typecheck && npm run build`).
-- **i18n sync:** every locale file that exists for `en` must exist for `de, sw, fr, pt` with
+- **i18n sync:** every locale file that exists for `en` must exist for `sw` with
   the same keys; URLs/slugs/codes are copied verbatim, text is translated.
 
 ## Coding Conventions

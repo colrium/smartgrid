@@ -5,7 +5,7 @@
 
 ## Project at a Glance
 - Next.js 16 **Pages Router** + TypeScript + Tailwind CSS v4, `src/`-layout.
-- i18n via `next-i18next` (locales: `en, de, sw, fr, pt`). Custom hook: `src/hooks/useTranslation.ts`.
+- i18n via `next-i18next` (locales: `en, sw`). Custom hook: `src/hooks/useTranslation.ts`.
 - Content from Sanity CMS + `public/locales/*/....json` files. Product registry in `products.json`.
 - Five locales must be kept in sync on every change (text translated, URLs/slugs/codes copied verbatim).
 

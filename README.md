@@ -188,7 +188,7 @@ smartgrid/
 │   ├─ styles/globals.css    # Tailwind theme + design tokens + utilities
 │   └─ types/next.d.ts
 └─ public/
-   ├─ locales/{en,de,sw,fr,pt}/*.json   # i18n namespaces
+   ├─ locales/{en,sw}/*.json   # i18n namespaces
    ├─ img/{earth,flags,instruments,products,...}
    ├─ fonts/              # Plus Jakarta Sans, Google Sans Flex, Brother 1816
       └─ geojson/            # world countries geometry for maps
@@ -214,7 +214,7 @@ The site uses Next.js **Pages Router** with **locale subpaths**.
 
 ### Internationalization (i18n)
 
-- **Locales:** `en` (default), `de`, `sw`, `fr`, `pt` — see `next-i18next.config.js`.
+- **Locales:** `en` (default), `sw` — see `next-i18next.config.js`.
 - **Namespaces:** one JSON file per concern per locale, e.g. `common.json`, `meta.json`,
   `home.json`, `about.json`, `contact.json`, `<service>.json`, `<product>.json`.
 - **Custom hook:** components use `src/hooks/useTranslation.ts` — a wrapper around
@@ -368,7 +368,7 @@ No — `src/pages/*.tsx` are proxies that re-export from `src/pages/[locale]/...
 `[locale]` source.
 
 **Which locales do I need to update?**
-`en`, `de`, `sw`, `fr`, `pt`. If a locale file doesn't yet exist for a namespace, create it.
+`en`, `sw`. If a locale file doesn't yet exist for a namespace, create it.
 
 ---
 
