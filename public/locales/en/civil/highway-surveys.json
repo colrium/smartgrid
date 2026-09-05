@@ -89,18 +89,68 @@
 	"highwaySurveyDeliverables": {
 		"tag": "Project Outputs",
 		"headline": "Highway Surveys Deliverables",
-		"image": "/media/civil/highway-surveys/03.png",
 		"description": "We deliver comprehensive data packages tailored for highway engineering and construction workflows.",
-        "items": [
-			"As-Built Maps",
-			"Digital Elevation Models (DSM, DTM)",
-			"Setting Out Coordinates",
-			"3D Spatial Data (X, Y, Z)",
-			"Contour Maps",
-			"Comprehensive Master Plans",
-			"Building Layouts & BIM Integration",
-			"CAD and GIS-Compatible Shapefiles",
-			"Professional PDF Map Exports"
+		"liveLabel": "Deliverable package",
+		"checks": [
+			"Design-grade accuracy",
+			"CAD & GIS compatible",
+			"Corridor-wide coverage"
+		],
+		"items": [
+			{
+				"title": "As-Built Maps",
+				"format": "PDF / DWG",
+				"icon": "file-document",
+				"description": "As-constructed corridor maps verifying completed works against the approved design."
+			},
+			{
+				"title": "Digital Elevation Models (DSM, DTM)",
+				"format": "GeoTIFF",
+				"icon": "image-filter-hdr",
+				"description": "Terrain and surface models for grading, drainage design, and earthworks balances along the route."
+			},
+			{
+				"title": "Setting Out Coordinates",
+				"format": "CSV / DXF",
+				"icon": "crosshairs-gps",
+				"description": "Centerline, curve, and structure positions ready for stakeout and machine control."
+			},
+			{
+				"title": "3D Spatial Data (X, Y, Z)",
+				"format": "CSV / DWG",
+				"icon": "axis-z-arrow",
+				"description": "Corridor-wide positional data for design verification and digital twin workflows."
+			},
+			{
+				"title": "Contour Maps",
+				"format": "DWG / DXF",
+				"icon": "chart-bell-curve",
+				"description": "Contours at design intervals supporting grading, cut-fill, and drainage analysis."
+			},
+			{
+				"title": "Comprehensive Master Plans",
+				"format": "PDF / DWG",
+				"icon": "map",
+				"description": "Consolidated route plans aligning alignment, ROW, utilities, and access points."
+			},
+			{
+				"title": "Building Layouts & BIM Integration",
+				"format": "IFC / DWG",
+				"icon": "office-building",
+				"description": "BIM-ready geometry and layouts for interchanges, structures, and roadside assets."
+			},
+			{
+				"title": "CAD and GIS-Compatible Shapefiles",
+				"format": "SHP / DWG",
+				"icon": "layers-triple",
+				"description": "Data packages that plug straight into CAD and GIS design environments."
+			},
+			{
+				"title": "Professional PDF Map Exports",
+				"format": "PDF",
+				"icon": "file-pdf-box",
+				"description": "Print-ready plan and profile exports for tenders, approvals, and site teams."
+			}
 		]
 	}
 }

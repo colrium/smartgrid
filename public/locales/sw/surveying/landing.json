@@ -94,26 +94,79 @@
 		"tag": "Matokeo",
 		"headline": "Matokeo ya Upimaji wa Ardhi",
 		"description": "Pato sahihi, tayari kwa kuwasilisha kwa maamuzi ya mipango, hati, na uhandisi.",
-		"images": [
-			"/media/surveying/04.png",
-			"/media/surveying/01.jpg",
-			"/media/surveying/02.png",
-			"/media/surveying/06.jpg",
-			"/media/surveying/05.png",
-			"/media/surveying/03.jpg"
+		"liveLabel": "Furushi la Matokeo",
+		"checks": [
+			"Tayari kuwasilishwa",
+			"Inakidhi mahitaji ya rejesta",
+			"Zinazoendana na CAD na GIS"
 		],
-		"list": [
-			"Ripoti na Ramani za Uchunguzi wa Mipaka",
-			"Ramani za Cadastral kwa Ushughulikiaji wa Hati",
-			"Wekaji wa Alama za Beacon",
-			"Ramani za Registry",
-			"Data ya Anga ya 3D (X, Y, Z)",
-			"Ramani za Topografia",
-			"Contours",
-			"Shapefiles za CAD",
-			"Ripoti za Uchunguzi",
-			"Pato za Ramani za PDF",
-			"Matokeo Mahsusi Mengine"
+		"items": [
+			{
+				"title": "Ripoti na Ramani za Uchunguzi wa Mipaka",
+				"format": "PDF / Mipango iliyochapishwa",
+				"icon": "vector-square",
+				"description": "Ripoti na ramani zilizotiliwa sahihi zinazofafanua mipaka ya kiwanja kwa miamala na maendeleo."
+			},
+			{
+				"title": "Ramani za Cadastral kwa Ushughulikiaji wa Hati",
+				"format": "Muundo wa Survey of Kenya",
+				"icon": "file-certificate",
+				"description": "Mipango inayokidhi mahitaji ya rejesta, tayari kwa kutolewa kwa hati ofisini."
+			},
+			{
+				"title": "Wekaji wa Alama za Beacon",
+				"format": "Kwenye tovuti",
+				"icon": "map-marker-radius",
+				"description": "Alama za mipaka zinazodumu zilizowekwa kwa usahihi wa upimaji."
+			},
+			{
+				"title": "Ramani za Registry",
+				"format": "Nakala zilizothibitishwa",
+				"icon": "map",
+				"description": "Ramani za rejesta na vichupo vilivyothibitishwa kwa uthibitisho wa kiwanja."
+			},
+			{
+				"title": "Data ya Anga ya 3D (X, Y, Z)",
+				"format": "CSV / DWG",
+				"icon": "axis-z-arrow",
+				"description": "Kuratibu tayari kwa kubuni, GIS, na mtiririko wa kazi wa machine-control."
+			},
+			{
+				"title": "Ramani za Topografia",
+				"format": "DWG / PDF",
+				"icon": "image-filter-hdr",
+				"description": "Ramani zenye vipengele vya ardhi, huduma, majengo, na viwango."
+			},
+			{
+				"title": "Contours",
+				"format": "DWG / DXF",
+				"icon": "chart-bell-curve",
+				"description": "Kontua za vipindi kuu na ndogo kwa daraja na kubuni mifereji."
+			},
+			{
+				"title": "Shapefiles za CAD",
+				"format": "SHP / DWG",
+				"icon": "layers-triple",
+				"description": "Shapefiles tayari kwa GIS na tabaka za CAD kwa michoro na ramani."
+			},
+			{
+				"title": "Ripoti za Uchunguzi",
+				"format": "PDF",
+				"icon": "file-document",
+				"description": "Muhtasari wa mbinu, vifaa, na usahihi uliotiliwa sahihi na wapimaji walioidhinishwa."
+			},
+			{
+				"title": "Pato za Ramani za PDF",
+				"format": "PDF",
+				"icon": "file-pdf-box",
+				"description": "Utoaji uliopangwa na wenye vipimo kwa wateja na mamlaka za idhini."
+			},
+			{
+				"title": "Matokeo Mahsusi Mengine",
+				"format": "Kwa ombi",
+				"icon": "table-large",
+				"description": "Pato maalumu - volumetrics, ufuatiliaji, data ya kuweka alama - kwa ombi."
+			}
 		]
 	}
 }

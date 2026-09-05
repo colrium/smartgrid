@@ -69,13 +69,49 @@
 		"tag": "Matokeo",
 		"headline": "Unachopata",
 		"description": "Kila uchunguzi wa topografia hutolewa kwa jumla kamili, tayari kwa uhandisi.",
+		"liveLabel": "Furushi la Matokeo",
+		"checks": [
+			"Tayari kwa uhandisi",
+			"Inaoendana na AutoCAD",
+			"Fomati tayari kwa idhini"
+		],
 		"items": [
-			"Ramani ya kina ya topografia yenye vipengele",
-			"Ramani za contour (intervals kubwa na ndogo)",
-			"Michoro ya CAD (tayari kwa AutoCAD)",
-			"Digital Terrain Models (DTM)",
-			"Data ya kuratibu XYZ, spot levels na vipengele vya tovuti",
-			"Ripoti ya uchunguzi"
+			{
+				"title": "Ramani ya kina ya topografia yenye vipengele",
+				"format": "DWG / PDF",
+				"icon": "map",
+				"description": "Ramani yenye vipengele vya tovuti: mipaka, majengo, huduma, na viwango."
+			},
+			{
+				"title": "Ramani za contour (intervals kubwa na ndogo)",
+				"format": "DWG / DXF",
+				"icon": "chart-bell-curve",
+				"description": "Kontua kwa intervals kubwa na ndogo kwa kubuni na ujenzi wa ardhi."
+			},
+			{
+				"title": "Michoro ya CAD (tayari kwa AutoCAD)",
+				"format": "DWG",
+				"icon": "ruler-square",
+				"description": "Michoro ya CAD yenye tabaka inayofunguka moja kwa moja AutoCAD na zana za kubuni."
+			},
+			{
+				"title": "Digital Terrain Models (DTM)",
+				"format": "GeoTIFF",
+				"icon": "image-filter-hdr",
+				"description": "Mifano ya ardhi ya kidijitali kwa kukata-kujaza, mifereji, na uchambuzi wa 3D."
+			},
+			{
+				"title": "Data ya kuratibu XYZ, spot levels na vipengele vya tovuti",
+				"format": "CSV",
+				"icon": "crosshairs-gps",
+				"description": "Kuratibu, spot levels, na vipengele vilivyopangwa kwa matumizi ya uhandisi."
+			},
+			{
+				"title": "Ripoti ya uchunguzi",
+				"format": "PDF",
+				"icon": "file-document",
+				"description": "Ripoti iliyotiliwa sahihi inayoeleza mbinu, udhibiti, na usahihi."
+			}
 		]
 	},
 	"cost": {
