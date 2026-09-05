@@ -68,3 +68,4 @@ kilo.jsonc
 
 # Verification files
 *.txt
+.next-build-verify
