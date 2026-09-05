@@ -334,7 +334,7 @@ select option {
 }
 
 @utility pale-panel {
-    background: linear-gradient(to bottom right, rgba(var(--primary-50), 0.8) 0%, var(--paper) 50%, var(--paper) 100%);
+    background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-surface) 50%, var(--color-surface) 100%);
 }
 
 @utility pale-panel-soft {
