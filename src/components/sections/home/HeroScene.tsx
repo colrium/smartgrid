@@ -420,10 +420,10 @@ export default function HeroScene() {
 			// Spin the propellers
 			propellers.forEach((prop, index) => {
 				const direction = index % 2 === 0 ? 1 : -1;
-				prop.rotation[propellorsAxis] += 2 * direction;
+				prop.rotation[propellorsAxis] += 0.95 * direction;
 			});
 
-			scanner.rotation.y += 0.005;
+			scanner.rotation.y += 0.01;
 			// Sync shader scan position to drone
 			gridUniforms.uDronePos.value.copy(droneGroup.position);
 

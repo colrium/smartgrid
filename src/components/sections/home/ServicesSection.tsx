@@ -173,7 +173,35 @@ export function ServicesSection(): ReactElement | null {
 											<p className="text-sm sm:text-base text-on-surface/65 leading-relaxed mb-8 sm:mb-10">
 												{active.description}
 											</p>
-
+											{/* Service deliverables — reusable interactive explorer (components/sections/Deliverables) */}
+											{hasDeliverables && (
+												<div key={activeTab} className="mt-12 sm:mt-16">
+													<FadeUp>
+														<div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-3">
+															<h3 className="inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
+																<span
+																	className="h-px w-6 bg-primary/60"
+																	aria-hidden
+																/>
+																{active.label} —{" "}
+																{deliverables?.label ||
+																	"Deliverables"}
+															</h3>
+															{deliverables?.description && (
+																<p className="max-w-xl text-sm text-on-surface/60 leading-relaxed">
+																	{deliverables.description}
+																</p>
+															)}
+														</div>
+													</FadeUp>
+													<div className="mt-8 sm:mt-10">
+														<DeliverablesExplorer
+															content={deliverables}
+                                                            className="flex! flex-col! flex-col-reverse!"
+														/>
+													</div>
+												</div>
+											)}
 											<div>
 												<h4 className="inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary mb-6">
 													<span className="h-px w-6 bg-primary/60" />
@@ -209,28 +237,6 @@ export function ServicesSection(): ReactElement | null {
 						</div>
 					</div>
 				</div>
-
-				{/* Service deliverables — reusable interactive explorer (components/sections/Deliverables) */}
-				{hasDeliverables && (
-					<div key={activeTab} className="mt-12 sm:mt-16">
-						<FadeUp>
-							<div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-3">
-								<h3 className="inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
-									<span className="h-px w-6 bg-primary/60" aria-hidden />
-									{active.label} — {deliverables?.label || "Deliverables"}
-								</h3>
-								{deliverables?.description && (
-									<p className="max-w-xl text-sm text-on-surface/60 leading-relaxed">
-										{deliverables.description}
-									</p>
-								)}
-							</div>
-						</FadeUp>
-						<div className="mt-8 sm:mt-10">
-							<DeliverablesExplorer content={deliverables} />
-						</div>
-					</div>
-				)}
 			</div>
 		</section>
 	);
