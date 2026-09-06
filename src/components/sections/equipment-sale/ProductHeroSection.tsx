@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import NextHead from "next/head";
+import { useRouter } from "next/router";
 import { useTranslation } from "@/hooks";
 import { FadeLeft, FadeRight } from "@/components/animations/Fade";
 import { SectionTag } from "@/components/SectionTag";
@@ -20,6 +22,7 @@ const formatAmount = (amount: number) => amount.toLocaleString("en-US");
 
 export function ProductHeroSection({ namespace }: ProductHeroSectionProps) {
 	const { t } = useTranslation([namespace]);
+	const router = useRouter();
 	const hero = t(`${namespace}:hero`, { returnObjects: true }) as unknown as ProductHeroContent;
     const breadcrumb = t(`${namespace}:breadcrumb`, { returnObjects: true }) as unknown as BreadcrumbContent;
     const catalogue = t(`${namespace}:catalogue`, {
@@ -47,9 +50,36 @@ export function ProductHeroSection({ namespace }: ProductHeroSectionProps) {
 	
 
 	const images = getProductImages({ hero, overview, productImages, catalogue });
+	const productImage = images
+		.map((image) => (typeof image === "string" ? image : image?.url))
+		.find((image): image is string => typeof image === "string" && image.startsWith("/"));
+	const productSchema = {
+		"@context": "https://schema.org",
+		"@type": "Product",
+		name: hero.title,
+		description: hero.description || overview.description,
+		image: productImage ? `https://smartgridsurveying.com${productImage}` : undefined,
+		url: `https://smartgridsurveying.com${router.asPath.split(/[?#]/, 1)[0]}`,
+		brand: { "@type": "Brand", name: "SmartGrid Surveying" },
+		offers:
+			priceOptions.length > 0
+				? priceOptions.map((price) => ({
+						"@type": "Offer",
+						priceCurrency: price.currency,
+						price: price.amount,
+						availability: "https://schema.org/InStock",
+					}))
+				: undefined,
+	};
 
 	return (
 		<section className="relative overflow-hidden">
+			<NextHead>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+				/>
+			</NextHead>
 			<Blob
 				className="w-[30rem] h-[30rem] bg-primary-100/50 -top-32 -left-24"
 				opacity={0.5}

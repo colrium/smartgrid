@@ -5407,7 +5407,36 @@ export default interface Resources {
   "label": "Land Surveying",
   "whatWeOffer": {
     "description": "",
-    "items": ["Topographical surveys", "Boundary Surveys", "Sectional Properties", "Building Sites surveys", "Resource mapping", "Bathymetric survey / Hydrographic survey", "GIS Mapping", "GPR (Ground Penetrating Radar) Surveys", "Cadastral Surveys", "Staking Out Surveys"],
+    "items": [{
+  "href": "/surveying/topographical-surveys",
+  "label": "Topographical surveys"
+}, {
+  "label": "Boundary Surveys"
+}, {
+  "href": "/surveying/sectional-properties",
+  "label": "Sectional Properties"
+}, {
+  "href": "/surveying/building-site-surveys",
+  "label": "Building Sites surveys"
+}, {
+  "href": "/surveying/resource-mapping",
+  "label": "Resource mapping"
+}, {
+  "href": "/surveying/bathymetric-surveys",
+  "label": "Bathymetric survey / Hydrographic survey"
+}, {
+  "href": "/surveying/gis-mapping",
+  "label": "GIS Mapping"
+}, {
+  "href": "/surveying/ground-penetrating-radar",
+  "label": "GPR (Ground Penetrating Radar) Surveys"
+}, {
+  "href": "/surveying/cadastral-surveys",
+  "label": "Cadastral Surveys"
+}, {
+  "href": "/civil/site-setting-out",
+  "label": "Staking Out Surveys"
+}],
     "label": "What we offer"
   }
 }, {
@@ -5473,7 +5502,31 @@ export default interface Resources {
   "label": "Aerial Surveys",
   "whatWeOffer": {
     "description": "",
-    "items": ["Drone imagery surveys", "Lidar Mapping", "Agricultural NDVI Mapping", "As built surveys", "Monitoring and Evaluation", "Solar Panel Drone Surveys", "Volumetric Surveys", "Landfill & Quarry Drone Surveys"],
+    "items": [{
+  "href": "/aerial-drones/drone-imagery-surveys",
+  "label": "Drone imagery surveys"
+}, {
+  "href": "/aerial-drones/lidar-mapping",
+  "label": "Lidar Mapping"
+}, {
+  "href": "/aerial-drones/agricultural-ndvi-mapping",
+  "label": "Agricultural NDVI Mapping"
+}, {
+  "href": "/aerial-drones/as-built-surveys",
+  "label": "As built surveys"
+}, {
+  "href": "/aerial-drones/monitoring-and-evaluation",
+  "label": "Monitoring and Evaluation"
+}, {
+  "href": "/aerial-drones/solar-panel-drone-surveys",
+  "label": "Solar Panel Drone Surveys"
+}, {
+  "href": "/aerial-drones/volumetric-surveys",
+  "label": "Volumetric Surveys"
+}, {
+  "href": "/aerial-drones/landfill-quarry-drone-surveys",
+  "label": "Landfill & Quarry Drone Surveys"
+}],
     "label": "What we offer"
   }
 }, {
@@ -5534,7 +5587,28 @@ export default interface Resources {
   "label": "Civil Engineering",
   "whatWeOffer": {
     "description": "",
-    "items": ["Site Engineering ", "Buildings Setting Out", "Underground utilities (Water lines, sanitation lines, electrical lines)", "Highway engineering", "Stake out", "Leveling", "Benchmarking", "Construction services"],
+    "items": [{
+  "href": "/civil/site-engineering",
+  "label": "Site Engineering"
+}, {
+  "href": "/civil/site-setting-out",
+  "label": "Buildings Setting Out"
+}, {
+  "href": "/surveying/ground-penetrating-radar",
+  "label": "Underground utilities (Water lines, sanitation lines, electrical lines)"
+}, {
+  "href": "/civil/highway-surveys",
+  "label": "Highway engineering"
+}, {
+  "href": "/civil/site-setting-out",
+  "label": "Stake out"
+}, {
+  "label": "Leveling"
+}, {
+  "label": "Benchmarking"
+}, {
+  "label": "Construction services"
+}],
     "label": "What we offer"
   }
 }],

@@ -48,6 +48,7 @@ export function Slider({
 	const [index, setIndex] = useState(0);
 	const [direction, setDirection] = useState(1);
 	const [paused, setPaused] = useState(false);
+	const [documentVisible, setDocumentVisible] = useState(true);
 	const touchStartX = useRef<number | null>(null);
 
 	const go = useCallback(
@@ -63,13 +64,20 @@ export function Slider({
 	const prev = useCallback(() => go(index - 1, -1), [go, index]);
 
 	useEffect(() => {
-		if (autoplay <= 0 || paused) return;
+		if (autoplay <= 0 || paused || !documentVisible) return;
 		const timer = setInterval(() => {
 			setDirection(1);
 			setIndex((current) => (current + 1) % count);
 		}, autoplay);
 		return () => clearInterval(timer);
-	}, [autoplay, paused, count]);
+	}, [autoplay, paused, count, documentVisible]);
+
+	useEffect(() => {
+		const updateVisibility = () => setDocumentVisible(!document.hidden);
+		updateVisibility();
+		document.addEventListener("visibilitychange", updateVisibility);
+		return () => document.removeEventListener("visibilitychange", updateVisibility);
+	}, []);
 
 	useEffect(() => {
 		const onKey = (e: KeyboardEvent) => {
@@ -90,6 +98,8 @@ export function Slider({
 			className={`relative select-none ${className}`}
 			onMouseEnter={() => autoplay > 0 && setPaused(true)}
 			onMouseLeave={() => autoplay > 0 && setPaused(false)}
+			onFocusCapture={() => autoplay > 0 && setPaused(true)}
+			onBlurCapture={() => autoplay > 0 && setPaused(false)}
 			onTouchStart={(e) => {
 				touchStartX.current = e.touches[0].clientX;
 			}}

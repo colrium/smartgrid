@@ -277,7 +277,9 @@ class MorphEngine {
 	private textures: Texture[];
 	private sizes: [number, number][];
 	private resizeObserver: ResizeObserver;
+	private visibilityObserver: IntersectionObserver | null = null;
 	private raf = 0;
+	private active = true;
 	private boundLoop: (t: number) => void;
 	private boundContextLost: (e: Event) => void;
 
@@ -339,6 +341,13 @@ class MorphEngine {
 
 		this.resizeObserver = new ResizeObserver(() => this.resize());
 		this.resizeObserver.observe(container);
+		this.visibilityObserver = new IntersectionObserver(
+			([entry]) => {
+				this.active = entry.isIntersecting;
+			},
+			{ threshold: 0 },
+		);
+		this.visibilityObserver.observe(container);
 		this.resize();
 
 		this.loadTextures();
@@ -348,22 +357,28 @@ class MorphEngine {
 	}
 
 	private loadTextures(): void {
-		this.items.forEach((item, index) => {
-			const img = new Image();
-			img.crossOrigin = "anonymous";
-			img.src = item.image;
-			img.onload = () => {
-				const texture = new Texture(this.gl, { generateMipmaps: false });
-				texture.image = img;
-				this.textures[index] = texture;
-				this.sizes[index] = [img.naturalWidth || 1, img.naturalHeight || 1];
-				if (index === this.current) {
-					this.program.uniforms.tCurrent.value = texture;
-					this.program.uniforms.uCurrentSize.value = this.sizes[index];
-				}
-			};
-			img.onerror = () => {};
-		});
+		this.loadTexture(this.current);
+		if (this.items.length > 1) this.loadTexture(this.wrap(this.current + 1));
+	}
+
+	private loadTexture(index: number): void {
+		const item = this.items[index];
+		if (!item || this.sizes[index][0] !== 1 || this.sizes[index][1] !== 1) return;
+
+		const img = new Image();
+		img.crossOrigin = "anonymous";
+		img.src = item.image;
+		img.onload = () => {
+			const texture = new Texture(this.gl, { generateMipmaps: false });
+			texture.image = img;
+			this.textures[index] = texture;
+			this.sizes[index] = [img.naturalWidth || 1, img.naturalHeight || 1];
+			if (index === this.current) {
+				this.program.uniforms.tCurrent.value = texture;
+				this.program.uniforms.uCurrentSize.value = this.sizes[index];
+			}
+		};
+		img.onerror = () => {};
 	}
 
 	private resize(): void {
@@ -386,9 +401,11 @@ class MorphEngine {
 	}
 
 	private loop(t: number): void {
-		this.program.uniforms.uTime.value = t * 0.001;
-		if (!this.dragging && !this.animating) this.syncOptions();
-		this.renderer.render({ scene: this.mesh });
+		if (this.active && !document.hidden) {
+			this.program.uniforms.uTime.value = t * 0.001;
+			if (!this.dragging && !this.animating) this.syncOptions();
+			this.renderer.render({ scene: this.mesh });
+		}
 		this.raf = requestAnimationFrame(this.boundLoop);
 	}
 
@@ -399,6 +416,7 @@ class MorphEngine {
 
 	private prepareNext(dir: number): number {
 		const target = this.wrap(this.current + dir);
+		this.loadTexture(target);
 		this.program.uniforms.tCurrent.value = this.textures[this.current];
 		this.program.uniforms.uCurrentSize.value = this.sizes[this.current];
 		this.program.uniforms.tNext.value = this.textures[target];
@@ -526,6 +544,7 @@ class MorphEngine {
 		cancelAnimationFrame(this.raf);
 		if (this.tween) this.tween.kill();
 		this.resizeObserver.disconnect();
+		this.visibilityObserver?.disconnect();
 		this.canvas.removeEventListener("webglcontextlost", this.boundContextLost);
 		this.textures.forEach((tex) => {
 			if (tex && tex.texture) this.gl.deleteTexture(tex.texture);

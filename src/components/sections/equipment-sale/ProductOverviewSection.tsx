@@ -1,10 +1,17 @@
 "use client";
 
 import { useTranslation } from "@/hooks";
+import dynamic from "next/dynamic";
+import Image from "next/image";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionTag } from "@/components/SectionTag";
 import { Blob } from "@/components/sections/home/decor";
-import MorphSlider from "@/components/ui/MorphSlider";
+import DeferredMount from "@/components/ui/DeferredMount";
+
+const MorphSlider = dynamic(() => import("@/components/ui/MorphSlider"), {
+	ssr: false,
+	loading: () => <div className="h-full bg-primary-50/50" />,
+});
 
 interface ImageEntry {
 	url: string;
@@ -73,8 +80,23 @@ export function ProductOverviewSection({ namespace }: ProductOverviewSectionProp
 			</div>
 			<div className="relative z-10 max-w-7xl  mx-auto px-6 sm:px-8 lg:px-12 mt-12">
 				<FadeUp className="h-[60dvh]">
-					{/* <AccordionGallery items={accordionGalleryItems} /> */}
-					<MorphSlider items={morphSliderItems} />
+					<DeferredMount
+						fallback={
+							<div className="relative h-full overflow-hidden rounded-c bg-primary-50/50">
+								{morphSliderItems[0]?.image && (
+									<Image
+										src={morphSliderItems[0].image}
+										alt=""
+										fill
+										sizes="(min-width: 1280px) 80rem, 100vw"
+										className="object-cover"
+									/>
+								)}
+							</div>
+						}
+					>
+						<MorphSlider items={morphSliderItems} />
+					</DeferredMount>
 				</FadeUp>
 			</div>
 		</section>

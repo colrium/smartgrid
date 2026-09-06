@@ -6,7 +6,12 @@ import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionHeader } from "@/components/sections/home/SectionHeader";
 import { Blob } from "@/components/sections/home/decor";
-import GoogleMap from "@/components/ui/GoogleMap";
+import dynamic from "next/dynamic";
+import DeferredMount from "@/components/ui/DeferredMount";
+
+const GoogleMap = dynamic(() => import("@/components/ui/GoogleMap"), {
+	ssr: false,
+});
 
 interface Office {
 	id?: string;
@@ -169,12 +174,16 @@ export function OfficesSection() {
 				{markers.length > 0 && (
 					<FadeUp className="mt-6 sm:mt-8">
 						<div className="rounded-c overflow-hidden hairline card-shadow">
-							<GoogleMap
-								markers={markers}
-								defaultCenter={mapCenter}
-								defaultZoom={11}
-								className="h-[420px] sm:h-[500px]"
-							/>
+							<DeferredMount
+								fallback={<div className="h-[420px] bg-primary-50/50 sm:h-[500px]" />}
+							>
+								<GoogleMap
+									markers={markers}
+									defaultCenter={mapCenter}
+									defaultZoom={11}
+									className="h-[420px] sm:h-[500px]"
+								/>
+							</DeferredMount>
 						</div>
 					</FadeUp>
 				)}

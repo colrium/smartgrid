@@ -11,6 +11,7 @@ import localFont from "next/font/local";
 import { useEffect } from "react";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { LazyMotion, MotionConfig, domAnimation } from "framer-motion";
 
 const fontSans = Plus_Jakarta_Sans({
 	subsets: ["latin"],	
@@ -54,15 +55,19 @@ function App({ Component, pageProps }: AppPropsWithLayout) {
 
     
     
-    return (
-		<main
-			className={`flex flex-col min-h-screen relative  ${fontSans.variable} ${fontSansSerif.variable} ${fontDisplay.variable} font-sans`}
-		>
-			<PageTransitionLoader />
-			{renderPageWithLayout(<Component {...pageProps} />)}
-			<Analytics />
-			<SpeedInsights />
-		</main>
+	return (
+		<LazyMotion features={domAnimation}>
+			<MotionConfig reducedMotion="user">
+				<main
+					className={`flex flex-col min-h-screen relative  ${fontSans.variable} ${fontSansSerif.variable} ${fontDisplay.variable} font-sans`}
+				>
+					<PageTransitionLoader />
+					{renderPageWithLayout(<Component {...pageProps} />)}
+					<Analytics />
+					<SpeedInsights />
+				</main>
+			</MotionConfig>
+		</LazyMotion>
 	);
 }
 
