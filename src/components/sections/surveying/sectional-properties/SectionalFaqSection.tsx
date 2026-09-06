@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import type { ReactElement } from "react";
 import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { Blob } from "@/components/sections/home/decor";
 import { SectionTag } from "@/components/SectionTag";
-import { IconButton } from "@/components/ui/IconButton";
+import { FaqSectionItems, type FaqSectionItem } from "@/components/sections/FaqSectionItems";
 
 interface FaqItem {
 	q: string;
@@ -19,13 +19,18 @@ interface FaqContent {
 	items: FaqItem[];
 }
 
-export function SectionalFaqSection() {
+export function SectionalFaqSection(): ReactElement {
 	const { t } = useTranslation(["surveying/sectional-properties"]);
 	const section = t("surveying/sectional-properties:faq", {
 		returnObjects: true,
 	}) as unknown as FaqContent;
-	const [openIndex, setOpenIndex] = useState<number | null>(0);
-	const items = Array.isArray(section.items) ? section.items : [];
+	const items: FaqSectionItem[] = Array.isArray(section.items)
+		? section.items.map((item) => ({
+				question: item.q,
+				answer: item.a,
+				points: Array.isArray(item.b) ? item.b : undefined,
+			}))
+		: [];
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden">
@@ -33,79 +38,14 @@ export function SectionalFaqSection() {
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<div className="max-w-3xl mx-auto text-center">
-                    {section.tag && <SectionTag >
-                        {section.tag}
-                    </SectionTag> }
+					{section.tag && <SectionTag>{section.tag}</SectionTag>}
 					<h2 className="mt-5 font-light tracking-tight leading-[1.08] text-3xl sm:text-4xl lg:text-[2.85rem] text-ink">
 						{section.headline}
 					</h2>
 				</div>
 
 				<FadeUp className="mt-14 sm:mt-20 max-w-4xl mx-auto">
-					<div className="rounded-c bg-surface hairline card-shadow overflow-hidden">
-						{items.map((item, index) => {
-							const isOpen = openIndex === index;
-							return (
-								<div
-									key={index}
-									className={index > 0 ? "border-t border-ink/10" : ""}
-								>
-									<button
-										type="button"
-										onClick={() => setOpenIndex(isOpen ? null : index)}
-										className="w-full flex justify-between items-center gap-6 py-6 px-6 sm:px-8 text-left cursor-pointer"
-									>
-										<span
-											className={`text-sm sm:text-base font-medium leading-snug transition-colors duration-300 ${
-												isOpen ? "text-primary" : "text-ink"
-											}`}
-										>
-											{item.q}
-										</span>
-										<IconButton as="span" size="small" aria-hidden="true">
-											<span
-												className={`mdi mdi-${
-													isOpen ? "close text-red-700" : "plus"
-												} text-lg leading-none`}
-											/>
-										</IconButton>
-									</button>
-
-									<div
-										className={`grid transition-all duration-250 ease-out ${
-											isOpen
-												? "grid-rows-[1fr] opacity-100"
-												: "grid-rows-[0fr] opacity-0"
-										}`}
-									>
-										<div className="overflow-hidden">
-											<div className="px-6 sm:px-8 pb-8">
-												<p className="text-sm sm:text-[15px] text-on-surface/60 leading-relaxed whitespace-pre-line">
-													{item.a}
-												</p>
-
-												{Array.isArray(item.b) && item.b.length > 0 && (
-													<ul className="mt-5 pl-1 space-y-3">
-														{item.b.map((point, i) => (
-															<li
-																key={i}
-																className="flex items-start gap-3 text-sm text-on-surface/70 leading-relaxed"
-															>
-																<span className="mt-0.5 h-5 w-5 shrink-0 rounded-full bg-primary-50 text-primary flex items-center justify-center">
-																	<span className="mdi mdi-check text-xs" />
-																</span>
-																{point}
-															</li>
-														))}
-													</ul>
-												)}
-											</div>
-										</div>
-									</div>
-								</div>
-							);
-						})}
-					</div>
+					<FaqSectionItems items={items} />
 				</FadeUp>
 			</div>
 		</section>

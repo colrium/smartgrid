@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type ReactElement } from "react";
+import type { ReactElement } from "react";
 import Link from "next/link";
 import NextHead from "next/head";
 
@@ -8,11 +8,11 @@ import { useTranslation } from "@/hooks";
 import { SectionHeader } from "./SectionHeader";
 import { FadeUp } from "@/components/animations/Fade";
 import { Blob } from "./decor";
-
-interface FaqItem {
-	question: string;
-	answer: string;
-}
+import {
+	FaqSectionItems,
+	buildFaqSchema,
+	type FaqSectionItem,
+} from "@/components/sections/FaqSectionItems";
 
 interface FaqCta {
 	label: string;
@@ -24,7 +24,7 @@ interface FaqContent {
 	tag?: string | null;
 	headline: string;
 	description?: string;
-	items?: FaqItem[];
+	items?: FaqSectionItem[];
 	stillCurious?: {
 		label?: string;
 		description?: string;
@@ -39,26 +39,15 @@ export function FaqSection(): ReactElement | null {
 	}) as unknown as FaqContent;
 
 	const items = Array.isArray(content?.items) ? content.items : [];
-	const [openIndex, setOpenIndex] = useState<number | null>(0);
 
 	if (items.length === 0) return null;
-
-	const faqSchema = {
-		"@context": "https://schema.org",
-		"@type": "FAQPage",
-		mainEntity: items.map((item) => ({
-			"@type": "Question",
-			name: item.question,
-			acceptedAnswer: { "@type": "Answer", text: item.answer },
-		})),
-	};
 
 	return (
 		<section id="faq" className="py-24 sm:py-28 relative overflow-hidden">
 			<NextHead>
 				<script
 					type="application/ld+json"
-					dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqSchema(items)) }}
 				/>
 			</NextHead>
 			<Blob className="w-96 h-96 bg-primary-100/50 -left-24 top-1/3" opacity={0.5} />
@@ -106,54 +95,7 @@ export function FaqSection(): ReactElement | null {
 
 				{/* Accordion */}
 				<div className="lg:col-span-7">
-					<ul className="flex flex-col">
-						{items.map((item, index) => {
-							const isOpen = openIndex === index;
-							return (
-								<li key={item.question} className="border-t border-ink/10 last:border-b">
-									<button
-										type="button"
-										aria-expanded={isOpen}
-										onClick={() => setOpenIndex(isOpen ? null : index)}
-										className="group flex w-full items-start justify-between gap-6 py-6 text-left"
-									>
-										<span className="flex items-start gap-4">
-											<span className="pt-1 text-sm font-semibold tabular-nums tracking-[0.14em] text-primary">
-												{String(index + 1).padStart(2, "0")}
-											</span>
-											<span
-												className={`text-lg sm:text-xl font-medium tracking-tight leading-snug transition-colors duration-300 ${
-													isOpen ? "text-primary" : "text-ink group-hover:text-primary"
-												}`}
-											>
-												{item.question}
-											</span>
-										</span>
-										<span
-											className={`mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
-												isOpen
-													? "bg-primary text-surface rotate-180"
-													: "hairline text-primary group-hover:border-primary"
-											}`}
-										>
-											<span className="mdi mdi-chevron-down text-xl" />
-										</span>
-									</button>
-									<div
-										className={`grid transition-[grid-template-rows] duration-250 ease-out ${
-											isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-										}`}
-									>
-										<div className="overflow-hidden">
-											<p className="pb-7 pl-9 pr-4 sm:pl-11 text-sm sm:text-[15px] text-on-surface/60 leading-relaxed">
-												{item.answer}
-											</p>
-										</div>
-									</div>
-								</li>
-							);
-						})}
-					</ul>
+					<FaqSectionItems items={items} />
 				</div>
 			</div>
 		</section>
