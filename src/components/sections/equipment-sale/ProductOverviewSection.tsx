@@ -75,12 +75,11 @@ export function ProductOverviewSection({ namespace }: ProductOverviewSectionProp
 						)}
 					</FadeUp>
 				</div>
-
-				
 			</div>
 			<div className="relative z-10 max-w-7xl  mx-auto px-6 sm:px-8 lg:px-12 mt-12">
 				<FadeUp className="h-[60dvh]">
 					<DeferredMount
+						className="h-full"
 						fallback={
 							<div className="relative h-full overflow-hidden rounded-c bg-primary-50/50">
 								{morphSliderItems[0]?.image && (
