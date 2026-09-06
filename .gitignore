@@ -70,3 +70,4 @@ kilo.jsonc
 *.txt
 .next-build-verify
 .next-verification
+.next-purge-baseline
