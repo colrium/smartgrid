@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import type { ReactElement } from "react";
 import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { Blob } from "@/components/sections/home/decor";
 import { SectionTag } from "@/components/SectionTag";
-import { IconButton } from "@/components/ui/IconButton";
+import { FaqSectionItems, type FaqSectionItem } from "@/components/sections/FaqSectionItems";
 
 interface FaqItem {
 	icon?: string;
@@ -20,13 +20,18 @@ interface FaqContent {
 	items: FaqItem[];
 }
 
-export function FaqSection() {
+export function FaqSection(): ReactElement {
 	const { t } = useTranslation(["civil/site-setting-out"]);
 	const section = t("civil/site-setting-out:faq", {
 		returnObjects: true,
 	}) as unknown as FaqContent;
-	const [openIndex, setOpenIndex] = useState<number | null>(0);
-	const items = Array.isArray(section.items) ? section.items : [];
+	const items: FaqSectionItem[] = Array.isArray(section.items)
+		? section.items.map((item) => ({
+				question: item.title,
+				answer: item.description,
+				icon: item.icon,
+			}))
+		: [];
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden">
@@ -42,65 +47,7 @@ export function FaqSection() {
 				</div>
 
 				<FadeUp className="mt-14 sm:mt-20 max-w-4xl mx-auto">
-					<div className="rounded-c bg-surface hairline card-shadow overflow-hidden">
-						{items.map((item, index) => {
-							const isOpen = openIndex === index;
-							return (
-								<div
-									key={index}
-									className={index > 0 ? "border-t border-ink/10" : ""}
-								>
-									<button
-										type="button"
-										onClick={() => setOpenIndex(isOpen ? null : index)}
-										className="w-full flex items-center justify-between gap-6 py-6 px-6 sm:px-8 text-left cursor-pointer"
-									>
-										<span className="flex items-center gap-3 sm:gap-4">
-											{item.icon && (
-												<span className="hidden sm:inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary">
-													<span
-														className={`mdi mdi-${item.icon} text-xl`}
-													/>
-												</span>
-											)}
-
-											<span
-												className={`text-sm sm:text-base font-medium leading-snug transition-colors duration-300 ${
-													isOpen ? "text-primary" : "text-ink"
-												}`}
-											>
-												{item.title}
-											</span>
-										</span>
-
-										<IconButton as="span" size="small" aria-hidden="true">
-											<span
-												className={`mdi mdi-${
-													isOpen ? "close text-red-700" : "plus"
-												} text-lg leading-none`}
-											/>
-										</IconButton>
-									</button>
-
-									<div
-										className={`grid transition-all duration-250 ease-out ${
-											isOpen
-												? "grid-rows-[1fr] opacity-100"
-												: "grid-rows-[0fr] opacity-0"
-										}`}
-									>
-										<div className="overflow-hidden">
-											<div className="px-6 sm:px-8 pb-8">
-												<p className="text-sm sm:text-[15px] text-on-surface/60 leading-relaxed whitespace-pre-line">
-													{item.description}
-												</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							);
-						})}
-					</div>
+					<FaqSectionItems items={items} />
 				</FadeUp>
 			</div>
 		</section>
