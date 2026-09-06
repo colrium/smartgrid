@@ -16,12 +16,12 @@ export function Checkbox({
 }: CheckboxProps): ReactElement {
 	const checkedBorder =
 		color === "accent"
-			? "checked:border-accent checked:bg-accent"
-			: "checked:border-primary checked:bg-primary";
+			? "peer-checked:border-accent peer-checked:bg-accent"
+			: "peer-checked:border-primary peer-checked:bg-primary";
 	const focusRing =
 		color === "accent"
-			? "checked:focus-visible:shadow-[0_0_0_4px_var(--color-accent-100)]"
-			: "checked:focus-visible:shadow-[0_0_0_4px_var(--color-primary-100)]";
+			? "peer-focus-visible:shadow-[0_0_0_4px_var(--color-accent-100)]"
+			: "peer-focus-visible:shadow-[0_0_0_4px_var(--color-primary-100)]";
 
 	return (
 		<span className={`relative inline-flex h-[18px] w-[18px] shrink-0 ${className}`}>

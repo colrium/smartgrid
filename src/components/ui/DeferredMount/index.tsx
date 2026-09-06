@@ -16,7 +16,7 @@ export function DeferredMount({
 	children,
 	fallback,
 	rootMargin = "320px 0px",
-	className,
+	className="",
 }: DeferredMountProps): ReactElement {
 	const ref = useRef<HTMLDivElement>(null);
 	const [mounted, setMounted] = useState(false);
