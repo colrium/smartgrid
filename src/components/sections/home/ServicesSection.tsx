@@ -3,16 +3,21 @@
 import { useState, type ReactElement } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "@/components/Link";
 import { useTranslation } from "@/hooks";
 import { SectionHeader } from "./SectionHeader";
 import { ParallaxDecor, Blob } from "./decor";
 import { FadeUp } from "@/components/animations/Fade";
 import { DeliverablesExplorer, type DeliverablesContent } from "@/components/sections/Deliverables";
 
+interface ServiceOfferItem {
+	label: string;
+	href?: string;
+}
 interface SeviceItemList {
 	label: string;
 	description: string;
-	items: string[];
+	items: (string | ServiceOfferItem)[];
 }
 interface ServiceItem {
 	featureImg: string;
@@ -210,20 +215,37 @@ export function ServicesSection(): ReactElement | null {
 								)}
 								<ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
 									{active.whatWeOffer?.items &&
-										active.whatWeOffer.items.map((d, i) => (
-											<li
-												key={i}
-												className="group/li flex items-start gap-3 rounded-xl bg-surface/70 hairline px-4 py-3 text-sm text-on-surface/75 leading-relaxed transition-colors duration-300 hover:border-primary/40"
-											>
-												<span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-primary-50 text-primary transition-colors duration-300 group-hover/li:bg-primary group-hover/li:text-surface">
-													<span
-														className="mdi mdi-check text-xs"
-														aria-hidden
-													/>
-												</span>
-												<span>{d}</span>
+										active.whatWeOffer.items.map((offer, i) => {
+											const item: ServiceOfferItem =
+												typeof offer === "string" ? { label: offer } : offer;
+											return (
+												<li
+													key={i}
+													className="group/li flex items-start gap-3 rounded-xl bg-surface/70 hairline px-4 py-3 text-sm text-on-surface/75 leading-relaxed transition-colors duration-300 hover:border-primary/40"
+												>
+													<span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-primary-50 text-primary transition-colors duration-300 group-hover/li:bg-primary group-hover/li:text-surface">
+														<span
+															className="mdi mdi-check text-xs"
+															aria-hidden
+														/>
+													</span>
+													{item.href ? (
+														<Link
+															href={item.href}
+															className="group/offer flex flex-1 items-start justify-between gap-2 text-on-surface/75 transition-colors duration-300 hover:text-primary"
+														>
+															<span>{item.label}</span>
+															<span
+																className="mdi mdi-arrow-top-right mt-0.5 text-xs opacity-0 transition-opacity duration-300 group-hover/offer:opacity-100"
+																aria-hidden
+															/>
+													</Link>
+													) : (
+													<span>{item.label}</span>
+												)}
 											</li>
-										))}
+										);
+									})}
 								</ul>
 							</div>
 						</motion.div>

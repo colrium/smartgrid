@@ -669,16 +669,16 @@
 					"label": "Tunachotoa",
 					"description": "",
 					"items": [
-						"Upimaji wa topografia",
-						"Upimaji wa mipaka",
-						"Mali za sehemu",
-						"Upimaji wa tovuti za ujenzi",
-						"Ramani ya rasilimali",
-						"Upimaji wa bathymetric / Upimaji wa hydrographic",
-						"Ramani ya GIS",
-						"Upimaji wa GPR (Rada ya Kupenya Ardhini)",
-						"Upimaji wa Cadastral",
-						"Upimaji wa Kuweka Alama"
+						{ "label": "Upimaji wa topografia", "href": "/surveying/topographical-surveys" },
+						{ "label": "Upimaji wa mipaka" },
+						{ "label": "Mali za sehemu", "href": "/surveying/sectional-properties" },
+						{ "label": "Upimaji wa tovuti za ujenzi", "href": "/surveying/building-site-surveys" },
+						{ "label": "Ramani ya rasilimali", "href": "/surveying/resource-mapping" },
+						{ "label": "Upimaji wa bathymetric / Upimaji wa hydrographic", "href": "/surveying/bathymetric-surveys" },
+						{ "label": "Ramani ya GIS", "href": "/surveying/gis-mapping" },
+						{ "label": "Upimaji wa GPR (Rada ya Kupenya Ardhini)", "href": "/surveying/ground-penetrating-radar" },
+						{ "label": "Upimaji wa Cadastral", "href": "/surveying/cadastral-surveys" },
+						{ "label": "Upimaji wa Kuweka Alama", "href": "/civil/site-setting-out" }
 					]
 				},
 				"deliverables": {
@@ -768,14 +768,14 @@
 					"label": "Tunachotoa",
 					"description": "",
 					"items": [
-						"Upimaji wa picha za ndege zisizo na rubani",
-						"Ramani ya Lidar",
-						"Ramani ya NDVI ya Kilimo",
-						"Upimaji wa 'as built'",
-						"Ufuatiliaji na Tathmini",
-						"Upimaji wa Paneli za Jua kwa Ndege zisizo na rubani",
-						"Upimaji wa Kiasi (Volumetric)",
-						"Upimaji wa Dampo na Machimbo kwa Ndege zisizo na rubani"
+						{ "label": "Upimaji wa picha za ndege zisizo na rubani", "href": "/aerial-drones/drone-imagery-surveys" },
+						{ "label": "Ramani ya Lidar", "href": "/aerial-drones/lidar-mapping" },
+						{ "label": "Ramani ya NDVI ya Kilimo", "href": "/aerial-drones/agricultural-ndvi-mapping" },
+						{ "label": "Upimaji wa 'as built'", "href": "/aerial-drones/as-built-surveys" },
+						{ "label": "Ufuatiliaji na Tathmini", "href": "/aerial-drones/monitoring-and-evaluation" },
+						{ "label": "Upimaji wa Paneli za Jua kwa Ndege zisizo na rubani", "href": "/aerial-drones/solar-panel-drone-surveys" },
+						{ "label": "Upimaji wa Kiasi (Volumetric)", "href": "/aerial-drones/volumetric-surveys" },
+						{ "label": "Upimaji wa Dampo na Machimbo kwa Ndege zisizo na rubani", "href": "/aerial-drones/landfill-quarry-drone-surveys" }
 					]
 				},
 				"deliverables": {
@@ -859,14 +859,14 @@
 					"label": "Tunachotoa",
 					"description": "",
 					"items": [
-						"Uhandisi wa Tovuti",
-						"Uwekaji wa Majengo",
-						"Huduma za chini ya ardhi (Mabomba ya maji, mabomba ya maji taka, nyaya za umeme)",
-						"Uhandisi wa Barabara kuu",
-						"Uwekaji alama",
-						"Upimaji wa viwango",
-						"Uwekaji wa alama za kumbukumbu",
-						"Huduma za ujenzi"
+						{ "label": "Uhandisi wa Tovuti", "href": "/civil/site-engineering" },
+						{ "label": "Uwekaji wa Majengo", "href": "/civil/site-setting-out" },
+						{ "label": "Huduma za chini ya ardhi (Mabomba ya maji, mabomba ya maji taka, nyaya za umeme)", "href": "/surveying/ground-penetrating-radar" },
+						{ "label": "Uhandisi wa Barabara kuu", "href": "/civil/highway-surveys" },
+						{ "label": "Uwekaji alama", "href": "/civil/site-setting-out" },
+						{ "label": "Upimaji wa viwango" },
+						{ "label": "Uwekaji wa alama za kumbukumbu" },
+						{ "label": "Huduma za ujenzi" }
 					]
 				},
 				"deliverables": {
