@@ -24,7 +24,7 @@ export function ParallaxDecor({
 
 /**
  * Soft, blurred background blob (institutional texture, like Biofarma's misc-01).
- * Uses a radial mask fade instead of `filter: blur()` — visually identical soft
+ * Uses a radial mask fade instead of `filter: blur()` - visually identical soft
  * falloff without the expensive GPU filter layer.
  */
 export function Blob({

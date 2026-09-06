@@ -42,7 +42,7 @@ export function DronesSection() {
 						items.map((item, index) => (
 							<FadeUp key={index} delay={(index % 2) * 0.1}>
 								<Link href={item.href || "#"}>
-									<article className="group overflow-hidden bg-surface rounded-4xl hairline card-shadow transition-colors duration-500 hover:border-primary/20 h-full">
+									<article className="group overflow-hidden bg-surface rounded-4xl hairline card-shadow transition-colors duration-250 hover:border-primary/20 h-full">
 										{/* Image */}
 										<div className="relative h-64 sm:h-96 overflow-hidden">
 											{item.img && (

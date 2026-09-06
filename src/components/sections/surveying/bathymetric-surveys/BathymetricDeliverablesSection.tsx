@@ -5,7 +5,7 @@ import type { ReactElement } from "react";
 import { Deliverables } from "@/components/sections/Deliverables";
 
 /**
- * Bathymetric Surveys deliverables — thin wrapper around the global
+ * Bathymetric Surveys deliverables - thin wrapper around the global
  * reusable <Deliverables /> explorer (content: surveying/bathymetric-surveys:deliverables).
  */
 export function BathymetricDeliverablesSection(): ReactElement {

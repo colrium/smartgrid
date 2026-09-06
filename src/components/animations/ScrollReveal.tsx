@@ -64,7 +64,7 @@ function useReveal(margin = "-80px", once = true) {
 // ══════════════════════════════════════════════════════════════════════════════
 // 1. ClipReveal
 //    A solid curtain (same colour as the background) slides away to reveal
-//    content — left-to-right, right-to-left, or bottom-to-top.
+//    content - left-to-right, right-to-left, or bottom-to-top.
 //    This is the signature SOM / Reform Collective effect.
 // ══════════════════════════════════════════════════════════════════════════════
 
@@ -329,7 +329,7 @@ export function SplitWords({
 
 // ══════════════════════════════════════════════════════════════════════════════
 // 6. SplitChars
-//    Like SplitWords but character-by-character — each letter spins or drops in.
+//    Like SplitWords but character-by-character - each letter spins or drops in.
 //    Ideal for short headings, logos, labels.
 // ══════════════════════════════════════════════════════════════════════════════
 
@@ -440,7 +440,7 @@ export function Parallax({
 
 // ══════════════════════════════════════════════════════════════════════════════
 // 8. HorizontalParallax
-//    Content drifts left or right driven by page scroll — perfect for
+//    Content drifts left or right driven by page scroll - perfect for
 //    wide marquee-style text, image strips, or decorative layers.
 // ══════════════════════════════════════════════════════════════════════════════
 
@@ -662,7 +662,7 @@ export function CountUp({
 	className,
 }: CountUpProps) {
 	const { ref, inView } = useReveal(margin, once);
-	// Write text directly to the DOM node — avoids ~60 React re-renders/sec
+	// Write text directly to the DOM node - avoids ~60 React re-renders/sec
 	// per counter during the animation. Visual output is identical.
 	const valueRef = useRef<HTMLSpanElement>(null);
 
@@ -773,7 +773,7 @@ export function LineReveal({
 // ══════════════════════════════════════════════════════════════════════════════
 // 14. BlurReveal
 //    Content materialises from a fully blurred + transparent state into sharp
-//    focus. A cinematic, dreamlike entrance — excellent for hero images.
+//    focus. A cinematic, dreamlike entrance - excellent for hero images.
 // ══════════════════════════════════════════════════════════════════════════════
 
 export interface BlurRevealProps extends RevealProps {

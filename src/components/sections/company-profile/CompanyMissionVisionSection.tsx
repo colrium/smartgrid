@@ -40,7 +40,7 @@ export function CompanyMissionVisionSection() {
 				<div className="mt-14 sm:mt-20 grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={index * 0.07} className="h-full">
-							<article className="group h-full flex flex-col gap-4 rounded-c bg-surface hairline card-shadow p-8 text-center transition-all duration-500 hover:card-shadow-lift hover:border-primary">
+							<article className="group h-full flex flex-col gap-4 rounded-c bg-surface hairline card-shadow p-8 text-center transition-all duration-250 hover:card-shadow-lift hover:border-primary">
 								<span className="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 									{item.icon && <span className={`mdi mdi-${item.icon} text-3xl`} />}
 								</span>

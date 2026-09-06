@@ -54,12 +54,12 @@ export function CoreExpertiseSection() {
 									<Link
 										href={item.href}
 										aria-label={item.label}
-										className="group relative h-full flex flex-col rounded-[15px] border-t-2 border-ink/10 bg-surface card-shadow p-7 transition-[transform,box-shadow,border-color] duration-500  hover:card-shadow-lift  overflow-hidden"
+										className="group relative h-full flex flex-col rounded-[15px] border-t-2 border-ink/10 bg-surface card-shadow p-7 transition-[transform,box-shadow,border-color] duration-250  hover:card-shadow-lift  overflow-hidden"
 									>
 										<ExpertiseCardBody item={item} index={index} kicker={kicker} />
 									</Link>
 								) : (
-									<article className="group relative h-full flex flex-col rounded-[15px] border-t-2 border-ink/10 bg-surface card-shadow p-7 transition-[transform,box-shadow,border-color] duration-500  overflow-hidden">
+									<article className="group relative h-full flex flex-col rounded-[15px] border-t-2 border-ink/10 bg-surface card-shadow p-7 transition-[transform,box-shadow,border-color] duration-250  overflow-hidden">
 										<ExpertiseCardBody item={item} index={index} kicker={kicker} />
 									</article>
 								)}

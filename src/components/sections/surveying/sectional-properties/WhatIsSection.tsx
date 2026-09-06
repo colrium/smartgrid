@@ -120,7 +120,7 @@ export function WhatIsSection(): ReactElement {
 						{items.map((item, index) => (
 							<FadeUp key={index} delay={index * 0.08}>
 								<article className="group relative overflow-hidden rounded-c pale-panel hairline card-shadow p-7 sm:p-8 transition-shadow duration-300 hover:card-shadow-lift">
-									<span className="absolute -top-10 -right-10 h-32 w-32 rounded-full bg-primary-50 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
+									<span className="absolute -top-10 -right-10 h-32 w-32 rounded-full bg-primary-50 opacity-0 blur-2xl transition-opacity duration-250 group-hover:opacity-100" />
 									<div className="relative flex items-start gap-5">
 										<span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary-50 text-primary hairline transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 											<span

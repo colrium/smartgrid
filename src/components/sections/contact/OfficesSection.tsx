@@ -71,7 +71,7 @@ export function OfficesSection() {
 					lat: o.lat as number,
 					lng: o.lng as number,
 					label: String(i + 1),
-					title: `${o.label} — ${o.city}`,
+					title: `${o.label} - ${o.city}`,
 				})),
 		[offices]
 	);
@@ -100,7 +100,7 @@ export function OfficesSection() {
 				<div className="mt-12 sm:mt-16 grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
 					{offices.map((office, index) => (
 						<FadeUp key={index} delay={(index % 2) * 0.08} className="h-full">
-							<article className="h-full flex flex-col rounded-c bg-surface hairline card-shadow overflow-hidden transition-all duration-500 hover:card-shadow-lift hover:border-primary">
+							<article className="h-full flex flex-col rounded-c bg-surface hairline card-shadow overflow-hidden transition-all duration-250 hover:card-shadow-lift hover:border-primary">
 								<div className="relative flex items-center gap-4 px-7 sm:px-9 pt-8 sm:pt-10 pb-7 border-b border-primary/10">
 									<span className="h-14 w-14 shrink-0 rounded-2xl bg-primary-50 flex items-center justify-center text-3xl">
 										{office.flag}

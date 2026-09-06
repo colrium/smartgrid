@@ -1,6 +1,9 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import i18nextConfig from "../../next-i18next.config";
-import { GoogleAnalytics } from "@next/third-parties/google";
+// Google Analytics is intentionally NOT loaded here: it would set `_ga`
+// cookies before consent. It is injected on the client only after the visitor
+// grants "analytics" consent (see src/components/CookieConsent.tsx +
+// src/lib/consent.ts).
 
 export default function MyDocument(props) {
         const currentLocale = (props.__NEXT_DATA__.query.locale ?? i18nextConfig.i18n.defaultLocale) as string;
@@ -17,7 +20,6 @@ export default function MyDocument(props) {
 					<Main />
 					<NextScript />
 				</body>
-				<GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ""} />
 			</Html>
 		);
 	

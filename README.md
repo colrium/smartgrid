@@ -9,13 +9,13 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Last commit](https://img.shields.io/github/last-commit/colrium/smartgrid)
 
-A performance-focused, internationalized marketing & content site for SmartGrid Surveying —
+A performance-focused, internationalized marketing & content site for SmartGrid Surveying -
 a Nairobi-based company delivering engineering-grade **land surveying**, **aerial/drone
 surveys**, **civil engineering**, and **surveying equipment** services across Kenya and East Africa.
 
-- 🌐 **Live site:** [https://smartgridsurveying.com](https://smartgridsurveying.com)
+- 🌐 **Live site:** [https://smartgrid-phi.vercel.app](https://smartgrid-phi.vercel.app)
 - 📍 **Headquarters:** Nairobi (Ruiru), Kenya
-- 🌍 **Locales:** English, German, Swahili, French, Portuguese (auto-detected)
+- 🌍 **Locales:** English, Swahili (auto-detected)
 - 🏗️ **Built with:** Next.js 16 · TypeScript · Tailwind CSS · i18next · Sanity CMS
 
 ---

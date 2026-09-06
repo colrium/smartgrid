@@ -146,7 +146,7 @@ export function GisComponentsSection() {
 					<div className="order-2 flex flex-col gap-4">
 						{list.map((item, index) => (
 							<FadeUp key={index} delay={index * 0.06}>
-								<article className="group relative flex items-start gap-5 rounded-c bg-paper hairline card-shadow p-5 sm:p-6 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
+								<article className="group relative flex items-start gap-5 rounded-c bg-paper hairline card-shadow p-5 sm:p-6 transition-all duration-250 hover:card-shadow-lift hover:border-primary">
 									<span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary-50 font-semibold text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 										{String(index + 1).padStart(2, "0")}
 									</span>

@@ -49,21 +49,21 @@ export function PlanningInfographicSection(): ReactElement | null {
 				{benefits.length > 0 && (
 					<ol className="mt-14 sm:mt-16 relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 sm:gap-6 lg:gap-4">
 						{/* Dashed journey connector (desktop) */}
-						<span
+						{/* <span
 							aria-hidden
 							className="hidden lg:block absolute top-16 left-[10%] right-[10%] border-t-2 border-dashed border-primary/25"
-						/>
+						/> */}
 						{benefits.map((benefit, index) => (
 							<li key={index} className="relative h-full min-h-50">
 								<FadeUp delay={index * 0.07} className="h-full">
-									<div className="group relative h-full p-6 pt-9 bg-surface rounded-c hairline card-shadow hover:card-shadow-lift hover:border-primary transition-[box-shadow,border-color,transform] duration-500 overflow-clip hover:-translate-y-1">
+									<div className="group relative h-full p-6 pt-9 bg-surface rounded-c hairline card-shadow hover:card-shadow-lift hover:border-primary transition-[box-shadow,border-color,transform] duration-250 overflow-clip ">
 										{/* Step index */}
-										<span className="absolute top-4 right-5 text-4xl font-light tracking-tight text-primary/15 tabular-nums transition-colors duration-500 group-hover:text-primary/30">
+										<span className="absolute top-4 right-5 text-4xl font-light tracking-tight text-primary/15 tabular-nums transition-colors duration-250 group-hover:text-primary/30">
 											{String(index + 1).padStart(2, "0")}
 										</span>
 
-										<span className="relative z-10 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
-											<span className={`mdi mdi-${benefit.icon} text-2xl`} />
+										<span className="relative z-10 flex h-8 w-8 items-center justify-center rounded-2xl bg-primary-50 text-ink transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
+											<span className={`mdi mdi-check text-md`} />
 										</span>
 
 										<p className="relative z-10 mt-5 text-sm text-on-surface/75 leading-relaxed">
@@ -73,7 +73,7 @@ export function PlanningInfographicSection(): ReactElement | null {
 										{/* Watermark icon */}
 										<span
 											aria-hidden
-											className={`absolute -bottom-4 -right-3 mdi mdi-${benefit.icon} text-7xl text-primary-100/80 select-none pointer-events-none transition-colors duration-500 group-hover:text-primary-200/90`}
+											className={`absolute -bottom-3 -right-2 mdi mdi-${benefit.icon} text-8xl text-ink-50/30 select-none pointer-events-none`}
 										/>
 									</div>
 								</FadeUp>
@@ -85,7 +85,7 @@ export function PlanningInfographicSection(): ReactElement | null {
 				{section.closingStatement && (
 					<FadeUp delay={0.1}>
 						<div className="mt-10 sm:mt-12 flex justify-center">
-							<p className="inline-block max-w-3xl text-center rounded-c pale-panel-soft hairline card-shadow px-8 py-6 text-base sm:text-lg text-on-surface/80 leading-relaxed font-medium">
+							<p className="inline-block max-w-3xl text-center rounded-c pale-panel hairline card-shadow px-8 py-6 text-base g text-on-surface/80 leading-relaxed font-medium">
 								<Trans
 									// @ts-expect-error
 									i18nKey={["home:planningInfographic.closingStatement"]}

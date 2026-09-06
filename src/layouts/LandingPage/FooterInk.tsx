@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useTranslation } from "@/hooks";
+import { useTranslation, useCookieConsent } from "@/hooks";
 
 const columnKeys = ["company", "surveying", "drones", "civil"] as const;
 const legalLinks = {
@@ -28,6 +28,7 @@ const isExternal = (href: string) => href.startsWith("http");
 
 export default function FooterInk() {
 	const { t } = useTranslation(["common", "meta", "contact"]);
+	const openPreferences = useCookieConsent((state) => state.openPreferences);
 	const title = t("meta:site.title");
 	const subtitle = t("meta:site.subtitle");
 	const description = t("common:footer.description");
@@ -173,6 +174,14 @@ export default function FooterInk() {
 								{t(`common:footer.legal.${key}`)}
 							</Link>
 						))}
+						{/* GDPR: withdraw / review cookie consent at any time. */}
+						<button
+							type="button"
+							onClick={() => openPreferences({ customizing: true })}
+							className="cursor-pointer text-xs text-surface/50 transition-colors hover:text-primary-300"
+						>
+							{t("common:footer.legal.cookies")}
+						</button>
 					</div>
 				</div>
 			</div>

@@ -67,7 +67,7 @@ export function ServicesSection(): ReactElement | null {
 				</FadeUp>
 
 				<div className="mt-14 sm:mt-20 rounded-c pale-panel-soft hairline card-shadow overflow-hidden p-6 sm:p-10 lg:p-12">
-					{/* Row 1 — horizontal service tabs */}
+					{/* Row 1 - horizontal service tabs */}
 					<div
 						role="tablist"
 						aria-label="Services"
@@ -84,7 +84,7 @@ export function ServicesSection(): ReactElement | null {
 									aria-selected={selected}
 									aria-controls="service-panel"
 									onClick={() => setActiveTab(index)}
-									className={`flex flex-col items-center justify-center gap-1.5 rounded-[15px] px-2 py-3.5 text-center transition-all duration-300 sm:flex-row sm:justify-start sm:gap-3.5 sm:rounded-2xl sm:px-5 sm:py-4 sm:text-left ${
+									className={`flex flex-col items-center justify-center gap-1.5 rounded-cmd cursor-pointer px-2 py-3.5 text-center transition-all duration-300 sm:flex-row sm:justify-start sm:gap-3.5 sm:rounded-2xl sm:px-5 sm:py-4 sm:text-left  ${
 										selected
 											? "bg-ink text-surface card-shadow"
 											: "bg-surface/70 hairline text-ink hover:bg-surface hover:-translate-y-0.5"
@@ -128,7 +128,7 @@ export function ServicesSection(): ReactElement | null {
 							exit={{ opacity: 0, y: -12 }}
 							transition={{ duration: 0.4, ease: PANEL_EASE }}
 						>
-							{/* Row 2 — feature image beside description */}
+							{/* Row 2 - feature image beside description */}
 							<div className="mt-8 sm:mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
 								<FadeUp>
 									<figure className="group relative aspect-4/5 rounded-cmd hairline overflow-hidden bg-surface card-shadow">
@@ -173,7 +173,7 @@ export function ServicesSection(): ReactElement | null {
 								</FadeUp>
 							</div>
 
-							{/* Row 3 — service deliverables: reusable interactive explorer (components/sections/Deliverables) */}
+							{/* Row 3 - service deliverables: reusable interactive explorer (components/sections/Deliverables) */}
 							{hasDeliverables && (
 								<div key={activeTab} className="mt-12 sm:mt-16">
 									<FadeUp>
@@ -183,7 +183,7 @@ export function ServicesSection(): ReactElement | null {
 													className="h-px w-6 bg-primary/60"
 													aria-hidden
 												/>
-												{active.label} —{" "}
+												{active.label} -{" "}
 												{deliverables?.label || "Deliverables"}
 											</h3>
 											{deliverables?.description && (
@@ -202,7 +202,7 @@ export function ServicesSection(): ReactElement | null {
 								</div>
 							)}
 
-							{/* Row 4 — what we offer */}
+							{/* Row 4 - what we offer */}
 							<div className="mt-12 sm:mt-16">
 								<h4 className="inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary mb-6">
 									<span className="h-px w-6 bg-primary/60" />

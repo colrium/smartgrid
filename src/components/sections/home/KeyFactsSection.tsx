@@ -63,7 +63,7 @@ export function KeyFactsSection(): ReactElement | null {
 							{items.map((item, index) => (
 								<article
 									key={index}
-									className="group glass rounded-2xl p-7 flex flex-col items-center text-center transition-[transform,box-shadow] duration-500 hover:-translate-y-1.5 hover:card-shadow-lift"
+									className="group glass rounded-2xl p-7 flex flex-col items-center text-center transition-[transform,box-shadow] duration-250 hover:-translate-y-1.5 hover:card-shadow-lift"
 									>
 									{/* Rotating survey-stamp medallion */}
 									<span className="relative mb-6 flex h-16 w-16 items-center justify-center">

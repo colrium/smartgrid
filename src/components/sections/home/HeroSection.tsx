@@ -50,8 +50,8 @@ interface Location {
 export default function HeroSection() {
 	const heroRef = useRef<HTMLElement>(null);
 
-	// WebGL scene is only for capable desktop-class devices. Deciding here —
-	// not inside HeroScene — means the ~600 KB three.js chunk is never even
+	// WebGL scene is only for capable desktop-class devices. Deciding here -
+	// not inside HeroScene - means the ~600 KB three.js chunk is never even
 	// fetched on touch devices / small viewports / low-core hardware, where
 	// the animated full-window canvas would otherwise saturate the CPU during
 	// load (the dominant Total Blocking Time + LCP delay in Lighthouse). The
@@ -77,7 +77,7 @@ export default function HeroSection() {
 	const scrollYPercentage = useMotionValue(0);
 
 	// Hero height is cached in a ref (so the Lenis callback reads the latest
-	// measurement without re-subscribing) and only re-measured on resize —
+	// measurement without re-subscribing) and only re-measured on resize -
 	// reading clientHeight on every scroll frame would force layout thrash.
 	const heroHeightRef = useRef(900);
 	useLenis(
@@ -209,7 +209,7 @@ export default function HeroSection() {
 				className={`rounded-3xl fixed  -right-40 md:-right-20 lg:-right-8 bottom-0 overflow-hidden w-80 md:w-100 lg:w-140 aspect-3/4 z-0`}
 				style={{ opacity: colorOpacity }}
 			>
-				{/* LCP element — priority + high fetch priority so it is discovered
+				{/* LCP element - priority + high fetch priority so it is discovered
 				    in the initial document and requested ahead of everything else. */}
 				<Image
 					src="/img/instruments/total-station-color.png"

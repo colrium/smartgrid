@@ -42,7 +42,7 @@ export function InstrumentsSection() {
 				<div className="mt-14 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={(index % 4) * 0.08}>
-							<article className="group relative h-64 sm:h-80 overflow-hidden rounded-2xl hairline bg-surface card-shadow transition-all duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-primary-300">
+							<article className="group relative h-64 sm:h-80 overflow-hidden rounded-2xl hairline bg-surface card-shadow transition-all duration-250 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-primary-300">
 								{item.image && (
 									<Image
 										src={item.image}

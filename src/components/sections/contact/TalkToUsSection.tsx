@@ -56,7 +56,7 @@ export function TalkToUsSection() {
 						<FadeUp key={index} delay={(index % 3) * 0.07}>
 							<a
 								href={contact.href}
-								className="relative group flex flex-col gap-6 h-full rounded-c bg-surface overflow-hidden hairline card-shadow p-7 sm:p-8 transition-all duration-500 hover:card-shadow-lift hover:border-primary"
+								className="relative group flex flex-col gap-6 h-full rounded-c bg-surface overflow-hidden hairline card-shadow p-7 sm:p-8 transition-all duration-250 hover:card-shadow-lift hover:border-primary"
 								target="_blank"
 							>
 								<div className="flex items-center justify-between">
@@ -68,7 +68,7 @@ export function TalkToUsSection() {
 										)}
 									</span>
 									<span
-										className={`mdi mdi-arrow-up-right text-xl text-${contact.color || "on-surface"} opacity-0 -translate-x-1 translate-y-1 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0`}
+										className={`mdi mdi-arrow-up-right text-xl text-${contact.color || "on-surface"} opacity-0 -translate-x-1 translate-y-1 transition-all duration-250 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0`}
 									/>
 								</div>
 

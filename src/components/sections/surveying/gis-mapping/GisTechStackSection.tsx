@@ -96,7 +96,7 @@ export function GisTechStackSection(): ReactElement {
 									}
 								>
 									<article
-										className={`group relative h-full w-full flex flex-col items-center justify-center gap-2.5 rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-500 hover:-translate-y-1 ${
+										className={`group relative h-full w-full flex flex-col items-center justify-center gap-2.5 rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-250 hover:-translate-y-1 ${
 											isFeature
 												? "pale-panel hairline card-shadow hover:card-shadow-lift hover:border-primary/40"
 												: "bg-surface hairline card-shadow hover:card-shadow-lift hover:border-primary"
@@ -108,7 +108,7 @@ export function GisTechStackSection(): ReactElement {
 												alt={logo.label || "Geospatial tool"}
 												fill
 												sizes="(min-width: 1024px) 25vw, 50vw"
-												className="object-contain p-3 transition-transform duration-500 group-hover:scale-105"
+												className="object-contain p-3 transition-transform duration-250 group-hover:scale-105"
 											/>
 										</span>
 										<span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-center leading-tight text-on-surface/40 transition-colors duration-300 group-hover:text-primary">

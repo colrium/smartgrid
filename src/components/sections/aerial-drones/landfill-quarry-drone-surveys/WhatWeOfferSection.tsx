@@ -66,7 +66,7 @@ export function WhatWeOfferSection() {
 				<div className="mt-14 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={(index % 3) * 0.08}>
-							<article className="group relative h-full flex flex-col p-8 rounded-c bg-surface hairline card-shadow transition-all duration-500 hover:card-shadow-lift hover:border-primary">
+							<article className="group relative h-full flex flex-col p-8 rounded-c bg-surface hairline card-shadow transition-all duration-250 hover:card-shadow-lift hover:border-primary">
 								<span className=" w-14 h-14 flex items-center justify-center rounded-full bg-primary-50 text-mute transition-colors duration-300 group-hover:text-primary self-center">
 									<span
 										className={`mdi mdi-${

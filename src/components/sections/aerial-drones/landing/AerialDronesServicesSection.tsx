@@ -59,7 +59,7 @@ export function AerialDronesServicesSection() {
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={(index % 3) * 0.07} className="h-full">
 							<article
-								className="group h-full flex flex-col gap-4 rounded-c bg-surface hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary"
+								className="group h-full flex flex-col gap-4 rounded-c bg-surface hairline card-shadow p-7 transition-all duration-250 hover:card-shadow-lift hover:border-primary"
 								onClick={() => item.popupContent && setOpen(index)}
 							>
 								<div className="flex items-start justify-between gap-4">

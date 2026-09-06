@@ -52,7 +52,7 @@ export function WhenYouNeedSection() {
 							delay={(index % 2) * 0.07}
 							className={`h-full ${item.children ? "md:col-span-2" : ""}`}
 						>
-							<article className="h-full flex flex-col gap-4 rounded-c bg-surface hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
+							<article className="h-full flex flex-col gap-4 rounded-c bg-surface hairline card-shadow p-7 transition-all duration-250 hover:card-shadow-lift hover:border-primary">
 								<div className="flex items-start gap-4">
 									<span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary">
 										{item.icon && <span className={`mdi mdi-${item.icon} text-xl`} />}

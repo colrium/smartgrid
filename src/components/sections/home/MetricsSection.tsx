@@ -66,7 +66,7 @@ export function MetricsSection() {
 										delay={(index % 4) * 0.08}
 										className="h-full"
 									>
-										<div className="relative glass-dark rounded-xl h-full p-8 flex flex-col items-center text-center gap-4 transition-[transform,border-color] duration-500 hover:-translate-y-1.5 hover:border-surface/30 overflow-hidden">
+										<div className="relative glass-dark rounded-xl h-full p-8 flex flex-col items-center text-center gap-4 transition-[transform,border-color] duration-250 hover:-translate-y-1.5 hover:border-surface/30 overflow-hidden">
 											<span className="text-5xl sm:text-[3.4rem] font-light text-surface tabular-nums leading-none tracking-tight">
 												<CountUp
 													to={item.value}

@@ -47,7 +47,7 @@ export function GisServicesSection(): ReactElement {
 						return (
 							<FadeUp key={index} delay={(index % 3) * 0.07} className="h-full">
 								<article
-									className={`group relative h-full flex flex-col rounded-c bg-surface hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary ${
+									className={`group relative h-full flex flex-col rounded-c bg-surface hairline card-shadow p-7 transition-all duration-250 hover:card-shadow-lift hover:border-primary ${
 										items.length % 2 !== 0 && index === items.length - 1
 											? "sm:col-span-2 lg:col-span-1"
 											: ""
@@ -59,7 +59,7 @@ export function GisServicesSection(): ReactElement {
 										</span>
 										<span
 											aria-hidden
-											className="text-4xl font-light leading-none tracking-tighter text-primary/15 transition-colors duration-500 group-hover:text-primary/40"
+											className="text-4xl font-light leading-none tracking-tighter text-primary/15 transition-colors duration-250 group-hover:text-primary/40"
 										>
 											{String(index + 1).padStart(2, "0")}
 										</span>

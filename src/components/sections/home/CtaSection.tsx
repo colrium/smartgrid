@@ -1,9 +1,8 @@
 "use client";
 
-import Link from "next/link";
+import type { ReactElement } from "react";
 import { useTranslation } from "@/hooks";
-import { FadeUp } from "@/components/animations/Fade";
-import { SectionTag } from "@/components/SectionTag";
+import { CtaBand } from "@/components/sections/shared";
 
 interface CtaLink {
 	label: string;
@@ -11,89 +10,40 @@ interface CtaLink {
 	icon?: string;
 }
 
-export function CtaSection() {
+export function CtaSection(): ReactElement {
 	const { t } = useTranslation(["home"]);
-	const primary = t("home:cta.primary", { returnObjects: true }) as CtaLink;
-	const secondary = t("home:cta.secondary", { returnObjects: true }) as CtaLink;
+	const primary = t("home:cta.primary", {
+		returnObjects: true,
+	}) as unknown as CtaLink;
+	const secondary = t("home:cta.secondary", {
+		returnObjects: true,
+	}) as unknown as CtaLink;
 
 	return (
-		<section id="cta" className="pb-24 sm:pb-28 relative overflow-hidden">
-			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-				<FadeUp>
-					<div className="relative rounded-c ink-panel card-shadow overflow-hidden px-8 py-16 sm:px-12 sm:py-24 text-center">
-						{/* authoritative glows + watermark */}
-						<span
-							className="absolute -top-24 -right-24 w-120 h-120 rounded-full bg-primary-300/20 pointer-events-none"
-							style={{
-								WebkitMaskImage: "radial-gradient(closest-side, black 30%, transparent 72%)",
-								maskImage: "radial-gradient(closest-side, black 30%, transparent 72%)",
-							}}
-						/>
-						<span
-							className="absolute -bottom-28 -left-20 w-72 h-72 rounded-full bg-primary/30 pointer-events-none"
-							style={{
-								WebkitMaskImage: "radial-gradient(closest-side, black 30%, transparent 72%)",
-								maskImage: "radial-gradient(closest-side, black 30%, transparent 72%)",
-							}}
-						/>
-						<span
-							className="absolute -bottom-10 right-4 font-light tracking-tighter text-[11rem] leading-none text-surface/[0.03] select-none pointer-events-none hidden sm:block"
-							aria-hidden
-						>
-							↗
-						</span>
-						
-
-						<div className="relative flex flex-col items-center gap-6">
-							{/* kicker */}
-							<SectionTag dark>
-								{t("home:cta.tag") as string}
-							</SectionTag>
-
-							<h2 className="font-light tracking-tight leading-[1.08] text-3xl sm:text-5xl lg:text-[3.4rem] text-surface max-w-3xl">
-								{t("home:cta.headline") as string}
-							</h2>
-
-							<p className="text-base sm:text-lg text-surface/65 leading-relaxed max-w-2xl mx-auto">
-								{t("home:cta.description") as string}
-							</p>
-
-							<div className="mt-4 flex flex-col sm:flex-row items-center gap-4">
-								{primary?.href && (
-									<Link
-										href={primary.href}
-										className="group inline-flex items-center gap-3 h-14 rounded-full bg-surface px-8 text-ink font-medium text-base transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]"
-									>
-										<span className="h-1.5 w-1.5 rounded-full bg-primary transition-transform duration-300 group-hover:scale-125" />
-										{primary.label}
-										{primary.icon && (
-											<span
-												className={`mdi mdi-${primary.icon} text-xl text-ink transition-transform duration-300 group-hover:translate-x-1`}
-											/>
-										)}
-									</Link>
-								)}
-								{secondary?.href && (
-									<Link
-										href={secondary.href}
-										className="inline-flex items-center gap-2.5 h-14 rounded-full border border-surface/30 px-8 text-surface text-base transition-[border-color,background-color] duration-300 hover:border-surface hover:bg-surface/10"
-									>
-										{secondary.icon ? (
-											<span
-												className={`mdi mdi-${secondary.icon} text-lg text-primary-200`}
-											/>
-										) : (
-											<span className="h-1.5 w-1.5 rounded-full bg-primary-200" />
-										)}
-										{secondary.label}
-									</Link>
-								)}
-							</div>
-						</div>
-					</div>
-				</FadeUp>
-			</div>
-		</section>
+		<CtaBand
+			id="cta"
+			className="pb-24 sm:pb-28 relative overflow-hidden"
+			decor="masked"
+			glyph="↗"
+			tag={t("home:cta.tag")}
+			headline={t("home:cta.headline")}
+			description={t("home:cta.description")}
+			primary={
+				primary?.href
+					? {
+							label: primary.label,
+							href: primary.href,
+							icon: primary.icon,
+							iconPosition: "end",
+						}
+					: null
+			}
+			secondary={
+				secondary?.href
+					? { label: secondary.label, href: secondary.href, icon: secondary.icon }
+					: null
+			}
+		/>
 	);
 }
 

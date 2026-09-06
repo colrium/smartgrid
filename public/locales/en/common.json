@@ -281,6 +281,33 @@
 		"ctaSecondary": { "label": "Learn More", "href": "/#faq" },
 		"ctaSearch": { "label": "Learn More", "href": "/#faq" }
 	},
+	"cookies": {
+		"title": "We value your privacy",
+		"description": "We use essential cookies to keep this site working, plus optional ones to enhance your experience and measure how it is used. Choose \"Accept all\", \"Reject all\", or customise your preferences — you can change your choice at any time.",
+		"privacyLink": "Read our Privacy Policy",
+		"acceptAll": "Accept all",
+		"rejectAll": "Reject all",
+		"customize": "Customise",
+		"savePreferences": "Save preferences",
+		"back": "Back",
+		"preferencesDescription": "Choose which cookies you allow. Essential cookies keep the site working and cannot be switched off.",
+		"categories": {
+			"necessary": {
+				"label": "Strictly necessary",
+				"description": "Required for core features such as security, your language setting and remembering these cookie choices.",
+				"alwaysActive": "Always active"
+			},
+			"functional": {
+				"label": "Functional",
+				"description": "Enable enhanced features like live chat support and remember your settings for a more personal experience."
+			},
+			"analytics": {
+				"label": "Analytics",
+				"description": "Help us understand how visitors use the site so we can improve it. Data is aggregated and does not identify you."
+			}
+		}
+	},
+
 	"footer": {
 		"description": "Reliable. Scalable. Fast. Accurate.",
 		"columns": {
@@ -349,7 +376,8 @@
 		"copyright": "© {{year}} {{organization}} All rights reserved.",
 		"legal": {
 			"privacy": "Privacy Policy",
-			"terms": "Terms of Use"
+			"terms": "Terms of Use",
+			"cookies": "Cookie Settings"
 		}
 	}
 }

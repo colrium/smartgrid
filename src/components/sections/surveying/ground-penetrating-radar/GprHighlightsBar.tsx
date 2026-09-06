@@ -30,11 +30,11 @@ export function GprHighlightsBar(): ReactElement {
 							{items.map((item, index) => (
 								<div
 									key={index}
-									className={`group relative flex items-center gap-4 px-6 sm:px-8 py-6 sm:py-7 transition-all duration-500 hover:bg-primary-50/40 `}
+									className={`group relative flex items-center gap-4 px-6 sm:px-8 py-6 sm:py-7 transition-all duration-250 hover:bg-primary-50/40 `}
 								>
 									
 
-									<span className="relative inline-flex h-12 w-12 shrink-0 items-center justify-center  text-primary transition-all duration-500   ">
+									<span className="relative inline-flex h-12 w-12 shrink-0 items-center justify-center  text-primary transition-all duration-250   ">
 										{item.icon && <span className={`mdi mdi-${item.icon} text-xl`} />}
 									</span>
 

@@ -67,7 +67,7 @@ export interface ModelBounds {
 	bottom: number;
 	/** Full bounding radius: horizontal (turntable) radius merged with half the height */
 	radius: number;
-	/** Horizontal (turntable) radius only — the model's footprint on the ground */
+	/** Horizontal (turntable) radius only - the model's footprint on the ground */
 	footprint: number;
 	/** Full height of the bounding box */
 	height: number;
@@ -109,7 +109,7 @@ export interface ModelViewerProps {
 }
 
 /* ------------------------------------------------------------------ */
-/* LoadingOverlay — rendered OUTSIDE the Canvas (and outside the       */
+/* LoadingOverlay - rendered OUTSIDE the Canvas (and outside the       */
 /* opacity-0 canvas wrapper), because drei's useProgress() is a global */
 /* zustand store hook that does not require R3F context. The previous  */
 /* Suspense fallback lived inside the fade-in wrapper, so the progress */
@@ -165,7 +165,7 @@ function LoadingOverlay({ ready }: { ready: boolean }) {
 }
 
 /* ------------------------------------------------------------------ */
-/* LoadPrompt — deferred-load teaser. A blurred, slowly drifting       */
+/* LoadPrompt - deferred-load teaser. A blurred, slowly drifting       */
 /* product image (or gradient fallback) behind a pulsing Load button.  */
 /* Nothing 3D mounts until clicked: no WebGL context, no GLB fetch.    */
 /* ------------------------------------------------------------------ */
@@ -208,13 +208,13 @@ function LoadPrompt({ src, onStart }: { src?: string; onStart: () => void }) {
 }
 
 /* ------------------------------------------------------------------ */
-/* Model — enables shadows, then signals readiness once (no material   */
+/* Model - enables shadows, then signals readiness once (no material   */
 /* opacity mutation: mutating shared/cached glTF materials per-instance*/
 /* is what previously left meshes stuck invisible).                    */
 /* ------------------------------------------------------------------ */
 
 /* ------------------------------------------------------------------ */
-/* Model — enables shadows, signals readiness, and wires glTF clips    */
+/* Model - enables shadows, signals readiness, and wires glTF clips    */
 /* (if any) into a play/pause controller exposed to the parent.        */
 /* ------------------------------------------------------------------ */
 
@@ -309,7 +309,7 @@ function Model({
 }
 
 /* ------------------------------------------------------------------ */
-/* AutoFit — initial framing that fills the canvas width and HOLDS at  */
+/* AutoFit - initial framing that fills the canvas width and HOLDS at  */
 /* any yaw angle: fits the model's max horizontal (turntable) radius   */
 /* to the horizontal FOV, re-fits on resize, and saves controls state  */
 /* so "Reset" restores this exact framing.                             */
@@ -323,7 +323,7 @@ const FIT_MARGIN = 1.06;
  * silhouette stays inside the frame at ANY yaw angle, re-fits on resize, and
  * saves controls state so "Reset" restores this exact framing.
  *
- * Lives at module scope on purpose — the three.js camera/controls are mutable,
+ * Lives at module scope on purpose - the three.js camera/controls are mutable,
  * non-reactive objects obtained from the R3F store, and mutating them here
  * (not during render) is the sanctioned pattern for imperative scene setup.
  */
@@ -402,7 +402,7 @@ function AutoFit({
 }
 
 /* ------------------------------------------------------------------ */
-/* Turntable — rotates the MODEL on Y, not the camera. Keeps the       */
+/* Turntable - rotates the MODEL on Y, not the camera. Keeps the       */
 /* camera and ContactShadows world-anchored so the shadow stays in     */
 /* place instead of swinging around like the whole scene is spinning.  */
 /* ------------------------------------------------------------------ */
@@ -462,7 +462,7 @@ class EnvironmentErrorBoundary extends Component<{ children: ReactNode }, { fail
 /* ------------------------------------------------------------------ */
 
 /**
- * Key light — the only shadow caster. With no explicit position it is placed
+ * Key light - the only shadow caster. With no explicit position it is placed
  * relative to the model center, it always aims at the model (not the world
  * origin), and its orthographic shadow frustum is fitted to the measured
  * bounds so large models don't clip and small models don't waste shadow-map
@@ -568,7 +568,7 @@ function Lights({
 }
 
 /**
- * Shadow catcher — an invisible ground plane under the model that receives
+ * Shadow catcher - an invisible ground plane under the model that receives
  * the key light's real shadow. ShadowMaterial renders only the shadowed
  * texels and stays transparent everywhere else, so the canvas' transparent
  * background (and whatever the page puts behind it) is preserved.
@@ -592,7 +592,7 @@ function ShadowCatcher({ bounds }: { bounds: ModelBounds }) {
 }
 
 /* ------------------------------------------------------------------ */
-/* Live X/Y/Z camera readout — driven by rAF + DOM refs, no React state*/
+/* Live X/Y/Z camera readout - driven by rAF + DOM refs, no React state*/
 /* ------------------------------------------------------------------ */
 
 function useCoordinateReadout(
@@ -658,7 +658,7 @@ export default function ModelViewer({
 	// environment cannot re-show the overlay over the model.
 	const [readyUrl, setReadyUrl] = useState<string | null>(null);
 
-	// World-space bounds of the loaded model — anchors the contact shadow, the
+	// World-space bounds of the loaded model - anchors the contact shadow, the
 	// shadow catcher and the key light to where the GLB actually sits.
 	const [bounds, setBounds] = useState<ModelBounds | null>(null);
 
@@ -689,7 +689,7 @@ export default function ModelViewer({
 	const coordsRef = useCoordinateReadout(controlsRef, showCoordinates);
 
 	// Ref-driven fade-in: flips a CSS class directly on the DOM node once the
-	// model has mounted. No React state, so no extra re-render on load — except
+	// model has mounted. No React state, so no extra re-render on load - except
 	// the single modelReady flip that hides the loading overlay.
 	const handleBounds = useCallback((next: ModelBounds) => setBounds(next), []);
 
@@ -757,7 +757,7 @@ export default function ModelViewer({
 					    wheel events for page scrolling, so zooming the model only
 					    worked while holding Ctrl (Lenis ignores ctrl+wheel). This
 					    attribute makes Lenis skip wheel events over the viewer so
-					    OrbitControls receives them — hover + scroll = zoom. Touch
+					    OrbitControls receives them - hover + scroll = zoom. Touch
 					    behavior is intentionally left unchanged. */}
 					<div
 						ref={canvasWrapperRef}
@@ -789,7 +789,7 @@ export default function ModelViewer({
 								{/* PCSS soft shadows: patches the shadow shader so
 								    penumbras widen with distance from the contact point
 								    (contact-hardening). It disposes/recompiles materials
-								    on mount/unmount — keep it stably mounted. */}
+								    on mount/unmount - keep it stably mounted. */}
 								{!disableShadow && <SoftShadows size={40} samples={12} focus={0} />}
 								{!disableShadow && bounds && <ShadowCatcher bounds={bounds} />}
 								{!disableShadow && (

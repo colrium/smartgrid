@@ -38,7 +38,7 @@ export function WhyChooseUsSection() {
 						{/* <div className="mt-10 inline-flex items-center gap-4">
 							<span className="h-[1px] w-12 bg-primary/60" />
 							<span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-on-surface/40">
-								{String(1).padStart(2, "0")} —{" "}
+								{String(1).padStart(2, "0")} -{" "}
 								{String(Array.isArray(items) ? items.length : 0).padStart(2, "0")}
 							</span>
 						</div> */}

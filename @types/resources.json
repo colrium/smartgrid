@@ -1297,7 +1297,7 @@ export default interface Resources {
       }
     },
     "productImages": {
-      "images": ["/media/equipment-sale/automatic-level-bosch/09.png", "/media/equipment-sale/automatic-level-bosch/04.jpg", "/media/equipment-sale/automatic-level-bosch/02.jpg", "/media/equipment-sale/automatic-level-bosch/10.png"]
+      "images": ["/media/equipment-sale/automatic-level-bosch/09.png", "/media/equipment-sale/automatic-level-bosch/04.jpg", "/media/equipment-sale/automatic-level-bosch/02.jpg", "/media/equipment-sale/automatic-level-bosch/10.png", "/media/equipment-sale/automatic-level-bosch/06.jpeg", "/media/equipment-sale/automatic-level-bosch/07.jpeg"]
     },
     "relatedProducts": {
       "description": "Discover more surveying instruments from the SmartGrid catalogue.",
@@ -2534,6 +2534,32 @@ export default interface Resources {
       "address": "Nairobi, Kenya",
       "mobile": "+254 10 7393023"
     },
+    "cookies": {
+      "acceptAll": "Accept all",
+      "back": "Back",
+      "categories": {
+        "analytics": {
+          "description": "Help us understand how visitors use the site so we can improve it. Data is aggregated and does not identify you.",
+          "label": "Analytics"
+        },
+        "functional": {
+          "description": "Enable enhanced features like live chat support and remember your settings for a more personal experience.",
+          "label": "Functional"
+        },
+        "necessary": {
+          "alwaysActive": "Always active",
+          "description": "Required for core features such as security, your language setting and remembering these cookie choices.",
+          "label": "Strictly necessary"
+        }
+      },
+      "customize": "Customise",
+      "description": "We use essential cookies to keep this site working, plus optional ones to enhance your experience and measure how it is used. Choose \"Accept all\", \"Reject all\", or customise your preferences — you can change your choice at any time.",
+      "preferencesDescription": "Choose which cookies you allow. Essential cookies keep the site working and cannot be switched off.",
+      "privacyLink": "Read our Privacy Policy",
+      "rejectAll": "Reject all",
+      "savePreferences": "Save preferences",
+      "title": "We value your privacy"
+    },
     "errors": {
       "actions": {
         "contact": "Contact Support",
@@ -2634,6 +2660,7 @@ export default interface Resources {
       "copyright": "© {{year}} {{organization}} All rights reserved.",
       "description": "Reliable. Scalable. Fast. Accurate.",
       "legal": {
+        "cookies": "Cookie Settings",
         "privacy": "Privacy Policy",
         "terms": "Terms of Use"
       }

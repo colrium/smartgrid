@@ -39,7 +39,7 @@ export function CertificationsSection() {
 					{Array.isArray(items) &&
 						items.map((item, index) => (
 							<FadeUp key={index} delay={(index % 4) * 0.08}>
-								<div className="group flex flex-col h-full min-h-56 rounded-c hairline bg-surface card-shadow p-6 sm:p-7 transition-colors duration-500 hover:border-primary ">
+								<div className="group flex flex-col h-full min-h-56 rounded-c hairline bg-surface card-shadow p-6 sm:p-7 transition-colors duration-250 hover:border-primary ">
 									<div className="flex items-center justify-between">
 									
 										<span className="text-[11px] font-semibold tabular-nums tracking-[0.14em] text-on-surface/35">

@@ -95,7 +95,7 @@ export function WhenYouNeedSection(): ReactElement {
 
 							const card = (
 								<article
-									className={`group relative h-full rounded-c bg-paper hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift ${
+									className={`group relative h-full rounded-c bg-paper hairline card-shadow p-7 transition-all duration-250 hover:card-shadow-lift ${
 										isLinked ? "hover:border-primary cursor-pointer" : ""
 									} ${isWide ? "sm:col-span-2 sm:flex sm:items-center sm:gap-7" : "flex flex-col gap-3"}`}
 								>

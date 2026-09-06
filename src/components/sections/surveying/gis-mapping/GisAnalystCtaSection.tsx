@@ -67,7 +67,7 @@ export function GisAnalystCtaSection(): ReactElement {
 								<Link
 									key={index}
 									href={action.href}
-									className="group flex flex-col items-center gap-3 rounded-c bg-surface/[0.05] hairline-dark p-7 text-center transition-all duration-500 hover:-translate-y-1.5 hover:bg-surface/10 hover:border-primary-300/50"
+									className="group flex flex-col items-center gap-3 rounded-c bg-surface/[0.05] hairline-dark p-7 text-center transition-all duration-250 hover:-translate-y-1.5 hover:bg-surface/10 hover:border-primary-300/50"
 								>
 									<span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/15 text-primary-200 transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 										<span className={`mdi mdi-${action.icon || "email-outline"} text-2xl`} />

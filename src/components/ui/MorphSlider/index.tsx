@@ -596,7 +596,7 @@ export default function MorphSlider({
 		fit: imageFit,
 	});
 
-	// Keep the engine's options in sync after commit — the engine reads them
+	// Keep the engine's options in sync after commit - the engine reads them
 	// lazily via getOptions() whenever it starts a transition.
 	useEffect(() => {
 		optsRef.current = {

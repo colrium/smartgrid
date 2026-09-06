@@ -5,7 +5,7 @@ import type { ReactElement } from "react";
 import { Deliverables } from "@/components/sections/Deliverables";
 
 /**
- * Resource Mapping deliverables — thin wrapper around the global
+ * Resource Mapping deliverables - thin wrapper around the global
  * reusable <Deliverables /> explorer (content: surveying/resource-mapping:deliverables).
  */
 export function ResourceMappingDeliverablesSection(): ReactElement {

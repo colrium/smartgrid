@@ -278,6 +278,33 @@
 		"ctaSecondary": { "label": "Jifunze Zaidi", "href": "/#faq" },
 		"ctaSearch": { "label": "Jifunze Zaidi", "href": "/#faq" }
 	},
+	"cookies": {
+		"title": "Tunajali faragha yako",
+		"description": "Tunatumia kuki muhimu ili tovuti hii ifanye kazi, na kuki za hiari ili kuboresha uzoefu wako na kupima jinsi inavyotumika. Chagua \"Kubali zote\", \"Kataa zote\", au kubinafsisha mapendeleo yako — unaweza kubadilisha chaguo lako wakati wowote.",
+		"privacyLink": "Soma Sera ya Faragha",
+		"acceptAll": "Kubali zote",
+		"rejectAll": "Kataa zote",
+		"customize": "Kubinafsisha",
+		"savePreferences": "Hifadhi mapendeleo",
+		"back": "Rudi",
+		"preferencesDescription": "Chagua kuki unazoruhusu. Kuki muhimu huifanya tovuti ifanye kazi na haziwezi kuzimwa.",
+		"categories": {
+			"necessary": {
+				"label": "Muhimu sana",
+				"description": "Inahitajika kwa vitendaji muhimu kama usalama, mpangilio wako wa lugha na kukumbuka chaguo zako za kuki.",
+				"alwaysActive": "Imewashwa kila wakati"
+			},
+			"functional": {
+				"label": "Za kiutendaji",
+				"description": "Huwezesha vipengele kama mazungumzo ya moja kwa moja na kukumbuka mipangilio yako kwa uzoefu wa kibinafsi zaidi."
+			},
+			"analytics": {
+				"label": "Za uchambuzi",
+				"description": "Hutusaidia kuelewa jinsi wageni wanavyotumia tovuti ili tuiboreshe. Takwimu hukusanywa kwa pamoja na hazimtambui mtumiaji."
+			}
+		}
+	},
+
 	"footer": {
 		"description": "Inaaminika. Inaweza kupanuka. Haraka. Sahihi.",
 		"columns": {
@@ -346,7 +373,8 @@
 		"copyright": "© {{year}} {{organization}} Haki zote zimehifadhiwa.",
 		"legal": {
 			"privacy": "Sera ya Faragha",
-			"terms": "Masharti ya Matumizi"
+			"terms": "Masharti ya Matumizi",
+			"cookies": "Mipangilio ya Kuki"
 		}
 	}
 }

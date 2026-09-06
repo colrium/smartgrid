@@ -74,7 +74,7 @@ export function WhatIsGisSection() {
 					<div className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 						{items.map((item, index) => (
 							<FadeUp key={index} delay={(index % 4) * 0.07}>
-								<article className="group relative h-full flex flex-col gap-4 rounded-c bg-paper hairline card-shadow p-6 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
+								<article className="group relative h-full flex flex-col gap-4 rounded-c bg-paper hairline card-shadow p-6 transition-all duration-250 hover:card-shadow-lift hover:border-primary">
 									<span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 										<span className={`mdi mdi-${item.icon || "map-marker"} text-2xl`} />
 									</span>
