@@ -6,7 +6,7 @@ import Link from "@/components/Link";
 export interface CtaAction {
 	/** Visible label. */
 	label: string;
-	/** Destination href (internal or external — routed via `@/components/Link`). */
+	/** Destination href (internal or external - routed via `@/components/Link`). */
 	href: string;
 	/** Optional MDI icon name (without the `mdi-` prefix). */
 	icon?: string | null;

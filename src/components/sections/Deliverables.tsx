@@ -38,7 +38,7 @@ interface DeliverablesProps {
 }
 
 export interface DeliverablesExplorerProps {
-	/** deliverables content object (tag/headline/description are ignored — render your own header) */
+	/** deliverables content object (tag/headline/description are ignored - render your own header) */
 	content?: DeliverablesContent | null;
 	/** extra classes for the explorer grid (e.g. top margin) */
 	className?: string;
@@ -65,7 +65,7 @@ const toImageSrc = (image?: MediaImage | string | null): string | null => {
  * selectable list of deliverables. Deliverables may optionally carry an
  * image (`MediaImage | string`) which is shown in the preview.
  *
- * Embedded variant of <Deliverables /> — used by the standalone section and
+ * Embedded variant of <Deliverables /> - used by the standalone section and
  * directly inside composite sections (e.g. the home services tabs).
  */
 export function DeliverablesExplorer({

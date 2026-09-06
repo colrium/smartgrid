@@ -74,7 +74,7 @@ function extractOptions(children: ReactNode): ExtractedOption[] {
 /**
  * Floating-label select (filled / outlined / standard) mirroring the
  * TextField variants. The trigger is a `peer` button: the label floats via
- * CSS only — `peer-focus` / `peer-aria-expanded` when open, and
+ * CSS only - `peer-focus` / `peer-aria-expanded` when open, and
  * `peer-data-[empty=true]` resets it to rest while no value is picked
  * (skipped with `displayEmpty`, which keeps the label floated). Colors come
  * from the globals.css tokens (danger -> gmail, success -> whatsapp).
@@ -196,7 +196,7 @@ export function Select({
 	// With displayEmpty the placeholder option (value="") is rendered as the
 	// current display, so the label stays floated.
 	const displayNode = selectedOption ? selectedOption.display : null;
-	// isEmpty: no value picked (and not displayEmpty) — only in this state can
+	// isEmpty: no value picked (and not displayEmpty) - only in this state can
 	// the label ever rest inside the field.
 	const isEmpty = !displayEmpty && !selectedOption;
 	// data-empty only when the field is genuinely "at rest" (empty + closed +

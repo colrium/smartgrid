@@ -66,7 +66,7 @@ const variantClasses: Record<ButtonVariant, Record<ButtonColor, string>> = {
 	},
 };
 
-/** Padding/scale per size — mirrors the MUI text/contained paddings. */
+/** Padding/scale per size - mirrors the MUI text/contained paddings. */
 const sizeClasses: Record<ButtonVariant, Record<ButtonSize, string>> = {
 	text: {
 		small: "px-[5px] py-1 text-xs",

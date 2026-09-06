@@ -26,7 +26,7 @@ export interface ConsentRecord extends ConsentCategories {
     version: number;
     necessary: true;
     decision: ConsentDecision;
-    /** ISO-8601 timestamp — proof of when consent was given (GDPR Art. 7(1)). */
+    /** ISO-8601 timestamp - proof of when consent was given (GDPR Art. 7(1)). */
     timestamp: string;
 }
 
@@ -101,7 +101,7 @@ export function persistConsent(record: ConsentRecord): void {
     try {
         window.localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify(record));
     } catch {
-        // Storage may be unavailable (private mode) — the cookie mirror still applies.
+        // Storage may be unavailable (private mode) - the cookie mirror still applies.
     }
     document.cookie = `${CONSENT_COOKIE_NAME}=${encodeURIComponent(
         JSON.stringify(record),
@@ -131,7 +131,7 @@ export function purgeOptionalCookies(): void {
 }
 
 /**
- * Inject gtag.js (the same output `@next/third-parties` produces) — but only
+ * Inject gtag.js (the same output `@next/third-parties` produces) - but only
  * ever called once analytics consent has been granted.
  */
 export function loadGoogleAnalytics(measurementId: string): void {
@@ -155,7 +155,7 @@ export function loadGoogleAnalytics(measurementId: string): void {
     dataWindow.gtag("config", measurementId, { anonymize_ip: true });
 }
 
-/** Send a SPA page_view — a no-op until the GA script exists (i.e. consent). */
+/** Send a SPA page_view - a no-op until the GA script exists (i.e. consent). */
 export function trackPageView(url: string, title?: string): void {
     if (typeof window === "undefined") return;
     const dataWindow = window as GtagWindow;

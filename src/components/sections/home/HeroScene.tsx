@@ -2,7 +2,7 @@
 "use client";
 
 /**
- * HeroScene — WebGL background for the home hero.
+ * HeroScene - WebGL background for the home hero.
  *
  * Loaded via next/dynamic (ssr: false) from HeroSection so three.js and its
  * loaders stay out of the initial page bundle. The render loop starts
@@ -161,7 +161,7 @@ export default function HeroScene() {
 
 		const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 		renderer.setSize(window.innerWidth, window.innerHeight);
-		// Cap pixel ratio at 1.5 — visually indistinguishable for this scene,
+		// Cap pixel ratio at 1.5 - visually indistinguishable for this scene,
 		// but far cheaper on high-DPI phones (full-window canvas).
 		renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
 		container.appendChild(renderer.domElement);
@@ -371,7 +371,7 @@ export default function HeroScene() {
 		let smoothMouseX = 0;
 		let smoothMouseY = 0;
 
-		// Store coordinates directly — the lerp in the render loop already
+		// Store coordinates directly - the lerp in the render loop already
 		// smooths the input, so debouncing only added latency.
 		const onMouseMove = (e: MouseEvent) => {
 			targetMouseX = (e.clientX / window.innerWidth) * 2 - 1;
@@ -382,7 +382,7 @@ export default function HeroScene() {
 
 		// --- Animation Loop ---
 		const clock = new THREE.Clock();
-		// Cap to ~30fps and skip entirely when the tab is hidden — continuous
+		// Cap to ~30fps and skip entirely when the tab is hidden - continuous
 		// full-window rendering saturates low-end CPUs and delays LCP.
 		const FRAME_INTERVAL = 1000 / 30;
 		let lastFrameTime = 0;
@@ -401,7 +401,7 @@ export default function HeroScene() {
 			smoothMouseX += (targetMouseX - smoothMouseX) * 0.05;
 			smoothMouseY += (targetMouseY - smoothMouseY) * 0.05;
 
-			// Terrain wave — GPU-side via uTime uniform
+			// Terrain wave - GPU-side via uTime uniform
 			gridUniforms.uTime.value = t;
 
 			terrain.rotation.z = t * 0.05;
@@ -446,7 +446,7 @@ export default function HeroScene() {
 		window.addEventListener("resize", onResize);
 
 		// Defer the first render until the window has fully loaded and the main
-		// thread is idle — first-draw work (shader compilation, GL uploads)
+		// thread is idle - first-draw work (shader compilation, GL uploads)
 		// would otherwise compete with hydration and LCP during page load. The
 		// grid/particles/scanner appear a beat after load; the drone streams in
 		// alongside as before.

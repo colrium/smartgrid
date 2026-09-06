@@ -27,7 +27,7 @@ interface TimelineContent {
 	cta?: { label?: string; href?: string; icon?: string | null } | null;
 }
 
-/** Widest duration in the dataset — used to scale the range bars. */
+/** Widest duration in the dataset - used to scale the range bars. */
 const MAX_SCALE_DAYS = 42;
 
 export function TimelineSection(): ReactElement {

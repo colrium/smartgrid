@@ -76,7 +76,7 @@ export function CoverageAreaSection(): ReactElement | null {
 
 	return (
 		<section id="coverage-area" className="py-24 sm:py-28 relative overflow-hidden ">
-			{/* SmartGrid survey-grid motif — a subtle wink at the name */}
+			{/* SmartGrid survey-grid motif - a subtle wink at the name */}
 			{/* <span
 				aria-hidden
 				className="absolute inset-0 pointer-events-none"

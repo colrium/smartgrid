@@ -27,7 +27,7 @@ interface CtaBandProps {
 	/** Adds the inset dark hairline ring. */
 	hairline?: boolean;
 	id?: string;
-	/** Outer `<section>` classes. Replaces the default — include spacing + overflow. */
+	/** Outer `<section>` classes. Replaces the default - include spacing + overflow. */
 	className?: string;
 }
 

@@ -76,7 +76,7 @@ export function TimelineSection(): ReactElement {
 								return (
 									<div
 										key={index}
-										title={`${stage.label ?? ""} — ${stage.range ?? ""}`}
+										title={`${stage.label ?? ""} - ${stage.range ?? ""}`}
 										className="group relative flex items-center justify-center border-r border-surface/40 last:border-r-0 transition-[filter] duration-300 hover:brightness-110"
 										style={{ width: `${((stage.days ?? 0) / totalDays) * 100}%` }}
 									>

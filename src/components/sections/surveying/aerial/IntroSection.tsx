@@ -44,7 +44,7 @@ export function IntroSection(): ReactElement {
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-					{/* Left — editorial manifesto */}
+					{/* Left - editorial manifesto */}
 					<FadeUp className="lg:col-span-6">
 						<SectionTag>{section.tag}</SectionTag>
 
@@ -62,7 +62,7 @@ export function IntroSection(): ReactElement {
 						
 					</FadeUp>
 
-					{/* Right — briefing card */}
+					{/* Right - briefing card */}
 					<FadeUp delay={0.12} className="lg:col-span-6">
 						<div className="relative overflow-hidden rounded-c bg-surface hairline card-shadow p-8 sm:p-10">
 							

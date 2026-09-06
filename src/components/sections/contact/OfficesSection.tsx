@@ -71,7 +71,7 @@ export function OfficesSection() {
 					lat: o.lat as number,
 					lng: o.lng as number,
 					label: String(i + 1),
-					title: `${o.label} — ${o.city}`,
+					title: `${o.label} - ${o.city}`,
 				})),
 		[offices]
 	);

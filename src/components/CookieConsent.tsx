@@ -24,7 +24,7 @@ const PREFERENCE_ROWS: PreferenceRow[] = [
 /**
  * Non-obtrusive GDPR cookie consent.
  *
- * Renders a small, non-blocking card in the bottom-left corner — no backdrop,
+ * Renders a small, non-blocking card in the bottom-left corner - no backdrop,
  * no scroll lock, the page stays fully interactive while the visitor decides.
  * Non-essential cookies (analytics, live chat) are never set until consent is
  * given, and can be reviewed or withdrawn at any time via the footer link.
@@ -46,7 +46,7 @@ export default function CookieConsent(): ReactElement | null {
 
     // Seed the draft from the stored decision whenever the dialog appears, so
     // re-opening preferences shows the current state (never pre-ticked opt-ins
-    // on a first visit — GDPR requires unticked boxes by default).
+    // on a first visit - GDPR requires unticked boxes by default).
     useEffect(() => {
         if (open) {
             
