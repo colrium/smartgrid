@@ -258,7 +258,7 @@ export function CaseStudySection(): ReactElement {
 										return (
 											<article
 												key={index}
-												className={`rounded-c bg-paper hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift ${
+												className={`rounded-c bg-paper hairline card-shadow p-7 transition-all duration-250 hover:card-shadow-lift ${
 													isWide ? "sm:col-span-2" : ""
 												}`}
 											>
@@ -345,7 +345,7 @@ export function CaseStudySection(): ReactElement {
 								{(impact.items ?? []).map((item, index) => (
 									<article
 										key={index}
-										className="flex items-start gap-3.5 rounded-2xl bg-paper hairline card-shadow p-5 transition-all duration-500 hover:card-shadow-lift"
+										className="flex items-start gap-3.5 rounded-2xl bg-paper hairline card-shadow p-5 transition-all duration-250 hover:card-shadow-lift"
 									>
 										<span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary">
 											<span className={`mdi mdi-${item.icon || "check-circle"} text-lg`} />

@@ -48,12 +48,12 @@ export function SurveyingInstrumentsSection() {
 								{item.href ? (
 									<Link
 										href={item.href}
-										className="group relative block h-64 sm:h-80 overflow-hidden rounded-2xl hairline bg-surface card-shadow transition-[transform,box-shadow,border-color] duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-primary-300"
+										className="group relative block h-64 sm:h-80 overflow-hidden rounded-2xl hairline bg-surface card-shadow transition-[transform,box-shadow,border-color] duration-250 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-primary-300"
 									>
 										<InstrumentCardBody item={item} wide={index === 0} />
 									</Link>
 								) : (
-									<article className="group relative h-64 sm:h-80 overflow-hidden rounded-2xl hairline bg-surface card-shadow transition-[transform,box-shadow,border-color] duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-primary-300">
+									<article className="group relative h-64 sm:h-80 overflow-hidden rounded-2xl hairline bg-surface card-shadow transition-[transform,box-shadow,border-color] duration-250 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-primary-300">
 										<InstrumentCardBody item={item} wide={index === 0} />
 									</article>
 								)}

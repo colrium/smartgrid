@@ -50,7 +50,7 @@ export function WhyUseDronesSection() {
 				<div className="mt-14 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={(index % 2) * 0.08}>
-							<article className="group relative h-full flex flex-col p-8 rounded-c bg-surface hairline card-shadow transition-all duration-500 hover:card-shadow-lift hover:border-primary">
+							<article className="group relative h-full flex flex-col p-8 rounded-c bg-surface hairline card-shadow transition-all duration-250 hover:card-shadow-lift hover:border-primary">
 								<span className="p-3 rounded-xl bg-primary-50 text-mute transition-colors duration-300   self-center">
 									<span
 										className={`mdi mdi-${

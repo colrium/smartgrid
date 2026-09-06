@@ -62,9 +62,9 @@ export function TechnologyStackSection(): ReactElement {
 							delay={(index % 3) * 0.07}
 							className="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1.334rem)]"
 						>
-							<article className="group relative h-full overflow-hidden rounded-2xl hairline bg-surface card-shadow p-7 transition-all duration-500  hover:card-shadow-lift hover:border-primary">
+							<article className="group relative h-full overflow-hidden rounded-2xl hairline bg-surface card-shadow p-7 transition-all duration-250  hover:card-shadow-lift hover:border-primary">
 								<span
-									className="absolute -top-10 -right-10 w-36 h-36 rounded-full bg-primary-100/50 blur-[70px] transition-all duration-500 group-hover:bg-primary-100/80"
+									className="absolute -top-10 -right-10 w-36 h-36 rounded-full bg-primary-100/50 blur-[70px] transition-all duration-250 group-hover:bg-primary-100/80"
 									aria-hidden
 								/>
 

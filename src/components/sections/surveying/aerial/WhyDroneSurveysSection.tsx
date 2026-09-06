@@ -59,7 +59,7 @@ export function WhyDroneSurveysSection(): ReactElement {
 								className={`h-full ${wide ? "lg:col-span-3" : "lg:col-span-2"}`}
 							>
 								<article
-									className={`group relative h-full flex flex-col rounded-c bg-surface hairline card-shadow p-7 sm:p-8 transition-all duration-500 hover:card-shadow-lift hover:border-primary ${
+									className={`group relative h-full flex flex-col rounded-c bg-surface hairline card-shadow p-7 sm:p-8 transition-all duration-250 hover:card-shadow-lift hover:border-primary ${
 										isFirst ? "sm:col-span-2 lg:col-span-2 bg-gradient-to-br from-primary-50/80 to-surface" : ""
 									}`}
 								>

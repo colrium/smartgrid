@@ -47,7 +47,7 @@ export function AerialSurveyingSection() {
 						<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
 							{items.map((item, index) => (
 								<FadeUp key={index} delay={(index % 2) * 0.05}>
-									<article className="group relative h-64 sm:h-72 overflow-hidden rounded-2xl hairline bg-surface card-shadow transition-all duration-500 hover:-translate-y-1 hover:card-shadow-lift hover:border-primary-300">
+									<article className="group relative h-64 sm:h-72 overflow-hidden rounded-2xl hairline bg-surface card-shadow transition-all duration-250 hover:-translate-y-1 hover:card-shadow-lift hover:border-primary-300">
 										{item.image && (
 											<Image
 												src={item.image}

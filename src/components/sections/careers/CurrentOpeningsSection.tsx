@@ -250,7 +250,7 @@ function OpeningCard({
 
 	return (
 		<FadeUp>
-			<article className="group h-full flex flex-col rounded-c bg-surface hairline card-shadow p-7 sm:p-8 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
+			<article className="group h-full flex flex-col rounded-c bg-surface hairline card-shadow p-7 sm:p-8 transition-all duration-250 hover:card-shadow-lift hover:border-primary">
 				<div className="flex items-start justify-between gap-4">
 					<span className="h-14 w-14 rounded-2xl bg-primary-50 text-primary flex items-center justify-center transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
 						{opening.icon && <span className={`mdi mdi-${opening.icon} text-2xl`} />}

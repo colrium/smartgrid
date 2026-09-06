@@ -43,7 +43,7 @@ export function GprApplicationsSection() {
 
 						return (
 							<FadeUp key={index} delay={(index % 3) * 0.07} className="h-full">
-								<article className="group h-full flex flex-col gap-3.5 rounded-[16px] bg-surface hairline card-shadow p-6 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
+								<article className="group h-full flex flex-col gap-3.5 rounded-[16px] bg-surface hairline card-shadow p-6 transition-all duration-250 hover:card-shadow-lift hover:border-primary">
 									<div className="flex items-center justify-between gap-4">
 										<span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 											{item.icon && <span className={`mdi mdi-${item.icon} text-xl`} />}

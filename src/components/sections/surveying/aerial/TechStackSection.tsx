@@ -51,7 +51,7 @@ export function TechStackSection(): ReactElement {
 
 						const card = (
 							<article
-								className={`group relative h-full flex flex-col rounded-c bg-paper hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift ${
+								className={`group relative h-full flex flex-col rounded-c bg-paper hairline card-shadow p-7 transition-all duration-250 hover:card-shadow-lift ${
 									isLinked ? "hover:border-primary cursor-pointer" : "hover:border-primary/30"
 								}`}
 							>

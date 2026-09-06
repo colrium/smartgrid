@@ -47,7 +47,7 @@ export function GisIndustriesSection(): ReactElement {
 
 						return (
 							<FadeUp key={index} delay={(index % 2) * 0.08} className="h-full">
-								<article className="group relative h-full flex flex-col rounded-c bg-surface hairline card-shadow p-7 sm:p-8 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
+								<article className="group relative h-full flex flex-col rounded-c bg-surface hairline card-shadow p-7 sm:p-8 transition-all duration-250 hover:card-shadow-lift hover:border-primary">
 									<div className="flex items-center gap-4">
 										<span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 											<span className={`mdi mdi-${item.icon || "account-group"} text-2xl`} />

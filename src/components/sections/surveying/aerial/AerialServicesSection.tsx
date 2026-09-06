@@ -71,7 +71,7 @@ export function AerialServicesSection(): ReactElement {
 								className={`h-full ${span}`}
 							>
 								<article
-									className={`group relative h-full overflow-hidden rounded-c hairline card-shadow transition-all duration-500hover:card-shadow-lift hover:border-primary ${
+									className={`group relative h-full overflow-hidden rounded-c hairline card-shadow transition-all duration-250hover:card-shadow-lift hover:border-primary ${
 										featured
 											? "bg-gradient-to-br from-primary-50/80 via-paper to-paper"
 											: "bg-paper"

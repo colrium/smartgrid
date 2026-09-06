@@ -55,7 +55,7 @@ export function CostSection(): ReactElement {
 					{tiers.map((tier, index) => (
 						<FadeUp key={index} delay={index * 0.08} className="h-full">
 							<article
-								className={`relative h-full flex flex-col rounded-c bg-paper hairline card-shadow p-8 transition-all duration-500 hover:card-shadow-lift ${
+								className={`relative h-full flex flex-col rounded-c bg-paper hairline card-shadow p-8 transition-all duration-250 hover:card-shadow-lift ${
 									tier.featured
 										? " card-shadow-lift border-primary/30! shadow-primary-300! lg:-translate-y-2"
 										: ""

@@ -74,7 +74,7 @@ export function AccuracyMattersSection(): ReactElement {
 						<div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
 							{items.map((item, index) => (
 								<FadeUp key={index} delay={(index % 2) * 0.08}>
-									<article className="group relative h-full overflow-hidden rounded-2xl hairline bg-surface card-shadow p-7 transition-all duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-primary">
+									<article className="group relative h-full overflow-hidden rounded-2xl hairline bg-surface card-shadow p-7 transition-all duration-250 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-primary">
 										<span
 											className="absolute -right-4 -top-6 font-light tracking-tighter text-[6.5rem] leading-none text-primary/[0.05] select-none pointer-events-none"
 											aria-hidden

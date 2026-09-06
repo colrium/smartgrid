@@ -140,7 +140,7 @@ export function FaqSection(): ReactElement | null {
 										</span>
 									</button>
 									<div
-										className={`grid transition-[grid-template-rows] duration-500 ease-out ${
+										className={`grid transition-[grid-template-rows] duration-250 ease-out ${
 											isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
 										}`}
 									>

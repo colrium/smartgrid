@@ -34,7 +34,7 @@ export function ProcessSection() {
 				<div className="mt-14 sm:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
 					{steps.map((step, index) => (
 						<FadeUp key={index} delay={(index % 3) * 0.08}>
-							<article className="group relative h-full overflow-hidden rounded-2xl hairline bg-paper card-shadow transition-all duration-500  hover:card-shadow-lift hover:border-primary-300 p-8">
+							<article className="group relative h-full overflow-hidden rounded-2xl hairline bg-paper card-shadow transition-all duration-250  hover:card-shadow-lift hover:border-primary-300 p-8">
 								<span className="absolute -right-3 -top-6 font-light tracking-tighter text-[7rem] leading-none text-primary/[0.06] select-none pointer-events-none">
 									{String(index + 1).padStart(2, "0")}
 								</span>

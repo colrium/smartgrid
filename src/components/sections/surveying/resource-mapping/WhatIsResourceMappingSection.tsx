@@ -45,7 +45,7 @@ export function WhatIsResourceMappingSection(): ReactElement {
 				<div className="mt-14 sm:mt-20 grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={index * 0.08} className="h-full">
-							<article className="group relative h-full flex flex-col gap-4 rounded-c bg-paper hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
+							<article className="group relative h-full flex flex-col gap-4 rounded-c bg-paper hairline card-shadow p-7 transition-all duration-250 hover:card-shadow-lift hover:border-primary">
 								{item.icon && (
 									<span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 										<span className={`mdi mdi-${item.icon} text-2xl`} />

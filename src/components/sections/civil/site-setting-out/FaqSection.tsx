@@ -83,7 +83,7 @@ export function FaqSection() {
 									</button>
 
 									<div
-										className={`grid transition-all duration-500 ease-out ${
+										className={`grid transition-all duration-250 ease-out ${
 											isOpen
 												? "grid-rows-[1fr] opacity-100"
 												: "grid-rows-[0fr] opacity-0"

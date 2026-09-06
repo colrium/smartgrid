@@ -42,7 +42,7 @@ export function GprTechnologySection() {
 
 						return (
 							<FadeUp key={index} delay={(index % 3) * 0.07} className="h-full w-full">
-								<article className="group h-full flex items-center gap-4 rounded-[16px] bg-surface hairline card-shadow p-4 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
+								<article className="group h-full flex items-center gap-4 rounded-[16px] bg-surface hairline card-shadow p-4 transition-all duration-250 hover:card-shadow-lift hover:border-primary">
 									{hasImage ? (
 										<span className="relative flex h-20 w-24 shrink-0 items-center justify-center rounded-xl bg-primary-50/60 overflow-hidden">
 											<Image

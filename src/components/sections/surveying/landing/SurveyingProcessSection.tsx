@@ -39,8 +39,8 @@ export function SurveyingProcessSection() {
 				<div className="mt-14 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={(index % 3) * 0.07} className="h-full">
-							<article className="group relative h-full flex flex-col gap-4 rounded-c bg-surface hairline card-shadow p-7 transition-all duration-500 hover:card-shadow-lift hover:border-primary overflow-hidden">
-								<span className="absolute -top-5 -right-2 text-[6rem] font-bold leading-none text-primary/5 select-none pointer-events-none transition-colors duration-500 group-hover:text-primary/10">
+							<article className="group relative h-full flex flex-col gap-4 rounded-c bg-surface hairline card-shadow p-7 transition-all duration-250 hover:card-shadow-lift hover:border-primary overflow-hidden">
+								<span className="absolute -top-5 -right-2 text-[6rem] font-bold leading-none text-primary/5 select-none pointer-events-none transition-colors duration-250 group-hover:text-primary/10">
 									{String(index + 1).padStart(2, "0")}
 								</span>
 

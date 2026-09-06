@@ -41,7 +41,7 @@ export function DetailedSurveysSection() {
 				<div className="mt-14 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={(index % 4) * 0.08}>
-							<article className="group relative h-full overflow-hidden rounded-2xl hairline bg-paper card-shadow transition-all duration-500 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-primary-300 flex flex-col">
+							<article className="group relative h-full overflow-hidden rounded-2xl hairline bg-paper card-shadow transition-all duration-250 hover:-translate-y-1.5 hover:card-shadow-lift hover:border-primary-300 flex flex-col">
 								{item.image && (
 									<div className="relative h-52 overflow-hidden shrink-0">
 										<Image
@@ -51,7 +51,7 @@ export function DetailedSurveysSection() {
 											sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
 											className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
 										/>
-										<div className="absolute inset-0 bg-gradient-to-t from-ink/30 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+										<div className="absolute inset-0 bg-gradient-to-t from-ink/30 to-transparent opacity-0 transition-opacity duration-250 group-hover:opacity-100" />
 										<span className="absolute top-4 left-4 inline-flex items-center gap-2 glass rounded-full text-sm font-semibold uppercase tracking-[0.18em] text-ink px-3 py-1.5">
 											<span className="h-1.5 w-1.5 rounded-full bg-primary" />
 											{String(index + 1).padStart(2, "0")}

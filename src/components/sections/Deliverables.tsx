@@ -190,7 +190,7 @@ export function DeliverablesExplorer({
 											alt={item.title ?? ""}
 											fill
 											sizes="44px"
-											className="object-cover transition-transform duration-500 group-hover:scale-110"
+											className="object-cover transition-transform duration-250 group-hover:scale-110"
 										/>
 									</span>
 								) : (

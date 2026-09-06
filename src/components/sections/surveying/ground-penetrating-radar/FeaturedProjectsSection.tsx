@@ -43,7 +43,7 @@ export function FeaturedProjectsSection() {
 				<div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={index * 0.08}>
-							<article className="group relative flex flex-col h-full rounded-c bg-surface hairline card-shadow p-7 sm:p-8 transition-all duration-500 hover:card-shadow-lift hover:border-primary">
+							<article className="group relative flex flex-col h-full rounded-c bg-surface hairline card-shadow p-7 sm:p-8 transition-all duration-250 hover:card-shadow-lift hover:border-primary">
 								<div className="flex items-start justify-between gap-4 mb-4">
 									<span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 										<span className="mdi mdi-flag-checkered text-2xl" />
