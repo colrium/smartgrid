@@ -19,6 +19,7 @@ export default function Link(props: LinkProps): ReactElement {
 		href,
 		children,
 		target,
+		rel,
 		...anchorProps
 	} = props;
 
@@ -35,7 +36,12 @@ export default function Link(props: LinkProps): ReactElement {
 	}
 
 	return (
-		<a href={typeof href === "string" ? href : undefined} target={target || "blank"} {...anchorProps}>
+		<a
+			href={typeof href === "string" ? href : undefined}
+			target={target || "_blank"}
+			rel={rel || "noopener noreferrer"}
+			{...anchorProps}
+		>
 			{children}
 		</a>
 	);

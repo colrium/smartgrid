@@ -2,6 +2,7 @@
 
 import { useState, type ReactElement } from "react";
 import Link from "next/link";
+import NextHead from "next/head";
 
 import { useTranslation } from "@/hooks";
 import { SectionHeader } from "./SectionHeader";
@@ -42,8 +43,24 @@ export function FaqSection(): ReactElement | null {
 
 	if (items.length === 0) return null;
 
+	const faqSchema = {
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		mainEntity: items.map((item) => ({
+			"@type": "Question",
+			name: item.question,
+			acceptedAnswer: { "@type": "Answer", text: item.answer },
+		})),
+	};
+
 	return (
 		<section id="faq" className="py-24 sm:py-28 relative overflow-hidden">
+			<NextHead>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+				/>
+			</NextHead>
 			<Blob className="w-96 h-96 bg-primary-100/50 -left-24 top-1/3" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">

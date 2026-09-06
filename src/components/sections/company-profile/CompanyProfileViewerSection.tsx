@@ -5,6 +5,7 @@ import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionHeader } from "@/components/sections/home";
 import { Blob } from "@/components/sections/home/decor";
+import DeferredMount from "@/components/ui/DeferredMount";
 
 interface ProfileViewContent {
 	tag?: string | null;
@@ -38,12 +39,17 @@ export function CompanyProfileViewerSection() {
 				<FadeUp delay={0.05}>
 					<div className="mt-12 sm:mt-16 rounded-c bg-surface hairline card-shadow p-3 sm:p-4">
 						<div className="relative rounded-[15px] overflow-hidden bg-primary-50/40 hairline">
-							<iframe
-								src={section.pdfLink}
-								title={section.viewerTitle || section.headline}
-								className="w-full h-[70vh] sm:h-[80vh] block"
-								allow="autoplay"
-							/>
+							<DeferredMount
+								fallback={<div className="h-[70vh] bg-primary-50/50 sm:h-[80vh]" />}
+							>
+								<iframe
+									src={section.pdfLink}
+									title={section.viewerTitle || section.headline}
+									className="block h-[70vh] w-full sm:h-[80vh]"
+									allow="autoplay"
+									loading="lazy"
+								/>
+							</DeferredMount>
 						</div>
 
 						{section.downloadLabel && (
@@ -51,6 +57,7 @@ export function CompanyProfileViewerSection() {
 								<Link
 									href={section.pdfLink.replace("/preview", "/view")}
 									target="_blank"
+									rel="noopener noreferrer"
 									className="group inline-flex items-center gap-3 h-13 rounded-full bg-ink px-8 text-surface font-medium text-sm transition-all duration-300 hover:bg-primary"
 								>
 									<span className="mdi mdi-cloud-download text-lg" />

@@ -1,19 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import dynamic from "next/dynamic";
+import Image from "next/image";
+import { useState, type ReactElement } from "react";
 import { useTranslation } from "@/hooks";
 import { SectionHeader } from "@/components/sections/home";
 import { Blob } from "@/components/sections/home/decor";
-import ModelViewer from "@/components/ui/ModelViewer";
-
-/* const ModelViewer = dynamic(() => import("@/components/ui/ModelViewer/index"), {
+const ModelViewer = dynamic(() => import("@/components/ui/ModelViewer"), {
 	ssr: false,
 	loading: () => (
-		<div className="h-full w-full flex items-center justify-center bg-surface">
-			<span className="mdi mdi-cube-outline animate-pulse text-4xl text-primary/50" />
+		<div className="flex h-full w-full items-center justify-center bg-surface">
+			<span className="mdi mdi-cube-outline animate-pulse text-4xl text-primary/50" aria-hidden />
 		</div>
 	),
-}); */
+});
 
 interface Model3d {
 	url: string;
@@ -33,8 +33,11 @@ interface ProductModelSectionProps {
 	placeholderSrc?: string | null;
 }
 
-export function ProductModelSection({ namespace, placeholderSrc }: ProductModelSectionProps) {
-	const { t } = useTranslation([namespace]);
+export function ProductModelSection({
+	namespace,
+	placeholderSrc,
+}: ProductModelSectionProps): ReactElement | null {
+	const { t } = useTranslation(["common", namespace]);
 	const section = t(`${namespace}:model3d`, {
 		returnObjects: true,
 	}) as unknown as Model3dContent;
@@ -45,6 +48,7 @@ export function ProductModelSection({ namespace, placeholderSrc }: ProductModelS
 		: [];
 
 	const [active, setActive] = useState(0);
+	const [viewerRequested, setViewerRequested] = useState(false);
 
 	if (models.length === 0) return null;
 
@@ -83,13 +87,34 @@ export function ProductModelSection({ namespace, placeholderSrc }: ProductModelS
 					/>
 				</div>
 				<div className="max-w-7xl  mx-auto mt-12 sm:mt-16">
-					<div className="relative overflow-hidden rounded-[15px] h-[70dvh] hairline">
-						<ModelViewer
-							url={current}
-							className="h-full relative"
-							autoLoad={false}
-							placeholderSrc={placeholder}
-						/>
+					<div className="relative h-[70dvh] overflow-hidden rounded-[15px] hairline bg-surface">
+						{viewerRequested ? (
+							<ModelViewer url={current} className="relative h-full" />
+						) : (
+							<div className="relative flex h-full w-full items-center justify-center overflow-hidden">
+								{placeholder && (
+									<Image
+										src={placeholder}
+										alt=""
+										fill
+										sizes="(min-width: 1024px) 80vw, 100vw"
+										className="object-contain object-center p-10 opacity-35 blur-[2px]"
+									/>
+								)}
+								<div className="relative z-10 flex max-w-sm flex-col items-center gap-4 px-6 text-center">
+									<span className="mdi mdi-cube-outline text-5xl text-primary" aria-hidden />
+									<button
+										type="button"
+										onClick={() => setViewerRequested(true)}
+										aria-label={t("common:misc.load3d")}
+										className="inline-flex h-12 items-center gap-2.5 rounded-full bg-primary px-6 text-sm font-medium text-surface transition-colors hover:bg-ink"
+									>
+										<span className="mdi mdi-play-circle-outline text-lg" aria-hidden />
+										{t("common:misc.load3d")}
+									</button>
+								</div>
+							</div>
+						)}
 					</div>
 
 					{models.length > 1 && (

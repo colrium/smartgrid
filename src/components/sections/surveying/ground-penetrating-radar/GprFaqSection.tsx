@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import NextHead from "next/head";
 import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionHeader } from "@/components/sections/home";
@@ -36,8 +37,24 @@ export function GprFaqSection() {
 
 	if (items.length === 0) return null;
 
+	const faqSchema = {
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		mainEntity: items.map((item) => ({
+			"@type": "Question",
+			name: item.question,
+			acceptedAnswer: { "@type": "Answer", text: item.answer },
+		})),
+	};
+
 	return (
 		<section id="faqs" className="scroll-mt-36 py-20 sm:py-24 relative overflow-hidden bg-surface">
+			<NextHead>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+				/>
+			</NextHead>
 			<div className="relative z-10 max-w-3xl mx-auto px-6 sm:px-8">
 				<SectionHeader
 					tag={section.tag || undefined}

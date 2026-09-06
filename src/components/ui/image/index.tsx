@@ -150,7 +150,7 @@ function Image({
 	className,
 	loading,
 	objectFit = "cover",
-	quality = 90,
+	quality = 75,
 	alt = "",
 	fill,
 	block = !fill,
