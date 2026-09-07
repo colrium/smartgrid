@@ -52,7 +52,7 @@ export function WhatIsSection(): ReactElement {
 							align="left"
 						/>
 
-						<figure className="mt-10 max-w-sm">
+						{/* <figure className="mt-10 max-w-sm">
 							<div className="relative rounded-c pale-panel hairline card-shadow p-6 sm:p-7">
 								{section.diagramLabel && (
 									<span className="absolute -top-3.5 left-6 inline-flex items-center gap-2 rounded-full bg-ink px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-surface card-shadow">
@@ -113,7 +113,7 @@ export function WhatIsSection(): ReactElement {
 									))}
 								</figcaption>
 							</div>
-						</figure>
+						</figure> */}
 					</FadeLeft>
 
 					<div className="flex flex-col gap-5">
