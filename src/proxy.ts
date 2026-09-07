@@ -3,6 +3,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import {
 	buildMediaPayload,
 	getMediaSigningKey,
+	getMediaTtlSeconds,
 	isGatedMediaPath,
 	MEDIA_PARAM_EXP,
 	MEDIA_PARAM_SIG,
@@ -104,7 +105,10 @@ export default async function proxy(request: NextRequest) {
 
 	const response = NextResponse.next();
 	response.headers.set("X-Robots-Tag", "noindex");
-	response.headers.set("Cache-Control", "private, max-age=3600");
+	// Keep the browser cache aligned with the signature lifetime: once the URL
+	// expires, a cached copy only ever serves the same visitor session that
+	// legitimately fetched it.
+	response.headers.set("Cache-Control", `private, max-age=${getMediaTtlSeconds()}`);
 	return response;
 }
 

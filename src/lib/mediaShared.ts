@@ -29,8 +29,17 @@ export const MEDIA_PARAM_SIG = "s";
 export const MEDIA_SIGNING_KEY_FALLBACK =
 	"smartgrid-dev-media-signing-key-do-not-use-in-production";
 
-/** Default signed-URL lifetime: 24 hours. */
-export const MEDIA_TTL_SECONDS_DEFAULT = 60 * 60 * 24;
+/**
+ * Default signed-URL lifetime: 15 minutes. Links are minted at page render and
+ * consumed by the visitor's browser within seconds, so a short TTL makes them
+ * effectively die shortly after the image is served. Fresh page loads always
+ * receive freshly signed URLs (getServerSideProps re-signs per request), so
+ * only copied/reused URLs expire.
+ */
+export const MEDIA_TTL_SECONDS_DEFAULT = 15 * 60;
+
+/** Hard ceiling for any configured TTL: 7 days. */
+export const MEDIA_TTL_SECONDS_MAX = 7 * 24 * 60 * 60;
 
 const MEDIA_PREFIX = "/media/";
 
@@ -46,14 +55,20 @@ export function isGatedMediaPath(pathname: string): boolean {
 	return pathname === "/media" || pathname.startsWith(MEDIA_PREFIX);
 }
 
-/** Signed-URL lifetime in seconds (MEDIA_TTL_SECONDS env, default 24h). */
+function readPositiveInt(raw: string | undefined): number | null {
+	if (!raw) return null;
+	const value = Number(raw);
+	return Number.isSafeInteger(value) && value > 0 ? value : null;
+}
+
+/**
+ * Signed-URL lifetime in seconds (MEDIA_TTL_SECONDS, guarded by the zod schema
+ * in src/lib/env.ts to 30s–7d). Precedence: env value > 15-minute default.
+ */
 export function getMediaTtlSeconds(): number {
-	const raw = process.env.MEDIA_TTL_SECONDS;
-	if (!raw) return MEDIA_TTL_SECONDS_DEFAULT;
-	const seconds = Number(raw);
-	return Number.isFinite(seconds) && seconds > 0
-		? Math.round(seconds)
-		: MEDIA_TTL_SECONDS_DEFAULT;
+	const seconds = readPositiveInt(process.env.MEDIA_TTL_SECONDS);
+	if (seconds !== null) return Math.min(seconds, MEDIA_TTL_SECONDS_MAX);
+	return MEDIA_TTL_SECONDS_DEFAULT;
 }
 
 /** Server-side signing key (MEDIA_SIGNING_KEY env, dev fallback otherwise). */
