@@ -381,7 +381,10 @@ export default function HeroScene() {
 		window.addEventListener("mousemove", onMouseMove);
 
 		// --- Animation Loop ---
-		const clock = new THREE.Clock();
+		const timer = new THREE.Timer();
+		// Use the Page Visibility API so the elapsed time doesn't jump by a large
+		// delta when the user returns to the tab (the loop skips hidden tabs).
+		timer.connect(document);
 		// Cap to ~30fps and skip entirely when the tab is hidden - continuous
 		// full-window rendering saturates low-end CPUs and delays LCP.
 		const FRAME_INTERVAL = 1000 / 30;
@@ -395,7 +398,8 @@ export default function HeroScene() {
 			const frameElapsed = now - lastFrameTime;
 			if (frameElapsed < FRAME_INTERVAL) return;
 			lastFrameTime = now - (frameElapsed % FRAME_INTERVAL);
-			const t = clock.getElapsedTime();
+			timer.update(now);
+			const t = timer.getElapsed();
 
 			// Lerp mouse variables for butter-smooth animation
 			smoothMouseX += (targetMouseX - smoothMouseX) * 0.05;
@@ -420,10 +424,10 @@ export default function HeroScene() {
 			// Spin the propellers
 			propellers.forEach((prop, index) => {
 				const direction = index % 2 === 0 ? 1 : -1;
-				prop.rotation[propellorsAxis] += 0.95 * direction;
+				prop.rotation[propellorsAxis] += 1.7 * direction;
 			});
 
-			scanner.rotation.y += 0.01;
+			scanner.rotation.y += 0.03;
 			// Sync shader scan position to drone
 			gridUniforms.uDronePos.value.copy(droneGroup.position);
 
@@ -487,6 +491,7 @@ export default function HeroScene() {
 			pMaterial.dispose();
 			renderer.dispose();
 			dracoLoader.dispose();
+			timer.dispose();
 			if (container.contains(renderer.domElement)) {
 				container.removeChild(renderer.domElement);
 			}
