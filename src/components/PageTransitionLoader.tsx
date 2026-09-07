@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Image from "next/image";
+import Image from "@/components/ui/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslation } from "@/hooks";
 

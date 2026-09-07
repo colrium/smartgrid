@@ -380,4 +380,16 @@ select option {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--color-primary-700);
+}
+
+/* ==================================== */
+/*   IMAGE DOWNLOAD DETERRENCE          */
+/*   (browser affordances only — not    */
+/*   DRM; JS layer: MediaProtection)    */
+/* ==================================== */
+
+img {
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+    user-select: none;
 } 

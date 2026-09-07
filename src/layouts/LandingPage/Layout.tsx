@@ -15,6 +15,7 @@ import ScrollTop from "./ScrollTop";
 import ChatWidget from "@/components/ChatWidget";
 import WhatsappButton from "@/components/WhatsappButton";
 import RippleSetup from "./RippleSetup";
+import MediaProtection from "./MediaProtection";
 import CookieConsent from "@/components/CookieConsent";
 
 interface LandingPageLayoutSlotProps {
@@ -57,6 +58,7 @@ export default function LandingPageLayout({ children, slotProps = {} }: LandingP
 				</div>
 				<Footer />
 				<RippleSetup />
+				<MediaProtection />
 				<CookieConsent />
 			</div>
 		</ReactLenis>
