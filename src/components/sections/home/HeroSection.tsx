@@ -58,6 +58,9 @@ export default function HeroSection() {
 	// hero content and fixed instrument frame carry the design on their own.
 	const [sceneEnabled, setSceneEnabled] = useState(false);
 
+	/* eslint-disable react-hooks/set-state-in-effect -- intentional one-shot
+	   capability probe after hydration; a lazy initializer would touch
+	   window/navigator during SSR and break the render. */
 	useEffect(() => {
 		const nav = navigator as Navigator & { deviceMemory?: number };
 		const supported =
@@ -69,6 +72,7 @@ export default function HeroSection() {
         
 		if (supported) setSceneEnabled(true);
 	}, []);
+	/* eslint-enable react-hooks/set-state-in-effect */
 
 	const { t } = useTranslation(["home"]);
 	const ctaPrimary = t("home:hero.ctaPrimary", { returnObjects: true }) as CtaItem;

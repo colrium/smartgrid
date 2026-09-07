@@ -1,6 +1,7 @@
 import { GetServerSidePropsContext, GetStaticPropsContext } from "next/types";
 import { serverSideTranslations } from "next-i18next/pages/serverSideTranslations";
 import i18nextConfig from "../../next-i18next.config";
+import { signMediaDeep } from "./media";
 
 export const getI18nPaths = () =>
 	i18nextConfig.i18n.locales.map((lng: string) => ({
@@ -53,7 +54,11 @@ export async function getI18nProps(
 	// social links from the "contact" namespace, so load it on every page.
 	const ns = Array.from(new Set(["contact", ...namespaces]));
 
-	return {
+	// Display-only media protection: the serialized i18n store travels to the
+	// browser, so rewrite every "/media/..." URL it contains into a short-lived
+	// signed URL before it leaves the server. Idempotent, zero-cost for values
+	// that are not media paths.
+	return signMediaDeep({
 		...(await serverSideTranslations(locale, ns, i18nextConfig)),
-	};
+	});
 }

@@ -7,7 +7,10 @@ export default defineConfig([
 	{
 		// Vendored static assets are never part of the app bundle — skip linting
 		// them (public/draco ships minified third-party decoder output).
-		ignores: ["public/**"],
+		// Build output dirs are generated artifacts; the ".next*" glob also
+		// covers verification builds that redirect distDir via NEXT_DIST_DIR
+		// (e.g. ".next-dev").
+		ignores: ["public/**", ".next*/**"],
 	},
 	{
 		plugins: {

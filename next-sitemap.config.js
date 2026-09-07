@@ -26,7 +26,7 @@ module.exports = {
 		...locales.flatMap((l) => [`/${l}`, `/${l}/*`]), // block ALL auto-crawled locale pages
 	],
 	robotsTxtOptions: {
-		policies: [{ userAgent: "*", allow: "/" }],
+		policies: [{ userAgent: "*", allow: "/", disallow: ["/media/"] }],
 		// additionalSitemaps only needed for extra sitemaps (news/image/video),
 		// additionalSitemaps: [`${siteUrl}/sitemap.xml`],
 		// the main sitemap.xml is added automatically

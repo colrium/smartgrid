@@ -27,7 +27,8 @@
 		"toc": "i18next-cli types",
 		"merge": "i18next-cli types",
 		"interface": "i18next-cli types",
-		"typegen": "sanity schema extract && sanity typegen generate"
+		"typegen": "sanity schema extract && sanity typegen generate",
+        "mediakeygen": "node -e \"console.log(require('crypto').randomBytes(16).toString('hex'))\""
 	},
 	"dependencies": {
 		"@formspree/react": "^3.0.0",
