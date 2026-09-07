@@ -272,6 +272,7 @@ const AccordionGallery = ({
 									src={item.image}
 									alt={item.alt || item.label || ""}
 									draggable={false}
+									onContextMenu={(event) => event.preventDefault()}
 									className="block h-full w-full select-none object-cover [-webkit-user-drag:none]"
 								/>
 							</span>

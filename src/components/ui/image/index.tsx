@@ -149,7 +149,7 @@ function Image({
 	style,
 	className,
 	loading,
-	objectFit = "cover",
+	objectFit = "fill",
 	quality = 75,
 	alt = "",
 	fill,
@@ -207,6 +207,7 @@ function Image({
 			unoptimized={unoptimized || isSvg}
 			draggable={false}
 			onDragStart={(e) => e.preventDefault()}
+			onContextMenu={(e) => e.preventDefault()}
 			{...(finalPlaceholder && { placeholder: finalPlaceholder })}
 			{...(blurDataURL && { blurDataURL })}
 			preload={preload}
