@@ -71,3 +71,4 @@ kilo.jsonc
 .next-build-verify
 .next-verification
 .next-purge-baseline
+.next-dev

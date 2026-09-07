@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { signMediaDeep } from "./media";
 import { ProductImages, MediaImage, ProductOverviewContent, ProductCatalogueContent } from "./types";
 
 export interface CatalogueCardPrice {
@@ -87,7 +88,11 @@ export function getRelatedProducts(
 					? entry.title
 					: null;
 		if (!title) continue;
-		items.push({ image, label: title.toUpperCase(), href: `/equipment-sale/${entry.slug}` });
+		items.push({
+			image: image ? signMediaDeep(image) : null,
+			label: title.toUpperCase(),
+			href: `/equipment-sale/${entry.slug}`,
+		});
 		if (items.length >= count) break;
 	}
 	return items;
@@ -181,8 +186,8 @@ export function getCatalogueItems(locale: string): CatalogueCard[] {
 			title,
 			description,
 			badge: typeof extra.badge === "string" ? extra.badge : null,
-            image: productImage,
-            images: productImages,
+            image: productImage ? signMediaDeep(productImage) : null,
+            images: productImages.map((item) => signMediaDeep(item)),
 			price: cheapest
 				? {
 						prefix:

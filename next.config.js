@@ -19,6 +19,20 @@ const nextConfig = {
 				hostname: "cdn.sanity.io",
 			},
 		],
+		// Next 16 rejects local image sources that carry a query string unless
+		// images.localPatterns is configured. The gated media library serves
+		// short-lived signed URLs ("/media/x.jpg?e=<expiry>&s=<hmac>") through
+		// the src/proxy.ts edge gate, so /media/** must allow any query string.
+		// Every other local path keeps the strict no-query default.
+		localPatterns: [
+			{
+				pathname: "/media/**",
+			},
+			{
+				pathname: "/**",
+				search: "",
+			},
+		],
 		// Serve AVIF where supported (noticeably smaller than WebP for the
 		// photography-heavy cards), falling back to WebP.
 		formats: ["image/avif", "image/webp"],
