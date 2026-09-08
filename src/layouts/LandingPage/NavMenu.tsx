@@ -102,7 +102,7 @@ export default function NavMenu({
 										href={localizePath(item.href, locale)}
 										locale={false}
 										onClick={() => handleClose(i)}
-										className={`mr-4 inline-flex cursor-pointer select-none items-center justify-center gap-1 px-[5px] py-1 text-sm no-underline! capitalize! relative transition-colors after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-0 after:transition-all after:duration-300 rounded-md hover:after:w-full ${
+										className={`mr-4 inline-flex cursor-pointer select-none items-center justify-center gap-1 px-1.25 py-1 text-sm no-underline! capitalize! relative transition-colors after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-0 after:transition-all after:duration-300 rounded-md hover:after:w-full ${
 											variant === "dark"
 												? "text-surface hover:text-primary-300 after:bg-primary-300"
 												: "text-ink hover:text-primary-500 after:bg-primary"
