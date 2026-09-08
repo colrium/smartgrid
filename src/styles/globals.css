@@ -148,7 +148,12 @@ html {
     font-size: 14px;
     font-weight: 400;
 }
-main * {
+/*
+ * Body font for the whole app shell (page content, navbar, footer, chat).
+ * The single <main> landmark wraps only the page content (see Layout.tsx),
+ * so this targets the app shell class instead of the main element.
+ */
+.site-shell * {
     font-family: var(--font-sans-serif),
             ui-sans-serif,
             system-ui;
@@ -325,20 +330,37 @@ select option {
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-@utility card-shadow {
+/* @utility card-shadow {
     box-shadow: 0 4px 24px 4px rgba(1, 55, 61, 0.08);
 }
 
 @utility card-shadow-lift {
     box-shadow: 0 18px 42px -10px rgba(1, 55, 61, 0.28);
 }
+ */
 
+ @utility card-shadow {
+     box-shadow: 0 4px 24px 4px rgb(from var(--color-ink) r g b / 0.08);
+ }
+
+ @utility card-shadow-lift {
+     box-shadow: 0 18px 42px -10px rgb(from var(--color-ink) r g b / 0.28);
+ }
 @utility pale-panel {
-    background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-surface) 50%, var(--color-surface) 100%);
+    /* background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-surface) 50%, var(--color-surface) 100%); */
+    background-color: var(--color-surface);
+        background-image:
+            radial-gradient(at 40% 20%, hsla(0, 13%, 97%, 1) 0px, transparent 50%),
+            radial-gradient(at 80% 0%, hsl(from var(--color-primary-300) h s calc(l - 38%)) 0px, transparent 50%),
+            radial-gradient(at 45% 97%, hsla(27, 87%, 85%, 0.63) 0px, transparent 50%);
 }
 
 @utility pale-panel-soft {
-    background: linear-gradient(213deg, #f0f6f9 0%, #f4f8fa 60%, #f6f5ef 100%);
+    /* background: linear-gradient(213deg, #f0f6f9 0%, #f4f8fa 60%, #f6f5ef 100%); */
+    background-color: var(--color-surface);
+    background-image:
+            radial-gradient(at 74% 60%, hsla(0, 13%, 97%, 1) 0px, transparent 50%),
+            radial-gradient(at 67% 67%, hsla(189, 100%, 79%, 0.49) 0px, transparent 50%);
 }
 
 @utility ink-panel {

@@ -129,6 +129,7 @@
 		"links": [
 			{
 				"label": "Upimaji",
+                "href": "/surveying",
 				"links": [
 					{
 						"label": "Upimaji wa topografia",
@@ -158,6 +159,7 @@
 			},
 			{
 				"label": "Ndege zisizo na rubani",
+                "href": "/aerial-drones",
 				"links": [
 					{
 						"label": "Upimaji wa picha za ndege zisizo na rubani",
@@ -199,6 +201,7 @@
 			},
 			{
 				"label": "Uhandisi wa Miundombinu",
+                "href": "/civil",
 				"links": [
 					{
 						"label": "Upimaji wa Barabara kuu",
@@ -228,6 +231,7 @@
 			},
 			{
 				"label": "Uuzaji wa Vifaa",
+                "href": "/equipment-sale",
 				"links": [
 					{
 						"label": "FOIF A90 RTK GNSS",
@@ -256,7 +260,8 @@
 				]
 			},
 			{
-				"label": "About",
+				"label": "Kuhusu",
+				"href": "/about",
 				"links": [
 					{
 						"label": "Kutuhusu",

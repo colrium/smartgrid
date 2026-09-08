@@ -1,21 +1,8 @@
 "use client";
 
-import {
-	createPortal,
-} from "react-dom";
-import {
-	useCallback,
-	useEffect,
-	useLayoutEffect,
-	useRef,
-	useState,
-} from "react";
-import type {
-	CSSProperties,
-	MouseEventHandler,
-	ReactElement,
-	ReactNode,
-} from "react";
+import { createPortal } from "react-dom";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import type { CSSProperties, MouseEventHandler, ReactElement, ReactNode } from "react";
 
 export type MenuOrigin = {
 	vertical?: "top" | "bottom" | "center" | number;
@@ -43,6 +30,11 @@ const useIsoLayoutEffect: typeof useLayoutEffect =
 	typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 type MenuPosition = { top: number; left: number; transform: string; anchorWidth: number };
+
+// Stable fallbacks: avoids constructing a new object on every
+// updatePosition() call when a caller omits anchorOrigin/transformOrigin.
+const DEFAULT_ANCHOR_ORIGIN: Required<MenuOrigin> = { vertical: "bottom", horizontal: "center" };
+const DEFAULT_TRANSFORM_ORIGIN: Required<MenuOrigin> = { vertical: "top", horizontal: "center" };
 
 /**
  * Anchored dropdown menu. Renders into document.body with fixed positioning
@@ -72,8 +64,12 @@ export function Menu({
 			return;
 		}
 		const rect = anchorEl.getBoundingClientRect();
-		const ao = { vertical: "bottom", horizontal: "center", ...anchorOrigin } as Required<MenuOrigin>;
-		const to = { vertical: "top", horizontal: "center", ...transformOrigin } as Required<MenuOrigin>;
+		const ao = anchorOrigin
+			? ({ ...DEFAULT_ANCHOR_ORIGIN, ...anchorOrigin } as Required<MenuOrigin>)
+			: DEFAULT_ANCHOR_ORIGIN;
+		const to = transformOrigin
+			? ({ ...DEFAULT_TRANSFORM_ORIGIN, ...transformOrigin } as Required<MenuOrigin>)
+			: DEFAULT_TRANSFORM_ORIGIN;
 
 		const top =
 			ao.vertical === "bottom"

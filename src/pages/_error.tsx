@@ -32,6 +32,8 @@ const ErrorPage: ErrorPageWithLayout = ({ statusCode, errorMessage }) => {
 			<Head>
 				<title>{`${statusCode} | ${title}`}</title>
 				<meta name="description" content={description} />
+				{/* Error responses must stay out of the index (soft-404 hygiene). */}
+				<meta name="robots" content="noindex, follow" />
 			</Head>
 			<ErrorPageSection
 				statusCode={statusCode}

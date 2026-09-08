@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "@/hooks";
@@ -32,7 +31,11 @@ export interface NavbarProps {
 	scrollVariant?: "light" | "dark";
 }
 
-export default function Navbar({ variant = "light", scrollVariantPercent = 20, scrollVariant = "dark"}: NavbarProps) {
+export default function Navbar({
+	variant = "light",
+	scrollVariantPercent = 20,
+	scrollVariant = "dark",
+}: NavbarProps) {
 	const router = useRouter();
 	const { t, i18n } = useTranslation(["common", "meta"]);
 	const [state, setState] = useSetState({
@@ -101,9 +104,9 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 
 	useLenis(
 		({ scroll }) => {
-            const progress = (scroll / window.innerHeight) * 100;
-            const isWindowScrolled = progress >= 2;
-            if (isWindowScrolled !== state.isWindowScrolled) {
+			const progress = (scroll / window.innerHeight) * 100;
+			const isWindowScrolled = progress >= 2;
+			if (isWindowScrolled !== state.isWindowScrolled) {
 				setState((prev) => ({
 					isWindowScrolled: !prev.isWindowScrolled,
 				}));
@@ -121,8 +124,7 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 		},
 		[scrollVariantPercent, scrollVariant, state.scrollVariantToggled, state.isWindowScrolled]
 	);
-	
-    
+
 	const handleDrawerToggle = () => {
 		setState({ drawerOpen: !state.drawerOpen });
 	};
@@ -148,14 +150,15 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 	const currentLocale = router.locale ?? i18n.language ?? "en";
 
 	const isDark =
-		typeof scrollVariantPercent !== "number"? variant === "dark" :
-		(variant === "light" && state.scrollVariantToggled) || (variant === "dark" && !state.scrollVariantToggled);
+		typeof scrollVariantPercent !== "number"
+			? variant === "dark"
+			: (variant === "light" && state.scrollVariantToggled) ||
+				(variant === "dark" && !state.scrollVariantToggled);
 
 	const iconColor = isDark ? "text-primary-200" : "text-primary";
 	const accentColor = isDark ? "text-accent-200" : "text-accent-700";
-    const hoverColor = isDark ? "hover:text-primary-300" : "hover:text-primary";
-    const menuClassName = isDark ? "bg-ink-soft/95! text-surface!" : "bg-surface/95! text-ink!";
-    
+	const hoverColor = isDark ? "hover:text-primary-300" : "hover:text-primary";
+	const menuClassName = isDark ? "bg-ink-soft/95! text-surface!" : "bg-surface/95! text-ink!";
 
 	return (
 		<>
@@ -213,13 +216,15 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 								height={32}
 							/>
 							<div className="flex flex-col mr-2 leading-tight">
-								<h6
+								{/* Brand wordmark — intentionally not a heading: it must not
+							    precede the page <h1> in the document outline. */}
+								<p
 									className={`flex uppercase font-semibold tracking-wide font-display no-underline transition-all duration-500 ${
 										isDark ? "text-surface" : "text-ink"
 									}`}
 								>
 									{t("meta:site.title")}
-								</h6>
+								</p>
 								<span
 									className={`capitalize hidden  lg:flex font-bold text-[7px] no-underline transition-all duration-500 ${accentColor}`}
 								>
@@ -296,11 +301,11 @@ export default function Navbar({ variant = "light", scrollVariantPercent = 20, s
 								height={32}
 							/>
 							<div className="flex flex-col mr-2 leading-tight">
-								<h6
+								<p
 									className={`flex uppercase font-semibold font-display tracking-wide  no-underline transition-all duration-500 text-ink`}
 								>
 									{t("meta:site.title")}
-								</h6>
+								</p>
 								<span
 									className={`capitalize hidden lg:flex font-bold text-[7px] no-underline transition-all duration-500 ${accentColor}`}
 								>

@@ -1,7 +1,6 @@
-
 import "@/styles/globals.css";
 import { appWithTranslation } from "next-i18next/pages";
-import {  type ReactElement } from "react";
+import { type ReactElement } from "react";
 import i18nextConfig from "../../next-i18next.config";
 import type { AppPropsWithLayout } from "@/types/next";
 import LandingPageLayout from "@/layouts/LandingPage/Layout";
@@ -14,7 +13,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { LazyMotion, MotionConfig, domAnimation } from "framer-motion";
 
 const fontSans = Plus_Jakarta_Sans({
-	subsets: ["latin"],	
+	subsets: ["latin"],
 	variable: "--font-sans", // sans variable for headers (decorative feet)
 	display: "swap",
 });
@@ -30,11 +29,9 @@ const fontDisplay = localFont({
 	display: "swap",
 });
 
-
 const withLandingPageLayout = (page: ReactElement) => <LandingPageLayout>{page}</LandingPageLayout>;
 function App({ Component, pageProps }: AppPropsWithLayout) {
-    const renderPageWithLayout = Component.getLayout ?? withLandingPageLayout;
-
+	const renderPageWithLayout = Component.getLayout ?? withLandingPageLayout;
 
 	useEffect(() => {
 		// Load the MDI icon-font stylesheet at runtime instead of shipping it in
@@ -52,20 +49,20 @@ function App({ Component, pageProps }: AppPropsWithLayout) {
 		document.head.appendChild(link);
 	}, []);
 
-
-    
-    
 	return (
 		<LazyMotion features={domAnimation}>
 			<MotionConfig reducedMotion="user">
-				<main
-					className={`flex flex-col min-h-screen relative  ${fontSans.variable} ${fontSansSerif.variable} ${fontDisplay.variable} font-sans`}
+				{/* Site shell div (not <main>): the single <main> landmark lives
+				    in LandingPageLayout and wraps only the page content, keeping
+				    the navbar (<header>) and footer (<footer>) outside of it. */}
+				<div
+					className={`site-shell flex flex-col min-h-screen relative  ${fontSans.variable} ${fontSansSerif.variable} ${fontDisplay.variable} font-sans`}
 				>
 					<PageTransitionLoader />
 					{renderPageWithLayout(<Component {...pageProps} />)}
 					<Analytics />
 					<SpeedInsights />
-				</main>
+				</div>
 			</MotionConfig>
 		</LazyMotion>
 	);

@@ -13,9 +13,9 @@ const envSchema = z.object({
 	NEXT_PUBLIC_GA_MEASUREMENT_ID: z.string().optional().default(null),
 	NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: z.string().optional(),
 	// Display-only media protection: HMAC secret for signed /media/* URLs and
-	// their lifetime in hours. Server-side only (never NEXT_PUBLIC_*).
+	// their lifetime in seconds (30s–7d). Server-side only (never NEXT_PUBLIC_*).
 	MEDIA_SIGNING_KEY: z.string().min(16).optional(),
-	MEDIA_TTL_SECONDS: z.coerce.number().int().positive().max(2073600).optional(),
+	MEDIA_TTL_SECONDS: z.coerce.number().int().min(30).max(604800).optional(),
 	ANALYZE: z.coerce.boolean().default(false),
 });
 

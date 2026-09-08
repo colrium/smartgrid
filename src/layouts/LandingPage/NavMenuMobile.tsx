@@ -1,5 +1,6 @@
 "use client";
 
+import { memo } from "react";
 import Link from "next/link";
 import { Accordion, AccordionDetails, AccordionSummary } from "@/components/ui/Accordion";
 
@@ -18,13 +19,7 @@ interface Props {
 	expanded?: boolean;
 }
 
-export default function NavMenuMobile({
-	items,
-	locale,
-	localizePath,
-	onNavigate,
-	expanded = false,
-}: Props) {
+function NavMenuMobileImpl({ items, locale, localizePath, onNavigate, expanded = false }: Props) {
 	return (
 		<div>
 			{items.map((item, i) => {
@@ -52,7 +47,17 @@ export default function NavMenuMobile({
 										<Link
 											href={localizePath(item.href, locale)}
 											locale={false}
-											onClick={onNavigate}
+											onClick={(e) => {
+												// Act as a normal link: navigate (and close the drawer)
+												// without toggling the accordion — the chevron handles that.
+												e.stopPropagation();
+												onNavigate?.();
+											}}
+											onKeyDown={(e) => {
+												// Stop the AccordionSummary's Enter/Space handler from
+												// hijacking the link's own keyboard activation.
+												e.stopPropagation();
+											}}
 											className="no-underline py-1 px-2 hover:text-primary rounded-md text-inherit"
 										>
 											{item.label}
@@ -63,7 +68,7 @@ export default function NavMenuMobile({
 							</AccordionSummary>
 							<AccordionDetails className="p-1 pl-2">
 								<div className="flex flex-col">
-									<NavMenuMobile
+									<NavMenuMobileMemo
 										items={item.links}
 										locale={locale}
 										localizePath={localizePath}
@@ -90,3 +95,8 @@ export default function NavMenuMobile({
 		</div>
 	);
 }
+
+// Memoized so a submenu's own state changes (e.g. Accordion expand/collapse)
+// don't force every other item/submenu in the tree to rerender.
+const NavMenuMobileMemo = memo(NavMenuMobileImpl);
+export default NavMenuMobileMemo;

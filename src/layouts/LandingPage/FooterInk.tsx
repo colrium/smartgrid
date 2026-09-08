@@ -32,17 +32,17 @@ export default function FooterInk() {
 	const title = t("meta:site.title");
 	const subtitle = t("meta:site.subtitle");
 	const description = t("common:footer.description");
-	const contacts = (t("contact:talkToUs.contacts", {
+	const contacts = t("contact:talkToUs.contacts", {
 		returnObjects: true,
-	}) as unknown) as ContactItem[];
-	const social = (t("contact:social.channels", {
+	}) as unknown as ContactItem[];
+	const social = t("contact:social.channels", {
 		returnObjects: true,
-	}) as unknown) as SocialChannel[];
+	}) as unknown as SocialChannel[];
 
 	return (
 		<footer className="relative z-50 overflow-hidden bg-ink text-surface">
 			{/* Decorative grid + glows */}
-			
+
 			<div
 				aria-hidden
 				className="pointer-events-none absolute -top-28 -right-28 h-96 w-96 rounded-full bg-primary/5 blur-3xl"
@@ -106,9 +106,9 @@ export default function FooterInk() {
 							}
 							return (
 								<div key={colKey}>
-									<h5 className="mb-5 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-300">
+									<h2 className="mb-5 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-300">
 										{t(`common:footer.columns.${colKey}.heading`)}
-									</h5>
+									</h2>
 									<ul className="flex flex-col gap-3">
 										{links.map((link, j) => (
 											<li key={j}>
