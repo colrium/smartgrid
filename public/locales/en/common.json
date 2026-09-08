@@ -131,6 +131,7 @@
 		"links": [
 			{
 				"label": "Surveying",
+                "href": "/surveying",
 				"links": [
 					{
 						"label": "Topographical surveys",
@@ -160,6 +161,7 @@
 			},
 			{
 				"label": "Aerial Drones",
+                "href": "/aerial-drones",
 				"links": [
 					{
 						"label": "Drone imagery surveys",
@@ -201,6 +203,7 @@
 			},
 			{
 				"label": "Civil",
+				"href": "/civil",
 				"links": [
 					{
 						"label": "Highway Surveys",
@@ -230,6 +233,7 @@
 			},
 			{
 				"label": "Equipment sale",
+				"href": "/equipment-sale",
 				"links": [
 					{
 						"label": "FOIF A90 RTK GNSS",
@@ -259,6 +263,7 @@
 			},
 			{
 				"label": "About",
+				"href": "/about",
 				"links": [
 					{
 						"label": "About Us",

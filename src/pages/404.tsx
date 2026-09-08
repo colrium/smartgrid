@@ -24,6 +24,8 @@ const NotFoundPage: NextPage<PageProps> = () => {
 					})} | {siteTitle}
 				</title>
 				<meta name="description" content={description} />
+				{/* Error responses must stay out of the index (soft-404 hygiene). */}
+				<meta name="robots" content="noindex, follow" />
 			</Head>
 			<ErrorPageSection
 				statusCode={404}

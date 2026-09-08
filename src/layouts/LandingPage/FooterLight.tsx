@@ -32,12 +32,12 @@ export default function FooterLight() {
 	const title = t("meta:site.title");
 	const subtitle = t("meta:site.subtitle");
 	const description = t("common:footer.description");
-	const contacts = (t("contact:talkToUs.contacts", {
+	const contacts = t("contact:talkToUs.contacts", {
 		returnObjects: true,
-	}) as unknown) as ContactItem[];
-	const social = (t("contact:social.channels", {
+	}) as unknown as ContactItem[];
+	const social = t("contact:social.channels", {
 		returnObjects: true,
-	}) as unknown) as SocialChannel[];
+	}) as unknown as SocialChannel[];
 
 	return (
 		<footer className="relative z-[9999] overflow-hidden border-t bg-surface hairline">
@@ -60,9 +60,7 @@ export default function FooterLight() {
 								<span className="text-xl font-semibold font-display tracking-wide text-ink uppercase">
 									{title}
 								</span>
-								<span className="mt-0.5 text-[7px]  text-accent">
-									{subtitle}
-								</span>
+								<span className="mt-0.5 text-[7px]  text-accent">{subtitle}</span>
 							</span>
 						</Link>
 						<p className="mt-5 text-sm leading-relaxed text-on-surface/55">
@@ -97,9 +95,9 @@ export default function FooterLight() {
 							}
 							return (
 								<div key={colKey}>
-									<h5 className="mb-5 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
+									<h2 className="mb-5 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
 										{t(`common:footer.columns.${colKey}.heading`)}
-									</h5>
+									</h2>
 									<ul className="flex flex-col gap-3">
 										{links.map((link, j) => (
 											<li key={j}>

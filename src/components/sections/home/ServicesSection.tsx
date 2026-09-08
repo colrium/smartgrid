@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "@/components/Link";
 import { useTranslation } from "@/hooks";
 import { SectionHeader } from "./SectionHeader";
-import { ParallaxDecor, Blob } from "./decor";
 import { FadeUp } from "@/components/animations/Fade";
 import { DeliverablesExplorer, type DeliverablesContent } from "@/components/sections/Deliverables";
 
@@ -50,13 +49,7 @@ export function ServicesSection(): ReactElement | null {
 
 	return (
 		<section id="services" className="py-24 sm:py-28 relative overflow-hidden">
-			<Blob
-				className="w-[26rem] h-[26rem] bg-primary-200/40 -top-24 left-1/4"
-				opacity={0.5}
-			/>
-			<ParallaxDecor speed={0.06} className="absolute bottom-16 -right-16 z-0">
-				<Blob className="w-80 h-80 bg-primary-100/80" opacity={0.6} />
-			</ParallaxDecor>
+			
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
@@ -84,7 +77,7 @@ export function ServicesSection(): ReactElement | null {
 									aria-selected={selected}
 									aria-controls="service-panel"
 									onClick={() => setActiveTab(index)}
-									className={`flex flex-col items-center justify-center gap-1.5 rounded-cmd cursor-pointer px-2 py-3.5 text-center transition-all duration-300 sm:flex-row sm:justify-start sm:gap-3.5 sm:rounded-2xl sm:px-5 sm:py-4 sm:text-left  ${
+									className={`flex flex-col items-center justify-center gap-1.5 rounded-cmd cursor-pointer p-2 text-center transition-all duration-300 sm:flex-row sm:justify-start sm:gap-3.5 sm:rounded-2xl sm:px-5 sm:py-4 sm:text-left  ${
 										selected
 											? "bg-ink text-surface card-shadow"
 											: "bg-surface/70 hairline text-ink hover:bg-surface hover:-translate-y-0.5"

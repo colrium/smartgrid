@@ -32,8 +32,8 @@ export default function NavMenu({
 	const [openMenuIndex, setOpenMenuIndex] = useState<number | null>(null);
 	const closeTimer = useRef<number | null>(null);
 
-	const handleOpen = (index: number, el: HTMLElement | null) => {
-		setAnchorMap((s) => ({ ...s, [index]: el }));
+	const handleOpen = (index: number, el: HTMLElement | null, replace: boolean = false) => {
+		setAnchorMap((s) => (replace? { [index]: el } : { ...s, [index]: el }));
 		setOpenMenuIndex(index);
 	};
 
@@ -85,36 +85,65 @@ export default function NavMenu({
 						const anchorEl = anchorMap[i] || null;
 
 						return (
-							<div key={`nav-${i}`}>
-								<Button
-									onClick={(e) => {
-										cancelClose();
-										if (openMenuIndex === i) {
-											handleClose(i);
-										} else {
-											handleOpen(i, e.currentTarget);
-										}
-									}}
-									endIcon={
+							<div
+								key={`nav-${i}`}
+								onMouseEnter={(e) => {
+									cancelClose();
+									handleOpen(i, e.currentTarget, true);
+								}}
+								onMouseLeave={() => scheduleClose(i)}
+								onFocus={(e) => {
+									cancelClose();
+									handleOpen(i, e.currentTarget, true);
+								}}
+							>
+								{item.href ? (
+									<Link
+										href={localizePath(item.href, locale)}
+										locale={false}
+										onClick={() => handleClose(i)}
+										className={`mr-4 inline-flex cursor-pointer select-none items-center justify-center gap-1 px-[5px] py-1 text-sm no-underline! capitalize! relative transition-colors after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-0 after:transition-all after:duration-300 rounded-md hover:after:w-full ${
+											variant === "dark"
+												? "text-surface hover:text-primary-300 after:bg-primary-300"
+												: "text-ink hover:text-primary-500 after:bg-primary"
+										}`}
+									>
+										{item.label}
 										<span className="mdi mdi-chevron-down text-xl" aria-hidden="true" />
-									}
-									color="inherit"
-									size="small"
-									variant="text"
-									className={`text-sm! mr-4 no-underline! capitalize!  relative transition-colors after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-0 after:transition-all after:duration-300 rounded-md hover:after:w-full ${
-										variant === "dark"
-											? "text-surface hover:text-primary-300 after:bg-primary-300"
-											: "text-ink hover:text-primary-500 after:bg-primary"
-                                        }`}
-                                    data-ripple-dark="true"
-								>
-									{item.label}
-								</Button>
+									</Link>
+								) : (
+									<Button
+										onClick={(e) => {
+											cancelClose();
+											if (openMenuIndex === i) {
+												handleClose(i);
+											} else {
+												handleOpen(i, e.currentTarget);
+											}
+										}}
+										endIcon={
+											<span className="mdi mdi-chevron-down text-xl" aria-hidden="true" />
+										}
+										color="inherit"
+										size="small"
+										variant="text"
+										className={`text-sm! mr-4 no-underline! capitalize!  relative transition-colors after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-0 after:transition-all after:duration-300 rounded-md hover:after:w-full ${
+											variant === "dark"
+												? "text-surface hover:text-primary-300 after:bg-primary-300"
+												: "text-ink hover:text-primary-500 after:bg-primary"
+										}`}
+										data-ripple-dark="true"
+									>
+										{item.label}
+									</Button>
+								)}
 
 								<Menu
 									anchorEl={anchorEl}
 									open={Boolean(anchorEl)}
 									onClose={() => handleClose(i)}
+									onMouseEnter={cancelClose}
+									onMouseLeave={() => scheduleClose(i)}
 									anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
 									transformOrigin={{ vertical: "top", horizontal: "center" }}
 									className={`rounded-lg border transition-[top] duration-500 ${menuClassName} backdrop-blur-lg card-shadow p-2 ${
@@ -125,8 +154,8 @@ export default function NavMenu({
 									<NavMenu
 										items={item.links}
 										locale={locale}
-                                        localizePath={localizePath}
-                                        variant={variant}
+										localizePath={localizePath}
+										variant={variant}
 									/>
 								</Menu>
 							</div>
