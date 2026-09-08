@@ -9,13 +9,15 @@
 		"home": {
 			"slug": "/",
 			"title": "Home",
-			"meta_description": "{{site_title}} provides advanced land and aerial surveying, GIS mapping, and civil engineering services across Kenya and Africa.",
+			"page_title": "Land Surveyor & Civil Engineering Company Kenya",
+			"meta_description": "Land surveyor & civil engineering company in Kenya — topographical, boundary, cadastral and drone mapping surveys with cost guidance across Nairobi, Kiambu, Mombasa & East Africa.",
 			"og_image": "/media/home/field-doperators.jpg"
 		},
 		"about": {
 			"slug": "/about",
 			"title": "About Us",
-			"meta_description": "Learn more about {{site_title}}, our surveying and civil engineering expertise, mission, and commitment to precision across Africa.",
+			"page_title": "About SmartGrid Surveying & Civil Engineering",
+			"meta_description": "About SmartGrid Surveying & Civil Engineering Ltd — the Kenyan surveying company behind land, aerial, GIS and civil engineering projects for developers, contractors and government across East Africa.",
 			"og_image": "/media/about/01.jpeg"
 		},
 		"contact": {
@@ -39,32 +41,32 @@
 		},
 		"surveying": {
 			"slug": "/surveying",
-			"page_title": "Land Surveying",
-			"meta_description": "Land surveying across Kenya and Africa — precise, reliable spatial data using advanced GNSS, Total Stations, and Drone LiDAR for centimeter-level accuracy.",
+			"page_title": "Land Surveyor in Nairobi & Kenya",
+			"meta_description": "Registered land surveyors in Nairobi, Ruiru, Kiambu, Mombasa & Kisumu — boundary, topographical, cadastral and construction surveys with RTK GNSS and total stations for centimeter accuracy across Kenya.",
 			"og_image": "/media/surveying/AG8ng.jpeg"
 		},
 		"topographical-surveys": {
 			"slug": "/surveying/topographical-surveys",
-			"page_title": "Topographical surveys",
-			"meta_description": "Topographical Surveying — See the Land as It Truly Is",
+			"page_title": "Topographical Survey Cost in Kenya",
+			"meta_description": "What is a topographical survey and what does it cost per acre in Kenya? SmartGrid delivers accurate topo surveys for construction and site design across Nairobi, Karen and beyond.",
 			"og_image": "/media/surveying/topographical/3d-data-collection.jpeg"
 		},
 		"building-site-surveys": {
 			"slug": "/surveying/building-site-surveys",
-			"page_title": "Building site surveys",
-			"meta_description": "Precision Surveys for Smarter Construction — building site surveys, construction staking & layout, as-built and underground utility surveys.",
+			"page_title": "Building Site Surveys for Developers Kenya",
+			"meta_description": "Survey requirements before building in Kenya — building site surveys, construction staking & engineering surveys for developers, architects and contractors.",
 			"og_image": "/media/surveying/building-site-surveys/AG8ng.jpeg"
 		},
 		"sectional-properties": {
 			"slug": "/surveying/sectional-properties",
-			"page_title": "Sectional Properties",
-			"meta_description": "Certified sectional property surveys (strata plans) — sectional title plans, unit surveys, boundary & encroachment checks, and 3D as-built scanning.",
+			"page_title": "Sectional Title Plans & Property Surveys Kenya",
+			"meta_description": "Certified sectional property surveys in Kenya — sectional title plans, unit surveys, boundary & encroachment checks and 3D as-built scanning for property developers.",
 			"og_image": "/media/surveying/sectional-properties/sectional-title-plans.jpeg"
 		},
 		"cadastral-surveys": {
 			"slug": "/surveying/cadastral-surveys",
-			"page_title": "Cadastral surveys",
-			"meta_description": "Cadastral & boundary surveys — know your boundaries and build with confidence. Accurate property lines, encroachment identification and dispute prevention.",
+			"page_title": "Cadastral & Boundary Survey Kenya",
+			"meta_description": "Certified cadastral & boundary surveys in Kenya — subdivisions, boundary dispute resolution and cost guidance for land buyers in Nairobi, Kiambu & Machakos.",
 			"og_image": "/media/surveying/cadastral-surveys/AG8ng.jpg"
 		},
 		"aerial-surveys": {
@@ -75,8 +77,8 @@
 		},
 		"ground-penetrating-radar": {
 			"slug": "/surveying/ground-penetrating-radar",
-			"page_title": "Ground Penetrating Radar",
-			"meta_description": "Advanced subsurface utility detection and underground mapping — non-destructive GPR surveys with the LMX200 for construction, engineering, and infrastructure projects.",
+			"page_title": "GPR Survey & Utility Mapping Kenya",
+			"meta_description": "GPR survey in Kenya — how ground penetrating radar detects underground utilities. Non-destructive utility mapping for construction, engineering and infrastructure projects.",
 			"og_image": "/media/surveying/ground-penetrating-radar/gpr-01.jpeg"
 		},
 		"resource-mapping": {
@@ -93,26 +95,26 @@
 		},
 		"gis-mapping": {
 			"slug": "/surveying/gis-mapping",
-			"page_title": "GIS Mapping & Spatial Data Intelligence in Kenya",
-			"meta_description": "Turn location data into actionable engineering, planning & infrastructure intelligence. Advanced GIS mapping services in Kenya, Uganda, Ethiopia, Tanzania and East Africa — integrating drone data, satellite imagery, and field survey datasets for decision-ready spatial intelligence.",
+			"page_title": "GIS Mapping Services in Kenya & East Africa",
+			"meta_description": "GIS mapping services in Kenya and East Africa — drone, satellite and field survey data turned into decision-ready spatial intelligence for government, utilities and infrastructure.",
 			"og_image": "/media/surveying/gis-mapping/gis-mapping-01.jpg"
 		},
 		"aerial-drones": {
 			"slug": "/aerial-drones",
-			"page_title": "Aerial Drones",
-			"meta_description": "Aerial drone surveys for mapping, 3D models, volumetrics, environmental assessment, and monitoring of large or inaccessible sites across Africa.",
+			"page_title": "Drone & UAV Survey Services in Kenya",
+			"meta_description": "Drone and UAV survey services in Kenya — aerial mapping, orthomosaics, LiDAR and 3D models for construction, agriculture and infrastructure in Uganda and Tanzania too.",
 			"og_image": "/media/aerial-drones/01.jpeg"
 		},
 		"drone-imagery-surveys": {
 			"slug": "/aerial-drones/drone-imagery-surveys",
-			"page_title": "Drone Imagery Surveys",
-			"meta_description": "Drone imagery surveys — reliable, scalable, fast and powerful. Map, measure, and monitor 1000+ acres at a time with cutting-edge drones across Africa.",
+			"page_title": "Drone Mapping Services in Kenya",
+			"meta_description": "Drone mapping & photogrammetry services in Kenya — orthomosaic mapping, aerial surveys and drone mapping cost estimates for construction and agriculture across East Africa.",
 			"og_image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-01.jpg"
 		},
 		"lidar-mapping": {
 			"slug": "/aerial-drones/lidar-mapping",
-			"page_title": "LiDAR Mapping",
-			"meta_description": "LiDAR mapping services — reliable, scalable, fast and powerful. High-accuracy point clouds, DEMs, and 3D models for construction, mining, forestry, and agriculture.",
+			"page_title": "LiDAR Survey & Mapping Services Kenya",
+			"meta_description": "LiDAR survey services in Kenya — high-accuracy point clouds, DEMs and 3D models for construction, mining, forestry and powerline projects across East Africa.",
 			"og_image": "/media/aerial-drones/lidar-mapping/lidar-mapping-01.png"
 		},
 		"agricultural-ndvi-mapping": {
@@ -123,8 +125,8 @@
 		},
 		"aerial-drones-as-built-surveys": {
 			"slug": "/aerial-drones/aerial-drones-as-built-surveys",
-			"page_title": "As-Built Surveys",
-			"meta_description": "Leading Africa's land and aerial surveying revolution — drone-based as-built surveys with precision mapping, speed, and seamless CAD/BIM integration.",
+			"page_title": "Drone As-Built Surveys Kenya",
+			"meta_description": "Drone-based as-built surveys in Kenya — precision mapping, speed and seamless CAD/BIM integration for construction handover and compliance.",
 			"og_image": "/media/aerial-drones/aerial-drones-as-built-surveys/01.jpg"
 		},
 		"monitoring-and-evaluation": {
@@ -159,20 +161,20 @@
 		},
 		"civil": {
 			"slug": "/civil",
-			"page_title": "Civil Engineering",
-			"meta_description": "Faster, more cost-effective, and safer mapping, measurement, and monitoring of construction sites — drone and surveying data you can act on.",
+			"page_title": "Civil Engineering Survey Company Kenya",
+			"meta_description": "Engineering survey company for construction projects in Kenya — survey services for civil engineers, contractors and EPC teams including highway, as-built, setting out and volumetric surveys.",
 			"og_image": "/media/civil/01.jpeg"
 		},
 		"civil-highway-surveys": {
 			"slug": "/civil/highway-surveys",
-			"page_title": "Highway Surveys",
-			"meta_description": "Highway surveys solutions — planning, design, construction, and operation of road infrastructure with aerial imaging, LiDAR, GNSS, and conventional surveying.",
+			"page_title": "Highway & Road Survey Services Kenya",
+			"meta_description": "Survey services for road construction in Kenya — highway alignments, corridor mapping, drone LiDAR and as-built surveys for contractors, developers and government road agencies.",
 			"og_image": "/media/civil/highway-surveys/01.jpg"
 		},
 		"civil-as-built-surveys": {
 			"slug": "/civil/as-built-surveys",
-			"page_title": "As-Built Surveys",
-			"meta_description": "Capture the true, current state of built environments — drone, LiDAR, and photogrammetry as-built surveys with centimeter-level accuracy for BIM, CAD, and compliance.",
+			"page_title": "As-Built Survey Services Kenya",
+			"meta_description": "As-built surveys in Kenya — capture the true state of built assets with drone and LiDAR as-built surveys for BIM, CAD, compliance and construction handover.",
 			"og_image": "/media/civil/as-built-surveys/01.jpg"
 		},
 		"civil-volumetric-surveys": {
@@ -189,14 +191,14 @@
 		},
 		"civil-site-engineering": {
 			"slug": "/civil/site-engineering",
-			"page_title": "Site Engineering Surveys",
-			"meta_description": "Survey smarter, build stronger — drone-enabled site engineering surveys for topographic mapping, cut & fill calculations, construction progress monitoring, and quality assurance.",
+			"page_title": "Site Engineering Surveys for Developers",
+			"meta_description": "Site engineering surveys for developers and contractors in Kenya — topographic mapping, cut & fill calculations and construction progress monitoring for confident decisions.",
 			"og_image": "/media/civil/site-engineering/01.jpg"
 		},
 		"civil-site-setting-out": {
 			"slug": "/civil/site-setting-out",
-			"page_title": "Site Setting Out",
-			"meta_description": "Staking out and setting out surveys — translating designs into accurate physical points on-site with centimeter-level GNSS accuracy for buildings, roads, and infrastructure.",
+			"page_title": "Construction Setting Out & Staking Kenya",
+			"meta_description": "Construction setting out and staking services in Kenya — translating designs into accurate on-site points with centimeter-level GNSS for buildings, roads and infrastructure.",
 			"og_image": "/media/civil/site-setting-out/01.jpg"
 		},
 		"dji-air-3s": {
@@ -268,8 +270,8 @@
 		},
 		"company-profile": {
 			"slug": "/company-profile",
-			"page_title": "Company Profile",
-			"meta_description": "From our base in Nairobi we serve government agencies, NGOs, private developers, and donor-funded programmes across Kenya and Africa — combining cutting-edge RTK GNSS, drone LiDAR, and total station technologies with disciplined project management to turn spatial data into confident decisions.",
+			"page_title": "Company Profile | Survey Partner for Infrastructure",
+			"meta_description": "SmartGrid Surveying & Civil Engineering Ltd — a Kenyan survey company for infrastructure projects, EPC contractors, government agencies and NGOs across Africa. View our capabilities.",
 			"og_image": "/media/about/01.jpeg"
 		}
 	},

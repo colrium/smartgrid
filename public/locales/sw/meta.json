@@ -9,12 +9,15 @@
 		"home": {
 			"slug": "/",
 			"title": "Nyumbani",
-			"meta_description": "{{site_title}} hutoa huduma za kisasa za upimaji wa ardhi na angani, uchoraji ramani wa GIS, na uhandisi wa kirahisi kote Kenya na Afrika.",
+			"page_title": "Kampuni ya Upimaji wa Ardhi na Uhandisi Kenya",
+			"meta_description": "Kampuni ya upimaji wa ardhi na uhandisi nchini Kenya — uchunguzi wa topografia, mipaka, cadastral na ramani za droni, pamoja na mwongozo wa gharama katika Nairobi, Kiambu, Mombasa na Afrika Mashariki.",
 			"og_image": "/media/home/field-doperators.jpg"
 		},
 		"about": {
+			"slug": "/about",
 			"title": "Kuhusu Sisi",
-			"meta_description": "Jifunze zaidi kuhusu {{site_title}}, utaalam wetu wa upimaji na uhandisi wa kirahisi, dhamira, na kujitolea kwetu kwa usahihi kote Afrika.",
+			"page_title": "Kuhusu SmartGrid Surveying & Civil Engineering",
+			"meta_description": "Kuhusu SmartGrid Surveying & Civil Engineering Ltd — kampuni ya upimaji ya Kenya iliyo nyuma ya miradi ya upimaji wa ardhi na angani, GIS na uhandisi kwa wasanidi, wakandarasi na serikali kote Afrika Mashariki.",
 			"og_image": "/media/about/01.jpeg"
 		},
 		"contact": {
@@ -35,28 +38,28 @@
 		},
 		"surveying": {
 			"slug": "/surveying",
-			"page_title": "Upimaji wa Ardhi",
-			"meta_description": "Upimaji wa ardhi nchini Kenya na Afrika — data sahihi na ya kuaminika ya eneo kwa kutumia GNSS, Total Stations, na Drone LiDAR kwa usahihi wa kiwango cha sentimita.",
+			"page_title": "Mchunguzi wa Ardhi Nairobi na Kenya",
+			"meta_description": "Wataalamu waliosajiliwa wa upimaji wa ardhi katika Nairobi, Ruiru, Kiambu, Mombasa na Kisumu — uchunguzi wa mipaka, topografia, cadastral na ujenzi kwa RTK GNSS kwa usahihi wa sentimita kote Kenya.",
 			"og_image": "/media/surveying/AG8ng.jpeg"
 		},
 		"topographical-surveys": {
-			"page_title": "Uchunguzi wa Topografia",
-			"meta_description": "Uchunguzi wa Topografia — Ona Ardhi Jinsi Ilivyo",
+			"page_title": "Gharama ya Uchunguzi wa Topografia Kenya",
+			"meta_description": "Uchunguzi wa topografia ni nini na gharama zake kwa ekari ni kiasi gani nchini Kenya? SmartGrid hutoa uchunguzi sahihi wa topografia kwa ujenzi na usanifu wa kiwanja katika Nairobi, Karen na maeneo mengine.",
 			"og_image": "/media/surveying/topographical/3d-data-collection.jpeg"
 		},
 		"building-site-surveys": {
-			"page_title": "Uchunguzi wa Kiwanja cha Ujenzi",
-			"meta_description": "Uchunguzi wa usahihi kwa ajili ya ujenzi bora — uchunguzi wa kiwanja, upangaji na mpangilio wa ujenzi, uchunguzi wa mali na huduma za chini ya ardhi.",
+			"page_title": "Uchunguzi wa Kiwanja cha Ujenzi kwa Wasanidi Kenya",
+			"meta_description": "Mahitaji ya uchunguzi kabla ya kujenga nchini Kenya — uchunguzi wa kiwanja, upangaji wa ujenzi na uchunguzi wa uhandisi kwa wasanidi, wasanifu na wakandarasi.",
 			"og_image": "/media/surveying/building-site-surveys/AG8ng.jpeg"
 		},
 		"sectional-properties": {
-			"page_title": "Mali za Sehemu",
-			"meta_description": "Uchunguzi wa mali za sehemu ulioidhinishwa (mipango ya strata) — mipango ya hatimiliki ya sehemu, uchunguzi wa vitengo, ukaguzi wa mipaka na uvamizi, na uchanganuzi wa 3D wa as-built.",
+			"page_title": "Mipango ya Hatimiliki ya Sehemu na Uchunguzi wa Mali Kenya",
+			"meta_description": "Uchunguzi ulioidhinishwa wa mali za sehemu nchini Kenya — mipango ya hatimiliki ya sehemu, uchunguzi wa vitengo, ukaguzi wa mipaka na uvamizi, na uchanganuzi wa 3D as-built kwa wasanidi.",
 			"og_image": "/media/surveying/sectional-properties/sectional-title-plans.jpeg"
 		},
 		"cadastral-surveys": {
-			"page_title": "Uchunguzi wa Cadastral",
-			"meta_description": "Uchunguzi wa cadastral na mipaka — jua mipaka yako na ujenge kwa ujasiri. Mistari sahihi ya mali, utambuzi wa uvamizi na kuzuia migogoro.",
+			"page_title": "Uchunguzi wa Cadastral na Mipaka Kenya",
+			"meta_description": "Uchunguzi ulioidhinishwa wa cadastral na mipaka nchini Kenya — mgawanyo wa ardhi, usuluhishi wa migogoro ya mipaka na mwongozo wa gharama kwa wanunuzi wa ardhi Nairobi, Kiambu na Machakos.",
 			"og_image": "/media/surveying/cadastral-surveys/AG8ng.jpg"
 		},
 		"aerial-surveys": {
@@ -65,8 +68,8 @@
 			"og_image": "/media/surveying/aerial-surveys/3d-models.jpeg"
 		},
 		"ground-penetrating-radar": {
-			"page_title": "Rada ya Kupenya Ardhi",
-			"meta_description": "Ugunduzi wa kisasa wa huduma za chini ya ardhi na uchoraji ramani wa chini ya ardhi — uchunguzi wa GPR usioharibu kwa LMX200 kwa miradi ya ujenzi, uhandisi, na miundombinu.",
+			"page_title": "Uchunguzi wa GPR na Ramani za Huduma Kenya",
+			"meta_description": "Uchunguzi wa GPR nchini Kenya — jinsi rada ya kupenya ardhi inavyogundua huduma zilizo chini ya ardhi. Uchoraji ramani wa huduma bila uharibifu kwa miradi ya ujenzi, uhandisi na miundombinu.",
 			"og_image": "/media/surveying/ground-penetrating-radar/gpr-01.jpeg"
 		},
 		"resource-mapping": {
@@ -80,24 +83,24 @@
 			"og_image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-01.jpg"
 		},
 		"gis-mapping": {
-			"page_title": "Ramani za GIS na Akili ya Data ya Kijiografia Kenya",
-			"meta_description": "Geuza data ya eneo kuwa akili ya uhandisi, upangaji na miundombinu. Huduma za hali ya juu za ramani za GIS nchini Kenya, Uganda, Ethiopia, Tanzania na Afrika Mashariki — tukichanganya data za droni, picha za satelaiti, na vipimo vya uwanja kwa taarifa zinazowezesha maamuzi.",
+			"page_title": "Huduma za Ramani za GIS Kenya na Afrika Mashariki",
+			"meta_description": "Huduma za ramani za GIS nchini Kenya na Afrika Mashariki — data za droni, satelaiti na vipimo vya uwanja zinazobadilishwa kuwa taarifa za maamuzi kwa serikali, huduma na miundombinu.",
 			"og_image": "/media/surveying/gis-mapping/gis-mapping-01.jpg"
 		},
 		"aerial-drones": {
 			"slug": "/aerial-drones",
-			"page_title": "Droni za Hewa",
-			"meta_description": "Uchunguzi wa droni za hewa kwa ramani, mifano ya 3D, volumetrics, tathmini za mazingira, na ufuatiliaji wa maeneo makubwa au yasiyofikika barani Afrika.",
+			"page_title": "Huduma za Uchunguzi wa Droni na UAV Kenya",
+			"meta_description": "Huduma za uchunguzi wa droni na UAV nchini Kenya — ramani za angani, orthomosaic, LiDAR na miundo ya 3D kwa ujenzi, kilimo na miundombinu pia Uganda na Tanzania.",
 			"og_image": "/media/aerial-drones/01.jpeg"
 		},
 		"drone-imagery-surveys": {
-			"page_title": "Uchunguzi wa Picha za Ndege Zisizo na Rubani",
-			"meta_description": "Uchunguzi wa picha za ndege zisizo na rubani — kuaminika, kupanuka, haraka na nguvu. Chora ramani, pima, na fuatilia zaidi ya ekari 1000 kwa wakati mmoja kwa ndege za kisasa kote Afrika.",
+			"page_title": "Huduma za Ramani za Droni Kenya",
+			"meta_description": "Huduma za ramani za droni na photogrammetry nchini Kenya — orthomosaic, uchunguzi wa angani na makadirio ya gharama za ramani za droni kwa ujenzi na kilimo kote Afrika Mashariki.",
 			"og_image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-01.jpg"
 		},
 		"lidar-mapping": {
-			"page_title": "Uchoraji Ramani wa LiDAR",
-			"meta_description": "Huduma za uchoraji ramani wa LiDAR — kuaminika, kupanuka, haraka na nguvu. Point clouds za usahihi wa juu, DEMs, na mifano ya 3D kwa ujenzi, madini, misitu, na kilimo.",
+			"page_title": "Huduma za Uchunguzi na Ramani za LiDAR Kenya",
+			"meta_description": "Huduma za uchunguzi wa LiDAR nchini Kenya — point clouds za usahihi wa juu, DEMs na miundo ya 3D kwa miradi ya ujenzi, madini, misitu na nyaya za umeme kote Afrika Mashariki.",
 			"og_image": "/media/aerial-drones/lidar-mapping/lidar-mapping-01.png"
 		},
 		"agricultural-ndvi-mapping": {
@@ -106,8 +109,8 @@
 			"og_image": "/media/aerial-drones/agricultural-ndvi-mapping/agricultural-ndvi-mapping-01.jpg"
 		},
 		"aerial-drones-as-built-surveys": {
-			"page_title": "Uchunguzi wa As-Built",
-			"meta_description": "Kuongoza mapinduzi ya upimaji wa ardhi na angani barani Afrika — uchunguzi wa as-built kwa ndege zisizo na rubani kwa ramani sahihi, kasi, na ujumuishaji usio na mshono wa CAD/BIM.",
+			"page_title": "Uchunguzi wa As-Built kwa Ndege zisizo na Rubani Kenya",
+			"meta_description": "Uchunguzi wa as-built kwa ndege zisizo na rubani nchini Kenya — ramani sahihi, kasi na ujumuishaji usio na mshono wa CAD/BIM kwa makabidhiano ya ujenzi na ufuasi wa kanuni.",
 			"og_image": "/media/aerial-drones/aerial-drones-as-built-surveys/01.jpg"
 		},
 		"monitoring-and-evaluation": {
@@ -137,18 +140,18 @@
 		},
 		"civil": {
 			"slug": "/civil",
-			"page_title": "Uhandisi wa Civil",
-			"meta_description": "Ramani, kipimo, na ufuatiliaji wa tovuti za ujenzi kwa haraka, kwa gharama nafuu na kwa usalama zaidi — data ya droni na upimaji unayoweza kutumia kwa maamuzi ya kuegemea.",
+			"page_title": "Kampuni ya Uchunguzi wa Uhandisi Kenya",
+			"meta_description": "Kampuni ya uchunguzi wa uhandisi kwa miradi ya ujenzi nchini Kenya — huduma za uchunguzi kwa wahandisi, wakandarasi na timu za EPC: barabara, as-built, upangaji na uchunguzi wa ujazo.",
 			"og_image": "/media/civil/01.jpeg"
 		},
 		"civil-highway-surveys": {
-			"page_title": "Uchunguzi wa Barabara Kuu",
-			"meta_description": "Suluhisho za uchunguzi wa barabara kuu — upangaji, kubuni, ujenzi, na uendeshaji wa miundombinu ya barabara kwa picha za angani, LiDAR, GNSS, na upimaji wa kawaida.",
+			"page_title": "Huduma za Uchunguzi wa Barabara Kenya",
+			"meta_description": "Huduma za uchunguzi kwa ujenzi wa barabara nchini Kenya — miingiliano ya barabara, uchoraji wa ukanda, LiDAR ya droni na uchunguzi wa as-built kwa wakandarasi, wasanidi na mashirika ya serikali.",
 			"og_image": "/media/civil/highway-surveys/01.jpg"
 		},
 		"civil-as-built-surveys": {
-			"page_title": "Uchunguzi wa As-Built",
-			"meta_description": "Kamata hali halisi, ya sasa ya mazingira yaliyojengwa — uchunguzi wa as-built wa ndege zisizo na rubani, LiDAR, na photogrammetry kwa usahihi wa kiwango cha sentimita kwa BIM, CAD, na kufuata kanuni.",
+			"page_title": "Huduma za Uchunguzi wa As-Built Kenya",
+			"meta_description": "Uchunguzi wa as-built nchini Kenya — kamata hali halisi ya mali iliyojengwa kwa as-built za droni na LiDAR kwa BIM, CAD, ufuasi wa kanuni na makabidhiano ya ujenzi.",
 			"og_image": "/media/civil/as-built-surveys/01.jpg"
 		},
 		"civil-volumetric-surveys": {
@@ -162,13 +165,13 @@
 			"og_image": "/media/civil/bim/01.jpg"
 		},
 		"civil-site-engineering": {
-			"page_title": "Uchunguzi wa Uhandisi wa Tovuti",
-			"meta_description": "Chunguza kwa busara, jenga kwa nguvu — uchunguzi wa uhandisi wa tovuti unaowezeshwa na ndege zisizo na rubani kwa ramani za topografia, hesabu za kukata na kujaza, ufuatiliaji wa maendeleo ya ujenzi, na uhakikisho wa ubora.",
+			"page_title": "Uchunguzi wa Uhandisi wa Tovuti kwa Wasanidi",
+			"meta_description": "Uchunguzi wa uhandisi wa tovuti kwa wasanidi na wakandarasi nchini Kenya — ramani za topografia, hesabu za kukata na kujaza na ufuatiliaji wa maendeleo ya ujenzi kwa maamuzi ya uhakika.",
 			"og_image": "/media/civil/site-engineering/01.jpg"
 		},
 		"civil-site-setting-out": {
-			"page_title": "Uwekaji wa Alama za Tovuti",
-			"meta_description": "Uchunguzi wa staking out na setting out — kutafsiri mibuni kuwa pointi sahihi za kimwili tovutini kwa usahihi wa kiwango cha sentimita wa GNSS kwa majengo, barabara, na miundombinu.",
+			"page_title": "Upangaji wa Ujenzi na Uwekaji Alama Kenya",
+			"meta_description": "Huduma za upangaji wa ujenzi nchini Kenya — kutafsiri miundo kuwa pointi sahihi tovutini kwa GNSS ya usahihi wa sentimita kwa majengo, barabara na miundombinu.",
 			"og_image": "/media/civil/site-setting-out/01.jpg"
 		},
 		"dji-air-3s": {
@@ -237,8 +240,8 @@
 			"og_image": "/media/home/field-doperators.jpg"
 		},
 		"company-profile": {
-			"page_title": "Wasifu wa Kampuni",
-			"meta_description": "Kutoka ofisi yetu ya Nairobi tunahudumia wakala za serikali, NGO, wasanidi binafsi, na miradi ya wadau wa fedha nchini Kenya na Afrika — tukichanganya teknolojia za RTK GNSS, droni LiDAR, na total station pamoja na usimamizi mzuri wa miradi kubadilisha data ya eneo kuwa maamuzi sahihi.",
+			"page_title": "Wasifu wa Kampuni | Mshirika wa Upimaji kwa Miundombinu",
+			"meta_description": "SmartGrid Surveying & Civil Engineering Ltd — kampuni ya upimaji ya Kenya kwa miradi ya miundombinu, wakandarasi wa EPC, mashirika ya serikali na NGO kote Afrika. Tazama uwezo wetu.",
 			"og_image": "/media/about/01.jpeg"
 		}
 	},
