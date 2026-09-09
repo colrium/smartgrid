@@ -101,54 +101,63 @@
 				"title": "As-Built Maps",
 				"format": "PDF / DWG",
 				"icon": "file-document",
+				"image": "/media/deliverables/as-built-maps.jpg",
 				"description": "As-constructed corridor maps verifying completed works against the approved design."
 			},
 			{
 				"title": "Digital Elevation Models (DSM, DTM)",
 				"format": "GeoTIFF",
 				"icon": "image-filter-hdr",
+				"image": "/media/deliverables/digital-elevation-models.jpg",
 				"description": "Terrain and surface models for grading, drainage design, and earthworks balances along the route."
 			},
 			{
 				"title": "Setting Out Coordinates",
 				"format": "CSV / DXF",
 				"icon": "crosshairs-gps",
+				"image": "/media/deliverables/setting-out-coordinates.jpg",
 				"description": "Centerline, curve, and structure positions ready for stakeout and machine control."
 			},
 			{
 				"title": "3D Spatial Data (X, Y, Z)",
 				"format": "CSV / DWG",
 				"icon": "axis-z-arrow",
+				"image": "/media/deliverables/3d-spatial-data.jpg",
 				"description": "Corridor-wide positional data for design verification and digital twin workflows."
 			},
 			{
 				"title": "Contour Maps",
 				"format": "DWG / DXF",
 				"icon": "chart-bell-curve",
+				"image": "/media/deliverables/contour-maps.jpg",
 				"description": "Contours at design intervals supporting grading, cut-fill, and drainage analysis."
 			},
 			{
 				"title": "Comprehensive Master Plans",
 				"format": "PDF / DWG",
 				"icon": "map",
+				"image": "/media/deliverables/master-plans.jpg",
 				"description": "Consolidated route plans aligning alignment, ROW, utilities, and access points."
 			},
 			{
 				"title": "Building Layouts & BIM Integration",
 				"format": "IFC / DWG",
 				"icon": "office-building",
+				"image": "/media/deliverables/building-layouts-bim.jpg",
 				"description": "BIM-ready geometry and layouts for interchanges, structures, and roadside assets."
 			},
 			{
 				"title": "CAD and GIS-Compatible Shapefiles",
 				"format": "SHP / DWG",
 				"icon": "layers-triple",
+				"image": "/media/deliverables/cad-shapefiles.jpg",
 				"description": "Data packages that plug straight into CAD and GIS design environments."
 			},
 			{
 				"title": "Professional PDF Map Exports",
 				"format": "PDF",
 				"icon": "file-pdf-box",
+				"image": "/media/deliverables/pdf-map-outputs.jpg",
 				"description": "Print-ready plan and profile exports for tenders, approvals, and site teams."
 			}
 		]

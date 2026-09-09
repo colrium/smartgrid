@@ -80,18 +80,21 @@
 				"title": "Ramani ya kina ya topografia yenye vipengele",
 				"format": "DWG / PDF",
 				"icon": "map",
+				"image": "/media/deliverables/topographical-maps.jpg",
 				"description": "Ramani yenye vipengele vya tovuti: mipaka, majengo, huduma, na viwango."
 			},
 			{
 				"title": "Ramani za contour (intervals kubwa na ndogo)",
 				"format": "DWG / DXF",
 				"icon": "chart-bell-curve",
+				"image": "/media/deliverables/contour-maps.jpg",
 				"description": "Kontua kwa intervals kubwa na ndogo kwa kubuni na ujenzi wa ardhi."
 			},
 			{
 				"title": "Michoro ya CAD (tayari kwa AutoCAD)",
 				"format": "DWG",
 				"icon": "ruler-square",
+				"image": "/media/deliverables/cad-drawings.jpg",
 				"description": "Michoro ya CAD yenye tabaka inayofunguka moja kwa moja AutoCAD na zana za kubuni."
 			},
 			{
@@ -110,6 +113,7 @@
 				"title": "Ripoti ya uchunguzi",
 				"format": "PDF",
 				"icon": "file-document",
+				"image": "/media/deliverables/survey-reports.jpg",
 				"description": "Ripoti iliyotiliwa sahihi inayoeleza mbinu, udhibiti, na usahihi."
 			}
 		]

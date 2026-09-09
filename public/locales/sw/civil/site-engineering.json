@@ -113,30 +113,35 @@
 				"title": "Kuratibu za Setting-Out",
 				"format": "CSV / DWG",
 				"icon": "map-marker-radius",
+				"image": "/media/deliverables/setting-out-coordinates.jpg",
 				"description": "Ratiba ya stakeout kwa majengo, barabara na huduma, iliyoandaliwa kwa total station na GNSS rovers."
 			},
 			{
 				"title": "Uchunguzi wa Mwinuko na Mteremko",
 				"format": "PDF / DWG",
 				"icon": "axis-z-arrow",
+				"image": "/media/deliverables/level-and-gradient-surveys.jpg",
 				"description": "Mwinuko, mteremko na urefu kwa kazi za ardhi, mifereji na uwekaji wa lami."
 			},
 			{
 				"title": "Uchunguzi wa Maendeleo na Wingi",
 				"format": "Excel / PDF",
 				"icon": "chart-histogram",
+				"image": "/media/deliverables/progress-and-quantity-surveys.jpg",
 				"description": "Wingi wa kati uliopimwa dhidi ya nyuso za usanifu kuunga mkono tathmini na madai."
 			},
 			{
 				"title": "Modeli za Udhibiti wa Mashine",
 				"format": "DXF / CALS",
 				"icon": "bulldozer",
+				"image": "/media/deliverables/machine-control-models.jpg",
 				"description": "Modeli za 3D za grado zilizoandaliwa kwa udhibiti wa GPS wa mashine na vifaa vya kufinya."
 			},
 			{
 				"title": "Nyaraka za Ufuasi na Uhamishaji",
 				"format": "PDF",
 				"icon": "file-certificate",
+				"image": "/media/deliverables/compliance-and-handover-documents.jpg",
 				"description": "Nyaraka za ufuasi wa nafasi, mwinuko na vipimo kwa ukamilishaji wa vitendo."
 			}
 		]

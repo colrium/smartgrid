@@ -153,48 +153,56 @@
 				"title": "Geo-referenced GIS databases",
 				"format": "GeoPackage / File Geodatabase",
 				"icon": "database-outline",
+				"image": "/media/deliverables/georeferenced-gis-databases.jpg",
 				"description": "Complete spatial databases with topology, attributes, and metadata ready for enterprise GIS deployment."
 			},
 			{
 				"title": "High-resolution orthomosaics",
 				"format": "GeoTIFF / COG",
 				"icon": "image-filter-hdr",
+				"image": "/media/deliverables/high-resolution-orthomosaics.jpg",
 				"description": "Seamless, georectified orthomosaics at 2–5 cm resolution for precise measurement and visual reference."
 			},
 			{
 				"title": "Digital Elevation Models (DEM/DSM)",
 				"format": "GeoTIFF / ASC",
 				"icon": "axis-z-arrow-lock",
+				"image": "/media/deliverables/digital-elevation-models.jpg",
 				"description": "Bare-earth DEMs and surface DSMs with contour extraction for terrain analysis and engineering design."
 			},
 			{
 				"title": "Land use / land cover classification maps",
 				"format": "Shapefile / GeoJSON",
 				"icon": "map-legend",
+				"image": "/media/deliverables/land-use-land-cover-classification-maps.jpg",
 				"description": "Standardized LULC classifications following FAO/ISO schemes with accuracy assessment reports."
 			},
 			{
 				"title": "Resource inventory datasets",
 				"format": "CSV / Excel / Geodatabase",
 				"icon": "clipboard-list-outline",
+				"image": "/media/deliverables/resource-inventory-datasets.jpg",
 				"description": "Quantified resource inventories with spatial attributes for planning, valuation, and reporting."
 			},
 			{
 				"title": "Interactive Web GIS maps",
 				"format": "ArcGIS Online / Mapbox / Custom",
 				"icon": "map-marker-radius",
+				"image": "/media/deliverables/interactive-web-gis-maps.jpg",
 				"description": "Optional hosted web maps with layer toggles, measurement tools, and stakeholder sharing."
 			},
 			{
 				"title": "Engineering-grade PDF reports",
 				"format": "PDF / Print-ready",
 				"icon": "file-pdf-box",
+				"image": "/media/deliverables/engineering-grade-pdf-reports.jpg",
 				"description": "Thematic map atlases with legends, scale bars, coordinate grids, and methodology appendices."
 			},
 			{
 				"title": "CAD-ready drawings for planners & engineers",
 				"format": "DWG / DXF",
 				"icon": "vector-square",
+				"image": "/media/deliverables/cad-ready-engineering-drawings.jpg",
 				"description": "Clean, layered CAD drawings with proper line weights, text styles, and coordinate systems."
 			}
 		]

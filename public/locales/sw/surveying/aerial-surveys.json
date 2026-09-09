@@ -143,24 +143,28 @@
 				"title": "Ramani za Orthomosaic",
 				"format": "GeoTIFF / vipande vya JPEG",
 				"icon": "google-earth",
+				"image": "/media/deliverables/orthomosaic-maps.jpg",
 				"description": "Ramani za msingi za angani zenye mwonekano wa juu na marejeleo ya kijiografia zinazounganisha tovuti yote kuwa picha moja sahihi — nzuri kwa kupanga, kupima na kuripoti."
 			},
 			{
 				"title": "Mifano ya Kidijitali ya Mwinuko (DTM & DSM)",
 				"format": "Rasteri ya GeoTIFF",
 				"icon": "image-filter-hdr",
+				"image": "/media/deliverables/digital-elevation-models.jpg",
 				"description": "Mifano ya ardhi tupu na uso kwa kupanga, mradi wa mifereji, kupanga kuchonga/kujaza na kuona tovuti kwa 3D."
 			},
 			{
 				"title": "Ramani za Contour",
 				"format": "Mipangilio ya 0.25m – 1m",
 				"icon": "vector-bezier",
+				"image": "/media/deliverables/contour-maps.jpg",
 				"description": "Mistari ya contour tayari kwa usanidi kwa vipimo vya uhandisi, iliyotokana na data ya mwinuko iliyosawazishwa na kuletwa kwa miundo ya CAD na GIS."
 			},
 			{
 				"title": "Point Clouds za LiDAR",
 				"format": "LAS / LAZ",
 				"icon": "axis-z-arrow",
+				"image": "/media/deliverables/lidar-point-clouds.jpg",
 				"description": "Point clouds mnene zilizopangwa zinazovuka miani kwa mwinuko wa ardhi halisi — tayari kwa mabomba, njia na misitu."
 			},
 			{
@@ -173,18 +177,21 @@
 				"title": "Uchambuzi wa NDVI & Multispectral",
 				"format": "Ramani ya NDVI",
 				"icon": "leaf",
+				"image": "/media/deliverables/ndvi-and-multispectral-analysis.jpg",
 				"description": "Ramani za afya ya mazao na kipimo cha mimea zinazoonyesha mkazo wa mimea, matatizo ya umwagiliaji na mifumo ya mavuno kwenye mashamba makubwa."
 			},
 			{
 				"title": "Michoro ya CAD",
 				"format": "DWG, DXF, LandXML",
 				"icon": "file-cad",
+				"image": "/media/deliverables/cad-drawings.jpg",
 				"description": "Vifurushi vya CAD tayari kwa uhandisi — contours, breaklines, uso na alignments zilizopangwa kwenye mfumo wako wa kuradiani na tabaka."
 			},
 			{
 				"title": "Ripoti ya Usahihi wa Uchunguzi",
 				"format": "Ripoti ya RMS + GCP",
 				"icon": "clipboard-check-outline",
+				"image": "/media/deliverables/survey-accuracy-reports.jpg",
 				"description": "Ripoti ya QA/QC iliyosainiwa inayorekodi GCP, checkpoints na makosa ya RMS — ushahidi ambao uidhinishaji na michoro yako unategemea."
 			}
 		]

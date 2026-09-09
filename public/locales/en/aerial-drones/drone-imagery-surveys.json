@@ -70,7 +70,7 @@
 		"tag": "Data Outputs",
 		"headline": "Aerial Surveys Deliverables",
 		"description": "Our drone‑based surveying solutions enhance decision‑making for construction, engineering, land administration, and environmental monitoring. We capture accurate geospatial data using advanced UAV platforms equipped with RGB, LiDAR, and thermal sensors. All outputs are optimized for use within GIS, CAD, BIM, and engineering workflows.",
-		"liveLabel": "Deliverable preview",
+		"liveLabel": "Deliverable",
 		"checks": [
 			"Geo-referenced & survey-grade",
 			"GIS / CAD / BIM ready",

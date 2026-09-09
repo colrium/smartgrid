@@ -105,12 +105,14 @@
 				"title": "Boundary Survey Reports & Plans",
 				"format": "PDF / Printed plans",
 				"icon": "vector-square",
+				"image": "/media/deliverables/boundary-survey-reports-and-plans.jpg",
 				"description": "Signed reports and plans defining parcel boundaries for transactions and development."
 			},
 			{
 				"title": "Cadastral Plans for Title Processing",
 				"format": "Survey of Kenya format",
 				"icon": "file-certificate",
+				"image": "/media/deliverables/cadastral-plans-for-title-processing.jpg",
 				"description": "Registry-compliant plans prepared for title issuance at the land registry."
 			},
 			{
@@ -123,42 +125,49 @@
 				"title": "Registry Maps",
 				"format": "Certified copies",
 				"icon": "map",
+				"image": "/media/deliverables/registry-maps.jpg",
 				"description": "Certified registry index maps and extracts for parcel verification."
 			},
 			{
 				"title": "3D Spatial Data (X, Y, Z)",
 				"format": "CSV / DWG",
 				"icon": "axis-z-arrow",
+				"image": "/media/deliverables/3d-spatial-data.jpg",
 				"description": "Positional coordinates ready for design, GIS, and machine-control workflows."
 			},
 			{
 				"title": "Topographical Maps",
 				"format": "DWG / PDF",
 				"icon": "image-filter-hdr",
+				"image": "/media/deliverables/topographical-maps.jpg",
 				"description": "Feature-coded maps of terrain, utilities, structures, and levels."
 			},
 			{
 				"title": "Contours",
 				"format": "DWG / DXF",
 				"icon": "chart-bell-curve",
+				"image": "/media/deliverables/contour-maps.jpg",
 				"description": "Major and minor interval contours for grading and drainage design."
 			},
 			{
 				"title": "CAD Shapefiles",
 				"format": "SHP / DWG",
 				"icon": "layers-triple",
+				"image": "/media/deliverables/cad-shapefiles.jpg",
 				"description": "GIS-ready shapefiles and CAD layers for drafting and mapping."
 			},
 			{
 				"title": "Survey Reports",
 				"format": "PDF",
 				"icon": "file-document",
+				"image": "/media/deliverables/survey-reports.jpg",
 				"description": "Methodology, equipment, and accuracy summary signed by licensed surveyors."
 			},
 			{
 				"title": "PDF Map Outputs",
 				"format": "PDF",
 				"icon": "file-pdf-box",
+				"image": "/media/deliverables/pdf-map-outputs.jpg",
 				"description": "Print-ready, scaled exports for clients and approval authorities."
 			},
 			{

@@ -242,42 +242,49 @@
 				"title": "Geo-referenced Utility Maps",
 				"format": "DWG / DXF / SHP",
 				"icon": "map-marker-path",
+				"image": "/media/deliverables/georeferenced-utility-maps.jpg",
 				"description": "Every detected utility plotted on a georeferenced plan you can drop straight into CAD or GIS for design."
 			},
 			{
 				"title": "3D Subsurface Interpretation Models",
 				"format": "Interactive 3D",
 				"icon": "cube-outline",
+				"image": "/media/deliverables/3d-subsurface-interpretation-models.jpg",
 				"description": "Depth-sliced 3D visualisation of buried pipes, cables, voids and structures to support clash-free design."
 			},
 			{
 				"title": "Utility Conflict Analysis Report",
 				"format": "Report + Plan",
 				"icon": "vector-combine",
+				"image": "/media/deliverables/utility-conflict-analysis-reports.jpg",
 				"description": "Identifies overlapping utilities and design conflicts before they become costly site surprises."
 			},
 			{
 				"title": "Depth Estimation & Classification Tables",
 				"format": "XLSX / PDF",
 				"icon": "table-large",
+				"image": "/media/deliverables/depth-estimation-and-classification-tables.jpg",
 				"description": "Tabulated depth, size and confidence classes for every target — ready for engineering sign-off."
 			},
 			{
 				"title": "GIS-Ready Datasets",
 				"format": "ArcGIS / QGIS",
 				"icon": "database-outline",
+				"image": "/media/deliverables/gis-ready-datasets.jpg",
 				"description": "Attribute-rich shapefiles and geodatabases that integrate into your existing asset management systems."
 			},
 			{
 				"title": "Construction Risk Maps",
 				"format": "Plan overlay",
 				"icon": "shield-alert-outline",
+				"image": "/media/deliverables/construction-risk-maps.jpg",
 				"description": "Colour-coded risk zones highlight where excavation needs extra care, protection or method statements."
 			},
 			{
 				"title": "Client-Ready Technical Report",
 				"format": "PDF",
 				"icon": "file-pdf-box",
+				"image": "/media/deliverables/client-ready-technical-reports.jpg",
 				"description": "A signed, standalone report documenting methodology, findings, radargrams and recommendations."
 			}
 		]

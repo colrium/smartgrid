@@ -193,18 +193,21 @@
 				"title": "Geo-referenced Coordinates",
 				"format": "Registry control",
 				"icon": "crosshairs-gps",
+				"image": "/media/deliverables/georeferenced-coordinates.jpg",
 				"description": "Unit and common-property corners tied to national registry beacons for survey-office and Ardhisasa acceptance."
 			},
 			{
 				"title": "Unit Factor Schedule",
 				"format": "Excel + PDF",
 				"icon": "table-large",
+				"image": "/media/deliverables/unit-factor-schedules.jpg",
 				"description": "Each owner's proportional share of the common property — maintenance levies and voting rights computed fairly."
 			},
 			{
 				"title": "Survey Report for Lands Registry",
 				"format": "Signed report",
 				"icon": "file-certificate",
+				"image": "/media/deliverables/survey-reports-for-the-lands-registry.jpg",
 				"description": "A narrative report by the licensed surveyor documenting methodology, control, boundaries and easements."
 			},
 			{

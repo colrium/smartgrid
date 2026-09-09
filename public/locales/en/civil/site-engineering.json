@@ -113,30 +113,35 @@
 				"title": "Setting-Out Coordinates",
 				"format": "CSV / DWG",
 				"icon": "map-marker-radius",
+				"image": "/media/deliverables/setting-out-coordinates.jpg",
 				"description": "Stakeout schedules for structures, roads and services, formatted for total stations and GNSS rovers."
 			},
 			{
 				"title": "Level & Gradient Surveys",
 				"format": "PDF / DWG",
 				"icon": "axis-z-arrow",
+				"image": "/media/deliverables/level-and-gradient-surveys.jpg",
 				"description": "Levels, gradients and elevations for earthworks, drainage and paving operations."
 			},
 			{
 				"title": "Progress & Quantity Surveys",
 				"format": "Excel / PDF",
 				"icon": "chart-histogram",
+				"image": "/media/deliverables/progress-and-quantity-surveys.jpg",
 				"description": "Interim quantities measured against design surfaces to support valuations and claims."
 			},
 			{
 				"title": "Machine Control Models",
 				"format": "DXF / CALS",
 				"icon": "bulldozer",
+				"image": "/media/deliverables/machine-control-models.jpg",
 				"description": "3D grade models prepared for GPS machine control on plant and compaction equipment."
 			},
 			{
 				"title": "Compliance & Handover Documents",
 				"format": "PDF",
 				"icon": "file-certificate",
+				"image": "/media/deliverables/compliance-and-handover-documents.jpg",
 				"description": "Positioning, level and dimensional compliance documentation for practical completion."
 			}
 		]

@@ -66,24 +66,28 @@
 				"title": "Modeli za Scan-to-BIM",
 				"format": "IFC / RVT",
 				"icon": "cube-outline",
+				"image": "/media/deliverables/scan-to-bim-models.jpg",
 				"description": "Modeli za hali iliyopo zinazotokana na point clouds zilizainishwa kwa kiwango cha maendeleo kinachohitajika."
 			},
 			{
 				"title": "Point Clouds Zilizosajiliwa",
 				"format": "RCP / E57 / LAS",
 				"icon": "vector-square",
+				"image": "/media/deliverables/registered-point-clouds.jpg",
 				"description": "Uchunguzi safi ulioelezwa kijiografia na usajili wa udhibiti, tayari kwa zana za uandishi wa BIM."
 			},
 			{
 				"title": "Modeli za BIM za As-Built",
 				"format": "IFC / RVT",
 				"icon": "domain",
+				"image": "/media/deliverables/as-built-bim-models.jpg",
 				"description": "Modeli za hatua ya ujenzi zilizosasishwa kwa uthibitisho wa shamba kwa uhamishaji, uendeshaji na matunzo."
 			},
 			{
 				"title": "Ripoti za Tofauti na Clash",
 				"format": "PDF / Excel",
 				"icon": "chart-histogram",
+				"image": "/media/deliverables/deviation-and-clash-reports.jpg",
 				"description": "Ulinganisho wa usanifu dhidi ya lililojengwa na tofauti zilizopimwa kwa uhakiki na utatuzi wa uhandisi."
 			},
 			{

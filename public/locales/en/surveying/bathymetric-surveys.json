@@ -93,42 +93,49 @@
 				"title": "Bathymetric contour maps",
 				"format": "CAD / GIS",
 				"icon": "map-legend",
+				"image": "/media/deliverables/bathymetric-contour-maps.jpg",
 				"description": "Detailed depth contour maps in CAD and GIS formats for engineering design and planning."
 			},
 			{
 				"title": "Digital Depth Models (DDM / DEM)",
 				"format": "GeoTIFF / ASC",
 				"icon": "axis-z-arrow-lock",
+				"image": "/media/deliverables/digital-depth-models.jpg",
 				"description": "High-resolution digital depth models and DEMs for volume calculations and 3D visualization."
 			},
 			{
 				"title": "Reservoir volume & capacity calculations",
 				"format": "Excel + PDF",
 				"icon": "cube-outline",
+				"image": "/media/deliverables/reservoir-volume-and-capacity-calculations.jpg",
 				"description": "Accurate reservoir capacity and volume calculations with stage-storage curves."
 			},
 			{
 				"title": "Sedimentation analysis reports",
 				"format": "PDF Report",
 				"icon": "chart-histogram",
+				"image": "/media/deliverables/sedimentation-analysis-reports.jpg",
 				"description": "Comprehensive sedimentation analysis with volume loss calculations and rate estimates."
 			},
 			{
 				"title": "Cross-section profiles of river/dam beds",
 				"format": "CAD / PDF",
 				"icon": "vector-square",
+				"image": "/media/deliverables/cross-section-profiles.jpg",
 				"description": "Detailed cross-section profiles showing underwater terrain for engineering analysis."
 			},
 			{
 				"title": "Geo-referenced survey datasets",
 				"format": "SHP / DWG",
 				"icon": "database-outline",
+				"image": "/media/deliverables/georeferenced-survey-datasets.jpg",
 				"description": "Complete geo-referenced datasets in Shapefile and DWG formats for GIS integration."
 			},
 			{
 				"title": "Technical hydrographic report",
 				"format": "PDF",
 				"icon": "file-document-outline",
+				"image": "/media/deliverables/technical-hydrographic-reports.jpg",
 				"description": "Full technical report with methodology, results, accuracy statements, and recommendations."
 			}
 		]

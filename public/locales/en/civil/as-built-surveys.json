@@ -166,36 +166,42 @@
 				"title": "As-Built Verification Reports",
 				"format": "PDF",
 				"icon": "clipboard-check-outline",
+				"image": "/media/deliverables/as-built-verification-reports.jpg",
 				"description": "Documented comparison of constructed works against design, with evidence for engineering sign-off and records."
 			},
 			{
 				"title": "Progress Survey Reports",
 				"format": "PDF / Web",
 				"icon": "chart-timeline-variant",
+				"image": "/media/deliverables/progress-survey-reports.jpg",
 				"description": "Scheduled captures that track construction progress against programme milestones and payment applications."
 			},
 			{
 				"title": "3D As-Built Models",
 				"format": "CAD / IFC",
 				"icon": "cube-outline",
+				"image": "/media/deliverables/3d-as-built-models.jpg",
 				"description": "Spatially accurate models of constructed works ready for BIM integration and facilities management."
 			},
 			{
 				"title": "Orthomosaic Maps & Imagery",
 				"format": "GeoTIFF / JPEG",
 				"icon": "image-filter-hdr",
+				"image": "/media/deliverables/orthomosaic-maps.jpg",
 				"description": "High-resolution, georeferenced aerial imagery documenting site conditions at every capture date."
 			},
 			{
 				"title": "Deviation & Quantity Analysis",
 				"format": "Excel / PDF",
 				"icon": "chart-histogram",
+				"image": "/media/deliverables/deviation-and-quantity-analysis.jpg",
 				"description": "Quantified differences between design and as-built surfaces, including earthwork and material quantities."
 			},
 			{
 				"title": "CAD Overlays & GIS Datasets",
 				"format": "DWG / SHP",
 				"icon": "vector-square",
+				"image": "/media/deliverables/cad-overlays-and-gis-datasets.jpg",
 				"description": "Design-versus-as-built overlays and geo-referenced datasets that plug straight into CAD and GIS workflows."
 			}
 		]

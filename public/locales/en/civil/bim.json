@@ -67,24 +67,28 @@
 				"title": "Scan-to-BIM Models",
 				"format": "IFC / RVT",
 				"icon": "cube-outline",
+				"image": "/media/deliverables/scan-to-bim-models.jpg",
 				"description": "Existing-conditions models generated from point clouds and classified to your required level of development."
 			},
 			{
 				"title": "Registered Point Clouds",
 				"format": "RCP / E57 / LAS",
 				"icon": "vector-square",
+				"image": "/media/deliverables/registered-point-clouds.jpg",
 				"description": "Clean, geo-referenced scans with control registration, ready for direct use in BIM authoring tools."
 			},
 			{
 				"title": "As-Built BIM Models",
 				"format": "IFC / RVT",
 				"icon": "domain",
+				"image": "/media/deliverables/as-built-bim-models.jpg",
 				"description": "Construction-stage models updated with field verification for handover, operations and maintenance."
 			},
 			{
 				"title": "Deviation & Clash Reports",
 				"format": "PDF / Excel",
 				"icon": "chart-histogram",
+				"image": "/media/deliverables/deviation-and-clash-reports.jpg",
 				"description": "Design-versus-built comparisons with quantified deviations for engineering review and resolution."
 			},
 			{

@@ -93,42 +93,49 @@
 				"title": "Ramani za kontura za bathymetric",
 				"format": "CAD / GIS",
 				"icon": "map-legend",
+				"image": "/media/deliverables/bathymetric-contour-maps.jpg",
 				"description": "Ramani za kontura za kina za kina katika muundo wa CAD na GIS kwa muundo wa uhandisi na upangaji."
 			},
 			{
 				"title": "Mifano ya Kijitali ya Kina (DDM / DEM)",
 				"format": "GeoTIFF / ASC",
 				"icon": "axis-z-arrow-lock",
+				"image": "/media/deliverables/digital-depth-models.jpg",
 				"description": "Mifano ya kijitali ya kina ya mwonekano wa juu na DEMs kwa hesabu za kiasi na onyesho ya 3D."
 			},
 			{
 				"title": "Hesabu za kiasi & uwezo wa mifereji",
 				"format": "Excel + PDF",
 				"icon": "cube-outline",
+				"image": "/media/deliverables/reservoir-volume-and-capacity-calculations.jpg",
 				"description": "Hesabu sahihi za uwezo wa hifadhi na kiasi cha mifereji na mianyo ya kiwango-kihifadhi."
 			},
 			{
 				"title": "Ripoti za uchambuzi wa sedimentation",
 				"format": "Ripoti ya PDF",
 				"icon": "chart-histogram",
+				"image": "/media/deliverables/sedimentation-analysis-reports.jpg",
 				"description": "Uchambuzi kamili wa sedimentation na hesabu za upotevu wa kiasi na makadirio ya mwendo."
 			},
 			{
 				"title": "Mifano ya cross-section ya chini ya mito/mabwawa",
 				"format": "CAD / PDF",
 				"icon": "vector-square",
+				"image": "/media/deliverables/cross-section-profiles.jpg",
 				"description": "Mifano ya kina ya cross-section inayoonya ardhi ya chini ya maji kwa uchambuzi wa uhandisi."
 			},
 			{
 				"title": "Dataset za uchunguzi zilizorejea eneo",
 				"format": "SHP / DWG",
 				"icon": "database-outline",
+				"image": "/media/deliverables/georeferenced-survey-datasets.jpg",
 				"description": "Dataset kamili zilizorejea eneo katika muundo wa Shapefile na DWG kwa ujumuishaji wa GIS."
 			},
 			{
 				"title": "Ripoti ya kiufundi ya hydrographic",
 				"format": "PDF",
 				"icon": "file-document-outline",
+				"image": "/media/deliverables/technical-hydrographic-reports.jpg",
 				"description": "Ripoti kamili ya kiufundi na mbinu, matokeo, maoni ya usahihi, na mapendekezo."
 			}
 		]
