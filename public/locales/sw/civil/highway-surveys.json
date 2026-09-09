@@ -101,54 +101,63 @@
 				"title": "Ramani za As-Built",
 				"format": "PDF / DWG",
 				"icon": "file-document",
+				"image": "/media/deliverables/as-built-maps.jpg",
 				"description": "Ramani za njia zilizojengwa zinazothibitisha kazi zilizokamilika dhidi ya kubuni iliyoidhinishwa."
 			},
 			{
 				"title": "Mifano ya Mwinuko wa Dijitali (DSM, DTM)",
 				"format": "GeoTIFF",
 				"icon": "image-filter-hdr",
+				"image": "/media/deliverables/digital-elevation-models.jpg",
 				"description": "Mifano ya ardhi na uso kwa upangaji wa daraja, mifereji, na usawazishaji wa ujenzi kwenye njia."
 			},
 			{
 				"title": "Viambatanisho vya Kuweka",
 				"format": "CSV / DXF",
 				"icon": "crosshairs-gps",
+				"image": "/media/deliverables/setting-out-coordinates.jpg",
 				"description": "Nafuni ya mistari ya katikati, mikunjano, na majengo tayari kwa kuweka alama na machine control."
 			},
 			{
 				"title": "Data ya Anga ya 3D (X, Y, Z)",
 				"format": "CSV / DWG",
 				"icon": "axis-z-arrow",
+				"image": "/media/deliverables/3d-spatial-data.jpg",
 				"description": "Data ya nafuni ya njia nzima kwa uthibitisho wa kubuni na mtiririko wa kazi wa digital twin."
 			},
 			{
 				"title": "Ramani za Contour",
 				"format": "DWG / DXF",
 				"icon": "chart-bell-curve",
+				"image": "/media/deliverables/contour-maps.jpg",
 				"description": "Kontua kwa vipindi vya kubuni vinavyosaidia daraja, kukata-kujaza, na uchambuzi wa mifereji."
 			},
 			{
 				"title": "Mipango Mikuu Kamili",
 				"format": "PDF / DWG",
 				"icon": "map",
+				"image": "/media/deliverables/master-plans.jpg",
 				"description": "Mipango ya njia inayounganisha upangaji, ROW, huduma, na maeneo ya kuingia."
 			},
 			{
 				"title": "Mipangilio ya Majengo na Ujumuishaji wa BIM",
 				"format": "IFC / DWG",
 				"icon": "office-building",
+				"image": "/media/deliverables/building-layouts-bim.jpg",
 				"description": "Jiometri na mipangilio tayari kwa BIM kwa viunganishi, majengo, na mali za barabara."
 			},
 			{
 				"title": "Shapefiles Zinazoendana na CAD na GIS",
 				"format": "SHP / DWG",
 				"icon": "layers-triple",
+				"image": "/media/deliverables/cad-shapefiles.jpg",
 				"description": "Vifurushi vya data vinavyoingia moja kwa moja kwenye mazingira ya kubuni ya CAD na GIS."
 			},
 			{
 				"title": "Utoaji wa Ramani za PDF za Kitaalamu",
 				"format": "PDF",
 				"icon": "file-pdf-box",
+				"image": "/media/deliverables/pdf-map-outputs.jpg",
 				"description": "Mipango na wasifu tayari kuchapishwa kwa zabuni, idhini, na timu za tovuti."
 			}
 		]

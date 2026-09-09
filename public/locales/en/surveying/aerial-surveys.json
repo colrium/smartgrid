@@ -143,24 +143,28 @@
 				"title": "Orthomosaic Maps",
 				"format": "GeoTIFF / JPEG tiles",
 				"icon": "google-earth",
+				"image": "/media/deliverables/orthomosaic-maps.jpg",
 				"description": "High-resolution, georeferenced aerial base maps that stitch the entire site into one accurate image — ideal for planning, measuring and reporting."
 			},
 			{
 				"title": "Digital Elevation Models (DTM & DSM)",
 				"format": "GeoTIFF raster",
 				"icon": "image-filter-hdr",
+				"image": "/media/deliverables/digital-elevation-models.jpg",
 				"description": "Bare-earth terrain and surface models for grading, drainage design, cut/fill planning and 3D site visualisation."
 			},
 			{
 				"title": "Contour Maps",
 				"format": "0.25m – 1m intervals",
 				"icon": "vector-bezier",
+				"image": "/media/deliverables/contour-maps.jpg",
 				"description": "Design-ready contour lines at engineering intervals, generated from calibrated elevation data and delivered in CAD and GIS formats."
 			},
 			{
 				"title": "LiDAR Point Clouds",
 				"format": "LAS / LAZ",
 				"icon": "axis-z-arrow",
+				"image": "/media/deliverables/lidar-point-clouds.jpg",
 				"description": "Dense, classified point clouds that penetrate vegetation for true-ground elevations — ready for pipelines, corridors and forested sites."
 			},
 			{
@@ -173,18 +177,21 @@
 				"title": "NDVI & Multispectral Analysis",
 				"format": "NDVI map",
 				"icon": "leaf",
+				"image": "/media/deliverables/ndvi-and-multispectral-analysis.jpg",
 				"description": "Crop-health and vegetation-index maps that expose plant stress, irrigation issues and yield patterns across large farms."
 			},
 			{
 				"title": "CAD Drawings",
 				"format": "DWG, DXF, LandXML",
 				"icon": "file-cad",
+				"image": "/media/deliverables/cad-drawings.jpg",
 				"description": "Engineer-ready CAD packages — contours, breaklines, surfaces and alignments organised on your coordinate system and layers."
 			},
 			{
 				"title": "Survey Accuracy Report",
 				"format": "RMS Error + GCP report",
 				"icon": "clipboard-check-outline",
+				"image": "/media/deliverables/survey-accuracy-reports.jpg",
 				"description": "A signed QA/QC report documenting GCPs, checkpoints and RMS errors — the evidence your approvals and designs rely on."
 			}
 		]

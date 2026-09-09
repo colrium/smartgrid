@@ -134,36 +134,42 @@
 				"title": "Ripoti za Uthibitisho wa As-Built",
 				"format": "PDF",
 				"icon": "clipboard-check-outline",
+				"image": "/media/deliverables/as-built-verification-reports.jpg",
 				"description": "Ulinganisho uliorekodiwa wa kazi zilizojengwa dhidi ya usanifu, na ushahidi kwa idhini ya uhandisi na kumbukumbu."
 			},
 			{
 				"title": "Ripoti za Maendeleo ya Uchunguzi",
 				"format": "PDF / Web",
 				"icon": "chart-timeline-variant",
+				"image": "/media/deliverables/progress-survey-reports.jpg",
 				"description": "Ukamataji uliopangwa unafuatilia maendeleo ya ujenzi dhidi ya hatua za programu na maombi ya malipo."
 			},
 			{
 				"title": "Modeli za 3D za As-Built",
 				"format": "CAD / IFC",
 				"icon": "cube-outline",
+				"image": "/media/deliverables/3d-as-built-models.jpg",
 				"description": "Modeli za kiwango cha anga za kazi zilizojengwa tayari kwa kuunganishwa na BIM na usimamizi wa vifaa."
 			},
 			{
 				"title": "Ramani za Orthomosaic na Picha",
 				"format": "GeoTIFF / JPEG",
 				"icon": "image-filter-hdr",
+				"image": "/media/deliverables/orthomosaic-maps.jpg",
 				"description": "Picha za angani za ubora wa juu zilizoelezwa kijiografia zinazorekodi hali ya tovuti kila ukamataji."
 			},
 			{
 				"title": "Uchambuzi wa Tofauti na Wingi",
 				"format": "Excel / PDF",
 				"icon": "chart-histogram",
+				"image": "/media/deliverables/deviation-and-quantity-analysis.jpg",
 				"description": "Tofauti zilizopimwa kati ya usanifu na nyuso za as-built, pamoja na wingi wa ardhi na vifaa."
 			},
 			{
 				"title": "Mistari ya CAD na Seti za Data za GIS",
 				"format": "DWG / SHP",
 				"icon": "vector-square",
+				"image": "/media/deliverables/cad-overlays-and-gis-datasets.jpg",
 				"description": "Mistari ya usanifu dhidi ya as-built na seti za data zilizoelezwa kijiografia zinazoingia moja kwa moja kwenye CAD na GIS."
 			}
 		]

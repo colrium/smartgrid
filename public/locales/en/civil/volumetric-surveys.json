@@ -87,6 +87,7 @@
 				"title": "Volume Calculation Reports",
 				"format": "PDF / Excel",
 				"icon": "chart-histogram",
+				"image": "/media/deliverables/volume-calculation-reports.jpg",
 				"description": "Cut and fill quantities with surfaces, methodology and tolerance clearly documented."
 			},
 			{
@@ -105,18 +106,21 @@
 				"title": "Contour & Elevation Maps",
 				"format": "DWG / PDF",
 				"icon": "map-legend",
+				"image": "/media/deliverables/contour-and-elevation-maps.jpg",
 				"description": "Contour plans of pre- and post-works terrain for design, records and compliance."
 			},
 			{
 				"title": "Progress Earthwork Reports",
 				"format": "PDF",
 				"icon": "chart-timeline-variant",
+				"image": "/media/deliverables/progress-earthwork-reports.jpg",
 				"description": "Periodic cut and fill movement reports aligned to payment applications and programmes."
 			},
 			{
 				"title": "CAD & GIS Data Packages",
 				"format": "DWG / SHP",
 				"icon": "database-outline",
+				"image": "/media/deliverables/cad-and-gis-data-packages.jpg",
 				"description": "Surfaces, contours and volumes exported in open formats for CAD and GIS workflows."
 			}
 		]

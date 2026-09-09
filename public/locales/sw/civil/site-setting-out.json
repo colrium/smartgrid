@@ -138,36 +138,42 @@
 				"title": "Nafasi Zilizowekwa Alama",
 				"format": "Tovutini",
 				"icon": "map-marker-check",
+				"image": "/media/deliverables/pegged-and-marked-positions.jpg",
 				"description": "Majengo, barabara, huduma na mipaka vimewekewa alama ardhini kutoka kwa kuratibu za usanifu."
 			},
 			{
 				"title": "Majedwali ya Kuratibu za Setting-Out",
 				"format": "CSV / PDF",
 				"icon": "table-large",
+				"image": "/media/deliverables/setting-out-coordinate-sheets.jpg",
 				"description": "Ratiba ya kuratibu iliyokaguliwa kwa kila hatua ya stakeout, ikirejelea udhibiti wa tovuti."
 			},
 			{
 				"title": "Mistari ya Offset na Alama za Rejea",
 				"format": "Tovutini",
 				"icon": "vector-square",
+				"image": "/media/deliverables/offset-lines-and-reference-marks.jpg",
 				"description": "Batter boards, mistari ya offset na alama za rejea zinazohifadhi mwelekeo katika kazi zote."
 			},
 			{
 				"title": "Michoro ya Setting-Out",
 				"format": "DWG / PDF",
 				"icon": "file-cad",
+				"image": "/media/deliverables/setting-out-drawings.jpg",
 				"description": "Michoro iliyoainishwa inayoonyesha nafasi zilizowekwa alama, offset na pointi za udhibiti kwa kumbukumbu."
 			},
 			{
 				"title": "Benchmarks na Viwango vya Mwinuko",
 				"format": "PDF",
 				"icon": "axis-z-arrow",
+				"image": "/media/deliverables/benchmarks-and-datum-levels.jpg",
 				"description": "Udhibiti wa wima ulioanzishwa tovutini na kurekodiwa kwa mwinuko, mteremko na kumaliza."
 			},
 			{
 				"title": "Uthibitisho na Ukaguzi wa As-Built",
 				"format": "PDF",
 				"icon": "clipboard-check-outline",
+				"image": "/media/deliverables/verification-and-as-built-checks.jpg",
 				"description": "Ukaguzi wa baada ya ujenzi unaothibitisha kazi zilizokamilika zinalingana na setting out iliyoidhinishwa."
 			}
 		]

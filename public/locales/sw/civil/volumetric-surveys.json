@@ -87,6 +87,7 @@
 				"title": "Ripoti za Kokotoo za Vina",
 				"format": "PDF / Excel",
 				"icon": "chart-histogram",
+				"image": "/media/deliverables/volume-calculation-reports.jpg",
 				"description": "Wingi wa kuchimba na kujaza pamoja na nyuso, mbinu na uvumilivu vilivyoelezwa wazi."
 			},
 			{
@@ -105,18 +106,21 @@
 				"title": "Ramani za Contour na Mwinuko",
 				"format": "DWG / PDF",
 				"icon": "map-legend",
+				"image": "/media/deliverables/contour-and-elevation-maps.jpg",
 				"description": "Ramani za contour za ardhi kabla na baada ya kazi kwa usanifu, kumbukumbu na ufuasi."
 			},
 			{
 				"title": "Ripoti za Maendeleo ya Kazi za Ardhi",
 				"format": "PDF",
 				"icon": "chart-timeline-variant",
+				"image": "/media/deliverables/progress-earthwork-reports.jpg",
 				"description": "Ripoti za mara kwa mara za kuchimba na kujaza zinazolingana na maombi ya malipo na programu."
 			},
 			{
 				"title": "Vifurushi vya Data za CAD na GIS",
 				"format": "DWG / SHP",
 				"icon": "database-outline",
+				"image": "/media/deliverables/cad-and-gis-data-packages.jpg",
 				"description": "Nyuso, contour na vina vilivyoagizwa kwa miundo wazi kwa mchakato wa CAD na GIS."
 			}
 		]

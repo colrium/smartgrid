@@ -232,18 +232,21 @@
 				"title": "Kuratibu Zilizorejelewa Kijiografia",
 				"format": "Udhibiti wa rejesta",
 				"icon": "crosshairs-gps",
+				"image": "/media/deliverables/georeferenced-coordinates.jpg",
 				"description": "Vipimo vya vitengo na mali ya pamoja vimelifungwa kwa alama za rejesta ya kitaifa kwa ukubaliaji wa ofisi ya uchunguzi na Ardhisasa."
 			},
 			{
 				"title": "Ratiba ya Kipengele cha Kitengo",
 				"format": "Excel + PDF",
 				"icon": "table-large",
+				"image": "/media/deliverables/unit-factor-schedules.jpg",
 				"description": "Hisa ya uwiano ya kila mmiliki katika mali ya pamoja — ada za matunzio na haki za kupiga kura zinahesabiwa kwa usawa."
 			},
 			{
 				"title": "Ripoti ya Uchunguzi kwa Rejesta ya Ardhi",
 				"format": "Ripoti iliyosainiwa",
 				"icon": "file-certificate",
+				"image": "/media/deliverables/survey-reports-for-the-lands-registry.jpg",
 				"description": "Ripoti ya maelezo na mchunguzi aliyoidhinishwa inayoelezea mbinu, udhibiti, mipaka na urahisi wa njia."
 			},
 			{

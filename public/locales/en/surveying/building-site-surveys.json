@@ -155,48 +155,56 @@
 				"title": "CAD Drawings",
 				"format": "DWG / DXF",
 				"icon": "vector-square",
+				"image": "/media/deliverables/cad-drawings.jpg",
 				"description": "Layer-ready drawings for architects, engineers,and drafters — georeferenced to the project coordinate system."
 			},
 			{
 				"title": "PDF Survey Plans",
 				"format": "PDF",
 				"icon": "file-pdf-box",
+				"image": "/media/deliverables/pdf-survey-plans.jpg",
 				"description": "Print-ready, scale-correct plans for approvals, permitting,and record keeping."
 			},
 			{
 				"title": "Contour Maps",
 				"format": "0.5m / 1m",
 				"icon": "map-marker-path",
+				"image": "/media/deliverables/contour-maps.jpg",
 				"description": "Precision contours at 0.5 m or 1 m vertical intervals for grading, drainage,and earthworks design."
 			},
 			{
 				"title": "Orthomosaic Maps",
 				"format": "GeoTIFF",
 				"icon": "image-filter-hdr",
+				"image": "/media/deliverables/orthomosaic-maps.jpg",
 				"description": "Scale-correct aerial imagery mosaics that double as site basemaps for planning and monitoring."
 			},
 			{
 				"title": "Point Cloud Data",
 				"format": "LAS / LAZ",
 				"icon": "axis-z-arrow",
+				"image": "/media/deliverables/point-cloud-data.jpg",
 				"description": "Millions of georeferenced points ready for volumetric analysis, BIM,and 3D modelling."
 			},
 			{
 				"title": "Coordinate Tables",
 				"format": "Excel",
 				"icon": "table-large",
+				"image": "/media/deliverables/coordinate-tables.jpg",
 				"description": "Structured point lists — boundaries, pegs, control,and setting-out coordinates — readable by any field team."
 			},
 			{
 				"title": "GIS Layers",
 				"format": "Shapefile / GeoJSON",
 				"icon": "layers-triple",
+				"image": "/media/deliverables/gis-layers.jpg",
 				"description": "Query-ready spatial layers that drop straight into QGIS, ArcGIS, or any web map stack."
 			},
 			{
 				"title": "Survey Report",
 				"format": "Signed & Stamped",
 				"icon": "file-certificate",
+				"image": "/media/deliverables/survey-reports.jpg",
 				"description": "A professional, legally-compliant report documenting the methodology, accuracy,and results."
 			}
 		]

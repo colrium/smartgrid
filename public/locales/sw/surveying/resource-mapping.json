@@ -153,48 +153,56 @@
 				"title": "Databases ya GIS zilizorejea eneo",
 				"format": "GeoPackage / File Geodatabase",
 				"icon": "database-outline",
+				"image": "/media/deliverables/georeferenced-gis-databases.jpg",
 				"description": "Databases kamili za kijiografia na topolojia, sifa, na metadata tayari kwa utekelezaji wa GIS wa shirika."
 			},
 			{
 				"title": "Orthomosaics za mwonekano wa juu",
 				"format": "GeoTIFF / COG",
 				"icon": "image-filter-hdr",
+				"image": "/media/deliverables/high-resolution-orthomosaics.jpg",
 				"description": "Orthomosaics zilizounganishwa, zilizorectify kwa kijiografia kwa mwonekano wa 2–5 cm kwa upimo na reperesent ya kimwili usahihi."
 			},
 			{
 				"title": "Mifano ya Mwinuko ya Kijitali (DEM/DSM)",
 				"format": "GeoTIFF / ASC",
 				"icon": "axis-z-arrow-lock",
+				"image": "/media/deliverables/digital-elevation-models.jpg",
 				"description": "DEMs za ardhi ya msingi na DSMs za uso na utoaji wa kontura kwa uchambuzi wa ardhi na uboreshaji wa uhandisi."
 			},
 			{
 				"title": "Ramani za mgawanyiko wa matumizi ya ardhi / chanzo cha ardhi",
 				"format": "Shapefile / GeoJSON",
 				"icon": "map-legend",
+				"image": "/media/deliverables/land-use-land-cover-classification-maps.jpg",
 				"description": "Mgawanyiko ya kawaida ya LULC kufuata mipango ya FAO/ISO na ripoti za tathmini ya usahihi."
 			},
 			{
 				"title": "Dataset za odha ya rasilimali",
 				"format": "CSV / Excel / Geodatabase",
 				"icon": "clipboard-list-outline",
+				"image": "/media/deliverables/resource-inventory-datasets.jpg",
 				"description": "Odha za rasilimali zilizopimwa na sifa za kijiografia kwa upangaji, kadiri, na ripoti."
 			},
 			{
 				"title": "Ramani za Web GIS za kuingiliana",
 				"format": "ArcGIS Online / Mapbox / Kipekee",
 				"icon": "map-marker-radius",
+				"image": "/media/deliverables/interactive-web-gis-maps.jpg",
 				"description": "Chaguo: ramani zilizohostishwa kwenye mtandao na uwezo wa kubadilisha tabaka, vifaa vya kipimo, na kushiriki na wadau."
 			},
 			{
 				"title": "Ripoti za PDF za kiwango cha uhandisi",
 				"format": "PDF / Inayoweza kuchapishwa",
 				"icon": "file-pdf-box",
+				"image": "/media/deliverables/engineering-grade-pdf-reports.jpg",
 				"description": "Atlas za ramani za kitabu na mialango, mizani, mipangilio ya kijiografia, na viambishi vya mbinu."
 			},
 			{
 				"title": "Uchoraji wa CAD tayari kwa wapangaji na wahandisi",
 				"format": "DWG / DXF",
 				"icon": "vector-square",
+				"image": "/media/deliverables/cad-ready-engineering-drawings.jpg",
 				"description": "Uchoraji safi, una vipengele, una mizani sahihi ya mistari, mistari ya maandishi, na mifumo ya kijiografia."
 			}
 		]

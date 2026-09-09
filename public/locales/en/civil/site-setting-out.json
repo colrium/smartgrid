@@ -138,36 +138,42 @@
 				"title": "Pegged & Marked Positions",
 				"format": "On-site",
 				"icon": "map-marker-check",
+				"image": "/media/deliverables/pegged-and-marked-positions.jpg",
 				"description": "Buildings, roads, services and boundaries physically pegged from approved design coordinates."
 			},
 			{
 				"title": "Setting-Out Coordinate Sheets",
 				"format": "CSV / PDF",
 				"icon": "table-large",
+				"image": "/media/deliverables/setting-out-coordinate-sheets.jpg",
 				"description": "Checked coordinate schedules for every stakeout point, referenced to site control."
 			},
 			{
 				"title": "Offset Lines & Reference Marks",
 				"format": "On-site",
 				"icon": "vector-square",
+				"image": "/media/deliverables/offset-lines-and-reference-marks.jpg",
 				"description": "Batter boards, offset lines and reference marks that preserve alignment throughout the works."
 			},
 			{
 				"title": "Setting-Out Drawings",
 				"format": "DWG / PDF",
 				"icon": "file-cad",
+				"image": "/media/deliverables/setting-out-drawings.jpg",
 				"description": "Annotated drawings showing pegged positions, offsets and control points for site records."
 			},
 			{
 				"title": "Benchmarks & Datum Levels",
 				"format": "PDF",
 				"icon": "axis-z-arrow",
+				"image": "/media/deliverables/benchmarks-and-datum-levels.jpg",
 				"description": "Vertical control established on site and documented for levels, gradients and finishes."
 			},
 			{
 				"title": "Verification & As-Built Checks",
 				"format": "PDF",
 				"icon": "clipboard-check-outline",
+				"image": "/media/deliverables/verification-and-as-built-checks.jpg",
 				"description": "Post-construction checks confirming completed works match the approved setting out."
 			}
 		]

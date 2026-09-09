@@ -80,18 +80,21 @@
 				"title": "Detailed features topographical map",
 				"format": "DWG / PDF",
 				"icon": "map",
+				"image": "/media/deliverables/topographical-maps.jpg",
 				"description": "Feature-rich map of the site: boundaries, structures, utilities, and levels."
 			},
 			{
 				"title": "Contour maps (major & minor intervals)",
 				"format": "DWG / DXF",
 				"icon": "chart-bell-curve",
+				"image": "/media/deliverables/contour-maps.jpg",
 				"description": "Contours at major and minor intervals for design and earthworks."
 			},
 			{
 				"title": "CAD drawings (AutoCAD-ready)",
 				"format": "DWG",
 				"icon": "ruler-square",
+				"image": "/media/deliverables/cad-drawings.jpg",
 				"description": "Layered CAD drawings that open directly in AutoCAD and civil design tools."
 			},
 			{
@@ -110,6 +113,7 @@
 				"title": "Survey report",
 				"format": "PDF",
 				"icon": "file-document",
+				"image": "/media/deliverables/survey-reports.jpg",
 				"description": "Signed report covering methodology, controls, and accuracy."
 			}
 		]

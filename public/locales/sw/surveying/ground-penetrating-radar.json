@@ -280,42 +280,49 @@
 				"title": "Ramani za Huduma Zilizogeoreferensiwa",
 				"format": "DWG / DXF / SHP",
 				"icon": "map-marker-path",
+				"image": "/media/deliverables/georeferenced-utility-maps.jpg",
 				"description": "Kila huduma iliyotambuliwa imewekwa kwenye mpango uliogeoreferensiwa unaoweza kuingia moja kwa moja kwenye CAD au GIS kwa mradi."
 			},
 			{
 				"title": "Miundo ya 3D ya Ufafanuzi wa Chini ya Ardhi",
 				"format": "3D inayoingiliana",
 				"icon": "cube-outline",
+				"image": "/media/deliverables/3d-subsurface-interpretation-models.jpg",
 				"description": "Ufafanuzi wa 3D wa mabomba, nyaya, mashimo na miundo iliyofichwa ili kusaidia mradi usio na mgongano."
 			},
 			{
 				"title": "Ripoti ya Uchambuzi wa Mgongano wa Huduma",
 				"format": "Ripoti + Mpango",
 				"icon": "vector-combine",
+				"image": "/media/deliverables/utility-conflict-analysis-reports.jpg",
 				"description": "Inabainisha huduma zinazopishana na migongano ya mradi kabla ya kuwa mashangazo ya gharama kubwa."
 			},
 			{
 				"title": "Jedwali za Ukadiriaji wa Kina na Uainishaji",
 				"format": "XLSX / PDF",
 				"icon": "table-large",
+				"image": "/media/deliverables/depth-estimation-and-classification-tables.jpg",
 				"description": "Kina, ukubwa na viwango vya uthubutu kwa kila lengo — tayari kwa saini ya uhandisi."
 			},
 			{
 				"title": "Datasets Tayari za GIS",
 				"format": "ArcGIS / QGIS",
 				"icon": "database-outline",
+				"image": "/media/deliverables/gis-ready-datasets.jpg",
 				"description": "Shapefile na geodatabase zenye sifa nyingi zinazoungana na mifumo yako iliyopo ya usimamizi wa mali."
 			},
 			{
 				"title": "Ramani za Hatari za Ujenzi",
 				"format": "Mpangilio wa ramani",
 				"icon": "shield-alert-outline",
+				"image": "/media/deliverables/construction-risk-maps.jpg",
 				"description": "Maeneo ya hatari yaliyorangiwa huonyesha mahali uchimbaji unahitaji uangalifu zaidi, ulinzi au taarifa za mbinu."
 			},
 			{
 				"title": "Ripoti ya Kiufundi Tayari kwa Mteja",
 				"format": "PDF",
 				"icon": "file-pdf-box",
+				"image": "/media/deliverables/client-ready-technical-reports.jpg",
 				"description": "Ripoti iliyosainiwa, huru inayorekodi mbinu, matokeo, radargrams na mapendekezo."
 			}
 		]

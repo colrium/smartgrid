@@ -108,30 +108,35 @@
 				"title": "Ramani za AS-BUILT",
 				"format": "PDF / DWG",
 				"icon": "file-document",
+				"image": "/media/deliverables/as-built-maps.jpg",
 				"description": "Ramani za kazi zilizojengwa zinazothibitisha ukamilishaji kwa kukabidhi na kumbukumbu."
 			},
 			{
 				"title": "Modeli za Mwinuko wa Kidijitali (DSM, DTM)",
 				"format": "GeoTIFF",
 				"icon": "image-filter-hdr",
+				"image": "/media/deliverables/digital-elevation-models.jpg",
 				"description": "Mifano ya uso na ardhi kwa daraja, vina, na kubuni mifereji."
 			},
 			{
 				"title": "Kuratibu za Setting Out",
 				"format": "CSV / DXF",
 				"icon": "crosshairs-gps",
+				"image": "/media/deliverables/setting-out-coordinates.jpg",
 				"description": "Nafuni kamili za majengo na huduma, tayari kwa kuweka alama."
 			},
 			{
 				"title": "Data ya 3D (X, Y, Z)",
 				"format": "CSV / DWG",
 				"icon": "axis-z-arrow",
+				"image": "/media/deliverables/3d-data-xyz.jpg",
 				"description": "Data ya nafuni ya pande tatu kwa machine control na uthibitisho wa kubuni."
 			},
 			{
 				"title": "Contours",
 				"format": "DWG / DXF",
 				"icon": "chart-bell-curve",
+				"image": "/media/deliverables/contour-maps.jpg",
 				"description": "Kontua kwa vipindi vya uhandisi kwa ujenzi wa ardhi na viwango."
 			},
 			{

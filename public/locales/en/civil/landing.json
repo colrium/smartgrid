@@ -108,54 +108,63 @@
 				"title": "AS - BUILT Maps",
 				"format": "PDF / DWG",
 				"icon": "file-document",
+				"image": "/media/deliverables/as-built-maps.jpg",
 				"description": "As-constructed maps verifying completed works for handover and records."
 			},
 			{
 				"title": "Digital Elevation Models (DSM, DTM)",
 				"format": "GeoTIFF",
 				"icon": "image-filter-hdr",
+				"image": "/media/deliverables/digital-elevation-models.jpg",
 				"description": "Surface and terrain models for grading, volumes, and drainage design."
 			},
 			{
 				"title": "Setting Out Coordinates",
 				"format": "CSV / DXF",
 				"icon": "crosshairs-gps",
+				"image": "/media/deliverables/setting-out-coordinates.jpg",
 				"description": "Exact positions for structures and services, ready for stakeout."
 			},
 			{
 				"title": "3D DATA (X, Y, Z)",
 				"format": "CSV / DWG",
 				"icon": "axis-z-arrow",
+				"image": "/media/deliverables/3d-data-xyz.jpg",
 				"description": "Three-dimensional positional data for machine control and design verification."
 			},
 			{
 				"title": "Contours",
 				"format": "DWG / DXF",
 				"icon": "chart-bell-curve",
+				"image": "/media/deliverables/contour-maps.jpg",
 				"description": "Contours at engineering intervals for earthworks and levels."
 			},
 			{
 				"title": "Master plans",
 				"format": "PDF / DWG",
 				"icon": "map",
+				"image": "/media/deliverables/master-plans.jpg",
 				"description": "Composite site plans consolidating layouts, services, and levels."
 			},
 			{
 				"title": "Buildings Layout / BIM",
 				"format": "IFC / DWG",
 				"icon": "office-building",
+				"image": "/media/deliverables/building-layouts-bim.jpg",
 				"description": "BIM-ready layouts and geometry for coordinated construction."
 			},
 			{
 				"title": "CAD Shapefiles",
 				"format": "SHP / DWG",
 				"icon": "vector-square",
+				"image": "/media/deliverables/cad-shapefiles.jpg",
 				"description": "GIS shapefiles and CAD layers for engineering workflows."
 			},
 			{
 				"title": "PDF Map",
 				"format": "PDF",
 				"icon": "file-pdf-box",
+				"image": "/media/deliverables/pdf-maps.jpg",
 				"description": "Print-ready map exports for site teams and documentation."
 			}
 		]
