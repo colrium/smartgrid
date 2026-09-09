@@ -668,28 +668,43 @@
 		"headline": "Our Services",
 		"items": [
 			{
-				"featureImg": "/media/services/land-surveying-deliverables.png",
+				"icon": "land-fields",
 				"label": "Land Surveying",
 				"description": "We provide a wide range of land surveying services, including topographical surveys, boundary surveys, sectional properties, building site surveys, resource mapping, bathymetric surveys, hydrographic surveys, and GIS mapping. Our deliverables include boundary survey reports and plans, cadastral plans for title processing, beacons monumentation, registry maps, 3D spatial data (X, Y, Z), topographical maps, contours, CAD shapefiles, survey reports, PDF map outputs, and other specialized deliverables.",
 				"whatWeOffer": {
 					"label": "What we offer",
 					"description": "",
 					"items": [
-						{ "label": "Topographical surveys", "href": "/surveying/topographical-surveys" },
+						{
+							"label": "Topographical surveys",
+							"href": "/surveying/topographical-surveys"
+						},
 						{ "label": "Boundary Surveys" },
-						{ "label": "Sectional Properties", "href": "/surveying/sectional-properties" },
-						{ "label": "Building Sites surveys", "href": "/surveying/building-site-surveys" },
+						{
+							"label": "Sectional Properties",
+							"href": "/surveying/sectional-properties"
+						},
+						{
+							"label": "Building Sites surveys",
+							"href": "/surveying/building-site-surveys"
+						},
 						{ "label": "Resource mapping", "href": "/surveying/resource-mapping" },
-						{ "label": "Bathymetric survey / Hydrographic survey", "href": "/surveying/bathymetric-surveys" },
+						{
+							"label": "Bathymetric survey / Hydrographic survey",
+							"href": "/surveying/bathymetric-surveys"
+						},
 						{ "label": "GIS Mapping", "href": "/surveying/gis-mapping" },
-						{ "label": "GPR (Ground Penetrating Radar) Surveys", "href": "/surveying/ground-penetrating-radar" },
+						{
+							"label": "GPR (Ground Penetrating Radar) Surveys",
+							"href": "/surveying/ground-penetrating-radar"
+						},
 						{ "label": "Cadastral Surveys", "href": "/surveying/cadastral-surveys" },
 						{ "label": "Staking Out Surveys", "href": "/civil/site-setting-out" }
 					]
 				},
 				"deliverables": {
 					"label": "Deliverables",
-					"liveLabel": "Deliverable preview",
+					"liveLabel": "Deliverable",
 					"description": "Every project is delivered with professional, ready-to-use outputs tailored to the project needs:",
 					"checks": [
 						"Submission-ready",
@@ -776,7 +791,7 @@
 				}
 			},
 			{
-				"featureImg": "/media/services/aerial-drone-deliverables.png",
+				"icon": "quadcopter",
 				"label": "Aerial Surveys",
 				"description": "We offer a wide range of aerial surveying services, including drone imagery surveys, Lidar mapping, agricultural NDVI mapping, as-built surveys, monitoring and evaluation, solar panel drone surveys, volumetric surveys, and landfill & quarry drone surveys. Our deliverables include boundary survey reports and plans, cadastral plans for title processing, beacons monumentation, registry maps, 3D spatial data (X, Y, Z), topographical maps, contours, CAD shapefiles, survey reports, PDF map outputs, and other specialized deliverables.",
                 "whatWeOffer": {
@@ -795,7 +810,7 @@
 				},
 				"deliverables": {
 					"label": "Deliverables",
-					"liveLabel": "Deliverable preview",
+					"liveLabel": "Deliverable",
 					"description": "Every project is delivered with professional, ready-to-use outputs tailored to the project needs:",
 					"checks": [
 						"Geo-referenced outputs",
@@ -835,6 +850,7 @@
 							"title": "3D Point Clouds (X, Y, Z)",
 							"format": "LAS / LAZ",
 							"icon": "cube-scan",
+							"image": "/media/deliverables/3d-point-clouds.png",
 							"description": "Dense classified point clouds for accurate measurement, modelling, and feature extraction."
 						},
 						{
@@ -874,16 +890,19 @@
 				}
 			},
 			{
-				"featureImg": "/media/services/civil-engineering-deliverables.png",
+				"icon": "hard-hat",
 				"label": "Civil Engineering",
 				"description": "We offer a wide range of civil engineering services, including site engineering, building setting out, underground utilities installation, highway engineering, stake out, leveling, benchmarking, and construction services. Our deliverables include as-built maps, digital elevation models, setting out coordinates, 3D data, contours, master plans, building layouts, CAD shapefiles, and PDF maps.",
-                "whatWeOffer": {
+				"whatWeOffer": {
 					"label": "What we offer",
 					"description": "",
 					"items": [
 						{ "label": "Site Engineering", "href": "/civil/site-engineering" },
 						{ "label": "Buildings Setting Out", "href": "/civil/site-setting-out" },
-						{ "label": "Underground utilities (Water lines, sanitation lines, electrical lines)", "href": "/surveying/ground-penetrating-radar" },
+						{
+							"label": "Underground utilities (Water lines, sanitation lines, electrical lines)",
+							"href": "/surveying/ground-penetrating-radar"
+						},
 						{ "label": "Highway engineering", "href": "/civil/highway-surveys" },
 						{ "label": "Stake out", "href": "/civil/site-setting-out" },
 						{ "label": "Leveling" },
@@ -893,7 +912,7 @@
 				},
 				"deliverables": {
 					"label": "Deliverables",
-					"liveLabel": "Deliverable preview",
+					"liveLabel": "Deliverable",
 					"description": "Every project is delivered with professional, ready-to-use outputs tailored to the project needs:",
 					"checks": [
 						"Engineering-grade accuracy",

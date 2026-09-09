@@ -111,13 +111,13 @@ export function DeliverablesExplorer({
 							</div>
 
 							{activeImage ? (
-								<div className="relative mt-8 overflow-hidden rounded-2xl hairline aspect-[16/10] card-shadow">
+								<div className="relative mt-8 overflow-hidden rounded-2xl hairline aspect-4/3 card-shadow">
 									<Image
 										src={activeImage}
 										alt={active.title ?? ""}
 										fill
 										sizes="(max-width: 1024px) 100vw, 40vw"
-										className="object-cover"
+										className="object-fill"
 									/>
 								</div>
 							) : (
@@ -183,7 +183,7 @@ export function DeliverablesExplorer({
 								}`}
 								data-ripple-light="true"
 							>
-								{itemImage ? (
+								{/*itemImage ? (
 									<span className="relative inline-flex h-11 w-11 shrink-0 overflow-hidden rounded-xl hairline">
 										<Image
 											src={itemImage}
@@ -205,7 +205,18 @@ export function DeliverablesExplorer({
 											className={`mdi mdi-${item.icon ?? FALLBACK_ICONS[index % FALLBACK_ICONS.length]} text-xl`}
 										/>
 									</span>
-								)}
+								) */}
+								<span
+									className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-colors duration-300 ${
+										activeIndex === index
+											? "bg-primary text-surface"
+											: "bg-primary-50/50 text-mute group-hover:bg-primary group-hover:text-surface"
+									}`}
+								>
+									<span
+										className={`mdi mdi-${item.icon ?? FALLBACK_ICONS[index % FALLBACK_ICONS.length]} text-xl`}
+									/>
+								</span>
 								<span className="flex min-w-0 flex-col gap-1">
 									<span className="truncate text-sm font-semibold tracking-tight text-ink">
 										{item.title}

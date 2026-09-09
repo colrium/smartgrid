@@ -662,28 +662,40 @@
 		"headline": "Huduma Zetu",
 		"items": [
 			{
-				"featureImg": "/media/services/land-surveying-deliverables.png",
+				"icon": "land-fields",
 				"label": "Upimaji wa Ardhi",
 				"description": "Tunatoa huduma mbalimbali za upimaji wa ardhi, ikiwa ni pamoja na upimaji wa topografia, upimaji wa mipaka, mali za sehemu, upimaji wa tovuti za ujenzi, ramani ya rasilimali, upimaji wa bathymetric, upimaji wa hydrographic, na ramani ya GIS. Matokeo yetu yanajumuisha ripoti na mipango ya upimaji wa mipaka, mipango ya cadastral kwa ajili ya usindikaji wa hati miliki, uwekaji wa alama za mipaka, ramani za rejesta, data ya 3D ya anga (X, Y, Z), ramani za topografia, kontua, shapefiles za CAD, ripoti za upimaji, matokeo ya ramani za PDF, na matokeo mengine maalumu.",
 				"whatWeOffer": {
 					"label": "Tunachotoa",
 					"description": "",
 					"items": [
-						{ "label": "Upimaji wa topografia", "href": "/surveying/topographical-surveys" },
+						{
+							"label": "Upimaji wa topografia",
+							"href": "/surveying/topographical-surveys"
+						},
 						{ "label": "Upimaji wa mipaka" },
 						{ "label": "Mali za sehemu", "href": "/surveying/sectional-properties" },
-						{ "label": "Upimaji wa tovuti za ujenzi", "href": "/surveying/building-site-surveys" },
+						{
+							"label": "Upimaji wa tovuti za ujenzi",
+							"href": "/surveying/building-site-surveys"
+						},
 						{ "label": "Ramani ya rasilimali", "href": "/surveying/resource-mapping" },
-						{ "label": "Upimaji wa bathymetric / Upimaji wa hydrographic", "href": "/surveying/bathymetric-surveys" },
+						{
+							"label": "Upimaji wa bathymetric / Upimaji wa hydrographic",
+							"href": "/surveying/bathymetric-surveys"
+						},
 						{ "label": "Ramani ya GIS", "href": "/surveying/gis-mapping" },
-						{ "label": "Upimaji wa GPR (Rada ya Kupenya Ardhini)", "href": "/surveying/ground-penetrating-radar" },
+						{
+							"label": "Upimaji wa GPR (Rada ya Kupenya Ardhini)",
+							"href": "/surveying/ground-penetrating-radar"
+						},
 						{ "label": "Upimaji wa Cadastral", "href": "/surveying/cadastral-surveys" },
 						{ "label": "Upimaji wa Kuweka Alama", "href": "/civil/site-setting-out" }
 					]
 				},
 				"deliverables": {
 					"label": "Matokeo",
-					"liveLabel": "Muhtasari wa Matokeo",
+					"liveLabel": "Matokeo",
 					"description": "Kila mradi unatolewa kwa matokeo ya kitaalamu, tayari kutumika yaliyoundwa kulingana na mahitaji ya mradi:",
 					"checks": [
 						"Tayari kuwasilishwa",
@@ -770,26 +782,47 @@
 				}
 			},
 			{
-				"featureImg": "/media/services/aerial-drone-deliverables.png",
+				"icon": "quadcopter",
 				"label": "Upimaji wa Angani",
 				"description": "Tunatoa huduma mbalimbali za upimaji wa angani, ikiwa ni pamoja na upimaji wa picha za ndege zisizo na rubani, ramani ya Lidar, ramani ya NDVI ya kilimo, upimaji wa 'as built', ufuatiliaji na tathmini, upimaji wa paneli za jua kwa ndege zisizo na rubani, upimaji wa kiasi (volumetric), na upimaji wa dampo na machimbo kwa ndege zisizo na rubani. Matokeo yetu yanajumuisha ripoti na mipango ya upimaji wa mipaka, mipango ya cadastral kwa ajili ya usindikaji wa hati miliki, uwekaji wa alama za mipaka, ramani za rejesta, data ya 3D ya anga (X, Y, Z), ramani za topografia, kontua, shapefiles za CAD, ripoti za upimaji, matokeo ya ramani za PDF, na matokeo mengine maalumu.",
 				"whatWeOffer": {
 					"label": "Tunachotoa",
 					"description": "",
 					"items": [
-						{ "label": "Upimaji wa picha za ndege zisizo na rubani", "href": "/aerial-drones/drone-imagery-surveys" },
+						{
+							"label": "Upimaji wa picha za ndege zisizo na rubani",
+							"href": "/aerial-drones/drone-imagery-surveys"
+						},
 						{ "label": "Ramani ya Lidar", "href": "/aerial-drones/lidar-mapping" },
-						{ "label": "Ramani ya NDVI ya Kilimo", "href": "/aerial-drones/agricultural-ndvi-mapping" },
-						{ "label": "Upimaji wa 'as built'", "href": "/aerial-drones/as-built-surveys" },
-						{ "label": "Ufuatiliaji na Tathmini", "href": "/aerial-drones/monitoring-and-evaluation" },
-						{ "label": "Upimaji wa Paneli za Jua kwa Ndege zisizo na rubani", "href": "/aerial-drones/solar-panel-drone-surveys" },
-						{ "label": "Upimaji wa Kiasi (Volumetric)", "href": "/aerial-drones/volumetric-surveys" },
-						{ "label": "Upimaji wa Dampo na Machimbo kwa Ndege zisizo na rubani", "href": "/aerial-drones/landfill-quarry-drone-surveys" }
+						{
+							"label": "Ramani ya NDVI ya Kilimo",
+							"href": "/aerial-drones/agricultural-ndvi-mapping"
+						},
+						{
+							"label": "Upimaji wa 'as built'",
+							"href": "/aerial-drones/as-built-surveys"
+						},
+						{
+							"label": "Ufuatiliaji na Tathmini",
+							"href": "/aerial-drones/monitoring-and-evaluation"
+						},
+						{
+							"label": "Upimaji wa Paneli za Jua kwa Ndege zisizo na rubani",
+							"href": "/aerial-drones/solar-panel-drone-surveys"
+						},
+						{
+							"label": "Upimaji wa Kiasi (Volumetric)",
+							"href": "/aerial-drones/volumetric-surveys"
+						},
+						{
+							"label": "Upimaji wa Dampo na Machimbo kwa Ndege zisizo na rubani",
+							"href": "/aerial-drones/landfill-quarry-drone-surveys"
+						}
 					]
 				},
 				"deliverables": {
 					"label": "Matokeo",
-					"liveLabel": "Muhtasari wa Matokeo",
+					"liveLabel": "Matokeo",
 					"description": "Kila mradi unatolewa kwa matokeo ya kitaalamu, tayari kutumika yaliyoundwa kulingana na mahitaji ya mradi:",
 					"checks": [
 						"Pato lililopangwa kijiografia",
@@ -829,6 +862,7 @@
 							"title": "Mawingu ya Pointi za 3D (X, Y, Z)",
 							"format": "LAS / LAZ",
 							"icon": "cube-scan",
+							"image": "/media/deliverables/3d-point-clouds.png",
 							"description": "Mawingu ya pointi yenye msongamano na ugawaji sahihi kwa kupima, kuunda mifano, na kutambua vipengele."
 						},
 						{
@@ -868,7 +902,7 @@
 				}
 			},
 			{
-				"featureImg": "/media/services/civil-engineering-deliverables.png",
+				"icon": "hard-hat",
 				"label": "Uhandisi wa Miundombinu",
 				"description": "Tunatoa huduma mbalimbali za uhandisi wa miundombinu, ikiwa ni pamoja na uhandisi wa tovuti, uwekaji wa majengo, uwekaji wa huduma za chini ya ardhi, uhandisi wa barabara kuu, uwekaji alama, upimaji wa viwango, uwekaji wa alama za kumbukumbu, na huduma za ujenzi. Matokeo yetu yanajumuisha ramani za 'as-built', miundo ya elevation ya dijiti, kuratibu za uwekaji, data ya 3D, kontua, mipango mikuu, mipango ya majengo, shapefiles za CAD, na ramani za PDF.",
 				"whatWeOffer": {
@@ -877,7 +911,10 @@
 					"items": [
 						{ "label": "Uhandisi wa Tovuti", "href": "/civil/site-engineering" },
 						{ "label": "Uwekaji wa Majengo", "href": "/civil/site-setting-out" },
-						{ "label": "Huduma za chini ya ardhi (Mabomba ya maji, mabomba ya maji taka, nyaya za umeme)", "href": "/surveying/ground-penetrating-radar" },
+						{
+							"label": "Huduma za chini ya ardhi (Mabomba ya maji, mabomba ya maji taka, nyaya za umeme)",
+							"href": "/surveying/ground-penetrating-radar"
+						},
 						{ "label": "Uhandisi wa Barabara kuu", "href": "/civil/highway-surveys" },
 						{ "label": "Uwekaji alama", "href": "/civil/site-setting-out" },
 						{ "label": "Upimaji wa viwango" },
@@ -887,7 +924,7 @@
 				},
 				"deliverables": {
 					"label": "Matokeo",
-					"liveLabel": "Muhtasari wa Matokeo",
+					"liveLabel": "Matokeo",
 					"description": "Kila mradi unatolewa kwa matokeo ya kitaalamu, tayari kutumika yaliyoundwa kulingana na mahitaji ya mradi:",
 					"checks": [
 						"Usahihi wa kiwango cha uhandisi",
