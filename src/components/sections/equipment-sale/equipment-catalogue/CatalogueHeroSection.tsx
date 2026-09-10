@@ -129,8 +129,8 @@ export function CatalogueHeroSection({ namespace }: CatalogueHeroSectionProps) {
 									</div>
 
 									{overview.tag && (
-										<span className="absolute -bottom-5 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 rounded-full bg-primary-100 px-5 py-2.5 text-xs font-semibold uppercase tracking-widest text-primary-600 card-shadow">
-											<span className="mdi mdi-check-decagram text-base text-primary-300" />
+										<span className="absolute -bottom-5 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-xs font-semibold uppercase tracking-widest text-surface card-shadow">
+											<span className="mdi mdi-check-decagram text-base text-surface" />
 											{overview.tag}
 										</span>
 									)}
