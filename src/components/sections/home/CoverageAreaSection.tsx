@@ -130,8 +130,8 @@ export function CoverageAreaSection(): ReactElement | null {
 						<div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
 							{stats.map((stat, index) => (
 								<FadeUp key={stat.label} delay={0.08 * index}>
-									<div className="flex items-center gap-4 rounded-[15px] px-6 py-5">
-										<span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full  text-mute">
+									<div className="flex items-center gap-4 rounded-cmd px-6 py-5">
+										<span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full  text-primary">
 											<span className={`mdi mdi-${stat.icon} text-3xl`} />
 										</span>
 										<div className="flex flex-col">

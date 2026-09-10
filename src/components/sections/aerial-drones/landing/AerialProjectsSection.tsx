@@ -71,7 +71,7 @@ export function AerialProjectsSection() {
 							{items.map((item, index) => (
 								<li
 									key={index}
-									className="group flex items-start gap-4 rounded-[15px] bg-surface hairline card-shadow px-5 py-4 transition-all duration-250 hover:card-shadow-lift hover:border-primary"
+									className="group flex items-start gap-4 rounded-cmd bg-surface hairline card-shadow px-5 py-4 transition-all duration-250 hover:card-shadow-lift hover:border-primary"
 								>
 									<span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary text-xs font-semibold transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 										{String(index + 1).padStart(2, "0")}

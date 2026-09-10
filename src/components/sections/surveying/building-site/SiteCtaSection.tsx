@@ -37,7 +37,7 @@ export function SiteCtaSection() {
 							↗
 						</span>
 						<span
-							className="absolute inset-3 rounded-[15px] hairline-dark pointer-events-none"
+							className="absolute inset-3 rounded-cmd hairline-dark pointer-events-none"
 							aria-hidden
 						/>
 

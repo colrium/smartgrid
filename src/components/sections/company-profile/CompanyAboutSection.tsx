@@ -62,7 +62,7 @@ export function CompanyAboutSection() {
 						{points.map((point, index) => (
 							<li
 								key={index}
-								className="flex items-start gap-3 rounded-[15px] bg-surface hairline card-shadow px-5 py-4 text-sm text-on-surface/75 leading-relaxed transition-all duration-250 hover:card-shadow-lift hover:border-primary"
+								className="flex items-start gap-3 rounded-cmd bg-surface hairline card-shadow px-5 py-4 text-sm text-on-surface/75 leading-relaxed transition-all duration-250 hover:card-shadow-lift hover:border-primary"
 							>
 								<span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-50 text-primary">
 									<span className="mdi mdi-check-decagram text-sm" />

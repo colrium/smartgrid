@@ -34,16 +34,7 @@ export function ProductOverviewSection({ namespace }: ProductOverviewSectionProp
 	const section = t(`${namespace}:productOverview`, {
 		returnObjects: true,
 	}) as unknown as ProductOverviewContent;
-    /* const accordionGalleryItems: AccordionGalleryItem[] = Array.isArray(section?.images)
-		? section.images.map((image, index) => ({
-				image: image?.url || image,
-				label: image?.label || undefined,
-				description: image?.description || undefined,
-				alt: image?.alt || undefined,
-				link: image?.link || undefined,
-			}))
-		: []; */
-        const morphSliderItems = Array.isArray(section?.images)
+	const morphSliderItems = Array.isArray(section?.images)
 			? section.images.map((image) => ({
 					image: image?.url || image,
 					caption: image?.label || undefined

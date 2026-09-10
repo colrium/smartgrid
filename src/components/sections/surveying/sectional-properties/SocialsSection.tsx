@@ -33,7 +33,7 @@ export function SocialsSection() {
 						<span className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary-200/50 blur-[90px] pointer-events-none" />
 						<span className="absolute -bottom-28 -left-20 w-72 h-72 rounded-full bg-primary-100/70 blur-[90px] pointer-events-none" />
 						<span
-							className="absolute inset-3 rounded-[15px] hairline pointer-events-none"
+							className="absolute inset-3 rounded-cmd hairline pointer-events-none"
 							aria-hidden
 						/>
 

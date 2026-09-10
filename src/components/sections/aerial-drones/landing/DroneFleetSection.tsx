@@ -47,7 +47,7 @@ export function DroneFleetSection() {
 						const hasImage = typeof item.image === "string" && item.image.startsWith("/");
 						const card = (
 							<article className="group h-full flex flex-col rounded-c bg-surface hairline card-shadow p-5 transition-all duration-250 hover:card-shadow-lift hover:border-primary">
-								<div className="relative aspect-square rounded-[15px] overflow-hidden bg-primary-50/60">
+								<div className="relative aspect-square rounded-cmd overflow-hidden bg-primary-50/60">
 									{hasImage && (
 										<Image
 											src={item.image as string}

@@ -133,7 +133,7 @@ export function SurveyCostSection(): ReactElement | null {
 											type="button"
 											onClick={() => setActiveIndex(index)}
 											aria-pressed={isActive}
-											className={`flex flex-col items-center gap-2 rounded-[15px] px-2 py-4 text-center transition-all duration-300 ${
+											className={`flex flex-col items-center gap-2 rounded-cmd px-2 py-4 text-center transition-all duration-300 ${
 												isActive
 													? "bg-primary text-surface card-shadow -translate-y-0.5"
 													: "bg-surface/70 cursor-pointer hairline text-ink hover:bg-surface hover:-translate-y-0.5"
@@ -158,7 +158,7 @@ export function SurveyCostSection(): ReactElement | null {
 								initial={{ opacity: 0, y: 14 }}
 								animate={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.45, ease: "easeOut" }}
-								className="relative mt-6 rounded-[15px] bg-surface/85 hairline p-6 sm:p-7"
+								className="relative mt-6 rounded-cmd bg-surface/85 hairline p-6 sm:p-7"
 							>
 								<div className="flex flex-wrap items-end justify-between gap-4">
 									<div>

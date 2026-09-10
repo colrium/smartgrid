@@ -74,7 +74,7 @@ export function WhenYouNeedSection() {
 										{item.children.map((child, childIndex) => (
 											<li
 												key={childIndex}
-												className="flex flex-col gap-1.5 rounded-[14px] bg-primary-50/40 p-4"
+												className="flex flex-col gap-1.5 rounded-cmd bg-primary-50/40 p-4"
 											>
 												<span className="flex items-start gap-2 text-[13px] font-semibold text-ink leading-snug">
 													<span className="mdi mdi-subdirectory-arrow-right text-primary text-base shrink-0 mt-0.5" />

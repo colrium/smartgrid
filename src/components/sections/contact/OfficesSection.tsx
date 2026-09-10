@@ -161,7 +161,7 @@ export function OfficesSection() {
 
 								{office.note && (
 									<div className="px-7 sm:px-9 pb-8 sm:pb-10">
-										<p className="rounded-[14px] bg-primary-50/60 px-4 py-3.5 text-sm text-on-surface/70 leading-relaxed">
+										<p className="rounded-cmd bg-primary-50/60 px-4 py-3.5 text-sm text-on-surface/70 leading-relaxed">
 											{office.note}
 										</p>
 									</div>

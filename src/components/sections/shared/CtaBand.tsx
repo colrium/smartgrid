@@ -123,7 +123,7 @@ export function CtaBand({
 						{hairline && (
 							<span
 								aria-hidden
-								className="absolute inset-3 rounded-[15px] hairline-dark pointer-events-none"
+								className="absolute inset-3 rounded-cmd hairline-dark pointer-events-none"
 							/>
 						)}
 						{watermark && !isSplit && (

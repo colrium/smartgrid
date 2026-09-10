@@ -69,7 +69,7 @@ export function ImpactAcrossAfricaSection() {
 					<FadeUp className="lg:col-span-6">
 						{hasImage && (
 							<div className="relative">
-								<div className="absolute -inset-4 bg-primary/10 rounded-[28px] blur-2xl" />
+								<div className="absolute -inset-4 bg-primary/10 rounded-clg blur-2xl" />
 								<div className="relative aspect-square rounded-c overflow-hidden hairline card-shadow">
 									{/* <Image
 										src={section.image as string}

@@ -168,7 +168,6 @@ export function DeliverablesExplorer({
 
 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:-order-1 gap-3.5 content-start">
 				{items.map((item, index) => {
-					const itemImage = toImageSrc(item.image);
 					return (
 						<FadeUp key={index} delay={(index % 2) * 0.06}>
 							<button
@@ -181,34 +180,11 @@ export function DeliverablesExplorer({
 								}`}
 								data-ripple-light="true"
 							>
-								{/*itemImage ? (
-									<span className="relative inline-flex h-11 w-11 shrink-0 overflow-hidden rounded-xl hairline">
-										<Image
-											src={itemImage}
-											alt={item.title ?? ""}
-											fill
-											sizes="44px"
-											className="object-cover transition-transform duration-250 group-hover:scale-110"
-										/>
-									</span>
-								) : (
-									<span
-										className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-colors duration-300 ${
-											activeIndex === index
-												? "bg-primary text-surface"
-												: "bg-primary-50 text-primary group-hover:bg-primary group-hover:text-surface"
-										}`}
-									>
-										<span
-											className={`mdi mdi-${item.icon ?? FALLBACK_ICONS[index % FALLBACK_ICONS.length]} text-xl`}
-										/>
-									</span>
-								) */}
 								<span
 									className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-colors duration-300 ${
 										activeIndex === index
 											? "bg-primary text-surface"
-											: "bg-primary-50/50 text-mute group-hover:bg-primary group-hover:text-surface"
+											: "bg-primary-50/50 text-primary group-hover:bg-primary group-hover:text-surface"
 									}`}
 								>
 									<span
