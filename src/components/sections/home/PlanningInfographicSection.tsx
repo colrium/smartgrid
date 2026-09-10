@@ -85,7 +85,7 @@ export function PlanningInfographicSection(): ReactElement | null {
 				{section.closingStatement && (
 					<FadeUp delay={0.1}>
 						<div className="mt-10 sm:mt-12 flex justify-center">
-							<p className="inline-block max-w-3xl text-center rounded-c pale-panel hairline card-shadow px-8 py-6 text-base g text-on-surface/80 leading-relaxed font-medium">
+							<p className="inline-block max-w-3xl text-center  px-8 py-6 text-base g text-on-surface/80 leading-relaxed font-medium">
 								<Trans
 									// @ts-expect-error
 									i18nKey={["home:planningInfographic.closingStatement"]}

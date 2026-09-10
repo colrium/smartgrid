@@ -65,11 +65,14 @@ export default function HeroSection() {
 		const nav = navigator as Navigator & { deviceMemory?: number };
 		const supported =
 			!window.matchMedia("(pointer: coarse)").matches &&
-			!window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
 			window.innerWidth > 768 &&
 			(nav.hardwareConcurrency ?? 8) > 4 &&
             (nav.deviceMemory ?? 8) > 4;
-        
+        /* console.log("window.matchMedia(\"(pointer: coarse)\").matches", window.matchMedia("(pointer: coarse)").matches);
+        console.log("window.matchMedia(\"(prefers-reduced-motion: reduce)\").matches", window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+        console.log("window.innerWidth", window.innerWidth);
+        console.log("nav.hardwareConcurrency", nav.hardwareConcurrency);
+        console.log("nav.deviceMemory", nav.deviceMemory); */
 		if (supported) setSceneEnabled(true);
 	}, []);
 	/* eslint-enable react-hooks/set-state-in-effect */
