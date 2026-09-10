@@ -1,14 +1,9 @@
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, type ReactElement } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import { useTranslation, useSetState } from "@/hooks";
-import { TextField } from "@/components/ui/TextField";
-import { Select } from "@/components/ui/Select";
-import { MenuItem } from "@/components/ui/MenuItem";
-import { Checkbox } from "@/components/ui/Checkbox";
-import { FormControlLabel } from "@/components/ui/FormControlLabel";
-import { Button } from "@/components/ui/Button";
 import { useForm } from "@formspree/react";
+import { ALL_COUNTRIES } from "@/lib/countries";
+import Link from "@/components/Link";
 
 type Country = { code?: string; name: string; flag?: string };
 type Option = { value: string; label: string };
@@ -52,6 +47,144 @@ const initialValues: FormValues = {
 	newsletter: false,
 };
 
+const fieldShell =
+	"rounded-xl border border-on-surface-200 bg-surface transition-colors duration-200 " +
+	"focus-within:border-primary focus-within:ring-4 focus-within:ring-primary/15";
+
+const fieldInput =
+	"w-full bg-transparent px-4 py-3.5 text-sm text-on-surface-900 outline-none " +
+	"placeholder:text-on-surface-400";
+
+function FieldLabel({ label, required }: { label: string; required?: boolean }): ReactElement {
+	return (
+		<span className="mb-2 block text-xs font-semibold tracking-wide text-on-surface-700 uppercase">
+			{label}
+			{required && <span className="text-accent"> *</span>}
+		</span>
+	);
+}
+
+type TextInputFieldProps = {
+	name: string;
+	label: string;
+	placeholder?: string;
+	required?: boolean;
+	type?: string;
+	value: string;
+	onValueChange: (value: string) => void;
+};
+
+function TextInputField({
+	name,
+	label,
+	placeholder,
+	required,
+	type = "text",
+	value,
+	onValueChange,
+}: TextInputFieldProps): ReactElement {
+	return (
+		<label className="block">
+			<FieldLabel label={label} required={required} />
+			<span className={`flex items-center ${fieldShell}`}>
+				<input
+					name={name}
+					type={type}
+					required={required}
+					placeholder={placeholder}
+					value={value}
+					onChange={(event) => onValueChange(event.target.value)}
+					className={fieldInput}
+				/>
+			</span>
+		</label>
+	);
+}
+
+type SelectFieldProps = {
+	name: string;
+	label: string;
+	placeholder?: string;
+	required?: boolean;
+	value: string;
+	options: { value: string; label: string }[];
+	onValueChange: (value: string) => void;
+};
+
+function SelectField({
+	name,
+	label,
+	placeholder,
+	required,
+	value,
+	options,
+	onValueChange,
+}: SelectFieldProps): ReactElement {
+	return (
+		<label className="block">
+			<FieldLabel label={label} required={required} />
+			<span className={`relative flex items-center ${fieldShell}`}>
+				<select
+					name={name}
+					required={required}
+					value={value}
+					onChange={(event) => onValueChange(event.target.value)}
+					className={`${fieldInput} appearance-none pr-10 ${value ? "" : "text-on-surface-400"}`}
+				>
+					<option value="" disabled>
+						{placeholder}
+					</option>
+					{options.map((option) => (
+						<option key={option.value} value={option.value}>
+							{option.label}
+						</option>
+					))}
+				</select>
+				<span
+					className="mdi mdi-chevron-down text-on-surface-500 pointer-events-none absolute right-3 text-lg"
+					aria-hidden="true"
+				/>
+			</span>
+		</label>
+	);
+}
+
+type CheckboxFieldProps = {
+	name: string;
+	checked: boolean;
+	required?: boolean;
+	onChange: (checked: boolean) => void;
+	children: React.ReactNode;
+};
+
+function CheckboxField({
+	name,
+	checked,
+	required,
+	onChange,
+	children,
+}: CheckboxFieldProps): ReactElement {
+	return (
+		<label className="flex cursor-pointer items-start gap-3">
+			<span className="relative mt-0.5 inline-flex shrink-0">
+				<input
+					name={name}
+					type="checkbox"
+					required={required}
+					checked={checked}
+					onChange={(event) => onChange(event.target.checked)}
+					className="peer size-5 cursor-pointer appearance-none rounded-md border border-on-surface-300 bg-surface transition-colors duration-200 checked:border-primary checked:bg-primary focus-visible:ring-4 focus-visible:ring-primary/20 focus-visible:outline-none"
+				/>
+				<span
+					className="mdi mdi-check text-surface pointer-events-none absolute inset-0 flex items-center justify-center text-sm opacity-0 transition-opacity peer-checked:opacity-100"
+					aria-hidden="true"
+				/>
+			</span>
+			<span className="text-sm text-on-surface-800 leading-relaxed">{children}</span>
+		</label>
+	);
+}
+
 type ContactFormProps = { className?: string };
 
 export default function ContactForm({ className = "" }: ContactFormProps) {
@@ -81,9 +214,11 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
 		})
 	).map((office) => office.country);
 
+	// Full world list first, with any i18n/office countries that may be missing
+	// appended (deduplicated), then sorted alphabetically for easy scanning.
 	const countries = Array.from(
-		new Set([...locationCountries.map((c) => c.name), ...officeCountries])
-	);
+		new Set([...ALL_COUNTRIES, ...locationCountries.map((c) => c.name), ...officeCountries])
+	).sort((a, b) => a.localeCompare(b));
 
 	useEffect(() => {
 		const reason = typeof reasonQuery === "string" ? reasonQuery : "";
@@ -134,199 +269,142 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
 					</p>
 				</div>
 			)}
-			<div className=" p-6 md:p-8 grid gap-5">
-				<div className="grid md:grid-cols-2 gap-5">
-					<TextField
+			<div className="grid gap-6">
+				<div className="grid gap-6 md:grid-cols-2">
+					<TextInputField
 						name="first_name"
 						label={fields.first_name.label}
 						placeholder={fields.first_name.placeholder}
 						required={fields.first_name.required}
 						value={values.first_name}
-						onChange={(event) =>
-							setValues((current) => ({ ...current, first_name: event.target.value }))
-						}
+						onValueChange={(value) => setValues((c) => ({ ...c, first_name: value }))}
 					/>
-					<TextField
+					<TextInputField
 						name="last_name"
 						label={fields.last_name.label}
 						placeholder={fields.last_name.placeholder}
 						required={fields.last_name.required}
 						value={values.last_name}
-						onChange={(event) =>
-							setValues((current) => ({ ...current, last_name: event.target.value }))
-						}
+						onValueChange={(value) => setValues((c) => ({ ...c, last_name: value }))}
 					/>
 				</div>
-				<div className="grid md:grid-cols-2 gap-5">
-					<TextField
+				<div className="grid gap-6 md:grid-cols-2">
+					<TextInputField
 						name="email"
 						type="email"
 						label={fields.email.label}
 						placeholder={fields.email.placeholder}
 						required={fields.email.required}
 						value={values.email}
-						onChange={(event) =>
-							setValues((current) => ({ ...current, email: event.target.value }))
-						}
+						onValueChange={(value) => setValues((c) => ({ ...c, email: value }))}
 					/>
-					<TextField
+					<TextInputField
 						name="phone"
 						type="tel"
 						label={fields.phone.label}
 						placeholder={fields.phone.placeholder}
 						required={fields.phone.required}
 						value={values.phone}
-						onChange={(event) =>
-							setValues((current) => ({ ...current, phone: event.target.value }))
-						}
+						onValueChange={(value) => setValues((c) => ({ ...c, phone: value }))}
 					/>
 				</div>
-				<div className="grid md:grid-cols-2 gap-5">
-					<Select
-						label={fields.country.label}
+				<div className="grid gap-6 md:grid-cols-2">
+					<SelectField
 						name="country"
+						label={fields.country.label}
+						placeholder={fields.country.placeholder}
 						required={fields.country.required}
 						value={values.country}
-						onChange={(event) =>
-							setValues((current) => ({ ...current, country: event.target.value }))
-						}
-						displayEmpty
-					>
-						<MenuItem value="" disabled>
-							{fields.country.placeholder}
-						</MenuItem>
-						{countries.map((country) => (
-							<MenuItem key={country} value={country}>
-								{country}
-							</MenuItem>
-						))}
-					</Select>
-					<Select
-						label={fields.reason.label}
+						options={countries.map((country) => ({ value: country, label: country }))}
+						onValueChange={(value) => setValues((c) => ({ ...c, country: value }))}
+					/>
+					<SelectField
 						name="reason"
+						label={fields.reason.label}
+						placeholder={fields.reason.placeholder}
 						required={fields.reason.required}
 						value={values.reason}
-						onChange={(event) =>
-							setValues((current) => ({ ...current, reason: event.target.value }))
-						}
-						displayEmpty
-					>
-						<MenuItem value="" disabled>
-							{fields.reason.placeholder}
-						</MenuItem>
-						{reasons.map((reason) => (
-							<MenuItem key={reason.value} value={reason.value}>
-								{reason.label}
-							</MenuItem>
-						))}
-					</Select>
+						options={reasons}
+						onValueChange={(value) => setValues((c) => ({ ...c, reason: value }))}
+					/>
 				</div>
 				{["investment-enquiry", "due-diligence", "partnership"].includes(values.reason) && (
-					<Select
-						label={fields.opportunity.label}
+					<SelectField
 						name="opportunity"
+						label={fields.opportunity.label}
+						placeholder={fields.opportunity.placeholder}
 						value={values.opportunity}
-						onChange={(event) =>
-							setValues((current) => ({ ...current, opportunity: event.target.value }))
-						}
-						displayEmpty
-					>
-						<MenuItem value="" disabled>
-							{fields.opportunity.placeholder}
-						</MenuItem>
-						{opportunityOptions.map((opportunity) => (
-							<MenuItem key={opportunity.value} value={opportunity.value}>
-								{opportunity.label}
-							</MenuItem>
-						))}
-					</Select>
+						options={opportunityOptions}
+						onValueChange={(value) => setValues((c) => ({ ...c, opportunity: value }))}
+					/>
 				)}
-				{values.reason === "investment-enquiry" &&
-					values.opportunity === "gold-aggregation" && (
-						<Select
-							label={fields.investor_tier.label}
-							name="investor_tier"
-							value={values.tier}
+				{values.reason === "investment-enquiry" && values.opportunity === "gold-aggregation" && (
+					<SelectField
+						name="investor_tier"
+						label={fields.investor_tier.label}
+						placeholder={fields.investor_tier.placeholder}
+						value={values.tier}
+						options={tierOptions}
+						onValueChange={(value) => setValues((c) => ({ ...c, tier: value }))}
+					/>
+				)}
+				<label className="block">
+					<FieldLabel
+						label={fields.message.label}
+						required={fields.message.required}
+					/>
+					<span className={`block ${fieldShell}`}>
+						<textarea
+							name="message"
+							rows={fields.message.rows ?? 5}
+							required={fields.message.required}
+							placeholder={fields.message.placeholder}
+							value={values.message}
 							onChange={(event) =>
-								setValues((current) => ({ ...current, tier: event.target.value }))
+								setValues((current) => ({ ...current, message: event.target.value }))
 							}
-							displayEmpty
-						>
-							<MenuItem value="" disabled>
-								{fields.investor_tier.placeholder}
-							</MenuItem>
-							{tierOptions.map((tier) => (
-								<MenuItem key={tier.value} value={tier.value}>
-									{tier.label}
-								</MenuItem>
-							))}
-						</Select>
-					)}
-				<TextField
-					name="message"
-					multiline
-					rows={fields.message.rows ?? 5}
-					label={fields.message.label}
-					placeholder={fields.message.placeholder}
-					required={fields.message.required}
-					value={values.message}
-					onChange={(event) =>
-						setValues((current) => ({ ...current, message: event.target.value }))
-					}
-				/>
-				<FormControlLabel
-					control={
-						<Checkbox
-							name="consent"
-							required={fields.consent.required}
-							checked={values.consent}
-							onChange={(event) =>
-								setValues((current) => ({ ...current, consent: event.target.checked }))
-							}
+							className={`${fieldInput} resize-y`}
 						/>
-					}
-					label={
-						<span className="text-sm text-on-surface-800 leading-relaxed">
-							{consentPrefix}
-							{fields.consent.label_link && (
-								<Link
-									href="/privacy-policy"
-									target="_blank"
-									rel="noopener noreferrer"
-									className="text-primary underline hover:text-primary-700"
-								>
-									{fields.consent.label_link}
-								</Link>
-							)}
-							{consentSuffix}
-						</span>
-					}
-				/>
-				<FormControlLabel
-					control={
-						<Checkbox
-							name="newsletter"
-							checked={values.newsletter}
-							onChange={(event) =>
-								setValues((current) => ({ ...current, newsletter: event.target.checked }))
-							}
-						/>
-					}
-					label={<span className="text-sm text-on-surface-800">{fields.newsletter.label}</span>}
-				/>
-				<Button
+					</span>
+				</label>
+				<div className="grid gap-4">
+					<CheckboxField
+						name="consent"
+						checked={values.consent}
+						required={fields.consent.required}
+						onChange={(checked) => setValues((current) => ({ ...current, consent: checked }))}
+					>
+						{consentPrefix}
+						{fields.consent.label_link && (
+							<Link
+								href="/privacy-policy"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-primary underline hover:text-primary-700"
+							>
+								{fields.consent.label_link}
+							</Link>
+						)}
+						{consentSuffix}
+					</CheckboxField>
+					<CheckboxField
+						name="newsletter"
+						checked={values.newsletter}
+						onChange={(checked) => setValues((current) => ({ ...current, newsletter: checked }))}
+					>
+						{fields.newsletter.label}
+					</CheckboxField>
+				</div>
+				<button
 					type="submit"
-					variant="contained"
-					color="primary"
-					rounded="full"
 					disabled={formspree.submitting}
-					className="px-7! py-3.5!"
-					endIcon={<span className="mdi mdi-send text-xl" aria-hidden="true" />}
+					className="inline-flex w-fit items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-surface shadow-lg shadow-primary/25 transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-700 hover:shadow-xl hover:shadow-primary/30 focus-visible:ring-4 focus-visible:ring-primary/30 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-60"
 				>
+					<span className="mdi mdi-send text-xl" aria-hidden="true" />
 					{formspree.submitting
 						? t("common:form.sending")
 						: t("contact:form.submit_label")}
-				</Button>
+				</button>
 			</div>
 		</form>
 	);
