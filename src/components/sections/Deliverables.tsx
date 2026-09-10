@@ -7,7 +7,6 @@ import { useTranslation } from "@/hooks";
 import type { MediaImage } from "@/lib/types";
 import { SectionHeader } from "@/components/sections/home/SectionHeader";
 import { FadeUp, FadeLeft } from "@/components/animations/Fade";
-import { Blob } from "@/components/sections/home/decor";
 
 export interface DeliverableItemContent {
 	title?: string;
@@ -85,7 +84,7 @@ export function DeliverablesExplorer({
 			className={`grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-8 lg:gap-12 items-stretch ${className}`.trim()}
 		>
 			<FadeLeft className="h-full">
-				<div className="relative h-full min-h-[22rem] overflow-hidden rounded-c pale-panel card-shadow p-8 sm:p-10">
+				<div className="relative h-full min-h-[22rem] overflow-hidden rounded-c bg-surface card-shadow p-8 sm:p-10">
 					<span className="absolute -top-20 -right-20 w-60 h-60 rounded-full bg-primary-300/30 blur-[90px] pointer-events-none" />
 					<span className="absolute -bottom-16 -left-10 w-48 h-48 rounded-full bg-primary/25 blur-[80px] pointer-events-none" />
 					{!activeImage && (
@@ -99,8 +98,7 @@ export function DeliverablesExplorer({
 						<div key={activeIndex} className="relative flex h-full flex-col">
 							<div className="flex items-center justify-between gap-4">
 								{content?.liveLabel && (
-									<span className="inline-flex items-center gap-2 rounded-full bg-ink-soft/5 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary-400 hairline-dark">
-										<span className="h-1.5 w-1.5 rounded-full bg-primary-600 animate-pulse" />
+									<span className="inline-flex items-center gap-2 rounded-full bg-ink-soft/5 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-ink hairline-dark">
 										{content.liveLabel}
 									</span>
 								)}
@@ -111,7 +109,7 @@ export function DeliverablesExplorer({
 							</div>
 
 							{activeImage ? (
-								<div className="relative mt-8 overflow-hidden rounded-2xl hairline aspect-4/3 card-shadow">
+								<div className="relative mt-8 overflow-hidden rounded-2xl hairline aspect-4/3">
 									<Image
 										src={activeImage}
 										alt={active.title ?? ""}
@@ -265,10 +263,7 @@ export function Deliverables({
 
 	return (
 		<section id={id} className={`py-24 sm:py-28 relative overflow-hidden ${className}`.trim()}>
-			<Blob
-				className="w-[28rem] h-[28rem] bg-primary-200/40 -top-24 -right-24"
-				opacity={0.5}
-			/>
+			
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader
