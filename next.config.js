@@ -7,6 +7,7 @@ const nextConfig = {
 	// Allow redirecting the build output (e.g. CI/verification builds) without
 	// disturbing a running dev server that owns the default `.next` folder.
 	distDir: process.env.NEXT_DIST_DIR || ".next",
+	cacheComponents: true, // Enables the 'use cache' directive functionality
 	transpilePackages: [
 		"@sanity/sdk-react",
 		"@sanity/workbench",
