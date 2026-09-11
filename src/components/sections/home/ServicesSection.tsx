@@ -26,14 +26,6 @@ interface ServiceItem {
 	deliverables: DeliverablesContent & { label?: string };
 }
 
-const SERVICE_ICONS: Record<string, string> = {
-	"land surveying": "land-fields",
-	"aerial surveys": "quadcopter",
-	"civil engineering": "hard-hat",
-};
-
-const itemToIcon = (label: string) => SERVICE_ICONS[label.trim().toLowerCase()] || "tools";
-
 const PANEL_EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 export function ServicesSection(): ReactElement | null {

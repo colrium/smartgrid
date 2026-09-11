@@ -38,7 +38,7 @@ export function CompanyProfileViewerSection() {
 
 				<FadeUp delay={0.05}>
 					<div className="mt-12 sm:mt-16 rounded-c bg-surface hairline card-shadow p-3 sm:p-4">
-						<div className="relative rounded-[15px] overflow-hidden bg-primary-50/40 hairline">
+						<div className="relative rounded-cmd overflow-hidden bg-primary-50/40 hairline">
 							<DeferredMount
 								fallback={<div className="h-[70vh] bg-primary-50/50 sm:h-[80vh]" />}
 							>

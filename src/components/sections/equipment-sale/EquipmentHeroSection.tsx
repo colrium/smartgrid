@@ -85,7 +85,7 @@ export function EquipmentHeroSection({ namespace }: EquipmentHeroSectionProps) {
 								<div className="absolute inset-6 bg-primary/15 rounded-full blur-3xl" />
 
 								<div className="relative bg-surface p-6 sm:p-8 rounded-c hairline card-shadow">
-									<div className="relative aspect-square rounded-[15px] overflow-hidden bg-primary-50/60">
+									<div className="relative aspect-square rounded-cmd overflow-hidden bg-primary-50/60">
 										<Image
 											src={hero.image as string}
 											alt={hero.title}

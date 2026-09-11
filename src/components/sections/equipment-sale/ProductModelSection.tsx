@@ -87,7 +87,7 @@ export function ProductModelSection({
 					/>
 				</div>
 				<div className="max-w-7xl  mx-auto mt-12 sm:mt-16">
-					<div className="relative h-[70dvh] overflow-hidden rounded-[15px] hairline bg-surface">
+					<div className="relative h-[70dvh] overflow-hidden rounded-cmd hairline bg-surface">
 						{viewerRequested ? (
 							<ModelViewer url={current} className="relative h-full" />
 						) : (

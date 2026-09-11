@@ -47,7 +47,7 @@ export function DroneIntegrationProcessSection() {
 											<span className={`mdi mdi-${item.icon} text-lg`} />
 										</span>
 									)}
-									<span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-mute group-hover:text-primary font-semibold text-sm">
+									<span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:text-primary font-semibold text-sm">
 										{String(index + 1).padStart(2, "0")}
 									</span>
 								</div>

@@ -34,7 +34,7 @@ export function MetricsSection() {
 							}}
 						/>
 						<span
-							className="absolute -bottom-28 -left-16 w-80 h-80 rounded-full bg-gold-300/25 pointer-events-none"
+							className="absolute -bottom-28 -left-16 w-80 h-80 rounded-full bg-accent-200/25 pointer-events-none"
 							style={{
 								WebkitMaskImage: "radial-gradient(closest-side, black 30%, transparent 72%)",
 								maskImage: "radial-gradient(closest-side, black 30%, transparent 72%)",

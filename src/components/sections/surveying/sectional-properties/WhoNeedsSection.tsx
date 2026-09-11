@@ -51,7 +51,7 @@ export function WhoNeedsSection(): ReactElement {
 						<FadeUp key={index} delay={(index % 3) * 0.07}>
 							<Link
 								href={item.href ?? "/contact"}
-								className="group flex h-full flex-col rounded-[18px] bg-paper hairline card-shadow p-6 sm:p-7 transition-all duration-300 hover:-translate-y-1 hover:card-shadow-lift hover:border-primary"
+								className="group flex h-full flex-col rounded-c bg-paper hairline card-shadow p-6 sm:p-7 transition-all duration-300 hover:-translate-y-1 hover:card-shadow-lift hover:border-primary"
 							>
 								<span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 									<span

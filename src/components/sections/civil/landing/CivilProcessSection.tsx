@@ -74,7 +74,7 @@ export function CivilProcessSection() {
 									className="group relative flex gap-5 rounded-c bg-surface hairline card-shadow p-6 transition-all duration-250 hover:card-shadow-lift hover:border-primary"
 								>
 									<div className="flex flex-col items-center">
-										<span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary-50 text-mute transition-colors duration-300 group-hover:bg-surface group-hover:text-primary">
+										<span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-surface group-hover:text-primary">
 											{item.icon && <span className={`mdi mdi-${item.icon} text-xl`} />}
 										</span>
 										{index < items.length - 1 && (

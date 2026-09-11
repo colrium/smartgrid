@@ -83,7 +83,7 @@ export function BeforeAfterFlipCard({
 										duration: 0.35,
 										ease: [0.16, 1, 0.3, 1],
 									}}
-									className={`absolute inset-0 rounded-full ${isAfter ? "bg-success-100" : "bg-yellow-100"}`}
+									className={`absolute inset-0 rounded-full ${isAfter ? "bg-success-100" : "bg-warning-100"}`}
 								/>
 							)}
 							<span className="relative z-10">{side.label ?? key}</span>

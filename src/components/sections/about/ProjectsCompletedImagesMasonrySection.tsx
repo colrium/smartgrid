@@ -34,7 +34,7 @@ export function ProjectsCompletedImagesMasonrySection() {
 					{images.map((image, index) => (
 						<FadeUp key={index} delay={(index % 3) * 0.07}>
 							<figure className="group relative aspect-[4/3] overflow-hidden rounded-c bg-primary-50/40 hairline card-shadow p-3 transition-all duration-250 hover:card-shadow-lift hover:border-primary">
-								<div className="relative h-full w-full overflow-hidden rounded-[13px] bg-white">
+								<div className="relative h-full w-full overflow-hidden rounded-csm bg-white">
 									<Image
 										src={image}
 										alt={`Project ${index + 1}`}

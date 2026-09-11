@@ -54,12 +54,12 @@ export function CoreExpertiseSection() {
 									<Link
 										href={item.href}
 										aria-label={item.label}
-										className="group relative h-full flex flex-col rounded-[15px] border-t-2 border-ink/10 bg-surface card-shadow p-7 transition-[transform,box-shadow,border-color] duration-250  hover:card-shadow-lift  overflow-hidden"
+										className="group relative h-full flex flex-col rounded-cmd border-t-2 border-ink/10 bg-surface card-shadow p-7 transition-[transform,box-shadow,border-color] duration-250  hover:card-shadow-lift  overflow-hidden"
 									>
 										<ExpertiseCardBody item={item} index={index} kicker={kicker} />
 									</Link>
 								) : (
-									<article className="group relative h-full flex flex-col rounded-[15px] border-t-2 border-ink/10 bg-surface card-shadow p-7 transition-[transform,box-shadow,border-color] duration-250  overflow-hidden">
+									<article className="group relative h-full flex flex-col rounded-cmd border-t-2 border-ink/10 bg-surface card-shadow p-7 transition-[transform,box-shadow,border-color] duration-250  overflow-hidden">
 										<ExpertiseCardBody item={item} index={index} kicker={kicker} />
 									</article>
 								)}
@@ -109,7 +109,7 @@ function ExpertiseCardBody({
 			<h3 className="text-lg font-medium leading-snug text-ink mb-3">{item.label}</h3>
 			<p className="text-sm text-on-surface/60 leading-relaxed flex-1">{item.description}</p>
 
-			<span className="mt-6 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-mute">
+			<span className="mt-6 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-primary">
 				{kicker}
 			</span>
 		</>

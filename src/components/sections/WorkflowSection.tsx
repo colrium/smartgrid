@@ -136,7 +136,7 @@ export function WorkflowSection({
                                                 {String(index + 1).padStart(2, "0")}
                                             </span>
 
-                                            <div className="flex-1 rounded-[18px] bg-surface hairline card-shadow p-6 sm:p-7 transition-colors duration-300 hover:border-primary/40">
+                                            <div className="flex-1 rounded-c bg-surface hairline card-shadow p-6 sm:p-7 transition-colors duration-300 hover:border-primary/40">
                                                 <div className="flex flex-wrap items-center justify-between gap-3">
                                                     {step.phase ? (
                                                         <span

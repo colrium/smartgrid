@@ -7,8 +7,7 @@ import Image from "next/image";
 import useTranslation from "@/hooks/useTranslation";
 import { SectionTag } from "@/components/SectionTag";
 import Link from "next/link";
-import { FadeUp } from "@/components/animations/ScrollReveal";
-import { FadeLeft } from "@/components/animations/Fade";
+import { FadeUp, FadeLeft } from "@/components/animations/Fade";
 
 interface AboutCardLink {
 	icon?: string | null;
@@ -62,7 +61,7 @@ export const AboutSection: React.FC = () => {
 							{cards.map((card, index) => (
 								<FadeUp key={`about-card-${index}`} delay={(index % 3) * 0.1}>
 									<Link href={card.href}>
-										<div className="p-4 rounded-[15px] bg-surface hairline hover:border-primary cursor-pointer transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-0.5 h-full hover:card-shadow-lift flex items-start gap-3">
+										<div className="p-4 rounded-cmd bg-surface hairline hover:border-primary cursor-pointer transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-0.5 h-full hover:card-shadow-lift flex items-start gap-3">
 											<div className="p-2.5 rounded-lg bg-primary-50 text-primary">
 												<span className={`mdi mdi-${card.icon}`} />
 											</div>
