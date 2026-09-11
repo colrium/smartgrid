@@ -7,13 +7,14 @@ import { SectionHeader } from "./SectionHeader";
 import { FadeUp } from "@/components/animations/Fade";
 import { CountUp } from "@/components/animations/ScrollReveal";
 import { Blob } from "./decor";
+import DeferredMount from "@/components/ui/DeferredMount";
 import dynamic from "next/dynamic";
 
 const ProjectsGlobe = dynamic(() => import("@/components/ui/ProjectsGlobe"), {
 	ssr: false,
 	loading: () => (
 		<div className="text-center flex items-center text-primary justify-center w-80 h-80 md:w-100 md:h-100 lg:w-130 lg:h-130">
-			<div role="status">
+			<div role="status" aria-label="Loading coverage map">
 				<svg
 					className="h-5 w-5 animate-spin"
 					xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +105,39 @@ export function CoverageAreaSection(): ReactElement | null {
 				<div className="pale-panel mt-8 hairline card-shadow p-6 rounded-c">
 					<div className="w-full block relative ">
 						<div className="mx-auto w-100 aspect-square">
-							<ProjectsGlobe globeImageUrl="/img/earth/earth-light.jpg" />
+							{/* react-globe.gl pulls a second three.js copy — keep it
+							    out of the tree (and its chunk unfetched) until the
+							    section is near the viewport. */}
+							<DeferredMount
+								fallback={
+									<div className="flex h-full w-full items-center justify-center">
+										<div role="status" aria-label="Loading coverage map">
+											<svg
+												className="h-5 w-5 animate-spin text-primary"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="none"
+												viewBox="0 0 24 24"
+											>
+												<circle
+													className="opacity-25"
+													cx="12"
+													cy="12"
+													r="10"
+													stroke="currentColor"
+													strokeWidth="4"
+												></circle>
+												<path
+													className="opacity-75"
+													fill="currentColor"
+													d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+												></path>
+											</svg>
+										</div>
+									</div>
+								}
+							>
+								<ProjectsGlobe globeImageUrl="/img/earth/earth-light.jpg" />
+							</DeferredMount>
 						</div>
 					</div>
 

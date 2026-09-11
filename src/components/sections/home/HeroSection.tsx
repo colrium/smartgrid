@@ -13,8 +13,11 @@ import { FadeUp, FadeRight, FadeLeft } from "@/components/animations/Fade";
 import ScrollIndicator from "@/components/ui/ScrollIndicator";
 
 // Three.js + loaders (~500-700KB) stay out of the initial page bundle:
-// the WebGL scene is code-split and mounted client-side only.
-const HeroScene = dynamic(() => import("./HeroScene"), { ssr: false });
+// the WebGL scene is code-split and mounted client-side only, after idle.
+const HeroScene = dynamic(() => import("./HeroScene"), {
+	ssr: false,
+	loading: () => null,
+});
 
 // Local button token types (replacing the removed MUI ButtonProps types).
 type ButtonVariant = "text" | "contained" | "outlined";
@@ -58,21 +61,41 @@ export default function HeroSection() {
 	// hero content and fixed instrument frame carry the design on their own.
 	const [sceneEnabled, setSceneEnabled] = useState(false);
 
-	/* eslint-disable react-hooks/set-state-in-effect -- intentional one-shot
-	   capability probe after hydration; a lazy initializer would touch
-	   window/navigator during SSR and break the render. */
+	// One-shot capability probe after hydration; a lazy initializer would
+	// touch window/navigator during SSR and break the render.
 	useEffect(() => {
-		const nav = navigator as Navigator & { deviceMemory?: number };
-		const supported = (nav.hardwareConcurrency ?? 8) > 4 &&
-            (nav.deviceMemory ?? 8) > 4;
-        /* console.log("window.matchMedia(\"(pointer: coarse)\").matches", window.matchMedia("(pointer: coarse)").matches);
-        console.log("window.matchMedia(\"(prefers-reduced-motion: reduce)\").matches", window.matchMedia("(prefers-reduced-motion: reduce)").matches);
-        console.log("window.innerWidth", window.innerWidth);
-        console.log("nav.hardwareConcurrency", nav.hardwareConcurrency);
-        console.log("nav.deviceMemory", nav.deviceMemory); */
-		if (supported) setSceneEnabled(true);
+		const nav = navigator as Navigator & {
+			deviceMemory?: number;
+			connection?: { saveData?: boolean };
+		};
+		const conn = nav.connection;
+		// Lighthouse mobile (Moto G4, 4x throttle) reports desktop-class
+		// hardwareConcurrency/deviceMemory, so CPU/RAM alone cannot gate the
+		// ~600KB three.js chunk. Also bail on touch / small viewports /
+		// reduced-motion / data-saver, where the full-window canvas would
+		// saturate the main thread during load (TBT + LCP delay).
+		// const coarse = window.matchMedia("(pointer: coarse)").matches;
+		// const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+		// const small = window.innerWidth < 768;
+		const saveData = conn?.saveData === true;
+		const supported =
+			(nav.hardwareConcurrency ?? 8) > 4 && (nav.deviceMemory ?? 8) > 4;
+		if (!supported || saveData) return;
+		// Defer even the chunk *fetch* until the browser is idle so three.js
+		// parse/eval + shader compile never compete with hydration and LCP.
+		const idleWindow = window as Window & {
+			requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
+			cancelIdleCallback?: (id: number) => void;
+		};
+		if (idleWindow.requestIdleCallback) {
+			const id = idleWindow.requestIdleCallback(() => setSceneEnabled(true), {
+				timeout: 3000,
+			});
+			return () => idleWindow.cancelIdleCallback?.(id);
+		}
+		const timer = window.setTimeout(() => setSceneEnabled(true), 1500);
+		return () => window.clearTimeout(timer);
 	}, []);
-	/* eslint-enable react-hooks/set-state-in-effect */
 
 	const { t } = useTranslation(["home"]);
 	const ctaPrimary = t("home:hero.ctaPrimary", { returnObjects: true }) as CtaItem;
@@ -216,7 +239,7 @@ export default function HeroSection() {
 				{/* LCP element - priority + high fetch priority so it is discovered
 				    in the initial document and requested ahead of everything else. */}
 				<Image
-					src="/img/instruments/total-station-color.png"
+					src="/img/instruments/total-station-color.webp"
 					alt="total-station-color"
 					fill
 					priority
