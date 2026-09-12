@@ -8,18 +8,7 @@ const nextConfig = {
 	// disturbing a running dev server that owns the default `.next` folder.
 	distDir: process.env.NEXT_DIST_DIR || ".next",
 	cacheComponents: true, // Enables the 'use cache' directive functionality
-	transpilePackages: [
-		"@sanity/sdk-react",
-		"@sanity/workbench",
-		// add any other @sanity/* package named in the next stack trace
-	],
 	images: {
-		remotePatterns: [
-			{
-				protocol: "https",
-				hostname: "cdn.sanity.io",
-			},
-		],
 		// Next 16 rejects local image sources that carry a query string unless
 		// images.localPatterns is configured. The gated media library serves
 		// short-lived signed URLs ("/media/x.jpg?e=<expiry>&s=<hmac>") through

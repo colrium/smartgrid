@@ -48,7 +48,7 @@ module.exports = {
 		...locales.flatMap((l) => [`/${l}`, `/${l}/*`]), // block ALL auto-crawled locale pages
 	],
 	robotsTxtOptions: {
-		policies: [{ userAgent: "*", allow: "/", disallow: ["/media/", "/studio"] }],
+		policies: [{ userAgent: "*", allow: "/", disallow: ["/media/"] }],
 		// next-sitemap hard-appends a "Host:" directive (a Yandex-only,
 		// non-standard line for Google). Strip it; the generated Sitemap:
 		// lines are appended after this transform runs.

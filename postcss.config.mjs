@@ -14,7 +14,7 @@
  *   (custom `@utility` classes, scroll-driven `.fade-*` helpers,
  *   `.animate-scroll-line`, base element selectors) so PurgeCSS never drops
  *   them even when no scanned source references the literal class name
- *   (e.g. classes composed at runtime, CMS-driven markup, pseudo-elements).
+ *   (e.g. classes composed at runtime, dynamic markup, pseudo-elements).
  */
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -26,7 +26,6 @@ const config = {
 					"@fullhuman/postcss-purgecss": {
 						content: [
 							"./src/**/*.{js,jsx,ts,tsx,mdx}",
-							"./sanity/**/*.{js,jsx,ts,tsx}",
 							"!./src/**/*.test.{js,jsx,ts,tsx}",
 							"!./src/**/*.stories.{js,jsx,ts,tsx}",
 						],
