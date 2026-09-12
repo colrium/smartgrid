@@ -6,7 +6,6 @@ import { useTranslation } from "@/hooks";
 import { SectionHeader } from "./SectionHeader";
 import { FadeUp } from "@/components/animations/Fade";
 import { CountUp } from "@/components/animations/ScrollReveal";
-import { Blob } from "./decor";
 import DeferredMount from "@/components/ui/DeferredMount";
 import dynamic from "next/dynamic";
 
@@ -91,7 +90,7 @@ export function CoverageAreaSection(): ReactElement | null {
 						"radial-gradient(ellipse 85% 75% at 50% 35%, black 25%, transparent 78%)",
 				}}
 			/> */}
-			<Blob className="w-96 h-96 bg-primary-100/60 -bottom-32 -right-24" opacity={0.5} />
+			
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
