@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "UCHORAJI RAMANI WA LIDAR",
 		"title": "Kuaminika. Kupanuka. Haraka. Nguvu.",
 		"image": "/media/aerial-drones/lidar-mapping/lidar-mapping-01.png",
@@ -10,6 +11,7 @@
 		}
 	},
 	"industriesWeServe": {
+		"type": "card-grid",
 		"tag": "Maeneo ya Athari",
 		"headline": "Tasnia Tunazohudumia",
 		"description": "Teknolojia ya LiDAR inaweza kubadilisha jinsi tasnia zinavyokusanya na kutumia data. Hapa kuna maeneo machache ambapo SmartGrid Surveying inatoa athari:",
@@ -33,6 +35,7 @@
 		]
 	},
 	"whyChooseLidar": {
+		"type": "card-grid",
 		"tag": "Data ya Usahihi",
 		"headline": "Kwa Nini Uchague Suluhisho Zetu za Uchoraji Ramani wa LiDAR?",
 		"description": "Suluhisho zetu za uchoraji ramani wa LiDAR zinapeleka usahihi na maelezo yasiyo na kifani kwa matumizi mbalimbali, kuhakikisha data ya kuaminika kwa maamuzi muhimu.",
@@ -56,24 +59,28 @@
 		]
 	},
 	"lidarPowerlineInspection": {
+		"type": "split-media",
 		"tag": "Usalama wa Miundombinu",
 		"headline": "Ukaguzi wa Nyaya za Umeme wa Lidar",
 		"image": "/media/aerial-drones/lidar-mapping/lidar-mapping-05.png",
 		"description": "LiDAR ni ya thamani kubwa kwa ukaguzi wa nyaya za umeme, kugundua uvamizi wa mimea, masuala ya uadilifu wa kimuundo, na kuhakikisha kufuata viwango vya usalama."
 	},
 	"forestry": {
+		"type": "split-media",
 		"tag": "Usimamizi wa Mazingira",
 		"headline": "Misitu",
 		"image": "/media/aerial-drones/lidar-mapping/lidar-mapping-03.jpg",
 		"description": "Teknolojia ya LiDAR katika misitu huwezesha kipimo sahihi cha urefu wa miti, miundo ya taji, na biomass kwa kukamata data ya kina ya 3D kutoka juu. Hii inawaruhusu wasimamizi wa misitu kutathmini afya, kupanga uvunaji endelevu, na kufuatilia mabadiliko ya mfumo ikolojia kwa usahihi usio na mfano."
 	},
 	"construction": {
+		"type": "split-media",
 		"tag": "Ufanisi wa Mradi",
 		"headline": "Ujenzi",
 		"image": "/media/aerial-drones/lidar-mapping/lidar-mapping-02.jpg",
 		"description": "LiDAR katika ujenzi hutoa data sahihi ya topografia na mifano ya tovuti ya 3D, kurahisisha upangaji, muundo, na makadirio ya kazi za ardhi. Inaboresha usahihi katika ufuatiliaji wa maendeleo, kugundua mkengeuko wa kimuundo, na kupunguza kazi ghali ya kurudia."
 	},
 	"ctaSection": {
+		"type": "cta",
 		"tag": null,
 		"headline": "Anza Leo!",
 		"description": "Tayari kupeleka miradi yako kwenye kiwango kinachofuata na uchoraji ramani wa LiDAR? Wasiliana na SmartGrid Surveying kujifunza zaidi kuhusu jinsi suluhisho zetu zinavyoweza kukusaidia kufikia malengo yako. Timu yetu iko hapa kujibu maswali yoyote na kutoa ushauri wa bure.",
@@ -83,6 +90,7 @@
 		}
 	},
 	"howItWorks": {
+		"type": "process",
 		"tag": "rahisi na bora",
 		"headline": "Inavyofanya Kazi",
 		"description": "Mchakato wetu wa uchoraji ramani wa LiDAR ni rahisi na bora. Hivi ndivyo tunavyofanya:",

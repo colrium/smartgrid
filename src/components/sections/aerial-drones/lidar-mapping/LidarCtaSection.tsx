@@ -1,9 +1,10 @@
 "use client";
 
-import Link from "next/link";
+import type { ReactElement } from "react";
 import { useTranslation } from "@/hooks";
-import { FadeUp } from "@/components/animations/Fade";
-import { SectionTag } from "@/components/SectionTag";
+import { CtaBand } from "@/components/sections/shared";
+
+const NS = "aerial-drones/lidar-mapping";
 
 interface LidarCtaLink {
 	label: string;
@@ -24,56 +25,30 @@ function normalizeHref(href?: string): string | undefined {
 	return href;
 }
 
-export function LidarCtaSection() {
-	const { t } = useTranslation(["aerial-drones/lidar-mapping"]);
-	const section = t("aerial-drones/lidar-mapping:ctaSection", {
+export function LidarCtaSection(): ReactElement {
+	const { t } = useTranslation([NS]);
+	const section = t(`${NS}:ctaSection`, {
 		returnObjects: true,
 	}) as unknown as LidarCtaContent;
-	const ctaHref = normalizeHref(section.ctaPrimary?.href);
+	const ctaHref = normalizeHref(section?.ctaPrimary?.href);
 
 	return (
-		<section className="pb-24 sm:pb-28 relative overflow-hidden">
-			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-				<FadeUp>
-					<div className="relative rounded-c ink-panel card-shadow overflow-hidden px-8 py-16 sm:px-12 sm:py-24 text-center">
-						<span className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary-300/30 blur-[90px] pointer-events-none" />
-						<span className="absolute -bottom-28 -left-20 w-72 h-72 rounded-full bg-primary/30 blur-[90px] pointer-events-none" />
-						{/* <span className="absolute inset-3 rounded-[15px] hairline-dark pointer-events-none" aria-hidden /> */}
-
-						<div className="relative flex flex-col items-center gap-6">
-							{section.tag && (
-								<SectionTag className="inline-flex items-center gap-3 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-primary-200">
-									{section.tag}
-								</SectionTag>
-							)}
-
-							<h2 className="font-light tracking-tight leading-[1.08] text-3xl sm:text-5xl lg:text-[3.4rem] text-surface max-w-3xl">
-								{section.headline}
-							</h2>
-
-							{section.description && (
-								<p className="text-base sm:text-lg text-surface/65 leading-relaxed max-w-2xl mx-auto">
-									{section.description}
-								</p>
-							)}
-
-							{ctaHref && (
-								<div className="mt-4">
-									<Link
-										href={ctaHref}
-										className="group inline-flex items-center gap-3 h-14 rounded-full bg-surface px-8 text-ink font-medium text-base transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]"
-									>
-										<span className="h-1.5 w-1.5 rounded-full bg-primary transition-transform duration-300 group-hover:scale-125" />
-										{section.ctaPrimary?.label}
-										<span className="mdi mdi-email-outline text-xl text-ink transition-transform duration-300 group-hover:translate-x-1" />
-									</Link>
-								</div>
-							)}
-						</div>
-					</div>
-				</FadeUp>
-			</div>
-		</section>
+		<CtaBand
+			className="pb-24 sm:pb-28 relative overflow-hidden"
+			tag={section?.tag ?? null}
+			headline={section?.headline ?? ""}
+			description={section?.description ?? null}
+			primary={
+				ctaHref
+					? {
+							label: section?.ctaPrimary?.label ?? "",
+							href: ctaHref,
+							icon: "email-outline",
+							iconPosition: "end",
+						}
+					: null
+			}
+		/>
 	);
 }
 

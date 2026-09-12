@@ -1,9 +1,18 @@
 "use client";
 
-import { LidarSplitSection } from "./LidarSplitSection";
+import type { ReactElement } from "react";
+import { useTranslation } from "@/hooks";
+import { SplitMedia, type SplitMediaContent } from "@/components/sections/shared";
 
-export function ForestrySection() {
-	return <LidarSplitSection sectionKey="forestry" imagePosition="left" tone="surface" />;
+const NS = "aerial-drones/lidar-mapping";
+
+export function ForestrySection(): ReactElement {
+	const { t } = useTranslation([NS]);
+	const section = t(`${NS}:forestry`, {
+		returnObjects: true,
+	}) as unknown as SplitMediaContent;
+
+	return <SplitMedia data={section} imagePosition="left" tone="surface" mediaAspect="aspect-16/10" />;
 }
 
 export default ForestrySection;

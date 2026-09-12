@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "UFUATILIAJI NA TATHMINI",
 		"title": "Ufuatiliaji na Tathmini kwa Kujenga Kwa Nguvu Zaidi",
 		"image": "/media/aerial-drones/monitoring-and-evaluation/01.jpg",
@@ -11,11 +12,13 @@
 		}
 	},
 	"drivingSustainability": {
+		"type": "intro",
 		"tag": "Uendelevu",
 		"headline": "Kuendesha Uendelevu kwa Data",
 		"description": "Katika SmartGrid, tunatumia zana za kijiografia za angani na za ardhini kusaidia ulinzi wa mazingira, uhifadhi, na matumizi endelevu ya ardhi kupitia ufuatiliaji wa usahihi."
 	},
 	"ourCapabilities": {
+		"type": "card-grid",
 		"tag": "Tunachofanya",
 		"headline": "Uwezo Wetu",
 		"description": "",
@@ -39,11 +42,13 @@
 		]
 	},
 	"techWeUse": {
+		"type": "intro",
 		"tag": "Maarifa ya Kina, Sahihi",
 		"headline": "Teknolojia Tunayotumia",
 		"description": "Timu yetu hutumia ndege zisizo na rubani za LiDAR, vitengo vya RTK GNSS, total station, vitanda vya bathymetry na programu za hali ya juu za GIS kama QGIS, Pix4D, na ArcGIS Pro. Zana hizi hutusaidia kutoa maarifa ya kina, sahihi kijiografia kusaidia mahitaji yako ya mazingira."
 	},
 	"impact": {
+		"type": "card-grid",
 		"tag": "Athari",
 		"headline": "Athari ya Ulimwengu Halisi",
 		"description": "",
@@ -63,11 +68,13 @@
 		]
 	},
 	"whyPartnerWithUs": {
+		"type": "intro",
 		"tag": null,
 		"headline": "Kwa Nini Ushirikiane Nasi?",
 		"description": "Tunatoa akili ya kijiografia na uchunguzi wa hali ya juu kwa matokeo endelevu. Timu yetu inayoitikia huhakikisha ripoti kwa wakati, huduma zinazoweza kubadilishwa, na matokeo ya GIS yanayoendana na mtiririko wako wa kazi."
 	},
 	"cta": {
+		"type": "cta",
 		"tag": null,
 		"headline": "Tuushirikiane",
 		"description": "Una mradi akilini au unahitaji ushauri?",
@@ -78,6 +85,7 @@
 		}
 	},
 	"smartMonitoringAndEval": {
+		"type": "card-grid",
 		"tag": "Kwa Ndege Zisizo na Rubani",
 		"headline": "Ufuatiliaji na Tathmini Mahiri kwa Ndege Zisizo na Rubani",
 		"description": "",
@@ -135,6 +143,7 @@
 		}
 	},
 	"whatWeOffer": {
+		"type": "card-grid",
 		"tag": "Teknolojia + Utaalamu",
 		"headline": "Tunachotoa",
 		"images": [

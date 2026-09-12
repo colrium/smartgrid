@@ -1,23 +1,52 @@
 "use client";
 import type { ReactElement, ReactNode } from "react";
+import Image from "next/image";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionShell } from "@/components/sections/shared/SectionShell";
-import { Card, type CardProps } from "@/components/ui/Card";
-export interface CardItem extends Omit<CardProps, "children"> { title?: string; label?: string; description?: string; icon?: string | null; image?: string | null; items?: string[] | null }
-export interface CardGridProps {
-	tag?: string | null; headline: string; description?: ReactNode;
-	subheading?: string | null; items: CardItem[]; columns?: 2 | 3 | 4 | 5; tone?: "default" | "surface";
-	align?: "left" | "center"; headerAlign?: "left" | "center"; headerRow?: boolean;
-	hoverArrow?: boolean; watermarkedIndexed?: boolean; indexed?: boolean; id?: string;
-	kicker?: string | null; card?: Partial<CardProps>; className?: string;
+import { CtaPill, type CtaAction } from "@/components/sections/shared/CtaPill";
+import { CardList, cardGridCols, type CardItem } from "@/components/sections/shared/CardList";
+import type { CardProps } from "@/components/ui/Card";
+
+export type { CardItem } from "@/components/sections/shared/CardList";
+
+export interface CardGridAction extends CtaAction {
+	/** `primary` = solid brand pill, `surface` = light hairline pill (light backgrounds). */
+	variant?: "primary" | "surface";
 }
-const COLS: Record<number, string> = {
-	2: "lg:grid-cols-2", 3: "lg:grid-cols-3", 4: "lg:grid-cols-4", 5: "lg:grid-cols-5",
-};
+export interface CardGridProps {
+	tag?: string | null;
+	headline: string;
+	description?: ReactNode;
+	subheading?: string | null;
+	items: CardItem[];
+	columns?: 2 | 3 | 4 | 5;
+	tone?: "default" | "surface";
+	align?: "left" | "center";
+	headerAlign?: "left" | "center";
+	headerRow?: boolean;
+	hoverArrow?: boolean;
+	watermarkedIndexed?: boolean;
+	indexed?: boolean;
+	id?: string;
+	kicker?: string | null;
+	card?: Partial<CardProps>;
+	fallbackIcons?: string[] | null;
+	popupTrigger?: string;
+	/** Lead images rendered as a strip between header and cards. */
+	leadImages?: string[] | null;
+	leadAspect?: string;
+	/** Action pills rendered centred below the grid (light backgrounds). */
+	actions?: CardGridAction[] | null;
+	className?: string;
+}
 export function CardGrid(props: CardGridProps): ReactElement | null {
 	const items = Array.isArray(props.items) ? props.items : [];
 	if (items.length === 0) return null;
 	const columns = props.columns ?? 3;
+	const leadImages = Array.isArray(props.leadImages) ? props.leadImages : [];
+	const actions = Array.isArray(props.actions) ? props.actions : [];
+	const leadClass = props.subheading ? "mt-8" : "mt-12";
+	const gridMargin = leadImages.length > 0 ? "mt-12 sm:mt-14" : props.subheading ? "mt-8" : "mt-14 sm:mt-16";
 	return (
 		<SectionShell id={props.id} tag={props.tag} headline={props.headline} description={props.description} align={props.headerAlign ?? "center"} tone={props.tone} className={props.className}>
 			{props.subheading ? (
@@ -25,26 +54,49 @@ export function CardGrid(props: CardGridProps): ReactElement | null {
 					{props.subheading}
 				</p>
 			) : null}
-			<div className={`${props.subheading ? "mt-8" : "mt-14 sm:mt-16"} grid grid-cols-1 sm:grid-cols-2 ${COLS[columns]} gap-5 sm:gap-6`}>
-				{items.map((raw, index) => {
-					const item = raw as CardItem;
-					const title = item.title ?? item.label ?? "";
-					const itemCard: Partial<CardProps> = { ...(props.card ?? {}) };
-					if (props.headerRow !== undefined && itemCard.headerRow === undefined) itemCard.headerRow = props.headerRow;
-					if (props.hoverArrow !== undefined && itemCard.hoverArrow === undefined) itemCard.hoverArrow = props.hoverArrow;
-					if (props.watermarkedIndexed && itemCard.watermark === undefined) itemCard.watermark = String(index + 1).padStart(2, "0");
-					return (
-						<FadeUp key={index} delay={(index % columns) * 0.07} className="h-full">
-							<Card variant={itemCard.variant ?? "outlined"} elevation={itemCard.elevation ?? 1} align={props.align ?? (itemCard.align ?? "left")} header={title} headerIcon={item.icon ?? item.headerIcon ?? null} iconShape={itemCard.iconShape} body={item.description ?? item.body} media={item.image ?? item.media ?? null} mediaPosition={item.image || item.media ? (itemCard.mediaPosition ?? "top") : undefined} tags={item.items ?? item.tags ?? null} indexBadge={props.indexed ? indexBadgeValue(item, index) : (item.indexBadge ?? null)} watermark={item.watermark ?? itemCard.watermark} headerRow={item.headerRow ?? itemCard.headerRow} hoverArrow={item.hoverArrow ?? itemCard.hoverArrow ?? Boolean(item.href)} link={item.link ?? null} href={item.href ?? null} kicker={item.kicker ?? props.kicker ?? null} className={itemCard.className} />
-						</FadeUp>
-					);
-				})}
-			</div>
+			{leadImages.length > 0 ? (
+				<FadeUp>
+					<div className={`${leadClass} grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6`}>
+						{leadImages.map((src, index) => (
+							<div key={index} className={`relative rounded-c overflow-hidden hairline ${props.leadAspect ?? "h-64 sm:h-80"}`}>
+								<Image src={src} alt="" fill sizes="(min-width: 640px) 50vw, 100vw" className="object-cover object-center transition-transform duration-700 hover:scale-105" />
+							</div>
+						))}
+					</div>
+				</FadeUp>
+			) : null}
+			<CardList
+				items={items}
+				columns={columns}
+				align={props.align}
+				card={props.card}
+				headerRow={props.headerRow}
+				hoverArrow={props.hoverArrow}
+				watermarkedIndexed={props.watermarkedIndexed}
+				indexed={props.indexed}
+				kicker={props.kicker}
+				fallbackIcons={props.fallbackIcons}
+				popupHeading={props.headline}
+				popupTrigger={props.popupTrigger}
+				className={`${gridMargin} grid grid-cols-1 sm:grid-cols-2 ${cardGridCols(columns)} gap-5 sm:gap-6`}
+			/>
+			{actions.length > 0 ? (
+				<FadeUp delay={0.1}>
+					<div className="mt-12 flex flex-wrap items-center justify-center gap-4">
+						{actions.map((action, index) => (
+							action.href ? (
+								<CtaPill
+									key={index}
+									action={action}
+									variant={action.variant === "surface" ? "surface" : "primary"}
+								/>
+							) : null
+						))}
+					</div>
+				</FadeUp>
+			) : null}
 		</SectionShell>
 	);
 }
-function indexBadgeValue(item: CardItem, index: number): number | string | null {
-	if (item.indexBadge !== undefined) return item.indexBadge;
-	return index;
-}
+
 export default CardGrid;

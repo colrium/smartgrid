@@ -1,6 +1,7 @@
 "use client";
 
 import type { ReactElement } from "react";
+import Image from "next/image";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionTag } from "@/components/SectionTag";
 import { CtaPill, type CtaAction } from "./CtaPill";
@@ -14,8 +15,14 @@ interface CtaBandProps {
 	secondary?: CtaAction | null;
 	/** `"centered"` (stacked, centred) or `"split"` (copy left, actions right). */
 	layout?: "centered" | "split";
+	/** `panel` = rounded ink-panel card (default); `bleed` = full-bleed primary section. */
+	variant?: "panel" | "bleed";
 	/** Band density: `xl` = flagship bands, `lg` = medium centred bands, `md` = split bands. */
 	size?: "xl" | "lg" | "md";
+	/** Optional lead images rendered as a 3-column strip above the band content. */
+	images?: string[] | null;
+	/** Height classes for the lead image strip. */
+	imagesAspect?: string;
 	/** Background ornaments: soft blurred glows or radially masked circles. */
 	decor?: "glow" | "masked" | "none";
 	/** Decorative MDI icon name (without the `mdi-` prefix). */
@@ -49,7 +56,10 @@ export function CtaBand({
 	primary,
 	secondary,
 	layout = "centered",
+	variant = "panel",
 	size,
+	images,
+	imagesAspect,
 	decor = "glow",
 	watermark,
 	glyph,
@@ -80,6 +90,46 @@ export function CtaBand({
 		: "text-base sm:text-lg text-surface/65 leading-relaxed max-w-2xl mx-auto";
 
 	const hasActions = Boolean(primary?.href || secondary?.href);
+	const leadImages = Array.isArray(images) ? images : [];
+
+	if (variant === "bleed") {
+		return (
+			<section id={id} className={className ?? "py-24 sm:py-28 relative overflow-hidden bg-primary-600"}>
+				{decor === "glow" && (
+					<>
+						<span aria-hidden className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary-300/30 blur-[90px] pointer-events-none" />
+						<span aria-hidden className="absolute -bottom-28 -left-20 w-72 h-72 rounded-full bg-primary/30 blur-[90px] pointer-events-none" />
+					</>
+				)}
+				<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+					{leadImages.length > 0 && (
+						<FadeUp>
+							<div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-14 sm:mb-16">
+								{leadImages.map((src, index) => (
+									<div key={index} className={`relative rounded-c overflow-hidden ${imagesAspect ?? "h-52 sm:h-60"}`}>
+										<Image src={src} alt="" fill sizes="(min-width: 640px) 33vw, 100vw" className="object-cover object-center transition-transform duration-700 hover:scale-105" />
+									</div>
+								))}
+							</div>
+						</FadeUp>
+					)}
+					<FadeUp>
+						<div className="flex flex-col items-center gap-6 text-center">
+							{tag && <SectionTag dark>{tag}</SectionTag>}
+							<h2 className={headlineClass}>{headline}</h2>
+							{description && <p className={descriptionClass}>{description}</p>}
+							{hasActions && (
+								<div className="mt-4 flex flex-col sm:flex-row items-center gap-4">
+									{primary?.href && <CtaPill action={primary} />}
+									{secondary?.href && <CtaPill action={secondary} variant="outline" />}
+								</div>
+							)}
+						</div>
+					</FadeUp>
+				</div>
+			</section>
+		);
+	}
 
 	return (
 		<section

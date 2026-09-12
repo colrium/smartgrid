@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "MONITORING AND EVALUATION",
 		"title": "Monitoring & Evaluation to Build Stronger",
 		"image": "/media/aerial-drones/monitoring-and-evaluation/01.jpg",
@@ -11,11 +12,13 @@
 		}
 	},
 	"drivingSustainability": {
+		"type": "intro",
 		"tag": "Sustainability",
 		"headline": "Driving Sustainability with Data",
 		"description": "At SmartGrid, we leverage aerial and terrestrial geospatial tools to support environmental protection, conservation, and sustainable land use through precision monitoring."
 	},
 	"ourCapabilities": {
+		"type": "card-grid",
 		"tag": "What we do",
 		"headline": "Our Capabilities",
 		"description": "",
@@ -39,11 +42,13 @@
 		]
 	},
 	"techWeUse": {
+		"type": "intro",
 		"tag": "Detailed, Accurate Insights",
 		"headline": "Technology We Use",
 		"description": "Our team utilizes LiDAR drones, RTK GNSS units, total stations, bathymetry kits and advanced GIS software such as QGIS, Pix4D, and ArcGIS Pro. These tools help us provide detailed, spatially accurate insights to support your environmental needs."
 	},
 	"impact": {
+		"type": "card-grid",
 		"tag": "Impact",
 		"headline": "Real-World Impact",
 		"description": "",
@@ -63,11 +68,13 @@
 		]
 	},
 	"whyPartnerWithUs": {
+		"type": "intro",
 		"tag": null,
 		"headline": "Why Partner With Us?",
 		"description": "We deliver high-quality geospatial and survey intelligence for sustainable outcomes. Our responsive team ensures timely reporting, customizable services, and GIS outputs that are compatible with your workflow."
 	},
 	"cta": {
+		"type": "cta",
 		"tag": null,
 		"headline": "Let’s Collaborate",
 		"description": "Have a project in mind or need a consultation?",
@@ -78,6 +85,7 @@
 		}
 	},
 	"smartMonitoringAndEval": {
+		"type": "card-grid",
 		"tag": "With Drones",
 		"headline": "Smart Monitoring & Evaluation with Drones",
 		"description": "",
@@ -135,6 +143,7 @@
 		}
 	},
 	"whatWeOffer": {
+		"type": "card-grid",
 		"tag": "Tech + Expertise",
 		"headline": "What We Offer",
 		"images": [

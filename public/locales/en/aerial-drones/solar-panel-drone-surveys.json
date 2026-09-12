@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "Leading Africa's Land and Aerial Surveying Revolution",
 		"title": "Solar Panels Drone surveys",
 		"image": "/media/aerial-drones/solar-panel-drone-surveys/01.jpg",
@@ -11,6 +12,7 @@
 		}
 	},
 	"whatWeDo": {
+		"type": "card-grid",
 		"tag": "Services",
 		"headline": "What We Do",
 		"description": "At SmartGrid Surveying, we leverage cutting-edge drone technology to perform precise, efficient, and safe surveys for solar panel installations. From planning and inspection to thermal mapping and post-installation assessments, our drone surveys offer unmatched insight for both corporate and individual clients.",
@@ -38,6 +40,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": null,
 		"headline": "Want to Elevate Your Solar Projects?",
 		"description": "Contact us for a tailored drone survey solution.",
@@ -47,6 +50,7 @@
 		}
 	},
 	"droneIntegrationProcess": {
+		"type": "card-grid",
 		"tag": "Process",
 		"headline": "Drone Integration in the Solar Installation Process",
 		"description": "",
