@@ -5,7 +5,6 @@ import type { ReactElement } from "react";
 import Link from "@/components/Link";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionHeader } from "@/components/sections/home";
-import { Blob } from "@/components/sections/home/decor";
 
 export interface WorkflowStep {
     icon?: string | null;
@@ -45,15 +44,15 @@ export interface WorkflowSectionProps {
 
 const PHASE_STYLES: WorkflowPhaseStyles = {
     PLANNING: {
-        chip: "border-primary/30 bg-primary-50 text-primary-700",
+        chip: "border-ink/30 bg-ink-50 text-ink-700",
         icon: "clipboard-text",
     },
     CONTROL: {
-        chip: "border-accent/30 bg-accent-50 text-accent-700",
+        chip: "border-warning/30 bg-warning-50 text-warning-700",
         icon: "crosshairs-gps",
     },
     ACQUISITION: {
-        chip: "border-purple-300/60 bg-purple-50 text-purple-700",
+        chip: "border-accent/30 bg-accent-50 text-accent-700",
         icon: "boat",
     },
     PROCESSING: {
@@ -69,11 +68,11 @@ const PHASE_STYLES: WorkflowPhaseStyles = {
         icon: "chart-timeline-variant",
     },
     VALIDATION: {
-        chip: "border-green-300/60 bg-green-50 text-green-700",
+        chip: "border-success-200/60 bg-success-50/50 text-success-400",
         icon: "check-circle-outline",
     },
     DELIVERY: {
-        chip: "border-whatsapp/30 bg-whatsapp/10 text-green-700",
+        chip: "border-success/30 bg-success/10 text-success-700",
         icon: "file-document-outline",
     },
 };
@@ -95,13 +94,10 @@ export function WorkflowSection({
     if (items.length === 0) return <></>;
 
     const phaseMap: WorkflowPhaseStyles = { ...PHASE_STYLES, ...(phaseStyles ?? {}) };
-
+    const hasOutcome = !!(outcome || ctaNote || cta?.href)
     return (
         <section className="bg-surface py-24 sm:py-28 relative overflow-hidden">
-            <Blob
-                className="w-[30rem] h-[30rem] bg-primary-100/60 -bottom-40 -left-40"
-                opacity={0.5}
-            />
+            
 
             <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
                 <SectionHeader
@@ -114,7 +110,7 @@ export function WorkflowSection({
                 <div className="relative mt-16 sm:mt-20">
                     <div
                         aria-hidden
-                        className="absolute left-4 lg:left-1/2 lg:-translate-x-1/2 top-2 bottom-2 w-px bg-gradient-to-b from-primary/0 via-primary/40 to-accent/50"
+                        className={`absolute left-4 lg:left-1/2 lg:-translate-x-1/2 top-2 ${hasOutcome? "-bottom-14" : "bottom-2"}  w-px bg-linear-to-b from-warning/10  via-primary/40  to-success/50`}
                     />
                     <ol className="space-y-10 lg:space-y-14">
                         {items.map((step, index) => {

@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useState, type ReactElement } from "react";
 import { useTranslation } from "@/hooks";
 import { SectionHeader } from "@/components/sections/home";
-import { Blob } from "@/components/sections/home/decor";
 const ModelViewer = dynamic(() => import("@/components/ui/ModelViewer"), {
 	ssr: false,
 	loading: () => (
@@ -72,11 +71,6 @@ export function ProductModelSection({
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden">
-			<Blob
-				className="w-[28rem] h-[28rem] bg-primary-100/50 -bottom-24 -left-24"
-				opacity={0.5}
-			/>
-
 			<div className="relative z-10 w-screen md:w-[90dvw] mx-auto px-6 sm:px-8 lg:px-12">
 				<div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
 					<SectionHeader
@@ -89,27 +83,37 @@ export function ProductModelSection({
 				<div className="max-w-7xl  mx-auto mt-12 sm:mt-16">
 					<div className="relative h-[70dvh] overflow-hidden rounded-cmd hairline bg-surface">
 						{viewerRequested ? (
-							<ModelViewer url={current} className="relative h-full" />
+							<ModelViewer
+								url={current}
+								autoLoad={false}
+								placeholderSrc={placeholder}
+								className="relative h-full"
+							/>
 						) : (
-							<div className="relative flex h-full w-full items-center justify-center overflow-hidden">
+							<div className="group relative flex h-full w-full items-center justify-center overflow-hidden">
 								{placeholder && (
 									<Image
 										src={placeholder}
-										alt=""
+										alt="3D Model Placeholder"
 										fill
 										sizes="(min-width: 1024px) 80vw, 100vw"
-										className="object-contain object-center p-10 opacity-35 blur-[2px]"
+										className="object-center  scale-110 object-contain p-12 opacity-70 blur-2xl transition-all duration-700 ease-out group-hover:scale-105 group-hover:opacity-90 group-hover:blur-xl"
 									/>
 								)}
-								<div className="relative z-10 flex max-w-sm flex-col items-center gap-4 px-6 text-center">
-									<span className="mdi mdi-cube-outline text-5xl text-primary" aria-hidden />
+								<div onClick={() => setViewerRequested(true)} className="relative z-10 group flex max-w-sm flex-col items-center gap-4 px-6 text-center cursor-pointer">
+									<span
+										className="mdi mdi-rotate-3d text-5xl text-ink-500 group-hover:text-accent-200 transition-colors duration-300"
+										aria-hidden
+									/>
 									<button
-										type="button"
-										onClick={() => setViewerRequested(true)}
+										type="button"										
 										aria-label={t("common:misc.load3d")}
-										className="inline-flex h-12 items-center gap-2.5 rounded-full bg-primary px-6 text-sm font-medium text-surface transition-colors hover:bg-ink"
+										className="inline-flex h-12 items-center gap-2.5 rounded-full bg-primary px-6 text-sm font-medium text-surface transition-colors duration-300 group-hover:bg-primary-600  cursor-pointer"
 									>
-										<span className="mdi mdi-play-circle-outline text-lg" aria-hidden />
+										<span
+											className="mdi mdi-play-circle-outline text-lg"
+											aria-hidden
+										/>
 										{t("common:misc.load3d")}
 									</button>
 								</div>

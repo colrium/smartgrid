@@ -1,11 +1,13 @@
 "use client";
 
+import type { ReactElement, ReactNode } from "react";
+
 import { SectionTag } from "@/components/SectionTag";
 
 interface SectionHeaderProps {
 	tag?: string;
 	headline: string;
-	description?: string;
+	description?: ReactNode;
 	tone?: "light" | "dark";
 	align?: "left" | "center";
 }
@@ -16,7 +18,7 @@ export function SectionHeader({
 	description,
 	tone = "light",
 	align = "left",
-}: SectionHeaderProps) {
+}: SectionHeaderProps): ReactElement {
 	const dark = tone === "dark";
 
 	const descClass = dark

@@ -1,9 +1,6 @@
-"use client";
-
-import Link from "next/link";
+import type { ReactElement } from "react";
 import { useTranslation } from "@/hooks";
-import { SectionTag } from "@/components/SectionTag";
-import { FadeUp } from "@/components/animations/Fade";
+import { CardGrid, type CardItem } from "@/components/sections/shared";
 
 interface ExpertiseItem {
 	icon?: string | null;
@@ -12,102 +9,34 @@ interface ExpertiseItem {
 	href?: string;
 }
 
-export function CoreExpertiseSection() {
-	const { t } = useTranslation(["home"]);
-	const items = t("home:coreExpertise.items", {
-		returnObjects: true,
-	}) as unknown as ExpertiseItem[];
-	const kicker = t("home:coreExpertise.label", {
-		defaultValue: "Core capability",
-	}) as string;
-
-	return (
-		<section id="core-expertise" className="py-24 sm:py-28 relative overflow-hidden">
-			
-
-			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-				<FadeUp>
-					<div className="mb-12 flex flex-col items-center gap-4 text-center">
-						<SectionTag>{t("home:coreExpertise.tag") as string}</SectionTag>
-						<p
-							className={`text-base sm:text-lg leading-relaxed max-w-2xl mx-auto text-on-surface/60`}
-						>
-							{t("home:coreExpertise.description") as string}
-						</p>
-					</div>
-				</FadeUp>
-
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6">
-					{Array.isArray(items) &&
-						items.map((item, index) => (
-							<FadeUp
-								key={index}
-								delay={(index % 4) * 0.08}
-								// className={index % 2 === 1 ? "lg:translate-y-8" : ""}
-							>
-								{item.href ? (
-									<Link
-										href={item.href}
-										aria-label={item.label}
-										className="group relative h-full flex flex-col rounded-cmd border-t-2 border-ink/10 bg-surface card-shadow p-7 transition-[transform,box-shadow,border-color] duration-250  hover:card-shadow-lift  overflow-hidden"
-									>
-										<ExpertiseCardBody item={item} index={index} kicker={kicker} />
-									</Link>
-								) : (
-									<article className="group relative h-full flex flex-col rounded-cmd border-t-2 border-ink/10 bg-surface card-shadow p-7 transition-[transform,box-shadow,border-color] duration-250  overflow-hidden">
-										<ExpertiseCardBody item={item} index={index} kicker={kicker} />
-									</article>
-								)}
-							</FadeUp>
-						))}
-				</div>
-			</div>
-		</section>
-	);
+interface CoreExpertiseContent {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+	items: ExpertiseItem[];
 }
 
-function ExpertiseCardBody({
-	item,
-	index,
-	kicker,
-}: {
-	item: ExpertiseItem;
-	index: number;
-	kicker: string;
-}) {
+export function CoreExpertiseSection(): ReactElement | null {
+	const { t } = useTranslation(["home"]);
+	const section = t("home:coreExpertise", {
+		returnObjects: true,
+	}) as unknown as CoreExpertiseContent;
+	const items: CardItem[] = Array.isArray(section?.items) ? section.items : [];
+
+	if (items.length === 0) return null;
+
 	return (
-		<>
-			{/* watermark index */}
-			<span
-				className="absolute right-4 top-2 font-light text-5xl tracking-tight text-ink/[0.05] select-none pointer-events-none"
-				aria-hidden
-			>
-				{String(index + 1).padStart(2, "0")}
-			</span>
-
-			<div className="flex items-center justify-between mb-8">
-				<span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
-					<span className={`mdi mdi-${item.icon || "hard-hat"} text-2xl`} />
-				</span>
-				{item.href && (
-					<span
-						className={`mdi mdi-arrow-up-right text-xl text-on-surface/25 transition-[color,transform,opacity] duration-300 group-hover:text-primary ${
-							item.href
-								? "-translate-x-2 translate-y-2 opacity-0 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100"
-								: ""
-						}`}
-						aria-hidden={!item.href}
-					/>
-				)}
-			</div>
-
-			<h3 className="text-lg font-medium leading-snug text-ink mb-3">{item.label}</h3>
-			<p className="text-sm text-on-surface/60 leading-relaxed flex-1">{item.description}</p>
-
-			<span className="mt-6 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-primary">
-				{kicker}
-			</span>
-		</>
+		<CardGrid
+			id="core-expertise"
+			tag={section.tag}
+			headline={section.headline}
+			description={section.description}
+			items={items}
+			columns={3}
+			headerRow
+			hoverArrow
+			watermarkedIndexed
+		/>
 	);
 }
 

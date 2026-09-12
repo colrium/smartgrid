@@ -263,6 +263,7 @@
 		]
 	},
 	"industriesWeServe": {
+		"type": "card-grid",
 		"tag": "Industries",
 		"headline": "Industries We Serve",
 		"description": "From small land parcels to large-scale infrastructure projects—our systems scale to your needs. We work with the following industries:",
@@ -332,6 +333,7 @@
 		]
 	},
 	"coreExpertise": {
+		"type": "card-grid",
 		"tag": "Experts",
 		"headline": "Our Core Expertise",
 		"description": "We specialize in providing high-quality surveying and engineering services, leveraging advanced technology and industry expertise to deliver accurate and reliable results for our clients.",
@@ -592,6 +594,7 @@
 	},
 
 	"faq": {
+		"type": "faq",
 		"tag": "FAQ",
 		"headline": "Frequently Asked Questions",
 		"description": "Straight answers from the field — the things clients ask us before commissioning their first survey.",

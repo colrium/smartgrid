@@ -17,6 +17,7 @@
 		"description": "At Smartgrid Surveying, established 2020. We're redefining the future of land and aerial surveys across Africa and beyond. With cutting-edge technology and an unwavering commitment to precision, we offer a full suite of professional surveying services that support infrastructure development, land administration, environmental monitoring, and planning projects of all scales."
 	},
 	"aerialSurveying": {
+		"type": "card-grid",
 		"tag": "Aerial Intelligence",
 		"headline": "AERIAL SURVEYING",
 		"description": "Drones have transformed the surveying industry—and we're leading the way. Smartgrid Surveying leverages aerial drones for mapping, 3D modeling, volumetrics, environmental assessments, and monitoring large or inaccessible areas. Beyond technical mapping, we offer professional drone photography for real estate, construction marketing, tourism, and events. Using drones equipped with RTK GPS and high-resolution sensors, we capture precise geospatial data that empowers engineers, developers, governments, and NGOs to make smarter decisions, faster.",
@@ -69,6 +70,7 @@
 		]
 	},
     "servicesByImages": {
+		"type": "gallery-grid",
 		"tag": null,
 		"headline": "",
 		"description": "",
@@ -108,6 +110,7 @@
 		]
 	},
     "dronePhotographyimageSlider": {
+		"type": "gallery-slider",
 		"tag": null,
 		"headline": "Drone Photography",
 		"description": "",
@@ -120,6 +123,7 @@
 		]
 	},
 	"landSurveying": {
+		"type": "card-grid",
 		"tag": "Ground Precision",
 		"headline": "SMARTGRID LAND SURVEYING",
 		"description": "At Smartgrid Surveying, we're redefining the future of <primary>land and aerial surveys</primary> across Africa and beyond. With cutting-edge technology and an unwavering commitment to <primary>precision</primary>, we offer a full suite of <primary>professional surveying</primary> services that support infrastructure development, land administration, environmental monitoring, and planning projects of all scales. Smartgrid Surveying provides comprehensive land surveying solutions tailored to <primary>developers, governments, contractors, and private clients</primary>. Whether it's for title deeds, boundary demarcation, construction layouts, or cadastral mapping, we bring experience and excellence to every site.",
@@ -157,6 +161,7 @@
 		]
 	},
     "landSurveyingImages": {
+		"type": "gallery-grid",
 		"tag": null,
 		"headline": "",
 		"description": "",
@@ -197,6 +202,7 @@
         }
 	},
 	"whyChooseSmartGrid": {
+		"type": "card-grid",
 		"tag": "Why Us",
 		"headline": "Why Choose SmartGrid for Drone Services?",
 		"description": "",
@@ -229,6 +235,7 @@
 		]
 	},
     "projectsCompletedImagesMasonry": {
+		"type": "gallery-masonry",
 		"tag": null,
 		"headline": "PROJECTS COMPLETED",
 		"description": "",

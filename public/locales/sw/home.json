@@ -259,6 +259,7 @@
 		]
 	},
 	"industriesWeServe": {
+		"type": "card-grid",
 		"tag": "Sekta",
 		"headline": "Sekta Tunazohudumia",
 		"description": "Kuanzia viwanja vidogo vya ardhi hadi miradi mikubwa ya miundombinu—mifumo yetu inaweza kupanuka kulingana na mahitaji yako. Tunafanya kazi na sekta zifuatazo:",
@@ -328,6 +329,7 @@
 		]
 	},
 	"coreExpertise": {
+		"type": "card-grid",
 		"tag": "Wataalamu",
 		"headline": "Utaalamu Wetu wa Msingi",
 		"description": "Tunabobea katika kutoa huduma za ubora wa juu za upimaji na uhandisi, kwa kutumia teknolojia ya kisasa na utaalamu wa sekta ili kutoa matokeo sahihi na ya kuaminika kwa wateja wetu.",
@@ -586,6 +588,7 @@
 		"note": "Unafanya kazi sehemu isiyo kwenye ramani? Tunawasili. Tuambie tovuti yako iko wapi."
 	},
 	"faq": {
+		"type": "faq",
 		"tag": "Maswali",
 		"headline": "Maswali Yanayoulizwa Mara Kwa Mara",
 		"description": "Majibu ya moja kwa moja kutoka uwanjani — mambo wateja hutuuliza kabla ya kuagiza upimaji wao wa kwanza.",

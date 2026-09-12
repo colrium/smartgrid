@@ -1,11 +1,9 @@
-"use client";
-
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactElement } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslation } from "@/hooks";
-import { SectionHeader } from "@/components/sections/home/SectionHeader";
+import { SectionShell } from "@/components/sections/shared";
 import { FadeUp } from "@/components/animations/Fade";
-import { Blob, ParallaxDecor } from "@/components/sections/home/decor";
+import { Card } from "@/components/ui/Card";
 
 interface AerialSurveyingItem {
 	title: string;
@@ -32,12 +30,12 @@ const FALLBACK_ICONS = [
 	"alert-octagon-outline",
 ];
 
-export function AerialSurveyingSection() {
+export function AerialSurveyingSection(): ReactElement | null {
 	const { t } = useTranslation(["about"]);
 	const section = t("about:aerialSurveying", {
 		returnObjects: true,
 	}) as unknown as AerialSurveyingContent;
-	const items = Array.isArray(section.items) ? section.items : [];
+	const items = Array.isArray(section?.items) ? section.items : [];
 	const [active, setActive] = useState<AerialSurveyingItem | null>(null);
 
 	useEffect(() => {
@@ -48,56 +46,39 @@ export function AerialSurveyingSection() {
 		return () => window.removeEventListener("keydown", onKey);
 	}, []);
 
+	if (items.length === 0) return null;
+
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
-			<Blob className="w-[28rem] h-[28rem] bg-primary-200/40 -top-24 -right-24" opacity={0.5} />
-			<ParallaxDecor speed={-0.06} className="absolute bottom-16 -left-24 z-0">
-				<Blob className="w-72 h-72 bg-primary-100/80" opacity={0.6} />
-			</ParallaxDecor>
-
-			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-				<SectionHeader
-					tag={section.tag ?? undefined}
-					headline={section.headline}
-					description={section.description}
-					align="center"
-				/>
-
-				<div className="mt-14 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-					{items.map((item, index) => (
-						<FadeUp key={index} delay={(index % 3) * 0.08}>
-							<article className="group relative h-full flex flex-col p-8 rounded-c bg-surface hairline card-shadow transition-all duration-250 hover:card-shadow-lift hover:border-primary">
-								<span className="p-3 rounded-xl bg-primary-50 text-primary transition-colors duration-300 self-center">
-									<span
-										className={`mdi mdi-${
-											FALLBACK_ICONS[index % FALLBACK_ICONS.length]
-										} text-3xl group-hover:text-primary`}
-									/>
-								</span>
-
-								<h3 className="mt-6 text-lg sm:text-xl font-medium tracking-tight text-ink leading-snug text-center">
-									{item.title}
-								</h3>
-								<p className="mt-3 flex-1 text-sm text-on-surface/60 leading-relaxed text-center">
-									{item.description}
-								</p>
-
-								{item.popupContent && (
+		<SectionShell
+			tag={section.tag}
+			headline={section.headline}
+			description={section.description}
+			align="center"
+			tone="surface"
+		>
+			<div className="mt-14 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+				{items.map((item, index) => (
+					<FadeUp key={index} delay={(index % 3) * 0.08} className="h-full">
+						<Card
+							align="center"
+							header={item.title}
+							headerIcon={FALLBACK_ICONS[index % FALLBACK_ICONS.length]}
+							body={item.description}
+							footer={
+								item.popupContent ? (
 									<button
 										type="button"
 										onClick={() => setActive(item)}
-										className="mt-6 mx-auto inline-flex items-center gap-2 text-sm font-semibold text-primary cursor-pointer"
+										className="mt-2 mx-auto inline-flex items-center gap-2 text-sm font-semibold text-primary cursor-pointer"
 									>
-										<span className="uppercase tracking-[0.14em] text-xs">
-											Learn more
-										</span>
+										<span className="uppercase tracking-[0.14em] text-xs">Learn more</span>
 										<span className="mdi mdi-arrow-right ml-1 transition-transform duration-300 group-hover:translate-x-1" />
 									</button>
-								)}
-							</article>
-						</FadeUp>
-					))}
-				</div>
+								) : undefined
+							}
+						/>
+					</FadeUp>
+				))}
 			</div>
 
 			<AnimatePresence>
@@ -142,7 +123,7 @@ export function AerialSurveyingSection() {
 					</motion.div>
 				)}
 			</AnimatePresence>
-		</section>
+		</SectionShell>
 	);
 }
 
