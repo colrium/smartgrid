@@ -2,7 +2,6 @@
 
 import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
-import { Blob } from "@/components/sections/home/decor";
 import { SectionTag } from "@/components/SectionTag";
 import { ProductCard } from "./ProductCard";
 
@@ -41,8 +40,6 @@ export function ProductRelatedSection({ namespace, items: propItems }: ProductRe
 
 	return (
 		<section className="py-24 sm:py-28 relative overflow-hidden">
-			<Blob className="w-[28rem] h-[28rem] bg-primary-200/40 -bottom-24 -right-24" opacity={0.5} />
-
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
 					<div className="flex flex-col items-center text-center gap-4">

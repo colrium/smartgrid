@@ -30,7 +30,7 @@ export const RevealCard: React.FC<RevealCardProps> = ({
 
 	return (
 		<div
-			className={`group relative aspect-[2/3] w-full max-w-screen overflow-hidden rounded-c  font-sans transition-colors duration-300 ${
+			className={`group relative aspect-2/3 w-full max-w-screen overflow-hidden rounded-c  font-sans transition-colors duration-300 ${
 				isDark ? " text-surface" : " text-ink"
 			} ${className}`}
 		>

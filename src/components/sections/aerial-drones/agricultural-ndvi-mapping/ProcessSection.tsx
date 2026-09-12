@@ -1,61 +1,32 @@
-"use client";
-
 import { useTranslation } from "@/hooks";
-import { SectionHeader } from "@/components/sections/home";
-import { FadeUp } from "@/components/animations/Fade";
-import { Blob } from "@/components/sections/home/decor";
-
-interface ProcessItem {
-	title: string;
-	description: string;
-}
+import { Process } from "@/components/sections/shared";
+import type { ReactElement } from "react";
 
 interface ProcessContent {
 	tag?: string | null;
 	headline: string;
 	description?: string;
-	items: ProcessItem[];
+	items: { title: string; description: string }[];
 }
 
-export function ProcessSection() {
+export function ProcessSection(): ReactElement | null {
 	const { t } = useTranslation(["aerial-drones/agricultural-ndvi-mapping"]);
 	const section = t("aerial-drones/agricultural-ndvi-mapping:process", {
 		returnObjects: true,
 	}) as unknown as ProcessContent;
-	const items = Array.isArray(section.items) ? section.items : [];
+	const items = Array.isArray(section?.items) ? section.items : [];
+
+	if (items.length === 0) return null;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden">
-			<Blob className="w-[28rem] h-[28rem] bg-primary-200/40 -top-24 -right-24" opacity={0.5} />
-
-			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-				<SectionHeader
-					tag={section.tag}
-					headline={section.headline}
-					description={section.description}
-					align="center"
-				/>
-
-				<div className="mt-14 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-					{items.map((item, index) => (
-						<FadeUp key={index} delay={(index % 3) * 0.07}>
-							<article className="group relative h-full flex flex-col gap-4 rounded-c bg-surface hairline card-shadow p-7 transition-all duration-250 hover:card-shadow-lift hover:border-primary">
-								<span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-50 text-primary font-semibold card-shadow-lift">
-									{String(index + 1).padStart(2, "0")}
-								</span>
-
-								<h3 className="text-base sm:text-lg font-medium tracking-tight text-ink leading-snug">
-									{item.title}
-								</h3>
-								<p className="flex-1 text-sm text-on-surface/60 leading-relaxed">
-									{item.description}
-								</p>
-							</article>
-						</FadeUp>
-					))}
-				</div>
-			</div>
-		</section>
+		<Process
+			tag={section.tag}
+			headline={section.headline}
+			description={section.description}
+			items={items}
+			layout="grid"
+			columns={3}
+		/>
 	);
 }
 

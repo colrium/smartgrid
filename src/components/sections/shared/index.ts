@@ -15,4 +15,14 @@ export { Split } from "./Split";
 export type { SplitProps } from "./Split";
 export { Cta, ClosingCta } from "./Cta";
 export type { CtaProps, ClosingCtaProps } from "./Cta";
+export { Process } from "./Process";
+export type {
+	ProcessItem,
+	ProcessProps,
+	ProcessPhaseStyle,
+	ProcessPhaseStyles,
+	ProcessCta,
+} from "./Process";
+export { Stats } from "./Stats";
+export type { StatItem, StatsProps } from "./Stats";
 
