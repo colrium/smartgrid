@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"headline": "UCHUNGUZI WA UJENZI NA UHANDISI",
 		"title": "Pima Kwa Umaalimu, Jenga kwa Nguvu",
 		"image": "/media/surveying/building-site-surveys/AG8ng.jpeg",
@@ -16,11 +17,13 @@
 		]
 	},
 	"section1": {
+		"type": "intro",
 		"tag": "Ujenzi Bora",
 		"headline": "Uchunguzi wa Usahihi kwa Ujenzi Bora",
 		"description": "Katika Smartgrid Surveying, tunatoa huduma za kitaalam za uchunguzi wa kiwanja cha ujenzi zilizoundwa kuhakikisha usahihi, ufanisi, na uzingatiaji katika miradi ya ujenzi. Iwe unapanga maendeleo ya makazi, biashara, au viwanda, teknolojia yetu ya kisasa ya upimaji na wataalamu wenye uzoefu hutoa data unayohitaji kujenga kwa ujasiri."
 	},
 	"section2": {
+		"type": "unique",
 		"tag": "Jenga kwa Umaalimu",
 		"headline": "Ya Kuaminika. Sahihi. Haraka. Yenye Nguvu.",
 		"subtitle": "Smartgrid Surveying ni mshirika wako wa upimaji anayeaminika!",
@@ -31,6 +34,7 @@
 		}
 	},
 	"siteEngineeringSurveys": {
+		"type": "card-grid",
 		"tag": null,
 		"headline": "Uchunguzi wa Usahihi wa Uhandisi wa Kiwanja",
 		"description": "Chunguza jinsi SmartGrid Surveying inavyotumia teknolojia za kisasa za dronzi, LiDAR, na kijiografia kutoa uchunguzi wa kiwango cha uhandisi unaowezesha ujenzi na maendeleo ya miundombinu.",
@@ -62,6 +66,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": null,
 		"headline": "Shirikiana na SmartGrid kwa Uchunguzi wa Usahihi wa Kiwanja",
 		"description": "",
@@ -71,6 +76,7 @@
 		}
 	},
 	"process": {
+		"type": "process",
 		"tag": null,
 		"headline": "Mchakato wa Upimaji wa Ardhi",
 		"image": "",
@@ -102,6 +108,7 @@
 		]
 	},
 	"accuracyMatters": {
+		"type": "unique",
 		"tag": "Usahihi wa Upimaji Kenya",
 		"headline": "Kwa Nini Usahihi Ni Muhimu",
 		"description": "Katika maendeleo ya ardhi, kosa la 5–10 cm linaweza kusababisha migogoro ya mipaka, kupotoka kwa muundo, kurudia kazi ya ujenzi, na ucheleweshaji wa kisheria.",
@@ -140,6 +147,7 @@
 		]
 	},
 	"deliverables": {
+		"type": "deliverables",
 		"tag": "Bidhaa za Mradi",
 		"headline": "Bidhaa Unazopokea",
 		"description": "Kila shughuli inafungwa kwa kifurushi kamili cha data kilicho tayari kwa wahandisi — kinasafirishwa katika miundo wazi inayoingia moja kwa moja kwenye zana za CAD,GIS, na usimamizi wa ujenzi.",
@@ -209,6 +217,7 @@
 		]
 	},
 	"technology": {
+		"type": "card-grid",
 		"tag": "Mfumo wa Teknolojia",
 		"headline": "Teknolojia ya Upimaji Tunayotumia",
 		"description": "Zana jumuishi za GNSS, total station, droni, LiDAR, na GPR — zinazolingana na kila ardhi, kiwango cha usahihi, na bidhaa.",
@@ -245,6 +254,7 @@
 		]
 	},
 	"consultation": {
+		"type": "unique",
 		"tag": "Ushauri Unaosaidiwa na Teknolojia",
 		"headline": "Omba Ushauri wa Upimaji Unaosaidiwa na Teknolojia",
 		"description": "Tuambie kuhusu ardhi yako, kiwanja chako, au mradi wako — tutakulinganisha na mchanganyiko sahihi wa zana, mfumo wa kazi ulioidhinishwa, na bei iliyo wazi na isiyobadilika.",
@@ -275,6 +285,7 @@
 		]
 	},
 	"actionCtaEngineer": {
+		"type": "cta",
 		"tag": "Jenga kwa Uhakika",
 		"headline": "Kila muundo unastahili msingi wa ukweli uliothibitishwa.",
 		"description": "Ongea na mhandisi wa SmartGrid kuhusu kiwanja chako, na tutapendekeza teknolojia sahihi ya upimaji, mfumo wa kazi, na bidhaa zinazohakikisha mradi wako unakamilika kwa wakati na bajeti.",
@@ -291,6 +302,7 @@
 		}
 	},
 	"exploreMore": {
+		"type": "gallery-grid",
 		"tag": null,
 		"headline": "Chunguza zaidi...",
 		"description": "",

@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"headline": "BUILDING & ENGINEERING SURVEYS",
 		"title": "Survey Smarter, Build Stronger",
 		"image": "/media/surveying/building-site-surveys/AG8ng.jpeg",
@@ -16,11 +17,13 @@
 		]
 	},
 	"section1": {
+		"type": "intro",
 		"tag": "Smarter Construction",
 		"headline": "Precision Surveys for Smarter Construction",
 		"description": "At Smartgrid Surveying, we provide expert building site surveying services designed to ensure accuracy, efficiency, and compliance in construction projects. Whether you're planning a residential, commercial, or industrial development, our advanced surveying technology and experienced professionals deliver the data you need to build with confidence."
 	},
 	"section2": {
+		"type": "unique",
 		"tag": "Build Smarter",
 		"headline": "Reliable. Accurate. Fast. Powerful.",
 		"subtitle": "Smartgrid Surveying is your trusted surveying partner!",
@@ -31,6 +34,7 @@
 		}
 	},
 	"siteEngineeringSurveys": {
+		"type": "card-grid",
 		"tag": null,
 		"headline": "Precision Site Engineering Surveys",
 		"description": "Explore how SmartGrid Surveying leverages cutting-edge drone, LiDAR, and geospatial technologies to deliver engineering-grade surveys that empower construction and infrastructure development.",
@@ -62,6 +66,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": null,
 		"headline": "Partner with SmartGrid for Precision Site Surveys",
 		"description": "",
@@ -72,6 +77,7 @@
 	},
 
 	"process": {
+		"type": "process",
 		"tag": null,
 		"headline": "Land Surveying Process",
 		"image": "",
@@ -103,6 +109,7 @@
 		]
 	},
 	"accuracyMatters": {
+		"type": "unique",
 		"tag": "Survey Accuracy Kenya",
 		"headline": "Why Accuracy Matters",
 		"description": "In land development, a 5–10 cm error can lead to boundary disputes, design misalignment, construction rework,and legal delays.",
@@ -141,6 +148,7 @@
 		]
 	},
 	"deliverables": {
+		"type": "deliverables",
 		"tag": "Project Outputs",
 		"headline": "Deliverables You Receive",
 		"description": "Every engagement closes with a complete, engineer-ready data package — exported in open formats that feed straight into CAD, GIS,and construction management tools.",
@@ -210,6 +218,7 @@
 		]
 	},
 	"technology": {
+		"type": "card-grid",
 		"tag": "Technology Stack",
 		"headline": "Surveying Technology We Use",
 		"description": "An integrated GNSS, total station, drone, LiDAR,and GPR toolkit — matched to each terrain, accuracy class,and deliverable.",
@@ -246,6 +255,7 @@
 		]
 	},
 	"consultation": {
+		"type": "unique",
 		"tag": "Technology-Assisted Consultation",
 		"headline": "Request a Technology-Assisted Survey Consultation",
 		"description": "Tell us about your land, site, or project — we'll match you with the right instrument mix, a licensed workflow,and a fixed, transparent quote.",
@@ -276,6 +286,7 @@
 		]
 	},
 	"actionCtaEngineer": {
+		"type": "cta",
 		"tag": "Build on Certainty",
 		"headline": "Every structure deserves a foundation of verified ground truth.",
 		"description": "Talk to a SmartGrid engineer about your site,and we'll recommend the right survey technology, workflow,and deliverables to keep your project on schedule,and on budget.",
@@ -292,6 +303,7 @@
 		}
 	},
 	"exploreMore": {
+		"type": "gallery-grid",
 		"tag": null,
 		"headline": "Explore more...",
 		"description": "",

@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"headline": "KATALOGI YA VIFAA",
 		"title": "Ya Kuaminika. Imesawazishwa. Sahihi.",
 		"image": "/media/equipment-sale/equipment-catalogue/01.jpg",
@@ -10,16 +11,19 @@
 		}
 	},
 	"breadcrumb": {
+		"type": "unique",
 		"home": "Nyumbani",
 		"section": "Uuzaji wa Vifaa",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
 	"catalogueOverview": {
+		"type": "intro",
 		"tag": "Aina zetu za Vifaa",
 		"headline": "Katalogi ya Vifaa",
 		"description": "SmartGrid Surveying inatoa anuwai kamili ya vifaa vya upimaji na uhandisi vya ubora wa juu. Vyombo vyote vinaaminika, vimesawazishwa, na ni sahihi kusaidia miradi yako kwa usahihi."
 	},
 	"equipmentCategories": {
+		"type": "card-grid",
 		"tag": "Makundi ya Bidhaa",
 		"headline": "Tunachotoa",
 		"description": "Vinjari uteuzi wetu wa vifaa vya upimaji na vifaa vya ziada vya kitaalamu.",
@@ -27,6 +31,7 @@
 		"ctaLabel": "Tazama Maelezo"
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Pata Nukuu",
 		"headline": "Unahitaji Msaada Kuchagua Vifaa?",
 		"description": "Zungumza nasi moja kwa moja kwa ushauri wa kitaalamu, bei, na upatikanaji.",

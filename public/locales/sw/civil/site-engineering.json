@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"headline": "Chunguza kwa Busara, Jenga kwa Nguvu",
 		"title": "UCHUNGUZI WA UHANDISI WA TOVUTI",
 		"image": "/media/civil/site-engineering/01.jpg",
@@ -10,12 +11,14 @@
 		}
 	},
 	"overview": {
+		"type": "split",
 		"tag": "Ujenzi wa Usahihi",
 		"headline": "Kuaminika. Kupanuka. Haraka. Nguvu.",
 		"image": "/media/civil/site-engineering/01.jpg",
 		"description": "Kwa kukamata data ya topografia ya mwonekano wa juu, mifano ya ardhi ya 3D, na picha sahihi za mipaka, tunarahisisha upangaji wa tovuti na kupunguza ukarabati wa gharama kubwa. Iwe unaanza ujenzi au unadumisha uboreshaji wa miundombinu, SmartGrid Surveying hukupa uwazi wa kijiografia unaohitaji kuhandisi kwa imani na usahihi."
 	},
 	"WhatWeDo": {
+		"type": "card-grid",
 		"tag": "Ujenzi wa Usahihi",
 		"headline": "Uchunguzi Sahihi wa Uhandisi wa Tovuti",
 		"description": "Jenga kwa busara zaidi tangu mwanzo—uchunguzi wa tovuti unaoendeshwa na ndege zisizo na rubani wa SmartGrid Surveying hutoa data ya ardhi ya wakati halisi, uundaji sahihi wa mifano ya tovuti, na ufanyaji maamuzi wa haraka kwa miradi ya kisasa ya ujenzi.",
@@ -51,6 +54,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Tuushirikiane",
 		"headline": "Unahitaji Uchunguzi wa Usahihi wa Juu kwa Ujenzi Wako Ujao?",
 		"description": "",
@@ -61,6 +65,7 @@
 		}
 	},
 	"exploreMore": {
+		"type": "card-grid",
 		"tag": null,
 		"headline": "Chunguza zaidi...",
 		"description": "",
@@ -93,6 +98,7 @@
 		]
 	},
 	"deliverables": {
+		"type": "deliverables",
 		"tag": "Matokeo ya Uhandisi",
 		"headline": "Matokeo ya Uhandisi wa Tovuti",
 		"description": "Bidhaa za data sahihi zinazoweka kazi za tovuti kwenye udhibiti:",

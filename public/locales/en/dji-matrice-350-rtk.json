@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"tag": "Survey Drone",
 		"headline": "Heavy-Lift LiDAR & High-Precision Survey Platform",
 		"title": "DJI Matrice 350 RTK (M350 RTK)",
@@ -11,16 +12,19 @@
 		}
 	},
 	"breadcrumb": {
+		"type": "unique",
 		"home": "Home",
 		"section": "Equipment Sale",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
 	"catalogue": {
+		"type": "unique",
 		"icon": "quadcopter",
 		"description": "A flagship enterprise UAV designed for high-accuracy geospatial data acquisition, particularly for LiDAR mapping, corridor surveys, and large-scale engineering projects.",
 		"badge": "New"
 	},
 	"productImages": {
+		"type": "unique",
 		"images": [
 			"/media/equipment-sale/dji-matrice-350-rtk/images/02-01.png",
 			"/media/equipment-sale/dji-matrice-350-rtk/images/02-02.png",
@@ -34,6 +38,7 @@
 		]
 	},
 	"pricing": {
+		"type": "pricing",
 		"new": {
 			"label": "Brand New",
 			"currency": "KES",
@@ -70,6 +75,7 @@
 		}
 	],
 	"productOverview": {
+		"type": "unique",
 		"tag": "Product Overview",
 		"headline": "Enterprise-Grade Precision for Demanding Surveys",
 		"images": [
@@ -90,6 +96,7 @@
 		"description": "The DJI Matrice 350 RTK pairs a built-in RTK/PPK GNSS module with interchangeable LiDAR and photogrammetry payloads, delivering survey-grade accuracy across dense vegetation, powerline corridors, and large-scale engineering sites."
 	},
 	"keyFeatures": {
+		"type": "card-grid",
 		"tag": "Highlights",
 		"headline": "Key Features",
 		"description": "Everything that makes the M350 RTK the benchmark heavy-lift survey platform.",
@@ -117,6 +124,7 @@
 		]
 	},
 	"model3d": {
+		"type": "unique",
 		"tag": "Interactive 3D",
 		"headline": "Explore the M350 RTK in 3D",
 		"description": "Drag to rotate the model and scroll or pinch to zoom.",
@@ -126,6 +134,7 @@
 		]
 	},
 	"positioningAndAccuracy": {
+		"type": "unique",
 		"tag": "Positioning",
 		"headline": "Positioning & Accuracy",
 		"description": "Survey-grade GNSS positioning built into the airframe.",
@@ -139,6 +148,7 @@
 		]
 	},
 	"flightPerformance": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Flight Performance",
 		"description": "Built for extended, stable survey missions.",
@@ -150,6 +160,7 @@
 		]
 	},
 	"payloadOptions": {
+		"type": "unique",
 		"tag": "Payloads",
 		"headline": "Payload Options (Survey-Focused)",
 		"description": "Interchangeable payloads for LiDAR mapping and photogrammetry.",
@@ -165,11 +176,13 @@
 		]
 	},
 	"specs": {
+		"type": "unique",
 		"tag": "Tech Data",
 		"headline": "Technical Specifications",
 		"description": "Complete technical details for the DJI Matrice 350 RTK."
 	},
 	"surveyApplications": {
+		"type": "unique",
 		"tag": "Applications",
 		"headline": "Survey Applications",
 		"description": "Where the M350 RTK excels in the field.",
@@ -183,6 +196,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Get a Quote",
 		"headline": "Inquire About This Drone",
 		"description": "Tell us about your project and get a tailored quote for the DJI Matrice 350 RTK.",
@@ -198,6 +212,7 @@
 		}
 	},
 	"relatedProducts": {
+		"type": "unique",
 		"tag": "Explore",
 		"headline": "Other Drones You May Like",
 		"description": "Discover more survey drones from the SmartGrid catalogue."

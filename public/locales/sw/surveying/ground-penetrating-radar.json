@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"headline": "GROUND PENETRATING RADAR",
 		"title": "Uchunguzi wa Ground Penetrating Radar (GPR) & Uhandisi wa Huduma za Chini ya Ardhi (SUE) nchini Kenya",
 		"image": "/media/surveying/ground-penetrating-radar/hero.png",
@@ -86,6 +87,7 @@
 		}
 	},
 	"technicalCta": {
+		"type": "cta",
 		"tag": "Pendekezo la Kiufundi",
 		"headline": "Omba Pendekezo la Kiufundi (Majibu ya Saa 24)",
 		"description": "Tutumie maelezo ya tovuti yako — ufikiaji, eneo, na mahangaiko ya huduma — nasi tutapokea pendekezo la kiufundi la GPR / SUE lenye mbinu, matokeo na bei ndani ya saa 24.",
@@ -170,6 +172,7 @@
 		}
 	],
 	"overview": {
+		"type": "unique",
 		"tag": "Muhtasari",
 		"headline": "Uchunguzi wa Ground Penetrating Radar Kenya",
 		"paragraphs": [
@@ -179,6 +182,7 @@
 		]
 	},
 	"methodology": {
+		"type": "unique",
 		"tag": "Mtiririko Wetu wa Kazi wa GPR",
 		"headline": "Mtiririko Wetu wa Kazi wa Uchunguzi wa GPR (Mbinu ya Kiwango cha Uhandisi)",
 		"description": "Tunafuata mbinu iliyopangwa ya Uhandisi wa Huduma za Chini ya Ardhi (SUE):",
@@ -211,6 +215,7 @@
 		]
 	},
 	"applications": {
+		"type": "card-grid",
 		"tag": "Matumizi",
 		"headline": "Sekta za uhandesi na matumizi tunayohudumia",
 		"items": [
@@ -266,6 +271,7 @@
 		]
 	},
 	"deliverables": {
+		"type": "deliverables",
 		"tag": "Matokeo Unayopokea",
 		"headline": "Matokeo Unayopokea",
 		"description": "Hatuchambui tu — tunatoa matokeo tayari kwa uhandisi:",
@@ -328,6 +334,7 @@
 		]
 	},
 	"detectCaps": {
+		"type": "card-grid",
 		"tag": "Uwezo wa GPR",
 		"headline": "Tunachogundua (Uwezo wa GPR)",
 		"description": "Malengo ya chini ya ardhi yanayotambuliwa kwa mwonekano wa juu wa LMX200 + muunganisho wa RTK-GNSS:",
@@ -365,6 +372,7 @@
 		]
 	},
 	"sue": {
+		"type": "unique",
 		"tag": "Uzingatiaji",
 		"headline": "Uzingatiaji wa Uhandisi wa Huduma za Chini ya Ardhi (SUE)",
 		"description": "Tunatumia viwango vya kimataifa vya SUE kwa kila mradi wa ramani za huduma — kuwapa wahandisi imani ya kuchimba kwa usalama:",
@@ -397,6 +405,7 @@
 		"note": "Inahakikisha imani ya darasa la uhandisi kabla ya uchimbaji"
 	},
 	"limitations": {
+		"type": "unique",
 		"tag": "Uwazi",
 		"headline": "Vikwazo vya Kiufundi (Uwazi Unaoweza Kuaminiwa)",
 		"description": "Utendaji wa Ground Penetrating Radar unategemea hali ya tovuti. Tunakwambia hasa unachopaswa kutarajia:",
@@ -426,6 +435,7 @@
 		"noteIcon": "check-decagram"
 	},
 	"beforeAfter": {
+		"type": "unique",
 		"tag": "Kabla vs Baada",
 		"headline": "Kabla vs Baada ya Uchunguzi wa GPR",
 		"flipHint": "Gusa kadi ili kuiburudisha",
@@ -451,6 +461,7 @@
 		}
 	},
 	"summary": {
+		"type": "unique",
 		"tag": "Uchunguzi wa GPR na Ramani za Huduma nchini Kenya",
 		"headline": "Uchunguzi wa GPR na Ramani za Huduma nchini Kenya | Uhandisi wa Huduma za Chini ya Ardhi (SUE)",
 		"description": "Huduma za kitaalamu za Ground Penetrating Radar (GPR) nchini Kenya kwa ramani za huduma, usalama wa ujenzi, na uhandisi wa chini ya ardhi. Mifumo ya RTK-GNSS + LMX200.",
@@ -461,6 +472,7 @@
 		]
 	},
 	"finalCta": {
+		"type": "cta-closing",
 		"tag": "Anza Uchunguzi Wako",
 		"headline": "Uko Tayari Kupunguza Hatari ya Mradi Wako?",
 		"description": "Pata Usaidizi wa Kitaalamu wa Ramani za Huduma Leo",
@@ -487,6 +499,7 @@
 		]
 	},
 	"technology": {
+		"type": "unique",
 		"tag": "Mfumo wa Teknolojia",
 		"headline": "Vifaa na programu zinazoongoza tasnia",
 		"items": [
@@ -521,6 +534,7 @@
 		]
 	},
 	"faqs": {
+		"type": "faq",
 		"tag": "Maswali",
 		"headline": "Maswali Yanayoulizwa Mara Kwa Mara",
 		"items": [
@@ -557,6 +571,7 @@
 		}
 	},
 	"featuredProjects": {
+		"type": "unique",
 		"tag": "Miradi Iliyokua",
 		"headline": "Miradi Iliyofanyika Kenya",
 		"description": "Miradi halisi ya GPR iliyotokea Kenya inayotoa maarifa ya chini ya ardhi.",

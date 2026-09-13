@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"tag": "Surveying Equipment",
 		"headline": "Precision Total Station for Demanding Surveys",
 		"title": "TOTAL STATION DTM 152M",
@@ -11,6 +12,7 @@
 		}
 	},
 	"productImages": {
+		"type": "unique",
 		"images": [
 			"/media/equipment-sale/total-station-dtm-152m/02-01.png",
 			"/media/equipment-sale/total-station-dtm-152m/02-02.png",
@@ -20,17 +22,20 @@
 		]
 	},
 	"breadcrumb": {
+		"type": "unique",
 		"home": "Home",
 		"section": "Equipment Sale",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
 	"catalogue": {
+		"type": "unique",
 		"icon": "ruler-square",
 		"title": "DTM 152M Total Station",
 		"description": "Reliable and efficient total station for engineering and cadastral surveys with stable measurement performance.",
 		"badge": "Hot Deal"
 	},
 	"pricing": {
+		"type": "pricing",
 		"new": {
 			"label": "Brand New",
 			"currency": "KES",
@@ -50,11 +55,13 @@
 		}
 	],
 	"specs": {
+		"type": "unique",
 		"tag": "Tech Data",
 		"headline": "Technical Specifications",
 		"description": "Complete technical details for the DTM 152M Total Station."
 	},
 	"measurementCapability": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Measurement Capability",
 		"description": "High-precision angles and long-range distance measurement.",
@@ -66,6 +73,7 @@
 		]
 	},
 	"accuracyAndPerformance": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Accuracy & Performance",
 		"description": "Millimeter-grade accuracy you can trust on every shot.",
@@ -77,6 +85,7 @@
 		]
 	},
 	"dataAndInterface": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Data & Interface",
 		"description": "Onboard storage and simple connectivity for smooth workflows.",
@@ -88,6 +97,7 @@
 		]
 	},
 	"buildAndDurability": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Build & Durability",
 		"description": "Compact, rugged, and ready for long days in the field.",
@@ -99,6 +109,7 @@
 		]
 	},
 	"applications": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Applications",
 		"description": "Trusted across topographic, layout, and engineering work.",
@@ -110,6 +121,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Get a Quote",
 		"headline": "Get This Equipment",
 		"description": "Contact us for pricing, availability, and professional support.",
@@ -125,6 +137,7 @@
 		}
 	},
 	"includedInPackage": {
+		"type": "card-grid",
 		"tag": "Package Contents",
 		"headline": "Included in Package",
 		"description": "Everything you need to get surveying, right out of the box.",
@@ -144,6 +157,7 @@
 		]
 	},
 	"relatedProducts": {
+		"type": "unique",
 		"tag": "Explore",
 		"headline": "Other Products You May Like",
 		"description": "Discover more surveying instruments from the SmartGrid catalogue."

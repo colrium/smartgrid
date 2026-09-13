@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"headline": "EQUIPMENT CATALOGUE",
 		"title": "Reliable. Calibrated. Accurate.",
 		"image": "/media/equipment-sale/equipment-catalogue/01.jpg",
@@ -10,16 +11,19 @@
 		}
 	},
 	"breadcrumb": {
+		"type": "unique",
 		"home": "Home",
 		"section": "Equipment Sale",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
 	"catalogueOverview": {
+		"type": "intro",
 		"tag": "Our Equipment Range",
 		"headline": "Equipment Catalogue",
 		"description": "SmartGrid Surveying offers a comprehensive range of high-quality surveying and engineering equipment. All instruments are reliable, calibrated, and accurate to support your projects with precision."
 	},
 	"equipmentCategories": {
+		"type": "card-grid",
 		"tag": "Product Categories",
 		"headline": "What We Offer",
 		"description": "Browse our selection of professional surveying equipment and accessories.",
@@ -27,6 +31,7 @@
 		"ctaLabel": "View Details"
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Get a Quote",
 		"headline": "Need Help Choosing Equipment?",
 		"description": "Talk to us directly for expert advice, pricing, and availability.",

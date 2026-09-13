@@ -94,6 +94,7 @@
 		"image": "/media/surveying/aerial-surveys/drone-piloting.jpeg"
 	},
 	"aerialSurveying": {
+		"type": "unique",
 		"tag": "",
 		"headline": "Aerial Surveying",
 		"description": "Drones have transformed the surveying industry—and we’re leading the way. Smartgrid Surveying leverages aerial drones for mapping, 3D modeling, volumetrics, environmental assessments, and monitoring large or inaccessible areas. Beyond technical mapping, we offer professional drone photography for real estate, construction marketing, tourism, and events. Using drones equipped with RTK GPS and high-resolution sensors, we capture precise geospatial data that empowers engineers, developers, governments, and NGOs to make smarter decisions, faster. \n\n We deliver fast, accurate, and detailed surveys for:",

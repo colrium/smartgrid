@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "Kuaminika. Kupanuka. Haraka. Nguvu.",
 		"title": "Uchunguzi wa Kiasi Unafanywa Kwa Busara Zaidi.",
 		"image": "/media/civil/volumetric-surveys/01.jpg",
@@ -16,17 +17,20 @@
 		}
 	},
 	"maxProductivityMinGuesswork": {
+		"type": "intro",
 		"tag": "Ongoza kwa Data",
 		"headline": "Kuongeza Tija. Kupunguza Bahati Nasibu.",
 		"description": "Tumia uchunguzi wa kiasi wa kisasa wa ndege za SmartGrid kufanya maamuzi ya haraka na ya busara zaidi tovutini. Acha data iongoze njia ya faida."
 	},
 	"precisionVolumetricAnalysis": {
+		"type": "split-media",
 		"tag": "Akili Sahihi ya Tovuti",
 		"headline": "Uchambuzi Sahihi wa Kiasi kwa Teknolojia ya Ndege Zisizo na Rubani",
 		"image": "/media/civil/volumetric-surveys/02.jpg",
 		"description": "SmartGrid hutumia UAV za hali ya juu na photogrammetry kutoa vipimo vya kiasi vya haraka, sahihi.\n\n Iwe unasimamia mrundikano, machimbo, au kazi za ardhi, suluhisho zetu za ndege hupunguza muda na gharama huku zikiboresha usalama na uaminifu wa data."
 	},
 	"services": {
+		"type": "card-grid",
 		"tag": "HUDUMA ZA KIASI",
 		"headline": "Iwe wewe ni wakala wa serikali, shirika lisilo la kiserikali, au msanidi binafsi, Smartgrid Surveying ni mshirika wako wa kuaminika!\n\n Ndege zetu zisizo na rubani hutoa data inayoweza kutekelezwa mahali inapohitajika zaidi.",
 		"items": [
@@ -58,11 +62,13 @@
 		]
 	},
 	"clarityAndControl": {
+		"type": "intro",
 		"tag": "Uwazi na Udhibiti",
 		"headline": "Kuongeza Usahihi. Kuendesha Ufanisi.",
 		"description": "Sema kwaheri kwa uchunguzi wa kizamani wa mikono. Hesabu zetu za kiasi za ndege zisizo na rubani huleta uwazi na udhibiti katika kila hatua muhimu ya mradi."
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Tuushirikiane",
 		"headline": "Unahitaji Data Sahihi ya Kiasi kwa Tovuti Yako?",
 		"description": "Wasiliana na SmartGrid Surveying kwa uchunguzi maalum wa kiasi wa ndege unaookoa muda, kupunguza hatari, na kutoa matokeo.",
@@ -73,6 +79,7 @@
 		}
 	},
 	"deliverables": {
+		"type": "deliverables",
 		"tag": "Matokeo ya Mradi",
 		"headline": "Matokeo ya Uchunguzi wa Vina",
 		"description": "Vina na wingi tayari kwa ukaguzi kwa kazi za ardhi na makusanyo:",

@@ -94,6 +94,7 @@
 		"image": "/media/surveying/aerial-surveys/drone-piloting.jpeg"
 	},
 	"aerialSurveying": {
+		"type": "unique",
 		"tag": "",
 		"headline": "Uchunguzi wa Angani",
 		"description": "Drone zimebadilisha sekta ya uchunguzi — na sisi tuko mbele. Smartgrid Surveying inatumia drone wa angani kwa uchoraji ramani, uundaji wa mifano ya 3D, vipimo vya kiasi, tathmini za mazingira, na ufuatiliaji wa maeneo makubwa au yasiyofikika. Mbali na uchoraji ramani wa kiufundi, tunatoa huduma za kitaalamu za upigaji picha wa angani kwa ajili ya mali isiyohamishika, uuzaji wa ujenzi, utalii, na matukio. Kwa kutumia ndege zisizo na rubani zenye RTK GPS na sensorer za mwonekano wa juu, tunakamata data ya kijiografia sahihi inayowawezesha wahandisi, wasanidi, serikali, na NGO kufanya maamuzi bora, haraka. \n\n Tunatoa uchunguzi wa haraka, sahihi, na wa kina kwa:",

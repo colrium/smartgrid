@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"tag": "Survey Drone",
 		"headline": "Multispectral & Agricultural Survey Drone",
 		"title": "DJI Mavic 3 Multispectral (M3M)",
@@ -11,6 +12,7 @@
 		}
 	},
 	"productImages": {
+		"type": "unique",
 		"images": [
 			"/media/equipment-sale/dji-mavic-3-multispectral/images/02.png",
 			"/media/equipment-sale/dji-mavic-3-multispectral/images/03.png",
@@ -19,17 +21,20 @@
 		]
 	},
 	"breadcrumb": {
+		"type": "unique",
 		"home": "Home",
 		"section": "Equipment Sale",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
 	"catalogue": {
+		"type": "unique",
 		"icon": "leaf",
 		"title": "DJI Mavic 3 Multispectral",
 		"description": "RGB + four-band multispectral drone for NDVI mapping, crop health monitoring, and GIS-ready environmental analysis in a single flight.",
 		"badge": "New"
 	},
 	"pricing": {
+		"type": "pricing",
 		"new": {
 			"label": "Brand New",
 			"currency": "KES",
@@ -66,6 +71,7 @@
 		}
 	],
 	"productOverview": {
+		"type": "unique",
 		"tag": "Product Overview",
 		"headline": "Precision Agriculture Meets GIS Analysis",
 		"images": [
@@ -85,6 +91,7 @@
 		"description": "The DJI Mavic 3 Multispectral combines an RGB camera with a four-band multispectral sensor, enabling NDVI mapping, crop health monitoring, and environmental impact analysis in a single flight."
 	},
 	"keyFeatures": {
+		"type": "card-grid",
 		"tag": "Highlights",
 		"headline": "Key Features",
 		"description": "Sensor capabilities built for agricultural and environmental survey work.",
@@ -112,6 +119,7 @@
 		]
 	},
 	"sensorSpecifications": {
+		"type": "unique",
 		"tag": "Sensors",
 		"headline": "Sensor Specifications",
 		"description": "Dual RGB and multispectral imaging in one airframe.",
@@ -121,6 +129,7 @@
 		]
 	},
 	"mappingCapabilities": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Mapping Capabilities",
 		"description": "Purpose-built for vegetation and land analysis.",
@@ -132,11 +141,13 @@
 		]
 	},
 	"specs": {
+		"type": "unique",
 		"tag": "Tech Data",
 		"headline": "Technical Specifications",
 		"description": "Complete technical details for the DJI Mavic 3 Multispectral."
 	},
 	"surveyApplications": {
+		"type": "unique",
 		"tag": "Applications",
 		"headline": "Survey Applications & GIS Integration",
 		"description": "Where the M3M excels in agriculture and environmental work.",
@@ -150,6 +161,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Get a Quote",
 		"headline": "Inquire About This Drone",
 		"description": "Tell us about your project and get a tailored quote for the DJI Mavic 3 Multispectral.",
@@ -165,6 +177,7 @@
 		}
 	},
 	"relatedProducts": {
+		"type": "unique",
 		"tag": "Explore",
 		"headline": "Other Drones You May Like",
 		"description": "Discover more survey drones from the SmartGrid catalogue."

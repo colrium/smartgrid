@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"tag": "Surveying Equipment",
 		"headline": "Reliable Levelling Instruments",
 		"title": "Bosch GOL 32D Automatic Level",
@@ -11,27 +12,31 @@
 		}
 	},
 	"productImages": {
+		"type": "unique",
 		"images": [
 			"/media/equipment-sale/automatic-level-bosch/09.png",
 			"/media/equipment-sale/automatic-level-bosch/04.jpg",
 			"/media/equipment-sale/automatic-level-bosch/02.jpg",
 			"/media/equipment-sale/automatic-level-bosch/10.png",
-            "/media/equipment-sale/automatic-level-bosch/06.jpeg",
-            "/media/equipment-sale/automatic-level-bosch/07.jpeg"
+			"/media/equipment-sale/automatic-level-bosch/06.jpeg",
+			"/media/equipment-sale/automatic-level-bosch/07.jpeg"
 		]
 	},
 	"breadcrumb": {
+		"type": "unique",
 		"home": "Home",
 		"section": "Equipment Sale",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
 	"catalogue": {
+		"type": "unique",
 		"icon": "spirit-level",
 		"title": "Bosch GOL 32D Level",
 		"description": "32x automatic level for precise construction leveling, grading, and site works with excellent optical clarity.",
 		"badge": "New"
 	},
 	"pricing": {
+		"type": "pricing",
 		"used": {
 			"label": "Slightly Used",
 			"currency": "KES",
@@ -51,11 +56,13 @@
 		}
 	],
 	"specs": {
+		"type": "unique",
 		"tag": "Tech Data",
 		"headline": "Technical Specifications",
 		"description": "Complete technical details for the Bosch GOL 32D Automatic Level."
 	},
 	"opticalPerformance": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Optical Performance",
 		"description": "Crisp, bright optics built for precise sighting.",
@@ -67,6 +74,7 @@
 		]
 	},
 	"accuracyAndLeveling": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Accuracy & Leveling",
 		"description": "Fast, accurate leveling with a dependable automatic compensator.",
@@ -78,6 +86,7 @@
 		]
 	},
 	"buildAndDurability": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Build & Durability",
 		"description": "Tough, weather-ready construction for demanding sites.",
@@ -89,6 +98,7 @@
 		]
 	},
 	"operationAndFeatures": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Operation & Features",
 		"description": "Simple controls for quick setup and smooth operation.",
@@ -100,6 +110,7 @@
 		]
 	},
 	"applications": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Applications",
 		"description": "Proven use cases across construction and surveying work.",
@@ -111,6 +122,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Get a Quote",
 		"headline": "Get This Equipment",
 		"description": "Contact us for pricing, availability, and expert guidance.",
@@ -126,6 +138,7 @@
 		}
 	},
 	"relatedProducts": {
+		"type": "unique",
 		"tag": "Explore",
 		"headline": "Other Products You May Like",
 		"description": "Discover more surveying instruments from the SmartGrid catalogue."

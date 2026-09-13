@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "Reliable. Scalable. Fast. Powerful.",
 		"title": "Building Information Modelling (BIM)",
 		"image": "/media/civil/bim/01.jpg",
@@ -10,8 +11,8 @@
 			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Building Information Modelling (BIM)&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Building Information Modelling (BIM). Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
-
 	"bimServices": {
+		"type": "card-grid",
 		"tag": "Our Capabilities",
 		"headline": "Building Information Modeling (BIM) in Engineering Surveying",
 		"description": "Discover how SmartGrid Surveying integrates drone and geospatial data with BIM workflows to power modern infrastructure development with precision and efficiency.",
@@ -43,6 +44,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Let’s Collaborate",
 		"headline": "Ready to Elevate Your Infrastructure with BIM?",
 		"description": "",
@@ -53,6 +55,7 @@
 		}
 	},
 	"deliverables": {
+		"type": "deliverables",
 		"tag": "BIM Outputs",
 		"headline": "BIM & Digital Twin Deliverables",
 		"description": "Survey-grade data modelled for BIM workflows and digital twins:",

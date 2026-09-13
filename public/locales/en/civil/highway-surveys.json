@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "HIGHWAY SURVEYS",
 		"title": "Highway Surveys Solutions",
 		"image": "/media/civil/highway-surveys/01.jpg",
@@ -10,11 +11,13 @@
 		}
 	},
 	"overview": {
+		"type": "intro",
 		"tag": "Critical Infrastructure",
 		"headline": "Overview",
 		"description": "Leveraging a mix of aerial imaging, UAV photogrammetry, LiDAR, GNSS, and conventional surveying, engineers can make data-driven decisions that ensure safety, efficiency, and sustainability throughout the lifecycle of a highway project."
 	},
 	"services": {
+		"type": "card-grid",
 		"tag": "What we offer",
 		"headline": "Highway Surveying Services",
 		"description": "",
@@ -43,13 +46,14 @@
 				"title": "Construction Monitoring",
 				"description": "Integrated UAV flyovers and terrestrial control check progress, ensure compliance, and detect deviations in real time."
 			},
-            {
+			{
 				"title": "As-Built & Digital Twins",
 				"description": "Post-construction 3D mapping using UAV and scanning tech feeds into BIM and digital twin environments for lifecycle asset management."
 			}
 		]
 	},
-    "benefitsOfHighwaySurveys": {
+	"benefitsOfHighwaySurveys": {
+		"type": "card-grid",
 		"tag": "Value Drivers",
 		"headline": "Benefits of Integrated Highway Surveys",
 		"description": "",
@@ -87,6 +91,7 @@
 		]
 	},
 	"highwaySurveyDeliverables": {
+		"type": "deliverables",
 		"tag": "Project Outputs",
 		"headline": "Highway Surveys Deliverables",
 		"description": "We deliver comprehensive data packages tailored for highway engineering and construction workflows.",

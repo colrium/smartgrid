@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"tag": "Survey Drone",
 		"headline": "Photogrammetry Drone",
 		"title": "DJI Phantom 4 RTK",
@@ -11,11 +12,13 @@
 		}
 	},
 	"breadcrumb": {
+		"type": "unique",
 		"home": "Home",
 		"section": "Equipment Sale",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
 	"pricing": {
+		"type": "pricing",
 		"new": {
 			"label": "Brand New",
 			"currency": "KES",
@@ -30,8 +33,9 @@
 		}
 	],
 	"productImages": {
+		"type": "unique",
 		"images": [
-            "/media/equipment-sale/dji-phantom-4-rtk/images/02-01.png",
+			"/media/equipment-sale/dji-phantom-4-rtk/images/02-01.png",
 			"/media/equipment-sale/dji-phantom-4-rtk/images/02-01.png",
 			"/media/equipment-sale/dji-phantom-4-rtk/images/02-02.png",
 			"/media/equipment-sale/dji-phantom-4-rtk/images/02-03.png",
@@ -61,6 +65,7 @@
 		}
 	],
 	"productOverview": {
+		"type": "unique",
 		"tag": "Product Overview",
 		"headline": "The Benchmark Survey Drone",
 		"images": [
@@ -72,6 +77,7 @@
 		"description": "The DJI Phantom 4 RTK remains a proven, reliable choice for cadastral and engineering mapping, pairing a mechanical shutter camera with seamless RTK integration for high mapping accuracy."
 	},
 	"keyFeatures": {
+		"type": "card-grid",
 		"tag": "Highlights",
 		"headline": "Key Features",
 		"description": "Why the Phantom 4 RTK remains an industry benchmark.",
@@ -99,6 +105,7 @@
 		]
 	},
 	"model3d": {
+		"type": "unique",
 		"tag": "Interactive 3D",
 		"headline": "Explore the Phantom 4 RTK in 3D",
 		"description": "Drag to rotate the model and scroll or pinch to zoom.",
@@ -107,6 +114,7 @@
 		]
 	},
 	"cameraSystem": {
+		"type": "unique",
 		"tag": "Camera",
 		"headline": "Camera",
 		"description": "A dedicated mapping camera built for accuracy.",
@@ -117,6 +125,7 @@
 		]
 	},
 	"positioningAndAccuracy": {
+		"type": "unique",
 		"tag": "Positioning",
 		"headline": "Accuracy",
 		"description": "Survey-grade RTK positioning built in.",
@@ -126,11 +135,13 @@
 		]
 	},
 	"specs": {
+		"type": "unique",
 		"tag": "Tech Data",
 		"headline": "Technical Specifications",
 		"description": "Complete technical details for the DJI Phantom 4 RTK."
 	},
 	"detailedSpecifications": {
+		"type": "unique",
 		"tag": "Full Datasheet",
 		"headline": "Detailed Technical Specifications",
 		"description": "Complete manufacturer specifications for the DJI Phantom 4 RTK aircraft, camera, battery, and remote controller.",
@@ -388,6 +399,7 @@
 		]
 	},
 	"strengths": {
+		"type": "unique",
 		"tag": "Strengths",
 		"headline": "Strengths",
 		"description": "What has made the Phantom 4 RTK an enduring choice for surveyors.",
@@ -398,6 +410,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Get a Quote",
 		"headline": "Inquire About This Drone",
 		"description": "Tell us about your project and get a tailored quote for the DJI Phantom 4 RTK.",
@@ -413,6 +426,7 @@
 		}
 	},
 	"relatedProducts": {
+		"type": "unique",
 		"tag": "Explore",
 		"headline": "Other Drones You May Like",
 		"description": "Discover more survey drones from the SmartGrid catalogue."

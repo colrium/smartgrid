@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"tag": "Prosumer Drone",
 		"headline": "Advanced Prosumer Mapping Platform",
 		"title": "DJI Mavic 3 Pro",
@@ -11,6 +12,7 @@
 		}
 	},
 	"productImages": {
+		"type": "unique",
 		"images": [
 			"/media/equipment-sale/dji-mavic-3-pro/images/02-01.png",
 			"/media/equipment-sale/dji-mavic-3-pro/images/02-02.png",
@@ -23,11 +25,13 @@
 		]
 	},
 	"breadcrumb": {
+		"type": "unique",
 		"home": "Home",
 		"section": "Equipment Sale",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
 	"pricing": {
+		"type": "pricing",
 		"new": {
 			"label": "Brand New",
 			"currency": "KES",
@@ -64,6 +68,7 @@
 		}
 	],
 	"productOverview": {
+		"type": "unique",
 		"tag": "Product Overview",
 		"headline": "Triple-Camera Versatility for Visual & Geospatial Work",
 		"images": [
@@ -76,6 +81,7 @@
 		"description": "The DJI Mavic 3 Pro pairs a Hasselblad main sensor with 70 mm and 166 mm tele lenses, delivering cinematic imaging alongside orthomosaic-capable photogrammetry for site documentation and pre-construction reconnaissance."
 	},
 	"keyFeatures": {
+		"type": "card-grid",
 		"tag": "Highlights",
 		"headline": "Key Features",
 		"description": "What sets the Mavic 3 Pro apart as a prosumer mapping tool.",
@@ -103,6 +109,7 @@
 		]
 	},
 	"model3d": {
+		"type": "unique",
 		"tag": "Interactive 3D",
 		"headline": "Explore the Mavic 3 Pro in 3D",
 		"description": "Drag to rotate the model and scroll or pinch to zoom.",
@@ -112,6 +119,7 @@
 		]
 	},
 	"cameraSystem": {
+		"type": "unique",
 		"tag": "Camera",
 		"headline": "Camera System (Key Strength)",
 		"description": "Cinematic-grade imaging in a compact prosumer body.",
@@ -126,6 +134,7 @@
 		]
 	},
 	"flightPerformance": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Flight Performance",
 		"description": "Reliable range and safety systems for field work.",
@@ -136,6 +145,7 @@
 		]
 	},
 	"accuracyNotes": {
+		"type": "unique",
 		"tag": "Accuracy",
 		"headline": "Accuracy (Important Reality Check)",
 		"description": "GCP-dependent accuracy given no built-in RTK.",
@@ -145,11 +155,13 @@
 		]
 	},
 	"specs": {
+		"type": "unique",
 		"tag": "Tech Data",
 		"headline": "Technical Specifications",
 		"description": "Complete technical details for the DJI Mavic 3 Pro."
 	},
 	"surveyApplications": {
+		"type": "unique",
 		"tag": "Applications",
 		"headline": "Engineering Applications",
 		"description": "Where the Mavic 3 Pro fits into a survey workflow.",
@@ -161,6 +173,7 @@
 		]
 	},
 	"limitations": {
+		"type": "unique",
 		"tag": "Limitations",
 		"headline": "Limitations (Critical for Surveyors)",
 		"description": "Considerations before using this drone for precision survey work.",
@@ -172,6 +185,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Get a Quote",
 		"headline": "Inquire About This Drone",
 		"description": "Tell us about your project and get a tailored quote for the DJI Mavic 3 Pro.",
@@ -187,6 +201,7 @@
 		}
 	},
 	"relatedProducts": {
+		"type": "unique",
 		"tag": "Explore",
 		"headline": "Other Drones You May Like",
 		"description": "Discover more survey drones from the SmartGrid catalogue."

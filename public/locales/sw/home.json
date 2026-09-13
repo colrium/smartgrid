@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"badge": "Usahihi wa Uhandisi",
 		"headline": "Pima <primary>Kwa Akili</primary>, Jenga <accent>Kwa Nguvu</accent>.",
 		"description": "Kuongoza Upimaji wa Ardhi na Angani wa Afrika kwa Teknolojia ya Juu ya Vifaa",
@@ -26,6 +27,7 @@
 		}
 	},
 	"leadGenBar": {
+		"type": "unique",
 		"tag": "SMARTGRID SURVEYING & CIVIL ENGINEERING LTD",
 		"headline": "Inaaminika. Inaweza kupanuka. Haraka. Sahihi.",
 		"title": "Upimaji wa Kiwango cha Uhandisi na Suluhisho za Kijiografia Katika Kenya na Afrika Mashariki",
@@ -74,6 +76,7 @@
 		]
 	},
 	"about": {
+		"type": "unique",
 		"tag": "Kuhusu Sisi",
 		"headline": "Kutoka Data ya Upimaji wa Uwanjani, Awamu ya Kubuni na Ujenzi.",
 		"description": "Smartgrid surveying inatoa data sahihi ya XYZ, kwa maamuzi bora ndani ya mradi wako.",
@@ -108,6 +111,7 @@
 		]
 	},
 	"planningInfographic": {
+		"type": "unique",
 		"tag": "Unapanga Mradi?",
 		"headline": "Anza na Data Sahihi ya Ardhi",
 		"description": "Kabla ya kubuni, kujenga, au kuwekeza, unahitaji data ya upimaji ya kuaminika. Tunakusaidia:",
@@ -136,6 +140,7 @@
 		"closingStatement": "<bold>Iwe wewe ni msanidi, mhandisi, mkandarasi, au mmiliki wa ardhi—data yetu inahakikisha mradi wako unaanza vizuri.</bold>"
 	},
 	"surveyingInstruments": {
+		"type": "unique",
 		"tag": "Usahihi",
 		"headline": "Vyombo Vyetu vya Upimaji",
 		"description": "Tunatumia vifaa vya kisasa, vilivyorekebishwa, na sahihi ili kuhakikisha kila sehemu ni sahihi na ya kuaminika kwa miradi yako ya ujenzi na uhandisi nchini Kenya na kwingineko.",
@@ -174,6 +179,7 @@
 		]
 	},
 	"drones": {
+		"type": "unique",
 		"tag": "Mel ya Ndege zisizo na Rubani",
 		"headline": "Ndege Zetu Zisizo na Rubani",
 		"description": "Tunatumia ndege za kisasa zisizo na rubani kupiga picha za ubora wa juu za angani za RGB / LiDAR na data ya multispectral kwa ajili ya Ramani Sahihi, Ufuatiliaji, Mipango, Upimaji, na Uhandisi.",
@@ -216,6 +222,7 @@
 		]
 	},
 	"whyChooseUs": {
+		"type": "unique",
 		"tag": "Kwa Nini Uchague Sisi",
 		"headline": "Suluhisho bora za upimaji na uhandisi.",
 		"description": "Tunachanganya teknolojia ya kisasa na uzoefu mkubwa ili kutoa suluhisho bora za upimaji na uhandisi.",
@@ -302,6 +309,7 @@
 		]
 	},
 	"keyFacts": {
+		"type": "unique",
 		"tag": "Mambo Muhimu",
 		"headline": "EA Leaders in surveying",
 		"description": "Sisi ni kampuni inayoongoza ya upimaji na uhandisi yenye uwepo mkubwa katika Afrika Mashariki, maalumu katika upimaji wa ardhi, ramani za ndege zisizo na rubani, na suluhisho za data ya kijiografia. Kwa uzoefu wa zaidi ya miaka 5, tumekamilisha miradi mingi kwa mafanikio huku tukizingatia kanuni za kitaifa na mbinu bora za upimaji.",
@@ -367,6 +375,7 @@
 		]
 	},
 	"certifications": {
+		"type": "unique",
 		"tag": "Imethibitishwa",
 		"headline": "Vyeti Vyetu",
 		"description": "Tunajivunia kushikilia vyeti kutoka kwa mashirika yenye sifa, kuonyesha kujitolea kwetu kwa ubora, usalama, na taaluma katika sekta ya upimaji na uhandisi.",
@@ -394,6 +403,7 @@
 		]
 	},
 	"metrics": {
+		"type": "unique",
 		"tag": "Kiwango",
 		"headline": "Kiwango Chetu cha Uendeshaji",
 		"description": "Tuna kiwango kikubwa cha uendeshaji, tukiwa na uwepo katika nchi nyingi, idadi kubwa ya miradi iliyokamilika, na kujitolea kutoa huduma za ubora wa juu kwa miaka mingi.",
@@ -421,6 +431,7 @@
 		]
 	},
 	"trustees": {
+		"type": "unique",
 		"tag": null,
 		"headline": "WADHAMINI WETU",
 		"items": [
@@ -475,6 +486,7 @@
 		]
 	},
 	"surveyCostInKenya": {
+		"type": "unique",
 		"tag": "Mpango wa Bajeti",
 		"headline": "Upimaji Unagharimu Kiasi Gani Kenya?",
 		"description": "Jibu la kweli: inategemea — lakini si kwa siri. Uhalisia mdogo wa tovuti yako unaounda kila nukuu tunayotoa, na kuujua hukuweka wewe mwenyewe mwenye udhibiti wa mazungumzo ya bajeti.",
@@ -556,6 +568,7 @@
 		}
 	},
 	"coverageArea": {
+		"type": "unique",
 		"tag": "Eneo la Ufunikaji",
 		"headline": "Kutoka Makao Yetu ya Nairobi hadi Afrika Mashariki pana",
 		"description": "Tuna uwezo mkubwa wa uendeshaji — uwepo katika nchi nyingi, miradi mamia iliyokamilika, na dhamira ya kutoa huduma za ubora wa juu kupitia miaka. Ikiwa tovuti yako iko katika mkoa huu, kwa hakika tumechora ramani ya jirani yako.",
@@ -629,6 +642,7 @@
 		}
 	},
 	"actionCtaSurveyor": {
+		"type": "cta",
 		"tag": "Ushauri wa Bure",
 		"headline": "Huji wapi unapoanza? Ongea na mpimaji.",
 		"description": "Tuambie kuhusu tovuti yako na lengo lako — tutakupendekeza upimaji sahihi, vifaa sahihi, na bajeti ya uwazi. Bila wajibu, bila maneno magumu.",
@@ -645,6 +659,7 @@
 		}
 	},
 	"actionCtaEngineer": {
+		"type": "cta",
 		"tag": "Jenga kwa Uhakika",
 		"headline": "Wasilisha mhandisi kwa hatua yako ijayo.",
 		"description": "Uwekaji alama, uhandisi wa tovuti, uthibitishaji wa as-built — weka jicho la kiwango cha uhandisi kwenye mradi wako kutoka kuvunja ardhi hadi kusaini.",
@@ -661,6 +676,7 @@
 		}
 	},
 	"services": {
+		"type": "tabs",
 		"tag": "Huduma",
 		"headline": "Huduma Zetu",
 		"items": [
@@ -1004,6 +1020,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Tufanye kazi pamoja",
 		"headline": "Upimaji sahihi na uhandisi, tayari ukiwa tayari.",
 		"description": "Kutoka shimo moja hadi ekari 1000+, wapimaji na marubani wetu wako tayari kutoa data ya haraka, sahihi na inayoweza kutekelezeka — katika Afrika Mashariki na kwingineko.",

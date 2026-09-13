@@ -59,6 +59,7 @@
 		]
 	},
 	"opportunities": {
+		"type": "unique",
 		"tag": "Chagua Njia",
 		"headline": "Elekeza swali lako kwa timu sahihi",
 		"description": "Chagua huduma inayofaa zaidi mradi wako ili tuweze kutoa taarifa sahihi na hatua zinazofuata."
@@ -110,6 +111,7 @@
 		}
 	},
 	"contact_reasons": {
+		"type": "unique",
 		"label": "Tunaweza kusaidia na nini?",
 		"options": [
 			{
@@ -319,6 +321,7 @@
 		"error_body": "Kuna tatizo limetokea kutuma ujumbe wako. Tafadhali jaribu tena au tutumie barua pepe moja kwa moja kwa smartgridsurveying@gmail.com."
 	},
 	"direct_contacts": {
+		"type": "unique",
 		"tag": "Mawasiliano ya Moja kwa Moja",
 		"headline": "Fikia mtu sahihi",
 		"items": [
@@ -373,6 +376,7 @@
 		]
 	},
 	"site_visit": {
+		"type": "unique",
 		"tag": "Ziara za Tovuti",
 		"headline": "Jionee uendeshaji mwenyewe",
 		"description": "Wateja wanakaribishwa kupanga mashauriano ya mradi na timu yetu jijini Nairobi. Ziara zinaweza kujumuisha mjadala wa mahitaji yako ya upimaji, uhandisi wa kirahisi, vifaa, au huduma za droni.",
@@ -410,6 +414,7 @@
 		}
 	},
 	"faq": {
+		"type": "unique",
 		"tag": "Majibu ya Haraka",
 		"headline": "Maswali ya kawaida ya mawasiliano",
 		"items": [
@@ -436,6 +441,7 @@
 		]
 	},
 	"social": {
+		"type": "unique",
 		"tag": "Tufuate",
 		"headline": "Endelea kuwa karibu nasi",
 		"channels": [

@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"tag": "Droni ya Prosumer",
 		"headline": "Jukwaa la Kisasa la Ramani kwa Prosumer",
 		"title": "DJI Mavic 3 Pro",
@@ -11,6 +12,7 @@
 		}
 	},
 	"productImages": {
+		"type": "unique",
 		"images": [
 			"/media/equipment-sale/dji-mavic-3-pro/images/02-01.png",
 			"/media/equipment-sale/dji-mavic-3-pro/images/02-02.png",
@@ -23,11 +25,13 @@
 		]
 	},
 	"breadcrumb": {
+		"type": "unique",
 		"home": "Nyumbani",
 		"section": "Uuzaji wa Vifaa",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
 	"pricing": {
+		"type": "pricing",
 		"new": {
 			"label": "Mpya Kabisa",
 			"currency": "KES",
@@ -64,6 +68,7 @@
 		}
 	],
 	"productOverview": {
+		"type": "unique",
 		"tag": "Muhtasari wa Bidhaa",
 		"headline": "Ubunifu wa Kamera Tatu kwa Kazi za Picha na Jiografia",
 		"images": [
@@ -76,6 +81,7 @@
 		"description": "DJI Mavic 3 Pro inaunganisha sensori kuu ya Hasselblad na lensi za tele za mm 70 na mm 166, ikitoa upigaji picha wa kifahari pamoja na photogrammetry inayoweza kutengeneza orthomosaic kwa nyaraka za tovuti na utafiti kabla ya ujenzi."
 	},
 	"keyFeatures": {
+		"type": "card-grid",
 		"tag": "Mambo Muhimu",
 		"headline": "Vipengele Muhimu",
 		"description": "Kinachotofautisha Mavic 3 Pro kama zana ya ramani ya prosumer.",
@@ -103,6 +109,7 @@
 		]
 	},
 	"model3d": {
+		"type": "unique",
 		"tag": "Mwingiliano wa 3D",
 		"headline": "Chunguza Mavic 3 Pro kwa 3D",
 		"description": "Buruta kuzungusha modeli na tumia gurudumu la kutanua au kidondoa kukaza.",
@@ -112,6 +119,7 @@
 		]
 	},
 	"cameraSystem": {
+		"type": "unique",
 		"tag": "Kamera",
 		"headline": "Mfumo wa Kamera (Nguvu Kuu)",
 		"description": "Upigaji picha wa daraja la sinema ndani ya mwili mdogo wa prosumer.",
@@ -126,6 +134,7 @@
 		]
 	},
 	"flightPerformance": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Utendaji wa Kuruka",
 		"description": "Mbali na mifumo ya usalama inayoaminika kwa kazi shambani.",
@@ -136,6 +145,7 @@
 		]
 	},
 	"accuracyNotes": {
+		"type": "unique",
 		"tag": "Usahihi",
 		"headline": "Usahihi (Ukweli Muhimu)",
 		"description": "Usahihi unaotegemea GCP kwa kuwa haipo RTK iliyojengwa ndani.",
@@ -145,11 +155,13 @@
 		]
 	},
 	"specs": {
+		"type": "unique",
 		"tag": "Data ya Kiufundi",
 		"headline": "Vipimo vya Kiufundi",
 		"description": "Maelezo kamili ya kiufundi kwa DJI Mavic 3 Pro."
 	},
 	"surveyApplications": {
+		"type": "unique",
 		"tag": "Matumizi",
 		"headline": "Matumizi ya Uhandisi",
 		"description": "Pale Mavic 3 Pro inavyofaa katika mtiririko wa kazi wa upimaji.",
@@ -161,6 +173,7 @@
 		]
 	},
 	"limitations": {
+		"type": "unique",
 		"tag": "Mapungufu",
 		"headline": "Mapungufu (Muhimu kwa Wapimaji)",
 		"description": "Mambo ya kuzingatia kabla ya kutumia droni hii kwa kazi za upimaji sahihi.",
@@ -172,6 +185,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Pata Nukuu",
 		"headline": "Ulizia Droni Hii",
 		"description": "Tuambie kuhusu mradi wako na upate nukuu iliyoundwa kwa ajili ya DJI Mavic 3 Pro.",
@@ -187,6 +201,7 @@
 		}
 	},
 	"relatedProducts": {
+		"type": "unique",
 		"tag": "Chunguza",
 		"headline": "Droni Nyingine Unazoweza Kuzipenda",
 		"description": "Gundua droni zaidi za upimaji kutoka kwenye katalogi ya SmartGrid."

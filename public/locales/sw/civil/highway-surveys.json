@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "UCHUNGUZI WA BARABARA KUU",
 		"title": "Suluhisho za Uchunguzi wa Barabara Kuu",
 		"image": "/media/civil/highway-surveys/01.jpg",
@@ -10,11 +11,13 @@
 		}
 	},
 	"overview": {
+		"type": "intro",
 		"tag": "Miundombinu Muhimu",
 		"headline": "Muhtasari",
 		"description": "Kwa kutumia mchanganyiko wa picha za angani, photogrammetry ya UAV, LiDAR, GNSS, na upimaji wa kawaida, wahandisi wanaweza kufanya maamuzi yanayoendeshwa na data yanayohakikisha usalama, ufanisi, na uendelevu katika mzunguko wote wa maisha ya mradi wa barabara kuu."
 	},
 	"services": {
+		"type": "card-grid",
 		"tag": "Tunachotoa",
 		"headline": "Huduma za Uchunguzi wa Barabara Kuu",
 		"description": "",
@@ -50,6 +53,7 @@
 		]
 	},
 	"benefitsOfHighwaySurveys": {
+		"type": "card-grid",
 		"tag": "Viendeshaji vya Thamani",
 		"headline": "Faida za Uchunguzi Jumuishi wa Barabara Kuu",
 		"description": "",
@@ -87,6 +91,7 @@
 		]
 	},
 	"highwaySurveyDeliverables": {
+		"type": "deliverables",
 		"tag": "Matokeo ya Mradi",
 		"headline": "Matokeo ya Uchunguzi wa Barabara Kuu",
 		"description": "Tunatoa vifurushi kamili vya data vilivyoundwa kwa mtiririko wa kazi wa uhandisi wa barabara kuu na ujenzi.",

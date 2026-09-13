@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"tag": "Droni ya Upimaji",
 		"headline": "Droni ya Photogrammetry",
 		"title": "DJI Phantom 4 RTK",
@@ -11,11 +12,13 @@
 		}
 	},
 	"breadcrumb": {
+		"type": "unique",
 		"home": "Nyumbani",
 		"section": "Uuzaji wa Vifaa",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
 	"pricing": {
+		"type": "pricing",
 		"new": {
 			"label": "Mpya Kabisa",
 			"currency": "KES",
@@ -30,6 +33,7 @@
 		}
 	],
 	"productImages": {
+		"type": "unique",
 		"images": [
 			"/media/equipment-sale/dji-phantom-4-rtk/images/02-01.png",
 			"/media/equipment-sale/dji-phantom-4-rtk/images/02-01.png",
@@ -61,6 +65,7 @@
 		}
 	],
 	"productOverview": {
+		"type": "unique",
 		"tag": "Muhtasari wa Bidhaa",
 		"headline": "Droni Kielelezo cha Upimaji",
 		"images": [
@@ -72,6 +77,7 @@
 		"description": "DJI Phantom 4 RTK bado ni chaguo lililothibitishwa na kuaminika kwa upimaji wa mipaka na ramani za uhandisi, ikichanganya kamera yenye shutter ya mitambo na ujumuishaji wa RTK usio na mshono kwa usahihi wa juu wa ramani."
 	},
 	"keyFeatures": {
+		"type": "card-grid",
 		"tag": "Mambo Muhimu",
 		"headline": "Vipengele Muhimu",
 		"description": "Kwa nini Phantom 4 RTK bado ni kielelezo cha tasnia.",
@@ -99,6 +105,7 @@
 		]
 	},
 	"model3d": {
+		"type": "unique",
 		"tag": "Mwingiliano wa 3D",
 		"headline": "Chunguza Phantom 4 RTK kwa 3D",
 		"description": "Buruta kuzungusha modeli na tumia gurudumu la kutanua au kidondoa kukaza.",
@@ -107,6 +114,7 @@
 		]
 	},
 	"cameraSystem": {
+		"type": "unique",
 		"tag": "Kamera",
 		"headline": "Kamera",
 		"description": "Kamera maalum ya ramani iliyoundwa kwa usahihi.",
@@ -117,6 +125,7 @@
 		]
 	},
 	"positioningAndAccuracy": {
+		"type": "unique",
 		"tag": "Uwekaji Nafasi",
 		"headline": "Usahihi",
 		"description": "RTK ya daraja la upimaji iliyojengwa ndani.",
@@ -126,11 +135,13 @@
 		]
 	},
 	"specs": {
+		"type": "unique",
 		"tag": "Data ya Kiufundi",
 		"headline": "Vipimo vya Kiufundi",
 		"description": "Maelezo kamili ya kiufundi kwa DJI Phantom 4 RTK."
 	},
 	"detailedSpecifications": {
+		"type": "unique",
 		"tag": "Data Sheet Kamili",
 		"headline": "Vipimo vya Kiufundi vya Kina",
 		"description": "Vipimo kamili vya mtengenezaji kwa ndege, kamera, betri na kidhibiti cha mbali cha DJI Phantom 4 RTK.",
@@ -388,6 +399,7 @@
 		]
 	},
 	"strengths": {
+		"type": "unique",
 		"tag": "Uwezo",
 		"headline": "Uwezo",
 		"description": "Kinachofanya Phantom 4 RTK kuwa chaguo endelevu kwa wapimaji.",
@@ -398,6 +410,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Pata Nukuu",
 		"headline": "Ulizia Droni Hii",
 		"description": "Tuambie kuhusu mradi wako na upate nukuu iliyoundwa kwa ajili ya DJI Phantom 4 RTK.",
@@ -413,6 +426,7 @@
 		}
 	},
 	"relatedProducts": {
+		"type": "unique",
 		"tag": "Chunguza",
 		"headline": "Droni Nyingine Unazoweza Kuzipenda",
 		"description": "Gundua droni zaidi za upimaji kutoka kwenye katalogi ya SmartGrid."

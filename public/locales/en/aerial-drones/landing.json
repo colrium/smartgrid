@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "UAV Technology",
 		"title": "Aerial Drones",
 		"image": "/media/aerial-drones/01.jpeg",
@@ -15,6 +16,7 @@
 	},
 
 	"services": {
+		"type": "card-grid",
 		"tag": "Core Capabilities",
 		"headline": "Our Aerial Surveying Services",
 		"description": "Discover our full range of aerial drone surveying services and deliverables.",
@@ -68,6 +70,7 @@
 		]
 	},
     "droneFleet": {
+	"type": "card-grid",
 		"tag": "Aerial Fleet",
 		"headline": "Our Drone Fleet",
 		"description": "At SmartGrid Surveying, we deploy advanced drones to capture high-resolution aerial imagery and multispectral data for accurate mapping, monitoring, and surveying.",
@@ -99,6 +102,7 @@
 		]
 	},
 	"whyAerialSurveyDronesMatter": {
+		"type": "card-grid",
 		"tag": "Key Applications",
 		"headline": "Why Aerial Survey Drones Matter?",
 		"description": "Our drone solutions deliver critical insights across multiple sectors, transforming how projects are planned, managed, and monitored.",
@@ -146,6 +150,7 @@
 		]
 	},
     "exploreMore": {
+	"type": "card-grid",
 		"tag": null,
 		"headline": "Explore more...",
 		"description": "",
@@ -190,6 +195,7 @@
 		]
 	},
 	"projects": {
+		"type": "unique",
 		"tag": "completed Projects",
 		"headline": "PROJECTS DONE ACROSS AFRICA",
 		"description": "We’ve completed aerial drone surveys across several African countries, supporting governments, private developers, and NGOs. Here are a few highlights:",
@@ -204,6 +210,7 @@
 		]
 	},
 	"dronePhotography": {
+		"type": "unique",
 		"tag": "In addition to technical surveys",
 		"headline": "Drone Photography & Aerial Storytelling",
 		"description": "We fly beyond expectations – cinematic visuals, events, and immersive brand storytelling from the skies. Need equipment? Our drone rental service gives clients access to high-quality drones for short- or long-term hire, with optional training or operator support.",

@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"tag": "Droni ya Upimaji",
 		"headline": "Jukwaa la Upimaji wa LiDAR mzito na Usahihi wa Juu",
 		"title": "DJI Matrice 350 RTK (M350 RTK)",
@@ -11,16 +12,19 @@
 		}
 	},
 	"breadcrumb": {
+		"type": "unique",
 		"home": "Nyumbani",
 		"section": "Uuzaji wa Vifaa",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
 	"catalogue": {
+		"type": "unique",
 		"icon": "quadcopter",
 		"description": "A flagship enterprise UAV designed for high-accuracy geospatial data acquisition, particularly for LiDAR mapping, corridor surveys, and large-scale engineering projects.",
 		"badge": "Kipya"
 	},
 	"productImages": {
+		"type": "unique",
 		"images": [
 			"/media/equipment-sale/dji-matrice-350-rtk/images/02-01.png",
 			"/media/equipment-sale/dji-matrice-350-rtk/images/02-02.png",
@@ -34,6 +38,7 @@
 		]
 	},
 	"pricing": {
+		"type": "pricing",
 		"new": {
 			"label": "Mpya Kabisa",
 			"currency": "KES",
@@ -70,6 +75,7 @@
 		}
 	],
 	"productOverview": {
+		"type": "unique",
 		"tag": "Muhtasari wa Bidhaa",
 		"headline": "Usahihi wa Daraja la Biashara kwa Uchunguzi Mahututi",
 		"images": [
@@ -90,6 +96,7 @@
 		"description": "DJI Matrice 350 RTK inaunganisha moduli ya GNSS ya RTK/PPK iliyojengwa ndani na mzigo unaobadilishika wa LiDAR na photogrammetry, ikitoa usahihi wa daraja la upimaji katika maeneo yenye mimea migumu, njia za mistari ya umeme, na tovuti kubwa za uhandisi."
 	},
 	"keyFeatures": {
+		"type": "card-grid",
 		"tag": "Mambo Muhimu",
 		"headline": "Vipengele Muhimu",
 		"description": "Kila kitu kinachomfanya M350 RTK kuwa kielelezo cha majukwaa ya upimaji yanayobeba mizigo mikubwa.",
@@ -117,6 +124,7 @@
 		]
 	},
 	"model3d": {
+		"type": "unique",
 		"tag": "Mwingiliano wa 3D",
 		"headline": "Chunguza M350 RTK kwa 3D",
 		"description": "Buruta kuzungusha modeli na tumia gurudumu la kutanua au kidondoa kukaza.",
@@ -126,6 +134,7 @@
 		]
 	},
 	"positioningAndAccuracy": {
+		"type": "unique",
 		"tag": "Uwekaji Nafasi",
 		"headline": "Uwekaji Nafasi & Usahihi",
 		"description": "GNSS ya daraja la upimaji iliyojengwa ndani ya mwili wa ndege.",
@@ -139,6 +148,7 @@
 		]
 	},
 	"flightPerformance": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Utendaji wa Kuruka",
 		"description": "Imeundwa kwa misheni ndefu na imara za upimaji.",
@@ -150,6 +160,7 @@
 		]
 	},
 	"payloadOptions": {
+		"type": "unique",
 		"tag": "Mizigo",
 		"headline": "Chaguo za Mizigo (Zinazolenga Upimaji)",
 		"description": "Mizigo inayobadilishwa kwa ramani za LiDAR na photogrammetry.",
@@ -165,11 +176,13 @@
 		]
 	},
 	"specs": {
+		"type": "unique",
 		"tag": "Data ya Kiufundi",
 		"headline": "Vipimo vya Kiufundi",
 		"description": "Maelezo kamili ya kiufundi kwa DJI Matrice 350 RTK."
 	},
 	"surveyApplications": {
+		"type": "unique",
 		"tag": "Matumizi",
 		"headline": "Matumizi ya Upimaji",
 		"description": "Pale M350 RTK inavyofaa zaidi shambani.",
@@ -183,6 +196,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Pata Nukuu",
 		"headline": "Ulizia Droni Hii",
 		"description": "Tuambie kuhusu mradi wako na upate nukuu iliyoundwa kwa ajili ya DJI Matrice 350 RTK.",
@@ -198,6 +212,7 @@
 		}
 	},
 	"relatedProducts": {
+		"type": "unique",
 		"tag": "Chunguza",
 		"headline": "Droni Nyingine Unazoweza Kuzipenda",
 		"description": "Gundua droni zaidi za upimaji kutoka kwenye katalogi ya SmartGrid."

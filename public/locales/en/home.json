@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"badge": "Engineering Precision",
 		"headline": "Survey <primary>Smarter</primary>, Build <accent>Stronger</accent>.",
 		"description": "Leading Africa's Land and Aerial Surveying with Advanced equipment Technology",
@@ -27,6 +28,7 @@
 	},
 
 	"leadGenBar": {
+		"type": "unique",
 		"tag": "SMARTGRID SURVEYING & CIVIL ENGINEERING LTD",
 		"headline": "Reliable. Scalable. Fast. Accurate.",
 		"title": "Engineering-Grade Surveying & Geospatial Solutions Across Kenya and East Africa",
@@ -76,6 +78,7 @@
 		]
 	},
 	"about": {
+		"type": "unique",
 		"tag": "About Us",
 		"headline": "From Surveying Field data, Designing and Construction Phase.",
 		"description": "Change to: Smartgrid surveying delivers Accurate XYZ data, for smarter decisions within your project. ",
@@ -111,6 +114,7 @@
 		]
 	},
 	"planningInfographic": {
+		"type": "unique",
 		"tag": "Planning a Project?",
 		"headline": "Start With Accurate Ground Data",
 		"description": "Before you design, build, or invest, you need reliable surveying data. We help you:",
@@ -139,6 +143,7 @@
 		"closingStatement": "<bold>Whether you're a developer, engineer, contractor, or landowner—our data ensures your project starts right.</bold>"
 	},
 	"surveyingInstruments": {
+		"type": "unique",
 		"tag": "Precision",
 		"headline": "Our Surveying Instruments",
 		"description": "We Use Advanced, Calibrated, Precise equipment to ensure every point is accurate and reliable for your construction and engineering projects across Kenya and Beyond.",
@@ -178,6 +183,7 @@
 		]
 	},
 	"drones": {
+		"type": "unique",
 		"tag": "Drone Fleet",
 		"headline": "Our Drones",
 		"description": "We deploy advanced drones to capture high-resolution aerial RGB / LiDAR imagery and multispectral data for Accurate Mapping, Monitoring, Planning, surveying, and engineering.",
@@ -220,6 +226,7 @@
 		]
 	},
 	"whyChooseUs": {
+		"type": "unique",
 		"tag": "Why Choose Us",
 		"headline": "Exceptional surveying and engineering solutions.",
 		"description": "We combine cutting-edge technology with extensive experience to deliver exceptional surveying and engineering solutions.",
@@ -306,6 +313,7 @@
 		]
 	},
 	"keyFacts": {
+		"type": "unique",
 		"tag": "Key Facts",
 		"headline": "EA Leaders in surveying",
 		"description": "We are a leading surveying and engineering company with a strong presence in East Africa, specializing in land surveying, drone mapping, and geospatial data solutions. With over 5 years of experience, we have successfully completed numerous projects while adhering to national regulations and survey best practices.",
@@ -372,6 +380,7 @@
 		]
 	},
 	"certifications": {
+		"type": "unique",
 		"tag": "Certified",
 		"headline": "Our Certifications",
 		"description": "We are proud to hold certifications from reputable organizations, demonstrating our commitment to quality, safety, and professionalism in the surveying and engineering industry.",
@@ -399,6 +408,7 @@
 		]
 	},
 	"metrics": {
+		"type": "unique",
 		"tag": "Scale",
 		"headline": "Our Operational Scale",
 		"description": "We have a strong operational scale, with a presence in multiple countries, a large number of projects completed, and a commitment to delivering high-quality services over the years.",
@@ -426,6 +436,7 @@
 		]
 	},
 	"trustees": {
+		"type": "unique",
 		"tag": null,
 		"headline": "OUR TRUSTEES",
 		"items": [
@@ -480,6 +491,7 @@
 		]
 	},
 	"surveyCostInKenya": {
+		"type": "unique",
 		"tag": "Budget Planning",
 		"headline": "How Much Does a Survey Cost in Kenya?",
 		"description": "The honest answer: it depends — but not by mystery. A few site realities shape every quotation we issue, and knowing them puts you in control of the budget conversation.",
@@ -561,6 +573,7 @@
 		}
 	},
 	"coverageArea": {
+		"type": "unique",
 		"tag": "Coverage Area",
 		"headline": "From Our Nairobi Base to the Wider East Africa",
 		"description": "We have a strong operational scale — a presence in multiple countries, hundreds of projects completed, and a commitment to delivering high-quality services over the years. If your site is in the region, chances are we've already mapped next door.",
@@ -635,6 +648,7 @@
 		}
 	},
 	"actionCtaSurveyor": {
+		"type": "cta",
 		"tag": "Free Consultation",
 		"headline": "Not sure where to start? Talk to a surveyor.",
 		"description": "Tell us about your site and your goal — we'll recommend the right survey, the right instruments, and a realistic budget. No obligation, no jargon.",
@@ -651,6 +665,7 @@
 		}
 	},
 	"actionCtaEngineer": {
+		"type": "cta",
 		"tag": "Build on Certainty",
 		"headline": "Engage an engineer for your next milestone.",
 		"description": "Setting out, site engineering, as-built verification — put an engineer-grade eye on your project from ground-break to handover.",
@@ -667,6 +682,7 @@
 		}
 	},
 	"services": {
+		"type": "tabs",
 		"tag": "Services",
 		"headline": "Our Services",
 		"items": [
@@ -992,6 +1008,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Let's work together",
 		"headline": "Precision survey & engineering, ready when you are.",
 		"description": "From a single plot to 1000+ acres, our surveyors and pilots are ready to deliver fast, accurate and actionable data — across East Africa and beyond.",

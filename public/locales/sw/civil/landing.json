@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"headline": "Ujenzi wa Usahihi",
 		"title": "Uhandisi wa Civil",
 		"image": "/media/civil/01.jpeg",
@@ -14,6 +15,7 @@
 		}
 	},
 	"services": {
+		"type": "card-grid",
 		"tag": "Suluhisho za Civil",
 		"headline": "Huduma Zetu za Uhandisi wa Civil",
 		"description": "Tunatoa msaada kamili wa uhandisi wa civil kwa miradi ya miundombinu ya vipimo vyote.",
@@ -56,6 +58,7 @@
 		]
 	},
 	"process": {
+		"type": "unique",
 		"tag": "Mchakato Wetu",
 		"headline": "Mchakato wa Upimaji wa Uhandisi",
 		"image": "/media/civil/03.jpeg",
@@ -94,6 +97,7 @@
 		]
 	},
 	"deliverables": {
+		"type": "deliverables",
 		"tag": "Matokeo",
 		"headline": "Matokeo ya Uhandisi",
 		"description": "Pato sahihi kwa maamuzi ya mipango na uhandisi.",

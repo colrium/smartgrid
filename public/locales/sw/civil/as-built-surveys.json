@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "UCHUNGUZI WA AS-BUILT",
 		"title": "Uchunguzi wa As-Built",
 		"image": "/media/civil/as-built-surveys/01.jpg",
@@ -10,11 +11,13 @@
 		}
 	},
 	"whatAreAsBuiltSurveys": {
+		"type": "intro",
 		"tag": "Nyaraka za Usahihi",
 		"headline": "Uchunguzi wa as-built ni nini?",
 		"description": "Uchunguzi wa as-built hukamata hali halisi, ya sasa ya mazingira yaliyojengwa kwa kulinganisha hali halisi ya shambani na mibuni asilia. Kwa kutumia ndege zisizo na rubani, LiDAR, na photogrammetry, tunaandika miundombinu kwa usahihi wa kiwango cha sentimita, kutoka angani—haraka na salama kuliko mbinu za kawaida."
 	},
 	"asBuiltSolutions": {
+		"type": "card-grid",
 		"tag": "Tunachofanya",
 		"headline": "Suluhisho za As-Built",
 		"description": "",
@@ -46,6 +49,7 @@
 		]
 	},
 	"keyIndustries": {
+		"type": "card-grid",
 		"tag": "Sekta Zinazohudumiwa",
 		"headline": "Viwanda Muhimu",
 		"description": "",
@@ -78,11 +82,13 @@
 		]
 	},
 	"maxProductivityMinGuesswork": {
+		"type": "intro",
 		"tag": "Ongoza kwa Data",
 		"headline": "Kuongeza Tija. Kupunguza Bahati Nasibu.",
 		"description": "Katika SmartGrid Surveying, tunatumia UAV zilizo na vitambuzi vya usahihi wa hali ya juu kukusanya data ya 3D, orthomosaic, na mifano ya mwinuko. Hii inawezesha nakala kamili ya dijitali ya tovuti—bora kwa kuthibitisha uvumilivu wa uhandisi, kutathmini mkengeuko, na kuwezesha ufanyaji maamuzi bora. Acha data iongoze njia ya faida."
 	},
 	"applications": {
+		"type": "card-grid",
 		"tag": "Matumizi Muhimu",
 		"headline": "Matumizi Yetu",
 		"description": "",
@@ -115,11 +121,13 @@
 		]
 	},
 	"actionableInsights": {
+		"type": "intro",
 		"tag": "Maarifa Yanayoweza Kutekelezwa",
 		"headline": "Maarifa Mahiri, Yanayowasilishwa Dijitali!",
 		"description": "Kwa kuoanisha data ya ndege zisizo na rubani na mbinu za upimaji na usindikaji wa GIS, tunabadilisha data mbichi ya angani kuwa maarifa yanayoweza kutekelezwa. Ona mkengeuko, weka alama za kutofautiana, na ulete uwazi kwenye mtiririko wako wa kazi wa ujenzi—yote kwenye jukwaa moja lisilo na mshono."
 	},
 	"deliverables": {
+		"type": "deliverables",
 		"tag": "Matokeo ya Mradi",
 		"headline": "Matokeo ya Uchunguzi wa As-Built",
 		"description": "Nyaraka kamili za as-built kwa uhamishaji, uthibitisho na kumbukumbu:",

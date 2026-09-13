@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"tag": "Vifaa vya Upimaji",
 		"headline": "Vyombo vya Kuaminika vya Usawazishaji",
 		"title": "Bosch GOL 32D Automatic Level",
@@ -11,6 +12,7 @@
 		}
 	},
 	"productImages": {
+		"type": "unique",
 		"images": [
 			"/media/equipment-sale/automatic-level-bosch/09.png",
 			"/media/equipment-sale/automatic-level-bosch/04.jpg",
@@ -21,17 +23,20 @@
 		]
 	},
 	"breadcrumb": {
+		"type": "unique",
 		"home": "Nyumbani",
 		"section": "Uuzaji wa Vifaa",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
 	"catalogue": {
+		"type": "unique",
 		"icon": "spirit-level",
 		"title": "Bosch GOL 32D Level",
 		"description": "Kiwango cha kiotomatiki cha 32x kwa usawazishaji sahihi wa ujenzi, usawazishaji wa ardhi, na kazi za tovuti zenye uwazi bora wa macho.",
 		"badge": "Kipya"
 	},
 	"pricing": {
+		"type": "pricing",
 		"used": {
 			"label": "Iliyotumika Kidogo",
 			"currency": "KES",
@@ -51,11 +56,13 @@
 		}
 	],
 	"specs": {
+		"type": "unique",
 		"tag": "Data ya Kiufundi",
 		"headline": "Vipimo vya Kiufundi",
 		"description": "Maelezo kamili ya kiufundi kwa Bosch GOL 32D Automatic Level."
 	},
 	"opticalPerformance": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Utendaji wa Macho",
 		"description": "Optiki kali na angavu zilizoundwa kulenga kwa usahihi.",
@@ -67,6 +74,7 @@
 		]
 	},
 	"accuracyAndLeveling": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Usahihi na Usawazishaji",
 		"description": "Usawazishaji wa haraka na sahihi kwa fidia ya kuaminika ya kiotomatiki.",
@@ -78,6 +86,7 @@
 		]
 	},
 	"buildAndDurability": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Ujenzi na Uimara",
 		"description": "Ujenzi imara na unaostahimili hali ya hewa kwa maeneo magumu.",
@@ -89,6 +98,7 @@
 		]
 	},
 	"operationAndFeatures": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Uendeshaji na Vipengele",
 		"description": "Vidhibiti rahisi kwa usanidi wa haraka na uendeshaji laini.",
@@ -100,6 +110,7 @@
 		]
 	},
 	"applications": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Matumizi",
 		"description": "Matumizi yaliyothibitika katika kazi za ujenzi na upimaji.",
@@ -111,6 +122,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Pata Nukuu",
 		"headline": "Pata Kifaa Hiki",
 		"description": "Wasiliana nasi kwa bei, upatikanaji, na mwongozo wa kitaalamu.",
@@ -126,6 +138,7 @@
 		}
 	},
 	"relatedProducts": {
+		"type": "unique",
 		"tag": "Chunguza",
 		"headline": "Bidhaa Nyingine Unazoweza Kuzipenda",
 		"description": "Gundua vifaa vingine vya upimaji kutoka kwenye katalogi ya SmartGrid."

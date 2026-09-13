@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "UCHUNGUZI WA PICHA ZA NDEGE ZISIZO NA RUBANI",
 		"title": "Kuaminika. Kupanuka. Haraka. Nguvu.",
 		"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-01.jpg",
@@ -10,6 +11,7 @@
 		}
 	},
 	"whatWeOffer": {
+		"type": "card-grid",
 		"tag": "Huduma",
 		"headline": "Huduma Zetu za Uchunguzi wa Angani",
 		"items": [
@@ -61,12 +63,14 @@
 		]
 	},
 	"whyDronesMatter": {
+		"type": "split-media",
 		"tag": "Mustakabali wa Upimaji",
 		"headline": "Kwa Nini Ndege Zisizo na Rubani Zina Umuhimu!",
 		"image": "/media/aerial-drones/drone-imagery-surveys/drone-imagery-12.jpg",
 		"description": "Upimaji wa kisasa unabadilika—na ndege zisizo na rubani ziko katikati ya mabadiliko haya. Zinapeleka kasi, usahihi, usalama, na maarifa yenye nguvu ya kijiografia ambayo mbinu za jadi pekee haziwezi kufikia. Katika Smartgrid Surveying, tunatoa uchunguzi wa haraka, sahihi, na wa kina."
 	},
 	"aerialSurveyDeliverables": {
+		"type": "deliverables",
 		"tag": "Matokeo ya Data",
 		"headline": "Bidhaa za Uchunguzi wa Angani",
 		"description": "Suluhisho zetu za uchunguzi zinazotegemea ndege zisizo na rubani huboresha uamuzi kwa ujenzi, uhandisi, usimamizi wa ardhi, na ufuatiliaji wa mazingira. Tunakamata data sahihi ya kijiografia kwa kutumia jukwaa za kisasa za UAV zenye sensorer za RGB, LiDAR, na joto. Matokeo yote yameboreshwa kwa matumizi ndani ya michakato ya GIS, CAD, BIM, na uhandisi.",
@@ -114,6 +118,7 @@
 		]
 	},
 	"drones": {
+		"type": "card-grid",
 		"tag": "Mel ya Ndege zisizo na Rubani",
 		"headline": "Ndege Zetu Zisizo na Rubani",
 		"description": "Katika SmartGrid Surveying, tunatumia ndege za kisasa zisizo na rubani kukamata picha za angani za mwonekano wa juu na data ya multispectral kwa uchoraji ramani sahihi, ufuatiliaji, na upimaji.",
@@ -156,6 +161,7 @@
 		]
 	},
 	"projectsAcrossAfrica": {
+		"type": "unique",
 		"tag": "Ufikiaji Wetu",
 		"headline": "MIRADI ILIYOFANYWA KOTE AFRIKA",
 		"images": [

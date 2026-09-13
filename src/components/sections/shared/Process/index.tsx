@@ -33,6 +33,35 @@ export interface ProcessCta {
 	icon?: string | null;
 }
 
+export interface ProcessTimelineStage {
+	/** Stage name rendered on the timeline rail and stage list. */
+	label?: string | null;
+	/** Optional human range descriptor, e.g. "2–4 days". */
+	range?: string | null;
+	/** Duration in days used for the rail width. Defaults to `1`. */
+	days?: number | null;
+}
+
+export interface ProcessTimelineProps {
+	/**
+	 * Optional timeline-specific payload. When provided, the timeline renderer
+	 * switches from step cards to the stage-bar timeline used by
+	 * `surveying/sectional-properties:timeline`.
+	 */
+	stages?: ProcessTimelineStage[] | null;
+	/** Small eyebrow line above the stage list. */
+	barLabel?: string | null;
+	/** Start/end eyebrow labels rendered under the rail. */
+	startLabel?: string | null;
+	endLabel?: string | null;
+	/** Supporting note rendered below the stage list. */
+	timelineNote?: string | null;
+	/** Cost/information callout rendered below the stage list. */
+	costNote?: string | null;
+	/** Optional closing email CTA. */
+	emailCta?: { label?: string; href?: string } | null;
+}
+
 export interface ProcessProps {
 	id?: string;
 	tag?: string | null;
@@ -54,6 +83,8 @@ export interface ProcessProps {
 	/** Closing call-to-action button. */
 	cta?: ProcessCta | null;
 	className?: string;
+	/** Timeline-specific overrides used by `surveying/sectional-properties:timeline`. */
+	timeline?: ProcessTimelineProps | null;
 }
 
 const GRID_COLUMNS: Record<2 | 3 | 4, string> = {
@@ -208,6 +239,97 @@ export function Process(props: ProcessProps): ReactElement | null {
 	};
 
 	if (layout === "timeline") {
+		const stages = Array.isArray(props.timeline?.stages)
+			? props.timeline.stages
+			: items.map((item, index) => ({
+					label: item.phase ?? item.title,
+					range: item.description ?? undefined,
+					days: index === 0 ? 1 : undefined,
+				}));
+
+		if (Array.isArray(props.timeline?.stages) && stages.length > 0) {
+			const totalDays = stages.reduce((sum, stage) => sum + (stage.days ?? 1), 0) || 1;
+			const TONE_SEGMENTS = [
+				"bg-primary-800",
+				"bg-primary-700",
+				"bg-primary-600",
+				"bg-primary-500",
+				"bg-primary-400",
+				"bg-primary-300",
+				"bg-primary-200",
+			];
+
+			return (
+				<SectionShell
+					id={props.id}
+					tag={props.tag}
+					headline={props.headline}
+					description={props.description}
+					align="center"
+					tone={props.tone ?? "surface"}
+					className={props.className}
+				>
+					<div className="relative mt-16 sm:mt-20">
+						{props.timeline?.barLabel && (
+							<p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+								{props.timeline.barLabel}
+							</p>
+						)}
+						<div className="mt-5 flex h-16 sm:h-20 w-full overflow-hidden rounded-2xl hairline card-shadow">
+							{stages.map((stage, index) => (
+								<div
+									key={index}
+									title={`${(stage.label ?? "").trim()} — ${(stage.range ?? "").trim()}`}
+									className="group relative flex items-center justify-center border-r border-surface/40 last:border-r-0 transition-[filter] duration-300 hover:brightness-110"
+									style={{ width: `${((stage.days ?? 1) / totalDays) * 100}%` }}
+								>
+									<div className={`absolute inset-0 ${TONE_SEGMENTS[index % TONE_SEGMENTS.length]}`} />
+									<span
+										className={`relative z-10 px-1 text-center text-[10px] sm:text-xs font-semibold leading-tight ${
+											index >= 5 ? "text-ink" : "text-surface"
+										}`}
+									>
+										{stage.days}
+									</span>
+								</div>
+							))}
+						</div>
+						<div className="mt-3 flex justify-between text-[11px] font-medium uppercase tracking-[0.18em] text-ink/40">
+							<span>{props.timeline?.startLabel}</span>
+							<span>{props.timeline?.endLabel}</span>
+						</div>
+						<div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+							{stages.map((stage, index) => (
+								<span key={index} className="inline-flex items-center gap-2 text-xs sm:text-sm text-ink/70">
+									<span className={`h-2.5 w-2.5 rounded-sm ${TONE_SEGMENTS[index % TONE_SEGMENTS.length]}`} />
+									<span className="font-semibold text-ink">{stage.label ?? ""}</span>
+									<span className="text-ink/50">{stage.range ?? ""}</span>
+								</span>
+							))}
+						</div>
+						{props.timeline?.costNote && (
+							<div className="mx-auto mt-10 flex max-w-2xl items-start justify-center gap-3 rounded-2xl pale-panel hairline card-shadow px-6 py-5 text-sm leading-relaxed text-ink/70">
+								<span className="mdi mdi-cash-multiple mt-0.5 shrink-0 text-lg text-accent-500" />
+								{props.timeline.costNote}
+							</div>
+						)}
+						{props.timeline?.emailCta?.href && (
+							<div className="mt-9 flex justify-center">
+								<Link
+									href={props.timeline.emailCta.href}
+									className="group inline-flex items-center gap-3 h-14 rounded-full bg-ink px-8 text-surface font-medium text-base transition-all duration-300 hover:-translate-y-0.5 hover:card-shadow-lift"
+								>
+									<span className="mdi mdi-email-fast-outline text-xl text-primary-300" aria-hidden />
+									{props.timeline.emailCta.label}
+								</Link>
+							</div>
+						)}
+					</div>
+					{footerNode()}
+				</SectionShell>
+			);
+		}
+
 		return (
 			<SectionShell
 				id={props.id}

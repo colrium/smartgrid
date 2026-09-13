@@ -1,9 +1,8 @@
 "use client";
 
-import Link from "next/link";
+import type { ReactElement } from "react";
 import { useTranslation } from "@/hooks";
-import { FadeUp } from "@/components/animations/Fade";
-import { SectionTag } from "@/components/SectionTag";
+import { CtaBand } from "@/components/sections/shared";
 
 interface CtaLink {
 	icon?: string;
@@ -23,68 +22,42 @@ interface ProductCtaSectionProps {
 	namespace: string;
 }
 
-export function ProductCtaSection({ namespace }: ProductCtaSectionProps) {
+/**
+ * Product closing CTA — shared CTA band (content: `<ns>:cta`).
+ */
+export function ProductCtaSection({ namespace }: ProductCtaSectionProps): ReactElement {
 	const { t } = useTranslation([namespace]);
 	const section = t(`${namespace}:cta`, {
 		returnObjects: true,
 	}) as unknown as CtaContent;
 
 	return (
-		<section className="pb-24 sm:py-28 relative overflow-hidden">
-			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-				<FadeUp>
-					<div className="relative rounded-c ink-panel card-shadow overflow-hidden px-8 py-16 sm:px-12 sm:py-24 text-center">
-						<span className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary-300/30 blur-[90px] pointer-events-none" />
-						<span className="absolute -bottom-28 -left-20 w-72 h-72 rounded-full bg-primary/30 blur-[90px] pointer-events-none" />
-
-						<div className="relative flex flex-col items-center gap-6">
-							{section.tag && <SectionTag dark>{section.tag}</SectionTag>}
-
-							<h2 className="font-light tracking-tight leading-[1.08] text-3xl sm:text-5xl lg:text-[3.4rem] text-surface max-w-3xl">
-								{section.headline}
-							</h2>
-
-							{section.description && (
-								<p className="text-base sm:text-lg text-surface/65 leading-relaxed max-w-2xl mx-auto">
-									{section.description}
-								</p>
-							)}
-
-							{(section.ctaPrimary?.href || section.ctaSecondary?.href) && (
-								<div className="mt-4 flex flex-wrap items-center justify-center gap-4">
-									{section.ctaPrimary?.href && (
-										<Link
-											href={section.ctaPrimary.href}
-											className="group inline-flex items-center gap-3 h-14 rounded-full bg-surface px-8 text-ink font-medium text-base transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]"
-										>
-											{section.ctaPrimary.icon && (
-												<span
-													className={`mdi mdi-${section.ctaPrimary.icon} text-xl text-ink transition-transform duration-300 group-hover:translate-x-1`}
-												/>
-											)}
-											{section.ctaPrimary.label}
-										</Link>
-									)}
-
-									{section.ctaSecondary?.href && (
-										<Link
-											href={section.ctaSecondary.href}
-											className="group inline-flex items-center gap-3 h-14 rounded-full border border-surface/40 px-8 text-surface font-medium text-base transition-all duration-300 hover:bg-surface hover:text-ink"
-										>
-											{section.ctaSecondary.icon && (
-												<span className={`mdi mdi-${section.ctaSecondary.icon} text-xl`} />
-											)}
-											{section.ctaSecondary.label}
-											<span className="mdi mdi-arrow-right text-xl transition-transform duration-300 group-hover:translate-x-1" />
-										</Link>
-									)}
-								</div>
-							)}
-						</div>
-					</div>
-				</FadeUp>
-			</div>
-		</section>
+		<CtaBand
+			tag={section?.tag}
+			headline={section?.headline}
+			description={section?.description}
+			primary={
+				section?.ctaPrimary?.href
+					? {
+							label: section.ctaPrimary.label,
+							href: section.ctaPrimary.href,
+							icon: section.ctaPrimary.icon,
+							iconPosition: "start",
+						}
+					: null
+			}
+			secondary={
+				section?.ctaSecondary?.href
+					? {
+							label: section.ctaSecondary.label,
+							href: section.ctaSecondary.href,
+							icon: section.ctaSecondary.icon,
+							iconPosition: "start",
+							trailingArrow: true,
+						}
+					: null
+			}
+		/>
 	);
 }
 

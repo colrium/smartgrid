@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "AS-BUILT SURVEYS",
 		"title": "As-Built Surveys",
 		"image": "/media/civil/as-built-surveys/01.jpg",
@@ -10,11 +11,13 @@
 		}
 	},
 	"whatAreAsBuiltSurveys": {
+		"type": "intro",
 		"tag": "Precision Documentation",
 		"headline": "What are As-built surveys?",
 		"description": "As-built surveys capture the true, current state of built environments by comparing actual field conditions with original designs. Using drones, LiDAR, and photogrammetry, we document infrastructure with centimeter-level accuracy, from the air—faster and safer than traditional methods."
 	},
 	"asBuiltSolutions": {
+		"type": "card-grid",
 		"tag": "What we do",
 		"headline": "As-Built Solutions",
 		"description": "",
@@ -46,6 +49,7 @@
 		]
 	},
 	"keyIndustries": {
+		"type": "card-grid",
 		"tag": "Sectors Served",
 		"headline": "Key Industries",
 		"description": "",
@@ -78,11 +82,13 @@
 		]
 	},
 	"maxProductivityMinGuesswork": {
+		"type": "intro",
 		"tag": "Lead with Data",
 		"headline": "Maximize Productivity. Minimize Guesswork.",
 		"description": "At SmartGrid Surveying, we use UAVs equipped with high-precision sensors to collect 3D data, orthomosaics, and elevation models. This enables a complete digital replica of the site—ideal for validating engineering tolerances, assessing deviations, and facilitating smarter decision-making. Let data lead the way to profitability."
 	},
 	"applications": {
+		"type": "card-grid",
 		"tag": "Key Applications",
 		"headline": "Our Applications",
 		"description": "",
@@ -114,44 +120,14 @@
 			}
 		]
 	},
-	"keyIndustries": {
-		"tag": "Sectors Served",
-		"headline": "Key Industries",
-		"description": "",
-		"items": [
-			{
-				"icon": "road-variant",
-				"title": "Infrastructure & Transportation",
-				"description": "Highways, railways, and airports."
-			},
-			{
-				"icon": "flash",
-				"title": "Energy & Utilities",
-				"description": "Power lines, substations, and solar farms."
-			},
-			{
-				"icon": "city",
-				"title": "Commercial & Residential Development",
-				"description": "Building and housing projects."
-			},
-			{
-				"icon": "gas-station",
-				"title": "Oil & Gas Facilities",
-				"description": "Refineries, pipelines, and storage depots."
-			},
-			{
-				"icon": "office-building",
-				"title": "Public Works & Civil Engineering",
-				"description": "Bridges, dams, and municipal projects."
-			}
-		]
-	},
 	"actionableInsights": {
+		"type": "intro",
 		"tag": "Actionable Insights",
 		"headline": "Smart Insights, Delivered Digitally!",
 		"description": "Pairing drone data with surveying techniques and GIS processing, we convert raw aerial data into actionable insights. Visualize deviations, flag inconsistencies, and bring clarity to your construction workflows—all in one seamless platform."
 	},
 	"deliverables": {
+		"type": "deliverables",
 		"tag": "Project Outputs",
 		"headline": "As-Built Survey Deliverables",
 		"description": "Complete as-built documentation for handover, verification and records:",
