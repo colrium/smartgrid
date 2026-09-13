@@ -3,13 +3,13 @@
 ## Project Overview
 **SmartGrid Surveying & Civil Engineering Ltd** landing site.
 Next.js 16 (Pages Router) + TypeScript + Tailwind CSS v4. Internationalization with
-`next-i18next` (locales: `en, sw`). Content from Sanity CMS and
+`next-i18next` (locales: `en, sw`). Content from Keystatic and
 `public/locales/*/....json`.
 
 ## Key Files
 - **Config:** `next.config.js`, `next-i18next.config.js`, `next-sitemap.config.js`,
   `tsconfig.json`, `tailwind.config.ts`, `eslint.config.mjs`, `.prettierrc`,
-  `.editorconfig`, `postcss.config.mjs`.
+  `.editorconfig`, `postcss.config.mjs`, `keystatic.config.ts`.
 - **Entry points:** `src/pages/_app.tsx` (i18n + `LandingPageLayout`), `src/pages/_document.tsx`
   (language detection, Google Analytics).
 - **Routing:** real localized pages under `src/pages/[locale]/`; root `src/pages/*.tsx` are
@@ -21,7 +21,12 @@ Next.js 16 (Pages Router) + TypeScript + Tailwind CSS v4. Internationalization w
 - **Components:** `src/components/sections/<page>/index.ts` barrels,
   `src/components/animations/`, `src/components/ui/` (Avatar, Drawer, Menu, MenuItem,
   IconButton, ScrollIndicator).
-- **Env:** `src/lib/env.ts` (Zod-validated). Copy `.env.example` → `.env.local`.
+- **Content:** `keystatic.config.ts`, `src/lib/keystatic/`, and `content/pages/`; existing
+  `public/locales/{en,sw}/` files remain the default/fallback source during migration.
+- **Env:** `src/lib/env.ts` (Zod-validated). Copy `.env.example` → `.env.local`. Production
+  Keystatic auth uses `KEYSTATIC_ADMIN_USER` and `KEYSTATIC_ADMIN_PASSWORD`.
+- **Planning:** `docs/keystatic-page-builder-plan.md` is the progress source of truth;
+  `docs/prompts/keystatic-page-builder-agent.md` is the implementation handoff prompt.
 
 ## Commands
 ```bash

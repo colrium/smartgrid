@@ -7,7 +7,7 @@ import {
     WorkflowSection,
     type WorkflowPhaseStyles,
     type WorkflowSectionProps,
-} from "@/components/sections/WorkflowSection";
+} from "@/components/sections/shared/WorkflowSection";
 
 /** Domain-specific chip styling: the default ACQUISITION icon is hydrographic (boat). */
 const PHASE_STYLE_OVERRIDES: WorkflowPhaseStyles = {

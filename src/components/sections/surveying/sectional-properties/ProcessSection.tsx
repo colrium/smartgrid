@@ -7,7 +7,7 @@ import {
 	WorkflowSection,
 	type WorkflowPhaseStyles,
 	type WorkflowSectionProps,
-} from "@/components/sections/WorkflowSection";
+} from "@/components/sections/shared/WorkflowSection";
 
 /** Domain-specific chip styling preserved from the original section. */
 const PHASE_STYLES: WorkflowPhaseStyles = {

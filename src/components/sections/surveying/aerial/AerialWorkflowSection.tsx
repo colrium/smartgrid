@@ -7,7 +7,7 @@ import {
     WorkflowSection,
     type WorkflowCta,
     type WorkflowStep,
-} from "@/components/sections/WorkflowSection";
+} from "@/components/sections/shared/WorkflowSection";
 
 interface AerialWorkflowContent {
     tag?: string | null;

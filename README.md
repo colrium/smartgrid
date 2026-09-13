@@ -16,7 +16,7 @@ surveys**, **civil engineering**, and **surveying equipment** services across Ke
 - 🌐 **Live site:** [https://smartgrid-phi.vercel.app](https://smartgrid-phi.vercel.app)
 - 📍 **Headquarters:** Nairobi (Ruiru), Kenya
 - 🌍 **Locales:** English, Swahili (auto-detected)
-- 🏗️ **Built with:** Next.js 16 · TypeScript · Tailwind CSS · i18next · Sanity CMS
+- 🏗️ **Built with:** Next.js 16 · TypeScript · Tailwind CSS · i18next · Keystatic
 
 ---
 
@@ -56,7 +56,8 @@ surveys**, **civil engineering**, and **surveying equipment** services across Ke
 ## Features
 
 - **5 locales** with automatic browser-language detection and a language switcher.
-- **Sanity CMS** driven content (team, projects, certifications, metrics).
+- **Keystatic page builder** for structured pages composed from reusable shared sections.
+- **next-i18next locale content** remains the default/fallback source while pages are migrated.
 - **Equipment catalogue** driven by a JSON registry (`products.json`) — adding a product listing
   is a single JSON entry plus a per-product locale file.
 - **Code-split 3D WebGL hero** (`three.js` / `@react-three/fiber`) — loaded client-only and only
@@ -82,7 +83,7 @@ surveys**, **civil engineering**, and **surveying equipment** services across Ke
 | Language           | TypeScript (`strict: false`, bundler module resolution)                   |
 | Styling            | [Tailwind CSS v4](https://tailwindcss.com) + PostCSS                        |
 | Internationalization | [i18next](https://www.i18next.com/) + [next-i18next](https://github.com/i18next/next-i18next) |
-| Content / CMS      | [Sanity](https://www.sanity.io) (`next-sanity`, `@sanity/image-url`)       |
+| Content / CMS      | [Keystatic](https://keystatic.com) (`@keystatic/core`, `@keystatic/next`)  |
 | 3D / WebGL         | `three`, `@react-three/fiber`, `@react-three/drei`, `ogl` (code-split)      |
 | Animations         | `framer-motion`, `gsap`, `lenis` (smooth scroll)                            |
 | State              | `zustand`                                                                    |
@@ -113,8 +114,9 @@ npm install
 
 ### Environment Variables
 
-Copy the example and fill in the required values (Sanity credentials, Formspree form ID,
-Google Analytics / Maps keys):
+Copy the example and fill in the required values (Formspree form ID and Google Analytics / Maps
+keys). Keystatic uses local storage during development unless a deployed GitHub-backed storage
+mode is configured.
 
 ```bash
 cp .env.example .env.local
@@ -123,17 +125,19 @@ cp .env.example .env.local
 | Variable                          | Required | Description                                         |
 | --------------------------------- | -------- | --------------------------------------------------- |
 | `NEXT_PUBLIC_SITE_URL`            | no       | Site URL (used by sitemap / analytics)              |
-| `NEXT_PUBLIC_SANITY_PROJECT_ID`   | **yes**  | Sanity project ID                                   |
-| `NEXT_PUBLIC_SANITY_DATASET`      | **yes**  | Sanity dataset (e.g. `production`)                  |
-| `NEXT_PUBLIC_SANITY_API_VERSION`  | no       | Sanity API date version (default `2024-01-01`)      |
-| `NEXT_PUBLIC_SANITY_USE_CDN`      | no       | Use CDN for reads (default `true`)                  |
-| `SANITY_API_TOKEN`                | no       | Token for preview/write operations                  |
 | `NEXT_PUBLIC_FORMSPREE_FORM_ID`   | no       | Formspree contact form ID                           |
 | `NEXT_PUBLIC_GA_MEASUREMENT_ID`   | no       | Google Analytics 4 measurement ID                   |
 | `NEXT_PUBLIC_TAWK_PROPERTY_ID`    | no       | Tawk.to live-chat property ID                       |
 | `NEXT_PUBLIC_TAWK_WIDGET_ID`      | no       | Tawk.to widget ID                                   |
 | `NEXT_PUBLIC_WHATSAPP_NUMBER`     | no       | WhatsApp contact number (digits / intl format)      |
 | `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` | no       | Google Maps JS API key (maps section)               |
+| `KEYSTATIC_ADMIN_USER`            | deploy   | Production Keystatic Basic Auth username           |
+| `KEYSTATIC_ADMIN_PASSWORD`        | deploy   | Production Keystatic Basic Auth password           |
+
+Keystatic administration is available at `/keystatic` and `/api/keystatic/*`. Development is
+unrestricted; production requests are protected by the middleware Basic Auth gate. Configure the
+storage repository and GitHub integration in `keystatic.config.ts` through deployment-safe
+environment variables before enabling GitHub-backed editing.
 
 > Environment variables are validated at runtime with Zod (`src/lib/env.ts`). Invalid values
 > will crash the app at startup with a readable error.
@@ -159,6 +163,7 @@ smartgrid/
 ├─ CLAUDE.md                # Claude Code instructions
 ├─ README.md                # this file
 ├─ package.json
+├─ keystatic.config.ts                 # Keystatic schema and storage configuration
 ├─ tsconfig.json            # @/* -> ./src/*, bundler resolution
 ├─ next.config.js           # i18n, image formats/qualities, distDir
 ├─ next-i18next.config.js   # locales: en, de, sw, fr, pt
@@ -183,7 +188,7 @@ smartgrid/
 │   │   ├─ animations/       # Fade, ScrollReveal, ClipReveal, ParallaxTile, ...
 │   │   └─ ui/               # Avatar, Drawer, Menu, MenuItem, IconButton, ...
 │   ├─ layouts/LandingPage/  # Navbar, Footer, Layout (Lenis, ChatWidget, ...)
-│   ├─ lib/                  # i18n, sanity, catalogue, env(zod), types, product
+│   ├─ lib/                  # i18n, keystatic, catalogue, env(zod), types, product
 │   ├─ hooks/                # useTranslation (custom), useSetState
 │   ├─ styles/globals.css    # Tailwind theme + design tokens + utilities
 │   └─ types/next.d.ts
@@ -192,6 +197,10 @@ smartgrid/
    ├─ img/{earth,flags,instruments,products,...}
    ├─ fonts/              # Plus Jakarta Sans, Google Sans Flex, Brother 1816
       └─ geojson/            # world countries geometry for maps
+    ├─ content/pages/             # Keystatic page documents (created during migration)
+    └─ docs/
+       ├─ keystatic-page-builder-plan.md
+       └─ prompts/keystatic-page-builder-agent.md
 ```
 
 ---
@@ -211,6 +220,18 @@ The site uses Next.js **Pages Router** with **locale subpaths**.
   proxy + `[locale]` mirror pattern; `equipment-sale/[product].tsx` is a dynamic route.
 - Every page uses `getServerSideProps` → `getI18nProps(context, ["common", "meta", "<pageNS>"])`
   to load its namespaces. The shared layout auto-loads the `contact` namespace.
+
+### Content / Page Builder
+
+Keystatic is the structured page editor. `keystatic.config.ts` defines the page collection and
+ordered section data. `src/lib/keystatic/` contains the reader, locale normalization, and
+page-builder helpers. The approved component registry will connect serializable components from
+`src/components/sections/shared/` (and selected `src/components/ui/` components) to both the
+Keystatic schema and the runtime renderer.
+
+The existing `public/locales/{en,sw}/` files remain the default content source during the
+incremental migration. Each migrated page must document its source precedence and preserve the
+existing localized URL.
 
 ### Internationalization (i18n)
 

@@ -6,7 +6,7 @@ import { useTranslation } from "@/hooks";
 import {
     WorkflowSection,
     type WorkflowSectionProps,
-} from "@/components/sections/WorkflowSection";
+} from "@/components/sections/shared/WorkflowSection";
 
 export function BathymetricWorkflowSection(): ReactElement {
     const { t } = useTranslation(["surveying/bathymetric-surveys"]);

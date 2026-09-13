@@ -19,7 +19,9 @@ engineering-grade land, aerial, and civil surveying services across Kenya and Ea
 - **Styling:** Tailwind CSS v4 (PostCSS) with CSS custom properties defined in `src/styles/globals.css`.
 - **Internationalization:** `i18next` + `next-i18next`, backed by JSON locale files in `public/locales/`.
   A custom `useTranslation` wrapper lives at `src/hooks/useTranslation.ts`.
-- **Content:** Sanity CMS (`src/lib/sanity.ts`); equipment/product registry in `public/locales/en/products.json`.
+- **Content:** Keystatic page builder (`keystatic.config.ts`, `src/lib/keystatic/`, and
+  `content/pages/`); existing locale JSON remains the default/fallback source during migration.
+  Equipment/product registry remains in `public/locales/en/products.json`.
 - **Animations:** Framer Motion, GSAP, Lenis (smooth scroll), Three.js / `@react-three/fiber` +
   `@react-three/drei` (code-split, client-only, device-gated).
 - **State:** Zustand. **Validation:** Zod (env parsing).
@@ -39,11 +41,13 @@ src/
   pages/{surveying,aerial-drones,civil,equipment-sale}/  # Nested route groups (proxy + [locale] mirrors)
   components/                     # Shared UI: sections/{home,about,...}, animations/, forms/, ui/
   layouts/LandingPage/            # Navbar, Footer, Layout (Lenis, ChatWidget, Whatsapp, ScrollTop, RippleSetup)
-  lib/                            # i18n helpers, sanity, catalogue, env (zod), types, product
+  lib/                            # i18n helpers, keystatic, catalogue, env (zod), types, product
   hooks/                          # useTranslation (custom), useSetState
   styles/globals.css              # Tailwind + theme tokens (CSS vars, utilities, shimmer)
   types/next.d.ts                 # NextPageWithLayout, Service, Project, Metric
 @types/                           # resources.ts (i18n type generator output), i18next.d.ts
+content/pages/                    # Keystatic page documents (introduced during migration)
+docs/                             # Page-builder plan and agent handoff prompt
 public/                           # assets, fonts, img, geojson, locales/{lang}/*.json
 ```
 
@@ -86,6 +90,21 @@ public/                           # assets, fonts, img, geojson, locales/{lang}/
 - Pages load namespaces via `getServerSideProps` → `getI18nProps(context, ["common", "meta", "<pageNS>"])`.
   The `contact` namespace is auto-loaded by the shared layout.
 - Re-run `npm run toc` to regenerate `@types/resources.ts` when locale namespaces change.
+
+## Keystatic Page Builder
+- The active implementation plan is `docs/keystatic-page-builder-plan.md`; update milestone
+  status, checklist items, and the dated status log as work progresses.
+- The startup prompt is `docs/prompts/keystatic-page-builder-agent.md`.
+- `keystatic.config.ts` must use valid APIs for the installed Keystatic versions and must not
+  contain placeholder repository values or secrets.
+- Register only serializable, editor-friendly components from `src/components/sections/shared/`
+  and selected `src/components/ui/` components. One registry must drive both editor options and
+  runtime rendering.
+- Preserve `en`/`sw` content shape and existing public URLs. Define and test source precedence
+  between Keystatic documents and `public/locales/` before migrating a page.
+- The admin route is `/keystatic`; production access is gated by `middleware.ts` using
+  `KEYSTATIC_ADMIN_USER` and `KEYSTATIC_ADMIN_PASSWORD`. Keep local development possible without
+  GitHub credentials.
 
 ## Component Patterns
 - Sections are colocated under `src/components/sections/<page>/` with an `index.ts` barrel.
