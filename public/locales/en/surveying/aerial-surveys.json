@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "AERIAL SURVEYS",
 		"title": "Aerial Drone Surveying in Kenya, Uganda, Tanzania and beyond",
 		"image": "/media/surveying/aerial-surveys/AG8ng.jpeg",
@@ -24,6 +25,7 @@
 		]
 	},
 	"section1": {
+		"type": "intro",
 		"tag": "Your trusted partner",
 		"headline": "Reliable. Scalable. Fast. Effective.",
 		"description": "Whether you're a government agency, an NGO, or a private developer, Smartgrid Surveying is your trusted partner! \n Our drones deliver actionable data where it matters most. ",
@@ -33,6 +35,7 @@
 		}
 	},
 	"whatWeOffer": {
+		"type": "unique",
 		"tag": "Services",
 		"headline": "Our Aerial Surveying Services",
 		"items": [
@@ -84,6 +87,7 @@
 		]
 	},
 	"precision": {
+		"type": "split-media",
 		"tag": "Precision",
 		"headline": "Eyes in the Sky, Precision on the Ground",
 		"description": "At SmartGrid Surveying, our aerial drone survey solutions offer high-resolution imagery, topographic mapping, and volumetric analysis with unmatched accuracy and speed. From vast farmlands to urban infrastructure, our drone technology captures data quickly, safely, and cost-effectively—especially in hard-to-reach or expansive areas. \n\n We’ve completed aerial drone surveys across multiple sectors in 10+ African countries, serving land developers, governments, mining companies, and agribusinesses.",
@@ -129,6 +133,7 @@
 		]
 	},
 	"deliverables": {
+		"type": "deliverables",
 		"tag": "What you receive",
 		"headline": "What You Receive From a Drone Survey Project",
 		"description": "Every engagement closes with a complete, engineer-ready data package — exported in open formats that feed straight into CAD, GIS and construction management tools.",
@@ -197,6 +202,7 @@
 		]
 	},
 	"whyDroneSurveys": {
+		"type": "unique",
 		"tag": "Why Drone Surveys",
 		"headline": "Why Engineers & Developers in Kenya Use Drone Surveys",
 		"description": "Drone surveying has become the default choice for engineering, construction and land development teams that need reliable data on tight timelines.",
@@ -230,6 +236,7 @@
 		]
 	},
 	"workflow": {
+		"type": "process",
 		"tag": "Field-to-Design Pipeline",
 		"headline": "Our Drone Survey Workflow",
 		"description": "A transparent, seven-stage aerial pipeline — from the first scope call to CAD/GIS handover, you always know where your project stands.",
@@ -279,6 +286,7 @@
 		}
 	},
 	"industries": {
+		"type": "card-grid",
 		"tag": "Industry Use Cases",
 		"headline": "Aerial Surveys for Key Industries in Kenya",
 		"description": "From national road corridors to county master plans — our drone data supports the decisions that shape Kenya's built environment.",
@@ -328,6 +336,7 @@
 		]
 	},
 	"industryCta": {
+		"type": "cta",
 		"tag": "Tailored Proposals",
 		"headline": "Get Industry-Specific Survey Proposal",
 		"description": "Roads, energy, mining, agriculture or county planning — tell us your sector and we will scope the flights, deliverables and accuracy class your project needs.",
@@ -344,6 +353,7 @@
 		}
 	},
 	"techStack": {
+		"type": "card-grid",
 		"tag": "Our Technology Stack",
 		"headline": "Survey Technology We Use",
 		"description": "Engineer-grade hardware and software — every deliverable is produced on platforms your technical team already trusts.",
@@ -384,6 +394,7 @@
 		]
 	},
 	"capabilityCta": {
+		"type": "cta",
 		"tag": "For Tenders & Prequalification",
 		"headline": "Request Technical Capability Statement (PDF)",
 		"description": "Equipment lists, accuracy standards, KCAA compliance, insurance and past project references — everything procurement teams need to prequalify SmartGrid Surveying.",
@@ -400,6 +411,7 @@
 		}
 	},
 	"finalCta": {
+		"type": "cta-closing",
 		"tag": "Start Your Aerial Survey",
 		"headline": "Need Accurate Drone Mapping for Your Project?",
 		"description": "Get engineering-grade aerial survey data delivered within timelines aligned to construction, design, and approval workflows.",
@@ -432,6 +444,7 @@
 		]
 	},
 	"projects": {
+		"type": "unique",
 		"tag": "completed Projects",
 		"headline": "PROJECTS DONE ACROSS AFRICA",
 		"images": [
@@ -452,6 +465,7 @@
 		]
 	},
 	"additionalServices": {
+		"type": "unique",
 		"tag": "In addition to technical surveys",
 		"headline": "we offer aerial photography services for",
 		"items": ["Real estate and property marketing", "Events coverage", "Promotional media"],

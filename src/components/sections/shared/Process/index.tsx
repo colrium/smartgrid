@@ -86,8 +86,6 @@ export function Process(props: ProcessProps): ReactElement | null {
 		return props.phaseStyles?.[item.phase] || undefined;
 	};
 
-	const chipClass = (item: ProcessItem): string => styleFor(item)?.chip || DEFAULT_CHIP;
-
 	const phaseChip = (item: ProcessItem): ReactElement | null => {
 		if (!item.phase) return null;
 		const style = styleFor(item);

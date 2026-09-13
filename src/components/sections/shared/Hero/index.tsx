@@ -28,6 +28,8 @@ export interface HeroContent {
 	scrollCue?: boolean;
 	/** Label for the bottom scroll cue (banner variant). */
 	cueLabel?: string | null;
+	/** Footnote chips rendered under the CTA row (hero trust markers). */
+	footnoteItems?: { icon?: string | null; text?: string }[] | null;
 	ctaPrimary?: {
 		label: string;
 		href: string;
@@ -77,6 +79,7 @@ export function Hero(props: HeroProps): ReactElement {
 	const light = layout === "light";
 	const framed = props.frame ?? hero.frame ?? false;
 	const cue = props.scrollCue ?? hero.scrollCue ?? false;
+	const footnotes = Array.isArray(hero.footnoteItems) ? hero.footnoteItems : [];
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");
 	const tag = banner ? (hero.title ?? hero.headline ?? null) : (hero.headline ?? null);
 	const heading = banner
@@ -258,6 +261,20 @@ export function Hero(props: HeroProps): ReactElement {
 								{primary ? <CtaPill action={primary} variant={pillVariant} /> : null}
 								{secondary ? <CtaPill action={secondary} variant="outline" /> : null}
 							</div>
+						) : null}
+
+						{footnotes.length > 0 ? (
+							<ul className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-3">
+								{footnotes.map((item, index) => (
+									<li key={index} className="inline-flex items-center gap-2 text-xs sm:text-sm text-surface/75">
+										<span
+											className={`mdi mdi-${item.icon || "check-circle"} text-base text-primary-300`}
+											aria-hidden
+										/>
+										{item.text}
+									</li>
+								))}
+							</ul>
 						) : null}
 					</div>
 				</FadeUp>

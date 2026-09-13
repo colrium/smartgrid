@@ -2,7 +2,7 @@
 
 import type { ReactElement } from "react";
 import { useTranslation } from "@/hooks";
-import { CardGrid, type CardItem } from "@/components/sections/shared";
+import { CardGrid } from "@/components/sections/shared";
 
 const NS = "aerial-drones/monitoring-and-evaluation";
 
