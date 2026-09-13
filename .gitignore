@@ -49,6 +49,7 @@ next-env.d.ts
 # IDE
 .idea
 .vscode
+.editorconfig
 
 #Logs
 **/*.log
@@ -60,8 +61,12 @@ next-env.d.ts
 # Backups and Experimental versions
 *.bak*
 *.experimental*
+
 #AI
+AGENTS.md
+CLAUDE.md
 .freebuff
+.clinerules
 .next-verify
 .kilo
 kilo.jsonc
