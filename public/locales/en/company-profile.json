@@ -1,5 +1,7 @@
 {
 	"hero": {
+		"type": "hero",
+		"layout": "light",
 		"headline": "SMARTGRID SURVEYING & CIVIL WORKS",
 		"title": "Company Profile",
 		"description": "Survey Smarter, Build Stronger. Building Trust and Integrity every step of the way.",
@@ -10,6 +12,7 @@
 		}
 	},
 	"stats": {
+		"type": "stats",
 		"items": [
 			{
 				"icon": "map",
@@ -34,6 +37,7 @@
 		]
 	},
 	"about": {
+		"type": "split-media",
 		"tag": "Who We Are",
 		"headline": "A Geospatial & Engineering Partner You Can Build On",
 		"image": "/img/logo.svg",
@@ -46,6 +50,7 @@
 		]
 	},
 	"missionVision": {
+		"type": "card-grid",
 		"tag": "Our Foundation",
 		"headline": "Mission, Vision & Core Values",
 		"items": [
@@ -67,6 +72,7 @@
 		]
 	},
 	"services": {
+		"type": "card-grid",
 		"tag": "What We Do",
 		"headline": "Integrated Service Capabilities",
 		"description": "One partner across the full project lifecycle — from reconnaissance to final deliverables.",
@@ -110,6 +116,7 @@
 		]
 	},
 	"whyUs": {
+		"type": "card-grid",
 		"tag": "Why SmartGrid",
 		"headline": "The SmartGrid Difference",
 		"description": "Clients choose us because precision is not a promise — it is a procedure.",
@@ -147,6 +154,7 @@
 		]
 	},
 	"companyProfileView": {
+		"type": "unique",
 		"tag": "Company Profile Document",
 		"headline": "Read the Full Profile",
 		"description": "Browse our complete company profile below — capabilities, experience, equipment, and references. You can also download it for sharing.",

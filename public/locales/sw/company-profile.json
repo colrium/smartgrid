@@ -1,5 +1,7 @@
 {
 	"hero": {
+		"type": "hero",
+		"layout": "light",
 		"headline": "SMARTGRID SURVEYING & CIVIL WORKS",
 		"title": "Wasifu wa Kampuni",
 		"description": "Pima kwa Akili, Jenga kwa Nguvu. Kujenga Uaminifu na Uadilifu katika kila hatua.",
@@ -10,6 +12,7 @@
 		}
 	},
 	"stats": {
+		"type": "stats",
 		"items": [
 			{
 				"icon": "map",
@@ -34,6 +37,7 @@
 		]
 	},
 	"about": {
+		"type": "split-media",
 		"tag": "Sisi ni Nani",
 		"headline": "Mshirika wa Kijiografia na Uhandisi Unaoweza Kutegemewa",
 		"image": "/media/surveying/AG8ng.jpeg",
@@ -46,6 +50,7 @@
 		]
 	},
 	"missionVision": {
+		"type": "card-grid",
 		"tag": "Msingi Wetu",
 		"headline": "Dhamira, Maono na Maadili ya Msingi",
 		"items": [
@@ -67,6 +72,7 @@
 		]
 	},
 	"services": {
+		"type": "card-grid",
 		"tag": "Tunachofanya",
 		"headline": "Uwezo Kamili wa Huduma",
 		"description": "Mshirika mmoja katika mzunguko mzima wa mradi — kutoka utafiti hadi matokeo ya mwisho.",
@@ -110,6 +116,7 @@
 		]
 	},
 	"whyUs": {
+		"type": "card-grid",
 		"tag": "Kwa Nini SmartGrid",
 		"headline": "Tofauti ya SmartGrid",
 		"description": "Wateja hutuchagua kwa sababu usahihi si ahadi — ni taratibu.",
@@ -147,6 +154,7 @@
 		]
 	},
 	"companyProfileView": {
+		"type": "unique",
 		"tag": "Nyaraka za Wasifu wa Kampuni",
 		"headline": "Soma Wasifu Kamili",
 		"description": "Vinjari wasifu wetu kamili wa kampuni hapa chini — uwezo, uzoefu, vifaa, na marejeleo. Unaweza pia kupakua kwa ajili ya kushirikisha wengine.",

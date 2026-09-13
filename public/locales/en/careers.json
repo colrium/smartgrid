@@ -1,5 +1,7 @@
 {
 	"hero": {
+		"type": "hero",
+		"layout": "banner",
 		"headline": "Let's Work Together in Kenya and Beyond.",
 		"title": "Careers",
 		"description": "SmartGrid Surveying is a professional geospatial and engineering firm delivering precision land surveying, UAV mapping, GIS, underground utility detection, and civil infrastructure solutions. We seek disciplined, technically competent professionals committed to accuracy, safety, and excellence in project delivery.",
@@ -9,6 +11,7 @@
 		}
 	},
 	"currentOpenings": {
+		"type": "unique",
 		"tag": "Join Our Team",
 		"headline": "Current Opportunities",
 		"description": "Explore the open positions below and apply to become part of our growing team.",
@@ -485,12 +488,14 @@
 		]
 	},
 	"applicationProcess": {
+		"type": "unique",
 		"tag": null,
 		"title": "",
 		"subtitle": "Application Process",
 		"description": "Submit your CV and cover letter to <bold>info@smartgridsurveying.com<bold> indicating the position applied for in the subject line.\n\n Only shortlisted candidates will be contacted. SmartGrid Surveying is an equal opportunity employer committed to professionalism, integrity, and excellence."
 	},
 	"statement": {
+		"type": "unique",
 		"tag": null,
 		"title": "",
 		"subtitle": "Equal Opportunity & Donor Compliance Statement",

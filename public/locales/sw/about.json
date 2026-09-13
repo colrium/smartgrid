@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "Ya Kuaminika. Inayoweza Kupanuka. Ya Haraka. Inayofaa.",
 		"title": "Kuhusu Sisi",
 		"image": "/media/about/01.jpeg",
@@ -10,6 +11,7 @@
 		}
 	},
 	"ourStory": {
+		"type": "split-media",
 		"tag": "Safari Yetu",
 		"headline": "SMARTGRID SURVEYING & ENGINEERING",
 		"image": "/img/logo.svg",
@@ -123,6 +125,7 @@
 	},
 	"landSurveying": {
 		"type": "card-grid",
+		"type": "card-grid",
 		"tag": "Usahihi wa Ardhi",
 		"headline": "UPIMAJI WA ARDHI WA SMARTGRID",
 		"description": "Katika Smartgrid Surveying, tunafafanua upya mustakabali wa <primary>uchunguzi wa ardhi na anga</primary> kote Afrika na kuendelea. Kwa teknolojia ya kisasa na kujitolea thabiti kwa <primary>usahihi</primary>, tunatoa huduma kamili ya <primary>upimaji wa kitaalamu</primary> inayosaidia maendeleo ya miundombinu, usimamizi wa ardhi, ufuatiliaji wa mazingira, na miradi ya upangaji ya viwango vyote. Smartgrid Surveying hutoa suluhisho kamili za upimaji wa ardhi zilizoundwa kwa <primary>wasanidi, serikali, makandarasi, na wateja binafsi</primary>. Iwe ni kwa hati miliki, uwekaji wa mipaka, mipangilio ya ujenzi, au uchoraji ramani wa cadastral, tunaleta uzoefu na ubora kwa kila tovuti.",
@@ -183,6 +186,7 @@
 		]
 	},
 	"impactAcrossAfrica": {
+		"type": "globe",
 		"tag": "Ufikiaji Wetu",
 		"headline": "Athari Kote Afrika",
 		"image": "/media/about/28.jpeg",
@@ -200,6 +204,7 @@
 		}
 	},
 	"whyChooseSmartGrid": {
+		"type": "card-grid",
 		"type": "card-grid",
 		"tag": "Kwa Nini Sisi",
 		"headline": "Kwa Nini Uchague SmartGrid kwa Huduma za Droni?",

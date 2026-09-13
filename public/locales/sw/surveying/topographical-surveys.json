@@ -9,6 +9,7 @@
 		"ctaPrimary": {
 			"icon": "email",
 			"iconPosition": "start",
+			"trailingArrow": true,
 			"label": "Omba Nukuu ya Uchunguzi wa Topografia Leo",
 			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Topographical Survey&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for a Topographical Survey. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0APlot size:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}

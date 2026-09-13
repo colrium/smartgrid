@@ -6,6 +6,7 @@ import { FadeUp } from "@/components/animations/Fade";
 import { SectionHeader } from "@/components/sections/home/SectionHeader";
 import { Blob } from "@/components/sections/home/decor";
 import { CardList, cardGridCols, type CardItem } from "@/components/sections/shared/CardList";
+import { CheckList } from "@/components/sections/shared/Pricing";
 import type { CardProps } from "@/components/ui/Card";
 
 export interface SplitMediaContent {
@@ -13,6 +14,8 @@ export interface SplitMediaContent {
 	headline: string;
 	description?: string | null;
 	image?: string | null;
+	/** Check-bullet points rendered under the media frame. */
+	points?: string[] | null;
 }
 
 export interface SplitMediaProps {
@@ -23,6 +26,8 @@ export interface SplitMediaProps {
 	tone?: "default" | "surface";
 	/** Inner media frame classes, e.g. `h-96` (default) or `aspect-16/10`. */
 	mediaAspect?: string;
+	/** Media object fit — `cover` (default) or `contain` (logos/diagrams). */
+	mediaFit?: "cover" | "contain";
 	id?: string;
 	className?: string;
 	/** Optional card row rendered below the split, inside the same section. */
@@ -75,10 +80,17 @@ export function SplitMedia(props: SplitMediaProps): ReactElement | null {
 								alt={data.headline}
 								fill
 								sizes="(min-width: 1024px) 50vw, 100vw"
-								className="object-cover object-center transition-transform duration-700 hover:scale-105"
+								className={
+									props.mediaFit === "contain"
+										? "object-contain object-center p-8 sm:p-10"
+										: "object-cover object-center transition-transform duration-700 hover:scale-105"
+								}
 							/>
 						</div>
 					</div>
+					{data.points && data.points.length > 0 ? (
+						<CheckList items={data.points} className="mt-8" />
+					) : null}
 				</div>
 			) : null}
 		</FadeUp>

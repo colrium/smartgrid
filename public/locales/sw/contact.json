@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"tag": "Wasiliana Nasi",
 		"headline": "Hebu tuzungumze kuhusu mradi wako wa upimaji au uhandisi",
 		"description": "Iwe unahitaji upimaji wa ardhi, uchunguzi wa angani, uhandisi wa kiraia, ukodishaji wa vifaa, au upigaji picha kwa ndege zisizo na rubani, timu yetu iko tayari kukusaidia.",
@@ -9,6 +10,7 @@
 		}
 	},
 	"talkToUs": {
+		"type": "card-grid",
 		"tag": "Fikia Nasi",
 		"headline": "Zungumza Nasi",
 		"description": "Wasiliana na wataalamu wetu kwa simu au barua pepe kwa maswali ya huduma, msaada, au mapendekezo.",
@@ -62,6 +64,7 @@
 		"description": "Chagua huduma inayofaa zaidi mradi wako ili tuweze kutoa taarifa sahihi na hatua zinazofuata."
 	},
 	"offices": {
+		"type": "unique",
 		"tag": "Ofisi Zetu",
 		"headline": "Fikia Ofisi Zetu",
 		"description": "Tembelea ofisi kuu yetu kwa mashauriano ya kitaalamu kuhusu upimaji wa ardhi, angani, na uhandisi.",
@@ -180,6 +183,7 @@
 		]
 	},
 	"form": {
+		"type": "contact",
 		"tag": "Tuma Ujumbe",
 		"headline": "Anza mazungumzo",
 		"description": "Jaza fomu na mwanachama sahihi wa timu yetu atajibu ndani ya siku moja ya kazi.",

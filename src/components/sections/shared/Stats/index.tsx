@@ -20,8 +20,9 @@ export interface StatsProps {
 	/** Metric items; `items` and the legacy `metrics` key are interchangeable. */
 	items?: StatItem[] | null;
 	metrics?: StatItem[] | null;
-	/** `band` = full-bleed primary band; `cards` = light stat cards. */
-	layout?: "band" | "cards";
+	/** `band` = full-bleed primary band; `cards` = light stat cards;
+	 *  `panel` = rounded ink-panel strip overlapping the section above. */
+	layout?: "band" | "cards" | "panel";
 	tone?: "default" | "surface";
 	columns?: 2 | 3 | 4;
 	className?: string;
@@ -90,6 +91,32 @@ export function Stats(props: StatsProps): ReactElement | null {
 					))}
 				</div>
 			</SectionShell>
+		);
+	}
+
+	if (layout === "panel") {
+		return (
+			<section id={props.id} className={`relative z-10 -mt-4 pb-8 ${props.className ?? ""}`.trim()}>
+				<div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+					<div className="grid grid-cols-2 lg:grid-cols-4 rounded-c ink-panel card-shadow overflow-hidden">
+						{items.map((item, index) => (
+							<FadeUp key={index} delay={index * 0.06}>
+								<div className="flex flex-col items-center text-center gap-2.5 px-6 py-9">
+									<span className="flex h-20 w-20 items-center justify-center rounded-xl hover:bg-surface/10 text-surface">
+										{item.icon && <span className={`mdi mdi-${item.icon} text-4xl`} />}
+									</span>
+									<span className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">
+										{item.value}
+									</span>
+									<span className="text-[11px] uppercase tracking-widest text-white/55 leading-snug max-w-[12rem]">
+										{item.label}
+									</span>
+								</div>
+							</FadeUp>
+						))}
+					</div>
+				</div>
+			</section>
 		);
 	}
 

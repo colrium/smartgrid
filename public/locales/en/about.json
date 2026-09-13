@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "Reliable. Scalable. Fast. Effective.",
 		"title": "About Us",
 		"image": "/media/about/01.jpeg",
@@ -11,6 +12,7 @@
 	},
 	
 	"ourStory": {
+		"type": "split-media",
 		"tag": "Our Journey",
 		"headline": "SMARTGRID SURVEYING & ENGINEERING",
 		"image": "/img/logo.svg",
@@ -124,6 +126,7 @@
 	},
 	"landSurveying": {
 		"type": "card-grid",
+		"type": "card-grid",
 		"tag": "Ground Precision",
 		"headline": "SMARTGRID LAND SURVEYING",
 		"description": "At Smartgrid Surveying, we're redefining the future of <primary>land and aerial surveys</primary> across Africa and beyond. With cutting-edge technology and an unwavering commitment to <primary>precision</primary>, we offer a full suite of <primary>professional surveying</primary> services that support infrastructure development, land administration, environmental monitoring, and planning projects of all scales. Smartgrid Surveying provides comprehensive land surveying solutions tailored to <primary>developers, governments, contractors, and private clients</primary>. Whether it's for title deeds, boundary demarcation, construction layouts, or cadastral mapping, we bring experience and excellence to every site.",
@@ -185,6 +188,7 @@
 		]
 	},
 	"impactAcrossAfrica": {
+		"type": "globe",
 		"tag": "Our Reach",
 		"headline": "Impact Across Africa",
 		"image": "/media/about/28.jpeg",
@@ -202,6 +206,7 @@
         }
 	},
 	"whyChooseSmartGrid": {
+		"type": "card-grid",
 		"type": "card-grid",
 		"tag": "Why Us",
 		"headline": "Why Choose SmartGrid for Drone Services?",

@@ -1,11 +1,13 @@
 {
 	"hero": {
+		"type": "unique",
 		"tag": "Get In Touch",
 		"headline": "Let's talk about your surveying or engineering project",
 		"description": "Whether you need land surveying, aerial surveys, civil engineering, equipment hire, or drone photography, our team is ready to help.",
 		"badge": { "text": "Response within 24 hours", "status": "active" }
 	},
 	"talkToUs": {
+		"type": "card-grid",
 		"tag": "Reach Out",
 		"headline": "Talk to Us",
 		"description": "Reach out to our experts via call or email for service inquiries, support, or proposals.",
@@ -55,6 +57,7 @@
         ]
 	},
 	"offices": {
+		"type": "unique",
 		"tag": "Our Offices",
 		"headline": "Reach Our Offices",
         "description": "Visit our head office for professional consultation on land, aerial, and engineering surveys.",
@@ -125,6 +128,7 @@
 		]
 	},
 	"form": {
+		"type": "contact",
 		"tag": "Send a Message",
 		"headline": "Start the conversation",
 		"description": "Fill in the form and the right member of our team will respond within one business day.",

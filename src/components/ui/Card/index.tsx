@@ -21,6 +21,8 @@ export interface CardProps {
 	watermark?: string | number | null; headerRow?: boolean; headerEnd?: ReactNode;
 	hoverArrow?: boolean; kicker?: string | null; footer?: ReactNode; tags?: string[] | null;
 	subItems?: CardSubItem[] | null; mediaBadge?: string | number | null;
+	/** Brand accent token for the icon chip / arrow (primary|whatsapp|gmail|calendly|primary-700). */
+	accent?: string | null;
 	tagIcon?: string; link?: CardAction | null; href?: string | null;
 	className?: string; children?: ReactNode;
 }
@@ -37,6 +39,24 @@ const ICON_SHAPE: Record<CardIconShape, string> = {
 };
 const ICON_CHIP: Record<CardIconSize, string> = { sm: "h-11 w-11", md: "h-12 w-12", lg: "h-14 w-14" };
 const ICON_GLYPH: Record<CardIconSize, string> = { sm: "text-lg", md: "text-2xl", lg: "text-3xl" };
+/** Static accent token → chip classes (Tailwind-safe literal candidates). */
+const ACCENT_CHIP: Record<string, string> = {
+	primary: "bg-primary-50 text-primary group-hover:bg-primary group-hover:text-surface",
+	"primary-500": "bg-primary-500/10 text-primary-500 group-hover:bg-primary-500 group-hover:text-surface",
+	whatsapp: "bg-whatsapp/10 text-whatsapp group-hover:bg-whatsapp group-hover:text-surface",
+	gmail: "bg-gmail/10 text-gmail group-hover:bg-gmail group-hover:text-surface",
+	calendly: "bg-calendly/10 text-calendly group-hover:bg-calendly group-hover:text-surface",
+	"primary-700": "bg-primary-700/10 text-primary-700 group-hover:bg-primary-700 group-hover:text-surface",
+};
+/** Static accent token → hover text color for the header-end arrow. */
+const ACCENT_HOVER: Record<string, string> = {
+	primary: "group-hover:text-primary",
+	"primary-500": "group-hover:text-primary-500",
+	whatsapp: "group-hover:text-whatsapp",
+	gmail: "group-hover:text-gmail",
+	calendly: "group-hover:text-calendly",
+	"primary-700": "group-hover:text-primary-700",
+};
 const PADDING: Record<CardDensity, string> = { comfortable: "p-7", roomy: "p-8" };
 const BADGE_CHIP = "inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 font-semibold text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface";
 export function Card(props: CardProps): ReactElement {
@@ -55,7 +75,7 @@ export function Card(props: CardProps): ReactElement {
 		centered ? "items-center text-center" : "",
 		isBackground ? (props.mediaAspect ?? "aspect-[3/4]") : isTopMedia ? "overflow-hidden p-0!" : PADDING[density], props.className ?? ""].join(" ");
 	const icon = props.headerIcon && variant !== "image" && props.iconShape !== "none" ? (
-		<span className={`inline-flex ${ICON_CHIP[props.iconSize ?? "md"]} items-center justify-center ${ICON_SHAPE[props.iconShape ?? "rounded"]} bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface ${props.iconClassName ?? ""}`}>
+		<span className={`inline-flex ${ICON_CHIP[props.iconSize ?? "md"]} items-center justify-center ${ICON_SHAPE[props.iconShape ?? "rounded"]} ${ACCENT_CHIP[props.accent ?? "primary"] ?? ACCENT_CHIP.primary} transition-colors duration-300 ${props.iconClassName ?? ""}`}>
 			<span className={`mdi mdi-${props.headerIcon} ${ICON_GLYPH[props.iconSize ?? "md"]}`} aria-hidden />
 		</span>
 	) : null;
@@ -69,7 +89,7 @@ export function Card(props: CardProps): ReactElement {
 			<span className={BADGE_CHIP}>{badgeValue}</span>
 		)
 	) : null;
-	const headerEndNode = props.headerEnd ?? (props.hoverArrow ? (<span className="mdi mdi-arrow-up-right text-xl text-on-surface/25 transition-[color,transform,opacity] duration-300 group-hover:text-primary -translate-x-2 translate-y-2 opacity-0 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100" aria-hidden />) : null);
+	const headerEndNode = props.headerEnd ?? (props.hoverArrow ? (<span className={`mdi mdi-arrow-up-right text-xl text-on-surface/25 transition-[color,transform,opacity] duration-300 ${ACCENT_HOVER[props.accent ?? "primary"] ?? ACCENT_HOVER.primary} -translate-x-2 translate-y-2 opacity-0 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100`} aria-hidden />) : null);
 	const inner = (
 		<>
 			{props.watermark !== null && props.watermark !== undefined ? (<span className="absolute right-4 top-2 font-light text-5xl tracking-tight text-ink/[0.05] select-none pointer-events-none" aria-hidden>{props.watermark}</span>) : null}

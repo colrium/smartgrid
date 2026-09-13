@@ -30,11 +30,23 @@ export function SmartMonitoringSection(): ReactElement | null {
 
 	if (items.length === 0) return null;
 
-	const rawActions: (CardGridAction | null)[] = [
-		section?.ctaPrimary?.href ? { ...section.ctaPrimary, variant: "primary" } : null,
-		section?.ctaSecondary?.href ? { ...section.ctaSecondary, variant: "surface" } : null,
-	];
-	const actions = rawActions.filter((action): action is CardGridAction => action !== null);
+	const actions: CardGridAction[] = [];
+	if (section?.ctaPrimary?.href) {
+		actions.push({
+			label: section.ctaPrimary.label,
+			href: section.ctaPrimary.href,
+			icon: section.ctaPrimary.icon ?? null,
+			variant: "primary",
+		});
+	}
+	if (section?.ctaSecondary?.href) {
+		actions.push({
+			label: section.ctaSecondary.label,
+			href: section.ctaSecondary.href,
+			icon: section.ctaSecondary.icon ?? null,
+			variant: "surface",
+		});
+	}
 
 	return (
 		<CardGrid

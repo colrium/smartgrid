@@ -132,6 +132,7 @@ export function CardList(props: CardListProps): ReactElement | null {
 								mediaAspect={itemCard.mediaAspect}
 								mediaBadge={item.mediaBadge ?? itemCard.mediaBadge ?? null}
 								subItems={item.subItems ?? null}
+								accent={item.accent ?? itemCard.accent ?? null}
 								tags={item.items ?? item.tags ?? null}
 								indexBadge={props.indexed ? indexBadgeValue(item, index) : (item.indexBadge ?? null)}
 								indexBadgePosition={itemCard.indexBadgePosition}
