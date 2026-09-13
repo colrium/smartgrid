@@ -67,9 +67,14 @@ AGENTS.md
 CLAUDE.md
 .freebuff
 .clinerules
+.cline
 .next-verify
 .kilo
 kilo.jsonc
+.opencode
+opencode.json
+opencode.jsonc
+
 
 # Verification files
 *.txt
@@ -77,3 +82,4 @@ kilo.jsonc
 .next-verification
 .next-purge-baseline
 .next-dev
+*.txt
