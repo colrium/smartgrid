@@ -20,8 +20,11 @@ interface IntroTextSectionProps {
 	tone?: "default" | "surface";
 	/** `center` centres the copy block (max-w-3xl, centred header). */
 	align?: "left" | "center";
+	/** `split` renders the description beside the header (7/5 columns). */
+	split?: boolean;
 	/** Optional solid brand pill rendered below the description. */
 	cta?: IntroTextCta | null;
+	id?: string;
 	className?: string;
 }
 
@@ -36,12 +39,15 @@ export function IntroTextSection({
 	description,
 	tone = "default",
 	align = "left",
+	split = false,
 	cta,
+	id,
 	className = "",
 }: IntroTextSectionProps): ReactElement {
 	const centered = align === "center";
 	return (
 		<section
+			id={id}
 			className={`py-24 sm:py-28 relative overflow-hidden ${
 				tone === "surface" ? "bg-surface" : ""
 			} ${className}`.trim()}
@@ -52,19 +58,31 @@ export function IntroTextSection({
 			/>
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-				<div className={`max-w-3xl ${centered ? "mx-auto text-center" : ""}`}>
-					<FadeUp>
-						<SectionHeader
-							tag={tag ?? undefined}
-							headline={headline}
-							align={centered ? "center" : "left"}
-						/>
-
-						{description && (
-							<p className="mt-8 text-base sm:text-lg leading-relaxed text-on-surface/60 whitespace-pre-line">
+				{split && description ? (
+					<div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+						<FadeUp className="lg:col-span-7">
+							<SectionHeader tag={tag ?? undefined} headline={headline} />
+						</FadeUp>
+						<FadeUp delay={0.1} className="lg:col-span-5">
+							<p className="text-base sm:text-lg leading-relaxed text-on-surface/60 whitespace-pre-line">
 								{description}
 							</p>
-						)}
+						</FadeUp>
+					</div>
+				) : (
+					<div className={`max-w-3xl ${centered ? "mx-auto text-center" : ""}`}>
+						<FadeUp>
+							<SectionHeader
+								tag={tag ?? undefined}
+								headline={headline}
+								align={centered ? "center" : "left"}
+							/>
+
+							{description && (
+								<p className="mt-8 text-base sm:text-lg leading-relaxed text-on-surface/60 whitespace-pre-line">
+									{description}
+								</p>
+							)}
 
 						{cta?.href ? (
 							<div className="mt-10">
@@ -83,8 +101,9 @@ export function IntroTextSection({
 								</Link>
 							</div>
 						) : null}
-					</FadeUp>
-				</div>
+						</FadeUp>
+					</div>
+				)}
 			</div>
 		</section>
 	);

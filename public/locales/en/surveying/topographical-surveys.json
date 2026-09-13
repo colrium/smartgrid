@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "Topographical Surveys in Kenya, East Africa and Beyond",
 		"title": "Accurate Site Data for Design, Planning & Construction",
 		"subTitle": "Leading Land and Aerial surveying in Kenya.",
@@ -7,16 +8,19 @@
         "image": "/media/surveying/topographical/AG8ng.jpeg",
 		"ctaPrimary": {
 			"icon": "email",
+			"iconPosition": "start",
 			"label": "Request a Topographical Survey Quote Today",
 			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Topographical Survey&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for a Topographical Survey. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0APlot size:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
 	"whatIs": {
+		"type": "intro",
 		"tag": "The Foundation of Every Project",
 		"headline": "What is a Topographical Survey?",
 		"description": "A topographical survey provides a detailed representation of your land — capturing elevations, contours, natural features, and existing structures as they exist on the ground. It is the foundation of all engineering design and construction projects, giving architects, engineers, and planners the accurate site data they need to design with confidence."
 	},
 	"whenYouNeed": {
+		"type": "card-grid",
 		"tag": "Use Cases",
 		"headline": "When Do You Need a Topographical Survey?",
 		"description": "From the first design sketch to final county approval, an accurate topographical survey underpins every critical decision on your project.",
@@ -66,6 +70,7 @@
 		]
 	},
 	"whatYouGet": {
+		"type": "deliverables",
 		"tag": "Deliverables",
 		"headline": "What You Get",
 		"description": "Every topographical survey is delivered as a complete, engineering-ready package.",
@@ -119,6 +124,7 @@
 		]
 	},
 	"cost": {
+		"type": "pricing",
 		"tag": "Pricing",
 		"headline": "Topographical Survey Cost in Kenya",
 		"description": "Topographical survey pricing is influenced by site conditions and the level of detail required for engineering and approval purposes. Each project is assessed individually to ensure accurate and fit-for-purpose pricing.",
@@ -141,11 +147,14 @@
 		]
 	},
 	"section1": {
+		"type": "intro",
+		"split": true,
 		"tag": "Topographical Surveying",
 		"headline": "See the Land as It Truly Is",
 		"description": "SmartGrid Surveying delivers highly detailed and accurate topographical surveys for engineering, planning, and construction. Whether in Nairobi, Kisumu, Mombasa — or across Africa and beyond — our expert team captures terrain with centimeter-level precision using GNSS, Total Stations, and Drone LiDAR Mapping."
 	},
 	"whatWeOffer": {
+		"type": "card-grid",
 		"tag": "Services",
 		"headline": "What we offer as SmartGrid!",
 		"items": [
@@ -164,6 +173,7 @@
 		]
 	},
 	"detailedTopographicalSurveys": {
+		"type": "card-grid",
 		"tag": null,
 		"headline": "Detailed Topographical Surveys Across East Africa!",
 		"description": "At SmartGrid Surveying Ltd, we specialize in delivering high-precision topographical surveys across East Africa, covering Kenya, Uganda, Tanzania, Rwanda, Burundi, Somalia, South Sudan, Ethiopia, and Other Parts of Africa. Our team of expert surveyors utilizes the latest technology, including GPS, drones, and total stations, to provide accurate and detailed mapping solutions for various projects.",
@@ -211,6 +221,7 @@
 		]
 	},
 	"sampleTopographicalMap": {
+		"type": "split-media",
 		"tag": null,
 		"headline": "SAMPLE TOPOGRAPHICAL MAP",
 		"description": "SmartGrid Surveying conducted a comprehensive topographical survey in Usenge, Siaya County, focused on mapping and identifying existing and potential water pipeline infrastructure. This project supports the community's initiative to enhance water distribution efficiency and infrastructure planning across the region.",
@@ -229,6 +240,7 @@
 	},
 
 	"surveyingInstruments": {
+		"type": "card-grid",
 		"tag": null,
 		"headline": "Our Surveying Instruments",
 		"description": "We Use Advanced, Calibrated, Precise equipment to ensure every point is accurate and reliable for your construction and engineering projects across Kenya and Beyond.",
@@ -252,6 +264,7 @@
 		]
 	},
 	"whyConductSurvey": {
+		"type": "card-grid",
 		"tag": null,
 		"headline": "Why Conduct a Topographical Survey",
 		"description": "",

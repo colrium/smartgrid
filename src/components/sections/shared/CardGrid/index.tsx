@@ -27,6 +27,8 @@ export interface CardGridProps {
 	hoverArrow?: boolean;
 	watermarkedIndexed?: boolean;
 	indexed?: boolean;
+	/** Auto-numbers the `mediaBadge` glass chip on media cards ("01", …). */
+	mediaBadged?: boolean;
 	id?: string;
 	kicker?: string | null;
 	card?: Partial<CardProps>;
@@ -74,6 +76,7 @@ export function CardGrid(props: CardGridProps): ReactElement | null {
 				hoverArrow={props.hoverArrow}
 				watermarkedIndexed={props.watermarkedIndexed}
 				indexed={props.indexed}
+				mediaBadged={props.mediaBadged}
 				kicker={props.kicker}
 				fallbackIcons={props.fallbackIcons}
 				popupHeading={props.headline}

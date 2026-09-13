@@ -14,6 +14,8 @@ export { Gallery } from "./Gallery";
 export type { GalleryItem, GalleryLayout, GalleryProps } from "./Gallery";
 export { Faq } from "./Faq";
 export type { FaqProps } from "./Faq";
+export { Pricing, CheckList } from "./Pricing";
+export type { PricingCard, PricingProps } from "./Pricing";
 export { Split } from "./Split";
 export type { SplitProps } from "./Split";
 export { SplitMedia } from "./SplitMedia";

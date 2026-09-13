@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import type { ReactElement } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FadeUp } from "@/components/animations/Fade";
-import { Card, type CardProps } from "@/components/ui/Card";
+import { Card, type CardProps, type CardSubItem } from "@/components/ui/Card";
 
 export interface CardItem extends Omit<CardProps, "children"> {
 	title?: string;
@@ -12,6 +12,12 @@ export interface CardItem extends Omit<CardProps, "children"> {
 	icon?: string | null;
 	image?: string | null;
 	items?: string[] | null;
+	/** Nested sub-items rendered as an inset 2-col checklist below the body. */
+	subItems?: CardSubItem[] | null;
+	/** Spans the grid's full row width at md+ (2-col) / lg+ (3-col) grids. */
+	wide?: boolean;
+	/** Glass number chip overlaid on the card media (top or background). */
+	mediaBadge?: string | number | null;
 	/** When present, the card renders a "Learn more" trigger that opens a modal. */
 	popupContent?: string | null;
 }
@@ -31,6 +37,8 @@ export interface CardListProps {
 	/** Kicker shown inside the popup modal (usually the section headline). */
 	popupHeading?: string | null;
 	popupTrigger?: string;
+	/** Auto-numbers the `mediaBadge` glass chip ("01", "02", …). */
+	mediaBadged?: boolean;
 	/** Full grid wrapper classes; defaults to the standard responsive grid. */
 	className?: string;
 }
@@ -102,8 +110,13 @@ export function CardList(props: CardListProps): ReactElement | null {
 					if (props.headerRow !== undefined && itemCard.headerRow === undefined) itemCard.headerRow = props.headerRow;
 					if (props.hoverArrow !== undefined && itemCard.hoverArrow === undefined) itemCard.hoverArrow = props.hoverArrow;
 					if (props.watermarkedIndexed && itemCard.watermark === undefined) itemCard.watermark = String(index + 1).padStart(2, "0");
+					if (props.mediaBadged && itemCard.mediaBadge === undefined) itemCard.mediaBadge = String(index + 1).padStart(2, "0");
 					return (
-						<FadeUp key={index} delay={(index % columns) * 0.07} className="h-full">
+						<FadeUp
+							key={index}
+							delay={(index % columns) * 0.07}
+							className={`h-full ${item.wide ? "sm:col-span-2 lg:col-span-3" : ""}`.trim()}
+						>
 							<Card
 								variant={itemCard.variant ?? "outlined"}
 								elevation={itemCard.elevation ?? 1}
@@ -117,6 +130,8 @@ export function CardList(props: CardListProps): ReactElement | null {
 								media={item.image ?? item.media ?? null}
 								mediaPosition={item.image || item.media ? (itemCard.mediaPosition ?? "top") : undefined}
 								mediaAspect={itemCard.mediaAspect}
+								mediaBadge={item.mediaBadge ?? itemCard.mediaBadge ?? null}
+								subItems={item.subItems ?? null}
 								tags={item.items ?? item.tags ?? null}
 								indexBadge={props.indexed ? indexBadgeValue(item, index) : (item.indexBadge ?? null)}
 								indexBadgePosition={itemCard.indexBadgePosition}

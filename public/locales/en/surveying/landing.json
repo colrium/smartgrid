@@ -1,15 +1,21 @@
 {
 	"hero": {
+		"type": "hero",
+		"layout": "centered",
+		"frame": true,
+		"scrollCue": true,
 		"headline": "Land Surveying — See the Land as It Truly Is",
 		"title": "LAND SURVEYING",
 		"image": "/media/surveying/AG8ng.jpeg",
 		"description": "Our team delivers precise and reliable spatial data using advanced GNSS, Total Stations, and Drone LiDAR technologies — ensuring centimeter-level accuracy on every site. From Nairobi, Kiambu, Kisumu, Mombasa, and across Africa, we map and measure the land with unmatched detail to support informed design and development decisions.",
 		"ctaPrimary": {
+			"icon": "email-outline",
 			"label": "Get Your Free Consultation",
 			"href": "mailto:smartgridsurveying@gmail.com?subject=Consultation Request: Land Surveying&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a free consultation about land surveying. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
 	"services": {
+		"type": "card-grid",
 		"tag": "Our Services",
 		"headline": "Explore More...",
 		"image": "/media/surveying/05.png",
@@ -60,6 +66,7 @@
 		]
 	},
 	"process": {
+		"type": "process",
 		"tag": "Process",
 		"headline": "Land Surveying Process",
 		"description": "At SmartGrid Surveying, we specialize in Land surveys using aerial drones, RTK Base Rover Stations, and Total Stations to deliver precise and efficient mapping solutions. Our drones capture high-resolution terrain data, while RTK technology ensures real-time positional accuracy. With Total Stations providing precise distance and angle measurements, we guarantee detailed site assessments with minimal errors. This advanced approach enhances efficiency, improves decision-making, and ensures the highest level of accuracy for our clients' surveying needs.",
@@ -91,6 +98,7 @@
 		]
 	},
 	"deliverables": {
+		"type": "deliverables",
 		"tag": "Deliverables",
 		"headline": "Land Surveying Deliverables",
 		"description": "Accurate, submission-ready outputs for planning, titling, and engineering decisions.",
