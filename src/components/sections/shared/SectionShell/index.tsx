@@ -1,7 +1,7 @@
 "use client";
 import type { ReactElement, ReactNode } from "react";
-import { SectionHeader } from "@/components/sections/home/SectionHeader";
-import { Blob } from "@/components/sections/home/decor";
+import { SectionHeader } from "@/components/sections/shared/SectionHeader";
+import { Blob } from "@/components/sections/shared/decor";
 import { FadeUp } from "@/components/animations/Fade";
 export interface SectionShellProps {
 	id?: string; tag?: string | null; headline?: string; description?: ReactNode;

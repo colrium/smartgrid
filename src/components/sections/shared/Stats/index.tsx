@@ -1,7 +1,7 @@
 "use client";
 import type { ReactElement } from "react";
 
-import { SectionHeader } from "@/components/sections/home/SectionHeader";
+import { SectionHeader } from "@/components/sections/shared/SectionHeader";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionShell } from "@/components/sections/shared/SectionShell";
 

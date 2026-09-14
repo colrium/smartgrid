@@ -3,7 +3,7 @@
 import type { ReactElement } from "react";
 
 import { useTranslation } from "@/hooks";
-import { SectionHeader } from "./SectionHeader";
+import { SectionHeader } from "../shared/SectionHeader";
 import { FadeUp } from "@/components/animations/Fade";
 import { CountUp } from "@/components/animations/ScrollReveal";
 import DeferredMount from "@/components/ui/DeferredMount";

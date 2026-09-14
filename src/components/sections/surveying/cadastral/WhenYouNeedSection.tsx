@@ -7,7 +7,7 @@ import { useTranslation } from "@/hooks";
 import Link from "@/components/Link";
 import { SectionHeader } from "@/components/sections/home";
 import { FadeUp } from "@/components/animations/Fade";
-import { Blob, ParallaxDecor } from "@/components/sections/home/decor";
+import { Blob, ParallaxDecor } from "@/components/sections/shared/decor";
 
 interface NeedItem {
 	icon?: string | null;

@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslation } from "@/hooks";
-import { Blob } from "@/components/sections/home/decor";
+import { Blob } from "@/components/sections/shared/decor";
 import {
 	ProductListing,
 	type ProductListingItem,

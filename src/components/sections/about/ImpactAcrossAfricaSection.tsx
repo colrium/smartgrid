@@ -2,8 +2,8 @@
 
 import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
-import { SectionHeader } from "@/components/sections/home/SectionHeader";
-import { Blob } from "@/components/sections/home/decor";
+import { SectionHeader } from "@/components/sections/shared/SectionHeader";
+import { Blob } from "@/components/sections/shared/decor";
 import dynamic from "next/dynamic";
 const ProjectsGlobe = dynamic(() => import("@/components/ui/ProjectsGlobe"), {
 	ssr: false,

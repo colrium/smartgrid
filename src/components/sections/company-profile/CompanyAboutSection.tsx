@@ -33,6 +33,10 @@ export function CompanyAboutSection(): ReactElement | null {
 			}}
 			imagePosition="right"
 			mediaAspect="aspect-square"
+			classes={{
+				mediaWrapper: "bg-transparent p-8",
+				mediaCard: "bg-surface shadow-none! border-0! bg-transparent",
+			}}
 		/>
 	);
 }

@@ -3,7 +3,7 @@
 import { useTranslation } from "@/hooks";
 import { FadeLeft, FadeRight } from "@/components/animations/Fade";
 import { SectionHeader } from "@/components/sections/home";
-import { Blob } from "@/components/sections/home/decor";
+import { Blob } from "@/components/sections/shared/decor";
 import dynamic from "next/dynamic";
 
 const ProjectsGlobe = dynamic(() => import("@/components/ui/ProjectsGlobe"), {

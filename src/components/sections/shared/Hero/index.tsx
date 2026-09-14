@@ -4,7 +4,7 @@ import type { ReactElement } from "react";
 import Image from "next/image";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionTag } from "@/components/SectionTag";
-import { Blob } from "@/components/sections/home/decor";
+import { Blob } from "@/components/sections/shared/decor";
 import { CtaPill, type CtaAction } from "../CtaPill";
 
 export interface HeroContent {

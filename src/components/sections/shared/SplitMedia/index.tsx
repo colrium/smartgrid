@@ -3,8 +3,8 @@
 import type { ReactElement } from "react";
 import Image from "next/image";
 import { FadeUp } from "@/components/animations/Fade";
-import { SectionHeader } from "@/components/sections/home/SectionHeader";
-import { Blob } from "@/components/sections/home/decor";
+import { SectionHeader, SectionHeaderClassesProp } from "@/components/sections/shared/SectionHeader";
+import { Blob } from "@/components/sections/shared/decor";
 import { CardList, cardGridCols, type CardItem } from "@/components/sections/shared/CardList";
 import { CheckList } from "@/components/sections/shared/Pricing";
 import type { CardProps } from "@/components/ui/Card";
@@ -17,7 +17,12 @@ export interface SplitMediaContent {
 	/** Check-bullet points rendered under the media frame. */
 	points?: string[] | null;
 }
-
+export interface SplitMediaClassesProp{
+    mediaCard?: string;
+    mediaWrapper?: string; 
+    media?: string; 
+    sectionHeader?: SectionHeaderClassesProp
+}
 export interface SplitMediaProps {
 	/** Section content object, usually `t("<ns>:<key>", { returnObjects: true })`. */
 	data: SplitMediaContent;
@@ -28,6 +33,8 @@ export interface SplitMediaProps {
 	mediaAspect?: string;
 	/** Media object fit — `cover` (default) or `contain` (logos/diagrams). */
 	mediaFit?: "cover" | "contain";
+    mediaWrapperClass?: string;
+    classes?: SplitMediaClassesProp; 
 	id?: string;
 	className?: string;
 	/** Optional card row rendered below the split, inside the same section. */
@@ -58,7 +65,7 @@ export function SplitMedia(props: SplitMediaProps): ReactElement | null {
 
 			{data.description ? (
 				<div className="mt-8">
-					<p className="text-base sm:text-lg leading-relaxed text-on-surface/60 whitespace-pre-line">
+					<p className={`text-base sm:text-lg leading-relaxed text-on-surface/60 whitespace-pre-line {props.classes?.description ?? ""}`}>
 						{data.description}
 					</p>
 				</div>
@@ -73,23 +80,25 @@ export function SplitMedia(props: SplitMediaProps): ReactElement | null {
 					<div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/10 rounded-full blur-2xl" />
 					<div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl" />
 
-					<div className="relative bg-surface p-4 rounded-c hairline card-shadow">
-						<div className={`relative ${props.mediaAspect ?? "h-96"} rounded-xl overflow-hidden bg-slate-900`}>
+					<div className={`relative bg-surface p-4 rounded-c hairline card-shadow *:${props.classes?.mediaCard ?? ""}`}>
+						<div
+							className={`relative ${props.mediaAspect ?? "h-96"} rounded-xl overflow-hidden bg-slate-900 ${props.classes?.mediaWrapper ?? ""}`}
+						>
 							<Image
 								src={data.image}
 								alt={data.headline}
 								fill
 								sizes="(min-width: 1024px) 50vw, 100vw"
-								className={
+								className={`${
 									props.mediaFit === "contain"
 										? "object-contain object-center p-8 sm:p-10"
 										: "object-cover object-center transition-transform duration-700 hover:scale-105"
-								}
+								}  ${props.classes?.media ?? ""}`}
 							/>
 						</div>
 					</div>
 					{data.points && data.points.length > 0 ? (
-						<CheckList items={data.points} className="mt-8" />
+						<CheckList items={data.points} className="mt-8 items-center" />
 					) : null}
 				</div>
 			) : null}

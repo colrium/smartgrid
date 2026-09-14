@@ -5,7 +5,7 @@ import type { ReactElement } from "react";
 import { useTranslation } from "@/hooks";
 import { SectionTag } from "@/components/SectionTag";
 import { FadeUp } from "@/components/animations/Fade";
-import { ParallaxDecor, Blob } from "./decor";
+import { ParallaxDecor, Blob } from "../shared/decor";
 
 interface KeyFactItem {
 	icon?: string | null;

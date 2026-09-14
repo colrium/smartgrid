@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import { useTranslation } from "@/hooks";
-import { SectionHeader } from "./SectionHeader";
+import { SectionHeader } from "../shared/SectionHeader";
 import { FadeUp } from "@/components/animations/Fade";
-import { ParallaxDecor, Blob } from "./decor";
+import { ParallaxDecor, Blob } from "../shared/decor";
 import Link from "next/link";
 
 interface DroneItem {

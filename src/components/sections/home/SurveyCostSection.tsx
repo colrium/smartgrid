@@ -5,10 +5,10 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 import { useTranslation } from "@/hooks";
-import { SectionHeader } from "./SectionHeader";
+import { SectionHeader } from "../shared/SectionHeader";
 import { FadeUp } from "@/components/animations/Fade";
 import { CountUp } from "@/components/animations/ScrollReveal";
-import { Blob } from "./decor";
+import { Blob } from "../shared/decor";
 
 interface CostFactor {
 	icon: string;

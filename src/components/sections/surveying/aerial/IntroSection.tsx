@@ -6,7 +6,7 @@ import type { ReactElement } from "react";
 import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionTag } from "@/components/SectionTag";
-import { Blob, ParallaxDecor } from "@/components/sections/home/decor";
+import { Blob, ParallaxDecor } from "@/components/sections/shared/decor";
 
 interface IntroCta {
 	label: string;

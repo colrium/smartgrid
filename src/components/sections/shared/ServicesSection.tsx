@@ -4,7 +4,7 @@ import { useState, type ReactElement } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "@/components/Link";
 import { useTranslation } from "@/hooks";
-import { SectionHeader } from "./SectionHeader";
+import { SectionHeader, SectionHeaderClassesProp } from "./SectionHeader";
 import { FadeUp } from "@/components/animations/Fade";
 import { DeliverablesExplorer, type DeliverablesContent } from "@/components/sections/Deliverables";
 import { SectionTag } from "@/components/SectionTag";
@@ -25,12 +25,19 @@ interface ServiceItem {
 	whatWeOffer: SeviceItemList;
 	deliverables: DeliverablesContent & { label?: string };
 }
+export interface ServicesClassesProp {
+	sectionHeader?: SectionHeaderClassesProp;
+}
+export interface ServicesProps extends React.HTMLAttributes<HTMLDivElement> {
+	id?: string;
+	classes?: ServicesClassesProp;
+}
 
 const PANEL_EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
-export function ServicesSection(): ReactElement | null {
-	const { t } = useTranslation(["home"]);
-	const items = t("home:services.items", { returnObjects: true }) as unknown as ServiceItem[];
+export function ServicesSection({ id = "services", className, classes = {} }: ServicesProps): ReactElement | null {
+	const { t } = useTranslation(["common"]);
+	const items = t("common:services.items", { returnObjects: true }) as unknown as ServiceItem[];
 	const [activeTab, setActiveTab] = useState(0);
 
 	if (!Array.isArray(items) || items.length === 0) return null;
@@ -40,7 +47,7 @@ export function ServicesSection(): ReactElement | null {
 	const hasDeliverables = Array.isArray(deliverables?.items) && deliverables.items.length > 0;
 
 	return (
-		<section id="services" className="py-24 sm:py-28 relative overflow-hidden">
+		<section id={id} className={`py-24 sm:py-28 relative overflow-hidden ${className || ""}`}>
 			<div className="relative z-10 max-w-7xl mx-auto rounded-c pale-panel-soft hairline card-shadow pt-12 px-2 sm:px-3 lg:px-4">
 				<span
 					className={`mdi mdi-${active.icon} text-7xl md:text-[15rem] lg:text-[20rem] absolute -top-2 -right-2 z-0 text-primary-50/40`}
@@ -52,7 +59,8 @@ export function ServicesSection(): ReactElement | null {
 					<SectionHeader
 						tag={t("home:services.tag") as string}
 						headline={t("home:services.headline") as string}
-						align="center"
+                        align="center"
+                        classes={classes?.sectionHeader}
 					/>
 				</FadeUp>
 

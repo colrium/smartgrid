@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useMemo } from "react";
 import type { ReactNode } from "react";
 import { FadeUp } from "@/components/animations/Fade";
-import { SectionHeader } from "@/components/sections/home/SectionHeader";
+import { SectionHeader } from "@/components/sections/shared/SectionHeader";
 import type { MediaImage } from "@/lib/types";
 
 export interface ProductListingCta {

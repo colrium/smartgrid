@@ -2,9 +2,9 @@
 
 import type { ReactElement } from "react";
 import Link from "@/components/Link";
-import { SectionHeader } from "@/components/sections/home/SectionHeader";
+import { SectionHeader } from "@/components/sections/shared/SectionHeader";
 import { FadeUp } from "@/components/animations/Fade";
-import { Blob } from "@/components/sections/home/decor";
+import { Blob } from "@/components/sections/shared/decor";
 
 export interface IntroTextCta {
 	label: string;

@@ -5,7 +5,7 @@ import { useState, type ReactElement } from "react";
 
 import { useTranslation } from "@/hooks";
 import type { MediaImage } from "@/lib/types";
-import { SectionHeader } from "@/components/sections/home/SectionHeader";
+import { SectionHeader } from "@/components/sections/shared/SectionHeader";
 import { FadeUp, FadeLeft } from "@/components/animations/Fade";
 
 export interface DeliverableItemContent {

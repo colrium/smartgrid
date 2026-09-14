@@ -41,6 +41,346 @@
 			}
 		]
 	},
+	"services": {
+		"type": "tabs",
+		"tag": "Services",
+		"headline": "Our Services",
+		"items": [
+			{
+				"icon": "land-fields",
+				"label": "Land Surveying",
+				"description": "We provide a wide range of land surveying services, including topographical surveys, boundary surveys, sectional properties, building site surveys, resource mapping, bathymetric surveys, hydrographic surveys, and GIS mapping. Our deliverables include boundary survey reports and plans, cadastral plans for title processing, beacons monumentation, registry maps, 3D spatial data (X, Y, Z), topographical maps, contours, CAD shapefiles, survey reports, PDF map outputs, and other specialized deliverables.",
+				"whatWeOffer": {
+					"label": "What we offer",
+					"description": "",
+					"items": [
+						{
+							"label": "Topographical surveys",
+							"href": "/surveying/topographical-surveys"
+						},
+						{ "label": "Boundary Surveys" },
+						{
+							"label": "Sectional Properties",
+							"href": "/surveying/sectional-properties"
+						},
+						{
+							"label": "Building Sites surveys",
+							"href": "/surveying/building-site-surveys"
+						},
+						{ "label": "Resource mapping", "href": "/surveying/resource-mapping" },
+						{
+							"label": "Bathymetric survey / Hydrographic survey",
+							"href": "/surveying/bathymetric-surveys"
+						},
+						{ "label": "GIS Mapping", "href": "/surveying/gis-mapping" },
+						{
+							"label": "GPR (Ground Penetrating Radar) Surveys",
+							"href": "/surveying/ground-penetrating-radar"
+						},
+						{ "label": "Cadastral Surveys", "href": "/surveying/cadastral-surveys" },
+						{ "label": "Staking Out Surveys", "href": "/civil/site-setting-out" }
+					]
+				},
+				"deliverables": {
+					"label": "Deliverables",
+					"liveLabel": "Deliverable",
+					"description": "Every project is delivered with professional, ready-to-use outputs tailored to the project needs:",
+					"checks": [
+						"Submission-ready",
+						"CAD & GIS compatible",
+						"Signed by licensed surveyors"
+					],
+					"items": [
+						{
+							"title": "Boundary Survey Reports & Plans",
+							"format": "PDF / Printed plans",
+							"icon": "vector-square",
+							"image": "/media/deliverables/boundary-survey-reports-and-plans.jpg",
+							"description": "Signed reports and plans defining parcel boundaries for transactions, development, and dispute resolution."
+						},
+						{
+							"title": "Cadastral Plans for Title Processing",
+							"format": "Survey of Kenya format",
+							"icon": "file-certificate",
+							"image": "/media/deliverables/cadastral-plans-for-title-processing.jpg",
+							"description": "Registry-compliant cadastral plans prepared for submission to the land registry for title issuance."
+						},
+						{
+							"title": "Beacons Monumentation",
+							"format": "On-site",
+							"icon": "map-marker-radius",
+							"description": "Durable boundary beacons placed and referenced to survey accuracy, protecting your parcel corners."
+						},
+						{
+							"title": "Registry Maps",
+							"format": "Certified copies",
+							"icon": "map",
+							"image": "/media/deliverables/registry-maps.jpg",
+							"description": "Certified registry index maps and extracts for parcel verification and due diligence."
+						},
+						{
+							"title": "3D Spatial Data (X, Y, Z)",
+							"format": "CSV / DWG",
+							"icon": "axis-z-arrow",
+							"image": "/media/deliverables/3d-spatial-data.jpg",
+							"description": "Positional coordinates ready for design, GIS databases, and machine-control workflows."
+						},
+						{
+							"title": "Topographical Maps",
+							"format": "DWG / PDF",
+							"icon": "image-filter-hdr",
+							"image": "/media/deliverables/topographical-maps.jpg",
+							"description": "Feature-coded maps of terrain, utilities, structures, and levels for planning and engineering design."
+						},
+						{
+							"title": "Contours",
+							"format": "DWG / DXF",
+							"icon": "chart-bell-curve",
+							"image": "/media/deliverables/contour-maps.jpg",
+							"description": "Major and minor interval contours for grading, drainage, and earthworks design."
+						},
+						{
+							"title": "CAD Shapefiles",
+							"format": "SHP / DWG",
+							"icon": "layers-triple",
+							"image": "/media/deliverables/cad-shapefiles.jpg",
+							"description": "GIS-ready shapefiles and CAD layers that drop straight into drafting and mapping workflows."
+						},
+						{
+							"title": "Survey Reports",
+							"format": "PDF",
+							"icon": "file-document",
+							"image": "/media/deliverables/survey-reports.jpg",
+							"description": "Methodology, equipment, and accuracy summary signed by a licensed surveyor for approvals and records."
+						},
+						{
+							"title": "PDF Map Outputs",
+							"format": "PDF",
+							"icon": "file-pdf-box",
+							"image": "/media/deliverables/pdf-map-outputs.jpg",
+							"description": "Print-ready, scaled map exports for sharing with clients, consultants, and approval authorities."
+						},
+						{
+							"title": "Other Specialized Deliverables",
+							"format": "On request",
+							"icon": "table-large",
+							"description": "Custom outputs - volumetrics, monitoring reports, setting-out data - tailored to your project."
+						}
+					]
+				}
+			},
+			{
+				"icon": "quadcopter",
+				"label": "Aerial Surveys",
+				"description": "We offer a wide range of aerial surveying services, including drone imagery surveys, Lidar mapping, agricultural NDVI mapping, as-built surveys, monitoring and evaluation, solar panel drone surveys, volumetric surveys, and landfill & quarry drone surveys. Our deliverables include boundary survey reports and plans, cadastral plans for title processing, beacons monumentation, registry maps, 3D spatial data (X, Y, Z), topographical maps, contours, CAD shapefiles, survey reports, PDF map outputs, and other specialized deliverables.",
+				"whatWeOffer": {
+					"label": "What we offer",
+					"description": "",
+					"items": [
+						{
+							"label": "Drone imagery surveys",
+							"href": "/aerial-drones/drone-imagery-surveys"
+						},
+						{ "label": "Lidar Mapping", "href": "/aerial-drones/lidar-mapping" },
+						{
+							"label": "Agricultural NDVI Mapping",
+							"href": "/aerial-drones/agricultural-ndvi-mapping"
+						},
+						{ "label": "As built surveys", "href": "/aerial-drones/as-built-surveys" },
+						{
+							"label": "Monitoring and Evaluation",
+							"href": "/aerial-drones/monitoring-and-evaluation"
+						},
+						{
+							"label": "Solar Panel Drone Surveys",
+							"href": "/aerial-drones/solar-panel-drone-surveys"
+						},
+						{
+							"label": "Volumetric Surveys",
+							"href": "/aerial-drones/volumetric-surveys"
+						},
+						{
+							"label": "Landfill & Quarry Drone Surveys",
+							"href": "/aerial-drones/landfill-quarry-drone-surveys"
+						}
+					]
+				},
+				"deliverables": {
+					"label": "Deliverables",
+					"liveLabel": "Deliverable",
+					"description": "Every project is delivered with professional, ready-to-use outputs tailored to the project needs:",
+					"checks": ["Geo-referenced outputs", "CAD, GIS & BIM ready", "Fast turnaround"],
+					"items": [
+						{
+							"title": "Orthorectified Imagery (Geo-Referenced) + Raw images",
+							"format": "GeoTIFF / JPEG",
+							"icon": "quadcopter",
+							"image": "/media/deliverables/orthorectified-imagery-and-raw-images.jpg",
+							"description": "Georeferenced aerial imagery alongside the raw frames captured during every flight."
+						},
+						{
+							"title": "Orthomosaic Maps (Geo-Referenced)",
+							"format": "GeoTIFF / KMZ",
+							"icon": "map",
+							"image": "/media/deliverables/orthomosaic-maps.jpg",
+							"description": "Seamless, measurement-ready mosaics stitched from hundreds of georeferenced frames."
+						},
+						{
+							"title": "Digital Elevation Models (DTM, DSM)",
+							"format": "GeoTIFF",
+							"icon": "image-filter-hdr",
+							"image": "/media/deliverables/digital-elevation-models.jpg",
+							"description": "Bare-earth and surface elevation models for terrain analysis, drainage, and cut-fill planning."
+						},
+						{
+							"title": "Contours",
+							"format": "DWG / DXF",
+							"icon": "chart-bell-curve",
+							"image": "/media/deliverables/contour-maps.jpg",
+							"description": "Vector contours generated from photogrammetry or LiDAR, ready for grading and design."
+						},
+						{
+							"title": "3D Point Clouds (X, Y, Z)",
+							"format": "LAS / LAZ",
+							"icon": "cube-scan",
+							"image": "/media/deliverables/3d-point-clouds.png",
+							"description": "Dense classified point clouds for accurate measurement, modelling, and feature extraction."
+						},
+						{
+							"title": "Topographical Maps",
+							"format": "DWG / PDF / SHP",
+							"icon": "map-marker-path",
+							"image": "/media/deliverables/topographical-maps.jpg",
+							"description": "Feature-coded topographic maps prepared for engineering, planning, and GIS workflows."
+						},
+						{
+							"title": "CAD Shapefiles",
+							"format": "SHP / DWG",
+							"icon": "layers-triple",
+							"image": "/media/deliverables/cad-shapefiles.jpg",
+							"description": "GIS shapefiles and CAD layers that integrate directly into your drafting environment."
+						},
+						{
+							"title": "Volumetric Analysis Reports",
+							"format": "Excel / PDF",
+							"icon": "table-large",
+							"description": "Quantified stockpile, quarry, and earthwork volumes with survey-grade confidence."
+						},
+						{
+							"title": "Survey Reports",
+							"format": "PDF",
+							"icon": "file-document",
+							"image": "/media/deliverables/survey-reports.jpg",
+							"description": "Methodology, equipment, and accuracy summary accompanying every aerial survey package."
+						},
+						{
+							"title": "NDVI & Multispectral Maps (Agriculture only)",
+							"format": "GeoTIFF / PDF",
+							"icon": "tree",
+							"description": "Crop-health indices from multispectral captures to guide irrigation, inputs, and yield decisions."
+						}
+					]
+				}
+			},
+			{
+				"icon": "hard-hat",
+				"label": "Civil Engineering",
+				"description": "We offer a wide range of civil engineering services, including site engineering, building setting out, underground utilities installation, highway engineering, stake out, leveling, benchmarking, and construction services. Our deliverables include as-built maps, digital elevation models, setting out coordinates, 3D data, contours, master plans, building layouts, CAD shapefiles, and PDF maps.",
+				"whatWeOffer": {
+					"label": "What we offer",
+					"description": "",
+					"items": [
+						{ "label": "Site Engineering", "href": "/civil/site-engineering" },
+						{ "label": "Buildings Setting Out", "href": "/civil/site-setting-out" },
+						{
+							"label": "Underground utilities (Water lines, sanitation lines, electrical lines)",
+							"href": "/surveying/ground-penetrating-radar"
+						},
+						{ "label": "Highway engineering", "href": "/civil/highway-surveys" },
+						{ "label": "Stake out", "href": "/civil/site-setting-out" },
+						{ "label": "Leveling" },
+						{ "label": "Benchmarking" },
+						{ "label": "Construction services" }
+					]
+				},
+				"deliverables": {
+					"label": "Deliverables",
+					"liveLabel": "Deliverable",
+					"description": "Every project is delivered with professional, ready-to-use outputs tailored to the project needs:",
+					"checks": [
+						"Engineering-grade accuracy",
+						"Construction-ready formats",
+						"As-built verification"
+					],
+					"items": [
+						{
+							"title": "AS-BUILT Maps",
+							"format": "PDF / DWG",
+							"icon": "file-document",
+							"image": "/media/deliverables/as-built-maps.jpg",
+							"description": "As-constructed maps verifying that works match the approved designs for handover and records."
+						},
+						{
+							"title": "Digital Elevation Models (DSM, DTM)",
+							"format": "GeoTIFF",
+							"icon": "image-filter-hdr",
+							"image": "/media/deliverables/digital-elevation-models.jpg",
+							"description": "Surface and terrain models supporting grading, drainage design, and quantity checks."
+						},
+						{
+							"title": "Setting Out Coordinates",
+							"format": "CSV / DXF",
+							"icon": "crosshairs-gps",
+							"image": "/media/deliverables/setting-out-coordinates.jpg",
+							"description": "Precise positions for structures, roads, and services - ready for stakeout on site."
+						},
+						{
+							"title": "3D DATA (X, Y, Z)",
+							"format": "CSV / DWG",
+							"icon": "axis-z-arrow",
+							"image": "/media/deliverables/3d-data-xyz.jpg",
+							"description": "Three-dimensional positional data for machine control, modelling, and design verification."
+						},
+						{
+							"title": "Contours",
+							"format": "DWG / DXF",
+							"icon": "chart-bell-curve",
+							"image": "/media/deliverables/contour-maps.jpg",
+							"description": "Contours at engineering intervals for earthworks, levels, and drainage design."
+						},
+						{
+							"title": "Master Plans",
+							"format": "PDF / DWG",
+							"icon": "map",
+							"image": "/media/deliverables/master-plans.jpg",
+							"description": "Composite site plans consolidating layouts, services, and levels for the whole development."
+						},
+						{
+							"title": "Buildings Layout / BIM",
+							"format": "IFC / DWG",
+							"icon": "office-building",
+							"image": "/media/deliverables/building-layouts-bim.jpg",
+							"description": "Building layouts and BIM-ready geometry for coordination across design and construction teams."
+						},
+						{
+							"title": "CAD Shapefiles",
+							"format": "SHP / DWG",
+							"icon": "vector-square",
+							"image": "/media/deliverables/cad-shapefiles.jpg",
+							"description": "GIS shapefiles and CAD layers that drop straight into your engineering workflows."
+						},
+						{
+							"title": "PDF Map",
+							"format": "PDF",
+							"icon": "file-pdf-box",
+							"image": "/media/deliverables/pdf-maps.jpg",
+							"description": "Print-ready map exports for site teams, consultants, and project documentation."
+						}
+					]
+				}
+			}
+		]
+	},
 	"projectsByCountry": [
 		{
 			"name": "Kenya",
@@ -131,7 +471,7 @@
 		"links": [
 			{
 				"label": "Surveying",
-                "href": "/surveying",
+				"href": "/surveying",
 				"links": [
 					{
 						"label": "Topographical surveys",
@@ -161,7 +501,7 @@
 			},
 			{
 				"label": "Aerial Drones",
-                "href": "/aerial-drones",
+				"href": "/aerial-drones",
 				"links": [
 					{
 						"label": "Drone imagery surveys",

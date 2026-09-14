@@ -2,8 +2,8 @@
 import type { ReactElement } from "react";
 import NextHead from "next/head";
 import Link from "next/link";
-import { SectionHeader } from "@/components/sections/home/SectionHeader";
-import { Blob } from "@/components/sections/home/decor";
+import { SectionHeader } from "@/components/sections/shared/SectionHeader";
+import { Blob } from "@/components/sections/shared/decor";
 import { FadeUp } from "@/components/animations/Fade";
 import { FaqSectionItems, buildFaqSchema, type FaqSectionItem } from "@/components/sections/FaqSectionItems";
 export interface FaqProps {

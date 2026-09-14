@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useTranslation } from "@/hooks";
 import { SectionTag } from "@/components/SectionTag";
 import { FadeUp } from "@/components/animations/Fade";
-import { Blob } from "./decor";
+import { Blob } from "../shared/decor";
 
 interface TrusteeItem {
 	label: string;

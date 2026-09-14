@@ -6,7 +6,7 @@ import { useTranslation } from "@/hooks";
 import Link from "@/components/Link";
 import { SectionHeader } from "@/components/sections/home";
 import { FadeUp } from "@/components/animations/Fade";
-import { Blob } from "@/components/sections/home/decor";
+import { Blob } from "@/components/sections/shared/decor";
 
 interface RelatedItem {
 	icon?: string | null;
