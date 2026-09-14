@@ -366,6 +366,41 @@ function expectLocaleNode(value, where, { allowEmpty = false } = {}) {
 	}
 }
 
+function stripToText(html) {
+	return html
+		.replace(/<script[\s\S]*?<\/script>/gi, " ")
+		.replace(/<style[\s\S]*?<\/style>/gi, " ")
+		.replace(/<[^>]+>/g, " ")
+		.replace(/\s+/g, " ")
+		.trim();
+}
+
+// --dump-text <slug>: print the resolved visible text of every stored
+// section in both locales as JSON (parity diffing for migrations).
+function dumpText(slug) {
+	const file = join(ROOT, "content", "pages", `${slug}.json`);
+	let data;
+	try {
+		data = JSON.parse(readFileSync(file, "utf8"));
+	} catch (err) {
+		console.error(`FAIL cannot read ${file}: ${err.message}`);
+		process.exit(1);
+	}
+	const out = { slug, locales: {} };
+	for (const locale of LOCALES) {
+		out.locales[locale] = (Array.isArray(data.pageBuilder) ? data.pageBuilder : []).map((section, index) => {
+			try {
+				const html = renderToStaticMarkup(renderers.renderSection(section.discriminant, section.value, locale, `dump-${index}`));
+				return { id: section.discriminant, text: stripToText(html) };
+			} catch (err) {
+				console.error(`FAIL render ${slug}[${index}]/${locale}: ${err?.message}`);
+				process.exit(1);
+			}
+		});
+	}
+	console.log(JSON.stringify(out, null, 2));
+}
+
 function main() {
 	const dirArg = process.argv.indexOf("--dir");
 	const rawDir = dirArg === -1 ? join(ROOT, "content", "pages") : process.argv[dirArg + 1];
@@ -405,6 +440,24 @@ function main() {
 			}
 			const value = section.value;
 			if (typeof value !== "object" || value === null) return fail(at, "section is missing its value object");
+			// Every stored section must render in both locales without
+			// leaking unresolved locale nodes — the renderability proof for
+			// migrated content (M4).
+			for (const locale of LOCALES) {
+				const renderWhere = `${at}/${locale}:render`;
+				try {
+					const element = renderers.renderSection(section.discriminant, value, locale, `check-${index}`);
+					if (!React.isValidElement(element)) {
+						fail(renderWhere, "did not produce a valid React element");
+						continue;
+					}
+					const html = renderToStaticMarkup(element);
+					if (!/<section/i.test(html)) fail(renderWhere, "rendered markup has no <section>");
+					if (html.includes("{en}") || html.includes("{sw}")) fail(renderWhere, "unresolved locale nodes in markup");
+				} catch (err) {
+					fail(renderWhere, `render threw: ${err?.message}`);
+				}
+			}
 			// Generic locale-node audit: every { en, sw } node must be strings.
 			const audit = (node, path) => {
 				if (Array.isArray(node)) return node.forEach((entry, i) => audit(entry, `${path}[${i}]`));
@@ -427,4 +480,9 @@ function main() {
 	console.log(`OK registry (${ids.length} sections), renderers, locale semantics, page resolution and ${files.length} page fixture(s) satisfy the page-builder contract.`);
 }
 
-main();
+const dumpIndex = process.argv.indexOf("--dump-text");
+if (dumpIndex !== -1) {
+	dumpText(process.argv[dumpIndex + 1]);
+} else {
+	main();
+}

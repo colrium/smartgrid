@@ -45,9 +45,10 @@ import {
  *   schema + renderer + example.
  * - Page-specific bespoke sections (`CurrentOpeningsSection`,
  *   `CompanyProfileViewerSection`, …) are never registered: the registry
- *   stays shared-only so branch options make sense for every page. Their
- *   pages remain on locale JSON until a shared-section or hybrid strategy
- *   is decided (M4 log).
+ *   stays shared-only so branch options make sense for every page. Hybrid
+ *   strategy (decided M4, company-profile pilot): Keystatic owns the shared
+ *   sections while the bespoke tail keeps rendering from legacy locale JSON
+ *   in the same route — never a registry branch, never a renderer key.
  */
 
 export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia"] as const;
