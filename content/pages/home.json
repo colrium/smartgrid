@@ -1,0 +1,59 @@
+{
+	"slug": "Home",
+	"title": "Home (starter)",
+	"status": "published",
+	"pageBuilder": [
+		{
+			"discriminant": "introText",
+			"value": {
+				"tag": { "en": "Surveying", "sw": "Upimaji" },
+				"headline": {
+					"en": "Surveying and engineering, delivered precisely",
+					"sw": "Upimaji na uhandisi, kwa usahihi"
+				},
+				"description": {
+					"en": "Starter Keystatic page for local development.",
+					"sw": "Ukurasa wa majaribio wa Keystatic."
+				},
+				"tone": "default",
+				"align": "left",
+				"split": false,
+				"cta": {
+					"label": { "en": "Contact us", "sw": "Wasiliana nasi" },
+					"href": "/en/contact",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "stats",
+			"value": {
+				"tag": { "en": "", "sw": "" },
+				"headline": { "en": "What we do", "sw": "Tunachofanya" },
+				"description": { "en": "", "sw": "" },
+				"items": [
+					{
+						"value": { "en": "250+", "sw": "250+" },
+						"label": { "en": "Projects completed", "sw": "Miradi iliyokamilika" },
+						"description": {
+							"en": "Boundary and topographic surveys.",
+							"sw": "Upimaji wa mipaka na topografia."
+						},
+						"icon": "crosshairs-gps"
+					},
+					{
+						"value": { "en": "15+", "sw": "15+" },
+						"label": { "en": "Years in the field", "sw": "Miaka kazini" },
+						"description": { "en": "", "sw": "" },
+						"icon": "drone"
+					}
+				],
+				"layout": "band",
+				"tone": "default",
+				"columns": 3,
+				"id": ""
+			}
+		}
+	]
+}

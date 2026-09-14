@@ -1,0 +1,49 @@
+{
+	"slug": "Terms of Use",
+	"title": "Terms of Use (starter)",
+	"status": "published",
+	"pageBuilder": [
+		{
+			"discriminant": "introText",
+			"value": {
+				"tag": { "en": "Legal", "sw": "Kisheria" },
+				"headline": { "en": "Terms of Use", "sw": "Masharti ya Matumizi" },
+				"description": {
+					"en": "Starter Keystatic pilot for the M3 rendering pipeline. Real legal content migrates in M4.",
+					"sw": "Ukurasa wa majaribio wa Keystatic."
+				},
+				"tone": "default",
+				"align": "left",
+				"split": false,
+				"cta": {
+					"label": { "en": "Contact us", "sw": "Wasiliana nasi" },
+					"href": "/en/contact",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "ctaBand",
+			"value": {
+				"tag": { "en": "", "sw": "" },
+				"headline": { "en": "Questions about these terms?", "sw": "Maswali kuhusu masharti haya?" },
+				"description": { "en": "", "sw": "" },
+				"primary": {
+					"label": { "en": "Contact us", "sw": "Wasiliana nasi" },
+					"href": "/en/contact",
+					"icon": "arrow-right"
+				},
+				"secondary": { "label": { "en": "", "sw": "" }, "href": "", "icon": "" },
+				"layout": "centered",
+				"variant": "panel",
+				"decor": "glow",
+				"watermark": "",
+				"images": [],
+				"shimmer": false,
+				"hairline": false,
+				"id": ""
+			}
+		}
+	]
+}

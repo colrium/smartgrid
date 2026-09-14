@@ -1,0 +1,47 @@
+import type { ComponentType, ReactElement } from "react";
+import { IntroTextSection } from "@/components/sections/shared/IntroTextSection";
+import { CtaBand } from "@/components/sections/shared/CtaBand";
+import { Stats } from "@/components/sections/shared/Stats";
+import { Hero } from "@/components/sections/shared/Hero";
+import { CardGrid } from "@/components/sections/shared/CardGrid";
+import { SplitMedia } from "@/components/sections/shared/SplitMedia";
+import type { Lang } from "../types";
+import { resolveLocaleValue } from "./localize";
+import { getSectionDefinition, type SectionId } from "./sectionRegistry";
+
+/**
+ * Renderer mapping for registered page-builder sections (M2).
+ *
+ * Keys are the single source of truth from `sectionRegistry.ts` — adding a
+ * registry entry without a renderer here is a type error, and the reverse
+ * coverage is enforced by `yarn check:keystatic`. Component implementations
+ * live only behind this module: it is imported by pages, never by
+ * `keystatic.config.ts`, so the config keeps loading in plain Node.
+ *
+ * Data flow per section: stored `value` → `resolveLocaleValue` (locale +
+ * English fallback) → entry `normalize` (editor-optional shapes) → props.
+ * Unknown ids throw `UnknownSectionError`; the M3 pipeline turns that into
+ * a safe development diagnostic instead of a blank page.
+ */
+
+export const sectionRenderers = {
+	introText: IntroTextSection,
+	ctaBand: CtaBand,
+	stats: Stats,
+	hero: Hero,
+	cardGrid: CardGrid,
+	splitMedia: SplitMedia,
+} satisfies Record<SectionId, ComponentType<any>>;
+
+export function renderSection(
+	id: string,
+	value: unknown,
+	lang: Lang,
+	key: string | number
+): ReactElement {
+	const definition = getSectionDefinition(id);
+	const resolved = (resolveLocaleValue(value, lang) ?? {}) as Record<string, any>;
+	const props: any = definition.normalize(resolved);
+	const Component = sectionRenderers[definition.id];
+	return <Component key={key} {...props} />;
+}

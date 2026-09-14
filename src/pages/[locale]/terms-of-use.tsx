@@ -2,15 +2,36 @@ import type { GetServerSideProps, NextPage } from "next";
 import PageHead from "@/components/Head";
 import { LegalPageSection } from "@/components/sections";
 import { useTranslation } from "@/hooks";
-import { getI18nProps } from "@/lib/i18n";
+import { getI18nProps, getLocale } from "@/lib/i18n";
+import { PageBuilderDocument } from "@/components/keystatic/PageBuilderDocument";
+import { resolveKeystaticPage, type ResolvedKeystaticPage } from "@/lib/keystatic/resolvePage";
+import type { Lang } from "@/lib/types";
 
 type LegalSection = {
 	title: string;
 	content: string[];
 };
 
-const TermsOfUsePage: NextPage = () => {
+type PageProps = {
+	/** Keystatic page when the `terms-of-use` slug is opted in; otherwise `null` (legacy). */
+	keystaticPage: ResolvedKeystaticPage | null;
+};
+
+const TermsOfUsePage: NextPage<PageProps> = ({ keystaticPage }) => {
 	const { t } = useTranslation(["common", "terms", "meta"]);
+
+	// Migration source switch (M3): Keystatic owns this route only when the
+	// slug is allowlisted via `KEYSTATIC_PAGES` and the entry is published.
+	// Otherwise the legacy locale-JSON implementation renders unchanged.
+	if (keystaticPage) {
+		return (
+			<div className="relative">
+				<PageHead pageName="terms_of_use" />
+				<PageBuilderDocument page={keystaticPage} />
+			</div>
+		);
+	}
+
 	const siteTitle = t("meta:site.title", { defaultValue: "" });
 	const sections = t("terms:articles", {
 		returnObjects: true,
@@ -42,7 +63,13 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 	if (!i18nProps) return { notFound: true };
 
-	return { props: { ...i18nProps } };
+	const locale = getLocale(context);
+	const lang: Lang = locale === "sw" ? "sw" : "en";
+	const resolution = await resolveKeystaticPage("terms-of-use", lang);
+
+	return {
+		props: { ...i18nProps, keystaticPage: resolution.status === "keystatic" ? resolution.page : null },
+	};
 };
 
 export default TermsOfUsePage;
