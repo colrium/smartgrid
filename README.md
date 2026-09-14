@@ -269,7 +269,7 @@ existing localized URL.
 npm install
 
 # 2. Configure environment
-cp .env.example .env.local   # fill in Sanity / Formspree / GA values
+cp .env.example .env.local   # fill in Formspree / GA / media + Keystatic values
 
 # 3. Develop
 npm run dev                  # http://localhost:3000
@@ -288,7 +288,6 @@ npm run build               # production build + next-sitemap
   add a namespace JSON per locale, load via `getI18nProps(context, ["common","meta","<page>"])`.
 - **Add an equipment/product:** register it in `public/locales/en/products.json` and add a
   per-product locale file (e.g. `dji-mavic-3-pro.json`) for each locale.
-- **Regenerate Sanity types:** `npm run typegen` (runs `sanity schema extract && sanity typegen`).
 
 ---
 
@@ -345,15 +344,61 @@ Full, canonical standards live in [`AGENTS.md`](./AGENTS.md).
 | `npm run lint`       | Lint all files (fails on any warning)            |
 | `npm run lint:fix`   | Auto-fix lint issues                             |
 | `npm run typecheck`  | Type-check with `tsc --noEmit`                   |
+| `npm run check:keystatic` | Verify page-builder registry, renderers, fixtures + migration |
+| `npm run migrate:keystatic` | Generate/verify a Keystatic page from locale JSON (`--page <slug> --write\|--verify`) |
+| `npm run mediakeygen` | Generate a random secret (admin password / media signing key) |
 | `npm run clean`      | Remove the `.next` build folder                  |
 | `npm run nuke:install` | Remove `node_modules` + lockfile (fresh install) |
 | `npm run toc`        | Regenerate `@types/resources.ts` from locale files |
 | `npm run merge`      | Merge locale resources into `@types/resources.json` |
 | `npm run interface`  | Generate `i18next` type definitions              |
-| `npm run typegen`    | Sanity schema extract + typegen                  |
 
 > Note: the dev script is registered as `"dev": "next"` in `package.json`; running
 > `npm run dev` starts the Next.js dev server.
+
+---
+
+## Keystatic Page Builder (operator guide)
+
+Structured pages are composed in the Keystatic admin (`/keystatic`, local dev needs
+no login) from six registered sections: `introText`, `ctaBand`, `stats`, `hero`,
+`cardGrid`, `splitMedia`. See `src/lib/keystatic/sectionRegistry.ts` — the single
+source for editor options and renderer mappings.
+
+- **Create / edit / remove:** open the `Pages` collection, draft entries with the
+  section blocks (labels, descriptions, and defaults ship with every field), reorder
+  blocks, then set `status: published` to make the entry servable. Deleting or
+  re-drafting an entry falls back to legacy content — never a blank page.
+- **Preview / publish flow:** `draft` = invisible to visitors; `published` + slug
+  listed in `KEYSTATIC_PAGES` = served from Keystatic (`resolveKeystaticPage` in
+  `src/lib/keystatic/resolvePage.ts`, checked by `yarn check:keystatic`). Content
+  edits commit straight to the branch Keystatic writes to (local filesystem in dev,
+  `KEYSTATIC_GITHUB_REPO` on a deployed CMS environment); there is no separate
+  preview deploy — verify with `KEYSTATIC_PAGES=<slug> yarn dev` before widening
+  the allowlist.
+- **Rollback (two levels):** per-page — remove the slug from `KEYSTATIC_PAGES` or
+  set the entry back to `draft`; global kill-switch — `KEYSTATIC_DISABLE=1` forces
+  every route to legacy locale JSON. Both are tested in
+  `scripts/check-keystatic-pages.mjs` (resolver matrix).
+- **Admin access:** non-development `/keystatic/*` and `/api/keystatic/*` require
+  HTTP Basic Auth (`KEYSTATIC_ADMIN_USER` / `KEYSTATIC_ADMIN_PASSWORD`, fail-closed,
+  constant-time compare in `src/proxy.ts`). Generate the password with
+  `yarn mediakeygen`, store it in the host env (Vercel → Project Settings →
+  Environment Variables), and rotate regularly. Never commit credentials.
+- **GitHub-backed editing (deployed CMS):** set `KEYSTATIC_GITHUB_REPO=owner/name`
+  plus the `NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG` app slug so the admin can commit
+  to the repo; keep local dev on filesystem storage (unset). Branch/PR behavior
+  follows the Keystatic GitHub app configuration — direct commits by default.
+- **Media policy (decided):** no uploads — images are referenced as `/public` paths
+  (`imagePath` / `localeMedia` fields); `fields.image` uploads stay disabled until a
+  directory-per-entry layout is adopted. Allowed formats follow the existing
+  library: JPEG/PNG/WebP/AVIF/SVG under `public/` (gated `/media/**` photos are
+  served via short-lived HMAC-signed URLs — see `src/lib/mediaShared.ts`).
+- **Accessibility rules for editors:** every image path must render with meaningful
+  alt text (shared components fall back to the headline/title — never ship an empty
+  `alt` on a content image); keep one `h1` per page (the hero) with section
+  headlines as `h2` in stored order — do not skip heading levels when ordering
+  blocks.
 
 ---
 
@@ -376,10 +421,11 @@ the quality gate. See [`AGENTS.md`](./AGENTS.md) for the full reference.
 
 ## FAQ
 
-**Do I need a Sanity dataset to run locally?**
-Only `NEXT_PUBLIC_SANITY_PROJECT_ID` and `NEXT_PUBLIC_SANITY_DATASET` are *required* (Zod will
-fail-fast otherwise). If you don't have a Sanity project, point them at any value to start; pages
-that query Sanity will simply not render their dynamic content.
+**Do I need a CMS dataset to run locally?**
+No. Copy `.env.example` to `.env.local`, run `yarn dev`, and open `/keystatic` —
+local editing works credential-free against filesystem storage. Set
+`KEYSTATIC_PAGES=<slug>` to preview a published entry, or `KEYSTATIC_DISABLE=1`
+to force legacy locale-JSON rendering.
 
 **I added a translation key but TypeScript can't see it.**
 Run `npm run toc` to regenerate `@types/resources.ts`, then restart the dev server.

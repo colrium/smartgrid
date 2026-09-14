@@ -260,12 +260,29 @@ function main() {
 	}
 	let onDisk;
 	try {
-		onDisk = readFileSync(dest, "utf8");
+		onDisk = readFileSync(dest, "utf8").replace(/\r\n/g, "\n");
 	} catch {
 		console.error(`FAIL ${dest} does not exist — run with --write first.`);
 		process.exit(1);
 	}
-	if (onDisk !== serialize(generated)) {
+	// The committed pilot entry was published by hand after generation (M4
+	// status log); the generator always emits `draft`. Compare with the status
+	// normalized so `--verify` pins content equality, not the publish flip.
+	const generatedJson = serialize(generated);
+	try {
+		const onDiskEntry = JSON.parse(onDisk);
+		const generatedEntry = JSON.parse(generatedJson);
+		if (
+			JSON.stringify({ ...onDiskEntry, status: "draft" }) ===
+			JSON.stringify({ ...generatedEntry, status: "draft" })
+		) {
+			console.log(`OK ${page}: checked-in entry equals repeatable migration output (${generated.pageBuilder.length} sections, no gaps).`);
+			return;
+		}
+	} catch {
+		// Fall through to the byte-compare diagnostic below.
+	}
+	if (onDisk !== generatedJson) {
 		console.error(`FAIL ${dest} differs from repeatable output — re-run with --write and inspect the diff.`);
 		process.exit(1);
 	}

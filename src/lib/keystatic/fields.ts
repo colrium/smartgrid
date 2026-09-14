@@ -17,9 +17,9 @@ import { fields } from "@keystatic/core";
  *   directory-per-entry layout is adopted.
  * - `fields.url` rejects relative URLs, so internal locale-prefixed paths
  *   (`/en/contact`) use plain text via `linkObject`.
- * - `fields.image` uploads into the repo and needs the undecided media
- *   policy (M-decisions); images are referenced as `/public` paths via
- *   `imagePath` until that decision lands.
+ * - `fields.image` uploads into the repo and needs a directory-per-entry
+ *   layout the single-file `content/pages/*` JSON cannot persist; images
+ *   are referenced as `/public` paths via `imagePath` (M5 media policy).
  */
 
 /** Every translatable node keeps both `en` and `sw` keys. */
@@ -61,7 +61,7 @@ export const linkObject = (label: string) =>
 		{ label }
 	);
 
-/** Reference to an image under `/public` (media policy pending, see above). */
+/** Reference to an image under `/public` (M5 media policy: references only, no uploads). */
 export const imagePath = (label: string) =>
 	fields.text({ label, description: "Path under /public, e.g. /images/cta-band-1.jpg." });
 
@@ -70,6 +70,13 @@ export const imagePath = (label: string) =>
  * locale (company-profile `about.image` is `/img/logo.svg` in `en` but a
  * `/media/…` photo in `sw`), so a single shared path would silently drop
  * one locale's media. Resolves to a plain string like any locale node.
+ *
+ * Media policy (M5, decided): references only — no `fields.image` uploads.
+ * Keep paths under `/public` (JPEG/PNG/WebP/AVIF/SVG); gated `/media/**`
+ * photos resolve to short-lived signed URLs at render time. Every stored
+ * image must render with meaningful alt text (components fall back to the
+ * headline/title) and pages keep one `h1` with `h2` section headlines —
+ * see the README operator guide for the editor-facing rules.
  */
 export const localeMedia = (label: string) =>
 	fields.object(

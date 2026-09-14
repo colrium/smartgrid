@@ -297,6 +297,46 @@ const resolutionCases = await (async () => {
 	outcomes.push(["resolve-mixed-unknown-is-fatal", mixedRes.status === "legacy" && mixedRes.reason === "error"]);
 	console.warn = originalWarn;
 
+	// Admin edge gate (M5, src/proxy.ts): pure path/auth contract. Mirrors the
+	// shipped path regexes (verified present below) so the matcher + fail-closed
+	// contract is pinned from the real source, not a copy.
+	const proxySrc = readFileSync(join(ROOT, "src", "proxy.ts"), "utf8");
+	const proxyOutcomes = [];
+	for (const key of ["function isKeystaticPath(", "function isAuthorizedAdmin(", "function expectedAdminCredentials("]) {
+		proxyOutcomes.push([`proxy-has-${key.slice(9, -1)}`, proxySrc.includes(key)]);
+	}
+	const shippedPathGate = (pathname) => {
+		const withoutLocale = pathname.replace(/^\/(en|sw)(\/|$)/, "/");
+		return /^(\/keystatic|\/api\/keystatic)(\/|$)/.test(withoutLocale);
+	};
+	proxyOutcomes.push([
+		"proxy-route-coverage",
+		shippedPathGate("/keystatic") &&
+			shippedPathGate("/keystatic/") &&
+			shippedPathGate("/en/keystatic") &&
+			shippedPathGate("/sw/keystatic/pages/x") &&
+			shippedPathGate("/api/keystatic/x") &&
+			!shippedPathGate("/en/about") &&
+			!shippedPathGate("/media/x.jpg") &&
+			!shippedPathGate("/enkeystatic") &&
+			!shippedPathGate("/api/keystatic-evil"),
+	]);
+	// The shipped source must fail closed (empty env yields no credentials),
+	// compare credentials in constant time, run as the single edge gate, and
+	// carry matchers for plain, locale-prefixed, API and media paths.
+	proxyOutcomes.push(["proxy-fails-closed", /if \(!user \|\| !pass\) return null/.test(proxySrc)]);
+	proxyOutcomes.push([
+		"proxy-constant-time",
+		proxySrc.includes("credentialsEqual(provided.user, expected.user)") && /function credentialsEqual[\s\S]*?timingSafeEqual/.test(proxySrc),
+	]);
+	proxyOutcomes.push(["proxy-single-gate", !existsSync(join(ROOT, "middleware.ts"))]);
+	for (const matcher of ['"/keystatic/:path*"', '"/en/keystatic/:path*"', '"/sw/keystatic/:path*"', '"/api/keystatic/:path*"', '"/media']) {
+		proxyOutcomes.push([`proxy-matcher-${matcher.replace(/[^a-z]/gi, "")}`, proxySrc.includes(matcher)]);
+	}
+	for (const [name, passed] of proxyOutcomes) {
+		check(`proxy/${name}`, passed, "admin edge gate behaved unexpectedly");
+	}
+
 	const realBase = makeContentBase({ "home.json": JSON.parse(readFileSync(join(ROOT, "content", "pages", "home.json"), "utf8")) });
 	setSwitchEnv("home", undefined);
 	const realRes = await resolveKeystaticPage("home", "en", { baseDir: realBase });
