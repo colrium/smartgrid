@@ -3,6 +3,7 @@
 import type { ReactElement } from "react";
 import {
 	Process,
+	type ProcessClassesProp,
 	type ProcessItem,
 	type ProcessPhaseStyle,
 	type ProcessPhaseStyles,
@@ -18,6 +19,14 @@ export type WorkflowCta = ProcessCta;
 export type WorkflowPhaseStyle = ProcessPhaseStyle;
 export type WorkflowPhaseStyles = ProcessPhaseStyles;
 
+export interface WorkflowClassesProp {
+	sectionHeader?: ProcessClassesProp["sectionHeader"];
+	grid?: string;
+	card?: string;
+	footer?: string;
+	note?: string;
+	outcome?: string;
+}
 export interface WorkflowSectionProps {
 	tag?: string | null;
 	headline?: string;
@@ -30,6 +39,7 @@ export interface WorkflowSectionProps {
 	cta?: WorkflowCta | null;
 	/** Per-phase chip style overrides merged over the defaults. */
 	phaseStyles?: WorkflowPhaseStyles | null;
+	classes?: WorkflowClassesProp;
 }
 
 const PHASE_STYLES: WorkflowPhaseStyles = {
@@ -96,6 +106,7 @@ export function WorkflowSection(props: WorkflowSectionProps): ReactElement {
 			phaseStyles={{ ...PHASE_STYLES, ...(props.phaseStyles ?? {}) }}
 			outcome={props.outcome ?? null}
 			ctaNote={props.ctaNote ?? null}
+			classes={props.classes ? { sectionHeader: props.classes.sectionHeader, grid: props.classes.grid, card: props.classes.card, footer: props.classes.footer, note: props.classes.note, outcome: props.classes.outcome } : undefined}
 			cta={
 				props.cta?.href
 					? {

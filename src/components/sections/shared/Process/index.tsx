@@ -3,7 +3,7 @@ import type { ReactElement } from "react";
 
 import Link from "@/components/Link";
 import { FadeUp } from "@/components/animations/Fade";
-import { SectionShell } from "@/components/sections/shared/SectionShell";
+import { SectionShell, type SectionShellClassesProp } from "@/components/sections/shared/SectionShell";
 
 export interface ProcessItem {
 	/** Step label / phase chip text (e.g. "01", "Survey"). */
@@ -62,6 +62,14 @@ export interface ProcessTimelineProps {
 	emailCta?: { label?: string; href?: string } | null;
 }
 
+export interface ProcessClassesProp {
+	sectionHeader?: SectionShellClassesProp["sectionHeader"];
+	grid?: string;
+	card?: string;
+	footer?: string;
+	note?: string;
+	outcome?: string;
+}
 export interface ProcessProps {
 	id?: string;
 	tag?: string | null;
@@ -82,6 +90,7 @@ export interface ProcessProps {
 	ctaNote?: string | null;
 	/** Closing call-to-action button. */
 	cta?: ProcessCta | null;
+	classes?: ProcessClassesProp;
 	className?: string;
 	/** Timeline-specific overrides used by `surveying/sectional-properties:timeline`. */
 	timeline?: ProcessTimelineProps | null;
@@ -133,7 +142,7 @@ export function Process(props: ProcessProps): ReactElement | null {
 	};
 
 	const gridCard = (item: ProcessItem, index: number): ReactElement => (
-		<article className="group h-full flex flex-col gap-4 rounded-c bg-surface hairline card-shadow p-7 transition-all duration-250 hover:card-shadow-lift hover:border-primary">
+		<article className={`group h-full flex flex-col gap-4 rounded-c bg-surface hairline card-shadow p-7 transition-all duration-250 hover:card-shadow-lift hover:border-primary ${props.classes?.card ?? ""}`}>
 			<span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
 				{item.icon ? (
 					<span className={`mdi mdi-${item.icon} text-2xl`} aria-hidden />
@@ -172,7 +181,7 @@ export function Process(props: ProcessProps): ReactElement | null {
 				<div className="ml-12 grid grid-cols-1 lg:ml-0 lg:grid-cols-2 lg:gap-16">
 					<div className={even ? "lg:col-start-1" : "lg:col-start-2"}>
 						<FadeUp delay={Math.min(index * 0.06, 0.3)}>
-							<div className="group flex flex-col gap-3 rounded-c bg-surface hairline card-shadow p-6 sm:p-7 transition-all duration-250 hover:card-shadow-lift hover:border-primary">
+							<div className={`group flex flex-col gap-3 rounded-c bg-surface hairline card-shadow p-6 sm:p-7 transition-all duration-250 hover:card-shadow-lift hover:border-primary ${props.classes?.card ?? ""}`}>
 								<div className="flex flex-wrap items-center justify-between gap-3">
 									{phaseChip(item)}
 									<span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-on-surface/40">
@@ -205,15 +214,15 @@ export function Process(props: ProcessProps): ReactElement | null {
 		if (!props.outcome && !props.ctaNote && !props.cta?.href) return null;
 		return (
 			<FadeUp>
-				<div className="relative mt-14 flex flex-col items-center gap-6 text-center">
+				<div className={`relative mt-14 flex flex-col items-center gap-6 text-center ${props.classes?.footer ?? ""}`}>
 					{props.outcome && (
-						<div className="inline-flex flex-wrap items-center justify-center gap-3 rounded-full border border-whatsapp/40 bg-whatsapp/10 px-7 py-3.5 text-sm sm:text-base font-medium text-ink/80 text-center">
+						<div className={`inline-flex flex-wrap items-center justify-center gap-3 rounded-full border border-whatsapp/40 bg-whatsapp/10 px-7 py-3.5 text-sm sm:text-base font-medium text-ink/80 text-center ${props.classes?.outcome ?? ""}`}>
 							<span className="mdi mdi-check-decagram text-xl text-whatsapp" aria-hidden />
 							{props.outcome}
 						</div>
 					)}
 					{props.ctaNote && (
-						<p className="max-w-2xl text-sm sm:text-base text-on-surface/60 leading-relaxed">
+						<p className={`max-w-2xl text-sm sm:text-base text-on-surface/60 leading-relaxed ${props.classes?.note ?? ""}`}>
 							{props.ctaNote}
 						</p>
 					)}
@@ -268,8 +277,9 @@ export function Process(props: ProcessProps): ReactElement | null {
 					align="center"
 					tone={props.tone ?? "surface"}
 					className={props.className}
+					classes={props.classes ? { sectionHeader: props.classes.sectionHeader } : undefined}
 				>
-					<div className="relative mt-16 sm:mt-20">
+					<div className={`relative mt-16 sm:mt-20 ${props.classes?.grid ?? ""}`}>
 						{props.timeline?.barLabel && (
 							<p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-primary">
 								{props.timeline.barLabel}
@@ -339,8 +349,9 @@ export function Process(props: ProcessProps): ReactElement | null {
 				align="center"
 				tone={props.tone ?? "surface"}
 				className={props.className}
+				classes={props.classes ? { sectionHeader: props.classes.sectionHeader } : undefined}
 			>
-				<div className="relative mt-16 sm:mt-20">
+				<div className={`relative mt-16 sm:mt-20 ${props.classes?.grid ?? ""}`}>
 					<span
 						aria-hidden
 						className="absolute left-4 lg:left-1/2 lg:-translate-x-1/2 top-2 bottom-2 w-px bg-gradient-to-b from-primary/0 via-primary/40 to-accent/50"
@@ -351,7 +362,7 @@ export function Process(props: ProcessProps): ReactElement | null {
 				</div>
 				{props.note && (
 					<FadeUp>
-						<p className="mt-12 text-center text-sm text-on-surface/55">{props.note}</p>
+						<p className={`mt-12 text-center text-sm text-on-surface/55 ${props.classes?.note ?? ""}`}>{props.note}</p>
 					</FadeUp>
 				)}
 				{footerNode()}
@@ -368,9 +379,10 @@ export function Process(props: ProcessProps): ReactElement | null {
 			align="center"
 			tone={props.tone ?? "default"}
 			className={props.className}
+			classes={props.classes ? { sectionHeader: props.classes.sectionHeader } : undefined}
 		>
 			<div
-				className={`mt-14 sm:mt-20 grid grid-cols-1 gap-5 sm:gap-6 ${GRID_COLUMNS[columns]}`}
+				className={`mt-14 sm:mt-20 grid grid-cols-1 gap-5 sm:gap-6 ${GRID_COLUMNS[columns]} ${props.classes?.grid ?? ""}`}
 			>
 				{items.map((item, index) => (
 					<FadeUp key={index} delay={(index % columns) * 0.07} className="h-full">
@@ -380,7 +392,7 @@ export function Process(props: ProcessProps): ReactElement | null {
 			</div>
 			{props.note && (
 				<FadeUp delay={0.15}>
-					<p className="mt-12 text-center text-sm text-on-surface/55">{props.note}</p>
+					<p className={`mt-12 text-center text-sm text-on-surface/55 ${props.classes?.note ?? ""}`}>{props.note}</p>
 				</FadeUp>
 			)}
 			{footerNode()}

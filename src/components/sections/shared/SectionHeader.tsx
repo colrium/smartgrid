@@ -6,8 +6,8 @@ import { SectionTag } from "@/components/SectionTag";
 
 export interface SectionHeaderClassesProp {
 	tag?: string;
-	headline: string;
-	description?: ReactNode;
+	headline?: string;
+	description?: string;
 }
 
 export interface SectionHeaderProps {
@@ -27,11 +27,7 @@ export function SectionHeader({
 	tone = "light",
 	align = "left",
 	className,
-	classes = {
-		tag: "",
-		headline: "",
-		description: "",
-	},
+	classes,
 }: SectionHeaderProps): ReactElement {
 	const dark = tone === "dark";
 

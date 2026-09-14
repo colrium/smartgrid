@@ -47,6 +47,15 @@ export interface HeroContent {
 	} | null;
 }
 
+export interface HeroClassesProp {
+	tag?: string;
+	watermark?: string;
+	content?: string;
+	heading?: string;
+	lede?: string;
+	actions?: string;
+	footnote?: string;
+}
 export interface HeroProps {
 	/** Section content object, usually `t("<ns>:hero", { returnObjects: true })`. */
 	data: HeroContent;
@@ -57,6 +66,7 @@ export interface HeroProps {
 	/** Overrides `data.scrollCue`: bouncing scroll cue anchored bottom-centre. */
 	scrollCue?: boolean;
 	id?: string;
+	classes?: HeroClassesProp;
 	className?: string;
 }
 
@@ -141,7 +151,7 @@ export function Hero(props: HeroProps): ReactElement {
 					/>
 					<span
 						aria-hidden
-						className="absolute inset-x-0 top-[25%] select-none pointer-events-none text-center font-mono font-bold uppercase tracking-[0.5em] text-surface/4 text-[22vw] lg:text-[13rem] leading-none whitespace-nowrap"
+						className={`absolute inset-x-0 top-[25%] select-none pointer-events-none text-center font-mono font-bold uppercase tracking-[0.5em] text-surface/4 text-[22vw] lg:text-[13rem] leading-none whitespace-nowrap ${props.classes?.watermark ?? ""}`}
 					>
 						{hero.title}
 					</span>
@@ -192,7 +202,7 @@ export function Hero(props: HeroProps): ReactElement {
 			<div
 				className={`relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12 ${
 					light ? "pb-16 sm:pb-20" : centered ? "py-48" : ""
-				}`.trim()}
+				} ${props.classes?.content ?? ""}`.trim()}
 			>
 				<FadeUp
 					className={
@@ -212,11 +222,11 @@ export function Hero(props: HeroProps): ReactElement {
 									: undefined
 						}
 					>
-						{tag ? <SectionTag dark={light ? undefined : true}>{tag}</SectionTag> : null}
+						{tag ? <SectionTag dark={light ? undefined : true} className={props.classes?.tag ?? ""}>{tag}</SectionTag> : null}
 
 						{heading ? (
 							<h1
-								className={
+								className={`${
 									light
 										? "font-light tracking-tight leading-[1.02] text-5xl sm:text-6xl lg:text-7xl text-ink max-w-4xl"
 										: banner
@@ -224,7 +234,7 @@ export function Hero(props: HeroProps): ReactElement {
 											: centered
 												? "font-light tracking-tight leading-[1.02] text-5xl sm:text-6xl lg:text-7xl text-white drop-shadow-sm"
 												: "mt-5 max-w-4xl font-light tracking-tight leading-[1.05] text-4xl sm:text-6xl lg:text-7xl text-surface"
-								}
+								} ${props.classes?.heading ?? ""}`}
 							>
 								{heading}
 							</h1>
@@ -232,7 +242,7 @@ export function Hero(props: HeroProps): ReactElement {
 
 						{lede ? (
 							<p
-								className={
+								className={`${
 									light
 										? "max-w-2xl text-base sm:text-lg text-on-surface/60 leading-relaxed whitespace-pre-line"
 										: banner
@@ -240,7 +250,7 @@ export function Hero(props: HeroProps): ReactElement {
 											: centered
 												? "max-w-2xl text-base sm:text-lg text-white/75 leading-relaxed whitespace-pre-line"
 												: "mt-6 max-w-2xl text-base sm:text-lg text-surface/70 leading-relaxed whitespace-pre-line"
-								}
+								} ${props.classes?.lede ?? ""}`}
 							>
 								{lede}
 							</p>
@@ -248,7 +258,7 @@ export function Hero(props: HeroProps): ReactElement {
 
 						{primary || secondary ? (
 							<div
-								className={
+								className={`${
 									centered
 										? "mt-1 flex flex-wrap items-center justify-center gap-4"
 										: banner
@@ -256,7 +266,7 @@ export function Hero(props: HeroProps): ReactElement {
 											: light
 												? "flex flex-wrap items-center justify-center gap-4"
 												: "mt-10 flex flex-wrap items-center gap-4"
-								}
+								} ${props.classes?.actions ?? ""}`}
 							>
 								{primary ? <CtaPill action={primary} variant={pillVariant} /> : null}
 								{secondary ? <CtaPill action={secondary} variant="outline" /> : null}
@@ -264,7 +274,7 @@ export function Hero(props: HeroProps): ReactElement {
 						) : null}
 
 						{footnotes.length > 0 ? (
-							<ul className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-3">
+							<ul className={`mt-8 flex flex-wrap items-center gap-x-7 gap-y-3 ${props.classes?.footnote ?? ""}`}>
 								{footnotes.map((item, index) => (
 									<li key={index} className="inline-flex items-center gap-2 text-xs sm:text-sm text-surface/75">
 										<span

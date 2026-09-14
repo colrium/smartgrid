@@ -2,12 +2,21 @@
 import type { ReactElement, ReactNode } from "react";
 import Image from "next/image";
 import { FadeUp } from "@/components/animations/Fade";
-import { SectionShell } from "@/components/sections/shared/SectionShell";
+import { SectionShell, type SectionShellClassesProp } from "@/components/sections/shared/SectionShell";
 import { CtaPill, type CtaAction } from "@/components/sections/shared/CtaPill";
 import { CardList, cardGridCols, type CardItem } from "@/components/sections/shared/CardList";
 import type { CardProps } from "@/components/ui/Card";
 
 export type { CardItem } from "@/components/sections/shared/CardList";
+
+export interface CardGridClassesProp {
+	sectionHeader?: SectionShellClassesProp["sectionHeader"];
+	subheading?: string;
+	leadGrid?: string;
+	leadImage?: string;
+	grid?: string;
+	actions?: string;
+}
 
 export interface CardGridAction extends CtaAction {
 	/** `primary` = solid brand pill, `surface` = light hairline pill (light backgrounds). */
@@ -39,6 +48,7 @@ export interface CardGridProps {
 	leadAspect?: string;
 	/** Action pills rendered centred below the grid (light backgrounds). */
 	actions?: CardGridAction[] | null;
+	classes?: CardGridClassesProp;
 	className?: string;
 }
 export function CardGrid(props: CardGridProps): ReactElement | null {
@@ -50,17 +60,17 @@ export function CardGrid(props: CardGridProps): ReactElement | null {
 	const leadClass = props.subheading ? "mt-8" : "mt-12";
 	const gridMargin = leadImages.length > 0 ? "mt-12 sm:mt-14" : props.subheading ? "mt-8" : "mt-14 sm:mt-16";
 	return (
-		<SectionShell id={props.id} tag={props.tag} headline={props.headline} description={props.description} align={props.headerAlign ?? "center"} tone={props.tone} className={props.className}>
+		<SectionShell id={props.id} tag={props.tag} headline={props.headline} description={props.description} align={props.headerAlign ?? "center"} tone={props.tone} className={props.className} classes={props.classes ? { sectionHeader: props.classes.sectionHeader } : undefined}>
 			{props.subheading ? (
-				<p className="mt-10 font-mono text-xs uppercase tracking-widest font-semibold text-primary">
+				<p className={`mt-10 font-mono text-xs uppercase tracking-widest font-semibold text-primary ${props.classes?.subheading ?? ""}`}>
 					{props.subheading}
 				</p>
 			) : null}
 			{leadImages.length > 0 ? (
 				<FadeUp>
-					<div className={`${leadClass} grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6`}>
+					<div className={`${leadClass} grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 ${props.classes?.leadGrid ?? ""}`}>
 						{leadImages.map((src, index) => (
-							<div key={index} className={`relative rounded-c overflow-hidden hairline ${props.leadAspect ?? "h-64 sm:h-80"}`}>
+							<div key={index} className={`relative rounded-c overflow-hidden hairline ${props.leadAspect ?? "h-64 sm:h-80"} ${props.classes?.leadImage ?? ""}`}>
 								<Image src={src} alt="" fill sizes="(min-width: 640px) 50vw, 100vw" className="object-cover object-center transition-transform duration-700 hover:scale-105" />
 							</div>
 						))}
@@ -81,11 +91,12 @@ export function CardGrid(props: CardGridProps): ReactElement | null {
 				fallbackIcons={props.fallbackIcons}
 				popupHeading={props.headline}
 				popupTrigger={props.popupTrigger}
+				classes={props.classes?.grid ? { grid: props.classes.grid } : undefined}
 				className={`${gridMargin} grid grid-cols-1 sm:grid-cols-2 ${cardGridCols(columns)} gap-5 sm:gap-6`}
 			/>
 			{actions.length > 0 ? (
 				<FadeUp delay={0.1}>
-					<div className="mt-12 flex flex-wrap items-center justify-center gap-4">
+					<div className={`mt-12 flex flex-wrap items-center justify-center gap-4 ${props.classes?.actions ?? ""}`}>
 						{actions.map((action, index) => (
 							action.href ? (
 								<CtaPill

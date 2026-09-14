@@ -22,6 +22,9 @@ export interface CardItem extends Omit<CardProps, "children"> {
 	popupContent?: string | null;
 }
 
+export interface CardListClassesProp {
+	grid?: string;
+}
 export interface CardListProps {
 	items: CardItem[];
 	columns?: 2 | 3 | 4 | 5;
@@ -39,6 +42,7 @@ export interface CardListProps {
 	popupTrigger?: string;
 	/** Auto-numbers the `mediaBadge` glass chip ("01", "02", …). */
 	mediaBadged?: boolean;
+	classes?: CardListClassesProp;
 	/** Full grid wrapper classes; defaults to the standard responsive grid. */
 	className?: string;
 }
@@ -102,7 +106,7 @@ export function CardList(props: CardListProps): ReactElement | null {
 
 	return (
 		<>
-			<div className={props.className ?? `grid grid-cols-1 sm:grid-cols-2 ${cardGridCols(columns)} gap-5 sm:gap-6`}>
+			<div className={`${props.className ?? `grid grid-cols-1 sm:grid-cols-2 ${cardGridCols(columns)} gap-5 sm:gap-6`} ${props.classes?.grid ?? ""}`}>
 				{items.map((raw, index) => {
 					const item = raw as CardItem;
 					const title = item.title ?? item.label ?? "";

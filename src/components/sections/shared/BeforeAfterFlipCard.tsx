@@ -9,6 +9,10 @@ export interface FlipSide {
 	items?: string[] | null;
 }
 
+export interface BeforeAfterFlipCardClassesProp {
+	wrapper?: string;
+	card?: string;
+}
 interface BeforeAfterFlipCardProps {
 	before: FlipSide;
 	after: FlipSide;
@@ -23,6 +27,7 @@ interface BeforeAfterFlipCardProps {
 	afterWatermarkClass?: string;
 	/** Tailwind classes for the "AFTER" corner glyph. */
 	afterCornerClass?: string;
+	classes?: BeforeAfterFlipCardClassesProp;
 }
 
 export function BeforeAfterFlipCard({
@@ -33,7 +38,8 @@ export function BeforeAfterFlipCard({
 	afterIcon = "check-circle",
 	beforeIcon = "alert-circle",
     afterCornerClass = "text-success-700/70",
-    afterWatermarkClass
+    afterWatermarkClass,
+    classes,
 }: BeforeAfterFlipCardProps): ReactElement {
 	const [showAfter, setShowAfter] = useState(false);
 
@@ -47,7 +53,7 @@ export function BeforeAfterFlipCard({
 	const isBefore = !isAfter;
 
 	return (
-		<div className="mt-12 sm:mt-14 mx-auto max-w-2xl flex flex-col items-center">
+		<div className={`mt-12 sm:mt-14 mx-auto max-w-2xl flex flex-col items-center ${classes?.wrapper ?? ""}`}>
 			{/* Segmented BEFORE / AFTER toggle */}
 			<div
 				role="tablist"
@@ -111,7 +117,7 @@ export function BeforeAfterFlipCard({
 						tabIndex={0}
 						aria-pressed={isAfter}
 						aria-label={flipHint ?? "Toggle before / after"}
-						className={`relative w-full cursor-pointer overflow-hidden select-none rounded-c p-8 sm:p-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background bg-surface`}
+						className={`relative w-full cursor-pointer overflow-hidden select-none rounded-c p-8 sm:p-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background bg-surface ${classes?.card ?? ""}`}
 					>
 						<span
 							aria-hidden

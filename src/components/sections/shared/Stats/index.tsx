@@ -3,7 +3,7 @@ import type { ReactElement } from "react";
 
 import { SectionHeader } from "@/components/sections/shared/SectionHeader";
 import { FadeUp } from "@/components/animations/Fade";
-import { SectionShell } from "@/components/sections/shared/SectionShell";
+import { SectionShell, type SectionShellClassesProp } from "@/components/sections/shared/SectionShell";
 
 export interface StatItem {
 	value?: string | number;
@@ -12,6 +12,11 @@ export interface StatItem {
 	icon?: string | null;
 }
 
+export interface StatsClassesProp {
+	sectionHeader?: SectionShellClassesProp["sectionHeader"];
+	grid?: string;
+	card?: string;
+}
 export interface StatsProps {
 	id?: string;
 	tag?: string | null;
@@ -25,6 +30,7 @@ export interface StatsProps {
 	layout?: "band" | "cards" | "panel";
 	tone?: "default" | "surface";
 	columns?: 2 | 3 | 4;
+	classes?: StatsClassesProp;
 	className?: string;
 }
 
@@ -61,13 +67,14 @@ export function Stats(props: StatsProps): ReactElement | null {
 				align="center"
 				tone={props.tone ?? "default"}
 				className={props.className}
+				classes={props.classes ? { sectionHeader: props.classes.sectionHeader } : undefined}
 			>
 				<div
-					className={`mt-14 sm:mt-20 grid grid-cols-1 gap-5 sm:gap-6 ${CARD_COLUMNS[columns]}`}
+					className={`mt-14 sm:mt-20 grid grid-cols-1 gap-5 sm:gap-6 ${CARD_COLUMNS[columns]} ${props.classes?.grid ?? ""}`}
 				>
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={(index % columns) * 0.07}>
-							<div className="group h-full flex flex-col items-center gap-2 rounded-c bg-surface hairline card-shadow p-7 text-center transition-all duration-250 hover:card-shadow-lift hover:border-primary">
+							<div className={`group h-full flex flex-col items-center gap-2 rounded-c bg-surface hairline card-shadow p-7 text-center transition-all duration-250 hover:card-shadow-lift hover:border-primary ${props.classes?.card ?? ""}`}>
 								{item.icon && (
 									<span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-50 text-primary">
 										<span className={`mdi mdi-${item.icon} text-2xl`} />
@@ -98,10 +105,10 @@ export function Stats(props: StatsProps): ReactElement | null {
 		return (
 			<section id={props.id} className={`relative z-10 -mt-4 pb-8 ${props.className ?? ""}`.trim()}>
 				<div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-					<div className="grid grid-cols-2 lg:grid-cols-4 rounded-c ink-panel card-shadow overflow-hidden">
+					<div className={`grid grid-cols-2 lg:grid-cols-4 rounded-c ink-panel card-shadow overflow-hidden ${props.classes?.grid ?? ""}`}>
 						{items.map((item, index) => (
 							<FadeUp key={index} delay={index * 0.06}>
-								<div className="flex flex-col items-center text-center gap-2.5 px-6 py-9">
+								<div className={`flex flex-col items-center text-center gap-2.5 px-6 py-9 ${props.classes?.card ?? ""}`}>
 									<span className="flex h-20 w-20 items-center justify-center rounded-xl hover:bg-surface/10 text-surface">
 										{item.icon && <span className={`mdi mdi-${item.icon} text-4xl`} />}
 									</span>
@@ -134,17 +141,16 @@ export function Stats(props: StatsProps): ReactElement | null {
 							description={props.description ?? undefined}
 							align="center"
 							tone="dark"
+						classes={props.classes?.sectionHeader}
 						/>
 					</FadeUp>
 				)}
 				<div
-					className={`grid grid-cols-1 gap-10 sm:gap-8 ${BAND_COLUMNS[columns]} ${
-						props.headline ? "mt-12" : ""
-					}`}
+					className={`grid grid-cols-1 gap-10 sm:gap-8 ${BAND_COLUMNS[columns]} ${props.headline ? "mt-12" : ""} ${props.classes?.grid ?? ""}`}
 				>
 					{items.map((item, index) => (
 						<FadeUp key={index} delay={index * 0.08}>
-							<div className="flex flex-col items-center gap-2 text-center">
+							<div className={`flex flex-col items-center gap-2 text-center ${props.classes?.card ?? ""}`}>
 								{item.icon && (
 									<span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-surface/10 text-primary-200">
 										<span className={`mdi mdi-${item.icon} text-2xl`} />

@@ -2,13 +2,20 @@
 
 import type { ReactElement } from "react";
 import { FadeLeft, FadeRight, FadeUp } from "@/components/animations/Fade";
-import { SectionShell } from "@/components/sections/shared/SectionShell";
+import { SectionShell, type SectionShellClassesProp } from "@/components/sections/shared/SectionShell";
 
 export interface PricingCard {
 	/** Card heading (e.g. "What drives the cost"). */
 	title?: string | null;
 	/** Check-bullet lines rendered inside the card. */
 	items?: string[] | null;
+}
+
+export interface PricingClassesProp {
+	sectionHeader?: SectionShellClassesProp["sectionHeader"];
+	grid?: string;
+	card?: string;
+	price?: string;
 }
 
 export interface PricingProps {
@@ -24,6 +31,7 @@ export interface PricingProps {
 		value?: string | null;
 		note?: string | null;
 	} | null;
+	classes?: PricingClassesProp;
 	className?: string;
 }
 
@@ -68,13 +76,14 @@ export function Pricing(props: PricingProps): ReactElement | null {
 			align="center"
 			tone="surface"
 			className={props.className}
+			classes={props.classes ? { sectionHeader: props.classes.sectionHeader } : undefined}
 		>
 			{cards.length > 0 ? (
-				<div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
+				<div className={`mt-14 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start ${props.classes?.grid ?? ""}`}>
 					{cards.map((card, index) =>
 						index % 2 === 0 ? (
 							<FadeLeft key={index} className="h-full">
-								<article className="h-full flex flex-col gap-6 rounded-c bg-surface hairline card-shadow p-8">
+								<article className={`h-full flex flex-col gap-6 rounded-c bg-surface hairline card-shadow p-8 ${props.classes?.card ?? ""}`}>
 									{card.title ? (
 										<h3 className="text-lg font-semibold tracking-tight text-ink">
 											{card.title}
@@ -85,7 +94,7 @@ export function Pricing(props: PricingProps): ReactElement | null {
 							</FadeLeft>
 						) : (
 							<FadeRight key={index} delay={0.08} className="h-full">
-								<article className="h-full flex flex-col gap-6 rounded-c bg-surface hairline card-shadow p-8">
+								<article className={`h-full flex flex-col gap-6 rounded-c bg-surface hairline card-shadow p-8 ${props.classes?.card ?? ""}`}>
 									{card.title ? (
 										<h3 className="text-lg font-semibold tracking-tight text-ink">
 											{card.title}
@@ -101,7 +110,7 @@ export function Pricing(props: PricingProps): ReactElement | null {
 
 			{price ? (
 				<FadeUp delay={0.1}>
-					<div className="mt-8 relative rounded-c bg-surface hairline card-shadow overflow-hidden px-8 py-12 sm:px-12 text-center">
+					<div className={`mt-8 relative rounded-c bg-surface hairline card-shadow overflow-hidden px-8 py-12 sm:px-12 text-center ${props.classes?.price ?? ""}`}>
 						<span
 							className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-primary-100/60 blur-[90px] pointer-events-none"
 							aria-hidden

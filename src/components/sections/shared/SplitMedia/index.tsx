@@ -3,7 +3,7 @@
 import type { ReactElement } from "react";
 import Image from "next/image";
 import { FadeUp } from "@/components/animations/Fade";
-import { SectionHeader, SectionHeaderClassesProp } from "@/components/sections/shared/SectionHeader";
+import { SectionHeader, type SectionHeaderClassesProp } from "@/components/sections/shared/SectionHeader";
 import { Blob } from "@/components/sections/shared/decor";
 import { CardList, cardGridCols, type CardItem } from "@/components/sections/shared/CardList";
 import { CheckList } from "@/components/sections/shared/Pricing";
@@ -19,8 +19,9 @@ export interface SplitMediaContent {
 }
 export interface SplitMediaClassesProp{
     mediaCard?: string;
-    mediaWrapper?: string; 
-    media?: string; 
+    mediaWrapper?: string;
+    media?: string;
+    description?: string;
     sectionHeader?: SectionHeaderClassesProp
 }
 export interface SplitMediaProps {
@@ -34,7 +35,7 @@ export interface SplitMediaProps {
 	/** Media object fit — `cover` (default) or `contain` (logos/diagrams). */
 	mediaFit?: "cover" | "contain";
     mediaWrapperClass?: string;
-    classes?: SplitMediaClassesProp; 
+    classes?: SplitMediaClassesProp;
 	id?: string;
 	className?: string;
 	/** Optional card row rendered below the split, inside the same section. */
@@ -61,11 +62,11 @@ export function SplitMedia(props: SplitMediaProps): ReactElement | null {
 
 	const text = (
 		<FadeUp className="lg:col-span-6">
-			<SectionHeader tag={data.tag ?? undefined} headline={data.headline} />
+			<SectionHeader tag={data.tag ?? undefined} headline={data.headline} classes={props.classes?.sectionHeader} />
 
 			{data.description ? (
 				<div className="mt-8">
-					<p className={`text-base sm:text-lg leading-relaxed text-on-surface/60 whitespace-pre-line {props.classes?.description ?? ""}`}>
+					<p className={`text-base sm:text-lg leading-relaxed text-on-surface/60 whitespace-pre-line ${props.classes?.description ?? ""}`}>
 						{data.description}
 					</p>
 				</div>
@@ -80,9 +81,9 @@ export function SplitMedia(props: SplitMediaProps): ReactElement | null {
 					<div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/10 rounded-full blur-2xl" />
 					<div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl" />
 
-					<div className={`relative bg-surface p-4 rounded-c hairline card-shadow *:${props.classes?.mediaCard ?? ""}`}>
+					<div className={`relative bg-surface p-4 rounded-c hairline card-shadow ${props.classes?.mediaCard ?? ""}`}>
 						<div
-							className={`relative ${props.mediaAspect ?? "h-96"} rounded-xl overflow-hidden bg-slate-900 ${props.classes?.mediaWrapper ?? ""}`}
+							className={`relative ${props.mediaAspect ?? "h-96"} rounded-xl overflow-hidden bg-slate-900 ${props.mediaWrapperClass ?? ""} ${props.classes?.mediaWrapper ?? ""}`}
 						>
 							<Image
 								src={data.image}

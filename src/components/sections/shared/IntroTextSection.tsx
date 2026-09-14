@@ -2,7 +2,7 @@
 
 import type { ReactElement } from "react";
 import Link from "@/components/Link";
-import { SectionHeader } from "@/components/sections/shared/SectionHeader";
+import { SectionHeader, type SectionHeaderClassesProp } from "@/components/sections/shared/SectionHeader";
 import { FadeUp } from "@/components/animations/Fade";
 import { Blob } from "@/components/sections/shared/decor";
 
@@ -12,7 +12,12 @@ export interface IntroTextCta {
 	icon?: string | null;
 }
 
-interface IntroTextSectionProps {
+export interface IntroTextClassesProp {
+	sectionHeader?: SectionHeaderClassesProp;
+	description?: string;
+}
+
+export interface IntroTextSectionProps {
 	tag?: string | null;
 	headline: string;
 	description?: string | null;
@@ -25,6 +30,7 @@ interface IntroTextSectionProps {
 	/** Optional solid brand pill rendered below the description. */
 	cta?: IntroTextCta | null;
 	id?: string;
+	classes?: IntroTextClassesProp;
 	className?: string;
 }
 
@@ -42,6 +48,7 @@ export function IntroTextSection({
 	split = false,
 	cta,
 	id,
+	classes,
 	className = "",
 }: IntroTextSectionProps): ReactElement {
 	const centered = align === "center";
@@ -61,10 +68,10 @@ export function IntroTextSection({
 				{split && description ? (
 					<div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 						<FadeUp className="lg:col-span-7">
-							<SectionHeader tag={tag ?? undefined} headline={headline} />
+							<SectionHeader tag={tag ?? undefined} headline={headline} classes={classes?.sectionHeader} />
 						</FadeUp>
 						<FadeUp delay={0.1} className="lg:col-span-5">
-							<p className="text-base sm:text-lg leading-relaxed text-on-surface/60 whitespace-pre-line">
+							<p className={`text-base sm:text-lg leading-relaxed text-on-surface/60 whitespace-pre-line ${classes?.description ?? ""}`}>
 								{description}
 							</p>
 						</FadeUp>
@@ -76,10 +83,11 @@ export function IntroTextSection({
 								tag={tag ?? undefined}
 								headline={headline}
 								align={centered ? "center" : "left"}
+							classes={classes?.sectionHeader}
 							/>
 
 							{description && (
-								<p className="mt-8 text-base sm:text-lg leading-relaxed text-on-surface/60 whitespace-pre-line">
+								<p className={`mt-8 text-base sm:text-lg leading-relaxed text-on-surface/60 whitespace-pre-line ${classes?.description ?? ""}`}>
 									{description}
 								</p>
 							)}

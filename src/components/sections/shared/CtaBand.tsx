@@ -6,6 +6,13 @@ import { FadeUp } from "@/components/animations/Fade";
 import { SectionTag } from "@/components/SectionTag";
 import { CtaPill, type CtaAction } from "./CtaPill";
 
+export interface CtaBandClassesProp {
+	tag?: string;
+	headline?: string;
+	description?: string;
+	band?: string;
+	actions?: string;
+}
 interface CtaBandProps {
 	/** Kicker rendered above the headline (dark tone). */
 	tag?: string | null;
@@ -34,6 +41,7 @@ interface CtaBandProps {
 	/** Adds the inset dark hairline ring. */
 	hairline?: boolean;
 	id?: string;
+	classes?: CtaBandClassesProp;
 	/** Outer `<section>` classes. Replaces the default - include spacing + overflow. */
 	className?: string;
 }
@@ -66,6 +74,7 @@ export function CtaBand({
 	shimmer = false,
 	hairline = false,
 	id,
+	classes,
 	className,
 }: CtaBandProps): ReactElement {
 	const isSplit = layout === "split";
@@ -114,12 +123,12 @@ export function CtaBand({
 						</FadeUp>
 					)}
 					<FadeUp>
-						<div className="flex flex-col items-center gap-6 text-center">
-							{tag && <SectionTag dark>{tag}</SectionTag>}
-							<h2 className={headlineClass}>{headline}</h2>
-							{description && <p className={descriptionClass}>{description}</p>}
+						<div className={`flex flex-col items-center gap-6 text-center ${classes?.band ?? ""}`}>
+							{tag && <SectionTag dark className={classes?.tag ?? ""}>{tag}</SectionTag>}
+							<h2 className={`${headlineClass} ${classes?.headline ?? ""}`}>{headline}</h2>
+							{description && <p className={`${descriptionClass} ${classes?.description ?? ""}`}>{description}</p>}
 							{hasActions && (
-								<div className="mt-4 flex flex-col sm:flex-row items-center gap-4">
+								<div className={`mt-4 flex flex-col sm:flex-row items-center gap-4 ${classes?.actions ?? ""}`}>
 									{primary?.href && <CtaPill action={primary} />}
 									{secondary?.href && <CtaPill action={secondary} variant="outline" />}
 								</div>
@@ -141,7 +150,7 @@ export function CtaBand({
 					<div
 						className={`group/band relative rounded-c ink-panel card-shadow overflow-hidden ${bandPad} ${
 							isSplit ? "" : "text-center"
-						} ${shimmer ? "shimmer-t shimmer-gold-200" : ""}`}
+						} ${shimmer ? "shimmer-t shimmer-gold-200" : ""} ${classes?.band ?? ""}`}
 					>
 						{/* Background ornaments */}
 						{decor === "glow" && (
@@ -207,18 +216,18 @@ export function CtaBand({
 							<div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:gap-12">
 								<div className="flex-1 min-w-0">
 									{tag && (
-										<SectionTag dark className="mb-4">
+										<SectionTag dark className={`mb-4 ${classes?.tag ?? ""}`}>
 											{tag}
 										</SectionTag>
 									)}
-									<h2 className={headlineClass}>{headline}</h2>
+									<h2 className={`${headlineClass} ${classes?.headline ?? ""}`}>{headline}</h2>
 									{description && (
-										<p className={descriptionClass}>{description}</p>
+										<p className={`${descriptionClass} ${classes?.description ?? ""}`}>{description}</p>
 									)}
 								</div>
 
 								{hasActions && (
-									<div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-stretch sm:items-center gap-3 shrink-0">
+									<div className={`flex flex-col sm:flex-row lg:flex-col xl:flex-row items-stretch sm:items-center gap-3 shrink-0 ${classes?.actions ?? ""}`}>
 										{primary?.href && <CtaPill action={primary} size="md" />}
 										{secondary?.href && (
 											<CtaPill action={secondary} size="md" variant="outline" />
@@ -227,13 +236,13 @@ export function CtaBand({
 								)}
 							</div>
 						) : (
-							<div className="relative flex flex-col items-center gap-6">
-								{tag && <SectionTag dark>{tag}</SectionTag>}
-								<h2 className={headlineClass}>{headline}</h2>
-								{description && <p className={descriptionClass}>{description}</p>}
+							<div className={`relative flex flex-col items-center gap-6 ${classes?.band ?? ""}`}>
+								{tag && <SectionTag dark className={classes?.tag ?? ""}>{tag}</SectionTag>}
+								<h2 className={`${headlineClass} ${classes?.headline ?? ""}`}>{headline}</h2>
+								{description && <p className={`${descriptionClass} ${classes?.description ?? ""}`}>{description}</p>}
 
 								{hasActions && (
-									<div className="mt-4 flex flex-col sm:flex-row items-center gap-4">
+									<div className={`mt-4 flex flex-col sm:flex-row items-center gap-4 ${classes?.actions ?? ""}`}>
 										{primary?.href && <CtaPill action={primary} />}
 										{secondary?.href && (
 											<CtaPill action={secondary} variant="outline" />
