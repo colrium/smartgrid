@@ -40,7 +40,7 @@ export function ApplicationProcessSection() {
 	if (!section.subtitle && !section.description) return null;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden">
+		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<span className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary-300/10 blur-[90px] pointer-events-none" />
 				<span className="absolute bottom-2 -left-20 w-72 h-72 rounded-full bg-primary/10 blur-[90px] pointer-events-none" />

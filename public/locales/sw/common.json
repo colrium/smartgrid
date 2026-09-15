@@ -41,56 +41,6 @@
 			}
 		]
 	},
-	"projectsByCountry": [
-		{
-			"name": "Kenya",
-			"totalHa": 2000,
-			"description": "Hekta 2,000 za ugawaji wa ardhi ya kilimo huko Uasin Gishu",
-			"items": []
-		},
-		{
-			"name": "Tanzania",
-			"totalHa": 5500,
-			"description": "Zaidi ya hekta 10,000 zilipimwa katika miradi ya miundombinu ya kikanda na mipango ya matumizi ya ardhi nchini Kenya, Uganda, na Tanzania",
-			"items": []
-		},
-		{
-			"name": "Uganda",
-			"totalHa": 1500,
-			"description": "Zaidi ya hekta 10,000 zilipimwa katika miradi ya miundombinu ya kikanda na mipango ya matumizi ya ardhi nchini Kenya, Uganda, na Tanzania",
-			"items": []
-		},
-		{
-			"name": "Ghana",
-			"totalHa": 3500,
-			"description": "Hekta 3,500 za urambazaji wa mashamba ya kakao huko Kumasi",
-			"items": []
-		},
-		{
-			"name": "Rwanda",
-			"totalHa": 1800,
-			"description": "Hekta 1,800 za uchambuzi wa ardhi oevu huko Bugesera",
-			"items": []
-		},
-		{
-			"name": "Afrika Kusini",
-			"totalHa": 5200,
-			"description": "Hekta 5,200 za ujazo wa uchimbaji madini huko Limpopo",
-			"items": []
-		},
-		{
-			"name": "Nigeria",
-			"totalHa": 4100,
-			"description": "Hekta 4,100 za ufuatiliaji wa upanuzi wa miji huko Abuja",
-			"items": []
-		},
-		{
-			"name": "Eneo la Afrika Mashariki",
-			"totalHa": 10000,
-			"description": "Zaidi ya hekta 10,000 zilipimwa katika miradi ya miundombinu ya kikanda na mipango ya matumizi ya ardhi nchini Kenya, Uganda, na Tanzania",
-			"items": []
-		}
-	],
 	"services": {
 		"type": "tabs",
 		"tag": "Huduma",
@@ -435,6 +385,105 @@
 			}
 		]
 	},
+	"leadGenBar": {
+		"type": "unique",
+		"tag": "SMARTGRID SURVEYING & CIVIL ENGINEERING LTD",
+		"headline": "Inaaminika. Inaweza kupanuka. Haraka. Sahihi.",
+		"title": "Upimaji wa Kiwango cha Uhandisi na Suluhisho za Kijiografia Katika Kenya na Afrika Mashariki",
+		"description": "Katika SmartGrid Surveying, hatupimi ardhi tu—tunatoa <bold>data sahihi ya anga iliyo tayari kwa maamuzi</bold> ambayo wahandisi, wasanidi, na wasimamizi wa miradi wanategemea kupanga, kubuni, na kutekeleza kwa ujasiri.\n\nKuanzia <bold>upimaji wa topografia na ramani za cadastral</bold> hadi <bold>ramani za ndege zisizo na rubani, LiDAR, na ugunduzi wa huduma za chini ya ardhi</bold>, tunatoa suluhisho kamili za kijiografia zilizoundwa kwa ajili ya miradi ya kisasa ya ujenzi na miundombinu.",
+		"link": { "label": "Wasifu wa Kampuni", "href": "/about/company-profile" },
+		"items": [
+			{
+				"icon": "land-fields",
+				"label": "UPIMAJI WA ARDHI",
+				"description": "Upimaji sahihi wa topografia, mipaka, cadastral, GIS, na uhandisi unaoendeshwa na teknolojia ya kisasa.",
+				"more": {
+					"label": "Gundua zaidi",
+					"href": "/surveying"
+				},
+				"action": {
+					"label": "Omba Upimaji",
+					"href": "/contact?reason=land-surveying#contact-form"
+				}
+			},
+			{
+				"icon": "quadcopter",
+				"label": "NDEGE ZISIZO NA RUBANI ZA ANGANI",
+				"description": "Picha za ubora wa juu za angani na kilimo, ramani za 3D, na data ya topografia iliyotolewa kwa haraka na salama.",
+				"more": {
+					"label": "Gundua zaidi",
+					"href": "/aerial-drones"
+				},
+				"action": {
+					"label": "Oda upimaji wa ndege isiyo na rubani",
+					"href": "/contact?reason=book-drone-survey#contact-form"
+				}
+			},
+			{
+				"icon": "hard-hat",
+				"label": "UHANDISI WA MIUNDOMBINU",
+				"description": "Mpangilio wa tovuti za ujenzi na majengo, ufuatiliaji, na uthibitishaji wa 'as-built' kwa usahihi na kasi.",
+				"more": {
+					"label": "Gundua zaidi",
+					"href": "/civil"
+				},
+				"action": {
+					"label": "Shirikiana nasi",
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Partnership Inquiry&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'm interested in partnering with SmartGrid Surveying.%0D%0A%0D%0AOrganization:%0D%0AProposal details:%0D%0A%0D%0AThank you."
+				}
+			}
+		]
+	},
+	"projectsByCountry": [
+		{
+			"name": "Kenya",
+			"totalHa": 2000,
+			"description": "Hekta 2,000 za ugawaji wa ardhi ya kilimo huko Uasin Gishu",
+			"items": []
+		},
+		{
+			"name": "Tanzania",
+			"totalHa": 5500,
+			"description": "Zaidi ya hekta 10,000 zilipimwa katika miradi ya miundombinu ya kikanda na mipango ya matumizi ya ardhi nchini Kenya, Uganda, na Tanzania",
+			"items": []
+		},
+		{
+			"name": "Uganda",
+			"totalHa": 1500,
+			"description": "Zaidi ya hekta 10,000 zilipimwa katika miradi ya miundombinu ya kikanda na mipango ya matumizi ya ardhi nchini Kenya, Uganda, na Tanzania",
+			"items": []
+		},
+		{
+			"name": "Ghana",
+			"totalHa": 3500,
+			"description": "Hekta 3,500 za urambazaji wa mashamba ya kakao huko Kumasi",
+			"items": []
+		},
+		{
+			"name": "Rwanda",
+			"totalHa": 1800,
+			"description": "Hekta 1,800 za uchambuzi wa ardhi oevu huko Bugesera",
+			"items": []
+		},
+		{
+			"name": "Afrika Kusini",
+			"totalHa": 5200,
+			"description": "Hekta 5,200 za ujazo wa uchimbaji madini huko Limpopo",
+			"items": []
+		},
+		{
+			"name": "Nigeria",
+			"totalHa": 4100,
+			"description": "Hekta 4,100 za ufuatiliaji wa upanuzi wa miji huko Abuja",
+			"items": []
+		},
+		{
+			"name": "Eneo la Afrika Mashariki",
+			"totalHa": 10000,
+			"description": "Zaidi ya hekta 10,000 zilipimwa katika miradi ya miundombinu ya kikanda na mipango ya matumizi ya ardhi nchini Kenya, Uganda, na Tanzania",
+			"items": []
+		}
+	],
 	"errors": {
 		"error": "Hitilafu",
 		"notFound": "Ukurasa haupatikani",

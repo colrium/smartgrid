@@ -46,7 +46,7 @@ export default function LandingPageLayout({ children, slotProps = {} }: LandingP
 				{/* Single <main> landmark: only the page content lives inside it —
 				    the navbar (<header>) and footer (<footer>) stay outside, giving
 				    crawlers and assistive tech one clean content outline per page. */}
-				<main className="flex-1 -mt-35">{children}</main>
+				<main className="flex-1 -mt-32.5">{children}</main>
 
 				<ChatWidget />
 				<div className="fixed right-6 bottom-8 z-999999 flex flex-col gap-2 items-center justify-center">

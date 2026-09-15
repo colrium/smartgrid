@@ -43,4 +43,5 @@ export { Stats } from "./Stats";
 export type { StatItem, StatsProps, StatsClassesProp } from "./Stats";
 export { Hero } from "./Hero";
 export type { HeroContent, HeroProps, HeroClassesProp } from "./Hero";
+export { default as LeadGenBar } from "./LeadGenBar";
 

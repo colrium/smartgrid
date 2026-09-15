@@ -8,6 +8,7 @@ import {
 	ApplicationProcessSection,
 	EqualOpportunityStatementSection,
 } from "@/components/sections/careers";
+import { ServicesSection, LeadGenBar } from "@/components/sections/shared";
 
 type PageProps = {
 	// Add custom props here
@@ -18,7 +19,9 @@ const Page: NextPage<PageProps> = () => {
 		<div className="relative">
 			<PageHead pageName="careers" />
 			<div className="flex flex-col min-h-screen">
-				<CareersHeroSection />
+                <CareersHeroSection />
+                <LeadGenBar />
+                <ServicesSection />
 				<CurrentOpeningsSection />
 				<ApplicationProcessSection />
 				<EqualOpportunityStatementSection />

@@ -25,58 +25,7 @@
 				{ "label": "South Africa", "code": "SA" }
 			]
 		}
-	},
-
-	"leadGenBar": {
-		"type": "unique",
-		"tag": "SMARTGRID SURVEYING & CIVIL ENGINEERING LTD",
-		"headline": "Reliable. Scalable. Fast. Accurate.",
-		"title": "Engineering-Grade Surveying & Geospatial Solutions Across Kenya and East Africa",
-		"description": "At SmartGrid Surveying, we don’t just measure land—we deliver <bold>accurate, decision-ready spatial data</bold> that engineers, developers, and project managers rely on to plan, design, and execute with confidence.\n\n From <bold>topographical surveys and cadastral mapping</bold> to <bold>drone mapping, LiDAR, and underground utility detection</bold>, we provide end-to-end geospatial solutions tailored for modern construction and infrastructure projects",
-		"link": { "label": "Company Profile", "href": "/about/company-profile" },
-		"items": [
-			{
-				"icon": "land-fields",
-				"label": "LAND SURVEYING",
-				"description": "Precise Topographical, boundary, cadastral, GIS, and engineering surveys powered by the latest technology.",
-				"more": {
-					"label": "Explore more",
-					"href": "/surveying"
-				},
-				"action": {
-					"label": "Request Survey",
-					"href": "/contact?reason=land-surveying#contact-form"
-				}
-			},
-
-			{
-				"icon": "quadcopter",
-				"label": "AERIAL DRONES",
-				"description": "Aerial and Agricultural High-resolution imagery, 3D mapping, and topographical data delivered faster and safer.",
-				"more": {
-					"label": "Explore more",
-					"href": "/aerial-drones"
-				},
-				"action": {
-					"label": "Book a drone survey",
-					"href": "/contact?reason=book-drone-survey#contact-form"
-				}
-			},
-			{
-				"icon": "hard-hat",
-				"label": "CIVIL ENGINEERING",
-				"description": "Construction and building Site layout, monitoring, and as-built verification with precision and speed.",
-				"more": {
-					"label": "Explore more",
-					"href": "/civil"
-				},
-				"action": {
-					"label": "Partner with us.",
-					"href": "mailto:smartgridsurveying@gmail.com?subject=Partnership Inquiry&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'm interested in partnering with SmartGrid Surveying.%0D%0A%0D%0AOrganization:%0D%0AProposal details:%0D%0A%0D%0AThank you."
-				}
-			}
-		]
-	},
+	},	
 	"about": {
 		"type": "unique",
 		"tag": "About Us",

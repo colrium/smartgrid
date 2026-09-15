@@ -25,10 +25,10 @@ const GLOW_MASK =
 const LeadGenBar: React.FC<{ className?: string }> = ({ className }) => {
     
     const { t } = useTranslation(["home"]);
-    const leadGenItems = t("home:leadGenBar.items", { returnObjects: true }) as unknown as LeadGenItem[];
+    const leadGenItems = t("common:leadGenBar.items", { returnObjects: true }) as unknown as LeadGenItem[];
 
     return (
-		<section className={`relative  ${className || ""}`}>
+		<section className={`relative mx-auto max-w-7xl px-6 w-full  ${className || ""}`}>
 			<div
 				className="absolute -top-6 -left-6 w-64 h-64 bg-primary/10 rounded-full pointer-events-none"
 				style={{ WebkitMaskImage: GLOW_MASK, maskImage: GLOW_MASK }}
@@ -43,15 +43,15 @@ const LeadGenBar: React.FC<{ className?: string }> = ({ className }) => {
 				<div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 					<FadeUp viewport={{ amount: 0.01, margin: "0px 0px 0% 0px" }}>
 						<div className="flex flex-col items-center gap-4">
-							<SectionTag>{t("home:leadGenBar.tag")}</SectionTag>
+							<SectionTag>{t("common:leadGenBar.tag")}</SectionTag>
 							<h2 className="text-3xl sm:text-5xl font-light tracking-tight text-ink leading-tight whitespace-pre-line max-w-3xl">
-								{t("home:leadGenBar.headline")}
+								{t("common:leadGenBar.headline")}
 							</h2>
 
 							<p className="text-md text-center text-on-surface/60 max-w-2xl font-normal leading-relaxed mb-10 sm:mb-16 whitespace-pre-line">
 								<Trans
 									// @ts-expect-error
-									i18nKey={["home:leadGenBar.description"]}
+									i18nKey={["common:leadGenBar.description"]}
 									defaults=""
 									components={{
 										accent: <span className="text-accent" />,
