@@ -49,9 +49,25 @@ import {
  *   strategy (decided M4, company-profile pilot): Keystatic owns the shared
  *   sections while the bespoke tail keeps rendering from legacy locale JSON
  *   in the same route — never a registry branch, never a renderer key.
+ *
+ * M7 full-site coverage (first batch, 2026-09-15): `legal` wraps the bespoke
+ * `LegalPageSection` (privacy-policy, terms-of-use) as shared data — label,
+ * title, description, last-updated line, article list (title + paragraphs),
+ * contact action + note. Legacy `site_title` interpolation stays in the
+ * migration mapping (values copied verbatim, not re-interpolated at render).
+ * `contactHref` is per-locale (not shared): legacy terms links diverge
+ * (`/contact?reason=compliance-legal` en vs `…#contact-form` sw), same
+ * per-locale precedent as `localeMedia`.
+ *
+ * M7 batch 2 (contact + careers, 2026-09-15): `faq` wraps the shared `Faq`
+ * (question/answer/points/icon items + optional still-curious side card);
+ * `process` wraps the shared `Process` grid (phase/title/description/outcome/
+ * icon items + note/cta footer). Contact `site_visit.process_steps` map to
+ * `process` items with `phase` = zero-padded step number. Both components are
+ * SSR-safe (`"use client"` without browser-only APIs on first render).
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -566,7 +582,231 @@ const splitMedia: SectionDefinition = {
 	}),
 };
 
-export const sectionRegistry: readonly SectionDefinition[] = [introText, ctaBand, stats, hero, cardGrid, splitMedia];
+const legal: SectionDefinition = {
+	id: "legal",
+	version: 1,
+	label: "Legal page",
+	description: "Legal article page (privacy-policy, terms-of-use): header plus article list and contact row.",
+	schema: fields.object({
+		label: localeText("Label", { optionalInEnglish: true }),
+		title: localeText("Title"),
+		description: localeLongText("Description"),
+		lastUpdated: localeText("Last-updated line", { optionalInEnglish: true }),
+		articles: fields.array(
+			fields.object({
+				title: localeText("Title"),
+				paragraphs: fields.array(localeLongText("Paragraph"), {
+					label: "Paragraphs",
+					itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Paragraph"),
+				}),
+			}),
+			{
+				label: "Articles",
+				itemLabel: previewTitledItem("Article"),
+			},
+		),
+		contactHref: localeText("Contact link"),
+		contactLabel: localeText("Contact label", { optionalInEnglish: true }),
+		note: localeLongText("Note"),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` and the gavel icon
+		// (fixed presentation in LegalPageSection, not an editor contract).
+	}),
+	example: {
+		label: { en: "Privacy", sw: "Faragha" },
+		title: { en: "Privacy Policy", sw: "Sera ya Faragha" },
+		description: { en: "How we handle information submitted through our website.", sw: "" },
+		lastUpdated: { en: "Last Updated Aug, 2026", sw: "" },
+		articles: [
+			{
+				title: { en: "Information We Collect", sw: "Taarifa Tunazokusanya" },
+				paragraphs: [{ en: "We collect information you choose to provide.", sw: "" }],
+			},
+		],
+		contactHref: {
+			en: "/contact?reason=privacy#contact-form",
+			sw: "/contact?reason=privacy#contact-form",
+		},
+		contactLabel: { en: "Contact Privacy Team", sw: "Wasiliana na Timu ya Faragha" },
+		note: { en: "Questions about this policy can be sent to the team.", sw: "" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		label: resolved.label,
+		title: resolved.title,
+		description: resolved.description,
+		lastUpdated: resolved.lastUpdated,
+		sections: Array.isArray(resolved.articles)
+			? resolved.articles.map((article: any) => ({
+					title: article?.title ?? "",
+					content: Array.isArray(article?.paragraphs) ? article.paragraphs : [],
+				}))
+			: [],
+		contactHref:
+			typeof resolved.contactHref === "string" && resolved.contactHref ? resolved.contactHref : "/contact",
+		contactLabel: resolved.contactLabel,
+		note: resolved.note,
+	}),
+};
+
+const faq: SectionDefinition = {
+	id: "faq",
+	version: 1,
+	label: "FAQ",
+	description: "Frequently-asked-questions accordion with an optional still-curious side card.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				question: localeText("Question"),
+				answer: localeLongText("Answer"),
+				points: fields.array(localeText("Point", { optionalInEnglish: true }), {
+					label: "Bullet points",
+					itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Point"),
+				}),
+				icon: fields.text({
+					label: "MDI icon (optional)",
+					description: "Icon slug without the `mdi-` prefix.",
+				}),
+			}),
+			{
+				label: "Questions",
+				itemLabel: (item) => previewText(item, ["fields", "question", "fields", "en", "value"], "Question"),
+			},
+		),
+		stillCuriousLabel: localeText("Still-curious label", { optionalInEnglish: true }),
+		stillCuriousDescription: localeLongText("Still-curious description"),
+		stillCuriousCta: linkObject("Still-curious action"),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` and the aside `icon`
+		// (fixed presentation in Faq, not an editor contract).
+	}),
+	example: {
+		tag: { en: "Quick Answers", sw: "Majibu ya Haraka" },
+		headline: { en: "Common contact questions", sw: "Maswali ya kawaida ya mawasiliano" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				question: { en: "How quickly will you respond?", sw: "Ni haraka kiasi gani mtajibu?" },
+				answer: { en: "Within one business day.", sw: "" },
+				points: [],
+				icon: "",
+			},
+		],
+		stillCuriousLabel: { en: "", sw: "" },
+		stillCuriousDescription: { en: "", sw: "" },
+		stillCuriousCta: { label: { en: "", sw: "" }, href: "", icon: "" },
+		id: "faq",
+	},
+	normalize: (resolved) => {
+		const cta = resolved.stillCuriousCta as { label?: string; href?: string; icon?: string } | undefined;
+		return {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						question: item?.question ?? "",
+						answer: item?.answer ?? "",
+						points: Array.isArray(item?.points) ? item.points.filter((p: unknown) => typeof p === "string" && p) : [],
+						icon: item?.icon || undefined,
+					}))
+				: [],
+			stillCurious:
+				cta && typeof cta.href === "string" && cta.href
+					? { label: cta.label ?? "", description: resolved.stillCuriousDescription ?? "", cta }
+					: null,
+			id: resolved.id || undefined,
+		};
+	},
+};
+
+const process: SectionDefinition = {
+	id: "process",
+	version: 1,
+	label: "Process steps",
+	description: "Numbered step grid with an optional closing call-to-action.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				phase: localeText("Phase", { optionalInEnglish: true }),
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+				outcome: localeText("Outcome", { optionalInEnglish: true }),
+				icon: fields.text({
+					label: "MDI icon (optional)",
+					description: "Icon slug without the `mdi-` prefix; falls back to the step number.",
+				}),
+			}),
+			{
+				label: "Steps",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Step"),
+			},
+		),
+		note: localeLongText("Note"),
+		ctaNote: localeLongText("CTA note"),
+		cta: linkObject("Closing action"),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, `columns`, `phaseStyles`
+		// and the `timeline` variant (sectional-properties-only payload).
+	}),
+	example: {
+		tag: { en: "Site Visits", sw: "Ziara za Tovuti" },
+		headline: { en: "See the operation for yourself", sw: "Jionee uendeshaji mwenyewe" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				phase: { en: "01", sw: "" },
+				title: { en: "Submit a request", sw: "Wasilisha ombi" },
+				description: { en: "Use the contact form above.", sw: "" },
+				outcome: { en: "", sw: "" },
+				icon: "",
+			},
+		],
+		note: { en: "", sw: "" },
+		ctaNote: { en: "", sw: "" },
+		cta: { label: { en: "Request a Site Visit", sw: "Omba Ziara ya Tovuti" }, href: "#contact-form", icon: "" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		tag: resolved.tag,
+		headline: resolved.headline,
+		description: resolved.description,
+		items: Array.isArray(resolved.items)
+			? resolved.items.map((item: any) => ({
+					phase: item?.phase || undefined,
+					title: item?.title ?? "",
+					description: item?.description ?? "",
+					outcome: item?.outcome || undefined,
+					icon: item?.icon || undefined,
+				}))
+			: [],
+		note: resolved.note,
+		ctaNote: resolved.ctaNote,
+		cta:
+			resolved.cta && typeof resolved.cta.href === "string" && resolved.cta.href
+				? { label: resolved.cta.label ?? "", href: resolved.cta.href, icon: resolved.cta.icon || undefined }
+				: null,
+		id: resolved.id || undefined,
+	}),
+};
+
+export const sectionRegistry: readonly SectionDefinition[] = [
+	introText,
+	ctaBand,
+	stats,
+	hero,
+	cardGrid,
+	splitMedia,
+	legal,
+	faq,
+	process,
+];
 
 export function getSectionDefinition(id: string): SectionDefinition {
 	const found = sectionRegistry.find((section) => section.id === id);
@@ -581,6 +821,9 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	hero: hero.label,
 	cardGrid: cardGrid.label,
 	splitMedia: splitMedia.label,
+	legal: legal.label,
+	faq: faq.label,
+	process: process.label,
 };
 
 /**

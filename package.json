@@ -20,7 +20,7 @@
 		"lint": "eslint . --max-warnings=0",
 		"lint:fix": "eslint . --fix",
 		"typecheck": "tsc --project ./tsconfig.json --noEmit",
-		"check:keystatic": "node scripts/check-keystatic-pages.mjs && node scripts/migrate-locale-to-keystatic.mjs --page company-profile --verify",
+		"check:keystatic": "node scripts/check-keystatic-pages.mjs && node scripts/migrate-locale-to-keystatic.mjs --page company-profile --verify && node scripts/migrate-locale-to-keystatic.mjs --page privacy-policy --verify && node scripts/migrate-locale-to-keystatic.mjs --page terms-of-use --verify",
 		"migrate:keystatic": "node scripts/migrate-locale-to-keystatic.mjs",
 		"clean": "rimraf .next",
 		"nuke:install": "rimraf ./node_modules ./package-lock.json",

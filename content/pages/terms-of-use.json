@@ -1,47 +1,88 @@
 {
 	"slug": "Terms of Use",
-	"title": "Terms of Use (starter)",
-	"status": "published",
+	"title": "Terms of Use (migrated)",
+	"status": "draft",
 	"pageBuilder": [
 		{
-			"discriminant": "introText",
+			"discriminant": "legal",
 			"value": {
-				"tag": { "en": "Legal", "sw": "Kisheria" },
-				"headline": { "en": "Terms of Use", "sw": "Masharti ya Matumizi" },
+				"label": { "en": "Terms", "sw": "Masharti" },
+				"title": { "en": "Terms of Use", "sw": "Masharti ya Matumizi" },
 				"description": {
-					"en": "Starter Keystatic pilot for the M3 rendering pipeline. Real legal content migrates in M4.",
-					"sw": "Ukurasa wa majaribio wa Keystatic."
+					"en": "These terms explain how you may use the SmartGrid website, content, contact forms, and investor enquiry features.",
+					"sw": "Masharti haya yanaelezea jinsi unavyoweza kutumia tovuti ya SmartGrid, maudhui, fomu za mawasiliano, na vipengele vya maswali ya wawekezaji."
 				},
-				"tone": "default",
-				"align": "left",
-				"split": false,
-				"cta": {
-					"label": { "en": "Contact us", "sw": "Wasiliana nasi" },
-					"href": "/en/contact",
-					"icon": ""
+				"lastUpdated": { "en": "Last Updated May 31, 2026", "sw": "Ilisasishwa Mwisho May 31, 2026" },
+				"articles": [
+					{
+						"title": { "en": "Acceptance of These Terms", "sw": "Kukubali Masharti Haya" },
+						"paragraphs": [
+							{ "en": "By accessing or using this website, you agree to these Terms of Use and any policies referenced on the site. If you do not agree, you should stop using the website.", "sw": "Kwa kufikia au kutumia tovuti hii, unakubali Masharti haya ya Matumizi na sera zozote zilizorejelewa kwenye tovuti. Ikiwa hukubali, unapaswa kuacha kutumia tovuti." },
+							{ "en": "SmartGrid may update these terms from time to time. Continued use of the website after an update means you accept the revised terms.", "sw": "SmartGrid inaweza kusasisha masharti haya mara kwa mara. Kuendelea kutumia tovuti baada ya sasisho kunamaanisha unakubali masharti yaliyorekebishwa." }
+						]
+					},
+					{
+						"title": { "en": "Website Content", "sw": "Maudhui ya Tovuti" },
+						"paragraphs": [
+							{ "en": "Content on this website is provided for general information about SmartGrid, its operations, investment opportunities, and partnership discussions.", "sw": "Maudhui kwenye tovuti hii hutolewa kwa taarifa ya jumla kuhusu SmartGrid, shughuli zake, fursa za uwekezaji, na majadiliano ya ushirikiano." },
+							{ "en": "Website content may be updated, corrected, expanded, or withdrawn at any time. It should not be treated as a final agreement, public offer, prospectus, guarantee, or professional advice.", "sw": "Maudhui ya tovuti yanaweza kusasishwa, kusahihishwa, kupanuliwa, au kuondolewa wakati wowote. Hayapaswi kuchukuliwa kama makubaliano ya mwisho, ofa ya umma, waraka wa hisa, dhamana, au ushauri wa kitaalamu." }
+						]
+					},
+					{
+						"title": { "en": "Investment Enquiries", "sw": "Maswali ya Uwekezaji" },
+						"paragraphs": [
+							{ "en": "Submitting an enquiry, requesting due diligence materials, or discussing an opportunity does not create an investor relationship, partnership, advisory relationship, or obligation for either party.", "sw": "Kuwasilisha swali, kuomba nyaraka za uchunguzi wa ustahiki, au kujadili fursa hakunaunda uhusiano wa mwekezaji, ushirikiano, uhusiano wa ushauri, au wajibu kwa upande wowote." },
+							{ "en": "Any investment, partnership, site visit, or commercial arrangement is subject to qualification, due diligence, KYC or compliance checks, and signed transaction documents.", "sw": "Uwekezaji wowote, ushirikiano, ziara ya tovuti, au mpangilio wa kibiashara unategemea sifa, uchunguzi wa ustahiki, ukaguzi wa KYC au uzingatiaji, na nyaraka zilizosainiwa za miamala." }
+						]
+					},
+					{
+						"title": { "en": "Permitted Use", "sw": "Matumizi Yaliyoruhusiwa" },
+						"paragraphs": [
+							{ "en": "You may use this website for lawful informational and enquiry purposes only. You must not misuse the website, attempt unauthorized access, interfere with site operation, submit false information, or use the site to violate any law.", "sw": "Unaweza kutumia tovuti hii kwa madhumuni halali ya taarifa na maswali pekee. Haupaswi kuitumia vibaya tovuti, kujaribu ufikiaji usioidhinishwa, kuingilia uendeshaji wa tovuti, kuwasilisha taarifa za uongo, au kuitumia tovuti kukiuka sheria yoyote." },
+							{ "en": "You are responsible for ensuring that your use of the website and any enquiry you submit complies with laws applicable to you.", "sw": "Unawajibika kuhakikisha matumizi yako ya tovuti na swali lolote unalowasilisha yanazingatia sheria zinazokuhusu." }
+						]
+					},
+					{
+						"title": { "en": "Intellectual Property", "sw": "Haki Miliki" },
+						"paragraphs": [
+							{ "en": "Unless otherwise stated, the text, design, branding, graphics, media, and other content on this website are owned by or licensed to SmartGrid.", "sw": "Isipokuwa ikiwa imeelezwa vinginevyo, maandishi, muundo, chapa, michoro, media, na maudhui mengine kwenye tovuti hii yanamilikiwa au yametolewa leseni kwa SmartGrid." },
+							{ "en": "You may view and share links to public pages for informational purposes, but you may not copy, reproduce, modify, sell, or commercially exploit website content without prior written permission.", "sw": "Unaweza kutazama na kushiriki viungo vya kurasa za umma kwa madhumuni ya taarifa, lakini haupaswi kunakili, kuzalisha tena, kurekebisha, kuuza, au kutumia kibiashara maudhui ya tovuti bila ruhusa ya maandishi ya awali." }
+						]
+					},
+					{
+						"title": { "en": "Third-Party Links and Materials", "sw": "Viungo na Nyaraka za Wahusika Wengine" },
+						"paragraphs": [
+							{ "en": "The website may reference third-party platforms, maps, media, documents, service providers, or external websites. These are provided for convenience or context only.", "sw": "Tovuti inaweza kurejelea majukwaa, ramani, media, nyaraka, watoa huduma, au tovuti za nje za wahusika wengine. Hizi hutolewa kwa urahisi au muktadha tu." },
+							{ "en": "SmartGrid is not responsible for third-party content, availability, security, policies, or practices.", "sw": "SmartGrid haiwajibiki kwa maudhui ya wahusika wengine, upatikanaji, usalama, sera, au mazoea yao." }
+						]
+					},
+					{
+						"title": { "en": "No Warranties", "sw": "Hakuna Dhamana" },
+						"paragraphs": [
+							{ "en": "The website is provided on an as-is and as-available basis. SmartGrid does not guarantee that the website will be uninterrupted, error-free, secure, or always current.", "sw": "Tovuti hutolewa kwa misingi ya ilivyo na inavyopatikana. SmartGrid haidhamini kwamba tovuti itakuwa isiyokatiza, isiyo na makosa, yenye usalama, au ya sasa kila wakati." },
+							{ "en": "To the fullest extent permitted by law, SmartGrid disclaims warranties related to the website and any reliance on website content.", "sw": "Kwa kiwango kikubwa kinachoruhusiwa na sheria, SmartGrid inakanusha dhamana zinazohusiana na tovuti na utegemezi wowote kwenye maudhui ya tovuti." }
+						]
+					},
+					{
+						"title": { "en": "Limitation of Liability", "sw": "Kikomo cha Dhima" },
+						"paragraphs": [
+							{ "en": "To the fullest extent permitted by law, SmartGrid will not be liable for indirect, incidental, consequential, special, punitive, or lost-profit damages arising from your use of the website.", "sw": "Kwa kiwango kikubwa kinachoruhusiwa na sheria, SmartGrid haitawajibika kwa uharibifu usio wa moja kwa moja, wa bahati mbaya, wa matokeo, maalum, wa adhabu, au hasara ya faida inayotokana na matumizi yako ya tovuti." },
+							{ "en": "Nothing in these terms limits liability that cannot legally be limited.", "sw": "Hakuna katika masharti haya kinachozuia dhima ambayo haiwezi kuzuiwa kisheria." }
+						]
+					},
+					{
+						"title": { "en": "Contact", "sw": "Wasiliana" },
+						"paragraphs": [
+							{ "en": "Questions about these Terms of Use can be sent through the contact page using the compliance or legal enquiry option.", "sw": "Maswali kuhusu Masharti haya ya Matumizi yanaweza kutumwa kupitia ukurasa wa mawasiliano kwa kutumia chaguo la uzingatiaji au la kisheria." }
+						]
+					}
+				],
+				"contactHref": {
+					"en": "/contact?reason=compliance-legal",
+					"sw": "/contact?reason=compliance-legal#contact-form"
 				},
-				"id": ""
-			}
-		},
-		{
-			"discriminant": "ctaBand",
-			"value": {
-				"tag": { "en": "", "sw": "" },
-				"headline": { "en": "Questions about these terms?", "sw": "Maswali kuhusu masharti haya?" },
-				"description": { "en": "", "sw": "" },
-				"primary": {
-					"label": { "en": "Contact us", "sw": "Wasiliana nasi" },
-					"href": "/en/contact",
-					"icon": "arrow-right"
-				},
-				"secondary": { "label": { "en": "", "sw": "" }, "href": "", "icon": "" },
-				"layout": "centered",
-				"variant": "panel",
-				"decor": "glow",
-				"watermark": "",
-				"images": [],
-				"shimmer": false,
-				"hairline": false,
+				"contactLabel": { "en": "Contact Us", "sw": "Wasiliana Nasi" },
+				"note": { "en": "Got Questions?", "sw": "Swali?" },
 				"id": ""
 			}
 		}

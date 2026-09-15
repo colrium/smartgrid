@@ -1,7 +1,7 @@
 "use client";
 import type { ReactElement } from "react";
 import NextHead from "next/head";
-import Link from "next/link";
+import Link from "@/components/Link";
 import { SectionHeader, type SectionHeaderClassesProp } from "@/components/sections/shared/SectionHeader";
 import { Blob } from "@/components/sections/shared/decor";
 import { FadeUp } from "@/components/animations/Fade";

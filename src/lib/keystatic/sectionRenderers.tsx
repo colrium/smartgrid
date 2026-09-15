@@ -5,6 +5,9 @@ import { Stats } from "@/components/sections/shared/Stats";
 import { Hero } from "@/components/sections/shared/Hero";
 import { CardGrid } from "@/components/sections/shared/CardGrid";
 import { SplitMedia } from "@/components/sections/shared/SplitMedia";
+import LegalPageSection from "@/components/sections/LegalPageSection";
+import { Faq } from "@/components/sections/shared/Faq";
+import { Process } from "@/components/sections/shared/Process";
 import type { Lang } from "../types";
 import { resolveLocaleValue } from "./localize";
 import { getSectionDefinition, type SectionId } from "./sectionRegistry";
@@ -31,6 +34,9 @@ export const sectionRenderers = {
 	hero: Hero,
 	cardGrid: CardGrid,
 	splitMedia: SplitMedia,
+	legal: LegalPageSection,
+	faq: Faq,
+	process: Process,
 } satisfies Record<SectionId, ComponentType<any>>;
 
 export function renderSection(

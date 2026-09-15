@@ -92,6 +92,72 @@ function cardGridBuild(presentation) {
 	};
 }
 
+function interpolateSiteTitle(value, siteTitle, where) {
+	if (typeof value !== "string") return "";
+	if (!value.includes("{{site_title}}")) return value;
+	if (!siteTitle) {
+		gap(where, "needs {{site_title}} but meta.json has no site title");
+		return value;
+	}
+	return value.split("{{site_title}}").join(siteTitle);
+}
+
+function legalBuild(pageTitle) {
+	return (en, sw, where, siteTitle) => {
+		const enArticles = en.articles ?? [];
+		const swArticles = sw.articles ?? [];
+		if (!Array.isArray(swArticles) || swArticles.length !== enArticles.length) {
+			gap(where, `article count diverged (en=${enArticles.length} sw=${swArticles?.length})`);
+		}
+		// Legacy contactLink is per-locale editorial content (terms sw adds
+		// `#contact-form`); copy verbatim per locale, never sharedValue.
+		return {
+			label: { en: reqText(en.misc?.label, `${where}.misc.label.en`), sw: reqText(sw.misc?.label, `${where}.misc.label.sw`) },
+			title: { en: reqText(en.misc?.title, `${where}.misc.title.en`), sw: reqText(sw.misc?.title, `${where}.misc.title.sw`) },
+			description: {
+				en: reqText(interpolateSiteTitle(en.misc?.description, siteTitle?.en, `${where}.misc.description.en`), `${where}.misc.description.en`),
+				sw: reqText(interpolateSiteTitle(sw.misc?.description, siteTitle?.sw, `${where}.misc.description.sw`), `${where}.misc.description.sw`),
+			},
+			lastUpdated: {
+				en: `${optText(en.misc?.lastUpdatedLabel)} ${optText(en.misc?.lastUpdated)}`.trim(),
+				sw: `${optText(sw.misc?.lastUpdatedLabel)} ${optText(sw.misc?.lastUpdated)}`.trim(),
+			},
+			articles: enArticles.map((article, i) => {
+				const swArticle = swArticles[i] ?? {};
+				const enContent = Array.isArray(article.content) ? article.content : [article.content];
+				const swContent = Array.isArray(swArticle.content) ? swArticle.content : [swArticle.content];
+				if (enContent.length !== swContent.length) {
+					gap(where, `article[${i}] paragraph count diverged (en=${enContent.length} sw=${swContent.length})`);
+				}
+				return {
+					title: { en: reqText(article.title, `${where}.articles[${i}].title.en`), sw: reqText(swArticle.title, `${where}.articles[${i}].title.sw`) },
+					paragraphs: enContent.map((paragraph, j) => ({
+						en: reqText(
+							interpolateSiteTitle(paragraph, siteTitle?.en, `${where}.articles[${i}].content[${j}].en`),
+							`${where}.articles[${i}].content[${j}].en`,
+						),
+						sw: reqText(
+							interpolateSiteTitle(swContent[j], siteTitle?.sw, `${where}.articles[${i}].content[${j}].sw`),
+							`${where}.articles[${i}].content[${j}].sw`,
+						),
+					})),
+				};
+			}),
+			contactHref: {
+				en: reqText(en.misc?.contactLink, `${where}.misc.contactLink.en`),
+				sw: reqText(sw.misc?.contactLink, `${where}.misc.contactLink.sw`),
+			},
+			contactLabel: { en: reqText(en.misc?.contactLabel, `${where}.misc.contactLabel.en`), sw: reqText(sw.misc?.contactLabel, `${where}.misc.contactLabel.sw`) },
+			note: {
+				en: reqText(interpolateSiteTitle(en.misc?.note ?? en.contact?.description, siteTitle?.en, `${where}.note.en`), `${where}.note.en`),
+				sw: reqText(interpolateSiteTitle(sw.misc?.note ?? sw.contact?.description, siteTitle?.sw, `${where}.note.sw`), `${where}.note.sw`),
+			},
+			id: "",
+			_pageTitle: pageTitle,
+		};
+	};
+}
+
 const PAGES = {
 	"company-profile": {
 		namespace: "company-profile",
@@ -199,10 +265,48 @@ const PAGES = {
 			},
 		],
 	},
+	// M7 batch 1: legal pages. The whole namespace migrates as one `legal`
+	// section (from: null = whole-file mapping); the legacy route passes
+	// `t(ns:misc.*)` header props + `t(ns:articles)` into LegalPageSection.
+	"privacy-policy": {
+		namespace: "privacy",
+		title: "Privacy Policy",
+		wholeFile: true,
+		sections: [{ discriminant: "legal", from: null, build: legalBuild("privacy_policy") }],
+	},
+	"terms-of-use": {
+		namespace: "terms",
+		title: "Terms of Use",
+		wholeFile: true,
+		sections: [{ discriminant: "legal", from: null, build: legalBuild("terms_of_use") }],
+	},
 };
 
 function loadNamespace(locale, namespace) {
 	return JSON.parse(readFileSync(join(ROOT, "public", "locales", locale, `${namespace}.json`), "utf8"));
+}
+
+function loadSiteTitle(locale) {
+	try {
+		const meta = JSON.parse(readFileSync(join(ROOT, "public", "locales", locale, "meta.json"), "utf8"));
+		const title = meta?.site?.title;
+		return typeof title === "string" && title ? title : "";
+	} catch {
+		return "";
+	}
+}
+
+function stripInternalKeys(value) {
+	if (Array.isArray(value)) return value.map(stripInternalKeys);
+	if (value !== null && typeof value === "object") {
+		const out = {};
+		for (const [key, entry] of Object.entries(value)) {
+			if (key === "_pageTitle") continue;
+			out[key] = stripInternalKeys(entry);
+		}
+		return out;
+	}
+	return value;
 }
 
 function generate(pageSlug) {
@@ -211,12 +315,17 @@ function generate(pageSlug) {
 	gaps.length = 0;
 	const en = loadNamespace("en", mapping.namespace);
 	const sw = loadNamespace("sw", mapping.namespace);
+	const siteTitle = { en: loadSiteTitle("en"), sw: loadSiteTitle("sw") };
 	const pageBuilder = mapping.sections.map(({ discriminant, from, build }) => {
+		if (from === null) {
+			// Whole-file mapping (legal pages): the namespace root IS the section.
+			return { discriminant, value: stripInternalKeys(build(en, sw, mapping.namespace, siteTitle)) };
+		}
 		if (!(from in en) || !(from in sw)) {
 			gap(from, "section key missing in one locale");
 			return { discriminant, value: {} };
 		}
-		return { discriminant, value: build(en[from], sw[from], from) };
+		return { discriminant, value: stripInternalKeys(build(en[from], sw[from], from, siteTitle)) };
 	});
 	return {
 		entry: {
