@@ -56,21 +56,23 @@ export default function HeroSection() {
 	// the animated full-window canvas would otherwise saturate the CPU during
 	// load (the dominant Total Blocking Time + LCP delay in Lighthouse). The
 	// hero content and fixed instrument frame carry the design on their own.
-	const [sceneEnabled, setSceneEnabled] = useState(false);
+	const [sceneEnabled, setSceneEnabled] = useState(true);
 
 	/* eslint-disable react-hooks/set-state-in-effect -- intentional one-shot
 	   capability probe after hydration; a lazy initializer would touch
 	   window/navigator during SSR and break the render. */
-	useEffect(() => {
+    useEffect(() => {
+		/* 
 		const nav = navigator as Navigator & { deviceMemory?: number };
 		const supported = (nav.hardwareConcurrency ?? 8) > 4 &&
             (nav.deviceMemory ?? 8) > 4;
-        /* console.log("window.matchMedia(\"(pointer: coarse)\").matches", window.matchMedia("(pointer: coarse)").matches);
+        console.log("window.matchMedia(\"(pointer: coarse)\").matches", window.matchMedia("(pointer: coarse)").matches);
         console.log("window.matchMedia(\"(prefers-reduced-motion: reduce)\").matches", window.matchMedia("(prefers-reduced-motion: reduce)").matches);
         console.log("window.innerWidth", window.innerWidth);
         console.log("nav.hardwareConcurrency", nav.hardwareConcurrency);
-        console.log("nav.deviceMemory", nav.deviceMemory); */
+        console.log("nav.deviceMemory", nav.deviceMemory); 
 		if (supported) setSceneEnabled(true);
+        */
 	}, []);
 	/* eslint-enable react-hooks/set-state-in-effect */
 

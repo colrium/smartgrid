@@ -5,7 +5,7 @@ import { getI18nProps } from "@/lib/i18n";
 import HeroSection from "@/components/sections/home/HeroSection";
 import { AboutSection } from "@/components/sections/home/AboutSection";
 import { PlanningInfographicSection } from "@/components/sections/home/PlanningInfographicSection";
-import LeadGenBar from "@/components/sections/home/LeadGenBar";
+import LeadGenBar from "@/components/sections/shared/LeadGenBar";
 import {
 	SurveyingInstrumentsSection,
 	DronesSection,
