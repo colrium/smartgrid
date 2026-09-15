@@ -4,7 +4,7 @@ import { useState, type ReactElement } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "@/components/Link";
 import { useTranslation } from "@/hooks";
-import { SectionHeader } from "./SectionHeader";
+import { SectionHeader } from "../home/SectionHeader";
 import { FadeUp } from "@/components/animations/Fade";
 import { DeliverablesExplorer, type DeliverablesContent } from "@/components/sections/Deliverables";
 import { SectionTag } from "@/components/SectionTag";
@@ -29,8 +29,8 @@ interface ServiceItem {
 const PANEL_EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 export function ServicesSection(): ReactElement | null {
-	const { t } = useTranslation(["home"]);
-	const items = t("home:services.items", { returnObjects: true }) as unknown as ServiceItem[];
+	const { t } = useTranslation(["common"]);
+	const items = t("common:services.items", { returnObjects: true }) as unknown as ServiceItem[];
 	const [activeTab, setActiveTab] = useState(0);
 
 	if (!Array.isArray(items) || items.length === 0) return null;
@@ -50,8 +50,8 @@ export function ServicesSection(): ReactElement | null {
 				/>
 				<FadeUp>
 					<SectionHeader
-						tag={t("home:services.tag") as string}
-						headline={t("home:services.headline") as string}
+						tag={t("common:services.tag") as string}
+						headline={t("common:services.headline") as string}
 						align="center"
 					/>
 				</FadeUp>

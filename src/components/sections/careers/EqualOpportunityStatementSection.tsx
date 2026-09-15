@@ -17,7 +17,7 @@ export function EqualOpportunityStatementSection() {
 	if (!section.subtitle && !section.description) return null;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
+		<section className="py-32 sm:py-28 relative overflow-hidden ">
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
 					<div className="rounded-c bg-surface hairline card-shadow p-8 sm:p-10 lg:p-12">

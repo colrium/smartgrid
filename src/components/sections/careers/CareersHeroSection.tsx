@@ -23,12 +23,7 @@ export function CareersHeroSection() {
 	const hero = t("careers:hero", { returnObjects: true }) as unknown as CareersHeroContent;
 
 	return (
-		<section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-40 pb-24 sm:pt-44 sm:pb-28">
-			<div className="absolute inset-0 ink-panel" />
-
-			<span className="absolute -top-32 -left-24 w-[30rem] h-[30rem] rounded-full bg-primary/25 blur-[120px] pointer-events-none" />
-			<span className="absolute -bottom-32 -right-24 w-[30rem] h-[30rem] rounded-full bg-primary/20 blur-[120px] pointer-events-none" />
-
+		<section className="relative min-h-screen ink-panel flex items-center justify-center overflow-hidden pt-40 pb-24 sm:pt-44 sm:pb-28">
 			<span
 				aria-hidden
 				className="absolute inset-x-0 top-[25%] select-none pointer-events-none text-center font-mono font-bold uppercase tracking-[0.5em] text-surface/4 text-[22vw] lg:text-[13rem] leading-none whitespace-nowrap"
