@@ -1,0 +1,609 @@
+{
+	"slug": "About",
+	"title": "About (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "hero",
+			"value": {
+				"headline": {
+					"en": "Reliable. Scalable. Fast. Effective.",
+					"sw": "Ya Kuaminika. Inayoweza Kupanuka. Ya Haraka. Inayofaa."
+				},
+				"title": {
+					"en": "About Us",
+					"sw": "Kuhusu Sisi"
+				},
+				"description": {
+					"en": "Whether you're a government agency, an NGO, or a private developer, Smartgrid Surveying is your trusted partner! Our drones deliver actionable data where it matters most.",
+					"sw": "Iwe ni wakala wa serikali, NGO, au msanidi programu wa kibinafsi, Smartgrid Surveying ni mshirika wako anayeaminika! Droni zetu hutoa data ya kiutendaji pale inapohitajika zaidi."
+				},
+				"image": "/media/about/01.jpeg",
+				"layout": "bottom",
+				"frame": false,
+				"scrollCue": false,
+				"cueLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"footnoteItems": [],
+				"ctaPrimary": {
+					"label": {
+						"en": "Start your Aerial Survey with Us!",
+						"sw": "Anza Uchunguzi wako wa Angani na Sisi!"
+					},
+					"href": "/aerial-drones/drone-imagery-surveys",
+					"icon": ""
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "splitMedia",
+			"value": {
+				"tag": {
+					"en": "Our Journey",
+					"sw": "Safari Yetu"
+				},
+				"headline": {
+					"en": "SMARTGRID SURVEYING & ENGINEERING",
+					"sw": "SMARTGRID SURVEYING & ENGINEERING"
+				},
+				"description": {
+					"en": "At Smartgrid Surveying, established 2020. We're redefining the future of land and aerial surveys across Africa and beyond. With cutting-edge technology and an unwavering commitment to precision, we offer a full suite of professional surveying services that support infrastructure development, land administration, environmental monitoring, and planning projects of all scales.",
+					"sw": "Katika Smartgrid Surveying, iliyoanzishwa 2020. Tunafafanua upya mustakabali wa uchunguzi wa ardhi na anga kote Afrika na kuendelea. Kwa teknolojia ya kisasa na kujitolea thabiti kwa usahihi, tunatoa huduma kamili za upimaji wa kitaalamu zinazosaidia maendeleo ya miundombinu, usimamizi wa ardhi, ufuatiliaji wa mazingira, na miradi ya upangaji ya viwango vyote."
+				},
+				"image": {
+					"en": "/img/logo.svg",
+					"sw": "/img/logo.svg"
+				},
+				"points": [],
+				"imagePosition": "left",
+				"tone": "default",
+				"mediaAspect": "square",
+				"mediaFit": "contain",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "gallery",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "",
+					"sw": ""
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"image": "/media/about/09.jpeg",
+						"title": {
+							"en": "",
+							"sw": ""
+						},
+						"label": {
+							"en": "Aerial Mapping",
+							"sw": "Uchoraji Ramani wa Angani"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/about/25.jpeg",
+						"title": {
+							"en": "",
+							"sw": ""
+						},
+						"label": {
+							"en": "3d models",
+							"sw": "Modeli za 3d"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/about/11.jpeg",
+						"title": {
+							"en": "Digital Terrain & Elevation Models (DTMs & DEMs)",
+							"sw": "Modeli za Kidijitali za Eneo na Mwinuko (DTM na DEM)"
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/about/26.jpeg",
+						"title": {
+							"en": "",
+							"sw": ""
+						},
+						"label": {
+							"en": "Construction Monitoring",
+							"sw": "Ufuatiliaji wa Ujenzi"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/about/19.jpeg",
+						"title": {
+							"en": "",
+							"sw": ""
+						},
+						"label": {
+							"en": "Agricultural Mapping",
+							"sw": "Uchoraji Ramani wa Kilimo"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/about/10.png",
+						"title": {
+							"en": "Environmental Monitoring",
+							"sw": "Ufuatiliaji wa Mazingira"
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/about/22.jpeg",
+						"title": {
+							"en": "",
+							"sw": ""
+						},
+						"label": {
+							"en": "Infrastructure Planning",
+							"sw": "Upangaji wa Miundombinu"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/about/27.jpeg",
+						"title": {
+							"en": "Volumetric calculations",
+							"sw": "Mahesabu ya Kiasi (Volumetric)"
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					}
+				],
+				"layout": "overlay",
+				"columns": "4",
+				"tone": "default",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "gallery",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "Drone Photography",
+					"sw": "Upigaji Picha wa Droni"
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"image": "/media/about/15.jpeg",
+						"title": {
+							"en": "",
+							"sw": ""
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/about/24.jpeg",
+						"title": {
+							"en": "",
+							"sw": ""
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/about/17.jpeg",
+						"title": {
+							"en": "",
+							"sw": ""
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/about/13.jpeg",
+						"title": {
+							"en": "",
+							"sw": ""
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/about/07.jpeg",
+						"title": {
+							"en": "",
+							"sw": ""
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					}
+				],
+				"layout": "slider",
+				"columns": "3",
+				"tone": "surface",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "gallery",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "",
+					"sw": ""
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"image": "/media/about/16.jpeg",
+						"title": {
+							"en": "Boundary Surveys & Subdivisions",
+							"sw": "Uchunguzi wa Mipaka na Migawanyo"
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/about/18.jpeg",
+						"title": {
+							"en": "Topographic Mapping",
+							"sw": "Uchoraji Ramani wa Topografia"
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/about/26.jpeg",
+						"title": {
+							"en": "Engineering & Construction Surveys",
+							"sw": "Uchunguzi wa Uhandisi na Ujenzi"
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/about/05.jpeg",
+						"title": {
+							"en": "As-Built Surveys",
+							"sw": "Uchunguzi wa As-Built"
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					}
+				],
+				"layout": "overlay",
+				"columns": "4",
+				"tone": "default",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "cardGrid",
+			"value": {
+				"tag": {
+					"en": "Why Us",
+					"sw": "Kwa Nini Sisi"
+				},
+				"headline": {
+					"en": "Why Choose SmartGrid for Drone Services?",
+					"sw": "Kwa Nini Uchague SmartGrid kwa Huduma za Droni?"
+				},
+				"subheading": {
+					"en": "",
+					"sw": ""
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"icon": "certificate",
+						"title": {
+							"en": "Certified Drone Pilots",
+							"sw": "Mapiloti wa Droni Walioidhinishwa"
+						},
+						"description": {
+							"en": "Expert pilots for safe and precise operations.",
+							"sw": "Mapiloti wataalamu kwa shughuli salama na sahihi."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "video-4k-box",
+						"title": {
+							"en": "4K Imaging & High-Accuracy Mapping",
+							"sw": "Picha za 4K na Uchoraji Ramani wa Usahihi wa Juu"
+						},
+						"description": {
+							"en": "Stunning imagery with cm-level accuracy.",
+							"sw": "Picha za kuvutia kwa usahihi wa ngazi ya sentimita."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "earth-box",
+						"title": {
+							"en": "Nationwide & Cross-Border Coverage",
+							"sw": "Ufunikaji wa Kitaifa na Kimataifa"
+						},
+						"description": {
+							"en": "Service across Kenya and beyond.",
+							"sw": "Huduma kote Kenya na kuendelea."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "file-sign",
+						"title": {
+							"en": "Flexible Hire Plans",
+							"sw": "Mipango Rahisi ya Kukodisha"
+						},
+						"description": {
+							"en": "Customized rental options for your project.",
+							"sw": "Chaguo maalum za kukodisha kwa mradi wako."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "headset",
+						"title": {
+							"en": "End-to-End Support",
+							"sw": "Msaada wa Kuanzia Mwisho hadi Mwisho"
+						},
+						"description": {
+							"en": "From planning to final delivery.",
+							"sw": "Kuanzia upangaji hadi uwasilishaji wa mwisho."
+						},
+						"image": "",
+						"href": ""
+					}
+				],
+				"columns": "5",
+				"align": "center",
+				"tone": "default",
+				"headerRow": false,
+				"cardDensity": "comfortable",
+				"cardIconSize": "md",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "gallery",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "PROJECTS COMPLETED",
+					"sw": "MIRADI IMEKAMILIKA"
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"image": "/media/about/04.png",
+						"title": {
+							"en": "",
+							"sw": ""
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/about/12.png",
+						"title": {
+							"en": "",
+							"sw": ""
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/about/08.png",
+						"title": {
+							"en": "",
+							"sw": ""
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/about/14.png",
+						"title": {
+							"en": "",
+							"sw": ""
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/about/06.png",
+						"title": {
+							"en": "",
+							"sw": ""
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/about/02.png",
+						"title": {
+							"en": "",
+							"sw": ""
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					}
+				],
+				"layout": "masonry",
+				"columns": "3",
+				"tone": "surface",
+				"id": ""
+			}
+		}
+	]
+}

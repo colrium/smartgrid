@@ -8,6 +8,7 @@ import { SplitMedia } from "@/components/sections/shared/SplitMedia";
 import LegalPageSection from "@/components/sections/LegalPageSection";
 import { Faq } from "@/components/sections/shared/Faq";
 import { Process } from "@/components/sections/shared/Process";
+import { Gallery } from "@/components/sections/shared/Gallery";
 import type { Lang } from "../types";
 import { resolveLocaleValue } from "./localize";
 import { getSectionDefinition, type SectionId } from "./sectionRegistry";
@@ -37,6 +38,7 @@ export const sectionRenderers = {
 	legal: LegalPageSection,
 	faq: Faq,
 	process: Process,
+	gallery: Gallery,
 } satisfies Record<SectionId, ComponentType<any>>;
 
 export function renderSection(

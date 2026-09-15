@@ -1,0 +1,50 @@
+{
+	"slug": "Careers",
+	"title": "Careers (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "hero",
+			"value": {
+				"headline": {
+					"en": "Let's Work Together in Kenya and Beyond.",
+					"sw": "Tufanye Kazi Pamoja Kenya na Nje."
+				},
+				"title": {
+					"en": "Careers",
+					"sw": "Ajira"
+				},
+				"description": {
+					"en": "SmartGrid Surveying is a professional geospatial and engineering firm delivering precision land surveying, UAV mapping, GIS, underground utility detection, and civil infrastructure solutions. We seek disciplined, technically competent professionals committed to accuracy, safety, and excellence in project delivery.",
+					"sw": "SmartGrid Surveying ni kampuni ya kitaalamu ya kijiografia na uhandisi inayotoa huduma za upimaji ardhi wa usahihi, ramani za UAV, GIS, utambuzi wa huduma za chini ya ardhi, na suluhisho za miundombinu ya civil. Tunatafuta wataalamu wenye nidhamu na uwezo wa kiufundi waliojitolea kwa usahihi, usalama, na ubora wa utekelezaji wa miradi."
+				},
+				"image": "",
+				"layout": "banner",
+				"frame": false,
+				"scrollCue": false,
+				"cueLabel": {
+					"en": "Open Roles",
+					"sw": "Nafasi Zilizopo"
+				},
+				"footnoteItems": [],
+				"ctaPrimary": {
+					"label": {
+						"en": "Apply Now",
+						"sw": "Apply Sasa"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Careers Inquiry&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to inquire about career opportunities at SmartGrid Surveying.%0D%0A%0D%0ARole of interest:%0D%0AYour name:%0D%0A%0D%0AThank you.",
+					"icon": ""
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		}
+	]
+}

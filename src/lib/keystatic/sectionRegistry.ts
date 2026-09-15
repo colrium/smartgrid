@@ -38,11 +38,13 @@ import {
  *   `MorphSlider`, `ProjectsGlobe` — runtime-only / client-only (window,
  *   document, portals, WebGL, Maps JS); no serializable editor contract.
  * - `SectionShell`, `Split` — layout-only (`ReactNode` slots, not data).
- * - `CardList` (grid+modal behavior, no `<section>`), `Faq`, `Pricing`,
- *   `Process`, `Gallery`, `FinalCta`, `WorkflowSection`,
+ * - `CardList` (grid+modal behavior, no `<section>`), `Pricing`,
+ *   `FinalCta`, `WorkflowSection`,
  *   `BeforeAfterFlipCard`, `CtaPill`, `ProductListing` — valid future
  *   candidates, deferred until migration needs them; each needs its own
- *   schema + renderer + example.
+ *   schema + renderer + example. (`Faq` and `Process` were on this list
+ *   until M7 batch 2 registered them, `Gallery` until M7 batch 3 — see
+ *   below.)
  * - Page-specific bespoke sections (`CurrentOpeningsSection`,
  *   `CompanyProfileViewerSection`, …) are never registered: the registry
  *   stays shared-only so branch options make sense for every page. Hybrid
@@ -62,12 +64,32 @@ import {
  * M7 batch 2 (contact + careers, 2026-09-15): `faq` wraps the shared `Faq`
  * (question/answer/points/icon items + optional still-curious side card);
  * `process` wraps the shared `Process` grid (phase/title/description/outcome/
- * icon items + note/cta footer). Contact `site_visit.process_steps` map to
- * `process` items with `phase` = zero-padded step number. Both components are
- * SSR-safe (`"use client"` without browser-only APIs on first render).
+ * icon items + note/cta footer). Both components are SSR-safe (`"use client"`
+ * without browser-only APIs on first render). NOTE (corrected 2026-09-16):
+ * `contact:site_visit` and `contact:faq` render NOWHERE (no reader in `src`;
+ * same dead-content verdict as `opportunities`/`direct_contacts`) — they are
+ * OUT OF SCOPE, not `process`/`faq` migration sources. The contact Keystatic
+ * surface is `talkToUs` → `cardGrid` only.
+ *
+ * M7 batch 2 continued (2026-09-16): `cardGrid` items gain an optional
+ * `accent` token (v1 → v2, additive). `TalkToUsSection` passes each contact's
+ * brand `color` as the card `accent` (`Card` documents the token set:
+ * `primary|primary-500|primary-700|whatsapp|gmail|calendly`); without the
+ * field the contact migration would silently drop every chip color. Existing
+ * v1 entries omit `accent` and normalize to `undefined` (component default),
+ * so the addition is backwards-compatible.
+ *
+ * M7 batch 3 (about, 2026-09-16): `gallery` wraps the shared `Gallery`
+ * (overlay cards, slider, masonry + grid layouts, 2–4 columns, both item
+ * shapes: bare image paths and `{image,title,label,description}` objects).
+ * All three about layouts are SSR-safe: `Slider` touches `window`/`document`
+ * only inside `useEffect`, so static-markup render is unaffected. Image
+ * paths are shared (not per-locale): legacy about galleries use identical
+ * paths in `en`/`sw`, and the migration's `sharedValue` gate aborts on any
+ * divergence instead of silently dropping one locale's media.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -386,7 +408,7 @@ const hero: SectionDefinition = {
 
 const cardGrid: SectionDefinition = {
 	id: "cardGrid",
-	version: 1,
+	version: 2,
 	label: "Card grid",
 	description: "Header plus a responsive card grid with optional icons, images and links.",
 	schema: fields.object({
@@ -406,6 +428,10 @@ const cardGrid: SectionDefinition = {
 				description: localeLongText("Description"),
 				image: imagePath("Image (optional)"),
 				href: fields.text({ label: "Link (optional)", description: "Card links to this URL when set." }),
+				accent: fields.text({
+					label: "Brand accent (optional)",
+					description: "Icon-chip color token (`primary`, `primary-500`, `primary-700`, `whatsapp`, `gmail`, `calendly`). Empty = default.",
+				}),
 			}),
 			{
 				label: "Cards",
@@ -478,6 +504,7 @@ const cardGrid: SectionDefinition = {
 				},
 				image: "",
 				href: "",
+				accent: "",
 			},
 		],
 		columns: "3",
@@ -494,6 +521,9 @@ const cardGrid: SectionDefinition = {
 			...item,
 			image: item.image || undefined,
 			href: item.href && item.href.trim() ? item.href : undefined,
+			// Empty/blank accents fall back to the component default chip
+			// (keeps v1 entries without the field rendering unchanged).
+			accent: typeof item.accent === "string" && item.accent.trim() ? item.accent.trim() : undefined,
 		})),
 		columns: Number(resolved.columns) || 3,
 		card: { density: resolved.cardDensity, iconSize: resolved.cardIconSize },
@@ -796,6 +826,100 @@ const process: SectionDefinition = {
 	}),
 };
 
+const gallery: SectionDefinition = {
+	id: "gallery",
+	version: 1,
+	label: "Gallery",
+	description: "Image gallery: overlay cards, slider, masonry or grid, with optional captions.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline", { optionalInEnglish: true }),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				image: imagePath("Image"),
+				// Overlay cards read `title ?? label`; slider/masonry read
+				// `title`. Bare-path legacy items migrate with empty captions.
+				title: localeText("Title", { optionalInEnglish: true }),
+				label: localeText("Label", { optionalInEnglish: true }),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Images",
+				itemLabel: (item) =>
+					previewText(item, ["fields", "title", "fields", "en", "value"], previewText(item, ["fields", "image", "value"], "Image")),
+			},
+		),
+		layout: fields.select({
+			label: "Layout",
+			options: [
+				{ label: "Overlay cards", value: "overlay" },
+				{ label: "Slider", value: "slider" },
+				{ label: "Masonry", value: "masonry" },
+				{ label: "Grid", value: "grid" },
+			],
+			defaultValue: "grid",
+		}),
+		columns: fields.select({
+			label: "Columns",
+			options: [
+				{ label: "2", value: "2" },
+				{ label: "3", value: "3" },
+				{ label: "4", value: "4" },
+			],
+			defaultValue: "3",
+		}),
+		tone: fields.select({
+			label: "Tone",
+			options: [
+				{ label: "Default", value: "default" },
+				{ label: "Surface", value: "surface" },
+			],
+			defaultValue: "default",
+		}),
+		id: anchorField(),
+		// Excluded from v1 (documented): `classes`/`className` (visual tuning,
+		// not an editor contract).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Drone Photography", sw: "Upigaji Picha wa Droni" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				image: "/media/about/15.jpeg",
+				title: { en: "", sw: "" },
+				label: { en: "", sw: "" },
+				description: { en: "", sw: "" },
+			},
+		],
+		layout: "slider",
+		columns: "3",
+		tone: "surface",
+		id: "",
+	},
+	normalize: (resolved) => ({
+		tag: resolved.tag,
+		headline: resolved.headline,
+		description: resolved.description,
+		items: Array.isArray(resolved.items)
+			? resolved.items.map((item: any) => ({
+					// Empty captions stay `undefined` so the component's
+					// `?? "Gallery"` / `?? label` / `Project N` fallbacks behave
+					// exactly as they do for absent legacy keys.
+					image: item?.image || undefined,
+					title: item?.title || undefined,
+					label: item?.label || undefined,
+					description: item?.description || undefined,
+				}))
+			: [],
+		layout: resolved.layout,
+		columns: Number(resolved.columns) || 3,
+		tone: resolved.tone,
+		id: resolved.id || undefined,
+	}),
+};
+
 export const sectionRegistry: readonly SectionDefinition[] = [
 	introText,
 	ctaBand,
@@ -806,6 +930,7 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	legal,
 	faq,
 	process,
+	gallery,
 ];
 
 export function getSectionDefinition(id: string): SectionDefinition {
@@ -824,6 +949,7 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	legal: legal.label,
 	faq: faq.label,
 	process: process.label,
+	gallery: gallery.label,
 };
 
 /**

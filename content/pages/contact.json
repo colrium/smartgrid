@@ -1,0 +1,121 @@
+{
+	"slug": "Contact",
+	"title": "Contact (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "cardGrid",
+			"value": {
+				"tag": {
+					"en": "Reach Out",
+					"sw": "Fikia Nasi"
+				},
+				"headline": {
+					"en": "Talk to Us",
+					"sw": "Zungumza Nasi"
+				},
+				"subheading": {
+					"en": "",
+					"sw": ""
+				},
+				"description": {
+					"en": "Reach out to our experts via call or email for service inquiries, support, or proposals.",
+					"sw": "Wasiliana na wataalamu wetu kwa simu au barua pepe kwa maswali ya huduma, msaada, au mapendekezo."
+				},
+				"items": [
+					{
+						"icon": "phone",
+						"title": {
+							"en": "+254 107 393 023",
+							"sw": "+254 107 393 023"
+						},
+						"description": {
+							"en": "HQ (Ruiru)",
+							"sw": "HQ (Ruiru)"
+						},
+						"image": "",
+						"href": "tel:+254107393023",
+						"accent": "primary"
+					},
+					{
+						"icon": "phone",
+						"title": {
+							"en": "+254 701 618 282",
+							"sw": "+254 701 618 282"
+						},
+						"description": {
+							"en": "Nairobi",
+							"sw": "Nairobi"
+						},
+						"image": "",
+						"href": "tel:+254701618282",
+						"accent": "primary-500"
+					},
+					{
+						"icon": "email",
+						"title": {
+							"en": "info@smartgridsurveying.com",
+							"sw": "info@smartgridsurveying.com"
+						},
+						"description": {
+							"en": "Queries",
+							"sw": "Queries"
+						},
+						"image": "",
+						"href": "mailto:info@smartgridsurveying.com?subject=General Inquiry&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to make an inquiry.%0D%0A%0D%0AName:%0D%0AMessage:%0D%0A%0D%0AThank you.",
+						"accent": "primary-700"
+					},
+					{
+						"icon": "gmail",
+						"title": {
+							"en": "smartgridsurveying@gmail.com",
+							"sw": "smartgridsurveying@gmail.com"
+						},
+						"description": {
+							"en": "Quotes",
+							"sw": "Quotes"
+						},
+						"image": "",
+						"href": "mailto:smartgridsurveying@gmail.com?subject=General Inquiry&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to make an inquiry.%0D%0A%0D%0AName:%0D%0AMessage:%0D%0A%0D%0AThank you.",
+						"accent": "gmail"
+					},
+					{
+						"icon": "whatsapp",
+						"title": {
+							"en": "Chat on WhatsApp",
+							"sw": "Zungumza kwenye WhatsApp"
+						},
+						"description": {
+							"en": "Quick",
+							"sw": "Quick"
+						},
+						"image": "",
+						"href": "https://wa.me/254107393023",
+						"accent": "whatsapp"
+					},
+					{
+						"icon": "calendar",
+						"title": {
+							"en": "Schedule via Calendly",
+							"sw": "Panga kwa Calendly"
+						},
+						"description": {
+							"en": "Scheduled",
+							"sw": "Scheduled"
+						},
+						"image": "",
+						"href": "https://calendly.com/smartgridsurveying",
+						"accent": "calendly"
+					}
+				],
+				"columns": "3",
+				"align": "left",
+				"tone": "default",
+				"headerRow": true,
+				"cardDensity": "comfortable",
+				"cardIconSize": "md",
+				"id": ""
+			}
+		}
+	]
+}

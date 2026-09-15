@@ -158,6 +158,87 @@ function legalBuild(pageTitle) {
 	};
 }
 
+// M7 batch 2: `contact:talkToUs` → `cardGrid`. The legacy wrapper maps
+// `contacts[]` (`label`/`note`/`href`/`icon`/`color`) onto CardGrid items
+// (`title`/`description`/`href`/`icon`/`accent`); `color` is a shared token
+// so any cross-locale divergence aborts via `sharedValue`.
+function talkToUsBuild(presentation) {
+	return (en, sw, where) => {
+		const enContacts = en.contacts ?? [];
+		const swContacts = sw.contacts ?? [];
+		if (!Array.isArray(swContacts) || swContacts.length !== enContacts.length) {
+			gap(where, `contact count diverged (en=${enContacts.length} sw=${swContacts?.length})`);
+		}
+		return {
+			tag: { en: optText(en.tag), sw: optText(sw.tag) },
+			headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+			subheading: emptyPair(),
+			description: { en: optText(en.description), sw: optText(sw.description) },
+			items: enContacts.map((contact, i) => {
+				const swContact = swContacts[i];
+				if (contact.href !== undefined || swContact?.href !== undefined) {
+					sharedValue(contact, swContact, "href", `${where}.contacts[${i}]`);
+				}
+				return {
+					icon: sharedValue(contact, swContact, "icon", `${where}.contacts[${i}]`) ?? "",
+					title: { en: reqText(contact.label, `${where}.contacts[${i}].label.en`), sw: reqText(swContact?.label, `${where}.contacts[${i}].label.sw`) },
+					description: { en: reqText(contact.note, `${where}.contacts[${i}].note.en`), sw: reqText(swContact?.note, `${where}.contacts[${i}].note.sw`) },
+					image: "",
+					href: typeof contact.href === "string" ? contact.href : "",
+					accent: sharedValue(contact, swContact, "color", `${where}.contacts[${i}]`) ?? "",
+				};
+			}),
+			...presentation,
+			id: "",
+		};
+	};
+}
+
+// M7 batch 3: `about:*` gallery sections → `gallery`. Legacy items are
+// either bare image paths (slider/masonry) or `{image,title?,label?}`
+// objects (overlay grids); both normalize to captioned items. Image paths
+// are shared references — any cross-locale divergence aborts via
+// `sharedValue` instead of silently dropping one locale's media.
+function galleryBuild(presentation) {
+	return (en, sw, where) => {
+		const enItems = en.items ?? [];
+		const swItems = sw.items ?? [];
+		if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+			gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+		}
+		return {
+			tag: { en: optText(en.tag), sw: optText(sw.tag) },
+			headline: { en: optText(en.headline), sw: optText(sw.headline) },
+			description: { en: optText(en.description), sw: optText(sw.description) },
+			items: enItems.map((item, i) => {
+				const swItem = swItems[i];
+				if (typeof item === "string" || typeof swItem === "string") {
+					if (item !== swItem) {
+						gap(where, `items[${i}] diverged (en=${JSON.stringify(item)} sw=${JSON.stringify(swItem)})`);
+					}
+					return {
+						image: typeof item === "string" ? item : "",
+						title: emptyPair(),
+						label: emptyPair(),
+						description: emptyPair(),
+					};
+				}
+				if (item.image !== undefined || swItem?.image !== undefined) {
+					sharedValue(item, swItem, "image", `${where}.items[${i}]`);
+				}
+				return {
+					image: typeof item.image === "string" ? item.image : "",
+					title: { en: optText(item.title), sw: optText(swItem?.title) },
+					label: { en: optText(item.label), sw: optText(swItem?.label) },
+					description: { en: optText(item.description), sw: optText(swItem?.description) },
+				};
+			}),
+			...presentation,
+			id: "",
+		};
+	};
+}
+
 const PAGES = {
 	"company-profile": {
 		namespace: "company-profile",
@@ -280,10 +361,171 @@ const PAGES = {
 		wholeFile: true,
 		sections: [{ discriminant: "legal", from: null, build: legalBuild("terms_of_use") }],
 	},
+	// M7 batch 2: contact. Only `talkToUs` renders through a shared section
+	// (TalkToUsSection → <CardGrid columns={3} headerRow /> with align/tone/
+	// card unset, i.e. component defaults). The bespoke hero, offices map,
+	// and Formspree form stay legacy (hybrid tails). `opportunities`,
+	// `direct_contacts`, `site_visit` and `faq` are unrendered in `src` and
+	// `social` is footer-owned → OUT OF SCOPE, never migrated.
+	"contact": {
+		namespace: "contact",
+		title: "Contact",
+		skipped: ["hero", "offices", "contact_reasons", "form", "opportunities", "direct_contacts", "site_visit", "faq", "social"],
+		sections: [
+			{
+				discriminant: "cardGrid",
+				from: "talkToUs",
+				// Legacy: TalkToUsSection → <CardGrid columns={3} headerRow />
+				build: talkToUsBuild({ columns: "3", align: "left", tone: "default", headerRow: true, cardDensity: "comfortable", cardIconSize: "md" }),
+			},
+		],
+	},
+	// M7 batch 2: careers. Only `hero` migrates (CareersHeroSection → shared
+	// <Hero>, `banner` layout; the scroll-cue label is merged from
+	// `common:misc.openRoles` at render time, so the mapping reads it from
+	// the `extra.common` namespaces). LeadGenBar (`home` ns) and
+	// ServicesSection (`common` ns) are global components; CurrentOpenings
+	// (TOR modal + deadline logic), ApplicationProcess (`<bold>`
+	// pseudo-markup the shared IntroTextSection would render literally) and
+	// the equal-opportunity statement stay legacy bespoke tails.
+	"careers": {
+		namespace: "careers",
+		title: "Careers",
+		skipped: ["currentOpenings", "applicationProcess", "statement"],
+		sections: [
+			{
+				discriminant: "hero",
+				from: "hero",
+				// Legacy: CareersHeroSection → <Hero data={{ ...t(hero), cueLabel: t("common:misc.openRoles") }} />
+				build(en, sw, where, siteTitle, extra) {
+					return {
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						title: { en: reqText(en.title, `${where}.title.en`), sw: reqText(sw.title, `${where}.title.sw`) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						image: "",
+						layout: sharedValue(en, sw, "layout", where),
+						frame: false,
+						scrollCue: false,
+						cueLabel: {
+							en: reqText(extra?.common?.en?.misc?.openRoles, `${where}.cueLabel.en (common:misc.openRoles)`),
+							sw: reqText(extra?.common?.sw?.misc?.openRoles, `${where}.cueLabel.sw (common:misc.openRoles)`),
+						},
+						footnoteItems: [],
+						ctaPrimary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+						},
+						ctaSecondary: { label: emptyPair(), href: "", icon: "" },
+						id: "",
+					};
+				},
+			},
+		],
+	},
+	// M7 batch 3: about. Seven sections migrate in page order — `hero`,
+	// `ourStory` (splitMedia), four `gallery` sections, `whyChooseSmartGrid`
+	// (cardGrid) — interleaved with three legacy tails (see route wiring):
+	// AerialSurveyingSection (popup modal + fallback icons: cardGrid v2
+	// models neither), LandSurveyingSection (`<primary>` inline markup +
+	// `itemsTitle`: no cardGrid equivalent), ImpactAcrossAfricaSection
+	// (client-only ProjectsGlobe, never a registry branch).
+	"about": {
+		namespace: "about",
+		title: "About",
+		skipped: ["aerialSurveying", "landSurveying", "impactAcrossAfrica"],
+		sections: [
+			{
+				discriminant: "hero",
+				from: "hero",
+				// Legacy: HeroSection → <Hero data={t(about:hero)} /> (default
+				// bottom layout; no layout key, cueLabel, footnotes or frame).
+				build(en, sw, where) {
+					return {
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						title: { en: reqText(en.title, `${where}.title.en`), sw: reqText(sw.title, `${where}.title.sw`) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						image: sharedValue(en, sw, "image", where) ?? "",
+						layout: sharedValue(en, sw, "layout", where) ?? "bottom",
+						frame: false,
+						scrollCue: false,
+						cueLabel: emptyPair(),
+						footnoteItems: [],
+						ctaPrimary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+						},
+						ctaSecondary: { label: emptyPair(), href: "", icon: "" },
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "splitMedia",
+				from: "ourStory",
+				// Legacy: OurStorySection → <SplitMedia data imagePosition="left" mediaAspect="aspect-square" mediaFit="contain" /> (no points).
+				build(en, sw, where) {
+					return {
+						tag: { en: reqText(en.tag, `${where}.tag.en`), sw: reqText(sw.tag, `${where}.tag.sw`) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						// Media is per-locale by contract (no divergence in
+						// this namespace today, but never coerced to shared).
+						image: { en: optText(en.image), sw: optText(sw.image) },
+						points: [],
+						imagePosition: "left",
+						tone: "default",
+						mediaAspect: "square",
+						mediaFit: "contain",
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "gallery",
+				from: "servicesByImages",
+				// Legacy: ServicesByImagesSection → <Gallery layout="overlay" columns={4} />
+				build: galleryBuild({ layout: "overlay", columns: "4", tone: "default" }),
+			},
+			{
+				discriminant: "gallery",
+				from: "dronePhotographyimageSlider",
+				// Legacy: DronePhotographyImageSliderSection → <Gallery layout="slider" tone="surface" /> (columns unset = 3)
+				build: galleryBuild({ layout: "slider", columns: "3", tone: "surface" }),
+			},
+			{
+				discriminant: "gallery",
+				from: "landSurveyingImages",
+				// Legacy: LandSurveyingImagesSection → <Gallery layout="overlay" columns={4} />
+				build: galleryBuild({ layout: "overlay", columns: "4", tone: "default" }),
+			},
+			{
+				discriminant: "cardGrid",
+				from: "whyChooseSmartGrid",
+				// Legacy: WhyChooseSmartGridSection → <CardGrid columns={5} align="center" /> (tone/card unset = defaults)
+				build: cardGridBuild({ columns: "5", align: "center", tone: "default", headerRow: false, cardDensity: "comfortable", cardIconSize: "md" }),
+			},
+			{
+				discriminant: "gallery",
+				from: "projectsCompletedImagesMasonry",
+				// Legacy: ProjectsCompletedImagesMasonrySection → <Gallery layout="masonry" columns={3} tone="surface" />
+				build: galleryBuild({ layout: "masonry", columns: "3", tone: "surface" }),
+			},
+		],
+	},
 };
 
 function loadNamespace(locale, namespace) {
 	return JSON.parse(readFileSync(join(ROOT, "public", "locales", locale, `${namespace}.json`), "utf8"));
+}
+
+function loadCommon(locale) {
+	try {
+		return JSON.parse(readFileSync(join(ROOT, "public", "locales", locale, "common.json"), "utf8"));
+	} catch {
+		return {};
+	}
 }
 
 function loadSiteTitle(locale) {
@@ -316,16 +558,20 @@ function generate(pageSlug) {
 	const en = loadNamespace("en", mapping.namespace);
 	const sw = loadNamespace("sw", mapping.namespace);
 	const siteTitle = { en: loadSiteTitle("en"), sw: loadSiteTitle("sw") };
+	// Cross-namespace content merged at render time (e.g. careers:hero
+	// cueLabel from common:misc.openRoles). Passed as the 5th build arg;
+	// existing 4-arg builds ignore it.
+	const extra = { common: { en: loadCommon("en"), sw: loadCommon("sw") } };
 	const pageBuilder = mapping.sections.map(({ discriminant, from, build }) => {
 		if (from === null) {
 			// Whole-file mapping (legal pages): the namespace root IS the section.
-			return { discriminant, value: stripInternalKeys(build(en, sw, mapping.namespace, siteTitle)) };
+			return { discriminant, value: stripInternalKeys(build(en, sw, mapping.namespace, siteTitle, extra)) };
 		}
 		if (!(from in en) || !(from in sw)) {
 			gap(from, "section key missing in one locale");
 			return { discriminant, value: {} };
 		}
-		return { discriminant, value: stripInternalKeys(build(en[from], sw[from], from, siteTitle)) };
+		return { discriminant, value: stripInternalKeys(build(en[from], sw[from], from, siteTitle, extra)) };
 	});
 	return {
 		entry: {
