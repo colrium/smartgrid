@@ -267,9 +267,12 @@ Route inventory (from `src/pages/[locale]/**` + `public/locales/<en|sw>/**`, 202
   (M7 batch 13, interleaved hybrids, entries `draft`), `monitoring-and-evaluation` +
   `aerial-drones-as-built-surveys` (M7 batch 14, interleaved hybrids, entries
   `draft`), `agricultural-ndvi-mapping` + `lidar-mapping` (M7 batch 15,
-  interleaved hybrids, entries `draft`). `aerial-drones/volumetric-surveys` is
-  DEFERRED — no `sw` locale namespace exists (see batch 15 log). All other
-  `[locale]` routes render legacy only — no `resolveKeystaticPage` call.
+  interleaved hybrids, entries   `draft`). `aerial-drones/volumetric-surveys` is
+  DEFERRED — no `sw` locale namespace exists (see batch 15 log).
+  `aerial-drones/landing`, `aerial-drones/drone-imagery-surveys` and
+  `aerial-drones/photography-video-marketing` are DEFERRED as bespoke-only pages
+  (see batch 16 log — zero registry-contract sections). All other `[locale]`
+  routes render legacy only — no `resolveKeystaticPage` call.
 
 - [x] Inventory every `[locale]` route and its locale namespace(s), section components,
       and bespoke/client-only parts (forms, maps, 3D/globe, viewers, product registry).
@@ -296,9 +299,15 @@ Route inventory (from `src/pages/[locale]/**` + `public/locales/<en|sw>/**`, 202
       `EqualOpportunityStatementSection` stay legacy. `contact:site_visit` + `contact:faq`
       are UNRENDERED dead content — OUT OF SCOPE like `opportunities`/`direct_contacts`;
       `contact:social` stays footer-owned.)
-- [ ] Decide the equipment-sale content model (`products.json` + per-product locale files
+- [x] Decide the equipment-sale content model (`products.json` + per-product locale files
       vs. one Keystatic entry per product vs. catalogue-only editing) and record the
-      decision with date before implementing.
+      decision with date before implementing. (Decided 2026-09-16, batch 16: equipment
+      stays FILE-BASED — `public/locales/<locale>/products.json` registry +
+      per-product locale files (`dji-air-3s.json`, …) remain the source of truth; product
+      pages are a product-registry model, not ordered page sections, so they never become
+      `pageBuilder` entries. Rationale: no shared-section usage on product routes; forcing
+      products into page sections would fork the registry contract for a single use case.
+      Revisit only if product pages gain marketing sections. User may override.)
 - [x] Extend the migration script with per-page mappings (or documented mappings where a
       repeatable script is infeasible), one page batch at a time; `--verify` must pin each
       checked-in entry. (Batch 1 done 2026-09-15: `legalBuild` + privacy/terms mappings,
@@ -430,6 +439,19 @@ Route inventory (from `src/pages/[locale]/**` + `public/locales/<en|sw>/**`, 202
       has no `volumetric-surveys.json` (page is en-only today); cannot migrate without a
       `sw` translation — revisit when the namespace exists (same rule will apply to any
       other page missing a locale side).)
+      Batch 16 — planning batch (no code): (a) bespoke-only deferrals confirmed for the
+      last three aerial-drones pages — `landing` (bespoke hero, popup cards, fleet,
+      tiles, globe, photo section; zero shared-section usage, carried from batch 4),
+      `drone-imagery-surveys` (AerialServiceHero local-shared hero, bespoke offer/drones/
+      deliverables, client-only ProjectsGlobe; zero registry-contract sections),
+      `photography-video-marketing` (custom gradient hero, raw Slider — not Gallery —,
+      hand-rolled services grid with positional fallback icons + bespoke CTA pill; zero
+      registry-contract sections) — all deferred until new sections are registered, no
+      entry, no wiring; (b) equipment model decided file-based (see checklist);
+      (c) home inventory done — home splits into batches 17+ (migratable:
+      ActionCta x2 split/shimmer, Industries label→title cardGrid, Faq, masked Cta;
+      tails: WebGL hero, global LeadGenBar, headerRow/hoverArrow/watermarkedIndexed
+      CoreExpertise, client-only CoverageArea globe, bespoke remainder).
 - [ ] Update the README operator guide + `.env.example` allowlist examples as the editable
       set grows; keep rollback (per-page allowlist/draft flip + `KEYSTATIC_DISABLE=1`)
       tested for the new pages.
@@ -520,4 +542,5 @@ For every implementation change:
 | 2026-09-16 | M7 | Batch 12 DONE (civil bim + site-engineering + site-setting-out + volumetric-surveys, tests deferred): bim = secondary-only hero (absent ctaPrimary → empty/null) + centred cta, 2 sections; site-engineering = centred cta only, 1 section; site-setting-out = dual-pill hero + 9-item faq (icon/title/description), 2 sections; volumetric = dual-pill hero + 2 introTexts + right splitMedia + centred cta, 5 sections. All four entries generated via `--write` (no gaps — generation only). Routes wired interleaved with count guards (bim KS at 0,3; se KS at 4; sso KS at 0,4; vol KS at 0,1,2,4,6). Tails stay legacy: bim `indexed` grid + deliverables; se `<bold>` hero + `Split` overview + indexed/media-bg grids + deliverables; sso indexed/mediaBadged grids + deliverables; vol left-aligned services grid + deliverables. Fixed a plan-edit misplacement (batch 11/12 ordering + duplicate batch 9 block) in the same change | Validation DEFERRED per M7 policy: no `--verify`/`check:keystatic`/`typecheck`/`lint`/dev-smoke this batch; run once after all M7 stages | |
 | 2026-09-16 | M7 | Batch 13 DONE (aerial-drones solar-panel + landfill-quarry, tests deferred): solar = hero + centred cta (wrapper-hardcoded arrow icon stored as shared literal), 2 sections; landfill = hero + quarryServices/maximizeProductivity introTexts, 3 sections. Both entries generated via `--write` (no gaps — generation only). Routes wired interleaved with count guards (solar KS at 0,3; landfill KS at 0,1,3). Tails stay legacy: solar `card.iconShape: "xl"` grid + `indexed` process; landfill iconShape + fallbackIcons grids. Per-batch commit workflow adopted (commit per batch, then proceed) | Validation DEFERRED per M7 policy: no `--verify`/`check:keystatic`/`typecheck`/`lint`/dev-smoke this batch; run once after all M7 stages | |
 | 2026-09-16 | M7 | Batch 14 DONE (aerial-drones monitoring-and-evaluation + as-built-surveys, tests deferred): M&E = hero + 3 introTexts + centred cta, 5 sections; as-built = hero (no title key → optText, h1 falls back to description) + metrics stats band + first bleed-variant + first images cta, 3 sections under hub-prefixed slug `aerial-drones-as-built-surveys` (bare slug taken by civil child). Completeness gate caught 2 real gaps, fixed: hero title optText + `sw` cta href curly-apostrophe aligned to en (one-char mailto fix, batch-2 precedent). Entries generated via `--write` (no gaps after fixes — generation only). Routes wired interleaved with count guards (M&E KS at 0,1,3,5,8; as-built KS at 0,3,4). Tails stay legacy: M&E fallbackIcons/iconShape/actions/leadImages grids; as-built fallbackIcons grid + layout/columns process | Validation DEFERRED per M7 policy: no `--verify`/`check:keystatic`/`typecheck`/`lint`/dev-smoke this batch; run once after all M7 stages | |
-| 2026-09-16 | M7 | Batch 15 DONE (aerial-drones agricultural-ndvi + lidar, tests deferred): agri = hero only, 1 section; lidar = hero + forestry/left-surface-wide + construction/right-default-wide splitMedias, 3 sections. Both entries generated via `--write` (no gaps — generation only). Routes wired interleaved with count guards (agri KS at 0; lidar KS at 0,4,5). Tails stay legacy: agri split-cards + layout/columns process; lidar indexed grid + layout/columns process + normalizeHref cta. DECISION: `aerial-drones/volumetric-surveys` DEFERRED — no `sw` namespace exists (en-only page); revisit when translated | Validation DEFERRED per M7 policy: no `--verify`/`check:keystatic`/`typecheck`/`lint`/dev-smoke this batch; run once after all M7 stages | | |
+| 2026-09-16 | M7 | Batch 15 DONE (aerial-drones agricultural-ndvi + lidar, tests deferred): agri = hero only, 1 section; lidar = hero + forestry/left-surface-wide + construction/right-default-wide splitMedias, 3 sections. Both entries generated via `--write` (no gaps — generation only). Routes wired interleaved with count guards (agri KS at 0; lidar KS at 0,4,5). Tails stay legacy: agri split-cards + layout/columns process; lidar indexed grid + layout/columns process + normalizeHref cta. DECISION: `aerial-drones/volumetric-surveys` DEFERRED — no `sw` namespace exists (en-only page); revisit when translated | Validation DEFERRED per M7 policy: no `--verify`/`check:keystatic`/`typecheck`/`lint`/dev-smoke this batch; run once after all M7 stages | |
+| 2026-09-16 | M7 | Batch 16 DONE (planning batch, no code): confirmed bespoke-only deferrals for `aerial-drones/landing` (carried from batch 4), `drone-imagery-surveys` and `photography-video-marketing` (zero registry-contract sections each — documented per page); equipment model decided file-based (checklist ticked, user may override); home inventory recorded (migratable: 2 ActionCtas, Industries, Faq, masked Cta; tails: WebGL hero, LeadGenBar, CoreExpertise extras, globe, bespoke rest) — home implementation splits into batches 17+. Also fixed two plan-edit misplacements in-session (non-unique oldString edits); rule going forward: always anchor plan edits with batch-specific context | No tests run (plan-only change; deferred validation unaffected) | | |
