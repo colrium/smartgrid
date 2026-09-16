@@ -17,8 +17,8 @@ interface CoreExpertiseContent {
 }
 
 export function CoreExpertiseSection(): ReactElement | null {
-	const { t } = useTranslation(["home"]);
-	const section = t("home:coreExpertise", {
+	const { t } = useTranslation(["common"]);
+	const section = t("common:coreExpertise", {
 		returnObjects: true,
 	}) as unknown as CoreExpertiseContent;
 	const items: CardItem[] = Array.isArray(section?.items) ? section.items : [];

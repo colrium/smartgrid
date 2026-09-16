@@ -29,8 +29,8 @@ export function ActionCtaSection({
 	contentKey,
 	className = "",
 }: ActionCtaSectionProps): ReactElement | null {
-	const { t } = useTranslation(["home"]);
-	const content = t(`home:${contentKey}`, {
+	const { t } = useTranslation(["common"]);
+	const content = t(`common:${contentKey}`, {
 		returnObjects: true,
 	}) as unknown as ActionCtaContent;
 

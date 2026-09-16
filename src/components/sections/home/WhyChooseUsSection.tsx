@@ -3,7 +3,6 @@
 import { useTranslation } from "@/hooks";
 import { SectionHeader } from "../shared/SectionHeader";
 import { FadeUp } from "@/components/animations/Fade";
-import { ParallaxDecor, Blob } from "../shared/decor";
 
 interface WhyChooseUsItem {
 	icon?: string | null;
@@ -13,39 +12,28 @@ interface WhyChooseUsItem {
 }
 
 export function WhyChooseUsSection() {
-	const { t } = useTranslation(["home"]);
-	const items = t("home:whyChooseUs.items", {
+	const { t } = useTranslation(["common", "home"]);
+	const items = t("common:whyChooseUs.items", {
 		returnObjects: true,
 	}) as unknown as WhyChooseUsItem[];
 
 	return (
 		<section id="why-choose-us" className="py-24 sm:py-28 relative overflow-hidden ">
-			{/* Soft institutional background shapes */}
-			<Blob className="w-[26rem] h-[26rem] bg-primary-200/40 -top-20 right-0" opacity={0.5} />
-			<ParallaxDecor speed={-0.06} className="absolute bottom-24 -left-20 z-0">
-				<Blob className="w-80 h-80 bg-primary-100/80" opacity={0.6} />
-			</ParallaxDecor>
+			
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
 					{/* Sticky manifesto header */}
 					<FadeUp className="lg:col-span-4 lg:sticky lg:top-28 self-start">
 						<SectionHeader
-							tag={t("home:whyChooseUs.tag") as string}
-							headline={t("home:whyChooseUs.headline") as string}
-							description={t("home:whyChooseUs.description") as string}
+							tag={t("common:whyChooseUs.tag") as string}
+							headline={t("common:whyChooseUs.headline") as string}
+							description={t("common:whyChooseUs.description") as string}
 						/>
-						{/* <div className="mt-10 inline-flex items-center gap-4">
-							<span className="h-[1px] w-12 bg-primary/60" />
-							<span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-on-surface/40">
-								{String(1).padStart(2, "0")} -{" "}
-								{String(Array.isArray(items) ? items.length : 0).padStart(2, "0")}
-							</span>
-						</div> */}
 					</FadeUp>
 
 					{/* Editorial list */}
-					<div className="lg:col-span-8 rounded-c pale-panel hairline card-shadow py-8">
+					<div className="lg:col-span-8 rounded-c bg-surface hairline card-shadow py-8">
 						{Array.isArray(items) &&
 							items.map((item, index) => (
 								<FadeUp key={index} delay={index * 0.05}>

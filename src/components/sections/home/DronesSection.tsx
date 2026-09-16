@@ -16,8 +16,8 @@ interface DroneItem {
 }
 
 export function DronesSection() {
-	const { t } = useTranslation(["home"]);
-	const items = t("home:drones.items", { returnObjects: true }) as unknown as DroneItem[];
+	const { t } = useTranslation(["common"]);
+	const items = t("common:drones.items", { returnObjects: true }) as unknown as DroneItem[];
 
 	return (
 		<section id="drones" className="py-24 sm:py-28 relative overflow-hidden">
@@ -32,9 +32,9 @@ export function DronesSection() {
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader
-					tag={t("home:drones.tag") as string}
-					headline={t("home:drones.headline") as string}
-					description={t("home:drones.description") as string}
+					tag={t("common:drones.tag") as string}
+					headline={t("common:drones.headline") as string}
+					description={t("common:drones.description") as string}
 				/>
 
 				<div className="mt-14 sm:mt-20 grid grid-cols-1 md:grid-cols-2 gap-7 sm:gap-8">
@@ -73,7 +73,7 @@ export function DronesSection() {
 												) : (
 													<span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
 														{
-															t("home:drones.label", {
+															t("common:drones.label", {
 																defaultValue: "Aerial capability",
 															}) as string
 														}

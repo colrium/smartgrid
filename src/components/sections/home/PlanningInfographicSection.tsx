@@ -22,8 +22,8 @@ interface PlanningContent {
 }
 
 export function PlanningInfographicSection(): ReactElement | null {
-	const { t } = useTranslation(["home"]);
-	const section = t("home:planningInfographic", {
+	const { t } = useTranslation(["home", "common"]);
+	const section = t("common:planningInfographic", {
 		returnObjects: true,
 	}) as unknown as PlanningContent;
 
@@ -88,7 +88,7 @@ export function PlanningInfographicSection(): ReactElement | null {
 							<p className="inline-block max-w-3xl text-center  px-8 py-6 text-base g text-on-surface/80 leading-relaxed font-medium">
 								<Trans
 									// @ts-expect-error
-									i18nKey={["home:planningInfographic.closingStatement"]}
+									i18nKey={["common:planningInfographic.closingStatement"]}
 									defaults=""
 									components={{
 										accent: <span className="text-accent" />,

@@ -16,8 +16,8 @@ interface AboutCardLink {
     description: string;
 }
 export const AboutSection: React.FC = () => {
-    const { t } = useTranslation(["home"]);
-    const cards = t("home:about.cards", {
+    const { t } = useTranslation(["common"]);
+    const cards = t("common:about.cards", {
 		returnObjects: true,
 	}) as unknown as AboutCardLink[];
 	return (
@@ -28,32 +28,32 @@ export const AboutSection: React.FC = () => {
 
 					<div className="lg:col-span-6 space-y-6">
 						<FadeUp>
-							<SectionTag className="text-primary">{t("home:about.tag")}</SectionTag>
+							<SectionTag className="text-primary">{t("common:about.tag")}</SectionTag>
 
 							<h2 className="text-3xl sm:text-5xl font-light tracking-tight text-ink leading-tight">
-								{t("home:about.headline")}
+								{t("common:about.headline")}
 							</h2>
 
 							<p className="text-on-surface/60 leading-relaxed text-base sm:text-lg">
-								{t("home:about.description")}
+								{t("common:about.description")}
 							</p>
 						</FadeUp>
 						<FadeUp>
 							<h3 className="text-xl sm:text-2xl font-medium tracking-tight text-primary leading-tight pt-2">
-								{t("home:about.whoWeAre.title")}
+								{t("common:about.whoWeAre.title")}
 							</h3>
 
 							<p className="text-on-surface/60 leading-relaxed text-sm sm:text-base">
-								{t("home:about.whoWeAre.description")}
+								{t("common:about.whoWeAre.description")}
 							</p>
 						</FadeUp>
 						<FadeUp>
 							<h3 className="text-xl sm:text-2xl font-medium tracking-tight text-primary leading-tight pt-2">
-								{t("home:about.mission.title")}
+								{t("common:about.mission.title")}
 							</h3>
 
 							<p className="text-on-surface/60 leading-relaxed text-sm sm:text-base">
-								{t("home:about.mission.description")}
+								{t("common:about.mission.description")}
 							</p>
 						</FadeUp>
 
@@ -103,8 +103,8 @@ export const AboutSection: React.FC = () => {
 									<div className="relative aspect-4/5 rounded-xl overflow-hidden bg-slate-900 group">
 										{/* Abstract Representation of Pointcloud / Surveying Mesh */}
 										<Image
-											src={t("home:about.featureImg.url")}
-											alt={t("home:about.featureImg.alt")}
+											src={t("common:about.featureImg.url")}
+											alt={t("common:about.featureImg.alt")}
 											fill
 											sizes="(min-width: 1024px) 384px, min(100vw, 448px)"
 											className="object-cover object-top transition-transform duration-700 group-hover:scale-105 opacity-80"
@@ -113,13 +113,13 @@ export const AboutSection: React.FC = () => {
 
 										<div className="absolute bottom-6 left-6 right-6 text-surface">
 											<span className="text-xs font-mono text-primary-200 uppercase font-bold tracking-wider">
-												{t("home:about.featureImg.caption")}
+												{t("common:about.featureImg.caption")}
 											</span>
 											<h3 className="text-xl font-light mt-1">
-												{t("home:about.featureImg.title")}
+												{t("common:about.featureImg.title")}
 											</h3>
 											<p className="text-xs text-surface/70 mt-2 leading-relaxed">
-												{t("home:about.featureImg.description")}
+												{t("common:about.featureImg.description")}
 											</p>
 										</div>
 									</div>

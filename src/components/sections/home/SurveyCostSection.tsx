@@ -48,8 +48,8 @@ const formatKES = (value: number): string =>
 	`KES ${Math.round(value).toLocaleString("en-US")}`;
 
 export function SurveyCostSection(): ReactElement | null {
-	const { t } = useTranslation(["home"]);
-	const content = t("home:surveyCostInKenya", {
+	const { t } = useTranslation(["common", "home"]);
+	const content = t("common:surveyCostInKenya", {
 		returnObjects: true,
 	}) as unknown as SurveyCostContent;
 

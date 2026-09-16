@@ -14,8 +14,8 @@ interface MetricItem {
 const METRIC_ICONS = ["globe-model", "briefcase-check", "clock-outline", "thumb-up"];
 
 export function MetricsSection() {
-	const { t } = useTranslation(["home"]);
-	const items = t("home:metrics.items", { returnObjects: true }) as unknown as MetricItem[];
+	const { t } = useTranslation(["home", "common"]);
+	const items = t("common:metrics.items", { returnObjects: true }) as unknown as MetricItem[];
 
 	const formatValue = (name: string) => (value: number) =>
 		name.includes("%") ? `${Math.round(value)}%` : `${Math.round(value)}`;
@@ -49,12 +49,12 @@ export function MetricsSection() {
 
 						<div className="relative flex flex-col items-center gap-4 mb-12 sm:mb-16">
 							<SectionTag className="text-surface">
-								{t("home:metrics.tag") as string}
+								{t("common:metrics.tag") as string}
 							</SectionTag>
 							<p
 								className={`text-base sm:text-lg leading-relaxed max-w-2xl mx-auto text-surface/60 text-center`}
 							>
-								{t("home:metrics.description") as string}
+								{t("common:metrics.description") as string}
 							</p>
 						</div>
 

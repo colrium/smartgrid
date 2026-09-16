@@ -12,8 +12,8 @@ interface CertificationItem {
 }
 
 export function CertificationsSection() {
-	const { t } = useTranslation(["home"]);
-	const items = t("home:certifications.items", {
+	const { t } = useTranslation(["common"]);
+	const items = t("common:certifications.items", {
 		returnObjects: true,
 	}) as unknown as CertificationItem[];
 
@@ -26,11 +26,11 @@ export function CertificationsSection() {
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
 					<div className="mb-12 flex flex-col items-center gap-4 text-center">
-						<SectionTag>{t("home:certifications.tag") as string}</SectionTag>
+						<SectionTag>{t("common:certifications.tag") as string}</SectionTag>
 						<p
 							className={`text-base sm:text-lg leading-relaxed max-w-2xl mx-auto text-on-surface/60`}
 						>
-							{t("home:certifications.description") as string}
+							{t("common:certifications.description") as string}
 						</p>
 					</div>
 				</FadeUp>

@@ -12,8 +12,8 @@ interface TrusteeItem {
 }
 
 export function TrusteesSection() {
-	const { t } = useTranslation(["home"]);
-	const items = t("home:trustees.items", {
+	const { t } = useTranslation(["common"]);
+	const items = t("common:trustees.items", {
 		returnObjects: true,
 	}) as unknown as TrusteeItem[];
 
@@ -25,11 +25,11 @@ export function TrusteesSection() {
 				<FadeUp>
 					<div className="mb-12 flex flex-col items-center gap-4 text-center">
 						<SectionTag>
-							{(t("home:trustees.tag", { defaultValue: "" }) as string) ||
+							{(t("common:trustees.tag", { defaultValue: "" }) as string) ||
 								"Trusted Partners"}
 						</SectionTag>
 						<p className="text-3xl sm:text-4xl font-light tracking-tight text-ink leading-tight">
-							{t("home:trustees.headline") as string}
+							{t("common:trustees.headline") as string}
 						</p>
 					</div>
 				</FadeUp>

@@ -64,8 +64,8 @@ interface CoverageAreaContent {
 }
 
 export function CoverageAreaSection(): ReactElement | null {
-	const { t } = useTranslation(["home"]);
-	const content = t("home:coverageArea", {
+	const { t } = useTranslation(["common"]);
+	const content = t("common:coverageArea", {
 		returnObjects: true,
 	}) as unknown as CoverageAreaContent;
 

@@ -16,8 +16,8 @@ interface IndustriesContent {
 }
 
 export function IndustriesWeServeSection(): ReactElement | null {
-	const { t } = useTranslation(["home"]);
-	const section = t("home:industriesWeServe", {
+	const { t } = useTranslation(["common"]);
+	const section = t("common:industriesWeServe", {
 		returnObjects: true,
 	}) as unknown as IndustriesContent;
 	const items: CardItem[] = Array.isArray(section?.items) ? section.items : [];

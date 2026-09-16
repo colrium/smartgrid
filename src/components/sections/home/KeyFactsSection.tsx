@@ -21,9 +21,9 @@ const FACT_ICONS = [
 ];
 
 export function KeyFactsSection(): ReactElement | null {
-	const { t } = useTranslation(["home"]);
-	const items = t("home:keyFacts.items", { returnObjects: true }) as unknown as KeyFactItem[];
-	const headline = t("home:keyFacts.headline", { defaultValue: "" }) as string;
+	const { t } = useTranslation(["home", "common"]);
+	const items = t("common:keyFacts.items", { returnObjects: true }) as unknown as KeyFactItem[];
+	const headline = t("common:keyFacts.headline", { defaultValue: "" }) as string;
 
 	if (!Array.isArray(items) || items.length === 0) return null;
 
@@ -48,14 +48,14 @@ export function KeyFactsSection(): ReactElement | null {
 						</span>
 
 						<div className="relative px-4 pt-12 sm:pt-14 flex flex-col items-center gap-4 text-center">
-							<SectionTag>{t("home:keyFacts.tag") as string}</SectionTag>
+							<SectionTag>{t("common:keyFacts.tag") as string}</SectionTag>
 							{headline && (
 								<h2 className="font-light tracking-tight leading-[1.08] text-3xl sm:text-4xl text-ink">
 									{headline}
 								</h2>
 							)}
 							<p className="text-base sm:text-lg leading-relaxed max-w-2xl mx-auto text-on-surface/60">
-								{t("home:keyFacts.description") as string}
+								{t("common:keyFacts.description") as string}
 							</p>
 						</div>
 

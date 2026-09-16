@@ -22,8 +22,8 @@ interface FaqContent {
 }
 
 export function FaqSection(): ReactElement | null {
-	const { t } = useTranslation(["home"]);
-	const content = t("home:faq", {
+	const { t } = useTranslation(["common"]);
+	const content = t("common:faq", {
 		returnObjects: true,
 	}) as unknown as FaqContent;
 

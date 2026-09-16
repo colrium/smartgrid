@@ -14,8 +14,8 @@ interface InstrumentItem {
 }
 
 export function SurveyingInstrumentsSection() {
-	const { t } = useTranslation(["home"]);
-	const items = t("home:surveyingInstruments.items", {
+	const { t } = useTranslation(["common"]);
+	const items = t("common:surveyingInstruments.items", {
 		returnObjects: true,
 	}) as unknown as InstrumentItem[];
 
@@ -32,9 +32,9 @@ export function SurveyingInstrumentsSection() {
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader
-					tag={t("home:surveyingInstruments.tag") as string}
-					headline={t("home:surveyingInstruments.headline") as string}
-					description={t("home:surveyingInstruments.description") as string}
+					tag={t("common:surveyingInstruments.tag") as string}
+					headline={t("common:surveyingInstruments.headline") as string}
+					description={t("common:surveyingInstruments.description") as string}
 				/>
 
 				<div className="mt-14 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
