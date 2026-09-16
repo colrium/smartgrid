@@ -1790,6 +1790,138 @@ const PAGES = {
 			},
 		],
 	},
+	// M7 batch 13a: solar-panel-drone-surveys. Two sections migrate in page
+	// order — `hero` (shared Hero, single pill) + `cta` (ctaBand centred;
+	// wrapper hardcodes primary `icon: "arrow-right"` + `iconPosition: "end"`,
+	// stored as shared literals — content carries label/href only — with
+	// `iconPosition` collapsing to the solid-pill default). Tails stay legacy:
+	// WhatWeDoSection (`card.iconShape: "xl"`, outside the contract),
+	// DroneIntegrationProcessSection (`indexed` numbering).
+	"solar-panel-drone-surveys": {
+		namespace: "aerial-drones/solar-panel-drone-surveys",
+		title: "Solar Panel Drone Surveys",
+		skipped: ["whatWeDo", "droneIntegrationProcess"],
+		sections: [
+			{
+				discriminant: "hero",
+				from: "hero",
+				// Legacy: HeroSection → <Hero data={t(hero)} /> (default
+				// bottom layout).
+				build(en, sw, where) {
+					return {
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						title: { en: reqText(en.title, `${where}.title.en`), sw: reqText(sw.title, `${where}.title.sw`) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						image: sharedValue(en, sw, "image", where) ?? "",
+						layout: sharedValue(en, sw, "layout", where) ?? "bottom",
+						frame: sharedValue(en, sw, "frame", where) ?? false,
+						scrollCue: sharedValue(en, sw, "scrollCue", where) ?? false,
+						cueLabel: emptyPair(),
+						footnoteItems: [],
+						ctaPrimary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+							iconPosition: sharedValue(en.ctaPrimary, sw.ctaPrimary, "iconPosition", where) ?? "end",
+							trailingArrow: (() => {
+								const arrow = sharedValue(en.ctaPrimary, sw.ctaPrimary, "trailingArrow", where);
+								return arrow === true ? "show" : arrow === false ? "hide" : "auto";
+							})(),
+						},
+						ctaSecondary: { label: emptyPair(), href: "", icon: "" },
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "ctaBand",
+				from: "cta",
+				// Legacy: CtaSection → <CtaBand tag headline description
+				// primary /> (layout/variant/decor unset =
+				// centered/panel/glow; `className` excluded). Primary icon +
+				// iconPosition are wrapper hardcodes, stored as shared
+				// literals (content carries label/href only).
+				build(en, sw, where) {
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						primary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: "arrow-right",
+						},
+						secondary: { label: emptyPair(), href: "", icon: "" },
+						layout: "centered",
+						variant: "panel",
+						decor: "glow",
+						watermark: "",
+						images: [],
+						shimmer: false,
+						hairline: false,
+						id: "",
+					};
+				},
+			},
+		],
+	},
+	// M7 batch 13b: landfill-quarry-drone-surveys. Three sections migrate in
+	// page order — `hero` (shared Hero, single pill) + `quarryServices`/
+	// `maximizeProductivity` (introTexts default/surface). Tails stay legacy:
+	// QuarryServicesItemsSection (`card.iconShape: "xl"` + roomy density —
+	// iconShape outside the contract), WhatWeOfferSection (`fallbackIcons`).
+	"landfill-quarry-drone-surveys": {
+		namespace: "aerial-drones/landfill-quarry-drone-surveys",
+		title: "Landfill Quarry Drone Surveys",
+		skipped: ["quarryServicesItems", "whatWeOffer"],
+		sections: [
+			{
+				discriminant: "hero",
+				from: "hero",
+				// Legacy: HeroSection → <Hero data={t(hero)} /> (default
+				// bottom layout).
+				build(en, sw, where) {
+					return {
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						title: { en: reqText(en.title, `${where}.title.en`), sw: reqText(sw.title, `${where}.title.sw`) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						image: sharedValue(en, sw, "image", where) ?? "",
+						layout: sharedValue(en, sw, "layout", where) ?? "bottom",
+						frame: sharedValue(en, sw, "frame", where) ?? false,
+						scrollCue: sharedValue(en, sw, "scrollCue", where) ?? false,
+						cueLabel: emptyPair(),
+						footnoteItems: [],
+						ctaPrimary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+							iconPosition: sharedValue(en.ctaPrimary, sw.ctaPrimary, "iconPosition", where) ?? "end",
+							trailingArrow: (() => {
+								const arrow = sharedValue(en.ctaPrimary, sw.ctaPrimary, "trailingArrow", where);
+								return arrow === true ? "show" : arrow === false ? "hide" : "auto";
+							})(),
+						},
+						ctaSecondary: { label: emptyPair(), href: "", icon: "" },
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "introText",
+				from: "quarryServices",
+				// Legacy: QuarryServicesSection → <TextSection /> (tone
+				// default, align/split unset).
+				build: introTextBuild({ tone: "default", align: "left", split: false }),
+			},
+			{
+				discriminant: "introText",
+				from: "maximizeProductivity",
+				// Legacy: MaximizeProductivitySection → <TextSection
+				// tone="surface" />.
+				build: introTextBuild({ tone: "surface", align: "left", split: false }),
+			},
+		],
+	},
 };
 
 function loadNamespace(locale, namespace) {

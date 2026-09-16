@@ -1,0 +1,110 @@
+{
+	"slug": "Landfill Quarry Drone Surveys",
+	"title": "Landfill Quarry Drone Surveys (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "hero",
+			"value": {
+				"headline": {
+					"en": "Survey Smarter, Build Stronger",
+					"sw": "Upime Kwa Busara, Jenga Kwa Nguvu Zaidi"
+				},
+				"title": {
+					"en": "LANDFILL & QUARRY DRONE SURVEYS",
+					"sw": "UCHUNGUZI WA NDEGE WA MASHIMO YA TAKA NA MACHIMBO"
+				},
+				"description": {
+					"en": "Leading Africa's Land and Aerial Surveying Revolution. Unlock faster, more cost-effective, and safer mapping, measurement, and monitoring of 1000+ Acres at a time.",
+					"sw": "Kuongoza Mapinduzi ya Upimaji wa Ardhi na Angani barani Afrika. Fungua uchoraji ramani, kipimo, na ufuatiliaji wa haraka, wa gharama nafuu, na salama zaidi wa zaidi ya ekari 1000 kwa wakati mmoja."
+				},
+				"image": "/media/aerial-drones/landfill-quarry-drone-surveys/01.jpg",
+				"layout": "bottom",
+				"frame": false,
+				"scrollCue": false,
+				"cueLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"footnoteItems": [],
+				"ctaPrimary": {
+					"label": {
+						"en": "Get Your Free Consultation",
+						"sw": "Pata Ushauri Wako wa Bure"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Landfill and Quarry Drone Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Landfill and Quarry Drone Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "gift",
+					"iconPosition": "end",
+					"trailingArrow": "auto"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "introText",
+			"value": {
+				"tag": {
+					"en": "Site Intelligence",
+					"sw": "Akili ya Tovuti"
+				},
+				"headline": {
+					"en": "QUARRY SERVICES",
+					"sw": "HUDUMA ZA MACHIMBO"
+				},
+				"description": {
+					"en": "Unlock Precision. Boost Profitability. Our drone and land surveys for quarries deliver the data you need—faster, safer, and more accurately than ever before.",
+					"sw": "Fungua Usahihi. Kuza Faida. Uchunguzi wetu wa ndege na ardhi kwa machimbo hutoa data unayohitaji—haraka, salama, na sahihi zaidi kuliko hapo awali."
+				},
+				"tone": "default",
+				"align": "left",
+				"split": false,
+				"cta": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "introText",
+			"value": {
+				"tag": {
+					"en": "Faster, Smarter",
+					"sw": "Haraka, Busara Zaidi"
+				},
+				"headline": {
+					"en": "Maximize Productivity. Minimize Guesswork.",
+					"sw": "Kuongeza Tija. Kupunguza Bahati Nasibu."
+				},
+				"description": {
+					"en": "Leverage SmartGrid's cutting-edge drone volume surveys to make faster, smarter decisions on site. Let data lead the way to profitability.",
+					"sw": "Tumia uchunguzi wa kiasi wa kisasa wa ndege za SmartGrid kufanya maamuzi ya haraka na ya busara zaidi tovutini. Acha data iongoze njia ya faida."
+				},
+				"tone": "surface",
+				"align": "left",
+				"split": false,
+				"cta": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		}
+	]
+}
