@@ -46,6 +46,9 @@ export function GisImportanceSection(): ReactElement | null {
 			columns={4}
 			tone="surface"
 			fallbackIcons={["map-marker-radius"]}
+			classes={{
+				leadGrid: "sm:grid-cols-1!"
+			}}
 		/>
 	);
 }

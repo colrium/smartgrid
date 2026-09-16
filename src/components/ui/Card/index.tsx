@@ -214,17 +214,17 @@ export function Card(props: CardProps): ReactElement {
 				</ul>
 			) : null}
 			{subItems.length > 0 ? (
-				<ul className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 border-t border-ink/10 pt-5">
+				<ul className="grid grid-cols-1 gap-3.5 border-t border-ink/10 pt-5">
 					{subItems.map((child, childIndex) => (
 						<li
 							key={childIndex}
-							className="flex flex-col gap-1.5 rounded-cmd bg-primary-50/40 p-4"
+							className="flex flex-col gap-1.5 rounded-cmd bg-primary-50/40 py-3 px-4"
 						>
-							<span className="flex items-start gap-2 text-[13px] font-semibold text-ink leading-snug">
-								<span
-									className="mdi mdi-subdirectory-arrow-right text-primary text-base shrink-0 mt-0.5"
+							<span className="flex items-start gap-2 text-sm font-semibold text-ink leading-snug">
+								{/* <span
+									className="mdi mdi-subdirectory-arrow-right  text-base shrink-0 mt-0.5"
 									aria-hidden
-								/>
+								/> */}
 								{child.title}
 							</span>
 							{child.description ? (
