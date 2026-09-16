@@ -1,68 +1,14 @@
 "use client";
 
+import type { ReactElement } from "react";
 import { useTranslation } from "@/hooks";
-import { SectionTag } from "@/components/SectionTag";
-import { FadeUp } from "@/components/animations/Fade";
-import { ParallaxDecor, Blob } from "../shared/decor";
+import { Certifications, type CertificationsProps } from "@/components/sections/shared/Certifications";
 
-interface CertificationItem {
-	icon?: string | null;
-	name: string;
-	label: string;
-}
-
-export function CertificationsSection() {
+export function CertificationsSection(): ReactElement | null {
 	const { t } = useTranslation(["common"]);
-	const items = t("common:certifications.items", {
-		returnObjects: true,
-	}) as unknown as CertificationItem[];
+	const data = t("common:certifications", { returnObjects: true }) as unknown as CertificationsProps["data"];
 
-	return (
-		<section id="certifications" className="py-24 sm:py-28 relative overflow-hidden">
-			<ParallaxDecor speed={0.05} className="absolute top-16 left-1/3 z-0">
-				<Blob className="w-64 h-64 bg-primary-200/50" opacity={0.5} />
-			</ParallaxDecor>
-
-			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-				<FadeUp>
-					<div className="mb-12 flex flex-col items-center gap-4 text-center">
-						<SectionTag>{t("common:certifications.tag") as string}</SectionTag>
-						<p
-							className={`text-base sm:text-lg leading-relaxed max-w-2xl mx-auto text-on-surface/60`}
-						>
-							{t("common:certifications.description") as string}
-						</p>
-					</div>
-				</FadeUp>
-
-				<div className="grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-					{Array.isArray(items) &&
-						items.map((item, index) => (
-							<FadeUp key={index} delay={(index % 4) * 0.08}>
-								<div className="group flex flex-col h-full min-h-56 rounded-c hairline bg-surface card-shadow p-6 sm:p-7 transition-colors duration-250 hover:border-primary ">
-									<div className="flex items-center justify-between">
-									
-										<span className="text-[11px] font-semibold tabular-nums tracking-[0.14em] text-on-surface/35">
-											{String(index + 1).padStart(2, "0")}
-										</span>
-									</div>
-
-									<div className="my-5 border-t border-ink/10" />
-
-									<span className="font-light leading-none tracking-tight text-ink/80 text-6xl select-none">
-										{item.name}
-									</span>
-
-									<p className="mt-auto pt-5 text-[13px] leading-snug text-on-surface/60">
-										{item.label}
-									</p>
-								</div>
-							</FadeUp>
-						))}
-				</div>
-			</div>
-		</section>
-	);
+	return <Certifications data={data} id="certifications" />;
 }
 
 export default CertificationsSection;

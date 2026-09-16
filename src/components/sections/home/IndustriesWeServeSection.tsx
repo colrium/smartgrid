@@ -1,38 +1,14 @@
-import { useTranslation } from "@/hooks";
-import { CardGrid, type CardItem } from "@/components/sections/shared";
+"use client";
+
 import type { ReactElement } from "react";
-
-interface IndustryItem {
-	icon?: string | null;
-	label: string;
-	description?: string;
-}
-
-interface IndustriesContent {
-	tag?: string | null;
-	headline: string;
-	description?: string;
-	items: IndustryItem[];
-}
+import { useTranslation } from "@/hooks";
+import { IndustriesWeServe, type IndustriesWeServeProps } from "@/components/sections/shared/IndustriesWeServe";
 
 export function IndustriesWeServeSection(): ReactElement | null {
 	const { t } = useTranslation(["common"]);
-	const section = t("common:industriesWeServe", {
-		returnObjects: true,
-	}) as unknown as IndustriesContent;
-	const items: CardItem[] = Array.isArray(section?.items) ? section.items : [];
+	const data = t("common:industriesWeServe", { returnObjects: true }) as unknown as IndustriesWeServeProps["data"];
 
-	if (items.length === 0) return null;
-
-	return (
-		<CardGrid
-			tag={section.tag}
-			headline={section.headline}
-			description={section.description}
-			items={items}
-			columns={3}
-		/>
-	);
+	return <IndustriesWeServe data={data} id="industries-we-serve" />;
 }
 
 export default IndustriesWeServeSection;
