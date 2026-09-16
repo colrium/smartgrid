@@ -1,0 +1,329 @@
+{
+	"slug": "As-Built Surveys",
+	"title": "As-Built Surveys (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "hero",
+			"value": {
+				"headline": {
+					"en": "AS-BUILT SURVEYS",
+					"sw": "UCHUNGUZI WA AS-BUILT"
+				},
+				"title": {
+					"en": "As-Built Surveys",
+					"sw": "Uchunguzi wa As-Built"
+				},
+				"description": {
+					"en": "Leading Africa's Land and Aerial Surveying Revolution. Capture the true, current state of built environments by comparing actual field conditions with original designs.",
+					"sw": "Kuongoza Mapinduzi ya Upimaji wa Ardhi na Angani barani Afrika. Kamata hali halisi, ya sasa ya mazingira yaliyojengwa kwa kulinganisha hali halisi ya shambani na mibuni asilia."
+				},
+				"image": "/media/civil/as-built-surveys/01.jpg",
+				"layout": "bottom",
+				"frame": false,
+				"scrollCue": false,
+				"cueLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"footnoteItems": [],
+				"ctaPrimary": {
+					"label": {
+						"en": "Get Your Free Consultation",
+						"sw": "Pata Ushauri Wako wa Bure"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Civil As-Built Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Civil As-Built Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "",
+					"iconPosition": "end",
+					"trailingArrow": "auto"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "introText",
+			"value": {
+				"tag": {
+					"en": "Precision Documentation",
+					"sw": "Nyaraka za Usahihi"
+				},
+				"headline": {
+					"en": "What are As-built surveys?",
+					"sw": "Uchunguzi wa as-built ni nini?"
+				},
+				"description": {
+					"en": "As-built surveys capture the true, current state of built environments by comparing actual field conditions with original designs. Using drones, LiDAR, and photogrammetry, we document infrastructure with centimeter-level accuracy, from the air—faster and safer than traditional methods.",
+					"sw": "Uchunguzi wa as-built hukamata hali halisi, ya sasa ya mazingira yaliyojengwa kwa kulinganisha hali halisi ya shambani na mibuni asilia. Kwa kutumia ndege zisizo na rubani, LiDAR, na photogrammetry, tunaandika miundombinu kwa usahihi wa kiwango cha sentimita, kutoka angani—haraka na salama kuliko mbinu za kawaida."
+				},
+				"tone": "default",
+				"align": "left",
+				"split": false,
+				"cta": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "cardGrid",
+			"value": {
+				"tag": {
+					"en": "Sectors Served",
+					"sw": "Sekta Zinazohudumiwa"
+				},
+				"headline": {
+					"en": "Key Industries",
+					"sw": "Viwanda Muhimu"
+				},
+				"subheading": {
+					"en": "",
+					"sw": ""
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"icon": "road-variant",
+						"title": {
+							"en": "Infrastructure & Transportation",
+							"sw": "Miundombinu na Usafiri"
+						},
+						"description": {
+							"en": "Highways, railways, and airports.",
+							"sw": "Barabara kuu, reli, na viwanja vya ndege."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "flash",
+						"title": {
+							"en": "Energy & Utilities",
+							"sw": "Nishati na Huduma"
+						},
+						"description": {
+							"en": "Power lines, substations, and solar farms.",
+							"sw": "Nyaya za umeme, vituo vya usambazaji, na mashamba ya sola."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "city",
+						"title": {
+							"en": "Commercial & Residential Development",
+							"sw": "Maendeleo ya Biashara na Makazi"
+						},
+						"description": {
+							"en": "Building and housing projects.",
+							"sw": "Miradi ya majengo na makazi."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "gas-station",
+						"title": {
+							"en": "Oil & Gas Facilities",
+							"sw": "Vifaa vya Mafuta na Gesi"
+						},
+						"description": {
+							"en": "Refineries, pipelines, and storage depots.",
+							"sw": "Viwekeo, mabomba, na maghala ya kuhifadhia."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "office-building",
+						"title": {
+							"en": "Public Works & Civil Engineering",
+							"sw": "Kazi za Umma na Uhandisi wa Kiraia"
+						},
+						"description": {
+							"en": "Bridges, dams, and municipal projects.",
+							"sw": "Madaraja, mabwawa, na miradi ya manispaa."
+						},
+						"image": "",
+						"href": ""
+					}
+				],
+				"columns": "3",
+				"align": "center",
+				"tone": "default",
+				"headerRow": false,
+				"cardDensity": "comfortable",
+				"cardIconSize": "md",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "introText",
+			"value": {
+				"tag": {
+					"en": "Lead with Data",
+					"sw": "Ongoza kwa Data"
+				},
+				"headline": {
+					"en": "Maximize Productivity. Minimize Guesswork.",
+					"sw": "Kuongeza Tija. Kupunguza Bahati Nasibu."
+				},
+				"description": {
+					"en": "At SmartGrid Surveying, we use UAVs equipped with high-precision sensors to collect 3D data, orthomosaics, and elevation models. This enables a complete digital replica of the site—ideal for validating engineering tolerances, assessing deviations, and facilitating smarter decision-making. Let data lead the way to profitability.",
+					"sw": "Katika SmartGrid Surveying, tunatumia UAV zilizo na vitambuzi vya usahihi wa hali ya juu kukusanya data ya 3D, orthomosaic, na mifano ya mwinuko. Hii inawezesha nakala kamili ya dijitali ya tovuti—bora kwa kuthibitisha uvumilivu wa uhandisi, kutathmini mkengeuko, na kuwezesha ufanyaji maamuzi bora. Acha data iongoze njia ya faida."
+				},
+				"tone": "surface",
+				"align": "left",
+				"split": false,
+				"cta": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "cardGrid",
+			"value": {
+				"tag": {
+					"en": "Key Applications",
+					"sw": "Matumizi Muhimu"
+				},
+				"headline": {
+					"en": "Our Applications",
+					"sw": "Matumizi Yetu"
+				},
+				"subheading": {
+					"en": "",
+					"sw": ""
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"icon": "chart-timeline",
+						"title": {
+							"en": "Construction Progress Verification",
+							"sw": "Uthibitishaji wa Maendeleo ya Ujenzi"
+						},
+						"description": {
+							"en": "Verify that construction aligns with design specifications and identify deviations early.",
+							"sw": "Thibitisha kuwa ujenzi unalingana na vipimo vya kubuni na utambue mkengeuko mapema."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "file-document",
+						"title": {
+							"en": "Post-Construction Documentation",
+							"sw": "Nyaraka za Baada ya Ujenzi"
+						},
+						"description": {
+							"en": "Create comprehensive records of completed structures for operations and maintenance.",
+							"sw": "Unda rekodi kamili za miundo iliyokamilika kwa uendeshaji na matengenezo."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "clipboard-search",
+						"title": {
+							"en": "Structural and Utility Audits",
+							"sw": "Ukaguzi wa Kimuundo na wa Huduma"
+						},
+						"description": {
+							"en": "Conduct detailed inspections of existing structures and underground utilities.",
+							"sw": "Fanya ukaguzi wa kina wa miundo iliyopo na huduma za chini ya ardhi."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "content-duplicate",
+						"title": {
+							"en": "Digital Twin Creation",
+							"sw": "Uundaji wa Digital Twin"
+						},
+						"description": {
+							"en": "Build precise digital replicas of physical assets for simulation and analysis.",
+							"sw": "Jenga nakala sahihi za dijitali za mali halisi kwa uigaji na uchambuzi."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "cube-scan",
+						"title": {
+							"en": "BIM Integration & Model Validation",
+							"sw": "Ujumuishaji wa BIM na Uthibitishaji wa Mifano"
+						},
+						"description": {
+							"en": "Validate and update Building Information Models with as-built data.",
+							"sw": "Thibitisha na sasisha Mifano ya Taarifa za Ujenzi kwa data ya as-built."
+						},
+						"image": "",
+						"href": ""
+					}
+				],
+				"columns": "3",
+				"align": "center",
+				"tone": "surface",
+				"headerRow": false,
+				"cardDensity": "comfortable",
+				"cardIconSize": "md",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "introText",
+			"value": {
+				"tag": {
+					"en": "Actionable Insights",
+					"sw": "Maarifa Yanayoweza Kutekelezwa"
+				},
+				"headline": {
+					"en": "Smart Insights, Delivered Digitally!",
+					"sw": "Maarifa Mahiri, Yanayowasilishwa Dijitali!"
+				},
+				"description": {
+					"en": "Pairing drone data with surveying techniques and GIS processing, we convert raw aerial data into actionable insights. Visualize deviations, flag inconsistencies, and bring clarity to your construction workflows—all in one seamless platform.",
+					"sw": "Kwa kuoanisha data ya ndege zisizo na rubani na mbinu za upimaji na usindikaji wa GIS, tunabadilisha data mbichi ya angani kuwa maarifa yanayoweza kutekelezwa. Ona mkengeuko, weka alama za kutofautiana, na ulete uwazi kwenye mtiririko wako wa kazi wa ujenzi—yote kwenye jukwaa moja lisilo na mshono."
+				},
+				"tone": "default",
+				"align": "left",
+				"split": false,
+				"cta": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		}
+	]
+}

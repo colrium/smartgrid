@@ -1,0 +1,189 @@
+{
+	"slug": "Highway Surveys",
+	"title": "Highway Surveys (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "hero",
+			"value": {
+				"headline": {
+					"en": "HIGHWAY SURVEYS",
+					"sw": "UCHUNGUZI WA BARABARA KUU"
+				},
+				"title": {
+					"en": "Highway Surveys Solutions",
+					"sw": "Suluhisho za Uchunguzi wa Barabara Kuu"
+				},
+				"description": {
+					"en": "Leading Africa's Land and Aerial Surveying Revolution. Highway surveys play a critical role in the planning, design, construction, and operation of road infrastructure.",
+					"sw": "Kuongoza Mapinduzi ya Upimaji wa Ardhi na Angani barani Afrika. Uchunguzi wa barabara kuu una jukumu muhimu katika upangaji, kubuni, ujenzi, na uendeshaji wa miundombinu ya barabara."
+				},
+				"image": "/media/civil/highway-surveys/01.jpg",
+				"layout": "bottom",
+				"frame": false,
+				"scrollCue": false,
+				"cueLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"footnoteItems": [],
+				"ctaPrimary": {
+					"label": {
+						"en": "Get Your Free Consultation",
+						"sw": "Pata Ushauri Wako wa Bure"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Highway Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Highway Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "",
+					"iconPosition": "end",
+					"trailingArrow": "auto"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "introText",
+			"value": {
+				"tag": {
+					"en": "Critical Infrastructure",
+					"sw": "Miundombinu Muhimu"
+				},
+				"headline": {
+					"en": "Overview",
+					"sw": "Muhtasari"
+				},
+				"description": {
+					"en": "Leveraging a mix of aerial imaging, UAV photogrammetry, LiDAR, GNSS, and conventional surveying, engineers can make data-driven decisions that ensure safety, efficiency, and sustainability throughout the lifecycle of a highway project.",
+					"sw": "Kwa kutumia mchanganyiko wa picha za angani, photogrammetry ya UAV, LiDAR, GNSS, na upimaji wa kawaida, wahandisi wanaweza kufanya maamuzi yanayoendeshwa na data yanayohakikisha usalama, ufanisi, na uendelevu katika mzunguko wote wa maisha ya mradi wa barabara kuu."
+				},
+				"tone": "surface",
+				"align": "left",
+				"split": false,
+				"cta": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "cardGrid",
+			"value": {
+				"tag": {
+					"en": "Value Drivers",
+					"sw": "Viendeshaji vya Thamani"
+				},
+				"headline": {
+					"en": "Benefits of Integrated Highway Surveys",
+					"sw": "Faida za Uchunguzi Jumuishi wa Barabara Kuu"
+				},
+				"subheading": {
+					"en": "",
+					"sw": ""
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"icon": "ruler-compass",
+						"title": {
+							"en": "Planning & Design",
+							"sw": "Upangaji na Kubuni"
+						},
+						"description": {
+							"en": "Surveys provide essential data for designing new roads, considering factors like traffic volume, safety, and environmental impact.",
+							"sw": "Uchunguzi hutoa data muhimu kwa kubuni barabara mpya, kuzingatia vipengele kama kiwango cha trafiki, usalama, na athari za mazingira."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "wrench",
+						"title": {
+							"en": "Maintenance",
+							"sw": "Matengenezo"
+						},
+						"description": {
+							"en": "Surveys help identify areas in need of repair, prioritize maintenance, and evaluate the effectiveness of repairs.",
+							"sw": "Uchunguzi husaidia kutambua maeneo yanayohitaji ukarabati, kuweka vipaumbele vya matengenezo, na kutathmini ufanisi wa ukarabati."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "pipe-valve",
+						"title": {
+							"en": "Utility Protection",
+							"sw": "Ulinzi wa Huduma"
+						},
+						"description": {
+							"en": "Identifying and mapping utilities helps avoid damaging them during construction, minimizing disruptions.",
+							"sw": "Kutambua na kuweka ramani za huduma husaidia kuepuka kuziharibu wakati wa ujenzi, kupunguza usumbufu."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "office-building",
+						"title": {
+							"en": "Construction",
+							"sw": "Ujenzi"
+						},
+						"description": {
+							"en": "Construction layout surveys ensure roads are built according to design plans and safety standards.",
+							"sw": "Uchunguzi wa mpangilio wa ujenzi huhakikisha barabara zinajengwa kulingana na mipango ya kubuni na viwango vya usalama."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "shield-check",
+						"title": {
+							"en": "Safety",
+							"sw": "Usalama"
+						},
+						"description": {
+							"en": "Accurate surveys contribute to road safety by ensuring proper alignment, clear sight distances, and appropriate signage.",
+							"sw": "Uchunguzi sahihi huchangia usalama wa barabara kwa kuhakikisha upangaji sahihi, umbali wazi wa mwonekano, na alama sahihi za barabara."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "clipboard-list",
+						"title": {
+							"en": "Assets Management",
+							"sw": "Usimamizi wa Mali"
+						},
+						"description": {
+							"en": "Inventory surveys provide data for managing and maintaining highway infrastructure.",
+							"sw": "Uchunguzi wa hesabu hutoa data kwa kusimamia na kudumisha miundombinu ya barabara kuu."
+						},
+						"image": "",
+						"href": ""
+					}
+				],
+				"columns": "3",
+				"align": "left",
+				"tone": "surface",
+				"headerRow": false,
+				"cardDensity": "comfortable",
+				"cardIconSize": "md",
+				"id": ""
+			}
+		}
+	]
+}

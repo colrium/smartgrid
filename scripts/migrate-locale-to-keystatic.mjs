@@ -1354,6 +1354,141 @@ const PAGES = {
 			},
 		],
 	},
+	// M7 batch 11a: highway-surveys. Three sections migrate in page order —
+	// `hero` (shared Hero, default bottom) + `overview` (introText surface) +
+	// `benefitsOfHighwaySurveys` (cardGrid cols 3 surface). Tails stay legacy:
+	// ServicesSection (`indexed` numbering) + bespoke deliverables explorer.
+	"highway-surveys": {
+		namespace: "civil/highway-surveys",
+		title: "Highway Surveys",
+		skipped: ["services", "highwaySurveyDeliverables"],
+		sections: [
+			{
+				discriminant: "hero",
+				from: "hero",
+				// Legacy: HeroSection → <Hero data={t(hero)} /> (default
+				// bottom layout).
+				build(en, sw, where) {
+					return {
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						title: { en: reqText(en.title, `${where}.title.en`), sw: reqText(sw.title, `${where}.title.sw`) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						image: sharedValue(en, sw, "image", where) ?? "",
+						layout: sharedValue(en, sw, "layout", where) ?? "bottom",
+						frame: sharedValue(en, sw, "frame", where) ?? false,
+						scrollCue: sharedValue(en, sw, "scrollCue", where) ?? false,
+						cueLabel: emptyPair(),
+						footnoteItems: [],
+						ctaPrimary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+							iconPosition: sharedValue(en.ctaPrimary, sw.ctaPrimary, "iconPosition", where) ?? "end",
+							trailingArrow: (() => {
+								const arrow = sharedValue(en.ctaPrimary, sw.ctaPrimary, "trailingArrow", where);
+								return arrow === true ? "show" : arrow === false ? "hide" : "auto";
+							})(),
+						},
+						ctaSecondary: { label: emptyPair(), href: "", icon: "" },
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "introText",
+				from: "overview",
+				// Legacy: OverviewSection → <IntroTextSection tone="surface" />
+				// (align/split unset = left/false).
+				build: introTextBuild({ tone: "surface", align: "left", split: false }),
+			},
+			{
+				discriminant: "cardGrid",
+				from: "benefitsOfHighwaySurveys",
+				// Legacy: BenefitsSection → <CardGrid columns={3}
+				// tone="surface" /> (align/card unset = defaults).
+				build: cardGridBuild({ columns: "3", align: "left", tone: "surface", headerRow: false, cardDensity: "comfortable", cardIconSize: "md" }),
+			},
+		],
+	},
+	// M7 batch 11b: as-built-surveys. Six sections migrate in page order —
+	// `hero` + `whatAreAsBuiltSurveys`/`maxProductivityMinGuesswork`/
+	// `actionableInsights` (introText via shared TextSection) +
+	// `keyIndustries`/`applications` (cardGrids). Tails stay legacy:
+	// AsBuiltSolutionsSection (`indexed` numbering) + bespoke Deliverables
+	// explorer.
+	"as-built-surveys": {
+		namespace: "civil/as-built-surveys",
+		title: "As-Built Surveys",
+		skipped: ["asBuiltSolutions", "deliverables"],
+		sections: [
+			{
+				discriminant: "hero",
+				from: "hero",
+				// Legacy: HeroSection → <Hero data={t(hero)} /> (default
+				// bottom layout).
+				build(en, sw, where) {
+					return {
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						title: { en: reqText(en.title, `${where}.title.en`), sw: reqText(sw.title, `${where}.title.sw`) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						image: sharedValue(en, sw, "image", where) ?? "",
+						layout: sharedValue(en, sw, "layout", where) ?? "bottom",
+						frame: sharedValue(en, sw, "frame", where) ?? false,
+						scrollCue: sharedValue(en, sw, "scrollCue", where) ?? false,
+						cueLabel: emptyPair(),
+						footnoteItems: [],
+						ctaPrimary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+							iconPosition: sharedValue(en.ctaPrimary, sw.ctaPrimary, "iconPosition", where) ?? "end",
+							trailingArrow: (() => {
+								const arrow = sharedValue(en.ctaPrimary, sw.ctaPrimary, "trailingArrow", where);
+								return arrow === true ? "show" : arrow === false ? "hide" : "auto";
+							})(),
+						},
+						ctaSecondary: { label: emptyPair(), href: "", icon: "" },
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "introText",
+				from: "whatAreAsBuiltSurveys",
+				// Legacy: WhatAreAsBuiltSurveysSection → <TextSection /> (tone
+				// default, align/split unset).
+				build: introTextBuild({ tone: "default", align: "left", split: false }),
+			},
+			{
+				discriminant: "cardGrid",
+				from: "keyIndustries",
+				// Legacy: KeyIndustriesSection → <CardGrid columns={3}
+				// align="center" /> (tone/card unset = defaults).
+				build: cardGridBuild({ columns: "3", align: "center", tone: "default", headerRow: false, cardDensity: "comfortable", cardIconSize: "md" }),
+			},
+			{
+				discriminant: "introText",
+				from: "maxProductivityMinGuesswork",
+				// Legacy: MaxProductivityMinGuessworkSection → <TextSection
+				// tone="surface" />.
+				build: introTextBuild({ tone: "surface", align: "left", split: false }),
+			},
+			{
+				discriminant: "cardGrid",
+				from: "applications",
+				// Legacy: ApplicationsSection → <CardGrid columns={3}
+				// tone="surface" align="center" />.
+				build: cardGridBuild({ columns: "3", align: "center", tone: "surface", headerRow: false, cardDensity: "comfortable", cardIconSize: "md" }),
+			},
+			{
+				discriminant: "introText",
+				from: "actionableInsights",
+				// Legacy: ActionableInsightsSection → <TextSection /> (tone
+				// default, align/split unset).
+				build: introTextBuild({ tone: "default", align: "left", split: false }),
+			},
+		],
+	},
 };
 
 function loadNamespace(locale, namespace) {
