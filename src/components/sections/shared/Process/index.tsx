@@ -174,14 +174,16 @@ export function Process(props: ProcessProps): ReactElement | null {
 			<li className="relative">
 				<span
 					aria-hidden
-					className="absolute left-4 top-8 z-10 flex h-3.5 w-3.5 -translate-x-1/2 items-center justify-center rounded-full border-2 border-primary bg-surface lg:left-1/2"
+					className="absolute left-0 lg:left-1/2 lg:-translate-x-1/2 top-1 inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary/30 bg-surface text-[11px] font-semibold text-primary shadow-[0_0_0_6px_rgba(0,151,178,0.08)]"
 				>
-					<span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                    {String(index + 1).padStart(2, "0")}
 				</span>
 				<div className="ml-12 grid grid-cols-1 lg:ml-0 lg:grid-cols-2 lg:gap-16">
 					<div className={even ? "lg:col-start-1" : "lg:col-start-2"}>
 						<FadeUp delay={Math.min(index * 0.06, 0.3)}>
-							<div className={`group flex flex-col gap-3 rounded-c bg-surface hairline card-shadow p-6 sm:p-7 transition-all duration-250 hover:card-shadow-lift hover:border-primary ${props.classes?.card ?? ""}`}>
+							<div
+								className={`group flex flex-col gap-3 rounded-c bg-surface hairline card-shadow p-6 sm:p-7 transition-all duration-250 hover:card-shadow-lift hover:border-primary ${props.classes?.card ?? ""}`}
+							>
 								<div className="flex flex-wrap items-center justify-between gap-3">
 									{phaseChip(item)}
 									<span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-on-surface/40">
@@ -198,7 +200,10 @@ export function Process(props: ProcessProps): ReactElement | null {
 								)}
 								{item.outcome && (
 									<span className="inline-flex items-center gap-2 text-xs font-medium text-primary">
-										<span className="mdi mdi-check-circle text-base" aria-hidden />
+										<span
+											className="mdi mdi-check-circle text-base"
+											aria-hidden
+										/>
 										{item.outcome}
 									</span>
 								)}
