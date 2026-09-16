@@ -1,0 +1,231 @@
+{
+	"slug": "Building Site Surveys",
+	"title": "Building Site Surveys (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "introText",
+			"value": {
+				"tag": {
+					"en": "Smarter Construction",
+					"sw": "Ujenzi Bora"
+				},
+				"headline": {
+					"en": "Precision Surveys for Smarter Construction",
+					"sw": "Uchunguzi wa Usahihi kwa Ujenzi Bora"
+				},
+				"description": {
+					"en": "At Smartgrid Surveying, we provide expert building site surveying services designed to ensure accuracy, efficiency, and compliance in construction projects. Whether you're planning a residential, commercial, or industrial development, our advanced surveying technology and experienced professionals deliver the data you need to build with confidence.",
+					"sw": "Katika Smartgrid Surveying, tunatoa huduma za kitaalam za uchunguzi wa kiwanja cha ujenzi zilizoundwa kuhakikisha usahihi, ufanisi, na uzingatiaji katika miradi ya ujenzi. Iwe unapanga maendeleo ya makazi, biashara, au viwanda, teknolojia yetu ya kisasa ya upimaji na wataalamu wenye uzoefu hutoa data unayohitaji kujenga kwa ujasiri."
+				},
+				"tone": "default",
+				"align": "left",
+				"split": true,
+				"cta": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "ctaBand",
+			"value": {
+				"tag": {
+					"en": "Build on Certainty",
+					"sw": "Jenga kwa Uhakika"
+				},
+				"headline": {
+					"en": "Every structure deserves a foundation of verified ground truth.",
+					"sw": "Kila muundo unastahili msingi wa ukweli uliothibitishwa."
+				},
+				"description": {
+					"en": "Talk to a SmartGrid engineer about your site,and we'll recommend the right survey technology, workflow,and deliverables to keep your project on schedule,and on budget.",
+					"sw": "Ongea na mhandisi wa SmartGrid kuhusu kiwanja chako, na tutapendekeza teknolojia sahihi ya upimaji, mfumo wa kazi, na bidhaa zinazohakikisha mradi wako unakamilika kwa wakati na bajeti."
+				},
+				"primary": {
+					"label": {
+						"en": "Talk to an Engineer",
+						"sw": "Ongea na Mhandisi"
+					},
+					"href": "/contact?reason=engage-engineer#contact-form",
+					"icon": "hard-hat"
+				},
+				"secondary": {
+					"label": {
+						"en": "Explore Surveying Services",
+						"sw": "Chunguza Huduma za Upimaji"
+					},
+					"href": "/surveying",
+					"icon": "arrow-right"
+				},
+				"layout": "split",
+				"variant": "panel",
+				"decor": "glow",
+				"watermark": "hard-hat",
+				"images": [],
+				"shimmer": true,
+				"hairline": false,
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "gallery",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "Explore more...",
+					"sw": "Chunguza zaidi..."
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"image": "/media/surveying/building-site-surveys/leveling.jpeg",
+						"title": {
+							"en": "Leveling",
+							"sw": "Upimaji Viwango"
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/surveying/building-site-surveys/excavation-services.jpg",
+						"title": {
+							"en": "Excavation services",
+							"sw": "Huduma za Uchimbaji"
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/surveying/building-site-surveys/as-built-surveys.jpeg",
+						"title": {
+							"en": "As-built Surveys",
+							"sw": "Uchunguzi wa As-Built"
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/surveying/building-site-surveys/buildings-stakeout.jpeg",
+						"title": {
+							"en": "Buildings stakeout",
+							"sw": "Uwekaji Alama wa Majengo"
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/surveying/building-site-surveys/utilities-mapping.jpeg",
+						"title": {
+							"en": "Utilities mapping",
+							"sw": "Uchoraji wa Ramani ya Huduma"
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/surveying/building-site-surveys/evaluation-monitoring.jpeg",
+						"title": {
+							"en": "Evaluation and monitoring",
+							"sw": "Tathmini na Ufuatiliaji"
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					}
+				],
+				"layout": "grid",
+				"columns": "3",
+				"tone": "default",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "ctaBand",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "Partner with SmartGrid for Precision Site Surveys",
+					"sw": "Shirikiana na SmartGrid kwa Uchunguzi wa Usahihi wa Kiwanja"
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"primary": {
+					"label": {
+						"en": "Get in Touch",
+						"sw": "Wasiliana Nasi"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Building Site Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Building Site Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": ""
+				},
+				"secondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"layout": "centered",
+				"variant": "panel",
+				"decor": "glow",
+				"watermark": "",
+				"images": [],
+				"shimmer": false,
+				"hairline": true,
+				"id": ""
+			}
+		}
+	]
+}

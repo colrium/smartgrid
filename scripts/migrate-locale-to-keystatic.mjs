@@ -828,6 +828,283 @@ const PAGES = {
 			},
 		],
 	},
+	// M7 batch 7: bathymetric-surveys. Four sections migrate in page order —
+	// `hero` (shared Hero, default bottom layout; no layout/frame keys in
+	// content), `whatIsBathymetricSurveys` (splitMedia, right/surface, no
+	// points), `whyBathymetricCritical` + `whySmartGridBathymetric` (cardGrid
+	// check-card grids built from string arrays) — interleaved with eight
+	// legacy tails (see route wiring): WorkflowSection workflow, bespoke
+	// equipment/deliverables/limitations/beforeAfter/finalCta, dams leadImages
+	// grid, applications mediaBadged grid.
+	"bathymetric-surveys": {
+		namespace: "surveying/bathymetric-surveys",
+		title: "Bathymetric Surveys",
+		skipped: ["bathymetricWorkflow", "equipmentTechnology", "deliverables", "technicalLimitations", "beforeAfter", "finalCta", "damsLakesSeaOcean", "applications"],
+		sections: [
+			{
+				discriminant: "hero",
+				from: "hero",
+				// Legacy: BathymetricHeroSection → <Hero data={t(hero)} />
+				// (default bottom layout; no layout/frame/scrollCue keys).
+				build(en, sw, where) {
+					return {
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						title: { en: reqText(en.title, `${where}.title.en`), sw: reqText(sw.title, `${where}.title.sw`) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						image: sharedValue(en, sw, "image", where) ?? "",
+						layout: sharedValue(en, sw, "layout", where) ?? "bottom",
+						frame: sharedValue(en, sw, "frame", where) ?? false,
+						scrollCue: sharedValue(en, sw, "scrollCue", where) ?? false,
+						cueLabel: emptyPair(),
+						footnoteItems: [],
+						ctaPrimary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+							iconPosition: sharedValue(en.ctaPrimary, sw.ctaPrimary, "iconPosition", where) ?? "end",
+							trailingArrow: (() => {
+								const arrow = sharedValue(en.ctaPrimary, sw.ctaPrimary, "trailingArrow", where);
+								return arrow === true ? "show" : arrow === false ? "hide" : "auto";
+							})(),
+						},
+						ctaSecondary: { label: emptyPair(), href: "", icon: "" },
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "splitMedia",
+				from: "whatIsBathymetricSurveys",
+				// Legacy: WhatIsBathymetricSection → <SplitMedia data
+				// imagePosition="right" tone="surface" /> (no points, no
+				// mediaAspect/mediaFit overrides).
+				build(en, sw, where) {
+					return {
+						tag: { en: reqText(en.tag, `${where}.tag.en`), sw: reqText(sw.tag, `${where}.tag.sw`) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						image: { en: optText(en.image), sw: optText(sw.image) },
+						points: [],
+						imagePosition: "right",
+						tone: "surface",
+						mediaAspect: "default",
+						mediaFit: "cover",
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "cardGrid",
+				from: "whyBathymetricCritical",
+				// Legacy: WhyBathymetricCriticalSection → <CardGrid columns={3}
+				// tone="surface" /> with `applications: string[]` mapped to
+				// check-icon cards (title = application, no description).
+				build(en, sw, where) {
+					const enApps = en.applications ?? [];
+					const swApps = sw.applications ?? [];
+					if (!Array.isArray(swApps) || swApps.length !== enApps.length) {
+						gap(where, `application count diverged (en=${enApps.length} sw=${swApps?.length})`);
+					}
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						subheading: emptyPair(),
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						items: enApps.map((app, i) => ({
+							icon: "check",
+							title: { en: reqText(app, `${where}.applications[${i}].en`), sw: reqText(swApps[i], `${where}.applications[${i}].sw`) },
+							description: emptyPair(),
+							image: "",
+							href: "",
+							accent: "",
+						})),
+						columns: "3",
+						align: "left",
+						tone: "surface",
+						headerRow: false,
+						cardDensity: "comfortable",
+						cardIconSize: "md",
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "cardGrid",
+				from: "whySmartGridBathymetric",
+				// Legacy: WhySmartGridBathymetricSection → <CardGrid
+				// columns={3} tone="surface" /> with `items: string[]` mapped
+				// to check-bold cards.
+				build(en, sw, where) {
+					const enRows = en.items ?? [];
+					const swRows = sw.items ?? [];
+					if (!Array.isArray(swRows) || swRows.length !== enRows.length) {
+						gap(where, `item count diverged (en=${enRows.length} sw=${swRows?.length})`);
+					}
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						subheading: emptyPair(),
+						description: emptyPair(),
+						items: enRows.map((row, i) => ({
+							icon: "check-bold",
+							title: { en: reqText(row, `${where}.items[${i}].en`), sw: reqText(swRows[i], `${where}.items[${i}].sw`) },
+							description: emptyPair(),
+							image: "",
+							href: "",
+							accent: "",
+						})),
+						columns: "3",
+						align: "left",
+						tone: "surface",
+						headerRow: false,
+						cardDensity: "comfortable",
+						cardIconSize: "md",
+						id: "",
+					};
+				},
+			},
+		],
+	},
+	// M7 batch 8a: resource-mapping. Two sections migrate in page order —
+	// `hero` (shared Hero, default bottom layout, dual pills) +
+	// `whySmartGridStandsOut` (cardGrid, columns 4, centred, surface).
+	// Tails stay legacy: WhatIs (bespoke items + closingStatement),
+	// TypesOfResourceMapping + TechStack (fallbackIcons), SectorSection
+	// grids (leadImages), WorkflowSection workflow, deliverables explorer,
+	// FinalCta (cta-closing), DataAccuracy/consultation bespoke.
+	"resource-mapping": {
+		namespace: "surveying/resource-mapping",
+		title: "Resource Mapping",
+		skipped: ["whatIsResourceMapping", "typesOfResourceMapping", "workflow", "deliverables", "whoUses", "technologyStack", "dataAccuracy", "consultationCta", "agriculture", "utilitiesEnergySmartInfrastructure", "quarryMining", "constructionCivilEngineering", "environmentalConservation", "disasterRiskReduction", "finalCta"],
+		sections: [
+			{
+				discriminant: "hero",
+				from: "hero",
+				// Legacy: ResourceMappingHeroSection → <Hero data={t(hero)} />
+				// (default bottom layout; dual pills, no pill overrides).
+				build(en, sw, where) {
+					return {
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						title: { en: reqText(en.title, `${where}.title.en`), sw: reqText(sw.title, `${where}.title.sw`) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						image: sharedValue(en, sw, "image", where) ?? "",
+						layout: sharedValue(en, sw, "layout", where) ?? "bottom",
+						frame: sharedValue(en, sw, "frame", where) ?? false,
+						scrollCue: sharedValue(en, sw, "scrollCue", where) ?? false,
+						cueLabel: emptyPair(),
+						footnoteItems: [],
+						ctaPrimary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+							iconPosition: sharedValue(en.ctaPrimary, sw.ctaPrimary, "iconPosition", where) ?? "end",
+							trailingArrow: (() => {
+								const arrow = sharedValue(en.ctaPrimary, sw.ctaPrimary, "trailingArrow", where);
+								return arrow === true ? "show" : arrow === false ? "hide" : "auto";
+							})(),
+						},
+						ctaSecondary: {
+							label: { en: reqText(en.ctaSecondary?.label, `${where}.ctaSecondary.label.en`), sw: reqText(sw.ctaSecondary?.label, `${where}.ctaSecondary.label.sw`) },
+							href: sharedValue(en.ctaSecondary, sw.ctaSecondary, "href", where) ?? "",
+							icon: sharedValue(en.ctaSecondary, sw.ctaSecondary, "icon", where) ?? "",
+						},
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "cardGrid",
+				from: "whySmartGridStandsOut",
+				// Legacy: WhyStandOutSection → <CardGrid columns={4}
+				// tone="surface" align="center" /> (card/density unset).
+				build: cardGridBuild({ columns: "4", align: "center", tone: "surface", headerRow: false, cardDensity: "comfortable", cardIconSize: "md" }),
+			},
+		],
+	},
+	// M7 batch 8b: building-site-surveys. Four sections migrate in page order —
+	// `section1` (introText split), `actionCtaEngineer` (ctaBand split/shimmer),
+	// `exploreMore` (gallery grid), `cta` (ctaBand centred/hairline).
+	// Tails stay legacy: bespoke hero, SiteEngineering (indexed +
+	// fallbackIcons + headerRow cards), BuildSmarter/Accuracy/Consultation
+	// bespoke, Process (layout/columns not in registry contract), deliverables
+	// explorer, TechnologyStack (fallbackIcons + hoverArrow + per-card links).
+	"building-site-surveys": {
+		namespace: "surveying/building-site-surveys",
+		title: "Building Site Surveys",
+		skipped: ["hero", "section2", "siteEngineeringSurveys", "process", "accuracyMatters", "deliverables", "technology", "consultation"],
+		sections: [
+			{
+				discriminant: "introText",
+				from: "section1",
+				// Legacy: IntroSection → <IntroTextSection ... split /> (split
+				// hardcoded; no CTA).
+				build: introTextBuild({ tone: "default", align: "left", split: true }),
+			},
+			{
+				discriminant: "ctaBand",
+				from: "actionCtaEngineer",
+				// Legacy: ActionCtaBand → <CtaBand layout="split" shimmer
+				// watermark /> (variant/decor unset = panel/glow).
+				build(en, sw, where) {
+					const action = (node, swNode, key) => ({
+						label: { en: reqText(node?.label, `${where}.${key}.label.en`), sw: reqText(swNode?.label, `${where}.${key}.label.sw`) },
+						href: sharedValue(node, swNode, "href", `${where}.${key}`) ?? "",
+						icon: sharedValue(node, swNode, "icon", `${where}.${key}`) ?? "",
+					});
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						primary: action(en.primary, sw.primary, "primary"),
+						secondary: action(en.secondary, sw.secondary, "secondary"),
+						layout: "split",
+						variant: "panel",
+						decor: "glow",
+						watermark: sharedValue(en, sw, "watermark", where) ?? "",
+						images: [],
+						shimmer: true,
+						hairline: false,
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "gallery",
+				from: "exploreMore",
+				// Legacy: ExploreMoreSection → <Gallery columns={3} />
+				// (layout/tone unset = grid/default).
+				build: galleryBuild({ layout: "grid", columns: "3", tone: "default" }),
+			},
+			{
+				discriminant: "ctaBand",
+				from: "cta",
+				// Legacy: SiteCtaSection → <CtaBand glyph hairline primary />
+				// (layout/variant/decor unset = centered/panel/glow; glyph is
+				// fixed presentation, not an editor contract).
+				build(en, sw, where) {
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						primary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+						},
+						secondary: { label: emptyPair(), href: "", icon: "" },
+						layout: "centered",
+						variant: "panel",
+						decor: "glow",
+						watermark: "",
+						images: [],
+						shimmer: false,
+						hairline: true,
+						id: "",
+					};
+				},
+			},
+		],
+	},
 };
 
 function loadNamespace(locale, namespace) {

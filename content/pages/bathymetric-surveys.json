@@ -1,0 +1,321 @@
+{
+	"slug": "Bathymetric Surveys",
+	"title": "Bathymetric Surveys (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "hero",
+			"value": {
+				"headline": {
+					"en": "BATHYMETRIC SURVEYS",
+					"sw": "UCHUNGUZI WA BATHYMETRIC"
+				},
+				"title": {
+					"en": "BATHYMETRIC & HYDROGRAPHIC SURVEY SERVICES IN KENYA",
+					"sw": "HUDUMA ZA UCHUNGUZI WA BATHYMETRIC & HYDROGRAPHIC NCHINI KENYA"
+				},
+				"description": {
+					"en": "Advanced Underwater Mapping for Dams, Rivers, Lakes & Coastal Engineering in Kenya and beyond.\n\nWe offer high-precision bathymetric and hydrographic surveys using sonar-based depth measurement systems integrated with GNSS RTK positioning to map underwater terrain for engineering, environmental, and infrastructure projects across Kenya and East Africa.\n\nFrom dams to rivers and reservoirs — we map what lies beneath the surface.",
+					"sw": "Uchoraji Ramani wa Chini ya Maji wa Hali ya Juu kwa Mabwawa, Mito, Maziwa & Uhandisi wa Pwani nchini Kenya na zaidi.\n\nTunatoa uchunguzi wa bathymetric na hydrographic wa usahihi wa juu kwa kutumia mifumo ya kipimo cha kina cha sonar vilivyojumuishwa na uwekezaji wa GNSS RTK kuchaoraji ramani ardhi ya chini ya maji kwa miradi ya uhandisi, mazingira, na miundombinu kote Kenya na Afrika Mashariki.\n\nKutoka mabwawa hadi mito na mifereji — tunachora ramani yale yaliyopo chini ya uso."
+				},
+				"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-01.jpg",
+				"layout": "bottom",
+				"frame": false,
+				"scrollCue": false,
+				"cueLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"footnoteItems": [],
+				"ctaPrimary": {
+					"label": {
+						"en": "Request Bathymetric Survey Consultation",
+						"sw": "Omba Ushauri wa Uchunguzi wa Bathymetric"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Request Bathymetric Survey Consultation&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a Bathymetric Survey Consultation. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "",
+					"iconPosition": "end",
+					"trailingArrow": "auto"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "splitMedia",
+			"value": {
+				"tag": {
+					"en": "Underwater Topography",
+					"sw": "Topografia ya Chini ya Maji"
+				},
+				"headline": {
+					"en": "What is Bathymetric Surveys?",
+					"sw": "Uchunguzi wa Bathymetric ni Nini?"
+				},
+				"description": {
+					"en": "Bathymetric surveys involve measuring the depth of water bodies and charting the underwater terrain. This technique is crucial for understanding sediment levels, water volume, and underwater hazards. It supports safer construction, better water resource management, and proactive environmental protection. SmartGrid Surveying uses high-resolution echo sounders, GNSS positioning systems, and remote-controlled survey boats to access shallow and restricted water zones safely and efficiently.",
+					"sw": "Uchunguzi wa bathymetric unahusisha kupima kina cha maji na kuchora ardhi ya chini ya maji. Mbinu hii ni muhimu kwa kuelewa viwango vya mashapo, kiasi cha maji, na hatari za chini ya maji. Inasaidia ujenzi salama, usimamizi bora wa rasilimali za maji, na ulinzi wa mazingira makini. SmartGrid Surveying hutumia echo sounders za mwonekano wa juu, mifumo ya uwekaji ya GNSS, na boti za uchunguzi zinazodhibitiwa kwa mbali kufikia maeneo ya maji ya kina kifupi na yaliyozuiliwa kwa usalama na ufanisi."
+				},
+				"image": {
+					"en": "/media/surveying/bathymetric-surveys/bathymetric-surveys-09.png",
+					"sw": "/media/surveying/bathymetric-surveys/bathymetric-surveys-09.png"
+				},
+				"points": [],
+				"imagePosition": "right",
+				"tone": "surface",
+				"mediaAspect": "default",
+				"mediaFit": "cover",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "cardGrid",
+			"value": {
+				"tag": {
+					"en": "Why It Matters in Kenya",
+					"sw": "Kwanini Ni Muhimu Kenya"
+				},
+				"headline": {
+					"en": "Why Bathymetric Surveys Are Critical in Kenya",
+					"sw": "Kwanini Uchunguzi wa Bathymetric Ni Muhimu nchini Kenya"
+				},
+				"subheading": {
+					"en": "",
+					"sw": ""
+				},
+				"description": {
+					"en": "Kenya's water infrastructure depends on accurate underwater data for:",
+					"sw": "Miundombinu ya maji ya Kenya inategemea data sahihi ya chini ya maji kwa:"
+				},
+				"items": [
+					{
+						"icon": "check",
+						"title": {
+							"en": "Dam safety and structural monitoring",
+							"sw": "Usalama wa mabwawa na ufuatiliaji wa kimuundo"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						},
+						"image": "",
+						"href": "",
+						"accent": ""
+					},
+					{
+						"icon": "check",
+						"title": {
+							"en": "Reservoir capacity and siltation analysis",
+							"sw": "Uchambuzi wa uwezo wa hifadhi na siltation ya mifereji"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						},
+						"image": "",
+						"href": "",
+						"accent": ""
+					},
+					{
+						"icon": "check",
+						"title": {
+							"en": "Hydropower planning (KenGen projects)",
+							"sw": "Mipango ya nishati ya umeme ya maji (miradi ya KenGen)"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						},
+						"image": "",
+						"href": "",
+						"accent": ""
+					},
+					{
+						"icon": "check",
+						"title": {
+							"en": "Flood risk modelling",
+							"sw": "Uundaji wa mfano wa hatari ya mafuriko"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						},
+						"image": "",
+						"href": "",
+						"accent": ""
+					},
+					{
+						"icon": "check",
+						"title": {
+							"en": "Water resource management (WRMA / Water Authorities)",
+							"sw": "Usimamizi wa rasilimali za maji (WRMA / Mamlaka za Maji)"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						},
+						"image": "",
+						"href": "",
+						"accent": ""
+					},
+					{
+						"icon": "check",
+						"title": {
+							"en": "Bridge and foundation design",
+							"sw": "Muundo wa daraja na misingi"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						},
+						"image": "",
+						"href": "",
+						"accent": ""
+					},
+					{
+						"icon": "check",
+						"title": {
+							"en": "Lake & river engineering studies",
+							"sw": "Utafiti wa uhandisi wa maziwa & mito"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						},
+						"image": "",
+						"href": "",
+						"accent": ""
+					}
+				],
+				"columns": "3",
+				"align": "left",
+				"tone": "surface",
+				"headerRow": false,
+				"cardDensity": "comfortable",
+				"cardIconSize": "md",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "cardGrid",
+			"value": {
+				"tag": {
+					"en": "Our Advantages",
+					"sw": "Faida Zetu"
+				},
+				"headline": {
+					"en": "WHY SMARTGRID BATHYMETRIC SURVEYS",
+					"sw": "KWA NINI SMARTGRID BATHYMETRIC SURVEYS"
+				},
+				"subheading": {
+					"en": "",
+					"sw": ""
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"icon": "check-bold",
+						"title": {
+							"en": "GNSS-integrated sonar mapping",
+							"sw": "Uchoraji ramani wa sonar uliounganishwa na GNSS"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						},
+						"image": "",
+						"href": "",
+						"accent": ""
+					},
+					{
+						"icon": "check-bold",
+						"title": {
+							"en": "Engineering-grade accuracy outputs",
+							"sw": "Matokeo ya usahihi wa kiwango cha uhandisi"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						},
+						"image": "",
+						"href": "",
+						"accent": ""
+					},
+					{
+						"icon": "check-bold",
+						"title": {
+							"en": "Fast mobilisation across Kenya",
+							"sw": "Mobilizasi haraka nchini Kenya"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						},
+						"image": "",
+						"href": "",
+						"accent": ""
+					},
+					{
+						"icon": "check-bold",
+						"title": {
+							"en": "Compatible with GIS, CAD & hydrological models",
+							"sw": "Inayolingana na GIS, CAD & mifano ya hydrological"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						},
+						"image": "",
+						"href": "",
+						"accent": ""
+					},
+					{
+						"icon": "check-bold",
+						"title": {
+							"en": "Integrated land + underwater surveying workflow",
+							"sw": "Mchakato wa uchunguzi wa ardhi + chini ya maji uliounganishwa"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						},
+						"image": "",
+						"href": "",
+						"accent": ""
+					},
+					{
+						"icon": "check-bold",
+						"title": {
+							"en": "Trusted for infrastructure & environmental projects",
+							"sw": "Imetumiwa kwa miradi ya miundombinu na mazingira"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						},
+						"image": "",
+						"href": "",
+						"accent": ""
+					}
+				],
+				"columns": "3",
+				"align": "left",
+				"tone": "surface",
+				"headerRow": false,
+				"cardDensity": "comfortable",
+				"cardIconSize": "md",
+				"id": ""
+			}
+		}
+	]
+}

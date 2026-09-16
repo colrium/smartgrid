@@ -249,13 +249,15 @@ Route inventory (from `src/pages/[locale]/**` + `public/locales/<en|sw>/**`, 202
   `/equipment-sale/[product]` (product pages render from `products.json` + per-product
   locale files, not one namespace per page — needs its own content model decision, see
   checklist).
-- Wired to Keystatic today (10 of ~34 static + 1 dynamic): `terms-of-use` (M3),
+- Wired to Keystatic today (13 of ~34 static + 1 dynamic): `terms-of-use` (M3),
   `company-profile` (M4, hybrid tail), `privacy-policy` (M7 batch 1),
   `contact` + `careers` (M7 batch 2, hybrid tails), `about` (M7 batch 3,
   interleaved hybrid, entry `draft`),   `surveying` + `civil` hubs (M7 batch 4,
   hybrid tails, entries `draft`), `topographical-surveys` (M7 batch 5 pilot,
   interleaved hybrid, entry `draft`), `sectional-properties` (M7 batch 6,
-  interleaved hybrid, entry `draft`). All other `[locale]` routes render
+  interleaved hybrid, entry `draft`), `bathymetric-surveys` (M7 batch 7,
+  interleaved hybrid, entry `draft`), `resource-mapping` + `building-site-surveys`
+  (M7 batch 8, interleaved hybrids, entries `draft`). All other `[locale]` routes render
   legacy only — no `resolveKeystaticPage` call.
 
 - [x] Inventory every `[locale]` route and its locale namespace(s), section components,
@@ -310,6 +312,11 @@ Route inventory (from `src/pages/[locale]/**` + `public/locales/<en|sw>/**`, 202
       (4 Keystatic sections by index + count guard → legacy fallback).
       Batch 6 done 2026-09-16: `sectional-properties.tsx` wired as interleaved hybrid
       (5 Keystatic sections by index + count guard → legacy fallback).
+      Batch 7 done 2026-09-16: `bathymetric-surveys.tsx` wired as interleaved hybrid
+      (4 Keystatic sections by index + count guard → legacy fallback).
+      Batch 8 done 2026-09-16: `resource-mapping.tsx` (hero + whyStandOut cardGrid,
+      2 sections) + `building-site-surveys.tsx` (introText + 2 ctaBands + gallery,
+      4 sections) wired as interleaved hybrids (count guards → legacy fallback).
       `check:keystatic` fixture/render coverage now 11 fixtures, 11 sections.)
 - [x] Migrate + verify in small batches (suggested: legal → contact/careers → about →
       hubs → children → home last as the largest page; equipment per its model decision),
@@ -327,7 +334,16 @@ Route inventory (from `src/pages/[locale]/**` + `public/locales/<en|sw>/**`, 202
       publish flip.) Batch 6 —
       sectional-properties (hero + introText+CTA + gallery + faq + ctaBand, 5 sections) —
       done 2026-09-16, `draft`, `--verify` clean, user-confirmed dev smoke with temp local
-      publish flip.)
+      publish flip. Batch 7 —
+      bathymetric-surveys (hero + splitMedia + 2 cardGrid check-cards, 4 sections) —
+      done 2026-09-16, `draft`, entry generated via `--write` (no gaps); `--verify`,
+      `check:keystatic`, typecheck/lint, dev smoke DEFERRED per 2026-09-16 M7
+      test-deferral policy (instructions.md) — run once after all M7 stages.
+      Batch 8 — resource-mapping (hero dual-pill + whyStandOut cardGrid columns 4
+      centred, 2 sections) + building-site-surveys (introText split + split/shimmer
+      ctaBand + grid gallery + centred/hairline ctaBand, 4 sections) — done 2026-09-16,
+      both `draft`, entries generated via `--write` (no gaps); all validation DEFERRED
+      per M7 test-deferral policy.)
 - [ ] Update the README operator guide + `.env.example` allowlist examples as the editable
       set grows; keep rollback (per-page allowlist/draft flip + `KEYSTATIC_DISABLE=1`)
       tested for the new pages.
@@ -408,4 +424,7 @@ For every implementation change:
  whyChoose, gallery masonry), `draft`, `--verify` clean first try, no gaps. `about.tsx` wired as interleaved hybrid (`renderSection` by index between 3 fixed legacy tails + `KEYSTATIC_SECTION_COUNT` guard → legacy fallback; keeps single `data-keystatic-page` wrapper, unlike slicing PageBuilderDocument which would nest `min-h-screen` blocks). Tails stay legacy: AerialSurveyingSection (popup modal + fallbackIcons — cardGrid v2 models neither), LandSurveyingSection (`<primary>` markup + `itemsTitle`), ImpactAcrossAfricaSection (client-only ProjectsGlobe, never registered) | `check:keystatic` OK (10 sections, 7 fixtures; same 3 expected warnings); `--verify` clean all 6 mapped pages; `--dump-text` about fully resolved en+sw, no leaks; `yarn typecheck` clean (88s); `eslint` clean on touched files; dev smoke user-confirmed good (`KEYSTATIC_PAGES=about`, temp publish flip, reverted to `draft`) — no node processes left behind | |
 | 2026-09-16 | M7 | Batch 4 DONE (surveying + civil hubs, no registry changes): `surveying` = 1 hero (centered, frame + scrollCue travel in content via `sharedValue`, mailto CTA with shared icon/href); `civil` = 1 services cardGrid via existing `cardGridBuild` (columns 3, tone surface, href-less item tolerated). Tails stay legacy: surveying services (lead map BELOW grid — cardGrid leadImages sit above), surveying process (watermarked/indexed cards), both deliverables explorers (ns-driven), civil bespoke diagonal hero + image stepper process. `aerial-drones/landing` verified zero shared-section usage (7 bespoke sections) — DEFERRED to a future batch that registers new sections; no entry, no wiring, documented here | `check:keystatic` OK (10 sections, 9 fixtures; same 3 expected warnings); `--verify` clean all 8 mapped pages; `--dump-text` surveying/civil fully resolved en+sw, no leaks; `yarn typecheck` clean (84s); `eslint` clean on touched files; dev smoke user-confirmed good (`KEYSTATIC_PAGES=surveying,civil`, temp publish flip, reverted to `draft`) — no node processes left behind | |
 | 2026-09-16 | M7 | Batch 5 DONE (topographical-surveys pilot, first child): `pricing` registered (cards + price band, SSR-safe) + `hero` v1→v2 (ctaIconPosition start/end, ctaTrailingArrow auto/show/hide; `end`/`auto` collapse to layout defaults in normalize; v1 fixtures render unchanged). Generic `introTextBuild` + `pricingBuild` migration helpers (reusable for cadastral + other cost pages). Entry: 4 sections (hero, whatIs, cost, section1) in page order, `draft`, `--verify` clean first try. Route wired interleaved (KS at 0,1,4,5 + count guard). Tails stay legacy: 5 cardGrids on non-contract props (`subItems`/`wide`, `indexed`, `mediaBadged`/`variant`/`mediaPosition`, `fallbackIcons`, JSX `headerEnd` — documented as the cardGrid boundary, not v3 scope), deliverables explorer, bespoke sample map. Legacy hero `subTitle` is unrendered by Hero → not migrated (documented in build comment) | `check:keystatic` OK (11 sections, 10 fixtures; same 3 expected warnings); `--verify` clean all 9 mapped pages; `--dump-text` topo fully resolved en+sw, no leaks; `yarn typecheck` clean (107s); `eslint` clean on touched files; dev smoke user-confirmed good (`KEYSTATIC_PAGES=topographical-surveys`, temp publish flip, reverted to `draft`) — no node processes left behind | |
-| 2026-09-16 | M7 | Batch 6 DONE (sectional-properties): 5 sections (hero with dual pills, introText with CTA via extended `introTextBuild`, overlay gallery, q/a/b faq, first `ctaBand` migration with shared watermark) in page order, `draft`, `--verify` clean first try. Route wired interleaved (KS at 0,1,3,9,10 + count guard 5). Tails stay legacy: bespoke WhatIs, 2 cardGrids on non-contract props (`indexed`/`fallbackIcons`/`hoverArrow`/`headerAlign`/footer links), WorkflowSection process + timeline variant, deliverables explorer; `socials` commented out = dead, never migrated | `check:keystatic` OK (11 sections, 11 fixtures; same 3 expected warnings); `--verify` clean all 10 mapped pages; `--dump-text` sectional fully resolved en+sw (hero/faq/ctaBand text verified), no leaks; `yarn typecheck` clean (42s); `eslint` clean on touched files; dev smoke user-confirmed good (`KEYSTATIC_PAGES=sectional-properties`, temp publish flip, reverted to `draft`) — no node processes left behind | | |
+| 2026-09-16 | M7 | Batch 6 DONE (sectional-properties): 5 sections (hero with dual pills, introText with CTA via extended `introTextBuild`, overlay gallery, q/a/b faq, first `ctaBand` migration with shared watermark) in page order, `draft`, `--verify` clean first try. Route wired interleaved (KS at 0,1,3,9,10 + count guard 5). Tails stay legacy: bespoke WhatIs, 2 cardGrids on non-contract props (`indexed`/`fallbackIcons`/`hoverArrow`/`headerAlign`/footer links), WorkflowSection process + timeline variant, deliverables explorer; `socials` commented out = dead, never migrated | `check:keystatic` OK (11 sections, 11 fixtures; same 3 expected warnings); `--verify` clean all 10 mapped pages; `--dump-text` sectional fully resolved en+sw (hero/faq/ctaBand text verified), no leaks; `yarn typecheck` clean (42s); `eslint` clean on touched files; dev smoke user-confirmed good (`KEYSTATIC_PAGES=sectional-properties`, temp publish flip, reverted to `draft`) — no node processes left behind | |
+| 2026-09-16 | M7 | Test-deferral policy adopted per user request: `docs/keystatic-page-builder/instructions.md` updated (M7 Test Deferral Policy — all per-batch `typecheck`/`lint`/`check:keystatic`/`--verify`/`--dump-text`/dev-smoke skipped, run once after all M7 stages). AGENTS.md/CLAUDE.md confirmed absent again (glob no match) — README + plan remain source of truth | No tests run (deferred); instructions.md edit only | |
+| 2026-09-16 | M7 | Batch 7 DONE (bathymetric-surveys, tests deferred): mapping added (`hero` default bottom + v2 pill keys, `whatIs` splitMedia right/surface, 2 string-array cardGrid builds with check/check-bold icons, columns 3 tone surface); `content/pages/bathymetric-surveys.json` generated via `--write` (4 sections, no completeness gaps — generation only, not validation); route wired interleaved (KS at 0,1,2,6 + count guard 4). Tails stay legacy: WorkflowSection workflow, bespoke equipment/deliverables/limitations/beforeAfter/finalCta, dams leadImages grid, applications mediaBadged grid | Validation DEFERRED per M7 policy: no `--verify`/`check:keystatic`/`typecheck`/`lint`/dev-smoke this batch; run once after all M7 stages | |
+| 2026-09-16 | M7 | Batch 8 DONE (resource-mapping + building-site-surveys, tests deferred): resource-mapping = hero dual-pill + whyStandOut cardGrid (cols 4 centred surface) via existing `cardGridBuild`, 2 sections; building-site = section1 introText split via `introTextBuild`, actionCta ctaBand split/shimmer, exploreMore gallery grid via `galleryBuild`, cta ctaBand centred/hairline, 4 sections. Both entries generated via `--write` (no gaps — generation only). Routes wired interleaved with count guards (resource KS at 0,9; building-site KS at 1,6,10,11). Tails stay legacy: resource sector/leadImages + fallbackIcons grids + workflow/deliverables/finalCta bespoke; building-site bespoke hero + indexed/fallbackIcons grids + Process layout/columns (outside registry contract) + deliverables explorer | Validation DEFERRED per M7 policy: no `--verify`/`check:keystatic`/`typecheck`/`lint`/dev-smoke this batch; run once after all M7 stages | | |

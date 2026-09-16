@@ -50,6 +50,27 @@ and tested fallback/source-precedence behavior.
     validation, decisions, and blockers.
 14. When done with a task automatically start on the next
 
+## M7 Test Deferral Policy (2026-09-16, per user request)
+
+During M7 (Full-Site Keystatic Coverage) all per-batch/stage tests are SKIPPED
+and done last after all M7 stages are complete:
+
+- Skip per batch: `yarn typecheck`, `yarn lint` / `eslint`, `yarn build`,
+  `node scripts/check-keystatic-pages.mjs` (`yarn check:keystatic`),
+  `node scripts/migrate-locale-to-keystatic.mjs --page <slug> --verify`,
+  `--dump-text` / leak checks, and dev-smoke parity (temp publish flip +
+  browser check, then revert to `draft`).
+- Keep implementing M7 batches back-to-back (mappings + entries + route
+  wiring + plan checklist/status-log updates) without running the above.
+- After the last M7 page/equipment decision is wired, run the deferred
+  validation once across the whole site: `check:keystatic` for all fixtures,
+  `--verify` for every mapped page, full `yarn typecheck` + `yarn lint` +
+  `yarn build`, sitemap/route verification, keyboard/responsive/visual checks,
+  performance sampling, and per-page dev-smoke parity + rollback test.
+- M6's `yarn build` standing skip and the plan's Definition of Done still
+  apply; this policy only defers *when* M7 validation runs, it does not drop
+  any exit criteria.
+
 ## Your First/Next task
 
 Start with the next task whose status is "NOT STARTED" in the plan only if one of the following:
@@ -135,6 +156,27 @@ and tested fallback/source-precedence behavior.
 13. Update the plan checklist and append a dated status-log entry containing files changed,
     validation, decisions, and blockers.
 14. When done with a task automatically start on the next
+
+## M7 Test Deferral Policy (2026-09-16, per user request)
+
+During M7 (Full-Site Keystatic Coverage) all per-batch/stage tests are SKIPPED
+and done last after all M7 stages are complete:
+
+- Skip per batch: `yarn typecheck`, `yarn lint` / `eslint`, `yarn build`,
+  `node scripts/check-keystatic-pages.mjs` (`yarn check:keystatic`),
+  `node scripts/migrate-locale-to-keystatic.mjs --page <slug> --verify`,
+  `--dump-text` / leak checks, and dev-smoke parity (temp publish flip +
+  browser check, then revert to `draft`).
+- Keep implementing M7 batches back-to-back (mappings + entries + route
+  wiring + plan checklist/status-log updates) without running the above.
+- After the last M7 page/equipment decision is wired, run the deferred
+  validation once across the whole site: `check:keystatic` for all fixtures,
+  `--verify` for every mapped page, full `yarn typecheck` + `yarn lint` +
+  `yarn build`, sitemap/route verification, keyboard/responsive/visual checks,
+  performance sampling, and per-page dev-smoke parity + rollback test.
+- M6's `yarn build` standing skip and the plan's Definition of Done still
+  apply; this policy only defers *when* M7 validation runs, it does not drop
+  any exit criteria.
 
 ## Your First/Next task
 

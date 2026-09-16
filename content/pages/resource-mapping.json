@@ -1,0 +1,134 @@
+{
+	"slug": "Resource Mapping",
+	"title": "Resource Mapping (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "hero",
+			"value": {
+				"headline": {
+					"en": "RESOURCE MAPPING",
+					"sw": "UCHORAJI RAMANI WA RASILIMALI"
+				},
+				"title": {
+					"en": "Land, Infrastructure & Natural Resources into Actionable Geospatial Intelligence data",
+					"sw": "Ardhi, Miundombinu na Rasilimali ya Asili kuwa Data ya Akili ya Kijiografia Inayoweza Kutendwa"
+				},
+				"description": {
+					"en": "SmartGrid Surveying enables precision agriculture, utilities management, mining, construction, environmental conservation, and disaster response through uniform, repeatable, and scalable grid-based mapping.",
+					"sw": "SmartGrid Surveying huwezesha kilimo cha usahihi, usimamizi wa huduma, madini, ujenzi, uhifadhi wa mazingira, na kukabiliana na maafa kupitia uchoraji ramani wa gridi unaofanana, unaorudiwa, na unaoweza kupanuka."
+				},
+				"image": "/media/surveying/resource-mapping/hero.jpg",
+				"layout": "bottom",
+				"frame": false,
+				"scrollCue": false,
+				"cueLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"footnoteItems": [],
+				"ctaPrimary": {
+					"label": {
+						"en": "Request Resource Mapping Proposal (24H Response)",
+						"sw": "Omba Muhtasari wa Uchoraji Ramani wa Rasilimali (Jibu ndani ya Saa 24)"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Request Resource Mapping Proposal&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a Resource Mapping Proposal. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "",
+					"iconPosition": "end",
+					"trailingArrow": "auto"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "WhatsApp GIS Specialist",
+						"sw": "WhatsApp Mtaalamu wa GIS"
+					},
+					"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20speak%20with%20a%20GIS%20specialist%20about%20resource%20mapping%20for%20my%20project.%20Please%20advise%20on%20next%20steps.",
+					"icon": "whatsapp"
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "cardGrid",
+			"value": {
+				"tag": {
+					"en": "Our Advantages",
+					"sw": "Faida Zetu"
+				},
+				"headline": {
+					"en": "Why SmartGrid Surveying Stands Out",
+					"sw": "Kwa Nini SmartGrid Surveying Inajitokeza"
+				},
+				"subheading": {
+					"en": "",
+					"sw": ""
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"icon": "repeat",
+						"title": {
+							"en": "Repeatable",
+							"sw": "Inayorudiwa"
+						},
+						"description": {
+							"en": "The same SmartGrid layout can be flown repeatedly for reliable temporal comparisons.",
+							"sw": "Mpangilio huo wa SmartGrid unaweza kurushwa mara kwa mara kwa ulinganisho wa muda wa kuaminika."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "scale",
+						"title": {
+							"en": "Scalable",
+							"sw": "Inayoweza Kupanuka"
+						},
+						"description": {
+							"en": "Whether it's a small farm or a national park, grid density can be adjusted to scale.",
+							"sw": "Iwe ni shamba dogo au hifadhi ya taifa, msongamano wa gridi unaweza kubadilishwa ili kupanuka."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "application-export",
+						"title": {
+							"en": "Compatible",
+							"sw": "Inayopatana"
+						},
+						"description": {
+							"en": "Outputs integrate seamlessly with GIS, CAD, and modeling platforms.",
+							"sw": "Matokeo yanaunganishwa kikamilifu na jukwaa za GIS, CAD, na uundaji."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "robot",
+						"title": {
+							"en": "Future-Proof",
+							"sw": "Tayari kwa Wakati Ujao"
+						},
+						"description": {
+							"en": "Grid-aligned datasets are ideal for feeding into AI and machine learning models for predictive analysis.",
+							"sw": "Seti za data zilizopangwa za gridi ni bora kwa kulisha mifano ya AI na ujifunzaji wa maprimary kwa uchambuzi wa utabiri."
+						},
+						"image": "",
+						"href": ""
+					}
+				],
+				"columns": "4",
+				"align": "center",
+				"tone": "surface",
+				"headerRow": false,
+				"cardDensity": "comfortable",
+				"cardIconSize": "md",
+				"id": ""
+			}
+		}
+	]
+}
