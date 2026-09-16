@@ -216,7 +216,8 @@ pass, and rollback instructions are tested.
 
 ### M7: Full-Site Keystatic Coverage (All Pages Editable)
 
-**Status: IN PROGRESS**
+**Status: DONE** (2026-09-16 — all static routes wired or deferred-with-reason, equipment
+decided file-based, deferred validation green; see close-out log row).
 
 Dependencies: M6 (M6 stays the active verification milestone; start M7 only when M6's
 browser/build-window items no longer block schema/registry work, or after confirming with
@@ -365,7 +366,9 @@ Route inventory (from `src/pages/[locale]/**` + `public/locales/<en|sw>/**`, 202
       Batch 15 done 2026-09-16: `aerial-drones/agricultural-ndvi-mapping.tsx` (hero only,
       1 section) + `aerial-drones/lidar-mapping.tsx` (hero + 2 wide splitMedias,
       3 sections) wired as interleaved hybrids (count guards → legacy fallback).
-      `check:keystatic` fixture/render coverage now 11 fixtures, 11 sections.)
+      Batch 17 done 2026-09-16: home (5 sections) wired; deferred validation green
+      (see close-out row). `check:keystatic` fixture/render coverage: 30 fixtures,
+      11 sections.)
 - [x] Migrate + verify in small batches (suggested: legal → contact/careers → about →
       hubs → children → home last as the largest page; equipment per its model decision),
       recording each page and its source of truth in the status log. (Batch 1 — legal —
@@ -456,9 +459,19 @@ Route inventory (from `src/pages/[locale]/**` + `public/locales/<en|sw>/**`, 202
       label→title Industries cardGrid + faq + masked Cta with id, 5 sections) wired as
       interleaved hybrid (count guard → legacy fallback; nested layout divs preserved;
       overwrites the M1 starter fixture with the real migrated home, stays `draft`).
-- [ ] Update the README operator guide + `.env.example` allowlist examples as the editable
+      Close-out 2026-09-16 (deferred validation, all green): `check:keystatic` OK
+      (11 sections, 30 fixtures; 3 fallback warnings = expected negative diagnostics;
+      fixed 1 stale assertion — M1 starter home expectation → migrated home + temp
+      publish in check); `--verify` clean for all 30 mapped pages; `yarn typecheck`
+      clean (13s); `yarn lint` clean (44s); dev-smoke user-confirmed good (all 30
+      routes en+sw with temp publish flips, reverted to `draft` after; company-profile
+      stays `published` as committed in M4); README section list 6→11 + `.env.example`
+      allowlist example updated. Residuals: `yarn build` standing skip (environment),
+      keyboard/responsive/visual + perf sampling need a browser session (M6 items).
+- [x] Update the README operator guide + `.env.example` allowlist examples as the editable
       set grows; keep rollback (per-page allowlist/draft flip + `KEYSTATIC_DISABLE=1`)
-      tested for the new pages.
+      tested for the new pages. (Done in close-out: README 11 sections + multi-slug
+      allowlist example; rollback covered by the resolver matrix in `check:keystatic`.)
 
 **Exit criteria:** every static locale route (plus equipment per its model decision) has a
 checked-in published-or-draft entry, a wired source switch, `--verify` parity with locale
@@ -548,4 +561,5 @@ For every implementation change:
 | 2026-09-16 | M7 | Batch 14 DONE (aerial-drones monitoring-and-evaluation + as-built-surveys, tests deferred): M&E = hero + 3 introTexts + centred cta, 5 sections; as-built = hero (no title key → optText, h1 falls back to description) + metrics stats band + first bleed-variant + first images cta, 3 sections under hub-prefixed slug `aerial-drones-as-built-surveys` (bare slug taken by civil child). Completeness gate caught 2 real gaps, fixed: hero title optText + `sw` cta href curly-apostrophe aligned to en (one-char mailto fix, batch-2 precedent). Entries generated via `--write` (no gaps after fixes — generation only). Routes wired interleaved with count guards (M&E KS at 0,1,3,5,8; as-built KS at 0,3,4). Tails stay legacy: M&E fallbackIcons/iconShape/actions/leadImages grids; as-built fallbackIcons grid + layout/columns process | Validation DEFERRED per M7 policy: no `--verify`/`check:keystatic`/`typecheck`/`lint`/dev-smoke this batch; run once after all M7 stages | |
 | 2026-09-16 | M7 | Batch 15 DONE (aerial-drones agricultural-ndvi + lidar, tests deferred): agri = hero only, 1 section; lidar = hero + forestry/left-surface-wide + construction/right-default-wide splitMedias, 3 sections. Both entries generated via `--write` (no gaps — generation only). Routes wired interleaved with count guards (agri KS at 0; lidar KS at 0,4,5). Tails stay legacy: agri split-cards + layout/columns process; lidar indexed grid + layout/columns process + normalizeHref cta. DECISION: `aerial-drones/volumetric-surveys` DEFERRED — no `sw` namespace exists (en-only page); revisit when translated | Validation DEFERRED per M7 policy: no `--verify`/`check:keystatic`/`typecheck`/`lint`/dev-smoke this batch; run once after all M7 stages | |
 | 2026-09-16 | M7 | Batch 16 DONE (planning batch, no code): confirmed bespoke-only deferrals for `aerial-drones/landing` (carried from batch 4), `drone-imagery-surveys` and `photography-video-marketing` (zero registry-contract sections each — documented per page); equipment model decided file-based (checklist ticked, user may override); home inventory recorded (migratable: 2 ActionCtas, Industries, Faq, masked Cta; tails: WebGL hero, LeadGenBar, CoreExpertise extras, globe, bespoke rest) — home implementation splits into batches 17+. Also fixed two plan-edit misplacements in-session (non-unique oldString edits); rule going forward: always anchor plan edits with batch-specific context | No tests run (plan-only change; deferred validation unaffected) | |
-| 2026-09-16 | M7 | Batch 17 DONE (home, tests deferred): 2 split/shimmer ActionCtas + Industries label→title cardGrid (CardList renders `title ?? label`, stored title identical) + faq with direct still-curious object + masked/id Cta, 5 sections, `draft` (overwrites M1 starter). Entry generated via `--write` (no gaps — generation only). `[locale]/index.tsx` wired interleaved with count guard 5 (nested layout divs preserved). Tails stay legacy: WebGL hero, global LeadGenBar, CoreExpertise extras grid, CoverageArea globe, bespoke rest | Validation DEFERRED per M7 policy: no `--verify`/`check:keystatic`/`typecheck`/`lint`/dev-smoke this batch; run once after all M7 stages | | |
+| 2026-09-16 | M7 | Batch 17 DONE (home, tests deferred): 2 split/shimmer ActionCtas + Industries label→title cardGrid (CardList renders `title ?? label`, stored title identical) + faq with direct still-curious object + masked/id Cta, 5 sections, `draft` (overwrites M1 starter). Entry generated via `--write` (no gaps — generation only). `[locale]/index.tsx` wired interleaved with count guard 5 (nested layout divs preserved). Tails stay legacy: WebGL hero, global LeadGenBar, CoreExpertise extras grid, CoverageArea globe, bespoke rest | Validation DEFERRED per M7 policy: no `--verify`/`check:keystatic`/`typecheck`/`lint`/dev-smoke this batch; run once after all M7 stages | |
+| 2026-09-16 | M7 | CLOSE-OUT — M7 DONE. Deferred validation run once across the whole site, all green: `check:keystatic` OK (11 sections, 30 fixtures; 1 stale assertion fixed — M1 starter home → migrated home + temp publish); `--verify` clean for all 30 mapped pages; `yarn typecheck` clean; `yarn lint` clean; dev-smoke user-confirmed good (all 30 routes en+sw, temp publish flips reverted; company-profile stays `published` per M4); README (11 sections) + `.env.example` (multi-slug allowlist) updated; rollback covered by resolver matrix. M7 exit criteria met: 30 wired (`draft` except company-profile) + 4 deferred-with-reason (landing/drone-imagery/photography bespoke-only, aerial-volumetric en-only) + equipment file-based. Residuals → M6: `yarn build` standing skip, keyboard/responsive/visual + perf need a browser session. NOTE: unrelated `Process/index.tsx` timeline-visual tweak in working tree — not reviewed, not committed, left for its owner | M7 DONE; M6 stays IN PROGRESS on browser residuals only | | |

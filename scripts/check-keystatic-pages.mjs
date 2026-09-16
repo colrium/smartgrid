@@ -337,14 +337,20 @@ const resolutionCases = await (async () => {
 		check(`proxy/${name}`, passed, "admin edge gate behaved unexpectedly");
 	}
 
-	const realBase = makeContentBase({ "home.json": JSON.parse(readFileSync(join(ROOT, "content", "pages", "home.json"), "utf8")) });
+	const realHome = JSON.parse(readFileSync(join(ROOT, "content", "pages", "home.json"), "utf8"));
+	// The checked-in entry stays `draft`, so the temp base flips it to
+	// `published` — proving the real fixture resolves end to end once published.
+	const realBase = makeContentBase({ "home.json": { ...realHome, status: "published" } });
 	setSwitchEnv("home", undefined);
 	const realRes = await resolveKeystaticPage("home", "en", { baseDir: realBase });
+	// M7 batch 17: `home.json` is the real migrated home (overwrote the M1
+	// starter): 2 split/shimmer ActionCtas + Industries cardGrid + faq +
+	// masked Cta, in page order.
 	outcomes.push([
 		"resolve-real-fixture",
 		realRes.status === "keystatic" &&
-			realRes.page.title === "Home (starter)" &&
-			realRes.page.sections.map((s) => s.id).join(",") === "introText,stats",
+			realRes.page.title === "Home (migrated)" &&
+			realRes.page.sections.map((s) => s.id).join(",") === "ctaBand,cardGrid,faq,ctaBand,ctaBand",
 	]);
 
 	setSwitchEnv(savedEnv.KEYSTATIC_PAGES, savedEnv.KEYSTATIC_DISABLE);
