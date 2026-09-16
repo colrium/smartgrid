@@ -241,13 +241,22 @@ function galleryBuild(presentation) {
 
 // M7 batch 5: generic `introText` builder. Presentation props (tone, align,
 // split) are wrapper hardcodes — passed in, never read from content.
-function introTextBuild(presentation) {
+// `ctaKey` names an optional `{label, href, icon?}` action object merged by
+// wrappers like sectional IntroSection (absent → hidden CTA).
+function introTextBuild(presentation, ctaKey = null) {
 	return (en, sw, where) => ({
 		tag: { en: optText(en.tag), sw: optText(sw.tag) },
 		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
 		description: { en: optText(en.description), sw: optText(sw.description) },
 		...presentation,
-		cta: { label: emptyPair(), href: "", icon: "" },
+		cta:
+			ctaKey && (en[ctaKey] || sw[ctaKey])
+				? {
+						label: { en: reqText(en[ctaKey]?.label, `${where}.${ctaKey}.label.en`), sw: reqText(sw[ctaKey]?.label, `${where}.${ctaKey}.label.sw`) },
+						href: sharedValue(en[ctaKey], sw[ctaKey], "href", `${where}.${ctaKey}`) ?? "",
+						icon: sharedValue(en[ctaKey], sw[ctaKey], "icon", `${where}.${ctaKey}`) ?? "",
+					}
+				: { label: emptyPair(), href: "", icon: "" },
 		id: "",
 	});
 }
@@ -683,6 +692,139 @@ const PAGES = {
 				from: "section1",
 				// Legacy: IntroSection → <IntroTextSection ... split /> (split hardcoded; the content `split` key is not read)
 				build: introTextBuild({ tone: "default", align: "left", split: true }),
+			},
+		],
+	},
+	// M7 batch 6: sectional-properties. Five sections migrate in page order —
+	// `hero`, `section1` (introText with CTA), `sectionalServices` (gallery),
+	// `faq` (q/a/b keys), `registrationCta` (first ctaBand migration) —
+	// interleaved with six legacy tails (see route wiring): WhatIs (bespoke),
+	// sectionalPropertyServices + whoNeeds (non-contract cardGrid props:
+	// `indexed`, `fallbackIcons`, `hoverArrow`, `headerAlign`, per-card footer
+	// links), ProcessSection + TimelineSection (WorkflowSection / timeline
+	// variant: neither registered), SectionalDeliverablesSection (explorer).
+	// `socials` is commented out of the route — dead, never migrated.
+	"sectional-properties": {
+		namespace: "surveying/sectional-properties",
+		title: "Sectional Properties",
+		skipped: ["whatIs", "sectionalPropertyServices", "process", "deliverables", "whoNeeds", "timeline", "socials"],
+		sections: [
+			{
+				discriminant: "hero",
+				from: "hero",
+				// Legacy: SectionalHeroSection → <Hero data={t(hero)} />
+				// (default bottom layout; no title key — the h1 falls back to
+				// description exactly as in legacy).
+				build(en, sw, where) {
+					return {
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						title: { en: optText(en.title), sw: optText(sw.title) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						image: sharedValue(en, sw, "image", where) ?? "",
+						layout: sharedValue(en, sw, "layout", where) ?? "bottom",
+						frame: sharedValue(en, sw, "frame", where) ?? false,
+						scrollCue: sharedValue(en, sw, "scrollCue", where) ?? false,
+						cueLabel: emptyPair(),
+						footnoteItems: [],
+						ctaPrimary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+							iconPosition: sharedValue(en.ctaPrimary, sw.ctaPrimary, "iconPosition", where) ?? "end",
+							trailingArrow: (() => {
+								const arrow = sharedValue(en.ctaPrimary, sw.ctaPrimary, "trailingArrow", where);
+								return arrow === true ? "show" : arrow === false ? "hide" : "auto";
+							})(),
+						},
+						ctaSecondary: {
+							label: { en: reqText(en.ctaSecondary?.label, `${where}.ctaSecondary.label.en`), sw: reqText(sw.ctaSecondary?.label, `${where}.ctaSecondary.label.sw`) },
+							href: sharedValue(en.ctaSecondary, sw.ctaSecondary, "href", where) ?? "",
+							icon: sharedValue(en.ctaSecondary, sw.ctaSecondary, "icon", where) ?? "",
+						},
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "introText",
+				from: "section1",
+				// Legacy: IntroSection → <IntroTextSection ... cta={ctaPrimary} /> (all defaults + pill CTA)
+				build: introTextBuild({ tone: "default", align: "left", split: false }, "ctaPrimary"),
+			},
+			{
+				discriminant: "gallery",
+				from: "sectionalServices",
+				// Legacy: ServicesImageSection → <Gallery columns={4} /> (layout/tone unset = grid/default)
+				build: galleryBuild({ layout: "grid", columns: "4", tone: "default" }),
+			},
+			{
+				discriminant: "faq",
+				from: "faq",
+				// Legacy: SectionalFaqSection → <SharedFaq tag headline items />
+				// with q/a/b keys mapped to question/answer/points (no icons,
+				// no still-curious card).
+				build(en, sw, where) {
+					const enItems = en.items ?? [];
+					const swItems = sw.items ?? [];
+					if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+						gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+					}
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: emptyPair(),
+						items: enItems.map((item, i) => {
+							const swItem = swItems[i] ?? {};
+							const enPoints = item.b ?? [];
+							const swPoints = swItem.b ?? [];
+							if (!Array.isArray(swPoints) || swPoints.length !== enPoints.length) {
+								gap(where, `items[${i}] point count diverged (en=${enPoints.length} sw=${swPoints?.length})`);
+							}
+							return {
+								question: { en: reqText(item.q, `${where}.items[${i}].q.en`), sw: reqText(swItem.q, `${where}.items[${i}].q.sw`) },
+								answer: { en: reqText(item.a, `${where}.items[${i}].a.en`), sw: reqText(swItem.a, `${where}.items[${i}].a.sw`) },
+								points: enPoints.map((point, j) => ({
+									en: reqText(point, `${where}.items[${i}].b[${j}].en`),
+									sw: reqText(swPoints[j], `${where}.items[${i}].b[${j}].sw`),
+								})),
+								icon: "",
+							};
+						}),
+						stillCuriousLabel: emptyPair(),
+						stillCuriousDescription: emptyPair(),
+						stillCuriousCta: { label: emptyPair(), href: "", icon: "" },
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "ctaBand",
+				from: "registrationCta",
+				// Legacy: RegistrationCtaSection → <CtaBand ... /> (layout /
+				// variant / decor unset = centered / panel / glow). First
+				// ctaBand migration; watermark travels as a shared token.
+				build(en, sw, where) {
+					const action = (node, swNode, key) => ({
+						label: { en: reqText(node?.label, `${where}.${key}.label.en`), sw: reqText(swNode?.label, `${where}.${key}.label.sw`) },
+						href: sharedValue(node, swNode, "href", `${where}.${key}`) ?? "",
+						icon: sharedValue(node, swNode, "icon", `${where}.${key}`) ?? "",
+					});
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						primary: action(en.primary, sw.primary, "primary"),
+						secondary: action(en.secondary, sw.secondary, "secondary"),
+						layout: "centered",
+						variant: "panel",
+						decor: "glow",
+						watermark: sharedValue(en, sw, "watermark", where) ?? "",
+						images: [],
+						shimmer: false,
+						hairline: false,
+						id: "",
+					};
+				},
 			},
 		],
 	},
