@@ -1,0 +1,52 @@
+{
+	"slug": "Cadastral Surveys",
+	"title": "Cadastral Surveys (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "hero",
+			"value": {
+				"headline": {
+					"en": "CADASTRAL SURVEYS",
+					"sw": "UCHUNGUZI WA CADASTRAL"
+				},
+				"title": {
+					"en": "Know Your Boundaries, Build with Confidence",
+					"sw": "Jua Mipaka Yako, Jenga kwa Ujasiri"
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"image": "/media/surveying/cadastral-surveys/AG8ng.jpg",
+				"layout": "bottom",
+				"frame": false,
+				"scrollCue": false,
+				"cueLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"footnoteItems": [],
+				"ctaPrimary": {
+					"label": {
+						"en": "Get Your Free Consultation",
+						"sw": "Pata Ushauri Wako wa Bure"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Cadastral Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Cadastral Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "",
+					"iconPosition": "end",
+					"trailingArrow": "auto"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		}
+	]
+}

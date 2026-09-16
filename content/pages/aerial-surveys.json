@@ -1,0 +1,101 @@
+{
+	"slug": "Aerial Surveys",
+	"title": "Aerial Surveys (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "hero",
+			"value": {
+				"headline": {
+					"en": "AERIAL SURVEYS",
+					"sw": "UCHUNGUZI WA ANGANI"
+				},
+				"title": {
+					"en": "Aerial Drone Surveying in Kenya, Uganda, Tanzania and beyond",
+					"sw": "Uchunguzi wa Drone wa Angani nchini Kenya, Uganda, Tanzania na zaidi"
+				},
+				"description": {
+					"en": "Survey-Grade Mapping for Engineering, Construction & Infrastructure Projects Across Africa and beyond.",
+					"sw": "Ramani za Darasa la Uchunguzi kwa Miradi ya Uhandisi, Ujenzi & Miundombinu Barani Afrika na zaidi."
+				},
+				"image": "/media/surveying/aerial-surveys/AG8ng.jpeg",
+				"layout": "bottom",
+				"frame": false,
+				"scrollCue": false,
+				"cueLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"footnoteItems": [
+					{
+						"icon": "shield-check",
+						"text": {
+							"en": "KCAA-Compliant UAV Operations",
+							"sw": "Uendeshaji wa UAV Unaozingatia KCAA"
+						}
+					},
+					{
+						"icon": "crosshairs-gps",
+						"text": {
+							"en": "RTK / LiDAR Accuracy ±2–5cm",
+							"sw": "Usahihi wa RTK / LiDAR ±2–5cm"
+						}
+					},
+					{
+						"icon": "map-marker-radius",
+						"text": {
+							"en": "Kenya, Uganda & East Africa Coverage",
+							"sw": "Ufunikaji wa Kenya, Uganda & Afrika Mashariki"
+						}
+					}
+				],
+				"ctaPrimary": {
+					"label": {
+						"en": "Get a Drone Survey Quote (24-Hour Response)",
+						"sw": "Pata Nukuu ya Uchunguzi wa Drone (Majibu ya Masaa 24)"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Drone Survey (24-Hour Response)&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like a drone survey quotation. Please respond within 24 hours.%0D%0A%0D%0AProject name:%0D%0ALocation (County / Country):%0D%0AArea to survey (hectares):%0D%0AService needed (mapping / LiDAR / volumetrics / NDVI):%0D%0ADeliverables required:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "",
+					"iconPosition": "end",
+					"trailingArrow": "auto"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "splitMedia",
+			"value": {
+				"tag": {
+					"en": "Precision",
+					"sw": "Usahihi"
+				},
+				"headline": {
+					"en": "Eyes in the Sky, Precision on the Ground",
+					"sw": "Jicho Angani, Usahihi Ardhini"
+				},
+				"description": {
+					"en": "At SmartGrid Surveying, our aerial drone survey solutions offer high-resolution imagery, topographic mapping, and volumetric analysis with unmatched accuracy and speed. From vast farmlands to urban infrastructure, our drone technology captures data quickly, safely, and cost-effectively—especially in hard-to-reach or expansive areas. \n\n We’ve completed aerial drone surveys across multiple sectors in 10+ African countries, serving land developers, governments, mining companies, and agribusinesses.",
+					"sw": "Katika SmartGrid Surveying, suluhisho zetu za uchunguzi wa drone wa angani hutoa picha za mwonekano wa juu, ramani za topografia, na uchambuzi wa kiasi kwa usahihi na kasi isio na mfano. Kutoka mashamba makubwa hadi miundombinu ya mijini, teknolojia yetu ya drone inakamata data kwa haraka, kwa usalama, na kwa gharama nafuu — hasa katika maeneo magumu kufikia au mapana. \n\n Tumekamilisha uchunguzi wa drone wa angani katika sekta nyingi katika nchi 10+ za Afrika, tukihudumia wasanidi wa ardhi, serikali, kampuni za madini, na wamiliki wa biashara za kilimo."
+				},
+				"image": {
+					"en": "/media/surveying/aerial-surveys/drone-piloting.jpeg",
+					"sw": "/media/surveying/aerial-surveys/drone-piloting.jpeg"
+				},
+				"points": [],
+				"imagePosition": "right",
+				"tone": "surface",
+				"mediaAspect": "default",
+				"mediaFit": "cover",
+				"id": ""
+			}
+		}
+	]
+}

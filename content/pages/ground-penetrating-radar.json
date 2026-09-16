@@ -1,0 +1,156 @@
+{
+	"slug": "Ground Penetrating Radar",
+	"title": "Ground Penetrating Radar (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "ctaBand",
+			"value": {
+				"tag": {
+					"en": "Technical Proposal",
+					"sw": "Pendekezo la Kiufundi"
+				},
+				"headline": {
+					"en": "Request Technical Proposal (24hr Turnaround)",
+					"sw": "Omba Pendekezo la Kiufundi (Majibu ya Saa 24)"
+				},
+				"description": {
+					"en": "Send us your site details — access, area, and utility concerns — and receive a scoped GPR / SUE technical proposal with methodology, deliverables and pricing within 24 hours.",
+					"sw": "Tutumie maelezo ya tovuti yako — ufikiaji, eneo, na mahangaiko ya huduma — nasi tutapokea pendekezo la kiufundi la GPR / SUE lenye mbinu, matokeo na bei ndani ya saa 24."
+				},
+				"primary": {
+					"label": {
+						"en": "Request Technical Proposal",
+						"sw": "Omba Pendekezo la Kiufundi"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Technical Proposal Request: GPR & SUE&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like a technical proposal for a GPR / subsurface utility engineering survey.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AArea to survey:%0D%0AUtility concerns:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "file-document-outline"
+				},
+				"secondary": {
+					"label": {
+						"en": "WhatsApp a GPR Specialist",
+						"sw": "WhatsApp Mtaalamu wa GPR"
+					},
+					"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20request%20a%20GPR%20technical%20proposal.",
+					"icon": "whatsapp"
+				},
+				"layout": "split",
+				"variant": "panel",
+				"decor": "glow",
+				"watermark": "file-document-outline",
+				"images": [],
+				"shimmer": true,
+				"hairline": true,
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "faq",
+			"value": {
+				"tag": {
+					"en": "FAQs",
+					"sw": "Maswali"
+				},
+				"headline": {
+					"en": "Frequently Asked Questions",
+					"sw": "Maswali Yanayoulizwa Mara Kwa Mara"
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"question": {
+							"en": "What is a GPR survey?",
+							"sw": "Uchunguzi wa GPR ni nini?"
+						},
+						"answer": {
+							"en": "A GPR (Ground Penetrating Radar) survey uses electromagnetic pulses fired into the ground to locate buried utilities, rebar, voids, and other subsurface features without excavation or drilling. The radar unit is pushed across the surface and the reflected signals are processed into a map showing the depth and position of detected features.",
+							"sw": "Uchunguzi wa GPR (Ground Penetrating Radar) hutumia miale ya electromagnetic inayofyatuliwa chini ya ardhi kutafuta huduga zilizojificha, rebar, mashimo, na vitu vingine vya chini ya ardhi bila kuchimba au kuchimba mashimo. Kifaa cha radar husukwa juu ya uso na ishara zilizorudishwa huchakatwa kuwa ramani inayoonyesha kina na mahali pa vitu vilivyotambuliwa."
+						},
+						"points": [],
+						"icon": ""
+					},
+					{
+						"question": {
+							"en": "How deep can GPR detect in Kenyan soil conditions?",
+							"sw": "GPR inaweza kufikia kina gani katika udongo wa Kenya?"
+						},
+						"answer": {
+							"en": "Detection depth depends on soil type. In sandy or volcanic soils we typically achieve 3-8 meters of penetration, while wet clay heavily attenuates the signal and may limit depth to 1-2 meters. Where deeper targets are expected, we deploy lower-frequency antennas and combine GPR with electromagnetic locators.",
+							"sw": "Kina cha utambuzi kinategemea aina ya udongo. Katika mchanga au udongo wa volkeno tunafikia kina cha mita 3-8, huku udongo mwitu wa udongo unapunguza ishara na kupunguza kina hadi 1-2 mita. Pale malengo ya kina yanapatarajiwa, tunatumia antennas za chini na kuchanganya GPR na vitambuzi vya electromagnetic."
+						},
+						"points": [],
+						"icon": ""
+					},
+					{
+						"question": {
+							"en": "Can GPR work through concrete?",
+							"sw": "Je, GPR inafanya kazi kupitia zege?"
+						},
+						"answer": {
+							"en": "Yes. Concrete scanning is one of the most common GPR applications — we locate rebar, post-tension cables, conduits, and voids within slabs, walls, and beams quickly and without any damage to the structure.",
+							"sw": "Ndiyo. Uscanaji wa zege ni mojawapo ya matumizi ya kawaida ya GPR — tunatambua rebar, kanda za post-tension, conduits, na mashimo ndani ya slabs, kuta, na beams kwa haraka bila madhara yoyote kwa muundo."
+						},
+						"points": [],
+						"icon": ""
+					},
+					{
+						"question": {
+							"en": "Do you provide same-day results?",
+							"sw": "Je, mnatoa matokeo siku hiyo hiyo?"
+						},
+						"answer": {
+							"en": "Preliminary findings and on-site markouts are provided immediately after scanning. Full interpreted reports and CAD drawings are delivered within the timeline agreed for your project — typically a few days depending on site size.",
+							"sw": "Matokeo ya awali na alama za tovuti hutolewa papo hapo baada ya uscanaji. Ripoti kamili zilizotafsiriwa na michoro ya CAD hutolewa ndani ya muda uliokubaliwa kwa mradi wako — kwa kawaida siku chache kulingana na ukubwa wa tovuti."
+						},
+						"points": [],
+						"icon": ""
+					},
+					{
+						"question": {
+							"en": "Is GPR safe to use indoors?",
+							"sw": "Je, GPR ni salama kutumia ndani ya majengo?"
+						},
+						"answer": {
+							"en": "Completely safe. GPR emits low-power radio waves — there is no radiation risk to people, and the method is entirely non-destructive, making it ideal for occupied buildings, hospitals, and live industrial facilities.",
+							"sw": "Ni salama kabisa. GPR hutuma miale ya redio yenye nguvu ndogo — hakuna hatari ya mionzi kwa watu, na njia hii haiharibu kabisa, na kuifanya kuwa bora kwa majengo yaliyokaliwa, hospitali, na viwanda vinavyofanya kazi."
+						},
+						"points": [],
+						"icon": ""
+					},
+					{
+						"question": {
+							"en": "Do you offer ground penetrating radar surveys near me?",
+							"sw": "Je, mnatoa huduma za GPR karibu nawe?"
+						},
+						"answer": {
+							"en": "Our GPR teams are based in Nairobi and mobilize countrywide — Kiambu, Nakuru, Kisumu, Mombasa, and beyond — with most requests scheduled within 24 hours.",
+							"sw": "Timu zetu za GPR ziko Nairobi na hupeleka huduma nchini kote — Kiambu, Nakuru, Kisumu, Mombasa, na zaidi — na ombi kubwa la maombi huwekwa ratiba ndani ya saa 24."
+						},
+						"points": [],
+						"icon": ""
+					}
+				],
+				"stillCuriousLabel": {
+					"en": "Have more questions?",
+					"sw": "Una maswali mengine?"
+				},
+				"stillCuriousDescription": {
+					"en": "Our team of experts is ready to assist you with your specific project requirements. Contact us today.",
+					"sw": "Timu yetu ya wataalamu iko tayari kukusaidia na mahitaji mahsusi ya mradi wako. Wasiliana nasi leo."
+				},
+				"stillCuriousCta": {
+					"label": {
+						"en": "Contact Us",
+						"sw": "Wasiliana Nasi"
+					},
+					"href": "/contact",
+					"icon": ""
+				},
+				"id": "faqs"
+			}
+		}
+	]
+}

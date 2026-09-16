@@ -249,7 +249,7 @@ Route inventory (from `src/pages/[locale]/**` + `public/locales/<en|sw>/**`, 202
   `/equipment-sale/[product]` (product pages render from `products.json` + per-product
   locale files, not one namespace per page — needs its own content model decision, see
   checklist).
-- Wired to Keystatic today (13 of ~34 static + 1 dynamic): `terms-of-use` (M3),
+- Wired to Keystatic today (17 of ~34 static + 1 dynamic): `terms-of-use` (M3),
   `company-profile` (M4, hybrid tail), `privacy-policy` (M7 batch 1),
   `contact` + `careers` (M7 batch 2, hybrid tails), `about` (M7 batch 3,
   interleaved hybrid, entry `draft`),   `surveying` + `civil` hubs (M7 batch 4,
@@ -257,8 +257,10 @@ Route inventory (from `src/pages/[locale]/**` + `public/locales/<en|sw>/**`, 202
   interleaved hybrid, entry `draft`), `sectional-properties` (M7 batch 6,
   interleaved hybrid, entry `draft`), `bathymetric-surveys` (M7 batch 7,
   interleaved hybrid, entry `draft`), `resource-mapping` + `building-site-surveys`
-  (M7 batch 8, interleaved hybrids, entries `draft`). All other `[locale]` routes render
-  legacy only — no `resolveKeystaticPage` call.
+  (M7 batch 8, interleaved hybrids, entries `draft`), `aerial-surveys` +
+  `cadastral-surveys` (M7 batch 9, interleaved hybrids, entries `draft`),
+  `ground-penetrating-radar` + `gis-mapping` (M7 batch 10, interleaved hybrids,
+  entries `draft`). All other `[locale]` routes render legacy only — no `resolveKeystaticPage` call.
 
 - [x] Inventory every `[locale]` route and its locale namespace(s), section components,
       and bespoke/client-only parts (forms, maps, 3D/globe, viewers, product registry).
@@ -317,6 +319,13 @@ Route inventory (from `src/pages/[locale]/**` + `public/locales/<en|sw>/**`, 202
       Batch 8 done 2026-09-16: `resource-mapping.tsx` (hero + whyStandOut cardGrid,
       2 sections) + `building-site-surveys.tsx` (introText + 2 ctaBands + gallery,
       4 sections) wired as interleaved hybrids (count guards → legacy fallback).
+      Batch 9 done 2026-09-16: `aerial-surveys.tsx` (hero with footnote chips +
+      precision splitMedia, 2 sections) + `cadastral-surveys.tsx` (hero only,
+      1 section) wired as interleaved hybrids (count guards → legacy fallback).
+      Batch 10 done 2026-09-16: `ground-penetrating-radar.tsx` (technicalCta ctaBand +
+      faqs faq with still-curious card, 2 sections) + `gis-mapping.tsx`
+      (consultationCta ctaBand, 1 section) wired as interleaved hybrids
+      (count guards → legacy fallback).
       `check:keystatic` fixture/render coverage now 11 fixtures, 11 sections.)
 - [x] Migrate + verify in small batches (suggested: legal → contact/careers → about →
       hubs → children → home last as the largest page; equipment per its model decision),
@@ -342,6 +351,24 @@ Route inventory (from `src/pages/[locale]/**` + `public/locales/<en|sw>/**`, 202
       Batch 8 — resource-mapping (hero dual-pill + whyStandOut cardGrid columns 4
       centred, 2 sections) + building-site-surveys (introText split + split/shimmer
       ctaBand + grid gallery + centred/hairline ctaBand, 4 sections) — done 2026-09-16,
+      both `draft`, entries generated via `--write` (no gaps); all validation DEFERRED
+      per M7 test-deferral policy.
+      Batch 9 — aerial-surveys (hero with 3 footnote chips, first footnote migration +
+      precision splitMedia, 2 sections) + cadastral-surveys (hero only with empty
+      description optText, 1 section; whatsABoundarySurvey DORMANT — IntroSection
+      commented out of route — postHeroCta bespoke band tail) — done 2026-09-16,
+      both `draft`, entries generated via `--write` (no gaps); all validation DEFERRED
+      per M7 test-deferral policy.
+      Batch 10 — ground-penetrating-radar (split/shimmer/hairline ctaBand + faq with
+      question/answer items + still-curious card from `cta`, 2 sections) +
+      gis-mapping (split/shimmer/hairline consultation ctaBand, 1 section; bespoke
+      hero with `<bold>` markup + all cardGrids on non-contract props stay legacy) —
+      done 2026-09-16, both `draft`, entries generated via `--write` (no gaps); all
+      validation DEFERRED per M7 test-deferral policy.)
+      Batch 9 — aerial-surveys (hero with 3 footnote chips, first footnote migration +
+      precision splitMedia, 2 sections) + cadastral-surveys (hero only with empty
+      description optText, 1 section; whatsABoundarySurvey DORMANT — IntroSection
+      commented out of route — postHeroCta bespoke band tail) — done 2026-09-16,
       both `draft`, entries generated via `--write` (no gaps); all validation DEFERRED
       per M7 test-deferral policy.)
 - [ ] Update the README operator guide + `.env.example` allowlist examples as the editable
@@ -427,4 +454,6 @@ For every implementation change:
 | 2026-09-16 | M7 | Batch 6 DONE (sectional-properties): 5 sections (hero with dual pills, introText with CTA via extended `introTextBuild`, overlay gallery, q/a/b faq, first `ctaBand` migration with shared watermark) in page order, `draft`, `--verify` clean first try. Route wired interleaved (KS at 0,1,3,9,10 + count guard 5). Tails stay legacy: bespoke WhatIs, 2 cardGrids on non-contract props (`indexed`/`fallbackIcons`/`hoverArrow`/`headerAlign`/footer links), WorkflowSection process + timeline variant, deliverables explorer; `socials` commented out = dead, never migrated | `check:keystatic` OK (11 sections, 11 fixtures; same 3 expected warnings); `--verify` clean all 10 mapped pages; `--dump-text` sectional fully resolved en+sw (hero/faq/ctaBand text verified), no leaks; `yarn typecheck` clean (42s); `eslint` clean on touched files; dev smoke user-confirmed good (`KEYSTATIC_PAGES=sectional-properties`, temp publish flip, reverted to `draft`) — no node processes left behind | |
 | 2026-09-16 | M7 | Test-deferral policy adopted per user request: `docs/keystatic-page-builder/instructions.md` updated (M7 Test Deferral Policy — all per-batch `typecheck`/`lint`/`check:keystatic`/`--verify`/`--dump-text`/dev-smoke skipped, run once after all M7 stages). AGENTS.md/CLAUDE.md confirmed absent again (glob no match) — README + plan remain source of truth | No tests run (deferred); instructions.md edit only | |
 | 2026-09-16 | M7 | Batch 7 DONE (bathymetric-surveys, tests deferred): mapping added (`hero` default bottom + v2 pill keys, `whatIs` splitMedia right/surface, 2 string-array cardGrid builds with check/check-bold icons, columns 3 tone surface); `content/pages/bathymetric-surveys.json` generated via `--write` (4 sections, no completeness gaps — generation only, not validation); route wired interleaved (KS at 0,1,2,6 + count guard 4). Tails stay legacy: WorkflowSection workflow, bespoke equipment/deliverables/limitations/beforeAfter/finalCta, dams leadImages grid, applications mediaBadged grid | Validation DEFERRED per M7 policy: no `--verify`/`check:keystatic`/`typecheck`/`lint`/dev-smoke this batch; run once after all M7 stages | |
-| 2026-09-16 | M7 | Batch 8 DONE (resource-mapping + building-site-surveys, tests deferred): resource-mapping = hero dual-pill + whyStandOut cardGrid (cols 4 centred surface) via existing `cardGridBuild`, 2 sections; building-site = section1 introText split via `introTextBuild`, actionCta ctaBand split/shimmer, exploreMore gallery grid via `galleryBuild`, cta ctaBand centred/hairline, 4 sections. Both entries generated via `--write` (no gaps — generation only). Routes wired interleaved with count guards (resource KS at 0,9; building-site KS at 1,6,10,11). Tails stay legacy: resource sector/leadImages + fallbackIcons grids + workflow/deliverables/finalCta bespoke; building-site bespoke hero + indexed/fallbackIcons grids + Process layout/columns (outside registry contract) + deliverables explorer | Validation DEFERRED per M7 policy: no `--verify`/`check:keystatic`/`typecheck`/`lint`/dev-smoke this batch; run once after all M7 stages | | |
+| 2026-09-16 | M7 | Batch 8 DONE (resource-mapping + building-site-surveys, tests deferred): resource-mapping = hero dual-pill + whyStandOut cardGrid (cols 4 centred surface) via existing `cardGridBuild`, 2 sections; building-site = section1 introText split via `introTextBuild`, actionCta ctaBand split/shimmer, exploreMore gallery grid via `galleryBuild`, cta ctaBand centred/hairline, 4 sections. Both entries generated via `--write` (no gaps — generation only). Routes wired interleaved with count guards (resource KS at 0,9; building-site KS at 1,6,10,11). Tails stay legacy: resource sector/leadImages + fallbackIcons grids + workflow/deliverables/finalCta bespoke; building-site bespoke hero + indexed/fallbackIcons grids + Process layout/columns (outside registry contract) + deliverables explorer | Validation DEFERRED per M7 policy: no `--verify`/`check:keystatic`/`typecheck`/`lint`/dev-smoke this batch; run once after all M7 stages | |
+| 2026-09-16 | M7 | Batch 9 DONE (aerial-surveys + cadastral-surveys, tests deferred): aerial = hero with 3 footnote chips (icons shared, text localized — first footnote migration) + precision splitMedia right/surface, 2 sections; cadastral = hero only (empty description via optText), 1 section. Both entries generated via `--write` (no gaps — generation only). Routes wired interleaved with count guards (aerial KS at 0,4; cadastral KS at 0). Tails stay legacy: aerial bespoke intro + popup services + workflow/deliverables + fallbackIcons grids + size/pill-override CtaBands + projects/additional/final; cadastral whatsABoundarySurvey DORMANT (IntroSection commented out — not migrated) + bespoke postHeroCta band + case-work tails | Validation DEFERRED per M7 policy: no `--verify`/`check:keystatic`/`typecheck`/`lint`/dev-smoke this batch; run once after all M7 stages | |
+| 2026-09-16 | M7 | Batch 10 DONE (ground-penetrating-radar + gis-mapping, tests deferred): GPR = technicalCta ctaBand split/shimmer/hairline + faqs faq (6 question/answer items + still-curious card from `cta`), 2 sections; GIS = consultationCta ctaBand split/shimmer/hairline, 1 section. Both entries generated via `--write` (no gaps — generation only). Routes wired interleaved with count guards (GPR KS at 1,15; GIS KS at 2). Tails stay legacy: GPR bespoke hero + indexed/fallbackIcons grids + bespoke deliverables/sue/limitations/beforeAfter/technology/summary/highlights/jumpNav/overview/methodology/featuredProjects/finalCta; GIS bespoke hero (`<bold>` markup) + all cardGrids on non-contract props + bespoke remainder | Validation DEFERRED per M7 policy: no `--verify`/`check:keystatic`/`typecheck`/`lint`/dev-smoke this batch; run once after all M7 stages | | |

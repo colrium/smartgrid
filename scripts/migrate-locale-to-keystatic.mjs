@@ -1105,6 +1105,255 @@ const PAGES = {
 			},
 		],
 	},
+	// M7 batch 9a: aerial-surveys. Two sections migrate in page order —
+	// `hero` (shared Hero with trust-marker footnote chips) + `precision`
+	// (splitMedia right/surface). Tails stay legacy: bespoke Intro (manifesto +
+	// briefing card), WhyDroneServices popup cards, WorkflowSection workflow,
+	// deliverables explorer, Industries + TechStack (fallbackIcons), IndustryCta
+	// + CapabilityCta (CtaBand `size` + pill iconPosition/trailingArrow
+	// overrides outside the v1 contract), Projects/AdditionalServices bespoke,
+	// final CTA.
+	"aerial-surveys": {
+		namespace: "surveying/aerial-surveys",
+		title: "Aerial Surveys",
+		skipped: ["section1", "whatWeOffer", "aerialSurveying", "deliverables", "whyDroneSurveys", "workflow", "industries", "industryCta", "techStack", "capabilityCta", "finalCta", "projects", "additionalServices"],
+		sections: [
+			{
+				discriminant: "hero",
+				from: "hero",
+				// Legacy: AerialHeroSection → <Hero data={t(hero)} /> (default
+				// bottom layout; footnote chips travel as shared icons +
+				// localized text — first hero migration with footnotes).
+				build(en, sw, where) {
+					const enChips = en.footnoteItems ?? [];
+					const swChips = sw.footnoteItems ?? [];
+					if (!Array.isArray(swChips) || swChips.length !== enChips.length) {
+						gap(where, `footnote count diverged (en=${enChips.length} sw=${swChips?.length})`);
+					}
+					return {
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						title: { en: reqText(en.title, `${where}.title.en`), sw: reqText(sw.title, `${where}.title.sw`) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						image: sharedValue(en, sw, "image", where) ?? "",
+						layout: sharedValue(en, sw, "layout", where) ?? "bottom",
+						frame: sharedValue(en, sw, "frame", where) ?? false,
+						scrollCue: sharedValue(en, sw, "scrollCue", where) ?? false,
+						cueLabel: emptyPair(),
+						footnoteItems: enChips.map((chip, i) => {
+							const swChip = swChips[i] ?? {};
+							return {
+								icon: sharedValue(chip, swChip, "icon", `${where}.footnoteItems[${i}]`) ?? "",
+								text: { en: reqText(chip.text, `${where}.footnoteItems[${i}].text.en`), sw: reqText(swChip.text, `${where}.footnoteItems[${i}].text.sw`) },
+							};
+						}),
+						ctaPrimary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+							iconPosition: sharedValue(en.ctaPrimary, sw.ctaPrimary, "iconPosition", where) ?? "end",
+							trailingArrow: (() => {
+								const arrow = sharedValue(en.ctaPrimary, sw.ctaPrimary, "trailingArrow", where);
+								return arrow === true ? "show" : arrow === false ? "hide" : "auto";
+							})(),
+						},
+						ctaSecondary: { label: emptyPair(), href: "", icon: "" },
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "splitMedia",
+				from: "precision",
+				// Legacy: PrecisionSection → <SplitMedia data
+				// imagePosition="right" tone="surface" /> (no points).
+				build(en, sw, where) {
+					return {
+						tag: { en: reqText(en.tag, `${where}.tag.en`), sw: reqText(sw.tag, `${where}.tag.sw`) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						image: { en: optText(en.image), sw: optText(sw.image) },
+						points: [],
+						imagePosition: "right",
+						tone: "surface",
+						mediaAspect: "default",
+						mediaFit: "cover",
+						id: "",
+					};
+				},
+			},
+		],
+	},
+	// M7 batch 9b: cadastral-surveys. Hero only (1 section) — the smallest
+	// surface of any child so far. `whatsABoundarySurvey` stays DORMANT: its
+	// IntroSection is commented out of the route, so migrating it would
+	// re-enable content the editors switched off; document here and revisit if
+	// the route re-enables it. `postHeroCta` is a bespoke band (Blob +
+	// shimmer, not CtaBand); process/cost/timeline/compliance/caseStudy/
+	// finalCta are bespoke case-work sections. Hero description is empty in
+	// both locales (optText, not reqText).
+	"cadastral-surveys": {
+		namespace: "surveying/cadastral-surveys",
+		title: "Cadastral Surveys",
+		skipped: ["whatsABoundarySurvey", "postHeroCta", "whenYouNeed", "process", "processCta", "cost", "timeline", "compliance", "caseStudy", "finalCta"],
+		sections: [
+			{
+				discriminant: "hero",
+				from: "hero",
+				// Legacy: CadastralHeroSection → <Hero data={t(hero)} />
+				// (default bottom layout; empty description in both locales).
+				build(en, sw, where) {
+					return {
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						title: { en: reqText(en.title, `${where}.title.en`), sw: reqText(sw.title, `${where}.title.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						image: sharedValue(en, sw, "image", where) ?? "",
+						layout: sharedValue(en, sw, "layout", where) ?? "bottom",
+						frame: sharedValue(en, sw, "frame", where) ?? false,
+						scrollCue: sharedValue(en, sw, "scrollCue", where) ?? false,
+						cueLabel: emptyPair(),
+						footnoteItems: [],
+						ctaPrimary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+							iconPosition: sharedValue(en.ctaPrimary, sw.ctaPrimary, "iconPosition", where) ?? "end",
+							trailingArrow: (() => {
+								const arrow = sharedValue(en.ctaPrimary, sw.ctaPrimary, "trailingArrow", where);
+								return arrow === true ? "show" : arrow === false ? "hide" : "auto";
+							})(),
+						},
+						ctaSecondary: { label: emptyPair(), href: "", icon: "" },
+						id: "",
+					};
+				},
+			},
+		],
+	},
+	// M7 batch 10a: ground-penetrating-radar. Two sections migrate in page
+	// order — `technicalCta` (ctaBand split/shimmer/hairline) + `faqs` (faq
+	// with still-curious card). The bespoke service hero (Link + Slider, not
+	// shared Hero) stays legacy; both cardGrids use non-contract props
+	// (`indexed` numbering, `fallbackIcons`); deliverables/sue/limitations/
+	// beforeAfter/technology/summary/highlights/jumpNav/overview/methodology/
+	// featuredProjects/finalCta are bespoke. FAQ items carry question/answer
+	// only (no points/icons); the still-curious card maps from the `cta`
+	// object (headline→label, description, label+href).
+	"ground-penetrating-radar": {
+		namespace: "surveying/ground-penetrating-radar",
+		title: "Ground Penetrating Radar",
+		skipped: ["hero", "highlights", "jumpNav", "overview", "methodology", "applications", "deliverables", "detectCaps", "sue", "limitations", "beforeAfter", "summary", "finalCta", "technology", "featuredProjects"],
+		sections: [
+			{
+				discriminant: "ctaBand",
+				from: "technicalCta",
+				// Legacy: GprTechnicalProposalCta → <CtaBand layout="split"
+				// shimmer hairline watermark /> (variant/decor unset =
+				// panel/glow).
+				build(en, sw, where) {
+					const action = (node, swNode, key) => ({
+						label: { en: reqText(node?.label, `${where}.${key}.label.en`), sw: reqText(swNode?.label, `${where}.${key}.label.sw`) },
+						href: sharedValue(node, swNode, "href", `${where}.${key}`) ?? "",
+						icon: sharedValue(node, swNode, "icon", `${where}.${key}`) ?? "",
+					});
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						primary: action(en.primary, sw.primary, "primary"),
+						secondary: action(en.secondary, sw.secondary, "secondary"),
+						layout: "split",
+						variant: "panel",
+						decor: "glow",
+						watermark: sharedValue(en, sw, "watermark", where) ?? "",
+						images: [],
+						shimmer: true,
+						hairline: true,
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "faq",
+				from: "faqs",
+				// Legacy: GprFaqSection → <SharedFaq id="faqs" tag headline
+				// items stillCurious /> with question/answer items (no icons,
+				// no points) and the still-curious card from `cta`.
+				build(en, sw, where) {
+					const enItems = en.items ?? [];
+					const swItems = sw.items ?? [];
+					if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+						gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+					}
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: emptyPair(),
+						items: enItems.map((item, i) => {
+							const swItem = swItems[i] ?? {};
+							return {
+								question: { en: reqText(item.question, `${where}.items[${i}].question.en`), sw: reqText(swItem.question, `${where}.items[${i}].question.sw`) },
+								answer: { en: reqText(item.answer, `${where}.items[${i}].answer.en`), sw: reqText(swItem.answer, `${where}.items[${i}].answer.sw`) },
+								points: [],
+								icon: "",
+							};
+						}),
+						stillCuriousLabel: { en: reqText(en.cta?.headline, `${where}.cta.headline.en`), sw: reqText(sw.cta?.headline, `${where}.cta.headline.sw`) },
+						stillCuriousDescription: { en: reqText(en.cta?.description, `${where}.cta.description.en`), sw: reqText(sw.cta?.description, `${where}.cta.description.sw`) },
+						stillCuriousCta: {
+							label: { en: reqText(en.cta?.label, `${where}.cta.label.en`), sw: reqText(sw.cta?.label, `${where}.cta.label.sw`) },
+							href: sharedValue(en.cta, sw.cta, "href", `${where}.cta`) ?? "",
+							icon: sharedValue(en.cta, sw.cta, "icon", `${where}.cta`) ?? "",
+						},
+						id: "faqs",
+					};
+				},
+			},
+		],
+	},
+	// M7 batch 10b: gis-mapping. One section migrates — `consultationCta`
+	// (ctaBand split/shimmer/hairline, same contract shape as GPR technicalCta).
+	// The bespoke hero (`<bold>` pseudo-markup the shared Hero would render
+	// literally, string footnote chips) stays legacy; every cardGrid uses
+	// non-contract props (`fallbackIcons`, `indexed`, `mediaBadged`); the rest
+	// (whatIs, workflow, deliverables, techStack, whatsappCta, components,
+	// dataAccuracy, beforeAfter, projectImpact, relatedServices, analystCta)
+	// are bespoke.
+	"gis-mapping": {
+		namespace: "surveying/gis-mapping",
+		title: "GIS Mapping",
+		skipped: ["hero", "whatIsGis", "whyGisCritical", "services", "remoteSensingSolutions", "mappingServices", "industries", "techStack", "whatsappCta", "components", "whySmartgrid", "dataAccuracy", "beforeAfter", "projectImpact", "relatedServices", "analystCta"],
+		sections: [
+			{
+				discriminant: "ctaBand",
+				from: "consultationCta",
+				// Legacy: GisConsultationCtaSection → <CtaBand layout="split"
+				// shimmer hairline watermark /> (variant/decor unset =
+				// panel/glow).
+				build(en, sw, where) {
+					const action = (node, swNode, key) => ({
+						label: { en: reqText(node?.label, `${where}.${key}.label.en`), sw: reqText(swNode?.label, `${where}.${key}.label.sw`) },
+						href: sharedValue(node, swNode, "href", `${where}.${key}`) ?? "",
+						icon: sharedValue(node, swNode, "icon", `${where}.${key}`) ?? "",
+					});
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						primary: action(en.primary, sw.primary, "primary"),
+						secondary: action(en.secondary, sw.secondary, "secondary"),
+						layout: "split",
+						variant: "panel",
+						decor: "glow",
+						watermark: sharedValue(en, sw, "watermark", where) ?? "",
+						images: [],
+						shimmer: true,
+						hairline: true,
+						id: "",
+					};
+				},
+			},
+		],
+	},
 };
 
 function loadNamespace(locale, namespace) {

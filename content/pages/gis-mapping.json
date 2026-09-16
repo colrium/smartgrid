@@ -1,0 +1,48 @@
+{
+	"slug": "GIS Mapping",
+	"title": "GIS Mapping (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "ctaBand",
+			"value": {
+				"tag": {
+					"en": "GIS Consultation",
+					"sw": "Ushauri wa GIS"
+				},
+				"headline": {
+					"en": "Book a GIS Consultation",
+					"sw": "Panga Ushauri wa GIS"
+				},
+				"description": {
+					"en": "Tell us about your site, assets, or datasets — a GIS specialist will map the fastest route from raw survey data to decision-ready maps and systems.",
+					"sw": "Tuambie kuhusu eneo lako, mali, au data — mtaalamu wa GIS atapanga njia ya haraka zaidi kutoka data ghafi za upimaji hadi ramani na mifumo inayowezesha maamuzi."
+				},
+				"primary": {
+					"label": {
+						"en": "Book a GIS Consultation",
+						"sw": "Panga Ushauri wa GIS"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Book a GIS Consultation&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a GIS consultation.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AScope (mapping / analysis / dashboards):%0D%0APreferred date & time:%0D%0A%0D%0AThank you.",
+					"icon": ""
+				},
+				"secondary": {
+					"label": {
+						"en": "Browse All Surveying Services",
+						"sw": "Tazama Huduma Zote za Upimaji"
+					},
+					"href": "/surveying",
+					"icon": "compass-outline"
+				},
+				"layout": "split",
+				"variant": "panel",
+				"decor": "glow",
+				"watermark": "calendar-check",
+				"images": [],
+				"shimmer": true,
+				"hairline": true,
+				"id": ""
+			}
+		}
+	]
+}
