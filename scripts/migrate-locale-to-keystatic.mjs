@@ -2253,6 +2253,189 @@ const PAGES = {
 			},
 		],
 	},
+	// M7 batch 17: home (largest page, done last per plan). Five sections
+	// migrate in page order — `actionCtaSurveyor` + `actionCtaEngineer`
+	// (ctaBand split/shimmer) + `industriesWeServe` (cardGrid cols 3) + `faq`
+	// + `cta` (ctaBand centred/masked). Tails stay legacy: bespoke WebGL hero,
+	// global LeadGenBar (`home` ns, never a page-builder branch),
+	// CoreExpertiseSection (`headerRow` + `hoverArrow` + `watermarkedIndexed`),
+	// client-only CoverageAreaSection (ProjectsGlobe), About/
+	// PlanningInfographic/SurveyingInstruments/Drones/WhyChooseUs/KeyFacts/
+	// Services/SurveyCost/Trustees/Certifications bespoke. NOTE: overwrites the
+	// M1 `home.json` starter fixture (placeholder since M1) with the real
+	// migrated home; entry stays `draft`.
+	"home": {
+		namespace: "home",
+		title: "Home",
+		skipped: ["hero", "about", "planningInfographic", "surveyingInstruments", "drones", "whyChooseUs", "keyFacts", "coreExpertise", "certifications", "services", "trustees", "metrics", "surveyCostInKenya", "coverageArea"],
+		sections: [
+			{
+				discriminant: "ctaBand",
+				from: "actionCtaSurveyor",
+				// Legacy: ActionCtaSection contentKey="actionCtaSurveyor" →
+				// <CtaBand layout="split" shimmer watermark /> (variant/decor
+				// unset = panel/glow; wrapper primary `iconPosition: "end"`
+				// is the solid-pill default).
+				build(en, sw, where) {
+					const action = (node, swNode, key) => ({
+						label: { en: reqText(node?.label, `${where}.${key}.label.en`), sw: reqText(swNode?.label, `${where}.${key}.label.sw`) },
+						href: sharedValue(node, swNode, "href", `${where}.${key}`) ?? "",
+						icon: sharedValue(node, swNode, "icon", `${where}.${key}`) ?? "",
+					});
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						primary: action(en.primary, sw.primary, "primary"),
+						secondary: action(en.secondary, sw.secondary, "secondary"),
+						layout: "split",
+						variant: "panel",
+						decor: "glow",
+						watermark: sharedValue(en, sw, "watermark", where) ?? "",
+						images: [],
+						shimmer: true,
+						hairline: false,
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "cardGrid",
+				from: "industriesWeServe",
+				// Legacy: IndustriesWeServeSection → <CardGrid columns={3} />
+				// (tone/align/card unset = defaults). Items carry
+				// icon/label/description — `label` maps to `title` (CardList
+				// renders `title ?? label`, so the stored title renders
+				// identically).
+				build(en, sw, where) {
+					const enItems = en.items ?? [];
+					const swItems = sw.items ?? [];
+					if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+						gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+					}
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						subheading: emptyPair(),
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						items: enItems.map((item, i) => {
+							const swItem = swItems[i] ?? {};
+							return {
+								icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+								title: { en: reqText(item.label, `${where}.items[${i}].label.en`), sw: reqText(swItem.label, `${where}.items[${i}].label.sw`) },
+								description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+								image: "",
+								href: "",
+								accent: "",
+							};
+						}),
+						columns: "3",
+						align: "left",
+						tone: "default",
+						headerRow: false,
+						cardDensity: "comfortable",
+						cardIconSize: "md",
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "faq",
+				from: "faq",
+				// Legacy: FaqSection → <SharedFaq tag headline description
+				// items stillCurious /> with question/answer items (no icons,
+				// no points) and a direct still-curious object.
+				build(en, sw, where) {
+					const enItems = en.items ?? [];
+					const swItems = sw.items ?? [];
+					if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+						gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+					}
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						items: enItems.map((item, i) => {
+							const swItem = swItems[i] ?? {};
+							return {
+								question: { en: reqText(item.question, `${where}.items[${i}].question.en`), sw: reqText(swItem.question, `${where}.items[${i}].question.sw`) },
+								answer: { en: reqText(item.answer, `${where}.items[${i}].answer.en`), sw: reqText(swItem.answer, `${where}.items[${i}].answer.sw`) },
+								points: [],
+								icon: "",
+							};
+						}),
+						stillCuriousLabel: { en: reqText(en.stillCurious?.label, `${where}.stillCurious.label.en`), sw: reqText(sw.stillCurious?.label, `${where}.stillCurious.label.sw`) },
+						stillCuriousDescription: { en: reqText(en.stillCurious?.description, `${where}.stillCurious.description.en`), sw: reqText(sw.stillCurious?.description, `${where}.stillCurious.description.sw`) },
+						stillCuriousCta: {
+							label: { en: reqText(en.stillCurious?.cta?.label, `${where}.stillCurious.cta.label.en`), sw: reqText(sw.stillCurious?.cta?.label, `${where}.stillCurious.cta.label.sw`) },
+							href: sharedValue(en.stillCurious?.cta, sw.stillCurious?.cta, "href", `${where}.stillCurious.cta`) ?? "",
+							icon: sharedValue(en.stillCurious?.cta, sw.stillCurious?.cta, "icon", `${where}.stillCurious.cta`) ?? "",
+						},
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "ctaBand",
+				from: "actionCtaEngineer",
+				// Legacy: ActionCtaSection contentKey="actionCtaEngineer" →
+				// same split/shimmer contract as actionCtaSurveyor.
+				build(en, sw, where) {
+					const action = (node, swNode, key) => ({
+						label: { en: reqText(node?.label, `${where}.${key}.label.en`), sw: reqText(swNode?.label, `${where}.${key}.label.sw`) },
+						href: sharedValue(node, swNode, "href", `${where}.${key}`) ?? "",
+						icon: sharedValue(node, swNode, "icon", `${where}.${key}`) ?? "",
+					});
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						primary: action(en.primary, sw.primary, "primary"),
+						secondary: action(en.secondary, sw.secondary, "secondary"),
+						layout: "split",
+						variant: "panel",
+						decor: "glow",
+						watermark: sharedValue(en, sw, "watermark", where) ?? "",
+						images: [],
+						shimmer: true,
+						hairline: false,
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "ctaBand",
+				from: "cta",
+				// Legacy: CtaSection → <CtaBand id="cta" decor="masked"
+				// glyph tag headline description primary secondary />
+				// (`glyph` is fixed presentation, not an editor contract;
+				// wrapper primary `iconPosition: "end"` is the solid-pill
+				// default). Flat content keys under `home:cta.*`.
+				build(en, sw, where) {
+					const action = (node, swNode, key) => ({
+						label: { en: reqText(node?.label, `${where}.${key}.label.en`), sw: reqText(swNode?.label, `${where}.${key}.label.sw`) },
+						href: sharedValue(node, swNode, "href", `${where}.${key}`) ?? "",
+						icon: sharedValue(node, swNode, "icon", `${where}.${key}`) ?? "",
+					});
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						primary: action(en.primary, sw.primary, "primary"),
+						secondary: action(en.secondary, sw.secondary, "secondary"),
+						layout: "centered",
+						variant: "panel",
+						decor: "masked",
+						watermark: "",
+						images: [],
+						shimmer: false,
+						hairline: false,
+						id: "cta",
+					};
+				},
+			},
+		],
+	},
 };
 
 function loadNamespace(locale, namespace) {

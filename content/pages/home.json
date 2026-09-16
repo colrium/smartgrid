@@ -1,58 +1,365 @@
 {
 	"slug": "Home",
-	"title": "Home (starter)",
-	"status": "published",
+	"title": "Home (migrated)",
+	"status": "draft",
 	"pageBuilder": [
 		{
-			"discriminant": "introText",
+			"discriminant": "ctaBand",
 			"value": {
-				"tag": { "en": "Surveying", "sw": "Upimaji" },
+				"tag": {
+					"en": "Free Consultation",
+					"sw": "Ushauri wa Bure"
+				},
 				"headline": {
-					"en": "Surveying and engineering, delivered precisely",
-					"sw": "Upimaji na uhandisi, kwa usahihi"
+					"en": "Not sure where to start? Talk to a surveyor.",
+					"sw": "Huji wapi unapoanza? Ongea na mpimaji."
 				},
 				"description": {
-					"en": "Starter Keystatic page for local development.",
-					"sw": "Ukurasa wa majaribio wa Keystatic."
+					"en": "Tell us about your site and your goal — we'll recommend the right survey, the right instruments, and a realistic budget. No obligation, no jargon.",
+					"sw": "Tuambie kuhusu tovuti yako na lengo lako — tutakupendekeza upimaji sahihi, vifaa sahihi, na bajeti ya uwazi. Bila wajibu, bila maneno magumu."
 				},
-				"tone": "default",
+				"primary": {
+					"label": {
+						"en": "Talk to a Surveyor",
+						"sw": "Ongea na Mpimaji"
+					},
+					"href": "/contact?reason=talk-to-surveyor#contact-form",
+					"icon": "account-voice"
+				},
+				"secondary": {
+					"label": {
+						"en": "See Typical Pricing",
+						"sw": "Ona Masafa ya Kawaida"
+					},
+					"href": "#survey-cost",
+					"icon": "cash-multiple"
+				},
+				"layout": "split",
+				"variant": "panel",
+				"decor": "glow",
+				"watermark": "hard-hat",
+				"images": [],
+				"shimmer": true,
+				"hairline": false,
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "cardGrid",
+			"value": {
+				"tag": {
+					"en": "Industries",
+					"sw": "Sekta"
+				},
+				"headline": {
+					"en": "Industries We Serve",
+					"sw": "Sekta Tunazohudumia"
+				},
+				"subheading": {
+					"en": "",
+					"sw": ""
+				},
+				"description": {
+					"en": "From small land parcels to large-scale infrastructure projects—our systems scale to your needs. We work with the following industries:",
+					"sw": "Kuanzia viwanja vidogo vya ardhi hadi miradi mikubwa ya miundombinu—mifumo yetu inaweza kupanuka kulingana na mahitaji yako. Tunafanya kazi na sekta zifuatazo:"
+				},
+				"items": [
+					{
+						"icon": "home-outline",
+						"title": {
+							"en": "Real Estate",
+							"sw": "Mali isiyohamishika"
+						},
+						"description": {
+							"en": "Site assessments, subdivision planning, and cadastral mapping for property development.",
+							"sw": "Tathmini za tovuti, mipango ya ugawaji, na ramani za cadastral kwa ajili ya maendeleo ya mali."
+						},
+						"image": "",
+						"href": "",
+						"accent": ""
+					},
+					{
+						"icon": "hard-hat",
+						"title": {
+							"en": "Civil & Construction",
+							"sw": "Miundombinu na Ujenzi"
+						},
+						"description": {
+							"en": "Surveying support for site layout, monitoring, and construction control.",
+							"sw": "Msaada wa upimaji kwa mpangilio wa tovuti, ufuatiliaji, na udhibiti wa ujenzi."
+						},
+						"image": "",
+						"href": "",
+						"accent": ""
+					},
+					{
+						"icon": "road-variant",
+						"title": {
+							"en": "Road Infrastructure",
+							"sw": "Miundombinu ya Barabara"
+						},
+						"description": {
+							"en": "Alignment surveys, as-built verification, and corridor mapping for road projects.",
+							"sw": "Upimaji wa mwelekeo, uthibitishaji wa 'as-built', na ramani za korido kwa miradi ya barabara."
+						},
+						"image": "",
+						"href": "",
+						"accent": ""
+					},
+					{
+						"icon": "account-multiple-outline",
+						"title": {
+							"en": "Private Developers",
+							"sw": "Wasanidi Binafsi"
+						},
+						"description": {
+							"en": "Feasibility surveys, master-planning support, and parcel mapping for developers.",
+							"sw": "Upimaji wa upembuzi yakinifu, msaada wa mipango mikuu, na ramani za viwanja kwa wasanidi."
+						},
+						"image": "",
+						"href": "",
+						"accent": ""
+					},
+					{
+						"icon": "city",
+						"title": {
+							"en": "Government",
+							"sw": "Serikali"
+						},
+						"description": {
+							"en": "Compliance mapping, public project surveys, and infrastructure planning support.",
+							"sw": "Ramani za ufuasi, upimaji wa miradi ya umma, na msaada wa mipango ya miundombinu."
+						},
+						"image": "",
+						"href": "",
+						"accent": ""
+					},
+					{
+						"icon": "domain",
+						"title": {
+							"en": "NGOs",
+							"sw": "Mashirika Yasiyo ya Kiserikali (NGOs)"
+						},
+						"description": {
+							"en": "Community mapping, resource assessments, and project monitoring services.",
+							"sw": "Ramani za jamii, tathmini za rasilimali, na huduma za ufuatiliaji wa miradi."
+						},
+						"image": "",
+						"href": "",
+						"accent": ""
+					},
+					{
+						"icon": "flash-outline",
+						"title": {
+							"en": "Utility & Energy Companies",
+							"sw": "Kampuni za Huduma na Nishati"
+						},
+						"description": {
+							"en": "Utility mapping, network surveys, and asset management support for energy projects.",
+							"sw": "Ramani za huduma, upimaji wa mitandao, na msaada wa usimamizi wa mali kwa miradi ya nishati."
+						},
+						"image": "",
+						"href": "",
+						"accent": ""
+					}
+				],
+				"columns": "3",
 				"align": "left",
-				"split": false,
-				"cta": {
-					"label": { "en": "Contact us", "sw": "Wasiliana nasi" },
-					"href": "/en/contact",
-					"icon": ""
+				"tone": "default",
+				"headerRow": false,
+				"cardDensity": "comfortable",
+				"cardIconSize": "md",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "faq",
+			"value": {
+				"tag": {
+					"en": "FAQ",
+					"sw": "Maswali"
+				},
+				"headline": {
+					"en": "Frequently Asked Questions",
+					"sw": "Maswali Yanayoulizwa Mara Kwa Mara"
+				},
+				"description": {
+					"en": "Straight answers from the field — the things clients ask us before commissioning their first survey.",
+					"sw": "Majibu ya moja kwa moja kutoka uwanjani — mambo wateja hutuuliza kabla ya kuagiza upimaji wao wa kwanza."
+				},
+				"items": [
+					{
+						"question": {
+							"en": "Do I need a survey before construction?",
+							"sw": "Je, nahitaji upimaji kabla ya ujenzi?"
+						},
+						"answer": {
+							"en": "Yes — and it's the cheapest insurance you'll ever buy. A topographical survey feeds your architectural designs, engineering plans, and county approvals, and it surfaces site realities (slopes, utilities, boundary positions) before they become costly change orders. Building on assumptions is the most expensive mistake in construction.",
+							"sw": "Ndiyo — na ni bima nafuu zaidi utakayonunua. Upimaji wa topografia unaendesha michoro ya usanifu, mipango ya uhandisi, na idhini za kaunti, na unafichua hali halisi za tovuti (mtelemko, huduma za chini ya ardhi, nafasi ya mipaka) kabla hazijawa mabadiliko ya gharama kubwa. Kujenga kwa dhana ni kosa la ghali zaidi ujenzeni."
+						},
+						"points": [],
+						"icon": ""
+					},
+					{
+						"question": {
+							"en": "How long does a survey take?",
+							"sw": "Upimaji huchukua muda gani?"
+						},
+						"answer": {
+							"en": "Most projects take 1–3 days of fieldwork and 2–7 days of processing and drafting, depending on the size of the site, the terrain, and the deliverables you need. We confirm a clear timeline with your quotation — and flag any delays early, not at handover.",
+							"sw": "Miradi mingi huchukua siku 1–3 za kazi uwanjani na siku 2–7 za kuchakata na kuchora, kulingana na ukubwa wa tovuti, mazingira, na matokeo unayohitaji. Tunathibitisha ratiba wazi na nukuu yako — na tunaonya ucheleweshaji mapema, si wakati wa kusaini."
+						},
+						"points": [],
+						"icon": ""
+					},
+					{
+						"question": {
+							"en": "Can you detect underground utilities?",
+							"sw": "Mnaweza kugundua huduma za chini ya ardhi?"
+						},
+						"answer": {
+							"en": "Yes. We use Ground Penetrating Radar (GPR) — including the LMX200 — alongside utility mapping techniques to locate buried water lines, power cables, and other infrastructure before you excavate. It protects your crew, your budget, and your programme.",
+							"sw": "Ndiyo. Tunatumia Rada ya Kupenya Ardhi (GPR) — ikiwemo LMX200 — pamoja na mbinu za ramani za huduma kutambua miundombinu yaliyozikwa kama mabomba ya maji na nyaya za umeme kabla ya kuchimba. Inalinda timu yako, bajeti yako, na ratiba yako."
+						},
+						"points": [],
+						"icon": ""
+					},
+					{
+						"question": {
+							"en": "How much will my survey cost?",
+							"sw": "Upimaji wangu utagharimu kiasi gani?"
+						},
+						"answer": {
+							"en": "Boundary surveys start from KES 30,000+, topographical surveys from KES 50,000+, and drone mapping from KES 25,000+. Because every site is different, we price on size, terrain, and accessibility — request a custom quotation and we'll turn it around quickly.",
+							"sw": "Upimaji wa mipaka huanza KES 30,000+, topografia KES 50,000+, na ramani kwa droni KES 25,000+. Kwa kuwa kila tovuti ni tofauti, tunabei kwa ukubwa, mazingira, na ufikivu — omba nukuu maalum nasi tuitolee haraka."
+						},
+						"points": [],
+						"icon": ""
+					},
+					{
+						"question": {
+							"en": "Which areas do you cover?",
+							"sw": "Mnafunika maeneo gani?"
+						},
+						"answer": {
+							"en": "We're based in Nairobi (Ruiru) and work across Kiambu, Machakos, Kajiado, Mombasa, Kisumu, and Nakuru — with full crews regularly deploying to Uganda, Tanzania, Somalia, and the wider East Africa region.",
+							"sw": "Makao yetu ni Nairobi (Ruiru) na tunafanya kazi Kiambu, Machakos, Kajiado, Mombasa, Kisumu, na Nakuru — na timu kamili inapelekwa mara kwa mara Uganda, Tanzania, Somalia, na mkoa mzima wa Afrika Mashariki."
+						},
+						"points": [],
+						"icon": ""
+					},
+					{
+						"question": {
+							"en": "What deliverables will I receive?",
+							"sw": "Nitapata matokeo gani?"
+						},
+						"answer": {
+							"en": "Professional, ready-to-use outputs: topographical maps and contours, boundary and cadastral plans, 3D point clouds, DEM/DSM models, CAD shapefiles, orthomosaics, volumetric reports, and signed survey reports — formatted for engineers, architects, and approval authorities.",
+							"sw": "Matokeo ya kitaalamu yaliyo tayari kutumika: ramani za topografia na kontua, mipango ya mipaka na cadastral, mawingu ya pointi za 3D, mifano ya DEM/DSM, shapefiles za CAD, orthomosaic, ripoti za kiasi, na ripoti za upimaji zilizosainiwa — zilizopangwa kwa wahandisi, waakitekti, na wamiliki wa idhini."
+						},
+						"points": [],
+						"icon": ""
+					}
+				],
+				"stillCuriousLabel": {
+					"en": "Still curious?",
+					"sw": "Bado una maswali?"
+				},
+				"stillCuriousDescription": {
+					"en": "Every site tells a story — we answer with data.",
+					"sw": "Kila tovuti ina hadithi — sisi tunajibu kwa data."
+				},
+				"stillCuriousCta": {
+					"label": {
+						"en": "Talk to a Surveyor",
+						"sw": "Ongea na Mpimaji"
+					},
+					"href": "/contact?reason=faq#contact-form",
+					"icon": "forum"
 				},
 				"id": ""
 			}
 		},
 		{
-			"discriminant": "stats",
+			"discriminant": "ctaBand",
 			"value": {
-				"tag": { "en": "", "sw": "" },
-				"headline": { "en": "What we do", "sw": "Tunachofanya" },
-				"description": { "en": "", "sw": "" },
-				"items": [
-					{
-						"value": { "en": "250+", "sw": "250+" },
-						"label": { "en": "Projects completed", "sw": "Miradi iliyokamilika" },
-						"description": {
-							"en": "Boundary and topographic surveys.",
-							"sw": "Upimaji wa mipaka na topografia."
-						},
-						"icon": "crosshairs-gps"
+				"tag": {
+					"en": "Build on Certainty",
+					"sw": "Jenga kwa Uhakika"
+				},
+				"headline": {
+					"en": "Engage an engineer for your next milestone.",
+					"sw": "Wasilisha mhandisi kwa hatua yako ijayo."
+				},
+				"description": {
+					"en": "Setting out, site engineering, as-built verification — put an engineer-grade eye on your project from ground-break to handover.",
+					"sw": "Uwekaji alama, uhandisi wa tovuti, uthibitishaji wa as-built — weka jicho la kiwango cha uhandisi kwenye mradi wako kutoka kuvunja ardhi hadi kusaini."
+				},
+				"primary": {
+					"label": {
+						"en": "Engage an Engineer",
+						"sw": "Wasilisha Mhandisi"
 					},
-					{
-						"value": { "en": "15+", "sw": "15+" },
-						"label": { "en": "Years in the field", "sw": "Miaka kazini" },
-						"description": { "en": "", "sw": "" },
-						"icon": "drone"
-					}
-				],
-				"layout": "band",
-				"tone": "default",
-				"columns": 3,
+					"href": "/contact?reason=engage-engineer#contact-form",
+					"icon": "hard-hat"
+				},
+				"secondary": {
+					"label": {
+						"en": "Explore Civil Services",
+						"sw": "Chunguza Huduma za Civil"
+					},
+					"href": "/civil",
+					"icon": "arrow-right"
+				},
+				"layout": "split",
+				"variant": "panel",
+				"decor": "glow",
+				"watermark": "bridge",
+				"images": [],
+				"shimmer": true,
+				"hairline": false,
 				"id": ""
+			}
+		},
+		{
+			"discriminant": "ctaBand",
+			"value": {
+				"tag": {
+					"en": "Let's work together",
+					"sw": "Tufanye kazi pamoja"
+				},
+				"headline": {
+					"en": "Precision survey & engineering, ready when you are.",
+					"sw": "Upimaji sahihi na uhandisi, tayari ukiwa tayari."
+				},
+				"description": {
+					"en": "From a single plot to 1000+ acres, our surveyors and pilots are ready to deliver fast, accurate and actionable data — across East Africa and beyond.",
+					"sw": "Kutoka shimo moja hadi ekari 1000+, wapimaji na marubani wetu wako tayari kutoa data ya haraka, sahihi na inayoweza kutekelezeka — katika Afrika Mashariki na kwingineko."
+				},
+				"primary": {
+					"label": {
+						"en": "Request a Survey",
+						"sw": "Omba Upimaji"
+					},
+					"href": "/contact?reason=request-survey#contact-form",
+					"icon": "send"
+				},
+				"secondary": {
+					"label": {
+						"en": "Talk to an Expert",
+						"sw": "Ongea na Mtaalamu"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Talk to an Expert&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to talk to an expert about a surveying project.%0D%0A%0D%0AName:%0D%0AService of interest:%0D%0AMessage:%0D%0A%0D%0AThank you.",
+					"icon": "email"
+				},
+				"layout": "centered",
+				"variant": "panel",
+				"decor": "masked",
+				"watermark": "",
+				"images": [],
+				"shimmer": false,
+				"hairline": false,
+				"id": "cta"
 			}
 		}
 	]

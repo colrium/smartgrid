@@ -1,7 +1,10 @@
 import type { GetServerSideProps, NextPage } from "next";
 import PageHead from "@/components/Head";
 
-import { getI18nProps } from "@/lib/i18n";
+import { getI18nProps, getLocale } from "@/lib/i18n";
+import type { Lang } from "@/lib/types";
+import { resolveKeystaticPage, type ResolvedKeystaticPage } from "@/lib/keystatic/resolvePage";
+import { renderSection } from "@/lib/keystatic/sectionRenderers";
 import HeroSection from "@/components/sections/home/HeroSection";
 import { AboutSection } from "@/components/sections/home/AboutSection";
 import { PlanningInfographicSection } from "@/components/sections/home/PlanningInfographicSection";
@@ -25,10 +28,89 @@ import {
 } from "@/components/sections/home";
 
 interface PageProps {
-	// Add any additional props fetched server-side here
+	/** Keystatic page when the `home` slug is opted in; otherwise `null` (legacy). */
+	keystaticPage: ResolvedKeystaticPage | null;
 }
 
-const Page: NextPage<PageProps> = () => {
+/**
+ * Sections migrated to Keystatic in page order (see the `home` mapping in
+ * `scripts/migrate-locale-to-keystatic.mjs`): actionCtaSurveyor ctaBand,
+ * industriesWeServe cardGrid, faq, actionCtaEngineer ctaBand, cta ctaBand.
+ * Fourteen legacy tails (bespoke WebGL hero, global LeadGenBar, headerRow/
+ * hoverArrow/watermarkedIndexed CoreExpertise grid, client-only CoverageArea
+ * globe, About/PlanningInfographic/SurveyingInstruments/Drones/WhyChooseUs/
+ * KeyFacts/Services/SurveyCost/Trustees/Certifications bespoke) sit at fixed
+ * positions between them, so the route renders each Keystatic section by
+ * index instead of one whole PageBuilderDocument. If an edit changes the
+ * section COUNT, the route falls back to legacy rather than misplacing
+ * sections — keep this in sync with the mapping.
+ */
+const KEYSTATIC_SECTION_COUNT = 5;
+
+function orderedSections(page: ResolvedKeystaticPage) {
+	if (page.sections.length !== KEYSTATIC_SECTION_COUNT) {
+		console.warn(
+			`[keystatic] page "home" has ${page.sections.length} sections, expected ${KEYSTATIC_SECTION_COUNT} — falling back to legacy content`
+		);
+		return null;
+	}
+	return page.sections;
+}
+
+const Page: NextPage<PageProps> = ({ keystaticPage }) => {
+	// Migration source switch (M3/M7): Keystatic owns the five migrated
+	// sections only when the slug is allowlisted via `KEYSTATIC_PAGES` and the
+	// entry is published. Otherwise the legacy locale-JSON implementation
+	// renders unchanged.
+	const sections = keystaticPage ? orderedSections(keystaticPage) : null;
+
+	if (keystaticPage && sections) {
+		const locale = keystaticPage.locale;
+		const renderAt = (index: number) => {
+			const section = sections[index];
+			return renderSection(section.id, section.value, locale, section.key);
+		};
+		return (
+			<div className="relative ">
+				<PageHead pageName="home" />
+				<div className="flex flex-col min-h-screen" data-keystatic-page={keystaticPage.slug}>
+					<HeroSection />
+					<div className="flex flex-col mx-auto max-w-7xl px-6 w-full">
+						<LeadGenBar
+							className="my-12  -mt-48"
+							// className="my-12 "
+						/>
+						<AboutSection />
+						<PlanningInfographicSection />
+					</div>
+					<SurveyingInstrumentsSection />
+					<DronesSection />
+
+					{renderAt(0)}
+
+					<ServicesSection />
+					{renderAt(1)}
+					<div className="flex flex-col  w-full">
+						<WhyChooseUsSection />
+
+						<CoreExpertiseSection />
+
+						<SurveyCostSection />
+						<CoverageAreaSection />
+						{renderAt(2)}
+						{renderAt(3)}
+						<KeyFactsSection />
+						<CertificationsSection />
+						<TrusteesSection />
+						{/* <MetricsSection /> */}
+					</div>
+
+					{renderAt(4)}
+				</div>
+			</div>
+		);
+	}
+
 	return (
 		<div className="relative ">
 			<PageHead pageName="home" />
@@ -80,7 +162,11 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 	if (!i18nProps) return { notFound: true };
 
-	return { props: { ...i18nProps } };
+	const locale = getLocale(context);
+	const lang: Lang = locale === "sw" ? "sw" : "en";
+	const resolution = await resolveKeystaticPage("home", lang);
+
+	return { props: { ...i18nProps, keystaticPage: resolution.status === "keystatic" ? resolution.page : null } };
 };
 
 export default Page;
