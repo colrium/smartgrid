@@ -1,0 +1,52 @@
+{
+	"slug": "Agricultural NDVI Mapping",
+	"title": "Agricultural NDVI Mapping (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "hero",
+			"value": {
+				"headline": {
+					"en": "AGRICULTURAL NDVI MAPPING",
+					"sw": "UCHORAJI RAMANI WA NDVI WA KILIMO"
+				},
+				"title": {
+					"en": "Transforming Agriculture with Aerial Intelligence",
+					"sw": "Kubadilisha Kilimo kwa Akili ya Angani"
+				},
+				"description": {
+					"en": "At SmartGrid Surveying, we empower modern agriculture with cutting-edge drone solutions designed to maximize yields, reduce costs, and make data-driven farming a reality. \n\n Our drone technology brings real-time insights from above—helping farmers monitor crops, optimize inputs, and make informed decisions across their agricultural operations.\n\n Smartgrid Surveying is your trusted surveying partner!",
+					"sw": "Katika SmartGrid Surveying, tunaimarisha kilimo cha kisasa kwa suluhisho za kisasa za ndege zisizo na rubani zilizoundwa kuongeza mavuno, kupunguza gharama, na kufanya kilimo kinachoendeshwa na data kuwa ukweli. \n\n Teknolojia yetu ya ndege zisizo na rubani huleta maarifa ya wakati halisi kutoka juu—kusaidia wakulima kufuatilia mazao, kuboresha pembejeo, na kufanya maamuzi sahihi katika shughuli zao za kilimo.\n\n Smartgrid Surveying ni mshirika wako wa kuaminika wa upimaji!"
+				},
+				"image": "/media/aerial-drones/agricultural-ndvi-mapping/agricultural-ndvi-mapping-01.jpg",
+				"layout": "bottom",
+				"frame": false,
+				"scrollCue": false,
+				"cueLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"footnoteItems": [],
+				"ctaPrimary": {
+					"label": {
+						"en": "Explore our Aerial Services",
+						"sw": "Chunguza Huduma Zetu za Angani"
+					},
+					"href": "/aerial-drones/drone-imagery-surveys",
+					"icon": "",
+					"iconPosition": "end",
+					"trailingArrow": "auto"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		}
+	]
+}

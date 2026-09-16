@@ -2124,6 +2124,135 @@ const PAGES = {
 			},
 		],
 	},
+	// M7 batch 15a: agricultural-ndvi-mapping. Hero only (1 section) — the
+	// smallest surface alongside cadastral. WhyUseDronesSection wraps
+	// SplitMedia with card items (`columns`/`card.iconShape`, outside the
+	// splitMedia text+image+points contract); ProcessSection passes
+	// layout/columns outside the registry `process` contract.
+	"agricultural-ndvi-mapping": {
+		namespace: "aerial-drones/agricultural-ndvi-mapping",
+		title: "Agricultural NDVI Mapping",
+		skipped: ["whyUseDronesInAgriculture", "process"],
+		sections: [
+			{
+				discriminant: "hero",
+				from: "hero",
+				// Legacy: AgriculturalNdviHeroSection → <Hero data={t(hero)} />
+				// (default bottom layout).
+				build(en, sw, where) {
+					return {
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						title: { en: reqText(en.title, `${where}.title.en`), sw: reqText(sw.title, `${where}.title.sw`) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						image: sharedValue(en, sw, "image", where) ?? "",
+						layout: sharedValue(en, sw, "layout", where) ?? "bottom",
+						frame: sharedValue(en, sw, "frame", where) ?? false,
+						scrollCue: sharedValue(en, sw, "scrollCue", where) ?? false,
+						cueLabel: emptyPair(),
+						footnoteItems: [],
+						ctaPrimary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+							iconPosition: sharedValue(en.ctaPrimary, sw.ctaPrimary, "iconPosition", where) ?? "end",
+							trailingArrow: (() => {
+								const arrow = sharedValue(en.ctaPrimary, sw.ctaPrimary, "trailingArrow", where);
+								return arrow === true ? "show" : arrow === false ? "hide" : "auto";
+							})(),
+						},
+						ctaSecondary: { label: emptyPair(), href: "", icon: "" },
+						id: "",
+					};
+				},
+			},
+		],
+	},
+	// M7 batch 15b: lidar-mapping. Three sections migrate in page order —
+	// `hero` + `forestry` (splitMedia left/surface/wide) + `construction`
+	// (splitMedia right/default/wide). Tails stay legacy:
+	// IndustriesWeServeSection (`indexed` LidarCardGrid), WhyChoose/Powerline/
+	// Split bespoke, HowItWorksSection (layout/columns outside the registry
+	// `process` contract), LidarCtaSection (wrapper `normalizeHref` transform —
+	// migrating the bare-email href verbatim would break the link).
+	"lidar-mapping": {
+		namespace: "aerial-drones/lidar-mapping",
+		title: "LiDAR Mapping",
+		skipped: ["industriesWeServe", "whyChooseLidar", "lidarPowerlineInspection", "howItWorks", "ctaSection"],
+		sections: [
+			{
+				discriminant: "hero",
+				from: "hero",
+				// Legacy: LidarHeroSection → <Hero data={t(hero)} /> (default
+				// bottom layout).
+				build(en, sw, where) {
+					return {
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						title: { en: reqText(en.title, `${where}.title.en`), sw: reqText(sw.title, `${where}.title.sw`) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						image: sharedValue(en, sw, "image", where) ?? "",
+						layout: sharedValue(en, sw, "layout", where) ?? "bottom",
+						frame: sharedValue(en, sw, "frame", where) ?? false,
+						scrollCue: sharedValue(en, sw, "scrollCue", where) ?? false,
+						cueLabel: emptyPair(),
+						footnoteItems: [],
+						ctaPrimary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+							iconPosition: sharedValue(en.ctaPrimary, sw.ctaPrimary, "iconPosition", where) ?? "end",
+							trailingArrow: (() => {
+								const arrow = sharedValue(en.ctaPrimary, sw.ctaPrimary, "trailingArrow", where);
+								return arrow === true ? "show" : arrow === false ? "hide" : "auto";
+							})(),
+						},
+						ctaSecondary: { label: emptyPair(), href: "", icon: "" },
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "splitMedia",
+				from: "forestry",
+				// Legacy: ForestrySection → <SplitMedia data
+				// imagePosition="left" tone="surface" mediaAspect="aspect-16/10" />
+				// (registry "wide" maps to aspect-16/10).
+				build(en, sw, where) {
+					return {
+						tag: { en: reqText(en.tag, `${where}.tag.en`), sw: reqText(sw.tag, `${where}.tag.sw`) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						image: { en: optText(en.image), sw: optText(sw.image) },
+						points: [],
+						imagePosition: "left",
+						tone: "surface",
+						mediaAspect: "wide",
+						mediaFit: "cover",
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "splitMedia",
+				from: "construction",
+				// Legacy: ConstructionSection → <SplitMedia data
+				// imagePosition="right" tone="default" mediaAspect="aspect-16/10" />.
+				build(en, sw, where) {
+					return {
+						tag: { en: reqText(en.tag, `${where}.tag.en`), sw: reqText(sw.tag, `${where}.tag.sw`) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						image: { en: optText(en.image), sw: optText(sw.image) },
+						points: [],
+						imagePosition: "right",
+						tone: "default",
+						mediaAspect: "wide",
+						mediaFit: "cover",
+						id: "",
+					};
+				},
+			},
+		],
+	},
 };
 
 function loadNamespace(locale, namespace) {
