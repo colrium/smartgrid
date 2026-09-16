@@ -9,6 +9,7 @@ import LegalPageSection from "@/components/sections/LegalPageSection";
 import { Faq } from "@/components/sections/shared/Faq";
 import { Process } from "@/components/sections/shared/Process";
 import { Gallery } from "@/components/sections/shared/Gallery";
+import { Pricing } from "@/components/sections/shared/Pricing";
 import type { Lang } from "../types";
 import { resolveLocaleValue } from "./localize";
 import { getSectionDefinition, type SectionId } from "./sectionRegistry";
@@ -39,6 +40,7 @@ export const sectionRenderers = {
 	faq: Faq,
 	process: Process,
 	gallery: Gallery,
+	pricing: Pricing,
 } satisfies Record<SectionId, ComponentType<any>>;
 
 export function renderSection(

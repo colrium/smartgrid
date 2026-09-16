@@ -239,6 +239,61 @@ function galleryBuild(presentation) {
 	};
 }
 
+// M7 batch 5: generic `introText` builder. Presentation props (tone, align,
+// split) are wrapper hardcodes — passed in, never read from content.
+function introTextBuild(presentation) {
+	return (en, sw, where) => ({
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		...presentation,
+		cta: { label: emptyPair(), href: "", icon: "" },
+		id: "",
+	});
+}
+
+// M7 batch 5: `cost`-shaped namespaces (factors + influences cards and a
+// price band) → `pricing`. Bullet counts must match across locales; card
+// titles fall back to "" (the component tolerates untitled cards).
+function pricingBuild(en, sw, where) {
+	const enFactors = en.factors ?? [];
+	const swFactors = sw.factors ?? [];
+	const enInfluences = en.influences ?? [];
+	const swInfluences = sw.influences ?? [];
+	if (!Array.isArray(swFactors) || swFactors.length !== enFactors.length) {
+		gap(where, `factor count diverged (en=${enFactors.length} sw=${swFactors?.length})`);
+	}
+	if (!Array.isArray(swInfluences) || swInfluences.length !== enInfluences.length) {
+		gap(where, `influence count diverged (en=${enInfluences.length} sw=${swInfluences?.length})`);
+	}
+	const bullets = (enList, swList, key) =>
+		enList.map((bullet, i) => ({
+			en: reqText(bullet, `${where}.${key}[${i}].en`),
+			sw: reqText(swList[i], `${where}.${key}[${i}].sw`),
+		}));
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		cards: [
+			{
+				title: { en: optText(en.factorsTitle), sw: optText(sw.factorsTitle) },
+				items: bullets(enFactors, swFactors, "factors"),
+			},
+			{
+				title: { en: optText(en.influencesTitle), sw: optText(sw.influencesTitle) },
+				items: bullets(enInfluences, swInfluences, "influences"),
+			},
+		],
+		price: {
+			label: { en: optText(en.priceRangeTitle), sw: optText(sw.priceRangeTitle) },
+			value: { en: reqText(en.priceRange, `${where}.priceRange.en`), sw: reqText(sw.priceRange, `${where}.priceRange.sw`) },
+			note: { en: optText(en.priceRangeNote), sw: optText(sw.priceRangeNote) },
+		},
+		id: "",
+	};
+}
+
 const PAGES = {
 	"company-profile": {
 		namespace: "company-profile",
@@ -511,6 +566,123 @@ const PAGES = {
 				from: "projectsCompletedImagesMasonry",
 				// Legacy: ProjectsCompletedImagesMasonrySection → <Gallery layout="masonry" columns={3} tone="surface" />
 				build: galleryBuild({ layout: "masonry", columns: "3", tone: "surface" }),
+			},
+		],
+	},
+	// M7 batch 4: hubs. `surveying` migrates its hero (shared Hero, centered
+	// framed variant — layout/frame/scrollCue travel in content); its services
+	// (lead map image BELOW the grid), process (indexed/watermarked cards) and
+	// deliverables (ns-driven explorer) stay legacy. `civil` migrates its
+	// services cardGrid; its bespoke diagonal hero, image stepper process and
+	// deliverables explorer stay legacy. `aerial-drones/landing` has NO shared
+	// section usage (bespoke hero, popup cards, fleet, tiles, globe, photo
+	// section) — deferred until new sections are registered.
+	"surveying": {
+		namespace: "surveying/landing",
+		title: "Surveying",
+		skipped: ["services", "process", "deliverables"],
+		sections: [
+			{
+				discriminant: "hero",
+				from: "hero",
+				// Legacy: SurveyingHeroSection → <Hero data={t(hero)} />
+				build(en, sw, where) {
+					return {
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						title: { en: reqText(en.title, `${where}.title.en`), sw: reqText(sw.title, `${where}.title.sw`) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						image: sharedValue(en, sw, "image", where) ?? "",
+						layout: sharedValue(en, sw, "layout", where) ?? "bottom",
+						frame: sharedValue(en, sw, "frame", where) ?? false,
+						scrollCue: sharedValue(en, sw, "scrollCue", where) ?? false,
+						cueLabel: emptyPair(),
+						footnoteItems: [],
+						ctaPrimary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+						},
+						ctaSecondary: { label: emptyPair(), href: "", icon: "" },
+						id: "",
+					};
+				},
+			},
+		],
+	},
+	"civil": {
+		namespace: "civil/landing",
+		title: "Civil",
+		skipped: ["hero", "process", "deliverables"],
+		sections: [
+			{
+				discriminant: "cardGrid",
+				from: "services",
+				// Legacy: CivilServicesSection → <CardGrid columns={3} tone="surface" /> (align/card unset = defaults)
+				build: cardGridBuild({ columns: "3", align: "left", tone: "surface", headerRow: false, cardDensity: "comfortable", cardIconSize: "md" }),
+			},
+		],
+	},
+	// M7 batch 5: topographical-surveys pilot (first child page). Four sections
+	// migrate in page order — `hero` (v2 pill overrides), `whatIs` + `section1`
+	// (introText, split hardcoded per wrapper), `cost` (pricing) — interleaved
+	// with seven legacy tails (see route wiring): five cardGrids using
+	// non-contract props (`subItems`/`wide`, `indexed` numbering,
+	// `mediaBadged`/`variant`/`mediaPosition` media cards, `fallbackIcons`, JSX
+	// `headerEnd`), the deliverables explorer, and the bespoke sample-map split.
+	"topographical-surveys": {
+		namespace: "surveying/topographical-surveys",
+		title: "Topographical Surveys",
+		skipped: ["whenYouNeed", "whatYouGet", "whatWeOffer", "detailedTopographicalSurveys", "sampleTopographicalMap", "surveyingInstruments", "whyConductSurvey"],
+		sections: [
+			{
+				discriminant: "hero",
+				from: "hero",
+				// Legacy: TopographicalHeroSection → <Hero data={t(hero)} />
+				// (default bottom layout; `subTitle` is unrendered by Hero and
+				// not migrated). Pill overrides travel as shared values.
+				build(en, sw, where) {
+					return {
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						title: { en: reqText(en.title, `${where}.title.en`), sw: reqText(sw.title, `${where}.title.sw`) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						image: sharedValue(en, sw, "image", where) ?? "",
+						layout: sharedValue(en, sw, "layout", where) ?? "bottom",
+						frame: sharedValue(en, sw, "frame", where) ?? false,
+						scrollCue: sharedValue(en, sw, "scrollCue", where) ?? false,
+						cueLabel: emptyPair(),
+						footnoteItems: [],
+						ctaPrimary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+							iconPosition: sharedValue(en.ctaPrimary, sw.ctaPrimary, "iconPosition", where) ?? "end",
+							trailingArrow: (() => {
+								const arrow = sharedValue(en.ctaPrimary, sw.ctaPrimary, "trailingArrow", where);
+								return arrow === true ? "show" : arrow === false ? "hide" : "auto";
+							})(),
+						},
+						ctaSecondary: { label: emptyPair(), href: "", icon: "" },
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "introText",
+				from: "whatIs",
+				// Legacy: WhatIsTopographicalSection → <IntroTextSection ... /> (all defaults)
+				build: introTextBuild({ tone: "default", align: "left", split: false }),
+			},
+			{
+				discriminant: "pricing",
+				from: "cost",
+				// Legacy: TopographicalCostSection → <Pricing cards price /> (see pricingBuild)
+				build: pricingBuild,
+			},
+			{
+				discriminant: "introText",
+				from: "section1",
+				// Legacy: IntroSection → <IntroTextSection ... split /> (split hardcoded; the content `split` key is not read)
+				build: introTextBuild({ tone: "default", align: "left", split: true }),
 			},
 		],
 	},

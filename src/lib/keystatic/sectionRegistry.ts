@@ -87,9 +87,18 @@ import {
  * paths are shared (not per-locale): legacy about galleries use identical
  * paths in `en`/`sw`, and the migration's `sharedValue` gate aborts on any
  * divergence instead of silently dropping one locale's media.
+ *
+ * M7 batch 5 (topographical pilot, 2026-09-16): `hero` v1 → v2 stores the
+ * pill overrides (`ctaIconPosition`, `ctaTrailingArrow`) the topographical
+ * hero sets; `pricing` wraps the shared `Pricing` cost guidance (checklist
+ * cards + price band). The pilot also confirms the cardGrid boundary: five
+ * topographical card grids stay legacy — they use `subItems`/`wide`,
+ * `indexed` numbering, `mediaBadged`/`variant`/`mediaPosition` media cards,
+ * `fallbackIcons`, and JSX `headerEnd` glyphs, none of which are
+ * editor-friendly v2/v3 contracts.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -131,6 +140,61 @@ function presentLink(link: any): any | null {
 	const href = typeof link.href === "string" ? link.href.trim() : "";
 	if (!href) return null;
 	return { ...link, href };
+}
+
+/**
+ * Hero primary CTA: `linkObject` plus the two pill overrides the shared
+ * `Hero` reads (`iconPosition`, `trailingArrow`). M7 batch 5 (hero v2):
+ * topographical hero sets both, so they are stored explicitly instead of
+ * dropped — layout defaults still win when they are absent (v1 entries omit
+ * both keys and normalize to `undefined`, rendering unchanged).
+ */
+function heroCta(label: string) {
+	return fields.object(
+		{
+			label: localeText("Label", { optionalInEnglish: true }),
+			href: fields.text({ label: "Link", description: "Internal path (/en/contact) or full URL." }),
+			icon: fields.text({
+				label: "MDI icon (optional)",
+				description: "Icon slug without the `mdi-` prefix.",
+			}),
+			iconPosition: fields.select({
+				label: "Icon position",
+				description: "Leading icon (`start`) or trailing (`end`, bottom-layout default). Centered/light/banner layouts always lead.",
+				options: [
+					{ label: "End (default)", value: "end" },
+					{ label: "Start (leading)", value: "start" },
+				],
+				defaultValue: "end",
+			}),
+			trailingArrow: fields.select({
+				label: "Trailing arrow",
+				description: "Automatic follows the layout default (arrow everywhere except the bottom layout).",
+				options: [
+					{ label: "Automatic", value: "auto" },
+					{ label: "Always show", value: "show" },
+					{ label: "Always hide", value: "hide" },
+				],
+				defaultValue: "auto",
+			}),
+		},
+		{ label }
+	);
+}
+
+/** Normalize a stored hero CTA to `HeroContent["ctaPrimary"]` (or `null`). */
+function presentHeroCta(cta: any): any | null {
+	const base = presentLink(cta);
+	if (!base) return null;
+	const { iconPosition, trailingArrow, ...rest } = base;
+	return {
+		...rest,
+		// `end` collapses to `undefined`: the bottom layout defaults to a
+		// trailing icon and the other layouts force a leading one, so an
+		// explicit `end` renders identically to absent.
+		iconPosition: iconPosition === "start" ? "start" : undefined,
+		trailingArrow: trailingArrow === "show" ? true : trailingArrow === "hide" ? false : undefined,
+	};
 }
 
 const introText: SectionDefinition = {
@@ -325,7 +389,7 @@ const stats: SectionDefinition = {
 
 const hero: SectionDefinition = {
 	id: "hero",
-	version: 1,
+	version: 2,
 	label: "Hero",
 	description: "Page hero in any of the four layouts, with pill CTAs and footnote chips.",
 	schema: fields.object({
@@ -360,12 +424,10 @@ const hero: SectionDefinition = {
 				itemLabel: (item) => previewText(item, ["fields", "text", "fields", "en", "value"], "Footnote"),
 			}
 		),
-		ctaPrimary: linkObject("Primary action"),
+		ctaPrimary: heroCta("Primary action"),
 		ctaSecondary: linkObject("Secondary action"),
 		id: anchorField(),
-		// Excluded from v1 (documented): `ctaPrimary.iconPosition` and
-		// `ctaPrimary.trailingArrow` overrides (legacy entries leave them
-		// unset, preserving layout defaults exactly) and `className`.
+		// Excluded from v2 (documented): `className`.
 	}),
 	example: {
 		headline: { en: "SMARTGRID SURVEYING & CIVIL WORKS", sw: "SMARTGRID SURVEYING & CIVIL WORKS" },
@@ -384,6 +446,8 @@ const hero: SectionDefinition = {
 			label: { en: "Download Company Profile", sw: "Pakua Wasifu wa Kampuni" },
 			href: "https://drive.google.com/file/d/1LuUk8Hl_J84tMHb-NKqBvs1QFdJGVTpH/view",
 			icon: "cloud-download",
+			iconPosition: "end",
+			trailingArrow: "auto",
 		},
 		ctaSecondary: { label: { en: "", sw: "" }, href: "", icon: "" },
 		id: "",
@@ -399,7 +463,7 @@ const hero: SectionDefinition = {
 			scrollCue: resolved.scrollCue,
 			cueLabel: resolved.cueLabel,
 			footnoteItems: Array.isArray(resolved.footnoteItems) ? resolved.footnoteItems : [],
-			ctaPrimary: presentLink(resolved.ctaPrimary),
+			ctaPrimary: presentHeroCta(resolved.ctaPrimary),
 			ctaSecondary: presentLink(resolved.ctaSecondary),
 		},
 		id: resolved.id || undefined,
@@ -920,6 +984,62 @@ const gallery: SectionDefinition = {
 	}),
 };
 
+const pricing: SectionDefinition = {
+	id: "pricing",
+	version: 1,
+	label: "Pricing",
+	description: "Cost guidance: checklist cards plus an optional centred price band.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		cards: fields.array(
+			fields.object({
+				title: localeText("Title", { optionalInEnglish: true }),
+				items: fields.array(localeText("Bullet", { optionalInEnglish: true }), {
+					label: "Bullets",
+					itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Bullet"),
+				}),
+			}),
+			{
+				label: "Cards",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Card"),
+			},
+		),
+		price: fields.object(
+			{
+				label: localeText("Label", { optionalInEnglish: true }),
+				value: localeText("Value", { optionalInEnglish: true }),
+				note: localeLongText("Note"),
+			},
+			{ label: "Price band (leave the value empty to hide)" }
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `classes`/`className` (visual tuning,
+		// not an editor contract).
+	}),
+	example: {
+		tag: { en: "Pricing", sw: "Bei" },
+		headline: { en: "What does it cost?", sw: "Inagharimu kiasi gani?" },
+		description: { en: "", sw: "" },
+		cards: [
+			{
+				title: { en: "Cost drivers", sw: "Vichocheo vya gharama" },
+				items: [{ en: "Plot size and terrain", sw: "" }],
+			},
+		],
+		price: {
+			label: { en: "Typical range", sw: "Kiwango cha kawaida" },
+			value: { en: "KES 50,000 – 300,000+", sw: "KES 50,000 – 300,000+" },
+			note: { en: "", sw: "" },
+		},
+		id: "",
+	},
+	// The component drops empty cards and hides the band without a value, so
+	// the normalizer passes content through untouched.
+	normalize: (resolved) => ({ ...resolved, id: resolved.id || undefined }),
+};
+
 export const sectionRegistry: readonly SectionDefinition[] = [
 	introText,
 	ctaBand,
@@ -931,6 +1051,7 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	faq,
 	process,
 	gallery,
+	pricing,
 ];
 
 export function getSectionDefinition(id: string): SectionDefinition {
@@ -950,6 +1071,7 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	faq: faq.label,
 	process: process.label,
 	gallery: gallery.label,
+	pricing: pricing.label,
 };
 
 /**

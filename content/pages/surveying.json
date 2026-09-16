@@ -1,0 +1,50 @@
+{
+	"slug": "Surveying",
+	"title": "Surveying (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "hero",
+			"value": {
+				"headline": {
+					"en": "Land Surveying — See the Land as It Truly Is",
+					"sw": "Upimaji wa Ardhi — Uone Ardhi Kama Ilivyo Kweli"
+				},
+				"title": {
+					"en": "LAND SURVEYING",
+					"sw": "UPIMAJI WA ARDHI"
+				},
+				"description": {
+					"en": "Our team delivers precise and reliable spatial data using advanced GNSS, Total Stations, and Drone LiDAR technologies — ensuring centimeter-level accuracy on every site. From Nairobi, Kiambu, Kisumu, Mombasa, and across Africa, we map and measure the land with unmatched detail to support informed design and development decisions.",
+					"sw": "Timu yetu hutoa data sahihi na ya kuaminika ya eneo kwa kutumia teknolojia za kisasa za GNSS, Total Stations, na Drone LiDAR — kuhakikisha usahihi wa kiwango cha sentimita kwenye kila tovuti. Kutoka Nairobi, Kiambu, Kisumu, Mombasa, na kote Afrika, tunapima na kuchora ramani za ardhi kwa maelezo yasiyoshindwa kuunga mkono maamuzi ya ubunifu na maendeleo."
+				},
+				"image": "/media/surveying/AG8ng.jpeg",
+				"layout": "centered",
+				"frame": true,
+				"scrollCue": true,
+				"cueLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"footnoteItems": [],
+				"ctaPrimary": {
+					"label": {
+						"en": "Get Your Free Consultation",
+						"sw": "Pata Ushauri Wako Bure"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Consultation Request: Land Surveying&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a free consultation about land surveying. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "email-outline"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		}
+	]
+}

@@ -1,0 +1,192 @@
+{
+	"slug": "Topographical Surveys",
+	"title": "Topographical Surveys (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "hero",
+			"value": {
+				"headline": {
+					"en": "Topographical Surveys in Kenya, East Africa and Beyond",
+					"sw": "Uchunguzi wa Topografia Kenya, Afrika Mashariki na Zaidi"
+				},
+				"title": {
+					"en": "Accurate Site Data for Design, Planning & Construction",
+					"sw": "Data Sahihi ya Tovuti kwa Usanidi, Upangaji na Ujenzi"
+				},
+				"description": {
+					"en": "Leading Land and Aerial surveying in Kenya.",
+					"sw": "Kiongozi katika upimaji wa Ardhi na Hewa Kenya."
+				},
+				"image": "/media/surveying/topographical/AG8ng.jpeg",
+				"layout": "bottom",
+				"frame": false,
+				"scrollCue": false,
+				"cueLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"footnoteItems": [],
+				"ctaPrimary": {
+					"label": {
+						"en": "Request a Topographical Survey Quote Today",
+						"sw": "Omba Nukuu ya Uchunguzi wa Topografia Leo"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Topographical Survey&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for a Topographical Survey. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0APlot size:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "email",
+					"iconPosition": "start",
+					"trailingArrow": "show"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "introText",
+			"value": {
+				"tag": {
+					"en": "The Foundation of Every Project",
+					"sw": "Msingi wa Kila Mradi"
+				},
+				"headline": {
+					"en": "What is a Topographical Survey?",
+					"sw": "Uchunguzi wa Topografia ni Nini?"
+				},
+				"description": {
+					"en": "A topographical survey provides a detailed representation of your land — capturing elevations, contours, natural features, and existing structures as they exist on the ground. It is the foundation of all engineering design and construction projects, giving architects, engineers, and planners the accurate site data they need to design with confidence.",
+					"sw": "Uchunguzi wa topografia hutoa uwakilishi wa kina wa ardhi yako — ukikamata mwinuko, contours, vipengele vya asili, na miundo iliyopo ardhini kama ilivyo. Ni msingi wa miradi yote ya usanidi wa uhandisi na ujenzi, ukipa waanachitecture, wahandisi, na wapangaji data sahihi ya tovuti wanayohitaji kusanidi kwa uhakika."
+				},
+				"tone": "default",
+				"align": "left",
+				"split": false,
+				"cta": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "pricing",
+			"value": {
+				"tag": {
+					"en": "Pricing",
+					"sw": "Bei"
+				},
+				"headline": {
+					"en": "Topographical Survey Cost in Kenya",
+					"sw": "Gharama ya Uchunguzi wa Topografia Kenya"
+				},
+				"description": {
+					"en": "Topographical survey pricing is influenced by site conditions and the level of detail required for engineering and approval purposes. Each project is assessed individually to ensure accurate and fit-for-purpose pricing.",
+					"sw": "Bei ya uchunguzi wa topografia huathiriwa na hali za tovuti na kiwango cha maelezo kinachohitajika kwa madhumuni ya uhandisi na idhini. Kila mradi hutathminiwa kwa kipekee kuhakikisha bei sahihi na inayofaa kwa madhumuni."
+				},
+				"cards": [
+					{
+						"title": {
+							"en": "Key Cost Factors",
+							"sw": "Mambo Makuu ya Gharama"
+						},
+						"items": [
+							{
+								"en": "Site size and land use intensity (small plots vs large developments)",
+								"sw": "Ukubwa wa tovuti na msongamano wa matumizi ya ardhi (ploti ndogo dhidi ya maendeleo makubwa)"
+							},
+							{
+								"en": "Terrain complexity (flat land, slopes, or heavily built-up areas)",
+								"sw": "Ugumu wa ardhi (ardhi tambarare, mitelemko, au maeneo yajengwa sana)"
+							},
+							{
+								"en": "Site accessibility (road access, vegetation cover, security conditions)",
+								"sw": "Urahisi wa kufikia tovuti (njia za barabara, mwonekano wa mimea, hali za usalama)"
+							},
+							{
+								"en": "Required accuracy and deliverables (basic contours vs full engineering datasets such as DTM/DSM and CAD integration)",
+								"sw": "Usahihi na matokeo yanayohitajika (contours za msingi dhidi ya datasets kamili za uhandisi kama DTM/DSM na muunganisho wa CAD)"
+							}
+						]
+					},
+					{
+						"title": {
+							"en": "What Influences Final Pricing for Our Clients",
+							"sw": "Kinachoathiri Bei ya Mwisho kwa Wateja Wetu"
+						},
+						"items": [
+							{
+								"en": "Mobilization cost to site",
+								"sw": "Gharama ya kupeleka vifaa tovutini"
+							},
+							{
+								"en": "Whether drone mapping is required",
+								"sw": "Ikiwa ramani za droni zinahitajika"
+							},
+							{
+								"en": "Level of detail required for county approval or design engineering",
+								"sw": "Kiwango cha maelezo kinachohitajika kwa idhini ya kaunti au usanidi wa uhandisi"
+							},
+							{
+								"en": "Integration with GIS, CAD, or BIM workflows",
+								"sw": "Muunganisho na mchakato wa GIS, CAD, au BIM"
+							}
+						]
+					}
+				],
+				"price": {
+					"label": {
+						"en": "Typical Price Range",
+						"sw": "Kiwango cha Kawaida cha Bei"
+					},
+					"value": {
+						"en": "KES 50,000 – 300,000+",
+						"sw": "KES 50,000 – 300,000+"
+					},
+					"note": {
+						"en": "This range applies to most residential, commercial, and mid-scale infrastructure projects across Nairobi, Kiambu and Kenya extensively. Large-scale developments, complex terrain, or high-precision engineering surveys may fall above this range.",
+						"sw": "Kiwango hiki kinatumika kwa miradi mingi ya makazi, biashara, na miundombinu ya wastani Nairobi, Kiambu na Kenya kwa ujumla. Maendeleo makubwa, ardhi ngumu, au uchunguzi wa usahihi wa juu wa uhandisi unaweza kuzidi kiwango hiki."
+					}
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "introText",
+			"value": {
+				"tag": {
+					"en": "Topographical Surveying",
+					"sw": "Uchunguzi wa Topografia"
+				},
+				"headline": {
+					"en": "See the Land as It Truly Is",
+					"sw": "Ona Ardhi Jinsi Ilivyo"
+				},
+				"description": {
+					"en": "SmartGrid Surveying delivers highly detailed and accurate topographical surveys for engineering, planning, and construction. Whether in Nairobi, Kisumu, Mombasa — or across Africa and beyond — our expert team captures terrain with centimeter-level precision using GNSS, Total Stations, and Drone LiDAR Mapping.",
+					"sw": "SmartGrid Surveying hutoa uchunguzi wa topografia wenye undani na usahihi wa hali ya juu kwa ajili ya uhandisi, upangaji, na ujenzi. Iwe Nairobi, Kisumu, Mombasa — au kote Afrika na nje yake — timu yetu ya wataalamu inakamata mandhari kwa usahihi wa ngazi ya sentimita kwa kutumia GNSS, Total Stations, na Uchoraji wa Ramani kwa Drone LiDAR."
+				},
+				"tone": "default",
+				"align": "left",
+				"split": true,
+				"cta": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		}
+	]
+}

@@ -1,0 +1,115 @@
+{
+	"slug": "Civil",
+	"title": "Civil (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "cardGrid",
+			"value": {
+				"tag": {
+					"en": "Civil Solutions",
+					"sw": "Suluhisho za Civil"
+				},
+				"headline": {
+					"en": "Our Civil Engineering Services",
+					"sw": "Huduma Zetu za Uhandisi wa Civil"
+				},
+				"subheading": {
+					"en": "",
+					"sw": ""
+				},
+				"description": {
+					"en": "We provide comprehensive civil engineering support for infrastructure projects of all scales.",
+					"sw": "Tunatoa msaada kamili wa uhandisi wa civil kwa miradi ya miundombinu ya vipimo vyote."
+				},
+				"items": [
+					{
+						"icon": "road-variant",
+						"title": {
+							"en": "Highway Surveys",
+							"sw": "Uchunguzi wa Barabara"
+						},
+						"description": {
+							"en": "Initial alignment and route planning with precision GNSS.",
+							"sw": "Mpangilio wa awali na upangaji wa njia kwa GNSS sahihi."
+						},
+						"image": "",
+						"href": "/civil/highway-surveys"
+					},
+					{
+						"icon": "file-document",
+						"title": {
+							"en": "As-Built Surveys",
+							"sw": "Uchunguzi wa As-Built"
+						},
+						"description": {
+							"en": "Verification of constructed works against original designs.",
+							"sw": "Uthibitisho wa kazi zilizojengwa dhidi ya michoro ya awali."
+						},
+						"image": "",
+						"href": "/civil/as-built-surveys"
+					},
+					{
+						"icon": "calculator",
+						"title": {
+							"en": "Volumetric Surveys",
+							"sw": "Uchunguzi wa Volumetric"
+						},
+						"description": {
+							"en": "3D modeling and volume computations for stockpiles.",
+							"sw": "Modeli za 3D na mahesabu ya vina kwa makusanyo."
+						},
+						"image": "",
+						"href": "/civil/volumetric-surveys"
+					},
+					{
+						"icon": "content-duplicate",
+						"title": {
+							"en": "BIM & Digital Twins",
+							"sw": "BIM na Digital Twins"
+						},
+						"description": {
+							"en": "Integrating spatial data into your BIM workflows.",
+							"sw": "Kuunganisha data ya eneo kwenye mchakato wako wa BIM."
+						},
+						"image": "",
+						"href": "/civil/bim"
+					},
+					{
+						"icon": "window-closed-variant",
+						"title": {
+							"en": "Indoor Mapping",
+							"sw": "Ramani za Ndani ya Majengo"
+						},
+						"description": {
+							"en": "Mapping and navigation inside complex facilities.",
+							"sw": "Ramani na urambazaji ndani ya majengo magumu."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "map-marker",
+						"title": {
+							"en": "Site Engineering",
+							"sw": "Uhandisi wa Tovuti"
+						},
+						"description": {
+							"en": "Construction layout, setting out, and geospatial monitoring.",
+							"sw": "Mpangilio wa ujenzi, setting out, na ufuatiliaji wa kijiografia."
+						},
+						"image": "",
+						"href": "/civil/site-engineering"
+					}
+				],
+				"columns": "3",
+				"align": "left",
+				"tone": "surface",
+				"headerRow": false,
+				"cardDensity": "comfortable",
+				"cardIconSize": "md",
+				"id": ""
+			}
+		}
+	]
+}
