@@ -1,0 +1,165 @@
+{
+	"slug": "Aerial As-Built Surveys",
+	"title": "Aerial As-Built Surveys (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "hero",
+			"value": {
+				"headline": {
+					"en": "As-Built Surveys",
+					"sw": "Uchunguzi wa As-Built"
+				},
+				"title": {
+					"en": "",
+					"sw": ""
+				},
+				"description": {
+					"en": "Leading Africa's Land and Aerial Surveying Revolution",
+					"sw": "Kuongoza Mapinduzi ya Upimaji wa Ardhi na Angani barani Afrika"
+				},
+				"image": "/media/aerial-drones/aerial-drones-as-built-surveys/01.jpg",
+				"layout": "bottom",
+				"frame": false,
+				"scrollCue": false,
+				"cueLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"footnoteItems": [],
+				"ctaPrimary": {
+					"label": {
+						"en": "Get Your Free Consultation",
+						"sw": "Pata Ushauri Wako wa Bure"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Aerial Drone As-Built Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Aerial Drone As-Built Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "",
+					"iconPosition": "end",
+					"trailingArrow": "auto"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "stats",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "",
+					"sw": ""
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"value": {
+							"en": "95%",
+							"sw": "95%"
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "Time saved vs traditional surveying",
+							"sw": "Muda uliookolewa ikilinganishwa na upimaji wa kawaida"
+						},
+						"icon": ""
+					},
+					{
+						"value": {
+							"en": "99.8%",
+							"sw": "99.8%"
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "Accuracy with RTK-Enabled UAVs",
+							"sw": "Usahihi na UAV zenye RTK"
+						},
+						"icon": ""
+					},
+					{
+						"value": {
+							"en": "+100",
+							"sw": "+100"
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "Projects delivered across sectors",
+							"sw": "Miradi iliyowasilishwa katika sekta mbalimbali"
+						},
+						"icon": ""
+					}
+				],
+				"layout": "band",
+				"tone": "default",
+				"columns": 3,
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "ctaBand",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "Transform Your Build Into Verified Reality",
+					"sw": "Badilisha Ujenzi Wako Kuwa Ukweli Uliothibitishwa"
+				},
+				"description": {
+					"en": "Partner with SmartGrid Surveying for next-generation, drone-based as-built documentation.",
+					"sw": "Shirikiana na SmartGrid Surveying kwa uandikishaji wa kizazi kijacho wa as-built unaotegemea ndege zisizo na rubani."
+				},
+				"primary": {
+					"label": {
+						"en": "Get a Free Consultation",
+						"sw": "🚀 Pata Ushauri wa Bure"
+					},
+					"href": "mailto:Smartgridsurveying@gmail.com?subject=As-Built Survey Consultation Request&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI’m interested in getting a quote for an as-built drone survey. Please get in touch with me.%0D%0A%0D%0AThank you.",
+					"icon": "arrow-right"
+				},
+				"secondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"layout": "centered",
+				"variant": "bleed",
+				"decor": "glow",
+				"watermark": "",
+				"images": [
+					"/media/aerial-drones/aerial-drones-as-built-surveys/02.jpg",
+					"/media/aerial-drones/aerial-drones-as-built-surveys/03.jpg",
+					"/media/aerial-drones/aerial-drones-as-built-surveys/04.jpg"
+				],
+				"shimmer": false,
+				"hairline": false,
+				"id": ""
+			}
+		}
+	]
+}

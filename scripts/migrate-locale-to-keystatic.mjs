@@ -1922,6 +1922,208 @@ const PAGES = {
 			},
 		],
 	},
+	// M7 batch 14a: monitoring-and-evaluation. Five sections migrate in page
+	// order — `hero` (shared Hero, single pill) + `drivingSustainability`/
+	// `techWeUse`/`whyPartnerWithUs` (introTexts default/surface/default) +
+	// `cta` (ctaBand centred; wrapper `iconPosition: "end"` collapses to the
+	// solid-pill default). Tails stay legacy: OurCapabilitiesSection +
+	// ImpactSection (`fallbackIcons`), SmartMonitoringSection
+	// (`card.iconShape` + `actions`, both outside the contract),
+	// WhatWeOfferSection (`leadImages` + media cards).
+	"monitoring-and-evaluation": {
+		namespace: "aerial-drones/monitoring-and-evaluation",
+		title: "Monitoring and Evaluation",
+		skipped: ["ourCapabilities", "impact", "smartMonitoringAndEval", "whatWeOffer"],
+		sections: [
+			{
+				discriminant: "hero",
+				from: "hero",
+				// Legacy: HeroSection → <Hero data={t(hero)} /> (default
+				// bottom layout).
+				build(en, sw, where) {
+					return {
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						title: { en: reqText(en.title, `${where}.title.en`), sw: reqText(sw.title, `${where}.title.sw`) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						image: sharedValue(en, sw, "image", where) ?? "",
+						layout: sharedValue(en, sw, "layout", where) ?? "bottom",
+						frame: sharedValue(en, sw, "frame", where) ?? false,
+						scrollCue: sharedValue(en, sw, "scrollCue", where) ?? false,
+						cueLabel: emptyPair(),
+						footnoteItems: [],
+						ctaPrimary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+							iconPosition: sharedValue(en.ctaPrimary, sw.ctaPrimary, "iconPosition", where) ?? "end",
+							trailingArrow: (() => {
+								const arrow = sharedValue(en.ctaPrimary, sw.ctaPrimary, "trailingArrow", where);
+								return arrow === true ? "show" : arrow === false ? "hide" : "auto";
+							})(),
+						},
+						ctaSecondary: { label: emptyPair(), href: "", icon: "" },
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "introText",
+				from: "drivingSustainability",
+				// Legacy: DrivingSustainabilitySection → <TextSection />
+				// (tone default, align/split unset).
+				build: introTextBuild({ tone: "default", align: "left", split: false }),
+			},
+			{
+				discriminant: "introText",
+				from: "techWeUse",
+				// Legacy: TechWeUseSection → <TextSection tone="surface" />.
+				build: introTextBuild({ tone: "surface", align: "left", split: false }),
+			},
+			{
+				discriminant: "introText",
+				from: "whyPartnerWithUs",
+				// Legacy: WhyPartnerWithUsSection → <TextSection /> (tone
+				// default, align/split unset).
+				build: introTextBuild({ tone: "default", align: "left", split: false }),
+			},
+			{
+				discriminant: "ctaBand",
+				from: "cta",
+				// Legacy: CtaSection → <CtaBand tag headline description
+				// primary /> (layout/variant/decor unset =
+				// centered/panel/glow; `className` excluded; wrapper
+				// `iconPosition: "end"` is the solid-pill default).
+				build(en, sw, where) {
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						primary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+						},
+						secondary: { label: emptyPair(), href: "", icon: "" },
+						layout: "centered",
+						variant: "panel",
+						decor: "glow",
+						watermark: "",
+						images: [],
+						shimmer: false,
+						hairline: false,
+						id: "",
+					};
+				},
+			},
+		],
+	},
+	// M7 batch 14b: aerial-drones as-built-surveys. Three sections migrate in
+	// page order — `hero` + `metrics` (stats band, value/description items) +
+	// `ctaSection` (ctaBand bleed variant with lead images; first bleed + first
+	// images migration; wrapper-hardcoded primary arrow stored as a shared
+	// literal). Tails stay legacy: WhyUseDronesSection (`fallbackIcons` +
+	// `card.iconShape`), ProcessSection (layout/columns outside the registry
+	// `process` contract). Slug is hub-prefixed
+	// (`aerial-drones-as-built-surveys`) — the bare `as-built-surveys` slug is
+	// taken by the civil child.
+	"aerial-drones-as-built-surveys": {
+		namespace: "aerial-drones/aerial-drones-as-built-surveys",
+		title: "Aerial As-Built Surveys",
+		skipped: ["whyUseDrones", "process"],
+		sections: [
+			{
+				discriminant: "hero",
+				from: "hero",
+				// Legacy: AsBuiltHeroSection → <Hero data={t(hero)} />
+				// (default bottom layout; no title key — the h1 falls back to
+				// description exactly as in legacy).
+				build(en, sw, where) {
+					return {
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						title: { en: optText(en.title), sw: optText(sw.title) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						image: sharedValue(en, sw, "image", where) ?? "",
+						layout: sharedValue(en, sw, "layout", where) ?? "bottom",
+						frame: sharedValue(en, sw, "frame", where) ?? false,
+						scrollCue: sharedValue(en, sw, "scrollCue", where) ?? false,
+						cueLabel: emptyPair(),
+						footnoteItems: [],
+						ctaPrimary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+							iconPosition: sharedValue(en.ctaPrimary, sw.ctaPrimary, "iconPosition", where) ?? "end",
+							trailingArrow: (() => {
+								const arrow = sharedValue(en.ctaPrimary, sw.ctaPrimary, "trailingArrow", where);
+								return arrow === true ? "show" : arrow === false ? "hide" : "auto";
+							})(),
+						},
+						ctaSecondary: { label: emptyPair(), href: "", icon: "" },
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "stats",
+				from: "metrics",
+				// Legacy: MetricsSection → <Stats items columns={3} />
+				// (layout/tone unset = band/default). Items carry
+				// value/description only — labels/icons stay empty.
+				build(en, sw, where) {
+					const items = en.items ?? [];
+					if (!Array.isArray(sw.items) || sw.items.length !== items.length) {
+						gap(where, `item count diverged (en=${items.length} sw=${sw.items?.length})`);
+					}
+					return {
+						tag: emptyPair(),
+						headline: emptyPair(),
+						description: emptyPair(),
+						items: items.map((item, i) => ({
+							value: { en: reqText(item.value, `${where}.items[${i}].value.en`), sw: reqText(sw.items?.[i]?.value, `${where}.items[${i}].value.sw`) },
+							label: emptyPair(),
+							description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(sw.items?.[i]?.description, `${where}.items[${i}].description.sw`) },
+							icon: "",
+						})),
+						layout: "band",
+						tone: "default",
+						columns: 3,
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "ctaBand",
+				from: "ctaSection",
+				// Legacy: CtaSection → <CtaBand variant images tag headline
+				// description primary /> (layout/decor unset =
+				// centered/glow; `className` excluded). Variant + images
+				// travel as shared values; primary arrow is a wrapper
+				// hardcode stored as a shared literal.
+				build(en, sw, where) {
+					const variant = sharedValue(en, sw, "variant", where) ?? "panel";
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						primary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: "arrow-right",
+						},
+						secondary: { label: emptyPair(), href: "", icon: "" },
+						layout: "centered",
+						variant: variant === "bleed" ? "bleed" : "panel",
+						decor: "glow",
+						watermark: "",
+						images: sharedValue(en, sw, "images", where) ?? [],
+						shimmer: false,
+						hairline: false,
+						id: "",
+					};
+				},
+			},
+		],
+	},
 };
 
 function loadNamespace(locale, namespace) {

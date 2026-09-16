@@ -249,7 +249,7 @@ Route inventory (from `src/pages/[locale]/**` + `public/locales/<en|sw>/**`, 202
   `/equipment-sale/[product]` (product pages render from `products.json` + per-product
   locale files, not one namespace per page — needs its own content model decision, see
   checklist).
-- Wired to Keystatic today (25 of ~34 static + 1 dynamic): `terms-of-use` (M3),
+- Wired to Keystatic today (27 of ~34 static + 1 dynamic): `terms-of-use` (M3),
   `company-profile` (M4, hybrid tail), `privacy-policy` (M7 batch 1),
   `contact` + `careers` (M7 batch 2, hybrid tails), `about` (M7 batch 3,
   interleaved hybrid, entry `draft`),   `surveying` + `civil` hubs (M7 batch 4,
@@ -264,7 +264,9 @@ Route inventory (from `src/pages/[locale]/**` + `public/locales/<en|sw>/**`, 202
   interleaved hybrids, entries `draft`),   `bim` + `site-engineering` +
   `site-setting-out` + `volumetric-surveys` (M7 batch 12, interleaved hybrids,
   entries `draft`), `solar-panel-drone-surveys` + `landfill-quarry-drone-surveys`
-  (M7 batch 13, interleaved hybrids, entries `draft`). All other `[locale]` routes render legacy only — no `resolveKeystaticPage` call.
+  (M7 batch 13, interleaved hybrids, entries `draft`), `monitoring-and-evaluation` +
+  `aerial-drones-as-built-surveys` (M7 batch 14, interleaved hybrids, entries
+  `draft`). All other `[locale]` routes render legacy only — no `resolveKeystaticPage` call.
 
 - [x] Inventory every `[locale]` route and its locale namespace(s), section components,
       and bespoke/client-only parts (forms, maps, 3D/globe, viewers, product registry).
@@ -343,6 +345,11 @@ Route inventory (from `src/pages/[locale]/**` + `public/locales/<en|sw>/**`, 202
       centred cta with hardcoded arrow icon, 2 sections) +
       `aerial-drones/landfill-quarry-drone-surveys.tsx` (hero + 2 introTexts,
       3 sections) wired as interleaved hybrids (count guards → legacy fallback).
+      Batch 14 done 2026-09-16: `aerial-drones/monitoring-and-evaluation.tsx` (hero +
+      3 introTexts + centred cta, 5 sections) + `aerial-drones/as-built-surveys.tsx`
+      (hero + stats band + bleed cta with images, 3 sections, hub-prefixed slug
+      `aerial-drones-as-built-surveys`) wired as interleaved hybrids (count guards →
+      legacy fallback).
       `check:keystatic` fixture/render coverage now 11 fixtures, 11 sections.)
 - [x] Migrate + verify in small batches (suggested: legal → contact/careers → about →
       hubs → children → home last as the largest page; equipment per its model decision),
@@ -401,7 +408,13 @@ Route inventory (from `src/pages/[locale]/**` + `public/locales/<en|sw>/**`, 202
       legacy) + landfill-quarry-drone-surveys (hero + default/surface introTexts,
       3 sections; iconShape/fallbackIcons grids stay legacy) — done 2026-09-16, both
       `draft`, entries generated via `--write` (no gaps); all validation DEFERRED per
-      M7 test-deferral policy.)
+      M7 test-deferral policy.
+      Batch 14 — monitoring-and-evaluation (hero + default/surface/default introTexts +
+      centred cta, 5 sections; fallbackIcons/iconShape/actions/leadImages grids stay
+      legacy) + aerial as-built (hero without title key + stats band + first bleed +
+      first images cta, 3 sections) — done 2026-09-16, both `draft`, entries generated
+      via `--write` (no gaps after 2 mapping fixes); all validation DEFERRED per M7
+      test-deferral policy.)
 - [ ] Update the README operator guide + `.env.example` allowlist examples as the editable
       set grows; keep rollback (per-page allowlist/draft flip + `KEYSTATIC_DISABLE=1`)
       tested for the new pages.
@@ -490,4 +503,5 @@ For every implementation change:
 | 2026-09-16 | M7 | Batch 10 DONE (ground-penetrating-radar + gis-mapping, tests deferred): GPR = technicalCta ctaBand split/shimmer/hairline + faqs faq (6 question/answer items + still-curious card from `cta`), 2 sections; GIS = consultationCta ctaBand split/shimmer/hairline, 1 section. Both entries generated via `--write` (no gaps — generation only). Routes wired interleaved with count guards (GPR KS at 1,15; GIS KS at 2). Tails stay legacy: GPR bespoke hero + indexed/fallbackIcons grids + bespoke deliverables/sue/limitations/beforeAfter/technology/summary/highlights/jumpNav/overview/methodology/featuredProjects/finalCta; GIS bespoke hero (`<bold>` markup) + all cardGrids on non-contract props + bespoke remainder | Validation DEFERRED per M7 policy: no `--verify`/`check:keystatic`/`typecheck`/`lint`/dev-smoke this batch; run once after all M7 stages | |
 | 2026-09-16 | M7 | Batch 11 DONE (civil highway-surveys + as-built-surveys, tests deferred): highway = hero + overview introText surface + benefits cardGrid cols-3 surface, 3 sections; as-built = hero + whatAre/maxProductivity/actionableInsights introTexts + keyIndustries/applications cardGrids, 6 sections. Both entries generated via `--write` (no gaps — generation only). Routes wired interleaved with count guards (highway KS at 0,1,3; as-built KS at 0,1,3,4,5,6). Tails stay legacy: highway `indexed` services grid + deliverables explorer; as-built `indexed` solutions grid + deliverables explorer | Validation DEFERRED per M7 policy: no `--verify`/`check:keystatic`/`typecheck`/`lint`/dev-smoke this batch; run once after all M7 stages | |
 | 2026-09-16 | M7 | Batch 12 DONE (civil bim + site-engineering + site-setting-out + volumetric-surveys, tests deferred): bim = secondary-only hero (absent ctaPrimary → empty/null) + centred cta, 2 sections; site-engineering = centred cta only, 1 section; site-setting-out = dual-pill hero + 9-item faq (icon/title/description), 2 sections; volumetric = dual-pill hero + 2 introTexts + right splitMedia + centred cta, 5 sections. All four entries generated via `--write` (no gaps — generation only). Routes wired interleaved with count guards (bim KS at 0,3; se KS at 4; sso KS at 0,4; vol KS at 0,1,2,4,6). Tails stay legacy: bim `indexed` grid + deliverables; se `<bold>` hero + `Split` overview + indexed/media-bg grids + deliverables; sso indexed/mediaBadged grids + deliverables; vol left-aligned services grid + deliverables. Fixed a plan-edit misplacement (batch 11/12 ordering + duplicate batch 9 block) in the same change | Validation DEFERRED per M7 policy: no `--verify`/`check:keystatic`/`typecheck`/`lint`/dev-smoke this batch; run once after all M7 stages | |
-| 2026-09-16 | M7 | Batch 13 DONE (aerial-drones solar-panel + landfill-quarry, tests deferred): solar = hero + centred cta (wrapper-hardcoded arrow icon stored as shared literal), 2 sections; landfill = hero + quarryServices/maximizeProductivity introTexts, 3 sections. Both entries generated via `--write` (no gaps — generation only). Routes wired interleaved with count guards (solar KS at 0,3; landfill KS at 0,1,3). Tails stay legacy: solar `card.iconShape: "xl"` grid + `indexed` process; landfill iconShape + fallbackIcons grids. Per-batch commit workflow adopted (commit per batch, then proceed) | Validation DEFERRED per M7 policy: no `--verify`/`check:keystatic`/`typecheck`/`lint`/dev-smoke this batch; run once after all M7 stages | | |
+| 2026-09-16 | M7 | Batch 13 DONE (aerial-drones solar-panel + landfill-quarry, tests deferred): solar = hero + centred cta (wrapper-hardcoded arrow icon stored as shared literal), 2 sections; landfill = hero + quarryServices/maximizeProductivity introTexts, 3 sections. Both entries generated via `--write` (no gaps — generation only). Routes wired interleaved with count guards (solar KS at 0,3; landfill KS at 0,1,3). Tails stay legacy: solar `card.iconShape: "xl"` grid + `indexed` process; landfill iconShape + fallbackIcons grids. Per-batch commit workflow adopted (commit per batch, then proceed) | Validation DEFERRED per M7 policy: no `--verify`/`check:keystatic`/`typecheck`/`lint`/dev-smoke this batch; run once after all M7 stages | |
+| 2026-09-16 | M7 | Batch 14 DONE (aerial-drones monitoring-and-evaluation + as-built-surveys, tests deferred): M&E = hero + 3 introTexts + centred cta, 5 sections; as-built = hero (no title key → optText, h1 falls back to description) + metrics stats band + first bleed-variant + first images cta, 3 sections under hub-prefixed slug `aerial-drones-as-built-surveys` (bare slug taken by civil child). Completeness gate caught 2 real gaps, fixed: hero title optText + `sw` cta href curly-apostrophe aligned to en (one-char mailto fix, batch-2 precedent). Entries generated via `--write` (no gaps after fixes — generation only). Routes wired interleaved with count guards (M&E KS at 0,1,3,5,8; as-built KS at 0,3,4). Tails stay legacy: M&E fallbackIcons/iconShape/actions/leadImages grids; as-built fallbackIcons grid + layout/columns process | Validation DEFERRED per M7 policy: no `--verify`/`check:keystatic`/`typecheck`/`lint`/dev-smoke this batch; run once after all M7 stages | | |

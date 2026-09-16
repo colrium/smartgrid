@@ -1,0 +1,180 @@
+{
+	"slug": "Monitoring and Evaluation",
+	"title": "Monitoring and Evaluation (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "hero",
+			"value": {
+				"headline": {
+					"en": "MONITORING AND EVALUATION",
+					"sw": "UFUATILIAJI NA TATHMINI"
+				},
+				"title": {
+					"en": "Monitoring & Evaluation to Build Stronger",
+					"sw": "Ufuatiliaji na Tathmini kwa Kujenga Kwa Nguvu Zaidi"
+				},
+				"description": {
+					"en": "Precision-driven solutions for sustainability, conservation, and compliance.",
+					"sw": "Suluhisho zinazoendeshwa na usahihi kwa uendelevu, uhifadhi, na kufuata kanuni."
+				},
+				"image": "/media/aerial-drones/monitoring-and-evaluation/01.jpg",
+				"layout": "bottom",
+				"frame": false,
+				"scrollCue": false,
+				"cueLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"footnoteItems": [],
+				"ctaPrimary": {
+					"label": {
+						"en": "Get Your Free Consultation",
+						"sw": "Pata Ushauri Wako wa Bure"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Drone Monitoring and Evaluation&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Drone Monitoring and Evaluation. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "gift",
+					"iconPosition": "end",
+					"trailingArrow": "auto"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "introText",
+			"value": {
+				"tag": {
+					"en": "Sustainability",
+					"sw": "Uendelevu"
+				},
+				"headline": {
+					"en": "Driving Sustainability with Data",
+					"sw": "Kuendesha Uendelevu kwa Data"
+				},
+				"description": {
+					"en": "At SmartGrid, we leverage aerial and terrestrial geospatial tools to support environmental protection, conservation, and sustainable land use through precision monitoring.",
+					"sw": "Katika SmartGrid, tunatumia zana za kijiografia za angani na za ardhini kusaidia ulinzi wa mazingira, uhifadhi, na matumizi endelevu ya ardhi kupitia ufuatiliaji wa usahihi."
+				},
+				"tone": "default",
+				"align": "left",
+				"split": false,
+				"cta": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "introText",
+			"value": {
+				"tag": {
+					"en": "Detailed, Accurate Insights",
+					"sw": "Maarifa ya Kina, Sahihi"
+				},
+				"headline": {
+					"en": "Technology We Use",
+					"sw": "Teknolojia Tunayotumia"
+				},
+				"description": {
+					"en": "Our team utilizes LiDAR drones, RTK GNSS units, total stations, bathymetry kits and advanced GIS software such as QGIS, Pix4D, and ArcGIS Pro. These tools help us provide detailed, spatially accurate insights to support your environmental needs.",
+					"sw": "Timu yetu hutumia ndege zisizo na rubani za LiDAR, vitengo vya RTK GNSS, total station, vitanda vya bathymetry na programu za hali ya juu za GIS kama QGIS, Pix4D, na ArcGIS Pro. Zana hizi hutusaidia kutoa maarifa ya kina, sahihi kijiografia kusaidia mahitaji yako ya mazingira."
+				},
+				"tone": "surface",
+				"align": "left",
+				"split": false,
+				"cta": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "introText",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "Why Partner With Us?",
+					"sw": "Kwa Nini Ushirikiane Nasi?"
+				},
+				"description": {
+					"en": "We deliver high-quality geospatial and survey intelligence for sustainable outcomes. Our responsive team ensures timely reporting, customizable services, and GIS outputs that are compatible with your workflow.",
+					"sw": "Tunatoa akili ya kijiografia na uchunguzi wa hali ya juu kwa matokeo endelevu. Timu yetu inayoitikia huhakikisha ripoti kwa wakati, huduma zinazoweza kubadilishwa, na matokeo ya GIS yanayoendana na mtiririko wako wa kazi."
+				},
+				"tone": "default",
+				"align": "left",
+				"split": false,
+				"cta": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "ctaBand",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "Let’s Collaborate",
+					"sw": "Tuushirikiane"
+				},
+				"description": {
+					"en": "Have a project in mind or need a consultation?",
+					"sw": "Una mradi akilini au unahitaji ushauri?"
+				},
+				"primary": {
+					"label": {
+						"en": "Request a Quotation",
+						"sw": "Omba Nukta ya Bei"
+					},
+					"href": "mailto:info@smartgridsurveying.com?subject=Request%20for%20Environmental%20Survey%20Quotation&body=Hello%20SmartGrid%20Team%2C%0A%0AI would like to request a quotation for the following environmental service:%0A%0AType of Survey:%0ALocation:%0AProject Size:%0ATimeline:%0A%0ARegards,",
+					"icon": "email"
+				},
+				"secondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"layout": "centered",
+				"variant": "panel",
+				"decor": "glow",
+				"watermark": "",
+				"images": [],
+				"shimmer": false,
+				"hairline": false,
+				"id": ""
+			}
+		}
+	]
+}
