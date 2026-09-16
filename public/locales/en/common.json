@@ -12,11 +12,6 @@
 		"submissionError": "Submission failed. Please try again later or contact support.",
 		"sending": "Sending..."
 	},
-	"contacts": {
-		"address": "Nairobi, Kenya",
-		"mobile": "+254 10 7393023",
-		"Email": "smartgridsurveying@gmail.com"
-	},
 	"errors": {
 		"error": "Error",
 		"notFound": "Page not found",
@@ -36,7 +31,6 @@
 			"contact": "Contact Support"
 		}
 	},
-
 	"locales": [
 		{
 			"label": "English",
@@ -49,10 +43,52 @@
 			"flag": "/img/flags/tz.svg"
 		}
 	],
+	"contacts": {
+		"address": [
+			{
+				"icon": "map-marker",
+				"label": "Nairobi, Kenya",
+				"value": "Nairobi, Kenya",
+				"href": null
+			}
+		],
+		"phone": [
+			{
+				"icon": "phone",
+				"label": "+254 10 7393023",
+				"value": "+254107393023",
+				"href": "tel:+254107393023"
+			}
+		],
+		"mail": [
+			{
+				"icon": "gmail",
+				"label": "smartgridsurveying@gmail.com",
+				"value": "smartgridsurveying@gmail.com",
+				"href": "mailto:smartgridsurveying@gmail.com"
+			}
+		],
+		"whatsapp": [
+			{
+				"icon": "whatsapp",
+				"label": "Chat On Whatsapp",
+				"value": "254107393023",
+				"href": "https://wa.me/254107393023?text=Hello%2C%20I%20would%20like%20to%20speak%20with%20your%20team."
+			}
+		]
+	},
+	"socials": [
+		{
+			"icon": "whatsapp",
+			"label": "Chat On Whatsapp",
+			"value": "254107393023",
+			"href": "https://wa.me/254107393023?text=Hello%2C%20I%20would%20like%20to%20speak%20with%20your%20team."
+		}
+	],
 	"nav": {
 		"logo": "/img/logo.svg",
 		"logo_dark": "/img/logo-dark.svg",
-		"logo_light": "/img/logo-light-color.svg",
+		"logo_light": "/img/logo-light.svg",
 		"logo_alt": "SmartGrid",
 		"links": [
 			{
@@ -712,7 +748,7 @@
 			"items": []
 		}
 	],
-    "planningInfographic": {
+	"planningInfographic": {
 		"type": "unique",
 		"tag": "Planning a Project?",
 		"headline": "Start With Accurate Ground Data",
@@ -974,7 +1010,7 @@
 				"icon": "radar",
 				"label": "Ground Penetrating Radar (GPR)",
 				"description": "Subsurface utility detection and mapping to locate buried services and structures.",
-                "href": "/surveying/ground-penetrating-radar"
+				"href": "/surveying/ground-penetrating-radar"
 			}
 		]
 	},
@@ -1178,8 +1214,18 @@
 		"description": "We have a strong operational scale — a presence in multiple countries, hundreds of projects completed, and a commitment to delivering high-quality services over the years. If your site is in the region, chances are we've already mapped next door.",
 		"hqPin": "HQ — Ruiru, Nairobi",
 		"stats": [
-			{ "icon": "map-marker-multiple", "value": 7, "suffix": "+", "label": "Countries covered" },
-			{ "icon": "clipboard-check", "value": 250, "suffix": "+", "label": "Projects completed" },
+			{
+				"icon": "map-marker-multiple",
+				"value": 7,
+				"suffix": "+",
+				"label": "Countries covered"
+			},
+			{
+				"icon": "clipboard-check",
+				"value": 250,
+				"suffix": "+",
+				"label": "Projects completed"
+			},
 			{ "icon": "timer-check", "value": 5, "suffix": "+", "label": "Years in the field" }
 		],
 		"groups": [
@@ -1278,7 +1324,7 @@
 			"href": "/civil",
 			"icon": "arrow-right"
 		}
-	},	
+	},
 	"defaultCta": {
 		"type": "cta",
 		"tag": "Let's work together",

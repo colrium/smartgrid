@@ -73,7 +73,7 @@ export default function NavMenu({
 		};
 	}, [router.events, handleClose]);
     const isDark = variant === "dark";
-	const menuClassName = isDark ? "bg-ink-soft/95 text-surface" : "bg-surface/95";
+	const menuClassName = isDark ? "bg-primary-700/95 text-surface" : "bg-surface/95";
     const menuItemClassName = isDark ? "text-surface" : "text-ink";
 	if (horizontal) {
 		return (
@@ -104,7 +104,7 @@ export default function NavMenu({
 										onClick={() => handleClose(i)}
 										className={`mr-4 inline-flex cursor-pointer select-none items-center justify-center gap-1 px-1.25 py-1 text-sm no-underline! capitalize! relative transition-colors after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-0 after:transition-all after:duration-300 rounded-md hover:after:w-full ${
 											variant === "dark"
-												? "text-surface hover:text-primary-300 after:bg-primary-300"
+												? "text-surface hover:text-primary-100 after:bg-primary-100"
 												: "text-ink hover:text-primary-500 after:bg-primary"
 										}`}
 									>
@@ -198,7 +198,7 @@ export default function NavMenu({
 									handleOpen(i, e.currentTarget);
 								}}
 								onMouseLeave={() => scheduleClose(i)}
-								className={`text-sm  tracking-tight hover:text-primary ${menuItemClassName}`}
+								className={`text-sm  tracking-tight hover:text-primary hover:bg-surface/10 focus-visible:bg-surface/10 ${menuItemClassName}`}
 							>
 								<span className="flex items-center gap-2">
 									{item.href && (
@@ -247,7 +247,7 @@ export default function NavMenu({
 						key={`item-${i}`}
 						href={localizePath(item.href, locale)}
 						onClick={() => handleClose()}
-						className={`text-sm  ${menuItemClassName}`}
+						className={`text-sm hover:bg-surface/10 focus-visible:bg-surface/10 ${menuItemClassName}`}
 					>
 						{item.label}
 					</MenuItem>

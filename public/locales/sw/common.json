@@ -12,11 +12,6 @@
 		"submissionError": "Uwasilishaji umeshindwa. Tafadhali jaribu tena baadaye au wasiliana na msaada.",
 		"sending": "Inatuma..."
 	},
-	"contacts": {
-		"address": "Nairobi, Kenya",
-		"mobile": "+254 10 7393023",
-		"Email": "smartgridsurveying@gmail.com"
-	},
 	"errors": {
 		"error": "Hitilafu",
 		"notFound": "Ukurasa haupatikani",
@@ -47,10 +42,52 @@
 			"flag": "/img/flags/tz.svg"
 		}
 	],
+	"contacts": {
+		"address": [
+			{
+				"icon": "map-marker",
+				"label": "Nairobi, Kenya",
+				"value": "Nairobi, Kenya",
+				"href": null
+			}
+		],
+		"phone": [
+			{
+				"icon": "phone",
+				"label": "+254 10 7393023",
+				"value": "+254107393023",
+				"href": "tel:+254107393023"
+			}
+		],
+		"mail": [
+			{
+				"icon": "gmail",
+				"label": "smartgridsurveying@gmail.com",
+				"value": "smartgridsurveying@gmail.com",
+				"href": "mailto:smartgridsurveying@gmail.com"
+			}
+		],
+		"whatsapp": [
+			{
+				"icon": "whatsapp",
+				"label": "Chat On Whatsapp",
+				"value": "254107393023",
+				"href": "https://wa.me/254107393023?text=Hello%2C%20I%20would%20like%20to%20speak%20with%20your%20team."
+			}
+		]
+	},
+	"socials": [
+		{
+			"icon": "whatsapp",
+			"label": "Chat On Whatsapp",
+			"value": "254107393023",
+			"href": "https://wa.me/254107393023?text=Hello%2C%20I%20would%20like%20to%20speak%20with%20your%20team."
+		}
+	],
 	"nav": {
 		"logo": "/img/logo.svg",
 		"logo_dark": "/img/logo-dark.svg",
-		"logo_light": "/img/logo-light-color.svg",
+		"logo_light": "/img/logo-light.svg",
 		"logo_alt": "SmartGrid",
 		"links": [
 			{
@@ -676,7 +713,7 @@
 			"items": []
 		}
 	],
-    "about": {
+	"about": {
 		"type": "unique",
 		"tag": "Kuhusu Sisi",
 		"headline": "Kutoka Data ya Upimaji wa Uwanjani, Awamu ya Kubuni na Ujenzi.",
@@ -1175,8 +1212,18 @@
 		"description": "Tuna uwezo mkubwa wa uendeshaji — uwepo katika nchi nyingi, miradi mamia iliyokamilika, na dhamira ya kutoa huduma za ubora wa juu kupitia miaka. Ikiwa tovuti yako iko katika mkoa huu, kwa hakika tumechora ramani ya jirani yako.",
 		"hqPin": "Makao Makuu — Ruiru, Nairobi",
 		"stats": [
-			{ "icon": "map-marker-multiple", "value": 7, "suffix": "+", "label": "Nchi zilizofunikwa" },
-			{ "icon": "clipboard-check", "value": 250, "suffix": "+", "label": "Miradi iliyokamilika" },
+			{
+				"icon": "map-marker-multiple",
+				"value": 7,
+				"suffix": "+",
+				"label": "Nchi zilizofunikwa"
+			},
+			{
+				"icon": "clipboard-check",
+				"value": 250,
+				"suffix": "+",
+				"label": "Miradi iliyokamilika"
+			},
 			{ "icon": "timer-check", "value": 5, "suffix": "+", "label": "Miaka uwanjani" }
 		],
 		"groups": [
@@ -1275,7 +1322,7 @@
 			"href": "/civil",
 			"icon": "arrow-right"
 		}
-	},	
+	},
 	"defaultCta": {
 		"type": "cta",
 		"tag": "Tufanye kazi pamoja",
