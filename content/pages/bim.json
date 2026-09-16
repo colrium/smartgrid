@@ -1,0 +1,93 @@
+{
+	"slug": "BIM",
+	"title": "BIM (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "hero",
+			"value": {
+				"headline": {
+					"en": "Reliable. Scalable. Fast. Powerful.",
+					"sw": "Kuaminika. Kupanuka. Haraka. Nguvu."
+				},
+				"title": {
+					"en": "Building Information Modelling (BIM)",
+					"sw": "Muundo wa Taarifa za Ujenzi (BIM)"
+				},
+				"description": {
+					"en": "Illuminate your energy future—our drone-powered solar panel surveys deliver unmatched precision, faster insights, and smarter decisions from the sky down. By capturing high-resolution imagery, 3D terrain data, and thermal analytics, we help optimize solar performance while reducing costly on-site inspections. Whether you're planning a new installation or maintaining an existing solar farm, our surveys provide the data clarity you need to maximize ROI and system efficiency. With SmartGrid, the power of geospatial intelligence takes your solar projects to the next level.\n\n Smartgrid Surveying is your trusted surveying partner!",
+					"sw": "Mwangaza mustakabali wako wa nishati—uchunguzi wetu wa paneli za sola unaoendeshwa na ndege zisizo na rubani hutoa usahihi usio na kifani, maarifa ya haraka, na maamuzi ya busara zaidi kutoka angani kwenda chini. Kwa kukamata picha za mwonekano wa juu, data ya ardhi ya 3D, na uchanganuzi wa joto, tunasaidia kuboresha utendaji wa sola huku tukipunguza ukaguzi wa gharama wa tovutini. Iwe unapanga usakinishaji mpya au unadumisha shamba lililopo la sola, uchunguzi wetu hutoa uwazi wa data unaohitaji kuongeza ROI na ufanisi wa mfumo. Kwa SmartGrid, nguvu ya akili ya kijiografia hupeleka miradi yako ya sola kiwango kingine.\n\n Smartgrid Surveying ni mshirika wako wa upimaji anayeaminika!"
+				},
+				"image": "/media/civil/bim/01.jpg",
+				"layout": "bottom",
+				"frame": false,
+				"scrollCue": false,
+				"cueLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"footnoteItems": [],
+				"ctaPrimary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": "",
+					"iconPosition": "end",
+					"trailingArrow": "auto"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "Email Us Today!",
+						"sw": "Tutumie Barua Pepe Leo!"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Building Information Modelling (BIM)&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Building Information Modelling (BIM). Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "email"
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "ctaBand",
+			"value": {
+				"tag": {
+					"en": "Let’s Collaborate",
+					"sw": "Tuushirikiane"
+				},
+				"headline": {
+					"en": "Ready to Elevate Your Infrastructure with BIM?",
+					"sw": "Uko Tayari Kuinua Miundombinu Yako kwa BIM?"
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"primary": {
+					"label": {
+						"en": "Get in Touch",
+						"sw": "Wasiliana Nasi"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Building Information Modelling (BIM)&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Building Information Modelling (BIM). Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "email"
+				},
+				"secondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"layout": "centered",
+				"variant": "panel",
+				"decor": "glow",
+				"watermark": "",
+				"images": [],
+				"shimmer": false,
+				"hairline": false,
+				"id": ""
+			}
+		}
+	]
+}

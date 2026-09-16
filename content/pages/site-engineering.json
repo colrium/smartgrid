@@ -1,0 +1,48 @@
+{
+	"slug": "Site Engineering",
+	"title": "Site Engineering (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "ctaBand",
+			"value": {
+				"tag": {
+					"en": "Let’s Collaborate",
+					"sw": "Tuushirikiane"
+				},
+				"headline": {
+					"en": "Need High-Precision Surveys for Your Next Build?",
+					"sw": "Unahitaji Uchunguzi wa Usahihi wa Juu kwa Ujenzi Wako Ujao?"
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"primary": {
+					"label": {
+						"en": "Get in Touch",
+						"sw": "Wasiliana Nasi"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Site Engineering Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Site Engineering Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "email"
+				},
+				"secondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"layout": "centered",
+				"variant": "panel",
+				"decor": "glow",
+				"watermark": "",
+				"images": [],
+				"shimmer": false,
+				"hairline": false,
+				"id": ""
+			}
+		}
+	]
+}

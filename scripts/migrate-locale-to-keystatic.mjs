@@ -1489,6 +1489,307 @@ const PAGES = {
 			},
 		],
 	},
+	// M7 batch 12a: bim. Two sections migrate in page order — `hero`
+	// (shared Hero with secondary-only pill: no `ctaPrimary` key in content)
+	// + `cta` (ctaBand centred; wrapper `iconPosition: "end"` collapses to the
+	// solid-pill default per CtaPill `iconAtEnd`). Tails stay legacy:
+	// BimServicesSection (`indexed` numbering) + bespoke Deliverables explorer.
+	"bim": {
+		namespace: "civil/bim",
+		title: "BIM",
+		skipped: ["bimServices", "deliverables"],
+		sections: [
+			{
+				discriminant: "hero",
+				from: "hero",
+				// Legacy: HeroSection → <Hero data={t(hero)} /> (default
+				// bottom layout; secondary-only pill).
+				build(en, sw, where) {
+					return {
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						title: { en: reqText(en.title, `${where}.title.en`), sw: reqText(sw.title, `${where}.title.sw`) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						image: sharedValue(en, sw, "image", where) ?? "",
+						layout: sharedValue(en, sw, "layout", where) ?? "bottom",
+						frame: sharedValue(en, sw, "frame", where) ?? false,
+						scrollCue: sharedValue(en, sw, "scrollCue", where) ?? false,
+						cueLabel: emptyPair(),
+						footnoteItems: [],
+						ctaPrimary: { label: emptyPair(), href: "", icon: "", iconPosition: "end", trailingArrow: "auto" },
+						ctaSecondary: {
+							label: { en: reqText(en.ctaSecondary?.label, `${where}.ctaSecondary.label.en`), sw: reqText(sw.ctaSecondary?.label, `${where}.ctaSecondary.label.sw`) },
+							href: sharedValue(en.ctaSecondary, sw.ctaSecondary, "href", where) ?? "",
+							icon: sharedValue(en.ctaSecondary, sw.ctaSecondary, "icon", where) ?? "",
+						},
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "ctaBand",
+				from: "cta",
+				// Legacy: CtaSection → <CtaBand tag headline description
+				// primary /> (layout/variant/decor unset =
+				// centered/panel/glow; wrapper `iconPosition: "end"` is the
+				// solid-pill default).
+				build(en, sw, where) {
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						primary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+						},
+						secondary: { label: emptyPair(), href: "", icon: "" },
+						layout: "centered",
+						variant: "panel",
+						decor: "glow",
+						watermark: "",
+						images: [],
+						shimmer: false,
+						hairline: false,
+						id: "",
+					};
+				},
+			},
+		],
+	},
+	// M7 batch 12b: site-engineering. One section migrates — `cta` (ctaBand
+	// centred, plain pill, no wrapper overrides). The bespoke hero (`<bold>`
+	// pseudo-markup) and `Split`-primitive overview stay legacy;
+	// WhatWeDoSection is `indexed`; ExploreMoreSection uses media-background
+	// cards (`mediaPosition`/`headerAlign` outside the contract); deliverables
+	// explorer stays legacy.
+	"site-engineering": {
+		namespace: "civil/site-engineering",
+		title: "Site Engineering",
+		skipped: ["hero", "overview", "WhatWeDo", "exploreMore", "deliverables"],
+		sections: [
+			{
+				discriminant: "ctaBand",
+				from: "cta",
+				// Legacy: CtaSection → <CtaBand tag headline description
+				// primary /> (all presentation unset = defaults).
+				build(en, sw, where) {
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						primary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+						},
+						secondary: { label: emptyPair(), href: "", icon: "" },
+						layout: "centered",
+						variant: "panel",
+						decor: "glow",
+						watermark: "",
+						images: [],
+						shimmer: false,
+						hairline: false,
+						id: "",
+					};
+				},
+			},
+		],
+	},
+	// M7 batch 12c: site-setting-out. Two sections migrate in page order —
+	// `hero` (shared Hero, dual pills without icons) + `faq` (icon/title/
+	// description items, no points, no still-curious card). Tails stay legacy:
+	// OurServicesSection (`indexed`), OurInstrumentsSection (`mediaBadged`),
+	// bespoke Deliverables explorer.
+	"site-setting-out": {
+		namespace: "civil/site-setting-out",
+		title: "Site Setting Out",
+		skipped: ["ourServices", "ourInstruments", "deliverables"],
+		sections: [
+			{
+				discriminant: "hero",
+				from: "hero",
+				// Legacy: HeroSection → <Hero data={t(hero)} /> (default
+				// bottom layout; dual pills, neither with an icon key).
+				build(en, sw, where) {
+					return {
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						title: { en: reqText(en.title, `${where}.title.en`), sw: reqText(sw.title, `${where}.title.sw`) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						image: sharedValue(en, sw, "image", where) ?? "",
+						layout: sharedValue(en, sw, "layout", where) ?? "bottom",
+						frame: sharedValue(en, sw, "frame", where) ?? false,
+						scrollCue: sharedValue(en, sw, "scrollCue", where) ?? false,
+						cueLabel: emptyPair(),
+						footnoteItems: [],
+						ctaPrimary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+							iconPosition: sharedValue(en.ctaPrimary, sw.ctaPrimary, "iconPosition", where) ?? "end",
+							trailingArrow: (() => {
+								const arrow = sharedValue(en.ctaPrimary, sw.ctaPrimary, "trailingArrow", where);
+								return arrow === true ? "show" : arrow === false ? "hide" : "auto";
+							})(),
+						},
+						ctaSecondary: {
+							label: { en: reqText(en.ctaSecondary?.label, `${where}.ctaSecondary.label.en`), sw: reqText(sw.ctaSecondary?.label, `${where}.ctaSecondary.label.sw`) },
+							href: sharedValue(en.ctaSecondary, sw.ctaSecondary, "href", where) ?? "",
+							icon: sharedValue(en.ctaSecondary, sw.ctaSecondary, "icon", where) ?? "",
+						},
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "faq",
+				from: "faq",
+				// Legacy: FaqSection → <SharedFaq tag headline description
+				// items /> with icon/title/description items mapped to
+				// question/answer/icon (no points, no still-curious card).
+				build(en, sw, where) {
+					const enItems = en.items ?? [];
+					const swItems = sw.items ?? [];
+					if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+						gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+					}
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						items: enItems.map((item, i) => {
+							const swItem = swItems[i] ?? {};
+							return {
+								question: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+								answer: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+								points: [],
+								icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+							};
+						}),
+						stillCuriousLabel: emptyPair(),
+						stillCuriousDescription: emptyPair(),
+						stillCuriousCta: { label: emptyPair(), href: "", icon: "" },
+						id: "",
+					};
+				},
+			},
+		],
+	},
+	// M7 batch 12d: volumetric-surveys. Five sections migrate in page order —
+	// `hero` (dual pills with icons) + `maxProductivityMinGuesswork`/
+	// `clarityAndControl` (introTexts default/surface) +
+	// `precisionVolumetricAnalysis` (splitMedia right/default) + `cta`
+	// (ctaBand centred; wrapper `iconPosition: "end"` is the solid-pill
+	// default; content `icon: "email"` shared so the `?? "arrow-right"`
+	// fallback never fires). Tails stay legacy: ServicesSection
+	// (`headerAlign="left"`, non-default — plain cardGrid would centre it) +
+	// bespoke Deliverables explorer.
+	"volumetric-surveys": {
+		namespace: "civil/volumetric-surveys",
+		title: "Volumetric Surveys",
+		skipped: ["services", "deliverables"],
+		sections: [
+			{
+				discriminant: "hero",
+				from: "hero",
+				// Legacy: HeroSection → <Hero data={t(hero)} /> (default
+				// bottom layout; dual pills with icons).
+				build(en, sw, where) {
+					return {
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						title: { en: reqText(en.title, `${where}.title.en`), sw: reqText(sw.title, `${where}.title.sw`) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						image: sharedValue(en, sw, "image", where) ?? "",
+						layout: sharedValue(en, sw, "layout", where) ?? "bottom",
+						frame: sharedValue(en, sw, "frame", where) ?? false,
+						scrollCue: sharedValue(en, sw, "scrollCue", where) ?? false,
+						cueLabel: emptyPair(),
+						footnoteItems: [],
+						ctaPrimary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+							iconPosition: sharedValue(en.ctaPrimary, sw.ctaPrimary, "iconPosition", where) ?? "end",
+							trailingArrow: (() => {
+								const arrow = sharedValue(en.ctaPrimary, sw.ctaPrimary, "trailingArrow", where);
+								return arrow === true ? "show" : arrow === false ? "hide" : "auto";
+							})(),
+						},
+						ctaSecondary: {
+							label: { en: reqText(en.ctaSecondary?.label, `${where}.ctaSecondary.label.en`), sw: reqText(sw.ctaSecondary?.label, `${where}.ctaSecondary.label.sw`) },
+							href: sharedValue(en.ctaSecondary, sw.ctaSecondary, "href", where) ?? "",
+							icon: sharedValue(en.ctaSecondary, sw.ctaSecondary, "icon", where) ?? "",
+						},
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "introText",
+				from: "maxProductivityMinGuesswork",
+				// Legacy: MaxProductivityMinGuessworkSection → <TextSection />
+				// (tone default, align/split unset).
+				build: introTextBuild({ tone: "default", align: "left", split: false }),
+			},
+			{
+				discriminant: "splitMedia",
+				from: "precisionVolumetricAnalysis",
+				// Legacy: PrecisionVolumetricAnalysisSection → <SplitMedia
+				// data imagePosition="right" /> (tone/mediaAspect/mediaFit
+				// unset = defaults).
+				build(en, sw, where) {
+					return {
+						tag: { en: reqText(en.tag, `${where}.tag.en`), sw: reqText(sw.tag, `${where}.tag.sw`) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						image: { en: optText(en.image), sw: optText(sw.image) },
+						points: [],
+						imagePosition: "right",
+						tone: "default",
+						mediaAspect: "default",
+						mediaFit: "cover",
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "introText",
+				from: "clarityAndControl",
+				// Legacy: ClarityAndControlSection → <TextSection
+				// tone="surface" />.
+				build: introTextBuild({ tone: "surface", align: "left", split: false }),
+			},
+			{
+				discriminant: "ctaBand",
+				from: "cta",
+				// Legacy: CtaSection → <CtaBand tag headline description
+				// primary /> (layout/variant/decor unset =
+				// centered/panel/glow; wrapper `iconPosition: "end"` is the
+				// solid-pill default).
+				build(en, sw, where) {
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						primary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+						},
+						secondary: { label: emptyPair(), href: "", icon: "" },
+						layout: "centered",
+						variant: "panel",
+						decor: "glow",
+						watermark: "",
+						images: [],
+						shimmer: false,
+						hairline: false,
+						id: "",
+					};
+				},
+			},
+		],
+	},
 };
 
 function loadNamespace(locale, namespace) {

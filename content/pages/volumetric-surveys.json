@@ -1,0 +1,178 @@
+{
+	"slug": "Volumetric Surveys",
+	"title": "Volumetric Surveys (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "hero",
+			"value": {
+				"headline": {
+					"en": "Reliable. Scalable. Fast. Powerful.",
+					"sw": "Kuaminika. Kupanuka. Haraka. Nguvu."
+				},
+				"title": {
+					"en": "Volumetric Surveys done Smarter.",
+					"sw": "Uchunguzi wa Kiasi Unafanywa Kwa Busara Zaidi."
+				},
+				"description": {
+					"en": "Unlock the True Value of Your Site—our drone-enabled volumetric surveys provide precise, timely measurements that drive smarter planning, resource management, and project efficiency.",
+					"sw": "Fungua Thamani Halisi ya Tovuti Yako—uchunguzi wetu wa kiasi unaowezeshwa na ndege zisizo na rubani hutoa vipimo sahihi, vya wakati unaofaa ambavyo vinaendesha upangaji bora, usimamizi wa rasilimali, na ufanisi wa mradi."
+				},
+				"image": "/media/civil/volumetric-surveys/01.jpg",
+				"layout": "bottom",
+				"frame": false,
+				"scrollCue": false,
+				"cueLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"footnoteItems": [],
+				"ctaPrimary": {
+					"label": {
+						"en": "Get Your Free Consultation",
+						"sw": "Pata Ushauri Wako wa Bure"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Volumetric Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Volumetric Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "gift",
+					"iconPosition": "end",
+					"trailingArrow": "auto"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "Explore other Aerial Services",
+						"sw": "Chunguza Huduma Nyingine za Angani"
+					},
+					"href": "/aerial-drones/drone-imagery-surveys",
+					"icon": "compass"
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "introText",
+			"value": {
+				"tag": {
+					"en": "Lead with Data",
+					"sw": "Ongoza kwa Data"
+				},
+				"headline": {
+					"en": "Maximize Productivity. Minimize Guesswork.",
+					"sw": "Kuongeza Tija. Kupunguza Bahati Nasibu."
+				},
+				"description": {
+					"en": "Leverage SmartGrid's cutting-edge drone volume surveys to make faster, smarter decisions on site. Let data lead the way to profitability.",
+					"sw": "Tumia uchunguzi wa kiasi wa kisasa wa ndege za SmartGrid kufanya maamuzi ya haraka na ya busara zaidi tovutini. Acha data iongoze njia ya faida."
+				},
+				"tone": "default",
+				"align": "left",
+				"split": false,
+				"cta": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "splitMedia",
+			"value": {
+				"tag": {
+					"en": "Accurate Site Intelligence",
+					"sw": "Akili Sahihi ya Tovuti"
+				},
+				"headline": {
+					"en": "Precision Volumetric Analysis with Drone Technology",
+					"sw": "Uchambuzi Sahihi wa Kiasi kwa Teknolojia ya Ndege Zisizo na Rubani"
+				},
+				"description": {
+					"en": "SmartGrid leverages advanced UAVs and photogrammetry to deliver fast, accurate volumetric measurements.\n\n Whether you’re managing stockpiles, quarries, or earthworks, our drone solutions cut time and cost while enhancing safety and data reliability.",
+					"sw": "SmartGrid hutumia UAV za hali ya juu na photogrammetry kutoa vipimo vya kiasi vya haraka, sahihi.\n\n Iwe unasimamia mrundikano, machimbo, au kazi za ardhi, suluhisho zetu za ndege hupunguza muda na gharama huku zikiboresha usalama na uaminifu wa data."
+				},
+				"image": {
+					"en": "/media/civil/volumetric-surveys/02.jpg",
+					"sw": "/media/civil/volumetric-surveys/02.jpg"
+				},
+				"points": [],
+				"imagePosition": "right",
+				"tone": "default",
+				"mediaAspect": "default",
+				"mediaFit": "cover",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "introText",
+			"value": {
+				"tag": {
+					"en": "Clarity & Control",
+					"sw": "Uwazi na Udhibiti"
+				},
+				"headline": {
+					"en": "Boost Accuracy. Drive Efficiency.",
+					"sw": "Kuongeza Usahihi. Kuendesha Ufanisi."
+				},
+				"description": {
+					"en": "Say goodbye to outdated manual surveys. Our drone-based volume calculations bring clarity and control to every project milestone.",
+					"sw": "Sema kwaheri kwa uchunguzi wa kizamani wa mikono. Hesabu zetu za kiasi za ndege zisizo na rubani huleta uwazi na udhibiti katika kila hatua muhimu ya mradi."
+				},
+				"tone": "surface",
+				"align": "left",
+				"split": false,
+				"cta": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "ctaBand",
+			"value": {
+				"tag": {
+					"en": "Let’s Collaborate",
+					"sw": "Tuushirikiane"
+				},
+				"headline": {
+					"en": "Need Accurate Volumetric Data for Your Site?",
+					"sw": "Unahitaji Data Sahihi ya Kiasi kwa Tovuti Yako?"
+				},
+				"description": {
+					"en": "Contact SmartGrid Surveying for a custom drone volume survey that saves time, reduces risk, and delivers results.",
+					"sw": "Wasiliana na SmartGrid Surveying kwa uchunguzi maalum wa kiasi wa ndege unaookoa muda, kupunguza hatari, na kutoa matokeo."
+				},
+				"primary": {
+					"label": {
+						"en": "Request a volumetric Survey",
+						"sw": "Omba Uchunguzi wa Kiasi"
+					},
+					"href": "mailto:contact@smartgridsurveying.com?subject=Quote Request: Volumetric Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Volumetric Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "email"
+				},
+				"secondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"layout": "centered",
+				"variant": "panel",
+				"decor": "glow",
+				"watermark": "",
+				"images": [],
+				"shimmer": false,
+				"hairline": false,
+				"id": ""
+			}
+		}
+	]
+}

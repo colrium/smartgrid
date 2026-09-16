@@ -1,0 +1,196 @@
+{
+	"slug": "Site Setting Out",
+	"title": "Site Setting Out (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "hero",
+			"value": {
+				"headline": {
+					"en": "SITE SETTING OUT",
+					"sw": "UWEKAJI WA ALAMA ZA TOVUTI"
+				},
+				"title": {
+					"en": "Staking Out and Setting Out",
+					"sw": "Staking Out na Setting Out"
+				},
+				"description": {
+					"en": "SmartGrid Surveying ensures precise construction by translating designs into accurate physical points on-site, supporting engineering, building, and civil projects across Kenya. Ensure your construction projects start with precision. SmartGrid Surveying delivers expert site setting out services, translating designs into accurate physical points on-site for buildings, roads, and infrastructure.\n\n Our experienced team uses advanced surveying instruments and GNSS technology to guarantee centimeter-level accuracy, helping projects stay on schedule and compliant with engineering standards.",
+					"sw": "SmartGrid Surveying huhakikisha ujenzi sahihi kwa kutafsiri mibuni kuwa pointi sahihi za kimwili tovutini, kusaidia miradi ya uhandisi, ujenzi, na kiraia kote Kenya. Hakikisha miradi yako ya ujenzi inaanza kwa usahihi. SmartGrid Surveying hutoa huduma za kitaalamu za setting out za tovuti, kutafsiri mibuni kuwa pointi sahihi za kimwili tovutini kwa majengo, barabara, na miundombinu.\n\n Timu yetu yenye uzoefu hutumia vyombo vya kisasa vya upimaji na teknolojia ya GNSS kuhakikisha usahihi wa kiwango cha sentimita, kusaidia miradi kukamilika kwa ratiba na kufuata viwango vya uhandisi."
+				},
+				"image": "/media/civil/site-setting-out/01.jpg",
+				"layout": "bottom",
+				"frame": false,
+				"scrollCue": false,
+				"cueLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"footnoteItems": [],
+				"ctaPrimary": {
+					"label": {
+						"en": "Get Your Free Consultation",
+						"sw": "Pata Ushauri Wako wa Bure"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Staking Out and Setting Out&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Staking Out and Setting Out. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "",
+					"iconPosition": "end",
+					"trailingArrow": "auto"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "Request Setting Out services!",
+						"sw": "Omba Huduma za Setting Out!"
+					},
+					"href": "/aerial-drones/drone-imagery-surveys",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "faq",
+			"value": {
+				"tag": {
+					"en": "Common Questions",
+					"sw": "Maswali ya Kawaida"
+				},
+				"headline": {
+					"en": "Frequently Asked Questions",
+					"sw": "Maswali Yanayoulizwa Mara kwa Mara"
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"question": {
+							"en": "What is a Site Setting Out Survey?",
+							"sw": "Uchunguzi wa Setting Out wa Tovuti ni nini?"
+						},
+						"answer": {
+							"en": "A site setting out survey translates the design drawings into physical points on the ground. It establishes the exact locations for buildings, roads, utilities, and other structures to ensure construction is accurate and complies with engineering plans.",
+							"sw": "Uchunguzi wa setting out wa tovuti hutafsiri michoro ya kubuni kuwa pointi za kimwili ardhini. Huanzisha maeneo halisi ya majengo, barabara, huduma, na miundo mingine kuhakikisha ujenzi ni sahihi na unakidhi mipango ya uhandisi."
+						},
+						"points": [],
+						"icon": "help-circle"
+					},
+					{
+						"question": {
+							"en": "Why do I need a Site Setting Out Survey?",
+							"sw": "Kwa nini nahitaji Uchunguzi wa Setting Out wa Tovuti?"
+						},
+						"answer": {
+							"en": "Without accurate setting out, structures can be misaligned or result in costly rework. SmartGrid Surveying ensures your project is built exactly as designed, maintaining legal and engineering compliance while saving time and resources.",
+							"sw": "Bila setting out sahihi, miundo inaweza kupotoka au kusababisha ukarabati wa gharama kubwa. SmartGrid Surveying huhakikisha mradi wako umejengwa hasa kama ulivyobuniwa, kudumisha kufuata kisheria na kihandisi huku ikihifadhi muda na rasilimali."
+						},
+						"points": [],
+						"icon": "help-circle"
+					},
+					{
+						"question": {
+							"en": "How long does a Site Setting Out survey take?",
+							"sw": "Uchunguzi wa Setting Out wa Tovuti huchukua muda gani?"
+						},
+						"answer": {
+							"en": "The duration depends on the project size and complexity. SmartGrid Surveying provides a detailed timeline before starting, ensuring transparency. For example, a residential plot may take 1–2 days, while larger commercial or infrastructure sites may take several days.",
+							"sw": "Muda unategemea ukubwa wa mradi na ugumu wake. SmartGrid Surveying hutoa ratiba ya kina kabla ya kuanza, kuhakikisha uwazi. Kwa mfano, kiwanja cha makazi kinaweza kuchukua siku 1–2, wakati maeneo makubwa ya biashara au miundombinu yanaweza kuchukua siku kadhaa."
+						},
+						"points": [],
+						"icon": "help-circle"
+					},
+					{
+						"question": {
+							"en": "Do you mark the site physically?",
+							"sw": "Je, mnaweka alama tovutini kimwili?"
+						},
+						"answer": {
+							"en": "Yes. SmartGrid Surveying places markers, pegs, or paint markings on the ground according to design coordinates, ensuring builders and contractors can accurately follow the plans.",
+							"sw": "Ndiyo. SmartGrid Surveying huweka alama, vigingi, au alama za rangi ardhini kulingana na kuratibu za kubuni, kuhakikisha wajenzi na makandarasi wanaweza kufuata mipango kwa usahihi."
+						},
+						"points": [],
+						"icon": "help-circle"
+					},
+					{
+						"question": {
+							"en": "Can a Site Setting Out survey prevent boundary disputes?",
+							"sw": "Je, Uchunguzi wa Setting Out wa Tovuti unaweza kuzuia mizozo ya mipaka?"
+						},
+						"answer": {
+							"en": "Absolutely. By aligning structures according to cadastral plans and approved drawings, SmartGrid Surveying ensures construction respects property boundaries, minimizing conflicts with neighbors or local authorities.",
+							"sw": "Kabisa. Kwa kuoanisha miundo kulingana na mipango ya cadastral na michoro iliyoidhinishwa, SmartGrid Surveying huhakikisha ujenzi unaheshimu mipaka ya mali, kupunguza migogoro na majirani au mamlaka za mitaa."
+						},
+						"points": [],
+						"icon": "help-circle"
+					},
+					{
+						"question": {
+							"en": "What documentation do I get after the survey?",
+							"sw": "Nipata nyaraka gani baada ya uchunguzi?"
+						},
+						"answer": {
+							"en": "After a site setting out survey, SmartGrid Surveying provides: \n\n\t 1. Survey drawings showing all marked points.\n 2. Coordinates of reference points.\n\t 3. Verification report confirming alignment with design.\n\t 4. Certificates for legal or regulatory purposes if needed.",
+							"sw": "Baada ya uchunguzi wa setting out wa tovuti, SmartGrid Surveying hutoa: \n\n\t 1. Michoro ya uchunguzi inayoonyesha pointi zote zilizowekwa alama.\n 2. Kuratibu za pointi za marejeleo.\n\t 3. Ripoti ya uthibitishaji inayothibitisha kulingana na kubuni.\n\t 4. Vyeti kwa madhumuni ya kisheria au ya udhibiti ikihitajika."
+						},
+						"points": [],
+						"icon": "help-circle"
+					},
+					{
+						"question": {
+							"en": "How often should setting out checks be done?",
+							"sw": "Ukaguzi wa setting out unapaswa kufanywa mara ngapi?"
+						},
+						"answer": {
+							"en": "Initial marking is done before construction begins. SmartGrid Surveying recommends follow-up checks at key stages (foundation, floor slabs, road alignment) to maintain accuracy throughout the construction process.",
+							"sw": "Uwekaji wa alama wa awali unafanywa kabla ya ujenzi kuanza. SmartGrid Surveying inapendekeza ukaguzi wa ufuatiliaji katika hatua muhimu (msingi, slabs za sakafu, usawazishaji wa barabara) kudumisha usahihi wakati wote wa mchakato wa ujenzi."
+						},
+						"points": [],
+						"icon": "help-circle"
+					},
+					{
+						"question": {
+							"en": "Is this service compliant with Kenyan regulations?",
+							"sw": "Je, huduma hii inazingatia kanuni za Kenya?"
+						},
+						"answer": {
+							"en": "Yes. SmartGrid Surveying operates under the Survey Act, Cap 299, and all work is performed by licensed surveyors. We also comply with county planning regulations and building codes.",
+							"sw": "Ndiyo. SmartGrid Surveying inafanya kazi chini ya Sheria ya Uchunguzi, Cap 299, na kazi zote zinafanywa na wapima ardhi walio na leseni. Pia tunazingatia kanuni za upangaji za kaunti na kanuni za ujenzi."
+						},
+						"points": [],
+						"icon": "help-circle"
+					},
+					{
+						"question": {
+							"en": "How can I request a Site Setting Out survey?",
+							"sw": "Ninawezaje kuomba Uchunguzi wa Setting Out wa Tovuti?"
+						},
+						"answer": {
+							"en": "You can contact SmartGrid Surveying via WhatsApp, email, or phone. We will schedule a site visit, provide a quotation, and outline the survey plan tailored to your project.",
+							"sw": "Unaweza kuwasiliana na SmartGrid Surveying kupitia WhatsApp, barua pepe, au simu. Tutapanga ziara ya tovuti, kutoa makadirio, na kuelezea mpango wa uchunguzi ulioundwa kwa mradi wako."
+						},
+						"points": [],
+						"icon": "help-circle"
+					}
+				],
+				"stillCuriousLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"stillCuriousDescription": {
+					"en": "",
+					"sw": ""
+				},
+				"stillCuriousCta": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		}
+	]
+}
