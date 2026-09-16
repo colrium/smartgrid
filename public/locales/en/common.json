@@ -17,6 +17,201 @@
 		"mobile": "+254 10 7393023",
 		"Email": "smartgridsurveying@gmail.com"
 	},
+	"errors": {
+		"error": "Error",
+		"notFound": "Page not found",
+		"serverError": "Internal server error",
+		"forbidden": "Access forbidden",
+		"pageTitle": "{{statusCode}} - {{title}}",
+		"statusLabel": "Error {{statusCode}}",
+		"notFoundTitle": "Page not found",
+		"notFoundDescription": "The page you are looking for may have moved, been removed, or never existed. Return home or contact the Smartgrid team if you need help finding something specific.",
+		"serverErrorTitle": "Something went wrong",
+		"serverErrorDescription": "The site could not complete this request. Our team has been notified where possible, and you can try again shortly or contact us directly.",
+		"genericTitle": "Unexpected error",
+		"genericDescription": "An unexpected error interrupted this request. Please try again, return home, or contact the Smartgrid team for support.",
+
+		"actions": {
+			"home": "Return Home",
+			"contact": "Contact Support"
+		}
+	},
+
+	"locales": [
+		{
+			"label": "English",
+			"code": "en",
+			"flag": "/img/flags/ke.svg"
+		},
+		{
+			"label": "Swahili",
+			"code": "sw",
+			"flag": "/img/flags/tz.svg"
+		}
+	],
+	"nav": {
+		"logo": "/img/logo.svg",
+		"logo_dark": "/img/logo-dark.svg",
+		"logo_light": "/img/logo-light-color.svg",
+		"logo_alt": "SmartGrid",
+		"links": [
+			{
+				"label": "Surveying",
+				"href": "/surveying",
+				"links": [
+					{
+						"label": "Topographical surveys",
+						"href": "/surveying/topographical-surveys"
+					},
+					{
+						"label": "Building site surveys",
+						"href": "/surveying/building-site-surveys"
+					},
+					{ "label": "Sectional properties", "href": "/surveying/sectional-properties" },
+					{ "label": "Cadastral surveys", "href": "/surveying/cadastral-surveys" },
+					{ "label": "Aerial surveys", "href": "/surveying/aerial-surveys" },
+					{
+						"label": "Ground penetrating radar",
+						"href": "/surveying/ground-penetrating-radar"
+					},
+					{ "label": "Resource Mapping", "href": "/surveying/resource-mapping" },
+					{
+						"label": "Bathymetric surveys",
+						"href": "/surveying/bathymetric-surveys"
+					},
+					{
+						"label": "GIS & Mapping",
+						"href": "/surveying/gis-mapping"
+					}
+				]
+			},
+			{
+				"label": "Aerial Drones",
+				"href": "/aerial-drones",
+				"links": [
+					{
+						"label": "Drone imagery surveys",
+						"href": "/aerial-drones/drone-imagery-surveys"
+					},
+					{
+						"label": "Lidar Mapping",
+						"href": "/aerial-drones/lidar-mapping"
+					},
+					{
+						"label": "Agricultural NDVI Mapping",
+						"href": "/aerial-drones/agricultural-ndvi-mapping"
+					},
+					{
+						"label": "As built surveys",
+						"href": "/aerial-drones/as-built-surveys"
+					},
+					{
+						"label": "Monitoring and Evaluation",
+						"href": "/aerial-drones/monitoring-and-evaluation"
+					},
+					{
+						"label": "Solar Panel Drone Surveys",
+						"href": "/aerial-drones/solar-panel-drone-surveys"
+					},
+					{
+						"label": "Volumetric Surveys",
+						"href": "/aerial-drones/volumetric-surveys"
+					},
+					{
+						"label": "Landfill & Quarry Drone Surveys",
+						"href": "/aerial-drones/landfill-quarry-drone-surveys"
+					},
+					{
+						"label": "Photography & Video Marketing",
+						"href": "/aerial-drones/photography-video-marketing"
+					}
+				]
+			},
+			{
+				"label": "Civil",
+				"href": "/civil",
+				"links": [
+					{
+						"label": "Highway Surveys",
+						"href": "/civil/highway-surveys"
+					},
+					{
+						"label": "As-built surveys",
+						"href": "/civil/as-built-surveys"
+					},
+					{
+						"label": "Volumetric surveys",
+						"href": "/civil/volumetric-surveys"
+					},
+					{
+						"label": "BIM",
+						"href": "/civil/bim"
+					},
+					{
+						"label": "Site Engineering",
+						"href": "/civil/site-engineering"
+					},
+					{
+						"label": "Site setting out",
+						"href": "/civil/site-setting-out"
+					}
+				]
+			},
+			{
+				"label": "Equipment sale",
+				"href": "/equipment-sale/equipment-catalogue",
+				"links": [
+					{
+						"label": "FOIF A90 RTK GNSS",
+						"href": "/equipment-sale/foif-a90-rtk-gnss"
+					},
+					{
+						"label": "TOTAL STATION ESURVEY",
+						"href": "/equipment-sale/total-station-esurvey"
+					},
+					{
+						"label": "TOTAL STATION DTM 152M",
+						"href": "/equipment-sale/total-station-dtm-152m"
+					},
+					{
+						"label": "AUTOMATIC LEVEL BOSCH",
+						"href": "/equipment-sale/automatic-level-bosch"
+					},
+					{
+						"label": "AUTOMATIC LEVEL HUEPER",
+						"href": "/equipment-sale/automatic-level-hueper"
+					},
+					{
+						"label": "EQUIPMENT CATALOGUE",
+						"href": "/equipment-sale/equipment-catalogue"
+					}
+				]
+			},
+			{
+				"label": "About",
+				"href": "/about",
+				"links": [
+					{
+						"label": "About Us",
+						"href": "/about"
+					},
+					{
+						"label": "Company Profile",
+						"href": "/company-profile"
+					},
+					{ "label": "Careers", "href": "/careers" }
+				]
+			},
+			{ "label": "Contact Us", "href": "/contact", "type": "pill" }
+		],
+
+		"ctaPrimary": {
+			"label": "Get a Quote",
+			"href": "/contact?reason=request-quote#contact-form"
+		},
+		"ctaSecondary": { "label": "Learn More", "href": "/#faq" },
+		"ctaSearch": { "label": "Learn More", "href": "/#faq" }
+	},
 	"locations": {
 		"countries": [
 			{
@@ -431,6 +626,42 @@
 			}
 		]
 	},
+	"about": {
+		"type": "unique",
+		"tag": "About Us",
+		"headline": "From Surveying Field data, Designing and Construction Phase.",
+		"description": "Change to: Smartgrid surveying delivers Accurate XYZ data, for smarter decisions within your project. ",
+		"featureImg": {
+			"url": "/media/home/field-doperators.jpg",
+			"alt": "Surveying Field Data",
+			"caption": "Field Operations",
+			"title": "Highly Detailed Topographical and GPR surveys",
+			"description": "SmartGrid surveying delivers 1cm accuracy to your project needs"
+		},
+		"whoWeAre": {
+			"title": "WHO WE ARE",
+			"description": "At SmartGrid surveying and Engineering, we specialize in advanced Land Surveying techniques and Civil Works in Kenya, Uganda, Tanzania and Africa, ensuring precision, efficiency, and reliability in every project. Our expertise in GIS mapping, drone surveying, and power grid analysis helps optimize infrastructure planning, while our civil engineering services lay the foundation for sustainable development."
+		},
+		"mission": {
+			"title": "OUR MISSION",
+			"description": "To deliver innovative, high-precision surveying and civil works solutions that enhance the efficiency and sustainability of projects."
+		},
+		"cards": [
+			{
+				"icon": "shield-outline",
+				"label": "Licensed Experts",
+				"href": "/about",
+				"description": "Full Institution of Surveyors certification."
+			},
+
+			{
+				"icon": "shopping-outline",
+				"label": "Equipment Catalogue",
+				"href": "/equipment-sale/equipment-catalogue",
+				"description": "Precise and reliable spatial data using advanced GNSS, Total Stations, and Drone LiDAR technologies"
+			}
+		]
+	},
 	"projectsByCountry": [
 		{
 			"name": "Kenya",
@@ -481,200 +712,588 @@
 			"items": []
 		}
 	],
-	"errors": {
-		"error": "Error",
-		"notFound": "Page not found",
-		"serverError": "Internal server error",
-		"forbidden": "Access forbidden",
-		"pageTitle": "{{statusCode}} - {{title}}",
-		"statusLabel": "Error {{statusCode}}",
-		"notFoundTitle": "Page not found",
-		"notFoundDescription": "The page you are looking for may have moved, been removed, or never existed. Return home or contact the Smartgrid team if you need help finding something specific.",
-		"serverErrorTitle": "Something went wrong",
-		"serverErrorDescription": "The site could not complete this request. Our team has been notified where possible, and you can try again shortly or contact us directly.",
-		"genericTitle": "Unexpected error",
-		"genericDescription": "An unexpected error interrupted this request. Please try again, return home, or contact the Smartgrid team for support.",
+    "planningInfographic": {
+		"type": "unique",
+		"tag": "Planning a Project?",
+		"headline": "Start With Accurate Ground Data",
+		"description": "Before you design, build, or invest, you need reliable surveying data. We help you:",
+		"benefits": [
+			{
+				"icon": "cash-check",
+				"label": "Eliminate costly design errors"
+			},
+			{
+				"icon": "map-check",
+				"label": "Avoid boundary disputes and legal delays"
+			},
+			{
+				"icon": "invoice-check",
+				"label": "Reduce construction risks"
+			},
+			{
+				"icon": "book-check",
+				"label": "Meet regulatory and approval requirements"
+			},
+			{
+				"icon": "notebook-check",
+				"label": "Accelerate project timelines with precise data"
+			}
+		],
+		"closingStatement": "<bold>Whether you're a developer, engineer, contractor, or landowner—our data ensures your project starts right.</bold>"
+	},
+	"surveyingInstruments": {
+		"type": "unique",
+		"tag": "Precision",
+		"headline": "Our Surveying Instruments",
+		"description": "We Use Advanced, Calibrated, Precise equipment to ensure every point is accurate and reliable for your construction and engineering projects across Kenya and Beyond.",
+		"items": [
+			{
+				"label": "RTK GNSS FOIF A90",
+				"img": "/media/instruments/RTK-GNSS-FOIF-A90.jpg",
+				"href": "/equipment-sale/foif-a90-rtk-gnss"
+			},
+			{
+				"label": "Total Stations",
+				"img": "/media/instruments/TOTAL-STATIONS.jpg",
+				"href": "/equipment-sale/equipment-catalogue?category=total-stations"
+			},
 
-		"actions": {
-			"home": "Return Home",
-			"contact": "Contact Support"
+			{
+				"label": "Automatic Levels",
+				"img": "/media/instruments/AUTOMATIC-LEVELS.jpg",
+				"href": "/equipment-sale/equipment-catalogue?category=automatic-levels"
+			},
+			{
+				"label": "GPR SCANNER",
+				"img": "/media/instruments/GPR-SCANNER.jpg"
+			},
+			{
+				"label": "LASER SCANNERS",
+				"img": "/media/instruments/LASER-SCANNERS.jpg"
+			},
+			{
+				"label": "BOSCH D-TECT 200C",
+				"img": "/media/home/bosch-d-tect-200c.jpg"
+			},
+			{
+				"label": "3D rotating LiDAR Scanner",
+				"img": "/media/home/3d-rotating-lidar-scanner.jpg"
+			}
+		]
+	},
+	"drones": {
+		"type": "unique",
+		"tag": "Drone Fleet",
+		"headline": "Our Drones",
+		"description": "We deploy advanced drones to capture high-resolution aerial RGB / LiDAR imagery and multispectral data for Accurate Mapping, Monitoring, Planning, surveying, and engineering.",
+		"items": [
+			{
+				"icon": "quadcopter",
+				"img": "/media/equipment-sale/dji-matrice-350-rtk/images/02-01.png",
+				"href": "/equipment-sale/dji-matrice-350-rtk",
+				"label": "DJI Matrice 300 RTK",
+				"description": "The DJI Matrice 300 RTK is a versatile and powerful drone designed for industrial applications, including surveying, mapping, and inspection. It features advanced flight capabilities, long battery life, and the ability to carry various payloads, making it ideal for professional use in challenging environments."
+			},
+			{
+				"icon": "quadcopter",
+				"img": "/media/equipment-sale/dji-air-3s/images/02.png",
+				"href": "/equipment-sale/dji-air-3s",
+				"label": "DJI Air 3S",
+				"description": "The DJI Air 3S is a compact and portable drone that offers high-quality aerial photography and videography capabilities. It features a dual-camera system, long flight time, and intelligent flight modes, making it suitable for both professional and recreational use."
+			},
+			{
+				"icon": "quadcopter",
+				"img": "/media/equipment-sale/dji-mavic-3-multispectral/images/02.png",
+				"href": "/equipment-sale/dji-mavic-3-multispectral",
+				"label": "DJI Mavic 3M / 3E",
+				"description": "The DJI Mavic 3M / 3E is a lightweight and portable drone that provides excellent aerial imaging capabilities. It features a high-resolution camera, obstacle avoidance sensors, and intelligent flight modes, making it ideal for capturing stunning photos and videos from the sky."
+			},
+			{
+				"icon": "quadcopter",
+				"img": "/media/equipment-sale/dji-mavic-3-pro/images/02-01.png",
+				"href": "/equipment-sale/dji-mavic-3-pro",
+				"label": "DJI Mavic 3 Pro",
+				"description": "The DJI Mavic 3 Pro is a versatile choice for site documentation and reconnaissance mapping, pairing a triple-camera Hasselblad system with orthomosaic-capable photogrammetry for high-detail visual capture."
+			},
+			{
+				"icon": "quadcopter",
+				"img": "/media/equipment-sale/dji-phantom-4/images/02-01.png",
+				"href": "/equipment-sale/dji-phantom-4",
+				"label": "DJI Phantom 4",
+				"description": "The DJI Phantom 4 remains a proven, reliable choice for cadastral and engineering mapping, pairing a mechanical shutter camera with dependable GNSS and vision-based positioning for accurate mapping."
+			}
+		]
+	},
+	"whyChooseUs": {
+		"type": "unique",
+		"tag": "Why Choose Us",
+		"headline": "Exceptional surveying and engineering solutions.",
+		"description": "We combine cutting-edge technology with extensive experience to deliver exceptional surveying and engineering solutions.",
+		"items": [
+			{
+				"icon": "crosshairs",
+				"name": "engineeringAccuracy",
+				"label": "Engineering Accuracy",
+				"description": "We use RTK GNSS, Total Stations, and Drone Systems to deliver centimeter-level precision."
+			},
+			{
+				"icon": "radar",
+				"name": "modernTechnology",
+				"label": "Modern Technology",
+				"description": "From LiDAR mapping to GPR utility detection, we deploy advanced tools for complex environments."
+			},
+			{
+				"icon": "timer-sand",
+				"name": "fastTurnaround",
+				"label": "Fast Turnaround",
+				"description": "Efficient workflows ensure timely delivery without compromising quality."
+			},
+			{
+				"icon": "clipboard-check",
+				"name": "projectFocused",
+				"label": "Project-Focused Approach",
+				"description": "We align our outputs with design, construction, and approval requirements-not just raw data."
+			},
+			{
+				"icon": "account-group",
+				"name": "trustedExperience",
+				"label": "Trusted Experience",
+				"description": "Our team brings hands-on field experience across infrastructure, real estate, and engineering projects in East Africa."
+			},
+			{
+				"icon": "shield-check",
+				"name": "commitmentQuality",
+				"label": "Commitment to Quality & Innovation",
+				"description": "We adhere to strict quality standards and continuously innovate to provide the best solutions for our clients."
+			}
+		]
+	},
+	"industriesWeServe": {
+		"type": "card-grid",
+		"tag": "Industries",
+		"headline": "Industries We Serve",
+		"description": "From small land parcels to large-scale infrastructure projects—our systems scale to your needs. We work with the following industries:",
+		"items": [
+			{
+				"icon": "home-outline",
+				"label": "Real Estate",
+				"description": "Site assessments, subdivision planning, and cadastral mapping for property development."
+			},
+			{
+				"icon": "hard-hat",
+				"label": "Civil & Construction",
+				"description": "Surveying support for site layout, monitoring, and construction control."
+			},
+			{
+				"icon": "road-variant",
+				"label": "Road Infrastructure",
+				"description": "Alignment surveys, as-built verification, and corridor mapping for road projects."
+			},
+			{
+				"icon": "account-multiple-outline",
+				"label": "Private Developers",
+				"description": "Feasibility surveys, master-planning support, and parcel mapping for developers."
+			},
+			{
+				"icon": "city",
+				"label": "Government",
+				"description": "Compliance mapping, public project surveys, and infrastructure planning support."
+			},
+			{
+				"icon": "domain",
+				"label": "NGOs",
+				"description": "Community mapping, resource assessments, and project monitoring services."
+			},
+			{
+				"icon": "flash-outline",
+				"label": "Utility & Energy Companies",
+				"description": "Utility mapping, network surveys, and asset management support for energy projects."
+			}
+		]
+	},
+	"keyFacts": {
+		"type": "unique",
+		"tag": "Key Facts",
+		"headline": "EA Leaders in surveying",
+		"description": "We are a leading surveying and engineering company with a strong presence in East Africa, specializing in land surveying, drone mapping, and geospatial data solutions. With over 5 years of experience, we have successfully completed numerous projects while adhering to national regulations and survey best practices.",
+		"items": [
+			{
+				"icon": "map-marker-radius",
+				"label": "Regional Coverage",
+				"description": "East Africa operations across Kenya, Uganda, Tanzania, Rwanda & surrounding regions."
+			},
+			{
+				"icon": "satellite-variant",
+				"label": "Specialization",
+				"description": "Land surveying, drone mapping & geospatial data solutions."
+			},
+			{
+				"icon": "clock-check-outline",
+				"label": "Experience",
+				"description": "5+ years delivering engineering-grade spatial data."
+			},
+			{
+				"icon": "shield-check-outline",
+				"label": "Standards",
+				"description": "Compliance with national regulations and survey best practices."
+			}
+		]
+	},
+	"coreExpertise": {
+		"type": "card-grid",
+		"tag": "Experts",
+		"headline": "Our Core Expertise",
+		"description": "We specialize in providing high-quality surveying and engineering services, leveraging advanced technology and industry expertise to deliver accurate and reliable results for our clients.",
+		"items": [
+			{
+				"icon": "terrain",
+				"label": "Topographical & Engineering Surveys",
+				"description": "Accurate land surveys for construction, infrastructure, and development projects.",
+				"href": "/surveying/topographical-surveys"
+			},
+			{
+				"icon": "quadcopter",
+				"label": "Drone Mapping & Photogrammetry",
+				"description": "High-resolution aerial imagery and 3D mapping for precise data collection.",
+				"href": "/aerial-drones/lidar-mapping"
+			},
+
+			{
+				"icon": "hard-hat",
+				"label": "Construction & Site Control",
+				"description": "Surveying services for construction layout, monitoring, and quality control.",
+				"href": "/civil/site-engineering"
+			},
+			{
+				"icon": "bridge",
+				"label": "Infrastructure Support",
+				"description": "Surveying and engineering solutions for roads, bridges, utilities, and other infrastructure projects.",
+				"href": "/civil/highway-surveys"
+			},
+			{
+				"icon": "radar",
+				"label": "Ground Penetrating Radar (GPR)",
+				"description": "Subsurface utility detection and mapping to locate buried services and structures.",
+                "href": "/surveying/ground-penetrating-radar"
+			}
+		]
+	},
+	"certifications": {
+		"type": "unique",
+		"tag": "Certified",
+		"headline": "Our Certifications",
+		"description": "We are proud to hold certifications from reputable organizations, demonstrating our commitment to quality, safety, and professionalism in the surveying and engineering industry.",
+		"items": [
+			{
+				"icon": null,
+				"name": "ISK",
+				"label": "Surveyors of Kenya"
+			},
+			{
+				"icon": null,
+				"name": "NEMA",
+				"label": "Environmental Compliance"
+			},
+			{
+				"icon": null,
+				"name": "NCA",
+				"label": "Construction Authority"
+			},
+			{
+				"icon": null,
+				"name": "SOK",
+				"label": "Survey of Kenya"
+			}
+		]
+	},
+	"metrics": {
+		"type": "unique",
+		"tag": "Scale",
+		"headline": "Our Operational Scale",
+		"description": "We have a strong operational scale, with a presence in multiple countries, a large number of projects completed, and a commitment to delivering high-quality services over the years.",
+		"items": [
+			{
+				"icon": "map-marker-multiple",
+				"name": "Countries",
+				"value": 7
+			},
+			{
+				"icon": "clipboard-check",
+				"name": "Project",
+				"value": 250
+			},
+			{
+				"icon": "timer-check",
+				"name": "Years",
+				"value": 5
+			},
+			{
+				"icon": "emoticon-happy",
+				"name": "%CSAT",
+				"value": 100
+			}
+		]
+	},
+	"trustees": {
+		"type": "unique",
+		"tag": null,
+		"headline": "OUR TRUSTEES",
+		"items": [
+			{
+				"label": "DJI",
+				"logoUrl": "/media/trustees/dji.png"
+			},
+			{
+				"label": "ESRI",
+				"logoUrl": "/media/trustees/esri.png"
+			},
+			{
+				"label": "Trimble",
+				"logoUrl": "/media/trustees/trimble.png"
+			},
+			{
+				"label": "FOIF",
+				"logoUrl": "/media/trustees/foif.jpg"
+			},
+			{
+				"label": "GoK",
+				"logoUrl": "/media/trustees/gok.png"
+			},
+			{
+				"label": "AutoCAD",
+				"logoUrl": "/media/trustees/autocad.png"
+			},
+			{
+				"label": "KCAA",
+				"logoUrl": "/media/trustees/kcaa.png"
+			},
+			{
+				"label": "PIX4D",
+				"logoUrl": "/media/trustees/pix4d.jpg"
+			},
+			{
+				"label": "BLUEGEOG",
+				"logoUrl": "/media/trustees/blue-geog.png"
+			},
+			{
+				"label": "ArcGIS",
+				"logoUrl": "/media/trustees/arcgis.png"
+			},
+			{
+				"label": "Bosch",
+				"logoUrl": "/media/trustees/bosch.jpg"
+			},
+			{
+				"label": "Agisoft Metashape",
+				"logoUrl": "/media/trustees/agisoft-metashape.png"
+			}
+		]
+	},
+	"surveyCostInKenya": {
+		"type": "unique",
+		"tag": "Budget Planning",
+		"headline": "How Much Does a Survey Cost in Kenya?",
+		"description": "The honest answer: it depends — but not by mystery. A few site realities shape every quotation we issue, and knowing them puts you in control of the budget conversation.",
+		"factors": {
+			"label": "Survey costs depend on:",
+			"items": [
+				{
+					"icon": "ruler-square-compass",
+					"label": "Project size and terrain",
+					"description": "Acres to cover, slopes, vegetation, and how much ground the crew must walk."
+				},
+				{
+					"icon": "map-search-outline",
+					"label": "Type of survey required",
+					"description": "A boundary retracement, a design topo, and a drone orthomosaic are different jobs."
+				},
+				{
+					"icon": "map-marker-path",
+					"label": "Location and accessibility",
+					"description": "Distance, road access, and how easily instruments reach every corner of the site."
+				}
+			]
+		},
+		"ranges": {
+			"label": "Typical ranges",
+			"hint": "Tap a survey type to explore what shapes its price",
+			"items": [
+				{
+					"icon": "vector-square",
+					"label": "Boundary Surveys",
+					"price": 30000,
+					"pricePrefix": "From KES",
+					"tagline": "Know exactly where your land ends",
+					"description": "Property lines, encroachments, and beacons — the survey that keeps neighbours friendly and titles clean.",
+					"includes": [
+						"Boundary delineation & beacon placement",
+						"Registry maps & title processing support",
+						"Dispute-proof survey documentation"
+					]
+				},
+				{
+					"icon": "terrain",
+					"label": "Topographical Surveys",
+					"price": 50000,
+					"pricePrefix": "From KES",
+					"tagline": "The ground truth behind every design",
+					"description": "Contours, features, and elevations your architect and engineer will build on — literally.",
+					"includes": [
+						"Contours & spot levels",
+						"Features & utilities mapping",
+						"CAD-ready engineering deliverables"
+					]
+				},
+				{
+					"icon": "quadcopter",
+					"label": "Drone Mapping",
+					"price": 25000,
+					"pricePrefix": "From KES",
+					"tagline": "1000+ acres in a fraction of the time",
+					"description": "Orthomosaics, 3D models, and volumetrics captured from the sky — fast, safe, and centimeter-accurate.",
+					"includes": [
+						"Orthomosaics & 3D models",
+						"Volumetric analysis & cut/fill",
+						"Rapid same-week turnaround"
+					]
+				}
+			]
+		},
+		"disclaimer": "Typical starting ranges only — every site is different. Size, terrain, and access shape the final figure on your quotation.",
+		"cta": {
+			"label": "Get a Custom Quotation",
+			"href": "/contact?reason=custom-quotation#contact-form",
+			"icon": "invoice-text"
+		},
+		"secondaryCta": {
+			"label": "Talk to a Surveyor",
+			"href": "/contact?reason=talk-to-surveyor#contact-form",
+			"icon": "account-voice"
 		}
 	},
-
-	"locales": [
-		{
-			"label": "English",
-			"code": "en",
-			"flag": "/img/flags/ke.svg"
-		},
-		{
-			"label": "Swahili",
-			"code": "sw",
-			"flag": "/img/flags/tz.svg"
-		}
-	],
-	"nav": {
-		"logo": "/img/logo.svg",
-		"logo_dark": "/img/logo-dark.svg",
-		"logo_light": "/img/logo-light-color.svg",
-		"logo_alt": "SmartGrid",
-		"links": [
-			{
-				"label": "Surveying",
-				"href": "/surveying",
-				"links": [
-					{
-						"label": "Topographical surveys",
-						"href": "/surveying/topographical-surveys"
-					},
-					{
-						"label": "Building site surveys",
-						"href": "/surveying/building-site-surveys"
-					},
-					{ "label": "Sectional properties", "href": "/surveying/sectional-properties" },
-					{ "label": "Cadastral surveys", "href": "/surveying/cadastral-surveys" },
-					{ "label": "Aerial surveys", "href": "/surveying/aerial-surveys" },
-					{
-						"label": "Ground penetrating radar",
-						"href": "/surveying/ground-penetrating-radar"
-					},
-					{ "label": "Resource Mapping", "href": "/surveying/resource-mapping" },
-					{
-						"label": "Bathymetric surveys",
-						"href": "/surveying/bathymetric-surveys"
-					},
-					{
-						"label": "GIS & Mapping",
-						"href": "/surveying/gis-mapping"
-					}
-				]
-			},
-			{
-				"label": "Aerial Drones",
-				"href": "/aerial-drones",
-				"links": [
-					{
-						"label": "Drone imagery surveys",
-						"href": "/aerial-drones/drone-imagery-surveys"
-					},
-					{
-						"label": "Lidar Mapping",
-						"href": "/aerial-drones/lidar-mapping"
-					},
-					{
-						"label": "Agricultural NDVI Mapping",
-						"href": "/aerial-drones/agricultural-ndvi-mapping"
-					},
-					{
-						"label": "As built surveys",
-						"href": "/aerial-drones/as-built-surveys"
-					},
-					{
-						"label": "Monitoring and Evaluation",
-						"href": "/aerial-drones/monitoring-and-evaluation"
-					},
-					{
-						"label": "Solar Panel Drone Surveys",
-						"href": "/aerial-drones/solar-panel-drone-surveys"
-					},
-					{
-						"label": "Volumetric Surveys",
-						"href": "/aerial-drones/volumetric-surveys"
-					},
-					{
-						"label": "Landfill & Quarry Drone Surveys",
-						"href": "/aerial-drones/landfill-quarry-drone-surveys"
-					},
-					{
-						"label": "Photography & Video Marketing",
-						"href": "/aerial-drones/photography-video-marketing"
-					}
-				]
-			},
-			{
-				"label": "Civil",
-				"href": "/civil",
-				"links": [
-					{
-						"label": "Highway Surveys",
-						"href": "/civil/highway-surveys"
-					},
-					{
-						"label": "As-built surveys",
-						"href": "/civil/as-built-surveys"
-					},
-					{
-						"label": "Volumetric surveys",
-						"href": "/civil/volumetric-surveys"
-					},
-					{
-						"label": "BIM",
-						"href": "/civil/bim"
-					},
-					{
-						"label": "Site Engineering",
-						"href": "/civil/site-engineering"
-					},
-					{
-						"label": "Site setting out",
-						"href": "/civil/site-setting-out"
-					}
-				]
-			},
-			{
-				"label": "Equipment sale",
-				"href": "/equipment-sale/equipment-catalogue",
-				"links": [
-					{
-						"label": "FOIF A90 RTK GNSS",
-						"href": "/equipment-sale/foif-a90-rtk-gnss"
-					},
-					{
-						"label": "TOTAL STATION ESURVEY",
-						"href": "/equipment-sale/total-station-esurvey"
-					},
-					{
-						"label": "TOTAL STATION DTM 152M",
-						"href": "/equipment-sale/total-station-dtm-152m"
-					},
-					{
-						"label": "AUTOMATIC LEVEL BOSCH",
-						"href": "/equipment-sale/automatic-level-bosch"
-					},
-					{
-						"label": "AUTOMATIC LEVEL HUEPER",
-						"href": "/equipment-sale/automatic-level-hueper"
-					},
-					{
-						"label": "EQUIPMENT CATALOGUE",
-						"href": "/equipment-sale/equipment-catalogue"
-					}
-				]
-			},
-			{
-				"label": "About",
-				"href": "/about",
-				"links": [
-					{
-						"label": "About Us",
-						"href": "/about"
-					},
-					{
-						"label": "Company Profile",
-						"href": "/company-profile"
-					},
-					{ "label": "Careers", "href": "/careers" }
-				]
-			},
-			{ "label": "Contact Us", "href": "/contact", "type": "pill" }
+	"coverageArea": {
+		"type": "unique",
+		"tag": "Coverage Area",
+		"headline": "From Our Nairobi Base to the Wider East Africa",
+		"description": "We have a strong operational scale — a presence in multiple countries, hundreds of projects completed, and a commitment to delivering high-quality services over the years. If your site is in the region, chances are we've already mapped next door.",
+		"hqPin": "HQ — Ruiru, Nairobi",
+		"stats": [
+			{ "icon": "map-marker-multiple", "value": 7, "suffix": "+", "label": "Countries covered" },
+			{ "icon": "clipboard-check", "value": 250, "suffix": "+", "label": "Projects completed" },
+			{ "icon": "timer-check", "value": 5, "suffix": "+", "label": "Years in the field" }
 		],
-
-		"ctaPrimary": {
-			"label": "Get a Quote",
-			"href": "/contact?reason=request-quote#contact-form"
+		"groups": [
+			{
+				"icon": "home-city",
+				"label": "Core Counties",
+				"description": "Where we're based and most active — fastest mobilisation and the sharpest local knowledge.",
+				"items": ["Nairobi", "Kiambu", "Machakos", "Kajiado"]
+			},
+			{
+				"icon": "city",
+				"label": "Major Cities",
+				"description": "Full crews and equipment regularly deployed to Kenya's key urban centres.",
+				"items": ["Mombasa", "Kisumu", "Nakuru"]
+			},
+			{
+				"icon": "earth",
+				"label": "East Africa & Beyond",
+				"description": "Cross-border assignments across the region — when drones fly, borders barely matter.",
+				"items": ["Uganda", "Tanzania", "Somalia & wider East Africa"]
+			}
+		],
+		"note": "Working somewhere off the grid? We deploy. Tell us where your site is."
+	},
+	"faq": {
+		"type": "faq",
+		"tag": "FAQ",
+		"headline": "Frequently Asked Questions",
+		"description": "Straight answers from the field — the things clients ask us before commissioning their first survey.",
+		"items": [
+			{
+				"question": "Do I need a survey before construction?",
+				"answer": "Yes — and it's the cheapest insurance you'll ever buy. A topographical survey feeds your architectural designs, engineering plans, and county approvals, and it surfaces site realities (slopes, utilities, boundary positions) before they become costly change orders. Building on assumptions is the most expensive mistake in construction."
+			},
+			{
+				"question": "How long does a survey take?",
+				"answer": "Most projects take 1–3 days of fieldwork and 2–7 days of processing and drafting, depending on the size of the site, the terrain, and the deliverables you need. We confirm a clear timeline with your quotation — and flag any delays early, not at handover."
+			},
+			{
+				"question": "Can you detect underground utilities?",
+				"answer": "Yes. We use Ground Penetrating Radar (GPR) — including the LMX200 — alongside utility mapping techniques to locate buried water lines, power cables, and other infrastructure before you excavate. It protects your crew, your budget, and your programme."
+			},
+			{
+				"question": "How much will my survey cost?",
+				"answer": "Boundary surveys start from KES 30,000+, topographical surveys from KES 50,000+, and drone mapping from KES 25,000+. Because every site is different, we price on size, terrain, and accessibility — request a custom quotation and we'll turn it around quickly."
+			},
+			{
+				"question": "Which areas do you cover?",
+				"answer": "We're based in Nairobi (Ruiru) and work across Kiambu, Machakos, Kajiado, Mombasa, Kisumu, and Nakuru — with full crews regularly deploying to Uganda, Tanzania, Somalia, and the wider East Africa region."
+			},
+			{
+				"question": "What deliverables will I receive?",
+				"answer": "Professional, ready-to-use outputs: topographical maps and contours, boundary and cadastral plans, 3D point clouds, DEM/DSM models, CAD shapefiles, orthomosaics, volumetric reports, and signed survey reports — formatted for engineers, architects, and approval authorities."
+			}
+		],
+		"stillCurious": {
+			"label": "Still curious?",
+			"description": "Every site tells a story — we answer with data.",
+			"cta": {
+				"label": "Talk to a Surveyor",
+				"href": "/contact?reason=faq#contact-form",
+				"icon": "forum"
+			}
+		}
+	},
+	"actionCtaSurveyor": {
+		"type": "cta",
+		"tag": "Free Consultation",
+		"headline": "Not sure where to start? Talk to a surveyor.",
+		"description": "Tell us about your site and your goal — we'll recommend the right survey, the right instruments, and a realistic budget. No obligation, no jargon.",
+		"watermark": "hard-hat",
+		"primary": {
+			"label": "Talk to a Surveyor",
+			"href": "/contact?reason=talk-to-surveyor#contact-form",
+			"icon": "account-voice"
 		},
-		"ctaSecondary": { "label": "Learn More", "href": "/#faq" },
-		"ctaSearch": { "label": "Learn More", "href": "/#faq" }
+		"secondary": {
+			"label": "See Typical Pricing",
+			"href": "#survey-cost",
+			"icon": "cash-multiple"
+		}
+	},
+	"actionCtaEngineer": {
+		"type": "cta",
+		"tag": "Build on Certainty",
+		"headline": "Engage an engineer for your next milestone.",
+		"description": "Setting out, site engineering, as-built verification — put an engineer-grade eye on your project from ground-break to handover.",
+		"watermark": "bridge",
+		"primary": {
+			"label": "Engage an Engineer",
+			"href": "/contact?reason=engage-engineer#contact-form",
+			"icon": "hard-hat"
+		},
+		"secondary": {
+			"label": "Explore Civil Services",
+			"href": "/civil",
+			"icon": "arrow-right"
+		}
+	},	
+	"defaultCta": {
+		"type": "cta",
+		"tag": "Let's work together",
+		"headline": "Precision survey & engineering, ready when you are.",
+		"description": "From a single plot to 1000+ acres, our surveyors and pilots are ready to deliver fast, accurate and actionable data — across East Africa and beyond.",
+		"primary": {
+			"label": "Request a Survey",
+			"href": "/contact?reason=request-survey#contact-form",
+			"icon": "send"
+		},
+		"secondary": {
+			"label": "Talk to an Expert",
+			"href": "mailto:smartgridsurveying@gmail.com?subject=Talk to an Expert&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to talk to an expert about a surveying project.%0D%0A%0D%0AName:%0D%0AService of interest:%0D%0AMessage:%0D%0A%0D%0AThank you.",
+			"icon": "email"
+		}
 	},
 	"cookies": {
 		"title": "We value your privacy",
@@ -702,7 +1321,6 @@
 			}
 		}
 	},
-
 	"footer": {
 		"description": "Reliable. Scalable. Fast. Accurate.",
 		"columns": {
