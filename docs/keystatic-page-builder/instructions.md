@@ -50,6 +50,22 @@ and tested fallback/source-precedence behavior.
     validation, decisions, and blockers.
 14. When done with a task automatically start on the next
 
+## M8/M9 — New milestones (added 2026-09-16, per user request)
+
+- M8 — Register the migrated `/` shared section components (`About`,
+  `Certifications`, `CoreExpertise`, `CoverageArea`, `IndustriesWeServe`,
+  `KeyFacts`, `Metrics`, `PlanningInfographic`, `SurveyCost`, `Trustees`,
+  `WhyChooseUs`, `SurveyingInstruments`) in Keystatic so they are editable in
+  `/` and addable to any page. See plan §M8 (status `IN PROGRESS`) for scope,
+  constraints, checklist, and exit criteria.
+- M9 — Make common layout content editable in Keystatic (`navbar`, `footer`,
+  `cookieConsent`, `socials`, `contacts`) once, site-wide, both locales. See
+  plan §M9 (status `NOT STARTED`) for the singleton-vs-collection decision,
+  checklist, and exit criteria.
+- M10 — New Keystatic pages must resolve to real routes (currently content-only
+  entries 404, e.g. `test-custom`). See plan §M10 (status `NOT STARTED`) for
+  the fixed-route-vs-catch-all URL decision, checklist, and exit criteria.
+
 ## M7 Test Deferral Policy (2026-09-16, per user request)
 
 During M7 (Full-Site Keystatic Coverage) all per-batch/stage tests are SKIPPED

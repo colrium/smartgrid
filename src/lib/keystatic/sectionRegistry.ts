@@ -96,9 +96,18 @@ import {
  * `indexed` numbering, `mediaBadged`/`variant`/`mediaPosition` media cards,
  * `fallbackIcons`, and JSX `headerEnd` glyphs, none of which are
  * editor-friendly v2/v3 contracts.
+ *
+ * M8 (home shared sections, 2026-09-16): `trustees` wraps the shared
+ * `Trustees` logo wall (tag + headline + `{label,logoUrl}` items). Labels
+ * are localized (`DJI` today, but free text for future renames); `logoUrl`
+ * is a shared `/public` reference — legacy en/sw logo paths are identical,
+ * and the migration's `sharedValue` gate aborts on divergence instead of
+ * silently dropping one locale's media. SSR-safe: `FadeUp` touches
+ * `IntersectionObserver` only inside `useEffect`, `Blob` is a pure span, and
+ * `next/image` renders statically.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -1040,6 +1049,54 @@ const pricing: SectionDefinition = {
 	normalize: (resolved) => ({ ...resolved, id: resolved.id || undefined }),
 };
 
+const trustees: SectionDefinition = {
+	id: "trustees",
+	version: 1,
+	label: "Trustees",
+	description: "Trusted-partner logo wall: tag, headline and logo cards.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline", { optionalInEnglish: true }),
+		items: fields.array(
+			fields.object({
+				label: localeText("Label"),
+				logoUrl: imagePath("Logo"),
+			}),
+			{
+				label: "Logos",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Logo"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `classes`/`className` (visual tuning,
+		// not an editor contract).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "OUR TRUSTEES", sw: "WADHAMINI WETU" },
+		items: [
+			{
+				label: { en: "DJI", sw: "DJI" },
+				logoUrl: "/media/trustees/dji.png",
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						label: item?.label ?? "",
+						logoUrl: item?.logoUrl || undefined,
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
 export const sectionRegistry: readonly SectionDefinition[] = [
 	introText,
 	ctaBand,
@@ -1052,6 +1109,7 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	process,
 	gallery,
 	pricing,
+	trustees,
 ];
 
 export function getSectionDefinition(id: string): SectionDefinition {
@@ -1072,6 +1130,7 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	process: process.label,
 	gallery: gallery.label,
 	pricing: pricing.label,
+	trustees: trustees.label,
 };
 
 /**

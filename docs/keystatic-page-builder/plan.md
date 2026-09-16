@@ -478,6 +478,157 @@ checked-in published-or-draft entry, a wired source switch, `--verify` parity wi
 JSON in both locales, dev-smoke parity per page, and full quality gates green; the
 bespoke/tail strategy for each page is documented; rollback is tested for the new pages.
 
+### M8: Register Migrated Home Shared Sections
+
+**Status: IN PROGRESS**
+
+Dependencies: M2 registry + schema factories, M7 coverage (home entry + interleaved
+wiring); HEAD migration `89e0767` (new shared components under
+`src/components/sections/shared/`).
+
+Scope (per user request 2026-09-16): the shared section components created/migrated
+from `/` in the HEAD commit must be registered in Keystatic so they are editable in
+`/` and addable to any page:
+
+- `About`, `Certifications`, `CoreExpertise`, `CoverageArea`, `IndustriesWeServe`,
+  `KeyFacts`, `Metrics`, `PlanningInfographic`, `SurveyCost`, `Trustees`,
+  `WhyChooseUs`, `SurveyingInstruments`.
+
+Notes / constraints recorded before implementing:
+
+- These wrappers are thin `data`-prop adapters over shared components (see
+  `src/components/sections/home/*Section.tsx` + `src/components/sections/shared/index.ts`);
+  schemas must model the shared `*Content` interfaces, not the locale-namespace wrappers.
+- `CoverageArea` embeds a client-only WebGL globe (`next/dynamic` ssr:false +
+  `DeferredMount`); per the M3 standing rule new sections must stay SSR-safe —
+  register the data contract but keep globe loading via `next/dynamic` in the renderer
+  (same precedent as `Gallery`'s effect-only `Slider`).
+- `SurveyCost` is stateful (`useState` tab index) but SSR-safe on first render;
+  check-script static-markup proof must render it in both locales.
+- `Metrics`/`CoreExpertise`/`IndustriesWeServe` overlap existing `stats`/`cardGrid`
+  contracts — record per-section whether they are new ids or additive versions, never
+  renames (registry versioning rules).
+- `PlanningInfographic` renders its closing statement via `<Trans>` against
+  `common:planningInfographic.closingStatement`, not from `data` — schema must either
+  carry that string as data or the renderer keeps the `<Trans>` lookup; record the
+  decision per section so Keystatic edits actually change output.
+- `CoreExpertise` hardcodes `headerRow`/`hoverArrow`/`watermarkedIndexed` presentation
+  flags (outside the `cardGrid` v2 contract); decide new id vs extended `cardGrid` v3.
+- `LeadGenBar` takes no `data` prop today (reads `t()` directly) — out of scope until
+  refactored to a props-driven shared section, same rule as layout-only exclusions.
+
+- [x] Inventory each HEAD shared component's `*Content` interface + SSR-safety
+      (browser APIs only in effects / dynamic / event handlers) and decide new id vs
+      version bump vs out-of-scope. (2026-09-16: first section `trustees` proven —
+      `TrusteesContent` `{tag?, headline?, items: [{label, logoUrl}]}`; SSR-safe:
+      `FadeUp` is `IntersectionObserver`-in-`useEffect` only, `Blob` is a pure
+      span, `next/image` renders statically. New id `trustees` v1 — no overlap
+      with `stats`/`cardGrid`. Remaining 11 sections still to register.)
+- [x] Register schemas + examples + normalizers in `sectionRegistry.ts` (single source),
+      renderers in `sectionRenderers.tsx`, extend `scripts/check-keystatic-pages.mjs`
+      coverage + migration mappings where the home `skipped` list shrinks.
+      (2026-09-16: `trustees` done — registry id + schema + example + normalize
+      (`{tag,headline,items,id}` → `{data:{...},id}` to match `TrusteesProps`),
+      renderer, check-script `resolve-real-fixture` extended to
+      `ctaBand,cardGrid,faq,ctaBand,ctaBand,trustees`; home `skipped` drops
+      `trustees`.)
+- [x] Migrate `/` content for the newly registered sections (extend
+      `scripts/migrate-locale-to-keystatic.mjs` home mapping, regenerate
+      `content/pages/home.json`, keep `draft` until dev-smoke parity).
+      (2026-09-16: `trusteesBuild` added — labels per-locale via `reqText`,
+      `logoUrl` shared via `sharedValue` gate; `contentNamespace: "common"`
+      added to `generate()` because HEAD `9b3f8d0` moved all home content nodes
+      to `common.json`; pre-existing `from: "cta"` corrected to
+      `from: "defaultCta"` — `home:cta` exists nowhere, `CtaSection` reads
+      `common:defaultCta`; `home.json` regenerated to 6 sections.)
+- [ ] Rewire `[locale]/index.tsx` interleaved hybrid (count guard + fixed tails) and
+      prove `yarn check:keystatic` + `--verify` + `typecheck` + `lint` + dev-smoke parity.
+      (2026-09-16: rewired — `KEYSTATIC_SECTION_COUNT` 5→6, `renderAt(5)` replaces
+      legacy `<TrusteesSection/>` in the Keystatic branch (legacy branch untouched);
+      `check:keystatic` OK (12 sections), `--verify` OK (home 6 sections, no gaps),
+      `tsc --noEmit` 0, `eslint --max-warnings=0` 0 on touched files.
+      PENDING: dev-smoke parity — publish-flip `home` locally and compare
+      `/en` + `/sw` Keystatic vs legacy before closing M8.)
+
+**Exit criteria:** every in-scope HEAD shared section has a registry id + schema +
+example + renderer + check coverage; `home.json` carries its content; `/en` + `/sw`
+render it from Keystatic when opted in, legacy otherwise; unknown/missing values still
+fail safe per M3 taxonomy.
+
+### M9: Editable Common Layout Content
+
+**Status: NOT STARTED**
+
+Dependencies: M8 (registry pattern proven on the new sections); layout sources today:
+`src/layouts/LandingPage/Navbar.tsx` (`common:nav` + `common:contacts` + `meta:site`),
+`src/layouts/LandingPage/Footer*.tsx` (`common:footer` + `contact:talkToUs.contacts` +
+`contact:social.channels`), `src/components/CookieConsent.tsx` (`common:cookies`),
+socials (`common:socials`, `contact:social`), contacts (`common:contacts`).
+
+Scope (per user request 2026-09-16): editors must be able to edit common layout
+content in Keystatic — navbar, footer, cookie consent, socials, contacts — once, with
+both `en`/`sw` values, applied site-wide.
+
+Design constraint (to confirm before implementing): layout content is singleton
+site-wide data, not ordered page sections — model as a new Keystatic
+singleton/collection (e.g. `content/site.json` or `content/layout/*.json`), NOT a
+`pageBuilder` branch; pages keep rendering layout outside `<main>` per
+`src/layouts/LandingPage/Layout.tsx`.
+
+- [ ] Decide the layout content model (singleton vs collection, file path(s),
+      relationship to `common.json`/`contact.json` namespaces) and record with date.
+- [ ] Define typed schemas (nav links incl. nested `links`, footer columns, contact
+      items, social channels, cookie-consent copy) with `en`/`sw` parity + fallback.
+- [ ] Wire `Navbar`/`Footer`/`CookieConsent` to the Keystatic reader with legacy
+      locale-JSON fallback (same M3 taxonomy: disabled/missing/unpublished/error →
+      legacy + warn, never blank).
+- [ ] Prove `check:keystatic` + `typecheck` + `lint` + dev-smoke parity (layout change
+      visible on multiple routes, rollback via kill-switch).
+
+**Exit criteria:** an editor can change navbar/footer/cookie-consent/socials/contacts
+once in Keystatic (both locales) and see it site-wide; legacy locale JSON still renders
+when the layout entry is absent/unpublished/unreadable.
+
+### M10: New Keystatic Pages Resolve to Real Routes (No 404)
+
+**Status: NOT STARTED**
+
+Dependencies: M3 resolver + per-page source switch (`resolveKeystaticPage`,
+`KEYSTATIC_PAGES` allowlist, `KEYSTATIC_DISABLE` kill-switch); M7 per-page wiring
+pattern (localized route + root proxy).
+
+Problem (per user report 2026-09-16): pages newly created in Keystatic
+(e.g. `content/pages/test-custom.json`, slug `test-custom`, `status: published`)
+redirect/404 — there is no matching Next.js route, so no URL exists to serve them
+on. Evidence: `content/pages/*.json` holds 31 entries (incl. `test-custom.json`)
+while `src/pages/[locale]/` only has a fixed set of route files; every renderable
+page today needs BOTH a content entry AND a route file calling
+`resolveKeystaticPage("<slug>", lang)` (e.g. `[locale]/about.tsx` ↔ slug `about`,
+root `about.tsx` re-exporting it). A content-only entry (no route file, no locale
+namespace in `getI18nProps`, no slug→route mapping) can never resolve — the 404
+comes from Next.js routing, before Keystatic is even consulted.
+
+- [ ] Decide the URL model for editor-created pages: fixed route per page (current
+      M7 pattern: new `[locale]/<slug>.tsx` + root `<slug>.tsx` proxy) vs. a generic
+      catch-all route (e.g. `[locale]/[...slug].tsx`) that resolves any Keystatic
+      slug. Record the decision + date; see "Decisions To Confirm" (canonical page
+      URL model).
+- [ ] If fixed-route: document the new-page checklist (route file + root proxy +
+      locale namespace(s) in `getI18nProps` + `content/pages/<slug>.json` +
+      `KEYSTATIC_PAGES` opt-in + sitemap/nav entry) and wire the missing route(s).
+- [ ] If catch-all: implement the fallback route with the M3 taxonomy
+      (disabled/missing/unpublished/error/empty → legacy or 404 + `console.warn`,
+      never blank), locale-prefixed URLs (`/en/<slug>`, `/sw/<slug>`), and sitemap
+      coverage. Prove existing fixed routes are unaffected.
+- [ ] Prove `check:keystatic` + `typecheck` + `lint` + dev-smoke (new page renders
+      in both locales when published+allowlisted, 404s otherwise, rollback via
+      kill-switch).
+
+**Exit criteria:** a page created in Keystatic renders at its locale-prefixed URL in
+both locales when published and allowlisted (no 404); unpublished/unallowlisted
+slugs fall back per the M3 taxonomy; the authoring checklist (or catch-all
+behavior) is documented so the next new page does not 404.
+
 ## Parallel Workstreams
 
 These may proceed independently after their stated dependencies are met:

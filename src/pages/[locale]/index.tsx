@@ -35,17 +35,18 @@ interface PageProps {
 /**
  * Sections migrated to Keystatic in page order (see the `home` mapping in
  * `scripts/migrate-locale-to-keystatic.mjs`): actionCtaSurveyor ctaBand,
- * industriesWeServe cardGrid, faq, actionCtaEngineer ctaBand, cta ctaBand.
- * Fourteen legacy tails (bespoke WebGL hero, global LeadGenBar, headerRow/
+ * industriesWeServe cardGrid, faq, actionCtaEngineer ctaBand, defaultCta
+ * ctaBand, trustees (M8, 2026-09-16).
+ * Thirteen legacy tails (bespoke WebGL hero, global LeadGenBar, headerRow/
  * hoverArrow/watermarkedIndexed CoreExpertise grid, client-only CoverageArea
  * globe, About/PlanningInfographic/SurveyingInstruments/Drones/WhyChooseUs/
- * KeyFacts/Services/SurveyCost/Trustees/Certifications bespoke) sit at fixed
+ * KeyFacts/Services/SurveyCost/Certifications bespoke) sit at fixed
  * positions between them, so the route renders each Keystatic section by
  * index instead of one whole PageBuilderDocument. If an edit changes the
  * section COUNT, the route falls back to legacy rather than misplacing
  * sections — keep this in sync with the mapping.
  */
-const KEYSTATIC_SECTION_COUNT = 5;
+const KEYSTATIC_SECTION_COUNT = 6;
 
 function orderedSections(page: ResolvedKeystaticPage) {
 	if (page.sections.length !== KEYSTATIC_SECTION_COUNT) {
@@ -58,7 +59,7 @@ function orderedSections(page: ResolvedKeystaticPage) {
 }
 
 const Page: NextPage<PageProps> = ({ keystaticPage }) => {
-	// Migration source switch (M3/M7): Keystatic owns the five migrated
+	// Migration source switch (M3/M7): Keystatic owns the six migrated
 	// sections only when the slug is allowlisted via `KEYSTATIC_PAGES` and the
 	// entry is published. Otherwise the legacy locale-JSON implementation
 	// renders unchanged.
@@ -101,7 +102,7 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 						{renderAt(3)}
 						<KeyFactsSection />
 						<CertificationsSection />
-						<TrusteesSection />
+						{renderAt(5)}
 						{/* <MetricsSection /> */}
 					</div>
 

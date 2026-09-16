@@ -10,6 +10,7 @@ import { Faq } from "@/components/sections/shared/Faq";
 import { Process } from "@/components/sections/shared/Process";
 import { Gallery } from "@/components/sections/shared/Gallery";
 import { Pricing } from "@/components/sections/shared/Pricing";
+import { Trustees } from "@/components/sections/shared/Trustees";
 import type { Lang } from "../types";
 import { resolveLocaleValue } from "./localize";
 import { getSectionDefinition, type SectionId } from "./sectionRegistry";
@@ -41,6 +42,7 @@ export const sectionRenderers = {
 	process: Process,
 	gallery: Gallery,
 	pricing: Pricing,
+	trustees: Trustees,
 } satisfies Record<SectionId, ComponentType<any>>;
 
 export function renderSection(

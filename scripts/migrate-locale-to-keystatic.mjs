@@ -239,6 +239,30 @@ function galleryBuild(presentation) {
 	};
 }
 
+// M8 (home shared sections, 2026-09-16): `trustees` logo wall. Legacy
+// `common:trustees` holds `{tag?, headline?, items: [{label, logoUrl}]}`.
+// Labels are localized free text; `logoUrl` is a shared `/public` reference
+// (identical in en/sw — any divergence aborts via `sharedValue`).
+function trusteesBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: optText(en.headline), sw: optText(sw.headline) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				label: { en: reqText(item.label, `${where}.items[${i}].label.en`), sw: reqText(swItem.label, `${where}.items[${i}].label.sw`) },
+				logoUrl: sharedValue(item, swItem, "logoUrl", `${where}.items[${i}]`) ?? "",
+			};
+		}),
+		id: "",
+	};
+}
+
 // M7 batch 5: generic `introText` builder. Presentation props (tone, align,
 // split) are wrapper hardcodes — passed in, never read from content.
 // `ctaKey` names an optional `{label, href, icon?}` action object merged by
@@ -2256,18 +2280,32 @@ const PAGES = {
 	// M7 batch 17: home (largest page, done last per plan). Five sections
 	// migrate in page order — `actionCtaSurveyor` + `actionCtaEngineer`
 	// (ctaBand split/shimmer) + `industriesWeServe` (cardGrid cols 3) + `faq`
-	// + `cta` (ctaBand centred/masked). Tails stay legacy: bespoke WebGL hero,
+	// + `cta` (ctaBand centred/masked). M8 (2026-09-16): `trustees` migrates
+	// next (logo wall, page-order position after the masked cta).
+	// NOTE (2026-09-16, HEAD `9b3f8d0` moved the home content nodes from the
+	// `home` namespace to `common`): the page entry stays `home.json`, but
+	// the migrated content keys (`actionCtaSurveyor`, `industriesWeServe`,
+	// `faq`, `actionCtaEngineer`, `cta`) now live in `common.json`, so every
+	// build in this mapping reads from `extra.common`, exactly like the
+	// cross-namespace `trustees` build below.
+	// Tails stay legacy: bespoke WebGL hero,
 	// global LeadGenBar (`home` ns, never a page-builder branch),
 	// CoreExpertiseSection (`headerRow` + `hoverArrow` + `watermarkedIndexed`),
 	// client-only CoverageAreaSection (ProjectsGlobe), About/
 	// PlanningInfographic/SurveyingInstruments/Drones/WhyChooseUs/KeyFacts/
-	// Services/SurveyCost/Trustees/Certifications bespoke. NOTE: overwrites the
+	// Services/SurveyCost/Certifications bespoke (`trustees` migrated in M8,
+	// so it leaves this tail list). NOTE: overwrites the
 	// M1 `home.json` starter fixture (placeholder since M1) with the real
 	// migrated home; entry stays `draft`.
 	"home": {
 		namespace: "home",
 		title: "Home",
-		skipped: ["hero", "about", "planningInfographic", "surveyingInstruments", "drones", "whyChooseUs", "keyFacts", "coreExpertise", "certifications", "services", "trustees", "metrics", "surveyCostInKenya", "coverageArea"],
+		// M8 (2026-09-16): HEAD `9b3f8d0` moved the home content nodes from
+		// the `home` namespace to `common` — `generate()` loads content from
+		// `contentNamespace` (`common.json`) while the page entry stays
+		// `home.json`.
+		contentNamespace: "common",
+		skipped: ["hero", "about", "planningInfographic", "surveyingInstruments", "drones", "whyChooseUs", "keyFacts", "coreExpertise", "certifications", "services", "metrics", "surveyCostInKenya", "coverageArea"],
 		sections: [
 			{
 				discriminant: "ctaBand",
@@ -2405,12 +2443,14 @@ const PAGES = {
 			},
 			{
 				discriminant: "ctaBand",
-				from: "cta",
-				// Legacy: CtaSection → <CtaBand id="cta" decor="masked"
-				// glyph tag headline description primary secondary />
+				from: "defaultCta",
+				// Legacy: CtaSection reads `common:defaultCta` (NOT `home:cta` —
+				// the `cta` key exists nowhere since the HEAD `9b3f8d0`
+				// pre-migration; verified against both locale files).
+				// Renders as <CtaBand id="cta" decor="masked" glyph ... />.
 				// (`glyph` is fixed presentation, not an editor contract;
 				// wrapper primary `iconPosition: "end"` is the solid-pill
-				// default). Flat content keys under `home:cta.*`.
+				// default). Flat content keys under `common:defaultCta.*`.
 				build(en, sw, where) {
 					const action = (node, swNode, key) => ({
 						label: { en: reqText(node?.label, `${where}.${key}.label.en`), sw: reqText(swNode?.label, `${where}.${key}.label.sw`) },
@@ -2432,6 +2472,16 @@ const PAGES = {
 						hairline: false,
 						id: "cta",
 					};
+				},
+			},
+			{
+				discriminant: "trustees",
+				from: "trustees",
+				// Legacy: TrusteesSection → <Trustees id="trustees" /> over
+				// `common:trustees` (same `common.json` content namespace as
+				// every other section in this mapping since HEAD `9b3f8d0`).
+				build(en, sw, where) {
+					return trusteesBuild(en, sw, where);
 				},
 			},
 		],
@@ -2477,8 +2527,12 @@ function generate(pageSlug) {
 	const mapping = PAGES[pageSlug];
 	if (!mapping) throw new Error(`No migration mapping for page ${JSON.stringify(pageSlug)}.`);
 	gaps.length = 0;
-	const en = loadNamespace("en", mapping.namespace);
-	const sw = loadNamespace("sw", mapping.namespace);
+	// M8 (2026-09-16): `contentNamespace` lets a mapping read content from a
+	// different locale file than the page entry name — home's entry stays
+	// `home.json` but its content nodes moved to `common.json` (HEAD `9b3f8d0`).
+	const contentNamespace = mapping.contentNamespace ?? mapping.namespace;
+	const en = loadNamespace("en", contentNamespace);
+	const sw = loadNamespace("sw", contentNamespace);
 	const siteTitle = { en: loadSiteTitle("en"), sw: loadSiteTitle("sw") };
 	// Cross-namespace content merged at render time (e.g. careers:hero
 	// cueLabel from common:misc.openRoles). Passed as the 5th build arg;

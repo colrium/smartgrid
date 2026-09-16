@@ -361,6 +361,106 @@
 				"hairline": false,
 				"id": "cta"
 			}
+		},
+		{
+			"discriminant": "trustees",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "OUR TRUSTEES",
+					"sw": "WADHAMINI WETU"
+				},
+				"items": [
+					{
+						"label": {
+							"en": "DJI",
+							"sw": "DJI"
+						},
+						"logoUrl": "/media/trustees/dji.png"
+					},
+					{
+						"label": {
+							"en": "ESRI",
+							"sw": "ESRI"
+						},
+						"logoUrl": "/media/trustees/esri.png"
+					},
+					{
+						"label": {
+							"en": "Trimble",
+							"sw": "Trimble"
+						},
+						"logoUrl": "/media/trustees/trimble.png"
+					},
+					{
+						"label": {
+							"en": "FOIF",
+							"sw": "FOIF"
+						},
+						"logoUrl": "/media/trustees/foif.jpg"
+					},
+					{
+						"label": {
+							"en": "GoK",
+							"sw": "GoK"
+						},
+						"logoUrl": "/media/trustees/gok.png"
+					},
+					{
+						"label": {
+							"en": "AutoCAD",
+							"sw": "AutoCAD"
+						},
+						"logoUrl": "/media/trustees/autocad.png"
+					},
+					{
+						"label": {
+							"en": "KCAA",
+							"sw": "KCAA"
+						},
+						"logoUrl": "/media/trustees/kcaa.png"
+					},
+					{
+						"label": {
+							"en": "PIX4D",
+							"sw": "PIX4D"
+						},
+						"logoUrl": "/media/trustees/pix4d.jpg"
+					},
+					{
+						"label": {
+							"en": "BLUEGEOG",
+							"sw": "BLUEGEOG"
+						},
+						"logoUrl": "/media/trustees/blue-geog.png"
+					},
+					{
+						"label": {
+							"en": "ArcGIS",
+							"sw": "ArcGIS"
+						},
+						"logoUrl": "/media/trustees/arcgis.png"
+					},
+					{
+						"label": {
+							"en": "Bosch",
+							"sw": "Bosch"
+						},
+						"logoUrl": "/media/trustees/bosch.jpg"
+					},
+					{
+						"label": {
+							"en": "Agisoft Metashape",
+							"sw": "Agisoft Metashape"
+						},
+						"logoUrl": "/media/trustees/agisoft-metashape.png"
+					}
+				],
+				"id": ""
+			}
 		}
 	]
 }
