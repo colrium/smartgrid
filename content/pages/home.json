@@ -828,6 +828,165 @@
 				],
 				"id": ""
 			}
+		},
+		{
+			"discriminant": "coreExpertise",
+			"value": {
+				"tag": {
+					"en": "Experts",
+					"sw": "Wataalamu"
+				},
+				"headline": {
+					"en": "Our Core Expertise",
+					"sw": "Utaalamu Wetu wa Msingi"
+				},
+				"description": {
+					"en": "We specialize in providing high-quality surveying and engineering services, leveraging advanced technology and industry expertise to deliver accurate and reliable results for our clients.",
+					"sw": "Tunabobea katika kutoa huduma za ubora wa juu za upimaji na uhandisi, kwa kutumia teknolojia ya kisasa na utaalamu wa sekta ili kutoa matokeo sahihi na ya kuaminika kwa wateja wetu."
+				},
+				"items": [
+					{
+						"icon": "terrain",
+						"label": {
+							"en": "Topographical & Engineering Surveys",
+							"sw": "Upimaji wa Topografia na Uhandisi"
+						},
+						"description": {
+							"en": "Accurate land surveys for construction, infrastructure, and development projects.",
+							"sw": "Upimaji sahihi wa ardhi kwa ajili ya miradi ya ujenzi, miundombinu, na maendeleo."
+						},
+						"href": "/surveying/topographical-surveys"
+					},
+					{
+						"icon": "quadcopter",
+						"label": {
+							"en": "Drone Mapping & Photogrammetry",
+							"sw": "Ramani za Ndege zisizo na Rubani na Photogrammetria"
+						},
+						"description": {
+							"en": "High-resolution aerial imagery and 3D mapping for precise data collection.",
+							"sw": "Picha za ubora wa juu za angani na ramani za 3D kwa ajili ya kukusanya data sahihi."
+						},
+						"href": "/aerial-drones/lidar-mapping"
+					},
+					{
+						"icon": "hard-hat",
+						"label": {
+							"en": "Construction & Site Control",
+							"sw": "Udhibiti wa Tovuti na Ujenzi"
+						},
+						"description": {
+							"en": "Surveying services for construction layout, monitoring, and quality control.",
+							"sw": "Huduma za upimaji kwa ajili ya mpangilio wa ujenzi, ufuatiliaji, na udhibiti wa ubora."
+						},
+						"href": "/civil/site-engineering"
+					},
+					{
+						"icon": "bridge",
+						"label": {
+							"en": "Infrastructure Support",
+							"sw": "Msaada wa Miundombinu"
+						},
+						"description": {
+							"en": "Surveying and engineering solutions for roads, bridges, utilities, and other infrastructure projects.",
+							"sw": "Suluhisho za upimaji na uhandisi kwa ajili ya barabara, madaraja, huduma, na miradi mingine ya miundombinu."
+						},
+						"href": "/civil/highway-surveys"
+					},
+					{
+						"icon": "radar",
+						"label": {
+							"en": "Ground Penetrating Radar (GPR)",
+							"sw": "Rada ya Kupenya Ardhini (GPR)"
+						},
+						"description": {
+							"en": "Subsurface utility detection and mapping to locate buried services and structures.",
+							"sw": "Ugunduzi na ramani ya huduma za chini ya ardhi ili kupata huduma na miundo iliyozikwa."
+						},
+						"href": "/surveying/ground-penetrating-radar"
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "planningInfographic",
+			"value": {
+				"tag": {
+					"en": "Planning a Project?",
+					"sw": "Unapanga Mradi?"
+				},
+				"headline": {
+					"en": "Start With Accurate Ground Data",
+					"sw": "Anza na Data Sahihi ya Ardhi"
+				},
+				"description": {
+					"en": "Before you design, build, or invest, you need reliable surveying data. We help you:",
+					"sw": "Kabla ya kubuni, kujenga, au kuwekeza, unahitaji data ya upimaji ya kuaminika. Tunakusaidia:"
+				},
+				"benefits": [
+					{
+						"icon": "cash-check",
+						"label": {
+							"en": "Eliminate costly design errors",
+							"sw": "Ondoa makosa ya kubuni yenye gharama kubwa"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"icon": "map-check",
+						"label": {
+							"en": "Avoid boundary disputes and legal delays",
+							"sw": "Epuka migogoro ya mipaka na ucheleweshaji wa kisheria"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"icon": "invoice-check",
+						"label": {
+							"en": "Reduce construction risks",
+							"sw": "Punguza hatari za ujenzi"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"icon": "book-check",
+						"label": {
+							"en": "Meet regulatory and approval requirements",
+							"sw": "Kukidhi mahitaji ya udhibiti na idhini"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"icon": "notebook-check",
+						"label": {
+							"en": "Accelerate project timelines with precise data",
+							"sw": "Harakisha ratiba za mradi kwa data sahihi"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					}
+				],
+				"closingStatement": {
+					"en": "<bold>Whether you're a developer, engineer, contractor, or landowner—our data ensures your project starts right.</bold>",
+					"sw": "<bold>Iwe wewe ni msanidi, mhandisi, mkandarasi, au mmiliki wa ardhi—data yetu inahakikisha mradi wako unaanza vizuri.</bold>"
+				},
+				"id": ""
+			}
 		}
 	]
 }

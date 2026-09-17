@@ -347,12 +347,13 @@ const resolutionCases = await (async () => {
 	// starter): 2 split/shimmer ActionCtas + Industries cardGrid + faq +
 	// masked Cta + trustees logo wall (M8, 2026-09-16) + certifications
 	// badge grid + keyFacts panel + whyChooseUs list + about narrative +
-	// surveyingInstruments grid (M8, 2026-09-17), in page order.
+	// surveyingInstruments grid + coreExpertise grid + planningInfographic
+	// (M8, 2026-09-17), in page order.
 	outcomes.push([
 		"resolve-real-fixture",
 		realRes.status === "keystatic" &&
 			realRes.page.title === "Home (migrated)" &&
-			realRes.page.sections.map((s) => s.id).join(",") === "ctaBand,cardGrid,faq,ctaBand,ctaBand,trustees,certifications,keyFacts,whyChooseUs,about,surveyingInstruments",
+			realRes.page.sections.map((s) => s.id).join(",") === "ctaBand,cardGrid,faq,ctaBand,ctaBand,trustees,certifications,keyFacts,whyChooseUs,about,surveyingInstruments,coreExpertise,planningInfographic",
 	]);
 
 	setSwitchEnv(savedEnv.KEYSTATIC_PAGES, savedEnv.KEYSTATIC_DISABLE);

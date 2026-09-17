@@ -17,6 +17,8 @@ import { Metrics } from "@/components/sections/shared/Metrics";
 import { WhyChooseUs } from "@/components/sections/shared/WhyChooseUs";
 import { About } from "@/components/sections/shared/About";
 import { SurveyingInstruments } from "@/components/sections/shared/SurveyingInstruments";
+import { CoreExpertise } from "@/components/sections/shared/CoreExpertise";
+import { PlanningInfographic } from "@/components/sections/shared/PlanningInfographic";
 import type { Lang } from "../types";
 import { resolveLocaleValue } from "./localize";
 import { getSectionDefinition, type SectionId } from "./sectionRegistry";
@@ -55,6 +57,8 @@ export const sectionRenderers = {
 	whyChooseUs: WhyChooseUs,
 	about: About,
 	surveyingInstruments: SurveyingInstruments,
+	coreExpertise: CoreExpertise,
+	planningInfographic: PlanningInfographic,
 } satisfies Record<SectionId, ComponentType<any>>;
 
 export function renderSection(

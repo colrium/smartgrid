@@ -414,6 +414,64 @@ function surveyingInstrumentsBuild(en, sw, where) {
 	};
 }
 
+// M8 batch C (2026-09-17): `coreExpertise` indexed grid. Legacy
+// `common:coreExpertise` holds `{tag?, headline, description?, items:
+// [{icon?, label, description, href?}]}`. `icon`/`href` are shared
+// (`sharedValue` gate — hrefs are locale-identical route paths);
+// `label`/`description` are localized.
+function coreExpertiseBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				label: { en: reqText(item.label, `${where}.items[${i}].label.en`), sw: reqText(swItem.label, `${where}.items[${i}].label.sw`) },
+				description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+				href: sharedValue(item, swItem, "href", `${where}.items[${i}]`) ?? "",
+			};
+		}),
+		id: "",
+	};
+}
+
+// M8 batch C (2026-09-17): `planningInfographic` benefits grid. Legacy
+// `common:planningInfographic` holds `{tag?, headline, description?,
+// benefits[{icon, label, description?}], closingStatement?}`. `icon` is
+// shared; `label`/`description`/`closingStatement` are localized.
+// `closingStatement` migrates verbatim as a VISIBILITY GATE — the component
+// renders the statement text via `<Trans>` from locale JSON, so the stored
+// value keeps the block visible without claiming editable text.
+function planningInfographicBuild(en, sw, where) {
+	const enBenefits = en.benefits ?? [];
+	const swBenefits = sw.benefits ?? [];
+	if (!Array.isArray(swBenefits) || swBenefits.length !== enBenefits.length) {
+		gap(where, `benefit count diverged (en=${enBenefits.length} sw=${swBenefits?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		benefits: enBenefits.map((benefit, i) => {
+			const swBenefit = swBenefits[i] ?? {};
+			return {
+				icon: sharedValue(benefit, swBenefit, "icon", `${where}.benefits[${i}]`) ?? "",
+				label: { en: reqText(benefit.label, `${where}.benefits[${i}].label.en`), sw: reqText(swBenefit.label, `${where}.benefits[${i}].label.sw`) },
+				description: { en: optText(benefit.description), sw: optText(swBenefit.description) },
+			};
+		}),
+		closingStatement: { en: optText(en.closingStatement), sw: optText(sw.closingStatement) },
+		id: "",
+	};
+}
+
 // NOTE (M8 batch A): `metrics` is registered but intentionally NOT migrated
 // here — `<MetricsSection/>` is commented out of `[locale]/index.tsx`, so
 // `common:metrics` is unrendered on `/` and `metrics` stays in `skipped`
@@ -2448,11 +2506,12 @@ const PAGES = {
 	// global LeadGenBar (`home` ns, never a page-builder branch),
 	// CoreExpertiseSection (`headerRow` + `hoverArrow` + `watermarkedIndexed`),
 	// client-only CoverageAreaSection (ProjectsGlobe), About/
-	// PlanningInfographic/Drones/
+	// Tails stay legacy: bespoke WebGL hero, global LeadGenBar, Drones,
 	// Services/SurveyCost bespoke (`trustees` + `certifications` + `keyFacts`
-	// + `whyChooseUs` + `about` + `surveyingInstruments` migrated in M8, so
-	// they leave this tail list; `metrics` stays in `skipped` — unrendered,
-	// commented out of the route). NOTE: overwrites the
+	// + `whyChooseUs` + `about` + `surveyingInstruments` + `coreExpertise` +
+	// `planningInfographic` migrated in M8, so they leave this tail list;
+	// `metrics` stays in `skipped` — unrendered, commented out of the route).
+	// NOTE: overwrites the
 	// M1 `home.json` starter fixture (placeholder since M1) with the real
 	// migrated home; entry stays `draft`.
 	"home": {
@@ -2463,7 +2522,7 @@ const PAGES = {
 		// `contentNamespace` (`common.json`) while the page entry stays
 		// `home.json`.
 		contentNamespace: "common",
-		skipped: ["hero", "planningInfographic", "drones", "coreExpertise", "services", "metrics", "surveyCostInKenya", "coverageArea"],
+		skipped: ["hero", "drones", "services", "metrics", "surveyCostInKenya", "coverageArea"],
 		sections: [
 			{
 				discriminant: "ctaBand",
@@ -2694,6 +2753,28 @@ const PAGES = {
 				// HEAD `9b3f8d0`).
 				build(en, sw, where) {
 					return surveyingInstrumentsBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "coreExpertise",
+				from: "coreExpertise",
+				// Legacy: CoreExpertiseSection → <CoreExpertise
+				// id="core-expertise" /> over `common:coreExpertise` (same
+				// `common.json` content namespace as every other section in
+				// this mapping since HEAD `9b3f8d0`).
+				build(en, sw, where) {
+					return coreExpertiseBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "planningInfographic",
+				from: "planningInfographic",
+				// Legacy: PlanningInfographicSection → <PlanningInfographic
+				// /> over `common:planningInfographic` (same `common.json`
+				// content namespace as every other section in this mapping
+				// since HEAD `9b3f8d0`).
+				build(en, sw, where) {
+					return planningInfographicBuild(en, sw, where);
 				},
 			},
 		],

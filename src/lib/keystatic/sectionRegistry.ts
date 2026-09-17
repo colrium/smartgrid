@@ -159,9 +159,38 @@ import {
  * (component branch, preserved by normalize). SSR-safe: effect-only
  * `FadeUp`, framer-motion `Parallax` (static first render), pure-span
  * `Blob`, static `next/image`.
+ *
+ * M8 batch C (2026-09-17): `coreExpertise` wraps the shared `CoreExpertise`
+ * adapter (tag + headline + description + `items` `[{icon?, label,
+ * description, href?}]`). New id v1 — NOT a `cardGrid` v3: the wrapper
+ * hardcodes `headerRow` + `hoverArrow` + `watermarkedIndexed` presentation
+ * plus positional `index` numbering, all outside the `cardGrid` v2
+ * contract; forking v3 for one page's flags would burden every cardGrid
+ * editor. `icon`/`href` are shared (`href`s are locale-identical route
+ * paths); `label`/`description` are localized. SSR-safe: plain `CardGrid`
+ * adapter, no browser APIs.
+ *
+ * M8 batch C (2026-09-17): `industriesWeServe` needs NO new id (decided,
+ * same date) — the wrapper is a bare `CardGrid columns={3}` with no
+ * presentation extras, fully inside the `cardGrid` v2 contract, and `/`
+ * already migrates `common:industriesWeServe` AS `cardGrid` (M7 batch 17).
+ * Editors edit it under the Card grid branch; a duplicate id would fork
+ * the contract for zero gain.
+ *
+ * M8 batch C (2026-09-17): `planningInfographic` wraps the shared
+ * `PlanningInfographic` benefits grid (tag + headline + description +
+ * `benefits` `[{icon, label, description?}]` + `closingStatement?`).
+ * `icon` is shared; `label`/`description` are localized. `closingStatement`
+ * is carried as localized data but acts as a VISIBILITY GATE ONLY: the
+ * component renders the statement text via `<Trans
+ * i18nKey="common:planningInfographic.closingStatement">` (locale JSON,
+ * `<bold>` pseudo-markup), not from `data` — clearing the field hides the
+ * statement, but editing its text does not change output until the
+ * component is refactored props-driven (field description warns editors).
+ * SSR-safe: effect-only `FadeUp`, pure-span `Blob`.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -1550,6 +1579,138 @@ const surveyingInstruments: SectionDefinition = {
 	}),
 };
 
+const coreExpertise: SectionDefinition = {
+	id: "coreExpertise",
+	version: 1,
+	label: "Core expertise",
+	description: "Indexed expertise grid with header row, hover arrows and watermarked numbering.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description", { optionalInEnglish: true }),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (optional)",
+					description: "Icon slug without the `mdi-` prefix.",
+				}),
+				label: localeText("Label"),
+				description: localeLongText("Description"),
+				href: fields.text({ label: "Link (optional)", description: "Internal path or full URL." }),
+			}),
+			{
+				label: "Expertise",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Expertise"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `classes`/`className` (visual tuning,
+		// not an editor contract). Presentation (`headerRow`, `hoverArrow`,
+		// `watermarkedIndexed`, 3 columns, positional numbering) is fixed by
+		// the `CoreExpertise` adapter — that is why this is its own id rather
+		// than a `cardGrid` v3.
+	}),
+	example: {
+		tag: { en: "Experts", sw: "Wataalamu" },
+		headline: { en: "Our Core Expertise", sw: "Utaalamu Wetu Mkuu" },
+		description: { en: "High-quality surveying and engineering services.", sw: "Huduma bora za upimaji na uhandisi." },
+		items: [
+			{
+				icon: "terrain",
+				label: { en: "Topographical & Engineering Surveys", sw: "Upimaji wa Topografia na Uhandisi" },
+				description: {
+					en: "Accurate land surveys for construction and infrastructure.",
+					sw: "Upimaji sahihi wa ardhi kwa ujenzi na miundombinu.",
+				},
+				href: "/surveying/topographical-surveys",
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || null,
+						label: item?.label ?? "",
+						description: item?.description ?? "",
+						href: item?.href || undefined,
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+const planningInfographic: SectionDefinition = {
+	id: "planningInfographic",
+	version: 1,
+	label: "Planning infographic",
+	description: "Benefits grid with closing statement (statement text stays locale-owned, see field).",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description", { optionalInEnglish: true }),
+		benefits: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon",
+					description: "Icon slug without the `mdi-` prefix (watermark + check chip).",
+				}),
+				label: localeText("Label"),
+				description: localeLongText("Description", { optionalInEnglish: true }),
+			}),
+			{
+				label: "Benefits",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Benefit"),
+			}
+		),
+		closingStatement: localeLongText("Closing statement (visibility gate)", {
+			optionalInEnglish: true,
+		}),
+		id: anchorField(),
+		// Excluded from v1 (documented): `classes`/`className` (visual tuning,
+		// not an editor contract). NOTE: `closingStatement` only gates
+		// visibility — the component renders the statement text via `<Trans
+		// i18nKey="common:planningInfographic.closingStatement">`, so editing
+		// this text does not change output until the component is refactored
+		// props-driven. Clearing it hides the statement.
+	}),
+	example: {
+		tag: { en: "Planning a Project?", sw: "Unapanga Mradi?" },
+		headline: { en: "Start With Accurate Ground Data", sw: "Anza na Data Sahihi ya Ardhi" },
+		description: { en: "You need reliable surveying data.", sw: "Unahitaji data ya upimaji inayoaminika." },
+		benefits: [
+			{
+				icon: "cash-check",
+				label: { en: "Eliminate costly design errors", sw: "Ondoa makosa ya kubuni yenye gharama" },
+				description: { en: "", sw: "" },
+			},
+		],
+		closingStatement: { en: "Our data ensures your project starts right.", sw: "Data yetu inahakikisha mradi wako unaanza vizuri." },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			benefits: Array.isArray(resolved.benefits)
+				? resolved.benefits.map((benefit: any) => ({
+						icon: benefit?.icon ?? "",
+						label: benefit?.label ?? "",
+						description: benefit?.description ?? "",
+					}))
+				: [],
+			closingStatement: resolved.closingStatement,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
 export const sectionRegistry: readonly SectionDefinition[] = [
 	introText,
 	ctaBand,
@@ -1569,6 +1730,8 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	whyChooseUs,
 	about,
 	surveyingInstruments,
+	coreExpertise,
+	planningInfographic,
 ];
 
 export function getSectionDefinition(id: string): SectionDefinition {
@@ -1596,6 +1759,8 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	whyChooseUs: whyChooseUs.label,
 	about: about.label,
 	surveyingInstruments: surveyingInstruments.label,
+	coreExpertise: coreExpertise.label,
+	planningInfographic: planningInfographic.label,
 };
 
 /**

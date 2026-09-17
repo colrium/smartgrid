@@ -37,17 +37,15 @@ interface PageProps {
  * `scripts/migrate-locale-to-keystatic.mjs`): actionCtaSurveyor ctaBand,
  * industriesWeServe cardGrid, faq, actionCtaEngineer ctaBand, defaultCta
  * ctaBand, trustees, certifications, keyFacts, whyChooseUs, about,
- * surveyingInstruments (M8, 2026-09-16/17).
- * Thirteen legacy tails (bespoke WebGL hero, global LeadGenBar, headerRow/
- * hoverArrow/watermarkedIndexed CoreExpertise grid, client-only CoverageArea
- * globe, PlanningInfographic/Drones/
- * Services/SurveyCost bespoke) sit at fixed
+ * surveyingInstruments, coreExpertise, planningInfographic (M8, 2026-09-16/17).
+ * Thirteen legacy tails (bespoke WebGL hero, global LeadGenBar,
+ * client-only CoverageArea globe, Drones/Services/SurveyCost bespoke) sit at fixed
  * positions between them, so the route renders each Keystatic section by
  * index instead of one whole PageBuilderDocument. If an edit changes the
  * section COUNT, the route falls back to legacy rather than misplacing
  * sections — keep this in sync with the mapping.
  */
-const KEYSTATIC_SECTION_COUNT = 11;
+const KEYSTATIC_SECTION_COUNT = 13;
 
 function orderedSections(page: ResolvedKeystaticPage) {
 	if (page.sections.length !== KEYSTATIC_SECTION_COUNT) {
@@ -60,7 +58,7 @@ function orderedSections(page: ResolvedKeystaticPage) {
 }
 
 const Page: NextPage<PageProps> = ({ keystaticPage }) => {
-	// Migration source switch (M3/M7): Keystatic owns the eleven migrated
+	// Migration source switch (M3/M7): Keystatic owns the thirteen migrated
 	// sections only when the slug is allowlisted via `KEYSTATIC_PAGES` and the
 	// entry is published. Otherwise the legacy locale-JSON implementation
 	// renders unchanged.
@@ -83,7 +81,7 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 							// className="my-12 "
 						/>
 						{renderAt(9)}
-						<PlanningInfographicSection />
+						{renderAt(12)}
 					</div>
 					{renderAt(10)}
 					<DronesSection />
@@ -95,7 +93,7 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 					<div className="flex flex-col  w-full">
 						{renderAt(8)}
 
-						<CoreExpertiseSection />
+						{renderAt(11)}
 
 						<SurveyCostSection />
 						<CoverageAreaSection />
