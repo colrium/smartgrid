@@ -1,5 +1,6 @@
-import { config, fields, collection } from "@keystatic/core";
+import { config, fields, collection, singleton } from "@keystatic/core";
 import { sectionBranchField } from "./src/lib/keystatic/sectionRegistry";
+import { siteLayoutSchema } from "./src/lib/keystatic/siteLayout";
 
 /**
  * Keystatic page-builder collection contract (M1 config, M2 registry).
@@ -15,6 +16,11 @@ import { sectionBranchField } from "./src/lib/keystatic/sectionRegistry";
  * - On disk, each page is `content/pages/<slug>.json` (`format.data: "json"`).
  *   The `slug` field itself is stored as the plain page-name string; the
  *   filename provides the slug.
+ * - Site-wide layout content (M9: navbar, footer, contacts, socials, cookie
+ *   consent) lives in the `site` singleton (`content/site.json`), NOT in
+ *   page branches — its schema is `siteLayoutSchema` in
+ *   `src/lib/keystatic/siteLayout.ts`. Served only when published AND the
+ *   reserved slug `site` is allowlisted via `KEYSTATIC_PAGES`.
  */
 
 export const SUPPORTED_PAGE_LOCALES = ["en", "sw"] as const;
@@ -85,6 +91,14 @@ export default config({
 				}),
 				pageBuilder: sectionBranchField(),
 			},
+		}),
+	},
+	singletons: {
+		site: singleton({
+			label: "Site layout",
+			path: "content/site",
+			format: { data: "json" },
+			schema: siteLayoutSchema,
 		}),
 	},
 });

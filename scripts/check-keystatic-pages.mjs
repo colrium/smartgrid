@@ -96,8 +96,10 @@ nodeRequire.extensions[".tsx"] = compileTypeScriptInPlace;
 nodeRequire.extensions[".ts"] = compileTypeScriptInPlace;
 
 const registry = nodeRequire(transpileToCache("src/lib/keystatic/fields.ts")) && nodeRequire(transpileToCache("src/lib/keystatic/localize.ts")) && nodeRequire(transpileToCache("src/lib/keystatic/sectionRegistry.ts"));
-nodeRequire(transpileToCache("keystatic.config.ts", [["./src/lib/keystatic/sectionRegistry", "./sectionRegistry"]]));
+const siteLayout = nodeRequire(transpileToCache("src/lib/keystatic/siteLayout.ts"));
+nodeRequire(transpileToCache("keystatic.config.ts", [["./src/lib/keystatic/sectionRegistry", "./sectionRegistry"], ["./src/lib/keystatic/siteLayout", "./siteLayout"]]));
 const { resolveKeystaticPage, isKeystaticPageEnabled } = nodeRequire(transpileToCache("src/lib/keystatic/resolvePage.ts"));
+const { resolveSiteLayout, mergeSiteLayoutIntoStore } = nodeRequire(transpileToCache("src/lib/keystatic/resolveLayout.ts"));
 const renderers = nodeRequire(transpileToCache("src/lib/keystatic/sectionRenderers.tsx"));
 const PageBuilderDocument = nodeRequire(transpileToCache("src/components/keystatic/PageBuilderDocument.tsx")).default;
 const localize = nodeRequire(join(CACHE, "localize.js"));
@@ -354,6 +356,94 @@ const resolutionCases = await (async () => {
 		realRes.status === "keystatic" &&
 			realRes.page.title === "Home (migrated)" &&
 			realRes.page.sections.map((s) => s.id).join(",") === "ctaBand,cardGrid,faq,ctaBand,ctaBand,trustees,certifications,keyFacts,whyChooseUs,about,surveyingInstruments,coreExpertise,planningInfographic,surveyCost,coverageArea",
+	]);
+
+	// --- Site layout singleton (M9) --------------------------------------
+	// Schema contract, failure taxonomy over throwaway trees, the real
+	// fixture, and the i18n-store merge — all from the real sources.
+	const layoutSchema = siteLayout.siteLayoutSchema;
+	const layoutExample = siteLayout.siteLayoutExample;
+	for (const key of ["status", "nav", "footer", "contacts", "cookies", "footerContacts", "socialChannels"]) {
+		outcomes.push([`layout-schema-${key}`, layoutSchema && key in layoutSchema]);
+	}
+	outcomes.push([
+		"layout-example-keys",
+		Object.keys(layoutExample).every((key) => key in layoutSchema),
+	]);
+	const exampleResolved = siteLayout.normalizeSiteLayout(resolveLocaleValue(layoutExample, "en"));
+	outcomes.push([
+		"layout-example-normalizes",
+		exampleResolved.nav.links[0]?.label === "Surveying" &&
+			typeof exampleResolved.footerContacts[0]?.label === "string" &&
+			exampleResolved.socialChannels.length === 1 &&
+			!JSON.stringify(exampleResolved).includes('"en"'),
+	]);
+
+	const makeLayoutBase = (files) => {
+		const base = mkdtempSync(join(tmpdir(), "ks-layout-"));
+		const contentDir = join(base, "content");
+		mkdirSync(contentDir, { recursive: true });
+		for (const [name, content] of Object.entries(files)) {
+			writeFileSync(join(contentDir, name), typeof content === "string" ? content : JSON.stringify(content));
+		}
+		return base;
+	};
+	setSwitchEnv(undefined, undefined);
+	const layoutDisabled = await resolveSiteLayout("en", { baseDir: makeLayoutBase({}) });
+	outcomes.push(["layout-disabled", layoutDisabled.status === "legacy" && layoutDisabled.reason === "disabled"]);
+
+	setSwitchEnv("site", undefined);
+	const layoutMissing = await resolveSiteLayout("en", { baseDir: makeLayoutBase({}) });
+	outcomes.push(["layout-missing", layoutMissing.status === "legacy" && layoutMissing.reason === "missing"]);
+
+	const realSite = JSON.parse(readFileSync(join(ROOT, "content", "site.json"), "utf8"));
+	const layoutDraft = await resolveSiteLayout("en", { baseDir: makeLayoutBase({ "site.json": realSite }) });
+	outcomes.push(["layout-unpublished", layoutDraft.status === "legacy" && layoutDraft.reason === "unpublished"]);
+
+	const layoutBroken = await resolveSiteLayout("sw", { baseDir: makeLayoutBase({ "site.json": "{oops" }) });
+	outcomes.push([
+		"layout-malformed",
+		layoutBroken.status === "legacy" && layoutBroken.reason === "error" && typeof layoutBroken.detail === "string" && layoutBroken.detail.length > 0,
+	]);
+
+	// The checked-in entry stays `draft`; the temp base flips it to
+	// `published` — proving the real fixture resolves once published.
+	const layoutPublished = await resolveSiteLayout("sw", {
+		baseDir: makeLayoutBase({ "site.json": { ...realSite, status: "published" } }),
+	});
+	outcomes.push([
+		"layout-real-fixture",
+		layoutPublished.status === "keystatic" &&
+			layoutPublished.site.locale === "sw" &&
+			layoutPublished.site.layout.nav.links.length === 6 &&
+			layoutPublished.site.layout.nav.links[0]?.label === "Upimaji" &&
+			layoutPublished.site.layout.footerContacts.length === 6 &&
+			layoutPublished.site.layout.socialChannels.length === 4 &&
+			typeof layoutPublished.site.layout.cookies.categories.necessary.label === "string" &&
+			typeof layoutPublished.site.layout.contacts.phone[0]?.href === "string",
+	]);
+
+	// Store merge: owned slices are replaced wholesale; routing, brand and
+	// page namespaces survive untouched.
+	const mergeStore = {
+		en: {
+			common: { nav: { old: true }, locales: [{ code: "en" }], misc: { x: 1 }, footer: { old: true }, contacts: { old: true }, cookies: { old: true } },
+			contact: { talkToUs: { title: "T", contacts: [] }, social: { channels: [] } },
+			meta: { site: { title: "Brand" } },
+		},
+	};
+	mergeSiteLayoutIntoStore(mergeStore, "en", layoutPublished.status === "keystatic" ? layoutPublished.site.layout : exampleResolved);
+	outcomes.push([
+		"layout-merge",
+		mergeStore.en.common.nav.links?.length === 6 &&
+			!mergeStore.en.common.nav.old &&
+			!mergeStore.en.common.footer.old &&
+			mergeStore.en.common.locales.length === 1 &&
+			mergeStore.en.common.misc.x === 1 &&
+			mergeStore.en.meta.site.title === "Brand" &&
+			mergeStore.en.contact.talkToUs.title === "T" &&
+			mergeStore.en.contact.talkToUs.contacts.length === 6 &&
+			mergeStore.en.contact.social.channels.length === 4,
 	]);
 
 	setSwitchEnv(savedEnv.KEYSTATIC_PAGES, savedEnv.KEYSTATIC_DISABLE);
