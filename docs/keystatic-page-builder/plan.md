@@ -522,8 +522,41 @@ Notes / constraints recorded before implementing:
       version bump vs out-of-scope. (2026-09-16: first section `trustees` proven —
       `TrusteesContent` `{tag?, headline?, items: [{label, logoUrl}]}`; SSR-safe:
       `FadeUp` is `IntersectionObserver`-in-`useEffect` only, `Blob` is a pure
-      span, `next/image` renders statically. New id `trustees` v1 — no overlap
-      with `stats`/`cardGrid`. Remaining 11 sections still to register.)
+      span,       `next/image` renders statically. New id `trustees` v1 — no overlap
+      with `stats`/`cardGrid`. 2026-09-17: `certifications` (`{tag?, headline?,
+      description?, items: [{icon?, name, label}]}` — `name` shared literal,
+      `label`/`description` localized) and `keyFacts` (`{tag?, headline?,
+      description?, items: [{icon?, label, description}]}` — `icon` shared
+      with positional fallback) inventoried — both SSR-safe (effect-only
+      `FadeUp`, pure-span `Blob`, framer-motion `Parallax` static first
+      render) and registered as new ids v1. Batch A: `metrics` (`{tag?,
+      headline?, description?, items: [{icon?, name, value}]}` — `name`
+      localized, `value` shared integer via `fields.integer`, positional
+      `METRIC_ICONS` fallback; `CountUp` renders a static span, animation in
+      `useEffect`) registered as new id v1 — but NOT migrated: the wrapper is
+      commented out of `[locale]/index.tsx`, so `common:metrics` is
+      unrendered on `/` (stays in home `skipped`; addable to any page).
+      `whyChooseUs` (`{tag?, headline?, description?, items: [{icon?, name,
+      label, description}]}` — `icon`/`name` shared literals, `name`
+      rendered as the item eyebrow) registered as new id v1. Batch B:
+      `about` (narrative + whoWeAre/mission + featureImg + cards; `url`/
+      `icon`/`href` shared) and `surveyingInstruments` (`[{label, img,
+      href?}]`; empty `href` renders `<article>`, preserved by normalize)
+      registered as new ids v1. Batch C: `coreExpertise` registered as new
+      id v1 (NOT `cardGrid` v3 — `headerRow`/`hoverArrow`/
+      `watermarkedIndexed` + positional numbering are outside the v2
+      contract); `industriesWeServe` needs NO new id (decided 2026-09-17 —
+      bare `CardGrid columns={3}`, fully inside v2, already migrates AS
+      `cardGrid`); `planningInfographic` registered as new id v1 with
+      `closingStatement` carried as data but GATE-ONLY (component keeps the
+      `<Trans>` locale lookup — editing the text does not change output
+      until a props-driven refactor; field description warns editors).
+      Batch D: `coverageArea` (stats `value`/`suffix` shared, group chips
+      localized — last group diverges; globe stays `dynamic ssr:false`) and
+      `surveyCost` (nested factors/ranges, `price` integers, CTA `href`s
+      shared; `useState` tab index is SSR-safe) registered as new ids v1.
+      All 12 in-scope sections resolved (10 migrated into `home.json`,
+      `metrics` registered-only, `industriesWeServe` covered by `cardGrid`).)
 - [x] Register schemas + examples + normalizers in `sectionRegistry.ts` (single source),
       renderers in `sectionRenderers.tsx`, extend `scripts/check-keystatic-pages.mjs`
       coverage + migration mappings where the home `skipped` list shrinks.
@@ -531,7 +564,28 @@ Notes / constraints recorded before implementing:
       (`{tag,headline,items,id}` → `{data:{...},id}` to match `TrusteesProps`),
       renderer, check-script `resolve-real-fixture` extended to
       `ctaBand,cardGrid,faq,ctaBand,ctaBand,trustees`; home `skipped` drops
-      `trustees`.)
+      `trustees`. 2026-09-17: `certifications` done — new id v1 (`tag?,
+      headline?, description?, items: [{icon?, name, label}], id`), `name` a
+      shared literal via `sharedValue` gate, `icon` optional shared MDI slug,
+      renderer, fixture extended with `,certifications`; home `skipped` drops
+      `certifications`. 2026-09-17: `keyFacts` done — new id v1 (`tag?,
+      headline?, description?, items: [{icon?, label, description}], id`),
+      `icon` shared with positional `FACT_ICONS` fallback, renderer, fixture
+      extended with `,keyFacts`; home `skipped` drops `keyFacts`. Batch A:
+      `metrics` (new id v1, registered-only — commented out of the route, not
+      migrated) + `whyChooseUs` (new id v1, migrated); fixture
+      `...,keyFacts,whyChooseUs`; `skipped` drops `whyChooseUs`. Batch B:
+      `about` + `surveyingInstruments` (new ids v1, migrated); fixture
+      `...,whyChooseUs,about,surveyingInstruments`; `skipped` drops both.
+      Batch C: `coreExpertise` + `planningInfographic` (new ids v1,
+      migrated; `industriesWeServe` decided covered-by-`cardGrid`, no code);
+      fixture `...,surveyingInstruments,coreExpertise,planningInfographic`;
+      `skipped` drops both. Batch D: `coverageArea` + `surveyCost` (new ids
+      v1, migrated); fixture
+      `...,planningInfographic,surveyCost,coverageArea`; home `skipped` is
+      now `["hero", "drones", "services", "metrics"]`. Each batch committed
+      separately with `check:keystatic` + `--verify` + `typecheck` + `eslint`
+      green.)
 - [x] Migrate `/` content for the newly registered sections (extend
       `scripts/migrate-locale-to-keystatic.mjs` home mapping, regenerate
       `content/pages/home.json`, keep `draft` until dev-smoke parity).
@@ -540,13 +594,38 @@ Notes / constraints recorded before implementing:
       added to `generate()` because HEAD `9b3f8d0` moved all home content nodes
       to `common.json`; pre-existing `from: "cta"` corrected to
       `from: "defaultCta"` — `home:cta` exists nowhere, `CtaSection` reads
-      `common:defaultCta`; `home.json` regenerated to 6 sections.)
+      `common:defaultCta`; `home.json` regenerated to 6 sections.
+      2026-09-17: `certificationsBuild` + `keyFactsBuild` added (4 items each,
+      no gaps); `home.json` regenerated to 8 sections, `--verify` clean.
+      Batches A–D: `whyChooseUsBuild` (6 items), `aboutBuild`
+      (whoWeAre/mission/featureImg/cards), `surveyingInstrumentsBuild`
+      (7 items), `coreExpertiseBuild` (5 items),
+      `planningInfographicBuild` (5 benefits, closingStatement verbatim as
+      gate), `coverageAreaBuild` (3 stats + 3 groups, shared-number gate),
+      `surveyCostBuild` (3 factors + 3 ranges + includes bullets + CTAs);
+      `home.json` now 15 sections, `--verify` clean every batch. Batch D
+      fix: mapping entries ordered `surveyCost` then `coverageArea` to match
+      page order (first attempt had them swapped and failed the fixture
+      string — caught by `check:keystatic`, fixed, green.)
 - [ ] Rewire `[locale]/index.tsx` interleaved hybrid (count guard + fixed tails) and
       prove `yarn check:keystatic` + `--verify` + `typecheck` + `lint` + dev-smoke parity.
       (2026-09-16: rewired — `KEYSTATIC_SECTION_COUNT` 5→6, `renderAt(5)` replaces
       legacy `<TrusteesSection/>` in the Keystatic branch (legacy branch untouched);
       `check:keystatic` OK (12 sections), `--verify` OK (home 6 sections, no gaps),
       `tsc --noEmit` 0, `eslint --max-warnings=0` 0 on touched files.
+      2026-09-17: rewired — count 6→7→8, `renderAt(6)` replaces legacy
+      `<CertificationsSection/>`, `renderAt(7)` replaces legacy
+      `<KeyFactsSection/>` (legacy branch untouched; visual order preserved:
+      keyFacts → certifications → trustees);
+      `check:keystatic` OK (14 sections), `--verify` OK (home 8 sections, no gaps),
+      `tsc --noEmit` 0, `eslint --max-warnings=0` 0 on touched files.
+      Batches A–D: count 8→9→11→13→15; `renderAt(8)` whyChooseUs,
+      `renderAt(9)` about, `renderAt(10)` surveyingInstruments, `renderAt(11)`
+      coreExpertise, `renderAt(12)` planningInfographic, `renderAt(13)`
+      surveyCost, `renderAt(14)` coverageArea (legacy branch untouched
+      throughout); final `check:keystatic` OK (22 sections),
+      `--verify` OK (15 sections, no gaps), `tsc --noEmit` 0,
+      `eslint --max-warnings=0` 0 on touched files.
       PENDING: dev-smoke parity — publish-flip `home` locally and compare
       `/en` + `/sw` Keystatic vs legacy before closing M8.)
 
@@ -713,4 +792,6 @@ For every implementation change:
 | 2026-09-16 | M7 | Batch 15 DONE (aerial-drones agricultural-ndvi + lidar, tests deferred): agri = hero only, 1 section; lidar = hero + forestry/left-surface-wide + construction/right-default-wide splitMedias, 3 sections. Both entries generated via `--write` (no gaps — generation only). Routes wired interleaved with count guards (agri KS at 0; lidar KS at 0,4,5). Tails stay legacy: agri split-cards + layout/columns process; lidar indexed grid + layout/columns process + normalizeHref cta. DECISION: `aerial-drones/volumetric-surveys` DEFERRED — no `sw` namespace exists (en-only page); revisit when translated | Validation DEFERRED per M7 policy: no `--verify`/`check:keystatic`/`typecheck`/`lint`/dev-smoke this batch; run once after all M7 stages | |
 | 2026-09-16 | M7 | Batch 16 DONE (planning batch, no code): confirmed bespoke-only deferrals for `aerial-drones/landing` (carried from batch 4), `drone-imagery-surveys` and `photography-video-marketing` (zero registry-contract sections each — documented per page); equipment model decided file-based (checklist ticked, user may override); home inventory recorded (migratable: 2 ActionCtas, Industries, Faq, masked Cta; tails: WebGL hero, LeadGenBar, CoreExpertise extras, globe, bespoke rest) — home implementation splits into batches 17+. Also fixed two plan-edit misplacements in-session (non-unique oldString edits); rule going forward: always anchor plan edits with batch-specific context | No tests run (plan-only change; deferred validation unaffected) | |
 | 2026-09-16 | M7 | Batch 17 DONE (home, tests deferred): 2 split/shimmer ActionCtas + Industries label→title cardGrid (CardList renders `title ?? label`, stored title identical) + faq with direct still-curious object + masked/id Cta, 5 sections, `draft` (overwrites M1 starter). Entry generated via `--write` (no gaps — generation only). `[locale]/index.tsx` wired interleaved with count guard 5 (nested layout divs preserved). Tails stay legacy: WebGL hero, global LeadGenBar, CoreExpertise extras grid, CoverageArea globe, bespoke rest | Validation DEFERRED per M7 policy: no `--verify`/`check:keystatic`/`typecheck`/`lint`/dev-smoke this batch; run once after all M7 stages | |
-| 2026-09-16 | M7 | CLOSE-OUT — M7 DONE. Deferred validation run once across the whole site, all green: `check:keystatic` OK (11 sections, 30 fixtures; 1 stale assertion fixed — M1 starter home → migrated home + temp publish); `--verify` clean for all 30 mapped pages; `yarn typecheck` clean; `yarn lint` clean; dev-smoke user-confirmed good (all 30 routes en+sw, temp publish flips reverted; company-profile stays `published` per M4); README (11 sections) + `.env.example` (multi-slug allowlist) updated; rollback covered by resolver matrix. M7 exit criteria met: 30 wired (`draft` except company-profile) + 4 deferred-with-reason (landing/drone-imagery/photography bespoke-only, aerial-volumetric en-only) + equipment file-based. Residuals → M6: `yarn build` standing skip, keyboard/responsive/visual + perf need a browser session. NOTE: unrelated `Process/index.tsx` timeline-visual tweak in working tree — not reviewed, not committed, left for its owner | M7 DONE; M6 stays IN PROGRESS on browser residuals only | | |
+| 2026-09-16 | M7 | CLOSE-OUT — M7 DONE. Deferred validation run once across the whole site, all green: `check:keystatic` OK (11 sections, 30 fixtures; 1 stale assertion fixed — M1 starter home → migrated home + temp publish); `--verify` clean for all 30 mapped pages; `yarn typecheck` clean; `yarn lint` clean; dev-smoke user-confirmed good (all 30 routes en+sw, temp publish flips reverted; company-profile stays `published` per M4); README (11 sections) + `.env.example` (multi-slug allowlist) updated; rollback covered by resolver matrix. M7 exit criteria met: 30 wired (`draft` except company-profile) + 4 deferred-with-reason (landing/drone-imagery/photography bespoke-only, aerial-volumetric en-only) + equipment file-based. Residuals → M6: `yarn build` standing skip, keyboard/responsive/visual + perf need a browser session. NOTE: unrelated `Process/index.tsx` timeline-visual tweak in working tree — not reviewed, not committed, left for its owner | M7 DONE; M6 stays IN PROGRESS on browser residuals only | |
+| 2026-09-17 | M8 | `certifications` + `keyFacts` registered (new ids v1, schema + example + normalize + renderer each; `certifications.name` shared literal via `sharedValue` gate, `keyFacts.icon` shared with positional fallback; itemLabel previews fixed — `keyFacts` items carry `label` not `title`, so inline `previewText` on `fields.label` instead of `previewTitledItem`). Migration: `certificationsBuild` + `keyFactsBuild` (4 items each, no gaps), home `skipped` drops both, `home.json` 6→8 sections, `--verify` clean. Route: count guard 6→7→8, `renderAt(6)` replaces legacy `<CertificationsSection/>`, `renderAt(7)` replaces legacy `<KeyFactsSection/>` (legacy branch untouched, visual order preserved). README section list 11→14. Files: `sectionRegistry.ts`, `sectionRenderers.tsx`, `migrate-locale-to-keystatic.mjs`, `check-keystatic-pages.mjs`, `[locale]/index.tsx`, `content/pages/home.json`, README, plan | `check:keystatic` OK (14 sections, 30 fixtures; 3 fallback warnings = expected negatives); `--verify` home clean (8 sections, no gaps); `yarn typecheck` clean (23s); `eslint --max-warnings=0` clean on touched files. PENDING: dev-smoke parity (publish-flip `home`, compare `/en` + `/sw`, revert to `draft`) — needs a browser session; 9 M8 sections remain (About, CoreExpertise, CoverageArea, IndustriesWeServe, Metrics, PlanningInfographic, SurveyCost, WhyChooseUs, SurveyingInstruments) | |
+| 2026-09-17 | M8 | Batches A–D DONE (all 9 remaining sections resolved, one commit per batch with simple message). A: `metrics` (new id v1, registered-only — wrapper commented out of route) + `whyChooseUs` (new id v1, migrated, 6 items). B: `about` (whoWeAre/mission/featureImg/cards) + `surveyingInstruments` (7 items, empty-href→`<article>` branch preserved) — fixed an `eslint` unused-arg warning in the `block` helper. C: `coreExpertise` (new id v1, NOT `cardGrid` v3 — presentation flags outside v2 contract) + `planningInfographic` (closingStatement verbatim as visibility gate; component keeps `<Trans>` lookup — check-script emits the expected `NO_I18NEXT_INSTANCE` notice in its isolated render); `industriesWeServe` decided covered-by-`cardGrid`, no code. D: `coverageArea` (shared-number gate for stat values, localized chips) + `surveyCost` (nested factors/ranges/includes, integer prices, CTA hrefs shared); fixed a mapping-order swap (surveyCost/coverageArea) caught by the fixture string. Route count guard 8→9→11→13→15; legacy branch untouched throughout. `home.json` 8→15 sections (stays `draft`); `skipped` now `["hero", "drones", "services", "metrics"]`; README list 14→22 | `check:keystatic` OK every batch (final: 22 sections, 30 fixtures); `--verify` home clean every batch (final: 15 sections, no gaps); `yarn typecheck` clean every batch; `eslint --max-warnings=0` clean on touched files every batch. Commits: batch A `6a0e24a`, batch B `2731207`, batch C `c62aa14`, batch D `97b3508` (this docs update uncommitted). REMAINING to close M8: dev-smoke parity only (publish-flip `home`, compare `/en` + `/sw`, revert to `draft`) — needs a browser session | | |
