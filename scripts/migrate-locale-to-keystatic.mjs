@@ -414,6 +414,87 @@ function surveyingInstrumentsBuild(en, sw, where) {
 	};
 }
 
+// M9 follow-up batch F (2026-09-17): `services` tabbed explorer. Legacy
+// content is `common:services` (`{tag?, headline, items: [{icon, label,
+// description, whatWeOffer{label, description?, items[(string |
+// {label,href})]}, deliverables{label?, liveLabel?, description?,
+// checks[], items[{title, format?, icon?, image?, description}]}]}`).
+// `icon`s, offer `href`s and deliverable `image`s are shared; everything
+// else is localized. String offers migrate to `{label, href: ""}` objects
+// (the component renders both identically). NOTE: tag/headline come from
+// `common:services` — the component's legacy `home:services.*` lookup
+// addresses keys that no longer exist, so the Keystatic branch visibly
+// fixes the header (recorded in the plan).
+function servicesBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			const scope = `${where}.items[${i}]`;
+			const enOffers = item.whatWeOffer?.items ?? [];
+			const swOffers = swItem.whatWeOffer?.items ?? [];
+			if (!Array.isArray(swOffers) || swOffers.length !== enOffers.length) {
+				gap(scope, `offer count diverged (en=${enOffers.length} sw=${swOffers?.length})`);
+			}
+			const enDels = item.deliverables?.items ?? [];
+			const swDels = swItem.deliverables?.items ?? [];
+			if (!Array.isArray(swDels) || swDels.length !== enDels.length) {
+				gap(scope, `deliverable count diverged (en=${enDels.length} sw=${swDels?.length})`);
+			}
+			const enChecks = item.deliverables?.checks ?? [];
+			const swChecks = swItem.deliverables?.checks ?? [];
+			if (!Array.isArray(swChecks) || swChecks.length !== enChecks.length) {
+				gap(scope, `check count diverged (en=${enChecks.length} sw=${swChecks?.length})`);
+			}
+			return {
+				icon: sharedValue(item, swItem, "icon", scope) ?? "",
+				label: { en: reqText(item.label, `${scope}.label.en`), sw: reqText(swItem.label, `${scope}.label.sw`) },
+				description: { en: reqText(item.description, `${scope}.description.en`), sw: reqText(swItem.description, `${scope}.description.sw`) },
+				whatWeOffer: {
+					label: { en: reqText(item.whatWeOffer?.label, `${scope}.whatWeOffer.label.en`), sw: reqText(swItem.whatWeOffer?.label, `${scope}.whatWeOffer.label.sw`) },
+					description: { en: optText(item.whatWeOffer?.description), sw: optText(swItem.whatWeOffer?.description) },
+					items: enOffers.map((offer, j) => {
+						const swOffer = swOffers[j] ?? {};
+						const enObj = typeof offer === "string" ? { label: offer } : offer;
+						const swObj = typeof swOffer === "string" ? { label: swOffer } : swOffer;
+						return {
+							label: { en: reqText(enObj.label, `${scope}.whatWeOffer.items[${j}].label.en`), sw: reqText(swObj.label, `${scope}.whatWeOffer.items[${j}].label.sw`) },
+							href: sharedValue(enObj, swObj, "href", `${scope}.whatWeOffer.items[${j}]`) ?? "",
+						};
+					}),
+				},
+				deliverables: {
+					label: { en: optText(item.deliverables?.label), sw: optText(swItem.deliverables?.label) },
+					liveLabel: { en: optText(item.deliverables?.liveLabel), sw: optText(swItem.deliverables?.liveLabel) },
+					description: { en: optText(item.deliverables?.description), sw: optText(swItem.deliverables?.description) },
+					checks: enChecks.map((check, j) => ({
+						en: reqText(check, `${scope}.deliverables.checks[${j}].en`),
+						sw: reqText(swChecks[j], `${scope}.deliverables.checks[${j}].sw`),
+					})),
+					items: enDels.map((del, j) => {
+						const swDel = swDels[j] ?? {};
+						const dscope = `${scope}.deliverables.items[${j}]`;
+						return {
+							title: { en: reqText(del.title, `${dscope}.title.en`), sw: reqText(swDel.title, `${dscope}.title.sw`) },
+							format: { en: optText(del.format), sw: optText(swDel.format) },
+							icon: sharedValue(del, swDel, "icon", dscope) ?? "",
+							image: sharedValue(del, swDel, "image", dscope) ?? "",
+							description: { en: reqText(del.description, `${dscope}.description.en`), sw: reqText(swDel.description, `${dscope}.description.sw`) },
+						};
+					}),
+				},
+			};
+		}),
+		id: "",
+	};
+}
+
 // M8 batch C (2026-09-17): `coreExpertise` indexed grid. Legacy
 // `common:coreExpertise` holds `{tag?, headline, description?, items:
 // [{icon?, label, description, href?}]}`. `icon`/`href` are shared
@@ -2681,9 +2762,9 @@ const PAGES = {
 	// global LeadGenBar (`home` ns, never a page-builder branch),
 	// CoreExpertiseSection (`headerRow` + `hoverArrow` + `watermarkedIndexed`),
 	// client-only CoverageAreaSection (ProjectsGlobe), About/
-	// Tails stay legacy: bespoke WebGL hero, global LeadGenBar, Drones,
-	// Services bespoke (every other home section migrates in M7/M8;
-	// `metrics` stays in `skipped` — unrendered, commented out of the route).
+	// Tails stay legacy: bespoke WebGL hero, Drones bespoke (every other home
+	// section migrates in M7/M8 plus the M9 follow-up; `metrics` stays in
+	// `skipped` — unrendered, commented out of the route).
 	// NOTE: overwrites the
 	// M1 `home.json` starter fixture (placeholder since M1) with the real
 	// migrated home; entry stays `draft`.
@@ -2695,7 +2776,7 @@ const PAGES = {
 		// `contentNamespace` (`common.json`) while the page entry stays
 		// `home.json`.
 		contentNamespace: "common",
-		skipped: ["hero", "drones", "services", "metrics"],
+		skipped: ["hero", "drones", "metrics"],
 		sections: [
 			{
 				discriminant: "ctaBand",
@@ -2981,6 +3062,19 @@ const PAGES = {
 				// this mapping since HEAD `9b3f8d0`).
 				build(en, sw, where) {
 					return leadGenBarBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "services",
+				from: "services",
+				// Legacy: home route renders the shared <ServicesSection />
+				// over `common:services` (same `common.json` content
+				// namespace as every other section in this mapping since
+				// HEAD `9b3f8d0`). NOTE: tag/headline migrate from
+				// `common:services` — the component's legacy
+				// `home:services.*` lookup addresses missing keys.
+				build(en, sw, where) {
+					return servicesBuild(en, sw, where);
 				},
 			},
 		],

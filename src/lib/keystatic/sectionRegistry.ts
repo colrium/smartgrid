@@ -220,9 +220,22 @@ import {
  * `planningInfographic.closingStatement` — field description warns
  * editors). `title`/`link`/`type` locale keys are unrendered — excluded.
  * SSR-safe: effect-only `FadeUp`, no browser APIs on first render.
+ *
+ * M9 follow-up batch F (2026-09-17): `services` wraps the shared
+ * `ServicesSection` tabbed explorer (tag + headline + `items` `[{icon,
+ * label, description, whatWeOffer, deliverables}]`). Same additive `data`
+ * refactor (omitted = legacy strings; other pages' bare callers
+ * untouched). LEGACY BUG FIX (visible, recorded): the component read
+ * tag/headline from `home:services.*`, which no longer exists in locale
+ * JSON (nodes moved to `common.json`) — the legacy header renders the raw
+ * key strings. The Keystatic branch sources tag/headline from
+ * `common:services` instead, so opting in visibly fixes the header.
+ * Offer items migrate strings → `{label, href: ""}` objects (the component
+ * renders both identically). SSR-safe: `useState` tabs + `motion` animate
+ * client-side only (SurveyCost precedent).
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -2069,6 +2082,150 @@ const leadGenBar: SectionDefinition = {
 	}),
 };
 
+const services: SectionDefinition = {
+	id: "services",
+	version: 1,
+	label: "Services",
+	description: "Tabbed services explorer with offers and deliverables per tab.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon",
+					description: "Icon slug without the `mdi-` prefix.",
+				}),
+				label: localeText("Label"),
+				description: localeLongText("Description"),
+				whatWeOffer: fields.object(
+					{
+						label: localeText("Label"),
+						description: localeLongText("Description", { optionalInEnglish: true }),
+						items: fields.array(
+							fields.object({
+								label: localeText("Label"),
+								href: fields.text({ label: "Link (optional)", description: "Empty = plain text." }),
+							}),
+							{
+								label: "Offers",
+								itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Offer"),
+							}
+						),
+					},
+					{ label: "What we offer" }
+				),
+				deliverables: fields.object(
+					{
+						label: localeText("Label", { optionalInEnglish: true }),
+						liveLabel: localeText("Live label", { optionalInEnglish: true }),
+						description: localeLongText("Description", { optionalInEnglish: true }),
+						checks: fields.array(localeText("Check", { optionalInEnglish: true }), {
+							label: "Checks",
+							itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Check"),
+						}),
+						items: fields.array(
+							fields.object({
+								title: localeText("Title"),
+								format: localeText("Format", { optionalInEnglish: true }),
+								icon: fields.text({
+									label: "MDI icon (optional)",
+									description: "Icon slug without the `mdi-` prefix. Empty = positional default.",
+								}),
+								image: imagePath("Image (optional)"),
+								description: localeLongText("Description"),
+							}),
+							{
+								label: "Deliverables",
+								itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Deliverable"),
+							}
+						),
+					},
+					{ label: "Deliverables" }
+				),
+			}),
+			{
+				label: "Services",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Service"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `classes`/`className` (visual tuning,
+		// not an editor contract).
+	}),
+	example: {
+		tag: { en: "Services", sw: "Huduma" },
+		headline: { en: "Our Services", sw: "Huduma Zetu" },
+		items: [
+			{
+				icon: "land-fields",
+				label: { en: "Land Surveying", sw: "Upimaji wa Ardhi" },
+				description: { en: "Topographical and boundary surveys.", sw: "Upimaji wa topografia na mipaka." },
+				whatWeOffer: {
+					label: { en: "What we offer", sw: "Tunachotoa" },
+					description: { en: "", sw: "" },
+					items: [{ label: { en: "Topographical surveys", sw: "Upimaji wa topografia" }, href: "/surveying/topographical-surveys" }],
+				},
+				deliverables: {
+					label: { en: "Deliverables", sw: "Vile tunavyotoa" },
+					liveLabel: { en: "Deliverable", sw: "Matokeo" },
+					description: { en: "Professional outputs.", sw: "Matokeo ya kitaalamu." },
+					checks: [{ en: "Submission-ready", sw: "Tayari kuwasilishwa" }],
+					items: [
+						{
+							title: { en: "Boundary Survey Reports", sw: "Ripoti za Upimaji wa Mipaka" },
+							format: { en: "PDF", sw: "PDF" },
+							icon: "vector-square",
+							image: "",
+							description: { en: "Signed reports.", sw: "Ripoti zilizosainiwa." },
+						},
+					],
+				},
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon ?? "",
+						label: item?.label ?? "",
+						description: item?.description ?? "",
+						whatWeOffer: {
+							label: item?.whatWeOffer?.label ?? "",
+							description: item?.whatWeOffer?.description ?? "",
+							items: Array.isArray(item?.whatWeOffer?.items)
+								? item.whatWeOffer.items.map((offer: any) => ({
+										label: offer?.label ?? "",
+										href: offer?.href || undefined,
+									}))
+								: [],
+						},
+						deliverables: {
+							label: item?.deliverables?.label ?? "",
+							liveLabel: item?.deliverables?.liveLabel ?? "",
+							description: item?.deliverables?.description ?? "",
+							checks: Array.isArray(item?.deliverables?.checks) ? item.deliverables.checks : [],
+							items: Array.isArray(item?.deliverables?.items)
+								? item.deliverables.items.map((deliverable: any) => ({
+										title: deliverable?.title ?? "",
+										format: deliverable?.format ?? "",
+										icon: deliverable?.icon || null,
+										image: deliverable?.image || undefined,
+										description: deliverable?.description ?? "",
+									}))
+								: [],
+						},
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
 export const sectionRegistry: readonly SectionDefinition[] = [
 	introText,
 	ctaBand,
@@ -2093,6 +2250,7 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	coverageArea,
 	surveyCost,
 	leadGenBar,
+	services,
 ];
 
 export function getSectionDefinition(id: string): SectionDefinition {
@@ -2125,6 +2283,7 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	coverageArea: coverageArea.label,
 	surveyCost: surveyCost.label,
 	leadGenBar: leadGenBar.label,
+	services: services.label,
 };
 
 /**

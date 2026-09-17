@@ -31,16 +31,34 @@ export interface ServicesClassesProp {
 	tabs?: string;
 	content?: string;
 }
+export interface ServicesContent {
+	tag?: string | null;
+	headline?: string;
+	items?: ServiceItem[] | null;
+}
 export interface ServicesProps extends HTMLAttributes<HTMLDivElement> {
 	id?: string;
 	classes?: ServicesClassesProp;
+	/** Section content. When omitted, the legacy locale strings render
+	 * (`common:services.items` + `home:services.tag/headline`) — unchanged
+	 * behavior for non-Keystatic callers. NOTE: `home:services.*` no longer
+	 * exists in locale JSON (nodes moved to `common.json`), so the legacy
+	 * header renders the raw key strings; the Keystatic branch sources
+	 * tag/headline from `common:services` instead (visible fix). */
+	data?: ServicesContent | null;
 }
 
 const PANEL_EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
-export function ServicesSection({ id = "services", className, classes }: ServicesProps): ReactElement | null {
+export function ServicesSection({ id = "services", className, classes, data }: ServicesProps): ReactElement | null {
 	const { t } = useTranslation(["common"]);
-	const items = t("common:services.items", { returnObjects: true }) as unknown as ServiceItem[];
+	const items = (
+		Array.isArray(data?.items)
+			? data.items
+			: (t("common:services.items", { returnObjects: true }) as unknown as ServiceItem[])
+	) as ServiceItem[];
+	const tag = data ? (data.tag ?? "") : (t("home:services.tag") as string);
+	const headline = data ? (data.headline ?? "") : (t("home:services.headline") as string);
 	const [activeTab, setActiveTab] = useState(0);
 
 	if (!Array.isArray(items) || items.length === 0) return null;
@@ -60,8 +78,8 @@ export function ServicesSection({ id = "services", className, classes }: Service
 				/>
 				<FadeUp>
 					<SectionHeader
-						tag={t("home:services.tag") as string}
-						headline={t("home:services.headline") as string}
+						tag={tag}
+						headline={headline}
                         align="center"
                         classes={classes?.sectionHeader}
 					/>

@@ -39,9 +39,10 @@ interface PageProps {
  * industriesWeServe cardGrid, faq, actionCtaEngineer ctaBand, defaultCta
  * ctaBand, trustees, certifications, keyFacts, whyChooseUs, about,
  * surveyingInstruments, coreExpertise, planningInfographic, surveyCost,
- * coverageArea, leadGenBar (M8, 2026-09-16/17; leadGenBar M9 follow-up).
+ * coverageArea, leadGenBar, services (M8, 2026-09-16/17; leadGenBar +
+ * services M9 follow-up).
  * Thirteen legacy tails (bespoke WebGL hero,
- * Drones/Services bespoke) sit at fixed
+ * Drones bespoke) sit at fixed
  * positions between them, so the route renders each Keystatic section by
  * index instead of one whole PageBuilderDocument. If an edit changes the
  * section COUNT, the route falls back to legacy rather than misplacing
@@ -50,7 +51,7 @@ interface PageProps {
  * `leadGenBar` keeps its route-level positioning (`-mt-48` overlap) via
  * `cloneElement`: the registry stores content only, never `className`.
  */
-const KEYSTATIC_SECTION_COUNT = 16;
+const KEYSTATIC_SECTION_COUNT = 17;
 
 function orderedSections(page: ResolvedKeystaticPage) {
 	if (page.sections.length !== KEYSTATIC_SECTION_COUNT) {
@@ -63,7 +64,7 @@ function orderedSections(page: ResolvedKeystaticPage) {
 }
 
 const Page: NextPage<PageProps> = ({ keystaticPage }) => {
-	// Migration source switch (M3/M7): Keystatic owns the sixteen migrated
+	// Migration source switch (M3/M7): Keystatic owns the seventeen migrated
 	// sections only when the slug is allowlisted via `KEYSTATIC_PAGES` and the
 	// entry is published. Otherwise the legacy locale-JSON implementation
 	// renders unchanged.
@@ -92,7 +93,7 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 
 					{renderAt(0)}
 
-					<ServicesSection />
+					{renderAt(16)}
 					{renderAt(1)}
 					<div className="flex flex-col  w-full">
 						{renderAt(8)}
