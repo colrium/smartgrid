@@ -636,7 +636,7 @@ fail safe per M3 taxonomy.
 
 ### M9: Editable Common Layout Content
 
-**Status: NOT STARTED**
+**Status: IN PROGRESS**
 
 Dependencies: M8 (registry pattern proven on the new sections); layout sources today:
 `src/layouts/LandingPage/Navbar.tsx` (`common:nav` + `common:contacts` + `meta:site`),
@@ -654,15 +654,66 @@ singleton/collection (e.g. `content/site.json` or `content/layout/*.json`), NOT 
 `pageBuilder` branch; pages keep rendering layout outside `<main>` per
 `src/layouts/LandingPage/Layout.tsx`.
 
-- [ ] Decide the layout content model (singleton vs collection, file path(s),
+- [x] Decide the layout content model (singleton vs collection, file path(s),
       relationship to `common.json`/`contact.json` namespaces) and record with date.
-- [ ] Define typed schemas (nav links incl. nested `links`, footer columns, contact
+      (Decided 2026-09-17, Stage 1 inventory: ONE Keystatic singleton `site` →
+      `content/site.json` with `status` draft/published — site-wide data, NOT
+      `pageBuilder` branches. Reader inventory proves the owned surface:
+      Navbar reads `common:nav.{links,logo,logo_light,logo_alt}` +
+      `common:contacts` (PageTransitionLoader also reads `nav.logo` — inherits
+      the override); both Footers read `common:footer.*` +
+      `contact:talkToUs.contacts` + `contact:social.channels`; CookieConsent
+      reads `common:cookies.*`. Delivery is a server-side STORE OVERRIDE in
+      `getI18nProps` (single touch point, zero component changes): published +
+      allowlisted singleton → deep-merge owned slices into
+      `_nextI18Next.initialI18nStore`, then `signMediaDeep` (so Keystatic
+      media refs are signed too); otherwise the legacy store ships
+      byte-identical. Opt-in reuses the M3 switch: reserved slug `site` in
+      `KEYSTATIC_PAGES` + `KEYSTATIC_DISABLE` kill-switch, same taxonomy.
+      Side effect (documented): legacy `/contact` tail (`TalkToUsSection`
+      reads whole `contact:talkToUs`) follows the singleton too — single
+      source; the `/contact` page ENTRY copy wins on `/contact` when opted
+      in. Explicitly OUT: `common:socials` (unrendered dead content),
+      `nav.ctaPrimary/ctaSecondary/ctaSearch` + `nav.logo_dark`
+      (unrendered), `common:locales`/`common:misc` (routing), `meta:site`
+      (brand/SEO, legacy-owned).)
+- [x] Define typed schemas (nav links incl. nested `links`, footer columns, contact
       items, social channels, cookie-consent copy) with `en`/`sw` parity + fallback.
-- [ ] Wire `Navbar`/`Footer`/`CookieConsent` to the Keystatic reader with legacy
+      (Stage 2, 2026-09-17: `src/lib/keystatic/siteLayout.ts` — single source
+      for the `site` singleton schema (`siteLayoutSchema`), normalize
+      (`normalizeSiteLayout`) and example (`siteLayoutExample`); config adds
+      `singletons.site` with `path: "content/site"` (prefix — the reader
+      appends `.json`; `content/site.json` on disk). `resolveLayout.ts`
+      implements the M3 taxonomy for the reserved slug `site` + `mergeSiteLayoutIntoStore`.
+      Migration `scripts/migrate-layout-to-keystatic.mjs` (`--write`/`--verify`,
+      `yarn migrate:layout`) generated `content/site.json` (`draft`, no gaps).
+      Fixes found by checks: singleton path prefix (was `content/site.json` →
+      reader looked for `content/site.json.json`); `previewText` path for
+      localeText arrays is `["fields","en","value"]`. Check script pins:
+      schema keys, example normalization, resolver matrix
+      (disabled/missing/unpublished/malformed → legacy), real-fixture
+      resolution (sw: 6 nav links, `Upimaji` first label, 6 footer contacts,
+      4 social channels), merge replacement + `nav` additivity, and full
+      en+sw owned-slice parity with legacy.)
+- [x] Wire `Navbar`/`Footer`/`CookieConsent` to the Keystatic reader with legacy
       locale-JSON fallback (same M3 taxonomy: disabled/missing/unpublished/error →
       legacy + warn, never blank).
+      (Stage 3, 2026-09-17: zero component changes — `getI18nProps`
+      (`src/lib/i18n.ts`, the single funnel for every page incl.
+      `makeStaticProps`) resolves the singleton and merges owned slices into
+      the serialized store before `signMediaDeep`. Two normalize fixes from
+      the parity proof: empty nav `links` omitted (legacy Contact pill has no
+      `links` key) and store keys stay snake_case (`logo_light`,
+      `logo_alt`); `nav` merges additively so dead keys (`logo_dark`,
+      `cta*`) survive. Ops: `check:keystatic` chain + `migrate:layout`
+      helper in `package.json`; `site` slug documented in `.env.example`.)
 - [ ] Prove `check:keystatic` + `typecheck` + `lint` + dev-smoke parity (layout change
       visible on multiple routes, rollback via kill-switch).
+      (`check:keystatic` OK incl. layout matrix + parity, `typecheck` clean,
+      `eslint` clean on touched files — all 2026-09-17. PENDING: dev-smoke —
+      allowlist `site` with a temp local publish flip, confirm navbar/footer/
+      cookies change on multiple routes in `/en` + `/sw`, revert to `draft`,
+      and flip `KEYSTATIC_DISABLE=1` to confirm rollback. Needs a browser session.)
 
 **Exit criteria:** an editor can change navbar/footer/cookie-consent/socials/contacts
 once in Keystatic (both locales) and see it site-wide; legacy locale JSON still renders
@@ -794,4 +845,5 @@ For every implementation change:
 | 2026-09-16 | M7 | Batch 17 DONE (home, tests deferred): 2 split/shimmer ActionCtas + Industries label→title cardGrid (CardList renders `title ?? label`, stored title identical) + faq with direct still-curious object + masked/id Cta, 5 sections, `draft` (overwrites M1 starter). Entry generated via `--write` (no gaps — generation only). `[locale]/index.tsx` wired interleaved with count guard 5 (nested layout divs preserved). Tails stay legacy: WebGL hero, global LeadGenBar, CoreExpertise extras grid, CoverageArea globe, bespoke rest | Validation DEFERRED per M7 policy: no `--verify`/`check:keystatic`/`typecheck`/`lint`/dev-smoke this batch; run once after all M7 stages | |
 | 2026-09-16 | M7 | CLOSE-OUT — M7 DONE. Deferred validation run once across the whole site, all green: `check:keystatic` OK (11 sections, 30 fixtures; 1 stale assertion fixed — M1 starter home → migrated home + temp publish); `--verify` clean for all 30 mapped pages; `yarn typecheck` clean; `yarn lint` clean; dev-smoke user-confirmed good (all 30 routes en+sw, temp publish flips reverted; company-profile stays `published` per M4); README (11 sections) + `.env.example` (multi-slug allowlist) updated; rollback covered by resolver matrix. M7 exit criteria met: 30 wired (`draft` except company-profile) + 4 deferred-with-reason (landing/drone-imagery/photography bespoke-only, aerial-volumetric en-only) + equipment file-based. Residuals → M6: `yarn build` standing skip, keyboard/responsive/visual + perf need a browser session. NOTE: unrelated `Process/index.tsx` timeline-visual tweak in working tree — not reviewed, not committed, left for its owner | M7 DONE; M6 stays IN PROGRESS on browser residuals only | |
 | 2026-09-17 | M8 | `certifications` + `keyFacts` registered (new ids v1, schema + example + normalize + renderer each; `certifications.name` shared literal via `sharedValue` gate, `keyFacts.icon` shared with positional fallback; itemLabel previews fixed — `keyFacts` items carry `label` not `title`, so inline `previewText` on `fields.label` instead of `previewTitledItem`). Migration: `certificationsBuild` + `keyFactsBuild` (4 items each, no gaps), home `skipped` drops both, `home.json` 6→8 sections, `--verify` clean. Route: count guard 6→7→8, `renderAt(6)` replaces legacy `<CertificationsSection/>`, `renderAt(7)` replaces legacy `<KeyFactsSection/>` (legacy branch untouched, visual order preserved). README section list 11→14. Files: `sectionRegistry.ts`, `sectionRenderers.tsx`, `migrate-locale-to-keystatic.mjs`, `check-keystatic-pages.mjs`, `[locale]/index.tsx`, `content/pages/home.json`, README, plan | `check:keystatic` OK (14 sections, 30 fixtures; 3 fallback warnings = expected negatives); `--verify` home clean (8 sections, no gaps); `yarn typecheck` clean (23s); `eslint --max-warnings=0` clean on touched files. PENDING: dev-smoke parity (publish-flip `home`, compare `/en` + `/sw`, revert to `draft`) — needs a browser session; 9 M8 sections remain (About, CoreExpertise, CoverageArea, IndustriesWeServe, Metrics, PlanningInfographic, SurveyCost, WhyChooseUs, SurveyingInstruments) | |
-| 2026-09-17 | M8 | Batches A–D DONE (all 9 remaining sections resolved, one commit per batch with simple message). A: `metrics` (new id v1, registered-only — wrapper commented out of route) + `whyChooseUs` (new id v1, migrated, 6 items). B: `about` (whoWeAre/mission/featureImg/cards) + `surveyingInstruments` (7 items, empty-href→`<article>` branch preserved) — fixed an `eslint` unused-arg warning in the `block` helper. C: `coreExpertise` (new id v1, NOT `cardGrid` v3 — presentation flags outside v2 contract) + `planningInfographic` (closingStatement verbatim as visibility gate; component keeps `<Trans>` lookup — check-script emits the expected `NO_I18NEXT_INSTANCE` notice in its isolated render); `industriesWeServe` decided covered-by-`cardGrid`, no code. D: `coverageArea` (shared-number gate for stat values, localized chips) + `surveyCost` (nested factors/ranges/includes, integer prices, CTA hrefs shared); fixed a mapping-order swap (surveyCost/coverageArea) caught by the fixture string. Route count guard 8→9→11→13→15; legacy branch untouched throughout. `home.json` 8→15 sections (stays `draft`); `skipped` now `["hero", "drones", "services", "metrics"]`; README list 14→22 | `check:keystatic` OK every batch (final: 22 sections, 30 fixtures); `--verify` home clean every batch (final: 15 sections, no gaps); `yarn typecheck` clean every batch; `eslint --max-warnings=0` clean on touched files every batch. Commits: batch A `6a0e24a`, batch B `2731207`, batch C `c62aa14`, batch D `97b3508` (this docs update uncommitted). REMAINING to close M8: dev-smoke parity only (publish-flip `home`, compare `/en` + `/sw`, revert to `draft`) — needs a browser session | | |
+| 2026-09-17 | M8 | Batches A–D DONE (all 9 remaining sections resolved, one commit per batch with simple message). A: `metrics` (new id v1, registered-only — wrapper commented out of route) + `whyChooseUs` (new id v1, migrated, 6 items). B: `about` (whoWeAre/mission/featureImg/cards) + `surveyingInstruments` (7 items, empty-href→`<article>` branch preserved) — fixed an `eslint` unused-arg warning in the `block` helper. C: `coreExpertise` (new id v1, NOT `cardGrid` v3 — presentation flags outside v2 contract) + `planningInfographic` (closingStatement verbatim as visibility gate; component keeps `<Trans>` lookup — check-script emits the expected `NO_I18NEXT_INSTANCE` notice in its isolated render); `industriesWeServe` decided covered-by-`cardGrid`, no code. D: `coverageArea` (shared-number gate for stat values, localized chips) + `surveyCost` (nested factors/ranges/includes, integer prices, CTA hrefs shared); fixed a mapping-order swap (surveyCost/coverageArea) caught by the fixture string. Route count guard 8→9→11→13→15; legacy branch untouched throughout. `home.json` 8→15 sections (stays `draft`); `skipped` now `["hero", "drones", "services", "metrics"]`; README list 14→22 | `check:keystatic` OK every batch (final: 22 sections, 30 fixtures); `--verify` home clean every batch (final: 15 sections, no gaps); `yarn typecheck` clean every batch; `eslint --max-warnings=0` clean on touched files every batch. Commits: batch A `6a0e24a`, batch B `2731207`, batch C `c62aa14`, batch D `97b3508`, docs `50af3b3`. REMAINING to close M8: dev-smoke parity only (publish-flip `home`, compare `/en` + `/sw`, revert to `draft`) — needs a browser session | | |
+| 2026-09-17 | M9 | Stage 1 DONE (model decided: one `site` singleton → `content/site.json`, store-override delivery in `getI18nProps`, reserved slug `site` + kill-switch, exclusions recorded). Stage 2 DONE (commit `2dce4e3`): `siteLayout.ts` (schema + normalize + example), `resolveLayout.ts` (taxonomy + merge helper), config singleton (`path: "content/site"` — prefix, reader appends `.json`), `migrate-layout-to-keystatic.mjs` + `content/site.json` (`draft`, no gaps), check-script layout matrix. Fixes: singleton path prefix; localeText-array `itemLabel` path `["fields","en","value"]`. Stage 3 DONE (commit `72b7106`): `getI18nProps` merge (zero component changes) + `check:keystatic` chain + `migrate:layout` helper + `.env.example` `site` docs. Parity proof fixes: empty nav `links` omitted; store keys snake_case; `nav` merges additively (dead keys survive). Docs commit (this change): plan checklist + README operator guide | `check:keystatic` OK (22 sections + layout matrix + en/sw parity); `migrate-layout --verify` clean; `yarn typecheck` clean; `eslint` clean on touched files. REMAINING to close M9: dev-smoke only (allowlist `site` + temp publish flip on multiple routes en+sw, revert to `draft`, kill-switch rollback) — needs a browser session | |

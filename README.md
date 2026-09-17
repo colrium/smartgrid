@@ -384,6 +384,18 @@ source for editor options and renderer mappings.
   set the entry back to `draft`; global kill-switch — `KEYSTATIC_DISABLE=1` forces
   every route to legacy locale JSON. Both are tested in
   `scripts/check-keystatic-pages.mjs` (resolver matrix).
+- **Site layout (navbar / footer / contacts / socials / cookie consent):** edit
+  once in the `Site layout` singleton (`content/site.json`), in both locales, and
+  it applies site-wide — no component changes needed (the server merges the
+  published layout into the i18n store in `getI18nProps`). Publish flow is the
+  same as pages: `status: published` **plus** the reserved slug `site` in
+  `KEYSTATIC_PAGES`; rollback is per-site (drop `site` / re-draft) or the same
+  global `KEYSTATIC_DISABLE=1`. Regenerate/verify with
+  `node scripts/migrate-layout-to-keystatic.mjs --write|--verify`
+  (`yarn migrate:layout`). Notes: `common:socials`, `nav.cta*`, `nav.logo_dark`,
+  `common:locales`/`misc` and `meta:site` stay legacy-owned (unrendered or
+  routing/brand); the legacy `/contact` tail follows the singleton, while the
+  `/contact` page entry copy wins on `/contact` when opted in.
 - **Admin access:** non-development `/keystatic/*` and `/api/keystatic/*` require
   HTTP Basic Auth (`KEYSTATIC_ADMIN_USER` / `KEYSTATIC_ADMIN_PASSWORD`, fail-closed,
   constant-time compare in `src/proxy.ts`). Generate the password with
