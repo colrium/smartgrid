@@ -188,9 +188,30 @@ import {
  * statement, but editing its text does not change output until the
  * component is refactored props-driven (field description warns editors).
  * SSR-safe: effect-only `FadeUp`, pure-span `Blob`.
+ *
+ * M8 batch D (2026-09-17): `coverageArea` wraps the shared `CoverageArea`
+ * region section (tag + headline + description + `hqPin?` + `stats`
+ * `[{icon, value, suffix, label}]` + `groups` `[{icon, label, description,
+ * items[]}]` + `note?`). `icon`/`value`/`suffix` are shared (numbers and
+ * `+` literals identical in en/sw — divergence aborts); `label`,
+ * `hqPin`, `note`, group `label`/`description` and the location chips are
+ * localized (the last group's chips diverge: `Somalia & wider East Africa`
+ * vs `Somalia na Afrika Mashariki pana`). SSR-safe: the WebGL globe loads
+ * via `next/dynamic ssr:false` inside `DeferredMount` (static spinner
+ * fallback renders on the server), `CountUp`/`FadeUp` are effect-only.
+ * New id v1 — no overlap with `stats`/`cardGrid`.
+ *
+ * M8 batch D (2026-09-17): `surveyCost` wraps the shared `SurveyCost`
+ * tabbed estimator (tag + headline + description + `factors` `{label?,
+ * items[]}` + `ranges` `{label?, hint?, items[]}` + `disclaimer?` + `cta?`
+ * + `secondaryCta?`). Factor/range `icon`s, `price` numbers and CTA
+ * `href`s are shared; all labels, descriptions, `includes` bullets,
+ * `pricePrefix`/`tagline` and CTA labels are localized. SSR-safe:
+ * `useState` tab index only affects event handlers — first render is
+ * static (`CountUp`/`motion` animate client-side).
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -1711,6 +1732,251 @@ const planningInfographic: SectionDefinition = {
 	}),
 };
 
+const coverageArea: SectionDefinition = {
+	id: "coverageArea",
+	version: 1,
+	label: "Coverage area",
+	description: "Region coverage: HQ pin, count-up stats, location-group cards and note.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description", { optionalInEnglish: true }),
+		hqPin: localeText("HQ pin", { optionalInEnglish: true }),
+		stats: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon",
+					description: "Icon slug without the `mdi-` prefix.",
+				}),
+				value: fields.integer({ label: "Value", defaultValue: 0, validation: { min: 0 } }),
+				suffix: fields.text({ label: "Suffix (shared)", description: "Identical in en/sw." }),
+				label: localeText("Label"),
+			}),
+			{
+				label: "Stats",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Stat"),
+			}
+		),
+		groups: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon",
+					description: "Icon slug without the `mdi-` prefix.",
+				}),
+				label: localeText("Label"),
+				description: localeLongText("Description"),
+				items: fields.array(localeText("Location", { optionalInEnglish: true }), {
+					label: "Locations",
+					itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Location"),
+				}),
+			}),
+			{
+				label: "Groups",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Group"),
+			}
+		),
+		note: localeLongText("Note", { optionalInEnglish: true }),
+		id: anchorField(),
+		// Excluded from v1 (documented): `classes`/`className` (visual tuning,
+		// not an editor contract). The globe image (`/img/earth/earth-light.jpg`)
+		// is fixed presentation, not content.
+	}),
+	example: {
+		tag: { en: "Coverage Area", sw: "Eneo la Huduma" },
+		headline: { en: "From Nairobi to the wider East Africa", sw: "Kutoka Nairobi hadi Afrika Mashariki" },
+		description: { en: "Strong operational scale across the region.", sw: "Uwepo mkubwa wa uendeshaji katika mkoa." },
+		hqPin: { en: "HQ — Ruiru, Nairobi", sw: "Makao Makuu — Ruiru, Nairobi" },
+		stats: [
+			{
+				icon: "map-marker-multiple",
+				value: 7,
+				suffix: "+",
+				label: { en: "Countries covered", sw: "Nchi zilizofunikwa" },
+			},
+		],
+		groups: [
+			{
+				icon: "home-city",
+				label: { en: "Core Counties", sw: "Kaunti Kuu" },
+				description: { en: "Where we are based and most active.", sw: "Tulikotoa na tunaofanya kazi zaidi." },
+				items: [{ en: "Nairobi", sw: "Nairobi" }],
+			},
+		],
+		note: { en: "Working off the grid? We deploy.", sw: "Unafanya kazi nje ya ramani? Tunawasili." },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			hqPin: resolved.hqPin,
+			stats: Array.isArray(resolved.stats)
+				? resolved.stats.map((stat: any) => ({
+						icon: stat?.icon ?? "",
+						value: typeof stat?.value === "number" ? stat.value : 0,
+						suffix: stat?.suffix ?? "",
+						label: stat?.label ?? "",
+					}))
+				: [],
+			groups: Array.isArray(resolved.groups)
+				? resolved.groups.map((group: any) => ({
+						icon: group?.icon ?? "",
+						label: group?.label ?? "",
+						description: group?.description ?? "",
+						items: Array.isArray(group?.items) ? group.items : [],
+					}))
+				: [],
+			note: resolved.note,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+const surveyCost: SectionDefinition = {
+	id: "surveyCost",
+	version: 1,
+	label: "Survey cost",
+	description: "Tabbed cost estimator: cost factors, price ranges, disclaimer and CTAs.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description", { optionalInEnglish: true }),
+		factors: fields.object(
+			{
+				label: localeText("Label", { optionalInEnglish: true }),
+				items: fields.array(
+					fields.object({
+						icon: fields.text({
+							label: "MDI icon",
+							description: "Icon slug without the `mdi-` prefix.",
+						}),
+						label: localeText("Label"),
+						description: localeLongText("Description"),
+					}),
+					{
+						label: "Factors",
+						itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Factor"),
+					}
+				),
+			},
+			{ label: "Cost factors" }
+		),
+		ranges: fields.object(
+			{
+				label: localeText("Label", { optionalInEnglish: true }),
+				hint: localeText("Hint", { optionalInEnglish: true }),
+				items: fields.array(
+					fields.object({
+						icon: fields.text({
+							label: "MDI icon",
+							description: "Icon slug without the `mdi-` prefix.",
+						}),
+						label: localeText("Label"),
+						price: fields.integer({ label: "Price (KES)", defaultValue: 0, validation: { min: 0 } }),
+						pricePrefix: localeText("Price prefix", { optionalInEnglish: true }),
+						tagline: localeText("Tagline", { optionalInEnglish: true }),
+						description: localeLongText("Description"),
+						includes: fields.array(localeText("Included", { optionalInEnglish: true }), {
+							label: "Includes",
+							itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Included"),
+						}),
+					}),
+					{
+						label: "Ranges",
+						itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Range"),
+					}
+				),
+			},
+			{ label: "Price ranges" }
+		),
+		disclaimer: localeLongText("Disclaimer", { optionalInEnglish: true }),
+		cta: linkObject("Primary CTA"),
+		secondaryCta: linkObject("Secondary CTA"),
+		id: anchorField(),
+		// Excluded from v1 (documented): `classes`/`className` (visual tuning,
+		// not an editor contract).
+	}),
+	example: {
+		tag: { en: "Budget Planning", sw: "Kupanga Bajeti" },
+		headline: { en: "How Much Does a Survey Cost?", sw: "Upimaji Unagharimu Kiasi Gani?" },
+		description: { en: "Site realities shape every quotation.", sw: "Hali ya tovuti huunda kila nukuu." },
+		factors: {
+			label: { en: "Survey costs depend on:", sw: "Gharama hutegemea:" },
+			items: [
+				{
+					icon: "ruler-square-compass",
+					label: { en: "Project size and terrain", sw: "Ukubwa wa mradi na mazingira" },
+					description: { en: "Acres, slopes and vegetation.", sw: "Eka, miteremko na mimea." },
+				},
+			],
+		},
+		ranges: {
+			label: { en: "Typical ranges", sw: "Masafa ya kawaida" },
+			hint: { en: "Tap a survey type", sw: "Gusa aina ya upimaji" },
+			items: [
+				{
+					icon: "vector-square",
+					label: { en: "Boundary Surveys", sw: "Upimaji wa Mipaka" },
+					price: 30000,
+					pricePrefix: { en: "From KES", sw: "Kuanzia KES" },
+					tagline: { en: "Know where your land ends", sw: "Jua ardhi yako inaishia wapi" },
+					description: { en: "Property lines and beacons.", sw: "Mistari ya mali na nguzo." },
+					includes: [{ en: "Boundary delineation", sw: "Kutambua mipaka" }],
+				},
+			],
+		},
+		disclaimer: { en: "Starting ranges only.", sw: "Masafa ya kuanzia tu." },
+		cta: {
+			label: { en: "Get a Custom Quotation", sw: "Pata Nukuu Maalum" },
+			href: "/contact?reason=custom-quotation#contact-form",
+			icon: "invoice-text",
+		},
+		secondaryCta: {
+			label: { en: "Talk to a Surveyor", sw: "Ongea na Mpimaji" },
+			href: "/contact?reason=talk-to-surveyor#contact-form",
+			icon: "account-voice",
+		},
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			factors: {
+				label: resolved.factors?.label,
+				items: Array.isArray(resolved.factors?.items)
+					? resolved.factors.items.map((factor: any) => ({
+							icon: factor?.icon ?? "",
+							label: factor?.label ?? "",
+							description: factor?.description ?? "",
+						}))
+					: [],
+			},
+			ranges: {
+				label: resolved.ranges?.label,
+				hint: resolved.ranges?.hint,
+				items: Array.isArray(resolved.ranges?.items)
+					? resolved.ranges.items.map((range: any) => ({
+							icon: range?.icon ?? "",
+							label: range?.label ?? "",
+							price: typeof range?.price === "number" ? range.price : 0,
+							pricePrefix: range?.pricePrefix ?? "",
+							tagline: range?.tagline ?? "",
+							description: range?.description ?? "",
+							includes: Array.isArray(range?.includes) ? range.includes : [],
+						}))
+					: [],
+			},
+			disclaimer: resolved.disclaimer,
+			cta: presentLink(resolved.cta),
+			secondaryCta: presentLink(resolved.secondaryCta),
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
 export const sectionRegistry: readonly SectionDefinition[] = [
 	introText,
 	ctaBand,
@@ -1732,6 +1998,8 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	surveyingInstruments,
 	coreExpertise,
 	planningInfographic,
+	coverageArea,
+	surveyCost,
 ];
 
 export function getSectionDefinition(id: string): SectionDefinition {
@@ -1761,6 +2029,8 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	surveyingInstruments: surveyingInstruments.label,
 	coreExpertise: coreExpertise.label,
 	planningInfographic: planningInfographic.label,
+	coverageArea: coverageArea.label,
+	surveyCost: surveyCost.label,
 };
 
 /**

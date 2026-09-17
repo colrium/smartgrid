@@ -987,6 +987,335 @@
 				},
 				"id": ""
 			}
+		},
+		{
+			"discriminant": "surveyCost",
+			"value": {
+				"tag": {
+					"en": "Budget Planning",
+					"sw": "Mpango wa Bajeti"
+				},
+				"headline": {
+					"en": "How Much Does a Survey Cost in Kenya?",
+					"sw": "Upimaji Unagharimu Kiasi Gani Kenya?"
+				},
+				"description": {
+					"en": "The honest answer: it depends — but not by mystery. A few site realities shape every quotation we issue, and knowing them puts you in control of the budget conversation.",
+					"sw": "Jibu la kweli: inategemea — lakini si kwa siri. Uhalisia mdogo wa tovuti yako unaounda kila nukuu tunayotoa, na kuujua hukuweka wewe mwenyewe mwenye udhibiti wa mazungumzo ya bajeti."
+				},
+				"factors": {
+					"label": {
+						"en": "Survey costs depend on:",
+						"sw": "Gharama za upimaji hutegemea:"
+					},
+					"items": [
+						{
+							"icon": "ruler-square-compass",
+							"label": {
+								"en": "Project size and terrain",
+								"sw": "Ukubwa wa mradi na mazingira ya ardhi"
+							},
+							"description": {
+								"en": "Acres to cover, slopes, vegetation, and how much ground the crew must walk.",
+								"sw": "Eka za kufunikwa, mitelemko, mimea, na umbali ambao timu inapaswa kutembea."
+							}
+						},
+						{
+							"icon": "map-search-outline",
+							"label": {
+								"en": "Type of survey required",
+								"sw": "Aina ya upimaji unaohitajika"
+							},
+							"description": {
+								"en": "A boundary retracement, a design topo, and a drone orthomosaic are different jobs.",
+								"sw": "Uchunguzi wa mipaka, topografia ya kubuni, na orthomosaic ya droni ni kazi tofauti kabisa."
+							}
+						},
+						{
+							"icon": "map-marker-path",
+							"label": {
+								"en": "Location and accessibility",
+								"sw": "Mahali na ufikivu"
+							},
+							"description": {
+								"en": "Distance, road access, and how easily instruments reach every corner of the site.",
+								"sw": "Umbali, hali ya barabara, na urahisi wa vifaa kufika kila kona ya tovuti."
+							}
+						}
+					]
+				},
+				"ranges": {
+					"label": {
+						"en": "Typical ranges",
+						"sw": "Masafa ya kawaida"
+					},
+					"hint": {
+						"en": "Tap a survey type to explore what shapes its price",
+						"sw": "Gusa aina ya upimaji ili kuchunguza kinachounda bei yake"
+					},
+					"items": [
+						{
+							"icon": "vector-square",
+							"label": {
+								"en": "Boundary Surveys",
+								"sw": "Upimaji wa Mipaka"
+							},
+							"price": 30000,
+							"pricePrefix": {
+								"en": "From KES",
+								"sw": "Kuanzia KES"
+							},
+							"tagline": {
+								"en": "Know exactly where your land ends",
+								"sw": "Jua hasa ardhi yako inaishia wapi"
+							},
+							"description": {
+								"en": "Property lines, encroachments, and beacons — the survey that keeps neighbours friendly and titles clean.",
+								"sw": "Mistari ya mali, uvamizi, na nguzo za kudumu — upimaji unaofanya majirani kuwa marafiki na hatimiliki kuwa safi."
+							},
+							"includes": [
+								{
+									"en": "Boundary delineation & beacon placement",
+									"sw": "Kutambua mipaka na kuweka nguzo"
+								},
+								{
+									"en": "Registry maps & title processing support",
+									"sw": "Ramani za rejesta na msaada wa hatimiliki"
+								},
+								{
+									"en": "Dispute-proof survey documentation",
+									"sw": "Nyaraka za upimaji zisizo na migogoro"
+								}
+							]
+						},
+						{
+							"icon": "terrain",
+							"label": {
+								"en": "Topographical Surveys",
+								"sw": "Upimaji wa Topografia"
+							},
+							"price": 50000,
+							"pricePrefix": {
+								"en": "From KES",
+								"sw": "Kuanzia KES"
+							},
+							"tagline": {
+								"en": "The ground truth behind every design",
+								"sw": "Ukweli wa ardhi ulioko nyuma ya kila kubuni"
+							},
+							"description": {
+								"en": "Contours, features, and elevations your architect and engineer will build on — literally.",
+								"sw": "Kontua, vitu vilivyo, na mitelemko ambayo mwanamajengo na mhandisi wako watajenga juu yake — kwa maana halisi."
+							},
+							"includes": [
+								{
+									"en": "Contours & spot levels",
+									"sw": "Kontua na viwango vya maeneo"
+								},
+								{
+									"en": "Features & utilities mapping",
+									"sw": "Ramani za vitu na huduma za chini ya ardhi"
+								},
+								{
+									"en": "CAD-ready engineering deliverables",
+									"sw": "Matokeo yaliyo tayari kwa CAD"
+								}
+							]
+						},
+						{
+							"icon": "quadcopter",
+							"label": {
+								"en": "Drone Mapping",
+								"sw": "Ramani kwa Droni"
+							},
+							"price": 25000,
+							"pricePrefix": {
+								"en": "From KES",
+								"sw": "Kuanzia KES"
+							},
+							"tagline": {
+								"en": "1000+ acres in a fraction of the time",
+								"sw": "Ekari 1000+ kwa sehemu ndogo ya muda"
+							},
+							"description": {
+								"en": "Orthomosaics, 3D models, and volumetrics captured from the sky — fast, safe, and centimeter-accurate.",
+								"sw": "Orthomosaic, mifano ya 3D, na uchambuzi wa kiasi kutoka angani — kwa haraka, kwa usalama, na kwa usahihi wa sentimita."
+							},
+							"includes": [
+								{
+									"en": "Orthomosaics & 3D models",
+									"sw": "Orthomosaic na mifano ya 3D"
+								},
+								{
+									"en": "Volumetric analysis & cut/fill",
+									"sw": "Uchambuzi wa kiasi na kukata/kujaza"
+								},
+								{
+									"en": "Rapid same-week turnaround",
+									"sw": "Kuhitaji kwa haraka ndani ya wiki moja"
+								}
+							]
+						}
+					]
+				},
+				"disclaimer": {
+					"en": "Typical starting ranges only — every site is different. Size, terrain, and access shape the final figure on your quotation.",
+					"sw": "Ni masafa ya kuanzia tu — kila tovuti ni tofauti. Ukubwa, mazingira, na ufikivu vinaunda thamani ya mwisho kwenye nukuu yako."
+				},
+				"cta": {
+					"label": {
+						"en": "Get a Custom Quotation",
+						"sw": "Pata Nukuu Maalum"
+					},
+					"href": "/contact?reason=custom-quotation#contact-form",
+					"icon": "invoice-text"
+				},
+				"secondaryCta": {
+					"label": {
+						"en": "Talk to a Surveyor",
+						"sw": "Ongea na Mpimaji"
+					},
+					"href": "/contact?reason=talk-to-surveyor#contact-form",
+					"icon": "account-voice"
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "coverageArea",
+			"value": {
+				"tag": {
+					"en": "Coverage Area",
+					"sw": "Eneo la Ufunikaji"
+				},
+				"headline": {
+					"en": "From Our Nairobi Base to the Wider East Africa",
+					"sw": "Kutoka Makao Yetu ya Nairobi hadi Afrika Mashariki pana"
+				},
+				"description": {
+					"en": "We have a strong operational scale — a presence in multiple countries, hundreds of projects completed, and a commitment to delivering high-quality services over the years. If your site is in the region, chances are we've already mapped next door.",
+					"sw": "Tuna uwezo mkubwa wa uendeshaji — uwepo katika nchi nyingi, miradi mamia iliyokamilika, na dhamira ya kutoa huduma za ubora wa juu kupitia miaka. Ikiwa tovuti yako iko katika mkoa huu, kwa hakika tumechora ramani ya jirani yako."
+				},
+				"hqPin": {
+					"en": "HQ — Ruiru, Nairobi",
+					"sw": "Makao Makuu — Ruiru, Nairobi"
+				},
+				"stats": [
+					{
+						"icon": "map-marker-multiple",
+						"value": 7,
+						"suffix": "+",
+						"label": {
+							"en": "Countries covered",
+							"sw": "Nchi zilizofunikwa"
+						}
+					},
+					{
+						"icon": "clipboard-check",
+						"value": 250,
+						"suffix": "+",
+						"label": {
+							"en": "Projects completed",
+							"sw": "Miradi iliyokamilika"
+						}
+					},
+					{
+						"icon": "timer-check",
+						"value": 5,
+						"suffix": "+",
+						"label": {
+							"en": "Years in the field",
+							"sw": "Miaka uwanjani"
+						}
+					}
+				],
+				"groups": [
+					{
+						"icon": "home-city",
+						"label": {
+							"en": "Core Counties",
+							"sw": "Kaunti Kuu"
+						},
+						"description": {
+							"en": "Where we're based and most active — fastest mobilisation and the sharpest local knowledge.",
+							"sw": "Tulikotoa na tunaofanya kazi zaidi — kuhamasisha kwa haraka na maarifa ya ndani bora."
+						},
+						"items": [
+							{
+								"en": "Nairobi",
+								"sw": "Nairobi"
+							},
+							{
+								"en": "Kiambu",
+								"sw": "Kiambu"
+							},
+							{
+								"en": "Machakos",
+								"sw": "Machakos"
+							},
+							{
+								"en": "Kajiado",
+								"sw": "Kajiado"
+							}
+						]
+					},
+					{
+						"icon": "city",
+						"label": {
+							"en": "Major Cities",
+							"sw": "Miji Mikuu"
+						},
+						"description": {
+							"en": "Full crews and equipment regularly deployed to Kenya's key urban centres.",
+							"sw": "Timu kamili na vifaa vinapelekwa mara kwa mara katika miji mikuu ya Kenya."
+						},
+						"items": [
+							{
+								"en": "Mombasa",
+								"sw": "Mombasa"
+							},
+							{
+								"en": "Kisumu",
+								"sw": "Kisumu"
+							},
+							{
+								"en": "Nakuru",
+								"sw": "Nakuru"
+							}
+						]
+					},
+					{
+						"icon": "earth",
+						"label": {
+							"en": "East Africa & Beyond",
+							"sw": "Afrika Mashariki na Nje"
+						},
+						"description": {
+							"en": "Cross-border assignments across the region — when drones fly, borders barely matter.",
+							"sw": "Kazi za kuvuka mipaka katika mkoa huu — droni zikipaa, mipaka haipingani nazo sana."
+						},
+						"items": [
+							{
+								"en": "Uganda",
+								"sw": "Uganda"
+							},
+							{
+								"en": "Tanzania",
+								"sw": "Tanzania"
+							},
+							{
+								"en": "Somalia & wider East Africa",
+								"sw": "Somalia na Afrika Mashariki pana"
+							}
+						]
+					}
+				],
+				"note": {
+					"en": "Working somewhere off the grid? We deploy. Tell us where your site is.",
+					"sw": "Unafanya kazi sehemu isiyo kwenye ramani? Tunawasili. Tuambie tovuti yako iko wapi."
+				},
+				"id": ""
+			}
 		}
 	]
 }

@@ -472,6 +472,147 @@ function planningInfographicBuild(en, sw, where) {
 	};
 }
 
+// M8 batch D (2026-09-17): `coverageArea` region section. Legacy
+// `common:coverageArea` holds `{tag?, headline, description?, hqPin?,
+// stats[{icon, value, suffix, label}], groups[{icon, label, description,
+// items[]}], note?}`. `icon`/`value`/`suffix` are shared (numbers and `+`
+// literals identical in en/sw — any divergence aborts); `label`, `hqPin`,
+// `note`, group `label`/`description` and location chips are localized.
+function coverageAreaBuild(en, sw, where) {
+	const enStats = en.stats ?? [];
+	const swStats = sw.stats ?? [];
+	const enGroups = en.groups ?? [];
+	const swGroups = sw.groups ?? [];
+	if (!Array.isArray(swStats) || swStats.length !== enStats.length) {
+		gap(where, `stat count diverged (en=${enStats.length} sw=${swStats?.length})`);
+	}
+	if (!Array.isArray(swGroups) || swGroups.length !== enGroups.length) {
+		gap(where, `group count diverged (en=${enGroups.length} sw=${swGroups?.length})`);
+	}
+	const sharedNumber = (enNode, swNode, key, scope) => {
+		if (enNode?.[key] !== swNode?.[key]) {
+			gap(scope, `"${key}" diverged across locales (en=${JSON.stringify(enNode?.[key])} sw=${JSON.stringify(swNode?.[key])})`);
+		}
+		const value = enNode?.[key];
+		if (typeof value !== "number") gap(scope, `"${key}" must be a number`);
+		return typeof value === "number" ? value : 0;
+	};
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		hqPin: { en: optText(en.hqPin), sw: optText(sw.hqPin) },
+		stats: enStats.map((stat, i) => {
+			const swStat = swStats[i] ?? {};
+			return {
+				icon: sharedValue(stat, swStat, "icon", `${where}.stats[${i}]`) ?? "",
+				value: sharedNumber(stat, swStat, "value", `${where}.stats[${i}]`),
+				suffix: sharedValue(stat, swStat, "suffix", `${where}.stats[${i}]`) ?? "",
+				label: { en: reqText(stat.label, `${where}.stats[${i}].label.en`), sw: reqText(swStat.label, `${where}.stats[${i}].label.sw`) },
+			};
+		}),
+		groups: enGroups.map((group, i) => {
+			const swGroup = swGroups[i] ?? {};
+			const enLocations = group.items ?? [];
+			const swLocations = swGroup.items ?? [];
+			if (!Array.isArray(swLocations) || swLocations.length !== enLocations.length) {
+				gap(where, `location count diverged (en=${enLocations.length} sw=${swLocations?.length})`);
+			}
+			return {
+				icon: sharedValue(group, swGroup, "icon", `${where}.groups[${i}]`) ?? "",
+				label: { en: reqText(group.label, `${where}.groups[${i}].label.en`), sw: reqText(swGroup.label, `${where}.groups[${i}].label.sw`) },
+				description: { en: reqText(group.description, `${where}.groups[${i}].description.en`), sw: reqText(swGroup.description, `${where}.groups[${i}].description.sw`) },
+				items: enLocations.map((location, j) => ({
+					en: reqText(location, `${where}.groups[${i}].items[${j}].en`),
+					sw: reqText(swLocations[j], `${where}.groups[${i}].items[${j}].sw`),
+				})),
+			};
+		}),
+		note: { en: optText(en.note), sw: optText(sw.note) },
+		id: "",
+	};
+}
+
+// M8 batch D (2026-09-17): `surveyCost` tabbed estimator. Legacy
+// `common:surveyCostInKenya` holds `{tag?, headline, description?,
+// factors{label?, items[{icon, label, description}]},
+// ranges{label?, hint?, items[{icon, label, price, pricePrefix, tagline,
+// description, includes[]}]}, disclaimer?, cta?, secondaryCta?}`.
+// `icon`s, `price` numbers and CTA `href`s are shared; everything else is
+// localized.
+function surveyCostBuild(en, sw, where) {
+	const enFactors = en.factors?.items ?? [];
+	const swFactors = sw.factors?.items ?? [];
+	const enRanges = en.ranges?.items ?? [];
+	const swRanges = sw.ranges?.items ?? [];
+	if (!Array.isArray(swFactors) || swFactors.length !== enFactors.length) {
+		gap(where, `factor count diverged (en=${enFactors.length} sw=${swFactors?.length})`);
+	}
+	if (!Array.isArray(swRanges) || swRanges.length !== enRanges.length) {
+		gap(where, `range count diverged (en=${enRanges.length} sw=${swRanges?.length})`);
+	}
+	const sharedNumber = (enNode, swNode, key, scope) => {
+		if (enNode?.[key] !== swNode?.[key]) {
+			gap(scope, `"${key}" diverged across locales (en=${JSON.stringify(enNode?.[key])} sw=${JSON.stringify(swNode?.[key])})`);
+		}
+		const value = enNode?.[key];
+		if (typeof value !== "number") gap(scope, `"${key}" must be a number`);
+		return typeof value === "number" ? value : 0;
+	};
+	const action = (node, swNode, key) =>
+		node || swNode
+			? {
+					label: { en: reqText(node?.label, `${where}.${key}.label.en`), sw: reqText(swNode?.label, `${where}.${key}.label.sw`) },
+					href: sharedValue(node, swNode, "href", `${where}.${key}`) ?? "",
+					icon: sharedValue(node, swNode, "icon", `${where}.${key}`) ?? "",
+				}
+			: { label: emptyPair(), href: "", icon: "" };
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		factors: {
+			label: { en: optText(en.factors?.label), sw: optText(sw.factors?.label) },
+			items: enFactors.map((factor, i) => {
+				const swFactor = swFactors[i] ?? {};
+				return {
+					icon: sharedValue(factor, swFactor, "icon", `${where}.factors[${i}]`) ?? "",
+					label: { en: reqText(factor.label, `${where}.factors[${i}].label.en`), sw: reqText(swFactor.label, `${where}.factors[${i}].label.sw`) },
+					description: { en: reqText(factor.description, `${where}.factors[${i}].description.en`), sw: reqText(swFactor.description, `${where}.factors[${i}].description.sw`) },
+				};
+			}),
+		},
+		ranges: {
+			label: { en: optText(en.ranges?.label), sw: optText(sw.ranges?.label) },
+			hint: { en: optText(en.ranges?.hint), sw: optText(sw.ranges?.hint) },
+			items: enRanges.map((range, i) => {
+				const swRange = swRanges[i] ?? {};
+				const enIncludes = range.includes ?? [];
+				const swIncludes = swRange.includes ?? [];
+				if (!Array.isArray(swIncludes) || swIncludes.length !== enIncludes.length) {
+					gap(where, `includes count diverged (en=${enIncludes.length} sw=${swIncludes?.length})`);
+				}
+				return {
+					icon: sharedValue(range, swRange, "icon", `${where}.ranges[${i}]`) ?? "",
+					label: { en: reqText(range.label, `${where}.ranges[${i}].label.en`), sw: reqText(swRange.label, `${where}.ranges[${i}].label.sw`) },
+					price: sharedNumber(range, swRange, "price", `${where}.ranges[${i}]`),
+					pricePrefix: { en: optText(range.pricePrefix), sw: optText(swRange.pricePrefix) },
+					tagline: { en: optText(range.tagline), sw: optText(swRange.tagline) },
+					description: { en: reqText(range.description, `${where}.ranges[${i}].description.en`), sw: reqText(swRange.description, `${where}.ranges[${i}].description.sw`) },
+					includes: enIncludes.map((bullet, j) => ({
+						en: reqText(bullet, `${where}.ranges[${i}].includes[${j}].en`),
+						sw: reqText(swIncludes[j], `${where}.ranges[${i}].includes[${j}].sw`),
+					})),
+				};
+			}),
+		},
+		disclaimer: { en: optText(en.disclaimer), sw: optText(sw.disclaimer) },
+		cta: action(en.cta, sw.cta, "cta"),
+		secondaryCta: action(en.secondaryCta, sw.secondaryCta, "secondaryCta"),
+		id: "",
+	};
+}
+
 // NOTE (M8 batch A): `metrics` is registered but intentionally NOT migrated
 // here — `<MetricsSection/>` is commented out of `[locale]/index.tsx`, so
 // `common:metrics` is unrendered on `/` and `metrics` stays in `skipped`
@@ -2507,9 +2648,7 @@ const PAGES = {
 	// CoreExpertiseSection (`headerRow` + `hoverArrow` + `watermarkedIndexed`),
 	// client-only CoverageAreaSection (ProjectsGlobe), About/
 	// Tails stay legacy: bespoke WebGL hero, global LeadGenBar, Drones,
-	// Services/SurveyCost bespoke (`trustees` + `certifications` + `keyFacts`
-	// + `whyChooseUs` + `about` + `surveyingInstruments` + `coreExpertise` +
-	// `planningInfographic` migrated in M8, so they leave this tail list;
+	// Services bespoke (every other home section migrates in M7/M8;
 	// `metrics` stays in `skipped` — unrendered, commented out of the route).
 	// NOTE: overwrites the
 	// M1 `home.json` starter fixture (placeholder since M1) with the real
@@ -2522,7 +2661,7 @@ const PAGES = {
 		// `contentNamespace` (`common.json`) while the page entry stays
 		// `home.json`.
 		contentNamespace: "common",
-		skipped: ["hero", "drones", "services", "metrics", "surveyCostInKenya", "coverageArea"],
+		skipped: ["hero", "drones", "services", "metrics"],
 		sections: [
 			{
 				discriminant: "ctaBand",
@@ -2775,6 +2914,28 @@ const PAGES = {
 				// since HEAD `9b3f8d0`).
 				build(en, sw, where) {
 					return planningInfographicBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "surveyCost",
+				from: "surveyCostInKenya",
+				// Legacy: SurveyCostSection → <SurveyCost id="survey-cost" />
+				// over `common:surveyCostInKenya` (same `common.json` content
+				// namespace as every other section in this mapping since
+				// HEAD `9b3f8d0`; note the key differs from the section id).
+				build(en, sw, where) {
+					return surveyCostBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "coverageArea",
+				from: "coverageArea",
+				// Legacy: CoverageAreaSection → <CoverageArea
+				// id="coverage-area" /> over `common:coverageArea` (same
+				// `common.json` content namespace as every other section in
+				// this mapping since HEAD `9b3f8d0`).
+				build(en, sw, where) {
+					return coverageAreaBuild(en, sw, where);
 				},
 			},
 		],

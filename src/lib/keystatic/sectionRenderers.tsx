@@ -19,6 +19,8 @@ import { About } from "@/components/sections/shared/About";
 import { SurveyingInstruments } from "@/components/sections/shared/SurveyingInstruments";
 import { CoreExpertise } from "@/components/sections/shared/CoreExpertise";
 import { PlanningInfographic } from "@/components/sections/shared/PlanningInfographic";
+import { CoverageArea } from "@/components/sections/shared/CoverageArea";
+import { SurveyCost } from "@/components/sections/shared/SurveyCost";
 import type { Lang } from "../types";
 import { resolveLocaleValue } from "./localize";
 import { getSectionDefinition, type SectionId } from "./sectionRegistry";
@@ -59,6 +61,8 @@ export const sectionRenderers = {
 	surveyingInstruments: SurveyingInstruments,
 	coreExpertise: CoreExpertise,
 	planningInfographic: PlanningInfographic,
+	coverageArea: CoverageArea,
+	surveyCost: SurveyCost,
 } satisfies Record<SectionId, ComponentType<any>>;
 
 export function renderSection(
