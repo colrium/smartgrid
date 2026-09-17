@@ -728,7 +728,7 @@ when the layout entry is absent/unpublished/unreadable.
 
 ### M10: New Keystatic Pages Resolve to Real Routes (No 404)
 
-**Status: NOT STARTED**
+**Status: IN PROGRESS**
 
 Dependencies: M3 resolver + per-page source switch (`resolveKeystaticPage`,
 `KEYSTATIC_PAGES` allowlist, `KEYSTATIC_DISABLE` kill-switch); M7 per-page wiring
@@ -745,21 +745,59 @@ root `about.tsx` re-exporting it). A content-only entry (no route file, no local
 namespace in `getI18nProps`, no slug→route mapping) can never resolve — the 404
 comes from Next.js routing, before Keystatic is even consulted.
 
-- [ ] Decide the URL model for editor-created pages: fixed route per page (current
+- [x] Decide the URL model for editor-created pages: fixed route per page (current
       M7 pattern: new `[locale]/<slug>.tsx` + root `<slug>.tsx` proxy) vs. a generic
       catch-all route (e.g. `[locale]/[...slug].tsx`) that resolves any Keystatic
       slug. Record the decision + date; see "Decisions To Confirm" (canonical page
       URL model).
-- [ ] If fixed-route: document the new-page checklist (route file + root proxy +
+      (Decided 2026-09-17, Stage 1: CATCH-ALL. Fixed-route-per-page requires a
+      code change + deploy for every editor-created page, defeating the goal
+      "a page created in Keystatic renders". `src/pages/[locale]/[...slug].tsx`
+      (+ root `[...slug].tsx` proxy, same pattern as `about.tsx`) resolves any
+      single-segment slug with no top-level fixed file via the unchanged M3
+      pipeline; fixed routes take Next.js precedence and are unaffected.
+      Content-only pages have no legacy implementation, so every non-keystatic
+      outcome (disabled/missing/unpublished/error, multi-segment, reserved or
+      `home` slugs) is a 404 + server warn — never blank. Known limitation
+      (documented, same class as the M8 Trans gate): published + allowlisted
+      nested/hub entries ALSO resolve at their flat `/<slug>` URL; don't link
+      those — the fixed route is canonical.)
+- [x] If fixed-route: document the new-page checklist (route file + root proxy +
       locale namespace(s) in `getI18nProps` + `content/pages/<slug>.json` +
       `KEYSTATIC_PAGES` opt-in + sitemap/nav entry) and wire the missing route(s).
-- [ ] If catch-all: implement the fallback route with the M3 taxonomy
+      (N/A 2026-09-17 — catch-all decided instead; the checklist below replaces it.
+      New-page checklist (no code deploy): 1) create the entry in Keystatic admin
+      (`Pages` → slug: single-segment lowercase/hyphens, MUST NOT collide with a
+      fixed route or `home`); 2) compose registry sections in both locales;
+      3) set `status: published`; 4) add the slug to `KEYSTATIC_PAGES`;
+      5) optional: add a nav link via the `site` singleton + link to it from
+      content. Rollback: drop the slug / re-draft / `KEYSTATIC_DISABLE=1`.)
+- [x] If catch-all: implement the fallback route with the M3 taxonomy
       (disabled/missing/unpublished/error/empty → legacy or 404 + `console.warn`,
       never blank), locale-prefixed URLs (`/en/<slug>`, `/sw/<slug>`), and sitemap
       coverage. Prove existing fixed routes are unaffected.
+      (Stage 2, 2026-09-17, commit `f0a2eba`: `src/pages/[locale]/[...slug].tsx`
+      + root `[...slug].tsx` proxy (default-locale unprefixed URLs, same pattern
+      as `about.tsx`). Single-segment, non-reserved (`home`, `keystatic`),
+      published + allowlisted → `PageBuilderDocument`; everything else 404s
+      (content-only pages have no legacy). Fixed routes take Next.js precedence
+      — untouched. `PageHead` degrades gracefully (unknown `meta:pages` key →
+      site title + humanized breadcrumbs). Sitemap: `getKeystaticSitemapSlugs`
+      (build-time, pinned by checks) lists published + allowlisted + unwired
+      slugs — wired detection greps `src/pages` for
+      `resolveKeystaticPage("<slug>")` literals + `home`. Pilot fixture
+      `content/pages/test-custom.json` (`draft`, hero + ctaBand) committed for
+      publish-flip smoke.)
 - [ ] Prove `check:keystatic` + `typecheck` + `lint` + dev-smoke (new page renders
       in both locales when published+allowlisted, 404s otherwise, rollback via
       kill-switch).
+      (`check:keystatic` OK incl. catch-all file contract, novel-slug
+      resolution (published → keystatic, draft → legacy), pilot-fixture
+      resolution and sitemap helper; `typecheck` clean; `eslint` clean on
+      touched files — all 2026-09-17. PENDING: dev-smoke — flip `test-custom`
+      to published + `KEYSTATIC_PAGES=test-custom`, confirm `/en/test-custom`
+      + `/sw/test-custom` render and an unknown slug 404s, revert to `draft`.
+      Needs a browser session.)
 
 **Exit criteria:** a page created in Keystatic renders at its locale-prefixed URL in
 both locales when published and allowlisted (no 404); unpublished/unallowlisted

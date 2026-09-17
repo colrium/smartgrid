@@ -396,6 +396,14 @@ source for editor options and renderer mappings.
   `common:locales`/`misc` and `meta:site` stay legacy-owned (unrendered or
   routing/brand); the legacy `/contact` tail follows the singleton, while the
   `/contact` page entry copy wins on `/contact` when opted in.
+- **New pages (no code deploy):** create the entry in `Pages` (single-segment
+  slug — lowercase/hyphens, must not collide with a fixed route or `home`),
+  compose sections in both locales, publish it, and add the slug to
+  `KEYSTATIC_PAGES`. It renders at `/<slug>` (default locale) and `/sw/<slug>`
+  via the catch-all route (`src/pages/[locale]/[...slug].tsx`); unpublished or
+  unallowlisted slugs 404. Published + allowlisted entries are picked up by the
+  sitemap automatically (wired pages are excluded — they keep their
+  `meta.json` URLs). Rollback: drop the slug / re-draft / `KEYSTATIC_DISABLE=1`.
 - **Admin access:** non-development `/keystatic/*` and `/api/keystatic/*` require
   HTTP Basic Auth (`KEYSTATIC_ADMIN_USER` / `KEYSTATIC_ADMIN_PASSWORD`, fail-closed,
   constant-time compare in `src/proxy.ts`). Generate the password with
