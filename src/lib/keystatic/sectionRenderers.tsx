@@ -21,6 +21,7 @@ import { CoreExpertise } from "@/components/sections/shared/CoreExpertise";
 import { PlanningInfographic } from "@/components/sections/shared/PlanningInfographic";
 import { CoverageArea } from "@/components/sections/shared/CoverageArea";
 import { SurveyCost } from "@/components/sections/shared/SurveyCost";
+import LeadGenBar from "@/components/sections/shared/LeadGenBar";
 import type { Lang } from "../types";
 import { resolveLocaleValue } from "./localize";
 import { getSectionDefinition, type SectionId } from "./sectionRegistry";
@@ -63,6 +64,7 @@ export const sectionRenderers = {
 	planningInfographic: PlanningInfographic,
 	coverageArea: CoverageArea,
 	surveyCost: SurveyCost,
+	leadGenBar: LeadGenBar,
 } satisfies Record<SectionId, ComponentType<any>>;
 
 export function renderSection(

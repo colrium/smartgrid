@@ -1316,6 +1316,101 @@
 				},
 				"id": ""
 			}
+		},
+		{
+			"discriminant": "leadGenBar",
+			"value": {
+				"tag": {
+					"en": "SMARTGRID SURVEYING & CIVIL ENGINEERING LTD",
+					"sw": "SMARTGRID SURVEYING & CIVIL ENGINEERING LTD"
+				},
+				"headline": {
+					"en": "Reliable. Scalable. Fast. Accurate.",
+					"sw": "Inaaminika. Inaweza kupanuka. Haraka. Sahihi."
+				},
+				"description": {
+					"en": "At SmartGrid Surveying, we don’t just measure land—we deliver <bold>accurate, decision-ready spatial data</bold> that engineers, developers, and project managers rely on to plan, design, and execute with confidence.\n\n From <bold>topographical surveys and cadastral mapping</bold> to <bold>drone mapping, LiDAR, and underground utility detection</bold>, we provide end-to-end geospatial solutions tailored for modern construction and infrastructure projects",
+					"sw": "Katika SmartGrid Surveying, hatupimi ardhi tu—tunatoa <bold>data sahihi ya anga iliyo tayari kwa maamuzi</bold> ambayo wahandisi, wasanidi, na wasimamizi wa miradi wanategemea kupanga, kubuni, na kutekeleza kwa ujasiri.\n\nKuanzia <bold>upimaji wa topografia na ramani za cadastral</bold> hadi <bold>ramani za ndege zisizo na rubani, LiDAR, na ugunduzi wa huduma za chini ya ardhi</bold>, tunatoa suluhisho kamili za kijiografia zilizoundwa kwa ajili ya miradi ya kisasa ya ujenzi na miundombinu."
+				},
+				"items": [
+					{
+						"icon": "land-fields",
+						"label": {
+							"en": "LAND SURVEYING",
+							"sw": "UPIMAJI WA ARDHI"
+						},
+						"description": {
+							"en": "Precise Topographical, boundary, cadastral, GIS, and engineering surveys powered by the latest technology.",
+							"sw": "Upimaji sahihi wa topografia, mipaka, cadastral, GIS, na uhandisi unaoendeshwa na teknolojia ya kisasa."
+						},
+						"more": {
+							"label": {
+								"en": "Explore more",
+								"sw": "Gundua zaidi"
+							},
+							"href": "/surveying"
+						},
+						"action": {
+							"label": {
+								"en": "Request Survey",
+								"sw": "Omba Upimaji"
+							},
+							"href": "/contact?reason=land-surveying#contact-form"
+						}
+					},
+					{
+						"icon": "quadcopter",
+						"label": {
+							"en": "AERIAL DRONES",
+							"sw": "NDEGE ZISIZO NA RUBANI ZA ANGANI"
+						},
+						"description": {
+							"en": "Aerial and Agricultural High-resolution imagery, 3D mapping, and topographical data delivered faster and safer.",
+							"sw": "Picha za ubora wa juu za angani na kilimo, ramani za 3D, na data ya topografia iliyotolewa kwa haraka na salama."
+						},
+						"more": {
+							"label": {
+								"en": "Explore more",
+								"sw": "Gundua zaidi"
+							},
+							"href": "/aerial-drones"
+						},
+						"action": {
+							"label": {
+								"en": "Book a drone survey",
+								"sw": "Oda upimaji wa ndege isiyo na rubani"
+							},
+							"href": "/contact?reason=book-drone-survey#contact-form"
+						}
+					},
+					{
+						"icon": "hard-hat",
+						"label": {
+							"en": "CIVIL ENGINEERING",
+							"sw": "UHANDISI WA MIUNDOMBINU"
+						},
+						"description": {
+							"en": "Construction and building Site layout, monitoring, and as-built verification with precision and speed.",
+							"sw": "Mpangilio wa tovuti za ujenzi na majengo, ufuatiliaji, na uthibitishaji wa 'as-built' kwa usahihi na kasi."
+						},
+						"more": {
+							"label": {
+								"en": "Explore more",
+								"sw": "Gundua zaidi"
+							},
+							"href": "/civil"
+						},
+						"action": {
+							"label": {
+								"en": "Partner with us.",
+								"sw": "Shirikiana nasi"
+							},
+							"href": "mailto:smartgridsurveying@gmail.com?subject=Partnership Inquiry&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'm interested in partnering with SmartGrid Surveying.%0D%0A%0D%0AOrganization:%0D%0AProposal details:%0D%0A%0D%0AThank you."
+						}
+					}
+				],
+				"id": ""
+			}
 		}
 	]
 }

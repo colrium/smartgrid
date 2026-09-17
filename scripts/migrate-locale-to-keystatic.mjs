@@ -613,6 +613,40 @@ function surveyCostBuild(en, sw, where) {
 	};
 }
 
+// M9 follow-up (2026-09-17): `leadGenBar` trio. Legacy `common:leadGenBar`
+// holds `{tag?, headline, description?, items: [{icon, label, description,
+// more?, action?}]}`. `icon` and link `href`s are shared; `label`s,
+// `description`s and link labels are localized. `description` migrates
+// verbatim as a VISIBILITY GATE (component keeps the `<Trans>` lookup);
+// `title`/`link` keys are unrendered and never migrated.
+function leadGenBarBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	const link = (node, swNode, key) => ({
+		label: { en: optText(node?.label), sw: optText(swNode?.label) },
+		href: sharedValue(node, swNode, "href", `${where}.${key}`) ?? "",
+	});
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				label: { en: reqText(item.label, `${where}.items[${i}].label.en`), sw: reqText(swItem.label, `${where}.items[${i}].label.sw`) },
+				description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+				more: link(item.more, swItem.more, `items[${i}].more`),
+				action: link(item.action, swItem.action, `items[${i}].action`),
+			};
+		}),
+		id: "",
+	};
+}
+
 // NOTE (M8 batch A): `metrics` is registered but intentionally NOT migrated
 // here — `<MetricsSection/>` is commented out of `[locale]/index.tsx`, so
 // `common:metrics` is unrendered on `/` and `metrics` stays in `skipped`
@@ -2936,6 +2970,17 @@ const PAGES = {
 				// this mapping since HEAD `9b3f8d0`).
 				build(en, sw, where) {
 					return coverageAreaBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "leadGenBar",
+				from: "leadGenBar",
+				// Legacy: home route renders the global shared
+				// <LeadGenBar /> over `common:leadGenBar` (same
+				// `common.json` content namespace as every other section in
+				// this mapping since HEAD `9b3f8d0`).
+				build(en, sw, where) {
+					return leadGenBarBuild(en, sw, where);
 				},
 			},
 		],

@@ -209,9 +209,20 @@ import {
  * `pricePrefix`/`tagline` and CTA labels are localized. SSR-safe:
  * `useState` tab index only affects event handlers — first render is
  * static (`CountUp`/`motion` animate client-side).
+ *
+ * M9 follow-up (2026-09-17, per user request): `leadGenBar` wraps the
+ * shared `LeadGenBar` trio (tag + headline + description + `items`
+ * `[{icon, label, description, more?, action?}]`). The component was
+ * refactored to an additive optional `data` prop (omitted = legacy `t()`
+ * strings, so the bare `careers` caller is untouched); `description`
+ * stays `<Trans>`-rendered from the locale store (`<bold>` pseudo-markup),
+ * so the schema field is a VISIBILITY GATE ONLY (same precedent as
+ * `planningInfographic.closingStatement` — field description warns
+ * editors). `title`/`link`/`type` locale keys are unrendered — excluded.
+ * SSR-safe: effect-only `FadeUp`, no browser APIs on first render.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -1977,6 +1988,87 @@ const surveyCost: SectionDefinition = {
 	}),
 };
 
+const leadGenBar: SectionDefinition = {
+	id: "leadGenBar",
+	version: 1,
+	label: "Lead generation bar",
+	description: "Trio of enquiry cards with tag, headline and gated description.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description (visibility gate)", {
+			optionalInEnglish: true,
+		}),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon",
+					description: "Icon slug without the `mdi-` prefix.",
+				}),
+				label: localeText("Label"),
+				description: localeLongText("Description"),
+				more: fields.object(
+					{
+						label: localeText("Label", { optionalInEnglish: true }),
+						href: fields.text({ label: "Link (optional)", description: "Empty = no link." }),
+					},
+					{ label: "More link" }
+				),
+				action: fields.object(
+					{
+						label: localeText("Label", { optionalInEnglish: true }),
+						href: fields.text({ label: "Link (optional)", description: "Empty = no button." }),
+					},
+					{ label: "Action button" }
+				),
+			}),
+			{
+				label: "Cards",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Card"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `classes`/`className` (route-level
+		// positioning, not content) and the `title`/`link` locale keys
+		// (unrendered). NOTE: `description` only gates visibility — the
+		// component renders the text via `<Trans>` from locale JSON
+		// (`<bold>` markup), so editing this text does not change output
+		// until a props-driven refactor. Clearing it hides the paragraph.
+	}),
+	example: {
+		tag: { en: "Get Started", sw: "Anza" },
+		headline: { en: "Engineering-grade solutions", sw: "Suluhisho za kihandisi" },
+		description: { en: "Accurate spatial data.", sw: "Data sahihi ya anga." },
+		items: [
+			{
+				icon: "land-fields",
+				label: { en: "LAND SURVEYING", sw: "UPIMAJI WA ARDHI" },
+				description: { en: "Precise surveys.", sw: "Upimaji sahihi." },
+				more: { label: { en: "Explore more", sw: "Gundua zaidi" }, href: "/surveying" },
+				action: { label: { en: "Request Survey", sw: "Oda Upimaji" }, href: "/contact" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon ?? "",
+						label: item?.label ?? "",
+						description: item?.description ?? "",
+						more: item?.more,
+						action: item?.action,
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
 export const sectionRegistry: readonly SectionDefinition[] = [
 	introText,
 	ctaBand,
@@ -2000,6 +2092,7 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	planningInfographic,
 	coverageArea,
 	surveyCost,
+	leadGenBar,
 ];
 
 export function getSectionDefinition(id: string): SectionDefinition {
@@ -2031,6 +2124,7 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	planningInfographic: planningInfographic.label,
 	coverageArea: coverageArea.label,
 	surveyCost: surveyCost.label,
+	leadGenBar: leadGenBar.label,
 };
 
 /**

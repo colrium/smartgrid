@@ -350,12 +350,13 @@ const resolutionCases = await (async () => {
 	// masked Cta + trustees logo wall (M8, 2026-09-16) + certifications
 	// badge grid + keyFacts panel + whyChooseUs list + about narrative +
 	// surveyingInstruments grid + coreExpertise grid + planningInfographic +
-	// surveyCost estimator + coverageArea (M8, 2026-09-17), in page order.
+	// surveyCost estimator + coverageArea (M8, 2026-09-17) + leadGenBar trio
+	// (M9 follow-up), in page order.
 	outcomes.push([
 		"resolve-real-fixture",
 		realRes.status === "keystatic" &&
 			realRes.page.title === "Home (migrated)" &&
-			realRes.page.sections.map((s) => s.id).join(",") === "ctaBand,cardGrid,faq,ctaBand,ctaBand,trustees,certifications,keyFacts,whyChooseUs,about,surveyingInstruments,coreExpertise,planningInfographic,surveyCost,coverageArea",
+			realRes.page.sections.map((s) => s.id).join(",") === "ctaBand,cardGrid,faq,ctaBand,ctaBand,trustees,certifications,keyFacts,whyChooseUs,about,surveyingInstruments,coreExpertise,planningInfographic,surveyCost,coverageArea,leadGenBar",
 	]);
 
 	// --- Site layout singleton (M9) --------------------------------------

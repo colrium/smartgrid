@@ -1,4 +1,5 @@
 import type { GetServerSideProps, NextPage } from "next";
+import { cloneElement, type ReactElement } from "react";
 import PageHead from "@/components/Head";
 
 import { getI18nProps, getLocale } from "@/lib/i18n";
@@ -38,15 +39,18 @@ interface PageProps {
  * industriesWeServe cardGrid, faq, actionCtaEngineer ctaBand, defaultCta
  * ctaBand, trustees, certifications, keyFacts, whyChooseUs, about,
  * surveyingInstruments, coreExpertise, planningInfographic, surveyCost,
- * coverageArea (M8, 2026-09-16/17).
- * Thirteen legacy tails (bespoke WebGL hero, global LeadGenBar,
+ * coverageArea, leadGenBar (M8, 2026-09-16/17; leadGenBar M9 follow-up).
+ * Thirteen legacy tails (bespoke WebGL hero,
  * Drones/Services bespoke) sit at fixed
  * positions between them, so the route renders each Keystatic section by
  * index instead of one whole PageBuilderDocument. If an edit changes the
  * section COUNT, the route falls back to legacy rather than misplacing
  * sections — keep this in sync with the mapping.
+ *
+ * `leadGenBar` keeps its route-level positioning (`-mt-48` overlap) via
+ * `cloneElement`: the registry stores content only, never `className`.
  */
-const KEYSTATIC_SECTION_COUNT = 15;
+const KEYSTATIC_SECTION_COUNT = 16;
 
 function orderedSections(page: ResolvedKeystaticPage) {
 	if (page.sections.length !== KEYSTATIC_SECTION_COUNT) {
@@ -59,7 +63,7 @@ function orderedSections(page: ResolvedKeystaticPage) {
 }
 
 const Page: NextPage<PageProps> = ({ keystaticPage }) => {
-	// Migration source switch (M3/M7): Keystatic owns the fifteen migrated
+	// Migration source switch (M3/M7): Keystatic owns the sixteen migrated
 	// sections only when the slug is allowlisted via `KEYSTATIC_PAGES` and the
 	// entry is published. Otherwise the legacy locale-JSON implementation
 	// renders unchanged.
@@ -77,10 +81,9 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 				<div className="flex flex-col min-h-screen" data-keystatic-page={keystaticPage.slug}>
 					<HeroSection />
 					<div className="flex flex-col mx-auto max-w-7xl px-6 w-full">
-						<LeadGenBar
-							className="my-12  -mt-48"
-							// className="my-12 "
-						/>
+						{cloneElement(renderAt(15) as ReactElement<{ className?: string }>, {
+							className: "my-12  -mt-48",
+						})}
 						{renderAt(9)}
 						{renderAt(12)}
 					</div>
