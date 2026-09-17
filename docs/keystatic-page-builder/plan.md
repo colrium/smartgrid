@@ -195,8 +195,13 @@ Dependencies: M4 and M5.
       `/terms-of-use` + `/company-profile` present in `en` and `/sw`; zero
       `keystatic`/`[locale]` leaks; `/api/*` + `/[locale]/*` excludes intact; opt-in pages
       need no sitemap change (same URLs, same locales). Remaining on this item: `yarn build`
-      (standing M3 environment skip — final check only when all milestones are complete) +
-      dev-smoke of the two opted-in routes in a browser session.)
+      (standing M3 environment skip — final check only when all milestones are complete).
+      Update 2026-09-17: dev-smoke parity user-confirmed for M8 (`home` 15
+      sections, `/en` + `/sw`) and M9 (`site` layout on multiple routes,
+      `/en` + `/sw`); both entries reverted to `draft` after
+      (`company-profile` stays `published` per M4). Still open: `yarn build`
+      (standing skip) + keyboard/responsive/visual + perf sampling — M6 stays
+      IN PROGRESS on those browser residuals.)
 - [ ] Perform keyboard, responsive, and visual checks in the editor and rendered pages.
 - [ ] Measure page performance for representative pages, especially pages containing images,
       animation, maps, or 3D components.
@@ -480,7 +485,7 @@ bespoke/tail strategy for each page is documented; rollback is tested for the ne
 
 ### M8: Register Migrated Home Shared Sections
 
-**Status: IN PROGRESS**
+**Status: DONE** (2026-09-17 — all 12 in-scope sections resolved; dev-smoke parity user-confirmed; see close-out log row).
 
 Dependencies: M2 registry + schema factories, M7 coverage (home entry + interleaved
 wiring); HEAD migration `89e0767` (new shared components under
@@ -607,7 +612,7 @@ Notes / constraints recorded before implementing:
       fix: mapping entries ordered `surveyCost` then `coverageArea` to match
       page order (first attempt had them swapped and failed the fixture
       string — caught by `check:keystatic`, fixed, green.)
-- [ ] Rewire `[locale]/index.tsx` interleaved hybrid (count guard + fixed tails) and
+- [x] Rewire `[locale]/index.tsx` interleaved hybrid (count guard + fixed tails) and
       prove `yarn check:keystatic` + `--verify` + `typecheck` + `lint` + dev-smoke parity.
       (2026-09-16: rewired — `KEYSTATIC_SECTION_COUNT` 5→6, `renderAt(5)` replaces
       legacy `<TrusteesSection/>` in the Keystatic branch (legacy branch untouched);
@@ -626,8 +631,9 @@ Notes / constraints recorded before implementing:
       throughout); final `check:keystatic` OK (22 sections),
       `--verify` OK (15 sections, no gaps), `tsc --noEmit` 0,
       `eslint --max-warnings=0` 0 on touched files.
-      PENDING: dev-smoke parity — publish-flip `home` locally and compare
-      `/en` + `/sw` Keystatic vs legacy before closing M8.)
+      DONE 2026-09-17: dev-smoke parity user-confirmed (`home` temp publish
+      flip, `/en` + `/sw` Keystatic vs legacy, reverted to `draft` after;
+      `company-profile` stays `published` per M4). M8 exit criteria met.)
 
 **Exit criteria:** every in-scope HEAD shared section has a registry id + schema +
 example + renderer + check coverage; `home.json` carries its content; `/en` + `/sw`
@@ -636,7 +642,7 @@ fail safe per M3 taxonomy.
 
 ### M9: Editable Common Layout Content
 
-**Status: IN PROGRESS**
+**Status: DONE** (2026-09-17 — singleton live behind `site` opt-in; dev-smoke parity user-confirmed; see close-out log row).
 
 Dependencies: M8 (registry pattern proven on the new sections); layout sources today:
 `src/layouts/LandingPage/Navbar.tsx` (`common:nav` + `common:contacts` + `meta:site`),
@@ -707,13 +713,14 @@ singleton/collection (e.g. `content/site.json` or `content/layout/*.json`), NOT 
       `logo_alt`); `nav` merges additively so dead keys (`logo_dark`,
       `cta*`) survive. Ops: `check:keystatic` chain + `migrate:layout`
       helper in `package.json`; `site` slug documented in `.env.example`.)
-- [ ] Prove `check:keystatic` + `typecheck` + `lint` + dev-smoke parity (layout change
+- [x] Prove `check:keystatic` + `typecheck` + `lint` + dev-smoke parity (layout change
       visible on multiple routes, rollback via kill-switch).
       (`check:keystatic` OK incl. layout matrix + parity, `typecheck` clean,
-      `eslint` clean on touched files — all 2026-09-17. PENDING: dev-smoke —
-      allowlist `site` with a temp local publish flip, confirm navbar/footer/
-      cookies change on multiple routes in `/en` + `/sw`, revert to `draft`,
-      and flip `KEYSTATIC_DISABLE=1` to confirm rollback. Needs a browser session.)
+      `eslint` clean on touched files — all 2026-09-17. DONE 2026-09-17:
+      dev-smoke user-confirmed (allowlist `site` + temp publish flip, layout
+      change visible on multiple routes in `/en` + `/sw`, reverted to `draft`
+      after; verified `home: draft`, `site: draft`, `company-profile:
+      published`). M9 exit criteria met.)
 
 **Exit criteria:** an editor can change navbar/footer/cookie-consent/socials/contacts
 once in Keystatic (both locales) and see it site-wide; legacy locale JSON still renders
@@ -847,3 +854,5 @@ For every implementation change:
 | 2026-09-17 | M8 | `certifications` + `keyFacts` registered (new ids v1, schema + example + normalize + renderer each; `certifications.name` shared literal via `sharedValue` gate, `keyFacts.icon` shared with positional fallback; itemLabel previews fixed — `keyFacts` items carry `label` not `title`, so inline `previewText` on `fields.label` instead of `previewTitledItem`). Migration: `certificationsBuild` + `keyFactsBuild` (4 items each, no gaps), home `skipped` drops both, `home.json` 6→8 sections, `--verify` clean. Route: count guard 6→7→8, `renderAt(6)` replaces legacy `<CertificationsSection/>`, `renderAt(7)` replaces legacy `<KeyFactsSection/>` (legacy branch untouched, visual order preserved). README section list 11→14. Files: `sectionRegistry.ts`, `sectionRenderers.tsx`, `migrate-locale-to-keystatic.mjs`, `check-keystatic-pages.mjs`, `[locale]/index.tsx`, `content/pages/home.json`, README, plan | `check:keystatic` OK (14 sections, 30 fixtures; 3 fallback warnings = expected negatives); `--verify` home clean (8 sections, no gaps); `yarn typecheck` clean (23s); `eslint --max-warnings=0` clean on touched files. PENDING: dev-smoke parity (publish-flip `home`, compare `/en` + `/sw`, revert to `draft`) — needs a browser session; 9 M8 sections remain (About, CoreExpertise, CoverageArea, IndustriesWeServe, Metrics, PlanningInfographic, SurveyCost, WhyChooseUs, SurveyingInstruments) | |
 | 2026-09-17 | M8 | Batches A–D DONE (all 9 remaining sections resolved, one commit per batch with simple message). A: `metrics` (new id v1, registered-only — wrapper commented out of route) + `whyChooseUs` (new id v1, migrated, 6 items). B: `about` (whoWeAre/mission/featureImg/cards) + `surveyingInstruments` (7 items, empty-href→`<article>` branch preserved) — fixed an `eslint` unused-arg warning in the `block` helper. C: `coreExpertise` (new id v1, NOT `cardGrid` v3 — presentation flags outside v2 contract) + `planningInfographic` (closingStatement verbatim as visibility gate; component keeps `<Trans>` lookup — check-script emits the expected `NO_I18NEXT_INSTANCE` notice in its isolated render); `industriesWeServe` decided covered-by-`cardGrid`, no code. D: `coverageArea` (shared-number gate for stat values, localized chips) + `surveyCost` (nested factors/ranges/includes, integer prices, CTA hrefs shared); fixed a mapping-order swap (surveyCost/coverageArea) caught by the fixture string. Route count guard 8→9→11→13→15; legacy branch untouched throughout. `home.json` 8→15 sections (stays `draft`); `skipped` now `["hero", "drones", "services", "metrics"]`; README list 14→22 | `check:keystatic` OK every batch (final: 22 sections, 30 fixtures); `--verify` home clean every batch (final: 15 sections, no gaps); `yarn typecheck` clean every batch; `eslint --max-warnings=0` clean on touched files every batch. Commits: batch A `6a0e24a`, batch B `2731207`, batch C `c62aa14`, batch D `97b3508`, docs `50af3b3`. REMAINING to close M8: dev-smoke parity only (publish-flip `home`, compare `/en` + `/sw`, revert to `draft`) — needs a browser session | | |
 | 2026-09-17 | M9 | Stage 1 DONE (model decided: one `site` singleton → `content/site.json`, store-override delivery in `getI18nProps`, reserved slug `site` + kill-switch, exclusions recorded). Stage 2 DONE (commit `2dce4e3`): `siteLayout.ts` (schema + normalize + example), `resolveLayout.ts` (taxonomy + merge helper), config singleton (`path: "content/site"` — prefix, reader appends `.json`), `migrate-layout-to-keystatic.mjs` + `content/site.json` (`draft`, no gaps), check-script layout matrix. Fixes: singleton path prefix; localeText-array `itemLabel` path `["fields","en","value"]`. Stage 3 DONE (commit `72b7106`): `getI18nProps` merge (zero component changes) + `check:keystatic` chain + `migrate:layout` helper + `.env.example` `site` docs. Parity proof fixes: empty nav `links` omitted; store keys snake_case; `nav` merges additively (dead keys survive). Docs commit (this change): plan checklist + README operator guide | `check:keystatic` OK (22 sections + layout matrix + en/sw parity); `migrate-layout --verify` clean; `yarn typecheck` clean; `eslint` clean on touched files. REMAINING to close M9: dev-smoke only (allowlist `site` + temp publish flip on multiple routes en+sw, revert to `draft`, kill-switch rollback) — needs a browser session | |
+| 2026-09-17 | M8 | CLOSE-OUT — M8 DONE. Dev-smoke parity user-confirmed (`home` temp publish flip, `/en` + `/sw` Keystatic vs legacy good); entries verified reverted (`home: draft`, `company-profile: published` per M4). All 12 in-scope sections resolved (10 migrated, `metrics` registered-only, `industriesWeServe` covered by `cardGrid`); full gates green every batch | M8 DONE; M6 stays IN PROGRESS on browser residuals only | |
+| 2026-09-17 | M9 | CLOSE-OUT — M9 DONE. Dev-smoke parity user-confirmed (allowlist `site` + temp publish flip, layout change visible on multiple routes `/en` + `/sw` good, kill-switch rollback confirmed); entry verified reverted (`site: draft`). Singleton serves navbar/footer/contacts/socials/cookies site-wide in both locales when published + allowlisted; legacy locale JSON renders otherwise per the M3 taxonomy | M9 DONE; next up M10 (NOT STARTED) | |
