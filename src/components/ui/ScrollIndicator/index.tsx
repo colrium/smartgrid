@@ -7,7 +7,10 @@ interface ScrollIndicatorProps extends ComponentProps<"button"> {
 	onClick?: () => void;
 }
 
-export const ScrollIndicator: React.FC<ScrollIndicatorProps> = ({ className = "", color = "accent" }) => {
+export const ScrollIndicator: React.FC<ScrollIndicatorProps> = ({
+	className = "",
+	color = "accent",
+}) => {
 	return (
 		<div className={`flex items-center gap-5 ${className}`}>
 			<div
