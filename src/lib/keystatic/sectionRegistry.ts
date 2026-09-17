@@ -142,9 +142,26 @@ import {
  * `sharedValue` gate aborts on divergence); `label`/`description` are
  * localized. SSR-safe: `FadeUp`/`SectionHeader` have no browser APIs on
  * first render.
+ *
+ * M8 batch B (2026-09-17): `about` wraps the shared `About` narrative
+ * (tag + headline + description + `whoWeAre`/`mission` `{title,
+ * description}` blocks + `featureImg` `{url, alt, caption, title,
+ * description}` + `cards` `[{icon?, href, label, description}]`). `url`,
+ * `icon` and `href` are shared (`sharedValue` gate); all other strings are
+ * localized. SSR-safe: `FadeUp`/`FadeLeft` are `useEffect`-only,
+ * `next/image` + `next/link` render statically.
+ *
+ * M8 batch B (2026-09-17): `surveyingInstruments` wraps the shared
+ * `SurveyingInstruments` image-card grid (tag + headline + description +
+ * `items` `[{label, img, href?}]`). `img` is a shared `/public` reference
+ * and `href` a shared path (both `sharedValue`-gated); `label` is
+ * localized. Empty `href` renders a plain `<article>` instead of a link
+ * (component branch, preserved by normalize). SSR-safe: effect-only
+ * `FadeUp`, framer-motion `Parallax` (static first render), pure-span
+ * `Blob`, static `next/image`.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -1377,6 +1394,162 @@ const whyChooseUs: SectionDefinition = {
 	}),
 };
 
+const about: SectionDefinition = {
+	id: "about",
+	version: 1,
+	label: "About",
+	description: "Narrative split: tag, headline, who-we-are/mission blocks, feature image and link cards.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description", { optionalInEnglish: true }),
+		whoWeAre: fields.object(
+			{
+				title: localeText("Title", { optionalInEnglish: true }),
+				description: localeLongText("Description", { optionalInEnglish: true }),
+			},
+			{ label: "Who we are" }
+		),
+		mission: fields.object(
+			{
+				title: localeText("Title", { optionalInEnglish: true }),
+				description: localeLongText("Description", { optionalInEnglish: true }),
+			},
+			{ label: "Mission" }
+		),
+		featureImg: fields.object(
+			{
+				url: imagePath("Image"),
+				alt: localeText("Alt text", { optionalInEnglish: true }),
+				caption: localeText("Caption", { optionalInEnglish: true }),
+				title: localeText("Title", { optionalInEnglish: true }),
+				description: localeLongText("Description", { optionalInEnglish: true }),
+			},
+			{ label: "Feature image" }
+		),
+		cards: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (optional)",
+					description: "Icon slug without the `mdi-` prefix.",
+				}),
+				href: fields.text({ label: "Link", description: "Internal path or full URL." }),
+				label: localeText("Label"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Cards",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Card"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `classes`/`className` (visual tuning,
+		// not an editor contract).
+	}),
+	example: {
+		tag: { en: "About Us", sw: "Kutuhusu" },
+		headline: { en: "From field data to design and construction.", sw: "Kutoka data ya uwandani hadi usanifu na ujenzi." },
+		description: { en: "Accurate data for smarter decisions.", sw: "Data sahihi kwa maamuzi bora." },
+		whoWeAre: {
+			title: { en: "WHO WE ARE", sw: "TULIYE NANI" },
+			description: { en: "Advanced land surveying in East Africa.", sw: "Upimaji wa hali ya juu Afrika Mashariki." },
+		},
+		mission: {
+			title: { en: "OUR MISSION", sw: "DHAMIRA YETU" },
+			description: { en: "High-precision solutions for every project.", sw: "Suluhisho sahihi kwa kila mradi." },
+		},
+		featureImg: {
+			url: "/media/home/field-doperators.jpg",
+			alt: { en: "Surveying Field Data", sw: "Data ya Upimaji wa Uwanjani" },
+			caption: { en: "Field Operations", sw: "Shughuli za Uwanjani" },
+			title: { en: "Topographical and GPR surveys", sw: "Upimaji wa Topografia na GPR" },
+			description: { en: "1cm accuracy for your project.", sw: "Usahihi wa 1cm kwa mradi wako." },
+		},
+		cards: [
+			{
+				icon: "shield-outline",
+				href: "/about",
+				label: { en: "Licensed Experts", sw: "Wataalamu Wenye Leseni" },
+				description: { en: "Full Institution of Surveyors certification.", sw: "Uthibitisho kamili wa Taasisi ya Wapimaji." },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			whoWeAre: resolved.whoWeAre,
+			mission: resolved.mission,
+			featureImg: resolved.featureImg,
+			cards: Array.isArray(resolved.cards)
+				? resolved.cards.map((card: any) => ({
+						icon: card?.icon || null,
+						href: card?.href ?? "",
+						label: card?.label ?? "",
+						description: card?.description ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+const surveyingInstruments: SectionDefinition = {
+	id: "surveyingInstruments",
+	version: 1,
+	label: "Surveying instruments",
+	description: "Image-card grid of instruments with optional product links.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline", { optionalInEnglish: true }),
+		description: localeLongText("Description", { optionalInEnglish: true }),
+		items: fields.array(
+			fields.object({
+				label: localeText("Label"),
+				img: imagePath("Image"),
+				href: fields.text({ label: "Link (optional)", description: "Empty = plain card, no link." }),
+			}),
+			{
+				label: "Instruments",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Instrument"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `classes`/`className` (visual tuning,
+		// not an editor contract).
+	}),
+	example: {
+		tag: { en: "Precision", sw: "Usahihi" },
+		headline: { en: "Our Surveying Instruments", sw: "Vifaa Vyetu vya Upimaji" },
+		description: { en: "Calibrated, precise equipment.", sw: "Vifaa sahihi vilivyorekebishwa." },
+		items: [
+			{
+				label: { en: "RTK GNSS FOIF A90", sw: "RTK GNSS FOIF A90" },
+				img: "/media/instruments/RTK-GNSS-FOIF-A90.jpg",
+				href: "/equipment-sale/foif-a90-rtk-gnss",
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						label: item?.label ?? "",
+						img: item?.img || undefined,
+						href: item?.href || undefined,
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
 export const sectionRegistry: readonly SectionDefinition[] = [
 	introText,
 	ctaBand,
@@ -1394,6 +1567,8 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	keyFacts,
 	metrics,
 	whyChooseUs,
+	about,
+	surveyingInstruments,
 ];
 
 export function getSectionDefinition(id: string): SectionDefinition {
@@ -1419,6 +1594,8 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	keyFacts: keyFacts.label,
 	metrics: metrics.label,
 	whyChooseUs: whyChooseUs.label,
+	about: about.label,
+	surveyingInstruments: surveyingInstruments.label,
 };
 
 /**

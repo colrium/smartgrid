@@ -347,6 +347,73 @@ function whyChooseUsBuild(en, sw, where) {
 	};
 }
 
+// M8 batch B (2026-09-17): `about` narrative split. Legacy `common:about`
+// holds `{tag?, headline, description?, whoWeAre{title,description},
+// mission{title,description}, featureImg{url,alt,caption,title,description},
+// cards[{icon?,href,label,description}]}`. `url`, `icon` and `href` are
+// shared (`sharedValue` gate); every other string is localized.
+function aboutBuild(en, sw, where) {
+	const enCards = en.cards ?? [];
+	const swCards = sw.cards ?? [];
+	if (!Array.isArray(swCards) || swCards.length !== enCards.length) {
+		gap(where, `card count diverged (en=${enCards.length} sw=${swCards?.length})`);
+	}
+	const block = (node, swNode) => ({
+		title: { en: optText(node?.title), sw: optText(swNode?.title) },
+		description: { en: optText(node?.description), sw: optText(swNode?.description) },
+	});
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		whoWeAre: block(en.whoWeAre, sw.whoWeAre),
+		mission: block(en.mission, sw.mission),
+		featureImg: {
+			url: sharedValue(en.featureImg, sw.featureImg, "url", `${where}.featureImg`) ?? "",
+			alt: { en: optText(en.featureImg?.alt), sw: optText(sw.featureImg?.alt) },
+			caption: { en: optText(en.featureImg?.caption), sw: optText(sw.featureImg?.caption) },
+			title: { en: optText(en.featureImg?.title), sw: optText(sw.featureImg?.title) },
+			description: { en: optText(en.featureImg?.description), sw: optText(sw.featureImg?.description) },
+		},
+		cards: enCards.map((card, i) => {
+			const swCard = swCards[i] ?? {};
+			return {
+				icon: sharedValue(card, swCard, "icon", `${where}.cards[${i}]`) ?? "",
+				href: sharedValue(card, swCard, "href", `${where}.cards[${i}]`) ?? "",
+				label: { en: reqText(card.label, `${where}.cards[${i}].label.en`), sw: reqText(swCard.label, `${where}.cards[${i}].label.sw`) },
+				description: { en: reqText(card.description, `${where}.cards[${i}].description.en`), sw: reqText(swCard.description, `${where}.cards[${i}].description.sw`) },
+			};
+		}),
+		id: "",
+	};
+}
+
+// M8 batch B (2026-09-17): `surveyingInstruments` image grid. Legacy
+// `common:surveyingInstruments` holds `{tag?, headline?, description?,
+// items[{label, img, href?}]}`. `img`/`href` are shared (`sharedValue`
+// gate); `label` is localized.
+function surveyingInstrumentsBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: optText(en.headline), sw: optText(sw.headline) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				label: { en: reqText(item.label, `${where}.items[${i}].label.en`), sw: reqText(swItem.label, `${where}.items[${i}].label.sw`) },
+				img: sharedValue(item, swItem, "img", `${where}.items[${i}]`) ?? "",
+				href: sharedValue(item, swItem, "href", `${where}.items[${i}]`) ?? "",
+			};
+		}),
+		id: "",
+	};
+}
+
 // NOTE (M8 batch A): `metrics` is registered but intentionally NOT migrated
 // here — `<MetricsSection/>` is commented out of `[locale]/index.tsx`, so
 // `common:metrics` is unrendered on `/` and `metrics` stays in `skipped`
@@ -2381,11 +2448,11 @@ const PAGES = {
 	// global LeadGenBar (`home` ns, never a page-builder branch),
 	// CoreExpertiseSection (`headerRow` + `hoverArrow` + `watermarkedIndexed`),
 	// client-only CoverageAreaSection (ProjectsGlobe), About/
-	// PlanningInfographic/SurveyingInstruments/Drones/
+	// PlanningInfographic/Drones/
 	// Services/SurveyCost bespoke (`trustees` + `certifications` + `keyFacts`
-	// + `whyChooseUs` migrated in M8, so they leave this tail list;
-	// `metrics` stays in `skipped` — unrendered, commented out of the route).
-	// NOTE: overwrites the
+	// + `whyChooseUs` + `about` + `surveyingInstruments` migrated in M8, so
+	// they leave this tail list; `metrics` stays in `skipped` — unrendered,
+	// commented out of the route). NOTE: overwrites the
 	// M1 `home.json` starter fixture (placeholder since M1) with the real
 	// migrated home; entry stays `draft`.
 	"home": {
@@ -2396,7 +2463,7 @@ const PAGES = {
 		// `contentNamespace` (`common.json`) while the page entry stays
 		// `home.json`.
 		contentNamespace: "common",
-		skipped: ["hero", "about", "planningInfographic", "surveyingInstruments", "drones", "coreExpertise", "services", "metrics", "surveyCostInKenya", "coverageArea"],
+		skipped: ["hero", "planningInfographic", "drones", "coreExpertise", "services", "metrics", "surveyCostInKenya", "coverageArea"],
 		sections: [
 			{
 				discriminant: "ctaBand",
@@ -2605,6 +2672,28 @@ const PAGES = {
 				// this mapping since HEAD `9b3f8d0`).
 				build(en, sw, where) {
 					return whyChooseUsBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "about",
+				from: "about",
+				// Legacy: AboutSection → <About id="about" /> over
+				// `common:about` (same `common.json` content namespace as
+				// every other section in this mapping since HEAD `9b3f8d0`).
+				build(en, sw, where) {
+					return aboutBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "surveyingInstruments",
+				from: "surveyingInstruments",
+				// Legacy: SurveyingInstrumentsSection →
+				// <SurveyingInstruments id="surveying-instruments" /> over
+				// `common:surveyingInstruments` (same `common.json` content
+				// namespace as every other section in this mapping since
+				// HEAD `9b3f8d0`).
+				build(en, sw, where) {
+					return surveyingInstrumentsBuild(en, sw, where);
 				},
 			},
 		],

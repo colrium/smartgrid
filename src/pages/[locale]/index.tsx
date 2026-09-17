@@ -36,17 +36,18 @@ interface PageProps {
  * Sections migrated to Keystatic in page order (see the `home` mapping in
  * `scripts/migrate-locale-to-keystatic.mjs`): actionCtaSurveyor ctaBand,
  * industriesWeServe cardGrid, faq, actionCtaEngineer ctaBand, defaultCta
- * ctaBand, trustees, certifications, keyFacts, whyChooseUs (M8, 2026-09-16/17).
+ * ctaBand, trustees, certifications, keyFacts, whyChooseUs, about,
+ * surveyingInstruments (M8, 2026-09-16/17).
  * Thirteen legacy tails (bespoke WebGL hero, global LeadGenBar, headerRow/
  * hoverArrow/watermarkedIndexed CoreExpertise grid, client-only CoverageArea
- * globe, About/PlanningInfographic/SurveyingInstruments/Drones/
+ * globe, PlanningInfographic/Drones/
  * Services/SurveyCost bespoke) sit at fixed
  * positions between them, so the route renders each Keystatic section by
  * index instead of one whole PageBuilderDocument. If an edit changes the
  * section COUNT, the route falls back to legacy rather than misplacing
  * sections — keep this in sync with the mapping.
  */
-const KEYSTATIC_SECTION_COUNT = 9;
+const KEYSTATIC_SECTION_COUNT = 11;
 
 function orderedSections(page: ResolvedKeystaticPage) {
 	if (page.sections.length !== KEYSTATIC_SECTION_COUNT) {
@@ -59,7 +60,7 @@ function orderedSections(page: ResolvedKeystaticPage) {
 }
 
 const Page: NextPage<PageProps> = ({ keystaticPage }) => {
-	// Migration source switch (M3/M7): Keystatic owns the nine migrated
+	// Migration source switch (M3/M7): Keystatic owns the eleven migrated
 	// sections only when the slug is allowlisted via `KEYSTATIC_PAGES` and the
 	// entry is published. Otherwise the legacy locale-JSON implementation
 	// renders unchanged.
@@ -81,10 +82,10 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 							className="my-12  -mt-48"
 							// className="my-12 "
 						/>
-						<AboutSection />
+						{renderAt(9)}
 						<PlanningInfographicSection />
 					</div>
-					<SurveyingInstrumentsSection />
+					{renderAt(10)}
 					<DronesSection />
 
 					{renderAt(0)}
