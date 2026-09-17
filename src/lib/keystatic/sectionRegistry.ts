@@ -105,9 +105,46 @@ import {
  * silently dropping one locale's media. SSR-safe: `FadeUp` touches
  * `IntersectionObserver` only inside `useEffect`, `Blob` is a pure span, and
  * `next/image` renders statically.
+ *
+ * M8 continued (2026-09-17): `certifications` wraps the shared
+ * `Certifications` badge grid (tag + headline + description + `{icon?,
+ * name, label}` items). `name` (ISK/NEMA/…) is a shared literal identical in
+ * en/sw — the migration's `sharedValue` gate aborts on divergence; `label`
+ * is localized free text. `icon` is an optional shared MDI slug (null in
+ * legacy). SSR-safe: `FadeUp` is `useEffect`-only, `Parallax` is
+ * framer-motion `useScroll`/`useSpring` (static first render, same class as
+ * the M7 `Gallery` Slider precedent), `Blob` is a pure span.
+ *
+ * M8 continued (2026-09-17): `keyFacts` wraps the shared `KeyFacts` panel
+ * (tag + headline + description + `{icon?, label, description}` items).
+ * `icon` is a shared MDI slug with a positional `FACT_ICONS` fallback in
+ * the component (empty = default by index); `label`/`description` are
+ * localized. Same SSR-safety story as `certifications` (effect-only
+ * `FadeUp`, pure-span `Blob`, framer-motion `Parallax`).
+ *
+ * M8 batch A (2026-09-17): `metrics` wraps the shared `Metrics` scale band
+ * (tag + headline + description + `{icon?, name, value}` items). `name` is
+ * localized (`Countries` en vs `Nchi` sw — unlike `stats`, whose value is
+ * the localized node); `value` is a shared integer, identical in en/sw
+ * (the migration aborts on divergence); `icon` is an optional shared MDI
+ * slug with a positional `METRIC_ICONS` fallback.
+ * SSR-safe: `CountUp` renders a static span (animation runs in `useEffect`
+ * via `requestAnimationFrame`), `FadeUp` is `useEffect`-only. New id v1 —
+ * no overlap with `stats` (string values + layout/tone/columns contract).
+ * NOTE: `<MetricsSection/>` is commented out of `[locale]/index.tsx`, so
+ * `common:metrics` is unrendered on `/` — the id is registered (addable to
+ * any page) but NOT migrated into `home.json` (nothing renders it there).
+ *
+ * M8 batch A (2026-09-17): `whyChooseUs` wraps the shared `WhyChooseUs`
+ * sticky-list section (tag + headline + description + `{icon?, name, label,
+ * description}` items). `icon` is shared; `name` is a shared literal
+ * (identical camelCase keys in en/sw, rendered as the item eyebrow —
+ * `sharedValue` gate aborts on divergence); `label`/`description` are
+ * localized. SSR-safe: `FadeUp`/`SectionHeader` have no browser APIs on
+ * first render.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -1097,6 +1134,249 @@ const trustees: SectionDefinition = {
 	}),
 };
 
+const certifications: SectionDefinition = {
+	id: "certifications",
+	version: 1,
+	label: "Certifications",
+	description: "Certification badge grid: tag, headline, description and name/label cards.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline", { optionalInEnglish: true }),
+		description: localeLongText("Description", { optionalInEnglish: true }),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (optional)",
+					description: "Icon slug without the `mdi-` prefix. Empty = no icon.",
+				}),
+				name: fields.text({
+					label: "Badge name (shared)",
+					description: "Short code shown large on the card (e.g. ISK). Identical in en/sw.",
+				}),
+				label: localeText("Label"),
+			}),
+			{
+				label: "Certifications",
+				itemLabel: (item) => previewText(item, ["fields", "name", "value"], "Certification"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `classes`/`className` (visual tuning,
+		// not an editor contract).
+	}),
+	example: {
+		tag: { en: "Certified", sw: "Imethibitishwa" },
+		headline: { en: "Our Certifications", sw: "Vyeti Vyetu" },
+		description: { en: "We hold certifications from reputable organizations.", sw: "Tunashikilia vyeti kutoka kwa mashirika yenye sifa." },
+		items: [
+			{
+				icon: "",
+				name: "ISK",
+				label: { en: "Surveyors of Kenya", sw: "Wapimaji wa Kenya" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || null,
+						name: item?.name ?? "",
+						label: item?.label ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+const keyFacts: SectionDefinition = {
+	id: "keyFacts",
+	version: 1,
+	label: "Key facts",
+	description: "Panel with watermark count: tag, headline, description and fact cards.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline", { optionalInEnglish: true }),
+		description: localeLongText("Description", { optionalInEnglish: true }),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (optional)",
+					description: "Icon slug without the `mdi-` prefix. Empty = positional default.",
+				}),
+				label: localeText("Label"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Facts",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Fact"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `classes`/`className` (visual tuning,
+		// not an editor contract).
+	}),
+	example: {
+		tag: { en: "Key Facts", sw: "Mambo Muhimu" },
+		headline: { en: "EA Leaders in surveying", sw: "EA Leaders in surveying" },
+		description: { en: "A leading surveying and engineering company.", sw: "Kampuni inayoongoza ya upimaji na uhandisi." },
+		items: [
+			{
+				icon: "map-marker-radius",
+				label: { en: "Regional Coverage", sw: "Ufikiaji wa Kikanda" },
+				description: {
+					en: "East Africa operations across Kenya, Uganda, Tanzania and Rwanda.",
+					sw: "Shughuli za Afrika Mashariki katika Kenya, Uganda, Tanzania na Rwanda.",
+				},
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || null,
+						label: item?.label ?? "",
+						description: item?.description ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+const metrics: SectionDefinition = {
+	id: "metrics",
+	version: 1,
+	label: "Metrics",
+	description: "Operational scale band: tag, headline, description and animated count-up stats.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline", { optionalInEnglish: true }),
+		description: localeLongText("Description", { optionalInEnglish: true }),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (optional)",
+					description: "Icon slug without the `mdi-` prefix. Empty = positional default.",
+				}),
+				name: localeText("Name"),
+				value: fields.integer({ label: "Value", defaultValue: 0, validation: { min: 0 } }),
+			}),
+			{
+				label: "Metrics",
+				itemLabel: (item) => previewText(item, ["fields", "name", "fields", "en", "value"], "Metric"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `classes`/`className` (visual tuning,
+		// not an editor contract).
+	}),
+	example: {
+		tag: { en: "Scale", sw: "Kiwango" },
+		headline: { en: "Our Operational Scale", sw: "Kiwango Chetu cha Uendeshaji" },
+		description: { en: "A strong operational scale across the region.", sw: "Kiwango kikubwa cha uendeshaji katika mkoa." },
+		items: [
+			{
+				icon: "map-marker-multiple",
+				name: { en: "Countries", sw: "Nchi" },
+				value: 7,
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || null,
+						name: item?.name ?? "",
+						value: typeof item?.value === "number" ? item.value : 0,
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+const whyChooseUs: SectionDefinition = {
+	id: "whyChooseUs",
+	version: 1,
+	label: "Why choose us",
+	description: "Sticky header plus numbered proof-point list with eyebrow, title and description.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline", { optionalInEnglish: true }),
+		description: localeLongText("Description", { optionalInEnglish: true }),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (optional)",
+					description: "Icon slug without the `mdi-` prefix. Informational only in this layout.",
+				}),
+				name: fields.text({
+					label: "Eyebrow (shared)",
+					description: "Short key shown above the title. Identical in en/sw.",
+				}),
+				label: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Proof points",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Point"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `classes`/`className` (visual tuning,
+		// not an editor contract).
+	}),
+	example: {
+		tag: { en: "Why Choose Us", sw: "Kwa Nini Utuchague" },
+		headline: { en: "Exceptional surveying and engineering solutions.", sw: "Suluhisho bora za upimaji na uhandisi." },
+		description: { en: "Cutting-edge technology with extensive experience.", sw: "Teknolojia ya kisasa yenye uzoefu mkubwa." },
+		items: [
+			{
+				icon: "crosshairs",
+				name: "engineeringAccuracy",
+				label: { en: "Engineering Accuracy", sw: "Usahihi wa Kihandisi" },
+				description: {
+					en: "Centimeter-level precision with RTK GNSS and total stations.",
+					sw: "Usahihi wa sentimita kwa RTK GNSS na total stations.",
+				},
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || null,
+						name: item?.name ?? "",
+						label: item?.label ?? "",
+						description: item?.description ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
 export const sectionRegistry: readonly SectionDefinition[] = [
 	introText,
 	ctaBand,
@@ -1110,6 +1390,10 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	gallery,
 	pricing,
 	trustees,
+	certifications,
+	keyFacts,
+	metrics,
+	whyChooseUs,
 ];
 
 export function getSectionDefinition(id: string): SectionDefinition {
@@ -1131,6 +1415,10 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	gallery: gallery.label,
 	pricing: pricing.label,
 	trustees: trustees.label,
+	certifications: certifications.label,
+	keyFacts: keyFacts.label,
+	metrics: metrics.label,
+	whyChooseUs: whyChooseUs.label,
 };
 
 /**

@@ -263,6 +263,95 @@ function trusteesBuild(en, sw, where) {
 	};
 }
 
+// M8 continued (2026-09-17): `certifications` badge grid. Legacy
+// `common:certifications` holds `{tag?, headline?, description?, items:
+// [{icon?, name, label}]}`. `name` (ISK/NEMA/…) is a shared literal
+// identical in en/sw — any divergence aborts via `sharedValue`; `label`
+// is localized free text; `icon` is an optional shared MDI slug (null in
+// legacy content → stored as "").
+function certificationsBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: optText(en.headline), sw: optText(sw.headline) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				name: sharedValue(item, swItem, "name", `${where}.items[${i}]`) ?? "",
+				label: { en: reqText(item.label, `${where}.items[${i}].label.en`), sw: reqText(swItem.label, `${where}.items[${i}].label.sw`) },
+			};
+		}),
+		id: "",
+	};
+}
+
+// M8 continued (2026-09-17): `keyFacts` panel. Legacy `common:keyFacts`
+// holds `{tag?, headline?, description?, items: [{icon?, label,
+// description}]}`. `icon` is a shared MDI slug (identical in en/sw — any
+// divergence aborts via `sharedValue`; the component falls back to a
+// positional icon when empty); `label`/`description` are localized.
+function keyFactsBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: optText(en.headline), sw: optText(sw.headline) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				label: { en: reqText(item.label, `${where}.items[${i}].label.en`), sw: reqText(swItem.label, `${where}.items[${i}].label.sw`) },
+				description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+			};
+		}),
+		id: "",
+	};
+}
+
+// M8 batch A (2026-09-17): `whyChooseUs` sticky list. Legacy
+// `common:whyChooseUs` holds `{tag?, headline?, description?, items:
+// [{icon?, name, label, description}]}`. `icon` is shared; `name` is a
+// shared literal (identical camelCase eyebrow keys in en/sw — any
+// divergence aborts via `sharedValue`); `label`/`description` are
+// localized.
+function whyChooseUsBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: optText(en.headline), sw: optText(sw.headline) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				name: sharedValue(item, swItem, "name", `${where}.items[${i}]`) ?? "",
+				label: { en: reqText(item.label, `${where}.items[${i}].label.en`), sw: reqText(swItem.label, `${where}.items[${i}].label.sw`) },
+				description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+			};
+		}),
+		id: "",
+	};
+}
+
+// NOTE (M8 batch A): `metrics` is registered but intentionally NOT migrated
+// here — `<MetricsSection/>` is commented out of `[locale]/index.tsx`, so
+// `common:metrics` is unrendered on `/` and `metrics` stays in `skipped`
+// below. The id exists so editors can add it to any page.
+
 // M7 batch 5: generic `introText` builder. Presentation props (tone, align,
 // split) are wrapper hardcodes — passed in, never read from content.
 // `ctaKey` names an optional `{label, href, icon?}` action object merged by
@@ -2292,9 +2381,11 @@ const PAGES = {
 	// global LeadGenBar (`home` ns, never a page-builder branch),
 	// CoreExpertiseSection (`headerRow` + `hoverArrow` + `watermarkedIndexed`),
 	// client-only CoverageAreaSection (ProjectsGlobe), About/
-	// PlanningInfographic/SurveyingInstruments/Drones/WhyChooseUs/KeyFacts/
-	// Services/SurveyCost/Certifications bespoke (`trustees` migrated in M8,
-	// so it leaves this tail list). NOTE: overwrites the
+	// PlanningInfographic/SurveyingInstruments/Drones/
+	// Services/SurveyCost bespoke (`trustees` + `certifications` + `keyFacts`
+	// + `whyChooseUs` migrated in M8, so they leave this tail list;
+	// `metrics` stays in `skipped` — unrendered, commented out of the route).
+	// NOTE: overwrites the
 	// M1 `home.json` starter fixture (placeholder since M1) with the real
 	// migrated home; entry stays `draft`.
 	"home": {
@@ -2305,7 +2396,7 @@ const PAGES = {
 		// `contentNamespace` (`common.json`) while the page entry stays
 		// `home.json`.
 		contentNamespace: "common",
-		skipped: ["hero", "about", "planningInfographic", "surveyingInstruments", "drones", "whyChooseUs", "keyFacts", "coreExpertise", "certifications", "services", "metrics", "surveyCostInKenya", "coverageArea"],
+		skipped: ["hero", "about", "planningInfographic", "surveyingInstruments", "drones", "coreExpertise", "services", "metrics", "surveyCostInKenya", "coverageArea"],
 		sections: [
 			{
 				discriminant: "ctaBand",
@@ -2482,6 +2573,38 @@ const PAGES = {
 				// every other section in this mapping since HEAD `9b3f8d0`).
 				build(en, sw, where) {
 					return trusteesBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "certifications",
+				from: "certifications",
+				// Legacy: CertificationsSection → <Certifications
+				// id="certifications" /> over `common:certifications` (same
+				// `common.json` content namespace as every other section in
+				// this mapping since HEAD `9b3f8d0`).
+				build(en, sw, where) {
+					return certificationsBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "keyFacts",
+				from: "keyFacts",
+				// Legacy: KeyFactsSection → <KeyFacts id="key-facts" /> over
+				// `common:keyFacts` (same `common.json` content namespace as
+				// every other section in this mapping since HEAD `9b3f8d0`).
+				build(en, sw, where) {
+					return keyFactsBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "whyChooseUs",
+				from: "whyChooseUs",
+				// Legacy: WhyChooseUsSection → <WhyChooseUs
+				// id="why-choose-us" /> over `common:whyChooseUs` (same
+				// `common.json` content namespace as every other section in
+				// this mapping since HEAD `9b3f8d0`).
+				build(en, sw, where) {
+					return whyChooseUsBuild(en, sw, where);
 				},
 			},
 		],

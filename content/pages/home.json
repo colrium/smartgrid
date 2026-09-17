@@ -461,6 +461,214 @@
 				],
 				"id": ""
 			}
+		},
+		{
+			"discriminant": "certifications",
+			"value": {
+				"tag": {
+					"en": "Certified",
+					"sw": "Imethibitishwa"
+				},
+				"headline": {
+					"en": "Our Certifications",
+					"sw": "Vyeti Vyetu"
+				},
+				"description": {
+					"en": "We are proud to hold certifications from reputable organizations, demonstrating our commitment to quality, safety, and professionalism in the surveying and engineering industry.",
+					"sw": "Tunajivunia kushikilia vyeti kutoka kwa mashirika yenye sifa, kuonyesha kujitolea kwetu kwa ubora, usalama, na taaluma katika sekta ya upimaji na uhandisi."
+				},
+				"items": [
+					{
+						"icon": "",
+						"name": "ISK",
+						"label": {
+							"en": "Surveyors of Kenya",
+							"sw": "Wapimaji wa Kenya"
+						}
+					},
+					{
+						"icon": "",
+						"name": "NEMA",
+						"label": {
+							"en": "Environmental Compliance",
+							"sw": "Ufuasi wa Mazingira"
+						}
+					},
+					{
+						"icon": "",
+						"name": "NCA",
+						"label": {
+							"en": "Construction Authority",
+							"sw": "Mamlaka ya Ujenzi"
+						}
+					},
+					{
+						"icon": "",
+						"name": "SOK",
+						"label": {
+							"en": "Survey of Kenya",
+							"sw": "Upimaji wa Kenya"
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "keyFacts",
+			"value": {
+				"tag": {
+					"en": "Key Facts",
+					"sw": "Mambo Muhimu"
+				},
+				"headline": {
+					"en": "EA Leaders in surveying",
+					"sw": "EA Leaders in surveying"
+				},
+				"description": {
+					"en": "We are a leading surveying and engineering company with a strong presence in East Africa, specializing in land surveying, drone mapping, and geospatial data solutions. With over 5 years of experience, we have successfully completed numerous projects while adhering to national regulations and survey best practices.",
+					"sw": "Sisi ni kampuni inayoongoza ya upimaji na uhandisi yenye uwepo mkubwa katika Afrika Mashariki, maalumu katika upimaji wa ardhi, ramani za ndege zisizo na rubani, na suluhisho za data ya kijiografia. Kwa uzoefu wa zaidi ya miaka 5, tumekamilisha miradi mingi kwa mafanikio huku tukizingatia kanuni za kitaifa na mbinu bora za upimaji."
+				},
+				"items": [
+					{
+						"icon": "map-marker-radius",
+						"label": {
+							"en": "Regional Coverage",
+							"sw": "Ufikiaji wa Kikanda"
+						},
+						"description": {
+							"en": "East Africa operations across Kenya, Uganda, Tanzania, Rwanda & surrounding regions.",
+							"sw": "Shughuli za Afrika Mashariki katika Kenya, Uganda, Tanzania, Rwanda na maeneo jirani."
+						}
+					},
+					{
+						"icon": "satellite-variant",
+						"label": {
+							"en": "Specialization",
+							"sw": "Utaalamu"
+						},
+						"description": {
+							"en": "Land surveying, drone mapping & geospatial data solutions.",
+							"sw": "Upimaji wa ardhi, ramani za ndege zisizo na rubani na suluhisho za data ya kijiografia."
+						}
+					},
+					{
+						"icon": "clock-check-outline",
+						"label": {
+							"en": "Experience",
+							"sw": "Uzoefu"
+						},
+						"description": {
+							"en": "5+ years delivering engineering-grade spatial data.",
+							"sw": "Miaka 5+ ya kutoa data ya anga ya kiwango cha uhandisi."
+						}
+					},
+					{
+						"icon": "shield-check-outline",
+						"label": {
+							"en": "Standards",
+							"sw": "Viwango"
+						},
+						"description": {
+							"en": "Compliance with national regulations and survey best practices.",
+							"sw": "Kufuata kanuni za kitaifa na mbinu bora za upimaji."
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "whyChooseUs",
+			"value": {
+				"tag": {
+					"en": "Why Choose Us",
+					"sw": "Kwa Nini Uchague Sisi"
+				},
+				"headline": {
+					"en": "Exceptional surveying and engineering solutions.",
+					"sw": "Suluhisho bora za upimaji na uhandisi."
+				},
+				"description": {
+					"en": "We combine cutting-edge technology with extensive experience to deliver exceptional surveying and engineering solutions.",
+					"sw": "Tunachanganya teknolojia ya kisasa na uzoefu mkubwa ili kutoa suluhisho bora za upimaji na uhandisi."
+				},
+				"items": [
+					{
+						"icon": "crosshairs",
+						"name": "engineeringAccuracy",
+						"label": {
+							"en": "Engineering Accuracy",
+							"sw": "Usahihi wa Kiuhandisi"
+						},
+						"description": {
+							"en": "We use RTK GNSS, Total Stations, and Drone Systems to deliver centimeter-level precision.",
+							"sw": "Tunatumia RTK GNSS, Total Stations, na Mifumo ya Ndege zisizo na Rubani kutoa usahihi wa sentimita."
+						}
+					},
+					{
+						"icon": "radar",
+						"name": "modernTechnology",
+						"label": {
+							"en": "Modern Technology",
+							"sw": "Teknolojia ya Kisasa"
+						},
+						"description": {
+							"en": "From LiDAR mapping to GPR utility detection, we deploy advanced tools for complex environments.",
+							"sw": "Kuanzia ramani ya LiDAR hadi ugunduzi wa huduma za GPR, tunatumia zana za kisasa kwa mazingira magumu."
+						}
+					},
+					{
+						"icon": "timer-sand",
+						"name": "fastTurnaround",
+						"label": {
+							"en": "Fast Turnaround",
+							"sw": "Utekelezaji wa Haraka"
+						},
+						"description": {
+							"en": "Efficient workflows ensure timely delivery without compromising quality.",
+							"sw": "Mifumo bora ya kazi inahakikisha uwasilishaji kwa wakati bila kuathiri ubora."
+						}
+					},
+					{
+						"icon": "clipboard-check",
+						"name": "projectFocused",
+						"label": {
+							"en": "Project-Focused Approach",
+							"sw": "Mbinu Inayolenga Mradi"
+						},
+						"description": {
+							"en": "We align our outputs with design, construction, and approval requirements-not just raw data.",
+							"sw": "Tunalinganisha matokeo yetu na mahitaji ya kubuni, ujenzi, na idhini—sio data ghafi tu."
+						}
+					},
+					{
+						"icon": "account-group",
+						"name": "trustedExperience",
+						"label": {
+							"en": "Trusted Experience",
+							"sw": "Uzoefu wa Kuaminika"
+						},
+						"description": {
+							"en": "Our team brings hands-on field experience across infrastructure, real estate, and engineering projects in East Africa.",
+							"sw": "Timu yetu ina uzoefu wa moja kwa moja wa uwanjani katika miradi ya miundombinu, mali isiyohamishika, na uhandisi katika Afrika Mashariki."
+						}
+					},
+					{
+						"icon": "shield-check",
+						"name": "commitmentQuality",
+						"label": {
+							"en": "Commitment to Quality & Innovation",
+							"sw": "Kujitolea kwa Ubora na Ubunifu"
+						},
+						"description": {
+							"en": "We adhere to strict quality standards and continuously innovate to provide the best solutions for our clients.",
+							"sw": "Tunafuata viwango vikali vya ubora na tunaendelea kubuni suluhisho bora kwa wateja wetu."
+						}
+					}
+				],
+				"id": ""
+			}
 		}
 	]
 }

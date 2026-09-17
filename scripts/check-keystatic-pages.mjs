@@ -345,12 +345,14 @@ const resolutionCases = await (async () => {
 	const realRes = await resolveKeystaticPage("home", "en", { baseDir: realBase });
 	// M7 batch 17: `home.json` is the real migrated home (overwrote the M1
 	// starter): 2 split/shimmer ActionCtas + Industries cardGrid + faq +
-	// masked Cta + trustees logo wall (M8, 2026-09-16), in page order.
+	// masked Cta + trustees logo wall (M8, 2026-09-16) + certifications
+	// badge grid + keyFacts panel + whyChooseUs list (M8, 2026-09-17),
+	// in page order.
 	outcomes.push([
 		"resolve-real-fixture",
 		realRes.status === "keystatic" &&
 			realRes.page.title === "Home (migrated)" &&
-			realRes.page.sections.map((s) => s.id).join(",") === "ctaBand,cardGrid,faq,ctaBand,ctaBand,trustees",
+			realRes.page.sections.map((s) => s.id).join(",") === "ctaBand,cardGrid,faq,ctaBand,ctaBand,trustees,certifications,keyFacts,whyChooseUs",
 	]);
 
 	setSwitchEnv(savedEnv.KEYSTATIC_PAGES, savedEnv.KEYSTATIC_DISABLE);

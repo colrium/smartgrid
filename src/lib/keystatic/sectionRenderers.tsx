@@ -11,6 +11,10 @@ import { Process } from "@/components/sections/shared/Process";
 import { Gallery } from "@/components/sections/shared/Gallery";
 import { Pricing } from "@/components/sections/shared/Pricing";
 import { Trustees } from "@/components/sections/shared/Trustees";
+import { Certifications } from "@/components/sections/shared/Certifications";
+import { KeyFacts } from "@/components/sections/shared/KeyFacts";
+import { Metrics } from "@/components/sections/shared/Metrics";
+import { WhyChooseUs } from "@/components/sections/shared/WhyChooseUs";
 import type { Lang } from "../types";
 import { resolveLocaleValue } from "./localize";
 import { getSectionDefinition, type SectionId } from "./sectionRegistry";
@@ -43,6 +47,10 @@ export const sectionRenderers = {
 	gallery: Gallery,
 	pricing: Pricing,
 	trustees: Trustees,
+	certifications: Certifications,
+	keyFacts: KeyFacts,
+	metrics: Metrics,
+	whyChooseUs: WhyChooseUs,
 } satisfies Record<SectionId, ComponentType<any>>;
 
 export function renderSection(
