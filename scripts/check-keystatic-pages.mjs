@@ -480,6 +480,75 @@ const resolutionCases = await (async () => {
 	}
 	outcomes.push(["layout-parity", parity]);
 
+	// --- Catch-all route for editor-created pages (M10) --------------------
+	// File contract: the localized catch-all plus the root proxy that keeps
+	// default-locale URLs unprefixed (same pattern as `about.tsx`).
+	const catchAllSrc = readFileSync(join(ROOT, "src", "pages", "[locale]", "[...slug].tsx"), "utf8");
+	const catchAllProxy = readFileSync(join(ROOT, "src", "pages", "[...slug].tsx"), "utf8");
+	outcomes.push([
+		"catchall-files",
+		catchAllProxy.includes('./[locale]/[...slug]') &&
+			catchAllSrc.includes("PageBuilderDocument") &&
+			catchAllSrc.includes("notFound") &&
+			catchAllSrc.includes('"home"') &&
+			catchAllSrc.includes('"keystatic"'),
+	]);
+
+	// Content-only slugs resolve through the unchanged M3 pipeline: a novel
+	// published + allowlisted slug is servable, anything else falls back
+	// (the route turns every fallback into a 404 — it has no legacy page).
+	const probeEntry = (status) => ({
+		slug: "Test Custom Probe",
+		title: "Test Custom Probe",
+		status,
+		pageBuilder: [
+			{ discriminant: "hero", value: JSON.parse(JSON.stringify(definitions.find((d) => d.id === "hero").example)) },
+			{ discriminant: "ctaBand", value: JSON.parse(JSON.stringify(definitions.find((d) => d.id === "ctaBand").example)) },
+		],
+	});
+	setSwitchEnv("test-custom-probe", undefined);
+	const probeBase = makeContentBase({ "test-custom-probe.json": probeEntry("published") });
+	const probeRes = await resolveKeystaticPage("test-custom-probe", "sw", { baseDir: probeBase });
+	outcomes.push([
+		"catchall-novel-published",
+		probeRes.status === "keystatic" &&
+			probeRes.page.locale === "sw" &&
+			probeRes.page.sections.map((s) => s.id).join(",") === "hero,ctaBand",
+	]);
+	const probeDraft = await resolveKeystaticPage("test-custom-probe", "en", {
+		baseDir: makeContentBase({ "test-custom-probe.json": probeEntry("draft") }),
+	});
+	outcomes.push(["catchall-novel-unpublished", probeDraft.status === "legacy" && probeDraft.reason === "unpublished"]);
+
+	// The committed `test-custom` pilot fixture resolves once published.
+	const realTestCustom = JSON.parse(readFileSync(join(ROOT, "content", "pages", "test-custom.json"), "utf8"));
+	setSwitchEnv("test-custom", undefined);
+	const testCustomRes = await resolveKeystaticPage("test-custom", "en", {
+		baseDir: makeContentBase({ "test-custom.json": { ...realTestCustom, status: "published" } }),
+	});
+	outcomes.push([
+		"catchall-pilot-fixture",
+		testCustomRes.status === "keystatic" &&
+			testCustomRes.page.sections.map((s) => s.id).join(",") === "hero,ctaBand",
+	]);
+
+	// Sitemap: published + allowlisted + unwired slugs only (helper is
+	// exercised against a throwaway root so fixtures stay hermetic).
+	const sitemapConfig = nodeRequire(join(ROOT, "next-sitemap.config.js"));
+	const siteRoot = mkdtempSync(join(tmpdir(), "ks-sitemap-"));
+	mkdirSync(join(siteRoot, "src", "pages", "[locale]"), { recursive: true });
+	mkdirSync(join(siteRoot, "content", "pages"), { recursive: true });
+	writeFileSync(join(siteRoot, "src", "pages", "[locale]", "about.tsx"), 'resolveKeystaticPage("about")');
+	for (const [name, status] of [["about.json", "published"], ["test-custom.json", "published"], ["draft-one.json", "draft"]]) {
+		writeFileSync(join(siteRoot, "content", "pages", name), JSON.stringify({ slug: name, title: name, status, pageBuilder: [] }));
+	}
+	outcomes.push([
+		"catchall-sitemap",
+		JSON.stringify(sitemapConfig.getKeystaticSitemapSlugs({ rootDir: siteRoot, allowlist: ["about", "test-custom", "draft-one"] })) === JSON.stringify(["/test-custom"]) &&
+			sitemapConfig.getWiredKeystaticSlugs(siteRoot).has("home") &&
+			sitemapConfig.getWiredKeystaticSlugs(siteRoot).has("about"),
+	]);
+
 	setSwitchEnv(savedEnv.KEYSTATIC_PAGES, savedEnv.KEYSTATIC_DISABLE);
 	return outcomes;
 })();

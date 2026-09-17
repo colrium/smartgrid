@@ -62,7 +62,9 @@ module.exports = {
 	additionalPaths: async (config) => {
 		const staticRoutes = [...staticPagesSlugs]; // includes "" (localized home) exactly once
 		const productRoutes = productPagesSlugs.map((slug) => `/equipment-sale/${slug}`);
-		const allRoutes = [...staticRoutes, ...productRoutes];
+		// Editor-created Keystatic pages served by the catch-all route (M10).
+		const keystaticRoutes = getKeystaticSitemapSlugs();
+		const allRoutes = [...staticRoutes, ...productRoutes, ...keystaticRoutes];
 		const paths = [];
 		for (const route of allRoutes) {
 			for (const locale of locales) {
@@ -144,3 +146,77 @@ function getProductSlugs() {
 	const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 	return data.items.map((product) => product.slug);
 }
+
+// Editor-created Keystatic pages served by the catch-all route (M10).
+//
+// A content entry is sitemap-eligible iff ALL hold: single-segment slug,
+// `status: "published"`, allowlisted in `KEYSTATIC_PAGES` (a sitemap URL must
+// resolve 200, and the catch-all requires the allowlist), and NOT served by
+// a dedicated fixed route. Fixed-route detection scans `src/pages` for
+// `resolveKeystaticPage("<slug>")` literals (the M7 wiring pattern) plus the
+// `home` index route — so wired pages (covered by `meta.json` slugs above)
+// are never duplicated, and drafts never leak. `rootDir`/`allowlist`
+// overrides exist for the check script (`scripts/check-keystatic-pages.mjs`).
+function getWiredKeystaticSlugs(rootDir = process.cwd()) {
+	const wired = new Set(["home"]);
+	const pagesDir = path.join(rootDir, "src", "pages");
+	const walk = (dir) => {
+		let entries;
+		try {
+			entries = fs.readdirSync(dir, { withFileTypes: true });
+		} catch {
+			return;
+		}
+		for (const entry of entries) {
+			const full = path.join(dir, entry.name);
+			if (entry.isDirectory()) {
+				walk(full);
+				continue;
+			}
+			if (!/\.tsx$/.test(entry.name)) continue;
+			let src;
+			try {
+				src = fs.readFileSync(full, "utf-8");
+			} catch {
+				continue;
+			}
+			for (const match of src.matchAll(/resolveKeystaticPage\(\s*"([^"]+)"/g)) {
+				wired.add(match[1]);
+			}
+		}
+	};
+	walk(pagesDir);
+	return wired;
+}
+
+function getKeystaticSitemapSlugs({ rootDir = process.cwd(), allowlist = null } = {}) {
+	const allowed =
+		allowlist ??
+		(process.env.KEYSTATIC_PAGES ?? "")
+			.split(",")
+			.map((s) => s.trim())
+			.filter(Boolean);
+	const dir = path.join(rootDir, "content", "pages");
+	if (!fs.existsSync(dir)) return [];
+	const wired = getWiredKeystaticSlugs(rootDir);
+	const out = [];
+	for (const file of fs.readdirSync(dir)) {
+		if (!file.endsWith(".json")) continue;
+		const slug = file.slice(0, -".json".length);
+		if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) continue;
+		if (wired.has(slug)) continue;
+		if (!allowed.includes(slug)) continue;
+		try {
+			const entry = JSON.parse(fs.readFileSync(path.join(dir, file), "utf-8"));
+			if (entry.status === "published") out.push(`/${slug}`);
+		} catch {
+			// Unreadable entries never reach the sitemap (the route 404s them).
+		}
+	}
+	return out.sort();
+}
+
+// Exposed for `scripts/check-keystatic-pages.mjs` (next-sitemap ignores
+// unknown config keys and only reads its documented fields).
+module.exports.getKeystaticSitemapSlugs = getKeystaticSitemapSlugs;
+module.exports.getWiredKeystaticSlugs = getWiredKeystaticSlugs;
