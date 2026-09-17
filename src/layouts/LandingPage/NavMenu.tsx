@@ -74,7 +74,9 @@ export default function NavMenu({
 	}, [router.events, handleClose]);
     const isDark = variant === "dark";
 	const menuClassName = isDark ? "bg-primary-700/95 text-surface" : "bg-surface/95";
-    const menuItemClassName = isDark ? "text-surface" : "text-ink";
+    const menuItemClassName = isDark
+		? "hover:bg-surface/10 focus-visible:bg-surface/10 text-surface"
+		: "text-ink hover:bg-primary/10 focus-visible:bg-primary/10 ";
 	if (horizontal) {
 		return (
 			<div className="hidden lg:flex flex-1 lg:grow lg:gap-4 lg:items-center lg:justify-end">
@@ -247,7 +249,7 @@ export default function NavMenu({
 						key={`item-${i}`}
 						href={localizePath(item.href, locale)}
 						onClick={() => handleClose()}
-						className={`text-sm hover:bg-surface/10 focus-visible:bg-surface/10 ${menuItemClassName}`}
+						className={`text-sm ${menuItemClassName}`}
 					>
 						{item.label}
 					</MenuItem>

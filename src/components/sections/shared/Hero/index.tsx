@@ -6,6 +6,7 @@ import { FadeUp } from "@/components/animations/Fade";
 import { SectionTag } from "@/components/SectionTag";
 import { Blob } from "@/components/sections/shared/decor";
 import { CtaPill, type CtaAction } from "../CtaPill";
+import { ScrollIndicator } from "@/components/ui/ScrollIndicator";
 
 export interface HeroContent {
 	/**
@@ -158,8 +159,14 @@ export function Hero(props: HeroProps): ReactElement {
 				</>
 			) : light ? (
 				<>
-					<Blob className="w-[30rem] h-[30rem] bg-primary-100/50 -top-32 -left-24" opacity={0.5} />
-					<Blob className="w-[26rem] h-[26rem] bg-primary/10 -bottom-24 -right-20" opacity={0.5} />
+					<Blob
+						className="w-[30rem] h-[30rem] bg-primary-100/50 -top-32 -left-24"
+						opacity={0.5}
+					/>
+					<Blob
+						className="w-[26rem] h-[26rem] bg-primary/10 -bottom-24 -right-20"
+						opacity={0.5}
+					/>
 				</>
 			) : (
 				<>
@@ -222,7 +229,14 @@ export function Hero(props: HeroProps): ReactElement {
 									: undefined
 						}
 					>
-						{tag ? <SectionTag dark={light ? undefined : true} className={props.classes?.tag ?? ""}>{tag}</SectionTag> : null}
+						{tag ? (
+							<SectionTag
+								dark={light ? undefined : true}
+								className={props.classes?.tag ?? ""}
+							>
+								{tag}
+							</SectionTag>
+						) : null}
 
 						{heading ? (
 							<h1
@@ -268,15 +282,24 @@ export function Hero(props: HeroProps): ReactElement {
 												: "mt-10 flex flex-wrap items-center gap-4"
 								} ${props.classes?.actions ?? ""}`}
 							>
-								{primary ? <CtaPill action={primary} variant={pillVariant} /> : null}
-								{secondary ? <CtaPill action={secondary} variant="outline" /> : null}
+								{primary ? (
+									<CtaPill action={primary} variant={pillVariant} />
+								) : null}
+								{secondary ? (
+									<CtaPill action={secondary} variant="outline" />
+								) : null}
 							</div>
 						) : null}
 
 						{footnotes.length > 0 ? (
-							<ul className={`mt-8 flex flex-wrap items-center gap-x-7 gap-y-3 ${props.classes?.footnote ?? ""}`}>
+							<ul
+								className={`mt-8 flex flex-wrap items-center gap-x-7 gap-y-3 ${props.classes?.footnote ?? ""}`}
+							>
 								{footnotes.map((item, index) => (
-									<li key={index} className="inline-flex items-center gap-2 text-xs sm:text-sm text-surface/75">
+									<li
+										key={index}
+										className="inline-flex items-center gap-2 text-xs sm:text-sm text-surface/75"
+									>
 										<span
 											className={`mdi mdi-${item.icon || "check-circle"} text-base text-primary-300`}
 											aria-hidden
@@ -295,7 +318,8 @@ export function Hero(props: HeroProps): ReactElement {
 					<span className="text-[10px] uppercase tracking-[0.28em] font-semibold">
 						{hero.cueLabel}
 					</span>
-					<span className="mdi mdi-chevron-down animate-bounce text-xl" aria-hidden />
+					{/* <span className="mdi mdi-chevron-down animate-bounce text-xl" aria-hidden /> */}
+					<ScrollIndicator color="surface"/>
 				</div>
 			) : null}
 			{centered && cue ? (
