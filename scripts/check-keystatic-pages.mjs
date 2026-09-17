@@ -423,11 +423,12 @@ const resolutionCases = await (async () => {
 			typeof layoutPublished.site.layout.contacts.phone[0]?.href === "string",
 	]);
 
-	// Store merge: owned slices are replaced wholesale; routing, brand and
-	// page namespaces survive untouched.
+	// Store merge: owned slices replace legacy values; `nav` merges
+	// additively (unrendered legacy keys survive); routing, brand and page
+	// namespaces survive untouched.
 	const mergeStore = {
 		en: {
-			common: { nav: { old: true }, locales: [{ code: "en" }], misc: { x: 1 }, footer: { old: true }, contacts: { old: true }, cookies: { old: true } },
+			common: { nav: { logo_dark: "/old.svg", links: [] }, locales: [{ code: "en" }], misc: { x: 1 }, footer: { old: true }, contacts: { old: true }, cookies: { old: true } },
 			contact: { talkToUs: { title: "T", contacts: [] }, social: { channels: [] } },
 			meta: { site: { title: "Brand" } },
 		},
@@ -436,7 +437,7 @@ const resolutionCases = await (async () => {
 	outcomes.push([
 		"layout-merge",
 		mergeStore.en.common.nav.links?.length === 6 &&
-			!mergeStore.en.common.nav.old &&
+			mergeStore.en.common.nav.logo_dark === "/old.svg" &&
 			!mergeStore.en.common.footer.old &&
 			mergeStore.en.common.locales.length === 1 &&
 			mergeStore.en.common.misc.x === 1 &&
@@ -445,6 +446,39 @@ const resolutionCases = await (async () => {
 			mergeStore.en.contact.talkToUs.contacts.length === 6 &&
 			mergeStore.en.contact.social.channels.length === 4,
 	]);
+
+	// Parity: the published fixture migrates verbatim from locale JSON, so
+	// merging it into the real store must reproduce the legacy owned slices
+	// exactly — opting in changes nothing until an editor edits content.
+	const parityStore = {
+		en: {
+			common: JSON.parse(readFileSync(join(ROOT, "public", "locales", "en", "common.json"), "utf8")),
+			contact: JSON.parse(readFileSync(join(ROOT, "public", "locales", "en", "contact.json"), "utf8")),
+		},
+		sw: {
+			common: JSON.parse(readFileSync(join(ROOT, "public", "locales", "sw", "common.json"), "utf8")),
+			contact: JSON.parse(readFileSync(join(ROOT, "public", "locales", "sw", "contact.json"), "utf8")),
+		},
+	};
+	const legacyOwned = JSON.parse(JSON.stringify(parityStore));
+	const layoutEn = await resolveSiteLayout("en", { baseDir: makeLayoutBase({ "site.json": { ...realSite, status: "published" } }) });
+	const layoutSw = await resolveSiteLayout("sw", { baseDir: makeLayoutBase({ "site.json": { ...realSite, status: "published" } }) });
+	const ownedPaths = [["common", "nav"], ["common", "footer"], ["common", "contacts"], ["common", "cookies"]];
+	let parity = layoutEn.status === "keystatic" && layoutSw.status === "keystatic";
+	if (parity) {
+		mergeSiteLayoutIntoStore(parityStore, "en", layoutEn.site.layout);
+		mergeSiteLayoutIntoStore(parityStore, "sw", layoutSw.site.layout);
+		for (const locale of LOCALES) {
+			for (const [ns, key] of ownedPaths) {
+				parity = parity && JSON.stringify(parityStore[locale][ns][key]) === JSON.stringify(legacyOwned[locale][ns][key]);
+			}
+			parity =
+				parity &&
+				JSON.stringify(parityStore[locale].contact.talkToUs.contacts) === JSON.stringify(legacyOwned[locale].contact.talkToUs.contacts) &&
+				JSON.stringify(parityStore[locale].contact.social.channels) === JSON.stringify(legacyOwned[locale].contact.social.channels);
+		}
+	}
+	outcomes.push(["layout-parity", parity]);
 
 	setSwitchEnv(savedEnv.KEYSTATIC_PAGES, savedEnv.KEYSTATIC_DISABLE);
 	return outcomes;

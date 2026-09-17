@@ -271,15 +271,21 @@ export interface NormalizedSiteLayout {
  */
 export function normalizeSiteLayout(resolved: any): NormalizedSiteLayout {
 	const links = Array.isArray(resolved?.nav?.links)
-		? resolved.nav.links.map((link: any) => ({
-				label: link?.label ?? "",
-				href: link?.href ?? "",
-				...(link?.type && link.type !== "standard" ? { type: link.type } : {}),
-				...(link?.excludeOnMainNav ? { excludeOnMainNav: true } : {}),
-				links: Array.isArray(link?.links)
+		? resolved.nav.links.map((link: any) => {
+				const subs = Array.isArray(link?.links)
 					? link.links.map((sub: any) => ({ label: sub?.label ?? "", href: sub?.href ?? "" }))
-					: [],
-			}))
+					: [];
+				return {
+					label: link?.label ?? "",
+					href: link?.href ?? "",
+					...(link?.type && link.type !== "standard" ? { type: link.type } : {}),
+					...(link?.excludeOnMainNav ? { excludeOnMainNav: true } : {}),
+					// Legacy omits `links` when a link has no sublinks (e.g.
+					// the Contact pill) — omit too so the merged store keeps
+					// the exact legacy shape.
+					...(subs.length > 0 ? { links: subs } : {}),
+				};
+			})
 		: [];
 	const contactGroup = (items: any) =>
 		Array.isArray(items)
@@ -291,10 +297,15 @@ export function normalizeSiteLayout(resolved: any): NormalizedSiteLayout {
 				}))
 			: [];
 	return {
+		// Store keys stay snake_case (`logo_light`, `logo_alt`) — the
+		// components read exactly those paths. Unrendered legacy keys
+		// (`logo_dark`, `ctaPrimary`, …) are NOT dropped here: the merge
+		// spreads the legacy nav underneath, so dead keys survive the
+		// override untouched.
 		nav: {
 			logo: resolved?.nav?.logo || undefined,
-			logoLight: resolved?.nav?.logoLight || undefined,
-			logoAlt: resolved?.nav?.logoAlt ?? "",
+			logo_light: resolved?.nav?.logoLight || undefined,
+			logo_alt: resolved?.nav?.logoAlt ?? "",
 			links,
 		},
 		footer: resolved?.footer,

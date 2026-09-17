@@ -63,9 +63,11 @@ export async function resolveSiteLayout(
 
 /**
  * Merge a resolved layout into a next-i18next store (`getI18nProps` calls
- * this server-side before signing). Owned slices are REPLACED wholesale —
- * single-source semantics, no stale keys — while every other namespace
- * (`locales`, `misc`, `meta`, page content) is preserved untouched.
+ * this server-side before signing). `nav` merges additively over the legacy
+ * object (unrendered keys survive); every other owned slice is replaced
+ * wholesale — single-source semantics, no stale keys — while the remaining
+ * namespaces (`locales`, `misc`, `meta`, page content) are preserved
+ * untouched.
  */
 export function mergeSiteLayoutIntoStore(
 	store: Record<string, Record<string, any>>,
@@ -74,7 +76,13 @@ export function mergeSiteLayoutIntoStore(
 ): void {
 	store[locale] = store[locale] ?? {};
 	const common = { ...(store[locale].common ?? {}) };
-	common.nav = layout.nav;
+	// `nav` merges ADDITIVELY over the legacy object: owned keys (`logo`,
+	// `logo_light`, `logo_alt`, `links`) are replaced while unrendered
+	// legacy keys (`logo_dark`, `ctaPrimary`, …) survive untouched. Every
+	// other owned slice is replaced wholesale (their legacy shapes carry no
+	// dead keys), while the remaining namespaces (`locales`, `misc`,
+	// `meta`, page content) are preserved untouched.
+	common.nav = { ...((store[locale].common ?? {}).nav ?? {}), ...layout.nav };
 	common.footer = layout.footer;
 	common.contacts = layout.contacts;
 	common.cookies = layout.cookies;
