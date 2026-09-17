@@ -158,14 +158,14 @@ export default function Navbar({
 	const iconColor = isDark ? "text-primary-200" : "text-primary";
 	const accentColor = isDark ? "text-accent-200" : "text-accent-700";
 	const hoverColor = isDark ? "hover:text-primary-300" : "hover:text-primary";
-	const menuClassName = isDark ? "bg-ink-soft/95! text-surface!" : "bg-surface/95! text-ink!";
+	const menuClassName = isDark ? "bg-primary-700/95! text-surface!" : "bg-surface/95! text-ink!";
 
 	return (
 		<>
-			<header className="sticky top-0 z-[9999] w-full bg-transparent px-4 md:px-8 transition-all duration-500">
+			<header className="sticky top-0 z-9999 w-full bg-transparent px-4 md:px-8 transition-all duration-500">
 				<div
-					className={`mx-auto mt-3 mb-1 w-full max-w-[1200px] rounded-3xl px-4 backdrop-blur-lg transition-all duration-500 ${
-						isDark ? "bg-ink-soft/85 text-surface" : "bg-surface/85 text-ink"
+					className={`mx-auto mt-3 mb-1 w-full max-w-300 rounded-3xl px-4  transition-all duration-500 ${
+						isDark ? "bg-primary-700 text-surface" : "bg-surface text-ink"
 					} ${state.isWindowScrolled ? "card-shadow-lift" : "card-shadow"}`}
 				>
 					<div
