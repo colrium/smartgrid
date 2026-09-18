@@ -18,18 +18,16 @@ type PageProps = {
 };
 
 const Page: NextPage<PageProps> = ({ keystaticPage }) => {
-	// Migration source switch (M3/M7): Keystatic owns the shared `talkToUs`
-	// card grid only when the slug is allowlisted via `KEYSTATIC_PAGES` and
-	// the entry is published. The bespoke hero, offices map, and form always
-	// render from legacy locale JSON (hybrid strategy) — see registry header.
+	// Migration source switch (M3/M7, completed M11 batch 1): Keystatic owns
+	// the whole page in page order — `contactHero`, `talkToUs` cardGrid,
+	// `contactOffices`, `contactForm` — when the slug is allowlisted via
+	// `KEYSTATIC_PAGES` and the entry is published. Otherwise the legacy
+	// locale-JSON implementation renders unchanged.
 	if (keystaticPage) {
 		return (
 			<div className="relative">
 				<PageHead pageName="contact" />
-				<ContactHeroSection />
 				<PageBuilderDocument page={keystaticPage} />
-				<OfficesSection />
-				<ContactFormSection />
 			</div>
 		);
 	}

@@ -25,6 +25,9 @@ import LeadGenBar from "@/components/sections/shared/LeadGenBar";
 import { ServicesSection } from "@/components/sections/shared/ServicesSection";
 import HeroSection from "@/components/sections/home/HeroSection";
 import { DronesSection } from "@/components/sections/home/DronesSection";
+import { ContactHeroSection } from "@/components/sections/contact/ContactHeroSection";
+import { OfficesSection } from "@/components/sections/contact/OfficesSection";
+import ContactFormSection from "@/components/sections/ContactFormSection";
 import type { Lang } from "../types";
 import { resolveLocaleValue } from "./localize";
 import { getSectionDefinition, type SectionId } from "./sectionRegistry";
@@ -71,6 +74,9 @@ export const sectionRenderers = {
 	services: ServicesSection,
 	homeHero: HeroSection,
 	homeDrones: DronesSection,
+	contactHero: ContactHeroSection,
+	contactOffices: OfficesSection,
+	contactForm: ContactFormSection,
 } satisfies Record<SectionId, ComponentType<any>>;
 
 export function renderSection(

@@ -187,7 +187,35 @@ function CheckboxField({
 
 type ContactFormProps = { className?: string };
 
-export default function ContactForm({ className = "" }: ContactFormProps) {
+/**
+ * Locale-read hardening (M11 batch 1): `tObject` returns the key string
+ * when a namespace is missing (and there is no i18next instance in the
+ * check-script static proof), so every object/array read is coerced here —
+ * a missing `contact:form` copy renders an empty form instead of
+ * white-screening the page (M3 fail-safe rule). Production reads pass
+ * through untouched.
+ */
+const asArray = <T,>(value: unknown): T[] => (Array.isArray(value) ? (value as T[]) : []);
+const asFieldMap = (value: unknown): Record<string, any> => {
+	const map = typeof value === "object" && value !== null ? (value as Record<string, any>) : {};
+	return new Proxy(map, {
+		get: (target, prop) => (typeof prop === "string" && prop in target ? target[prop] : {}),
+	});
+};
+
+/**
+ * Keystatic-owned widget strings (M11 `contactForm` unique section).
+ * When omitted, the legacy `contact:form` locale strings render. Field
+ * structure, reason options, validation and posting stay locale-owned
+ * (see `ContactFormSection`).
+ */
+export interface ContactFormContent {
+	submitLabel?: string | null;
+	successHeading?: string | null;
+	successBody?: string | null;
+}
+
+export default function ContactForm({ className = "", content }: ContactFormProps & { content?: ContactFormContent | null }) {
 	const { t, tObject } = useTranslation(["contact", "common"]);
 	const router = useRouter();
 	const formspreeFormId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID;
@@ -195,20 +223,28 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
 	const { opportunity: opportunityQuery, reason: reasonQuery, tier: tierQuery } = router.query;
 	const [values, setValues] = useSetState<FormValues>(initialValues);
 
-	const reasons = tObject<Option[]>("contact:contact_reasons.options", {
-		returnObjects: true,
-	});
+	const reasons = asArray<Option>(
+		tObject<Option[]>("contact:contact_reasons.options", {
+			returnObjects: true,
+		})
+	);
 
-	const fields = tObject<Record<string, Field>>("contact:form.fields", {
-		returnObjects: true,
-	});
-	const opportunityOptions = tObject<Option[]>("contact:form.fields.opportunity.options", {
-		returnObjects: true,
-	}) as unknown as Option[];
-	const locationCountries = tObject<Country[]>("common:locations.countries", {
-		returnObjects: true,
-	});
-	const officeCountries = (
+	const fields = asFieldMap(
+		tObject<Record<string, Field>>("contact:form.fields", {
+			returnObjects: true,
+		})
+	);
+	const opportunityOptions = asArray<Option>(
+		tObject<Option[]>("contact:form.fields.opportunity.options", {
+			returnObjects: true,
+		})
+	) as unknown as Option[];
+	const locationCountries = asArray<Country>(
+		tObject<Country[]>("common:locations.countries", {
+			returnObjects: true,
+		})
+	);
+	const officeCountries = asArray<{ country: string }>(
 		tObject<{ country: string }[]>("contact:offices.items", {
 			returnObjects: true,
 		})
@@ -252,10 +288,10 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
 			{formspree.succeeded && (
 				<div className="mt-8 rounded-lg border border-primary/30 bg-primary/10 p-5">
 					<div className="text-primary font-medium">
-						{t("contact:form.success_heading")}
+						{content?.successHeading || t("contact:form.success_heading")}
 					</div>
 					<p className="text-sm text-on-surface-800 mt-2 leading-relaxed">
-						{t("contact:form.success_body")}
+						{content?.successBody || t("contact:form.success_body")}
 					</p>
 				</div>
 			)}
@@ -402,8 +438,8 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
 				>
 					<span className="mdi mdi-send text-xl" aria-hidden="true" />
 					{formspree.submitting
-						? t("common:form.sending")
-						: t("contact:form.submit_label")}
+					? t("common:form.sending")
+					: content?.submitLabel || t("contact:form.submit_label")}
 				</button>
 			</div>
 		</form>

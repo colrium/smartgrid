@@ -58,8 +58,26 @@ function transpileToCache(relativePath, replacements = []) {
 
 const nodeRequire = createRequire(ROOT + "/package.json");
 const Module = nodeRequire("node:module");
+// M11 batch 1 (contact): the `contactForm` renderer embeds the interactive
+// `ContactForm` widget, which calls `useRouter()` for query-param prefill.
+// There is no Next.js router in this isolated render, so `next/router`
+// resolves to a static stub (empty query — the same prefill state as a
+// direct visit with no query string). Production behavior is unchanged.
+const routerStub = join(CACHE, "next-router-stub.js");
+if (!existsSync(routerStub)) {
+	writeFileSync(
+		routerStub,
+		`"use strict";\nmodule.exports = { useRouter: () => ({ pathname: "/", asPath: "/", query: {}, push: async () => false, replace: async () => false, prefetch: async () => {}, back: () => {}, events: { on() {}, off() {}, emit() {} } }) };\n`
+	);
+}
+// `ContactForm` also calls Formspree's `useForm()` with
+// `NEXT_PUBLIC_FORMSPREE_FORM_ID`, which is unset in this harness. A dummy
+// key keeps the static proof honest: `useForm` only initializes state until
+// submit, and this harness never submits.
+process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID ??= "ks-check-harness";
 const origResolveFilename = Module._resolveFilename;
 Module._resolveFilename = function (request, ...rest) {
+	if (request === "next/router") return routerStub;
 	if (typeof request === "string" && /(^|\/)keystatic\.config$/.test(request)) {
 		return join(CACHE, "keystatic.config.js");
 	}

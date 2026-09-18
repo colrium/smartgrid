@@ -242,7 +242,7 @@ import {
  * from DATA (the wrapper is page-owned), so edits change output.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -2391,6 +2391,241 @@ const homeDrones: SectionDefinition = {
 	}),
 };
 
+/**
+ * M11 batch 1 — contact page (2026-09-18): `contactHero` wraps the bespoke
+ * `ContactHeroSection` (tag + headline + description + availability badge
+ * card). Unique — only valid on `/contact`. The badge `status` is shared
+ * text: exactly `active` renders the green availability pulse, anything
+ * else renders amber. SSR-safe: effect-only `FadeUp`, pure-span `Blob`.
+ */
+const contactHero: SectionDefinition = {
+	id: "contactHero",
+	version: 1,
+	label: "Contact hero (unique)",
+	description: "Unique: the /contact hero — tag, headline, description and availability badge card. Only valid on the contact page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		badge: fields.object(
+			{
+				text: localeText("Text"),
+				status: fields.text({
+					label: "Status (shared)",
+					description: "`active` shows the green availability pulse; any other value renders amber. Identical in en/sw.",
+				}),
+			},
+			{ label: "Availability badge" }
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` and the fixed headset
+		// icon + company line in the badge card (presentation, not content).
+	}),
+	example: {
+		tag: { en: "Get In Touch", sw: "Wasiliana Nasi" },
+		headline: { en: "Let's talk about your surveying or engineering project", sw: "Hebu tuzungumze kuhusu mradi wako wa upimaji au uhandisi" },
+		description: { en: "Our team is ready to help.", sw: "" },
+		badge: {
+			text: { en: "Response within 24 hours", sw: "Majibu ndani ya saa 24" },
+			status: "active",
+		},
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			badge: resolved.badge
+				? {
+						text: resolved.badge.text ?? "",
+						status: resolved.badge.status ?? "",
+					}
+				: null,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 1 — contact page (2026-09-18): `contactOffices` wraps the
+ * `OfficesSection` office cards + map (tag + headline + description +
+ * office items + closing CTA). Unique — only valid on `/contact`. Proper
+ * nouns and contact details are shared (identical in en/sw — the
+ * migration aborts on divergence); address lines and notes are localized.
+ * Coordinates are shared decimal degrees; a zeroed coordinate renders no
+ * marker. The Google Map stays client-only (`dynamic ssr:false` in
+ * `DeferredMount`, static fallback on the server).
+ */
+const contactOffices: SectionDefinition = {
+	id: "contactOffices",
+	version: 1,
+	label: "Contact offices (unique)",
+	description: "Unique: the /contact office cards, map and closing CTA. Only valid on the contact page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				id: fields.text({
+					label: "Office id (shared)",
+					description: "Stable identifier (e.g. hq-nairobi). Identical in en/sw.",
+				}),
+				label: fields.text({
+					label: "Office name (shared)",
+					description: "Display name. Identical in en/sw.",
+				}),
+				city: fields.text({
+					label: "City (shared)",
+					description: "Identical in en/sw.",
+				}),
+				country: fields.text({
+					label: "Country (shared)",
+					description: "Identical in en/sw.",
+				}),
+				flag: fields.text({
+					label: "Flag emoji (shared)",
+					description: "Identical in en/sw.",
+				}),
+				address_lines: fields.array(localeText("Address line", { optionalInEnglish: true }), {
+					label: "Address lines",
+					itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Address line"),
+				}),
+				phone: fields.text({
+					label: "Phone (shared)",
+					description: "Identical in en/sw.",
+				}),
+				email: fields.text({
+					label: "Email (shared)",
+					description: "Identical in en/sw.",
+				}),
+				hours: fields.text({
+					label: "Hours (shared)",
+					description: "Identical in en/sw.",
+				}),
+				type: fields.text({
+					label: "Type (shared)",
+					description: "Office type key (`hq`, `field`, `regional`). Identical in en/sw.",
+				}),
+				note: localeLongText("Note"),
+				lat: fields.number({ label: "Latitude (shared, decimal degrees)" }),
+				lng: fields.number({ label: "Longitude (shared, decimal degrees)" }),
+			}),
+			{
+				label: "Offices",
+				itemLabel: (item) => previewText(item, ["fields", "label", "value"], "Office"),
+			}
+		),
+		cta: linkObject("Closing action"),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` (visual tuning, not
+		// an editor contract).
+	}),
+	example: {
+		tag: { en: "Our Offices", sw: "Ofisi Zetu" },
+		headline: { en: "Reach Our Offices", sw: "Fikia Ofisi Zetu" },
+		description: { en: "Visit our head office for professional consultation.", sw: "" },
+		items: [
+			{
+				id: "hq-nairobi",
+				label: "SmartGrid Surveying HQ",
+				city: "Ruiru",
+				country: "Kenya",
+				flag: "🇰🇪",
+				address_lines: [{ en: "SmartGrid Surveying HQ, Nord Mall, Ruiru, Kenya", sw: "" }],
+				phone: "+254 10 7393023",
+				email: "smartgridsurveying@gmail.com",
+				hours: "Mon–Fri 08:00–17:00 EAT",
+				type: "hq",
+				note: { en: "", sw: "" },
+				lat: -1.1466,
+				lng: 36.9609,
+			},
+		],
+		cta: { label: { en: "Book a consultation", sw: "Panga mashauriano" }, href: "/contact?reason=book-consultation#contact-form", icon: "arrow-right" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						id: item?.id ?? "",
+						label: item?.label ?? "",
+						city: item?.city ?? "",
+						country: item?.country ?? "",
+						flag: item?.flag ?? "",
+						address_lines: Array.isArray(item?.address_lines)
+							? item.address_lines.filter((line: unknown) => typeof line === "string" && line)
+							: [],
+						phone: item?.phone ?? "",
+						email: item?.email ?? "",
+						hours: item?.hours ?? "",
+						type: item?.type ?? "",
+						note: item?.note ?? "",
+						// A zeroed coordinate carries no marker (Keystatic
+						// number fields default to 0 when cleared).
+						lat: typeof item?.lat === "number" && item.lat !== 0 ? item.lat : undefined,
+						lng: typeof item?.lng === "number" && item.lng !== 0 ? item.lng : undefined,
+					}))
+				: [],
+			cta: presentLink(resolved.cta),
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 1 — contact page (2026-09-18): `contactForm` wraps the
+ * `ContactFormSection` form section (tag + headline + description + submit
+ * and success strings). Unique — only valid on `/contact`. The interactive
+ * form widget (field structure, reason options, validation, Formspree
+ * posting) keeps reading locale JSON: field keys double as payload keys
+ * and query-param values, so the form structure is behavior, not copy
+ * (documented boundary, same class as the Trans gates).
+ */
+const contactForm: SectionDefinition = {
+	id: "contactForm",
+	version: 1,
+	label: "Contact form (unique)",
+	description: "Unique: the /contact form section — header copy plus submit and success strings. The form fields themselves stay locale-owned. Only valid on the contact page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		submitLabel: localeText("Submit label"),
+		successHeading: localeText("Success heading"),
+		successBody: localeLongText("Success message"),
+		id: anchorField(),
+		// Excluded from v1 (documented): the form widget's field labels,
+		// placeholders, reason options, validation and error strings
+		// (form structure is behavior — see the definition note).
+	}),
+	example: {
+		tag: { en: "Send a Message", sw: "Tuma Ujumbe" },
+		headline: { en: "Start the conversation", sw: "Anza mazungumzo" },
+		description: { en: "Tell us about your project.", sw: "" },
+		submitLabel: { en: "Send Message", sw: "Tuma Ujumbe" },
+		successHeading: { en: "Message received", sw: "Ujumbe umepokelewa" },
+		successBody: { en: "Thank you for reaching out.", sw: "" },
+		id: "contact-form",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			submitLabel: resolved.submitLabel,
+			successHeading: resolved.successHeading,
+			successBody: resolved.successBody,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
 export const sectionRegistry: readonly SectionDefinition[] = [
 	introText,
 	ctaBand,
@@ -2418,6 +2653,9 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	services,
 	homeHero,
 	homeDrones,
+	contactHero,
+	contactOffices,
+	contactForm,
 ];
 
 export function getSectionDefinition(id: string): SectionDefinition {
@@ -2453,6 +2691,9 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	services: services.label,
 	homeHero: homeHero.label,
 	homeDrones: homeDrones.label,
+	contactHero: contactHero.label,
+	contactOffices: contactOffices.label,
+	contactForm: contactForm.label,
 };
 
 /**

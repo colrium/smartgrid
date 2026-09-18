@@ -14,27 +14,27 @@ const GoogleMap = dynamic(() => import("@/components/ui/GoogleMap"), {
 });
 
 interface Office {
-	id?: string;
-	label: string;
-	city: string;
-	country: string;
-	flag?: string;
-	address_lines?: string[] | null;
-	phone?: string;
-	email?: string;
-	hours?: string;
-	type?: string;
-	note?: string;
-	lat?: number;
-	lng?: number;
+	id?: string | null;
+	label?: string | null;
+	city?: string | null;
+	country?: string | null;
+	flag?: string | null;
+	address_lines?: (string | null)[] | null;
+	phone?: string | null;
+	email?: string | null;
+	hours?: string | null;
+	type?: string | null;
+	note?: string | null;
+	lat?: number | null;
+	lng?: number | null;
 }
 
-interface OfficesContent {
+export interface OfficesContent {
 	tag?: string | null;
-	headline: string;
-	description?: string;
-	items: Office[];
-	cta?: { label: string; href: string } | null;
+	headline?: string | null;
+	description?: string | null;
+	items?: Office[] | null;
+	cta?: { label?: string | null; href?: string | null } | null;
 }
 
 function typeLabel(type?: string): string {
@@ -50,11 +50,16 @@ function typeLabel(type?: string): string {
 	}
 }
 
-export function OfficesSection() {
+export function OfficesSection({ data }: { data?: OfficesContent | null } = {}) {
 	const { t } = useTranslation(["contact"]);
-	const section = t("contact:offices", {
-		returnObjects: true,
-	}) as unknown as OfficesContent;
+	// Keystatic-owned content when `data` is provided (M11 `contactOffices`
+	// unique section); legacy `contact:offices` locale strings otherwise.
+	// The Google Map stays client-only (`dynamic ssr:false` in
+	// `DeferredMount`); only its strings and coordinates become data.
+	const section = (data ??
+		(t("contact:offices", {
+			returnObjects: true,
+		}) as unknown as OfficesContent)) as OfficesContent;
 	// Memoized so the `markers` useMemo below doesn't get a fresh array (and
 	// recompute) on every render.
 	const offices = useMemo(
@@ -91,8 +96,8 @@ export function OfficesSection() {
 				<FadeUp>
 					<SectionHeader
 						tag={section.tag ?? undefined}
-						headline={section.headline}
-						description={section.description}
+						headline={section.headline ?? ""}
+						description={section.description ?? undefined}
 						align="center"
 					/>
 				</FadeUp>

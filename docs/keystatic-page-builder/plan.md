@@ -848,8 +848,15 @@ Rules (decided 2026-09-18, before implementing):
       `skipped` now `["metrics"]`; count guard 17→19; README 24→26 sections.
       Validation: `check:keystatic` OK, `--verify` clean, typecheck + lint
       clean; dev-smoke DEFERRED per M11/M12 policy.)
-- [ ] Per-page batches: each opted-in route's remaining legacy tails registered
+- [x] Per-page batches: each opted-in route's remaining legacy tails registered
       as unique sections (or recorded out-of-scope with reason), migrated, wired.
+      (Batch 1 — contact — done 2026-09-18: `contactHero` + `contactOffices` +
+      `contactForm`; whole page Keystatic-owned in page order so the route
+      renders one PageBuilderDocument — M11+M12 together. Form widget keeps
+      field structure/reasons/validation locale-owned; hardened its locale
+      reads so a missing namespace renders an empty form, never a
+      white-screen. Validation: `check:keystatic` OK, `--verify` clean,
+      typecheck + lint clean; dev-smoke DEFERRED per M11/M12 policy.)
 - [ ] README operator list + `.env.example` untouched (no new env); check-script
       fixture/render coverage extended per batch.
 

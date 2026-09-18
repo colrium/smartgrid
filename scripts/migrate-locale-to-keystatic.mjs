@@ -194,6 +194,93 @@ function talkToUsBuild(presentation) {
 	};
 }
 
+// M11 batch 1 — contact page (2026-09-18): `contact:hero` → `contactHero`.
+// Badge text is localized; `status` is shared (`active` = green pulse).
+function contactHeroBuild(en, sw, where) {
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		badge: {
+			text: { en: reqText(en.badge?.text, `${where}.badge.text.en`), sw: reqText(sw.badge?.text, `${where}.badge.text.sw`) },
+			status: sharedValue(en.badge, sw.badge, "status", `${where}.badge`) ?? "",
+		},
+		id: "",
+	};
+}
+
+// M11 batch 1 — contact page (2026-09-18): `contact:offices` →
+// `contactOffices`. Proper nouns and contact details are shared
+// (divergence aborts); address lines and notes are localized;
+// coordinates are shared numbers.
+function contactOfficesBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `office count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	const lines = (item, swItem, i) => {
+		const enLines = item?.address_lines ?? [];
+		const swLines = swItem?.address_lines ?? [];
+		if (!Array.isArray(swLines) || swLines.length !== enLines.length) {
+			gap(where, `items[${i}].address_lines count diverged (en=${enLines.length} sw=${swLines?.length})`);
+		}
+		return enLines.map((line, j) => ({
+			en: reqText(line, `${where}.items[${i}].address_lines[${j}].en`),
+			sw: reqText(swLines[j], `${where}.items[${i}].address_lines[${j}].sw`),
+		}));
+	};
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			const num = (node, key) => {
+				const value = sharedValue(node, swItem, key, `${where}.items[${i}]`);
+				if (typeof value !== "number") gap(`${where}.items[${i}]`, `"${key}" must be a number`);
+				return typeof value === "number" ? value : 0;
+			};
+			return {
+				id: sharedValue(item, swItem, "id", `${where}.items[${i}]`) ?? "",
+				label: sharedValue(item, swItem, "label", `${where}.items[${i}]`) ?? "",
+				city: sharedValue(item, swItem, "city", `${where}.items[${i}]`) ?? "",
+				country: sharedValue(item, swItem, "country", `${where}.items[${i}]`) ?? "",
+				flag: sharedValue(item, swItem, "flag", `${where}.items[${i}]`) ?? "",
+				address_lines: lines(item, swItem, i),
+				phone: sharedValue(item, swItem, "phone", `${where}.items[${i}]`) ?? "",
+				email: sharedValue(item, swItem, "email", `${where}.items[${i}]`) ?? "",
+				hours: sharedValue(item, swItem, "hours", `${where}.items[${i}]`) ?? "",
+				type: sharedValue(item, swItem, "type", `${where}.items[${i}]`) ?? "",
+				note: { en: optText(item.note), sw: optText(swItem.note) },
+				lat: num(item, "lat"),
+				lng: num(item, "lng"),
+			};
+		}),
+		cta: {
+			label: { en: reqText(en.cta?.label, `${where}.cta.label.en`), sw: reqText(sw.cta?.label, `${where}.cta.label.sw`) },
+			href: sharedValue(en.cta, sw.cta, "href", `${where}.cta`) ?? "",
+			icon: "",
+		},
+		id: "",
+	};
+}
+
+// M11 batch 1 — contact page (2026-09-18): `contact:form` → `contactForm`
+// (section chrome + submit/success strings only; the widget's field
+// structure stays locale-owned — see the `contactForm` registry note).
+function contactFormBuild(en, sw, where) {
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		submitLabel: { en: reqText(en.submit_label, `${where}.submit_label.en`), sw: reqText(sw.submit_label, `${where}.submit_label.sw`) },
+		successHeading: { en: reqText(en.success_heading, `${where}.success_heading.en`), sw: reqText(sw.success_heading, `${where}.success_heading.sw`) },
+		successBody: { en: reqText(en.success_body, `${where}.success_body.en`), sw: reqText(sw.success_body, `${where}.success_body.sw`) },
+		id: "contact-form",
+	};
+}
+
 // M7 batch 3: `about:*` gallery sections → `gallery`. Legacy items are
 // either bare image paths (slider/masonry) or `{image,title?,label?}`
 // objects (overlay grids); both normalize to captioned items. Image paths
@@ -998,13 +1085,49 @@ const PAGES = {
 	"contact": {
 		namespace: "contact",
 		title: "Contact",
-		skipped: ["hero", "offices", "contact_reasons", "form", "opportunities", "direct_contacts", "site_visit", "faq", "social"],
+		// M11 batch 1 (2026-09-18): page order — `hero` (`contactHero`
+		// unique), `talkToUs` (cardGrid), `offices` (`contactOffices`
+		// unique), `form` (`contactForm` unique). The whole page is
+		// Keystatic-owned, so the route renders one PageBuilderDocument
+		// (M11+M12 together). `contact_reasons` options + form field
+		// structure stay locale-owned (form behavior — see `contactForm`
+		// registry note); `opportunities`/`direct_contacts`/`site_visit`/
+		// `faq` are unrendered dead content, `social` is footer-owned.
+		skipped: ["contact_reasons", "opportunities", "direct_contacts", "site_visit", "faq", "social"],
 		sections: [
+			{
+				discriminant: "contactHero",
+				from: "hero",
+				// Legacy: ContactHeroSection over `contact:hero` (tag +
+				// headline + description + availability badge card).
+				build(en, sw, where) {
+					return contactHeroBuild(en, sw, where);
+				},
+			},
 			{
 				discriminant: "cardGrid",
 				from: "talkToUs",
 				// Legacy: TalkToUsSection → <CardGrid columns={3} headerRow />
 				build: talkToUsBuild({ columns: "3", align: "left", tone: "default", headerRow: true, cardDensity: "comfortable", cardIconSize: "md" }),
+			},
+			{
+				discriminant: "contactOffices",
+				from: "offices",
+				// Legacy: OfficesSection over `contact:offices` (office
+				// cards + client-only map + closing CTA).
+				build(en, sw, where) {
+					return contactOfficesBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "contactForm",
+				from: "form",
+				// Legacy: ContactFormSection over `contact:form` (section
+				// chrome + submit/success strings; widget stays
+				// locale-owned — see the `contactForm` registry note).
+				build(en, sw, where) {
+					return contactFormBuild(en, sw, where);
+				},
 			},
 		],
 	},
