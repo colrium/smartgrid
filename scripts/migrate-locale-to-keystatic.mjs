@@ -470,6 +470,144 @@ function aboutImpactBuild(en, sw, where) {
 	};
 }
 
+// M11 batch 5 — hubs (2026-09-18): `surveying/landing:services` →
+// `surveyingServices`. Card icons/hrefs + map image are shared;
+// titles and descriptions are localized.
+function surveyingServicesBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		image: sharedValue(en, sw, "image", where) ?? "",
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+				href: sharedValue(item, swItem, "href", `${where}.items[${i}]`) ?? "",
+			};
+		}),
+		id: "",
+	};
+}
+
+// M11 batch 5 — hubs (2026-09-18): `surveying/landing:process` →
+// `surveyingProcess` (indexed/watermarked cards; legacy items carry no
+// icons). Titles and descriptions are localized.
+function surveyingProcessBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+			};
+		}),
+		id: "",
+	};
+}
+
+// M11 batch 5 — hubs (2026-09-18): `civil/landing:hero` → `civilHero`
+// (bespoke diagonal hero). Image + CTA hrefs are shared; all other
+// strings are localized.
+function civilHeroBuild(en, sw, where) {
+	const cta = (node, swNode, key) => ({
+		label: { en: reqText(node?.label, `${where}.${key}.label.en`), sw: reqText(swNode?.label, `${where}.${key}.label.sw`) },
+		href: sharedValue(node, swNode, "href", `${where}.${key}`) ?? "",
+		icon: "",
+	});
+	return {
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		title: { en: reqText(en.title, `${where}.title.en`), sw: reqText(sw.title, `${where}.title.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		image: sharedValue(en, sw, "image", where) ?? "",
+		ctaPrimary: cta(en.ctaPrimary, sw.ctaPrimary, "ctaPrimary"),
+		ctaSecondary: cta(en.ctaSecondary, sw.ctaSecondary, "ctaSecondary"),
+		id: "",
+	};
+}
+
+// M11 batch 5 — hubs (2026-09-18): `civil/landing:process` → `civilProcess`
+// (image stepper + step rail). Image + step icons are shared; titles and
+// descriptions are localized.
+function civilProcessBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		image: sharedValue(en, sw, "image", where) ?? "",
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+			};
+		}),
+		id: "",
+	};
+}
+
+// M11 batch 5 — hubs (2026-09-18): any `<Deliverables ns=…>` node → shared
+// `deliverables`. Item icons are shared; titles, formats and descriptions
+// are localized; item images are per-locale (civil items prove paths can
+// diverge); `tone` reproduces the wrapper `className` variance.
+function deliverablesBuild(tone) {
+	return (en, sw, where) => {
+		const enItems = en.items ?? [];
+		const swItems = sw.items ?? [];
+		if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+			gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+		}
+		const enChecks = en.checks ?? [];
+		const swChecks = sw.checks ?? [];
+		if (!Array.isArray(swChecks) || swChecks.length !== enChecks.length) {
+			gap(where, `checks count diverged (en=${enChecks.length} sw=${swChecks?.length})`);
+		}
+		return {
+			tag: { en: optText(en.tag), sw: optText(sw.tag) },
+			headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+			description: { en: optText(en.description), sw: optText(sw.description) },
+			liveLabel: { en: optText(en.liveLabel), sw: optText(sw.liveLabel) },
+			checks: enChecks.map((check, i) => ({
+				en: reqText(check, `${where}.checks[${i}].en`),
+				sw: reqText(swChecks[i], `${where}.checks[${i}].sw`),
+			})),
+			items: enItems.map((item, i) => {
+				const swItem = swItems[i] ?? {};
+				return {
+					title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+					format: { en: optText(item.format), sw: optText(swItem.format) },
+					icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+					image: { en: optText(item.image), sw: optText(swItem.image) },
+					description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+				};
+			}),
+			tone,
+			id: "",
+		};
+	};
+}
+
 // M7 batch 3: `about:*` gallery sections → `gallery`. Legacy items are
 // either bare image paths (slider/masonry) or `{image,title?,label?}`
 // objects (overlay grids); both normalize to captioned items. Image paths
@@ -1568,7 +1706,12 @@ const PAGES = {
 	"surveying": {
 		namespace: "surveying/landing",
 		title: "Surveying",
-		skipped: ["services", "process", "deliverables"],
+		// M11 batch 5 (2026-09-18): the whole hub is Keystatic-owned in
+		// page order — `hero`, `services` (`surveyingServices` unique),
+		// `process` (`surveyingProcess` unique), `deliverables` (shared)
+		// — so the route renders one PageBuilderDocument (M11+M12
+		// together). Nothing stays skipped.
+		skipped: [],
 		sections: [
 			{
 				discriminant: "hero",
@@ -1595,18 +1738,75 @@ const PAGES = {
 					};
 				},
 			},
+			{
+				discriminant: "surveyingServices",
+				from: "services",
+				// Legacy: SurveyingServicesSection (grid + framed map image
+				// below) over `surveying/landing:services`.
+				build(en, sw, where) {
+					return surveyingServicesBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "surveyingProcess",
+				from: "process",
+				// Legacy: SurveyingProcessSection (indexed/watermarked cards)
+				// over `surveying/landing:process`.
+				build(en, sw, where) {
+					return surveyingProcessBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "deliverables",
+				from: "deliverables",
+				// Legacy: SurveyingDeliverablesSection → <Deliverables
+				// ns="surveying/landing" className="bg-surface" /> (tone
+				// surface).
+				build: deliverablesBuild("surface"),
+			},
 		],
 	},
 	"civil": {
 		namespace: "civil/landing",
 		title: "Civil",
-		skipped: ["hero", "process", "deliverables"],
+		// M11 batch 5 (2026-09-18): the whole hub is Keystatic-owned in
+		// page order — `hero` (`civilHero` unique), `services` (shared
+		// cardGrid), `process` (`civilProcess` unique), `deliverables`
+		// (shared) — so the route renders one PageBuilderDocument
+		// (M11+M12 together). Nothing stays skipped.
+		skipped: [],
 		sections: [
+			{
+				discriminant: "civilHero",
+				from: "hero",
+				// Legacy: CivilHeroSection (diagonal hero) over
+				// `civil/landing:hero`.
+				build(en, sw, where) {
+					return civilHeroBuild(en, sw, where);
+				},
+			},
 			{
 				discriminant: "cardGrid",
 				from: "services",
 				// Legacy: CivilServicesSection → <CardGrid columns={3} tone="surface" /> (align/card unset = defaults)
 				build: cardGridBuild({ columns: "3", align: "left", tone: "surface", headerRow: false, cardDensity: "comfortable", cardIconSize: "md" }),
+			},
+			{
+				discriminant: "civilProcess",
+				from: "process",
+				// Legacy: CivilProcessSection (image stepper + step rail)
+				// over `civil/landing:process`.
+				build(en, sw, where) {
+					return civilProcessBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "deliverables",
+				from: "deliverables",
+				// Legacy: CivilDeliverablesSection → <Deliverables
+				// ns="civil/landing" className="bg-surface" /> (tone
+				// surface).
+				build: deliverablesBuild("surface"),
 			},
 		],
 	},

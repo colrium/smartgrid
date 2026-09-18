@@ -6,7 +6,14 @@ import { CardGrid, type CardItem } from "@/components/sections/shared/CardGrid";
 
 interface ProcessContent {
 	tag?: string | null;
-	headline: string;
+	headline?: string | null;
+	description?: string | null;
+	items?: CardItem[] | null;
+}
+
+export interface SurveyingProcessData {
+	tag?: string | null;
+	headline?: string | null;
 	description?: string | null;
 	items?: CardItem[] | null;
 }
@@ -15,9 +22,14 @@ interface ProcessContent {
  * Land-surveying landing process — numbered step cards rendered through the
  * shared card grid (content: surveying/landing:process).
  */
-export function SurveyingProcessSection(): ReactElement | null {
+export function SurveyingProcessSection({ data }: { data?: SurveyingProcessData | null } = {}): ReactElement | null {
 	const { t } = useTranslation(["surveying/landing"]);
-	const section = t("surveying/landing:process", { returnObjects: true }) as unknown as ProcessContent;
+	// Keystatic-owned content when `data` is provided (M11
+	// `surveyingProcess` unique section); legacy `surveying/landing:process`
+	// locale strings otherwise. Presentation (indexed/watermarked cards)
+	// stays in the wrapper — only strings are data.
+	const section = (data ??
+		(t("surveying/landing:process", { returnObjects: true }) as unknown as ProcessContent)) as ProcessContent;
 	const items = Array.isArray(section?.items) ? section.items : [];
 
 	if (items.length === 0) return null;
@@ -25,8 +37,8 @@ export function SurveyingProcessSection(): ReactElement | null {
 	return (
 		<CardGrid
 			tag={section.tag ?? null}
-			headline={section.headline}
-			description={section.description}
+			headline={section.headline ?? ""}
+			description={section.description ?? undefined}
 			items={items}
 			columns={3}
 			watermarkedIndexed

@@ -45,6 +45,439 @@
 				},
 				"id": ""
 			}
+		},
+		{
+			"discriminant": "surveyingServices",
+			"value": {
+				"tag": {
+					"en": "Our Services",
+					"sw": "Huduma Zetu"
+				},
+				"headline": {
+					"en": "Explore More...",
+					"sw": "Chunguza Zaidi..."
+				},
+				"description": {
+					"en": "Discover our comprehensive range of surveying solutions tailored to your project needs.",
+					"sw": "Gundua anuwai kamili ya suluhisho zetu za upimaji zilizoundwa kwa mahitaji ya mradi wako."
+				},
+				"image": "/media/surveying/05.png",
+				"items": [
+					{
+						"icon": "map",
+						"title": {
+							"en": "Topographical Surveys",
+							"sw": "Uchunguzi wa Topografia"
+						},
+						"description": {
+							"en": "Accurate surveys for planning, construction, boundaries, and development.",
+							"sw": "Uchunguzi sahihi kwa mipango, ujenzi, mipaka, na maendeleo."
+						},
+						"href": "/surveying/topographical-surveys"
+					},
+					{
+						"icon": "quadcopter",
+						"title": {
+							"en": "Aerial Drone Surveys",
+							"sw": "Uchunguzi wa Droni za Hewa"
+						},
+						"description": {
+							"en": "Precise site assessments for construction projects.",
+							"sw": "Tathmini sahihi za tovuti kwa miradi ya ujenzi."
+						},
+						"href": "/surveying/aerial-surveys"
+					},
+					{
+						"icon": "office-building",
+						"title": {
+							"en": "Building & Engineering Surveys",
+							"sw": "Uchunguzi wa Majengo na Uhandisi"
+						},
+						"description": {
+							"en": "Site layout, monitoring, and as-built verification with precision and speed.",
+							"sw": "Mpangilio wa tovuti, ufuatiliaji, na uthibitisho wa as-built kwa usahihi na kasi."
+						},
+						"href": "/surveying/building-site-surveys"
+					},
+					{
+						"icon": "vector-square",
+						"title": {
+							"en": "Cadastral Surveys",
+							"sw": "Uchunguzi wa Cadastral"
+						},
+						"description": {
+							"en": "Define property boundaries precisely and confidently with expert surveyors.",
+							"sw": "Bainisha mipaka ya mali kwa usahihi na ujasiri kwa wataalamu wetu wa upimaji."
+						},
+						"href": "/surveying/cadastral-surveys"
+					},
+					{
+						"icon": "waves",
+						"title": {
+							"en": "Bathymetric Surveys",
+							"sw": "Uchunguzi wa Bathymetric"
+						},
+						"description": {
+							"en": "Detailed underwater terrain mapping for dams, rivers, lakes, and oceans.",
+							"sw": "Ramani za kina za ardhi chini ya maji kwa bwariga, mito, maziwa, na bahari."
+						},
+						"href": "/surveying/bathymetric-surveys"
+					},
+					{
+						"icon": "tree",
+						"title": {
+							"en": "Resource Mapping",
+							"sw": "Ramani za Rasilimali"
+						},
+						"description": {
+							"en": "Efficient mapping of resources such as forests, tree cover, and agricultural areas.",
+							"sw": "Ramani zenye ufanisi za rasilimali kama misitu, mwonekano wa miti, na maeneo ya kilimo."
+						},
+						"href": "/surveying/resource-mapping"
+					},
+					{
+						"icon": "layers",
+						"title": {
+							"en": "GIS Surveys",
+							"sw": "Uchunguzi wa GIS"
+						},
+						"description": {
+							"en": "Integrate geographic data seamlessly for smarter spatial analysis and mapping.",
+							"sw": "Unganisha data za kijiografia kwa urahisi kwa uchambuzi na ramani bora za eneo."
+						},
+						"href": "/surveying/gis-mapping"
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "surveyingProcess",
+			"value": {
+				"tag": {
+					"en": "Process",
+					"sw": "Mchakato"
+				},
+				"headline": {
+					"en": "Land Surveying Process",
+					"sw": "Mchakato wa Upimaji wa Ardhi"
+				},
+				"description": {
+					"en": "At SmartGrid Surveying, we specialize in Land surveys using aerial drones, RTK Base Rover Stations, and Total Stations to deliver precise and efficient mapping solutions. Our drones capture high-resolution terrain data, while RTK technology ensures real-time positional accuracy. With Total Stations providing precise distance and angle measurements, we guarantee detailed site assessments with minimal errors. This advanced approach enhances efficiency, improves decision-making, and ensures the highest level of accuracy for our clients' surveying needs.",
+					"sw": "Katika SmartGrid Surveying, tunabobea upimaji wa ardhi kwa kutumia droni za hewa, vituo vya RTK Base Rover, na Total Stations kutoa suluhisho za ramani sahihi na zenye ufanisi. Droni zetu hukamata data ya juu ya ardhi, huku RTK ikihakikisha usahihi wa nafuni wa papo hapo. Kwa Total Stations zinazotoa vipimo sahihi ya umbali na pembe, tunahakikisha tathmini za kina za tovuti zenye makosa madogo. Njia hii ya kisasa huongeza ufanisi, kuboresha maamuzi, na kuhakikisha kiwango cha juu zaidi cha usahihi kwa mahitaji ya upimaji ya wateja wetu."
+				},
+				"items": [
+					{
+						"title": {
+							"en": "Pre-Survey Planning",
+							"sw": "Mipango ya Kabla ya Uchunguzi"
+						},
+						"description": {
+							"en": "Conduct a thorough site evaluation and assess flight parameters for drone survey readiness.",
+							"sw": "Fanya tathmini kamili ya tovuti na tathini vigezo vya uruka kwa utayari wa uchunguzi wa droni."
+						}
+					},
+					{
+						"title": {
+							"en": "Establishing Ground Control",
+							"sw": "Kuanzisha Udhibiti wa Ardhi"
+						},
+						"description": {
+							"en": "Place georeferenced ground control points (GCPs) for accurate integration of aerial data.",
+							"sw": "Weka alama za udhibiti wa ardhi (GCPs) zenye jio-rejeleo kwa muunganisho sahihi wa data ya hewa."
+						}
+					},
+					{
+						"title": {
+							"en": "Drone Flight Operation",
+							"sw": "Uendeshaji wa Ruka la Droni"
+						},
+						"description": {
+							"en": "Deploy drone with precise flight paths, capturing high-resolution imagery and topographic data.",
+							"sw": "Tumia droni kwa njia sahihi za uruka, ukikamata picha za ubora wa juu na data ya topografia."
+						}
+					},
+					{
+						"title": {
+							"en": "Data Processing & Analysis",
+							"sw": "Uchakataji na Uchambuzi wa Data"
+						},
+						"description": {
+							"en": "Process aerial data using photogrammetry software to generate 3D models, orthoimages, and contours.",
+							"sw": "Chakata data ya hewa kwa programu za photogrammetry kutengeneza modeli za 3D, orthoimages, na contours."
+						}
+					},
+					{
+						"title": {
+							"en": "Validation & Accuracy Check",
+							"sw": "Uthibitisho na Ukaguzi wa Usahihi"
+						},
+						"description": {
+							"en": "Use total stations and RTK-GNSS systems to validate drone data and ensure the highest accuracy.",
+							"sw": "Tumia total stations na mifumo ya RTK-GNSS kuhakiki data ya droni na kuhakikisha usahihi wa juu zaidi."
+						}
+					},
+					{
+						"title": {
+							"en": "Final Survey Deliverables",
+							"sw": "Matokeo ya Mwisho ya Uchunguzi"
+						},
+						"description": {
+							"en": "Generate CAD drawings, GIS layers, and digital reports for final project handover and analysis.",
+							"sw": "Tengeneza michoro ya CAD, tabaka za GIS, na ripoti za kidijitali kwa uhandishi wa mwisho wa mradi na uchambuzi."
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "deliverables",
+			"value": {
+				"tag": {
+					"en": "Deliverables",
+					"sw": "Matokeo"
+				},
+				"headline": {
+					"en": "Land Surveying Deliverables",
+					"sw": "Matokeo ya Upimaji wa Ardhi"
+				},
+				"description": {
+					"en": "Accurate, submission-ready outputs for planning, titling, and engineering decisions.",
+					"sw": "Pato sahihi, tayari kwa kuwasilisha kwa maamuzi ya mipango, hati, na uhandisi."
+				},
+				"liveLabel": {
+					"en": "Deliverable package",
+					"sw": "Furushi la Matokeo"
+				},
+				"checks": [
+					{
+						"en": "Submission-ready",
+						"sw": "Tayari kuwasilishwa"
+					},
+					{
+						"en": "Registry-compliant",
+						"sw": "Inakidhi mahitaji ya rejesta"
+					},
+					{
+						"en": "CAD & GIS compatible",
+						"sw": "Zinazoendana na CAD na GIS"
+					}
+				],
+				"items": [
+					{
+						"title": {
+							"en": "Boundary Survey Reports & Plans",
+							"sw": "Ripoti na Ramani za Uchunguzi wa Mipaka"
+						},
+						"format": {
+							"en": "PDF / Printed plans",
+							"sw": "PDF / Mipango iliyochapishwa"
+						},
+						"icon": "vector-square",
+						"image": {
+							"en": "/media/deliverables/boundary-survey-reports-and-plans.jpg",
+							"sw": "/media/deliverables/boundary-survey-reports-and-plans.jpg"
+						},
+						"description": {
+							"en": "Signed reports and plans defining parcel boundaries for transactions and development.",
+							"sw": "Ripoti na ramani zilizotiliwa sahihi zinazofafanua mipaka ya kiwanja kwa miamala na maendeleo."
+						}
+					},
+					{
+						"title": {
+							"en": "Cadastral Plans for Title Processing",
+							"sw": "Ramani za Cadastral kwa Ushughulikiaji wa Hati"
+						},
+						"format": {
+							"en": "Survey of Kenya format",
+							"sw": "Muundo wa Survey of Kenya"
+						},
+						"icon": "file-certificate",
+						"image": {
+							"en": "/media/deliverables/cadastral-plans-for-title-processing.jpg",
+							"sw": "/media/deliverables/cadastral-plans-for-title-processing.jpg"
+						},
+						"description": {
+							"en": "Registry-compliant plans prepared for title issuance at the land registry.",
+							"sw": "Mipango inayokidhi mahitaji ya rejesta, tayari kwa kutolewa kwa hati ofisini."
+						}
+					},
+					{
+						"title": {
+							"en": "Beacons Monumentation",
+							"sw": "Wekaji wa Alama za Beacon"
+						},
+						"format": {
+							"en": "On-site",
+							"sw": "Kwenye tovuti"
+						},
+						"icon": "map-marker-radius",
+						"image": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "Durable boundary beacons placed and referenced to survey accuracy.",
+							"sw": "Alama za mipaka zinazodumu zilizowekwa kwa usahihi wa upimaji."
+						}
+					},
+					{
+						"title": {
+							"en": "Registry Maps",
+							"sw": "Ramani za Registry"
+						},
+						"format": {
+							"en": "Certified copies",
+							"sw": "Nakala zilizothibitishwa"
+						},
+						"icon": "map",
+						"image": {
+							"en": "/media/deliverables/registry-maps.jpg",
+							"sw": "/media/deliverables/registry-maps.jpg"
+						},
+						"description": {
+							"en": "Certified registry index maps and extracts for parcel verification.",
+							"sw": "Ramani za rejesta na vichupo vilivyothibitishwa kwa uthibitisho wa kiwanja."
+						}
+					},
+					{
+						"title": {
+							"en": "3D Spatial Data (X, Y, Z)",
+							"sw": "Data ya Anga ya 3D (X, Y, Z)"
+						},
+						"format": {
+							"en": "CSV / DWG",
+							"sw": "CSV / DWG"
+						},
+						"icon": "axis-z-arrow",
+						"image": {
+							"en": "/media/deliverables/3d-spatial-data.jpg",
+							"sw": "/media/deliverables/3d-spatial-data.jpg"
+						},
+						"description": {
+							"en": "Positional coordinates ready for design, GIS, and machine-control workflows.",
+							"sw": "Kuratibu tayari kwa kubuni, GIS, na mtiririko wa kazi wa machine-control."
+						}
+					},
+					{
+						"title": {
+							"en": "Topographical Maps",
+							"sw": "Ramani za Topografia"
+						},
+						"format": {
+							"en": "DWG / PDF",
+							"sw": "DWG / PDF"
+						},
+						"icon": "image-filter-hdr",
+						"image": {
+							"en": "/media/deliverables/topographical-maps.jpg",
+							"sw": "/media/deliverables/topographical-maps.jpg"
+						},
+						"description": {
+							"en": "Feature-coded maps of terrain, utilities, structures, and levels.",
+							"sw": "Ramani zenye vipengele vya ardhi, huduma, majengo, na viwango."
+						}
+					},
+					{
+						"title": {
+							"en": "Contours",
+							"sw": "Contours"
+						},
+						"format": {
+							"en": "DWG / DXF",
+							"sw": "DWG / DXF"
+						},
+						"icon": "chart-bell-curve",
+						"image": {
+							"en": "/media/deliverables/contour-maps.jpg",
+							"sw": "/media/deliverables/contour-maps.jpg"
+						},
+						"description": {
+							"en": "Major and minor interval contours for grading and drainage design.",
+							"sw": "Kontua za vipindi kuu na ndogo kwa daraja na kubuni mifereji."
+						}
+					},
+					{
+						"title": {
+							"en": "CAD Shapefiles",
+							"sw": "Shapefiles za CAD"
+						},
+						"format": {
+							"en": "SHP / DWG",
+							"sw": "SHP / DWG"
+						},
+						"icon": "layers-triple",
+						"image": {
+							"en": "/media/deliverables/cad-shapefiles.jpg",
+							"sw": "/media/deliverables/cad-shapefiles.jpg"
+						},
+						"description": {
+							"en": "GIS-ready shapefiles and CAD layers for drafting and mapping.",
+							"sw": "Shapefiles tayari kwa GIS na tabaka za CAD kwa michoro na ramani."
+						}
+					},
+					{
+						"title": {
+							"en": "Survey Reports",
+							"sw": "Ripoti za Uchunguzi"
+						},
+						"format": {
+							"en": "PDF",
+							"sw": "PDF"
+						},
+						"icon": "file-document",
+						"image": {
+							"en": "/media/deliverables/survey-reports.jpg",
+							"sw": "/media/deliverables/survey-reports.jpg"
+						},
+						"description": {
+							"en": "Methodology, equipment, and accuracy summary signed by licensed surveyors.",
+							"sw": "Muhtasari wa mbinu, vifaa, na usahihi uliotiliwa sahihi na wapimaji walioidhinishwa."
+						}
+					},
+					{
+						"title": {
+							"en": "PDF Map Outputs",
+							"sw": "Pato za Ramani za PDF"
+						},
+						"format": {
+							"en": "PDF",
+							"sw": "PDF"
+						},
+						"icon": "file-pdf-box",
+						"image": {
+							"en": "/media/deliverables/pdf-map-outputs.jpg",
+							"sw": "/media/deliverables/pdf-map-outputs.jpg"
+						},
+						"description": {
+							"en": "Print-ready, scaled exports for clients and approval authorities.",
+							"sw": "Utoaji uliopangwa na wenye vipimo kwa wateja na mamlaka za idhini."
+						}
+					},
+					{
+						"title": {
+							"en": "Other Specialized Deliverables",
+							"sw": "Matokeo Mahsusi Mengine"
+						},
+						"format": {
+							"en": "On request",
+							"sw": "Kwa ombi"
+						},
+						"icon": "table-large",
+						"image": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "Custom outputs - volumetrics, monitoring, setting-out data - on request.",
+							"sw": "Pato maalumu - volumetrics, ufuatiliaji, data ya kuweka alama - kwa ombi."
+						}
+					}
+				],
+				"tone": "surface",
+				"id": ""
+			}
 		}
 	]
 }

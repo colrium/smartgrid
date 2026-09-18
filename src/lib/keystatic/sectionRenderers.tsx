@@ -35,6 +35,11 @@ import { CompanyProfileViewerSection } from "@/components/sections/company-profi
 import { AerialSurveyingSection } from "@/components/sections/about/AerialSurveyingSection";
 import { LandSurveyingSection } from "@/components/sections/about/LandSurveyingSection";
 import { ImpactAcrossAfricaSection } from "@/components/sections/about/ImpactAcrossAfricaSection";
+import { SurveyingServicesSection } from "@/components/sections/surveying/landing/SurveyingServicesSection";
+import { SurveyingProcessSection } from "@/components/sections/surveying/landing/SurveyingProcessSection";
+import { CivilHeroSection } from "@/components/sections/civil/landing/CivilHeroSection";
+import { CivilProcessSection } from "@/components/sections/civil/landing/CivilProcessSection";
+import { Deliverables } from "@/components/sections/Deliverables";
 import type { Lang } from "../types";
 import { resolveLocaleValue } from "./localize";
 import { getSectionDefinition, type SectionId } from "./sectionRegistry";
@@ -91,6 +96,11 @@ export const sectionRenderers = {
 	aboutAerialSurveying: AerialSurveyingSection,
 	aboutLandSurveying: LandSurveyingSection,
 	aboutImpact: ImpactAcrossAfricaSection,
+	surveyingServices: SurveyingServicesSection,
+	surveyingProcess: SurveyingProcessSection,
+	civilHero: CivilHeroSection,
+	civilProcess: CivilProcessSection,
+	deliverables: Deliverables,
 } satisfies Record<SectionId, ComponentType<any>>;
 
 export function renderSection(

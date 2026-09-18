@@ -26,14 +26,20 @@ export interface DeliverablesContent {
 }
 
 interface DeliverablesProps {
-	/** i18n namespace that holds the deliverables content */
-	ns: string;
+	/** i18n namespace that holds the deliverables content (required when `content` is omitted) */
+	ns?: string;
 	/** key of the deliverables block inside the namespace (defaults to "deliverables") */
 	baseKey?: string;
 	/** id applied to the wrapping <section> (e.g. for anchor/jump-nav links) */
 	id?: string;
 	/** extra classes for the wrapping <section> (e.g. background tokens) */
 	className?: string;
+	/**
+	 * Keystatic-owned content (M11 `deliverables` shared section). When
+	 * provided, the locale lookup is skipped — `ns` is only the legacy
+	 * fallback.
+	 */
+	content?: DeliverablesContent | null;
 }
 
 export interface DeliverablesExplorerProps {
@@ -228,11 +234,15 @@ export function Deliverables({
 	baseKey = "deliverables",
 	id,
 	className = "",
+	content,
 }: DeliverablesProps): ReactElement | null {
-	const { t } = useTranslation([ns]);
-	const section = t(`${ns}:${baseKey}`, {
-		returnObjects: true,
-	}) as unknown as DeliverablesContent;
+	const { t } = useTranslation(ns ? [ns] : ["common"]);
+	const legacy = ns
+		? (t(`${ns}:${baseKey}`, {
+				returnObjects: true,
+			}) as unknown as DeliverablesContent)
+		: null;
+	const section = (content ?? legacy) as DeliverablesContent | null;
 	const items = Array.isArray(section?.items) ? section.items : [];
 
 	if (items.length === 0) return null;
@@ -243,9 +253,9 @@ export function Deliverables({
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader
-					tag={section.tag || undefined}
-					headline={section.headline ?? ""}
-					description={section.description || undefined}
+					tag={section?.tag || undefined}
+					headline={section?.headline ?? ""}
+					description={section?.description || undefined}
 					align="center"
 				/>
 

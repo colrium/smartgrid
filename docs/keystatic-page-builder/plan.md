@@ -881,6 +881,18 @@ Rules (decided 2026-09-18, before implementing):
       7→10, `skipped` now `[]`. Validation: `check:keystatic` OK
       (36 sections), `--verify` clean, typecheck + lint clean; dev-smoke
       DEFERRED per policy.)
+      (Batch 5 — surveying + civil hubs — done 2026-09-18:
+      `surveyingServices` + `surveyingProcess` + `civilHero` +
+      `civilProcess` (unique) + ONE shared `deliverables` (uniform node
+      shape verified across all pages — one contract instead of a dozen
+      duplicate uniques; item images per-locale since civil paths
+      diverge; `tone` reproduces wrapper className variance).
+      `Deliverables` gained optional `content` (+ optional `ns`); both hub
+      entries whole-owned in page order → one PageBuilderDocument each,
+      `skipped` now `[]`. CAUGHT: forgot the 5 renderer map entries
+      (imports only) — check-script mismatch + typecheck failure, fixed.
+      Validation: `check:keystatic` OK (41 sections), `--verify` clean
+      both hubs, typecheck + lint clean; dev-smoke DEFERRED per policy.)
 - [ ] README operator list + `.env.example` untouched (no new env); check-script
       fixture/render coverage extended per batch.
 
@@ -1034,3 +1046,4 @@ For every implementation change:
 | 2026-09-18 | M11 | Batch 2 — careers DONE: `careersOpenings` + `careersProcess` + `careersStatement` (additive-`data` refactors; `<bold>` parsed from data in process; deadline/TOR-modal logic stays in renderer); `leadGenBar`/`services` global instances embedded verbatim via new `fromExtra` (byte-identical to home's copies); whole page in page order → one PageBuilderDocument; `skipped` now `[]`; registry 29→32; README list updated. Fixed 2 `eslint` unused-arg warnings in the new builds | `check:keystatic` OK (32 sections); `--verify` careers clean (6 sections, no gaps); `typecheck` + `lint` clean. Dev-smoke DEFERRED per policy. Next: company-profile tails | |
 | 2026-09-18 | M11 | Batch 3 — company-profile DONE: `companyProfileViewer` (additive-`data` refactor; iframe stays lazy in `DeferredMount`); appended last in page order → one PageBuilderDocument; `skipped` now `[]`; registry 32→33. CAUGHT: `--write` overwrote the `published` entry with `draft` — restored (`--verify` is status-normalized); rule going forward: check entry status before `--write` | `check:keystatic` OK (33 sections); `--verify` clean (7 sections, no gaps); `typecheck` + `lint` clean. Dev-smoke DEFERRED per policy. Next: about + hubs tails | |
 | 2026-09-18 | M11/M12 | Batch 4 — about DONE: `aboutAerialSurveying` + `aboutLandSurveying` + `aboutImpact` (additive-`data` refactors; `<primary>` parsed from data; dead `itemsTitle` dropped; globe stays dynamic); mapping reordered to page order (10 sections), route destructures named slots, zero `renderAt`; `skipped` now `[]`; registry 33→36. Repaired a bad edit that dropped the droneSlider entry lines mid-reorder | `check:keystatic` OK (36 sections); `--verify` about clean (10 sections, no gaps); `typecheck` + `lint` clean. Dev-smoke DEFERRED per policy. Next: surveying/civil hubs tails | |
+| 2026-09-18 | M11/M12 | Batch 5 — surveying + civil hubs DONE: 4 uniques + shared `deliverables` (see checklist note for the shared-vs-unique rationale); `Deliverables` optional-`content`/optional-`ns`; both hubs whole-owned in page order → one PageBuilderDocument each; `skipped` now `[]` both; registry 36→41; README list updated. CAUGHT: 5 renderer map entries missing (imports only) — fixed | `check:keystatic` OK (41 sections); `--verify` clean both hubs (4 sections each, no gaps); `typecheck` + `lint` clean. Dev-smoke DEFERRED per policy. Next: surveying children tails | |

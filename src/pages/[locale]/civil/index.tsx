@@ -18,20 +18,25 @@ type PageProps = {
 };
 
 const Page: NextPage<PageProps> = ({ keystaticPage }) => {
-	// Migration source switch (M3/M7): Keystatic owns the shared services card
-	// grid only when the slug is allowlisted via `KEYSTATIC_PAGES` and the
-	// entry is published. The bespoke diagonal hero, image stepper process,
-	// and deliverables explorer always render from legacy locale JSON (hybrid
-	// strategy) — see the `civil` mapping in
-	// `scripts/migrate-locale-to-keystatic.mjs`.
+	// Migration source switch (M3/M7, completed M11 batch 5): Keystatic owns
+	// the whole hub in page order — `civilHero`, `services` cardGrid,
+	// `civilProcess`, `deliverables` — when the slug is allowlisted via
+	// `KEYSTATIC_PAGES` and the entry is published. Otherwise the legacy
+	// locale-JSON implementation renders unchanged.
 	return (
 		<div className="relative">
 			<PageHead pageName="civil" />
 			<div className="flex flex-col min-h-screen">
-				<CivilHeroSection />
-				{keystaticPage ? <PageBuilderDocument page={keystaticPage} /> : <CivilServicesSection />}
-				<CivilProcessSection />
-				<CivilDeliverablesSection />
+				{keystaticPage ? (
+					<PageBuilderDocument page={keystaticPage} />
+				) : (
+					<>
+						<CivilHeroSection />
+						<CivilServicesSection />
+						<CivilProcessSection />
+						<CivilDeliverablesSection />
+					</>
+				)}
 			</div>
 		</div>
 	);

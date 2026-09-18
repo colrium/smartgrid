@@ -9,7 +9,15 @@ import { CardList, type CardItem } from "@/components/sections/shared/CardList";
 
 interface ServicesContent {
 	tag?: string | null;
-	headline: string;
+	headline?: string | null;
+	description?: string | null;
+	image?: string | null;
+	items?: CardItem[] | null;
+}
+
+export interface SurveyingServicesData {
+	tag?: string | null;
+	headline?: string | null;
 	description?: string | null;
 	image?: string | null;
 	items?: CardItem[] | null;
@@ -20,9 +28,14 @@ interface ServicesContent {
  * full-width framed map image below the grid (content:
  * surveying/landing:services).
  */
-export function SurveyingServicesSection(): ReactElement | null {
+export function SurveyingServicesSection({ data }: { data?: SurveyingServicesData | null } = {}): ReactElement | null {
 	const { t } = useTranslation(["surveying/landing"]);
-	const section = t("surveying/landing:services", { returnObjects: true }) as unknown as ServicesContent;
+	// Keystatic-owned content when `data` is provided (M11
+	// `surveyingServices` unique section); legacy `surveying/landing:services`
+	// locale strings otherwise. Presentation (shell tone, grid columns, the
+	// framed map image below the grid) stays in the wrapper.
+	const section = (data ??
+		(t("surveying/landing:services", { returnObjects: true }) as unknown as ServicesContent)) as ServicesContent;
 	const items = Array.isArray(section?.items) ? section.items : [];
 
 	if (items.length === 0) return null;
@@ -33,7 +46,7 @@ export function SurveyingServicesSection(): ReactElement | null {
 		<SectionShell
 			tone="surface"
 			tag={section.tag ?? null}
-			headline={section.headline}
+			headline={section.headline ?? ""}
 			description={section.description ?? undefined}
 			align="center"
 		>

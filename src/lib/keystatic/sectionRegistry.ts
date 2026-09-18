@@ -242,7 +242,7 @@ import {
  * from DATA (the wrapper is page-owned), so edits change output.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -3097,6 +3097,343 @@ const aboutImpact: SectionDefinition = {
 	}),
 };
 
+/**
+ * M11 batch 5 — hubs (2026-09-18): `surveyingServices` wraps the
+ * `SurveyingServicesSection` service grid with the framed map image below
+ * it (tag + headline + description + image + link cards). Unique — only
+ * valid on `/surveying`. Card icons/hrefs are shared; titles and
+ * descriptions are localized. Renders nothing without items (legacy
+ * guard, preserved).
+ */
+const surveyingServices: SectionDefinition = {
+	id: "surveyingServices",
+	version: 1,
+	label: "Surveying services (unique)",
+	description: "Unique: the /surveying service grid with the framed map image below it. Only valid on the surveying hub.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		image: imagePath("Map image (shared)"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+				href: fields.text({
+					label: "Link (shared, optional)",
+					description: "Card links to this URL when set. Identical in en/sw.",
+				}),
+			}),
+			{
+				label: "Services",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Service"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` (visual tuning, not
+		// an editor contract).
+	}),
+	example: {
+		tag: { en: "Services", sw: "Huduma" },
+		headline: { en: "Our Surveying Services", sw: "Huduma Zetu za Upimaji" },
+		description: { en: "", sw: "" },
+		image: "/media/surveying/05.png",
+		items: [
+			{
+				icon: "map",
+				title: { en: "Topographical Surveys", sw: "Upimaji wa Topografia" },
+				description: { en: "Accurate surveys for planning.", sw: "" },
+				href: "/surveying/topographical-surveys",
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			image: resolved.image || undefined,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+						href: item?.href && item.href.trim() ? item.href : undefined,
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 5 — hubs (2026-09-18): `surveyingProcess` wraps the
+ * `SurveyingProcessSection` indexed/watermarked step cards (tag + headline
+ * + description + items). Unique — only valid on `/surveying`. Titles and
+ * descriptions are localized (legacy items carry no icons). Renders
+ * nothing without items (legacy guard, preserved).
+ */
+const surveyingProcess: SectionDefinition = {
+	id: "surveyingProcess",
+	version: 1,
+	label: "Surveying process (unique)",
+	description: "Unique: the /surveying indexed process cards. Only valid on the surveying hub.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Steps",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Step"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` and the fixed index
+		// badge styling (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Our Process", sw: "Mchakato Wetu" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				title: { en: "Pre-Survey Planning", sw: "Mipango ya Kabla ya Upimaji" },
+				description: { en: "Site evaluation first.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 5 — hubs (2026-09-18): `civilHero` wraps the bespoke diagonal
+ * `CivilHeroSection` (headline eyebrow + title + description + image +
+ * pill CTAs). Unique — only valid on `/civil`. The image and CTA hrefs are
+ * shared; all other strings are localized.
+ */
+const civilHero: SectionDefinition = {
+	id: "civilHero",
+	version: 1,
+	label: "Civil hero (unique)",
+	description: "Unique: the /civil diagonal hero — eyebrow, title, description, image and pill CTAs. Only valid on the civil hub.",
+	schema: fields.object({
+		headline: localeText("Eyebrow"),
+		title: localeText("Title"),
+		description: localeLongText("Description"),
+		image: imagePath("Background image (shared)"),
+		ctaPrimary: linkObject("Primary action"),
+		ctaSecondary: linkObject("Secondary action"),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` (visual tuning, not
+		// an editor contract).
+	}),
+	example: {
+		headline: { en: "Precision Construction", sw: "Ujenzi Sahihi" },
+		title: { en: "Civil Engineering", sw: "Uhandisi wa Kiraia" },
+		description: { en: "Faster, safer site mapping.", sw: "" },
+		image: "/media/civil/01.jpeg",
+		ctaPrimary: { label: { en: "Get a quote", sw: "Omba nukuu" }, href: "/contact", icon: "" },
+		ctaSecondary: { label: { en: "", sw: "" }, href: "", icon: "" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			headline: resolved.headline,
+			title: resolved.title,
+			description: resolved.description,
+			image: resolved.image || undefined,
+			ctaPrimary: presentLink(resolved.ctaPrimary),
+			ctaSecondary: presentLink(resolved.ctaSecondary),
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 5 — hubs (2026-09-18): `civilProcess` wraps the
+ * `CivilProcessSection` image stepper with the step rail (tag + headline +
+ * description + image + steps). Unique — only valid on `/civil`. The image
+ * and step icons are shared; titles and descriptions are localized.
+ * Renders nothing without items (legacy guard, preserved).
+ */
+const civilProcess: SectionDefinition = {
+	id: "civilProcess",
+	version: 1,
+	label: "Civil process (unique)",
+	description: "Unique: the /civil image stepper with the step rail. Only valid on the civil hub.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		image: imagePath("Stepper image (shared)"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Steps",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Step"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` (visual tuning, not
+		// an editor contract).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Our Process", sw: "Mchakato Wetu" },
+		description: { en: "", sw: "" },
+		image: "/media/civil/03.jpeg",
+		items: [
+			{
+				icon: "map-search",
+				title: { en: "Reconnaissance & Planning", sw: "Uchunguzi na Mipango" },
+				description: { en: "Initial site assessment.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			image: resolved.image || undefined,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 5 — hubs (2026-09-18): `deliverables` wraps the SHARED
+ * interactive `Deliverables` explorer (tag + headline + description +
+ * live label + checks + deliverable items). SHARED (not unique): the node
+ * shape is identical on every page that renders `<Deliverables ns=…>`
+ * (verified across surveying/civil children + hubs), so one contract
+ * serves them all instead of a dozen duplicate unique ids. Item icons are
+ * shared; titles, formats and descriptions are localized; item images are
+ * per-locale (civil items prove paths can diverge). The `tone` select
+ * reproduces the wrapper `className` variance (`surface` = `bg-surface`).
+ * Renders nothing without items (legacy guard, preserved).
+ */
+const deliverables: SectionDefinition = {
+	id: "deliverables",
+	version: 1,
+	label: "Deliverables explorer",
+	description: "Interactive deliverables explorer: header, live-preview panel and selectable deliverable list. Works on any page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		liveLabel: localeText("Live label", { optionalInEnglish: true }),
+		checks: fields.array(localeText("Check", { optionalInEnglish: true }), {
+			label: "Checks",
+			itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Check"),
+		}),
+		items: fields.array(
+			fields.object({
+				title: localeText("Title"),
+				format: localeText("Format", { optionalInEnglish: true }),
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				image: localeMedia("Image"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Deliverables",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Deliverable"),
+			}
+		),
+		tone: fields.select({
+			label: "Tone",
+			options: [
+				{ label: "Default", value: "default" },
+				{ label: "Surface", value: "surface" },
+			],
+			defaultValue: "default",
+		}),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` beyond the tone
+		// (visual tuning, not an editor contract).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "What You Get", sw: "Unachopata" },
+		description: { en: "", sw: "" },
+		liveLabel: { en: "Deliverable package", sw: "Kifurushi cha matokeo" },
+		checks: [{ en: "Submission-ready", sw: "Tayari kuwasilishwa" }],
+		items: [
+			{
+				title: { en: "Boundary Survey Reports & Plans", sw: "Ripoti na Mipango ya Upimaji wa Mipaka" },
+				format: { en: "PDF / Printed plans", sw: "" },
+				icon: "vector-square",
+				image: { en: "/media/deliverables/boundary-survey-reports-and-plans.jpg", sw: "" },
+				description: { en: "Signed reports and plans.", sw: "" },
+			},
+		],
+		tone: "surface",
+		id: "",
+	},
+	normalize: (resolved) => ({
+		content: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			liveLabel: resolved.liveLabel,
+			checks: Array.isArray(resolved.checks) ? resolved.checks.filter((check: unknown) => typeof check === "string" && check) : [],
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						title: item?.title ?? "",
+						format: item?.format ?? "",
+						icon: item?.icon || undefined,
+						image: item?.image || undefined,
+						description: item?.description ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+		className: resolved.tone === "surface" ? "bg-surface" : "",
+	}),
+};
+
 export const sectionRegistry: readonly SectionDefinition[] = [
 	introText,
 	ctaBand,
@@ -3134,6 +3471,11 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	aboutAerialSurveying,
 	aboutLandSurveying,
 	aboutImpact,
+	surveyingServices,
+	surveyingProcess,
+	civilHero,
+	civilProcess,
+	deliverables,
 ];
 
 export function getSectionDefinition(id: string): SectionDefinition {
@@ -3179,6 +3521,11 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	aboutAerialSurveying: aboutAerialSurveying.label,
 	aboutLandSurveying: aboutLandSurveying.label,
 	aboutImpact: aboutImpact.label,
+	surveyingServices: surveyingServices.label,
+	surveyingProcess: surveyingProcess.label,
+	civilHero: civilHero.label,
+	civilProcess: civilProcess.label,
+	deliverables: deliverables.label,
 };
 
 /**
