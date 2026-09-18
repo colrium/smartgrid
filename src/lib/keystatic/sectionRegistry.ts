@@ -242,7 +242,7 @@ import {
  * from DATA (the wrapper is page-owned), so edits change output.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -3434,6 +3434,390 @@ const deliverables: SectionDefinition = {
 	}),
 };
 
+/**
+ * M11 batch 6 — topographical-surveys page (2026-09-18): `topoWhenYouNeed`
+ * wraps the `WhenYouNeedSection` 2-col grid whose items with `children`
+ * render as wide cards with an inset sub-item checklist. Unique — only
+ * valid on `/surveying/topographical-surveys`. Icons are shared; titles,
+ * descriptions and children are localized. Renders nothing without items
+ * (legacy guard, preserved).
+ */
+const topoWhenYouNeed: SectionDefinition = {
+	id: "topoWhenYouNeed",
+	version: 1,
+	label: "Topo when-you-need (unique)",
+	description: "Unique: the topographical-surveys use-case grid with wide sub-item cards. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+				children: fields.array(
+					fields.object({
+						title: localeText("Title"),
+						description: localeLongText("Description"),
+					}),
+					{
+						label: "Sub-items (renders the card wide with a checklist)",
+						itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Sub-item"),
+					}
+				),
+			}),
+			{
+				label: "Use cases",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Use case"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` and the `lg` icon size
+		// (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "When You Need It", sw: "Unapohitaji" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				icon: "map",
+				title: { en: "Buying Land", sw: "Kununua Ardhi" },
+				description: { en: "Verify boundaries first.", sw: "" },
+				children: [],
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+						children: Array.isArray(item?.children)
+							? item.children.map((child: any) => ({
+									title: child?.title ?? "",
+									description: child?.description ?? "",
+								}))
+							: [],
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 6 — topographical-surveys page (2026-09-18): `topoWhatWeOffer`
+ * wraps the `WhatWeOfferSection` indexed grid with positional fallback
+ * icons. Unique — only valid on `/surveying/topographical-surveys`.
+ * Titles and descriptions are localized. Renders nothing without items
+ * (legacy guard, preserved).
+ */
+const topoWhatWeOffer: SectionDefinition = {
+	id: "topoWhatWeOffer",
+	version: 1,
+	label: "Topo what-we-offer (unique)",
+	description: "Unique: the topographical-surveys indexed services grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Services",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Service"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, columns, indexed
+		// numbering, positional fallback icons and card density (wrapper
+		// presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "What We Offer", sw: "Tunachotoa" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				title: { en: "Design Topos", sw: "Topografia za Kubuni" },
+				description: { en: "Contours for design.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 6 — topographical-surveys page (2026-09-18):
+ * `topoDetailedSurveys` wraps the `DetailedSurveysSection` media-badge
+ * grid. Unique — only valid on `/surveying/topographical-surveys`. Item
+ * images are shared; titles and descriptions are localized. Renders
+ * nothing without items (legacy guard, preserved).
+ */
+const topoDetailedSurveys: SectionDefinition = {
+	id: "topoDetailedSurveys",
+	version: 1,
+	label: "Topo detailed surveys (unique)",
+	description: "Unique: the topographical-surveys media-badge capability grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				image: imagePath("Image (shared)"),
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Capabilities",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Capability"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, columns, media
+		// badges and the paper card variant (presentation, not editor
+		// contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Detailed Surveys", sw: "Upimaji wa Kina" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				image: "/media/surveying/topographical/detail-1.jpg",
+				title: { en: "Settlement Mapping", sw: "Ramani za Makazi" },
+				description: { en: "Dense detail capture.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						image: item?.image || undefined,
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 6 — topographical-surveys page (2026-09-18): `topoSampleMap`
+ * wraps the `SampleMapSection` info card + framed map image. Unique — only
+ * valid on `/surveying/topographical-surveys`. The map image is shared;
+ * all other strings are localized.
+ */
+const topoSampleMap: SectionDefinition = {
+	id: "topoSampleMap",
+	version: 1,
+	label: "Topo sample map (unique)",
+	description: "Unique: the topographical-surveys sample-map split (info card + framed image). Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		map: fields.object(
+			{
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+				image: imagePath("Map image (shared)"),
+				items: fields.array(localeText("Highlight", { optionalInEnglish: true }), {
+					label: "Highlights",
+					itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Highlight"),
+				}),
+			},
+			{ label: "Map card" }
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` (visual tuning, not
+		// an editor contract).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Sample Map", sw: "Ramani Mfano" },
+		description: { en: "", sw: "" },
+		map: {
+			title: { en: "MAP HIGHLIGHTS", sw: "MUHIMU ZA RAMANI" },
+			description: { en: "Every element included.", sw: "" },
+			image: "/media/surveying/topographical/sample-topographical-map.png",
+			items: [{ en: "Contours", sw: "Kontua" }],
+		},
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			map: resolved.map
+				? {
+						title: resolved.map.title ?? "",
+						description: resolved.map.description ?? "",
+						image: resolved.map.image || undefined,
+						items: Array.isArray(resolved.map.items)
+							? resolved.map.items.filter((highlight: unknown) => typeof highlight === "string" && highlight)
+							: [],
+					}
+				: null,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 6 — topographical-surveys page (2026-09-18): `topoInstruments`
+ * wraps the `InstrumentsSection` background-media instrument cards (label
+ * + image items). Unique — only valid on
+ * `/surveying/topographical-surveys`. Labels are localized, images are
+ * shared. Renders nothing without items (legacy guard, preserved).
+ */
+const topoInstruments: SectionDefinition = {
+	id: "topoInstruments",
+	version: 1,
+	label: "Topo instruments (unique)",
+	description: "Unique: the topographical-surveys instrument media cards. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				label: localeText("Label"),
+				image: imagePath("Image (shared)"),
+			}),
+			{
+				label: "Instruments",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Instrument"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, columns, tone and
+		// background media presentation (wrapper presentation, not editor
+		// contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Instruments", sw: "Vifaa" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				label: { en: "RTK GNSS FOIF A90", sw: "RTK GNSS FOIF A90" },
+				image: "/media/instruments/RTK-GNSS-FOIF-A90.jpg",
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						label: item?.label ?? "",
+						image: item?.image || undefined,
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 6 — topographical-surveys page (2026-09-18): `topoWhyConduct`
+ * wraps the `WhyConductSection` indexed grid with the crosshairs header
+ * glyph. Unique — only valid on `/surveying/topographical-surveys`.
+ * Titles and descriptions are localized. Renders nothing without items
+ * (legacy guard, preserved).
+ */
+const topoWhyConduct: SectionDefinition = {
+	id: "topoWhyConduct",
+	version: 1,
+	label: "Topo why-conduct (unique)",
+	description: "Unique: the topographical-surveys indexed why-conduct grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Reasons",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Reason"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, columns, indexed
+		// numbering and the crosshairs header glyph (presentation, not
+		// editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Why Conduct a Survey", sw: "Kwa Nini Ufanye Upimaji" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				title: { en: "Avoid Disputes", sw: "Epuka Migogoro" },
+				description: { en: "Know your boundaries.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
 export const sectionRegistry: readonly SectionDefinition[] = [
 	introText,
 	ctaBand,
@@ -3476,6 +3860,12 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	civilHero,
 	civilProcess,
 	deliverables,
+	topoWhenYouNeed,
+	topoWhatWeOffer,
+	topoDetailedSurveys,
+	topoSampleMap,
+	topoInstruments,
+	topoWhyConduct,
 ];
 
 export function getSectionDefinition(id: string): SectionDefinition {
@@ -3526,6 +3916,12 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	civilHero: civilHero.label,
 	civilProcess: civilProcess.label,
 	deliverables: deliverables.label,
+	topoWhenYouNeed: topoWhenYouNeed.label,
+	topoWhatWeOffer: topoWhatWeOffer.label,
+	topoDetailedSurveys: topoDetailedSurveys.label,
+	topoSampleMap: topoSampleMap.label,
+	topoInstruments: topoInstruments.label,
+	topoWhyConduct: topoWhyConduct.label,
 };
 
 /**

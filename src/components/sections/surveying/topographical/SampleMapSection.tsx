@@ -9,13 +9,25 @@ import { CheckList } from "@/components/sections/shared/Pricing";
 
 interface SampleMapContent {
 	tag?: string | null;
-	headline: string;
+	headline?: string | null;
 	description?: string | null;
 	map?: {
 		title?: string | null;
 		description?: string | null;
 		image?: string | null;
-		items?: string[] | null;
+		items?: (string | null)[] | null;
+	} | null;
+}
+
+export interface SampleMapData {
+	tag?: string | null;
+	headline?: string | null;
+	description?: string | null;
+	map?: {
+		title?: string | null;
+		description?: string | null;
+		image?: string | null;
+		items?: (string | null)[] | null;
 	} | null;
 }
 
@@ -24,18 +36,23 @@ interface SampleMapContent {
  * image (content:
  * surveying/topographical-surveys:sampleTopographicalMap).
  */
-export function SampleMapSection(): ReactElement {
+export function SampleMapSection({ data }: { data?: SampleMapData | null } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/topographical-surveys"]);
-	const section = t("surveying/topographical-surveys:sampleTopographicalMap", {
-		returnObjects: true,
-	}) as unknown as SampleMapContent;
-	const highlights = Array.isArray(section.map?.items) ? section.map.items : [];
+	// Keystatic-owned content when `data` is provided (M11 `topoSampleMap`
+	// unique section); legacy locale strings otherwise.
+	const section = (data ??
+		(t("surveying/topographical-surveys:sampleTopographicalMap", {
+			returnObjects: true,
+		}) as unknown as SampleMapContent)) as SampleMapContent;
+	const highlights = (Array.isArray(section.map?.items) ? section.map.items : []).filter(
+		(highlight): highlight is string => typeof highlight === "string" && highlight.length > 0
+	);
 	const image = section.map?.image;
 
 	return (
 		<SectionShell
 			tag={section.tag ?? null}
-			headline={section.headline}
+			headline={section.headline ?? ""}
 			description={section.description ?? undefined}
 		>
 			<div className="mt-14 sm:mt-20 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">

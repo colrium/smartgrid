@@ -608,6 +608,122 @@ function deliverablesBuild(tone) {
 	};
 }
 
+// M11 batch 6 — topographical-surveys page (2026-09-18): the six bespoke
+// grid/map tails → unique sections. Icons/images shared; titles,
+// descriptions and children localized.
+function topoWhenYouNeedBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			const enChildren = item?.children ?? [];
+			const swChildren = swItem?.children ?? [];
+			if (!Array.isArray(swChildren) || swChildren.length !== enChildren.length) {
+				gap(where, `items[${i}].children count diverged (en=${enChildren.length} sw=${swChildren?.length})`);
+			}
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				description: { en: optText(item.description), sw: optText(swItem.description) },
+				children: enChildren.map((child, j) => ({
+					title: { en: reqText(child.title, `${where}.items[${i}].children[${j}].title.en`), sw: reqText(swChildren[j]?.title, `${where}.items[${i}].children[${j}].title.sw`) },
+					description: { en: optText(child.description), sw: optText(swChildren[j]?.description) },
+				})),
+			};
+		}),
+		id: "",
+	};
+}
+
+function topoCardGridBuild() {
+	return (en, sw, where) => {
+		const enItems = en.items ?? [];
+		const swItems = sw.items ?? [];
+		if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+			gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+		}
+		return {
+			tag: { en: optText(en.tag), sw: optText(sw.tag) },
+			headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+			description: { en: optText(en.description), sw: optText(sw.description) },
+			items: enItems.map((item, i) => {
+				const swItem = swItems[i] ?? {};
+				return {
+					title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+					description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+				};
+			}),
+			id: "",
+		};
+	};
+}
+
+function topoDetailedSurveysBuild(en, sw, where) {
+	const base = topoCardGridBuild()(en, sw, where);
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	return {
+		...base,
+		items: enItems.map((item, i) => ({
+			...base.items[i],
+			image: sharedValue(item, swItems[i] ?? {}, "image", `${where}.items[${i}]`) ?? "",
+		})),
+	};
+}
+
+function topoInstrumentsBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				label: { en: reqText(item.label, `${where}.items[${i}].label.en`), sw: reqText(swItem.label, `${where}.items[${i}].label.sw`) },
+				image: sharedValue(item, swItem, "image", `${where}.items[${i}]`) ?? "",
+			};
+		}),
+		id: "",
+	};
+}
+
+function topoSampleMapBuild(en, sw, where) {
+	const map = en.map ?? {};
+	const swMap = sw.map ?? {};
+	const enHighlights = map.items ?? [];
+	const swHighlights = swMap.items ?? [];
+	if (!Array.isArray(swHighlights) || swHighlights.length !== enHighlights.length) {
+		gap(where, `map.items count diverged (en=${enHighlights.length} sw=${swHighlights?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		map: {
+			title: { en: reqText(map.title, `${where}.map.title.en`), sw: reqText(swMap.title, `${where}.map.title.sw`) },
+			description: { en: optText(map.description), sw: optText(swMap.description) },
+			image: sharedValue(map, swMap, "image", `${where}.map`) ?? "",
+			items: enHighlights.map((highlight, i) => ({
+				en: reqText(highlight, `${where}.map.items[${i}].en`),
+				sw: reqText(swHighlights[i], `${where}.map.items[${i}].sw`),
+			})),
+		},
+		id: "",
+	};
+}
+
 // M7 batch 3: `about:*` gallery sections → `gallery`. Legacy items are
 // either bare image paths (slider/masonry) or `{image,title?,label?}`
 // objects (overlay grids); both normalize to captioned items. Image paths
@@ -1817,10 +1933,15 @@ const PAGES = {
 	// non-contract props (`subItems`/`wide`, `indexed` numbering,
 	// `mediaBadged`/`variant`/`mediaPosition` media cards, `fallbackIcons`, JSX
 	// `headerEnd`), the deliverables explorer, and the bespoke sample-map split.
+	// M11 batch 6 (2026-09-18): the seven tails migrate as unique sections
+	// (`topoWhenYouNeed`, `topoWhatWeOffer`, `topoDetailedSurveys`,
+	// `topoSampleMap`, `topoInstruments`, `topoWhyConduct`) plus shared
+	// `deliverables` — the whole page is Keystatic-owned in page order
+	// (M11+M12 together). Nothing stays skipped.
 	"topographical-surveys": {
 		namespace: "surveying/topographical-surveys",
 		title: "Topographical Surveys",
-		skipped: ["whenYouNeed", "whatYouGet", "whatWeOffer", "detailedTopographicalSurveys", "sampleTopographicalMap", "surveyingInstruments", "whyConductSurvey"],
+		skipped: [],
 		sections: [
 			{
 				discriminant: "hero",
@@ -1861,6 +1982,24 @@ const PAGES = {
 				build: introTextBuild({ tone: "default", align: "left", split: false }),
 			},
 			{
+				discriminant: "topoWhenYouNeed",
+				from: "whenYouNeed",
+				// Legacy: WhenYouNeedSection → <CardGrid columns={2}
+				// card={{iconSize:"lg"}} /> (children→subItems+wide computed
+				// in the wrapper).
+				build(en, sw, where) {
+					return topoWhenYouNeedBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "deliverables",
+				from: "whatYouGet",
+				// Legacy: WhatYouGetSection → <Deliverables
+				// ns="surveying/topographical-surveys" baseKey="whatYouGet" />
+				// (no className = tone default).
+				build: deliverablesBuild("default"),
+			},
+			{
 				discriminant: "pricing",
 				from: "cost",
 				// Legacy: TopographicalCostSection → <Pricing cards price /> (see pricingBuild)
@@ -1871,6 +2010,51 @@ const PAGES = {
 				from: "section1",
 				// Legacy: IntroSection → <IntroTextSection ... split /> (split hardcoded; the content `split` key is not read)
 				build: introTextBuild({ tone: "default", align: "left", split: true }),
+			},
+			{
+				discriminant: "topoWhatWeOffer",
+				from: "whatWeOffer",
+				// Legacy: WhatWeOfferSection → <CardGrid columns={3}
+				// headerAlign="left" indexed fallbackIcons ... /> (positional
+				// icons + numbering stay in the wrapper).
+				build(en, sw, where) {
+					return topoCardGridBuild()(en, sw, where);
+				},
+			},
+			{
+				discriminant: "topoDetailedSurveys",
+				from: "detailedTopographicalSurveys",
+				// Legacy: DetailedSurveysSection → <CardGrid columns={4}
+				// mediaBadged card={{variant:"paper"}} />.
+				build(en, sw, where) {
+					return topoDetailedSurveysBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "topoSampleMap",
+				from: "sampleTopographicalMap",
+				// Legacy: SampleMapSection (info card + framed map image).
+				build(en, sw, where) {
+					return topoSampleMapBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "topoInstruments",
+				from: "surveyingInstruments",
+				// Legacy: InstrumentsSection → <CardGrid columns={4}
+				// headerAlign="left" tone="surface" mediaBadged ... />.
+				build(en, sw, where) {
+					return topoInstrumentsBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "topoWhyConduct",
+				from: "whyConductSurvey",
+				// Legacy: WhyConductSection → <CardGrid columns={3} indexed
+				// ... /> (crosshairs header glyph stays in the wrapper).
+				build(en, sw, where) {
+					return topoCardGridBuild()(en, sw, where);
+				},
 			},
 		],
 	},

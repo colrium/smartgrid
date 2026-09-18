@@ -6,7 +6,14 @@ import { CardGrid, type CardItem } from "@/components/sections/shared/CardGrid";
 
 interface DetailedContent {
 	tag?: string | null;
-	headline: string;
+	headline?: string | null;
+	description?: string | null;
+	items?: CardItem[] | null;
+}
+
+export interface DetailedSurveysData {
+	tag?: string | null;
+	headline?: string | null;
 	description?: string | null;
 	items?: CardItem[] | null;
 }
@@ -16,11 +23,16 @@ interface DetailedContent {
  * numbered glass chips (content:
  * surveying/topographical-surveys:detailedTopographicalSurveys).
  */
-export function DetailedSurveysSection(): ReactElement | null {
+export function DetailedSurveysSection({ data }: { data?: DetailedSurveysData | null } = {}): ReactElement | null {
 	const { t } = useTranslation(["surveying/topographical-surveys"]);
-	const section = t("surveying/topographical-surveys:detailedTopographicalSurveys", {
-		returnObjects: true,
-	}) as unknown as DetailedContent;
+	// Keystatic-owned content when `data` is provided (M11
+	// `topoDetailedSurveys` unique section); legacy locale strings
+	// otherwise. Presentation (media badges, paper variant) stays in the
+	// wrapper — only strings and image paths are data.
+	const section = (data ??
+		(t("surveying/topographical-surveys:detailedTopographicalSurveys", {
+			returnObjects: true,
+		}) as unknown as DetailedContent)) as DetailedContent;
 	const items = Array.isArray(section?.items) ? section.items : [];
 
 	if (items.length === 0) return null;
@@ -28,8 +40,8 @@ export function DetailedSurveysSection(): ReactElement | null {
 	return (
 		<CardGrid
 			tag={section.tag ?? null}
-			headline={section.headline}
-			description={section.description}
+			headline={section.headline ?? ""}
+			description={section.description ?? undefined}
 			items={items}
 			columns={4}
 			mediaBadged

@@ -6,7 +6,14 @@ import { CardGrid, type CardItem } from "@/components/sections/shared/CardGrid";
 
 interface WhyContent {
 	tag?: string | null;
-	headline: string;
+	headline?: string | null;
+	description?: string | null;
+	items?: CardItem[] | null;
+}
+
+export interface WhyConductData {
+	tag?: string | null;
+	headline?: string | null;
 	description?: string | null;
 	items?: CardItem[] | null;
 }
@@ -15,11 +22,15 @@ interface WhyContent {
  * Why-conduct-a-survey — shared numbered card grid with the crosshairs
  * header-end glyph (content: surveying/topographical-surveys:whyConductSurvey).
  */
-export function WhyConductSection(): ReactElement | null {
+export function WhyConductSection({ data }: { data?: WhyConductData | null } = {}): ReactElement | null {
 	const { t } = useTranslation(["surveying/topographical-surveys"]);
-	const section = t("surveying/topographical-surveys:whyConductSurvey", {
-		returnObjects: true,
-	}) as unknown as WhyContent;
+	// Keystatic-owned content when `data` is provided (M11 `topoWhyConduct`
+	// unique section); legacy locale strings otherwise. Presentation
+	// (indexed cards, crosshairs header glyph) stays in the wrapper.
+	const section = (data ??
+		(t("surveying/topographical-surveys:whyConductSurvey", {
+			returnObjects: true,
+		}) as unknown as WhyContent)) as WhyContent;
 	const items = Array.isArray(section?.items) ? section.items : [];
 
 	if (items.length === 0) return null;
@@ -27,8 +38,8 @@ export function WhyConductSection(): ReactElement | null {
 	return (
 		<CardGrid
 			tag={section.tag ?? null}
-			headline={section.headline}
-			description={section.description}
+			headline={section.headline ?? ""}
+			description={section.description ?? undefined}
 			items={items}
 			columns={3}
 			indexed

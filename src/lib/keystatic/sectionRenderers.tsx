@@ -40,6 +40,12 @@ import { SurveyingProcessSection } from "@/components/sections/surveying/landing
 import { CivilHeroSection } from "@/components/sections/civil/landing/CivilHeroSection";
 import { CivilProcessSection } from "@/components/sections/civil/landing/CivilProcessSection";
 import { Deliverables } from "@/components/sections/Deliverables";
+import { WhenYouNeedSection } from "@/components/sections/surveying/topographical/WhenYouNeedSection";
+import { WhatWeOfferSection } from "@/components/sections/surveying/topographical/WhatWeOfferSection";
+import { DetailedSurveysSection } from "@/components/sections/surveying/topographical/DetailedSurveysSection";
+import { SampleMapSection } from "@/components/sections/surveying/topographical/SampleMapSection";
+import { InstrumentsSection } from "@/components/sections/surveying/topographical/InstrumentsSection";
+import { WhyConductSection } from "@/components/sections/surveying/topographical/WhyConductSection";
 import type { Lang } from "../types";
 import { resolveLocaleValue } from "./localize";
 import { getSectionDefinition, type SectionId } from "./sectionRegistry";
@@ -101,6 +107,12 @@ export const sectionRenderers = {
 	civilHero: CivilHeroSection,
 	civilProcess: CivilProcessSection,
 	deliverables: Deliverables,
+	topoWhenYouNeed: WhenYouNeedSection,
+	topoWhatWeOffer: WhatWeOfferSection,
+	topoDetailedSurveys: DetailedSurveysSection,
+	topoSampleMap: SampleMapSection,
+	topoInstruments: InstrumentsSection,
+	topoWhyConduct: WhyConductSection,
 } satisfies Record<SectionId, ComponentType<any>>;
 
 export function renderSection(
