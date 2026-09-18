@@ -116,10 +116,16 @@ export function Process(props: ProcessProps): ReactElement | null {
 	const items = raw.filter(
 		(item) => item && (item.title || item.name || item.description),
 	);
-	if (items.length === 0) return null;
-
 	const layout = props.layout ?? "grid";
 	const columns = props.columns ?? 3;
+	// LATENT BUG FIX (M11 batch 7, visible, recorded): the timeline layout
+	// renders from `props.timeline.stages`, not from grid items — the old
+	// items-empty early return nulled every item-less timeline (the
+	// sectional-properties timeline rendered nothing in production despite
+	// having content). Grid behavior is unchanged.
+	const hasTimelineStages =
+		layout === "timeline" && Array.isArray(props.timeline?.stages) && props.timeline.stages.length > 0;
+	if (items.length === 0 && !hasTimelineStages) return null;
 
 	const styleFor = (item: ProcessItem): ProcessPhaseStyle | undefined => {
 		if (!item.phase) return undefined;
@@ -171,7 +177,7 @@ export function Process(props: ProcessProps): ReactElement | null {
 	const timelineItem = (item: ProcessItem, index: number): ReactElement => {
 		const even = index % 2 === 0;
 		return (
-			<li className="relative">
+			<li key={index} className="relative">
 				<span
 					aria-hidden
 					className="absolute left-0 lg:left-1/2 lg:-translate-x-1/2 top-1 inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary/30 bg-surface text-[11px] font-semibold text-primary shadow-[0_0_0_6px_rgba(0,151,178,0.08)]"

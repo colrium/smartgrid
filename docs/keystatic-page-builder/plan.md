@@ -900,6 +900,19 @@ Rules (decided 2026-09-18, before implementing):
       order (11 sections), route destructures named slots, zero `renderAt`;
       `skipped` now `[]`. Validation: `check:keystatic` OK (47 sections),
       `--verify` clean, typecheck + lint clean; dev-smoke DEFERRED.)
+      (Batch 7 — sectional-properties — done 2026-09-18: 5 uniques
+      (`sectionalWhatIs` with points/impacts, `sectionalServicesDetail`,
+      `sectionalWorkflow`, `sectionalTimeline`, `sectionalWhoNeeds` with
+      computed footer links) + shared `deliverables`; dead `diagramLabel`
+      + dead workflow `ctaPrimary`/`ctaSecondary` excluded; shared
+      `WorkflowSection` gained optional `id`; mapping reordered to page
+      order (11 sections), route destructures named slots, zero `renderAt`;
+      `skipped` now `["socials"]` (dead). LEGACY-VISIBLE BUG FIX: shared
+      `Process` nulled item-less timelines — the sectional timeline
+      rendered NOTHING in production despite having content; fixed (grid
+      behavior unchanged) + added the missing `li` key the newly-live
+      branch exposed. Validation: `check:keystatic` OK (52 sections),
+      `--verify` clean, typecheck + lint clean; dev-smoke DEFERRED.)
 - [ ] README operator list + `.env.example` untouched (no new env); check-script
       fixture/render coverage extended per batch.
 
@@ -1055,3 +1068,4 @@ For every implementation change:
 | 2026-09-18 | M11/M12 | Batch 4 — about DONE: `aboutAerialSurveying` + `aboutLandSurveying` + `aboutImpact` (additive-`data` refactors; `<primary>` parsed from data; dead `itemsTitle` dropped; globe stays dynamic); mapping reordered to page order (10 sections), route destructures named slots, zero `renderAt`; `skipped` now `[]`; registry 33→36. Repaired a bad edit that dropped the droneSlider entry lines mid-reorder | `check:keystatic` OK (36 sections); `--verify` about clean (10 sections, no gaps); `typecheck` + `lint` clean. Dev-smoke DEFERRED per policy. Next: surveying/civil hubs tails | |
 | 2026-09-18 | M11/M12 | Batch 5 — surveying + civil hubs DONE: 4 uniques + shared `deliverables` (see checklist note for the shared-vs-unique rationale); `Deliverables` optional-`content`/optional-`ns`; both hubs whole-owned in page order → one PageBuilderDocument each; `skipped` now `[]` both; registry 36→41; README list updated. CAUGHT: 5 renderer map entries missing (imports only) — fixed | `check:keystatic` OK (41 sections); `--verify` clean both hubs (4 sections each, no gaps); `typecheck` + `lint` clean. Dev-smoke DEFERRED per policy. Next: surveying children tails | |
 | 2026-09-18 | M11/M12 | Batch 6 — topographical-surveys DONE: 6 uniques + shared `deliverables`; mapping reordered to page order (11 sections), route destructures named slots, zero `renderAt`; `skipped` now `[]`; registry 41→47; README list updated | `check:keystatic` OK (47 sections); `--verify` clean (11 sections, no gaps); `typecheck` + `lint` clean. Dev-smoke DEFERRED per policy. Next: sectional-properties + bathymetric-surveys | |
+| 2026-09-18 | M11/M12 | Batch 7 — sectional-properties DONE: 5 uniques + shared `deliverables`; mapping reordered to page order (11 sections), route named slots, zero `renderAt`; `skipped` now `["socials"]` (dead); registry 47→52. Cleaned a duplicated registry block (double insert). LEGACY-VISIBLE BUG FIX: shared `Process` nulled item-less timelines (sectional timeline invisible in production) — fixed + added missing `li` key | `check:keystatic` OK (52 sections); `--verify` clean (11 sections, no gaps); `typecheck` + `lint` clean. Dev-smoke DEFERRED per policy. Next: bathymetric-surveys | |

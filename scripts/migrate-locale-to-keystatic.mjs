@@ -724,6 +724,147 @@ function topoSampleMapBuild(en, sw, where) {
 	};
 }
 
+// M11 batch 7 — sectional-properties page (2026-09-18): the five bespoke
+// tails → unique sections. Icons/hrefs/phase keys/day counts shared;
+// titles, descriptions, points, impacts, labels localized. The locale
+// `ctaPrimary`/`ctaSecondary` workflow keys and the unrendered
+// `diagramLabel` key are dropped (see registry notes).
+function sectionalWhatIsBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	const bullets = (list, swList, key) => {
+		const enList = list ?? [];
+		const swL = swList ?? [];
+		if (!Array.isArray(swL) || swL.length !== enList.length) {
+			gap(where, `${key} count diverged (en=${enList.length} sw=${swL?.length})`);
+		}
+		return enList.map((bullet, i) => ({
+			en: reqText(bullet, `${where}.${key}[${i}].en`),
+			sw: reqText(swL[i], `${where}.${key}[${i}].sw`),
+		}));
+	};
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: optText(en.headline), sw: optText(sw.headline) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				points: bullets(item.points, swItem.points, `items[${i}].points`),
+				impactsLabel: { en: optText(item.impactsLabel), sw: optText(swItem.impactsLabel) },
+				impacts: bullets(item.impacts, swItem.impacts, `items[${i}].impacts`),
+			};
+		}),
+		id: "",
+	};
+}
+
+function sectionalServicesDetailBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+			};
+		}),
+		id: "",
+	};
+}
+
+function sectionalWorkflowBuild(en, sw, where) {
+	const enSteps = en.steps ?? [];
+	const swSteps = sw.steps ?? [];
+	if (!Array.isArray(swSteps) || swSteps.length !== enSteps.length) {
+		gap(where, `step count diverged (en=${enSteps.length} sw=${swSteps?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		steps: enSteps.map((step, i) => {
+			const swStep = swSteps[i] ?? {};
+			return {
+				phase: sharedValue(step, swStep, "phase", `${where}.steps[${i}]`) ?? "",
+				label: { en: reqText(step.label, `${where}.steps[${i}].label.en`), sw: reqText(swStep.label, `${where}.steps[${i}].label.sw`) },
+				description: { en: reqText(step.description, `${where}.steps[${i}].description.en`), sw: reqText(swStep.description, `${where}.steps[${i}].description.sw`) },
+			};
+		}),
+		outcome: { en: optText(en.outcome), sw: optText(sw.outcome) },
+		id: "",
+	};
+}
+
+function sectionalTimelineBuild(en, sw, where) {
+	const enStages = en.stages ?? [];
+	const swStages = sw.stages ?? [];
+	if (!Array.isArray(swStages) || swStages.length !== enStages.length) {
+		gap(where, `stage count diverged (en=${enStages.length} sw=${swStages?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: optText(en.headline), sw: optText(sw.headline) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		barLabel: { en: optText(en.barLabel), sw: optText(sw.barLabel) },
+		startLabel: { en: optText(en.startLabel), sw: optText(sw.startLabel) },
+		endLabel: { en: optText(en.endLabel), sw: optText(sw.endLabel) },
+		costNote: { en: optText(en.costNote), sw: optText(sw.costNote) },
+		stages: enStages.map((stage, i) => {
+			const swStage = swStages[i] ?? {};
+			const days = sharedValue(stage, swStage, "days", `${where}.stages[${i}]`);
+			if (typeof days !== "number") gap(`${where}.stages[${i}]`, `"days" must be a number`);
+			return {
+				label: { en: reqText(stage.label, `${where}.stages[${i}].label.en`), sw: reqText(swStage.label, `${where}.stages[${i}].label.sw`) },
+				range: { en: optText(stage.range), sw: optText(swStage.range) },
+				days: typeof days === "number" ? days : 1,
+			};
+		}),
+		ctaEmail: {
+			label: { en: reqText(en.ctaEmail?.label, `${where}.ctaEmail.label.en`), sw: reqText(sw.ctaEmail?.label, `${where}.ctaEmail.label.sw`) },
+			href: sharedValue(en.ctaEmail, sw.ctaEmail, "href", `${where}.ctaEmail`) ?? "",
+			icon: "",
+		},
+		id: "timeline",
+	};
+}
+
+function sectionalWhoNeedsBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		linkLabel: { en: optText(en.linkLabel), sw: optText(sw.linkLabel) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+				href: sharedValue(item, swItem, "href", `${where}.items[${i}]`) ?? "",
+			};
+		}),
+		id: "",
+	};
+}
+
 // M7 batch 3: `about:*` gallery sections → `gallery`. Legacy items are
 // either bare image paths (slider/masonry) or `{image,title?,label?}`
 // objects (overlay grids); both normalize to captioned items. Image paths
@@ -2067,10 +2208,15 @@ const PAGES = {
 	// links), ProcessSection + TimelineSection (WorkflowSection / timeline
 	// variant: neither registered), SectionalDeliverablesSection (explorer).
 	// `socials` is commented out of the route — dead, never migrated.
+	// M11 batch 7 (2026-09-18): the six tails migrate as unique sections
+	// (`sectionalWhatIs`, `sectionalServicesDetail`, `sectionalWorkflow`,
+	// `sectionalTimeline`, `sectionalWhoNeeds`) plus shared `deliverables`
+	// — the whole page is Keystatic-owned in page order (M11+M12 together).
+	// Only dead `socials` stays skipped.
 	"sectional-properties": {
 		namespace: "surveying/sectional-properties",
 		title: "Sectional Properties",
-		skipped: ["whatIs", "sectionalPropertyServices", "process", "deliverables", "whoNeeds", "timeline", "socials"],
+		skipped: ["socials"],
 		sections: [
 			{
 				discriminant: "hero",
@@ -2115,10 +2261,67 @@ const PAGES = {
 				build: introTextBuild({ tone: "default", align: "left", split: false }, "ctaPrimary"),
 			},
 			{
+				discriminant: "sectionalWhatIs",
+				from: "whatIs",
+				// Legacy: WhatIsSection (bespoke ownership cards; the
+				// `diagramLabel` figure is commented out — not migrated).
+				build(en, sw, where) {
+					return sectionalWhatIsBuild(en, sw, where);
+				},
+			},
+			{
 				discriminant: "gallery",
 				from: "sectionalServices",
 				// Legacy: ServicesImageSection → <Gallery columns={4} /> (layout/tone unset = grid/default)
 				build: galleryBuild({ layout: "grid", columns: "4", tone: "default" }),
+			},
+			{
+				discriminant: "sectionalServicesDetail",
+				from: "sectionalPropertyServices",
+				// Legacy: ServicesDetailSection → <CardGrid columns={4}
+				// tone="surface" headerAlign="left" indexed fallbackIcons
+				// ... /> (numbering + icons stay in the wrapper).
+				build(en, sw, where) {
+					return sectionalServicesDetailBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "sectionalWorkflow",
+				from: "process",
+				// Legacy: ProcessSection → <WorkflowSection {...section}
+				// phaseStyles={PHASE_STYLES} /> (domain chip styles stay in
+				// the wrapper; unrendered ctaPrimary/ctaSecondary dropped).
+				build(en, sw, where) {
+					return sectionalWorkflowBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "deliverables",
+				from: "deliverables",
+				// Legacy: SectionalDeliverablesSection → <Deliverables
+				// ns="surveying/sectional-properties" className="bg-surface" />
+				// (tone surface).
+				build: deliverablesBuild("surface"),
+			},
+			{
+				discriminant: "sectionalWhoNeeds",
+				from: "whoNeeds",
+				// Legacy: WhoNeedsSection → <CardGrid columns={3}
+				// tone="surface" headerAlign="left" hoverArrow ... /> (footer
+				// links computed in the wrapper).
+				build(en, sw, where) {
+					return sectionalWhoNeedsBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "sectionalTimeline",
+				from: "timeline",
+				// Legacy: TimelineSection → <Process layout="timeline"
+				// tone="surface" ... /> (rail computation stays in the
+				// wrapper).
+				build(en, sw, where) {
+					return sectionalTimelineBuild(en, sw, where);
+				},
 			},
 			{
 				discriminant: "faq",

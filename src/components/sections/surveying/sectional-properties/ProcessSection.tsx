@@ -25,15 +25,22 @@ const PHASE_STYLES: WorkflowPhaseStyles = {
 	},
 };
 
-export function ProcessSection(): ReactElement | null {
+export function ProcessSection({ data, id }: { data?: WorkflowSectionProps | null; id?: string } = {}): ReactElement | null {
 	const { t } = useTranslation(["surveying/sectional-properties"]);
-	const section = t("surveying/sectional-properties:process", {
-		returnObjects: true,
-	}) as unknown as WorkflowSectionProps;
+	// Keystatic-owned content when `data` is provided (M11
+	// `sectionalWorkflow` unique section); legacy
+	// `surveying/sectional-properties:process` locale strings otherwise.
+	// NOTE: the locale `ctaPrimary`/`ctaSecondary` keys are unrendered
+	// (`WorkflowSection` only reads `cta`) — not migrated. The
+	// domain-specific PHASE_STYLES stay hardcoded in the wrapper.
+	const section = (data ??
+		(t("surveying/sectional-properties:process", {
+			returnObjects: true,
+		}) as unknown as WorkflowSectionProps)) as WorkflowSectionProps;
 
 	if (!Array.isArray(section?.steps) || section.steps.length === 0) return null;
 
-	return <WorkflowSection {...section} phaseStyles={PHASE_STYLES} />;
+	return <WorkflowSection {...section} phaseStyles={PHASE_STYLES} id={id} />;
 }
 
 export default ProcessSection;

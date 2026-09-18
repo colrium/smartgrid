@@ -40,6 +40,8 @@ export interface WorkflowSectionProps {
 	/** Per-phase chip style overrides merged over the defaults. */
 	phaseStyles?: WorkflowPhaseStyles | null;
 	classes?: WorkflowClassesProp;
+	/** Anchor id forwarded to the underlying timeline. */
+	id?: string;
 }
 
 const PHASE_STYLES: WorkflowPhaseStyles = {
@@ -97,6 +99,7 @@ export function WorkflowSection(props: WorkflowSectionProps): ReactElement {
 
 	return (
 		<Process
+			id={props.id}
 			tag={props.tag ?? null}
 			headline={props.headline ?? ""}
 			description={props.description ?? null}

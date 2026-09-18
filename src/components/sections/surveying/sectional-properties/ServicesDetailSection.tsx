@@ -5,13 +5,20 @@ import { useTranslation } from "@/hooks";
 import { CardGrid, type CardItem } from "@/components/sections/shared/CardGrid";
 
 interface ServiceDetailItem {
-	title: string;
+	title?: string | null;
 	description?: string | null;
 }
 
 interface ServicesDetailContent {
 	tag?: string | null;
-	headline: string;
+	headline?: string | null;
+	description?: string | null;
+	items?: ServiceDetailItem[] | null;
+}
+
+export interface ServicesDetailData {
+	tag?: string | null;
+	headline?: string | null;
 	description?: string | null;
 	items?: ServiceDetailItem[] | null;
 }
@@ -28,20 +35,26 @@ const FALLBACK_ICONS = [
  * number badges (content:
  * surveying/sectional-properties:sectionalPropertyServices).
  */
-export function ServicesDetailSection(): ReactElement | null {
+export function ServicesDetailSection({ data, id }: { data?: ServicesDetailData | null; id?: string } = {}): ReactElement | null {
 	const { t } = useTranslation(["surveying/sectional-properties"]);
-	const section = t("surveying/sectional-properties:sectionalPropertyServices", {
-		returnObjects: true,
-	}) as unknown as ServicesDetailContent;
+	// Keystatic-owned content when `data` is provided (M11
+	// `sectionalServicesDetail` unique section); legacy locale strings
+	// otherwise. Presentation (indexed cards, positional fallback icons)
+	// stays in the wrapper — only strings are data.
+	const section = (data ??
+		(t("surveying/sectional-properties:sectionalPropertyServices", {
+			returnObjects: true,
+		}) as unknown as ServicesDetailContent)) as ServicesDetailContent;
 	const items = (Array.isArray(section?.items) ? section.items : []) as CardItem[];
 
 	if (items.length === 0) return null;
 
 	return (
 		<CardGrid
+			id={id}
 			tag={section.tag ?? null}
-			headline={section.headline}
-			description={section.description}
+			headline={section.headline ?? ""}
+			description={section.description ?? undefined}
 			items={items}
 			columns={4}
 			tone="surface"

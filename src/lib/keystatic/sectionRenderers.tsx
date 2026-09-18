@@ -46,6 +46,11 @@ import { DetailedSurveysSection } from "@/components/sections/surveying/topograp
 import { SampleMapSection } from "@/components/sections/surveying/topographical/SampleMapSection";
 import { InstrumentsSection } from "@/components/sections/surveying/topographical/InstrumentsSection";
 import { WhyConductSection } from "@/components/sections/surveying/topographical/WhyConductSection";
+import { WhatIsSection } from "@/components/sections/surveying/sectional-properties/WhatIsSection";
+import { ServicesDetailSection } from "@/components/sections/surveying/sectional-properties/ServicesDetailSection";
+import { ProcessSection as SectionalProcessSection } from "@/components/sections/surveying/sectional-properties/ProcessSection";
+import { TimelineSection } from "@/components/sections/surveying/sectional-properties/TimelineSection";
+import { WhoNeedsSection } from "@/components/sections/surveying/sectional-properties/WhoNeedsSection";
 import type { Lang } from "../types";
 import { resolveLocaleValue } from "./localize";
 import { getSectionDefinition, type SectionId } from "./sectionRegistry";
@@ -113,6 +118,11 @@ export const sectionRenderers = {
 	topoSampleMap: SampleMapSection,
 	topoInstruments: InstrumentsSection,
 	topoWhyConduct: WhyConductSection,
+	sectionalWhatIs: WhatIsSection,
+	sectionalServicesDetail: ServicesDetailSection,
+	sectionalWorkflow: SectionalProcessSection,
+	sectionalTimeline: TimelineSection,
+	sectionalWhoNeeds: WhoNeedsSection,
 } satisfies Record<SectionId, ComponentType<any>>;
 
 export function renderSection(

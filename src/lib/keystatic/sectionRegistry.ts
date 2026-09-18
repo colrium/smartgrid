@@ -242,7 +242,7 @@ import {
  * from DATA (the wrapper is page-owned), so edits change output.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -3818,6 +3818,366 @@ const topoWhyConduct: SectionDefinition = {
 	}),
 };
 
+
+/**
+ * M11 batch 7 — sectional-properties page (2026-09-18): `sectionalWhatIs`
+ * wraps the bespoke `WhatIsSection` ownership cards (tag + headline +
+ * description + items with point lists and impact chips). Unique — only
+ * valid on `/surveying/sectional-properties`. Icons are shared; titles,
+ * points and impacts are localized. NOTE: the legacy `diagramLabel` key is
+ * unrendered (figure commented out) — not migrated. Renders nothing without
+ * a headline and items (legacy guard, preserved).
+ */
+const sectionalWhatIs: SectionDefinition = {
+	id: "sectionalWhatIs",
+	version: 1,
+	label: "Sectional what-is (unique)",
+	description: "Unique: the sectional-properties ownership cards with impact chips. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline", { optionalInEnglish: true }),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Empty = positional default. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				points: fields.array(localeText("Point", { optionalInEnglish: true }), {
+					label: "Points",
+					itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Point"),
+				}),
+				impactsLabel: localeText("Impacts label", { optionalInEnglish: true }),
+				impacts: fields.array(localeText("Impact", { optionalInEnglish: true }), {
+					label: "Impacts",
+					itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Impact"),
+				}),
+			}),
+			{
+				label: "Ownership cards",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Card"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, positional card
+		// icons/numbers and the unrendered legacy `diagramLabel` key.
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "What Are Sectional Properties", sw: "Mali za Sehemu ni Nini" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				icon: "door-open",
+				title: { en: "Private Unit Ownership", sw: "Umiliki wa Vitengo Binafsi" },
+				points: [{ en: "Each unit is individually owned.", sw: "" }],
+				impactsLabel: { en: "", sw: "" },
+				impacts: [],
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? "",
+						points: Array.isArray(item?.points) ? item.points.filter((point: unknown) => typeof point === "string" && point) : [],
+						impactsLabel: item?.impactsLabel ?? "",
+						impacts: Array.isArray(item?.impacts) ? item.impacts.filter((impact: unknown) => typeof impact === "string" && impact) : [],
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 7 — sectional-properties page (2026-09-18):
+ * `sectionalServicesDetail` wraps the `ServicesDetailSection` indexed grid
+ * with positional fallback icons. Unique — only valid on
+ * `/surveying/sectional-properties`. Titles and descriptions are localized.
+ * Renders nothing without items (legacy guard, preserved).
+ */
+const sectionalServicesDetail: SectionDefinition = {
+	id: "sectionalServicesDetail",
+	version: 1,
+	label: "Sectional services detail (unique)",
+	description: "Unique: the sectional-properties indexed services grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Services",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Service"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, columns, tone,
+		// indexed numbering and positional fallback icons (presentation,
+		// not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Services in Detail", sw: "Huduma kwa Kina" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				title: { en: "Mutation Surveys", sw: "Upimaji wa Mabadiliko" },
+				description: { en: "Subdivision support.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 7 — sectional-properties page (2026-09-18): `sectionalWorkflow`
+ * wraps the `ProcessSection` WorkflowSection passthrough (tag + headline +
+ * description + phased steps + outcome). Unique — only valid on
+ * `/surveying/sectional-properties`. Phase keys are shared literals;
+ * labels and descriptions are localized. NOTE: the locale
+ * `ctaPrimary`/`ctaSecondary` keys are unrendered (`WorkflowSection` only
+ * reads `cta`) — not migrated. The domain PHASE_STYLES stay hardcoded in
+ * the wrapper. Renders nothing without steps (legacy guard, preserved).
+ */
+const sectionalWorkflow: SectionDefinition = {
+	id: "sectionalWorkflow",
+	version: 1,
+	label: "Sectional workflow (unique)",
+	description: "Unique: the sectional-properties phased workflow. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		steps: fields.array(
+			fields.object({
+				phase: fields.text({
+					label: "Phase key (shared)",
+					description: "Phase bucket key (e.g. FIELD, OFFICE, REGISTRY). Identical in en/sw.",
+				}),
+				label: localeText("Label"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Steps",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Step"),
+			}
+		),
+		outcome: localeText("Outcome", { optionalInEnglish: true }),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, domain `phaseStyles`
+		// and the unrendered `ctaPrimary`/`ctaSecondary` keys.
+	}),
+	example: {
+		tag: { en: "Process", sw: "Mchakato" },
+		headline: { en: "Sectional Property Survey Process", sw: "Mchakato wa Upimaji wa Mali za Sehemu" },
+		description: { en: "", sw: "" },
+		steps: [
+			{
+				phase: "FIELD",
+				label: { en: "Site Data Collection", sw: "Ukusanyaji wa Data za Tovuti" },
+				description: { en: "We visit the site.", sw: "" },
+			},
+		],
+		outcome: { en: "", sw: "" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			steps: Array.isArray(resolved.steps)
+				? resolved.steps.map((step: any) => ({
+						phase: step?.phase ?? "",
+						label: step?.label ?? "",
+						description: step?.description ?? "",
+					}))
+				: [],
+			outcome: resolved.outcome,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 7 — sectional-properties page (2026-09-18): `sectionalTimeline`
+ * wraps the `TimelineSection` stage-bar timeline (tag + headline +
+ * description + rail labels + stages + email CTA). Unique — only valid on
+ * `/surveying/sectional-properties`. Stage day counts and the CTA href are
+ * shared; all other strings are localized. The timeline computation stays
+ * in the wrapper. Renders nothing without a headline and stages (legacy
+ * guard, preserved).
+ */
+const sectionalTimeline: SectionDefinition = {
+	id: "sectionalTimeline",
+	version: 1,
+	label: "Sectional timeline (unique)",
+	description: "Unique: the sectional-properties stage-bar timeline. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline", { optionalInEnglish: true }),
+		description: localeLongText("Description"),
+		barLabel: localeText("Bar label", { optionalInEnglish: true }),
+		startLabel: localeText("Start label", { optionalInEnglish: true }),
+		endLabel: localeText("End label", { optionalInEnglish: true }),
+		costNote: localeText("Cost note", { optionalInEnglish: true }),
+		stages: fields.array(
+			fields.object({
+				label: localeText("Label"),
+				range: localeText("Range", { optionalInEnglish: true }),
+				days: fields.integer({ label: "Days (shared)", defaultValue: 1, validation: { min: 0 } }),
+			}),
+			{
+				label: "Stages",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Stage"),
+			}
+		),
+		ctaEmail: linkObject("Email action"),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` (visual tuning, not
+		// an editor contract).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "How Long It Takes", sw: "Inachukua Muda Gani" },
+		description: { en: "", sw: "" },
+		barLabel: { en: "", sw: "" },
+		startLabel: { en: "", sw: "" },
+		endLabel: { en: "", sw: "" },
+		costNote: { en: "", sw: "" },
+		stages: [
+			{
+				label: { en: "Data Collection", sw: "Ukusanyaji wa Data" },
+				range: { en: "Days 1–2", sw: "Siku 1–2" },
+				days: 2,
+			},
+		],
+		ctaEmail: { label: { en: "Request Exact Timeline", sw: "Omba Ratiba Halisi" }, href: "mailto:info@smartgridsurveying.com", icon: "" },
+		id: "timeline",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			barLabel: resolved.barLabel,
+			startLabel: resolved.startLabel,
+			endLabel: resolved.endLabel,
+			costNote: resolved.costNote,
+			stages: Array.isArray(resolved.stages)
+				? resolved.stages.map((stage: any) => ({
+						label: stage?.label ?? "",
+						range: stage?.range ?? "",
+						days: typeof stage?.days === "number" ? stage.days : undefined,
+					}))
+				: [],
+			ctaEmail: presentLink(resolved.ctaEmail),
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 7 — sectional-properties page (2026-09-18): `sectionalWhoNeeds`
+ * wraps the `WhoNeedsSection` linkable card grid (tag + headline +
+ * description + shared footer-link label + items). Unique — only valid on
+ * `/surveying/sectional-properties`. Icons/hrefs are shared; titles and
+ * descriptions are localized. The per-card footer-link computation stays in
+ * the wrapper. Renders nothing without items (legacy guard, preserved).
+ */
+const sectionalWhoNeeds: SectionDefinition = {
+	id: "sectionalWhoNeeds",
+	version: 1,
+	label: "Sectional who-needs (unique)",
+	description: "Unique: the sectional-properties linkable audience grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		linkLabel: localeText("Card link label", { optionalInEnglish: true }),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Empty = positional default. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+				href: fields.text({
+					label: "Link (shared, optional)",
+					description: "Card links to this URL when set. Identical in en/sw.",
+				}),
+			}),
+			{
+				label: "Audiences",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Audience"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` and the positional
+		// fallback icon (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Who Needs It", sw: "Nani Anaihitaji" },
+		description: { en: "", sw: "" },
+		linkLabel: { en: "Start here", sw: "Anzia hapa" },
+		items: [
+			{
+				icon: "city",
+				title: { en: "Real Estate Developers", sw: "Wasanidi wa Mali" },
+				description: { en: "Register developments.", sw: "" },
+				href: "/contact?reason=request-survey#contact-form",
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			linkLabel: resolved.linkLabel,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+						href: item?.href && item.href.trim() ? item.href : undefined,
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
 export const sectionRegistry: readonly SectionDefinition[] = [
 	introText,
 	ctaBand,
@@ -3866,6 +4226,11 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	topoSampleMap,
 	topoInstruments,
 	topoWhyConduct,
+	sectionalWhatIs,
+	sectionalServicesDetail,
+	sectionalWorkflow,
+	sectionalTimeline,
+	sectionalWhoNeeds,
 ];
 
 export function getSectionDefinition(id: string): SectionDefinition {
@@ -3922,6 +4287,11 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	topoSampleMap: topoSampleMap.label,
 	topoInstruments: topoInstruments.label,
 	topoWhyConduct: topoWhyConduct.label,
+	sectionalWhatIs: sectionalWhatIs.label,
+	sectionalServicesDetail: sectionalServicesDetail.label,
+	sectionalWorkflow: sectionalWorkflow.label,
+	sectionalTimeline: sectionalTimeline.label,
+	sectionalWhoNeeds: sectionalWhoNeeds.label,
 };
 
 /**
