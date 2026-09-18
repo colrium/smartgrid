@@ -376,6 +376,22 @@ function careersStatementBuild(en, sw) {
 	};
 }
 
+// M11 batch 3 — company-profile page (2026-09-18):
+// `company-profile:companyProfileView` → `companyProfileViewer`. The PDF
+// URL is shared; header copy, download label and viewer title are
+// localized.
+function companyProfileViewerBuild(en, sw, where) {
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		pdfLink: sharedValue(en, sw, "pdfLink", where) ?? "",
+		downloadLabel: { en: optText(en.downloadLabel), sw: optText(sw.downloadLabel) },
+		viewerTitle: { en: optText(en.viewerTitle), sw: optText(sw.viewerTitle) },
+		id: "profile-viewer",
+	};
+}
+
 // M7 batch 3: `about:*` gallery sections → `gallery`. Legacy items are
 // either bare image paths (slider/masonry) or `{image,title?,label?}`
 // objects (overlay grids); both normalize to captioned items. Image paths
@@ -1055,7 +1071,11 @@ const PAGES = {
 		title: "Company Profile",
 		// companyProfileView (bespoke PDF viewer: DeferredMount + iframe, no
 		// shared equivalent) is intentionally NOT migrated — see M4 log.
-		skipped: ["companyProfileView"],
+		// M11 batch 3 (2026-09-18): the viewer migrates as the
+		// `companyProfileViewer` unique section (strings become data, the
+		// iframe stays lazy in the renderer) — the whole page is
+		// Keystatic-owned in page order → one PageBuilderDocument.
+		skipped: [],
 		sections: [
 			{
 				discriminant: "hero",
@@ -1153,6 +1173,16 @@ const PAGES = {
 				from: "whyUs",
 				// Legacy: WhyUs → <CardGrid columns={3} tone="surface" card={{iconSize:"lg"}} />
 				build: cardGridBuild({ columns: "3", align: "left", tone: "surface", headerRow: false, cardDensity: "comfortable", cardIconSize: "lg" }),
+			},
+			{
+				discriminant: "companyProfileViewer",
+				from: "companyProfileView",
+				// Legacy: CompanyProfileViewerSection over
+				// `company-profile:companyProfileView` (PDF viewer; the
+				// iframe stays lazy in the renderer).
+				build(en, sw, where) {
+					return companyProfileViewerBuild(en, sw, where);
+				},
 			},
 		],
 	},

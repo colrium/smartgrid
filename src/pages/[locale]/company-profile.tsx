@@ -21,16 +21,16 @@ type PageProps = {
 };
 
 const Page: NextPage<PageProps> = ({ keystaticPage }) => {
-	// Migration source switch (M4): Keystatic owns the shared sections only
-	// when the slug is allowlisted via `KEYSTATIC_PAGES` and the entry is
-	// published. The bespoke PDF viewer has no shared equivalent and always
-    // renders from legacy locale JSON (hybrid strategy) — see registry header.
+	// Migration source switch (M4, completed M11 batch 3): Keystatic owns
+	// the whole page in page order — 6 shared sections plus the
+	// `companyProfileViewer` unique tail — when the slug is allowlisted via
+	// `KEYSTATIC_PAGES` and the entry is published. Otherwise the legacy
+	// locale-JSON implementation renders unchanged.
 	if (keystaticPage) {
 		return (
 			<div className="relative">
 				<PageHead pageName="company-profile" />
 				<PageBuilderDocument page={keystaticPage} />
-				<CompanyProfileViewerSection />
 			</div>
 		);
 	}

@@ -242,7 +242,7 @@ import {
  * from DATA (the wrapper is page-owned), so edits change output.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -2857,6 +2857,56 @@ const careersStatement: SectionDefinition = {
 	}),
 };
 
+/**
+ * M11 batch 3 — company-profile page (2026-09-18): `companyProfileViewer`
+ * wraps the `CompanyProfileViewerSection` PDF viewer (tag + headline +
+ * description + PDF link + download label + viewer title). Unique — only
+ * valid on `/company-profile`. The PDF URL is shared; all other strings
+ * are localized. Renders nothing without a PDF link (legacy guard,
+ * preserved). The iframe stays lazy inside `DeferredMount` (static
+ * fallback on the server).
+ */
+const companyProfileViewer: SectionDefinition = {
+	id: "companyProfileViewer",
+	version: 1,
+	label: "Company profile viewer (unique)",
+	description: "Unique: the /company-profile PDF viewer — header copy, document link and download label. Only valid on the company-profile page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		pdfLink: fields.text({
+			label: "PDF link (shared)",
+			description: "Embed URL of the document (iframe src). Identical in en/sw.",
+		}),
+		downloadLabel: localeText("Download label", { optionalInEnglish: true }),
+		viewerTitle: localeText("Viewer title", { optionalInEnglish: true }),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` and the fixed
+		// download icons (presentation, not content).
+	}),
+	example: {
+		tag: { en: "Company Profile Document", sw: "Nyaraka za Wasifu wa Kampuni" },
+		headline: { en: "Read the Full Profile", sw: "Soma Wasifu Kamili" },
+		description: { en: "Browse our complete company profile below.", sw: "" },
+		pdfLink: "https://drive.google.com/file/d/1LuUk8Hl_J84tMHb-NKqBvs1QFdJGVTpH/preview",
+		downloadLabel: { en: "Open / Download PDF", sw: "Fungua / Pakua PDF" },
+		viewerTitle: { en: "SmartGrid Surveying & Civil Works — Company Profile", sw: "" },
+		id: "profile-viewer",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			pdfLink: resolved.pdfLink,
+			downloadLabel: resolved.downloadLabel,
+			viewerTitle: resolved.viewerTitle,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
 export const sectionRegistry: readonly SectionDefinition[] = [
 	introText,
 	ctaBand,
@@ -2890,6 +2940,7 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	careersOpenings,
 	careersProcess,
 	careersStatement,
+	companyProfileViewer,
 ];
 
 export function getSectionDefinition(id: string): SectionDefinition {
@@ -2931,6 +2982,7 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	careersOpenings: careersOpenings.label,
 	careersProcess: careersProcess.label,
 	careersStatement: careersStatement.label,
+	companyProfileViewer: companyProfileViewer.label,
 };
 
 /**

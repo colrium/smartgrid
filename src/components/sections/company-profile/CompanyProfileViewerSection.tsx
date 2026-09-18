@@ -9,29 +9,43 @@ import DeferredMount from "@/components/ui/DeferredMount";
 
 interface ProfileViewContent {
 	tag?: string | null;
-	headline: string;
-	description?: string;
-	pdfLink?: string;
-	downloadLabel?: string;
-	viewerTitle?: string;
+	headline?: string | null;
+	description?: string | null;
+	pdfLink?: string | null;
+	downloadLabel?: string | null;
+	viewerTitle?: string | null;
 }
 
-export function CompanyProfileViewerSection() {
+export interface CompanyProfileViewerData {
+	tag?: string | null;
+	headline?: string | null;
+	description?: string | null;
+	pdfLink?: string | null;
+	downloadLabel?: string | null;
+	viewerTitle?: string | null;
+}
+
+export function CompanyProfileViewerSection({ data, id }: { data?: CompanyProfileViewerData | null; id?: string } = {}) {
 	const { t } = useTranslation(["company-profile"]);
-	const section = t("company-profile:companyProfileView", {
-		returnObjects: true,
-	}) as unknown as ProfileViewContent;
+	// Keystatic-owned content when `data` is provided (M11
+	// `companyProfileViewer` unique section); legacy
+	// `company-profile:companyProfileView` locale strings otherwise. The
+	// iframe stays lazy inside `DeferredMount` — only strings are data.
+	const section = (data ??
+		(t("company-profile:companyProfileView", {
+			returnObjects: true,
+		}) as unknown as ProfileViewContent)) as ProfileViewContent;
 
 	if (!section?.pdfLink) return null;
 
 	return (
-		<section id="profile-viewer" className="py-24 sm:py-28 relative overflow-hidden">
+		<section id={id ?? "profile-viewer"} className="py-24 sm:py-28 relative overflow-hidden">
 			<Blob className="w-[28rem] h-[28rem] bg-primary-100/50 -bottom-24 -left-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader
 					tag={section.tag || undefined}
-					headline={section.headline}
+					headline={section.headline ?? ""}
 					description={section.description || undefined}
 					align="center"
 				/>

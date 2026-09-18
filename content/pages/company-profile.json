@@ -457,6 +457,33 @@
 				"cardIconSize": "lg",
 				"id": ""
 			}
+		},
+		{
+			"discriminant": "companyProfileViewer",
+			"value": {
+				"tag": {
+					"en": "Company Profile Document",
+					"sw": "Nyaraka za Wasifu wa Kampuni"
+				},
+				"headline": {
+					"en": "Read the Full Profile",
+					"sw": "Soma Wasifu Kamili"
+				},
+				"description": {
+					"en": "Browse our complete company profile below — capabilities, experience, equipment, and references. You can also download it for sharing.",
+					"sw": "Vinjari wasifu wetu kamili wa kampuni hapa chini — uwezo, uzoefu, vifaa, na marejeleo. Unaweza pia kupakua kwa ajili ya kushirikisha wengine."
+				},
+				"pdfLink": "https://drive.google.com/file/d/1LuUk8Hl_J84tMHb-NKqBvs1QFdJGVTpH/preview",
+				"downloadLabel": {
+					"en": "Open / Download PDF",
+					"sw": "Fungua / Pakua PDF"
+				},
+				"viewerTitle": {
+					"en": "SmartGrid Surveying & Civil Works — Company Profile",
+					"sw": "SmartGrid Surveying & Civil Works — Wasifu wa Kampuni"
+				},
+				"id": "profile-viewer"
+			}
 		}
 	]
 }

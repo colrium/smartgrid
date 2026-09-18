@@ -865,6 +865,14 @@ Rules (decided 2026-09-18, before implementing):
       whole page in page order, one PageBuilderDocument, `skipped` now `[]`.
       Validation: `check:keystatic` OK (32 sections), `--verify` clean,
       typecheck + lint clean; dev-smoke DEFERRED per policy.)
+      (Batch 3 — company-profile — done 2026-09-18: `companyProfileViewer`
+      (strings become data, iframe stays lazy in the renderer); appended in
+      page order (last), whole page → one PageBuilderDocument, `skipped`
+      now `[]`. CAUGHT: `--write` overwrote the `published` entry with
+      `draft` — restored to `published` (only published entry in the tree;
+      `--verify` is status-normalized so it stayed green). Validation:
+      `check:keystatic` OK (33 sections), `--verify` clean, typecheck +
+      lint clean; dev-smoke DEFERRED per policy.)
 - [ ] README operator list + `.env.example` untouched (no new env); check-script
       fixture/render coverage extended per batch.
 
@@ -1016,3 +1024,4 @@ For every implementation change:
 | 2026-09-18 | M12 | Home DONE (commit `fd82e2d` was M11): mapping reordered to page order, `home.json` regenerated via `--write`, route renders named slots with zero `renderAt` literals (mutating-cursor attempt rejected by `react-hooks/immutability` — destructure-once instead); count guard 19 + legacy branch untouched; check-script fixture string now page order | `check:keystatic` OK (26 sections, 31 fixtures); `--verify` home clean (19 sections, no gaps); `yarn typecheck` clean; `yarn lint` clean. Dev-smoke DEFERRED per policy. Next: M11 per-page batches (remaining routes' tails), then M12 per completed page | |
 | 2026-09-18 | M11 | Batch 1 — contact DONE: `contactHero` + `contactOffices` + `contactForm` (additive-`data` refactors; form widget keeps field structure/reasons/validation locale-owned but its locale reads hardened so a missing namespace renders an empty form, never a white-screen; check harness gains a `next/router` stub + dummy Formspree key for the static proof). Whole page in page order → one PageBuilderDocument (M11+M12 together); `skipped` drops hero/offices/form | `check:keystatic` OK (29 sections); `--verify` contact clean (4 sections, no gaps); `typecheck` + `lint` clean. Dev-smoke DEFERRED per policy | |
 | 2026-09-18 | M11 | Batch 2 — careers DONE: `careersOpenings` + `careersProcess` + `careersStatement` (additive-`data` refactors; `<bold>` parsed from data in process; deadline/TOR-modal logic stays in renderer); `leadGenBar`/`services` global instances embedded verbatim via new `fromExtra` (byte-identical to home's copies); whole page in page order → one PageBuilderDocument; `skipped` now `[]`; registry 29→32; README list updated. Fixed 2 `eslint` unused-arg warnings in the new builds | `check:keystatic` OK (32 sections); `--verify` careers clean (6 sections, no gaps); `typecheck` + `lint` clean. Dev-smoke DEFERRED per policy. Next: company-profile tails | |
+| 2026-09-18 | M11 | Batch 3 — company-profile DONE: `companyProfileViewer` (additive-`data` refactor; iframe stays lazy in `DeferredMount`); appended last in page order → one PageBuilderDocument; `skipped` now `[]`; registry 32→33. CAUGHT: `--write` overwrote the `published` entry with `draft` — restored (`--verify` is status-normalized); rule going forward: check entry status before `--write` | `check:keystatic` OK (33 sections); `--verify` clean (7 sections, no gaps); `typecheck` + `lint` clean. Dev-smoke DEFERRED per policy. Next: about + hubs tails | |

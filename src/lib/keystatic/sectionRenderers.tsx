@@ -31,6 +31,7 @@ import ContactFormSection from "@/components/sections/ContactFormSection";
 import { CurrentOpeningsSection } from "@/components/sections/careers/CurrentOpeningsSection";
 import { ApplicationProcessSection } from "@/components/sections/careers/ApplicationProcessSection";
 import { EqualOpportunityStatementSection } from "@/components/sections/careers/EqualOpportunityStatementSection";
+import { CompanyProfileViewerSection } from "@/components/sections/company-profile/CompanyProfileViewerSection";
 import type { Lang } from "../types";
 import { resolveLocaleValue } from "./localize";
 import { getSectionDefinition, type SectionId } from "./sectionRegistry";
@@ -83,6 +84,7 @@ export const sectionRenderers = {
 	careersOpenings: CurrentOpeningsSection,
 	careersProcess: ApplicationProcessSection,
 	careersStatement: EqualOpportunityStatementSection,
+	companyProfileViewer: CompanyProfileViewerSection,
 } satisfies Record<SectionId, ComponentType<any>>;
 
 export function renderSection(
