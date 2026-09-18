@@ -34,7 +34,7 @@ const FALLBACK_ICONS = [
  * Aerial surveying capabilities — shared popup card grid; items carrying
  * `popupContent` open the shared modal (content: about:aerialSurveying).
  */
-export function AerialSurveyingSection({ data }: { data?: AerialSurveyingData | null } = {}): ReactElement | null {
+export function AerialSurveyingSection({ data, id }: { data?: AerialSurveyingData | null; id?: string } = {}): ReactElement | null {
 	const { t } = useTranslation(["about"]);
 	// Keystatic-owned content when `data` is provided (M11
 	// `aboutAerialSurveying` unique section); legacy `about:aerialSurveying`
@@ -49,6 +49,7 @@ export function AerialSurveyingSection({ data }: { data?: AerialSurveyingData | 
 
 	return (
 		<CardGrid
+			id={id}
 			tag={section.tag ?? null}
 			headline={section.headline ?? ""}
 			description={section.description ?? undefined}

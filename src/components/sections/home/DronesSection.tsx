@@ -29,7 +29,7 @@ export interface DronesContent {
 	items?: DroneItem[] | null;
 }
 
-export function DronesSection({ data }: { data?: DronesContent | null } = {}) {
+export function DronesSection({ data, id }: { data?: DronesContent | null; id?: string } = {}) {
 	const { t } = useTranslation(["common"]);
 	const tag = data ? (data.tag ?? "") : ((t("common:drones.tag") as string) ?? "");
 	const headline = data ? (data.headline ?? "") : ((t("common:drones.headline") as string) ?? "");
@@ -45,7 +45,7 @@ export function DronesSection({ data }: { data?: DronesContent | null } = {}) {
 	) as DroneItem[];
 
 	return (
-		<section id="drones" className="py-24 sm:py-28 relative overflow-hidden">
+		<section id={id ?? "drones"} className="py-24 sm:py-28 relative overflow-hidden">
 			{/* Soft institutional background shapes */}
 			<Blob
 				className="w-[26rem] h-[26rem] bg-primary-200/40 -bottom-24 -left-24"

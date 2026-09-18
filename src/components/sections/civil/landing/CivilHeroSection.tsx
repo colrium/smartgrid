@@ -29,7 +29,7 @@ export interface CivilHeroData {
 	ctaSecondary?: HeroCta | null;
 }
 
-export function CivilHeroSection({ data }: { data?: CivilHeroData | null } = {}) {
+export function CivilHeroSection({ data, id }: { data?: CivilHeroData | null; id?: string } = {}) {
 	const { t } = useTranslation(["civil/landing"]);
 	// Keystatic-owned content when `data` is provided (M11 `civilHero`
 	// unique section); legacy `civil/landing:hero` locale strings
@@ -40,7 +40,7 @@ export function CivilHeroSection({ data }: { data?: CivilHeroData | null } = {})
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");
 
 	return (
-		<section className="relative overflow-hidden bg-ink">
+		<section id={id} className="relative overflow-hidden bg-ink">
 			<div className="relative flex min-h-[92vh] items-center">
 				{/* full-bleed image panel with diagonal seam */}
 				{hasImage && (

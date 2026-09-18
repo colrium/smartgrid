@@ -28,7 +28,7 @@ const FALLBACK_ICONS = [
  * What-we-offer services — shared icon + numbered card grid (content:
  * surveying/topographical-surveys:whatWeOffer).
  */
-export function WhatWeOfferSection({ data }: { data?: WhatWeOfferData | null } = {}): ReactElement | null {
+export function WhatWeOfferSection({ data, id }: { data?: WhatWeOfferData | null; id?: string } = {}): ReactElement | null {
 	const { t } = useTranslation(["surveying/topographical-surveys"]);
 	// Keystatic-owned content when `data` is provided (M11
 	// `topoWhatWeOffer` unique section); legacy locale strings otherwise.
@@ -44,6 +44,7 @@ export function WhatWeOfferSection({ data }: { data?: WhatWeOfferData | null } =
 
 	return (
 		<CardGrid
+			id={id}
 			tag={section.tag ?? null}
 			headline={section.headline ?? ""}
 			description={section.description ?? undefined}

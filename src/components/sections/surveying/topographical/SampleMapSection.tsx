@@ -36,7 +36,7 @@ export interface SampleMapData {
  * image (content:
  * surveying/topographical-surveys:sampleTopographicalMap).
  */
-export function SampleMapSection({ data }: { data?: SampleMapData | null } = {}): ReactElement {
+export function SampleMapSection({ data, id }: { data?: SampleMapData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/topographical-surveys"]);
 	// Keystatic-owned content when `data` is provided (M11 `topoSampleMap`
 	// unique section); legacy locale strings otherwise.
@@ -51,6 +51,7 @@ export function SampleMapSection({ data }: { data?: SampleMapData | null } = {})
 
 	return (
 		<SectionShell
+			id={id}
 			tag={section.tag ?? null}
 			headline={section.headline ?? ""}
 			description={section.description ?? undefined}

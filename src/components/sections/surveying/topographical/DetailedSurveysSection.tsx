@@ -23,7 +23,7 @@ export interface DetailedSurveysData {
  * numbered glass chips (content:
  * surveying/topographical-surveys:detailedTopographicalSurveys).
  */
-export function DetailedSurveysSection({ data }: { data?: DetailedSurveysData | null } = {}): ReactElement | null {
+export function DetailedSurveysSection({ data, id }: { data?: DetailedSurveysData | null; id?: string } = {}): ReactElement | null {
 	const { t } = useTranslation(["surveying/topographical-surveys"]);
 	// Keystatic-owned content when `data` is provided (M11
 	// `topoDetailedSurveys` unique section); legacy locale strings
@@ -39,6 +39,7 @@ export function DetailedSurveysSection({ data }: { data?: DetailedSurveysData | 
 
 	return (
 		<CardGrid
+			id={id}
 			tag={section.tag ?? null}
 			headline={section.headline ?? ""}
 			description={section.description ?? undefined}

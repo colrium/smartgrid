@@ -17,7 +17,7 @@ export interface ContactHeroContent {
 	badge?: HeroBadge | null;
 }
 
-export function ContactHeroSection({ data }: { data?: ContactHeroContent | null } = {}) {
+export function ContactHeroSection({ data, id }: { data?: ContactHeroContent | null; id?: string } = {}) {
 	const { t } = useTranslation(["contact"]);
 	// Keystatic-owned content when `data` is provided (M11 `contactHero`
 	// unique section); legacy `contact:hero` locale strings otherwise.
@@ -25,7 +25,7 @@ export function ContactHeroSection({ data }: { data?: ContactHeroContent | null 
 	const active = hero.badge?.status === "active";
 
 	return (
-		<section className="relative overflow-hidden bg-surface pt-40 sm:pt-44 pb-20 sm:pb-24">
+		<section id={id} className="relative overflow-hidden bg-surface pt-40 sm:pt-44 pb-20 sm:pb-24">
 			
 			<Blob className="w-[30rem] h-[30rem] bg-primary-100/60 -top-32 -left-24" opacity={0.5} />
 			<Blob className="w-[26rem] h-[26rem] bg-primary/10 -bottom-24 -right-20" opacity={0.5} />

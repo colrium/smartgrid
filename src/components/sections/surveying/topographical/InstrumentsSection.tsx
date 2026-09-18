@@ -22,7 +22,7 @@ export interface TopoInstrumentsData {
  * Surveying instruments — shared full-bleed image card grid with numbered
  * glass chips (content: surveying/topographical-surveys:surveyingInstruments).
  */
-export function InstrumentsSection({ data }: { data?: TopoInstrumentsData | null } = {}): ReactElement | null {
+export function InstrumentsSection({ data, id }: { data?: TopoInstrumentsData | null; id?: string } = {}): ReactElement | null {
 	const { t } = useTranslation(["surveying/topographical-surveys"]);
 	// Keystatic-owned content when `data` is provided (M11 `topoInstruments`
 	// unique section); legacy locale strings otherwise. Presentation
@@ -37,6 +37,7 @@ export function InstrumentsSection({ data }: { data?: TopoInstrumentsData | null
 
 	return (
 		<CardGrid
+			id={id}
 			tag={section.tag ?? null}
 			headline={section.headline ?? ""}
 			description={section.description ?? undefined}

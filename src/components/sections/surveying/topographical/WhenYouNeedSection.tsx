@@ -36,7 +36,7 @@ export interface WhenYouNeedData {
  * `children` list render as full-width cards with the inset sub-item
  * checklist (content: surveying/topographical-surveys:whenYouNeed).
  */
-export function WhenYouNeedSection({ data }: { data?: WhenYouNeedData | null } = {}): ReactElement | null {
+export function WhenYouNeedSection({ data, id }: { data?: WhenYouNeedData | null; id?: string } = {}): ReactElement | null {
 	const { t } = useTranslation(["surveying/topographical-surveys"]);
 	// Keystatic-owned content when `data` is provided (M11
 	// `topoWhenYouNeed` unique section); legacy locale strings otherwise.
@@ -59,6 +59,7 @@ export function WhenYouNeedSection({ data }: { data?: WhenYouNeedData | null } =
 
 	return (
 		<CardGrid
+			id={id}
 			tag={section.tag ?? null}
 			headline={section.headline ?? ""}
 			description={section.description ?? undefined}

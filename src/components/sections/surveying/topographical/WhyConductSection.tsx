@@ -22,7 +22,7 @@ export interface WhyConductData {
  * Why-conduct-a-survey — shared numbered card grid with the crosshairs
  * header-end glyph (content: surveying/topographical-surveys:whyConductSurvey).
  */
-export function WhyConductSection({ data }: { data?: WhyConductData | null } = {}): ReactElement | null {
+export function WhyConductSection({ data, id }: { data?: WhyConductData | null; id?: string } = {}): ReactElement | null {
 	const { t } = useTranslation(["surveying/topographical-surveys"]);
 	// Keystatic-owned content when `data` is provided (M11 `topoWhyConduct`
 	// unique section); legacy locale strings otherwise. Presentation
@@ -37,6 +37,7 @@ export function WhyConductSection({ data }: { data?: WhyConductData | null } = {
 
 	return (
 		<CardGrid
+			id={id}
 			tag={section.tag ?? null}
 			headline={section.headline ?? ""}
 			description={section.description ?? undefined}

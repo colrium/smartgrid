@@ -47,7 +47,7 @@ function renderPrimary(text: string): ReactNode[] {
 	return nodes;
 }
 
-export function LandSurveyingSection({ data }: { data?: LandSurveyingData | null } = {}): ReactElement | null {
+export function LandSurveyingSection({ data, id }: { data?: LandSurveyingData | null; id?: string } = {}): ReactElement | null {
 	const { t } = useTranslation(["about"]);
 	// Keystatic-owned content when `data` is provided (M11
 	// `aboutLandSurveying` unique section); legacy `about:landSurveying`
@@ -70,6 +70,7 @@ export function LandSurveyingSection({ data }: { data?: LandSurveyingData | null
 
 	return (
 		<CardGrid
+			id={id}
 			tag={section.tag ?? null}
 			headline={section.headline ?? ""}
 			description={

@@ -91,7 +91,7 @@ function renderHeroHeadline(headline: string) {
 	});
 }
 
-export default function HeroSection({ data }: { data?: HeroSectionContent | null } = {}) {
+export default function HeroSection({ data, id }: { data?: HeroSectionContent | null; id?: string } = {}) {
 	const heroRef = useRef<HTMLElement>(null);
 
 	// WebGL scene is only for capable desktop-class devices. Deciding here -
@@ -184,6 +184,7 @@ export default function HeroSection({ data }: { data?: HeroSectionContent | null
 	return (
 		<section
 			ref={heroRef}
+			id={id}
 			className="relative min-h-screen flex items-center justify-center pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-32 overflow-hidden"
 		>
 			{/* WebGL Background (code-split, client-only, capable devices only) */}

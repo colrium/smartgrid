@@ -22,7 +22,7 @@ export interface SurveyingProcessData {
  * Land-surveying landing process — numbered step cards rendered through the
  * shared card grid (content: surveying/landing:process).
  */
-export function SurveyingProcessSection({ data }: { data?: SurveyingProcessData | null } = {}): ReactElement | null {
+export function SurveyingProcessSection({ data, id }: { data?: SurveyingProcessData | null; id?: string } = {}): ReactElement | null {
 	const { t } = useTranslation(["surveying/landing"]);
 	// Keystatic-owned content when `data` is provided (M11
 	// `surveyingProcess` unique section); legacy `surveying/landing:process`
@@ -36,6 +36,7 @@ export function SurveyingProcessSection({ data }: { data?: SurveyingProcessData 
 
 	return (
 		<CardGrid
+			id={id}
 			tag={section.tag ?? null}
 			headline={section.headline ?? ""}
 			description={section.description ?? undefined}

@@ -28,7 +28,7 @@ export interface SurveyingServicesData {
  * full-width framed map image below the grid (content:
  * surveying/landing:services).
  */
-export function SurveyingServicesSection({ data }: { data?: SurveyingServicesData | null } = {}): ReactElement | null {
+export function SurveyingServicesSection({ data, id }: { data?: SurveyingServicesData | null; id?: string } = {}): ReactElement | null {
 	const { t } = useTranslation(["surveying/landing"]);
 	// Keystatic-owned content when `data` is provided (M11
 	// `surveyingServices` unique section); legacy `surveying/landing:services`
@@ -44,6 +44,7 @@ export function SurveyingServicesSection({ data }: { data?: SurveyingServicesDat
 
 	return (
 		<SectionShell
+			id={id}
 			tone="surface"
 			tag={section.tag ?? null}
 			headline={section.headline ?? ""}

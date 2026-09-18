@@ -56,7 +56,7 @@ export interface ImpactAcrossAfricaData {
 	whyChooseUs?: WhyChooseUsContent | null;
 }
 
-export function ImpactAcrossAfricaSection({ data }: { data?: ImpactAcrossAfricaData | null } = {}) {
+export function ImpactAcrossAfricaSection({ data, id }: { data?: ImpactAcrossAfricaData | null; id?: string } = {}) {
 	const { t } = useTranslation(["about"]);
 	// Keystatic-owned content when `data` is provided (M11 `aboutImpact`
 	// unique section); legacy `about:impactAcrossAfrica` locale strings
@@ -72,7 +72,7 @@ export function ImpactAcrossAfricaSection({ data }: { data?: ImpactAcrossAfricaD
 	const whyItems = Array.isArray(whyChooseUs?.items) ? whyChooseUs.items : [];
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
+		<section id={id} className="py-24 sm:py-28 relative overflow-hidden bg-surface">
 			<Blob
 				className="w-[28rem] h-[28rem] bg-primary-100/60 -top-24 -right-24"
 				opacity={0.5}

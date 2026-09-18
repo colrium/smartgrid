@@ -393,7 +393,7 @@ function TorModal({ opening, labels, onClose }: TorModalProps) {
 	);
 }
 
-export function CurrentOpeningsSection({ data }: { data?: CurrentOpeningsContent | null } = {}) {
+export function CurrentOpeningsSection({ data, id }: { data?: CurrentOpeningsContent | null; id?: string } = {}) {
 	const { t } = useTranslation(["careers"]);
 	// Keystatic-owned content when `data` is provided (M11
 	// `careersOpenings` unique section); legacy `careers:currentOpenings`
@@ -419,7 +419,7 @@ export function CurrentOpeningsSection({ data }: { data?: CurrentOpeningsContent
 	const items = Array.isArray(section.items) ? section.items : [];
 
 	return (
-		<section id="openings" className="py-24 sm:py-28 relative overflow-hidden ">
+		<section id={id ?? "openings"} className="py-24 sm:py-28 relative overflow-hidden ">
 			<Blob className="w-[28rem] h-[28rem] bg-primary-100/60 -top-24 -right-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
