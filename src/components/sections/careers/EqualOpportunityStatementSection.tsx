@@ -4,15 +4,24 @@ import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 
 interface StatementContent {
-	subtitle?: string;
-	description?: string;
+	subtitle?: string | null;
+	description?: string | null;
 }
 
-export function EqualOpportunityStatementSection() {
+export interface EqualOpportunityStatementData {
+	subtitle?: string | null;
+	description?: string | null;
+}
+
+export function EqualOpportunityStatementSection({ data }: { data?: EqualOpportunityStatementData | null } = {}) {
 	const { t } = useTranslation(["careers"]);
-	const section = t("careers:statement", {
-		returnObjects: true,
-	}) as unknown as StatementContent;
+	// Keystatic-owned content when `data` is provided (M11
+	// `careersStatement` unique section); legacy `careers:statement`
+	// locale strings otherwise.
+	const section = (data ??
+		(t("careers:statement", {
+			returnObjects: true,
+		}) as unknown as StatementContent)) as StatementContent;
 
 	if (!section.subtitle && !section.description) return null;
 

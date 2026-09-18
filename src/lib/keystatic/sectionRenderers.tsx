@@ -28,6 +28,9 @@ import { DronesSection } from "@/components/sections/home/DronesSection";
 import { ContactHeroSection } from "@/components/sections/contact/ContactHeroSection";
 import { OfficesSection } from "@/components/sections/contact/OfficesSection";
 import ContactFormSection from "@/components/sections/ContactFormSection";
+import { CurrentOpeningsSection } from "@/components/sections/careers/CurrentOpeningsSection";
+import { ApplicationProcessSection } from "@/components/sections/careers/ApplicationProcessSection";
+import { EqualOpportunityStatementSection } from "@/components/sections/careers/EqualOpportunityStatementSection";
 import type { Lang } from "../types";
 import { resolveLocaleValue } from "./localize";
 import { getSectionDefinition, type SectionId } from "./sectionRegistry";
@@ -77,6 +80,9 @@ export const sectionRenderers = {
 	contactHero: ContactHeroSection,
 	contactOffices: OfficesSection,
 	contactForm: ContactFormSection,
+	careersOpenings: CurrentOpeningsSection,
+	careersProcess: ApplicationProcessSection,
+	careersStatement: EqualOpportunityStatementSection,
 } satisfies Record<SectionId, ComponentType<any>>;
 
 export function renderSection(

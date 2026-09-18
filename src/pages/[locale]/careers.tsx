@@ -19,21 +19,30 @@ type PageProps = {
 };
 
 const Page: NextPage<PageProps> = ({ keystaticPage }) => {
-	// Migration source switch (M3/M7): Keystatic owns the shared hero only
-	// when the slug is allowlisted via `KEYSTATIC_PAGES` and the entry is
-	// published. The global LeadGenBar/ServicesSection and the bespoke
-	// openings/process/statement tails always render from legacy locale JSON
-	// (hybrid strategy) — see registry header.
+	// Migration source switch (M3/M7, completed M11 batch 2): Keystatic owns
+	// the whole page in page order — `hero`, `leadGenBar`, `services`,
+	// `careersOpenings`, `careersProcess`, `careersStatement` — when the
+	// slug is allowlisted via `KEYSTATIC_PAGES` and the entry is published.
+	// Otherwise the legacy locale-JSON implementation renders unchanged.
+	// NOTE: the `leadGenBar`/`services` entry copies embed the global
+	// `common:leadGenBar`/`common:services` instances verbatim (same copy
+	// as home); re-run the migration to refresh them.
 	return (
 		<div className="relative">
 			<PageHead pageName="careers" />
 			<div className="flex flex-col min-h-screen">
-				{keystaticPage ? <PageBuilderDocument page={keystaticPage} /> : <CareersHeroSection />}
-				<LeadGenBar />
-				<ServicesSection />
-				<CurrentOpeningsSection />
-				<ApplicationProcessSection />
-				<EqualOpportunityStatementSection />
+				{keystaticPage ? (
+					<PageBuilderDocument page={keystaticPage} />
+				) : (
+					<>
+						<CareersHeroSection />
+						<LeadGenBar />
+						<ServicesSection />
+						<CurrentOpeningsSection />
+						<ApplicationProcessSection />
+						<EqualOpportunityStatementSection />
+					</>
+				)}
 			</div>
 		</div>
 	);

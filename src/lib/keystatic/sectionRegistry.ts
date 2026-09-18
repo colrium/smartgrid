@@ -242,7 +242,7 @@ import {
  * from DATA (the wrapper is page-owned), so edits change output.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -2626,6 +2626,237 @@ const contactForm: SectionDefinition = {
 	}),
 };
 
+/**
+ * M11 batch 2 — careers page (2026-09-18): `careersOpenings` wraps the
+ * `CurrentOpeningsSection` openings board (tag + headline + description +
+ * TOR modal labels + featured/regular openings with deadlines, actions and
+ * TOR details). Unique — only valid on `/careers`. Deadline values are
+ * shared date strings (deadline math stays in the renderer); titles,
+ * descriptions, TOR copy and action labels are localized; action hrefs and
+ * icons are shared. SSR-safe: `useSyncExternalStore` mounted flag renders
+ * stable markup on the server; the TOR modal only mounts on click.
+ */
+const careersOpeningItem = fields.object({
+	icon: fields.text({
+		label: "MDI icon (optional)",
+		description: "Icon slug without the `mdi-` prefix.",
+	}),
+	title: localeText("Title"),
+	applicationDeadline: fields.object(
+		{
+			label: localeText("Label", { optionalInEnglish: true }),
+			value: fields.text({
+				label: "Deadline (shared)",
+				description: "Deadline date string (e.g. 8 March 2027). Identical in en/sw — drives the closed-state math.",
+			}),
+		},
+		{ label: "Application deadline (leave the value empty to hide)" }
+	),
+	description: localeLongText("Description"),
+	actions: fields.array(
+		fields.object({
+			icon: fields.text({
+				label: "MDI icon (optional)",
+				description: "Icon slug without the `mdi-` prefix.",
+			}),
+			label: localeText("Label"),
+			href: fields.text({ label: "Link", description: "Internal path or full URL." }),
+		}),
+		{
+			label: "Actions",
+			itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Action"),
+		}
+	),
+	tor: fields.object(
+		{
+			positionSummary: localeLongText("Position summary"),
+			duties: fields.array(localeText("Duty", { optionalInEnglish: true }), {
+				label: "Duties",
+				itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Duty"),
+			}),
+			qualifications: fields.array(localeText("Qualification", { optionalInEnglish: true }), {
+				label: "Qualifications",
+				itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Qualification"),
+			}),
+			engagement: localeLongText("Engagement"),
+		},
+		{ label: "Terms of reference (leave the summary empty to hide)" }
+	),
+});
+
+const careersOpenings: SectionDefinition = {
+	id: "careersOpenings",
+	version: 1,
+	label: "Careers openings (unique)",
+	description: "Unique: the /careers openings board — deadlines, actions and terms-of-reference modal. Only valid on the careers page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		torLabels: fields.object(
+			{
+				button: localeText("TOR button", { optionalInEnglish: true }),
+				modalTitle: localeText("Modal title", { optionalInEnglish: true }),
+				summaryTitle: localeText("Summary title", { optionalInEnglish: true }),
+				dutiesTitle: localeText("Duties title", { optionalInEnglish: true }),
+				qualificationsTitle: localeText("Qualifications title", { optionalInEnglish: true }),
+				engagementTitle: localeText("Engagement title", { optionalInEnglish: true }),
+			},
+			{ label: "TOR modal labels" }
+		),
+		featuredOpenings: fields.array(careersOpeningItem, {
+			label: "Featured openings",
+			itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Opening"),
+		}),
+		items: fields.array(careersOpeningItem, {
+			label: "Openings",
+			itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Opening"),
+		}),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` (visual tuning, not
+		// an editor contract). The hardcoded "Closed" pill renders in
+		// English in both locales (legacy quirk, preserved).
+	}),
+	example: {
+		tag: { en: "Careers", sw: "Kazi" },
+		headline: { en: "Current openings", sw: "Nafasi zilizopo" },
+		description: { en: "", sw: "" },
+		torLabels: {
+			button: { en: "View TOR", sw: "Angalia TOR" },
+			modalTitle: { en: "Terms of Reference", sw: "Masharti ya Kazi" },
+			summaryTitle: { en: "Position summary", sw: "Muhtasari wa nafasi" },
+			dutiesTitle: { en: "Duties", sw: "Majukumu" },
+			qualificationsTitle: { en: "Qualifications", sw: "Sifa" },
+			engagementTitle: { en: "Engagement", sw: "Ushirikiano" },
+		},
+		featuredOpenings: [],
+		items: [
+			{
+				icon: "briefcase",
+				title: { en: "Project Manager", sw: "Project Manager" },
+				applicationDeadline: {
+					label: { en: "Application Deadline", sw: "Mwisho wa Maombi" },
+					value: "8 March 2027",
+				},
+				description: { en: "Lead surveying projects end to end.", sw: "" },
+				actions: [{ icon: "", label: { en: "Apply now", sw: "Omba sasa" }, href: "/contact?reason=job-application#contact-form" }],
+				tor: {
+					positionSummary: { en: "Summary.", sw: "" },
+					duties: [{ en: "Lead the crew.", sw: "" }],
+					qualifications: [{ en: "BSc Surveying.", sw: "" }],
+					engagement: { en: "", sw: "" },
+				},
+			},
+		],
+		id: "openings",
+	},
+	normalize: (resolved) => {
+		const opening = (item: any) => ({
+			icon: item?.icon || undefined,
+			title: item?.title ?? "",
+			applicationDeadline:
+				item?.applicationDeadline && typeof item.applicationDeadline.value === "string" && item.applicationDeadline.value
+					? { label: item.applicationDeadline.label ?? "", value: item.applicationDeadline.value }
+					: null,
+			description: item?.description ?? "",
+			actions: Array.isArray(item?.actions)
+				? item.actions.map((action: any) => ({
+						icon: action?.icon || undefined,
+						label: action?.label ?? "",
+						href: typeof action?.href === "string" && action.href ? action.href : "#",
+					}))
+				: [],
+			tor:
+				item?.tor && typeof item.tor.positionSummary === "string" && item.tor.positionSummary
+					? {
+							positionSummary: item.tor.positionSummary,
+							duties: Array.isArray(item.tor.duties) ? item.tor.duties.filter((d: unknown) => typeof d === "string" && d) : [],
+							qualifications: Array.isArray(item.tor.qualifications)
+								? item.tor.qualifications.filter((q: unknown) => typeof q === "string" && q)
+								: [],
+							engagement: item.tor.engagement || undefined,
+						}
+					: null,
+		});
+		return {
+			data: {
+				tag: resolved.tag,
+				headline: resolved.headline,
+				description: resolved.description,
+				torLabels: resolved.torLabels,
+				featuredOpenings: Array.isArray(resolved.featuredOpenings) ? resolved.featuredOpenings.map(opening) : [],
+				items: Array.isArray(resolved.items) ? resolved.items.map(opening) : [],
+			},
+			id: resolved.id || undefined,
+		};
+	},
+};
+
+/**
+ * M11 batch 2 — careers page (2026-09-18): `careersProcess` wraps the
+ * `ApplicationProcessSection` panel (subtitle + description). Unique —
+ * only valid on `/careers`. The `<bold>` pseudo-markup is parsed from DATA
+ * by the wrapper itself, so edits change output. Renders nothing when both
+ * fields are empty (legacy guard, preserved).
+ */
+const careersProcess: SectionDefinition = {
+	id: "careersProcess",
+	version: 1,
+	label: "Careers process (unique)",
+	description: "Unique: the /careers application-process panel — subtitle plus description with <bold> markup. Only valid on the careers page.",
+	schema: fields.object({
+		subtitle: localeText("Subtitle", { optionalInEnglish: true }),
+		description: localeLongText("Description"),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` (visual tuning, not
+		// an editor contract).
+	}),
+	example: {
+		subtitle: { en: "Application Process", sw: "Mchakato wa Maombi" },
+		description: { en: "Submit your CV to <bold>info@smartgridsurveying.com</bold>.", sw: "" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			subtitle: resolved.subtitle,
+			description: resolved.description,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 2 — careers page (2026-09-18): `careersStatement` wraps the
+ * `EqualOpportunityStatementSection` card (subtitle + description).
+ * Unique — only valid on `/careers`. Renders nothing when both fields are
+ * empty (legacy guard, preserved).
+ */
+const careersStatement: SectionDefinition = {
+	id: "careersStatement",
+	version: 1,
+	label: "Careers statement (unique)",
+	description: "Unique: the /careers equal-opportunity statement card. Only valid on the careers page.",
+	schema: fields.object({
+		subtitle: localeText("Subtitle", { optionalInEnglish: true }),
+		description: localeLongText("Description"),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` and the fixed
+		// scale-balance icon (presentation, not content).
+	}),
+	example: {
+		subtitle: { en: "Equal Opportunity", sw: "Fursa Sawa" },
+		description: { en: "We are an equal opportunity employer.", sw: "" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			subtitle: resolved.subtitle,
+			description: resolved.description,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
 export const sectionRegistry: readonly SectionDefinition[] = [
 	introText,
 	ctaBand,
@@ -2656,6 +2887,9 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	contactHero,
 	contactOffices,
 	contactForm,
+	careersOpenings,
+	careersProcess,
+	careersStatement,
 ];
 
 export function getSectionDefinition(id: string): SectionDefinition {
@@ -2694,6 +2928,9 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	contactHero: contactHero.label,
 	contactOffices: contactOffices.label,
 	contactForm: contactForm.label,
+	careersOpenings: careersOpenings.label,
+	careersProcess: careersProcess.label,
+	careersStatement: careersStatement.label,
 };
 
 /**

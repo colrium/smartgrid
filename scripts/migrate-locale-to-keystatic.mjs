@@ -281,6 +281,101 @@ function contactFormBuild(en, sw, where) {
 	};
 }
 
+// M11 batch 2 — careers page (2026-09-18): `careers:currentOpenings` →
+// `careersOpenings`. Deadline values + action hrefs/icons are shared;
+// titles, descriptions, TOR copy, action labels and deadline labels are
+// localized. The hardcoded "Closed" pill stays English in both locales
+// (legacy quirk, preserved — not migrated).
+function careersOpeningsBuild(en, sw, where) {
+	const opening = (item, swItem, key) => {
+		const enActions = item?.actions ?? [];
+		const swActions = swItem?.actions ?? [];
+		if (!Array.isArray(swActions) || swActions.length !== enActions.length) {
+			gap(where, `${key}.action count diverged (en=${enActions.length} sw=${swActions?.length})`);
+		}
+		const tor = item?.tor;
+		const swTor = swItem?.tor;
+		const bullets = (list, swList, name) => {
+			const enList = list ?? [];
+			const swL = swList ?? [];
+			if (!Array.isArray(swL) || swL.length !== enList.length) {
+				gap(where, `${key}.tor.${name} count diverged (en=${enList.length} sw=${swL?.length})`);
+			}
+			return enList.map((bullet, i) => ({
+				en: reqText(bullet, `${where}.${key}.tor.${name}[${i}].en`),
+				sw: reqText(swL[i], `${where}.${key}.tor.${name}[${i}].sw`),
+			}));
+		};
+		return {
+			icon: sharedValue(item, swItem, "icon", `${where}.${key}`) ?? "",
+			title: { en: reqText(item.title, `${where}.${key}.title.en`), sw: reqText(swItem.title, `${where}.${key}.title.sw`) },
+			applicationDeadline: {
+				label: { en: optText(item.applicationDeadline?.label), sw: optText(swItem.applicationDeadline?.label) },
+				value: sharedValue(item.applicationDeadline, swItem.applicationDeadline, "value", `${where}.${key}.applicationDeadline`) ?? "",
+			},
+			description: { en: reqText(item.description, `${where}.${key}.description.en`), sw: reqText(swItem.description, `${where}.${key}.description.sw`) },
+			actions: enActions.map((action, i) => {
+				const swAction = swActions[i] ?? {};
+				return {
+					icon: sharedValue(action, swAction, "icon", `${where}.${key}.actions[${i}]`) ?? "",
+					label: { en: reqText(action.label, `${where}.${key}.actions[${i}].label.en`), sw: reqText(swAction.label, `${where}.${key}.actions[${i}].label.sw`) },
+					href: sharedValue(action, swAction, "href", `${where}.${key}.actions[${i}]`) ?? "",
+				};
+			}),
+			tor: {
+				positionSummary: { en: reqText(tor?.positionSummary, `${where}.${key}.tor.positionSummary.en`), sw: reqText(swTor?.positionSummary, `${where}.${key}.tor.positionSummary.sw`) },
+				duties: bullets(tor?.duties, swTor?.duties, "duties"),
+				qualifications: bullets(tor?.qualifications, swTor?.qualifications, "qualifications"),
+				engagement: { en: optText(tor?.engagement), sw: optText(swTor?.engagement) },
+			},
+		};
+	};
+	const list = (enList, swList, name) => {
+		const swL = swList ?? [];
+		if (!Array.isArray(swL) || swL.length !== (enList ?? []).length) {
+			gap(where, `${name} count diverged (en=${enList?.length} sw=${swL?.length})`);
+		}
+		return (enList ?? []).map((item, i) => opening(item, swL[i] ?? {}, `${name}[${i}]`));
+	};
+	const labels = (node, swNode) => ({
+		button: { en: optText(node?.button), sw: optText(swNode?.button) },
+		modalTitle: { en: optText(node?.modalTitle), sw: optText(swNode?.modalTitle) },
+		summaryTitle: { en: optText(node?.summaryTitle), sw: optText(swNode?.summaryTitle) },
+		dutiesTitle: { en: optText(node?.dutiesTitle), sw: optText(swNode?.dutiesTitle) },
+		qualificationsTitle: { en: optText(node?.qualificationsTitle), sw: optText(swNode?.qualificationsTitle) },
+		engagementTitle: { en: optText(node?.engagementTitle), sw: optText(swNode?.engagementTitle) },
+	});
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		torLabels: labels(en.torLabels, sw.torLabels),
+		featuredOpenings: list(en.featuredOpenings, sw.featuredOpenings, "featuredOpenings"),
+		items: list(en.items, sw.items, "items"),
+		id: "openings",
+	};
+}
+
+// M11 batch 2 — careers page (2026-09-18): `careers:applicationProcess` →
+// `careersProcess` and `careers:statement` → `careersStatement` (subtitle +
+// description each; `<bold>` markup travels verbatim and is parsed from
+// data by the wrappers).
+function careersProcessBuild(en, sw) {
+	return {
+		subtitle: { en: optText(en.subtitle), sw: optText(sw.subtitle) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		id: "",
+	};
+}
+
+function careersStatementBuild(en, sw) {
+	return {
+		subtitle: { en: optText(en.subtitle), sw: optText(sw.subtitle) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		id: "",
+	};
+}
+
 // M7 batch 3: `about:*` gallery sections → `gallery`. Legacy items are
 // either bare image paths (slider/masonry) or `{image,title?,label?}`
 // objects (overlay grids); both normalize to captioned items. Image paths
@@ -1139,10 +1234,17 @@ const PAGES = {
 	// (TOR modal + deadline logic), ApplicationProcess (`<bold>`
 	// pseudo-markup the shared IntroTextSection would render literally) and
 	// the equal-opportunity statement stay legacy bespoke tails.
+	// M11 batch 2 (2026-09-18): the whole page is Keystatic-owned in page
+	// order — `hero`, `leadGenBar` + `services` (global instances embedded
+	// via `fromExtra`, same verbatim copy as home), `currentOpenings`
+	// (`careersOpenings` unique), `applicationProcess` (`careersProcess`
+	// unique), `statement` (`careersStatement` unique) — so the route
+	// renders one PageBuilderDocument (M11+M12 together). Nothing stays
+	// skipped.
 	"careers": {
 		namespace: "careers",
 		title: "Careers",
-		skipped: ["currentOpenings", "applicationProcess", "statement"],
+		skipped: [],
 		sections: [
 			{
 				discriminant: "hero",
@@ -1170,6 +1272,53 @@ const PAGES = {
 						ctaSecondary: { label: emptyPair(), href: "", icon: "" },
 						id: "",
 					};
+				},
+			},
+			{
+				discriminant: "leadGenBar",
+				fromExtra: { ns: "common", key: "leadGenBar" },
+				// Legacy: careers route renders the global shared
+				// <LeadGenBar /> over `common:leadGenBar` — embedded
+				// verbatim (same copy as home; re-migrate to refresh).
+				build(en, sw, where) {
+					return leadGenBarBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "services",
+				fromExtra: { ns: "common", key: "services" },
+				// Legacy: careers route renders the shared
+				// <ServicesSection /> over `common:services` — embedded
+				// verbatim (same copy as home; re-migrate to refresh).
+				build(en, sw, where) {
+					return servicesBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "careersOpenings",
+				from: "currentOpenings",
+				// Legacy: CurrentOpeningsSection over
+				// `careers:currentOpenings` (openings board + TOR modal).
+				build(en, sw, where) {
+					return careersOpeningsBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "careersProcess",
+				from: "applicationProcess",
+				// Legacy: ApplicationProcessSection over
+				// `careers:applicationProcess` (`<bold>` parsed from data).
+				build(en, sw, where) {
+					return careersProcessBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "careersStatement",
+				from: "statement",
+				// Legacy: EqualOpportunityStatementSection over
+				// `careers:statement`.
+				build(en, sw, where) {
+					return careersStatementBuild(en, sw, where);
 				},
 			},
 		],
@@ -3360,7 +3509,19 @@ function generate(pageSlug) {
 		if (!nsCache.has(key)) nsCache.set(key, loadNamespace(locale, ns));
 		return nsCache.get(key);
 	};
-	const pageBuilder = mapping.sections.map(({ discriminant, from, ns, build }) => {
+	const pageBuilder = mapping.sections.map(({ discriminant, from, ns, fromExtra, build }) => {
+		// M11 batch 2 (2026-09-18): `fromExtra` reads a section node from a
+		// cross-namespace locale file (careers embeds the global
+		// `common:leadGenBar` + `common:services` instances in page order).
+		if (fromExtra) {
+			const srcEn = extra[fromExtra.ns]?.en?.[fromExtra.key];
+			const srcSw = extra[fromExtra.ns]?.sw?.[fromExtra.key];
+			if (srcEn === undefined || srcSw === undefined) {
+				gap(fromExtra.key, `section key missing in extra.${fromExtra.ns}`);
+				return { discriminant, value: {} };
+			}
+			return { discriminant, value: stripInternalKeys(build(srcEn, srcSw, fromExtra.key, siteTitle, extra)) };
+		}
 		const srcEn = ns ? loadCached("en", ns) : en;
 		const srcSw = ns ? loadCached("sw", ns) : sw;
 		if (from === null) {

@@ -5,8 +5,13 @@ import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 
 interface ApplicationProcessContent {
-	subtitle?: string;
-	description?: string;
+	subtitle?: string | null;
+	description?: string | null;
+}
+
+export interface ApplicationProcessData {
+	subtitle?: string | null;
+	description?: string | null;
 }
 
 function renderBold(text: string): ReactNode[] {
@@ -31,11 +36,17 @@ function renderBold(text: string): ReactNode[] {
 	return nodes;
 }
 
-export function ApplicationProcessSection() {
+export function ApplicationProcessSection({ data }: { data?: ApplicationProcessData | null } = {}) {
 	const { t } = useTranslation(["careers"]);
-	const section = t("careers:applicationProcess", {
-		returnObjects: true,
-	}) as unknown as ApplicationProcessContent;
+	// Keystatic-owned content when `data` is provided (M11
+	// `careersProcess` unique section); legacy
+	// `careers:applicationProcess` locale strings otherwise. The `<bold>`
+	// pseudo-markup is parsed from DATA by `renderBold` (page-owned
+	// wrapper), so edits change output.
+	const section = (data ??
+		(t("careers:applicationProcess", {
+			returnObjects: true,
+		}) as unknown as ApplicationProcessContent)) as ApplicationProcessContent;
 
 	if (!section.subtitle && !section.description) return null;
 
