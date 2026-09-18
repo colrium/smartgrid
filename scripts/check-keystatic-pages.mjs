@@ -346,19 +346,17 @@ const resolutionCases = await (async () => {
 	setSwitchEnv("home", undefined);
 	const realRes = await resolveKeystaticPage("home", "en", { baseDir: realBase });
 	// M7 batch 17: `home.json` is the real migrated home (overwrote the M1
-	// starter): 2 split/shimmer ActionCtas + Industries cardGrid + faq +
-	// masked Cta + trustees logo wall (M8, 2026-09-16) + certifications
-	// badge grid + keyFacts panel + whyChooseUs list + about narrative +
-	// surveyingInstruments grid + coreExpertise grid + planningInfographic +
-	// surveyCost estimator + coverageArea (M8, 2026-09-17) + leadGenBar trio
-	// + services explorer (M9 follow-up) + homeHero + homeDrones unique
-	// sections appended at the end (M11 home pilot, 2026-09-18 — M12
-	// reorders into page order).
+	// starter). M12 (2026-09-18): entry order IS legacy page order —
+	// homeHero, leadGenBar, about, planningInfographic,
+	// surveyingInstruments, homeDrones, actionCtaSurveyor ctaBand,
+	// services, industriesWeServe cardGrid, whyChooseUs, coreExpertise,
+	// surveyCost, coverageArea, faq, actionCtaEngineer ctaBand, keyFacts,
+	// certifications, trustees, defaultCta ctaBand.
 	outcomes.push([
 		"resolve-real-fixture",
 		realRes.status === "keystatic" &&
 			realRes.page.title === "Home (migrated)" &&
-			realRes.page.sections.map((s) => s.id).join(",") === "ctaBand,cardGrid,faq,ctaBand,ctaBand,trustees,certifications,keyFacts,whyChooseUs,about,surveyingInstruments,coreExpertise,planningInfographic,surveyCost,coverageArea,leadGenBar,services,homeHero,homeDrones",
+			realRes.page.sections.map((s) => s.id).join(",") === "homeHero,leadGenBar,about,planningInfographic,surveyingInstruments,homeDrones,ctaBand,services,cardGrid,whyChooseUs,coreExpertise,surveyCost,coverageArea,faq,ctaBand,keyFacts,certifications,trustees,ctaBand",
 	]);
 
 	// --- Site layout singleton (M9) --------------------------------------

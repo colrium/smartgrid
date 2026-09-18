@@ -34,19 +34,20 @@ interface PageProps {
 }
 
 /**
- * Sections migrated to Keystatic in mapping order (see the `home` mapping in
- * `scripts/migrate-locale-to-keystatic.mjs`): actionCtaSurveyor ctaBand,
- * industriesWeServe cardGrid, faq, actionCtaEngineer ctaBand, defaultCta
- * ctaBand, trustees, certifications, keyFacts, whyChooseUs, about,
- * surveyingInstruments, coreExpertise, planningInfographic, surveyCost,
- * coverageArea, leadGenBar, services (M8, 2026-09-16/17; leadGenBar +
- * services M9 follow-up), homeHero + homeDrones unique sections appended at
- * the end (M11 home pilot, 2026-09-18 — M12 reorders the entry into page
- * order and drops the index coupling).
- * The route renders each Keystatic section by
- * index instead of one whole PageBuilderDocument. If an edit changes the
- * section COUNT, the route falls back to legacy rather than misplacing
- * sections — keep this in sync with the mapping.
+ * Sections migrated to Keystatic in legacy page order (see the `home`
+ * mapping in `scripts/migrate-locale-to-keystatic.mjs`): homeHero,
+ * leadGenBar, about, planningInfographic, surveyingInstruments, homeDrones,
+ * actionCtaSurveyor ctaBand, services, industriesWeServe cardGrid,
+ * whyChooseUs, coreExpertise, surveyCost, coverageArea, faq,
+ * actionCtaEngineer ctaBand, keyFacts, certifications, trustees,
+ * defaultCta ctaBand (M12, 2026-09-18 — entry order IS page order).
+ * The Keystatic branch destructures them once into named slots in entry
+ * order (`hero`, `leadGenBar`, … — no index literals) and places each slot
+ * at its legacy position instead of one whole PageBuilderDocument, because
+ * route-level layout chrome (centering divs, the `-mt-48` overlap) lives
+ * outside the registry. If an edit changes the section COUNT, the route
+ * falls back to legacy rather than misplacing sections — keep this in sync
+ * with the mapping.
  *
  * `leadGenBar` keeps its route-level positioning (`-mt-48` overlap) via
  * `cloneElement`: the registry stores content only, never `className`.
@@ -72,45 +73,66 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 
 	if (keystaticPage && sections) {
 		const locale = keystaticPage.locale;
-		const renderAt = (index: number) => {
-			const section = sections[index];
-			return renderSection(section.id, section.value, locale, section.key);
-		};
+		// M12: entry order IS page order — destructure once into named
+		// slots, no index literals. Positions below mirror the legacy
+		// branch; the count guard in `orderedSections` keeps a mismatch
+		// on legacy.
+		const [
+			hero,
+			leadGenBar,
+			aboutSection,
+			planning,
+			instruments,
+			drones,
+			surveyorCta,
+			servicesSection,
+			industries,
+			whyChoose,
+			coreExpertise,
+			surveyCost,
+			coverageArea,
+			faqSection,
+			engineerCta,
+			keyFacts,
+			certifications,
+			trustees,
+			defaultCta,
+		] = sections.map((section) => renderSection(section.id, section.value, locale, section.key));
 		return (
 			<div className="relative ">
 				<PageHead pageName="home" />
 				<div className="flex flex-col min-h-screen" data-keystatic-page={keystaticPage.slug}>
-					{renderAt(17)}
+					{hero}
 					<div className="flex flex-col mx-auto max-w-7xl px-6 w-full">
-						{cloneElement(renderAt(15) as ReactElement<{ className?: string }>, {
+						{cloneElement(leadGenBar as ReactElement<{ className?: string }>, {
 							className: "my-12  -mt-48",
 						})}
-						{renderAt(9)}
-						{renderAt(12)}
+						{aboutSection}
+						{planning}
 					</div>
-					{renderAt(10)}
-					{renderAt(18)}
+					{instruments}
+					{drones}
 
-					{renderAt(0)}
+					{surveyorCta}
 
-					{renderAt(16)}
-					{renderAt(1)}
+					{servicesSection}
+					{industries}
 					<div className="flex flex-col  w-full">
-						{renderAt(8)}
+						{whyChoose}
 
-						{renderAt(11)}
+						{coreExpertise}
 
-						{renderAt(13)}
-						{renderAt(14)}
-						{renderAt(2)}
-						{renderAt(3)}
-						{renderAt(7)}
-						{renderAt(6)}
-						{renderAt(5)}
+						{surveyCost}
+						{coverageArea}
+						{faqSection}
+						{engineerCta}
+						{keyFacts}
+						{certifications}
+						{trustees}
 						{/* <MetricsSection /> */}
 					</div>
 
-					{renderAt(4)}
+					{defaultCta}
 				</div>
 			</div>
 		);

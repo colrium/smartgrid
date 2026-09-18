@@ -885,8 +885,19 @@ Rules (decided 2026-09-18, before implementing):
 - Home first (all sections Keystatic-owned after the M11 pilot except
   commented-out `metrics`), then each M11-completed page in turn.
 
-- [ ] Home: `home.json` reordered into page order; `[locale]/index.tsx`
+- [x] Home: `home.json` reordered into page order; `[locale]/index.tsx`
       Keystatic branch renders sequentially with no index literals.
+      (Done 2026-09-18: mapping reordered to legacy page order
+      [`homeHero`, `leadGenBar`, `about`, `planningInfographic`,
+      `surveyingInstruments`, `homeDrones`, surveyor cta, `services`,
+      industries, `whyChooseUs`, `coreExpertise`, `surveyCost`,
+      `coverageArea`, `faq`, engineer cta, `keyFacts`, `certifications`,
+      `trustees`, default cta], regenerated via `--write`; route
+      destructures into named slots — first attempt used a mutating
+      cursor, rejected by `react-hooks/immutability`; count guard +
+      legacy branch untouched. Validation: `check:keystatic` OK,
+      `--verify` clean, typecheck + lint clean; dev-smoke DEFERRED per
+      M11/M12 policy.)
 - [ ] Remaining M11-completed pages: same reorder + sequential render, one batch
       at a time.
 - [ ] `check:keystatic` fixture strings + `--verify` green per batch.
@@ -987,3 +998,4 @@ For every implementation change:
 | 2026-09-17 | M9 | CLOSE-OUT — M9 DONE. Dev-smoke parity user-confirmed (allowlist `site` + temp publish flip, layout change visible on multiple routes `/en` + `/sw` good, kill-switch rollback confirmed); entry verified reverted (`site: draft`). Singleton serves navbar/footer/contacts/socials/cookies site-wide in both locales when published + allowlisted; legacy locale JSON renders otherwise per the M3 taxonomy | M9 DONE; next up M10 (NOT STARTED) | |
 | 2026-09-17 | M9 | FOLLOW-UP (per user request): `leadGenBar` + `services` registered on `/` (commits `1347e68`, `6a13133`). `LeadGenBar` refactored to additive optional `data` (omitted = legacy `t()`; bare `careers` caller untouched); description stays `<Trans>`-rendered (gate-only, field warns); `title`/`link` keys unrendered → excluded. Home rewire keeps `-mt-48` positioning via route-level `cloneElement` (registry stores content, never `className`). `ServicesSection` refactored to additive optional `data` (other pages' bare callers untouched). LEGACY BUG FIX (visible, recorded): component read tag/headline from `home:services.*`, which no longer exists — legacy renders raw key strings; Keystatic branch sources `common:services` instead, so opting in fixes the header. String offers migrate to `{label, href: ""}` (renders identically). Home 15→17 sections, count guard 15→17, `skipped` now `["hero", "drones", "metrics"]`; registry 22→24 sections; README list updated | `check:keystatic` OK (24 sections, 31 fixtures); `--verify` home clean (17 sections, no gaps); `typecheck` + `eslint` clean. PENDING: dev-smoke for the two rewired sections (publish-flip `home`, `/en` + `/sw`, revert to `draft`) — needs a browser session | |
 | 2026-09-18 | M11/M12 | New milestones added per user request (unique page sections + Keystatic page order) + instructions.md smoke-deferral policy (dev-smoke last; check/verify/typecheck/lint per batch). M11 home pilot DONE: `homeHero` + `homeDrones` registered (schema + example + normalize + renderer each; headline `<primary>`/`<accent>` parsed from data, not gate-only); `homeHeroBuild` (`ns: "home"` override in `generate()`) + `homeDronesBuild`; `home.json` 17→19 sections (appended; M12 reorders), `skipped` now `["metrics"]`; route count guard 17→19, `renderAt(17)` replaces legacy hero, `renderAt(18)` replaces legacy drones (legacy branch untouched); README 24→26 sections | `check:keystatic` OK (26 sections, 31 fixtures); `--verify` home clean (19 sections, no gaps); `yarn typecheck` clean; `yarn lint` clean. Dev-smoke DEFERRED per policy | |
+| 2026-09-18 | M12 | Home DONE (commit `fd82e2d` was M11): mapping reordered to page order, `home.json` regenerated via `--write`, route renders named slots with zero `renderAt` literals (mutating-cursor attempt rejected by `react-hooks/immutability` — destructure-once instead); count guard 19 + legacy branch untouched; check-script fixture string now page order | `check:keystatic` OK (26 sections, 31 fixtures); `--verify` home clean (19 sections, no gaps); `yarn typecheck` clean; `yarn lint` clean. Dev-smoke DEFERRED per policy. Next: M11 per-page batches (remaining routes' tails), then M12 per completed page | |

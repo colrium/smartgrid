@@ -2817,11 +2817,13 @@ const PAGES = {
 			},
 		],
 	},
-	// M7 batch 17: home (largest page, done last per plan). Five sections
-	// migrate in page order — `actionCtaSurveyor` + `actionCtaEngineer`
-	// (ctaBand split/shimmer) + `industriesWeServe` (cardGrid cols 3) + `faq`
-	// + `cta` (ctaBand centred/masked). M8 (2026-09-16): `trustees` migrates
-	// next (logo wall, page-order position after the masked cta).
+	// M7 batch 17: home (largest page, done last per plan). M12
+	// (2026-09-18): mapping order IS legacy page order — `homeHero`,
+	// `leadGenBar`, `about`, `planningInfographic`,
+	// `surveyingInstruments`, `homeDrones`, `actionCtaSurveyor`,
+	// `services`, `industriesWeServe`, `whyChooseUs`, `coreExpertise`,
+	// `surveyCostInKenya`, `coverageArea`, `faq`, `actionCtaEngineer`,
+	// `keyFacts`, `certifications`, `trustees`, `defaultCta`.
 	// NOTE (2026-09-16, HEAD `9b3f8d0` moved the home content nodes from the
 	// `home` namespace to `common`): the page entry stays `home.json`, but
 	// the migrated content keys (`actionCtaSurveyor`, `industriesWeServe`,
@@ -2852,6 +2854,72 @@ const PAGES = {
 		skipped: ["metrics"],
 		sections: [
 			{
+				discriminant: "homeHero",
+				from: "hero",
+				// M11 home pilot (2026-09-18): the bespoke WebGL
+				// <HeroSection /> over `home:hero` — the only home node
+				// still in the `home` namespace file, hence `ns: "home"`.
+				// M12 (2026-09-18): mapping order IS page order now.
+				ns: "home",
+				build(en, sw, where) {
+					return homeHeroBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "leadGenBar",
+				from: "leadGenBar",
+				// Legacy: home route renders the global shared
+				// <LeadGenBar /> over `common:leadGenBar` (same
+				// `common.json` content namespace as every other section in
+				// this mapping since HEAD `9b3f8d0`).
+				build(en, sw, where) {
+					return leadGenBarBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "about",
+				from: "about",
+				// Legacy: AboutSection → <About id="about" /> over
+				// `common:about` (same `common.json` content namespace as
+				// every other section in this mapping since HEAD `9b3f8d0`).
+				build(en, sw, where) {
+					return aboutBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "planningInfographic",
+				from: "planningInfographic",
+				// Legacy: PlanningInfographicSection → <PlanningInfographic
+				// /> over `common:planningInfographic` (same `common.json`
+				// content namespace as every other section in this mapping
+				// since HEAD `9b3f8d0`).
+				build(en, sw, where) {
+					return planningInfographicBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "surveyingInstruments",
+				from: "surveyingInstruments",
+				// Legacy: SurveyingInstrumentsSection →
+				// <SurveyingInstruments id="surveying-instruments" /> over
+				// `common:surveyingInstruments` (same `common.json` content
+				// namespace as every other section in this mapping since
+				// HEAD `9b3f8d0`).
+				build(en, sw, where) {
+					return surveyingInstrumentsBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "homeDrones",
+				from: "drones",
+				// M11 home pilot (2026-09-18): the bespoke
+				// <DronesSection /> fleet grid over `common:drones`.
+				// M12 (2026-09-18): mapping order IS page order now.
+				build(en, sw, where) {
+					return homeDronesBuild(en, sw, where);
+				},
+			},
+			{
 				discriminant: "ctaBand",
 				from: "actionCtaSurveyor",
 				// Legacy: ActionCtaSection contentKey="actionCtaSurveyor" →
@@ -2879,6 +2947,19 @@ const PAGES = {
 						hairline: false,
 						id: "",
 					};
+				},
+			},
+			{
+				discriminant: "services",
+				from: "services",
+				// Legacy: home route renders the shared <ServicesSection />
+				// over `common:services` (same `common.json` content
+				// namespace as every other section in this mapping since
+				// HEAD `9b3f8d0`). NOTE: tag/headline migrate from
+				// `common:services` — the component's legacy
+				// `home:services.*` lookup addresses missing keys.
+				build(en, sw, where) {
+					return servicesBuild(en, sw, where);
 				},
 			},
 			{
@@ -2919,6 +3000,50 @@ const PAGES = {
 						cardIconSize: "md",
 						id: "",
 					};
+				},
+			},
+			{
+				discriminant: "whyChooseUs",
+				from: "whyChooseUs",
+				// Legacy: WhyChooseUsSection → <WhyChooseUs
+				// id="why-choose-us" /> over `common:whyChooseUs` (same
+				// `common.json` content namespace as every other section in
+				// this mapping since HEAD `9b3f8d0`).
+				build(en, sw, where) {
+					return whyChooseUsBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "coreExpertise",
+				from: "coreExpertise",
+				// Legacy: CoreExpertiseSection → <CoreExpertise
+				// id="core-expertise" /> over `common:coreExpertise` (same
+				// `common.json` content namespace as every other section in
+				// this mapping since HEAD `9b3f8d0`).
+				build(en, sw, where) {
+					return coreExpertiseBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "surveyCost",
+				from: "surveyCostInKenya",
+				// Legacy: SurveyCostSection → <SurveyCost id="survey-cost" />
+				// over `common:surveyCostInKenya` (same `common.json` content
+				// namespace as every other section in this mapping since
+				// HEAD `9b3f8d0`; note the key differs from the section id).
+				build(en, sw, where) {
+					return surveyCostBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "coverageArea",
+				from: "coverageArea",
+				// Legacy: CoverageAreaSection → <CoverageArea
+				// id="coverage-area" /> over `common:coverageArea` (same
+				// `common.json` content namespace as every other section in
+				// this mapping since HEAD `9b3f8d0`).
+				build(en, sw, where) {
+					return coverageAreaBuild(en, sw, where);
 				},
 			},
 			{
@@ -2986,6 +3111,37 @@ const PAGES = {
 				},
 			},
 			{
+				discriminant: "keyFacts",
+				from: "keyFacts",
+				// Legacy: KeyFactsSection → <KeyFacts id="key-facts" /> over
+				// `common:keyFacts` (same `common.json` content namespace as
+				// every other section in this mapping since HEAD `9b3f8d0`).
+				build(en, sw, where) {
+					return keyFactsBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "certifications",
+				from: "certifications",
+				// Legacy: CertificationsSection → <Certifications
+				// id="certifications" /> over `common:certifications` (same
+				// `common.json` content namespace as every other section in
+				// this mapping since HEAD `9b3f8d0`).
+				build(en, sw, where) {
+					return certificationsBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "trustees",
+				from: "trustees",
+				// Legacy: TrusteesSection → <Trustees id="trustees" /> over
+				// `common:trustees` (same `common.json` content namespace as
+				// every other section in this mapping since HEAD `9b3f8d0`).
+				build(en, sw, where) {
+					return trusteesBuild(en, sw, where);
+				},
+			},
+			{
 				discriminant: "ctaBand",
 				from: "defaultCta",
 				// Legacy: CtaSection reads `common:defaultCta` (NOT `home:cta` —
@@ -3016,162 +3172,6 @@ const PAGES = {
 						hairline: false,
 						id: "cta",
 					};
-				},
-			},
-			{
-				discriminant: "trustees",
-				from: "trustees",
-				// Legacy: TrusteesSection → <Trustees id="trustees" /> over
-				// `common:trustees` (same `common.json` content namespace as
-				// every other section in this mapping since HEAD `9b3f8d0`).
-				build(en, sw, where) {
-					return trusteesBuild(en, sw, where);
-				},
-			},
-			{
-				discriminant: "certifications",
-				from: "certifications",
-				// Legacy: CertificationsSection → <Certifications
-				// id="certifications" /> over `common:certifications` (same
-				// `common.json` content namespace as every other section in
-				// this mapping since HEAD `9b3f8d0`).
-				build(en, sw, where) {
-					return certificationsBuild(en, sw, where);
-				},
-			},
-			{
-				discriminant: "keyFacts",
-				from: "keyFacts",
-				// Legacy: KeyFactsSection → <KeyFacts id="key-facts" /> over
-				// `common:keyFacts` (same `common.json` content namespace as
-				// every other section in this mapping since HEAD `9b3f8d0`).
-				build(en, sw, where) {
-					return keyFactsBuild(en, sw, where);
-				},
-			},
-			{
-				discriminant: "whyChooseUs",
-				from: "whyChooseUs",
-				// Legacy: WhyChooseUsSection → <WhyChooseUs
-				// id="why-choose-us" /> over `common:whyChooseUs` (same
-				// `common.json` content namespace as every other section in
-				// this mapping since HEAD `9b3f8d0`).
-				build(en, sw, where) {
-					return whyChooseUsBuild(en, sw, where);
-				},
-			},
-			{
-				discriminant: "about",
-				from: "about",
-				// Legacy: AboutSection → <About id="about" /> over
-				// `common:about` (same `common.json` content namespace as
-				// every other section in this mapping since HEAD `9b3f8d0`).
-				build(en, sw, where) {
-					return aboutBuild(en, sw, where);
-				},
-			},
-			{
-				discriminant: "surveyingInstruments",
-				from: "surveyingInstruments",
-				// Legacy: SurveyingInstrumentsSection →
-				// <SurveyingInstruments id="surveying-instruments" /> over
-				// `common:surveyingInstruments` (same `common.json` content
-				// namespace as every other section in this mapping since
-				// HEAD `9b3f8d0`).
-				build(en, sw, where) {
-					return surveyingInstrumentsBuild(en, sw, where);
-				},
-			},
-			{
-				discriminant: "coreExpertise",
-				from: "coreExpertise",
-				// Legacy: CoreExpertiseSection → <CoreExpertise
-				// id="core-expertise" /> over `common:coreExpertise` (same
-				// `common.json` content namespace as every other section in
-				// this mapping since HEAD `9b3f8d0`).
-				build(en, sw, where) {
-					return coreExpertiseBuild(en, sw, where);
-				},
-			},
-			{
-				discriminant: "planningInfographic",
-				from: "planningInfographic",
-				// Legacy: PlanningInfographicSection → <PlanningInfographic
-				// /> over `common:planningInfographic` (same `common.json`
-				// content namespace as every other section in this mapping
-				// since HEAD `9b3f8d0`).
-				build(en, sw, where) {
-					return planningInfographicBuild(en, sw, where);
-				},
-			},
-			{
-				discriminant: "surveyCost",
-				from: "surveyCostInKenya",
-				// Legacy: SurveyCostSection → <SurveyCost id="survey-cost" />
-				// over `common:surveyCostInKenya` (same `common.json` content
-				// namespace as every other section in this mapping since
-				// HEAD `9b3f8d0`; note the key differs from the section id).
-				build(en, sw, where) {
-					return surveyCostBuild(en, sw, where);
-				},
-			},
-			{
-				discriminant: "coverageArea",
-				from: "coverageArea",
-				// Legacy: CoverageAreaSection → <CoverageArea
-				// id="coverage-area" /> over `common:coverageArea` (same
-				// `common.json` content namespace as every other section in
-				// this mapping since HEAD `9b3f8d0`).
-				build(en, sw, where) {
-					return coverageAreaBuild(en, sw, where);
-				},
-			},
-			{
-				discriminant: "leadGenBar",
-				from: "leadGenBar",
-				// Legacy: home route renders the global shared
-				// <LeadGenBar /> over `common:leadGenBar` (same
-				// `common.json` content namespace as every other section in
-				// this mapping since HEAD `9b3f8d0`).
-				build(en, sw, where) {
-					return leadGenBarBuild(en, sw, where);
-				},
-			},
-			{
-				discriminant: "services",
-				from: "services",
-				// Legacy: home route renders the shared <ServicesSection />
-				// over `common:services` (same `common.json` content
-				// namespace as every other section in this mapping since
-				// HEAD `9b3f8d0`). NOTE: tag/headline migrate from
-				// `common:services` — the component's legacy
-				// `home:services.*` lookup addresses missing keys.
-				build(en, sw, where) {
-					return servicesBuild(en, sw, where);
-				},
-			},
-			{
-				discriminant: "homeHero",
-				from: "hero",
-				// M11 home pilot (2026-09-18): the bespoke WebGL
-				// <HeroSection /> over `home:hero` — the only home node
-				// still in the `home` namespace file, hence `ns: "home"`.
-				// Appended at the end (indexes 17); M12 reorders the entry
-				// into page order and drops the index coupling.
-				ns: "home",
-				build(en, sw, where) {
-					return homeHeroBuild(en, sw, where);
-				},
-			},
-			{
-				discriminant: "homeDrones",
-				from: "drones",
-				// M11 home pilot (2026-09-18): the bespoke
-				// <DronesSection /> fleet grid over `common:drones`.
-				// Appended at the end (index 18); M12 reorders into page
-				// order.
-				build(en, sw, where) {
-					return homeDronesBuild(en, sw, where);
 				},
 			},
 		],
