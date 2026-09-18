@@ -233,9 +233,16 @@ import {
  * Offer items migrate strings → `{label, href: ""}` objects (the component
  * renders both identically). SSR-safe: `useState` tabs + `motion` animate
  * client-side only (SurveyCost precedent).
+ *
+ * M11 (unique page sections, 2026-09-18): page-specific tails that can
+ * never be shared branches become page-scoped UNIQUE ids (`homeHero`,
+ * `homeDrones`, …) — never reused on another page, never renamed. Same
+ * additive-`data` contract as the M9 follow-up (omitted = legacy `t()`).
+ * Unlike the gate-only Trans precedents, unique sections render markup
+ * from DATA (the wrapper is page-owned), so edits change output.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -2226,6 +2233,164 @@ const services: SectionDefinition = {
 	}),
 };
 
+/**
+ * M11 (unique page sections, 2026-09-18): `homeHero` wraps the home
+ * `HeroSection` WebGL hero (badge, marked-up headline, description, pill
+ * CTAs, location chips). Unique — only valid on `/`. The headline carries
+ * inline `<primary>`/`<accent>` tags; the wrapper parses them from DATA
+ * (see `renderHeroHeadline`), so Keystatic edits change output. SSR-safe:
+ * the three.js scene loads via `next/dynamic ssr:false` after an idle
+ * capability probe — first render is static (the page SSR-renders this
+ * component in the legacy branch today).
+ */
+const homeHero: SectionDefinition = {
+	id: "homeHero",
+	version: 1,
+	label: "Home hero (unique)",
+	description: "Unique: the / WebGL hero — badge, headline, description, pill CTAs and location chips. Only valid on the home page.",
+	schema: fields.object({
+		badge: localeText("Badge", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		ctaPrimary: linkObject("Primary action"),
+		ctaSecondary: linkObject("Secondary action"),
+		location: fields.object(
+			{
+				label: localeText("Label", { optionalInEnglish: true }),
+				items: fields.array(
+					fields.object({
+						label: localeText("Label"),
+						code: fields.text({
+							label: "Code (shared)",
+							description: "Short location code shown in the chip (e.g. KE). Identical in en/sw.",
+						}),
+					}),
+					{
+						label: "Location chips",
+						itemLabel: (item) => previewText(item, ["fields", "code", "value"], "Location"),
+					}
+				),
+			},
+			{ label: "Location row" }
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` and the fixed
+		// instrument artwork / scroll indicator (presentation, not content).
+	}),
+	example: {
+		badge: { en: "Engineering Precision", sw: "Usahihi wa Uhandisi" },
+		headline: {
+			en: "Survey <primary>Smarter</primary>, Build <accent>Stronger</accent>.",
+			sw: "Pima <primary>Kwa Akili</primary>, Jenga <accent>Kwa Nguvu</accent>.",
+		},
+		description: {
+			en: "Leading Africa's Land and Aerial Surveying with Advanced equipment Technology",
+			sw: "Kuongoza Upimaji wa Ardhi na Angani wa Afrika kwa Teknolojia ya Juu ya Vifaa",
+		},
+		ctaPrimary: { label: { en: "Request a Survey", sw: "Omba Upimaji" }, href: "/contact?reason=request-survey#contact-form", icon: "send" },
+		ctaSecondary: { label: { en: "", sw: "" }, href: "", icon: "" },
+		location: {
+			label: { en: "Active across East Africa & beyond", sw: "Tunafanya kazi katika Afrika Mashariki na kwingineko" },
+			items: [{ label: { en: "Kenya", sw: "Kenya" }, code: "KE" }],
+		},
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			badge: resolved.badge,
+			headline: resolved.headline,
+			description: resolved.description,
+			ctaPrimary: presentLink(resolved.ctaPrimary),
+			ctaSecondary: presentLink(resolved.ctaSecondary),
+			location: {
+				label: resolved.location?.label ?? "",
+				items: Array.isArray(resolved.location?.items)
+					? resolved.location.items.map((item: any) => ({
+							label: item?.label ?? "",
+							code: item?.code ?? "",
+						}))
+					: [],
+			},
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 (unique page sections, 2026-09-18): `homeDrones` wraps the home
+ * `DronesSection` fleet grid (tag + headline + description + drone cards).
+ * Unique — only valid on `/`. `label` is the card eyebrow fallback: legacy
+ * has no `common:drones.label` key, so an empty label keeps the
+ * `t(..., { defaultValue: "Aerial capability" })` lookup. SSR-safe:
+ * effect-only `FadeUp`, pure-span `Blob`, framer-motion `Parallax`
+ * (static first render).
+ */
+const homeDrones: SectionDefinition = {
+	id: "homeDrones",
+	version: 1,
+	label: "Home drones (unique)",
+	description: "Unique: the / drone fleet grid — tag, headline, description and drone cards. Only valid on the home page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline", { optionalInEnglish: true }),
+		description: localeLongText("Description"),
+		label: localeText("Card eyebrow fallback", { optionalInEnglish: true }),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (optional)",
+					description: "Icon slug without the `mdi-` prefix.",
+				}),
+				img: imagePath("Image"),
+				href: fields.text({ label: "Link (optional)", description: "Card links to this URL when set." }),
+				label: localeText("Label"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Drones",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Drone"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `classes`/`className` (visual tuning,
+		// not an editor contract).
+	}),
+	example: {
+		tag: { en: "Drone Fleet", sw: "Mel ya Ndege zisizo na Rubani" },
+		headline: { en: "Our Drones", sw: "Ndege Zetu Zisizo na Rubani" },
+		description: { en: "We deploy advanced drones to capture high-resolution aerial imagery.", sw: "" },
+		label: { en: "", sw: "" },
+		items: [
+			{
+				icon: "quadcopter",
+				img: "/media/equipment-sale/dji-matrice-350-rtk/images/02-01.png",
+				href: "/equipment-sale/dji-matrice-350-rtk",
+				label: { en: "DJI Matrice 300 RTK", sw: "DJI Matrice 300 RTK" },
+				description: { en: "A versatile drone for surveying, mapping and inspection.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			label: resolved.label || undefined,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						img: item?.img || undefined,
+						href: item?.href && item.href.trim() ? item.href : undefined,
+						label: item?.label ?? "",
+						description: item?.description ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
 export const sectionRegistry: readonly SectionDefinition[] = [
 	introText,
 	ctaBand,
@@ -2251,6 +2416,8 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	surveyCost,
 	leadGenBar,
 	services,
+	homeHero,
+	homeDrones,
 ];
 
 export function getSectionDefinition(id: string): SectionDefinition {
@@ -2284,6 +2451,8 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	surveyCost: surveyCost.label,
 	leadGenBar: leadGenBar.label,
 	services: services.label,
+	homeHero: homeHero.label,
+	homeDrones: homeDrones.label,
 };
 
 /**

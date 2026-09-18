@@ -232,3 +232,42 @@ At the end of the session, report:
 - the next plan milestone to pick up.
 
 Keep the final report concise, but leave the plan accurate enough that another agent can resume without reconstructing the session from chat history.
+
+## M11/M12 — Unique page sections + Keystatic page order (added 2026-09-18, per user request)
+
+- M11 — Register all unregistered page sections as UNIQUE Keystatic sections
+  (e.g. the `/` hero becomes `homeHero`). Page-specific tails get page-scoped
+  ids never reused elsewhere; follow the M9 additive-`data` refactor precedent
+  (omitted `data` = legacy `t()` render). Home pilot first, then per-page
+  batches, one commit per batch. See plan §M11 (status `IN PROGRESS`) for rules,
+  checklist, and exit criteria.
+- M12 — Remove all `renderAt(<index>)` entries so the Keystatic section order
+  IS the page order (e.g. home renders its sections sequentially, no index
+  literals). Reorder each entry into legacy page order, render sequentially at
+  the legacy positions, keep the count guard + byte-identical legacy branch.
+  Home first, then each M11-completed page. See plan §M12 (status `NOT STARTED`).
+
+## M11/M12 Smoke-Test Deferral Policy (2026-09-18, per user request)
+
+During M11/M12 all dev-smoke parity checks are SKIPPED and done last after all
+batches are complete (temp publish flip + browser check per page, then revert
+to `draft`). M10's pending `test-custom` dev-smoke joins the deferred set.
+
+Per batch, KEEP running (unlike the M7 policy): `yarn check:keystatic`,
+`node scripts/migrate-locale-to-keystatic.mjs --page <slug> --verify`,
+`yarn typecheck`, and `yarn lint`. The M6 `yarn build` standing skip still
+applies; this policy only defers *when* smoke validation runs.
+
+
+## Handoff Format
+
+At the end of the session, report:
+
+- milestone and checklist items completed;
+- files changed;
+- commands run and their results;
+- decisions made or still required;
+- blockers and the exact next action;
+- the next plan milestone to pick up.
+
+Keep the final report concise, but leave the plan accurate enough that another agent can resume without reconstructing the session from chat history.

@@ -34,16 +34,16 @@ interface PageProps {
 }
 
 /**
- * Sections migrated to Keystatic in page order (see the `home` mapping in
+ * Sections migrated to Keystatic in mapping order (see the `home` mapping in
  * `scripts/migrate-locale-to-keystatic.mjs`): actionCtaSurveyor ctaBand,
  * industriesWeServe cardGrid, faq, actionCtaEngineer ctaBand, defaultCta
  * ctaBand, trustees, certifications, keyFacts, whyChooseUs, about,
  * surveyingInstruments, coreExpertise, planningInfographic, surveyCost,
  * coverageArea, leadGenBar, services (M8, 2026-09-16/17; leadGenBar +
- * services M9 follow-up).
- * Thirteen legacy tails (bespoke WebGL hero,
- * Drones bespoke) sit at fixed
- * positions between them, so the route renders each Keystatic section by
+ * services M9 follow-up), homeHero + homeDrones unique sections appended at
+ * the end (M11 home pilot, 2026-09-18 — M12 reorders the entry into page
+ * order and drops the index coupling).
+ * The route renders each Keystatic section by
  * index instead of one whole PageBuilderDocument. If an edit changes the
  * section COUNT, the route falls back to legacy rather than misplacing
  * sections — keep this in sync with the mapping.
@@ -51,7 +51,7 @@ interface PageProps {
  * `leadGenBar` keeps its route-level positioning (`-mt-48` overlap) via
  * `cloneElement`: the registry stores content only, never `className`.
  */
-const KEYSTATIC_SECTION_COUNT = 17;
+const KEYSTATIC_SECTION_COUNT = 19;
 
 function orderedSections(page: ResolvedKeystaticPage) {
 	if (page.sections.length !== KEYSTATIC_SECTION_COUNT) {
@@ -64,7 +64,7 @@ function orderedSections(page: ResolvedKeystaticPage) {
 }
 
 const Page: NextPage<PageProps> = ({ keystaticPage }) => {
-	// Migration source switch (M3/M7): Keystatic owns the seventeen migrated
+	// Migration source switch (M3/M7): Keystatic owns the nineteen migrated
 	// sections only when the slug is allowlisted via `KEYSTATIC_PAGES` and the
 	// entry is published. Otherwise the legacy locale-JSON implementation
 	// renders unchanged.
@@ -80,7 +80,7 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 			<div className="relative ">
 				<PageHead pageName="home" />
 				<div className="flex flex-col min-h-screen" data-keystatic-page={keystaticPage.slug}>
-					<HeroSection />
+					{renderAt(17)}
 					<div className="flex flex-col mx-auto max-w-7xl px-6 w-full">
 						{cloneElement(renderAt(15) as ReactElement<{ className?: string }>, {
 							className: "my-12  -mt-48",
@@ -89,7 +89,7 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 						{renderAt(12)}
 					</div>
 					{renderAt(10)}
-					<DronesSection />
+					{renderAt(18)}
 
 					{renderAt(0)}
 

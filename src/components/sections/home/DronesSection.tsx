@@ -9,15 +9,40 @@ import Link from "next/link";
 
 interface DroneItem {
 	icon?: string | null;
-	img: string;
-	href?: string;
-	label: string;
-	description: string;
+	img?: string | null;
+	href?: string | null;
+	label?: string | null;
+	description?: string | null;
 }
 
-export function DronesSection() {
+/**
+ * Keystatic-owned content for the home drones grid (M11 `homeDrones` unique
+ * section). When omitted, the legacy `common:drones` locale strings render
+ * (unchanged behavior for non-Keystatic callers).
+ */
+export interface DronesContent {
+	tag?: string | null;
+	headline?: string | null;
+	description?: string | null;
+	/** Card eyebrow fallback. Empty = legacy `common:drones.label` lookup. */
+	label?: string | null;
+	items?: DroneItem[] | null;
+}
+
+export function DronesSection({ data }: { data?: DronesContent | null } = {}) {
 	const { t } = useTranslation(["common"]);
-	const items = t("common:drones.items", { returnObjects: true }) as unknown as DroneItem[];
+	const tag = data ? (data.tag ?? "") : ((t("common:drones.tag") as string) ?? "");
+	const headline = data ? (data.headline ?? "") : ((t("common:drones.headline") as string) ?? "");
+	const description = data ? (data.description ?? "") : ((t("common:drones.description") as string) ?? "");
+	const eyebrowFallback = t("common:drones.label", {
+		defaultValue: "Aerial capability",
+	}) as string;
+	const label = data?.label || eyebrowFallback;
+	const items = (
+		Array.isArray(data?.items)
+			? data.items
+			: (t("common:drones.items", { returnObjects: true }) as unknown as DroneItem[])
+	) as DroneItem[];
 
 	return (
 		<section id="drones" className="py-24 sm:py-28 relative overflow-hidden">
@@ -32,9 +57,9 @@ export function DronesSection() {
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader
-					tag={t("common:drones.tag") as string}
-					headline={t("common:drones.headline") as string}
-					description={t("common:drones.description") as string}
+					tag={tag}
+					headline={headline}
+					description={description}
 				/>
 
 				<div className="mt-14 sm:mt-20 grid grid-cols-1 md:grid-cols-2 gap-7 sm:gap-8">
@@ -48,7 +73,7 @@ export function DronesSection() {
 											{item.img && (
 												<Image
 													src={item.img}
-													alt={item.label}
+													alt={item.label ?? ""}
 													fill
 													sizes="(min-width: 768px) 50vw, 100vw"
 													className="object-scale-down transition-transform duration-700 ease-out group-hover:scale-105"
@@ -72,11 +97,7 @@ export function DronesSection() {
 													</span>
 												) : (
 													<span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
-														{
-															t("common:drones.label", {
-																defaultValue: "Aerial capability",
-															}) as string
-														}
+														{label}
 													</span>
 												)}
 												<span className="mdi mdi-arrow-right text-on-surface/30 group-hover:text-primary transition-colors duration-300" />

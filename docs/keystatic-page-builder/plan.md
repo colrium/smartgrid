@@ -804,6 +804,97 @@ both locales when published and allowlisted (no 404); unpublished/unallowlisted
 slugs fall back per the M3 taxonomy; the authoring checklist (or catch-all
 behavior) is documented so the next new page does not 404.
 
+### M11: Register Unregistered Page Sections as Unique Sections
+
+**Status: IN PROGRESS** (home pilot: `homeHero` + `homeDrones`; remaining pages batched after).
+
+Dependencies: M2 registry + schema factories, M7 per-page wiring, M8/M9 additive-`data`
+precedent (`LeadGenBar`, `ServicesSection`).
+
+Problem (per user request 2026-09-18): every interleaved-hybrid route still renders
+one or more legacy tails that have no registry branch — e.g. the `/` WebGL hero
+(`HeroSection`) and drones grid (`DronesSection`) render from locale JSON even when
+`home` is opted in, so editors cannot touch them. Shared ids are for shared
+components; page-specific tails become page-scoped UNIQUE section ids
+(e.g. `homeHero`, `homeDrones`) that are never reused on another page.
+
+Rules (decided 2026-09-18, before implementing):
+
+- Follow the M9 additive-`data` precedent: refactor the wrapper to an optional
+  `data` prop (omitted = legacy `t()` render, bare callers untouched); register
+  schema + example + normalizer in `sectionRegistry.ts`, renderer in
+  `sectionRenderers.tsx`, migration build where the content lives in locale JSON.
+- New sections must stay statically renderable (client-only behavior via
+  `next/dynamic ssr:false` + effect-only code) — proven by the check-script
+  render proof for every example in both locales.
+- Pseudo-markup (`<primary>`/`<accent>`/`<bold>`) lives in locale JSON and is
+  rendered via `<Trans>` there; where a unique section must render it from DATA,
+  the wrapper parses the inline tags itself so Keystatic edits change output
+  (no gate-only fields for unique sections — the component is page-owned).
+- Truly runtime-only tails with no serializable content (forms posting to
+  Formsprey, Maps JS, PDF-viewer iframe, globe canvas itself) keep behavior in
+  the renderer; only their STRINGS become data. If a tail has no editable
+  strings at all, record it out-of-scope with reason instead of forcing a branch.
+- Batches: home pilot first (`homeHero` from `home:hero`, `homeDrones` from
+  `common:drones`); then per-page batches for the remaining opted-in routes'
+  tails (about 3, hubs, children, contact/careers/company-profile/legal tails).
+  One commit per batch with a simple message.
+
+- [x] Home pilot: `homeHero` (badge/headline/description/CTAs/location) +
+      `homeDrones` (tag/headline/description/items) registered, migrated into
+      `home.json`, wired into `[locale]/index.tsx` (legacy branch untouched).
+      (Done 2026-09-18: additive-`data` refactor on both wrappers; headline
+      `<primary>`/`<accent>` parsed from data; `home.json` 17→19 sections,
+      `skipped` now `["metrics"]`; count guard 17→19; README 24→26 sections.
+      Validation: `check:keystatic` OK, `--verify` clean, typecheck + lint
+      clean; dev-smoke DEFERRED per M11/M12 policy.)
+- [ ] Per-page batches: each opted-in route's remaining legacy tails registered
+      as unique sections (or recorded out-of-scope with reason), migrated, wired.
+- [ ] README operator list + `.env.example` untouched (no new env); check-script
+      fixture/render coverage extended per batch.
+
+**Exit criteria:** every in-scope legacy tail has a registry id + schema +
+example + renderer + check coverage; entries carry its content; `/en` + `/sw`
+render it from Keystatic when opted in, legacy otherwise.
+
+### M12: Keystatic Order Becomes Page Order (Remove renderAt Indexes)
+
+**Status: NOT STARTED**
+
+Dependencies: M11 per page (a page can only drop its indexes once ALL its
+sections are Keystatic-owned).
+
+Problem (per user request 2026-09-18): interleaved hybrids render Keystatic
+sections by hardcoded index (`renderAt(0)` … `renderAt(16)`), so the entry order
+is an implementation detail instead of the page order — reordering blocks in the
+editor silently misplaces sections (guarded only by the count check). Once a
+page's sections are all defined in Keystatic, the entry order must BE the page
+order and the route must render sequentially with no index literals.
+
+Rules (decided 2026-09-18, before implementing):
+
+- Reorder each entry's `pageBuilder` into legacy page order (migration mapping
+  order = entry order; regenerate via `--write`).
+- Replace index-based `renderAt(n)` with order-based sequential rendering at the
+  legacy positions (a cursor consuming sections in JSX order, which mirrors the
+  legacy branch); no `renderAt({index})` literals remain.
+- Keep a section-count guard → legacy fallback (misplacement is worse than
+  legacy); keep the legacy branch byte-identical; keep route-level layout chrome
+  (centering divs, overlap positioning) outside the registry (never `className`
+  in content).
+- Home first (all sections Keystatic-owned after the M11 pilot except
+  commented-out `metrics`), then each M11-completed page in turn.
+
+- [ ] Home: `home.json` reordered into page order; `[locale]/index.tsx`
+      Keystatic branch renders sequentially with no index literals.
+- [ ] Remaining M11-completed pages: same reorder + sequential render, one batch
+      at a time.
+- [ ] `check:keystatic` fixture strings + `--verify` green per batch.
+
+**Exit criteria:** no `renderAt(<index>)` literals remain on migrated pages;
+entry order == page order; reordering blocks in the editor reorders the page;
+legacy fallback still guards count mismatches.
+
 ## Parallel Workstreams
 
 These may proceed independently after their stated dependencies are met:
@@ -895,3 +986,4 @@ For every implementation change:
 | 2026-09-17 | M8 | CLOSE-OUT — M8 DONE. Dev-smoke parity user-confirmed (`home` temp publish flip, `/en` + `/sw` Keystatic vs legacy good); entries verified reverted (`home: draft`, `company-profile: published` per M4). All 12 in-scope sections resolved (10 migrated, `metrics` registered-only, `industriesWeServe` covered by `cardGrid`); full gates green every batch | M8 DONE; M6 stays IN PROGRESS on browser residuals only | |
 | 2026-09-17 | M9 | CLOSE-OUT — M9 DONE. Dev-smoke parity user-confirmed (allowlist `site` + temp publish flip, layout change visible on multiple routes `/en` + `/sw` good, kill-switch rollback confirmed); entry verified reverted (`site: draft`). Singleton serves navbar/footer/contacts/socials/cookies site-wide in both locales when published + allowlisted; legacy locale JSON renders otherwise per the M3 taxonomy | M9 DONE; next up M10 (NOT STARTED) | |
 | 2026-09-17 | M9 | FOLLOW-UP (per user request): `leadGenBar` + `services` registered on `/` (commits `1347e68`, `6a13133`). `LeadGenBar` refactored to additive optional `data` (omitted = legacy `t()`; bare `careers` caller untouched); description stays `<Trans>`-rendered (gate-only, field warns); `title`/`link` keys unrendered → excluded. Home rewire keeps `-mt-48` positioning via route-level `cloneElement` (registry stores content, never `className`). `ServicesSection` refactored to additive optional `data` (other pages' bare callers untouched). LEGACY BUG FIX (visible, recorded): component read tag/headline from `home:services.*`, which no longer exists — legacy renders raw key strings; Keystatic branch sources `common:services` instead, so opting in fixes the header. String offers migrate to `{label, href: ""}` (renders identically). Home 15→17 sections, count guard 15→17, `skipped` now `["hero", "drones", "metrics"]`; registry 22→24 sections; README list updated | `check:keystatic` OK (24 sections, 31 fixtures); `--verify` home clean (17 sections, no gaps); `typecheck` + `eslint` clean. PENDING: dev-smoke for the two rewired sections (publish-flip `home`, `/en` + `/sw`, revert to `draft`) — needs a browser session | |
+| 2026-09-18 | M11/M12 | New milestones added per user request (unique page sections + Keystatic page order) + instructions.md smoke-deferral policy (dev-smoke last; check/verify/typecheck/lint per batch). M11 home pilot DONE: `homeHero` + `homeDrones` registered (schema + example + normalize + renderer each; headline `<primary>`/`<accent>` parsed from data, not gate-only); `homeHeroBuild` (`ns: "home"` override in `generate()`) + `homeDronesBuild`; `home.json` 17→19 sections (appended; M12 reorders), `skipped` now `["metrics"]`; route count guard 17→19, `renderAt(17)` replaces legacy hero, `renderAt(18)` replaces legacy drones (legacy branch untouched); README 24→26 sections | `check:keystatic` OK (26 sections, 31 fixtures); `--verify` home clean (19 sections, no gaps); `yarn typecheck` clean; `yarn lint` clean. Dev-smoke DEFERRED per policy | |

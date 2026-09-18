@@ -351,12 +351,14 @@ const resolutionCases = await (async () => {
 	// badge grid + keyFacts panel + whyChooseUs list + about narrative +
 	// surveyingInstruments grid + coreExpertise grid + planningInfographic +
 	// surveyCost estimator + coverageArea (M8, 2026-09-17) + leadGenBar trio
-	// + services explorer (M9 follow-up), in page order.
+	// + services explorer (M9 follow-up) + homeHero + homeDrones unique
+	// sections appended at the end (M11 home pilot, 2026-09-18 — M12
+	// reorders into page order).
 	outcomes.push([
 		"resolve-real-fixture",
 		realRes.status === "keystatic" &&
 			realRes.page.title === "Home (migrated)" &&
-			realRes.page.sections.map((s) => s.id).join(",") === "ctaBand,cardGrid,faq,ctaBand,ctaBand,trustees,certifications,keyFacts,whyChooseUs,about,surveyingInstruments,coreExpertise,planningInfographic,surveyCost,coverageArea,leadGenBar,services",
+			realRes.page.sections.map((s) => s.id).join(",") === "ctaBand,cardGrid,faq,ctaBand,ctaBand,trustees,certifications,keyFacts,whyChooseUs,about,surveyingInstruments,coreExpertise,planningInfographic,surveyCost,coverageArea,leadGenBar,services,homeHero,homeDrones",
 	]);
 
 	// --- Site layout singleton (M9) --------------------------------------

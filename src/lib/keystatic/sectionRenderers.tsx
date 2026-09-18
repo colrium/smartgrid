@@ -23,6 +23,8 @@ import { CoverageArea } from "@/components/sections/shared/CoverageArea";
 import { SurveyCost } from "@/components/sections/shared/SurveyCost";
 import LeadGenBar from "@/components/sections/shared/LeadGenBar";
 import { ServicesSection } from "@/components/sections/shared/ServicesSection";
+import HeroSection from "@/components/sections/home/HeroSection";
+import { DronesSection } from "@/components/sections/home/DronesSection";
 import type { Lang } from "../types";
 import { resolveLocaleValue } from "./localize";
 import { getSectionDefinition, type SectionId } from "./sectionRegistry";
@@ -67,6 +69,8 @@ export const sectionRenderers = {
 	surveyCost: SurveyCost,
 	leadGenBar: LeadGenBar,
 	services: ServicesSection,
+	homeHero: HeroSection,
+	homeDrones: DronesSection,
 } satisfies Record<SectionId, ComponentType<any>>;
 
 export function renderSection(

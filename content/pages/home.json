@@ -2248,6 +2248,179 @@
 				],
 				"id": ""
 			}
+		},
+		{
+			"discriminant": "homeHero",
+			"value": {
+				"badge": {
+					"en": "Engineering Precision",
+					"sw": "Usahihi wa Uhandisi"
+				},
+				"headline": {
+					"en": "Survey <primary>Smarter</primary>, Build <accent>Stronger</accent>.",
+					"sw": "Pima <primary>Kwa Akili</primary>, Jenga <accent>Kwa Nguvu</accent>."
+				},
+				"description": {
+					"en": "Leading Africa's Land and Aerial Surveying with Advanced equipment Technology",
+					"sw": "Kuongoza Upimaji wa Ardhi na Angani wa Afrika kwa Teknolojia ya Juu ya Vifaa"
+				},
+				"ctaPrimary": {
+					"label": {
+						"en": "Request a Survey",
+						"sw": "Omba Upimaji"
+					},
+					"href": "/contact?reason=request-survey#contact-form",
+					"icon": "send"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "Talk to an Expert",
+						"sw": "Ongea na Mtaalamu"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Talk to an Expert&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to talk to an expert about a surveying project.%0D%0A%0D%0AName:%0D%0AService of interest:%0D%0AMessage:%0D%0A%0D%0AThank you.",
+					"icon": "email"
+				},
+				"location": {
+					"label": {
+						"en": "Active across East Africa & beyond",
+						"sw": "Tunafanya kazi katika Afrika Mashariki na kwingineko"
+					},
+					"items": [
+						{
+							"label": {
+								"en": "Kenya",
+								"sw": "Kenya"
+							},
+							"code": "KE"
+						},
+						{
+							"label": {
+								"en": "Uganda",
+								"sw": "Uganda"
+							},
+							"code": "UG"
+						},
+						{
+							"label": {
+								"en": "Tanzania",
+								"sw": "Tanzania"
+							},
+							"code": "TZ"
+						},
+						{
+							"label": {
+								"en": "Nigeria",
+								"sw": "Nigeria"
+							},
+							"code": "NG"
+						},
+						{
+							"label": {
+								"en": "Ghana",
+								"sw": "Ghana"
+							},
+							"code": "GH"
+						},
+						{
+							"label": {
+								"en": "South Africa",
+								"sw": "Afrika Kusini"
+							},
+							"code": "SA"
+						}
+					]
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "homeDrones",
+			"value": {
+				"tag": {
+					"en": "Drone Fleet",
+					"sw": "Mel ya Ndege zisizo na Rubani"
+				},
+				"headline": {
+					"en": "Our Drones",
+					"sw": "Ndege Zetu Zisizo na Rubani"
+				},
+				"description": {
+					"en": "We deploy advanced drones to capture high-resolution aerial RGB / LiDAR imagery and multispectral data for Accurate Mapping, Monitoring, Planning, surveying, and engineering.",
+					"sw": "Tunatumia ndege za kisasa zisizo na rubani kupiga picha za ubora wa juu za angani za RGB / LiDAR na data ya multispectral kwa ajili ya Ramani Sahihi, Ufuatiliaji, Mipango, Upimaji, na Uhandisi."
+				},
+				"label": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"icon": "quadcopter",
+						"img": "/media/equipment-sale/dji-matrice-350-rtk/images/02-01.png",
+						"href": "/equipment-sale/dji-matrice-350-rtk",
+						"label": {
+							"en": "DJI Matrice 300 RTK",
+							"sw": "DJI Matrice 300 RTK"
+						},
+						"description": {
+							"en": "The DJI Matrice 300 RTK is a versatile and powerful drone designed for industrial applications, including surveying, mapping, and inspection. It features advanced flight capabilities, long battery life, and the ability to carry various payloads, making it ideal for professional use in challenging environments.",
+							"sw": "DJI Matrice 300 RTK ni ndege isiyo na rubani yenye matumizi mengi na nguvu iliyoundwa kwa ajili ya matumizi ya viwandani, ikijumuisha upimaji, ramani, na ukaguzi. Ina uwezo wa juu wa kuruka, maisha marefu ya betri, na uwezo wa kubeba mizigo mbalimbali, na kuifanya kuwa bora kwa matumizi ya kitaalamu katika mazingira magumu."
+						}
+					},
+					{
+						"icon": "quadcopter",
+						"img": "/media/equipment-sale/dji-air-3s/images/02.png",
+						"href": "/equipment-sale/dji-air-3s",
+						"label": {
+							"en": "DJI Air 3S",
+							"sw": "DJI Air 3S"
+						},
+						"description": {
+							"en": "The DJI Air 3S is a compact and portable drone that offers high-quality aerial photography and videography capabilities. It features a dual-camera system, long flight time, and intelligent flight modes, making it suitable for both professional and recreational use.",
+							"sw": "DJI Air 3S ni ndege ndogo na rahisi kubeba inayotoa uwezo wa juu wa upigaji picha na video za angani. Ina mfumo wa kamera mbili, muda mrefu wa kuruka, na njia za kuruka za akili, na kuifanya kuwa inafaa kwa matumizi ya kitaalamu na burudani."
+						}
+					},
+					{
+						"icon": "quadcopter",
+						"img": "/media/equipment-sale/dji-mavic-3-multispectral/images/02.png",
+						"href": "/equipment-sale/dji-mavic-3-multispectral",
+						"label": {
+							"en": "DJI Mavic 3M / 3E",
+							"sw": "DJI Mavic 3M / 3E"
+						},
+						"description": {
+							"en": "The DJI Mavic 3M / 3E is a lightweight and portable drone that provides excellent aerial imaging capabilities. It features a high-resolution camera, obstacle avoidance sensors, and intelligent flight modes, making it ideal for capturing stunning photos and videos from the sky.",
+							"sw": "DJI Mavic 3M / 3E ni ndege nyepesi na rahisi kubeba inayotoa uwezo bora wa upigaji picha za angani. Ina kamera ya ubora wa juu, vitambuzi vya kuepuka vizuizi, na njia za kuruka za akili, na kuifanya kuwa bora kwa kupiga picha na video za kuvutia kutoka angani."
+						}
+					},
+					{
+						"icon": "quadcopter",
+						"img": "/media/equipment-sale/dji-mavic-3-pro/images/02-01.png",
+						"href": "/equipment-sale/dji-mavic-3-pro",
+						"label": {
+							"en": "DJI Mavic 3 Pro",
+							"sw": "DJI Mavic 3 Pro"
+						},
+						"description": {
+							"en": "The DJI Mavic 3 Pro is a versatile choice for site documentation and reconnaissance mapping, pairing a triple-camera Hasselblad system with orthomosaic-capable photogrammetry for high-detail visual capture.",
+							"sw": "DJI Mavic 3 Pro ni chaguo hodari kwa ajili ya kuandika hati za tovuti na ramani za uchunguzi, ikichanganya mfumo wa kamera tatu wa Hasselblad na fotogrammetria yenye uwezo wa orthomosaic kwa ajili ya upigaji picha wa kina na wa ubora wa juu."
+						}
+					},
+					{
+						"icon": "quadcopter",
+						"img": "/media/equipment-sale/dji-phantom-4/images/02-01.png",
+						"href": "/equipment-sale/dji-phantom-4",
+						"label": {
+							"en": "DJI Phantom 4",
+							"sw": "DJI Phantom 4"
+						},
+						"description": {
+							"en": "The DJI Phantom 4 remains a proven, reliable choice for cadastral and engineering mapping, pairing a mechanical shutter camera with dependable GNSS and vision-based positioning for accurate mapping.",
+							"sw": "DJI Phantom 4 bado ni chaguo lililothibitishwa na la kuaminika kwa ajili ya ramani za cadastral na uhandisi, ikichanganya kamera ya shutter ya mitambo na GNSS ya kuaminika na uwekaji wa msingi wa maono kwa ajili ya ramani sahihi."
+						}
+					}
+				],
+				"id": ""
+			}
 		}
 	]
 }

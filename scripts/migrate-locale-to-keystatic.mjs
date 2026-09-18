@@ -733,6 +733,76 @@ function leadGenBarBuild(en, sw, where) {
 // `common:metrics` is unrendered on `/` and `metrics` stays in `skipped`
 // below. The id exists so editors can add it to any page.
 
+// M11 home pilot (2026-09-18): `home:hero` → `homeHero`. The hero is the
+// only home node still in the `home` namespace file (everything else moved
+// to `common.json`); the mapping entry carries `ns: "home"` so `generate()`
+// loads it from there. CTA hrefs/icons and location codes are shared
+// (divergence aborts); badge/headline/description/labels are localized.
+// The headline keeps its inline `<primary>`/`<accent>` tags verbatim — the
+// wrapper parses them from data at render.
+function homeHeroBuild(en, sw, where) {
+	const action = (node, swNode, key) => ({
+		label: { en: reqText(node?.label, `${where}.${key}.label.en`), sw: reqText(swNode?.label, `${where}.${key}.label.sw`) },
+		href: sharedValue(node, swNode, "href", `${where}.${key}`) ?? "",
+		icon: sharedValue(node, swNode, "icon", `${where}.${key}`) ?? "",
+	});
+	const locEn = en.location ?? {};
+	const locSw = sw.location ?? {};
+	const enChips = locEn.items ?? [];
+	const swChips = locSw.items ?? [];
+	if (!Array.isArray(swChips) || swChips.length !== enChips.length) {
+		gap(where, `location chip count diverged (en=${enChips.length} sw=${swChips?.length})`);
+	}
+	return {
+		badge: { en: optText(en.badge), sw: optText(sw.badge) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		ctaPrimary: action(en.ctaPrimary, sw.ctaPrimary, "ctaPrimary"),
+		ctaSecondary: action(en.ctaSecondary, sw.ctaSecondary, "ctaSecondary"),
+		location: {
+			label: { en: optText(locEn.label), sw: optText(locSw.label) },
+			items: enChips.map((chip, i) => {
+				const swChip = swChips[i] ?? {};
+				return {
+					label: { en: reqText(chip.label, `${where}.location.items[${i}].label.en`), sw: reqText(swChip.label, `${where}.location.items[${i}].label.sw`) },
+					code: sharedValue(chip, swChip, "code", `${where}.location.items[${i}]`) ?? "",
+				};
+			}),
+		},
+		id: "",
+	};
+}
+
+// M11 home pilot (2026-09-18): `common:drones` → `homeDrones`. Icon, image,
+// href and drone-name labels are identical across locales (shared gate);
+// descriptions are localized. Legacy has no `common:drones.label` key, so
+// `label` migrates empty and the component keeps its
+// `t(..., { defaultValue: "Aerial capability" })` fallback.
+function homeDronesBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		label: emptyPair(),
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				img: sharedValue(item, swItem, "img", `${where}.items[${i}]`) ?? "",
+				href: sharedValue(item, swItem, "href", `${where}.items[${i}]`) ?? "",
+				label: { en: reqText(item.label, `${where}.items[${i}].label.en`), sw: reqText(swItem.label, `${where}.items[${i}].label.sw`) },
+				description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+			};
+		}),
+		id: "",
+	};
+}
+
 // M7 batch 5: generic `introText` builder. Presentation props (tone, align,
 // split) are wrapper hardcodes — passed in, never read from content.
 // `ctaKey` names an optional `{label, href, icon?}` action object merged by
@@ -2765,6 +2835,9 @@ const PAGES = {
 	// Tails stay legacy: bespoke WebGL hero, Drones bespoke (every other home
 	// section migrates in M7/M8 plus the M9 follow-up; `metrics` stays in
 	// `skipped` — unrendered, commented out of the route).
+	// M11 home pilot (2026-09-18): the hero + drones tails migrate too, as
+	// unique sections (`homeHero` from the `home` namespace via `ns`,
+	// `homeDrones` from `common:drones`); only `metrics` stays skipped.
 	// NOTE: overwrites the
 	// M1 `home.json` starter fixture (placeholder since M1) with the real
 	// migrated home; entry stays `draft`.
@@ -2776,7 +2849,7 @@ const PAGES = {
 		// `contentNamespace` (`common.json`) while the page entry stays
 		// `home.json`.
 		contentNamespace: "common",
-		skipped: ["hero", "drones", "metrics"],
+		skipped: ["metrics"],
 		sections: [
 			{
 				discriminant: "ctaBand",
@@ -3077,6 +3150,30 @@ const PAGES = {
 					return servicesBuild(en, sw, where);
 				},
 			},
+			{
+				discriminant: "homeHero",
+				from: "hero",
+				// M11 home pilot (2026-09-18): the bespoke WebGL
+				// <HeroSection /> over `home:hero` — the only home node
+				// still in the `home` namespace file, hence `ns: "home"`.
+				// Appended at the end (indexes 17); M12 reorders the entry
+				// into page order and drops the index coupling.
+				ns: "home",
+				build(en, sw, where) {
+					return homeHeroBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "homeDrones",
+				from: "drones",
+				// M11 home pilot (2026-09-18): the bespoke
+				// <DronesSection /> fleet grid over `common:drones`.
+				// Appended at the end (index 18); M12 reorders into page
+				// order.
+				build(en, sw, where) {
+					return homeDronesBuild(en, sw, where);
+				},
+			},
 		],
 	},
 };
@@ -3131,16 +3228,27 @@ function generate(pageSlug) {
 	// cueLabel from common:misc.openRoles). Passed as the 5th build arg;
 	// existing 4-arg builds ignore it.
 	const extra = { common: { en: loadCommon("en"), sw: loadCommon("sw") } };
-	const pageBuilder = mapping.sections.map(({ discriminant, from, build }) => {
+	// M11 (2026-09-18): per-section `ns` override — a section whose content
+	// lives in a different locale file than `contentNamespace` (home's hero
+	// is the only node left in `home.json`). Cached per locale+namespace.
+	const nsCache = new Map();
+	const loadCached = (locale, ns) => {
+		const key = `${locale}:${ns}`;
+		if (!nsCache.has(key)) nsCache.set(key, loadNamespace(locale, ns));
+		return nsCache.get(key);
+	};
+	const pageBuilder = mapping.sections.map(({ discriminant, from, ns, build }) => {
+		const srcEn = ns ? loadCached("en", ns) : en;
+		const srcSw = ns ? loadCached("sw", ns) : sw;
 		if (from === null) {
 			// Whole-file mapping (legal pages): the namespace root IS the section.
-			return { discriminant, value: stripInternalKeys(build(en, sw, mapping.namespace, siteTitle, extra)) };
+			return { discriminant, value: stripInternalKeys(build(srcEn, srcSw, ns ?? mapping.namespace, siteTitle, extra)) };
 		}
-		if (!(from in en) || !(from in sw)) {
+		if (!(from in srcEn) || !(from in srcSw)) {
 			gap(from, "section key missing in one locale");
 			return { discriminant, value: {} };
 		}
-		return { discriminant, value: stripInternalKeys(build(en[from], sw[from], from, siteTitle, extra)) };
+		return { discriminant, value: stripInternalKeys(build(srcEn[from], srcSw[from], from, siteTitle, extra)) };
 	});
 	return {
 		entry: {

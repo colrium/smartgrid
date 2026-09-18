@@ -361,11 +361,11 @@ Full, canonical standards live in [`AGENTS.md`](./AGENTS.md).
 ## Keystatic Page Builder (operator guide)
 
 Structured pages are composed in the Keystatic admin (`/keystatic`, local dev needs
-no login) from twenty-four registered sections: `introText`, `ctaBand`, `stats`, `hero`,
+no login) from twenty-six registered sections: `introText`, `ctaBand`, `stats`, `hero`,
 `cardGrid`, `splitMedia`, `legal`, `faq`, `process`, `gallery`, `pricing`, `trustees`,
 `certifications`, `keyFacts`, `metrics`, `whyChooseUs`, `about`,
 `surveyingInstruments`, `coreExpertise`, `planningInfographic`, `coverageArea`,
-`surveyCost`, `leadGenBar`, `services`. See
+`surveyCost`, `leadGenBar`, `services`, `homeHero`, `homeDrones`. See
 `src/lib/keystatic/sectionRegistry.ts` — the single
 source for editor options and renderer mappings.
 
