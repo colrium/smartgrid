@@ -51,6 +51,13 @@ import { ServicesDetailSection } from "@/components/sections/surveying/sectional
 import { ProcessSection as SectionalProcessSection } from "@/components/sections/surveying/sectional-properties/ProcessSection";
 import { TimelineSection } from "@/components/sections/surveying/sectional-properties/TimelineSection";
 import { WhoNeedsSection } from "@/components/sections/surveying/sectional-properties/WhoNeedsSection";
+import { BathymetricWorkflowSection } from "@/components/sections/surveying/bathymetric-surveys/BathymetricWorkflowSection";
+import { EquipmentTechnologySection } from "@/components/sections/surveying/bathymetric-surveys/EquipmentTechnologySection";
+import { TechnicalLimitationsSection } from "@/components/sections/surveying/bathymetric-surveys/TechnicalLimitationsSection";
+import { DamsLakesSection } from "@/components/sections/surveying/bathymetric-surveys/DamsLakesSection";
+import { ApplicationsSection as BathyApplicationsSection } from "@/components/sections/surveying/bathymetric-surveys/ApplicationsSection";
+import { BathymetricBeforeAfterSection } from "@/components/sections/surveying/bathymetric-surveys/BathymetricBeforeAfterSection";
+import { FinalCtaSection as BathyFinalCtaSection } from "@/components/sections/surveying/bathymetric-surveys/FinalCtaSection";
 import type { Lang } from "../types";
 import { resolveLocaleValue } from "./localize";
 import { getSectionDefinition, type SectionId } from "./sectionRegistry";
@@ -123,6 +130,13 @@ export const sectionRenderers = {
 	sectionalWorkflow: SectionalProcessSection,
 	sectionalTimeline: TimelineSection,
 	sectionalWhoNeeds: WhoNeedsSection,
+	bathyWorkflow: BathymetricWorkflowSection,
+	bathyEquipment: EquipmentTechnologySection,
+	bathyLimitations: TechnicalLimitationsSection,
+	bathyDamsLakes: DamsLakesSection,
+	bathyApplications: BathyApplicationsSection,
+	bathyBeforeAfter: BathymetricBeforeAfterSection,
+	bathyFinalCta: BathyFinalCtaSection,
 } satisfies Record<SectionId, ComponentType<any>>;
 
 export function renderSection(

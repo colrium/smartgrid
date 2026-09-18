@@ -913,6 +913,17 @@ Rules (decided 2026-09-18, before implementing):
       behavior unchanged) + added the missing `li` key the newly-live
       branch exposed. Validation: `check:keystatic` OK (52 sections),
       `--verify` clean, typecheck + lint clean; dev-smoke DEFERRED.)
+      (Batch 8 — bathymetric-surveys — done 2026-09-18: 7 uniques
+      (`bathyWorkflow`, `bathyEquipment`, `bathyLimitations` with hardcoded
+      card headings kept, `bathyDamsLakes` with lead images, `bathyApplications`,
+      `bathyBeforeAfter`, `bathyFinalCta`) + shared `deliverables`;
+      mapping reordered to page order (12 sections), route destructures
+      named slots, zero `renderAt`; `skipped` now `[]`. CAUGHT: builds
+      placed inside the PAGES object literal (syntax error — relocated to
+      top level) + two self-comparing `sharedValue` image calls (would
+      have skipped the sw check — fixed). Validation: `check:keystatic`
+      OK (59 sections), `--verify` clean, typecheck + lint clean;
+      dev-smoke DEFERRED.)
 - [ ] README operator list + `.env.example` untouched (no new env); check-script
       fixture/render coverage extended per batch.
 
@@ -1070,3 +1081,4 @@ For every implementation change:
 | 2026-09-18 | M11/M12 | Batch 6 — topographical-surveys DONE: 6 uniques + shared `deliverables`; mapping reordered to page order (11 sections), route destructures named slots, zero `renderAt`; `skipped` now `[]`; registry 41→47; README list updated | `check:keystatic` OK (47 sections); `--verify` clean (11 sections, no gaps); `typecheck` + `lint` clean. Dev-smoke DEFERRED per policy. Next: sectional-properties + bathymetric-surveys | |
 | 2026-09-18 | M11/M12 | Batch 7 — sectional-properties DONE: 5 uniques + shared `deliverables`; mapping reordered to page order (11 sections), route named slots, zero `renderAt`; `skipped` now `["socials"]` (dead); registry 47→52. Cleaned a duplicated registry block (double insert). LEGACY-VISIBLE BUG FIX: shared `Process` nulled item-less timelines (sectional timeline invisible in production) — fixed + added missing `li` key | `check:keystatic` OK (52 sections); `--verify` clean (11 sections, no gaps); `typecheck` + `lint` clean. Dev-smoke DEFERRED per policy. Next: bathymetric-surveys | |
 | 2026-09-18 | M11 | Anchor-id sweep: schema `anchorField`s were stored but ignored by 20 unique wrappers — threaded `id` through all of them (CardGrid/SectionShell/Process passthrough; bespoke `<section id>`; `drones`/`openings` keep legacy defaults). `id: ""` normalizes to `undefined` = no attribute, so legacy DOM is byte-identical | `check:keystatic` OK (52 sections); `typecheck` + `lint` clean. No entries changed (`--verify` unaffected) | |
+| 2026-09-18 | M11/M12 | Batch 8 — bathymetric-surveys DONE: 7 uniques + shared `deliverables`; mapping reordered to page order (12 sections), route named slots, zero `renderAt`; `skipped` now `[]`; registry 52→59. CAUGHT: builds inside PAGES literal (moved) + self-comparing sharedValue (fixed) | `check:keystatic` OK (59 sections); `--verify` clean (12 sections, no gaps); `typecheck` + `lint` clean. Dev-smoke DEFERRED per policy. Next: resource-mapping | |

@@ -8,13 +8,16 @@ import {
     type WorkflowSectionProps,
 } from "@/components/sections/shared/WorkflowSection";
 
-export function BathymetricWorkflowSection(): ReactElement {
+export function BathymetricWorkflowSection({ data, id }: { data?: WorkflowSectionProps | null; id?: string } = {}): ReactElement {
     const { t } = useTranslation(["surveying/bathymetric-surveys"]);
-    const section = t("surveying/bathymetric-surveys:bathymetricWorkflow", {
-        returnObjects: true,
-    }) as unknown as WorkflowSectionProps;
+    // Keystatic-owned content when `data` is provided (M11 `bathyWorkflow`
+    // unique section); legacy locale strings otherwise.
+    const section = (data ??
+        (t("surveying/bathymetric-surveys:bathymetricWorkflow", {
+            returnObjects: true,
+        }) as unknown as WorkflowSectionProps)) as WorkflowSectionProps;
 
-    return <WorkflowSection {...section} />;
+    return <WorkflowSection {...section} id={id} />;
 }
 
 export default BathymetricWorkflowSection;

@@ -242,7 +242,7 @@ import {
  * from DATA (the wrapper is page-owned), so edits change output.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyWorkflow", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "bathyFinalCta"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -4178,6 +4178,453 @@ const sectionalWhoNeeds: SectionDefinition = {
 	}),
 };
 
+/**
+ * M11 batch 8 — bathymetric-surveys page (2026-09-18): `bathyWorkflow`
+ * wraps the `BathymetricWorkflowSection` WorkflowSection passthrough (tag +
+ * headline + description + phased steps + outcome). Unique — only valid on
+ * `/surveying/bathymetric-surveys`. Phase keys are shared literals; labels
+ * and descriptions are localized. Renders nothing without steps (legacy
+ * guard via WorkflowSection, preserved).
+ */
+const bathyWorkflow: SectionDefinition = {
+	id: "bathyWorkflow",
+	version: 1,
+	label: "Bathy workflow (unique)",
+	description: "Unique: the bathymetric-surveys phased workflow. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		steps: fields.array(
+			fields.object({
+				phase: fields.text({
+					label: "Phase key (shared)",
+					description: "Phase bucket key (e.g. PLANNING). Identical in en/sw.",
+				}),
+				label: localeText("Label"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Steps",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Step"),
+			}
+		),
+		outcome: localeText("Outcome", { optionalInEnglish: true }),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` (visual tuning, not
+		// an editor contract).
+	}),
+	example: {
+		tag: { en: "Workflow", sw: "Mtiririko" },
+		headline: { en: "How It Works", sw: "Jinsi Inavyofanya Kazi" },
+		description: { en: "", sw: "" },
+		steps: [
+			{
+				phase: "PLANNING",
+				label: { en: "Project Planning", sw: "Mipango ya Mradi" },
+				description: { en: "Assess the waterbody.", sw: "" },
+			},
+		],
+		outcome: { en: "", sw: "" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			steps: Array.isArray(resolved.steps)
+				? resolved.steps.map((step: any) => ({
+						phase: step?.phase ?? "",
+						label: step?.label ?? "",
+						description: step?.description ?? "",
+					}))
+				: [],
+			outcome: resolved.outcome,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 8 — bathymetric-surveys page (2026-09-18): `bathyEquipment`
+ * wraps the `EquipmentTechnologySection` split (header + staggered image
+ * collage). Unique — only valid on `/surveying/bathymetric-surveys`. The
+ * image paths are shared; header strings are localized.
+ */
+const bathyEquipment: SectionDefinition = {
+	id: "bathyEquipment",
+	version: 1,
+	label: "Bathy equipment (unique)",
+	description: "Unique: the bathymetric-surveys equipment split with image collage. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		images: fields.array(imagePath("Image (shared)"), {
+			label: "Images",
+			itemLabel: (item) => previewText(item, ["value"], "Image"),
+		}),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` (visual tuning, not
+		// an editor contract).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Equipment & Technology", sw: "Vifaa na Teknolojia" },
+		description: { en: "", sw: "" },
+		images: ["/media/surveying/bathymetric-surveys/03-01.jpeg"],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			images: Array.isArray(resolved.images) ? resolved.images.filter((src: unknown) => typeof src === "string" && src) : [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 8 — bathymetric-surveys page (2026-09-18): `bathyLimitations`
+ * wraps the `TechnicalLimitationsSection` two-card panel (accuracy factors
+ * + typical outputs). Unique — only valid on
+ * `/surveying/bathymetric-surveys`. All strings are localized. NOTE: the
+ * card headings are hardcoded in JSX (legacy quirk, both locales) — not
+ * migrated. Renders nothing without factors and outputs (legacy guard,
+ * preserved).
+ */
+const bathyLimitations: SectionDefinition = {
+	id: "bathyLimitations",
+	version: 1,
+	label: "Bathy limitations (unique)",
+	description: "Unique: the bathymetric-surveys accuracy-factors/outputs panel. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		factors: fields.array(localeText("Factor", { optionalInEnglish: true }), {
+			label: "Accuracy factors",
+			itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Factor"),
+		}),
+		outputs: fields.array(localeText("Output", { optionalInEnglish: true }), {
+			label: "Typical outputs",
+			itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Output"),
+		}),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` and the hardcoded
+		// card headings (legacy quirk).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Technical Limitations", sw: "Mapungufu ya Kiufundi" },
+		description: { en: "", sw: "" },
+		factors: [{ en: "Water turbidity", sw: "Uto wa maji" }],
+		outputs: [{ en: "Depth charts", sw: "Chati za kina" }],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			factors: Array.isArray(resolved.factors) ? resolved.factors.filter((factor: unknown) => typeof factor === "string" && factor) : [],
+			outputs: Array.isArray(resolved.outputs) ? resolved.outputs.filter((output: unknown) => typeof output === "string" && output) : [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 8 — bathymetric-surveys page (2026-09-18): `bathyDamsLakes`
+ * wraps the `DamsLakesSection` card grid with the lead image strip above
+ * it. Unique — only valid on `/surveying/bathymetric-surveys`. Image paths
+ * and icons are shared; titles and descriptions are localized. Renders
+ * nothing without items and images (legacy guard, preserved).
+ */
+const bathyDamsLakes: SectionDefinition = {
+	id: "bathyDamsLakes",
+	version: 1,
+	label: "Bathy dams & lakes (unique)",
+	description: "Unique: the bathymetric-surveys coverage grid with lead images. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		images: fields.array(imagePath("Image (shared)"), {
+			label: "Lead images (first two render)",
+			itemLabel: (item) => previewText(item, ["value"], "Image"),
+		}),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Water bodies",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Water body"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` (visual tuning, not
+		// an editor contract).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Dams, Lakes & Oceans", sw: "Mabwawa, Maziwa na Bahari" },
+		description: { en: "", sw: "" },
+		images: ["/media/surveying/bathymetric-surveys/bathymetric-surveys-10.jpg"],
+		items: [
+			{
+				icon: "chart-bubble",
+				title: { en: "Monitor Siltation", sw: "Fuatilia Mchanga" },
+				description: { en: "Track sediment build-up.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			images: Array.isArray(resolved.images) ? resolved.images.filter((src: unknown) => typeof src === "string" && src) : [],
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 8 — bathymetric-surveys page (2026-09-18): `bathyApplications`
+ * wraps the `ApplicationsSection` media-badge grid. Unique — only valid on
+ * `/surveying/bathymetric-surveys`. Icons and images are shared; titles
+ * and descriptions are localized. Renders nothing without items (legacy
+ * guard, preserved).
+ */
+const bathyApplications: SectionDefinition = {
+	id: "bathyApplications",
+	version: 1,
+	label: "Bathy applications (unique)",
+	description: "Unique: the bathymetric-surveys media-badge applications grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				image: imagePath("Image (shared, optional)"),
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Applications",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Application"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, columns, tone and
+		// media badges (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Applications", sw: "Matumizi" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				icon: "water-well",
+				image: "/media/surveying/bathymetric-surveys/bathymetric-surveys-13.jpg",
+				title: { en: "Depth Analysis", sw: "Uchambuzi wa Kina" },
+				description: { en: "Precise depth measurement.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						image: item?.image || undefined,
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 8 — bathymetric-surveys page (2026-09-18): `bathyBeforeAfter`
+ * wraps the `BathymetricBeforeAfterSection` flip card (tag + headline +
+ * flip hint + before/after sides). Unique — only valid on
+ * `/surveying/bathymetric-surveys`. All strings are localized.
+ * Presentation (ferry icon, watermark, layout id) stays in the wrapper.
+ * Renders nothing without a headline (legacy guard, preserved).
+ */
+const bathyBeforeAfter: SectionDefinition = {
+	id: "bathyBeforeAfter",
+	version: 1,
+	label: "Bathy before/after (unique)",
+	description: "Unique: the bathymetric-surveys before/after flip card. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		flipHint: localeText("Flip hint", { optionalInEnglish: true }),
+		before: fields.object(
+			{
+				label: localeText("Label"),
+				tagline: localeText("Tagline", { optionalInEnglish: true }),
+				items: fields.array(localeText("Point", { optionalInEnglish: true }), {
+					label: "Points",
+					itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Point"),
+				}),
+			},
+			{ label: "Before" }
+		),
+		after: fields.object(
+			{
+				label: localeText("Label"),
+				tagline: localeText("Tagline", { optionalInEnglish: true }),
+				items: fields.array(localeText("Point", { optionalInEnglish: true }), {
+					label: "Points",
+					itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Point"),
+				}),
+			},
+			{ label: "After" }
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` and the fixed ferry
+		// icon, watermark and layout id (presentation, not content).
+	}),
+	example: {
+		tag: { en: "Value Demonstration", sw: "Udhihirisho wa Thamani" },
+		headline: { en: "BEFORE vs AFTER SURVEY VALUE", sw: "THAMANI KABLA NA BAADA YA UPIMAJI" },
+		flipHint: { en: "Click or tap to flip", sw: "Bofya kugeuza" },
+		before: {
+			label: { en: "Before", sw: "Kabla" },
+			tagline: { en: "", sw: "" },
+			items: [{ en: "Guesswork dredging.", sw: "" }],
+		},
+		after: {
+			label: { en: "After", sw: "Baada" },
+			tagline: { en: "", sw: "" },
+			items: [{ en: "Engineered volumes.", sw: "" }],
+		},
+		id: "before-after",
+	},
+	normalize: (resolved) => {
+		const side = (node: any) => ({
+			label: node?.label ?? "",
+			tagline: node?.tagline ?? "",
+			items: Array.isArray(node?.items) ? node.items.filter((point: unknown) => typeof point === "string" && point) : [],
+		});
+		return {
+			data: {
+				tag: resolved.tag,
+				headline: resolved.headline,
+				flipHint: resolved.flipHint,
+				before: side(resolved.before),
+				after: side(resolved.after),
+			},
+			id: resolved.id || undefined,
+		};
+	},
+};
+
+/**
+ * M11 batch 8 — bathymetric-surveys page (2026-09-18): `bathyFinalCta`
+ * wraps the `FinalCtaSection` closing panel (tag + headline + description
+ * + note + actions). Unique — only valid on
+ * `/surveying/bathymetric-surveys`. Action hrefs/icons are shared; labels
+ * and descriptions are localized. Presentation (accent tone, water
+ * watermark, 3 columns) stays in the wrapper. Renders nothing without a
+ * headline (legacy guard, preserved).
+ */
+const bathyFinalCta: SectionDefinition = {
+	id: "bathyFinalCta",
+	version: 1,
+	label: "Bathy final CTA (unique)",
+	description: "Unique: the bathymetric-surveys closing panel. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		note: localeLongText("Note"),
+		actions: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Empty = email fallback. Identical in en/sw.",
+				}),
+				label: localeText("Label"),
+				description: localeLongText("Description"),
+				href: fields.text({ label: "Link", description: "Internal path or full URL." }),
+			}),
+			{
+				label: "Actions",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Action"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, description tone,
+		// watermark, columns and the email icon fallback (presentation,
+		// not editor contracts).
+	}),
+	example: {
+		tag: { en: "Ready When You Are", sw: "Tayari Tukiwa Tayari" },
+		headline: { en: "READY TO SURVEY YOUR WATER BODY?", sw: "UKO TAYARI KUPIMA MAJI YAKO?" },
+		description: { en: "We respond quickly.", sw: "" },
+		note: { en: "", sw: "" },
+		actions: [
+			{
+				icon: "",
+				label: { en: "Request a Quote", sw: "Omba Nukuu" },
+				description: { en: "", sw: "" },
+				href: "mailto:info@smartgridsurveying.com",
+			},
+		],
+		id: "get-started",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			note: resolved.note,
+			actions: Array.isArray(resolved.actions)
+				? resolved.actions.map((action: any) => ({
+						icon: action?.icon || undefined,
+						label: action?.label ?? "",
+						description: action?.description ?? "",
+						href: typeof action?.href === "string" && action.href ? action.href : "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
 export const sectionRegistry: readonly SectionDefinition[] = [
 	introText,
 	ctaBand,
@@ -4231,6 +4678,13 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	sectionalWorkflow,
 	sectionalTimeline,
 	sectionalWhoNeeds,
+	bathyWorkflow,
+	bathyEquipment,
+	bathyLimitations,
+	bathyDamsLakes,
+	bathyApplications,
+	bathyBeforeAfter,
+	bathyFinalCta,
 ];
 
 export function getSectionDefinition(id: string): SectionDefinition {
@@ -4292,6 +4746,13 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	sectionalWorkflow: sectionalWorkflow.label,
 	sectionalTimeline: sectionalTimeline.label,
 	sectionalWhoNeeds: sectionalWhoNeeds.label,
+	bathyWorkflow: bathyWorkflow.label,
+	bathyEquipment: bathyEquipment.label,
+	bathyLimitations: bathyLimitations.label,
+	bathyDamsLakes: bathyDamsLakes.label,
+	bathyApplications: bathyApplications.label,
+	bathyBeforeAfter: bathyBeforeAfter.label,
+	bathyFinalCta: bathyFinalCta.label,
 };
 
 /**

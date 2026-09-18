@@ -204,6 +204,292 @@
 			}
 		},
 		{
+			"discriminant": "bathyWorkflow",
+			"value": {
+				"tag": {
+					"en": "Engineering Grade Process",
+					"sw": "Mchakato wa Kiwango cha Uhandisi"
+				},
+				"headline": {
+					"en": "OUR HYDROGRAPHIC SURVEY WORKFLOW",
+					"sw": "MCHAKATO WETU WA UCHUNGUZI WA HYDROGRAPHIC"
+				},
+				"description": {
+					"en": "Structured underwater survey pipeline for engineering-grade deliverables:",
+					"sw": "Mwelekeo ulio na muundo wa uchunguzi chini ya maji kwa matokeo ya kiwango cha uhandisi:"
+				},
+				"steps": [
+					{
+						"phase": "PLANNING",
+						"label": {
+							"en": "1. Project Planning & Waterbody Assessment",
+							"sw": "1. Mpangilio wa Mradi & Tathmini ya Kiotu cha Maji"
+						},
+						"description": {
+							"en": "Site reconnaissance\nDepth expectations & hazard mapping\nSurvey line planning",
+							"sw": "Uchunguzi wa tovuti\nMatakwa ya kina & uchoraji ramani wa hatari\nMpangilio wa mstari wa uchunguzi"
+						}
+					},
+					{
+						"phase": "CONTROL",
+						"label": {
+							"en": "2. GNSS Control Setup",
+							"sw": "2. Uwekezaji wa Kudhibiti GNSS"
+						},
+						"description": {
+							"en": "RTK GNSS positioning\nVertical datum alignment\nShoreline control points",
+							"sw": "Uwekaji wa RTK GNSS\nUpatanisho wa datum ya wima\nVipimo vya kudhibiti sahil"
+						}
+					},
+					{
+						"phase": "ACQUISITION",
+						"label": {
+							"en": "3. Bathymetric Data Acquisition",
+							"sw": "3. Kukusanya Data ya Bathymetric"
+						},
+						"description": {
+							"en": "Single-beam sonar scanning\nSurvey vessel transects\nContinuous depth logging",
+							"sw": "Uchunguzi wa sonar ya single-beam\nSafari za meli ya uchunguzi\nUrejesha endelevu wa kina"
+						}
+					},
+					{
+						"phase": "PROCESSING",
+						"label": {
+							"en": "4. Data Processing & Correction",
+							"sw": "4. Uchakataji wa Data & Usahihisho"
+						},
+						"description": {
+							"en": "Sound velocity corrections\nWater level / tidal adjustments\nNoise filtering",
+							"sw": "Usahihisho ya mwendo wa sauti\nMarekebisho ya kiwango cha maji / mwendo wa pewa\nUondoa kelele"
+						}
+					},
+					{
+						"phase": "MODELLING",
+						"label": {
+							"en": "5. Surface Modelling",
+							"sw": "5. Uundaji wa Mfano wa Uso"
+						},
+						"description": {
+							"en": "Bathymetric grids (DEM)\nDepth contour generation\n3D underwater surface modelling",
+							"sw": "Gride za bathymetric (DEM)\nUundaji wa kontura za kina\nUundaji wa mfano wa 3D wa uso wa chini ya maji"
+						}
+					},
+					{
+						"phase": "DELIVERY",
+						"label": {
+							"en": "6. Final Deliverables",
+							"sw": "6. Matokeo ya Mwisho"
+						},
+						"description": {
+							"en": "Engineering-ready hydrographic report",
+							"sw": "Ripoti ya hydrographic inayotumika na uhandisi"
+						}
+					}
+				],
+				"outcome": {
+					"en": "Complete hydrographic dataset ready for engineering design & decision-making",
+					"sw": "Dataset kamili ya hydrographic tayari kwa muundo wa uhandisi & maamuzi"
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "bathyEquipment",
+			"value": {
+				"tag": {
+					"en": "Equipment & Technology",
+					"sw": "Vifaa na Teknolojia"
+				},
+				"headline": {
+					"en": "EQUIPMENT & TECHNOLOGY",
+					"sw": "VIFAA NA TEKNOLOJIA"
+				},
+				"description": {
+					"en": "We deploy:\n\n• High-resolution echo sounders (single beam systems)\n• GNSS RTK positioning systems\n• Survey boats for shallow & deep water access\n• GIS & hydrographic modelling software\n\nIntegrated land + water geospatial reference ensures full terrain continuity.",
+					"sw": "Tunatumia:\n\n• Echo sounders za mwonekano wa juu (mifumo ya single beam)\n• Mifumo ya uwekaji wa GNSS RTK\n• Boti za uchunguzi kwa ufikiaji wa maji ya kina na ya kina\n• Programu ya GIS na uundaji wa mfano wa hydrographic\n\nRejea ya kijiografia ya ardhi + maji inahakikisha uendelevu kamili wa ardhi."
+				},
+				"images": [
+					"/media/surveying/bathymetric-surveys/03-01.jpeg",
+					"/media/surveying/bathymetric-surveys/03-02.jpeg",
+					"/media/surveying/bathymetric-surveys/03-03.jpeg",
+					"/media/surveying/bathymetric-surveys/03-04.jpeg"
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "deliverables",
+			"value": {
+				"tag": {
+					"en": "What You Receive",
+					"sw": "Unavyopokea"
+				},
+				"headline": {
+					"en": "WHAT YOU RECEIVE (DELIVERABLES)",
+					"sw": "UNVYOPOKEA (MATOKEO)"
+				},
+				"description": {
+					"en": "Engineering-grade hydrographic outputs:",
+					"sw": "Matokeo ya hydrographic ya kiwango cha uhandisi:"
+				},
+				"liveLabel": {
+					"en": "Deliverable package",
+					"sw": "Pakeji ya matokeo"
+				},
+				"checks": [
+					{
+						"en": "Engineering-grade accuracy",
+						"sw": "Usahihi wa kiwango cha uhandisi"
+					},
+					{
+						"en": "GIS & CAD compatible formats",
+						"sw": "Muundo unaolingana na GIS na CAD"
+					},
+					{
+						"en": "Surveyor-certified deliverables",
+						"sw": "Matokeo yaliyothibitishwa na mchunguzi"
+					}
+				],
+				"items": [
+					{
+						"title": {
+							"en": "Bathymetric contour maps",
+							"sw": "Ramani za kontura za bathymetric"
+						},
+						"format": {
+							"en": "CAD / GIS",
+							"sw": "CAD / GIS"
+						},
+						"icon": "map-legend",
+						"image": {
+							"en": "/media/deliverables/bathymetric-contour-maps.jpg",
+							"sw": "/media/deliverables/bathymetric-contour-maps.jpg"
+						},
+						"description": {
+							"en": "Detailed depth contour maps in CAD and GIS formats for engineering design and planning.",
+							"sw": "Ramani za kontura za kina za kina katika muundo wa CAD na GIS kwa muundo wa uhandisi na upangaji."
+						}
+					},
+					{
+						"title": {
+							"en": "Digital Depth Models (DDM / DEM)",
+							"sw": "Mifano ya Kijitali ya Kina (DDM / DEM)"
+						},
+						"format": {
+							"en": "GeoTIFF / ASC",
+							"sw": "GeoTIFF / ASC"
+						},
+						"icon": "axis-z-arrow-lock",
+						"image": {
+							"en": "/media/deliverables/digital-depth-models.jpg",
+							"sw": "/media/deliverables/digital-depth-models.jpg"
+						},
+						"description": {
+							"en": "High-resolution digital depth models and DEMs for volume calculations and 3D visualization.",
+							"sw": "Mifano ya kijitali ya kina ya mwonekano wa juu na DEMs kwa hesabu za kiasi na onyesho ya 3D."
+						}
+					},
+					{
+						"title": {
+							"en": "Reservoir volume & capacity calculations",
+							"sw": "Hesabu za kiasi & uwezo wa mifereji"
+						},
+						"format": {
+							"en": "Excel + PDF",
+							"sw": "Excel + PDF"
+						},
+						"icon": "cube-outline",
+						"image": {
+							"en": "/media/deliverables/reservoir-volume-and-capacity-calculations.jpg",
+							"sw": "/media/deliverables/reservoir-volume-and-capacity-calculations.jpg"
+						},
+						"description": {
+							"en": "Accurate reservoir capacity and volume calculations with stage-storage curves.",
+							"sw": "Hesabu sahihi za uwezo wa hifadhi na kiasi cha mifereji na mianyo ya kiwango-kihifadhi."
+						}
+					},
+					{
+						"title": {
+							"en": "Sedimentation analysis reports",
+							"sw": "Ripoti za uchambuzi wa sedimentation"
+						},
+						"format": {
+							"en": "PDF Report",
+							"sw": "Ripoti ya PDF"
+						},
+						"icon": "chart-histogram",
+						"image": {
+							"en": "/media/deliverables/sedimentation-analysis-reports.jpg",
+							"sw": "/media/deliverables/sedimentation-analysis-reports.jpg"
+						},
+						"description": {
+							"en": "Comprehensive sedimentation analysis with volume loss calculations and rate estimates.",
+							"sw": "Uchambuzi kamili wa sedimentation na hesabu za upotevu wa kiasi na makadirio ya mwendo."
+						}
+					},
+					{
+						"title": {
+							"en": "Cross-section profiles of river/dam beds",
+							"sw": "Mifano ya cross-section ya chini ya mito/mabwawa"
+						},
+						"format": {
+							"en": "CAD / PDF",
+							"sw": "CAD / PDF"
+						},
+						"icon": "vector-square",
+						"image": {
+							"en": "/media/deliverables/cross-section-profiles.jpg",
+							"sw": "/media/deliverables/cross-section-profiles.jpg"
+						},
+						"description": {
+							"en": "Detailed cross-section profiles showing underwater terrain for engineering analysis.",
+							"sw": "Mifano ya kina ya cross-section inayoonya ardhi ya chini ya maji kwa uchambuzi wa uhandisi."
+						}
+					},
+					{
+						"title": {
+							"en": "Geo-referenced survey datasets",
+							"sw": "Dataset za uchunguzi zilizorejea eneo"
+						},
+						"format": {
+							"en": "SHP / DWG",
+							"sw": "SHP / DWG"
+						},
+						"icon": "database-outline",
+						"image": {
+							"en": "/media/deliverables/georeferenced-survey-datasets.jpg",
+							"sw": "/media/deliverables/georeferenced-survey-datasets.jpg"
+						},
+						"description": {
+							"en": "Complete geo-referenced datasets in Shapefile and DWG formats for GIS integration.",
+							"sw": "Dataset kamili zilizorejea eneo katika muundo wa Shapefile na DWG kwa ujumuishaji wa GIS."
+						}
+					},
+					{
+						"title": {
+							"en": "Technical hydrographic report",
+							"sw": "Ripoti ya kiufundi ya hydrographic"
+						},
+						"format": {
+							"en": "PDF",
+							"sw": "PDF"
+						},
+						"icon": "file-document-outline",
+						"image": {
+							"en": "/media/deliverables/technical-hydrographic-reports.jpg",
+							"sw": "/media/deliverables/technical-hydrographic-reports.jpg"
+						},
+						"description": {
+							"en": "Full technical report with methodology, results, accuracy statements, and recommendations.",
+							"sw": "Ripoti kamili ya kiufundi na mbinu, matokeo, maoni ya usahihi, na mapendekezo."
+						}
+					}
+				],
+				"tone": "surface",
+				"id": ""
+			}
+		},
+		{
 			"discriminant": "cardGrid",
 			"value": {
 				"tag": {
@@ -315,6 +601,392 @@
 				"cardDensity": "comfortable",
 				"cardIconSize": "md",
 				"id": ""
+			}
+		},
+		{
+			"discriminant": "bathyLimitations",
+			"value": {
+				"tag": {
+					"en": "Transparency",
+					"sw": "Uwazi"
+				},
+				"headline": {
+					"en": "TECHNICAL LIMITATIONS (TRUST BUILDER)",
+					"sw": "VIPINGAMIZI VYA KIUFUNDI (KUJENGA AMANA)"
+				},
+				"description": {
+					"en": "Bathymetric accuracy depends on:",
+					"sw": "Usahihi wa bathymetric unategemea:"
+				},
+				"factors": [
+					{
+						"en": "Water turbidity and clarity",
+						"sw": "Kivuli na uwazi wa maji"
+					},
+					{
+						"en": "Depth range and sonar frequency",
+						"sw": "Kipimo cha kina na frequency ya sonar"
+					},
+					{
+						"en": "Vessel movement stability",
+						"sw": "Utulivu wa mwendo wa meli"
+					},
+					{
+						"en": "Wind and surface conditions",
+						"sw": "Hali ya upepo na uso"
+					}
+				],
+				"outputs": [
+					{
+						"en": "Depth accuracy: centimetre to decimetre range (depending on conditions)",
+						"sw": "Usahihi wa kina: kipimo cha sentimita hadi desimita (kulingana na hali)"
+					},
+					{
+						"en": "Full 3D surface modelling achievable for engineering use",
+						"sw": "Uundaji wa mfano wa 3D wa uso unayowezekana kwa matumizi ya uhandisi"
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "bathyDamsLakes",
+			"value": {
+				"tag": {
+					"en": "Water Infrastructure & Environment",
+					"sw": "Miundombinu ya Maji na Mazingira"
+				},
+				"headline": {
+					"en": "DAMS, LAKES, SEA & OCEAN",
+					"sw": "MABWAWA, MAZIWA, BAHARI NA OCEAN"
+				},
+				"description": {
+					"en": "Our expertise is especially critical for the management and maintenance of dams, lakes, sea, and oceans. We provide data that helps clients:",
+					"sw": "Utaalam wetu ni muhimu hasa kwa usimamizi na matengenezo ya mabwawa, maziwa, bahari, na ocean. Tunatoa data inayowasaidia wateja:"
+				},
+				"images": [
+					"/media/surveying/bathymetric-surveys/bathymetric-surveys-10.jpg",
+					"/media/surveying/bathymetric-surveys/bathymetric-surveys-11.jpg"
+				],
+				"items": [
+					{
+						"icon": "chart-bubble",
+						"title": {
+							"en": "Monitor Siltation & Sediment",
+							"sw": "Fuatilia Siltation na Mashapo"
+						},
+						"description": {
+							"en": "Monitor siltation and sediment build-up",
+							"sw": "Fuatilia mkusanyiko wa siltation na mashapo"
+						}
+					},
+					{
+						"icon": "water",
+						"title": {
+							"en": "Assess Dam Storage Capacity",
+							"sw": "Tathmini Uwezo wa Hifadhi wa Bwawa"
+						},
+						"description": {
+							"en": "Assess dam storage capacity and volume",
+							"sw": "Tathmini uwezo wa hifadhi na kiasi cha bwawa"
+						}
+					},
+					{
+						"icon": "waterfall",
+						"title": {
+							"en": "Evaluate Structural Risks",
+							"sw": "Tathmini Hatari za Kimuundo"
+						},
+						"description": {
+							"en": "Evaluate structural risks and identify erosion zones",
+							"sw": "Tathmini hatari za kimuundo na tambua maeneo ya mmomonyoko"
+						}
+					},
+					{
+						"icon": "waterfall",
+						"title": {
+							"en": "Pre-/Post-Dredging Assessments",
+							"sw": "Tathmini za Kabla/Baada ya Dredging"
+						},
+						"description": {
+							"en": "Conduct pre- and post-dredging assessments",
+							"sw": "Fanya tathmini za kabla na baada ya dredging"
+						}
+					},
+					{
+						"icon": "arrow-expand-horizontal",
+						"title": {
+							"en": "Plan for Expansion or Rehabilitation",
+							"sw": "Panga Upanuzi au Urekebishaji"
+						},
+						"description": {
+							"en": "Plan for dam expansion or rehabilitation",
+							"sw": "Panga upanuzi wa bwawa au urekebishaji"
+						}
+					},
+					{
+						"icon": "leaf-maple",
+						"title": {
+							"en": "Track Ecological Changes",
+							"sw": "Fuatilia Mabadiliko ya Ikolojia"
+						},
+						"description": {
+							"en": "Track ecological and environmental changes",
+							"sw": "Fuatilia mabadiliko ya ikolojia na mazingira"
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "bathyApplications",
+			"value": {
+				"tag": {
+					"en": "Key Applications",
+					"sw": "Matumizi Muhimu"
+				},
+				"headline": {
+					"en": "Our Applications of Bathymetric Surveys at SmartGrid Surveying",
+					"sw": "Matumizi Yetu ya Uchunguzi wa Bathymetric katika SmartGrid Surveying"
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"icon": "water-well",
+						"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-13.jpg",
+						"title": {
+							"en": "Depth Analysis",
+							"sw": "Uchambuzi wa Kina"
+						},
+						"description": {
+							"en": "Precise measurement of water depths for navigation, construction, and resource planning.",
+							"sw": "Kipimo sahihi cha kina cha maji kwa urambazaji, ujenzi, na upangaji wa rasilimali."
+						}
+					},
+					{
+						"icon": "water-pump",
+						"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-02.jpg",
+						"title": {
+							"en": "Water Resource Management",
+							"sw": "Usimamizi wa Rasilimali za Maji"
+						},
+						"description": {
+							"en": "Data-driven management of water supply, irrigation, and reservoir operations.",
+							"sw": "Usimamizi unaoendeshwa na data wa usambazaji wa maji, umwagiliaji, na shughuli za hifadhi."
+						}
+					},
+					{
+						"icon": "fish",
+						"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-12.png",
+						"title": {
+							"en": "Aquatic Habitat Study",
+							"sw": "Utafiti wa Makazi ya Majini"
+						},
+						"description": {
+							"en": "Mapping underwater terrain to support ecological research and conservation efforts.",
+							"sw": "Uchoraji ramani wa ardhi ya chini ya maji kusaidia utafiti wa ikolojia na juhudi za uhifadhi."
+						}
+					},
+					{
+						"icon": "waves-arrow-right",
+						"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-04.jpg",
+						"title": {
+							"en": "Disaster Risk Reduction (Flood Modeling)",
+							"sw": "Kupunguza Hatari ya Maafa (Uundaji wa Mafuriko)"
+						},
+						"description": {
+							"en": "Using bathymetric data to model flood patterns and assess flood risks.",
+							"sw": "Kutumia data ya bathymetric kuiga mifumo ya mafuriko na kutathmini hatari za mafuriko."
+						}
+					},
+					{
+						"icon": "leaf",
+						"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-05.jpg",
+						"title": {
+							"en": "Environmental Impact Assessment",
+							"sw": "Tathmini ya Athari kwa Mazingira"
+						},
+						"description": {
+							"en": "Evaluating the potential environmental effects of projects on water bodies.",
+							"sw": "Kutathmini athari zinazowezekana za kimazingira za miradi kwenye miili ya maji."
+						}
+					},
+					{
+						"icon": "chart-waterfall",
+						"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-06.jpg",
+						"title": {
+							"en": "Hydrographic Surveys",
+							"sw": "Uchunguzi wa Hydrographic"
+						},
+						"description": {
+							"en": "Comprehensive mapping of water bodies for nautical charting and marine navigation.",
+							"sw": "Uchoraji kamili wa ramani za miili ya maji kwa chati za bahari na urambazaji wa baharini."
+						}
+					},
+					{
+						"icon": "waterfall",
+						"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-08.png",
+						"title": {
+							"en": "Dam Engineering",
+							"sw": "Uhandisi wa Mabwawa"
+						},
+						"description": {
+							"en": "Critical data for the design, safety inspection, and maintenance of dams.",
+							"sw": "Data muhimu kwa muundo, ukaguzi wa usalama, na matengenezo ya mabwawa."
+						}
+					},
+					{
+						"icon": "flash",
+						"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-03.png",
+						"title": {
+							"en": "Hydroelectric Power",
+							"sw": "Nishati ya Hydroelectric"
+						},
+						"description": {
+							"en": "Supporting site assessment and operational efficiency for hydropower projects.",
+							"sw": "Kusaidia tathmini ya tovuti na ufanisi wa kiutendaji kwa miradi ya umeme wa maji."
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "bathyBeforeAfter",
+			"value": {
+				"tag": {
+					"en": "Value Demonstration",
+					"sw": "Onyesho la Thamani"
+				},
+				"headline": {
+					"en": "BEFORE vs AFTER SURVEY VALUE",
+					"sw": "KABLA vs BADA YA THAMANI YA UCHUNGUZI"
+				},
+				"flipHint": {
+					"en": "Click or tap to flip",
+					"sw": "Bofya au gusa kugeuza"
+				},
+				"before": {
+					"label": {
+						"en": "BEFORE SMARTGRID",
+						"sw": "KABLA YA SMARTGRID"
+					},
+					"tagline": {
+						"en": "Unknown underwater terrain = engineering risk",
+						"sw": "Ardhi ya chini ya maji isiyojulikana = hatari ya uhandisi"
+					},
+					"items": [
+						{
+							"en": "Unknown reservoir capacity",
+							"sw": "Uwezo wa mifereji haujulikani"
+						},
+						{
+							"en": "Unmapped sediment buildup",
+							"sw": "Mkusanyiko wa mashapo haujachorwa ramani"
+						},
+						{
+							"en": "High engineering uncertainty",
+							"sw": "Wasawazaji wa uhandisi wengi"
+						},
+						{
+							"en": "Flood risk unknown",
+							"sw": "Hatari ya mafuriko haijulikani"
+						}
+					]
+				},
+				"after": {
+					"label": {
+						"en": "AFTER SMARTGRID",
+						"sw": "BADA YA SMARTGRID"
+					},
+					"tagline": {
+						"en": "Data-driven decisions for water infrastructure",
+						"sw": "Maamuzi yaliyodumishwa na data kwa miundombinu ya maji"
+					},
+					"items": [
+						{
+							"en": "Accurate underwater terrain model",
+							"sw": "Mfano sahihi wa ardhi ya chini ya maji"
+						},
+						{
+							"en": "Verified dam/reservoir capacity",
+							"sw": "Uwezo wa bwawa/mifereji ulithibitishwa"
+						},
+						{
+							"en": "Sedimentation quantified",
+							"sw": "Sedimentation imekadiria"
+						},
+						{
+							"en": "Engineering decisions backed by data",
+							"sw": "Maamuzi ya uhandisi yaliyodumishwa na data"
+						}
+					]
+				},
+				"id": "before-after"
+			}
+		},
+		{
+			"discriminant": "bathyFinalCta",
+			"value": {
+				"tag": {
+					"en": "Ready When You Are",
+					"sw": "Tayari Wakati Wote"
+				},
+				"headline": {
+					"en": "READY TO SURVEY YOUR WATER BODY?",
+					"sw": "TAYARI KUCHUNGUZA KIOTU CHAKO CHA MAJI?"
+				},
+				"description": {
+					"en": "We respond quickly to urgent engineering and environmental survey needs.",
+					"sw": "Tunajibu kwa haraka mahitaji ya uchunguzi ya uhandisi na mazingira ya dharura."
+				},
+				"note": {
+					"en": "Rapid mobilisation • Kenya-wide coverage • Engineering-grade deliverables",
+					"sw": "Mobilizasi haraka • Uwanja wote Kenya • Matokeo ya kiwango cha uhandisi"
+				},
+				"actions": [
+					{
+						"icon": "email-outline",
+						"label": {
+							"en": "Request Bathymetric Quote",
+							"sw": "Omba Bei ya Bathymetric"
+						},
+						"description": {
+							"en": "Receive a detailed proposal with scope, timeline, and pricing",
+							"sw": "Pata muhtasari wa kina na muda na bei"
+						},
+						"href": "mailto:smartgridsurveying@gmail.com?subject=Request Bathymetric Quote&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a Bathymetric Survey Quote. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+					},
+					{
+						"icon": "calendar-clock",
+						"label": {
+							"en": "Book Site Inspection",
+							"sw": "Book Site Inspection"
+						},
+						"description": {
+							"en": "Schedule a site visit with our hydrographic survey team",
+							"sw": "Panga ziara ya tovuti na timu yetu ya uchunguzi wa hydrographic"
+						},
+						"href": "mailto:smartgridsurveying@gmail.com?subject=Book Site Inspection&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a site inspection for a Bathymetric Survey. Please get in touch to discuss.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0A%0D%0AThank you."
+					},
+					{
+						"icon": "whatsapp",
+						"label": {
+							"en": "WhatsApp Hydrographic Engineer",
+							"sw": "WhatsApp Mhandisi wa Hydrographic"
+						},
+						"description": {
+							"en": "Instant chat with our technical team",
+							"sw": "Mazungumzo ya papo hapo na timu yetu ya kiufundi"
+						},
+						"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20speak%20with%20a%20hydrographic%20engineer%20about%20bathymetric%20survey%20for%20my%20project.%20Please%20advise%20on%20next%20steps."
+					}
+				],
+				"id": "get-started"
 			}
 		}
 	]

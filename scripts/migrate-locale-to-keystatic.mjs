@@ -57,6 +57,171 @@ function sharedValue(enNode, swNode, key, where) {
 	return en;
 }
 
+	// M11 batch 8 — bathymetric-surveys page (2026-09-18): the seven bespoke
+// tails → unique sections. Phase keys, icons, image paths and hrefs
+// shared; titles, descriptions, points, factors, outputs localized. The
+// hardcoded limitations card headings are not migrated (legacy quirk).
+function bathyWorkflowBuild(en, sw, where) {
+	const enSteps = en.steps ?? [];
+	const swSteps = sw.steps ?? [];
+	if (!Array.isArray(swSteps) || swSteps.length !== enSteps.length) {
+		gap(where, `step count diverged (en=${enSteps.length} sw=${swSteps?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		steps: enSteps.map((step, i) => {
+			const swStep = swSteps[i] ?? {};
+			return {
+				phase: sharedValue(step, swStep, "phase", `${where}.steps[${i}]`) ?? "",
+				label: { en: reqText(step.label, `${where}.steps[${i}].label.en`), sw: reqText(swStep.label, `${where}.steps[${i}].label.sw`) },
+				description: { en: reqText(step.description, `${where}.steps[${i}].description.en`), sw: reqText(swStep.description, `${where}.steps[${i}].description.sw`) },
+			};
+		}),
+		outcome: { en: optText(en.outcome), sw: optText(sw.outcome) },
+		id: "",
+	};
+}
+
+function bathyEquipmentBuild(en, sw, where) {
+	const enImages = en.images ?? [];
+	const swImages = sw.images ?? [];
+	if (!Array.isArray(swImages) || swImages.length !== enImages.length) {
+		gap(where, `image count diverged (en=${enImages.length} sw=${swImages?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		images: enImages.map((src, i) => sharedValue({ v: src }, { v: swImages[i] }, "v", `${where}.images[${i}]`) ?? ""),
+		id: "",
+	};
+}
+
+function bathyLimitationsBuild(en, sw, where) {
+	const bullets = (list, swList, key) => {
+		const enList = list ?? [];
+		const swL = swList ?? [];
+		if (!Array.isArray(swL) || swL.length !== enList.length) {
+			gap(where, `${key} count diverged (en=${enList.length} sw=${swL?.length})`);
+		}
+		return enList.map((bullet, i) => ({
+			en: reqText(bullet, `${where}.${key}[${i}].en`),
+			sw: reqText(swL[i], `${where}.${key}[${i}].sw`),
+		}));
+	};
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		factors: bullets(en.factors, sw.factors, "factors"),
+		outputs: bullets(en.outputs, sw.outputs, "outputs"),
+		id: "",
+	};
+}
+
+function bathyDamsLakesBuild(en, sw, where) {
+	const enImages = en.images ?? [];
+	const swImages = sw.images ?? [];
+	if (!Array.isArray(swImages) || swImages.length !== enImages.length) {
+		gap(where, `image count diverged (en=${enImages.length} sw=${swImages?.length})`);
+	}
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		images: enImages.map((src, i) => sharedValue({ v: src }, { v: swImages[i] }, "v", `${where}.images[${i}]`) ?? ""),
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+			};
+		}),
+		id: "",
+	};
+}
+
+function bathyApplicationsBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				image: sharedValue(item, swItem, "image", `${where}.items[${i}]`) ?? "",
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+			};
+		}),
+		id: "",
+	};
+}
+
+function bathyBeforeAfterBuild(en, sw, where) {
+	const side = (node, swNode, key) => {
+		const enItems = node?.items ?? [];
+		const swItems = swNode?.items ?? [];
+		if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+			gap(where, `${key}.items count diverged (en=${enItems.length} sw=${swItems?.length})`);
+		}
+		return {
+			label: { en: reqText(node?.label, `${where}.${key}.label.en`), sw: reqText(swNode?.label, `${where}.${key}.label.sw`) },
+			tagline: { en: optText(node?.tagline), sw: optText(swNode?.tagline) },
+			items: enItems.map((point, i) => ({
+				en: reqText(point, `${where}.${key}.items[${i}].en`),
+				sw: reqText(swItems[i], `${where}.${key}.items[${i}].sw`),
+			})),
+		};
+	};
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		flipHint: { en: optText(en.flipHint), sw: optText(sw.flipHint) },
+		before: side(en.before, sw.before, "before"),
+		after: side(en.after, sw.after, "after"),
+		id: "before-after",
+	};
+}
+
+function bathyFinalCtaBuild(en, sw, where) {
+	const enActions = en.actions ?? [];
+	const swActions = sw.actions ?? [];
+	if (!Array.isArray(swActions) || swActions.length !== enActions.length) {
+		gap(where, `action count diverged (en=${enActions.length} sw=${swActions?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		note: { en: optText(en.note), sw: optText(sw.note) },
+		actions: enActions.map((action, i) => {
+			const swAction = swActions[i] ?? {};
+			return {
+				icon: sharedValue(action, swAction, "icon", `${where}.actions[${i}]`) ?? "",
+				label: { en: reqText(action.label, `${where}.actions[${i}].label.en`), sw: reqText(swAction.label, `${where}.actions[${i}].label.sw`) },
+				description: { en: optText(action.description), sw: optText(swAction.description) },
+				href: sharedValue(action, swAction, "href", `${where}.actions[${i}]`) ?? "",
+			};
+		}),
+		id: "get-started",
+	};
+}
+
 // --- Page mappings -----------------------------------------------------------
 // Each entry mirrors one legacy wrapper: content keys from the locale
 // namespace plus the presentation props the wrapper hardcodes (with source).
@@ -2402,10 +2567,16 @@ const PAGES = {
 	// legacy tails (see route wiring): WorkflowSection workflow, bespoke
 	// equipment/deliverables/limitations/beforeAfter/finalCta, dams leadImages
 	// grid, applications mediaBadged grid.
+	// M11 batch 8 (2026-09-18): the eight tails migrate as unique sections
+	// (`bathyWorkflow`, `bathyEquipment`, `bathyLimitations`,
+	// `bathyDamsLakes`, `bathyApplications`, `bathyBeforeAfter`,
+	// `bathyFinalCta`) plus shared `deliverables` — the whole page is
+	// Keystatic-owned in page order (M11+M12 together). Nothing stays
+	// skipped.
 	"bathymetric-surveys": {
 		namespace: "surveying/bathymetric-surveys",
 		title: "Bathymetric Surveys",
-		skipped: ["bathymetricWorkflow", "equipmentTechnology", "deliverables", "technicalLimitations", "beforeAfter", "finalCta", "damsLakesSeaOcean", "applications"],
+		skipped: [],
 		sections: [
 			{
 				discriminant: "hero",
@@ -2495,6 +2666,32 @@ const PAGES = {
 				},
 			},
 			{
+				discriminant: "bathyWorkflow",
+				from: "bathymetricWorkflow",
+				// Legacy: BathymetricWorkflowSection → <WorkflowSection
+				// {...section} /> (no domain phase styles on this page).
+				build(en, sw, where) {
+					return bathyWorkflowBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "bathyEquipment",
+				from: "equipmentTechnology",
+				// Legacy: EquipmentTechnologySection (header + staggered
+				// image collage).
+				build(en, sw, where) {
+					return bathyEquipmentBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "deliverables",
+				from: "deliverables",
+				// Legacy: BathymetricDeliverablesSection → <Deliverables
+				// ns="surveying/bathymetric-surveys" className="bg-surface" />
+				// (tone surface).
+				build: deliverablesBuild("surface"),
+			},
+			{
 				discriminant: "cardGrid",
 				from: "whySmartGridBathymetric",
 				// Legacy: WhySmartGridBathymetricSection → <CardGrid
@@ -2529,9 +2726,55 @@ const PAGES = {
 					};
 				},
 			},
+			{
+				discriminant: "bathyLimitations",
+				from: "technicalLimitations",
+				// Legacy: TechnicalLimitationsSection (accuracy factors +
+				// typical outputs; card headings hardcoded — not migrated).
+				build(en, sw, where) {
+					return bathyLimitationsBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "bathyDamsLakes",
+				from: "damsLakesSeaOcean",
+				// Legacy: DamsLakesSection → <CardGrid columns={3}
+				// leadImages={images.slice(0, 2)} />.
+				build(en, sw, where) {
+					return bathyDamsLakesBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "bathyApplications",
+				from: "applications",
+				// Legacy: ApplicationsSection → <CardGrid columns={4}
+				// tone="surface" mediaBadged />.
+				build(en, sw, where) {
+					return bathyApplicationsBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "bathyBeforeAfter",
+				from: "beforeAfter",
+				// Legacy: BathymetricBeforeAfterSection (flip card; ferry
+				// icon + watermark stay in the wrapper).
+				build(en, sw, where) {
+					return bathyBeforeAfterBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "bathyFinalCta",
+				from: "finalCta",
+				// Legacy: FinalCtaSection → <FinalCta id="get-started"
+				// descriptionTone="accent" watermark="water" ... />.
+				build(en, sw, where) {
+					return bathyFinalCtaBuild(en, sw, where);
+				},
+			},
 		],
 	},
-	// M7 batch 8a: resource-mapping. Two sections migrate in page order —
+
+// M7 batch 8a: resource-mapping. Two sections migrate in page order —
 	// `hero` (shared Hero, default bottom layout, dual pills) +
 	// `whySmartGridStandsOut` (cardGrid, columns 4, centred, surface).
 	// Tails stay legacy: WhatIs (bespoke items + closingStatement),
