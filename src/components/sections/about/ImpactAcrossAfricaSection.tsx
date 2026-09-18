@@ -36,23 +36,37 @@ const ProjectsGlobe = dynamic(() => import("@/components/ui/ProjectsGlobe"), {
 });
 interface WhyChooseUsContent {
 	icon?: string | null;
-	title: string;
-	items: string[];
+	title?: string | null;
+	items?: (string | null)[] | null;
 }
 
 interface ImpactAcrossAfricaContent {
 	tag?: string | null;
-	headline: string;
+	headline?: string | null;
 	image?: string | null;
-	description?: string;
+	description?: string | null;
 	whyChooseUs?: WhyChooseUsContent | null;
 }
 
-export function ImpactAcrossAfricaSection() {
+export interface ImpactAcrossAfricaData {
+	tag?: string | null;
+	headline?: string | null;
+	image?: string | null;
+	description?: string | null;
+	whyChooseUs?: WhyChooseUsContent | null;
+}
+
+export function ImpactAcrossAfricaSection({ data }: { data?: ImpactAcrossAfricaData | null } = {}) {
 	const { t } = useTranslation(["about"]);
-	const section = t("about:impactAcrossAfrica", {
-		returnObjects: true,
-	}) as unknown as ImpactAcrossAfricaContent;
+	// Keystatic-owned content when `data` is provided (M11 `aboutImpact`
+	// unique section); legacy `about:impactAcrossAfrica` locale strings
+	// otherwise. The WebGL globe stays client-only (`dynamic ssr:false`,
+	// spinner fallback on the server) — only strings and the image path
+	// are data.
+	const section = (data ??
+		(t("about:impactAcrossAfrica", {
+			returnObjects: true,
+		}) as unknown as ImpactAcrossAfricaContent)) as ImpactAcrossAfricaContent;
 	const hasImage = typeof section.image === "string" && section.image.startsWith("/");
 	const whyChooseUs = section.whyChooseUs;
 	const whyItems = Array.isArray(whyChooseUs?.items) ? whyChooseUs.items : [];
@@ -88,8 +102,8 @@ export function ImpactAcrossAfricaSection() {
 					<FadeUp delay={0.1} className="lg:col-span-6">
 						<SectionHeader
 							tag={section.tag ?? undefined}
-							headline={section.headline}
-							description={section.description}
+							headline={section.headline ?? ""}
+							description={section.description ?? undefined}
 						/>
 
 						{whyChooseUs && (

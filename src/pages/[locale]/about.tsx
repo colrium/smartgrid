@@ -24,17 +24,17 @@ type PageProps = {
 };
 
 /**
- * Sections migrated to Keystatic in page order (see the `about` mapping in
- * `scripts/migrate-locale-to-keystatic.mjs`): hero, ourStory, servicesByImages,
- * dronePhotographyimageSlider, landSurveyingImages, whyChooseSmartGrid,
- * projectsCompletedImagesMasonry. Legacy tails (aerialSurveying, landSurveying,
- * impactAcrossAfrica) sit at fixed positions between them, so the route renders
- * each Keystatic section by index instead of one whole PageBuilderDocument.
- * Stored order is respected within the Keystatic slots; if an edit changes the
- * section COUNT (add/remove), the route falls back to legacy rather than
- * silently dropping or misplacing sections — keep this in sync with the mapping.
+ * Sections migrated to Keystatic in legacy page order (see the `about`
+ * mapping in `scripts/migrate-locale-to-keystatic.mjs`): hero, ourStory,
+ * aboutAerialSurveying, servicesByImages, dronePhotographyimageSlider,
+ * aboutLandSurveying, landSurveyingImages, aboutImpact, whyChooseSmartGrid,
+ * projectsCompletedImagesMasonry (M11 batch 4, 2026-09-18 — entry order IS
+ * page order). The Keystatic branch destructures them once into named slots
+ * (no index literals) at the legacy positions. If an edit changes the
+ * section COUNT, the route falls back to legacy rather than misplacing
+ * sections — keep this in sync with the mapping.
  */
-const KEYSTATIC_SECTION_COUNT = 7;
+const KEYSTATIC_SECTION_COUNT = 10;
 
 function orderedSections(page: ResolvedKeystaticPage) {
 	if (page.sections.length !== KEYSTATIC_SECTION_COUNT) {
@@ -47,32 +47,44 @@ function orderedSections(page: ResolvedKeystaticPage) {
 }
 
 const Page: NextPage<PageProps> = ({ keystaticPage }) => {
-	// Migration source switch (M3/M7): Keystatic owns the seven migrated
-	// sections only when the slug is allowlisted via `KEYSTATIC_PAGES` and the
-	// entry is published. Otherwise the legacy locale-JSON implementation
-	// renders unchanged.
+	// Migration source switch (M3/M7, completed M11 batch 4): Keystatic owns
+	// the ten migrated sections only when the slug is allowlisted via
+	// `KEYSTATIC_PAGES` and the entry is published. Otherwise the legacy
+	// locale-JSON implementation renders unchanged.
 	const sections = keystaticPage ? orderedSections(keystaticPage) : null;
 
 	if (keystaticPage && sections) {
 		const locale = keystaticPage.locale;
-		const renderAt = (index: number) => {
-			const section = sections[index];
-			return renderSection(section.id, section.value, locale, section.key);
-		};
+		// M12: entry order IS page order — destructure once into named
+		// slots, no index literals. Positions below mirror the legacy
+		// branch; the count guard in `orderedSections` keeps a mismatch
+		// on legacy.
+		const [
+			hero,
+			ourStory,
+			aerialSurveying,
+			servicesByImages,
+			droneSlider,
+			landSurveying,
+			landSurveyingImages,
+			impact,
+			whyChoose,
+			masonry,
+		] = sections.map((section) => renderSection(section.id, section.value, locale, section.key));
 		return (
 			<div className="relative">
 				<PageHead pageName="about" />
 				<div className="flex flex-col min-h-screen" data-keystatic-page={keystaticPage.slug}>
-					{renderAt(0)}
-					{renderAt(1)}
-					<AerialSurveyingSection />
-					{renderAt(2)}
-					{renderAt(3)}
-					<LandSurveyingSection />
-					{renderAt(4)}
-					<ImpactAcrossAfricaSection />
-					{renderAt(5)}
-					{renderAt(6)}
+					{hero}
+					{ourStory}
+					{aerialSurveying}
+					{servicesByImages}
+					{droneSlider}
+					{landSurveying}
+					{landSurveyingImages}
+					{impact}
+					{whyChoose}
+					{masonry}
 				</div>
 			</div>
 		);

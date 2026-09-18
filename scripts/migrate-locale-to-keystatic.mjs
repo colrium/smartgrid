@@ -392,6 +392,84 @@ function companyProfileViewerBuild(en, sw, where) {
 	};
 }
 
+// M11 batch 4 — about page (2026-09-18): `about:aerialSurveying` →
+// `aboutAerialSurveying`. Titles, descriptions and popup copy are
+// localized (9 items each); presentation stays in the wrapper.
+function aboutAerialSurveyingBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+				popupContent: { en: reqText(item.popupContent, `${where}.items[${i}].popupContent.en`), sw: reqText(swItem.popupContent, `${where}.items[${i}].popupContent.sw`) },
+			};
+		}),
+		id: "",
+	};
+}
+
+// M11 batch 4 — about page (2026-09-18): `about:landSurveying` →
+// `aboutLandSurveying`. The `<primary>` description markup travels
+// verbatim; the unrendered legacy `itemsTitle` key is dropped (noted in
+// the registry definition).
+function aboutLandSurveyingBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+			};
+		}),
+		id: "",
+	};
+}
+
+// M11 batch 4 — about page (2026-09-18): `about:impactAcrossAfrica` →
+// `aboutImpact`. The image path and card icon are shared; header copy,
+// card title and points are localized.
+function aboutImpactBuild(en, sw, where) {
+	const why = en.whyChooseUs ?? {};
+	const swWhy = sw.whyChooseUs ?? {};
+	const enPoints = why.items ?? [];
+	const swPoints = swWhy.items ?? [];
+	if (!Array.isArray(swPoints) || swPoints.length !== enPoints.length) {
+		gap(where, `whyChooseUs.items count diverged (en=${enPoints.length} sw=${swPoints?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		image: sharedValue(en, sw, "image", where) ?? "",
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		whyChooseUs: {
+			icon: sharedValue(why, swWhy, "icon", `${where}.whyChooseUs`) ?? "",
+			title: { en: reqText(why.title, `${where}.whyChooseUs.title.en`), sw: reqText(swWhy.title, `${where}.whyChooseUs.title.sw`) },
+			items: enPoints.map((point, i) => ({
+				en: reqText(point, `${where}.whyChooseUs.items[${i}].en`),
+				sw: reqText(swPoints[i], `${where}.whyChooseUs.items[${i}].sw`),
+			})),
+		},
+		id: "",
+	};
+}
+
 // M7 batch 3: `about:*` gallery sections → `gallery`. Legacy items are
 // either bare image paths (slider/masonry) or `{image,title?,label?}`
 // objects (overlay grids); both normalize to captioned items. Image paths
@@ -1360,10 +1438,14 @@ const PAGES = {
 	// models neither), LandSurveyingSection (`<primary>` inline markup +
 	// `itemsTitle`: no cardGrid equivalent), ImpactAcrossAfricaSection
 	// (client-only ProjectsGlobe, never a registry branch).
+	// M11 batch 4 (2026-09-18): the three tails migrate as unique sections
+	// (`aboutAerialSurveying`, `aboutLandSurveying`, `aboutImpact`) in page
+	// order — the whole page is Keystatic-owned (M11+M12 together).
+	// Nothing stays skipped.
 	"about": {
 		namespace: "about",
 		title: "About",
-		skipped: ["aerialSurveying", "landSurveying", "impactAcrossAfrica"],
+		skipped: [],
 		sections: [
 			{
 				discriminant: "hero",
@@ -1413,6 +1495,16 @@ const PAGES = {
 				},
 			},
 			{
+				discriminant: "aboutAerialSurveying",
+				from: "aerialSurveying",
+				// Legacy: AerialSurveyingSection → <CardGrid columns={3}
+				// align="center" tone="surface" fallbackIcons popupTrigger />
+				// (page-order position between ourStory and servicesByImages).
+				build(en, sw, where) {
+					return aboutAerialSurveyingBuild(en, sw, where);
+				},
+			},
+			{
 				discriminant: "gallery",
 				from: "servicesByImages",
 				// Legacy: ServicesByImagesSection → <Gallery layout="overlay" columns={4} />
@@ -1425,10 +1517,31 @@ const PAGES = {
 				build: galleryBuild({ layout: "slider", columns: "3", tone: "surface" }),
 			},
 			{
+				discriminant: "aboutLandSurveying",
+				from: "landSurveying",
+				// Legacy: LandSurveyingSection → <CardGrid columns={3} />
+				// with `check` header icons and `<primary>`-parsed
+				// description (page-order position between the drone
+				// slider and landSurveyingImages).
+				build(en, sw, where) {
+					return aboutLandSurveyingBuild(en, sw, where);
+				},
+			},
+			{
 				discriminant: "gallery",
 				from: "landSurveyingImages",
 				// Legacy: LandSurveyingImagesSection → <Gallery layout="overlay" columns={4} />
 				build: galleryBuild({ layout: "overlay", columns: "4", tone: "default" }),
+			},
+			{
+				discriminant: "aboutImpact",
+				from: "impactAcrossAfrica",
+				// Legacy: ImpactAcrossAfricaSection (client-only globe +
+				// why-choose-us card; page-order position between
+				// landSurveyingImages and whyChooseSmartGrid).
+				build(en, sw, where) {
+					return aboutImpactBuild(en, sw, where);
+				},
 			},
 			{
 				discriminant: "cardGrid",

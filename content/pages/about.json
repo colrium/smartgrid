@@ -74,6 +74,152 @@
 			}
 		},
 		{
+			"discriminant": "aboutAerialSurveying",
+			"value": {
+				"tag": {
+					"en": "Aerial Intelligence",
+					"sw": "Akili ya Angani"
+				},
+				"headline": {
+					"en": "AERIAL SURVEYING",
+					"sw": "UPIMAJI WA ANGANI"
+				},
+				"description": {
+					"en": "Drones have transformed the surveying industry—and we're leading the way. Smartgrid Surveying leverages aerial drones for mapping, 3D modeling, volumetrics, environmental assessments, and monitoring large or inaccessible areas. Beyond technical mapping, we offer professional drone photography for real estate, construction marketing, tourism, and events. Using drones equipped with RTK GPS and high-resolution sensors, we capture precise geospatial data that empowers engineers, developers, governments, and NGOs to make smarter decisions, faster.",
+					"sw": "Droni zimebadilisha tasnia ya upimaji—na sisi tunaongoza. Smartgrid Surveying hutumia droni za angani kwa uchoraji ramani, uundaji wa modeli 3D, kiasi, tathmini za mazingira, na ufuatiliaji wa maeneo makubwa au yasiyofikika. Zaidi ya uchoraji ramani wa kiufundi, tunatoa upigaji picha wa kitaalamu wa droni kwa mali isiyohamishika, uuzaji wa ujenzi, utalii, na matukio. Kwa kutumia droni zilizo na RTK GPS na vitambuzi vya azimio la juu, tunakamata data ya kijiografia sahihi inayowawezesha wahandisi, wasanidi, serikali, na NGO kufanya maamuzi mahiri, haraka."
+				},
+				"items": [
+					{
+						"title": {
+							"en": "Aerial Mapping",
+							"sw": "Uchoraji Ramani wa Angani"
+						},
+						"description": {
+							"en": "Accurate drone-based imagery for planning, documentation, and analysis.",
+							"sw": "Picha sahihi za droni kwa upangaji, uhifadhi wa nyaraka, na uchambuzi."
+						},
+						"popupContent": {
+							"en": "SmartGrid Surveying delivers ultra-precise aerial mapping using UAVs to generate georeferenced orthomosaics, topographic data, and planning-grade base maps. Our solutions support infrastructure, utilities, and land development with unmatched speed and accuracy.",
+							"sw": "SmartGrid Surveying hutoa uchoraji ramani wa angani wa usahihi wa hali ya juu kwa kutumia UAV kuzalisha orthomosaics zilizorejelewa kijiografia, data topografia, na ramani za msingi za kiwango cha upangaji. Suluhisho zetu zinasaidia miundombinu, huduma, na maendeleo ya ardhi kwa kasi na usahihi usio na kifani."
+						}
+					},
+					{
+						"title": {
+							"en": "Construction Monitoring",
+							"sw": "Ufuatiliaji wa Ujenzi"
+						},
+						"description": {
+							"en": "Track site activity using consistent, real-time aerial visuals.",
+							"sw": "Fuatilia shughuli za tovuti kwa kutumia picha za angani thabiti za wakati halisi."
+						},
+						"popupContent": {
+							"en": "SmartGrid offers site monitoring through high-resolution drone flyovers. Our automated flights provide weekly visual updates, detect deviations from schedule, and support decision-making for project managers and developers.",
+							"sw": "SmartGrid hutoa ufuatiliaji wa tovuti kupitia safari za ndege za droni za azimio la juu. Safari zetu za kiotomatiki hutoa sasisho za kila wiki, hugundua mkengeuko kutoka kwa ratiba, na kusaidia kufanya maamuzi kwa wasimamizi wa miradi na wasanidi."
+						}
+					},
+					{
+						"title": {
+							"en": "Environmental Monitoring",
+							"sw": "Ufuatiliaji wa Mazingira"
+						},
+						"description": {
+							"en": "Visualize ecological change and monitor conservation areas.",
+							"sw": "Ona mabadiliko ya ikolojia na ufuatilie maeneo ya uhifadhi."
+						},
+						"popupContent": {
+							"en": "Using UAVs, SmartGrid tracks land cover change, deforestation, erosion, and other ecological indicators. Our data supports impact assessments and regulatory compliance with repeatable, time-stamped visuals.",
+							"sw": "Kwa kutumia UAV, SmartGrid hufuatilia mabadiliko ya chanjo ya ardhi, ukataji miti, mmomonyoko, na viashiria vingine vya ikolojia. Data yetu inasaidia tathmini za athari na kufuata kanuni kwa picha za muda-thabiti zinazoweza kurudiwa."
+						}
+					},
+					{
+						"title": {
+							"en": "Agricultural Mapping",
+							"sw": "Uchoraji Ramani wa Kilimo"
+						},
+						"description": {
+							"en": "Drone-based multispectral data for crop health and farm optimization.",
+							"sw": "Data ya anga za multispectral kwa afya ya mazao na uboreshaji wa shamba."
+						},
+						"popupContent": {
+							"en": "SmartGrid empowers agronomists with data on crop health, plant stress, and irrigation patterns. We use NDVI and multispectral analysis to optimize input use and improve yield sustainability.",
+							"sw": "SmartGrid huwawezesha wataalamu wa kilimo kwa data kuhusu afya ya mazao, mkazo wa mimea, na mifumo ya umwagiliaji. Tunatumia uchambuzi wa NDVI na multispectral kuboresha matumizi ya pembejeo na kuimarisha uendelevu wa mavuno."
+						}
+					},
+					{
+						"title": {
+							"en": "3D Modeling",
+							"sw": "Uundaji wa Modeli 3D"
+						},
+						"description": {
+							"en": "Photorealistic 3D models to support planning and inspections.",
+							"sw": "Modeli za 3D za uhalisia wa picha kusaidia upangaji na ukaguzi."
+						},
+						"popupContent": {
+							"en": "We create detailed 3D mesh and textured models of terrain, buildings, and infrastructure. These models are BIM-ready and useful for design validation, inspection, and immersive planning.",
+							"sw": "Tunaunda modeli za mesh za 3D na zenye muundo wa eneo, majengo, na miundombinu. Modeli hizi ziko tayari kwa BIM na zinafaa kwa uthibitishaji wa muundo, ukaguzi, na upangaji wa kina."
+						}
+					},
+					{
+						"title": {
+							"en": "Infrastructure Planning",
+							"sw": "Upangaji wa Miundombinu"
+						},
+						"description": {
+							"en": "Route and terrain data for smart infrastructure layout.",
+							"sw": "Data ya njia na eneo kwa mpangilio mahiri wa miundombinu."
+						},
+						"popupContent": {
+							"en": "We map routes and sites using drone LiDAR and photogrammetry. This ensures smart siting of roads, pipelines, and urban developments while minimizing environmental disruption.",
+							"sw": "Tunachora ramani za njia na maeneo kwa kutumia LiDAR ya droni na fotogrametri. Hii inahakikisha uwekaji mahiri wa barabara, mabomba, na maendeleo ya miji huku ikipunguza usumbufu wa mazingira."
+						}
+					},
+					{
+						"title": {
+							"en": "DTMs & DEMs",
+							"sw": "DTM na DEM"
+						},
+						"description": {
+							"en": "Digital terrain and elevation models for hydrological and civil works.",
+							"sw": "Modeli za kidijitali za eneo na mwinuko kwa kazi za maji na uhandisi wa umma."
+						},
+						"popupContent": {
+							"en": "Our terrain and elevation models help civil engineers and hydrologists analyze runoff, slope stability, and grading. We deliver precise elevation data to support resilient infrastructure.",
+							"sw": "Modeli zetu za eneo na mwinuko husaidia wahandisi wa umma na wanahidrolojia kuchambua mtiririko wa maji, uthabiti wa mteremko, na upangaji wa ardhi. Tunatoa data sahihi ya mwinuko kusaidia miundombinu imara."
+						}
+					},
+					{
+						"title": {
+							"en": "Volumetric Calculations",
+							"sw": "Mahesabu ya Kiasi (Volumetric)"
+						},
+						"description": {
+							"en": "Calculate material volumes and manage resources accurately.",
+							"sw": "Kokotoa kiasi cha nyenzo na usimamie rasilimali kwa usahihi."
+						},
+						"popupContent": {
+							"en": "SmartGrid computes cut/fill volumes and stockpile measurements with centimeter-level accuracy. Our aerial photogrammetry offers fast, safe, and repeatable results.",
+							"sw": "SmartGrid hukokotoa kiasi cha cut/fill na vipimo vya akiba kwa usahihi wa sentimita. Fotogrametri yetu ya angani inatoa matokeo ya haraka, salama, na yanayoweza kurudiwa."
+						}
+					},
+					{
+						"title": {
+							"en": "Disaster Assessment",
+							"sw": "Tathmini ya Maafa"
+						},
+						"description": {
+							"en": "Route and terrain data for smart infrastructure layout.",
+							"sw": "Data ya njia na eneo kwa mpangilio mahiri wa miundombinu."
+						},
+						"popupContent": {
+							"en": "After floods, landslides, or earthquakes, SmartGrid uses drones to quickly document damage. Our data helps responders prioritize actions, allocate aid, and plan recovery operations.",
+							"sw": "Baada ya mafuriko, maporomoko ya ardhi, au matetemeko ya ardhi, SmartGrid hutumia droni kuandika uharibifu haraka. Data yetu husaidia wahudumu kutanguliza hatua, kutenga misaada, na kupanga shughuli za uokoaji."
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
 			"discriminant": "gallery",
 			"value": {
 				"tag": {
@@ -315,6 +461,96 @@
 			}
 		},
 		{
+			"discriminant": "aboutLandSurveying",
+			"value": {
+				"tag": {
+					"en": "Ground Precision",
+					"sw": "Usahihi wa Ardhi"
+				},
+				"headline": {
+					"en": "SMARTGRID LAND SURVEYING",
+					"sw": "UPIMAJI WA ARDHI WA SMARTGRID"
+				},
+				"description": {
+					"en": "At Smartgrid Surveying, we're redefining the future of <primary>land and aerial surveys</primary> across Africa and beyond. With cutting-edge technology and an unwavering commitment to <primary>precision</primary>, we offer a full suite of <primary>professional surveying</primary> services that support infrastructure development, land administration, environmental monitoring, and planning projects of all scales. Smartgrid Surveying provides comprehensive land surveying solutions tailored to <primary>developers, governments, contractors, and private clients</primary>. Whether it's for title deeds, boundary demarcation, construction layouts, or cadastral mapping, we bring experience and excellence to every site.",
+					"sw": "Katika Smartgrid Surveying, tunafafanua upya mustakabali wa <primary>uchunguzi wa ardhi na anga</primary> kote Afrika na kuendelea. Kwa teknolojia ya kisasa na kujitolea thabiti kwa <primary>usahihi</primary>, tunatoa huduma kamili ya <primary>upimaji wa kitaalamu</primary> inayosaidia maendeleo ya miundombinu, usimamizi wa ardhi, ufuatiliaji wa mazingira, na miradi ya upangaji ya viwango vyote. Smartgrid Surveying hutoa suluhisho kamili za upimaji wa ardhi zilizoundwa kwa <primary>wasanidi, serikali, makandarasi, na wateja binafsi</primary>. Iwe ni kwa hati miliki, uwekaji wa mipaka, mipangilio ya ujenzi, au uchoraji ramani wa cadastral, tunaleta uzoefu na ubora kwa kila tovuti."
+				},
+				"items": [
+					{
+						"title": {
+							"en": "Topographical Surveys",
+							"sw": "Uchunguzi wa Topografia"
+						},
+						"description": {
+							"en": "Accurate surveys for planning, construction, boundaries, and development.",
+							"sw": "Uchunguzi sahihi kwa upangaji, ujenzi, mipaka, na maendeleo."
+						}
+					},
+					{
+						"title": {
+							"en": "Aerial Drone Surveys",
+							"sw": "Uchunguzi wa Droni wa Angani"
+						},
+						"description": {
+							"en": "Fast, safe, and high-resolution aerial imagery and data acquisition with drones.",
+							"sw": "Upatikanaji wa picha na data wa angani wa haraka, salama, na wa azimio la juu na droni."
+						}
+					},
+					{
+						"title": {
+							"en": "Building & Engineering Surveys",
+							"sw": "Uchunguzi wa Majengo na Uhandisi"
+						},
+						"description": {
+							"en": "Site layout, monitoring, and as-built verification with precision and speed.",
+							"sw": "Mpangilio wa tovuti, ufuatiliaji, na uthibitishaji wa as-built kwa usahihi na kasi."
+						}
+					},
+					{
+						"title": {
+							"en": "Cadastral Surveys",
+							"sw": "Uchunguzi wa Cadastral"
+						},
+						"description": {
+							"en": "Define property boundaries precisely and confidently with expert surveyors.",
+							"sw": "Fafanua mipaka ya mali kwa usahihi na kujiamini na wachunguzi wataalamu."
+						}
+					},
+					{
+						"title": {
+							"en": "Bathymetric Surveys",
+							"sw": "Uchunguzi wa Bathymetric"
+						},
+						"description": {
+							"en": "Detailed underwater terrain mapping for dams, rivers, lakes, and oceans.",
+							"sw": "Uchoraji ramani wa kina wa eneo la chini ya maji kwa mabwawa, mito, maziwa, na bahari."
+						}
+					},
+					{
+						"title": {
+							"en": "Resource Mapping",
+							"sw": "Upimaji wa Rasilimali"
+						},
+						"description": {
+							"en": "Efficient mapping of resources such as forests, tree cover, and agricultural areas.",
+							"sw": "Uchoraji ramani mzuri wa rasilimali kama vile misitu, chanjo ya miti, na maeneo ya kilimo."
+						}
+					},
+					{
+						"title": {
+							"en": "GIS Surveys",
+							"sw": "Uchunguzi wa GIS"
+						},
+						"description": {
+							"en": "Integrate geographic data seamlessly for smarter spatial analysis and mapping.",
+							"sw": "Unganisha data ya kijiografia kwa urahisi kwa uchambuzi bora wa anga na uchoraji ramani."
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
 			"discriminant": "gallery",
 			"value": {
 				"tag": {
@@ -394,6 +630,54 @@
 				"layout": "overlay",
 				"columns": "4",
 				"tone": "default",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "aboutImpact",
+			"value": {
+				"tag": {
+					"en": "Our Reach",
+					"sw": "Ufikiaji Wetu"
+				},
+				"headline": {
+					"en": "Impact Across Africa",
+					"sw": "Athari Kote Afrika"
+				},
+				"image": "/media/about/28.jpeg",
+				"description": {
+					"en": "From Kenya's Rift Valley to forests in the Congo Basin, and urban expansion in Accra, Ghana, Smartgrid Surveying has completed projects spanning thousands of hectares, transforming raw data into meaningful insights that support development, climate resilience, and sustainable land use.",
+					"sw": "Kutoka Bonde la Rift la Kenya hadi misitu ya Bonde la Kongo, na upanuzi wa miji huko Accra, Ghana, Smartgrid Surveying imekamilisha miradi inayojumuisha maelfu ya hekta, ikigeuza data ghafi kuwa maarifa ya maana yanayosaidia maendeleo, uthabiti wa hali ya hewa, na matumizi endelevu ya ardhi."
+				},
+				"whyChooseUs": {
+					"icon": "lightbulb-on",
+					"title": {
+						"en": "Why Choose SmartGrid for Drone Services?",
+						"sw": "Kwa Nini Uchague SmartGrid kwa Huduma za Droni?"
+					},
+					"items": [
+						{
+							"en": "Certified Drone Pilots",
+							"sw": "Mapiloti wa Droni Walioidhinishwa"
+						},
+						{
+							"en": "4K Imaging & High-Accuracy Mapping",
+							"sw": "Picha za 4K na Uchoraji Ramani wa Usahihi wa Juu"
+						},
+						{
+							"en": "Nationwide & Cross-Border Coverage",
+							"sw": "Ufunikaji wa Kitaifa na Kimataifa"
+						},
+						{
+							"en": "Flexible Hire Plans",
+							"sw": "Mipango Rahisi ya Kukodisha"
+						},
+						{
+							"en": "End-to-End Support – From Planning to Delivery",
+							"sw": "Msaada wa Kuanzia Mwisho hadi Mwisho – Kuanzia Upangaji hadi Uwasilishaji"
+						}
+					]
+				},
 				"id": ""
 			}
 		},

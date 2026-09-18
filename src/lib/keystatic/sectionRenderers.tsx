@@ -32,6 +32,9 @@ import { CurrentOpeningsSection } from "@/components/sections/careers/CurrentOpe
 import { ApplicationProcessSection } from "@/components/sections/careers/ApplicationProcessSection";
 import { EqualOpportunityStatementSection } from "@/components/sections/careers/EqualOpportunityStatementSection";
 import { CompanyProfileViewerSection } from "@/components/sections/company-profile/CompanyProfileViewerSection";
+import { AerialSurveyingSection } from "@/components/sections/about/AerialSurveyingSection";
+import { LandSurveyingSection } from "@/components/sections/about/LandSurveyingSection";
+import { ImpactAcrossAfricaSection } from "@/components/sections/about/ImpactAcrossAfricaSection";
 import type { Lang } from "../types";
 import { resolveLocaleValue } from "./localize";
 import { getSectionDefinition, type SectionId } from "./sectionRegistry";
@@ -85,6 +88,9 @@ export const sectionRenderers = {
 	careersProcess: ApplicationProcessSection,
 	careersStatement: EqualOpportunityStatementSection,
 	companyProfileViewer: CompanyProfileViewerSection,
+	aboutAerialSurveying: AerialSurveyingSection,
+	aboutLandSurveying: LandSurveyingSection,
+	aboutImpact: ImpactAcrossAfricaSection,
 } satisfies Record<SectionId, ComponentType<any>>;
 
 export function renderSection(

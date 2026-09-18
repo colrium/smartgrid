@@ -242,7 +242,7 @@ import {
  * from DATA (the wrapper is page-owned), so edits change output.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -2907,6 +2907,196 @@ const companyProfileViewer: SectionDefinition = {
 	}),
 };
 
+/**
+ * M11 batch 4 — about page (2026-09-18): `aboutAerialSurveying` wraps the
+ * `AerialSurveyingSection` popup card grid (tag + headline + description +
+ * popup items). Unique — only valid on `/about`. Presentation
+ * (columns/align/tone, positional fallback icons, the hardcoded "Learn
+ * more" trigger) stays in the wrapper — only strings are data. Renders
+ * nothing without items (legacy guard, preserved).
+ */
+const aboutAerialSurveying: SectionDefinition = {
+	id: "aboutAerialSurveying",
+	version: 1,
+	label: "About aerial surveying (unique)",
+	description: "Unique: the /about aerial capabilities popup grid. Only valid on the about page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+				popupContent: localeLongText("Popup content"),
+			}),
+			{
+				label: "Capabilities",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Capability"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, `columns`, `align`,
+		// `tone`, positional `fallbackIcons` and the "Learn more" trigger
+		// (wrapper presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Aerial Surveying Capabilities", sw: "Uwezo wa Upimaji wa Angani" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				title: { en: "Aerial Mapping", sw: "Uchoraji Ramani wa Angani" },
+				description: { en: "Accurate drone-based imagery.", sw: "" },
+				popupContent: { en: "Ultra-precise aerial mapping using UAVs.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+						popupContent: item?.popupContent ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 4 — about page (2026-09-18): `aboutLandSurveying` wraps the
+ * `LandSurveyingSection` check-bullet grid (tag + headline + description +
+ * items). Unique — only valid on `/about`. The `<primary>` pseudo-markup
+ * is parsed from DATA by the wrapper itself. NOTE: the legacy `itemsTitle`
+ * key is unrendered — intentionally not migrated. Renders nothing without
+ * items (legacy guard, preserved).
+ */
+const aboutLandSurveying: SectionDefinition = {
+	id: "aboutLandSurveying",
+	version: 1,
+	label: "About land surveying (unique)",
+	description: "Unique: the /about land surveying check-bullet grid — description supports <primary> markup. Only valid on the about page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Services",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Service"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, `columns`, the fixed
+		// `check` header icons and the unrendered legacy `itemsTitle` key.
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Land Surveying Services", sw: "Huduma za Upimaji wa Ardhi" },
+		description: { en: "Accurate surveys for <primary>planning</primary>.", sw: "" },
+		items: [
+			{
+				title: { en: "Topographical Surveys", sw: "Uchunguzi wa Topografia" },
+				description: { en: "Accurate surveys for planning.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 4 — about page (2026-09-18): `aboutImpact` wraps the
+ * `ImpactAcrossAfricaSection` globe panel (tag + headline + image +
+ * description + why-choose-us card). Unique — only valid on `/about`. The
+ * image path is shared; all other strings are localized. The WebGL globe
+ * stays client-only (`dynamic ssr:false`, spinner fallback on the server).
+ */
+const aboutImpact: SectionDefinition = {
+	id: "aboutImpact",
+	version: 1,
+	label: "About impact (unique)",
+	description: "Unique: the /about globe panel with the why-choose-us card. Only valid on the about page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		image: imagePath("Image (shared)"),
+		description: localeLongText("Description"),
+		whyChooseUs: fields.object(
+			{
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				items: fields.array(localeText("Point", { optionalInEnglish: true }), {
+					label: "Points",
+					itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Point"),
+				}),
+			},
+			{ label: "Why-choose-us card (leave the title empty to hide)" }
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` (visual tuning, not
+		// an editor contract).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Impact Across Africa", sw: "Athari Barani Afrika" },
+		image: "/media/about/28.jpeg",
+		description: { en: "", sw: "" },
+		whyChooseUs: {
+			icon: "lightbulb-on",
+			title: { en: "Why Choose SmartGrid for Drone Services?", sw: "Kwa Nini Uchague SmartGrid kwa Huduma za Droni?" },
+			items: [{ en: "Certified Drone Pilots", sw: "Mapiloti wa Droni Walioidhinishwa" }],
+		},
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			image: resolved.image || undefined,
+			description: resolved.description,
+			whyChooseUs:
+				resolved.whyChooseUs && typeof resolved.whyChooseUs.title === "string" && resolved.whyChooseUs.title
+					? {
+							icon: resolved.whyChooseUs.icon || undefined,
+							title: resolved.whyChooseUs.title,
+							items: Array.isArray(resolved.whyChooseUs.items)
+								? resolved.whyChooseUs.items.filter((point: unknown) => typeof point === "string" && point)
+								: [],
+						}
+					: null,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
 export const sectionRegistry: readonly SectionDefinition[] = [
 	introText,
 	ctaBand,
@@ -2941,6 +3131,9 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	careersProcess,
 	careersStatement,
 	companyProfileViewer,
+	aboutAerialSurveying,
+	aboutLandSurveying,
+	aboutImpact,
 ];
 
 export function getSectionDefinition(id: string): SectionDefinition {
@@ -2983,6 +3176,9 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	careersProcess: careersProcess.label,
 	careersStatement: careersStatement.label,
 	companyProfileViewer: companyProfileViewer.label,
+	aboutAerialSurveying: aboutAerialSurveying.label,
+	aboutLandSurveying: aboutLandSurveying.label,
+	aboutImpact: aboutImpact.label,
 };
 
 /**
