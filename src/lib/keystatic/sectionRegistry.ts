@@ -243,7 +243,7 @@ import {
  * from DATA (the wrapper is page-owned), so edits change output.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyWorkflow", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "bathyFinalCta", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "rmFinalCta", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation", "aerialIntro", "aerialWhyDrones", "aerialServices", "aerialWorkflow", "aerialSurveyingGrid", "aerialIndustries", "aerialIndustryCta", "aerialTechStack", "aerialCapabilityCta", "aerialFinalCta", "aerialProjects", "aerialAdditionalServices", "cadastralPostHeroCta", "cadastralWhenYouNeed", "cadastralProcess", "cadastralProcessCta", "cadastralCost", "cadastralTimeline", "cadastralCompliance", "cadastralCaseStudy", "cadastralFinalCta", "gprHero", "gprHighlights", "gprJumpNav", "gprOverview", "gprMethodology", "gprApplications", "gprDetect", "gprSue", "gprLimitations", "gprBeforeAfter", "gprTechnology", "gprFeaturedProjects", "gprSummary", "gprFinalCta"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyWorkflow", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "bathyFinalCta", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "rmFinalCta", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation", "aerialIntro", "aerialWhyDrones", "aerialServices", "aerialWorkflow", "aerialSurveyingGrid", "aerialIndustries", "aerialIndustryCta", "aerialTechStack", "aerialCapabilityCta", "aerialFinalCta", "aerialProjects", "aerialAdditionalServices", "cadastralPostHeroCta", "cadastralWhenYouNeed", "cadastralProcess", "cadastralProcessCta", "cadastralCost", "cadastralTimeline", "cadastralCompliance", "cadastralCaseStudy", "cadastralFinalCta", "gprHero", "gprHighlights", "gprJumpNav", "gprOverview", "gprMethodology", "gprApplications", "gprDetect", "gprSue", "gprLimitations", "gprBeforeAfter", "gprTechnology", "gprFeaturedProjects", "gprSummary", "gprFinalCta", "gisHero", "gisWhatIs", "gisImportance", "gisServices", "gisIndustries", "gisTechStack", "gisWhatsappCta", "gisComponents", "gisWhySmartgrid", "gisAnalystCta", "gisDataAccuracy", "gisBeforeAfter", "gisProjectImpact", "gisRelatedServices"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -8176,6 +8176,926 @@ const gprFinalCta: SectionDefinition = {
 	}),
 };
 
+/**
+ * M11 batch 14 — gis-mapping page (2026-09-19): `gisHero` wraps the
+ * `GisHeroSection` full-bleed image hero (`<bold>` description parsing +
+ * footnote chips stay in the renderer). Unique — only valid on
+ * `/surveying/gis-mapping` (bespoke layout the shared Hero cannot render).
+ * Image/href shared; headline, title, description, footnotes and CTA label
+ * localized.
+ */
+const gisHero: SectionDefinition = {
+	id: "gisHero",
+	version: 1,
+	label: "GIS hero (unique)",
+	description: "Unique: the gis-mapping full-bleed hero. Only valid on that page.",
+	schema: fields.object({
+		headline: localeText("Headline"),
+		title: localeText("Title"),
+		description: localeLongText("Description"),
+		footnoteItems: fields.array(localeText("Footnote"), {
+			label: "Footnotes",
+			itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Footnote"),
+		}),
+		image: imagePath("Image (shared, optional)"),
+		ctaPrimary: fields.object(
+			{
+				label: localeText("Label"),
+				href: fields.text({
+					label: "Link (shared)",
+					description: "Internal path or full URL. Identical in en/sw.",
+				}),
+			},
+			{ label: "Primary action" }
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, gradients and
+		// overlays (presentation, not editor contracts).
+	}),
+	example: {
+		headline: { en: "GIS, Mapping & Remote Sensing", sw: "GIS, Ramani na Hisia za Mbali" },
+		title: { en: "GIS Mapping & Spatial Intelligence", sw: "Ramani za GIS" },
+		description: { en: "Turn location data into action.", sw: "" },
+		footnoteItems: [{ en: "Nairobi", sw: "Nairobi" }],
+		image: "/media/surveying/gis-mapping/gis-mapping-01.jpg",
+		ctaPrimary: { label: { en: "Talk to Us", sw: "Ongea Nasi" }, href: "/contact" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			headline: resolved.headline,
+			title: resolved.title,
+			description: resolved.description,
+			footnoteItems: Array.isArray(resolved.footnoteItems)
+				? resolved.footnoteItems.filter((entry: unknown) => typeof entry === "string" && entry)
+				: [],
+			image: resolved.image || undefined,
+			ctaPrimary:
+				resolved.ctaPrimary && typeof resolved.ctaPrimary.href === "string" && resolved.ctaPrimary.href
+					? { label: resolved.ctaPrimary.label ?? "", href: resolved.ctaPrimary.href }
+					: null,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 14 — gis-mapping page (2026-09-19): `gisWhatIs` wraps the
+ * `WhatIsGisSection` intro cards + `<bold>` closing panel. Unique — only
+ * valid on `/surveying/gis-mapping`. Icons shared; tag, headline,
+ * description, titles and closing localized.
+ */
+const gisWhatIs: SectionDefinition = {
+	id: "gisWhatIs",
+	version: 1,
+	label: "GIS what-is (unique)",
+	description: "Unique: the gis-mapping intro cards with closing panel. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+			}),
+			{
+				label: "Cards",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Card"),
+			}
+		),
+		closingStatement: localeLongText("Closing statement"),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` (visual tuning, not
+		// an editor contract).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "What Is GIS", sw: "GIS ni Nini" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				icon: "map-marker",
+				title: { en: "Capture", sw: "Kukamata" },
+			},
+		],
+		closingStatement: { en: "", sw: "" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({ icon: item?.icon || undefined, title: item?.title ?? "" }))
+				: [],
+			closingStatement: resolved.closingStatement,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 14 — gis-mapping page (2026-09-19): `gisImportance` wraps the
+ * `GisImportanceSection` checklist grid (4 columns, surface tone,
+ * fallbackIcons, leadGrid override — outside the shared `cardGrid`
+ * contract). Unique — only valid on `/surveying/gis-mapping`. Icons
+ * shared; titles and features localized. Renders nothing without items
+ * (legacy guard, preserved).
+ */
+const gisImportance: SectionDefinition = {
+	id: "gisImportance",
+	version: 1,
+	label: "GIS importance (unique)",
+	description: "Unique: the gis-mapping why-critical checklist grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Empty = positional default. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				features: fields.array(localeText("Feature", { optionalInEnglish: true }), {
+					label: "Features",
+					itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Feature"),
+				}),
+			}),
+			{
+				label: "Capabilities",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Capability"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, columns, tone,
+		// fallbackIcons, leadGrid (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Why GIS Is Critical", sw: "Kwa Nini GIS ni Muhimu" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				icon: "road-variant",
+				title: { en: "Infrastructure", sw: "Miundombinu" },
+				features: [{ en: "Road planning.", sw: "" }],
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? "",
+						features: Array.isArray(item?.features)
+							? item.features.filter((entry: unknown) => typeof entry === "string" && entry)
+							: [],
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 14 — gis-mapping page (2026-09-19): `gisServices` wraps the
+ * `GisServicesSection` indexed grid (header-row number badges — outside the
+ * shared `cardGrid` contract). Unique — only valid on
+ * `/surveying/gis-mapping`. Icons shared; titles and features localized.
+ * Renders nothing without items (legacy guard, preserved).
+ */
+const gisServices: SectionDefinition = {
+	id: "gisServices",
+	version: 1,
+	label: "GIS services (unique)",
+	description: "Unique: the gis-mapping indexed service grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				features: fields.array(localeText("Feature", { optionalInEnglish: true }), {
+					label: "Features",
+					itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Feature"),
+				}),
+			}),
+			{
+				label: "Services",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Service"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, columns, header
+		// alignment, indexed badges, fallbackIcons (presentation, not editor
+		// contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "GIS Services", sw: "Huduma za GIS" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				icon: "vector-polygon",
+				title: { en: "Land GIS", sw: "GIS ya Ardhi" },
+				features: [{ en: "Parcel mapping.", sw: "" }],
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? "",
+						features: Array.isArray(item?.features)
+							? item.features.filter((entry: unknown) => typeof entry === "string" && entry)
+							: [],
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 14 — gis-mapping page (2026-09-19): `gisIndustries` wraps the
+ * `GisIndustriesSection` 2-col checklist grid (`fallbackIcons` outside the
+ * shared `cardGrid` contract). Unique — only valid on
+ * `/surveying/gis-mapping`. Icons shared; titles and features localized.
+ * Renders nothing without items (legacy guard, preserved).
+ */
+const gisIndustries: SectionDefinition = {
+	id: "gisIndustries",
+	version: 1,
+	label: "GIS industries (unique)",
+	description: "Unique: the gis-mapping industry checklist grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Empty = positional default. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				features: fields.array(localeText("Feature", { optionalInEnglish: true }), {
+					label: "Features",
+					itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Feature"),
+				}),
+			}),
+			{
+				label: "Industries",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Industry"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, columns,
+		// fallbackIcons (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "GIS for Industries", sw: "GIS kwa Viwanda" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				icon: "account-group",
+				title: { en: "Government", sw: "Serikali" },
+				features: [{ en: "County governments.", sw: "" }],
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? "",
+						features: Array.isArray(item?.features)
+							? item.features.filter((entry: unknown) => typeof entry === "string" && entry)
+							: [],
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 14 — gis-mapping page (2026-09-19): `gisTechStack` wraps the
+ * `GisTechStackSection` tool pills + logo bento (positional tool icons +
+ * feature/wide spans stay in the renderer). Unique — only valid on
+ * `/surveying/gis-mapping`. Logo paths shared; tools and labels localized.
+ * Renders nothing without tools and logos (legacy guard, preserved).
+ */
+const gisTechStack: SectionDefinition = {
+	id: "gisTechStack",
+	version: 1,
+	label: "GIS tech stack (unique)",
+	description: "Unique: the gis-mapping tool pills and logo bento. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		tools: fields.array(localeText("Tool"), {
+			label: "Tools",
+			itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Tool"),
+		}),
+		logos: fields.array(
+			fields.object({
+				image: imagePath("Logo (shared, optional)"),
+				label: localeText("Label", { optionalInEnglish: true }),
+			}),
+			{
+				label: "Logos",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Logo"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, positional tool
+		// icons, feature/wide spans (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "GIS Technology Stack", sw: "Teknolojia ya GIS" },
+		description: { en: "", sw: "" },
+		tools: [{ en: "ArcGIS Pro", sw: "ArcGIS Pro" }],
+		logos: [
+			{
+				image: "/media/surveying/gis-mapping/03-05.png",
+				label: { en: "ArcGIS", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			tools: Array.isArray(resolved.tools) ? resolved.tools.filter((entry: unknown) => typeof entry === "string" && entry) : [],
+			logos: Array.isArray(resolved.logos)
+				? resolved.logos.map((logo: any) => ({ image: logo?.image || undefined, label: logo?.label ?? "" }))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 14 — gis-mapping page (2026-09-19): `gisWhatsappCta` wraps the
+ * `GisWhatsappCtaSection` WhatsApp band. Unique — only valid on
+ * `/surveying/gis-mapping`. Href/icon shared; tag, headline, description,
+ * note and CTA label localized. Renders nothing without a headline (legacy
+ * guard, preserved).
+ */
+const gisWhatsappCta: SectionDefinition = {
+	id: "gisWhatsappCta",
+	version: 1,
+	label: "GIS WhatsApp CTA (unique)",
+	description: "Unique: the gis-mapping WhatsApp band. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		note: localeLongText("Note"),
+		cta: fields.object(
+			{
+				label: localeText("Label", { optionalInEnglish: true }),
+				href: fields.text({
+					label: "Link (shared, optional)",
+					description: "Full URL. Empty = no button. Identical in en/sw.",
+				}),
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+			},
+			{ label: "Action" }
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, hardcoded WhatsApp
+		// glyphs (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "Instant Support", sw: "Msaada wa Papo Hapo" },
+		headline: { en: "WhatsApp a GIS Specialist", sw: "WhatsApp Mtaalamu" },
+		description: { en: "", sw: "" },
+		note: { en: "", sw: "" },
+		cta: { label: { en: "WhatsApp Us", sw: "WhatsApp" }, href: "https://wa.me/254107393023", icon: "whatsapp" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			note: resolved.note,
+			cta:
+				resolved.cta && typeof resolved.cta.href === "string" && resolved.cta.href
+					? { label: resolved.cta.label ?? "", href: resolved.cta.href, icon: resolved.cta.icon || undefined }
+					: null,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 14 — gis-mapping page (2026-09-19): `gisComponents` wraps the
+ * `GisComponentsSection` lifecycle ring + component list (ring geometry +
+ * hardcoded "GIS"/"Lifecycle" fallbacks stay in the renderer). Unique —
+ * only valid on `/surveying/gis-mapping`. All strings localized.
+ */
+const gisComponents: SectionDefinition = {
+	id: "gisComponents",
+	version: 1,
+	label: "GIS components (unique)",
+	description: "Unique: the gis-mapping lifecycle ring. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		lifecycle: fields.object(
+			{
+				title: localeText("Title", { optionalInEnglish: true }),
+				subtitle: localeText("Subtitle", { optionalInEnglish: true }),
+			},
+			{ label: "Lifecycle hub" }
+		),
+		list: fields.array(
+			fields.object({
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Components",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Component"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, ring geometry and
+		// hub fallbacks (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "GIS Components", sw: "Vipengele vya GIS" },
+		description: { en: "", sw: "" },
+		lifecycle: { title: { en: "GIS", sw: "GIS" }, subtitle: { en: "Lifecycle", sw: "" } },
+		list: [
+			{
+				title: { en: "Capture", sw: "Ukamatiaji" },
+				description: { en: "Collect spatial data.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			lifecycle: resolved.lifecycle ? { title: resolved.lifecycle.title, subtitle: resolved.lifecycle.subtitle } : null,
+			list: Array.isArray(resolved.list)
+				? resolved.list.map((item: any) => ({ title: item?.title ?? "", description: item?.description ?? "" }))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 14 — gis-mapping page (2026-09-19): `gisWhySmartgrid` wraps the
+ * `GisWhySmartgridSection` icon grid (surface tone + `fallbackIcons`
+ * outside the shared `cardGrid` contract). Unique — only valid on
+ * `/surveying/gis-mapping`. Icons shared; titles localized. Renders nothing
+ * without items (legacy guard, preserved).
+ */
+const gisWhySmartgrid: SectionDefinition = {
+	id: "gisWhySmartgrid",
+	version: 1,
+	label: "GIS why-SmartGrid (unique)",
+	description: "Unique: the gis-mapping differentiator grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Empty = positional default. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+			}),
+			{
+				label: "Differentiators",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Differentiator"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, columns, tone,
+		// fallbackIcons (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Why SmartGrid GIS", sw: "Kwa Nini GIS Yetu" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				icon: "routes",
+				title: { en: "Integrated Workflow", sw: "Mtiririko" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({ icon: item?.icon || undefined, title: item?.title ?? "" }))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 14 — gis-mapping page (2026-09-19): `gisAnalystCta` wraps the
+ * `GisAnalystCtaSection` closing cards (hardcoded `id="talk-to-analyst"` +
+ * watermark + 3 columns stay in the renderer). Unique — only valid on
+ * `/surveying/gis-mapping`. Icons/hrefs shared; labels and descriptions
+ * localized. Renders nothing without a headline (legacy guard, preserved).
+ */
+const gisAnalystCta: SectionDefinition = {
+	id: "gisAnalystCta",
+	version: 1,
+	label: "GIS analyst CTA (unique)",
+	description: "Unique: the gis-mapping closing action cards. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		actions: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				label: localeText("Label"),
+				description: localeLongText("Description"),
+				href: fields.text({
+					label: "Link (shared)",
+					description: "Internal path or full URL. Identical in en/sw.",
+				}),
+			}),
+			{
+				label: "Actions",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Action"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): hardcoded anchor id, watermark,
+		// columns and `className` (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Talk to an Analyst", sw: "Ongea na Mchambuzi" },
+		description: { en: "", sw: "" },
+		actions: [
+			{
+				icon: "whatsapp",
+				label: { en: "Chat on WhatsApp", sw: "Ongea WhatsApp" },
+				description: { en: "Quick answers.", sw: "" },
+				href: "https://wa.me/254107393023",
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			actions: Array.isArray(resolved.actions)
+				? resolved.actions.map((action: any) => ({
+						icon: action?.icon || undefined,
+						label: action?.label ?? "",
+						description: action?.description ?? "",
+						href: typeof action?.href === "string" ? action.href : "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 14 — gis-mapping page (2026-09-19): `gisDataAccuracy` wraps the
+ * `GisDataAccuracySection` QC + accuracy-level panels. Unique — only valid
+ * on `/surveying/gis-mapping`. Icons shared; titles, factors and accuracies
+ * localized. Renders nothing without factors and levels (legacy guard,
+ * preserved).
+ */
+const gisDataAccuracy: SectionDefinition = {
+	id: "gisDataAccuracy",
+	version: 1,
+	label: "GIS data accuracy (unique)",
+	description: "Unique: the gis-mapping accuracy panels. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		ensureTitle: localeText("Ensure title", { optionalInEnglish: true }),
+		factors: fields.array(localeText("Factor"), {
+			label: "Factors",
+			itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Factor"),
+		}),
+		levelsTitle: localeText("Levels title", { optionalInEnglish: true }),
+		levels: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				label: localeText("Label"),
+				accuracy: localeText("Accuracy"),
+			}),
+			{
+				label: "Levels",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Level"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` (visual tuning, not
+		// an editor contract).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Data Accuracy", sw: "Usahihi wa Data" },
+		ensureTitle: { en: "", sw: "" },
+		factors: [{ en: "Ground control points.", sw: "" }],
+		levelsTitle: { en: "", sw: "" },
+		levels: [
+			{
+				icon: "quadcopter",
+				label: { en: "Drone mapping", sw: "Ramani za Droni" },
+				accuracy: { en: "2–5 cm", sw: "2–5 cm" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			ensureTitle: resolved.ensureTitle,
+			factors: Array.isArray(resolved.factors) ? resolved.factors.filter((entry: unknown) => typeof entry === "string" && entry) : [],
+			levelsTitle: resolved.levelsTitle,
+			levels: Array.isArray(resolved.levels)
+				? resolved.levels.map((level: any) => ({ icon: level?.icon || undefined, label: level?.label ?? "", accuracy: level?.accuracy ?? "" }))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 14 — gis-mapping page (2026-09-19): `gisBeforeAfter` wraps the
+ * `GisBeforeAfterSection` flip card (flip behavior, layoutId and icons stay
+ * in the renderer). Unique — only valid on `/surveying/gis-mapping`. All
+ * strings localized. Renders nothing without a headline (legacy guard,
+ * preserved).
+ */
+const gisBeforeAfter: SectionDefinition = {
+	id: "gisBeforeAfter",
+	version: 1,
+	label: "GIS before/after (unique)",
+	description: "Unique: the gis-mapping flip comparison card. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		flipHint: localeText("Flip hint", { optionalInEnglish: true }),
+		before: fields.object(
+			{
+				label: localeText("Label"),
+				tagline: localeText("Tagline", { optionalInEnglish: true }),
+				items: fields.array(localeText("Point"), {
+					label: "Points",
+					itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Point"),
+				}),
+			},
+			{ label: "Before" }
+		),
+		after: fields.object(
+			{
+				label: localeText("Label"),
+				tagline: localeText("Tagline", { optionalInEnglish: true }),
+				items: fields.array(localeText("Point"), {
+					label: "Points",
+					itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Point"),
+				}),
+			},
+			{ label: "After" }
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, layoutId and icons
+		// (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Before vs After GIS", sw: "Kabla na Baada ya GIS" },
+		flipHint: { en: "Tap to compare", sw: "" },
+		before: {
+			label: { en: "BEFORE", sw: "KABLA" },
+			tagline: { en: "", sw: "" },
+			items: [{ en: "Scattered data.", sw: "" }],
+		},
+		after: {
+			label: { en: "AFTER", sw: "BAADA" },
+			tagline: { en: "", sw: "" },
+			items: [{ en: "Central system.", sw: "" }],
+		},
+		id: "",
+	},
+	normalize: (resolved) => {
+		const side = (node: any) =>
+			node
+				? {
+						label: node.label ?? "",
+						tagline: node.tagline,
+						items: Array.isArray(node.items) ? node.items.filter((entry: unknown) => typeof entry === "string" && entry) : [],
+					}
+				: undefined;
+		return {
+			data: {
+				tag: resolved.tag,
+				headline: resolved.headline,
+				flipHint: resolved.flipHint,
+				before: side(resolved.before),
+				after: side(resolved.after),
+			},
+			id: resolved.id || undefined,
+		};
+	},
+};
+
+/**
+ * M11 batch 14 — gis-mapping page (2026-09-19): `gisProjectImpact` wraps the
+ * `GisProjectImpactSection` numbered grid (5 columns + `indexed` +
+ * `fallbackIcons` outside the shared `cardGrid` contract). Unique — only
+ * valid on `/surveying/gis-mapping`. Icons shared; titles localized.
+ * Renders nothing without items (legacy guard, preserved).
+ */
+const gisProjectImpact: SectionDefinition = {
+	id: "gisProjectImpact",
+	version: 1,
+	label: "GIS project impact (unique)",
+	description: "Unique: the gis-mapping impact number grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Empty = positional default. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+			}),
+			{
+				label: "Impacts",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Impact"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, columns, tone,
+		// indexed, fallbackIcons (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Project Impact", sw: "Athari za Mradi" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				icon: "",
+				title: { en: "Faster Approvals", sw: "Idhini za Haraka" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({ icon: item?.icon || undefined, title: item?.title ?? "" }))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 14 — gis-mapping page (2026-09-19): `gisRelatedServices` wraps
+ * the `GisRelatedServicesSection` link grid (internal-href filter +
+ * hardcoded bottom-note CTA stay in the renderer). Unique — only valid on
+ * `/surveying/gis-mapping`. Icons/hrefs shared; titles and bottom note
+ * localized. Renders nothing when no internal-href items remain (legacy
+ * guard, preserved).
+ */
+const gisRelatedServices: SectionDefinition = {
+	id: "gisRelatedServices",
+	version: 1,
+	label: "GIS related services (unique)",
+	description: "Unique: the gis-mapping related-service links. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		bottomNote: localeLongText("Bottom note"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				href: fields.text({
+					label: "Link (shared, optional)",
+					description: "Internal path — external hrefs are filtered out at render. Identical in en/sw.",
+				}),
+			}),
+			{
+				label: "Services",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Service"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, href filter and the
+		// hardcoded bottom-note CTA (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Related Services", sw: "Huduma Zinazohusiana" },
+		description: { en: "", sw: "" },
+		bottomNote: { en: "", sw: "" },
+		items: [
+			{
+				icon: "",
+				title: { en: "Topographical Surveys", sw: "Upimaji wa Topografia" },
+				href: "/surveying/topographical-surveys",
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			bottomNote: resolved.bottomNote,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? "",
+						href: item?.href || undefined,
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
 export const sectionRegistry: readonly SectionDefinition[] = [
 	introText,
 	ctaBand,
@@ -8286,6 +9206,20 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	gprFeaturedProjects,
 	gprSummary,
 	gprFinalCta,
+	gisHero,
+	gisWhatIs,
+	gisImportance,
+	gisServices,
+	gisIndustries,
+	gisTechStack,
+	gisWhatsappCta,
+	gisComponents,
+	gisWhySmartgrid,
+	gisAnalystCta,
+	gisDataAccuracy,
+	gisBeforeAfter,
+	gisProjectImpact,
+	gisRelatedServices,
 ];
 
 export function getSectionDefinition(id: string): SectionDefinition {
@@ -8404,6 +9338,20 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	gprFeaturedProjects: gprFeaturedProjects.label,
 	gprSummary: gprSummary.label,
 	gprFinalCta: gprFinalCta.label,
+	gisHero: gisHero.label,
+	gisWhatIs: gisWhatIs.label,
+	gisImportance: gisImportance.label,
+	gisServices: gisServices.label,
+	gisIndustries: gisIndustries.label,
+	gisTechStack: gisTechStack.label,
+	gisWhatsappCta: gisWhatsappCta.label,
+	gisComponents: gisComponents.label,
+	gisWhySmartgrid: gisWhySmartgrid.label,
+	gisAnalystCta: gisAnalystCta.label,
+	gisDataAccuracy: gisDataAccuracy.label,
+	gisBeforeAfter: gisBeforeAfter.label,
+	gisProjectImpact: gisProjectImpact.label,
+	gisRelatedServices: gisRelatedServices.label,
 };
 
 /**

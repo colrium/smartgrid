@@ -21,16 +21,27 @@ interface WhatsappCtaContent {
 	cta?: WhatsAppCta | null;
 }
 
-export function GisWhatsappCtaSection(): ReactElement {
+export interface GisWhatsappCtaData {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+	note?: string | null;
+	cta?: WhatsAppCta | null;
+}
+
+export function GisWhatsappCtaSection({ data, id }: { data?: GisWhatsappCtaData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/gis-mapping"]);
-	const content = t("surveying/gis-mapping:whatsappCta", {
-		returnObjects: true,
-	}) as unknown as WhatsappCtaContent;
+	// Keystatic-owned content when `data` is provided (M11 `gisWhatsappCta`
+	// unique section); legacy locale strings otherwise.
+	const content = (data ??
+		(t("surveying/gis-mapping:whatsappCta", {
+			returnObjects: true,
+		}) as unknown as WhatsappCtaContent)) as WhatsappCtaContent;
 
 	if (!content?.headline) return <></>;
 
 	return (
-		<section className="pb-14 sm:pb-16 relative overflow-hidden">
+		<section id={id} className="pb-14 sm:pb-16 relative overflow-hidden">
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
 					<div className="relative rounded-c bg-surface hairline card-shadow overflow-hidden px-8 py-10 sm:px-12 sm:py-12">

@@ -17,16 +17,27 @@ interface WhyGisCriticalContent {
 	items?: ImportanceItem[] | null;
 }
 
+export interface GisImportanceData {
+	tag?: string | null;
+	headline: string;
+	description?: string | null;
+	items?: ImportanceItem[] | null;
+}
+
 /**
  * Why-GIS-critical capabilities — shared card grid; each item's feature list
  * renders as the card inset checklist (content:
  * surveying/gis-mapping:whyGisCritical).
  */
-export function GisImportanceSection(): ReactElement | null {
+export function GisImportanceSection({ data }: { data?: GisImportanceData | null } = {}): ReactElement | null {
 	const { t } = useTranslation(["surveying/gis-mapping"]);
-	const section = t("surveying/gis-mapping:whyGisCritical", {
-		returnObjects: true,
-	}) as unknown as WhyGisCriticalContent;
+	// Keystatic-owned content when `data` is provided (M11 `gisImportance`
+	// unique section — columns/tone/fallbackIcons/leadGrid are outside the
+	// shared `cardGrid` contract); legacy locale strings otherwise.
+	const section = (data ??
+		(t("surveying/gis-mapping:whyGisCritical", {
+			returnObjects: true,
+		}) as unknown as WhyGisCriticalContent)) as WhyGisCriticalContent;
 	const rows = Array.isArray(section?.items) ? section.items : [];
 
 	if (rows.length === 0) return null;

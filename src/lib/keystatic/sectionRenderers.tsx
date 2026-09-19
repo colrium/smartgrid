@@ -104,6 +104,20 @@ import { GprTechnologySection } from "@/components/sections/surveying/ground-pen
 import { FeaturedProjectsSection as GprFeaturedProjectsSection } from "@/components/sections/surveying/ground-penetrating-radar/FeaturedProjectsSection";
 import { GprSummarySection } from "@/components/sections/surveying/ground-penetrating-radar/GprSummarySection";
 import { GprFinalCtaSection } from "@/components/sections/surveying/ground-penetrating-radar/GprFinalCtaSection";
+import { GisHeroSection } from "@/components/sections/surveying/gis-mapping/GisHeroSection";
+import { WhatIsGisSection } from "@/components/sections/surveying/gis-mapping/WhatIsGisSection";
+import { GisImportanceSection } from "@/components/sections/surveying/gis-mapping/GisImportanceSection";
+import { GisServicesSection } from "@/components/sections/surveying/gis-mapping/GisServicesSection";
+import { GisIndustriesSection } from "@/components/sections/surveying/gis-mapping/GisIndustriesSection";
+import { GisTechStackSection } from "@/components/sections/surveying/gis-mapping/GisTechStackSection";
+import { GisWhatsappCtaSection } from "@/components/sections/surveying/gis-mapping/GisWhatsappCtaSection";
+import { GisComponentsSection } from "@/components/sections/surveying/gis-mapping/GisComponentsSection";
+import { GisWhySmartgridSection } from "@/components/sections/surveying/gis-mapping/GisWhySmartgridSection";
+import { GisAnalystCtaSection } from "@/components/sections/surveying/gis-mapping/GisAnalystCtaSection";
+import { GisDataAccuracySection } from "@/components/sections/surveying/gis-mapping/GisDataAccuracySection";
+import { GisBeforeAfterSection } from "@/components/sections/surveying/gis-mapping/GisBeforeAfterSection";
+import { GisProjectImpactSection } from "@/components/sections/surveying/gis-mapping/GisProjectImpactSection";
+import { GisRelatedServicesSection } from "@/components/sections/surveying/gis-mapping/GisRelatedServicesSection";
 import { ProcessSection as BsProcessSection } from "@/components/sections/surveying/building-site/ProcessSection";
 import { AccuracyMattersSection } from "@/components/sections/surveying/building-site/AccuracyMattersSection";
 import { TechnologyStackSection } from "@/components/sections/surveying/building-site/TechnologyStackSection";
@@ -237,6 +251,20 @@ export const sectionRenderers = {
 	gprFeaturedProjects: GprFeaturedProjectsSection,
 	gprSummary: GprSummarySection,
 	gprFinalCta: GprFinalCtaSection,
+	gisHero: GisHeroSection,
+	gisWhatIs: WhatIsGisSection,
+	gisImportance: GisImportanceSection,
+	gisServices: GisServicesSection,
+	gisIndustries: GisIndustriesSection,
+	gisTechStack: GisTechStackSection,
+	gisWhatsappCta: GisWhatsappCtaSection,
+	gisComponents: GisComponentsSection,
+	gisWhySmartgrid: GisWhySmartgridSection,
+	gisAnalystCta: GisAnalystCtaSection,
+	gisDataAccuracy: GisDataAccuracySection,
+	gisBeforeAfter: GisBeforeAfterSection,
+	gisProjectImpact: GisProjectImpactSection,
+	gisRelatedServices: GisRelatedServicesSection,
 } satisfies Record<SectionId, ComponentType<any>>;
 
 export function renderSection(

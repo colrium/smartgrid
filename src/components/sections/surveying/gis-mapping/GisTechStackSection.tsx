@@ -21,6 +21,14 @@ interface TechStackContent {
 	logos?: TechLogo[] | null;
 }
 
+export interface GisTechStackData {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+	tools?: string[] | null;
+	logos?: TechLogo[] | null;
+}
+
 /** Icons paired with the tool list order (component-side fallbacks keep the locale JSON lean). */
 const TOOL_ICONS = [
 	"layers-triple",
@@ -31,18 +39,22 @@ const TOOL_ICONS = [
 	"robot-outline",
 ];
 
-export function GisTechStackSection(): ReactElement {
+export function GisTechStackSection({ data, id }: { data?: GisTechStackData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/gis-mapping"]);
-	const section = t("surveying/gis-mapping:techStack", {
-		returnObjects: true,
-	}) as unknown as TechStackContent;
+	// Keystatic-owned content when `data` is provided (M11 `gisTechStack`
+	// unique section); legacy locale strings otherwise. Positional tool
+	// icons + feature/wide logo spans stay in the renderer.
+	const section = (data ??
+		(t("surveying/gis-mapping:techStack", {
+			returnObjects: true,
+		}) as unknown as TechStackContent)) as TechStackContent;
 	const tools = Array.isArray(section?.tools) ? section.tools : [];
 	const logos = Array.isArray(section?.logos) ? section.logos : [];
 
 	if (tools.length === 0 && logos.length === 0) return <></>;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden">
+		<section id={id} className="py-24 sm:py-28 relative overflow-hidden">
 			<Blob className="w-[28rem] h-[28rem] bg-primary-200/40 -top-24 -right-24" opacity={0.5} />
 			<ParallaxDecor speed={-0.06} className="absolute bottom-16 -left-24 z-0">
 				<Blob className="w-72 h-72 bg-primary-100/80" opacity={0.6} />

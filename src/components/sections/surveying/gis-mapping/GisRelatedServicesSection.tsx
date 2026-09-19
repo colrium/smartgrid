@@ -22,11 +22,23 @@ interface RelatedServicesContent {
 	items?: RelatedItem[] | null;
 }
 
-export function GisRelatedServicesSection(): ReactElement {
+export interface GisRelatedServicesData {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+	bottomNote?: string | null;
+	items?: RelatedItem[] | null;
+}
+
+export function GisRelatedServicesSection({ data, id }: { data?: GisRelatedServicesData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/gis-mapping"]);
-	const section = t("surveying/gis-mapping:relatedServices", {
-		returnObjects: true,
-	}) as unknown as RelatedServicesContent;
+	// Keystatic-owned content when `data` is provided (M11 `gisRelatedServices`
+	// unique section); legacy locale strings otherwise. The internal-href
+	// filter + hardcoded bottom-note CTA stay in the renderer.
+	const section = (data ??
+		(t("surveying/gis-mapping:relatedServices", {
+			returnObjects: true,
+		}) as unknown as RelatedServicesContent)) as RelatedServicesContent;
 	const items = (Array.isArray(section?.items) ? section.items : []).filter(
 		(item) => typeof item.href === "string" && item.href.startsWith("/"),
 	);
@@ -34,7 +46,7 @@ export function GisRelatedServicesSection(): ReactElement {
 	if (items.length === 0) return <></>;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
+		<section id={id} className="py-24 sm:py-28 relative overflow-hidden bg-surface">
 			<Blob className="w-[26rem] h-[26rem] bg-primary-100/60 -bottom-24 -left-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">

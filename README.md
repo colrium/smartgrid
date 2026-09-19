@@ -361,7 +361,7 @@ Full, canonical standards live in [`AGENTS.md`](./AGENTS.md).
 ## Keystatic Page Builder (operator guide)
 
 Structured pages are composed in the Keystatic admin (`/keystatic`, local dev needs
-no login) from one hundred nine registered sections: `introText`, `ctaBand`, `stats`, `hero`,
+no login) from one hundred twenty-three registered sections: `introText`, `ctaBand`, `stats`, `hero`,
 `cardGrid`, `splitMedia`, `legal`, `faq`, `process`, `gallery`, `pricing`, `trustees`,
 `certifications`, `keyFacts`, `metrics`, `whyChooseUs`, `about`,
 `surveyingInstruments`, `coreExpertise`, `planningInfographic`, `coverageArea`,
@@ -385,7 +385,10 @@ no login) from one hundred nine registered sections: `introText`, `ctaBand`, `st
 `cadastralCompliance`, `cadastralCaseStudy`, `cadastralFinalCta`, `gprHero`,
 `gprHighlights`, `gprJumpNav`, `gprOverview`, `gprMethodology`, `gprApplications`,
 `gprDetect`, `gprSue`, `gprLimitations`, `gprBeforeAfter`, `gprTechnology`,
-`gprFeaturedProjects`, `gprSummary`, `gprFinalCta`. See
+`gprFeaturedProjects`, `gprSummary`, `gprFinalCta`, `gisHero`, `gisWhatIs`,
+`gisImportance`, `gisServices`, `gisIndustries`, `gisTechStack`, `gisWhatsappCta`,
+`gisComponents`, `gisWhySmartgrid`, `gisAnalystCta`, `gisDataAccuracy`,
+`gisBeforeAfter`, `gisProjectImpact`, `gisRelatedServices`. See
 `src/lib/keystatic/sectionRegistry.ts` — the single
 source for editor options and renderer mappings.
 

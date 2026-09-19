@@ -16,17 +16,29 @@ interface BeforeAfterContent {
 	after: FlipSide;
 }
 
-export function GisBeforeAfterSection(): ReactElement {
+export interface GisBeforeAfterData {
+	tag?: string | null;
+	headline: string;
+	flipHint?: string | null;
+	before: FlipSide;
+	after: FlipSide;
+}
+
+export function GisBeforeAfterSection({ data, id }: { data?: GisBeforeAfterData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/gis-mapping"]);
-	const section = t("surveying/gis-mapping:beforeAfter", {
-		returnObjects: true,
-	}) as unknown as BeforeAfterContent;
+	// Keystatic-owned content when `data` is provided (M11 `gisBeforeAfter`
+	// unique section); legacy locale strings otherwise. Flip behavior,
+	// layoutId and icons stay in the renderer.
+	const section = (data ??
+		(t("surveying/gis-mapping:beforeAfter", {
+			returnObjects: true,
+		}) as unknown as BeforeAfterContent)) as BeforeAfterContent;
 
 	if (!section?.headline) return <></>;
 
 	return (
 		<section
-			id="before-after"
+			id={id ?? "before-after"}
 			className="scroll-mt-36 py-20 sm:py-24 relative overflow-hidden"
 		>
 			<Blob

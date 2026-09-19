@@ -18,21 +18,32 @@ interface AnalystCtaContent {
 	actions?: CtaAction[] | null;
 }
 
+export interface GisAnalystCtaData {
+	tag?: string | null;
+	headline: string;
+	description?: string | null;
+	actions?: CtaAction[] | null;
+}
+
 /**
  * Talk-to-analyst closing CTA — shared full-bleed dark CTA with action cards
  * (content: surveying/gis-mapping:analystCta).
  */
-export function GisAnalystCtaSection(): ReactElement | null {
+export function GisAnalystCtaSection({ data, id }: { data?: GisAnalystCtaData | null; id?: string } = {}): ReactElement | null {
 	const { t } = useTranslation(["surveying/gis-mapping"]);
-	const section = t("surveying/gis-mapping:analystCta", {
-		returnObjects: true,
-	}) as unknown as AnalystCtaContent;
+	// Keystatic-owned content when `data` is provided (M11 `gisAnalystCta`
+	// unique section); legacy locale strings otherwise. The hardcoded
+	// `id="talk-to-analyst"` + watermark + 3 columns stay in the renderer.
+	const section = (data ??
+		(t("surveying/gis-mapping:analystCta", {
+			returnObjects: true,
+		}) as unknown as AnalystCtaContent)) as AnalystCtaContent;
 
 	if (!section?.headline) return null;
 
 	return (
 		<FinalCta
-			id="talk-to-analyst"
+			id={id ?? "talk-to-analyst"}
 			tag={section.tag}
 			headline={section.headline}
 			description={section.description}

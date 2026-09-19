@@ -19,6 +19,14 @@ interface WhatIsGisContent {
 	closingStatement?: string | null;
 }
 
+export interface GisWhatIsData {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+	items?: WhatIsGisItem[] | null;
+	closingStatement?: string | null;
+}
+
 /** Render inline <bold> segments on a dark panel. */
 function renderClosing(text: string): ReactNode[] {
 	const nodes: ReactNode[] = [];
@@ -47,16 +55,20 @@ function renderClosing(text: string): ReactNode[] {
 	return nodes;
 }
 
-export function WhatIsGisSection() {
+export function WhatIsGisSection({ data, id }: { data?: GisWhatIsData | null; id?: string } = {}) {
 	const { t } = useTranslation(["surveying/gis-mapping"]);
-	const section = t("surveying/gis-mapping:whatIsGis", {
-		returnObjects: true,
-	}) as unknown as WhatIsGisContent;
+	// Keystatic-owned content when `data` is provided (M11 `gisWhatIs` unique
+	// section); legacy locale strings otherwise. The `<bold>` closing
+	// parsing stays in the renderer.
+	const section = (data ??
+		(t("surveying/gis-mapping:whatIsGis", {
+			returnObjects: true,
+		}) as unknown as WhatIsGisContent)) as WhatIsGisContent;
 	const items = Array.isArray(section.items) ? section.items : [];
 	const closingLines = (section.closingStatement || "").split(/\n+/).filter(Boolean);
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden">
+		<section id={id} className="py-24 sm:py-28 relative overflow-hidden">
 			<Blob className="w-[28rem] h-[28rem] bg-primary-100/60 -top-24 -right-24" opacity={0.5} />
 			<Blob className="w-[22rem] h-[22rem] bg-primary-200/40 -bottom-24 -left-24" opacity={0.5} />
 

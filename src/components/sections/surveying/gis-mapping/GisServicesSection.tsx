@@ -17,16 +17,27 @@ interface GisServicesContent {
 	items?: ServiceItem[] | null;
 }
 
+export interface GisServicesData {
+	tag?: string | null;
+	headline: string;
+	description?: string | null;
+	items?: ServiceItem[] | null;
+}
+
 /**
  * GIS services — shared indexed card grid with header-row number badges; each
  * service's feature list renders as the card inset checklist (content:
  * surveying/gis-mapping:gisServices).
  */
-export function GisServicesSection(): ReactElement | null {
+export function GisServicesSection({ data, id }: { data?: GisServicesData | null; id?: string } = {}): ReactElement | null {
 	const { t } = useTranslation(["surveying/gis-mapping"]);
-	const section = t("surveying/gis-mapping:gisServices", {
-		returnObjects: true,
-	}) as unknown as GisServicesContent;
+	// Keystatic-owned content when `data` is provided (M11 `gisServices`
+	// unique section — `indexed` + header-row badges are outside the shared
+	// `cardGrid` contract); legacy locale strings otherwise.
+	const section = (data ??
+		(t("surveying/gis-mapping:gisServices", {
+			returnObjects: true,
+		}) as unknown as GisServicesContent)) as GisServicesContent;
 	const rows = Array.isArray(section?.items) ? section.items : [];
 
 	if (rows.length === 0) return null;
@@ -39,7 +50,7 @@ export function GisServicesSection(): ReactElement | null {
 
 	return (
 		<CardGrid
-			id="gis-services"
+			id={id ?? "gis-services"}
 			tag={section.tag ?? null}
 			headline={section.headline}
 			description={section.description}

@@ -22,18 +22,30 @@ interface DataAccuracyContent {
 	levels?: AccuracyLevel[] | null;
 }
 
-export function GisDataAccuracySection(): ReactElement {
+export interface GisDataAccuracyData {
+	tag?: string | null;
+	headline: string;
+	ensureTitle?: string | null;
+	factors?: string[] | null;
+	levelsTitle?: string | null;
+	levels?: AccuracyLevel[] | null;
+}
+
+export function GisDataAccuracySection({ data, id }: { data?: GisDataAccuracyData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/gis-mapping"]);
-	const section = t("surveying/gis-mapping:dataAccuracy", {
-		returnObjects: true,
-	}) as unknown as DataAccuracyContent;
+	// Keystatic-owned content when `data` is provided (M11 `gisDataAccuracy`
+	// unique section); legacy locale strings otherwise.
+	const section = (data ??
+		(t("surveying/gis-mapping:dataAccuracy", {
+			returnObjects: true,
+		}) as unknown as DataAccuracyContent)) as DataAccuracyContent;
 	const factors = Array.isArray(section?.factors) ? section.factors : [];
 	const levels = Array.isArray(section?.levels) ? section.levels : [];
 
 	if (factors.length === 0 && levels.length === 0) return <></>;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden ">
+		<section id={id} className="py-24 sm:py-28 relative overflow-hidden ">
 			<Blob className="w-[28rem] h-[28rem] bg-primary-100/60 -top-24 -left-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">

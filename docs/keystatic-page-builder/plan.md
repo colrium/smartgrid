@@ -1008,6 +1008,24 @@ Rules (decided 2026-09-18, before implementing):
       first try), `yarn typecheck` clean, `eslint --max-warnings=0` clean on
       touched files; dev-smoke DEFERRED per M11/M12 policy. Next: Batch 14
       — gis-mapping tails.)
+      (Batch 14 — gis-mapping — done 2026-09-19: 14 uniques (`gisHero`
+      with `<bold>` parsed from data, `gisWhatIs` with `<bold>` closing,
+      `gisImportance` + `gisServices` + `gisIndustries` sharing one
+      `gisChecklistGridBuild`, `gisTechStack` with pills + logo bento,
+      `gisWhatsappCta`, `gisComponents` lifecycle ring, `gisWhySmartgrid`,
+      `gisAnalystCta` with hardcoded anchor id, `gisDataAccuracy`,
+      `gisBeforeAfter` flip card, `gisProjectImpact`, `gisRelatedServices`
+      with href filter); additive-`data` refactors on all wrappers with
+      legacy anchor ids via `??` defaults; `remoteSensingSolutions` +
+      `mappingServices` stay DORMANT (commented out — never migrated);
+      whole page in page order (15 sections) → one `PageBuilderDocument`,
+      `skipped` now `["remoteSensingSolutions", "mappingServices"]`
+      (dead); registry 109→123; README 109→123. Validation:
+      `check:keystatic` OK (123 sections, 31 fixtures), `--verify` clean
+      (15 sections, no gaps, first try), `yarn typecheck` clean,
+      `eslint --max-warnings=0` clean on touched files; dev-smoke DEFERRED
+      per M11/M12 policy. Next: Batch 15 — civil highway-surveys +
+      as-built-surveys tails.)
 - [ ] README operator list + `.env.example` untouched (no new env); check-script
       fixture/render coverage extended per batch.
 
@@ -1182,3 +1200,4 @@ For every implementation change:
 | 2026-09-19 | M11 | Batch 11 DONE — aerial-surveys: 12 uniques (`aerialIntro`, `aerialWhyDrones`, `aerialServices`, `aerialWorkflow`, `aerialSurveyingGrid`, `aerialIndustries`, `aerialIndustryCta`, `aerialProjects`, `aerialTechStack`, `aerialCapabilityCta`, `aerialAdditionalServices`, `aerialFinalCta`) + shared `deliverables` (surface); additive-`data` refactors on all 12 wrappers; mapping reordered to page order (15 sections), route → one `PageBuilderDocument`, `skipped` now `[]`; registry 74→86; README list refreshed to 86 (was stale at 59). CAUGHT: duplicate `AerialSurveyingSection` import — aliased. Tail inventory (2 subagents) confirmed zero pseudo-markup/Trans on this page, all SSR-safe | `check:keystatic` OK (86 sections, 31 fixtures); `--verify` clean (15 sections, no gaps); `yarn typecheck` clean; `eslint --max-warnings=0` clean on touched files. Dev-smoke DEFERRED per M11/M12 policy. Next: Batch 12 — cadastral-surveys tails | |
 | 2026-09-19 | M11 | Batch 12 DONE — cadastral-surveys: 9 uniques (`cadastralPostHeroCta`, `cadastralWhenYouNeed`, `cadastralProcess`, `cadastralProcessCta`, `cadastralCost`, `cadastralTimeline`, `cadastralCompliance`, `cadastralCaseStudy`, `cadastralFinalCta` reusing the aerial closer build); additive-`data` refactors on all 9 wrappers; `whatsABoundarySurvey` stays DORMANT; mapping reordered to page order (10 sections), route → one `PageBuilderDocument`, `skipped` now `["whatsABoundarySurvey"]` (dead); registry 86→95; README 86→95. CAUGHT: bad plan-edit deleted the cadastral hero build — restored verbatim. No import collisions (cadastral Timeline/Cost aliased where sectional/topo names exist) | `check:keystatic` OK (95 sections, 31 fixtures); `--verify` clean (10 sections, no gaps, first try); `yarn typecheck` clean; `eslint --max-warnings=0` clean on touched files. Dev-smoke DEFERRED per M11/M12 policy. Next: Batch 13 — ground-penetrating-radar + gis-mapping tails | |
 | 2026-09-19 | M11 | Batch 13 DONE — ground-penetrating-radar (GPR only; GIS splits to Batch 14): 14 uniques (`gprHero`, `gprHighlights`, `gprJumpNav`, `gprOverview`, `gprMethodology`, `gprApplications`, `gprDetect`, `gprSue`, `gprLimitations`, `gprBeforeAfter`, `gprTechnology`, `gprFeaturedProjects`, `gprSummary`, `gprFinalCta` reusing `rmFinalCtaBuild`) + shared `deliverables` (surface + `id` via extended `deliverablesBuild(tone, id)`); additive-`data` refactors with legacy anchor ids via `??` defaults; whole page in page order (17 sections) → one `PageBuilderDocument`, `skipped` now `[]`; registry 95→109; README 95→109. DECISIONS: `gprJumpNav` keeps its `<nav>` root (sticky) + documented check exemption; shared-deliverables `scroll-mt-36` drop documented (anchor offset only) | `check:keystatic` OK (109 sections, 31 fixtures); `--verify` clean (17 sections, no gaps, first try); `yarn typecheck` clean (92s); `eslint --max-warnings=0` clean on touched files. Dev-smoke DEFERRED per M11/M12 policy. Next: Batch 14 — gis-mapping tails | |
+| 2026-09-19 | M11 | Batch 14 DONE — gis-mapping: 14 uniques (`gisHero`, `gisWhatIs`, `gisImportance`, `gisServices`, `gisIndustries`, `gisTechStack`, `gisWhatsappCta`, `gisComponents`, `gisWhySmartgrid`, `gisAnalystCta`, `gisDataAccuracy`, `gisBeforeAfter`, `gisProjectImpact`, `gisRelatedServices`); additive-`data` refactors on all 14 wrappers (`gisServices` + `gisBeforeAfter` + `gisAnalystCta` keep legacy anchor ids via `??` defaults); `remoteSensingSolutions` + `mappingServices` stay DORMANT; mapping reordered to page order (15 sections), route → one `PageBuilderDocument`, `skipped` now 2 dead keys; registry 109→123; README 109→123. Shared-build reuse: `gisChecklistGridBuild` serves importance/industries, `gisServicesBuild` adds the anchor id | `check:keystatic` OK (123 sections, 31 fixtures); `--verify` clean (15 sections, no gaps, first try); `yarn typecheck` clean (75s); `eslint --max-warnings=0` clean on touched files. Dev-smoke DEFERRED per M11/M12 policy. Next: Batch 15 — civil highway-surveys + as-built-surveys tails | |

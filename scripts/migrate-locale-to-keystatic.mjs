@@ -2807,6 +2807,312 @@ function gprSummaryBuild(en, sw, where) {
 	};
 }
 
+// M11 batch 14 — gis-mapping page (2026-09-19): the fourteen bespoke tails
+// → unique sections. Icons, image/logo paths and hrefs shared; all other
+// strings localized. `<bold>` hero/whatIs copy parses from data in the
+// wrappers. `remoteSensingSolutions` + `mappingServices` stay DORMANT
+// (commented out of the route — never migrated). Fixed presentation
+// (gradients, bento spans, ring geometry, flip cards, hardcoded row labels
+// and bottom-note CTA) stays in the wrappers.
+function gisHeroBuild(en, sw, where) {
+	const enFootnotes = en.footnoteItems ?? [];
+	const swFootnotes = sw.footnoteItems ?? [];
+	if (!Array.isArray(swFootnotes) || swFootnotes.length !== enFootnotes.length) {
+		gap(where, `footnote count diverged (en=${enFootnotes.length} sw=${swFootnotes?.length})`);
+	}
+	return {
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		title: { en: reqText(en.title, `${where}.title.en`), sw: reqText(sw.title, `${where}.title.sw`) },
+		description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+		footnoteItems: enFootnotes.map((footnote, i) => ({
+			en: reqText(footnote, `${where}.footnoteItems[${i}].en`),
+			sw: reqText(swFootnotes[i], `${where}.footnoteItems[${i}].sw`),
+		})),
+		image: sharedValue(en, sw, "image", where) ?? "",
+		ctaPrimary: {
+			label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+			href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+		},
+		id: "",
+	};
+}
+
+function gisWhatIsBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+			};
+		}),
+		closingStatement: { en: optText(en.closingStatement), sw: optText(sw.closingStatement) },
+		id: "",
+	};
+}
+
+// Importance/services/industries share the {tag, headline, description,
+// items[{icon, title, features[]}]} contract — one build with the caller key.
+function gisChecklistGridBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			const enFeatures = item.features ?? [];
+			const swFeatures = swItem.features ?? [];
+			if (!Array.isArray(swFeatures) || swFeatures.length !== enFeatures.length) {
+				gap(where, `feature count diverged (en=${enFeatures.length} sw=${swFeatures?.length})`);
+			}
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				features: enFeatures.map((feature, j) => ({
+					en: reqText(feature, `${where}.items[${i}].features[${j}].en`),
+					sw: reqText(swFeatures[j], `${where}.items[${i}].features[${j}].sw`),
+				})),
+			};
+		}),
+		id: "",
+	};
+}
+
+function gisServicesBuild(en, sw, where) {
+	const built = gisChecklistGridBuild(en, sw, where);
+	built.id = "gis-services";
+	return built;
+}
+
+function gisTechStackBuild(en, sw, where) {
+	const enTools = en.tools ?? [];
+	const swTools = sw.tools ?? [];
+	if (!Array.isArray(swTools) || swTools.length !== enTools.length) {
+		gap(where, `tool count diverged (en=${enTools.length} sw=${swTools?.length})`);
+	}
+	const enLogos = en.logos ?? [];
+	const swLogos = sw.logos ?? [];
+	if (!Array.isArray(swLogos) || swLogos.length !== enLogos.length) {
+		gap(where, `logo count diverged (en=${enLogos.length} sw=${swLogos?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		tools: enTools.map((tool, i) => ({
+			en: reqText(tool, `${where}.tools[${i}].en`),
+			sw: reqText(swTools[i], `${where}.tools[${i}].sw`),
+		})),
+		logos: enLogos.map((logo, i) => {
+			const swLogo = swLogos[i] ?? {};
+			return {
+				image: sharedValue(logo, swLogo, "image", `${where}.logos[${i}]`) ?? "",
+				label: { en: optText(logo.label), sw: optText(swLogo.label) },
+			};
+		}),
+		id: "",
+	};
+}
+
+function gisWhatsappCtaBuild(en, sw, where) {
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		note: { en: optText(en.note), sw: optText(sw.note) },
+		cta: {
+			label: { en: optText(en.cta?.label), sw: optText(sw.cta?.label) },
+			href: sharedValue(en.cta, sw.cta, "href", where) ?? "",
+			icon: sharedValue(en.cta, sw.cta, "icon", where) ?? "",
+		},
+		id: "",
+	};
+}
+
+function gisComponentsBuild(en, sw, where) {
+	const enList = en.list ?? [];
+	const swList = sw.list ?? [];
+	if (!Array.isArray(swList) || swList.length !== enList.length) {
+		gap(where, `item count diverged (en=${enList.length} sw=${swList?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		lifecycle: {
+			title: { en: optText(en.lifecycle?.title), sw: optText(sw.lifecycle?.title) },
+			subtitle: { en: optText(en.lifecycle?.subtitle), sw: optText(sw.lifecycle?.subtitle) },
+		},
+		list: enList.map((item, i) => {
+			const swItem = swList[i] ?? {};
+			return {
+				title: { en: reqText(item.title, `${where}.list[${i}].title.en`), sw: reqText(swItem.title, `${where}.list[${i}].title.sw`) },
+				description: { en: reqText(item.description, `${where}.list[${i}].description.en`), sw: reqText(swItem.description, `${where}.list[${i}].description.sw`) },
+			};
+		}),
+		id: "",
+	};
+}
+
+function gisWhySmartgridBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+			};
+		}),
+		id: "",
+	};
+}
+
+function gisAnalystCtaBuild(en, sw, where) {
+	const enActions = en.actions ?? [];
+	const swActions = sw.actions ?? [];
+	if (!Array.isArray(swActions) || swActions.length !== enActions.length) {
+		gap(where, `action count diverged (en=${enActions.length} sw=${swActions?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		actions: enActions.map((action, i) => {
+			const swAction = swActions[i] ?? {};
+			return {
+				icon: sharedValue(action, swAction, "icon", `${where}.actions[${i}]`) ?? "",
+				label: { en: reqText(action.label, `${where}.actions[${i}].label.en`), sw: reqText(swAction.label, `${where}.actions[${i}].label.sw`) },
+				description: { en: optText(action.description), sw: optText(swAction.description) },
+				href: sharedValue(action, swAction, "href", `${where}.actions[${i}]`) ?? "",
+			};
+		}),
+		id: "talk-to-analyst",
+	};
+}
+
+function gisDataAccuracyBuild(en, sw, where) {
+	const enFactors = en.factors ?? [];
+	const swFactors = sw.factors ?? [];
+	if (!Array.isArray(swFactors) || swFactors.length !== enFactors.length) {
+		gap(where, `factor count diverged (en=${enFactors.length} sw=${swFactors?.length})`);
+	}
+	const enLevels = en.levels ?? [];
+	const swLevels = sw.levels ?? [];
+	if (!Array.isArray(swLevels) || swLevels.length !== enLevels.length) {
+		gap(where, `level count diverged (en=${enLevels.length} sw=${swLevels?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		ensureTitle: { en: optText(en.ensureTitle), sw: optText(sw.ensureTitle) },
+		factors: enFactors.map((factor, i) => ({
+			en: reqText(factor, `${where}.factors[${i}].en`),
+			sw: reqText(swFactors[i], `${where}.factors[${i}].sw`),
+		})),
+		levelsTitle: { en: optText(en.levelsTitle), sw: optText(sw.levelsTitle) },
+		levels: enLevels.map((level, i) => {
+			const swLevel = swLevels[i] ?? {};
+			return {
+				icon: sharedValue(level, swLevel, "icon", `${where}.levels[${i}]`) ?? "",
+				label: { en: reqText(level.label, `${where}.levels[${i}].label.en`), sw: reqText(swLevel.label, `${where}.levels[${i}].label.sw`) },
+				accuracy: { en: reqText(level.accuracy, `${where}.levels[${i}].accuracy.en`), sw: reqText(swLevel.accuracy, `${where}.levels[${i}].accuracy.sw`) },
+			};
+		}),
+		id: "",
+	};
+}
+
+function gisBeforeAfterBuild(en, sw, where) {
+	const side = (node, swNode, key) => {
+		const enItems = node?.items ?? [];
+		const swItems = swNode?.items ?? [];
+		if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+			gap(where, `${key} count diverged (en=${enItems.length} sw=${swItems?.length})`);
+		}
+		return {
+			label: { en: reqText(node?.label, `${where}.${key}.label.en`), sw: reqText(swNode?.label, `${where}.${key}.label.sw`) },
+			tagline: { en: optText(node?.tagline), sw: optText(swNode?.tagline) },
+			items: enItems.map((item, i) => ({
+				en: reqText(item, `${where}.${key}.items[${i}].en`),
+				sw: reqText(swItems[i], `${where}.${key}.items[${i}].sw`),
+			})),
+		};
+	};
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		flipHint: { en: optText(en.flipHint), sw: optText(sw.flipHint) },
+		before: side(en.before, sw.before, "before"),
+		after: side(en.after, sw.after, "after"),
+		id: "before-after",
+	};
+}
+
+function gisProjectImpactBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+			};
+		}),
+		id: "",
+	};
+}
+
+function gisRelatedServicesBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		bottomNote: { en: optText(en.bottomNote), sw: optText(sw.bottomNote) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				href: sharedValue(item, swItem, "href", `${where}.items[${i}]`) ?? "",
+			};
+		}),
+		id: "",
+	};
+}
+
 const PAGES = {
 	"company-profile": {
 		namespace: "company-profile",
@@ -4806,8 +5112,34 @@ const PAGES = {
 	"gis-mapping": {
 		namespace: "surveying/gis-mapping",
 		title: "GIS Mapping",
-		skipped: ["hero", "whatIsGis", "whyGisCritical", "services", "remoteSensingSolutions", "mappingServices", "industries", "techStack", "whatsappCta", "components", "whySmartgrid", "dataAccuracy", "beforeAfter", "projectImpact", "relatedServices", "analystCta"],
+		// M11 batch 14 (2026-09-19): whole page Keystatic-owned in page order
+		// — `hero` (gisHero) + `whatIsGis` (gisWhatIs) + `consultationCta`
+		// (shared ctaBand) + `whyGisCritical` (gisImportance) + `gisServices`
+		// (gisServices) + `industries` (gisIndustries) + `techStack`
+		// (gisTechStack) + `whatsappCta` (gisWhatsappCta) + `gisComponents`
+		// (gisComponents) + `whySmartgrid` (gisWhySmartgrid) +
+		// `dataAccuracy` (gisDataAccuracy) + `beforeAfter` (gisBeforeAfter)
+		// + `projectImpact` (gisProjectImpact) + `relatedServices`
+		// (gisRelatedServices) + `analystCta` (gisAnalystCta).
+		// `remoteSensingSolutions` + `mappingServices` stay DORMANT
+		// (commented out of the route — never migrated). Mapping order =
+		// entry order = page order (M12 flexible rule).
+		skipped: ["remoteSensingSolutions", "mappingServices"],
 		sections: [
+			{
+				discriminant: "gisHero",
+				from: "hero",
+				// Legacy: GisHeroSection (full-bleed + <bold> lede) →
+				// <GisHeroSection data />.
+				build: gisHeroBuild,
+			},
+			{
+				discriminant: "gisWhatIs",
+				from: "whatIsGis",
+				// Legacy: WhatIsGisSection (cards + closing panel) →
+				// <WhatIsGisSection data />.
+				build: gisWhatIsBuild,
+			},
 			{
 				discriminant: "ctaBand",
 				from: "consultationCta",
@@ -4836,6 +5168,90 @@ const PAGES = {
 						id: "",
 					};
 				},
+			},
+			{
+				discriminant: "gisImportance",
+				from: "whyGisCritical",
+				// Legacy: GisImportanceSection (checklist grid) →
+				// <GisImportanceSection data />.
+				build: gisChecklistGridBuild,
+			},
+			{
+				discriminant: "gisServices",
+				from: "gisServices",
+				// Legacy: GisServicesSection (indexed grid) →
+				// <GisServicesSection data />.
+				build: gisServicesBuild,
+			},
+			{
+				discriminant: "gisIndustries",
+				from: "industries",
+				// Legacy: GisIndustriesSection (2-col grid) →
+				// <GisIndustriesSection data />.
+				build: gisChecklistGridBuild,
+			},
+			{
+				discriminant: "gisTechStack",
+				from: "techStack",
+				// Legacy: GisTechStackSection (pills + logo bento) →
+				// <GisTechStackSection data />.
+				build: gisTechStackBuild,
+			},
+			{
+				discriminant: "gisWhatsappCta",
+				from: "whatsappCta",
+				// Legacy: GisWhatsappCtaSection (WhatsApp band) →
+				// <GisWhatsappCtaSection data />.
+				build: gisWhatsappCtaBuild,
+			},
+			{
+				discriminant: "gisComponents",
+				from: "gisComponents",
+				// Legacy: GisComponentsSection (lifecycle ring) →
+				// <GisComponentsSection data />.
+				build: gisComponentsBuild,
+			},
+			{
+				discriminant: "gisWhySmartgrid",
+				from: "whySmartgrid",
+				// Legacy: GisWhySmartgridSection (icon grid) →
+				// <GisWhySmartgridSection data />.
+				build: gisWhySmartgridBuild,
+			},
+			{
+				discriminant: "gisDataAccuracy",
+				from: "dataAccuracy",
+				// Legacy: GisDataAccuracySection (QC + levels panels) →
+				// <GisDataAccuracySection data />.
+				build: gisDataAccuracyBuild,
+			},
+			{
+				discriminant: "gisBeforeAfter",
+				from: "beforeAfter",
+				// Legacy: GisBeforeAfterSection (flip card) →
+				// <GisBeforeAfterSection data />.
+				build: gisBeforeAfterBuild,
+			},
+			{
+				discriminant: "gisProjectImpact",
+				from: "projectImpact",
+				// Legacy: GisProjectImpactSection (number grid) →
+				// <GisProjectImpactSection data />.
+				build: gisProjectImpactBuild,
+			},
+			{
+				discriminant: "gisRelatedServices",
+				from: "relatedServices",
+				// Legacy: GisRelatedServicesSection (link grid) →
+				// <GisRelatedServicesSection data />.
+				build: gisRelatedServicesBuild,
+			},
+			{
+				discriminant: "gisAnalystCta",
+				from: "analystCta",
+				// Legacy: GisAnalystCtaSection (closing cards) →
+				// <GisAnalystCtaSection data />.
+				build: gisAnalystCtaBuild,
 			},
 		],
 	},
