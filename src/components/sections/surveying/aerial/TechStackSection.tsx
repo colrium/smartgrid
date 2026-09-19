@@ -18,13 +18,24 @@ interface TechStackContent {
 	items?: TechItem[] | null;
 }
 
+export interface AerialTechStackData {
+	tag?: string | null;
+	headline: string;
+	description?: string | null;
+	items?: TechItem[] | null;
+}
+
 const FALLBACK_ICONS = ["quadcopter", "drone", "radar", "crosshairs-gps", "cube-scan", "map-legend"];
 
 /** Technology stack — shared paper card grid (content:
  * surveying/aerial-surveys:techStack). */
-export function TechStackSection(): ReactElement | null {
+export function TechStackSection({ data }: { data?: AerialTechStackData | null } = {}): ReactElement | null {
 	const { t } = useTranslation(["surveying/aerial-surveys"]);
-	const section = t("surveying/aerial-surveys:techStack", { returnObjects: true }) as unknown as TechStackContent;
+	// Keystatic-owned content when `data` is provided (M11 `aerialTechStack`
+	// unique section); legacy locale strings otherwise. The note→description
+	// mapping + positional fallback icons stay in the renderer.
+	const section = (data ??
+		(t("surveying/aerial-surveys:techStack", { returnObjects: true }) as unknown as TechStackContent)) as TechStackContent;
 	const raw = Array.isArray(section?.items) ? section.items : [];
 
 	if (raw.length === 0) return null;

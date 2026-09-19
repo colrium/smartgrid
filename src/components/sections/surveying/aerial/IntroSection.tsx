@@ -20,11 +20,21 @@ interface IntroContent {
 	ctaPrimary?: IntroCta | null;
 }
 
-export function IntroSection(): ReactElement {
+export interface AerialIntroData {
+	tag?: string | null;
+	headline: string;
+	description: string;
+	ctaPrimary?: IntroCta | null;
+}
+
+export function IntroSection({ data, id }: { data?: AerialIntroData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/aerial-surveys"]);
-	const section = t("surveying/aerial-surveys:section1", {
-		returnObjects: true,
-	}) as unknown as IntroContent;
+	// Keystatic-owned content when `data` is provided (M11 `aerialIntro`
+	// unique section); legacy locale strings otherwise.
+	const section = (data ??
+		(t("surveying/aerial-surveys:section1", {
+			returnObjects: true,
+		}) as unknown as IntroContent)) as IntroContent;
 
 	// "Reliable. Scalable. Fast. Effective." → ["Reliable","Scalable","Fast","Effective"]
 	const headlineLines = (section.headline ?? "")
@@ -33,7 +43,7 @@ export function IntroSection(): ReactElement {
 		.filter(Boolean);
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden">
+		<section id={id} className="py-24 sm:py-28 relative overflow-hidden">
 			<Blob
 				className="w-[26rem] h-[26rem] bg-primary-100/70 -top-24 -left-24"
 				opacity={0.5}

@@ -19,11 +19,24 @@ interface CapabilityCtaContent {
 	secondary?: CtaLink | null;
 }
 
-export function CapabilityCtaSection(): ReactElement {
+export interface AerialCapabilityCtaData {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+	watermark?: string | null;
+	primary?: CtaLink | null;
+	secondary?: CtaLink | null;
+}
+
+export function CapabilityCtaSection({ data, id }: { data?: AerialCapabilityCtaData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/aerial-surveys"]);
-	const content = t("surveying/aerial-surveys:capabilityCta", {
-		returnObjects: true,
-	}) as unknown as CapabilityCtaContent;
+	// Keystatic-owned content when `data` is provided (M11
+	// `aerialCapabilityCta` unique section); legacy locale strings otherwise.
+	// Centered layout + shimmer presentation stays in the renderer.
+	const content = (data ??
+		(t("surveying/aerial-surveys:capabilityCta", {
+			returnObjects: true,
+		}) as unknown as CapabilityCtaContent)) as CapabilityCtaContent;
 
 	if (!content?.headline) return <></>;
 
@@ -33,6 +46,7 @@ export function CapabilityCtaSection(): ReactElement {
 			decor="none"
 			shimmer
 			hairline
+			id={id}
 			watermark={content.watermark}
 			tag={content.tag}
 			headline={content.headline}

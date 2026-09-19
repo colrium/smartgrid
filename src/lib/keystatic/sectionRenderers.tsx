@@ -69,6 +69,27 @@ import { SectorSection } from "@/components/sections/surveying/resource-mapping/
 import { BuildingSiteHeroSection } from "@/components/sections/surveying/building-site/BuildingSiteHeroSection";
 import { BuildSmarterSection } from "@/components/sections/surveying/building-site/BuildSmarterSection";
 import { SiteEngineeringSection } from "@/components/sections/surveying/building-site/SiteEngineeringSection";
+import { IntroSection as AerialIntroSection } from "@/components/sections/surveying/aerial/IntroSection";
+import { WhyDroneSurveysSection } from "@/components/sections/surveying/aerial/WhyDroneSurveysSection";
+import { AerialServicesSection } from "@/components/sections/surveying/aerial/AerialServicesSection";
+import { AerialWorkflowSection } from "@/components/sections/surveying/aerial/AerialWorkflowSection";
+import { AerialSurveyingSection as AerialSurveyingGridSection } from "@/components/sections/surveying/aerial/AerialSurveyingSection";
+import { AerialIndustriesSection } from "@/components/sections/surveying/aerial/AerialIndustriesSection";
+import { IndustryCtaSection } from "@/components/sections/surveying/aerial/IndustryCtaSection";
+import { TechStackSection as AerialTechStackSection } from "@/components/sections/surveying/aerial/TechStackSection";
+import { CapabilityCtaSection } from "@/components/sections/surveying/aerial/CapabilityCtaSection";
+import { AerialFinalCtaSection } from "@/components/sections/surveying/aerial/AerialFinalCtaSection";
+import { ProjectsSection as AerialProjectsSection } from "@/components/sections/surveying/aerial/ProjectsSection";
+import { AdditionalServicesSection as AerialAdditionalServicesSection } from "@/components/sections/surveying/aerial/AdditionalServicesSection";
+import { PostHeroCtaSection } from "@/components/sections/surveying/cadastral/PostHeroCtaSection";
+import { WhenYouNeedSection as CadastralWhenYouNeedSection } from "@/components/sections/surveying/cadastral/WhenYouNeedSection";
+import { ProcessFlowSection } from "@/components/sections/surveying/cadastral/ProcessFlowSection";
+import { ProcessCtaSection } from "@/components/sections/surveying/cadastral/ProcessCtaSection";
+import { CostSection as CadastralCostSection } from "@/components/sections/surveying/cadastral/CostSection";
+import { TimelineSection as CadastralTimelineSection } from "@/components/sections/surveying/cadastral/TimelineSection";
+import { ComplianceSection } from "@/components/sections/surveying/cadastral/ComplianceSection";
+import { CaseStudySection } from "@/components/sections/surveying/cadastral/CaseStudySection";
+import { FinalCtaSection as CadastralFinalCtaSection } from "@/components/sections/surveying/cadastral/FinalCtaSection";
 import { ProcessSection as BsProcessSection } from "@/components/sections/surveying/building-site/ProcessSection";
 import { AccuracyMattersSection } from "@/components/sections/surveying/building-site/AccuracyMattersSection";
 import { TechnologyStackSection } from "@/components/sections/surveying/building-site/TechnologyStackSection";
@@ -167,6 +188,27 @@ export const sectionRenderers = {
 	bsAccuracyMatters: AccuracyMattersSection,
 	bsTechnology: TechnologyStackSection,
 	bsConsultation: ConsultationSection,
+	aerialIntro: AerialIntroSection,
+	aerialWhyDrones: WhyDroneSurveysSection,
+	aerialServices: AerialServicesSection,
+	aerialWorkflow: AerialWorkflowSection,
+	aerialSurveyingGrid: AerialSurveyingGridSection,
+	aerialIndustries: AerialIndustriesSection,
+	aerialIndustryCta: IndustryCtaSection,
+	aerialTechStack: AerialTechStackSection,
+	aerialCapabilityCta: CapabilityCtaSection,
+	aerialFinalCta: AerialFinalCtaSection,
+	aerialProjects: AerialProjectsSection,
+	aerialAdditionalServices: AerialAdditionalServicesSection,
+	cadastralPostHeroCta: PostHeroCtaSection,
+	cadastralWhenYouNeed: CadastralWhenYouNeedSection,
+	cadastralProcess: ProcessFlowSection,
+	cadastralProcessCta: ProcessCtaSection,
+	cadastralCost: CadastralCostSection,
+	cadastralTimeline: CadastralTimelineSection,
+	cadastralCompliance: ComplianceSection,
+	cadastralCaseStudy: CaseStudySection,
+	cadastralFinalCta: CadastralFinalCtaSection,
 } satisfies Record<SectionId, ComponentType<any>>;
 
 export function renderSection(

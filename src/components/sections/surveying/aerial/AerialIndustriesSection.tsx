@@ -18,6 +18,13 @@ interface IndustriesContent {
 	items?: IndustryItem[] | null;
 }
 
+export interface AerialIndustriesData {
+	tag?: string | null;
+	headline: string;
+	description?: string | null;
+	items?: IndustryItem[] | null;
+}
+
 const FALLBACK_ICONS = [
 	"road-variant",
 	"domain",
@@ -33,9 +40,13 @@ const FALLBACK_ICONS = [
  * row when the count leaves a single remainder (content:
  * surveying/aerial-surveys:industries).
  */
-export function AerialIndustriesSection(): ReactElement | null {
+export function AerialIndustriesSection({ data }: { data?: AerialIndustriesData | null } = {}): ReactElement | null {
 	const { t } = useTranslation(["surveying/aerial-surveys"]);
-	const section = t("surveying/aerial-surveys:industries", { returnObjects: true }) as unknown as IndustriesContent;
+	// Keystatic-owned content when `data` is provided (M11 `aerialIndustries`
+	// unique section); legacy locale strings otherwise. The wide-last-card
+	// computation + positional fallback icons stay in the renderer.
+	const section = (data ??
+		(t("surveying/aerial-surveys:industries", { returnObjects: true }) as unknown as IndustriesContent)) as IndustriesContent;
 	const raw = Array.isArray(section?.items) ? section.items : [];
 
 	if (raw.length === 0) return null;

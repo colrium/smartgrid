@@ -361,7 +361,7 @@ Full, canonical standards live in [`AGENTS.md`](./AGENTS.md).
 ## Keystatic Page Builder (operator guide)
 
 Structured pages are composed in the Keystatic admin (`/keystatic`, local dev needs
-no login) from fifty-nine registered sections: `introText`, `ctaBand`, `stats`, `hero`,
+no login) from ninety-five registered sections: `introText`, `ctaBand`, `stats`, `hero`,
 `cardGrid`, `splitMedia`, `legal`, `faq`, `process`, `gallery`, `pricing`, `trustees`,
 `certifications`, `keyFacts`, `metrics`, `whyChooseUs`, `about`,
 `surveyingInstruments`, `coreExpertise`, `planningInfographic`, `coverageArea`,
@@ -374,7 +374,15 @@ no login) from fifty-nine registered sections: `introText`, `ctaBand`, `stats`, 
 `sectionalWhatIs`, `sectionalServicesDetail`, `sectionalWorkflow`,
 `sectionalTimeline`, `sectionalWhoNeeds`, `bathyWorkflow`, `bathyEquipment`,
 `bathyLimitations`, `bathyDamsLakes`, `bathyApplications`, `bathyBeforeAfter`,
-`bathyFinalCta`. See
+`bathyFinalCta`, `rmWhatIs`, `rmTypes`, `rmSector`, `rmWorkflow`, `rmWhoUses`,
+`rmTechStack`, `rmDataAccuracy`, `rmFinalCta`, `bsHero`, `bsSection2`,
+`bsSiteEngineering`, `bsProcess`, `bsAccuracyMatters`, `bsTechnology`,
+`bsConsultation`, `aerialIntro`, `aerialWhyDrones`, `aerialServices`,
+`aerialWorkflow`, `aerialSurveyingGrid`, `aerialIndustries`, `aerialIndustryCta`,
+`aerialTechStack`, `aerialCapabilityCta`, `aerialFinalCta`, `aerialProjects`,
+`aerialAdditionalServices`, `cadastralPostHeroCta`, `cadastralWhenYouNeed`,
+`cadastralProcess`, `cadastralProcessCta`, `cadastralCost`, `cadastralTimeline`,
+`cadastralCompliance`, `cadastralCaseStudy`, `cadastralFinalCta`. See
 `src/lib/keystatic/sectionRegistry.ts` — the single
 source for editor options and renderer mappings.
 

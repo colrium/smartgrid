@@ -19,11 +19,14 @@ interface AerialWorkflowContent {
     cta?: WorkflowCta | null;
 }
 
-export function AerialWorkflowSection(): ReactElement {
+export function AerialWorkflowSection({ data, id }: { data?: AerialWorkflowContent | null; id?: string } = {}): ReactElement {
     const { t } = useTranslation(["surveying/aerial-surveys"]);
-    const section = t("surveying/aerial-surveys:workflow", {
-        returnObjects: true,
-    }) as unknown as AerialWorkflowContent;
+    // Keystatic-owned content when `data` is provided (M11 `aerialWorkflow`
+    // unique section); legacy locale strings otherwise.
+    const section = (data ??
+        (t("surveying/aerial-surveys:workflow", {
+            returnObjects: true,
+        }) as unknown as AerialWorkflowContent)) as AerialWorkflowContent;
 
     return (
         <WorkflowSection
@@ -34,6 +37,7 @@ export function AerialWorkflowSection(): ReactElement {
             outcome={section.outcomeLabel}
             ctaNote={section.ctaNote}
             cta={section.cta}
+            id={id}
         />
     );
 }

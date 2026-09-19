@@ -4,7 +4,7 @@ import PageHead from "@/components/Head";
 import { getI18nProps, getLocale } from "@/lib/i18n";
 import type { Lang } from "@/lib/types";
 import { resolveKeystaticPage, type ResolvedKeystaticPage } from "@/lib/keystatic/resolvePage";
-import { renderSection } from "@/lib/keystatic/sectionRenderers";
+import { PageBuilderDocument } from "@/components/keystatic/PageBuilderDocument";
 import AerialHeroSection from "@/components/sections/surveying/aerial/AerialHeroSection";
 import IntroSection from "@/components/sections/surveying/aerial/IntroSection";
 import WhyDroneSurveysSection from "@/components/sections/surveying/aerial/WhyDroneSurveysSection";
@@ -27,62 +27,26 @@ type PageProps = {
 };
 
 /**
- * Sections migrated to Keystatic in page order (see the `aerial-surveys`
- * mapping in `scripts/migrate-locale-to-keystatic.mjs`): hero (with footnote
- * chips), precision splitMedia. Thirteen legacy tails (bespoke intro,
- * popup-card services, WorkflowSection workflow, deliverables explorer,
- * fallbackIcons industries/tech grids, CtaBand CTAs with `size` + pill
- * overrides outside the v1 contract, projects/additional/final bespoke) sit
- * at fixed positions between them, so the route renders each Keystatic
- * section by index instead of one whole PageBuilderDocument. If an edit
- * changes the section COUNT, the route falls back to legacy rather than
- * misplacing sections — keep this in sync with the mapping.
+ * All fifteen legacy sections are Keystatic-owned in page order (see the
+ * `aerial-surveys` mapping in `scripts/migrate-locale-to-keystatic.mjs`):
+ * hero, aerialIntro, aerialWhyDrones, aerialServices, precision
+ * splitMedia, aerialWorkflow, aerialSurveyingGrid, deliverables,
+ * aerialIndustries, aerialIndustryCta, aerialProjects, aerialTechStack,
+ * aerialCapabilityCta, aerialAdditionalServices, aerialFinalCta (M11 batch
+ * 11, 2026-09-19 — entry order IS page order, so editors can add, remove,
+ * and reorder sections freely; the M3 resolver taxonomy remains the only
+ * fallback).
  */
-const KEYSTATIC_SECTION_COUNT = 2;
-
-function orderedSections(page: ResolvedKeystaticPage) {
-	if (page.sections.length !== KEYSTATIC_SECTION_COUNT) {
-		console.warn(
-			`[keystatic] page "aerial-surveys" has ${page.sections.length} sections, expected ${KEYSTATIC_SECTION_COUNT} — falling back to legacy content`
-		);
-		return null;
-	}
-	return page.sections;
-}
-
 const Page: NextPage<PageProps> = ({ keystaticPage }) => {
-	// Migration source switch (M3/M7): Keystatic owns the two migrated
-	// sections only when the slug is allowlisted via `KEYSTATIC_PAGES` and the
-	// entry is published. Otherwise the legacy locale-JSON implementation
+	// Migration source switch (M3/M7, completed M11 batch 11): Keystatic owns
+	// the whole page when the slug is allowlisted via `KEYSTATIC_PAGES` and
+	// the entry is published. Otherwise the legacy locale-JSON implementation
 	// renders unchanged.
-	const sections = keystaticPage ? orderedSections(keystaticPage) : null;
-
-	if (keystaticPage && sections) {
-		const locale = keystaticPage.locale;
-		const renderAt = (index: number) => {
-			const section = sections[index];
-			return renderSection(section.id, section.value, locale, section.key);
-		};
+	if (keystaticPage) {
 		return (
 			<div className="relative">
 				<PageHead pageName="aerial-surveys" />
-				<div className="flex flex-col min-h-screen" data-keystatic-page={keystaticPage.slug}>
-					{renderAt(0)}
-					<IntroSection />
-					<WhyDroneSurveysSection />
-					<AerialServicesSection />
-					{renderAt(1)}
-					<AerialWorkflowSection />
-					<AerialSurveyingSection />
-					<DeliverablesSection />
-					<AerialIndustriesSection />
-					<IndustryCtaSection />
-					<ProjectsSection />
-					<TechStackSection />
-					<CapabilityCtaSection />
-					<AdditionalServicesSection />
-					<AerialFinalCtaSection />
-				</div>
+				<PageBuilderDocument page={keystaticPage} />
 			</div>
 		);
 	}

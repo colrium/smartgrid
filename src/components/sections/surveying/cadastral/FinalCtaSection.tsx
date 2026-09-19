@@ -19,11 +19,24 @@ interface FinalCtaContent {
 	actions?: CtaCard[] | null;
 }
 
-export function FinalCtaSection(): ReactElement {
+export interface CadastralFinalCtaData {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+	actionsLabel?: string | null;
+	actions?: CtaCard[] | null;
+}
+
+export function FinalCtaSection({ data, id }: { data?: CadastralFinalCtaData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/cadastral-surveys"]);
-	const section = t("surveying/cadastral-surveys:finalCta", {
-		returnObjects: true,
-	}) as unknown as FinalCtaContent;
+	// Keystatic-owned content when `data` is provided (M11 `cadastralFinalCta`
+	// unique section); legacy locale strings otherwise. The hardcoded
+	// `watermark="vector-square"` + `columns={4}` + left align stay in the
+	// renderer.
+	const section = (data ??
+		(t("surveying/cadastral-surveys:finalCta", {
+			returnObjects: true,
+		}) as unknown as FinalCtaContent)) as FinalCtaContent;
 
 	if (!section?.headline) return <></>;
 
@@ -37,6 +50,7 @@ export function FinalCtaSection(): ReactElement {
 			actionsLabel={section.actionsLabel}
 			columns={4}
 			align="left"
+			id={id}
 		/>
 	);
 }

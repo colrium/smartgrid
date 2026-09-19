@@ -839,6 +839,20 @@ Rules (decided 2026-09-18, before implementing):
   `common:drones`); then per-page batches for the remaining opted-in routes'
   tails (about 3, hubs, children, contact/careers/company-profile/legal tails).
   One commit per batch with a simple message.
+- Flexible rendering rule (decided 2026-09-19, per user request "any page can
+  accommodate add/remove/reorganize sections"): once a page is whole-owned
+  (every legacy section has a Keystatic counterpart, `skipped` empty or
+  dead-only), the route MUST render the whole page via `PageBuilderDocument`
+  — no `KEYSTATIC_SECTION_COUNT` guard, no `renderAt(<index>)` literals, no
+  fixed-length destructuring. Entry order IS page order, so editors can add,
+  remove, and reorder blocks freely; the M3 resolver taxonomy
+  (disabled/missing/unpublished/error/empty → legacy + warn) remains the only
+  fallback. The count-guard + named-slot pattern is retired for whole-owned
+  pages (it silently falls back to legacy on any add/remove). Exception:
+  pages whose Keystatic branch needs route-level layout chrome interleaved
+  between sections (today only `home`: `max-w-7xl` wrapper + `-mt-48`
+  overlap) keep named slots until the chrome moves into the section wrappers
+  or is explicitly dropped — record the decision per page, never silently.
 
 - [x] Home pilot: `homeHero` (badge/headline/description/CTAs/location) +
       `homeDrones` (tag/headline/description/items) registered, migrated into
@@ -924,6 +938,55 @@ Rules (decided 2026-09-18, before implementing):
       have skipped the sw check — fixed). Validation: `check:keystatic`
       OK (59 sections), `--verify` clean, typecheck + lint clean;
       dev-smoke DEFERRED.)
+      (Batch 9 — resource-mapping + building-site-surveys — done 2026-09-19
+      (implemented in commit `19eb513`, recorded here): 8 uniques
+      (`rmWhatIs`, `rmTypes`, `rmSector`, `rmWorkflow`, `rmWhoUses`,
+      `rmTechStack`, `rmDataAccuracy`, `rmFinalCta`) + 7 uniques
+      (`bsHero`, `bsSection2`, `bsSiteEngineering`, `bsProcess`,
+      `bsAccuracyMatters`, `bsTechnology`, `bsConsultation`); additive-`data`
+      refactors on all wrappers; both routes whole-owned in page order → one
+      `PageBuilderDocument` each (flexible rule — no count guard), `skipped`
+      now `[]` both; registry 59→74. Validation: `check:keystatic` OK
+      (74 sections, 31 fixtures), `--verify` clean both (16 + 12 sections,
+      no gaps), `yarn typecheck` clean (51s), `yarn lint` clean (124s);
+      dev-smoke DEFERRED per M11/M12 policy.)
+      (Batch 11 — aerial-surveys — done 2026-09-19: 12 uniques
+      (`aerialIntro`, `aerialWhyDrones`, `aerialServices` with modal kept in
+      renderer, `aerialWorkflow` as WorkflowSection passthrough with
+      outcomeLabel→outcome, `aerialSurveyingGrid`, `aerialIndustries`,
+      `aerialIndustryCta` + `aerialCapabilityCta` sharing one `aerialCtaBuild`,
+      `aerialTechStack` with note→description, `aerialProjects` mosaic,
+      `aerialAdditionalServices` pills, `aerialFinalCta` with hardcoded
+      watermark/columns) + shared `deliverables` (surface tone for the
+      `bg-surface` wrapper); additive-`data` refactors on all wrappers;
+      whole page in page order (15 sections) → one `PageBuilderDocument`,
+      `skipped` now `[]`; registry 74→86; README list refreshed to all 86
+      (was stale at 59 — batch 9 ids were never listed). CAUGHT: duplicate
+      `AerialSurveyingSection` import (about-page wrapper) — aliased to
+      `AerialSurveyingGridSection`. Validation: `check:keystatic` OK
+      (86 sections, 31 fixtures), `--verify` clean (15 sections, no gaps),
+      `yarn typecheck` clean, `eslint --max-warnings=0` clean on touched
+      files; dev-smoke DEFERRED per M11/M12 policy. Next: Batch 12 —
+      cadastral-surveys tails.)
+      (Batch 12 — cadastral-surveys — done 2026-09-19: 9 uniques
+      (`cadastralPostHeroCta`, `cadastralWhenYouNeed` with sticky image,
+      `cadastralProcess` as WorkflowSection passthrough with the ACQUISITION
+      purple-chip/satellite override kept in the renderer,
+      `cadastralProcessCta` with chips, `cadastralCost` with display-string
+      prices + featured flag, `cadastralTimeline` with shared day counts,
+      `cadastralCompliance` with related links, `cadastralCaseStudy` nested
+      story, `cadastralFinalCta` reusing the aerial closer build);
+      additive-`data` refactors on all wrappers; `whatsABoundarySurvey` stays
+      DORMANT (commented out — never migrated); whole page in page order
+      (10 sections) → one `PageBuilderDocument`, `skipped` now
+      `["whatsABoundarySurvey"]` (dead); registry 86→95; README 86→95.
+      CAUGHT: a bad plan-edit deleted the cadastral hero build body
+      mid-reorder — restored verbatim plus the 9 new sections. Validation:
+      `check:keystatic` OK (95 sections, 31 fixtures), `--verify` clean
+      (10 sections, no gaps), `yarn typecheck` clean,
+      `eslint --max-warnings=0` clean on touched files; dev-smoke DEFERRED
+      per M11/M12 policy. Next: Batch 13 — ground-penetrating-radar +
+      gis-mapping tails.)
 - [ ] README operator list + `.env.example` untouched (no new env); check-script
       fixture/render coverage extended per batch.
 
@@ -933,7 +996,9 @@ render it from Keystatic when opted in, legacy otherwise.
 
 ### M12: Keystatic Order Becomes Page Order (Remove renderAt Indexes)
 
-**Status: NOT STARTED**
+**Status: IN PROGRESS** (home named-slot conversion done 2026-09-18; flexible
+rule decided 2026-09-19 — whole-owned pages go straight to `PageBuilderDocument`;
+Batch 10 converts about/topographical/sectional/bathymetric).
 
 Dependencies: M11 per page (a page can only drop its indexes once ALL its
 sections are Keystatic-owned).
@@ -972,8 +1037,17 @@ Rules (decided 2026-09-18, before implementing):
       legacy branch untouched. Validation: `check:keystatic` OK,
       `--verify` clean, typecheck + lint clean; dev-smoke DEFERRED per
       M11/M12 policy.)
-- [ ] Remaining M11-completed pages: same reorder + sequential render, one batch
-      at a time.
+- [x] Remaining M11-completed pages: same reorder + sequential render, one batch
+      at a time. (Superseded 2026-09-19 by the flexible rule above: whole-owned
+      pages convert straight to `PageBuilderDocument` instead of named slots.
+      Batch 10 DONE 2026-09-19 — about (10 sections) + topographical-surveys
+      (11) + sectional-properties (11) + bathymetric-surveys (12): all four
+      Keystatic branches were flat 1:1 sequential (single `min-h-screen` div,
+      no layout chrome), so conversion was a pure route simplification
+      (count guard + destructuring → `if (keystaticPage)` +
+      `PageBuilderDocument`); entries already in page order, `--verify`
+      unaffected. `home` keeps named slots (chrome exception) until its chrome
+      decision is recorded.)
 - [ ] `check:keystatic` fixture strings + `--verify` green per batch.
 
 **Exit criteria:** no `renderAt(<index>)` literals remain on migrated pages;
@@ -1081,4 +1155,8 @@ For every implementation change:
 | 2026-09-18 | M11/M12 | Batch 6 — topographical-surveys DONE: 6 uniques + shared `deliverables`; mapping reordered to page order (11 sections), route destructures named slots, zero `renderAt`; `skipped` now `[]`; registry 41→47; README list updated | `check:keystatic` OK (47 sections); `--verify` clean (11 sections, no gaps); `typecheck` + `lint` clean. Dev-smoke DEFERRED per policy. Next: sectional-properties + bathymetric-surveys | |
 | 2026-09-18 | M11/M12 | Batch 7 — sectional-properties DONE: 5 uniques + shared `deliverables`; mapping reordered to page order (11 sections), route named slots, zero `renderAt`; `skipped` now `["socials"]` (dead); registry 47→52. Cleaned a duplicated registry block (double insert). LEGACY-VISIBLE BUG FIX: shared `Process` nulled item-less timelines (sectional timeline invisible in production) — fixed + added missing `li` key | `check:keystatic` OK (52 sections); `--verify` clean (11 sections, no gaps); `typecheck` + `lint` clean. Dev-smoke DEFERRED per policy. Next: bathymetric-surveys | |
 | 2026-09-18 | M11 | Anchor-id sweep: schema `anchorField`s were stored but ignored by 20 unique wrappers — threaded `id` through all of them (CardGrid/SectionShell/Process passthrough; bespoke `<section id>`; `drones`/`openings` keep legacy defaults). `id: ""` normalizes to `undefined` = no attribute, so legacy DOM is byte-identical | `check:keystatic` OK (52 sections); `typecheck` + `lint` clean. No entries changed (`--verify` unaffected) | |
-| 2026-09-18 | M11/M12 | Batch 8 — bathymetric-surveys DONE: 7 uniques + shared `deliverables`; mapping reordered to page order (12 sections), route named slots, zero `renderAt`; `skipped` now `[]`; registry 52→59. CAUGHT: builds inside PAGES literal (moved) + self-comparing sharedValue (fixed) | `check:keystatic` OK (59 sections); `--verify` clean (12 sections, no gaps); `typecheck` + `lint` clean. Dev-smoke DEFERRED per policy. Next: resource-mapping | |
+| 2026-09-18 | M11/M12 | Batch 8 — bathymetric-surveys DONE: 7 uniques + shared `deliverables`; mapping reordered to page order (12 sections), route named slots, zero `renderAt`; `skipped` now `[]`; registry 52→59. CAUGHT: builds inside PAGES literal (moved) + self-comparing sharedValue (fixed) | `check:keystatic` OK (59 sections); `--verify` clean (12 sections, no gaps); `typecheck` + `lint` clean. Dev-smoke DEFERRED per policy. Next: resource-mapping |
+| 2026-09-19 | M11/M12 | Batch 9 RECORDED (implemented in commit `19eb513`, validation run this session): resource-mapping (8 uniques) + building-site-surveys (7 uniques), additive-`data` refactors, both routes whole-owned → `PageBuilderDocument` (no count guard), registry 59→74. Flexible-rendering rule ADDED to M11 + M12 set IN PROGRESS: whole-owned pages must use `PageBuilderDocument` so editors can add/remove/reorder; count-guard/named-slot pattern retired for them; `home` recorded as the sole chrome exception (keeps slots until chrome decision) | `check:keystatic` OK (74 sections, 31 fixtures); `--verify` clean both (16 + 12 sections, no gaps); `yarn typecheck` clean (51s); `yarn lint` clean (124s). Dev-smoke DEFERRED per M11/M12 policy. Next: Batch 10 — convert about/topo/sectional/bathy to `PageBuilderDocument` |
+| 2026-09-19 | M12 | Batch 10 DONE: about + topographical-surveys + sectional-properties + bathymetric-surveys converted from count-guard named slots to whole-page `PageBuilderDocument` (4 route files, legacy branches untouched). Pure simplification — no registry/entry/mapping changes; entries already in page order | `check:keystatic` OK (74 sections, 31 fixtures); `--verify` clean all four (10/11/11/12 sections, no gaps); `yarn typecheck` clean (39s); `eslint --max-warnings=0` clean on touched files. Dev-smoke DEFERRED per M11/M12 policy. Next: aerial-surveys + cadastral-surveys tails (M11, still interleaved) or the `home` chrome decision | |
+| 2026-09-19 | M11 | Batch 11 DONE — aerial-surveys: 12 uniques (`aerialIntro`, `aerialWhyDrones`, `aerialServices`, `aerialWorkflow`, `aerialSurveyingGrid`, `aerialIndustries`, `aerialIndustryCta`, `aerialProjects`, `aerialTechStack`, `aerialCapabilityCta`, `aerialAdditionalServices`, `aerialFinalCta`) + shared `deliverables` (surface); additive-`data` refactors on all 12 wrappers; mapping reordered to page order (15 sections), route → one `PageBuilderDocument`, `skipped` now `[]`; registry 74→86; README list refreshed to 86 (was stale at 59). CAUGHT: duplicate `AerialSurveyingSection` import — aliased. Tail inventory (2 subagents) confirmed zero pseudo-markup/Trans on this page, all SSR-safe | `check:keystatic` OK (86 sections, 31 fixtures); `--verify` clean (15 sections, no gaps); `yarn typecheck` clean; `eslint --max-warnings=0` clean on touched files. Dev-smoke DEFERRED per M11/M12 policy. Next: Batch 12 — cadastral-surveys tails | |
+| 2026-09-19 | M11 | Batch 12 DONE — cadastral-surveys: 9 uniques (`cadastralPostHeroCta`, `cadastralWhenYouNeed`, `cadastralProcess`, `cadastralProcessCta`, `cadastralCost`, `cadastralTimeline`, `cadastralCompliance`, `cadastralCaseStudy`, `cadastralFinalCta` reusing the aerial closer build); additive-`data` refactors on all 9 wrappers; `whatsABoundarySurvey` stays DORMANT; mapping reordered to page order (10 sections), route → one `PageBuilderDocument`, `skipped` now `["whatsABoundarySurvey"]` (dead); registry 86→95; README 86→95. CAUGHT: bad plan-edit deleted the cadastral hero build — restored verbatim. No import collisions (cadastral Timeline/Cost aliased where sectional/topo names exist) | `check:keystatic` OK (95 sections, 31 fixtures); `--verify` clean (10 sections, no gaps, first try); `yarn typecheck` clean; `eslint --max-warnings=0` clean on touched files. Dev-smoke DEFERRED per M11/M12 policy. Next: Batch 13 — ground-penetrating-radar + gis-mapping tails | |

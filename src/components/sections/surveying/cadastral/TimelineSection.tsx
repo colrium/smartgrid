@@ -27,20 +27,34 @@ interface TimelineContent {
 	cta?: { label?: string; href?: string; icon?: string | null } | null;
 }
 
+export interface CadastralTimelineData {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+	scaleNote?: string | null;
+	items?: TimelineItem[] | null;
+	note?: string | null;
+	cta?: { label?: string; href?: string; icon?: string | null } | null;
+}
+
 /** Widest duration in the dataset - used to scale the range bars. */
 const MAX_SCALE_DAYS = 42;
 
-export function TimelineSection(): ReactElement {
+export function TimelineSection({ data, id }: { data?: CadastralTimelineData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/cadastral-surveys"]);
-	const section = t("surveying/cadastral-surveys:timeline", {
-		returnObjects: true,
-	}) as unknown as TimelineContent;
+	// Keystatic-owned content when `data` is provided (M11 `cadastralTimeline`
+	// unique section); legacy locale strings otherwise. The computed range
+	// bars (MAX_SCALE_DAYS) stay in the renderer.
+	const section = (data ??
+		(t("surveying/cadastral-surveys:timeline", {
+			returnObjects: true,
+		}) as unknown as TimelineContent)) as TimelineContent;
 	const items = Array.isArray(section?.items) ? section.items : [];
 
 	if (items.length === 0) return <></>;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden">
+		<section id={id} className="py-24 sm:py-28 relative overflow-hidden">
 			<Blob className="w-[24rem] h-[24rem] bg-accent-50 -bottom-32 -left-32" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">

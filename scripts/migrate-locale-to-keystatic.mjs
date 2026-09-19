@@ -1930,6 +1930,568 @@ function rmFinalCtaBuild(en, sw, where) {
 	};
 }
 
+// M11 batch 11 — aerial-surveys page (2026-09-19): the twelve bespoke tails
+// → unique sections (+ shared `deliverables`). Icons, image paths, hrefs,
+// watermarks and phase keys shared; all other strings localized. Fixed
+// presentation (featured cards, bento spans, modal, mosaic, shimmer bands)
+// stays in the wrappers.
+function aerialIntroBuild(en, sw, where) {
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+		ctaPrimary: {
+			label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+			href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+			icon: "",
+		},
+		id: "",
+	};
+}
+
+function aerialWhyDronesBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				stat: { en: optText(item.stat), sw: optText(swItem.stat) },
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				description: { en: optText(item.description), sw: optText(swItem.description) },
+			};
+		}),
+		id: "",
+	};
+}
+
+function aerialServicesBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+				popupContent: { en: optText(item.popupContent), sw: optText(swItem.popupContent) },
+			};
+		}),
+		id: "",
+	};
+}
+
+function aerialWorkflowBuild(en, sw, where) {
+	const enSteps = en.steps ?? [];
+	const swSteps = sw.steps ?? [];
+	if (!Array.isArray(swSteps) || swSteps.length !== enSteps.length) {
+		gap(where, `step count diverged (en=${enSteps.length} sw=${swSteps?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		outcomeLabel: { en: optText(en.outcomeLabel), sw: optText(sw.outcomeLabel) },
+		steps: enSteps.map((step, i) => {
+			const swStep = swSteps[i] ?? {};
+			return {
+				icon: sharedValue(step, swStep, "icon", `${where}.steps[${i}]`) ?? "",
+				label: { en: reqText(step.label, `${where}.steps[${i}].label.en`), sw: reqText(swStep.label, `${where}.steps[${i}].label.sw`) },
+				description: { en: reqText(step.description, `${where}.steps[${i}].description.en`), sw: reqText(swStep.description, `${where}.steps[${i}].description.sw`) },
+			};
+		}),
+		ctaNote: { en: optText(en.ctaNote), sw: optText(sw.ctaNote) },
+		cta: {
+			label: { en: reqText(en.cta?.label, `${where}.cta.label.en`), sw: reqText(sw.cta?.label, `${where}.cta.label.sw`) },
+			href: sharedValue(en.cta, sw.cta, "href", where) ?? "",
+			icon: sharedValue(en.cta, sw.cta, "icon", where) ?? "",
+		},
+		id: "",
+	};
+}
+
+function aerialSurveyingGridBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				label: { en: reqText(item.label, `${where}.items[${i}].label.en`), sw: reqText(swItem.label, `${where}.items[${i}].label.sw`) },
+				image: sharedValue(item, swItem, "image", `${where}.items[${i}]`) ?? "",
+			};
+		}),
+		id: "",
+	};
+}
+
+function aerialIndustriesBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				description: { en: optText(item.description), sw: optText(swItem.description) },
+				href: sharedValue(item, swItem, "href", `${where}.items[${i}]`) ?? "",
+			};
+		}),
+		id: "",
+	};
+}
+
+// Industry + capability CTAs share the same data contract (split vs
+// centered presentation stays in the wrappers).
+function aerialCtaBuild(en, sw, where) {
+	const link = (node, swNode, key) => ({
+		label: { en: optText(node?.label), sw: optText(swNode?.label) },
+		href: sharedValue(node, swNode, "href", `${where}.${key}`) ?? "",
+		icon: sharedValue(node, swNode, "icon", `${where}.${key}`) ?? "",
+	});
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		watermark: sharedValue(en, sw, "watermark", where) ?? "",
+		primary: link(en.primary, sw.primary, "primary"),
+		secondary: link(en.secondary, sw.secondary, "secondary"),
+		id: "",
+	};
+}
+
+function aerialTechStackBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				note: { en: optText(item.note), sw: optText(swItem.note) },
+				href: sharedValue(item, swItem, "href", `${where}.items[${i}]`) ?? "",
+			};
+		}),
+		id: "",
+	};
+}
+
+function aerialFinalCtaBuild(en, sw, where) {
+	const enActions = en.actions ?? [];
+	const swActions = sw.actions ?? [];
+	if (!Array.isArray(swActions) || swActions.length !== enActions.length) {
+		gap(where, `action count diverged (en=${enActions.length} sw=${swActions?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		actionsLabel: { en: optText(en.actionsLabel), sw: optText(sw.actionsLabel) },
+		actions: enActions.map((action, i) => {
+			const swAction = swActions[i] ?? {};
+			return {
+				icon: sharedValue(action, swAction, "icon", `${where}.actions[${i}]`) ?? "",
+				label: { en: reqText(action.label, `${where}.actions[${i}].label.en`), sw: reqText(swAction.label, `${where}.actions[${i}].label.sw`) },
+				description: { en: optText(action.description), sw: optText(swAction.description) },
+				href: sharedValue(action, swAction, "href", `${where}.actions[${i}]`) ?? "",
+			};
+		}),
+		id: "",
+	};
+}
+
+function aerialProjectsBuild(en, sw, where) {
+	const enImages = en.images ?? [];
+	const swImages = sw.images ?? [];
+	if (!Array.isArray(swImages) || swImages.length !== enImages.length) {
+		gap(where, `image count diverged (en=${enImages.length} sw=${swImages?.length})`);
+	}
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		images: enImages.map((src, i) => sharedValue({ v: src }, { v: swImages[i] }, "v", `${where}.images[${i}]`) ?? ""),
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => ({
+			en: reqText(item, `${where}.items[${i}].en`),
+			sw: reqText(swItems[i], `${where}.items[${i}].sw`),
+		})),
+		id: "",
+	};
+}
+
+function aerialAdditionalServicesBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		items: enItems.map((item, i) => ({
+			en: reqText(item, `${where}.items[${i}].en`),
+			sw: reqText(swItems[i], `${where}.items[${i}].sw`),
+		})),
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		id: "",
+	};
+}
+
+// M11 batch 12 — cadastral-surveys page (2026-09-19): the nine bespoke
+// tails → unique sections. Icons, image paths, hrefs, watermarks, phase
+// keys, day counts and featured flags shared; all other strings localized.
+// `whatsABoundarySurvey` stays DORMANT (commented out of the route — never
+// migrated). Fixed presentation (sticky splits, computed bars, shimmer
+// bands, positional spans) stays in the wrappers.
+function cadastralPostHeroCtaBuild(en, sw, where) {
+	const action = (node, swNode, key) => ({
+		label: { en: reqText(node?.label, `${where}.${key}.label.en`), sw: reqText(swNode?.label, `${where}.${key}.label.sw`) },
+		href: sharedValue(node, swNode, "href", `${where}.${key}`) ?? "",
+		icon: sharedValue(node, swNode, "icon", `${where}.${key}`) ?? "",
+	});
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		ctaPrimary: action(en.ctaPrimary, sw.ctaPrimary, "ctaPrimary"),
+		ctaSecondary: action(en.ctaSecondary, sw.ctaSecondary, "ctaSecondary"),
+		id: "",
+	};
+}
+
+function cadastralWhenYouNeedBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		image: sharedValue(en, sw, "image", where) ?? "",
+		imageBadge: { en: optText(en.imageBadge), sw: optText(sw.imageBadge) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				description: { en: optText(item.description), sw: optText(swItem.description) },
+				href: sharedValue(item, swItem, "href", `${where}.items[${i}]`) ?? "",
+			};
+		}),
+		id: "",
+	};
+}
+
+function cadastralProcessBuild(en, sw, where) {
+	const enSteps = en.steps ?? [];
+	const swSteps = sw.steps ?? [];
+	if (!Array.isArray(swSteps) || swSteps.length !== enSteps.length) {
+		gap(where, `step count diverged (en=${enSteps.length} sw=${swSteps?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		outcome: { en: optText(en.outcome), sw: optText(sw.outcome) },
+		steps: enSteps.map((step, i) => {
+			const swStep = swSteps[i] ?? {};
+			return {
+				phase: sharedValue(step, swStep, "phase", `${where}.steps[${i}]`) ?? "",
+				icon: sharedValue(step, swStep, "icon", `${where}.steps[${i}]`) ?? "",
+				label: { en: reqText(step.label, `${where}.steps[${i}].label.en`), sw: reqText(swStep.label, `${where}.steps[${i}].label.sw`) },
+				description: { en: reqText(step.description, `${where}.steps[${i}].description.en`), sw: reqText(swStep.description, `${where}.steps[${i}].description.sw`) },
+			};
+		}),
+		id: "",
+	};
+}
+
+function cadastralProcessCtaBuild(en, sw, where) {
+	const action = (node, swNode, key) => ({
+		label: { en: reqText(node?.label, `${where}.${key}.label.en`), sw: reqText(swNode?.label, `${where}.${key}.label.sw`) },
+		href: sharedValue(node, swNode, "href", `${where}.${key}`) ?? "",
+		icon: sharedValue(node, swNode, "icon", `${where}.${key}`) ?? "",
+	});
+	const enChips = en.chips ?? [];
+	const swChips = sw.chips ?? [];
+	if (!Array.isArray(swChips) || swChips.length !== enChips.length) {
+		gap(where, `chip count diverged (en=${enChips.length} sw=${swChips?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		ctaPrimary: action(en.ctaPrimary, sw.ctaPrimary, "ctaPrimary"),
+		ctaSecondary: action(en.ctaSecondary, sw.ctaSecondary, "ctaSecondary"),
+		chips: enChips.map((chip, i) => ({
+			en: reqText(chip, `${where}.chips[${i}].en`),
+			sw: reqText(swChips[i], `${where}.chips[${i}].sw`),
+		})),
+		id: "",
+	};
+}
+
+function cadastralCostBuild(en, sw, where) {
+	const enTiers = en.tiers ?? [];
+	const swTiers = sw.tiers ?? [];
+	if (!Array.isArray(swTiers) || swTiers.length !== enTiers.length) {
+		gap(where, `tier count diverged (en=${enTiers.length} sw=${swTiers?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		featuredLabel: { en: optText(en.featuredLabel), sw: optText(sw.featuredLabel) },
+		tiers: enTiers.map((tier, i) => {
+			const swTier = swTiers[i] ?? {};
+			const enFeatures = tier.features ?? [];
+			const swFeatures = swTier.features ?? [];
+			if (!Array.isArray(swFeatures) || swFeatures.length !== enFeatures.length) {
+				gap(where, `feature count diverged (en=${enFeatures.length} sw=${swFeatures?.length})`);
+			}
+			return {
+				icon: sharedValue(tier, swTier, "icon", `${where}.tiers[${i}]`) ?? "",
+				title: { en: reqText(tier.title, `${where}.tiers[${i}].title.en`), sw: reqText(swTier.title, `${where}.tiers[${i}].title.sw`) },
+				price: { en: reqText(tier.price, `${where}.tiers[${i}].price.en`), sw: reqText(swTier.price, `${where}.tiers[${i}].price.sw`) },
+				priceUnit: { en: optText(tier.priceUnit), sw: optText(swTier.priceUnit) },
+				note: { en: optText(tier.note), sw: optText(swTier.note) },
+				features: enFeatures.map((feature, j) => ({
+					en: reqText(feature, `${where}.tiers[${i}].features[${j}].en`),
+					sw: reqText(swFeatures[j], `${where}.tiers[${i}].features[${j}].sw`),
+				})),
+				featured: sharedValue(tier, swTier, "featured", `${where}.tiers[${i}]`) ?? false,
+			};
+		}),
+		cta: {
+			label: { en: reqText(en.cta?.label, `${where}.cta.label.en`), sw: reqText(sw.cta?.label, `${where}.cta.label.sw`) },
+			href: sharedValue(en.cta, sw.cta, "href", where) ?? "",
+			icon: sharedValue(en.cta, sw.cta, "icon", where) ?? "",
+		},
+		id: "",
+	};
+}
+
+function cadastralTimelineBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		scaleNote: { en: optText(en.scaleNote), sw: optText(sw.scaleNote) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				range: { en: optText(item.range), sw: optText(swItem.range) },
+				minDays: sharedValue(item, swItem, "minDays", `${where}.items[${i}]`) ?? null,
+				maxDays: sharedValue(item, swItem, "maxDays", `${where}.items[${i}]`) ?? null,
+				description: { en: optText(item.description), sw: optText(swItem.description) },
+			};
+		}),
+		note: { en: optText(en.note), sw: optText(sw.note) },
+		cta: {
+			label: { en: reqText(en.cta?.label, `${where}.cta.label.en`), sw: reqText(sw.cta?.label, `${where}.cta.label.sw`) },
+			href: sharedValue(en.cta, sw.cta, "href", where) ?? "",
+			icon: sharedValue(en.cta, sw.cta, "icon", where) ?? "",
+		},
+		id: "",
+	};
+}
+
+function cadastralComplianceBuild(en, sw, where) {
+	const enChecklist = en.checklist ?? [];
+	const swChecklist = sw.checklist ?? [];
+	if (!Array.isArray(swChecklist) || swChecklist.length !== enChecklist.length) {
+		gap(where, `checklist count diverged (en=${enChecklist.length} sw=${swChecklist?.length})`);
+	}
+	const enRelated = en.related ?? [];
+	const swRelated = sw.related ?? [];
+	if (!Array.isArray(swRelated) || swRelated.length !== enRelated.length) {
+		gap(where, `related count diverged (en=${enRelated.length} sw=${swRelated?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		checklistTitle: { en: optText(en.checklistTitle), sw: optText(sw.checklistTitle) },
+		checklist: enChecklist.map((item, i) => {
+			const swItem = swChecklist[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.checklist[${i}]`) ?? "",
+				title: { en: reqText(item.title, `${where}.checklist[${i}].title.en`), sw: reqText(swItem.title, `${where}.checklist[${i}].title.sw`) },
+				description: { en: optText(item.description), sw: optText(swItem.description) },
+			};
+		}),
+		relatedLabel: { en: optText(en.relatedLabel), sw: optText(sw.relatedLabel) },
+		related: enRelated.map((link, i) => {
+			const swLink = swRelated[i] ?? {};
+			return {
+				label: { en: reqText(link.label, `${where}.related[${i}].label.en`), sw: reqText(swLink.label, `${where}.related[${i}].label.sw`) },
+				href: sharedValue(link, swLink, "href", `${where}.related[${i}]`) ?? "",
+			};
+		}),
+		id: "",
+	};
+}
+
+function cadastralCaseStudyBuild(en, sw, where) {
+	const strings = (list, swList, key) => {
+		const enList = list ?? [];
+		const swL = swList ?? [];
+		if (!Array.isArray(swL) || swL.length !== enList.length) {
+			gap(where, `${key} count diverged (en=${enList.length} sw=${swL?.length})`);
+		}
+		return enList.map((entry, i) => ({
+			en: reqText(entry, `${where}.${key}[${i}].en`),
+			sw: reqText(swL[i], `${where}.${key}[${i}].sw`),
+		}));
+	};
+	const images = (list, swList, key) => {
+		const enList = list ?? [];
+		const swL = swList ?? [];
+		if (!Array.isArray(swL) || swL.length !== enList.length) {
+			gap(where, `${key} count diverged (en=${enList.length} sw=${swL?.length})`);
+		}
+		return enList.map((image, i) => {
+			const swImage = swL[i] ?? {};
+			return {
+				src: sharedValue(image, swImage, "src", `${where}.${key}[${i}]`) ?? "",
+				alt: { en: optText(image.alt), sw: optText(swImage.alt) },
+			};
+		});
+	};
+	const enCs = en, swCs = sw;
+	return {
+		tag: { en: optText(enCs.tag), sw: optText(swCs.tag) },
+		headline: { en: reqText(enCs.headline, `${where}.headline.en`), sw: reqText(swCs.headline, `${where}.headline.sw`) },
+		subtitle: { en: optText(enCs.subtitle), sw: optText(swCs.subtitle) },
+		overview: {
+			label: { en: reqText(enCs.overview?.label, `${where}.overview.label.en`), sw: reqText(swCs.overview?.label, `${where}.overview.label.sw`) },
+			paragraphs: strings(enCs.overview?.paragraphs, swCs.overview?.paragraphs, "overview.paragraphs"),
+			criticalTitle: { en: optText(enCs.overview?.criticalTitle), sw: optText(swCs.overview?.criticalTitle) },
+			critical: strings(enCs.overview?.critical, swCs.overview?.critical, "overview.critical"),
+			deployNote: { en: optText(enCs.overview?.deployNote), sw: optText(swCs.overview?.deployNote) },
+			deployIcon: sharedValue(enCs.overview, swCs.overview, "deployIcon", `${where}.overview`) ?? "",
+		},
+		challenge: {
+			label: { en: reqText(enCs.challenge?.label, `${where}.challenge.label.en`), sw: reqText(swCs.challenge?.label, `${where}.challenge.label.sw`) },
+			intro: { en: optText(enCs.challenge?.intro), sw: optText(swCs.challenge?.intro) },
+			items: strings(enCs.challenge?.items, swCs.challenge?.items, "challenge.items"),
+			images: images(enCs.challenge?.images, swCs.challenge?.images, "challenge.images"),
+		},
+		methodology: {
+			label: { en: reqText(enCs.methodology?.label, `${where}.methodology.label.en`), sw: reqText(swCs.methodology?.label, `${where}.methodology.label.sw`) },
+			intro: { en: optText(enCs.methodology?.intro), sw: optText(swCs.methodology?.intro) },
+			steps: (() => {
+				const enSteps = enCs.methodology?.steps ?? [];
+				const swSteps = swCs.methodology?.steps ?? [];
+				if (!Array.isArray(swSteps) || swSteps.length !== enSteps.length) {
+					gap(where, `methodology.steps count diverged (en=${enSteps.length} sw=${swSteps?.length})`);
+				}
+				return enSteps.map((step, i) => {
+					const swStep = swSteps[i] ?? {};
+					return {
+						title: { en: reqText(step.title, `${where}.methodology.steps[${i}].title.en`), sw: reqText(swStep.title, `${where}.methodology.steps[${i}].title.sw`) },
+						points: strings(step.points, swStep.points, `methodology.steps[${i}].points`),
+					};
+				});
+			})(),
+			images: images(enCs.methodology?.images, swCs.methodology?.images, "methodology.images"),
+		},
+		outcome: {
+			label: { en: reqText(enCs.outcome?.label, `${where}.outcome.label.en`), sw: reqText(swCs.outcome?.label, `${where}.outcome.label.sw`) },
+			intro: { en: optText(enCs.outcome?.intro), sw: optText(swCs.outcome?.intro) },
+			deliverablesTitle: { en: optText(enCs.outcome?.deliverablesTitle), sw: optText(swCs.outcome?.deliverablesTitle) },
+			deliverables: strings(enCs.outcome?.deliverables, swCs.outcome?.deliverables, "outcome.deliverables"),
+		},
+		impact: {
+			label: { en: reqText(enCs.impact?.label, `${where}.impact.label.en`), sw: reqText(swCs.impact?.label, `${where}.impact.label.sw`) },
+			items: (() => {
+				const enItems = enCs.impact?.items ?? [];
+				const swItems = swCs.impact?.items ?? [];
+				if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+					gap(where, `impact.items count diverged (en=${enItems.length} sw=${swItems?.length})`);
+				}
+				return enItems.map((item, i) => {
+					const swItem = swItems[i] ?? {};
+					return {
+						icon: sharedValue(item, swItem, "icon", `${where}.impact.items[${i}]`) ?? "",
+						text: { en: reqText(item.text, `${where}.impact.items[${i}].text.en`), sw: reqText(swItem.text, `${where}.impact.items[${i}].text.sw`) },
+					};
+				});
+			})(),
+		},
+		techSummary: {
+			label: { en: reqText(enCs.techSummary?.label, `${where}.techSummary.label.en`), sw: reqText(swCs.techSummary?.label, `${where}.techSummary.label.sw`) },
+			componentHeader: { en: optText(enCs.techSummary?.componentHeader), sw: optText(swCs.techSummary?.componentHeader) },
+			specHeader: { en: optText(enCs.techSummary?.specHeader), sw: optText(swCs.techSummary?.specHeader) },
+			rows: (() => {
+				const enRows = enCs.techSummary?.rows ?? [];
+				const swRows = swCs.techSummary?.rows ?? [];
+				if (!Array.isArray(swRows) || swRows.length !== enRows.length) {
+					gap(where, `techSummary.rows count diverged (en=${enRows.length} sw=${swRows?.length})`);
+				}
+				return enRows.map((row, i) => {
+					const swRow = swRows[i] ?? {};
+					return {
+						component: { en: reqText(row.component, `${where}.techSummary.rows[${i}].component.en`), sw: reqText(swRow.component, `${where}.techSummary.rows[${i}].component.sw`) },
+						specification: { en: reqText(row.specification, `${where}.techSummary.rows[${i}].specification.en`), sw: reqText(swRow.specification, `${where}.techSummary.rows[${i}].specification.sw`) },
+					};
+				});
+			})(),
+		},
+		engineeringNote: {
+			label: { en: optText(enCs.engineeringNote?.label), sw: optText(swCs.engineeringNote?.label) },
+			text: { en: reqText(enCs.engineeringNote?.text, `${where}.engineeringNote.text.en`), sw: reqText(swCs.engineeringNote?.text, `${where}.engineeringNote.text.sw`) },
+		},
+		id: "",
+	};
+}
+
 const PAGES = {
 	"company-profile": {
 		namespace: "company-profile",
@@ -3433,18 +3995,21 @@ const PAGES = {
 			},
 		],
 	},
-	// M7 batch 9a: aerial-surveys. Two sections migrate in page order —
-	// `hero` (shared Hero with trust-marker footnote chips) + `precision`
-	// (splitMedia right/surface). Tails stay legacy: bespoke Intro (manifesto +
-	// briefing card), WhyDroneServices popup cards, WorkflowSection workflow,
-	// deliverables explorer, Industries + TechStack (fallbackIcons), IndustryCta
-	// + CapabilityCta (CtaBand `size` + pill iconPosition/trailingArrow
-	// overrides outside the v1 contract), Projects/AdditionalServices bespoke,
-	// final CTA.
+	// M11 batch 11: aerial-surveys. Whole page Keystatic-owned in page order
+	// (2026-09-19) — `hero` (shared) + `section1` (aerialIntro) +
+	// `whyDroneSurveys` (aerialWhyDrones) + `whatWeOffer` (aerialServices) +
+	// `precision` (splitMedia) + `workflow` (aerialWorkflow) +
+	// `aerialSurveying` (aerialSurveyingGrid) + `deliverables` (shared,
+	// surface tone for the `bg-surface` wrapper) + `industries`
+	// (aerialIndustries) + `industryCta` (aerialIndustryCta) + `projects`
+	// (aerialProjects) + `techStack` (aerialTechStack) + `capabilityCta`
+	// (aerialCapabilityCta) + `additionalServices`
+	// (aerialAdditionalServices) + `finalCta` (aerialFinalCta). Mapping
+	// order = entry order = page order (M12 flexible rule).
 	"aerial-surveys": {
 		namespace: "surveying/aerial-surveys",
 		title: "Aerial Surveys",
-		skipped: ["section1", "whatWeOffer", "aerialSurveying", "deliverables", "whyDroneSurveys", "workflow", "industries", "industryCta", "techStack", "capabilityCta", "finalCta", "projects", "additionalServices"],
+		skipped: [],
 		sections: [
 			{
 				discriminant: "hero",
@@ -3490,6 +4055,27 @@ const PAGES = {
 				},
 			},
 			{
+				discriminant: "aerialIntro",
+				from: "section1",
+				// Legacy: IntroSection (manifesto + briefing card) →
+				// <IntroSection data />.
+				build: aerialIntroBuild,
+			},
+			{
+				discriminant: "aerialWhyDrones",
+				from: "whyDroneSurveys",
+				// Legacy: WhyDroneSurveysSection (bento grid) →
+				// <WhyDroneSurveysSection data />.
+				build: aerialWhyDronesBuild,
+			},
+			{
+				discriminant: "aerialServices",
+				from: "whatWeOffer",
+				// Legacy: AerialServicesSection (popup-card grid) →
+				// <AerialServicesSection data />.
+				build: aerialServicesBuild,
+			},
+			{
 				discriminant: "splitMedia",
 				from: "precision",
 				// Legacy: PrecisionSection → <SplitMedia data
@@ -3509,20 +4095,94 @@ const PAGES = {
 					};
 				},
 			},
+			{
+				discriminant: "aerialWorkflow",
+				from: "workflow",
+				// Legacy: AerialWorkflowSection (WorkflowSection passthrough,
+				// outcomeLabel → outcome) → <AerialWorkflowSection data />.
+				build: aerialWorkflowBuild,
+			},
+			{
+				discriminant: "aerialSurveyingGrid",
+				from: "aerialSurveying",
+				// Legacy: AerialSurveyingSection (image cards) →
+				// <AerialSurveyingSection data />.
+				build: aerialSurveyingGridBuild,
+			},
+			{
+				discriminant: "deliverables",
+				from: "deliverables",
+				// Legacy: DeliverablesSection → <Deliverables
+				// ns="surveying/aerial-surveys" className="bg-surface" /> —
+				// shared `deliverables` with surface tone.
+				build: deliverablesBuild("surface"),
+			},
+			{
+				discriminant: "aerialIndustries",
+				from: "industries",
+				// Legacy: AerialIndustriesSection (link-card grid) →
+				// <AerialIndustriesSection data />.
+				build: aerialIndustriesBuild,
+			},
+			{
+				discriminant: "aerialIndustryCta",
+				from: "industryCta",
+				// Legacy: IndustryCtaSection (split/shimmer CtaBand) →
+				// <IndustryCtaSection data />.
+				build: aerialCtaBuild,
+			},
+			{
+				discriminant: "aerialProjects",
+				from: "projects",
+				// Legacy: ProjectsSection (mosaic + highlights) →
+				// <ProjectsSection data />.
+				build: aerialProjectsBuild,
+			},
+			{
+				discriminant: "aerialTechStack",
+				from: "techStack",
+				// Legacy: TechStackSection (paper card grid) →
+				// <TechStackSection data />.
+				build: aerialTechStackBuild,
+			},
+			{
+				discriminant: "aerialCapabilityCta",
+				from: "capabilityCta",
+				// Legacy: CapabilityCtaSection (centered/shimmer CtaBand) →
+				// <CapabilityCtaSection data />.
+				build: aerialCtaBuild,
+			},
+			{
+				discriminant: "aerialAdditionalServices",
+				from: "additionalServices",
+				// Legacy: AdditionalServicesSection (pill row) →
+				// <AdditionalServicesSection data />.
+				build: aerialAdditionalServicesBuild,
+			},
+			{
+				discriminant: "aerialFinalCta",
+				from: "finalCta",
+				// Legacy: AerialFinalCtaSection (closing cards) →
+				// <AerialFinalCtaSection data />.
+				build: aerialFinalCtaBuild,
+			},
 		],
 	},
-	// M7 batch 9b: cadastral-surveys. Hero only (1 section) — the smallest
-	// surface of any child so far. `whatsABoundarySurvey` stays DORMANT: its
-	// IntroSection is commented out of the route, so migrating it would
-	// re-enable content the editors switched off; document here and revisit if
-	// the route re-enables it. `postHeroCta` is a bespoke band (Blob +
-	// shimmer, not CtaBand); process/cost/timeline/compliance/caseStudy/
-	// finalCta are bespoke case-work sections. Hero description is empty in
-	// both locales (optText, not reqText).
+	// M11 batch 12: cadastral-surveys. Whole page Keystatic-owned in page
+	// order (2026-09-19) — `hero` (shared) + `postHeroCta`
+	// (cadastralPostHeroCta) + `whenYouNeed` (cadastralWhenYouNeed) +
+	// `process` (cadastralProcess, ACQUISITION override kept in renderer) +
+	// `processCta` (cadastralProcessCta) + `cost` (cadastralCost) +
+	// `timeline` (cadastralTimeline) + `compliance` (cadastralCompliance) +
+	// `caseStudy` (cadastralCaseStudy) + `finalCta` (cadastralFinalCta, same
+	// contract as the aerial closer). `whatsABoundarySurvey` stays DORMANT:
+	// its IntroSection is commented out of the route, so migrating it would
+	// re-enable content the editors switched off. Mapping order = entry
+	// order = page order (M12 flexible rule).
 	"cadastral-surveys": {
 		namespace: "surveying/cadastral-surveys",
 		title: "Cadastral Surveys",
-		skipped: ["whatsABoundarySurvey", "postHeroCta", "whenYouNeed", "process", "processCta", "cost", "timeline", "compliance", "caseStudy", "finalCta"],
+		skipped: ["whatsABoundarySurvey"],
 		sections: [
 			{
 				discriminant: "hero",
@@ -3554,6 +4214,69 @@ const PAGES = {
 						id: "",
 					};
 				},
+			},
+			{
+				discriminant: "cadastralPostHeroCta",
+				from: "postHeroCta",
+				// Legacy: PostHeroCtaSection (light dual-CTA band) →
+				// <PostHeroCtaSection data />.
+				build: cadastralPostHeroCtaBuild,
+			},
+			{
+				discriminant: "cadastralWhenYouNeed",
+				from: "whenYouNeed",
+				// Legacy: WhenYouNeedSection (sticky-image grid) →
+				// <WhenYouNeedSection data />.
+				build: cadastralWhenYouNeedBuild,
+			},
+			{
+				discriminant: "cadastralProcess",
+				from: "process",
+				// Legacy: ProcessFlowSection (WorkflowSection + ACQUISITION
+				// override) → <ProcessFlowSection data />.
+				build: cadastralProcessBuild,
+			},
+			{
+				discriminant: "cadastralProcessCta",
+				from: "processCta",
+				// Legacy: ProcessCtaSection (dark band + chips) →
+				// <ProcessCtaSection data />.
+				build: cadastralProcessCtaBuild,
+			},
+			{
+				discriminant: "cadastralCost",
+				from: "cost",
+				// Legacy: CostSection (tier cards) → <CostSection data />.
+				build: cadastralCostBuild,
+			},
+			{
+				discriminant: "cadastralTimeline",
+				from: "timeline",
+				// Legacy: TimelineSection (range bars) →
+				// <TimelineSection data />.
+				build: cadastralTimelineBuild,
+			},
+			{
+				discriminant: "cadastralCompliance",
+				from: "compliance",
+				// Legacy: ComplianceSection (sticky checklist) →
+				// <ComplianceSection data />.
+				build: cadastralComplianceBuild,
+			},
+			{
+				discriminant: "cadastralCaseStudy",
+				from: "caseStudy",
+				// Legacy: CaseStudySection (project story) →
+				// <CaseStudySection data />.
+				build: cadastralCaseStudyBuild,
+			},
+			{
+				discriminant: "cadastralFinalCta",
+				from: "finalCta",
+				// Legacy: FinalCtaSection (closing cards) →
+				// <FinalCtaSection data /> — same contract as the aerial
+				// closer, shared build.
+				build: aerialFinalCtaBuild,
 			},
 		],
 	},

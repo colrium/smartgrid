@@ -243,7 +243,7 @@ import {
  * from DATA (the wrapper is page-owned), so edits change output.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyWorkflow", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "bathyFinalCta", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "rmFinalCta", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyWorkflow", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "bathyFinalCta", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "rmFinalCta", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation", "aerialIntro", "aerialWhyDrones", "aerialServices", "aerialWorkflow", "aerialSurveyingGrid", "aerialIndustries", "aerialIndustryCta", "aerialTechStack", "aerialCapabilityCta", "aerialFinalCta", "aerialProjects", "aerialAdditionalServices", "cadastralPostHeroCta", "cadastralWhenYouNeed", "cadastralProcess", "cadastralProcessCta", "cadastralCost", "cadastralTimeline", "cadastralCompliance", "cadastralCaseStudy", "cadastralFinalCta"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -5683,6 +5683,1603 @@ const bsConsultation: SectionDefinition = {
 	}),
 };
 
+/**
+ * M11 batch 11 — aerial-surveys page (2026-09-19): `aerialIntro` wraps the
+ * `IntroSection` manifesto + briefing card (headline split on "." into
+ * per-sentence blocks stays in the renderer). Unique — only valid on
+ * `/surveying/aerial-surveys`. The CTA href is shared; all strings are
+ * localized. Renders the CTA only with an href (legacy gate, preserved).
+ */
+const aerialIntro: SectionDefinition = {
+	id: "aerialIntro",
+	version: 1,
+	label: "Aerial intro (unique)",
+	description: "Unique: the aerial-surveys manifesto intro with briefing card. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		ctaPrimary: linkObject("Primary action"),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` (visual tuning, not
+		// an editor contract).
+	}),
+	example: {
+		tag: { en: "Intro", sw: "Utangulizi" },
+		headline: { en: "Reliable. Scalable. Fast.", sw: "Ya kuaminika. Inayoweza kupanuka. Haraka." },
+		description: { en: "Drone surveys for planning and analysis.", sw: "" },
+		ctaPrimary: { label: { en: "Start your survey", sw: "Anza upimaji" }, href: "/aerial-drones/drone-imagery-surveys", icon: "" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			ctaPrimary:
+				resolved.ctaPrimary && typeof resolved.ctaPrimary.href === "string" && resolved.ctaPrimary.href
+					? { label: resolved.ctaPrimary.label ?? "", href: resolved.ctaPrimary.href }
+					: null,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 11 — aerial-surveys page (2026-09-19): `aerialWhyDrones` wraps
+ * the `WhyDroneSurveysSection` bento grid (first card featured, `index>=3`
+ * wide row, positional fallback icons). Unique — only valid on
+ * `/surveying/aerial-surveys`. Icons/stats shared-or-localized per field;
+ * titles and descriptions localized. Renders nothing without items (legacy
+ * guard, preserved).
+ */
+const aerialWhyDrones: SectionDefinition = {
+	id: "aerialWhyDrones",
+	version: 1,
+	label: "Aerial why-drones (unique)",
+	description: "Unique: the aerial-surveys bento benefits grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Empty = positional default. Identical in en/sw.",
+				}),
+				stat: localeText("Stat", { optionalInEnglish: true }),
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Benefits",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Benefit"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, featured/wide
+		// positioning and positional fallback icons (presentation, not
+		// editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Why Drone Surveys", sw: "Kwa Nini Upimaji wa Droni" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				icon: "speedometer",
+				stat: { en: "10x", sw: "" },
+				title: { en: "10x Faster", sw: "Haraka Mara 10" },
+				description: { en: "Cover hectares per day.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						stat: item?.stat || undefined,
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 11 — aerial-surveys page (2026-09-19): `aerialServices` wraps
+ * the `AerialServicesSection` popup-card grid (featured first card,
+ * "Learn more" modal with Escape/backdrop close, positional fallback
+ * icons). Unique — only valid on `/surveying/aerial-surveys`. All strings
+ * localized. Modal behavior stays in the renderer.
+ */
+const aerialServices: SectionDefinition = {
+	id: "aerialServices",
+	version: 1,
+	label: "Aerial services (unique)",
+	description: "Unique: the aerial-surveys popup service grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		items: fields.array(
+			fields.object({
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+				popupContent: localeLongText("Popup detail"),
+			}),
+			{
+				label: "Services",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Service"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, featured-card span,
+		// positional fallback icons and the hardcoded "Learn more"/"Close"
+		// labels (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "Services", sw: "Huduma" },
+		headline: { en: "Our Aerial Surveying Services", sw: "Huduma Zetu za Upimaji wa Angani" },
+		items: [
+			{
+				title: { en: "Aerial Mapping", sw: "Uchoraji Ramani wa Angani" },
+				description: { en: "Accurate drone imagery.", sw: "" },
+				popupContent: { en: "Georeferenced orthomosaics.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+						popupContent: item?.popupContent ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 11 — aerial-surveys page (2026-09-19): `aerialWorkflow` wraps
+ * the `AerialWorkflowSection` WorkflowSection passthrough (outcomeLabel →
+ * outcome rename preserved). Unique — only valid on
+ * `/surveying/aerial-surveys` (the shared `process` renders a different
+ * component and excludes workflow CTA fields). Icons/hrefs shared; labels
+ * and descriptions localized.
+ */
+const aerialWorkflow: SectionDefinition = {
+	id: "aerialWorkflow",
+	version: 1,
+	label: "Aerial workflow (unique)",
+	description: "Unique: the aerial-surveys drone pipeline workflow. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		outcomeLabel: localeText("Outcome label", { optionalInEnglish: true }),
+		steps: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				label: localeText("Label"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Steps",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Step"),
+			}
+		),
+		ctaNote: localeLongText("CTA note"),
+		cta: linkObject("Closing action"),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` (visual tuning, not
+		// an editor contract).
+	}),
+	example: {
+		tag: { en: "Pipeline", sw: "Mchakato" },
+		headline: { en: "Our Drone Survey Workflow", sw: "Mtiririko Wetu wa Upimaji wa Droni" },
+		description: { en: "", sw: "" },
+		outcomeLabel: { en: "Engineering-ready data", sw: "" },
+		steps: [
+			{
+				icon: "clipboard-list-outline",
+				label: { en: "Site Assessment", sw: "Tathmini ya Tovuti" },
+				description: { en: "Define the survey area.", sw: "" },
+			},
+		],
+		ctaNote: { en: "", sw: "" },
+		cta: { label: { en: "Request samples", sw: "Omba sampuli" }, href: "mailto:smartgridsurveying@gmail.com", icon: "" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			outcome: resolved.outcomeLabel,
+			steps: Array.isArray(resolved.steps)
+				? resolved.steps.map((step: any) => ({
+						icon: step?.icon || undefined,
+						label: step?.label ?? "",
+						description: step?.description ?? "",
+					}))
+				: [],
+			ctaNote: resolved.ctaNote,
+			cta:
+				resolved.cta && typeof resolved.cta.href === "string" && resolved.cta.href
+					? { label: resolved.cta.label ?? "", href: resolved.cta.href, icon: resolved.cta.icon || undefined }
+					: null,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 11 — aerial-surveys page (2026-09-19): `aerialSurveyingGrid`
+ * wraps the `AerialSurveyingSection` image cards (gradient overlay, hover
+ * arrow, label alt text). Unique — only valid on
+ * `/surveying/aerial-surveys`. Image paths are shared; labels and copy are
+ * localized.
+ */
+const aerialSurveyingGrid: SectionDefinition = {
+	id: "aerialSurveyingGrid",
+	version: 1,
+	label: "Aerial surveying grid (unique)",
+	description: "Unique: the aerial-surveys image-card grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				label: localeText("Label"),
+				image: imagePath("Image (shared)"),
+			}),
+			{
+				label: "Cards",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Card"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` (visual tuning, not
+		// an editor contract).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Aerial Surveying", sw: "Upimaji wa Angani" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				label: { en: "Aerial Mapping", sw: "Uchoraji Ramani wa Angani" },
+				image: "/media/surveying/aerial-surveys/aerial-mapping.jpeg",
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						label: item?.label ?? "",
+						image: item?.image || undefined,
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 11 — aerial-surveys page (2026-09-19): `aerialIndustries`
+ * wraps the `AerialIndustriesSection` link-card grid (wide last card on a
+ * single remainder, positional fallback icons). Unique — only valid on
+ * `/surveying/aerial-surveys` (wide-last + fallbackIcons are outside the
+ * shared `cardGrid` contract). Icons/hrefs shared; titles and descriptions
+ * localized. Renders nothing without items (legacy guard, preserved).
+ */
+const aerialIndustries: SectionDefinition = {
+	id: "aerialIndustries",
+	version: 1,
+	label: "Aerial industries (unique)",
+	description: "Unique: the aerial-surveys industry link-card grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Empty = positional default. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+				href: fields.text({
+					label: "Link (shared, optional)",
+					description: "Internal path. Empty = no link. Identical in en/sw.",
+				}),
+			}),
+			{
+				label: "Industries",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Industry"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, columns, headerRow
+		// and positional fallback icons (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "Use Cases", sw: "Matumizi" },
+		headline: { en: "Aerial Surveys for Key Industries", sw: "Upimaji wa Angani kwa Viwanda" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				icon: "road-variant",
+				title: { en: "Roads & Infrastructure", sw: "Barabara na Miundombinu" },
+				description: { en: "Corridor mapping.", sw: "" },
+				href: "/civil/highway-surveys",
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+						href: item?.href || undefined,
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 11 — aerial-surveys page (2026-09-19): `aerialIndustryCta`
+ * wraps the `IndustryCtaSection` split/shimmer CtaBand (primary start-icon
+ * + trailing arrow). Unique — only valid on `/surveying/aerial-surveys`
+ * (fixed split presentation). Watermark/hrefs/icons shared; tag, headline,
+ * description and link labels localized. Renders nothing without a headline
+ * (legacy guard, preserved).
+ */
+const aerialIndustryCta: SectionDefinition = {
+	id: "aerialIndustryCta",
+	version: 1,
+	label: "Aerial industry CTA (unique)",
+	description: "Unique: the aerial-surveys industry split CTA band. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		watermark: fields.text({
+			label: "Watermark icon (shared, optional)",
+			description: "MDI slug without the `mdi-` prefix. Identical in en/sw.",
+		}),
+		primary: linkObject("Primary action"),
+		secondary: linkObject("Secondary action"),
+		id: anchorField(),
+		// Excluded from v1 (documented): split layout, size, decor,
+		// shimmer, hairline, primary iconPosition/trailingArrow (fixed
+		// presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Need an Industry Survey", sw: "Unahitaji Upimaji wa Kiwanda" },
+		description: { en: "", sw: "" },
+		watermark: "map-marker-path",
+		primary: { label: { en: "Request proposal", sw: "Omba pendekezo" }, href: "mailto:smartgridsurveying@gmail.com", icon: "" },
+		secondary: { label: { en: "WhatsApp us", sw: "WhatsApp" }, href: "https://wa.me/254107393023", icon: "whatsapp" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			watermark: resolved.watermark || undefined,
+			primary:
+				resolved.primary && typeof resolved.primary.href === "string" && resolved.primary.href
+					? { label: resolved.primary.label ?? "", href: resolved.primary.href, icon: resolved.primary.icon || undefined }
+					: null,
+			secondary:
+				resolved.secondary && typeof resolved.secondary.href === "string" && resolved.secondary.href
+					? { label: resolved.secondary.label ?? "", href: resolved.secondary.href, icon: resolved.secondary.icon || undefined }
+					: null,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 11 — aerial-surveys page (2026-09-19): `aerialTechStack`
+ * wraps the `TechStackSection` paper card grid (note → description mapping,
+ * positional fallback icons, surface tone). Unique — only valid on
+ * `/surveying/aerial-surveys` (fallbackIcons are outside the shared
+ * `cardGrid` contract). Icons/hrefs shared; titles and notes localized.
+ * Renders nothing without items (legacy guard, preserved).
+ */
+const aerialTechStack: SectionDefinition = {
+	id: "aerialTechStack",
+	version: 1,
+	label: "Aerial tech stack (unique)",
+	description: "Unique: the aerial-surveys technology card grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Empty = positional default. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				note: localeLongText("Note"),
+				href: fields.text({
+					label: "Link (shared, optional)",
+					description: "Internal path. Empty = no link. Identical in en/sw.",
+				}),
+			}),
+			{
+				label: "Platforms",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Platform"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, columns, tone,
+		// headerRow, paper card variant and positional fallback icons
+		// (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "Stack", sw: "Teknolojia" },
+		headline: { en: "Survey Technology We Use", sw: "Teknolojia Tunayotumia" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				icon: "quadcopter",
+				title: { en: "DJI Matrice 350 RTK", sw: "DJI Matrice 350 RTK" },
+				note: { en: "Flagship RTK platform.", sw: "" },
+				href: "/equipment-sale/dji-matrice-350-rtk",
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? "",
+						note: item?.note ?? "",
+						href: item?.href || undefined,
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 11 — aerial-surveys page (2026-09-19): `aerialCapabilityCta`
+ * wraps the `CapabilityCtaSection` centered/shimmer CtaBand (primary
+ * start-icon + trailing arrow). Unique — only valid on
+ * `/surveying/aerial-surveys` (fixed centered presentation). Same data
+ * contract as `aerialIndustryCta` minus the split layout.
+ */
+const aerialCapabilityCta: SectionDefinition = {
+	id: "aerialCapabilityCta",
+	version: 1,
+	label: "Aerial capability CTA (unique)",
+	description: "Unique: the aerial-surveys capability centered CTA band. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		watermark: fields.text({
+			label: "Watermark icon (shared, optional)",
+			description: "MDI slug without the `mdi-` prefix. Identical in en/sw.",
+		}),
+		primary: linkObject("Primary action"),
+		secondary: linkObject("Secondary action"),
+		id: anchorField(),
+		// Excluded from v1 (documented): centered layout, size, decor,
+		// shimmer, hairline, primary iconPosition/trailingArrow (fixed
+		// presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "See What We Can Capture", sw: "Ona Tunachoweza Kunasa" },
+		description: { en: "", sw: "" },
+		watermark: "file-pdf-box",
+		primary: { label: { en: "Request samples", sw: "Omba sampuli" }, href: "mailto:smartgridsurveying@gmail.com", icon: "" },
+		secondary: { label: { en: "", sw: "" }, href: "", icon: "" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			watermark: resolved.watermark || undefined,
+			primary:
+				resolved.primary && typeof resolved.primary.href === "string" && resolved.primary.href
+					? { label: resolved.primary.label ?? "", href: resolved.primary.href, icon: resolved.primary.icon || undefined }
+					: null,
+			secondary:
+				resolved.secondary && typeof resolved.secondary.href === "string" && resolved.secondary.href
+					? { label: resolved.secondary.label ?? "", href: resolved.secondary.href, icon: resolved.secondary.icon || undefined }
+					: null,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 11 — aerial-surveys page (2026-09-19): `aerialFinalCta` wraps
+ * the `AerialFinalCtaSection` closing cards (hardcoded `watermark="drone"`
+ * + 4 columns stay in the renderer). Unique — only valid on
+ * `/surveying/aerial-surveys`. Icons/hrefs shared; labels and descriptions
+ * localized. Renders nothing without a headline (legacy guard, preserved).
+ */
+const aerialFinalCta: SectionDefinition = {
+	id: "aerialFinalCta",
+	version: 1,
+	label: "Aerial final CTA (unique)",
+	description: "Unique: the aerial-surveys closing action cards. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		actionsLabel: localeText("Actions label", { optionalInEnglish: true }),
+		actions: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				label: localeText("Label"),
+				description: localeLongText("Description"),
+				href: fields.text({
+					label: "Link (shared)",
+					description: "Internal path or full URL. Identical in en/sw.",
+				}),
+			}),
+			{
+				label: "Actions",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Action"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `watermark="drone"`, columns and
+		// `className` (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Start Your Aerial Survey", sw: "Anza Upimaji Wako wa Angani" },
+		description: { en: "", sw: "" },
+		actionsLabel: { en: "", sw: "" },
+		actions: [
+			{
+				icon: "cash-multiple",
+				label: { en: "Get Instant Quote", sw: "Pata Nukuu" },
+				description: { en: "24-hour response.", sw: "" },
+				href: "mailto:smartgridsurveying@gmail.com",
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			actionsLabel: resolved.actionsLabel,
+			actions: Array.isArray(resolved.actions)
+				? resolved.actions.map((action: any) => ({
+						icon: action?.icon || undefined,
+						label: action?.label ?? "",
+						description: action?.description ?? "",
+						href: typeof action?.href === "string" ? action.href : "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 11 — aerial-surveys page (2026-09-19): `aerialProjects` wraps
+ * the `ProjectsSection` mosaic (first image featured 2x2, highlight chips
+ * with hardcoded marker icons). Unique — only valid on
+ * `/surveying/aerial-surveys`. Image paths are shared; tag, headline,
+ * description and highlight strings localized.
+ */
+const aerialProjects: SectionDefinition = {
+	id: "aerialProjects",
+	version: 1,
+	label: "Aerial projects (unique)",
+	description: "Unique: the aerial-surveys project mosaic with highlights. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		images: fields.array(imagePath("Image (shared)"), {
+			label: "Images",
+			itemLabel: (item) => previewText(item, ["value"], "Image"),
+		}),
+		description: localeLongText("Description"),
+		items: fields.array(localeText("Highlight"), {
+			label: "Highlights",
+			itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Highlight"),
+		}),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, mosaic spans and the
+		// hardcoded marker icons (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Featured Projects", sw: "Miradi Mashuhuri" },
+		images: ["/media/surveying/aerial-surveys/project-1.jpeg"],
+		description: { en: "", sw: "" },
+		items: [{ en: "Corridor mapping for highways.", sw: "" }],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			images: Array.isArray(resolved.images) ? resolved.images.filter((src: unknown) => typeof src === "string" && src) : [],
+			description: resolved.description,
+			items: Array.isArray(resolved.items) ? resolved.items.filter((entry: unknown) => typeof entry === "string" && entry) : [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 11 — aerial-surveys page (2026-09-19): `aerialAdditionalServices`
+ * wraps the `AdditionalServicesSection` pill row with closing statement
+ * (hardcoded camera icons stay in the renderer). Unique — only valid on
+ * `/surveying/aerial-surveys`. All strings localized.
+ */
+const aerialAdditionalServices: SectionDefinition = {
+	id: "aerialAdditionalServices",
+	version: 1,
+	label: "Aerial additional services (unique)",
+	description: "Unique: the aerial-surveys service pill row. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		items: fields.array(localeText("Service"), {
+			label: "Services",
+			itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Service"),
+		}),
+		description: localeLongText("Description"),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` and the hardcoded pill
+		// icons (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Additional Services", sw: "Huduma za Ziada" },
+		items: [{ en: "Drone Photography", sw: "Upigaji Picha wa Droni" }],
+		description: { en: "", sw: "" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			items: Array.isArray(resolved.items) ? resolved.items.filter((entry: unknown) => typeof entry === "string" && entry) : [],
+			description: resolved.description,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 12 — cadastral-surveys page (2026-09-19): `cadastralPostHeroCta`
+ * wraps the `PostHeroCtaSection` light shimmer band (dual pill CTAs with
+ * per-slot icon fallbacks). Unique — only valid on
+ * `/surveying/cadastral-surveys`. Hrefs/icons shared; tag, headline,
+ * description and labels localized. Renders nothing without a headline
+ * (legacy guard, preserved).
+ */
+const cadastralPostHeroCta: SectionDefinition = {
+	id: "cadastralPostHeroCta",
+	version: 1,
+	label: "Cadastral post-hero CTA (unique)",
+	description: "Unique: the cadastral-surveys light dual-CTA band. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		ctaPrimary: linkObject("Primary action"),
+		ctaSecondary: linkObject("Secondary action"),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, shimmer and the
+		// per-slot icon fallbacks (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "Cadastral Surveys in Kenya", sw: "Upimaji wa Ardhi nchini Kenya" },
+		headline: { en: "Title Deeds, Subdivision & Boundary Verification", sw: "Hatimiliki, Ugawaji na Uthibitishaji wa Mipaka" },
+		description: { en: "", sw: "" },
+		ctaPrimary: { label: { en: "Talk to a Surveyor", sw: "Ongea na Mchunguzi" }, href: "https://wa.me/254107393023", icon: "whatsapp" },
+		ctaSecondary: { label: { en: "Email Us", sw: "Tutumie Barua Pepe" }, href: "mailto:smartgridsurveying@gmail.com", icon: "email-fast-outline" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			ctaPrimary:
+				resolved.ctaPrimary && typeof resolved.ctaPrimary.href === "string" && resolved.ctaPrimary.href
+					? { label: resolved.ctaPrimary.label ?? "", href: resolved.ctaPrimary.href, icon: resolved.ctaPrimary.icon || undefined }
+					: null,
+			ctaSecondary:
+				resolved.ctaSecondary && typeof resolved.ctaSecondary.href === "string" && resolved.ctaSecondary.href
+					? { label: resolved.ctaSecondary.label ?? "", href: resolved.ctaSecondary.href, icon: resolved.ctaSecondary.icon || undefined }
+					: null,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 12 — cadastral-surveys page (2026-09-19): `cadastralWhenYouNeed`
+ * wraps the `WhenYouNeedSection` sticky-image + numbered-card grid
+ * (wide-last odd card, linked cards, positional fallback icons). Unique —
+ * only valid on `/surveying/cadastral-surveys`. Image/hrefs shared; tag,
+ * headline, badge, titles and descriptions localized. Renders nothing
+ * without items (legacy guard, preserved).
+ */
+const cadastralWhenYouNeed: SectionDefinition = {
+	id: "cadastralWhenYouNeed",
+	version: 1,
+	label: "Cadastral when-you-need (unique)",
+	description: "Unique: the cadastral-surveys sticky-image use-case grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		image: imagePath("Image (shared, optional)"),
+		imageBadge: localeText("Image badge", { optionalInEnglish: true }),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Empty = positional default. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+				href: fields.text({
+					label: "Link (shared, optional)",
+					description: "Internal path. Empty = no link. Identical in en/sw.",
+				}),
+			}),
+			{
+				label: "Use cases",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Use case"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, sticky/wide-last
+		// positioning and positional fallback icons (presentation, not
+		// editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "When You Need a Cadastral Survey", sw: "Unapohitaji Upimaji wa Ardhi" },
+		description: { en: "", sw: "" },
+		image: "/media/surveying/cadastral-surveys/01-02.jpg",
+		imageBadge: { en: "Ardhisasa-ready", sw: "" },
+		items: [
+			{
+				icon: "file-certificate-outline",
+				title: { en: "Buying Land", sw: "Kununua Ardhi" },
+				description: { en: "Verify the title deed.", sw: "" },
+				href: "",
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			image: resolved.image || undefined,
+			imageBadge: resolved.imageBadge,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+						href: item?.href || undefined,
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 12 — cadastral-surveys page (2026-09-19): `cadastralProcess`
+ * wraps the `ProcessFlowSection` WorkflowSection passthrough with the
+ * ACQUISITION phase-style override (purple chip + satellite icon — the
+ * default hydrographic icon would mislead). Unique — only valid on
+ * `/surveying/cadastral-surveys` (the shared `process` renders a different
+ * component and excludes `phaseStyles`). Phase keys/icons shared; labels
+ * and descriptions localized.
+ */
+const cadastralProcess: SectionDefinition = {
+	id: "cadastralProcess",
+	version: 1,
+	label: "Cadastral process (unique)",
+	description: "Unique: the cadastral-surveys phased workflow. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		outcome: localeText("Outcome", { optionalInEnglish: true }),
+		steps: fields.array(
+			fields.object({
+				phase: fields.text({
+					label: "Phase key (shared)",
+					description: "Phase bucket key (e.g. ACQUISITION). Identical in en/sw.",
+				}),
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				label: localeText("Label"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Steps",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Step"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` and the ACQUISITION
+		// phase-style override (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Our Cadastral Process", sw: "Mchakato Wetu wa Ardhi" },
+		description: { en: "", sw: "" },
+		outcome: { en: "Registered, titled & dispute-free", sw: "" },
+		steps: [
+			{
+				phase: "ACQUISITION",
+				icon: "file-search-outline",
+				label: { en: "Site Visit & Document Review", sw: "Ziara ya Tovuti" },
+				description: { en: "Walk the parcel with you.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			outcome: resolved.outcome,
+			steps: Array.isArray(resolved.steps)
+				? resolved.steps.map((step: any) => ({
+						phase: step?.phase ?? "",
+						icon: step?.icon || undefined,
+						label: step?.label ?? "",
+						description: step?.description ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 12 — cadastral-surveys page (2026-09-19): `cadastralProcessCta`
+ * wraps the `ProcessCtaSection` dark ink-panel band (watermark + blur,
+ * dual CTAs, check-decagram chips). Unique — only valid on
+ * `/surveying/cadastral-surveys` (chips are outside the shared `ctaBand`
+ * contract). Hrefs/icons shared; tag, headline, description, labels and
+ * chips localized. Renders nothing without a headline (legacy guard,
+ * preserved).
+ */
+const cadastralProcessCta: SectionDefinition = {
+	id: "cadastralProcessCta",
+	version: 1,
+	label: "Cadastral process CTA (unique)",
+	description: "Unique: the cadastral-surveys dark CTA band with chips. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		ctaPrimary: linkObject("Primary action"),
+		ctaSecondary: linkObject("Secondary action"),
+		chips: fields.array(localeText("Chip"), {
+			label: "Chips",
+			itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Chip"),
+		}),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, watermark, blur and
+		// per-slot icon fallbacks (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Start Your Cadastral Survey", sw: "Anza Upimaji Wako" },
+		description: { en: "", sw: "" },
+		ctaPrimary: { label: { en: "Email Us", sw: "Tutumie Barua Pepe" }, href: "mailto:smartgridsurveying@gmail.com", icon: "email-fast-outline" },
+		ctaSecondary: { label: { en: "WhatsApp", sw: "WhatsApp" }, href: "https://wa.me/254107393023", icon: "whatsapp" },
+		chips: [{ en: "Licensed surveyors", sw: "Wachunguzi walioidhinishwa" }],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			ctaPrimary:
+				resolved.ctaPrimary && typeof resolved.ctaPrimary.href === "string" && resolved.ctaPrimary.href
+					? { label: resolved.ctaPrimary.label ?? "", href: resolved.ctaPrimary.href, icon: resolved.ctaPrimary.icon || undefined }
+					: null,
+			ctaSecondary:
+				resolved.ctaSecondary && typeof resolved.ctaSecondary.href === "string" && resolved.ctaSecondary.href
+					? { label: resolved.ctaSecondary.label ?? "", href: resolved.ctaSecondary.href, icon: resolved.ctaSecondary.icon || undefined }
+					: null,
+			chips: Array.isArray(resolved.chips) ? resolved.chips.filter((entry: unknown) => typeof entry === "string" && entry) : [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 12 — cadastral-surveys page (2026-09-19): `cadastralCost`
+ * wraps the `CostSection` tier cards (display-string prices with accent
+ * units, featured lift + pill, check-bullet features, bottom CTA). Unique —
+ * only valid on `/surveying/cadastral-surveys` (range/project price
+ * strings + priceUnit + featured flag are outside the shared `pricing`
+ * contract). Icons/hrefs shared; titles, prices, notes and features
+ * localized. Renders nothing without tiers (legacy guard, preserved).
+ */
+const cadastralCost: SectionDefinition = {
+	id: "cadastralCost",
+	version: 1,
+	label: "Cadastral cost (unique)",
+	description: "Unique: the cadastral-surveys pricing tiers. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		featuredLabel: localeText("Featured label", { optionalInEnglish: true }),
+		tiers: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				price: localeText("Price"),
+				priceUnit: localeText("Price unit", { optionalInEnglish: true }),
+				note: localeLongText("Note"),
+				features: fields.array(localeText("Feature", { optionalInEnglish: true }), {
+					label: "Features",
+					itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Feature"),
+				}),
+				featured: fields.checkbox({ label: "Featured tier", defaultValue: false }),
+			}),
+			{
+				label: "Tiers",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Tier"),
+			}
+		),
+		cta: linkObject("Closing action"),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` and the featured lift
+		// (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Cadastral Survey Costs", sw: "Gharama za Upimaji" },
+		description: { en: "", sw: "" },
+		featuredLabel: { en: "Most Requested", sw: "" },
+		tiers: [
+			{
+				icon: "home-outline",
+				title: { en: "Small Residential Plot", sw: "Kiwanja Kidogo" },
+				price: { en: "KES 15,000 – 80,000", sw: "KES 15,000 – 80,000" },
+				priceUnit: { en: "", sw: "" },
+				note: { en: "", sw: "" },
+				features: [{ en: "Registry search", sw: "Utafutaji wa rejesta" }],
+				featured: false,
+			},
+		],
+		cta: { label: { en: "Get Accurate Pricing", sw: "Pata Bei Sahihi" }, href: "mailto:smartgridsurveying@gmail.com", icon: "cash-multiple" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			featuredLabel: resolved.featuredLabel,
+			tiers: Array.isArray(resolved.tiers)
+				? resolved.tiers.map((tier: any) => ({
+						icon: tier?.icon || undefined,
+						title: tier?.title ?? "",
+						price: tier?.price ?? "",
+						priceUnit: tier?.priceUnit || undefined,
+						note: tier?.note ?? "",
+						features: Array.isArray(tier?.features)
+							? tier.features.filter((entry: unknown) => typeof entry === "string" && entry)
+							: [],
+						featured: tier?.featured === true,
+					}))
+				: [],
+			cta:
+				resolved.cta && typeof resolved.cta.href === "string" && resolved.cta.href
+					? { label: resolved.cta.label ?? "", href: resolved.cta.href, icon: resolved.cta.icon || undefined }
+					: null,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 12 — cadastral-surveys page (2026-09-19): `cadastralTimeline`
+ * wraps the `TimelineSection` computed range bars (42-day scale, min-day
+ * dot, full-width pulse when open-ended, WhatsApp-green CTA). Unique —
+ * only valid on `/surveying/cadastral-surveys`. Day counts/hrefs/icons
+ * shared; titles, ranges, notes and labels localized. Renders nothing
+ * without items (legacy guard, preserved).
+ */
+const cadastralTimeline: SectionDefinition = {
+	id: "cadastralTimeline",
+	version: 1,
+	label: "Cadastral timeline (unique)",
+	description: "Unique: the cadastral-surveys duration bars. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		scaleNote: localeText("Scale note", { optionalInEnglish: true }),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				range: localeText("Range", { optionalInEnglish: true }),
+				minDays: fields.integer({ label: "Minimum days (shared, 0 = open-ended)", defaultValue: 0, validation: { min: 0 } }),
+				maxDays: fields.integer({ label: "Maximum days (shared, 0 = open-ended)", defaultValue: 0, validation: { min: 0 } }),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Stages",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Stage"),
+			}
+		),
+		note: localeLongText("Note"),
+		cta: linkObject("Closing action"),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` and the 42-day bar
+		// scale (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "How Long It Takes", sw: "Inachukua Muda Gani" },
+		description: { en: "", sw: "" },
+		scaleNote: { en: "", sw: "" },
+		items: [
+			{
+				icon: "calendar-clock",
+				title: { en: "Standard Survey", sw: "Upimaji wa Kawaida" },
+				range: { en: "7–21 days", sw: "Siku 7–21" },
+				minDays: 7,
+				maxDays: 21,
+				description: { en: "", sw: "" },
+			},
+		],
+		note: { en: "", sw: "" },
+		cta: { label: { en: "Check Timeline", sw: "Angalia Ratiba" }, href: "https://wa.me/254107393023", icon: "whatsapp" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			scaleNote: resolved.scaleNote,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? "",
+						range: item?.range || undefined,
+						minDays: typeof item?.minDays === "number" && item.minDays > 0 ? item.minDays : null,
+						maxDays: typeof item?.maxDays === "number" && item.maxDays > 0 ? item.maxDays : null,
+						description: item?.description ?? "",
+					}))
+				: [],
+			note: resolved.note,
+			cta:
+				resolved.cta && typeof resolved.cta.href === "string" && resolved.cta.href
+					? { label: resolved.cta.label ?? "", href: resolved.cta.href, icon: resolved.cta.icon || undefined }
+					: null,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 12 — cadastral-surveys page (2026-09-19): `cadastralCompliance`
+ * wraps the `ComplianceSection` sticky-split checklist (related-link pills,
+ * numbered cards, gavel watermark). Unique — only valid on
+ * `/surveying/cadastral-surveys`. Icons/hrefs shared; tag, headline,
+ * checklist and link labels localized. Renders nothing without a headline
+ * and checklist (legacy guard, preserved).
+ */
+const cadastralCompliance: SectionDefinition = {
+	id: "cadastralCompliance",
+	version: 1,
+	label: "Cadastral compliance (unique)",
+	description: "Unique: the cadastral-surveys compliance checklist. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		checklistTitle: localeText("Checklist title", { optionalInEnglish: true }),
+		checklist: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Checklist",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Entry"),
+			}
+		),
+		relatedLabel: localeText("Related label", { optionalInEnglish: true }),
+		related: fields.array(
+			fields.object({
+				label: localeText("Label"),
+				href: fields.text({
+					label: "Link (shared)",
+					description: "Internal path. Identical in en/sw.",
+				}),
+			}),
+			{
+				label: "Related links",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Link"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, sticky positioning
+		// and watermark (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Survey Act Compliance", sw: "Uzingatiaji wa Sheria" },
+		description: { en: "", sw: "" },
+		checklistTitle: { en: "", sw: "" },
+		checklist: [
+			{
+				icon: "shield-check",
+				title: { en: "Licensed Surveyors", sw: "Wachunguzi Walioidhinishwa" },
+				description: { en: "", sw: "" },
+			},
+		],
+		relatedLabel: { en: "", sw: "" },
+		related: [
+			{
+				label: { en: "Sectional Properties Act, 2020", sw: "Sheria ya Majengo, 2020" },
+				href: "/surveying/sectional-properties",
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			checklistTitle: resolved.checklistTitle,
+			checklist: Array.isArray(resolved.checklist)
+				? resolved.checklist.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+					}))
+				: [],
+			relatedLabel: resolved.relatedLabel,
+			related: Array.isArray(resolved.related)
+				? resolved.related.map((link: any) => ({
+						label: link?.label ?? "",
+						href: typeof link?.href === "string" ? link.href : "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 12 — cadastral-surveys page (2026-09-19): `cadastralCaseStudy`
+ * wraps the `CaseStudySection` project story (overview, challenge,
+ * methodology, outcome, impact, tech table, engineering note). Unique —
+ * only valid on `/surveying/cadastral-surveys`. Image paths shared; alts
+ * and all copy localized. Every block is optional in the renderer except
+ * the headline gate. Renders nothing without a headline (legacy guard,
+ * preserved).
+ */
+const cadastralCaseStudy: SectionDefinition = {
+	id: "cadastralCaseStudy",
+	version: 1,
+	label: "Cadastral case study (unique)",
+	description: "Unique: the cadastral-surveys project story. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		subtitle: localeText("Subtitle", { optionalInEnglish: true }),
+		overview: fields.object(
+			{
+				label: localeText("Label"),
+				paragraphs: fields.array(localeLongText("Paragraph"), {
+					label: "Paragraphs",
+					itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Paragraph"),
+				}),
+				criticalTitle: localeText("Critical title", { optionalInEnglish: true }),
+				critical: fields.array(localeText("Critical point"), {
+					label: "Critical points",
+					itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Point"),
+				}),
+				deployNote: localeLongText("Deploy note"),
+				deployIcon: fields.text({
+					label: "Deploy icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+			},
+			{ label: "Overview" }
+		),
+		challenge: fields.object(
+			{
+				label: localeText("Label"),
+				intro: localeLongText("Intro"),
+				items: fields.array(localeText("Challenge"), {
+					label: "Challenges",
+					itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Challenge"),
+				}),
+				images: fields.array(
+					fields.object({
+						src: imagePath("Image (shared)"),
+						alt: localeText("Alt text", { optionalInEnglish: true }),
+					}),
+					{
+						label: "Images",
+						itemLabel: (item) => previewText(item, ["fields", "alt", "fields", "en", "value"], "Image"),
+					}
+				),
+			},
+			{ label: "Challenge" }
+		),
+		methodology: fields.object(
+			{
+				label: localeText("Label"),
+				intro: localeLongText("Intro"),
+				steps: fields.array(
+					fields.object({
+						title: localeText("Title"),
+						points: fields.array(localeText("Point", { optionalInEnglish: true }), {
+							label: "Points",
+							itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Point"),
+						}),
+					}),
+					{
+						label: "Steps",
+						itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Step"),
+					}
+				),
+				images: fields.array(
+					fields.object({
+						src: imagePath("Image (shared)"),
+						alt: localeText("Alt text", { optionalInEnglish: true }),
+					}),
+					{
+						label: "Images",
+						itemLabel: (item) => previewText(item, ["fields", "alt", "fields", "en", "value"], "Image"),
+					}
+				),
+			},
+			{ label: "Methodology" }
+		),
+		outcome: fields.object(
+			{
+				label: localeText("Label"),
+				intro: localeLongText("Intro"),
+				deliverablesTitle: localeText("Deliverables title", { optionalInEnglish: true }),
+				deliverables: fields.array(localeText("Deliverable"), {
+					label: "Deliverables",
+					itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Deliverable"),
+				}),
+			},
+			{ label: "Outcome" }
+		),
+		impact: fields.object(
+			{
+				label: localeText("Label"),
+				items: fields.array(
+					fields.object({
+						icon: fields.text({
+							label: "MDI icon (shared, optional)",
+							description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+						}),
+						text: localeText("Text"),
+					}),
+					{
+						label: "Impacts",
+						itemLabel: (item) => previewText(item, ["fields", "text", "fields", "en", "value"], "Impact"),
+					}
+				),
+			},
+			{ label: "Impact" }
+		),
+		techSummary: fields.object(
+			{
+				label: localeText("Label"),
+				componentHeader: localeText("Component header", { optionalInEnglish: true }),
+				specHeader: localeText("Spec header", { optionalInEnglish: true }),
+				rows: fields.array(
+					fields.object({
+						component: localeText("Component"),
+						specification: localeText("Specification"),
+					}),
+					{
+						label: "Rows",
+						itemLabel: (item) => previewText(item, ["fields", "component", "fields", "en", "value"], "Row"),
+					}
+				),
+			},
+			{ label: "Tech summary" }
+		),
+		engineeringNote: fields.object(
+			{
+				label: localeText("Label", { optionalInEnglish: true }),
+				text: localeLongText("Text"),
+			},
+			{ label: "Engineering note" }
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` and positional spans
+		// (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Kiambu Parcel Case Study", sw: "Uchunguzi wa Kiwanja cha Kiambu" },
+		subtitle: { en: "", sw: "" },
+		overview: {
+			label: { en: "Overview", sw: "Muhtasari" },
+			paragraphs: [{ en: "A disputed parcel in Kiambu.", sw: "" }],
+			criticalTitle: { en: "", sw: "" },
+			critical: [{ en: "Overlapping claims", sw: "" }],
+			deployNote: { en: "", sw: "" },
+			deployIcon: "satellite-variant",
+		},
+		challenge: {
+			label: { en: "Challenge", sw: "Changamoto" },
+			intro: { en: "", sw: "" },
+			items: [{ en: "Unmarked boundary line.", sw: "" }],
+			images: [{ src: "/media/surveying/cadastral-surveys/02-02.jpg", alt: { en: "", sw: "" } }],
+		},
+		methodology: {
+			label: { en: "Methodology", sw: "Mbinu" },
+			intro: { en: "", sw: "" },
+			steps: [{ title: { en: "Desk study", sw: "Utafiti" }, points: [{ en: "Registry retrieval.", sw: "" }] }],
+			images: [],
+		},
+		outcome: {
+			label: { en: "Outcome", sw: "Matokeo" },
+			intro: { en: "", sw: "" },
+			deliverablesTitle: { en: "", sw: "" },
+			deliverables: [{ en: "Registered deed plan.", sw: "" }],
+		},
+		impact: {
+			label: { en: "Impact", sw: "Athari" },
+			items: [{ icon: "handshake-outline", text: { en: "Dispute resolved.", sw: "" } }],
+		},
+		techSummary: {
+			label: { en: "Tech", sw: "Teknolojia" },
+			componentHeader: { en: "", sw: "" },
+			specHeader: { en: "", sw: "" },
+			rows: [{ component: { en: "Survey System", sw: "Mfumo" }, specification: { en: "RTK GNSS", sw: "RTK GNSS" } }],
+		},
+		engineeringNote: {
+			label: { en: "", sw: "" },
+			text: { en: "Registered, titled and dispute-free.", sw: "" },
+		},
+		id: "",
+	},
+	normalize: (resolved) => {
+		const strings = (list: unknown) =>
+			Array.isArray(list) ? list.filter((entry: unknown) => typeof entry === "string" && entry) : [];
+		const caseImages = (list: unknown) =>
+			Array.isArray(list)
+				? list.map((image: any) => ({ src: typeof image?.src === "string" ? image.src : "", alt: image?.alt ?? "" }))
+				: [];
+		return {
+			data: {
+				tag: resolved.tag,
+				headline: resolved.headline,
+				subtitle: resolved.subtitle,
+				overview: resolved.overview
+					? {
+							label: resolved.overview.label ?? "",
+							paragraphs: strings(resolved.overview.paragraphs),
+							criticalTitle: resolved.overview.criticalTitle,
+							critical: strings(resolved.overview.critical),
+							deployNote: resolved.overview.deployNote,
+							deployIcon: resolved.overview.deployIcon || undefined,
+						}
+					: null,
+				challenge: resolved.challenge
+					? {
+							label: resolved.challenge.label ?? "",
+							intro: resolved.challenge.intro,
+							items: strings(resolved.challenge.items),
+							images: caseImages(resolved.challenge.images),
+						}
+					: null,
+				methodology: resolved.methodology
+					? {
+							label: resolved.methodology.label ?? "",
+							intro: resolved.methodology.intro,
+							steps: Array.isArray(resolved.methodology.steps)
+								? resolved.methodology.steps.map((step: any) => ({ title: step?.title ?? "", points: strings(step?.points) }))
+								: [],
+							images: caseImages(resolved.methodology.images),
+						}
+					: null,
+				outcome: resolved.outcome
+					? {
+							label: resolved.outcome.label ?? "",
+							intro: resolved.outcome.intro,
+							deliverablesTitle: resolved.outcome.deliverablesTitle,
+							deliverables: strings(resolved.outcome.deliverables),
+						}
+					: null,
+				impact: resolved.impact
+					? {
+							label: resolved.impact.label ?? "",
+							items: Array.isArray(resolved.impact.items)
+								? resolved.impact.items.map((item: any) => ({ icon: item?.icon || undefined, text: item?.text ?? "" }))
+								: [],
+						}
+					: null,
+				techSummary: resolved.techSummary
+					? {
+							label: resolved.techSummary.label ?? "",
+							componentHeader: resolved.techSummary.componentHeader,
+							specHeader: resolved.techSummary.specHeader,
+							rows: Array.isArray(resolved.techSummary.rows)
+								? resolved.techSummary.rows.map((row: any) => ({ component: row?.component ?? "", specification: row?.specification ?? "" }))
+								: [],
+						}
+					: null,
+				engineeringNote: resolved.engineeringNote
+					? { label: resolved.engineeringNote.label, text: resolved.engineeringNote.text ?? "" }
+					: null,
+			},
+			id: resolved.id || undefined,
+		};
+	},
+};
+
+/**
+ * M11 batch 12 — cadastral-surveys page (2026-09-19): `cadastralFinalCta`
+ * wraps the `FinalCtaSection` closing cards (hardcoded
+ * `watermark="vector-square"` + 4 columns + left align stay in the
+ * renderer). Unique — only valid on `/surveying/cadastral-surveys`.
+ * Icons/hrefs shared; labels and descriptions localized. Renders nothing
+ * without a headline (legacy guard, preserved).
+ */
+const cadastralFinalCta: SectionDefinition = {
+	id: "cadastralFinalCta",
+	version: 1,
+	label: "Cadastral final CTA (unique)",
+	description: "Unique: the cadastral-surveys closing action cards. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		actionsLabel: localeText("Actions label", { optionalInEnglish: true }),
+		actions: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				label: localeText("Label"),
+				description: localeLongText("Description"),
+				href: fields.text({
+					label: "Link (shared)",
+					description: "Internal path or full URL. Identical in en/sw.",
+				}),
+			}),
+			{
+				label: "Actions",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Action"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `watermark="vector-square"`,
+		// columns, align and `className` (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Book Your Cadastral Survey", sw: "Weka Upimaji Wako" },
+		description: { en: "", sw: "" },
+		actionsLabel: { en: "", sw: "" },
+		actions: [
+			{
+				icon: "calendar-check",
+				label: { en: "Book Site Visit", sw: "Weka Ziara" },
+				description: { en: "Walk your parcel.", sw: "" },
+				href: "mailto:smartgridsurveying@gmail.com",
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			actionsLabel: resolved.actionsLabel,
+			actions: Array.isArray(resolved.actions)
+				? resolved.actions.map((action: any) => ({
+						icon: action?.icon || undefined,
+						label: action?.label ?? "",
+						description: action?.description ?? "",
+						href: typeof action?.href === "string" ? action.href : "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
 export const sectionRegistry: readonly SectionDefinition[] = [
 	introText,
 	ctaBand,
@@ -5758,6 +7355,27 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	bsAccuracyMatters,
 	bsTechnology,
 	bsConsultation,
+	aerialIntro,
+	aerialWhyDrones,
+	aerialServices,
+	aerialWorkflow,
+	aerialSurveyingGrid,
+	aerialIndustries,
+	aerialIndustryCta,
+	aerialTechStack,
+	aerialCapabilityCta,
+	aerialFinalCta,
+	aerialProjects,
+	aerialAdditionalServices,
+	cadastralPostHeroCta,
+	cadastralWhenYouNeed,
+	cadastralProcess,
+	cadastralProcessCta,
+	cadastralCost,
+	cadastralTimeline,
+	cadastralCompliance,
+	cadastralCaseStudy,
+	cadastralFinalCta,
 ];
 
 export function getSectionDefinition(id: string): SectionDefinition {
@@ -5841,6 +7459,27 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	bsAccuracyMatters: bsAccuracyMatters.label,
 	bsTechnology: bsTechnology.label,
 	bsConsultation: bsConsultation.label,
+	aerialIntro: aerialIntro.label,
+	aerialWhyDrones: aerialWhyDrones.label,
+	aerialServices: aerialServices.label,
+	aerialWorkflow: aerialWorkflow.label,
+	aerialSurveyingGrid: aerialSurveyingGrid.label,
+	aerialIndustries: aerialIndustries.label,
+	aerialIndustryCta: aerialIndustryCta.label,
+	aerialTechStack: aerialTechStack.label,
+	aerialCapabilityCta: aerialCapabilityCta.label,
+	aerialFinalCta: aerialFinalCta.label,
+	aerialProjects: aerialProjects.label,
+	aerialAdditionalServices: aerialAdditionalServices.label,
+	cadastralPostHeroCta: cadastralPostHeroCta.label,
+	cadastralWhenYouNeed: cadastralWhenYouNeed.label,
+	cadastralProcess: cadastralProcess.label,
+	cadastralProcessCta: cadastralProcessCta.label,
+	cadastralCost: cadastralCost.label,
+	cadastralTimeline: cadastralTimeline.label,
+	cadastralCompliance: cadastralCompliance.label,
+	cadastralCaseStudy: cadastralCaseStudy.label,
+	cadastralFinalCta: cadastralFinalCta.label,
 };
 
 /**

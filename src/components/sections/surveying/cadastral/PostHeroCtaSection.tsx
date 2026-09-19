@@ -22,16 +22,28 @@ interface PostHeroCtaContent {
 	ctaSecondary?: CtaAction | null;
 }
 
-export function PostHeroCtaSection(): ReactElement {
+export interface CadastralPostHeroCtaData {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+	ctaPrimary?: CtaAction | null;
+	ctaSecondary?: CtaAction | null;
+}
+
+export function PostHeroCtaSection({ data, id }: { data?: CadastralPostHeroCtaData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/cadastral-surveys"]);
-	const section = t("surveying/cadastral-surveys:postHeroCta", {
-		returnObjects: true,
-	}) as unknown as PostHeroCtaContent;
+	// Keystatic-owned content when `data` is provided (M11
+	// `cadastralPostHeroCta` unique section); legacy locale strings
+	// otherwise.
+	const section = (data ??
+		(t("surveying/cadastral-surveys:postHeroCta", {
+			returnObjects: true,
+		}) as unknown as PostHeroCtaContent)) as PostHeroCtaContent;
 
 	if (!section?.headline) return <></>;
 
 	return (
-		<section className="pt-14 sm:pt-20 pb-4 relative overflow-hidden">
+		<section id={id} className="pt-14 sm:pt-20 pb-4 relative overflow-hidden">
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
 					<div className="group/band relative rounded-c bg-paper hairline card-shadow overflow-hidden px-8 py-10 sm:px-12 sm:py-12 shimmer-t shimmer-gold-200">

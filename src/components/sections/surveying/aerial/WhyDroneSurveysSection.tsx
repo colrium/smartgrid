@@ -21,19 +21,29 @@ interface WhyDroneSurveysContent {
 	items: WhyItem[];
 }
 
+export interface AerialWhyDronesData {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+	items: WhyItem[];
+}
+
 const FALLBACK_ICONS = ["speedometer", "cash-multiple", "crosshairs-gps", "file-cad", "drone"];
 
-export function WhyDroneSurveysSection(): ReactElement {
+export function WhyDroneSurveysSection({ data, id }: { data?: AerialWhyDronesData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/aerial-surveys"]);
-	const section = t("surveying/aerial-surveys:whyDroneSurveys", {
-		returnObjects: true,
-	}) as unknown as WhyDroneSurveysContent;
+	// Keystatic-owned content when `data` is provided (M11 `aerialWhyDrones`
+	// unique section); legacy locale strings otherwise.
+	const section = (data ??
+		(t("surveying/aerial-surveys:whyDroneSurveys", {
+			returnObjects: true,
+		}) as unknown as WhyDroneSurveysContent)) as WhyDroneSurveysContent;
 	const items = Array.isArray(section?.items) ? section.items : [];
 
 	if (items.length === 0) return <></>;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden">
+		<section id={id} className="py-24 sm:py-28 relative overflow-hidden">
 			<Blob className="w-[28rem] h-[28rem] bg-primary-100/60 -bottom-24 -right-24" opacity={0.5} />
 			<ParallaxDecor speed={-0.06} className="absolute top-24 -left-20 z-0">
 				<Blob className="w-64 h-64 bg-primary-50" opacity={0.6} />

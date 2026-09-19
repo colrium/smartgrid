@@ -17,13 +17,17 @@ const PHASE_STYLE_OVERRIDES: WorkflowPhaseStyles = {
     },
 };
 
-export function ProcessFlowSection(): ReactElement {
+export function ProcessFlowSection({ data, id }: { data?: WorkflowSectionProps | null; id?: string } = {}): ReactElement {
     const { t } = useTranslation(["surveying/cadastral-surveys"]);
-    const section = t("surveying/cadastral-surveys:process", {
-        returnObjects: true,
-    }) as unknown as WorkflowSectionProps;
+    // Keystatic-owned content when `data` is provided (M11 `cadastralProcess`
+    // unique section); legacy locale strings otherwise. The
+    // ACQUISITION phase-style override stays in the renderer.
+    const section = (data ??
+        (t("surveying/cadastral-surveys:process", {
+            returnObjects: true,
+        }) as unknown as WorkflowSectionProps)) as WorkflowSectionProps;
 
-    return <WorkflowSection {...section} phaseStyles={PHASE_STYLE_OVERRIDES} />;
+    return <WorkflowSection {...section} phaseStyles={PHASE_STYLE_OVERRIDES} id={id} />;
 }
 
 export default ProcessFlowSection;

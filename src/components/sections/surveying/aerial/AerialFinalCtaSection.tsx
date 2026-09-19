@@ -19,11 +19,23 @@ interface FinalCtaContent {
 	actions?: CtaCard[] | null;
 }
 
-export function AerialFinalCtaSection(): ReactElement {
+export interface AerialFinalCtaData {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+	actionsLabel?: string | null;
+	actions?: CtaCard[] | null;
+}
+
+export function AerialFinalCtaSection({ data, id }: { data?: AerialFinalCtaData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/aerial-surveys"]);
-	const section = t("surveying/aerial-surveys:finalCta", {
-		returnObjects: true,
-	}) as unknown as FinalCtaContent;
+	// Keystatic-owned content when `data` is provided (M11 `aerialFinalCta`
+	// unique section); legacy locale strings otherwise. The hardcoded
+	// `watermark="drone"` + `columns={4}` presentation stays in the renderer.
+	const section = (data ??
+		(t("surveying/aerial-surveys:finalCta", {
+			returnObjects: true,
+		}) as unknown as FinalCtaContent)) as FinalCtaContent;
 
 	if (!section?.headline) return <></>;
 
@@ -36,6 +48,7 @@ export function AerialFinalCtaSection(): ReactElement {
 			actions={section.actions ?? null}
 			actionsLabel={section.actionsLabel}
 			columns={4}
+			id={id}
 		/>
 	);
 }
