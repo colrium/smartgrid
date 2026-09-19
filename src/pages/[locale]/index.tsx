@@ -70,7 +70,7 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 	// entry is published. Otherwise the legacy locale-JSON implementation
 	// renders unchanged.
 	const sections = keystaticPage ? orderedSections(keystaticPage) : null;
-    console.log("keystaticPage", keystaticPage);
+    
 	if (keystaticPage && sections) {
 		const locale = keystaticPage.locale;
         
