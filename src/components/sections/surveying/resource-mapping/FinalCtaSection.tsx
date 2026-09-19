@@ -6,14 +6,22 @@ import { FinalCta } from "@/components/sections/shared";
 
 interface CtaAction {
 	icon?: string | null;
-	label: string;
+	label?: string | null;
 	description?: string | null;
-	href: string;
+	href?: string | null;
 }
 
 interface FinalCtaContent {
 	tag?: string | null;
-	headline: string;
+	headline?: string | null;
+	description?: string | null;
+	note?: string | null;
+	actions?: CtaAction[] | null;
+}
+
+export interface RmFinalCtaData {
+	tag?: string | null;
+	headline?: string | null;
 	description?: string | null;
 	note?: string | null;
 	actions?: CtaAction[] | null;
@@ -23,24 +31,33 @@ interface FinalCtaContent {
  * Resource-mapping closing CTA — shared full-bleed dark CTA with accent lede
  * and action cards (content: surveying/resource-mapping:finalCta).
  */
-export function FinalCtaSection(): ReactElement | null {
+export function FinalCtaSection({ data, id }: { data?: RmFinalCtaData | null; id?: string } = {}): ReactElement | null {
 	const { t } = useTranslation(["surveying/resource-mapping"]);
-	const section = t("surveying/resource-mapping:finalCta", {
-		returnObjects: true,
-	}) as unknown as FinalCtaContent;
+	// Keystatic-owned content when `data` is provided (M11 `rmFinalCta`
+	// unique section); legacy locale strings otherwise. Presentation
+	// (accent lede, map-marker watermark, 3 columns) stays in the wrapper.
+	const section = (data ??
+		(t("surveying/resource-mapping:finalCta", {
+			returnObjects: true,
+		}) as unknown as FinalCtaContent)) as FinalCtaContent;
 
 	if (!section?.headline) return null;
 
 	return (
 		<FinalCta
-			id="get-started"
-			tag={section.tag}
+			id={id ?? "get-started"}
+			tag={section.tag ?? null}
 			headline={section.headline}
-			description={section.description}
+			description={section.description ?? undefined}
 			descriptionTone="accent"
-			note={section.note}
+			note={section.note ?? undefined}
 			watermark="map-marker-radius"
-			actions={section.actions ?? null}
+			actions={(section.actions ?? []).map((action) => ({
+				icon: action.icon ?? null,
+				label: action.label ?? "",
+				description: action.description ?? undefined,
+				href: action.href ?? "",
+			}))}
 			columns={3}
 		/>
 	);

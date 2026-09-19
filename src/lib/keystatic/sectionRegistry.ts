@@ -4,6 +4,7 @@ import {
 	anchorField,
 	imagePath,
 	linkObject,
+	localeImageArray,
 	localeLongText,
 	localeMedia,
 	localeText,
@@ -242,7 +243,7 @@ import {
  * from DATA (the wrapper is page-owned), so edits change output.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyWorkflow", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "bathyFinalCta"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyWorkflow", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "bathyFinalCta", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "rmFinalCta", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -4625,6 +4626,1063 @@ const bathyFinalCta: SectionDefinition = {
 	}),
 };
 
+/**
+ * M11 batch 9 — resource-mapping page (2026-09-18): `rmWhatIs` wraps the
+ * bespoke `WhatIsResourceMappingSection` cards + closing statement.
+ * Unique — only valid on `/surveying/resource-mapping`. Icons are shared;
+ * titles, descriptions and the closing statement are localized. Renders
+ * nothing without items (legacy guard, preserved).
+ */
+const rmWhatIs: SectionDefinition = {
+	id: "rmWhatIs",
+	version: 1,
+	label: "RM what-is (unique)",
+	description: "Unique: the resource-mapping intro cards with closing statement. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Cards",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Card"),
+			}
+		),
+		closingStatement: localeLongText("Closing statement"),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` (visual tuning, not
+		// an editor contract).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "What Is Resource Mapping", sw: "Ramani ya Rasilimali ni Nini" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				icon: "map",
+				title: { en: "Inventory", sw: "Orodha" },
+				description: { en: "Know what you hold.", sw: "" },
+			},
+		],
+		closingStatement: { en: "", sw: "" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+					}))
+				: [],
+			closingStatement: resolved.closingStatement,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 9 — resource-mapping page (2026-09-18): `rmTypes` wraps the
+ * `TypesOfResourceMappingSection` grid whose categories render as inset
+ * checklists. Unique — only valid on `/surveying/resource-mapping`. Icons
+ * are shared; titles and list entries are localized. The
+ * category→subItems computation stays in the wrapper. Renders nothing
+ * without categories (legacy guard, preserved).
+ */
+const rmTypes: SectionDefinition = {
+	id: "rmTypes",
+	version: 1,
+	label: "RM types (unique)",
+	description: "Unique: the resource-mapping types grid with inset checklists. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		categories: fields.array(
+			fields.object({
+				title: localeText("Title"),
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Empty = positional default. Identical in en/sw.",
+				}),
+				items: fields.array(localeText("Entry", { optionalInEnglish: true }), {
+					label: "Entries",
+					itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Entry"),
+				}),
+			}),
+			{
+				label: "Categories",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Category"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, columns and
+		// positional fallback icons (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Types of Mapping", sw: "Aina za Ramani" },
+		description: { en: "", sw: "" },
+		categories: [
+			{
+				title: { en: "Agriculture", sw: "Kilimo" },
+				icon: "tractor-variant",
+				items: [{ en: "Crop health", sw: "Afya ya mazao" }],
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			categories: Array.isArray(resolved.categories)
+				? resolved.categories.map((category: any) => ({
+						title: category?.title ?? "",
+						icon: category?.icon || undefined,
+						items: Array.isArray(category?.items)
+							? category.items.filter((entry: unknown) => typeof entry === "string" && entry)
+							: [],
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 9 — resource-mapping page (2026-09-18): `rmSector` drives the
+ * parameterized `SectorSection` (one branch per sector in the entry: tag +
+ * headline + description + lead images + cards + tone). Unique — only valid
+ * on `/surveying/resource-mapping`. Image paths and icons are shared;
+ * titles and descriptions are localized. The `tone` select reproduces the
+ * per-sector wrapper variance (surface sectors vs default). Renders
+ * nothing without items and images (legacy guard, preserved).
+ */
+const rmSector: SectionDefinition = {
+	id: "rmSector",
+	version: 1,
+	label: "RM sector (unique)",
+	description: "Unique: one resource-mapping sector grid (used once per sector). Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		images: localeImageArray("Lead images (first two render)"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Cards",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Card"),
+			}
+		),
+		tone: fields.select({
+			label: "Tone",
+			options: [
+				{ label: "Default", value: "default" },
+				{ label: "Surface", value: "surface" },
+			],
+			defaultValue: "default",
+		}),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` (visual tuning, not
+		// an editor contract).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Agriculture", sw: "Kilimo" },
+		description: { en: "", sw: "" },
+		images: { en: ["/media/surveying/resource-mapping/agriculture-1.jpg"], sw: ["/media/surveying/resource-mapping/agriculture-1.jpg"] },
+		items: [
+			{
+				icon: "sprout",
+				title: { en: "Crop Mapping", sw: "Ramani za Mazao" },
+				description: { en: "Health and yield maps.", sw: "" },
+			},
+		],
+		tone: "default",
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			images: Array.isArray(resolved.images?.en) ? resolved.images.en.filter((src: unknown) => typeof src === "string" && src) : [],
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+					}))
+				: [],
+		},
+		tone: resolved.tone,
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 9 — resource-mapping page (2026-09-18): `rmWorkflow` wraps the
+ * `ResourceMappingWorkflowSection` WorkflowSection passthrough. Unique —
+ * only valid on `/surveying/resource-mapping`. Phase keys are shared
+ * literals; labels and descriptions are localized. The domain
+ * PHASE_STYLE_OVERRIDES stay hardcoded in the wrapper.
+ */
+const rmWorkflow: SectionDefinition = {
+	id: "rmWorkflow",
+	version: 1,
+	label: "RM workflow (unique)",
+	description: "Unique: the resource-mapping phased workflow. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		steps: fields.array(
+			fields.object({
+				phase: fields.text({
+					label: "Phase key (shared)",
+					description: "Phase bucket key (e.g. ACQUISITION). Identical in en/sw.",
+				}),
+				label: localeText("Label"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Steps",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Step"),
+			}
+		),
+		outcome: localeText("Outcome", { optionalInEnglish: true }),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` and domain
+		// `phaseStyles` (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "Workflow", sw: "Mtiririko" },
+		headline: { en: "How It Works", sw: "Jinsi Inavyofanya Kazi" },
+		description: { en: "", sw: "" },
+		steps: [
+			{
+				phase: "ACQUISITION",
+				label: { en: "Capture", sw: "Upigaji" },
+				description: { en: "Fly the site.", sw: "" },
+			},
+		],
+		outcome: { en: "", sw: "" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			steps: Array.isArray(resolved.steps)
+				? resolved.steps.map((step: any) => ({
+						phase: step?.phase ?? "",
+						label: step?.label ?? "",
+						description: step?.description ?? "",
+					}))
+				: [],
+			outcome: resolved.outcome,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 9 — resource-mapping page (2026-09-18): `rmWhoUses` wraps the
+ * bespoke `WhoUsesResourceMappingSection` category cards (linked list
+ * items). Unique — only valid on `/surveying/resource-mapping`. Icons and
+ * hrefs are shared; titles and descriptions are localized.
+ */
+const rmWhoUses: SectionDefinition = {
+	id: "rmWhoUses",
+	version: 1,
+	label: "RM who-uses (unique)",
+	description: "Unique: the resource-mapping audience category cards. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		categories: fields.array(
+			fields.object({
+				title: localeText("Title"),
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Empty = positional default. Identical in en/sw.",
+				}),
+				items: fields.array(
+					fields.object({
+						icon: fields.text({
+							label: "MDI icon (shared, optional)",
+							description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+						}),
+						title: localeText("Title"),
+						description: localeLongText("Description"),
+						href: fields.text({
+							label: "Link (shared, optional)",
+							description: "Item links to this URL when set. Identical in en/sw.",
+						}),
+					}),
+					{
+						label: "Items",
+						itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Item"),
+					}
+				),
+			}),
+			{
+				label: "Categories",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Category"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` and positional
+		// category icons (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Who Uses It", sw: "Nani Anaitumia" },
+		description: { en: "", sw: "" },
+		categories: [
+			{
+				title: { en: "Farmers", sw: "Wakulima" },
+				icon: "tractor-variant",
+				items: [
+					{
+						icon: "",
+						title: { en: "Crop Planning", sw: "Mipango ya Mazao" },
+						description: { en: "", sw: "" },
+						href: "",
+					},
+				],
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			categories: Array.isArray(resolved.categories)
+				? resolved.categories.map((category: any) => ({
+						title: category?.title ?? "",
+						icon: category?.icon || undefined,
+						items: Array.isArray(category?.items)
+							? category.items.map((item: any) => ({
+									icon: item?.icon || undefined,
+									title: item?.title ?? "",
+									description: item?.description ?? "",
+									href: item?.href && item.href.trim() ? item.href : undefined,
+								}))
+							: [],
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 9 — resource-mapping page (2026-09-18): `rmTechStack` wraps the
+ * `ResourceMappingTechStackSection` linkable grid (note→description
+ * mapping). Unique — only valid on `/surveying/resource-mapping`. Icons
+ * and hrefs are shared; titles and notes are localized. Renders nothing
+ * without items (legacy guard, preserved).
+ */
+const rmTechStack: SectionDefinition = {
+	id: "rmTechStack",
+	version: 1,
+	label: "RM tech stack (unique)",
+	description: "Unique: the resource-mapping linkable tech grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Empty = positional default. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				note: localeLongText("Note"),
+				href: fields.text({
+					label: "Link (shared, optional)",
+					description: "Card links to this URL when set. Identical in en/sw.",
+				}),
+			}),
+			{
+				label: "Technologies",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Technology"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, tone, hover arrows
+		// and positional fallback icons (presentation, not contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Tech Stack", sw: "Teknolojia" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				icon: "drone",
+				title: { en: "Drones", sw: "Droni" },
+				note: { en: "RTK fleets.", sw: "" },
+				href: "",
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? "",
+						note: item?.note ?? "",
+						href: item?.href && item.href.trim() ? item.href : undefined,
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 9 — resource-mapping page (2026-09-18): `rmDataAccuracy`
+ * wraps the `DataAccuracySection` factors/levels panel. Unique — only valid
+ * on `/surveying/resource-mapping`. All strings are localized. NOTE: the
+ * card headings are hardcoded in JSX (legacy quirk, both locales) — not
+ * migrated. Renders nothing without factors and levels (legacy guard,
+ * preserved).
+ */
+const rmDataAccuracy: SectionDefinition = {
+	id: "rmDataAccuracy",
+	version: 1,
+	label: "RM data accuracy (unique)",
+	description: "Unique: the resource-mapping accuracy factors/levels panel. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		factors: fields.array(localeText("Factor", { optionalInEnglish: true }), {
+			label: "Factors",
+			itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Factor"),
+		}),
+		levels: fields.array(
+			fields.object({
+				label: localeText("Label"),
+				accuracy: localeText("Accuracy"),
+			}),
+			{
+				label: "Levels",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Level"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` and the hardcoded
+		// card headings (legacy quirk).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Data Accuracy", sw: "Usahihi wa Data" },
+		description: { en: "", sw: "" },
+		factors: [{ en: "Ground control", sw: "Udhibiti wa ardhi" }],
+		levels: [
+			{
+				label: { en: "Mapping grade", sw: "Kiwango cha ramani" },
+				accuracy: { en: "±5 cm", sw: "±5 cm" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			factors: Array.isArray(resolved.factors) ? resolved.factors.filter((factor: unknown) => typeof factor === "string" && factor) : [],
+			levels: Array.isArray(resolved.levels)
+				? resolved.levels
+						.filter((level: any) => typeof level?.label === "string" && level.label)
+						.map((level: any) => ({ label: level.label, accuracy: level.accuracy ?? "" }))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 9 — resource-mapping page (2026-09-18): `rmFinalCta` wraps the
+ * `FinalCtaSection` closing panel. Unique — only valid on
+ * `/surveying/resource-mapping`. Action hrefs are shared; labels and
+ * descriptions are localized. Presentation (accent lede, map-marker
+ * watermark, 3 columns) stays in the wrapper.
+ */
+const rmFinalCta: SectionDefinition = {
+	id: "rmFinalCta",
+	version: 1,
+	label: "RM final CTA (unique)",
+	description: "Unique: the resource-mapping closing panel. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		note: localeLongText("Note"),
+		actions: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				label: localeText("Label"),
+				description: localeLongText("Description"),
+				href: fields.text({ label: "Link", description: "Internal path or full URL." }),
+			}),
+			{
+				label: "Actions",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Action"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, description tone,
+		// watermark and columns (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Start Mapping", sw: "Anza Ramani" },
+		description: { en: "", sw: "" },
+		note: { en: "", sw: "" },
+		actions: [
+			{
+				icon: "",
+				label: { en: "Request a Quote", sw: "Omba Nukuu" },
+				description: { en: "", sw: "" },
+				href: "/contact",
+			},
+		],
+		id: "get-started",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			note: resolved.note,
+			actions: Array.isArray(resolved.actions)
+				? resolved.actions.map((action: any) => ({
+						icon: action?.icon || undefined,
+						label: action?.label ?? "",
+						description: action?.description ?? "",
+						href: typeof action?.href === "string" && action.href ? action.href : "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 9 — building-site-surveys page (2026-09-18): `bsHero` wraps the
+ * bespoke `BuildingSiteHeroSection`. Unique — only valid on
+ * `/surveying/building-site-surveys`. Footnote chips travel as localized
+ * strings; CTA href/icon shared.
+ */
+const bsHero: SectionDefinition = {
+	id: "bsHero",
+	version: 1,
+	label: "BS hero (unique)",
+	description: "Unique: the building-site-surveys hero with footnote chips. Only valid on that page.",
+	schema: fields.object({
+		headline: localeText("Headline"),
+		title: localeText("Title", { optionalInEnglish: true }),
+		description: localeLongText("Description"),
+		image: imagePath("Background image (optional)"),
+		ctaPrimary: fields.object({
+			label: localeText("Label"),
+			href: fields.text({ label: "Link", description: "Internal path or full URL." }),
+			icon: fields.text({ label: "MDI icon (shared, optional)", description: "Icon slug without the `mdi-` prefix. Identical in en/sw." }),
+		}, { label: "Primary action" }),
+		footnoteItems: fields.array(
+			fields.object({
+				en: localeText("English text"),
+				sw: localeText("Swahili text"),
+			}),
+			{
+				label: "Footnote chips",
+				itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Footnote"),
+			}
+		),
+		id: anchorField(),
+	}),
+	example: {
+		headline: { en: "BUILDING & ENGINEERING SURVEYS", sw: "UCHUNGUZI WA UJENZI NA UHANDISI" },
+		title: { en: "Survey Smarter, Build Stronger", sw: "Pima Kwa Umaalimu, Jenga kwa Nguvu" },
+		description: { en: "Centimeter-accurate surveys.", sw: "Uchunguzi wenye usahihi wa sentimita." },
+		image: "/media/surveying/building-site-surveys/hero.jpg",
+		ctaPrimary: {
+			label: { en: "Get Consultation", sw: "Pata Ushauri" },
+			href: "mailto:smartgridsurveying@gmail.com",
+			icon: "",
+		},
+		footnoteItems: [
+			{ en: "RTK GNSS", sw: "RTK GNSS" },
+			{ en: "Licensed Survey Workflow", sw: "Mfumo wa Uchunguzi Ulioidhinishwa" },
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			headline: resolved.headline,
+			title: resolved.title,
+			description: resolved.description,
+			image: resolved.image,
+			ctaPrimary: {
+				label: resolved.ctaPrimary?.label ?? { en: "", sw: "" },
+				href: typeof resolved.ctaPrimary?.href === "string" && resolved.ctaPrimary.href ? resolved.ctaPrimary.href : "",
+				icon: resolved.ctaPrimary?.icon || undefined,
+			},
+			footnoteItems: Array.isArray(resolved.footnoteItems)
+				? resolved.footnoteItems.map((item: any) => ({
+						en: item?.en ?? "",
+						sw: item?.sw ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 9 — building-site-surveys page (2026-09-18): `bsSection2` wraps
+ * the bespoke `BuildSmarterSection`. Unique — only valid on
+ * `/surveying/building-site-surveys`. Subtitle travels as localized text.
+ */
+const bsSection2: SectionDefinition = {
+	id: "bsSection2",
+	version: 1,
+	label: "BS section 2 (unique)",
+	description: "Unique: the building-site-surveys Build Smarter section. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		subtitle: localeText("Subtitle", { optionalInEnglish: true }),
+		description: localeLongText("Description"),
+		ctaPrimary: fields.object({
+			label: localeText("Label"),
+			href: fields.text({ label: "Link", description: "Internal path or full URL." }),
+			icon: fields.text({ label: "MDI icon (shared, optional)", description: "Icon slug without the `mdi-` prefix. Identical in en/sw." }),
+		}, { label: "Primary action" }),
+		id: anchorField(),
+	}),
+	example: {
+		tag: { en: "Build Smarter", sw: "Jenga kwa Umaalimu" },
+		headline: { en: "Reliable. Accurate. Fast. Powerful.", sw: "Ya Kuaminika. Sahihi. Haraka. Yenye Nguvu." },
+		subtitle: { en: "Smartgrid Surveying is your trusted surveying partner!", sw: "Smartgrid Surveying ni mshirika wako wa upimaji anayeaminika!" },
+		description: { en: "Drone-enabled site engineering surveys...", sw: "Uchunguzi wa kiwanja unaowezeshwa na dronzi..." },
+		ctaPrimary: {
+			label: { en: "Email Us Today!", sw: "Tutumie Barua Pepe Leo!" },
+			href: "mailto:smartgridsurveying@gmail.com",
+			icon: "",
+		},
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			subtitle: resolved.subtitle,
+			description: resolved.description,
+			ctaPrimary: {
+				label: resolved.ctaPrimary?.label ?? { en: "", sw: "" },
+				href: typeof resolved.ctaPrimary?.href === "string" && resolved.ctaPrimary.href ? resolved.ctaPrimary.href : "",
+				icon: resolved.ctaPrimary?.icon || undefined,
+			},
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 9 — building-site-surveys page (2026-09-18): `bsSiteEngineering`
+ * wraps the bespoke `SiteEngineeringSection`. Unique — only valid on
+ * `/surveying/building-site-surveys`. Indexed numbering and fallback icons
+ * stay in the wrapper; here items are plain cards.
+ */
+const bsSiteEngineering: SectionDefinition = {
+	id: "bsSiteEngineering",
+	version: 1,
+	label: "BS site engineering (unique)",
+	description: "Unique: the building-site-surveys site engineering card grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Services",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Service"),
+			}
+		),
+		id: anchorField(),
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Precision Site Engineering Surveys", sw: "Uchunguzi wa Usahihi wa Uhandisi wa Kiwanja" },
+		description: { en: "Explore our services...", sw: "Chunguza huduma zetu..." },
+		items: [
+			{
+				icon: "map-marker-radius",
+				title: { en: "Topographic Surveys", sw: "Uchunguzi wa Topografia" },
+				description: { en: "Natural and built features.", sw: "Vipengele vya asili na vilivyojengwa." },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? { en: "", sw: "" },
+						description: item?.description ?? { en: "", sw: "" },
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 9 — building-site-surveys page (2026-09-18): `bsProcess` wraps
+ * the bespoke `ProcessSection`. Unique — only valid on
+ * `/surveying/building-site-surveys`. Image shared; step icons shared.
+ */
+const bsProcess: SectionDefinition = {
+	id: "bsProcess",
+	version: 1,
+	label: "BS process (unique)",
+	description: "Unique: the building-site-surveys land surveying process. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		image: imagePath("Background image (optional)"),
+		steps: fields.array(
+			fields.object({
+				label: localeText("Label"),
+				description: localeLongText("Description"),
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+			}),
+			{
+				label: "Steps",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Step"),
+			}
+		),
+		id: anchorField(),
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Land Surveying Process", sw: "Mchakato wa Upimaji wa Ardhi" },
+		image: "",
+		steps: [
+			{
+				label: { en: "Pre-Survey Planning", sw: "Upangaji wa Awali wa Uchunguzi" },
+				description: { en: "Site evaluation.", sw: "Tathmini ya kiwanja." },
+				icon: "",
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			image: resolved.image,
+			steps: Array.isArray(resolved.steps)
+				? resolved.steps.map((step: any) => ({
+						title: step?.label ?? { en: "", sw: "" },
+						description: step?.description ?? { en: "", sw: "" },
+						icon: step?.icon || undefined,
+					}))
+				: [],
+			layout: "grid",
+			columns: 3,
+			tone: "surface",
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 9 — building-site-surveys page (2026-09-18): `bsAccuracyMatters`
+ * wraps the bespoke `AccuracyMattersSection`. Unique — only valid on
+ * `/surveying/building-site-surveys`. Stats + keywords travel as data.
+ */
+const bsAccuracyMatters: SectionDefinition = {
+	id: "bsAccuracyMatters",
+	version: 1,
+	label: "BS accuracy matters (unique)",
+	description: "Unique: the building-site-surveys accuracy matters section. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		solution: localeLongText("Solution"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+				stat: localeText("Stat", { optionalInEnglish: true }),
+			}),
+			{
+				label: "Items",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Item"),
+			}
+		),
+		keywords: fields.object({
+			en: fields.array(fields.text({ label: "English keyword" }), { label: "English keywords" }),
+			sw: fields.array(fields.text({ label: "Swahili keyword" }), { label: "Swahili keywords" }),
+		}, { label: "SEO keywords" }),
+		id: anchorField(),
+	}),
+	example: {
+		tag: { en: "Survey Accuracy Kenya", sw: "Usahihi wa Upimaji Kenya" },
+		headline: { en: "Why Accuracy Matters", sw: "Kwa Nini Usahihi Ni Muhimu" },
+		description: { en: "A 5-10 cm error causes disputes.", sw: "Kosa la 5-10 cm husababisha migogoro." },
+		solution: { en: "We combine GNSS RTK...", sw: "Tunachanganya GNSS RTK..." },
+		items: [
+			{
+				icon: "vector-polyline",
+				title: { en: "Boundary Disputes", sw: "Migogoro ya Mipaka" },
+				description: { en: "Millimeter drift triggers disputes.", sw: "Mwendo wa milimita husababisha migogoro." },
+				stat: { en: "5-10 cm", sw: "5-10 cm" },
+			},
+		],
+		keywords: {
+			en: ["Boundary Dispute Survey Kenya", "Cadastral Survey Nairobi"],
+			sw: ["Uchunguzi wa Migogoro ya Mipaka Kenya", "Uchunguzi wa Kadastral Nairobi"],
+		},
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			solution: resolved.solution,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? { en: "", sw: "" },
+						description: item?.description ?? { en: "", sw: "" },
+						stat: item?.stat ?? { en: "", sw: "" },
+					}))
+				: [],
+			keywords: {
+				en: Array.isArray(resolved.keywords?.en) ? resolved.keywords.en : [],
+				sw: Array.isArray(resolved.keywords?.sw) ? resolved.keywords.sw : [],
+			},
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 9 — building-site-surveys page (2026-09-18): `bsTechnology` wraps
+ * the bespoke `TechnologyStackSection`. Unique — only valid on
+ * `/surveying/building-site-surveys`. LearnMore + per-card hrefs travel as data.
+ */
+const bsTechnology: SectionDefinition = {
+	id: "bsTechnology",
+	version: 1,
+	label: "BS technology (unique)",
+	description: "Unique: the building-site-surveys technology stack section. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		learnMore: localeText("Learn more label", { optionalInEnglish: true }),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+				href: fields.text({ label: "Link (optional)", description: "Internal path or full URL." }),
+			}),
+			{
+				label: "Technologies",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Technology"),
+			}
+		),
+		id: anchorField(),
+	}),
+	example: {
+		tag: { en: "Technology Stack", sw: "Mfumo wa Teknolojia" },
+		headline: { en: "Surveying Technology We Use", sw: "Teknolojia ya Upimaji Tunayotumia" },
+		description: { en: "Integrated GNSS, drone, LiDAR...", sw: "Zana jumuishi za GNSS, droni, LiDAR..." },
+		learnMore: { en: "Learn more", sw: "Jifunze zaidi" },
+		items: [
+			{
+				icon: "satellite-variant",
+				title: { en: "FOIF A90 RTK GNSS System", sw: "Mfumo wa FOIF A90 RTK GNSS" },
+				description: { en: "Centimeter-level GNSS RTK.", sw: "GNSS RTK ya usahihi wa sentimita." },
+				href: "/equipment-sale/foif-a90-rtk-gnss",
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			learnMore: resolved.learnMore,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? { en: "", sw: "" },
+						description: item?.description ?? { en: "", sw: "" },
+						href: typeof item?.href === "string" && item.href ? item.href : undefined,
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 9 — building-site-surveys page (2026-09-18): `bsConsultation`
+ * wraps the bespoke `ConsultationSection`. Unique — only valid on
+ * `/surveying/building-site-surveys`. Steps + dual CTA travel as data.
+ */
+const bsConsultation: SectionDefinition = {
+	id: "bsConsultation",
+	version: 1,
+	label: "BS consultation (unique)",
+	description: "Unique: the building-site-surveys consultation section. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		stepsLabel: localeText("Steps label", { optionalInEnglish: true }),
+		steps: fields.array(
+			fields.object({
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Steps",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Step"),
+			}
+		),
+		ctaPrimary: fields.object({
+			label: localeText("Label"),
+			href: fields.text({ label: "Link", description: "Internal path or full URL." }),
+			icon: fields.text({ label: "MDI icon (shared, optional)", description: "Icon slug without the `mdi-` prefix. Identical in en/sw." }),
+		}, { label: "Primary action" }),
+		ctaSecondary: fields.object({
+			label: localeText("Label"),
+			href: fields.text({ label: "Link", description: "Internal path or full URL." }),
+			icon: fields.text({ label: "MDI icon (shared, optional)", description: "Icon slug without the `mdi-` prefix. Identical in en/sw." }),
+		}, { label: "Secondary action" }),
+		id: anchorField(),
+	}),
+	example: {
+		tag: { en: "Technology-Assisted Consultation", sw: "Ushauri Unaosaidiwa na Teknolojia" },
+		headline: { en: "Request a Technology-Assisted Survey Consultation", sw: "Omba Ushauri wa Upimaji Unaosaidiwa na Teknolojia" },
+		description: { en: "Tell us about your project.", sw: "Tuambie kuhusu mradi wako." },
+		stepsLabel: { en: "What happens next", sw: "Kinachofuata baadaye" },
+		steps: [
+			{
+				title: { en: "Share Your Site Details", sw: "Shiriki Maelezo ya Kiwanja Chako" },
+				description: { en: "Location, size, terrain.", sw: "Eneo, ukubwa, ardhi." },
+			},
+		],
+		ctaPrimary: {
+			label: { en: "Request My Consultation", sw: "Omba Ushauri Wangu" },
+			href: "/contact?reason=engage-engineer#contact-form",
+			icon: "calendar-check",
+		},
+		ctaSecondary: {
+			label: { en: "Email the Survey Team", sw: "Tumia Barua Pepe kwa Timu ya Upimaji" },
+			href: "mailto:smartgridsurveying@gmail.com",
+			icon: "email-outline",
+		},
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			stepsLabel: resolved.stepsLabel,
+			steps: Array.isArray(resolved.steps)
+				? resolved.steps.map((step: any) => ({
+						title: step?.title ?? { en: "", sw: "" },
+						description: step?.description ?? { en: "", sw: "" },
+					}))
+				: [],
+			ctaPrimary: {
+				label: resolved.ctaPrimary?.label ?? { en: "", sw: "" },
+				href: typeof resolved.ctaPrimary?.href === "string" && resolved.ctaPrimary.href ? resolved.ctaPrimary.href : "",
+				icon: resolved.ctaPrimary?.icon || undefined,
+			},
+			ctaSecondary: {
+				label: resolved.ctaSecondary?.label ?? { en: "", sw: "" },
+				href: typeof resolved.ctaSecondary?.href === "string" && resolved.ctaSecondary.href ? resolved.ctaSecondary.href : "",
+				icon: resolved.ctaSecondary?.icon || undefined,
+			},
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
 export const sectionRegistry: readonly SectionDefinition[] = [
 	introText,
 	ctaBand,
@@ -4685,6 +5743,21 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	bathyApplications,
 	bathyBeforeAfter,
 	bathyFinalCta,
+	rmWhatIs,
+	rmTypes,
+	rmSector,
+	rmWorkflow,
+	rmWhoUses,
+	rmTechStack,
+	rmDataAccuracy,
+	rmFinalCta,
+	bsHero,
+	bsSection2,
+	bsSiteEngineering,
+	bsProcess,
+	bsAccuracyMatters,
+	bsTechnology,
+	bsConsultation,
 ];
 
 export function getSectionDefinition(id: string): SectionDefinition {
@@ -4753,6 +5826,21 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	bathyApplications: bathyApplications.label,
 	bathyBeforeAfter: bathyBeforeAfter.label,
 	bathyFinalCta: bathyFinalCta.label,
+	rmWhatIs: rmWhatIs.label,
+	rmTypes: rmTypes.label,
+	rmSector: rmSector.label,
+	rmWorkflow: rmWorkflow.label,
+	rmWhoUses: rmWhoUses.label,
+	rmTechStack: rmTechStack.label,
+	rmDataAccuracy: rmDataAccuracy.label,
+	rmFinalCta: rmFinalCta.label,
+	bsHero: bsHero.label,
+	bsSection2: bsSection2.label,
+	bsSiteEngineering: bsSiteEngineering.label,
+	bsProcess: bsProcess.label,
+	bsAccuracyMatters: bsAccuracyMatters.label,
+	bsTechnology: bsTechnology.label,
+	bsConsultation: bsConsultation.label,
 };
 
 /**

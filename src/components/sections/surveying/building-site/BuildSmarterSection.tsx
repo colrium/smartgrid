@@ -19,14 +19,31 @@ interface BuildSmarterContent {
 	ctaPrimary?: SectionCta | null;
 }
 
-export function BuildSmarterSection() {
+interface BuildSmarterSectionProps {
+	/** Locale key suffix (legacy lookup). Unused when `data` is provided. */
+	sectionKey?: string;
+	data?: BuildSmarterContent | null;
+	id?: string;
+}
+
+/**
+ * Build Smarter section — centered panel with subtitle and CTA (content:
+ * surveying/building-site-surveys:section2). M11: additive `data` prop for
+ * Keystatic-owned content (omitted = legacy `t()`).
+ */
+export function BuildSmarterSection({ sectionKey, data, id }: BuildSmarterSectionProps) {
 	const { t } = useTranslation(["surveying/building-site-surveys"]);
-	const section = t("surveying/building-site-surveys:section2", {
-		returnObjects: true,
-	}) as unknown as BuildSmarterContent;
+	const legacy = sectionKey
+		? (t(`surveying/building-site-surveys:${sectionKey}`, {
+				returnObjects: true,
+			}) as unknown as BuildSmarterContent)
+		: null;
+	const section = (data ?? legacy) as BuildSmarterContent | null;
+
+	if (!section?.headline) return null;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
+		<section id={id} className="py-24 sm:py-28 relative overflow-hidden bg-surface">
 			<Blob className="w-[26rem] h-[26rem] bg-primary-100/60 -bottom-24 -right-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">

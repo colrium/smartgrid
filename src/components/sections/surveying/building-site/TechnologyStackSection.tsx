@@ -27,15 +27,26 @@ const FALLBACK_ICONS = [
 	"radar",
 ];
 
+interface TechnologyStackSectionProps {
+	/** Locale key suffix (legacy lookup). Unused when `data` is provided. */
+	sectionKey?: string;
+	data?: TechnologyContent | null;
+	id?: string;
+}
+
 /**
  * Building-site technology stack — shared icon card grid with per-card
  * learn-more links (content: surveying/building-site-surveys:technology).
+ * M11: additive `data` prop for Keystatic-owned content (omitted = legacy `t()`).
  */
-export function TechnologyStackSection(): ReactElement | null {
+export function TechnologyStackSection({ sectionKey, data, id }: TechnologyStackSectionProps): ReactElement | null {
 	const { t } = useTranslation(["surveying/building-site-surveys"]);
-	const section = t("surveying/building-site-surveys:technology", {
-		returnObjects: true,
-	}) as unknown as TechnologyContent;
+	const legacy = sectionKey
+		? (t(`surveying/building-site-surveys:${sectionKey}`, {
+				returnObjects: true,
+			}) as unknown as TechnologyContent)
+		: null;
+	const section = (data ?? legacy) as TechnologyContent | null;
 	const rows = Array.isArray(section?.items) ? section.items : [];
 
 	if (rows.length === 0) return null;
@@ -53,9 +64,10 @@ export function TechnologyStackSection(): ReactElement | null {
 
 	return (
 		<CardGrid
-			tag={section.tag ?? null}
-			headline={section.headline}
-			description={section.description}
+			id={id}
+			tag={section?.tag ?? null}
+			headline={section?.headline ?? ""}
+			description={section?.description ?? undefined}
 			items={items}
 			columns={3}
 			hoverArrow

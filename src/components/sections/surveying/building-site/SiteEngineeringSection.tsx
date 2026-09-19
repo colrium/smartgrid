@@ -25,24 +25,36 @@ const FALLBACK_ICONS = [
 	"shovel",
 ];
 
+interface SiteEngineeringSectionProps {
+	/** Locale key suffix (legacy lookup). Unused when `data` is provided. */
+	sectionKey?: string;
+	data?: EngineeringContent | null;
+	id?: string;
+}
+
 /**
  * Site-engineering surveys — shared indexed card grid with header-row number
  * badges (content: surveying/building-site-surveys:siteEngineeringSurveys).
+ * M11: additive `data` prop for Keystatic-owned content (omitted = legacy `t()`).
  */
-export function SiteEngineeringSection(): ReactElement | null {
+export function SiteEngineeringSection({ sectionKey, data, id }: SiteEngineeringSectionProps): ReactElement | null {
 	const { t } = useTranslation(["surveying/building-site-surveys"]);
-	const section = t("surveying/building-site-surveys:siteEngineeringSurveys", {
-		returnObjects: true,
-	}) as unknown as EngineeringContent;
+	const legacy = sectionKey
+		? (t(`surveying/building-site-surveys:${sectionKey}`, {
+				returnObjects: true,
+			}) as unknown as EngineeringContent)
+		: null;
+	const section = (data ?? legacy) as EngineeringContent | null;
 	const items = (Array.isArray(section?.items) ? section.items : []) as CardItem[];
 
 	if (items.length === 0) return null;
 
 	return (
 		<CardGrid
-			tag={section.tag ?? null}
-			headline={section.headline}
-			description={section.description}
+			id={id}
+			tag={section?.tag ?? null}
+			headline={section?.headline ?? ""}
+			description={section?.description ?? undefined}
 			items={items}
 			columns={3}
 			headerAlign="left"

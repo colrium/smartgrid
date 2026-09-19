@@ -8,36 +8,47 @@ import { FadeUp } from "@/components/animations/Fade";
 import { Blob } from "@/components/sections/shared/decor";
 
 interface WhatIsItem {
-	icon?: string;
-	title: string;
-	description: string;
+	icon?: string | null;
+	title?: string | null;
+	description?: string | null;
 }
 
 interface WhatIsResourceMappingContent {
 	tag?: string | null;
-	headline: string;
-	description?: string;
-	items: WhatIsItem[];
-	closingStatement?: string;
+	headline?: string | null;
+	description?: string | null;
+	items?: WhatIsItem[] | null;
+	closingStatement?: string | null;
 }
 
-export function WhatIsResourceMappingSection(): ReactElement {
+export interface RmWhatIsData {
+	tag?: string | null;
+	headline?: string | null;
+	description?: string | null;
+	items?: WhatIsItem[] | null;
+	closingStatement?: string | null;
+}
+
+export function WhatIsResourceMappingSection({ data, id }: { data?: RmWhatIsData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/resource-mapping"]);
-	const section = t("surveying/resource-mapping:whatIsResourceMapping", {
-		returnObjects: true,
-	}) as unknown as WhatIsResourceMappingContent;
+	// Keystatic-owned content when `data` is provided (M11 `rmWhatIs`
+	// unique section); legacy locale strings otherwise.
+	const section = (data ??
+		(t("surveying/resource-mapping:whatIsResourceMapping", {
+			returnObjects: true,
+		}) as unknown as WhatIsResourceMappingContent)) as WhatIsResourceMappingContent;
 	const items = Array.isArray(section.items) ? section.items : [];
 
 	if (items.length === 0) return <></>;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
+		<section id={id} className="py-24 sm:py-28 relative overflow-hidden bg-surface">
 			<Blob className="w-[28rem] h-[28rem] bg-primary-100/60 -top-24 -right-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader
 					tag={section.tag || undefined}
-					headline={section.headline}
+					headline={section.headline ?? ""}
 					description={section.description || undefined}
 					align="center"
 				/>

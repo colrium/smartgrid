@@ -25,13 +25,17 @@ const PHASE_STYLE_OVERRIDES: WorkflowPhaseStyles = {
     },
 };
 
-export function ResourceMappingWorkflowSection(): ReactElement {
+export function ResourceMappingWorkflowSection({ data, id }: { data?: WorkflowSectionProps | null; id?: string } = {}): ReactElement {
     const { t } = useTranslation(["surveying/resource-mapping"]);
-    const section = t("surveying/resource-mapping:resourceMappingWorkflow", {
-        returnObjects: true,
-    }) as unknown as WorkflowSectionProps;
+    // Keystatic-owned content when `data` is provided (M11 `rmWorkflow`
+    // unique section); legacy locale strings otherwise. The domain
+    // PHASE_STYLE_OVERRIDES stay hardcoded in the wrapper.
+    const section = (data ??
+        (t("surveying/resource-mapping:resourceMappingWorkflow", {
+            returnObjects: true,
+        }) as unknown as WorkflowSectionProps)) as WorkflowSectionProps;
 
-    return <WorkflowSection {...section} phaseStyles={PHASE_STYLE_OVERRIDES} />;
+    return <WorkflowSection {...section} phaseStyles={PHASE_STYLE_OVERRIDES} id={id} />;
 }
 
 export default ResourceMappingWorkflowSection;

@@ -70,9 +70,10 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 	// entry is published. Otherwise the legacy locale-JSON implementation
 	// renders unchanged.
 	const sections = keystaticPage ? orderedSections(keystaticPage) : null;
-
+    console.log("keystaticPage", keystaticPage);
 	if (keystaticPage && sections) {
 		const locale = keystaticPage.locale;
+        
 		// M12: entry order IS page order — destructure once into named
 		// slots, no index literals. Positions below mirror the legacy
 		// branch; the count guard in `orderedSections` keeps a mismatch

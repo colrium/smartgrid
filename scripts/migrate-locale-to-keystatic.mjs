@@ -1703,6 +1703,233 @@ function pricingBuild(en, sw, where) {
 	};
 }
 
+// M11 batch 9 — resource-mapping page (2026-09-18): the bespoke tails →
+// unique sections. Icons/hrefs/phase keys shared; titles, descriptions,
+// points, levels localized. Sector `tone` follows the wrapper (surface
+// sectors vs default).
+function rmWhatIsBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+			};
+		}),
+		closingStatement: { en: optText(en.closingStatement), sw: optText(sw.closingStatement) },
+		id: "",
+	};
+}
+
+function rmTypesBuild(en, sw, where) {
+	const enCategories = en.categories ?? [];
+	const swCategories = sw.categories ?? [];
+	if (!Array.isArray(swCategories) || swCategories.length !== enCategories.length) {
+		gap(where, `category count diverged (en=${enCategories.length} sw=${swCategories?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		categories: enCategories.map((category, i) => {
+			const swCategory = swCategories[i] ?? {};
+			const enEntries = category?.items ?? [];
+			const swEntries = swCategory?.items ?? [];
+			if (!Array.isArray(swEntries) || swEntries.length !== enEntries.length) {
+				gap(where, `categories[${i}].items count diverged (en=${enEntries.length} sw=${swEntries?.length})`);
+			}
+			return {
+				title: { en: reqText(category.title, `${where}.categories[${i}].title.en`), sw: reqText(swCategory.title, `${where}.categories[${i}].title.sw`) },
+				icon: sharedValue(category, swCategory, "icon", `${where}.categories[${i}]`) ?? "",
+				items: enEntries.map((entry, j) => ({
+					en: reqText(entry, `${where}.categories[${i}].items[${j}].en`),
+					sw: reqText(swEntries[j], `${where}.categories[${i}].items[${j}].sw`),
+				})),
+			};
+		}),
+		id: "",
+	};
+}
+
+function rmSectorBuild(tone) {
+	return (en, sw, where) => {
+		const enImages = en.images ?? [];
+		const swImages = sw.images ?? [];
+		if (!Array.isArray(swImages) || swImages.length !== enImages.length) {
+			gap(where, `image count diverged (en=${enImages.length} sw=${swImages?.length})`);
+		}
+		const enItems = en.items ?? [];
+		const swItems = sw.items ?? [];
+		if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+			gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+		}
+		return {
+			tag: { en: optText(en.tag), sw: optText(sw.tag) },
+			headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+			description: { en: optText(en.description), sw: optText(sw.description) },
+			// Images are per-locale (legacy paths diverge: png vs jpg, gif vs jpg)
+			images: { en: enImages, sw: swImages },
+			items: enItems.map((item, i) => {
+				const swItem = swItems[i] ?? {};
+				return {
+					icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+					title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+					description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+				};
+			}),
+			tone,
+			id: "",
+		};
+	};
+}
+
+function rmWorkflowBuild(en, sw, where) {
+	const enSteps = en.steps ?? [];
+	const swSteps = sw.steps ?? [];
+	if (!Array.isArray(swSteps) || swSteps.length !== enSteps.length) {
+		gap(where, `step count diverged (en=${enSteps.length} sw=${swSteps?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		steps: enSteps.map((step, i) => {
+			const swStep = swSteps[i] ?? {};
+			return {
+				phase: sharedValue(step, swStep, "phase", `${where}.steps[${i}]`) ?? "",
+				label: { en: reqText(step.label, `${where}.steps[${i}].label.en`), sw: reqText(swStep.label, `${where}.steps[${i}].label.sw`) },
+				description: { en: reqText(step.description, `${where}.steps[${i}].description.en`), sw: reqText(swStep.description, `${where}.steps[${i}].description.sw`) },
+			};
+		}),
+		outcome: { en: optText(en.outcome), sw: optText(sw.outcome) },
+		id: "",
+	};
+}
+
+function rmWhoUsesBuild(en, sw, where) {
+	const enCategories = en.categories ?? [];
+	const swCategories = sw.categories ?? [];
+	if (!Array.isArray(swCategories) || swCategories.length !== enCategories.length) {
+		gap(where, `category count diverged (en=${enCategories.length} sw=${swCategories?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		categories: enCategories.map((category, i) => {
+			const swCategory = swCategories[i] ?? {};
+			const enItems = category?.items ?? [];
+			const swItems = swCategory?.items ?? [];
+			if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+				gap(where, `categories[${i}].items count diverged (en=${enItems.length} sw=${swItems?.length})`);
+			}
+			return {
+				title: { en: reqText(category.title, `${where}.categories[${i}].title.en`), sw: reqText(swCategory.title, `${where}.categories[${i}].title.sw`) },
+				icon: sharedValue(category, swCategory, "icon", `${where}.categories[${i}]`) ?? "",
+				items: enItems.map((item, j) => {
+					const swItem = swItems[j] ?? {};
+					// Legacy items are plain strings; migrate as title-only cards
+					const enTitle = typeof item === "string" ? item : (item?.title ?? "");
+					const swTitle = typeof swItem === "string" ? swItem : (swItem?.title ?? "");
+					return {
+						title: { en: reqText(enTitle, `${where}.categories[${i}].items[${j}].en`), sw: reqText(swTitle, `${where}.categories[${i}].items[${j}].sw`) },
+						description: { en: "", sw: "" },
+						icon: "",
+						href: "",
+					};
+				}),
+			};
+		}),
+		id: "",
+	};
+}
+
+function rmTechStackBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				note: { en: optText(item.note), sw: optText(swItem.note) },
+				href: sharedValue(item, swItem, "href", `${where}.items[${i}]`) ?? "",
+			};
+		}),
+		id: "",
+	};
+}
+
+function rmDataAccuracyBuild(en, sw, where) {
+	const enFactors = en.factors ?? [];
+	const swFactors = sw.factors ?? [];
+	if (!Array.isArray(swFactors) || swFactors.length !== enFactors.length) {
+		gap(where, `factor count diverged (en=${enFactors.length} sw=${swFactors?.length})`);
+	}
+	const enLevels = en.levels ?? [];
+	const swLevels = sw.levels ?? [];
+	if (!Array.isArray(swLevels) || swLevels.length !== enLevels.length) {
+		gap(where, `level count diverged (en=${enLevels.length} sw=${swLevels?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		factors: enFactors.map((factor, i) => ({
+			en: reqText(factor, `${where}.factors[${i}].en`),
+			sw: reqText(swFactors[i], `${where}.factors[${i}].sw`),
+		})),
+		levels: enLevels.map((level, i) => {
+			const swLevel = swLevels[i] ?? {};
+			return {
+				label: { en: reqText(level.label, `${where}.levels[${i}].label.en`), sw: reqText(swLevel.label, `${where}.levels[${i}].label.sw`) },
+				accuracy: { en: reqText(level.accuracy, `${where}.levels[${i}].accuracy.en`), sw: reqText(swLevel.accuracy, `${where}.levels[${i}].accuracy.sw`) },
+			};
+		}),
+		id: "",
+	};
+}
+
+function rmFinalCtaBuild(en, sw, where) {
+	const enActions = en.actions ?? [];
+	const swActions = sw.actions ?? [];
+	if (!Array.isArray(swActions) || swActions.length !== enActions.length) {
+		gap(where, `action count diverged (en=${enActions.length} sw=${swActions?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		note: { en: optText(en.note), sw: optText(sw.note) },
+		actions: enActions.map((action, i) => {
+			const swAction = swActions[i] ?? {};
+			return {
+				icon: sharedValue(action, swAction, "icon", `${where}.actions[${i}]`) ?? "",
+				label: { en: reqText(action.label, `${where}.actions[${i}].label.en`), sw: reqText(swAction.label, `${where}.actions[${i}].label.sw`) },
+				description: { en: optText(action.description), sw: optText(swAction.description) },
+				href: sharedValue(action, swAction, "href", `${where}.actions[${i}]`) ?? "",
+			};
+		}),
+		id: "get-started",
+	};
+}
+
 const PAGES = {
 	"company-profile": {
 		namespace: "company-profile",
@@ -2772,19 +2999,17 @@ const PAGES = {
 				},
 			},
 		],
-	},
+},
 
-// M7 batch 8a: resource-mapping. Two sections migrate in page order —
-	// `hero` (shared Hero, default bottom layout, dual pills) +
-	// `whySmartGridStandsOut` (cardGrid, columns 4, centred, surface).
-	// Tails stay legacy: WhatIs (bespoke items + closingStatement),
-	// TypesOfResourceMapping + TechStack (fallbackIcons), SectorSection
-	// grids (leadImages), WorkflowSection workflow, deliverables explorer,
-	// FinalCta (cta-closing), DataAccuracy/consultation bespoke.
+// M11 batch 9 (2026-09-18): resource-mapping — whole page Keystatic-owned
+	// in page order → one PageBuilderDocument (M11+M12 together). The six
+	// sector sections use the shared `rmSector` schema with `tone` alternating
+	// (default/surface) to match the legacy wrapper variance. Nothing stays
+	// skipped.
 	"resource-mapping": {
 		namespace: "surveying/resource-mapping",
 		title: "Resource Mapping",
-		skipped: ["whatIsResourceMapping", "typesOfResourceMapping", "workflow", "deliverables", "whoUses", "technologyStack", "dataAccuracy", "consultationCta", "agriculture", "utilitiesEnergySmartInfrastructure", "quarryMining", "constructionCivilEngineering", "environmentalConservation", "disasterRiskReduction", "finalCta"],
+		skipped: [],
 		sections: [
 			{
 				discriminant: "hero",
@@ -2822,32 +3047,258 @@ const PAGES = {
 				},
 			},
 			{
+				discriminant: "rmWhatIs",
+				from: "whatIsResourceMapping",
+				// Legacy: WhatIsResourceMappingSection → bespoke items + closingStatement.
+				build(en, sw, where) {
+					return rmWhatIsBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "rmTypes",
+				from: "typesOfResourceMapping",
+				// Legacy: TypesOfResourceMappingSection → categories with nested items.
+				build(en, sw, where) {
+					return rmTypesBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "rmSector",
+				from: "agriculture",
+				// Legacy: AgricultureSection → <SectorSection sectionKey="agriculture" tone="default" />.
+				build: rmSectorBuild("default"),
+			},
+			{
+				discriminant: "rmSector",
+				from: "utilitiesEnergySmartInfrastructure",
+				// Legacy: UtilitiesEnergySection → <SectorSection sectionKey="utilitiesEnergySmartInfrastructure" tone="surface" />.
+				build: rmSectorBuild("surface"),
+			},
+			{
+				discriminant: "rmSector",
+				from: "quarryMining",
+				// Legacy: QuarryMiningSection → <SectorSection sectionKey="quarryMining" tone="default" />.
+				build: rmSectorBuild("default"),
+			},
+			{
+				discriminant: "rmSector",
+				from: "constructionCivilEngineering",
+				// Legacy: ConstructionCivilSection → <SectorSection sectionKey="constructionCivilEngineering" tone="surface" />.
+				build: rmSectorBuild("surface"),
+			},
+			{
+				discriminant: "rmSector",
+				from: "environmentalManagementConservation",
+				// Legacy: EnvironmentalConservationSection → <SectorSection sectionKey="environmentalManagementConservation" tone="default" />.
+				build: rmSectorBuild("default"),
+			},
+			{
+				discriminant: "rmSector",
+				from: "disasterRiskReduction",
+				// Legacy: DisasterRiskReductionSection → <SectorSection sectionKey="disasterRiskReduction" tone="surface" />.
+				build: rmSectorBuild("surface"),
+			},
+			{
 				discriminant: "cardGrid",
 				from: "whySmartGridStandsOut",
-				// Legacy: WhyStandOutSection → <CardGrid columns={4}
-				// tone="surface" align="center" /> (card/density unset).
+				// Legacy: WhyStandOutSection → <CardGrid columns={4} tone="surface" align="center" />.
 				build: cardGridBuild({ columns: "4", align: "center", tone: "surface", headerRow: false, cardDensity: "comfortable", cardIconSize: "md" }),
+			},
+			{
+				discriminant: "rmWorkflow",
+				from: "resourceMappingWorkflow",
+				// Legacy: ResourceMappingWorkflowSection → <Process {...section} />.
+				build(en, sw, where) {
+					return rmWorkflowBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "deliverables",
+				from: "deliverables",
+				// Legacy: ResourceMappingDeliverablesSection → <Deliverables ns="surveying/resource-mapping" />.
+				build: deliverablesBuild("default"),
+			},
+			{
+				discriminant: "rmWhoUses",
+				from: "whoUsesResourceMapping",
+				// Legacy: WhoUsesResourceMappingSection → bespoke categories grid.
+				build(en, sw, where) {
+					return rmWhoUsesBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "rmTechStack",
+				from: "techStack",
+				// Legacy: ResourceMappingTechStackSection → <CardGrid ... /> with hrefs.
+				build(en, sw, where) {
+					return rmTechStackBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "rmDataAccuracy",
+				from: "dataAccuracy",
+				// Legacy: DataAccuracySection → bespoke factors + levels.
+				build(en, sw, where) {
+					return rmDataAccuracyBuild(en, sw, where);
+				},
+			},
+			{
+				discriminant: "rmFinalCta",
+				from: "finalCta",
+				// Legacy: FinalCtaSection → cta-closing with multiple actions.
+				build(en, sw, where) {
+					return rmFinalCtaBuild(en, sw, where);
+				},
 			},
 		],
 	},
-	// M7 batch 8b: building-site-surveys. Four sections migrate in page order —
-	// `section1` (introText split), `actionCtaEngineer` (ctaBand split/shimmer),
-	// `exploreMore` (gallery grid), `cta` (ctaBand centred/hairline).
-	// Tails stay legacy: bespoke hero, SiteEngineering (indexed +
-	// fallbackIcons + headerRow cards), BuildSmarter/Accuracy/Consultation
-	// bespoke, Process (layout/columns not in registry contract), deliverables
-	// explorer, TechnologyStack (fallbackIcons + hoverArrow + per-card links).
+	// M11 batch 9 (2026-09-18): building-site-surveys — whole page
+	// Keystatic-owned in page order → one PageBuilderDocument (M11+M12
+	// together). Seven bespoke tails become unique sections. Nothing stays
+	// skipped.
 	"building-site-surveys": {
 		namespace: "surveying/building-site-surveys",
 		title: "Building Site Surveys",
-		skipped: ["hero", "section2", "siteEngineeringSurveys", "process", "accuracyMatters", "deliverables", "technology", "consultation"],
+		skipped: [],
 		sections: [
+			{
+				discriminant: "bsHero",
+				from: "hero",
+				// Legacy: BuildingSiteHeroSection (bespoke hero with footnoteItems).
+				build(en, sw, where) {
+					return {
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						title: { en: reqText(en.title, `${where}.title.en`), sw: reqText(sw.title, `${where}.title.sw`) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						image: sharedValue(en, sw, "image", where) ?? "",
+						ctaPrimary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+						},
+						footnoteItems: (en.footnoteItems ?? []).map((item, i) => ({
+							en: reqText(item, `${where}.footnoteItems[${i}].en`),
+							sw: reqText(sw.footnoteItems?.[i], `${where}.footnoteItems[${i}].sw`),
+						})),
+						id: "",
+					};
+				},
+			},
 			{
 				discriminant: "introText",
 				from: "section1",
 				// Legacy: IntroSection → <IntroTextSection ... split /> (split
 				// hardcoded; no CTA).
 				build: introTextBuild({ tone: "default", align: "left", split: true }),
+			},
+			{
+				discriminant: "bsSiteEngineering",
+				from: "siteEngineeringSurveys",
+				// Legacy: SiteEngineeringSection → <CardGrid columns={3} headerRow
+				// indexed fallbackIcons /> (indexed numbering + fallback icons
+				// stay in the wrapper; here we store items as plain cards).
+				build(en, sw, where) {
+					const enItems = en.items ?? [];
+					const swItems = sw.items ?? [];
+					if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+						gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+					}
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						items: enItems.map((item, i) => {
+							const swItem = swItems[i] ?? {};
+							return {
+								icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+								title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+								description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+								image: "",
+								href: "",
+							};
+						}),
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "bsSection2",
+				from: "section2",
+				// Legacy: BuildSmarterSection (bespoke with subtitle + CTA).
+				build(en, sw, where) {
+					const action = (node, swNode, key) => ({
+						label: { en: reqText(node?.label, `${where}.${key}.label.en`), sw: reqText(swNode?.label, `${where}.${key}.label.sw`) },
+						href: sharedValue(node, swNode, "href", `${where}.${key}`) ?? "",
+						icon: sharedValue(node, swNode, "icon", `${where}.${key}`) ?? "",
+					});
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						subtitle: { en: optText(en.subtitle), sw: optText(sw.subtitle) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						ctaPrimary: action(en.ctaPrimary, sw.ctaPrimary, "ctaPrimary"),
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "bsProcess",
+				from: "process",
+				// Legacy: ProcessSection → layout/columns not in registry
+				// contract. Image + steps; image is shared, step icons shared.
+				build(en, sw, where) {
+					const enItems = en.items ?? [];
+					const swItems = sw.items ?? [];
+					if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+						gap(where, `step count diverged (en=${enItems.length} sw=${swItems?.length})`);
+					}
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						image: sharedValue(en, sw, "image", where) ?? "",
+						steps: enItems.map((step, i) => {
+							const swStep = swItems[i] ?? {};
+							return {
+								label: { en: reqText(step.label, `${where}.items[${i}].label.en`), sw: reqText(swStep.label, `${where}.items[${i}].label.sw`) },
+								description: { en: reqText(step.description, `${where}.items[${i}].description.en`), sw: reqText(swStep.description, `${where}.items[${i}].description.sw`) },
+								icon: sharedValue(step, swStep, "icon", `${where}.items[${i}]`) ?? "",
+							};
+						}),
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "bsAccuracyMatters",
+				from: "accuracyMatters",
+				// Legacy: AccuracyMattersSection (stats + keywords, bespoke).
+				build(en, sw, where) {
+					const enItems = en.items ?? [];
+					const swItems = sw.items ?? [];
+					if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+						gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+					}
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						solution: { en: optText(en.solution), sw: optText(sw.solution) },
+						items: enItems.map((item, i) => {
+							const swItem = swItems[i] ?? {};
+							return {
+								icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+								title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+								description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+								stat: { en: optText(item.stat), sw: optText(swItem.stat) },
+							};
+						}),
+						keywords: {
+							en: (en.keywords ?? []).map((k, i) => reqText(k, `${where}.keywords[${i}].en`)),
+							sw: (sw.keywords ?? []).map((k, i) => reqText(k, `${where}.keywords[${i}].sw`)),
+						},
+						id: "",
+					};
+				},
 			},
 			{
 				discriminant: "ctaBand",
@@ -2873,6 +3324,74 @@ const PAGES = {
 						images: [],
 						shimmer: true,
 						hairline: false,
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "deliverables",
+				from: "deliverables",
+				// Legacy: DeliverablesSection → <Deliverables ns="surveying/building-site-surveys" />.
+				build: deliverablesBuild("default"),
+			},
+			{
+				discriminant: "bsTechnology",
+				from: "technology",
+				// Legacy: TechnologyStackSection → <CardGrid ... /> with
+				// fallbackIcons + hoverArrow + per-card links (learnMore).
+				build(en, sw, where) {
+					const enItems = en.items ?? [];
+					const swItems = sw.items ?? [];
+					if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+						gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+					}
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						learnMore: { en: optText(en.learnMore), sw: optText(sw.learnMore) },
+						items: enItems.map((item, i) => {
+							const swItem = swItems[i] ?? {};
+							return {
+								icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+								title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+								description: { en: optText(item.description), sw: optText(swItem.description) },
+								href: sharedValue(item, swItem, "href", `${where}.items[${i}]`) ?? "",
+							};
+						}),
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "bsConsultation",
+				from: "consultation",
+				// Legacy: ConsultationSection (steps + dual CTA).
+				build(en, sw, where) {
+					const action = (node, swNode, key) => ({
+						label: { en: reqText(node?.label, `${where}.${key}.label.en`), sw: reqText(swNode?.label, `${where}.${key}.label.sw`) },
+						href: sharedValue(node, swNode, "href", `${where}.${key}`) ?? "",
+						icon: sharedValue(node, swNode, "icon", `${where}.${key}`) ?? "",
+					});
+					const enSteps = en.steps ?? [];
+					const swSteps = sw.steps ?? [];
+					if (!Array.isArray(swSteps) || swSteps.length !== enSteps.length) {
+						gap(where, `step count diverged (en=${enSteps.length} sw=${swSteps?.length})`);
+					}
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						stepsLabel: { en: optText(en.stepsLabel), sw: optText(sw.stepsLabel) },
+						steps: enSteps.map((step, i) => {
+							const swStep = swSteps[i] ?? {};
+							return {
+								title: { en: reqText(step.title, `${where}.steps[${i}].title.en`), sw: reqText(swStep.title, `${where}.steps[${i}].title.sw`) },
+								description: { en: reqText(step.description, `${where}.steps[${i}].description.en`), sw: reqText(swStep.description, `${where}.steps[${i}].description.sw`) },
+							};
+						}),
+						ctaPrimary: action(en.ctaPrimary, sw.ctaPrimary, "ctaPrimary"),
+						ctaSecondary: action(en.ctaSecondary, sw.ctaSecondary, "ctaSecondary"),
 						id: "",
 					};
 				},

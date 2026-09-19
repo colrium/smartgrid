@@ -87,6 +87,19 @@ export const localeMedia = (label: string) =>
 		{ label }
 	);
 
+/**
+ * Per-locale array of image paths. Used when legacy content has different
+ * image paths per locale (e.g. png vs jpg, gif vs jpg).
+ */
+export const localeImageArray = (label: string) =>
+	fields.object(
+		{
+			en: fields.array(imagePath("English image"), { label: "English images" }),
+			sw: fields.array(imagePath("Swahili image"), { label: "Swahili images" }),
+		},
+		{ label }
+	);
+
 /** Anchor id for a `<section>` element. */
 export const anchorField = () =>
 	fields.text({ label: "Anchor id (optional)", description: "Used as the section id for deep links." });

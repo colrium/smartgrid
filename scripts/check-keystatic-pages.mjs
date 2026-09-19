@@ -606,7 +606,7 @@ for (const [name, passed] of docCases) {
 
 // --- Fixture contract ------------------------------------------------------
 
-function expectLocaleNode(value, where, { allowEmpty = false } = {}) {
+function expectLocaleNode(value, where, { allowEmpty = false, allowArray = false } = {}) {
 	if (typeof value !== "object" || value === null) {
 		fail(where, "expected { en, sw } object");
 		return;
@@ -616,12 +616,16 @@ function expectLocaleNode(value, where, { allowEmpty = false } = {}) {
 			fail(where, `missing "${locale}" key`);
 			return;
 		}
-		if (typeof value[locale] !== "string") {
-			fail(where, `"${locale}" must be a string`);
-			return;
-		}
-		if (!allowEmpty && locale === "en" && value[locale].length === 0) {
-			fail(where, `"en" must be non-empty`);
+		const val = value[locale];
+		if (typeof val === "string") {
+			if (!allowEmpty && locale === "en" && val.length === 0) {
+				fail(where, `"en" must be non-empty`);
+				return;
+			}
+		} else if (allowArray && Array.isArray(val)) {
+			// Arrays are allowed (e.g. localeImageArray, keywords)
+		} else {
+			fail(where, `"${locale}" must be a string${allowArray ? " or array" : ""}`);
 			return;
 		}
 	}
@@ -724,7 +728,9 @@ function main() {
 				if (Array.isArray(node)) return node.forEach((entry, i) => audit(entry, `${path}[${i}]`));
 				if (node !== null && typeof node === "object") {
 					if ("en" in node || "sw" in node) {
-						return expectLocaleNode(node, path, { allowEmpty: true });
+						// Known array fields: rmSector.images (localeImageArray), bsAccuracyMatters.keywords
+						const isArrayField = path.endsWith(".images") || path.endsWith(".keywords");
+						return expectLocaleNode(node, path, { allowEmpty: true, allowArray: isArrayField });
 					}
 					for (const [key, entry] of Object.entries(node)) audit(entry, `${path}.${key}`);
 				}

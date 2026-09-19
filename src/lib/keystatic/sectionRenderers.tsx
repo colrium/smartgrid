@@ -58,6 +58,21 @@ import { DamsLakesSection } from "@/components/sections/surveying/bathymetric-su
 import { ApplicationsSection as BathyApplicationsSection } from "@/components/sections/surveying/bathymetric-surveys/ApplicationsSection";
 import { BathymetricBeforeAfterSection } from "@/components/sections/surveying/bathymetric-surveys/BathymetricBeforeAfterSection";
 import { FinalCtaSection as BathyFinalCtaSection } from "@/components/sections/surveying/bathymetric-surveys/FinalCtaSection";
+import { WhatIsResourceMappingSection } from "@/components/sections/surveying/resource-mapping/WhatIsResourceMappingSection";
+import { TypesOfResourceMappingSection } from "@/components/sections/surveying/resource-mapping/TypesOfResourceMappingSection";
+import { ResourceMappingWorkflowSection } from "@/components/sections/surveying/resource-mapping/ResourceMappingWorkflowSection";
+import { WhoUsesResourceMappingSection } from "@/components/sections/surveying/resource-mapping/WhoUsesResourceMappingSection";
+import { ResourceMappingTechStackSection } from "@/components/sections/surveying/resource-mapping/ResourceMappingTechStackSection";
+import { DataAccuracySection } from "@/components/sections/surveying/resource-mapping/DataAccuracySection";
+import { FinalCtaSection as RmFinalCtaSection } from "@/components/sections/surveying/resource-mapping/FinalCtaSection";
+import { SectorSection } from "@/components/sections/surveying/resource-mapping/SectorSection";
+import { BuildingSiteHeroSection } from "@/components/sections/surveying/building-site/BuildingSiteHeroSection";
+import { BuildSmarterSection } from "@/components/sections/surveying/building-site/BuildSmarterSection";
+import { SiteEngineeringSection } from "@/components/sections/surveying/building-site/SiteEngineeringSection";
+import { ProcessSection as BsProcessSection } from "@/components/sections/surveying/building-site/ProcessSection";
+import { AccuracyMattersSection } from "@/components/sections/surveying/building-site/AccuracyMattersSection";
+import { TechnologyStackSection } from "@/components/sections/surveying/building-site/TechnologyStackSection";
+import { ConsultationSection } from "@/components/sections/surveying/building-site/ConsultationSection";
 import type { Lang } from "../types";
 import { resolveLocaleValue } from "./localize";
 import { getSectionDefinition, type SectionId } from "./sectionRegistry";
@@ -137,6 +152,21 @@ export const sectionRenderers = {
 	bathyApplications: BathyApplicationsSection,
 	bathyBeforeAfter: BathymetricBeforeAfterSection,
 	bathyFinalCta: BathyFinalCtaSection,
+	rmWhatIs: WhatIsResourceMappingSection,
+	rmTypes: TypesOfResourceMappingSection,
+	rmSector: SectorSection,
+	rmWorkflow: ResourceMappingWorkflowSection,
+	rmWhoUses: WhoUsesResourceMappingSection,
+	rmTechStack: ResourceMappingTechStackSection,
+	rmDataAccuracy: DataAccuracySection,
+	rmFinalCta: RmFinalCtaSection,
+	bsHero: BuildingSiteHeroSection,
+	bsSection2: BuildSmarterSection,
+	bsSiteEngineering: SiteEngineeringSection,
+	bsProcess: BsProcessSection,
+	bsAccuracyMatters: AccuracyMattersSection,
+	bsTechnology: TechnologyStackSection,
+	bsConsultation: ConsultationSection,
 } satisfies Record<SectionId, ComponentType<any>>;
 
 export function renderSection(
