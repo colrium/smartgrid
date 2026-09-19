@@ -78,6 +78,86 @@
 			}
 		},
 		{
+			"discriminant": "asBuiltSolutions",
+			"value": {
+				"tag": {
+					"en": "What we do",
+					"sw": "Tunachofanya"
+				},
+				"headline": {
+					"en": "As-Built Solutions",
+					"sw": "Suluhisho za As-Built"
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"title": {
+							"en": "Drone-Based Accuracy",
+							"sw": "Usahihi wa Ndege Zisizo na Rubani"
+						},
+						"description": {
+							"en": "We deploy UAVs equipped with LiDAR and photogrammetry to capture as-built conditions with high fidelity, minimizing human error and maximizing detail.",
+							"sw": "Tunatumia UAV zilizo na LiDAR na photogrammetry kukamata hali ya as-built kwa uaminifu wa hali ya juu, kupunguza makosa ya kibinadamu na kuongeza maelezo."
+						}
+					},
+					{
+						"title": {
+							"en": "3D Model Integration",
+							"sw": "Ujumuishaji wa Mifano ya 3D"
+						},
+						"description": {
+							"en": "Our data feeds directly into BIM and CAD environments, enabling seamless collaboration across engineering, design, and asset management teams.",
+							"sw": "Data yetu huingia moja kwa moja kwenye mazingira ya BIM na CAD, kuwezesha ushirikiano usio na mshono kati ya timu za uhandisi, kubuni, na usimamizi wa mali."
+						}
+					},
+					{
+						"title": {
+							"en": "Compliance Verification",
+							"sw": "Uthibitishaji wa Kufuata Kanuni"
+						},
+						"description": {
+							"en": "We verify that structures and infrastructure meet design specifications, codes, and regulatory standards through precision spatial documentation.",
+							"sw": "Tunathibitisha kuwa miundo na miundombinu vinakidhi vipimo vya kubuni, kanuni, na viwango vya udhibiti kupitia nyaraka sahihi za anga."
+						}
+					},
+					{
+						"title": {
+							"en": "Utility Mapping",
+							"sw": "Uchoraji Ramani wa Huduma"
+						},
+						"description": {
+							"en": "Subsurface and surface utility lines are geo-referenced and recorded, creating a permanent digital record to reduce risk and support future development.",
+							"sw": "Mistari ya huduma za chini ya ardhi na za juu hurekodiwa na kupewa marejeleo ya kijiografia, na kuunda rekodi ya kudumu ya dijitali kupunguza hatari na kusaidia maendeleo ya baadaye."
+						}
+					},
+					{
+						"title": {
+							"en": "Progress & Handover Records",
+							"sw": "Rekodi za Maendeleo na Ukabidhi"
+						},
+						"description": {
+							"en": "Capture every construction milestone with timestamped aerial data—perfect for reporting, stakeholder updates, and final handover documentation.",
+							"sw": "Kamata kila hatua muhimu ya ujenzi kwa data ya angani yenye muhuri wa muda—bora kwa ripoti, sasisho za wadau, na nyaraka za mwisho za ukabidhi."
+						}
+					},
+					{
+						"title": {
+							"en": "Smart Documentation",
+							"sw": "Nyaraka Mahiri"
+						},
+						"description": {
+							"en": "Interactive maps, 2D plans, and 3D datasets are delivered through secure portals, giving clients easy access to their as-built records from any device.",
+							"sw": "Ramani zinazoingiliana, mipango ya 2D, na seti za data za 3D hutolewa kupitia lango salama, kuwapa wateja ufikiaji rahisi wa rekodi zao za as-built kutoka kifaa chochote."
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
 			"discriminant": "cardGrid",
 			"value": {
 				"tag": {
@@ -322,6 +402,159 @@
 					"href": "",
 					"icon": ""
 				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "deliverables",
+			"value": {
+				"tag": {
+					"en": "Project Outputs",
+					"sw": "Matokeo ya Mradi"
+				},
+				"headline": {
+					"en": "As-Built Survey Deliverables",
+					"sw": "Matokeo ya Uchunguzi wa As-Built"
+				},
+				"description": {
+					"en": "Complete as-built documentation for handover, verification and records:",
+					"sw": "Nyaraka kamili za as-built kwa uhamishaji, uthibitisho na kumbukumbu:"
+				},
+				"liveLabel": {
+					"en": "Deliverable package",
+					"sw": "Kifurushi cha matokeo"
+				},
+				"checks": [
+					{
+						"en": "Georeferenced to national control",
+						"sw": "Imeelezwa kwa udhibiti wa kitaifa"
+					},
+					{
+						"en": "Engineer-ready formats",
+						"sw": "Miundo tayari kwa uhandisi"
+					},
+					{
+						"en": "Audit-ready documentation",
+						"sw": "Nyaraka tayari kwa ukaguzi"
+					}
+				],
+				"items": [
+					{
+						"title": {
+							"en": "As-Built Verification Reports",
+							"sw": "Ripoti za Uthibitisho wa As-Built"
+						},
+						"format": {
+							"en": "PDF",
+							"sw": "PDF"
+						},
+						"icon": "clipboard-check-outline",
+						"image": {
+							"en": "/media/deliverables/as-built-verification-reports.jpg",
+							"sw": "/media/deliverables/as-built-verification-reports.jpg"
+						},
+						"description": {
+							"en": "Documented comparison of constructed works against design, with evidence for engineering sign-off and records.",
+							"sw": "Ulinganisho uliorekodiwa wa kazi zilizojengwa dhidi ya usanifu, na ushahidi kwa idhini ya uhandisi na kumbukumbu."
+						}
+					},
+					{
+						"title": {
+							"en": "Progress Survey Reports",
+							"sw": "Ripoti za Maendeleo ya Uchunguzi"
+						},
+						"format": {
+							"en": "PDF / Web",
+							"sw": "PDF / Web"
+						},
+						"icon": "chart-timeline-variant",
+						"image": {
+							"en": "/media/deliverables/progress-survey-reports.jpg",
+							"sw": "/media/deliverables/progress-survey-reports.jpg"
+						},
+						"description": {
+							"en": "Scheduled captures that track construction progress against programme milestones and payment applications.",
+							"sw": "Ukamataji uliopangwa unafuatilia maendeleo ya ujenzi dhidi ya hatua za programu na maombi ya malipo."
+						}
+					},
+					{
+						"title": {
+							"en": "3D As-Built Models",
+							"sw": "Modeli za 3D za As-Built"
+						},
+						"format": {
+							"en": "CAD / IFC",
+							"sw": "CAD / IFC"
+						},
+						"icon": "cube-outline",
+						"image": {
+							"en": "/media/deliverables/3d-as-built-models.jpg",
+							"sw": "/media/deliverables/3d-as-built-models.jpg"
+						},
+						"description": {
+							"en": "Spatially accurate models of constructed works ready for BIM integration and facilities management.",
+							"sw": "Modeli za kiwango cha anga za kazi zilizojengwa tayari kwa kuunganishwa na BIM na usimamizi wa vifaa."
+						}
+					},
+					{
+						"title": {
+							"en": "Orthomosaic Maps & Imagery",
+							"sw": "Ramani za Orthomosaic na Picha"
+						},
+						"format": {
+							"en": "GeoTIFF / JPEG",
+							"sw": "GeoTIFF / JPEG"
+						},
+						"icon": "image-filter-hdr",
+						"image": {
+							"en": "/media/deliverables/orthomosaic-maps.jpg",
+							"sw": "/media/deliverables/orthomosaic-maps.jpg"
+						},
+						"description": {
+							"en": "High-resolution, georeferenced aerial imagery documenting site conditions at every capture date.",
+							"sw": "Picha za angani za ubora wa juu zilizoelezwa kijiografia zinazorekodi hali ya tovuti kila ukamataji."
+						}
+					},
+					{
+						"title": {
+							"en": "Deviation & Quantity Analysis",
+							"sw": "Uchambuzi wa Tofauti na Wingi"
+						},
+						"format": {
+							"en": "Excel / PDF",
+							"sw": "Excel / PDF"
+						},
+						"icon": "chart-histogram",
+						"image": {
+							"en": "/media/deliverables/deviation-and-quantity-analysis.jpg",
+							"sw": "/media/deliverables/deviation-and-quantity-analysis.jpg"
+						},
+						"description": {
+							"en": "Quantified differences between design and as-built surfaces, including earthwork and material quantities.",
+							"sw": "Tofauti zilizopimwa kati ya usanifu na nyuso za as-built, pamoja na wingi wa ardhi na vifaa."
+						}
+					},
+					{
+						"title": {
+							"en": "CAD Overlays & GIS Datasets",
+							"sw": "Mistari ya CAD na Seti za Data za GIS"
+						},
+						"format": {
+							"en": "DWG / SHP",
+							"sw": "DWG / SHP"
+						},
+						"icon": "vector-square",
+						"image": {
+							"en": "/media/deliverables/cad-overlays-and-gis-datasets.jpg",
+							"sw": "/media/deliverables/cad-overlays-and-gis-datasets.jpg"
+						},
+						"description": {
+							"en": "Design-versus-as-built overlays and geo-referenced datasets that plug straight into CAD and GIS workflows.",
+							"sw": "Mistari ya usanifu dhidi ya as-built na seti za data zilizoelezwa kijiografia zinazoingia moja kwa moja kwenye CAD na GIS."
+						}
+					}
+				],
+				"tone": "surface",
 				"id": ""
 			}
 		}

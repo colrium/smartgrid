@@ -118,6 +118,8 @@ import { GisDataAccuracySection } from "@/components/sections/surveying/gis-mapp
 import { GisBeforeAfterSection } from "@/components/sections/surveying/gis-mapping/GisBeforeAfterSection";
 import { GisProjectImpactSection } from "@/components/sections/surveying/gis-mapping/GisProjectImpactSection";
 import { GisRelatedServicesSection } from "@/components/sections/surveying/gis-mapping/GisRelatedServicesSection";
+import { ServicesSection as HighwayServicesSection } from "@/components/sections/civil/highway-surveys/ServicesSection";
+import { AsBuiltSolutionsSection } from "@/components/sections/civil/as-built-surveys/AsBuiltSolutionsSection";
 import { ProcessSection as BsProcessSection } from "@/components/sections/surveying/building-site/ProcessSection";
 import { AccuracyMattersSection } from "@/components/sections/surveying/building-site/AccuracyMattersSection";
 import { TechnologyStackSection } from "@/components/sections/surveying/building-site/TechnologyStackSection";
@@ -265,6 +267,8 @@ export const sectionRenderers = {
 	gisBeforeAfter: GisBeforeAfterSection,
 	gisProjectImpact: GisProjectImpactSection,
 	gisRelatedServices: GisRelatedServicesSection,
+	highwayServices: HighwayServicesSection,
+	asBuiltSolutions: AsBuiltSolutionsSection,
 } satisfies Record<SectionId, ComponentType<any>>;
 
 export function renderSection(

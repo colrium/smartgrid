@@ -3113,6 +3113,32 @@ function gisRelatedServicesBuild(en, sw, where) {
 	};
 }
 
+// M11 batch 15 — civil highway-surveys + as-built-surveys pages
+// (2026-09-19): the two `indexed` grids → unique sections. Both share the
+// {tag, headline, description, items[{title, description}]} contract —
+// columns/tone/indexed presentation stays in the wrappers. Titles and
+// descriptions localized.
+function civilIndexedGridBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+			};
+		}),
+		id: "",
+	};
+}
+
 const PAGES = {
 	"company-profile": {
 		namespace: "company-profile",
@@ -5262,7 +5288,12 @@ const PAGES = {
 	"highway-surveys": {
 		namespace: "civil/highway-surveys",
 		title: "Highway Surveys",
-		skipped: ["services", "highwaySurveyDeliverables"],
+		// M11 batch 15 (2026-09-19): whole page Keystatic-owned in page order
+		// — `hero` + `overview` + `services` (highwayServices) + `benefits`
+		// + `highwaySurveyDeliverables` (shared `deliverables`, default tone
+		// — the wrapper carries no className). Mapping order = entry order =
+		// page order (M12 flexible rule).
+		skipped: [],
 		sections: [
 			{
 				discriminant: "hero",
@@ -5303,11 +5334,27 @@ const PAGES = {
 				build: introTextBuild({ tone: "surface", align: "left", split: false }),
 			},
 			{
+				discriminant: "highwayServices",
+				from: "services",
+				// Legacy: ServicesSection (indexed grid) →
+				// <ServicesSection data />.
+				build: civilIndexedGridBuild,
+			},
+			{
 				discriminant: "cardGrid",
 				from: "benefitsOfHighwaySurveys",
 				// Legacy: BenefitsSection → <CardGrid columns={3}
 				// tone="surface" /> (align/card unset = defaults).
 				build: cardGridBuild({ columns: "3", align: "left", tone: "surface", headerRow: false, cardDensity: "comfortable", cardIconSize: "md" }),
+			},
+			{
+				discriminant: "deliverables",
+				from: "highwaySurveyDeliverables",
+				// Legacy: DeliverablesSection → <Deliverables
+				// ns="civil/highway-surveys"
+				// baseKey="highwaySurveyDeliverables" /> — shared
+				// `deliverables`, default tone (no wrapper className).
+				build: deliverablesBuild("default"),
 			},
 		],
 	},
@@ -5320,7 +5367,12 @@ const PAGES = {
 	"as-built-surveys": {
 		namespace: "civil/as-built-surveys",
 		title: "As-Built Surveys",
-		skipped: ["asBuiltSolutions", "deliverables"],
+		// M11 batch 15 (2026-09-19): whole page Keystatic-owned in page order
+		// — `hero` + `whatAre` + `asBuiltSolutions` (asBuiltSolutions) +
+		// `keyIndustries` + `maxProductivity` + `applications` +
+		// `actionableInsights` + `deliverables` (shared, surface tone).
+		// Mapping order = entry order = page order (M12 flexible rule).
+		skipped: [],
 		sections: [
 			{
 				discriminant: "hero",
@@ -5361,6 +5413,13 @@ const PAGES = {
 				build: introTextBuild({ tone: "default", align: "left", split: false }),
 			},
 			{
+				discriminant: "asBuiltSolutions",
+				from: "asBuiltSolutions",
+				// Legacy: AsBuiltSolutionsSection (indexed surface grid) →
+				// <AsBuiltSolutionsSection data />.
+				build: civilIndexedGridBuild,
+			},
+			{
 				discriminant: "cardGrid",
 				from: "keyIndustries",
 				// Legacy: KeyIndustriesSection → <CardGrid columns={3}
@@ -5387,6 +5446,14 @@ const PAGES = {
 				// Legacy: ActionableInsightsSection → <TextSection /> (tone
 				// default, align/split unset).
 				build: introTextBuild({ tone: "default", align: "left", split: false }),
+			},
+			{
+				discriminant: "deliverables",
+				from: "deliverables",
+				// Legacy: inline <Deliverables ns="civil/as-built-surveys"
+				// className="bg-surface" /> — shared `deliverables`, surface
+				// tone.
+				build: deliverablesBuild("surface"),
 			},
 		],
 	},

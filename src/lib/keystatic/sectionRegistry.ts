@@ -243,7 +243,7 @@ import {
  * from DATA (the wrapper is page-owned), so edits change output.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyWorkflow", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "bathyFinalCta", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "rmFinalCta", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation", "aerialIntro", "aerialWhyDrones", "aerialServices", "aerialWorkflow", "aerialSurveyingGrid", "aerialIndustries", "aerialIndustryCta", "aerialTechStack", "aerialCapabilityCta", "aerialFinalCta", "aerialProjects", "aerialAdditionalServices", "cadastralPostHeroCta", "cadastralWhenYouNeed", "cadastralProcess", "cadastralProcessCta", "cadastralCost", "cadastralTimeline", "cadastralCompliance", "cadastralCaseStudy", "cadastralFinalCta", "gprHero", "gprHighlights", "gprJumpNav", "gprOverview", "gprMethodology", "gprApplications", "gprDetect", "gprSue", "gprLimitations", "gprBeforeAfter", "gprTechnology", "gprFeaturedProjects", "gprSummary", "gprFinalCta", "gisHero", "gisWhatIs", "gisImportance", "gisServices", "gisIndustries", "gisTechStack", "gisWhatsappCta", "gisComponents", "gisWhySmartgrid", "gisAnalystCta", "gisDataAccuracy", "gisBeforeAfter", "gisProjectImpact", "gisRelatedServices"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyWorkflow", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "bathyFinalCta", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "rmFinalCta", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation", "aerialIntro", "aerialWhyDrones", "aerialServices", "aerialWorkflow", "aerialSurveyingGrid", "aerialIndustries", "aerialIndustryCta", "aerialTechStack", "aerialCapabilityCta", "aerialFinalCta", "aerialProjects", "aerialAdditionalServices", "cadastralPostHeroCta", "cadastralWhenYouNeed", "cadastralProcess", "cadastralProcessCta", "cadastralCost", "cadastralTimeline", "cadastralCompliance", "cadastralCaseStudy", "cadastralFinalCta", "gprHero", "gprHighlights", "gprJumpNav", "gprOverview", "gprMethodology", "gprApplications", "gprDetect", "gprSue", "gprLimitations", "gprBeforeAfter", "gprTechnology", "gprFeaturedProjects", "gprSummary", "gprFinalCta", "gisHero", "gisWhatIs", "gisImportance", "gisServices", "gisIndustries", "gisTechStack", "gisWhatsappCta", "gisComponents", "gisWhySmartgrid", "gisAnalystCta", "gisDataAccuracy", "gisBeforeAfter", "gisProjectImpact", "gisRelatedServices", "highwayServices", "asBuiltSolutions"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -9096,6 +9096,116 @@ const gisRelatedServices: SectionDefinition = {
 	}),
 };
 
+/**
+ * M11 batch 15 — civil highway-surveys page (2026-09-19): `highwayServices`
+ * wraps the `ServicesSection` indexed grid (`indexed` numbering is outside
+ * the shared `cardGrid` contract). Unique — only valid on
+ * `/civil/highway-surveys`. Titles and descriptions localized. Renders
+ * nothing without items (legacy guard, preserved).
+ */
+const highwayServices: SectionDefinition = {
+	id: "highwayServices",
+	version: 1,
+	label: "Highway services (unique)",
+	description: "Unique: the highway-surveys indexed service grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Services",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Service"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, columns, indexed
+		// numbering (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Highway Survey Services", sw: "Huduma za Upimaji wa Barabara" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				title: { en: "Route Analysis", sw: "Uchambuzi wa Njia" },
+				description: { en: "Optimal corridor mapping.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({ title: item?.title ?? "", description: item?.description ?? "" }))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 15 — civil as-built-surveys page (2026-09-19): `asBuiltSolutions`
+ * wraps the `AsBuiltSolutionsSection` indexed surface grid (same shape as
+ * `highwayServices` plus surface tone — separate id, page-scoped).
+ * Unique — only valid on `/civil/as-built-surveys`. Titles and descriptions
+ * localized. Renders nothing without items (legacy guard, preserved).
+ */
+const asBuiltSolutions: SectionDefinition = {
+	id: "asBuiltSolutions",
+	version: 1,
+	label: "As-built solutions (unique)",
+	description: "Unique: the as-built-surveys indexed solution grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Solutions",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Solution"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, columns, tone,
+		// indexed numbering (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "As-Built Solutions", sw: "Suluhisho za Kujengwa" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				title: { en: "Drone Accuracy", sw: "Usahihi wa Droni" },
+				description: { en: "LiDAR capture.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({ title: item?.title ?? "", description: item?.description ?? "" }))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
 export const sectionRegistry: readonly SectionDefinition[] = [
 	introText,
 	ctaBand,
@@ -9220,6 +9330,8 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	gisBeforeAfter,
 	gisProjectImpact,
 	gisRelatedServices,
+	highwayServices,
+	asBuiltSolutions,
 ];
 
 export function getSectionDefinition(id: string): SectionDefinition {
@@ -9352,6 +9464,8 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	gisBeforeAfter: gisBeforeAfter.label,
 	gisProjectImpact: gisProjectImpact.label,
 	gisRelatedServices: gisRelatedServices.label,
+	highwayServices: highwayServices.label,
+	asBuiltSolutions: asBuiltSolutions.label,
 };
 
 /**
