@@ -70,7 +70,7 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 	// entry is published. Otherwise the legacy locale-JSON implementation
 	// renders unchanged.
 	const sections = keystaticPage ? orderedSections(keystaticPage) : null;
-    
+    console.log("sections", sections)
 	if (keystaticPage && sections) {
 		const locale = keystaticPage.locale;
         
@@ -97,7 +97,8 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 			keyFacts,
 			certifications,
 			trustees,
-			defaultCta,
+            defaultCta,
+            ...rest
 		] = sections.map((section) => renderSection(section.id, section.value, locale, section.key));
 		return (
 			<div className="relative ">
@@ -130,10 +131,11 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 						{keyFacts}
 						{certifications}
 						{trustees}
-						{/* <MetricsSection /> */}
 					</div>
-
-					{defaultCta}
+                    {defaultCta}
+                    {rest?.map((section, index) => (
+                        <div key={index}>{section}</div>
+                    ) )}
 				</div>
 			</div>
 		);
