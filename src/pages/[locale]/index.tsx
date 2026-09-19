@@ -1,5 +1,5 @@
 import type { GetServerSideProps, NextPage } from "next";
-import { cloneElement, type ReactElement } from "react";
+// import { cloneElement, type ReactElement } from "react";
 import PageHead from "@/components/Head";
 
 import { getI18nProps, getLocale } from "@/lib/i18n";
@@ -70,10 +70,9 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 	// entry is published. Otherwise the legacy locale-JSON implementation
 	// renders unchanged.
 	const sections = keystaticPage ? orderedSections(keystaticPage) : null;
-    console.log("sections", sections)
+
 	if (keystaticPage && sections) {
 		const locale = keystaticPage.locale;
-        
 		// M12: entry order IS page order — destructure once into named
 		// slots, no index literals. Positions below mirror the legacy
 		// branch; the count guard in `orderedSections` keeps a mismatch
@@ -97,18 +96,21 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 			keyFacts,
 			certifications,
 			trustees,
-            defaultCta,
-            ...rest
+			defaultCta,
 		] = sections.map((section) => renderSection(section.id, section.value, locale, section.key));
 		return (
 			<div className="relative ">
 				<PageHead pageName="home" />
-				<div className="flex flex-col min-h-screen" data-keystatic-page={keystaticPage.slug}>
+				<div
+					className="flex flex-col min-h-screen"
+					data-keystatic-page={keystaticPage.slug}
+				>
 					{hero}
 					<div className="flex flex-col mx-auto max-w-7xl px-6 w-full">
-						{cloneElement(leadGenBar as ReactElement<{ className?: string }>, {
+						{/*cloneElement(leadGenBar as ReactElement<{ className?: string }>, {
 							className: "my-12  -mt-48",
-						})}
+						})*/}
+						{leadGenBar}
 						{aboutSection}
 						{planning}
 					</div>
@@ -131,11 +133,10 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 						{keyFacts}
 						{certifications}
 						{trustees}
+						{/* <MetricsSection /> */}
 					</div>
-                    {defaultCta}
-                    {rest?.map((section, index) => (
-                        <div key={index}>{section}</div>
-                    ) )}
+
+					{defaultCta}
 				</div>
 			</div>
 		);

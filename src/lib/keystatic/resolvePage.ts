@@ -1,6 +1,7 @@
 import { createReader } from "@keystatic/core/reader";
 import keystaticConfig from "../../../keystatic.config";
 import type { Lang } from "../types";
+import { signMediaDeep } from "@/lib/media";
 import { getSectionDefinition } from "./sectionRegistry";
 
 /**
@@ -99,7 +100,13 @@ export async function resolveKeystaticPage(
 		const sections: ResolvedPageSection[] = stored.map(
 			(section: { discriminant: string; value: unknown }, index: number) => {
 				getSectionDefinition(section.discriminant);
-				return { key: `${slug}:${section.discriminant}:${index}`, id: section.discriminant, value: section.value };
+				// Display-only media protection: every `/media/...` image/media
+				// path stored in Keystatic content must leave the server as a
+				// short-lived `signMediaPath` URL, or the edge gate (`src/proxy.ts`)
+				// 404s it. `signMediaDeep` is idempotent — non-media strings pass
+				// through untouched. Site-layout media needs no handling here:
+				// it merges into the i18n store, which `getI18nProps` signs after.
+				return { key: `${slug}:${section.discriminant}:${index}`, id: section.discriminant, value: signMediaDeep(section.value) };
 			}
 		);
 		return { status: "keystatic", page: { slug, title: entry.title, locale, sections } };
