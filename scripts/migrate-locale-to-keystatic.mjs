@@ -735,8 +735,10 @@ function civilProcessBuild(en, sw, where) {
 // M11 batch 5 — hubs (2026-09-18): any `<Deliverables ns=…>` node → shared
 // `deliverables`. Item icons are shared; titles, formats and descriptions
 // are localized; item images are per-locale (civil items prove paths can
-// diverge); `tone` reproduces the wrapper `className` variance.
-function deliverablesBuild(tone) {
+// diverge); `tone` reproduces the wrapper `className` variance. M11 batch 13
+// (2026-09-19): optional `id` param — the GPR wrapper carries
+// `id="deliverables"` for its jump-nav anchor (other pages store "").
+function deliverablesBuild(tone, id = "") {
 	return (en, sw, where) => {
 		const enItems = en.items ?? [];
 		const swItems = sw.items ?? [];
@@ -768,7 +770,7 @@ function deliverablesBuild(tone) {
 				};
 			}),
 			tone,
-			id: "",
+			id,
 		};
 	};
 }
@@ -2489,6 +2491,319 @@ function cadastralCaseStudyBuild(en, sw, where) {
 			text: { en: reqText(enCs.engineeringNote?.text, `${where}.engineeringNote.text.en`), sw: reqText(swCs.engineeringNote?.text, `${where}.engineeringNote.text.sw`) },
 		},
 		id: "",
+	};
+}
+
+// M11 batch 13 — ground-penetrating-radar page (2026-09-19): the fourteen
+// bespoke tails → unique sections (+ shared `deliverables` with the
+// jump-nav `id`). Icons, image paths/urls, hrefs, day counts and featured
+// flags shared; all other strings localized. The dead hero
+// `headline`/`image` keys are dropped (never rendered). `<bold>` hero copy
+// parses from data in the wrapper. Fixed presentation (slider, sticky
+// scroll-spy, timeline rail, positional badges/watermarks, flip card,
+// hardcoded Step/Project/Used labels) stays in the wrappers.
+function gprHeroBuild(en, sw, where) {
+	const enImages = en.images ?? [];
+	const swImages = sw.images ?? [];
+	if (!Array.isArray(swImages) || swImages.length !== enImages.length) {
+		gap(where, `image count diverged (en=${enImages.length} sw=${swImages?.length})`);
+	}
+	const action = (node, swNode, key) => ({
+		label: { en: reqText(node?.label, `${where}.${key}.label.en`), sw: reqText(swNode?.label, `${where}.${key}.label.sw`) },
+		href: sharedValue(node, swNode, "href", `${where}.${key}`) ?? "",
+		icon: sharedValue(node, swNode, "icon", `${where}.${key}`) ?? "",
+	});
+	return {
+		title: { en: reqText(en.title, `${where}.title.en`), sw: reqText(sw.title, `${where}.title.sw`) },
+		images: enImages.map((image, i) => {
+			const swImage = swImages[i] ?? {};
+			const enUrl = typeof image === "object" ? image.url : image;
+			const swUrl = typeof swImage === "object" ? swImage.url : swImage;
+			return {
+				url: sharedValue({ v: enUrl }, { v: swUrl }, "v", `${where}.images[${i}]`) ?? "",
+				label: { en: optText(typeof image === "object" ? image.label : image), sw: optText(typeof swImage === "object" ? swImage.label : swImage) },
+				description: { en: optText(typeof image === "object" ? image.description : ""), sw: optText(typeof swImage === "object" ? swImage.description : "") },
+			};
+		}),
+		browseAll: {
+			label: { en: reqText(en.browseAll?.label, `${where}.browseAll.label.en`), sw: reqText(sw.browseAll?.label, `${where}.browseAll.label.sw`) },
+			href: sharedValue(en.browseAll, sw.browseAll, "href", where) ?? "",
+		},
+		description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+		ctaPrimary: action(en.ctaPrimary, sw.ctaPrimary, "ctaPrimary"),
+		ctaSecondary: action(en.ctaSecondary, sw.ctaSecondary, "ctaSecondary"),
+		id: "",
+	};
+}
+
+function gprHighlightsBuild(en, sw, where) {
+	const enItems = Array.isArray(en) ? en : [];
+	const swItems = Array.isArray(sw) ? sw : [];
+	if (swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}[${i}]`) ?? "",
+				label: { en: reqText(item.label, `${where}[${i}].label.en`), sw: reqText(swItem.label, `${where}[${i}].label.sw`) },
+			};
+		}),
+		id: "",
+	};
+}
+
+function gprJumpNavBuild(en, sw, where) {
+	const enItems = Array.isArray(en) ? en : [];
+	const swItems = Array.isArray(sw) ? sw : [];
+	if (swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				label: { en: reqText(item.label, `${where}[${i}].label.en`), sw: reqText(swItem.label, `${where}[${i}].label.sw`) },
+				href: sharedValue(item, swItem, "href", `${where}[${i}]`) ?? "",
+			};
+		}),
+		id: "",
+	};
+}
+
+function gprOverviewBuild(en, sw, where) {
+	const enParagraphs = en.paragraphs ?? [];
+	const swParagraphs = sw.paragraphs ?? [];
+	if (!Array.isArray(swParagraphs) || swParagraphs.length !== enParagraphs.length) {
+		gap(where, `paragraph count diverged (en=${enParagraphs.length} sw=${swParagraphs?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		paragraphs: enParagraphs.map((paragraph, i) => ({
+			en: reqText(paragraph, `${where}.paragraphs[${i}].en`),
+			sw: reqText(swParagraphs[i], `${where}.paragraphs[${i}].sw`),
+		})),
+		image: { en: optText(en.image), sw: optText(sw.image) },
+		id: "overview",
+	};
+}
+
+function gprMethodologyBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			const enPoints = item.points ?? [];
+			const swPoints = swItem.points ?? [];
+			if (!Array.isArray(swPoints) || swPoints.length !== enPoints.length) {
+				gap(where, `point count diverged (en=${enPoints.length} sw=${swPoints?.length})`);
+			}
+			return {
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				points: enPoints.map((point, j) => ({
+					en: reqText(point, `${where}.items[${i}].points[${j}].en`),
+					sw: reqText(swPoints[j], `${where}.items[${i}].points[${j}].sw`),
+				})),
+			};
+		}),
+		id: "methodology",
+	};
+}
+
+function gprApplicationsBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			const enPoints = item.points ?? [];
+			const swPoints = swItem.points ?? [];
+			if (!Array.isArray(swPoints) || swPoints.length !== enPoints.length) {
+				gap(where, `point count diverged (en=${enPoints.length} sw=${swPoints?.length})`);
+			}
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				points: enPoints.map((point, j) => ({
+					en: reqText(point, `${where}.items[${i}].points[${j}].en`),
+					sw: reqText(swPoints[j], `${where}.items[${i}].points[${j}].sw`),
+				})),
+			};
+		}),
+		id: "applications",
+	};
+}
+
+function gprDetectBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				note: { en: optText(item.note), sw: optText(swItem.note) },
+			};
+		}),
+		id: "detect",
+	};
+}
+
+function gprSueBuild(en, sw, where) {
+	const enLevels = en.levels ?? [];
+	const swLevels = sw.levels ?? [];
+	if (!Array.isArray(swLevels) || swLevels.length !== enLevels.length) {
+		gap(where, `level count diverged (en=${enLevels.length} sw=${swLevels?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		levels: enLevels.map((level, i) => {
+			const swLevel = swLevels[i] ?? {};
+			return {
+				icon: sharedValue(level, swLevel, "icon", `${where}.levels[${i}]`) ?? "",
+				level: { en: reqText(level.level, `${where}.levels[${i}].level.en`), sw: reqText(swLevel.level, `${where}.levels[${i}].level.sw`) },
+				title: { en: reqText(level.title, `${where}.levels[${i}].title.en`), sw: reqText(swLevel.title, `${where}.levels[${i}].title.sw`) },
+				description: { en: optText(level.description), sw: optText(swLevel.description) },
+			};
+		}),
+		note: { en: optText(en.note), sw: optText(sw.note) },
+		id: "sue",
+	};
+}
+
+function gprLimitationsBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				description: { en: optText(item.description), sw: optText(swItem.description) },
+			};
+		}),
+		note: { en: optText(en.note), sw: optText(sw.note) },
+		noteIcon: sharedValue(en, sw, "noteIcon", where) ?? "",
+		id: "limitations",
+	};
+}
+
+function gprBeforeAfterBuild(en, sw, where) {
+	const side = (node, swNode, key) => {
+		const enItems = node?.items ?? [];
+		const swItems = swNode?.items ?? [];
+		if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+			gap(where, `${key} count diverged (en=${enItems.length} sw=${swItems?.length})`);
+		}
+		return {
+			label: { en: reqText(node?.label, `${where}.${key}.label.en`), sw: reqText(swNode?.label, `${where}.${key}.label.sw`) },
+			tagline: { en: optText(node?.tagline), sw: optText(swNode?.tagline) },
+			items: enItems.map((item, i) => ({
+				en: reqText(item, `${where}.${key}.items[${i}].en`),
+				sw: reqText(swItems[i], `${where}.${key}.items[${i}].sw`),
+			})),
+		};
+	};
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		flipHint: { en: optText(en.flipHint), sw: optText(sw.flipHint) },
+		before: side(en.before, sw.before, "before"),
+		after: side(en.after, sw.after, "after"),
+		id: "before-after",
+	};
+}
+
+function gprTechnologyBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+				image: sharedValue(item, swItem, "image", `${where}.items[${i}]`) ?? "",
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				description: { en: optText(item.description), sw: optText(swItem.description) },
+			};
+		}),
+		id: "technology",
+	};
+}
+
+function gprFeaturedProjectsBuild(en, sw, where) {
+	const enItems = en.items ?? [];
+	const swItems = sw.items ?? [];
+	if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+		gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		items: enItems.map((item, i) => {
+			const swItem = swItems[i] ?? {};
+			return {
+				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+				used: { en: reqText(item.used, `${where}.items[${i}].used.en`), sw: reqText(swItem.used, `${where}.items[${i}].used.sw`) },
+				objective: { en: reqText(item.objective, `${where}.items[${i}].objective.en`), sw: reqText(swItem.objective, `${where}.items[${i}].objective.sw`) },
+				result: { en: reqText(item.result, `${where}.items[${i}].result.en`), sw: reqText(swItem.result, `${where}.items[${i}].result.sw`) },
+			};
+		}),
+		id: "projects",
+	};
+}
+
+function gprSummaryBuild(en, sw, where) {
+	const enChips = en.chips ?? [];
+	const swChips = sw.chips ?? [];
+	if (!Array.isArray(swChips) || swChips.length !== enChips.length) {
+		gap(where, `chip count diverged (en=${enChips.length} sw=${swChips?.length})`);
+	}
+	return {
+		tag: { en: optText(en.tag), sw: optText(sw.tag) },
+		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+		description: { en: optText(en.description), sw: optText(sw.description) },
+		chips: enChips.map((chip, i) => ({
+			en: reqText(chip, `${where}.chips[${i}].en`),
+			sw: reqText(swChips[i], `${where}.chips[${i}].sw`),
+		})),
+		id: "summary",
 	};
 }
 
@@ -4292,8 +4607,30 @@ const PAGES = {
 	"ground-penetrating-radar": {
 		namespace: "surveying/ground-penetrating-radar",
 		title: "Ground Penetrating Radar",
-		skipped: ["hero", "highlights", "jumpNav", "overview", "methodology", "applications", "deliverables", "detectCaps", "sue", "limitations", "beforeAfter", "summary", "finalCta", "technology", "featuredProjects"],
+		// M11 batch 13 (2026-09-19): whole page Keystatic-owned in page order
+		// — `hero` (gprHero) + `technicalCta` (shared ctaBand) + `highlights`
+		// (gprHighlights) + `jumpNav` (gprJumpNav) + `overview` (gprOverview)
+		// + `methodology` (gprMethodology) + `applications`
+		// (gprApplications) + `detectCaps` (gprDetect) + `deliverables`
+		// (shared, surface tone + jump-nav `id`) + `sue` (gprSue) +
+		// `limitations` (gprLimitations) + `beforeAfter` (gprBeforeAfter) +
+		// `technology` (gprTechnology) + `featuredProjects`
+		// (gprFeaturedProjects) + `summary` (gprSummary) + `faqs` (shared
+		// faq) + `finalCta` (gprFinalCta, shared rmFinalCtaBuild). Mapping
+		// order = entry order = page order (M12 flexible rule). Known minor
+		// divergence: the shared `deliverables` hop drops the wrapper's
+		// `scroll-mt-36` (tone maps to `bg-surface` only) — anchor scroll
+		// offset for #deliverables, no visual change.
+		skipped: [],
 		sections: [
+			{
+				discriminant: "gprHero",
+				from: "hero",
+				// Legacy: GprServiceHero (slider + <bold> lede) →
+				// <GprServiceHero data />. Dead `headline`/`image` keys
+				// dropped (never rendered).
+				build: gprHeroBuild,
+			},
 			{
 				discriminant: "ctaBand",
 				from: "technicalCta",
@@ -4322,6 +4659,95 @@ const PAGES = {
 						id: "",
 					};
 				},
+			},
+			{
+				discriminant: "gprHighlights",
+				from: "highlights",
+				// Legacy: GprHighlightsBar (root-array strip) →
+				// <GprHighlightsBar data />.
+				build: gprHighlightsBuild,
+			},
+			{
+				discriminant: "gprJumpNav",
+				from: "jumpNav",
+				// Legacy: GprJumpNav (root-array sticky scroll-spy nav) →
+				// <GprJumpNav data />.
+				build: gprJumpNavBuild,
+			},
+			{
+				discriminant: "gprOverview",
+				from: "overview",
+				// Legacy: GprOverviewSection → <GprOverviewSection data />.
+				build: gprOverviewBuild,
+			},
+			{
+				discriminant: "gprMethodology",
+				from: "methodology",
+				// Legacy: GprMethodologySection (timeline rail) →
+				// <GprMethodologySection data />.
+				build: gprMethodologyBuild,
+			},
+			{
+				discriminant: "gprApplications",
+				from: "applications",
+				// Legacy: GprApplicationsSection (indexed grid) →
+				// <GprApplicationsSection data />.
+				build: gprApplicationsBuild,
+			},
+			{
+				discriminant: "gprDetect",
+				from: "detectCaps",
+				// Legacy: GprDetectSection (fallbackIcons grid) →
+				// <GprDetectSection data />.
+				build: gprDetectBuild,
+			},
+			{
+				discriminant: "deliverables",
+				from: "deliverables",
+				// Legacy: GprDeliverablesSection → <Deliverables
+				// ns="surveying/ground-penetrating-radar" id="deliverables"
+				// className="bg-surface scroll-mt-36" /> — shared
+				// `deliverables`, surface tone + jump-nav id (scroll-mt-36
+				// documented drop, see mapping comment).
+				build: deliverablesBuild("surface", "deliverables"),
+			},
+			{
+				discriminant: "gprSue",
+				from: "sue",
+				// Legacy: GprSueComplianceSection (SUE level cards) →
+				// <GprSueComplianceSection data />.
+				build: gprSueBuild,
+			},
+			{
+				discriminant: "gprLimitations",
+				from: "limitations",
+				// Legacy: GprLimitationsSection → <GprLimitationsSection data />.
+				build: gprLimitationsBuild,
+			},
+			{
+				discriminant: "gprBeforeAfter",
+				from: "beforeAfter",
+				// Legacy: GprBeforeAfterSection (flip card) →
+				// <GprBeforeAfterSection data />.
+				build: gprBeforeAfterBuild,
+			},
+			{
+				discriminant: "gprTechnology",
+				from: "technology",
+				// Legacy: GprTechnologySection → <GprTechnologySection data />.
+				build: gprTechnologyBuild,
+			},
+			{
+				discriminant: "gprFeaturedProjects",
+				from: "featuredProjects",
+				// Legacy: FeaturedProjectsSection → <FeaturedProjectsSection data />.
+				build: gprFeaturedProjectsBuild,
+			},
+			{
+				discriminant: "gprSummary",
+				from: "summary",
+				// Legacy: GprSummarySection → <GprSummarySection data />.
+				build: gprSummaryBuild,
 			},
 			{
 				discriminant: "faq",
@@ -4358,6 +4784,14 @@ const PAGES = {
 						id: "faqs",
 					};
 				},
+			},
+			{
+				discriminant: "gprFinalCta",
+				from: "finalCta",
+				// Legacy: GprFinalCtaSection (closing cards) →
+				// <GprFinalCtaSection data /> — same contract as rmFinalCta,
+				// shared build.
+				build: rmFinalCtaBuild,
 			},
 		],
 	},

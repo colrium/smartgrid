@@ -16,16 +16,26 @@ interface ApplicationsContent {
 	items?: ApplicationItem[] | null;
 }
 
+export interface GprApplicationsData {
+	tag?: string | null;
+	headline: string;
+	items?: ApplicationItem[] | null;
+}
+
 /**
  * GPR applications — shared indexed card grid with header-row number badges;
  * each application's point list renders as the card inset checklist (content:
  * surveying/ground-penetrating-radar:applications).
  */
-export function GprApplicationsSection(): ReactElement | null {
+export function GprApplicationsSection({ data, id }: { data?: GprApplicationsData | null; id?: string } = {}): ReactElement | null {
 	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
-	const section = t("surveying/ground-penetrating-radar:applications", {
-		returnObjects: true,
-	}) as unknown as ApplicationsContent;
+	// Keystatic-owned content when `data` is provided (M11 `gprApplications`
+	// unique section — `indexed` + header-row badges are outside the shared
+	// `cardGrid` contract); legacy locale strings otherwise.
+	const section = (data ??
+		(t("surveying/ground-penetrating-radar:applications", {
+			returnObjects: true,
+		}) as unknown as ApplicationsContent)) as ApplicationsContent;
 	const rows = Array.isArray(section?.items) ? section.items : [];
 
 	if (rows.length === 0) return null;
@@ -38,7 +48,7 @@ export function GprApplicationsSection(): ReactElement | null {
 
 	return (
 		<CardGrid
-			id="applications"
+			id={id ?? "applications"}
 			tag={section.tag ?? null}
 			headline={section.headline}
 			items={items}

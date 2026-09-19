@@ -10,11 +10,19 @@ interface HighlightItem {
 	label: string;
 }
 
-export function GprHighlightsBar(): ReactElement {
+export interface GprHighlightsData {
+	items: HighlightItem[];
+}
+
+export function GprHighlightsBar({ data }: { data?: GprHighlightsData | null } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
-	const items = (t("surveying/ground-penetrating-radar:highlights", {
+	// Keystatic-owned content when `data` is provided (M11 `gprHighlights`
+	// unique section); legacy locale strings otherwise. The locale node is a
+	// root array — the migration wraps it as `{ items }`.
+	const legacy = (t("surveying/ground-penetrating-radar:highlights", {
 		returnObjects: true,
 	}) as unknown as HighlightItem[]) ?? [];
+	const items = (data?.items ?? legacy) as HighlightItem[];
 
 	if (!Array.isArray(items) || items.length === 0) return null;
 

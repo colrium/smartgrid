@@ -17,6 +17,13 @@ interface DetectContent {
 	items?: DetectItem[] | null;
 }
 
+export interface GprDetectData {
+	tag?: string | null;
+	headline: string;
+	description?: string | null;
+	items?: DetectItem[] | null;
+}
+
 const FALLBACK_ICONS = [
 	"pipe",
 	"barrel-outline",
@@ -30,11 +37,15 @@ const FALLBACK_ICONS = [
  * GPR detection capabilities — shared icon card grid (content:
  * surveying/ground-penetrating-radar:detectCaps).
  */
-export function GprDetectSection(): ReactElement | null {
+export function GprDetectSection({ data, id }: { data?: GprDetectData | null; id?: string } = {}): ReactElement | null {
 	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
-	const section = t("surveying/ground-penetrating-radar:detectCaps", {
-		returnObjects: true,
-	}) as unknown as DetectContent;
+	// Keystatic-owned content when `data` is provided (M11 `gprDetect` unique
+	// section — `fallbackIcons` is outside the shared `cardGrid` contract);
+	// legacy locale strings otherwise.
+	const section = (data ??
+		(t("surveying/ground-penetrating-radar:detectCaps", {
+			returnObjects: true,
+		}) as unknown as DetectContent)) as DetectContent;
 	const rows = Array.isArray(section?.items) ? section.items : [];
 
 	if (rows.length === 0) return null;
@@ -47,7 +58,7 @@ export function GprDetectSection(): ReactElement | null {
 
 	return (
 		<CardGrid
-			id="detect"
+			id={id ?? "detect"}
 			tag={section.tag ?? null}
 			headline={section.headline}
 			description={section.description}

@@ -90,6 +90,20 @@ import { TimelineSection as CadastralTimelineSection } from "@/components/sectio
 import { ComplianceSection } from "@/components/sections/surveying/cadastral/ComplianceSection";
 import { CaseStudySection } from "@/components/sections/surveying/cadastral/CaseStudySection";
 import { FinalCtaSection as CadastralFinalCtaSection } from "@/components/sections/surveying/cadastral/FinalCtaSection";
+import { GprServiceHero } from "@/components/sections/surveying/ground-penetrating-radar/GprServiceHero";
+import { GprHighlightsBar } from "@/components/sections/surveying/ground-penetrating-radar/GprHighlightsBar";
+import { GprJumpNav } from "@/components/sections/surveying/ground-penetrating-radar/GprJumpNav";
+import { GprOverviewSection } from "@/components/sections/surveying/ground-penetrating-radar/GprOverviewSection";
+import { GprMethodologySection } from "@/components/sections/surveying/ground-penetrating-radar/GprMethodologySection";
+import { GprApplicationsSection } from "@/components/sections/surveying/ground-penetrating-radar/GprApplicationsSection";
+import { GprDetectSection } from "@/components/sections/surveying/ground-penetrating-radar/GprDetectSection";
+import { GprSueComplianceSection } from "@/components/sections/surveying/ground-penetrating-radar/GprSueComplianceSection";
+import { GprLimitationsSection } from "@/components/sections/surveying/ground-penetrating-radar/GprLimitationsSection";
+import { GprBeforeAfterSection } from "@/components/sections/surveying/ground-penetrating-radar/GprBeforeAfterSection";
+import { GprTechnologySection } from "@/components/sections/surveying/ground-penetrating-radar/GprTechnologySection";
+import { FeaturedProjectsSection as GprFeaturedProjectsSection } from "@/components/sections/surveying/ground-penetrating-radar/FeaturedProjectsSection";
+import { GprSummarySection } from "@/components/sections/surveying/ground-penetrating-radar/GprSummarySection";
+import { GprFinalCtaSection } from "@/components/sections/surveying/ground-penetrating-radar/GprFinalCtaSection";
 import { ProcessSection as BsProcessSection } from "@/components/sections/surveying/building-site/ProcessSection";
 import { AccuracyMattersSection } from "@/components/sections/surveying/building-site/AccuracyMattersSection";
 import { TechnologyStackSection } from "@/components/sections/surveying/building-site/TechnologyStackSection";
@@ -209,6 +223,20 @@ export const sectionRenderers = {
 	cadastralCompliance: ComplianceSection,
 	cadastralCaseStudy: CaseStudySection,
 	cadastralFinalCta: CadastralFinalCtaSection,
+	gprHero: GprServiceHero,
+	gprHighlights: GprHighlightsBar,
+	gprJumpNav: GprJumpNav,
+	gprOverview: GprOverviewSection,
+	gprMethodology: GprMethodologySection,
+	gprApplications: GprApplicationsSection,
+	gprDetect: GprDetectSection,
+	gprSue: GprSueComplianceSection,
+	gprLimitations: GprLimitationsSection,
+	gprBeforeAfter: GprBeforeAfterSection,
+	gprTechnology: GprTechnologySection,
+	gprFeaturedProjects: GprFeaturedProjectsSection,
+	gprSummary: GprSummarySection,
+	gprFinalCta: GprFinalCtaSection,
 } satisfies Record<SectionId, ComponentType<any>>;
 
 export function renderSection(

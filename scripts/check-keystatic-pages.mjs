@@ -187,7 +187,14 @@ for (const def of definitions) {
 			const element = renderers.renderSection(def.id, def.example, locale, `${def.id}-${locale}`);
 			check(where, React.isValidElement(element), "renderSection must return a valid React element");
 			const html = renderToStaticMarkup(element);
-			check(where, /<section/i.test(html), "rendered markup must contain a <section>");
+			// M11 batch 13: `gprJumpNav` renders a `<nav>` root (not
+			// `<section>`) so its sticky positioning survives — a documented
+			// exemption; every other section must render a `<section>`.
+			if (def.id === "gprJumpNav") {
+				check(where, /<nav/i.test(html), "nav-rooted section must contain a <nav>");
+			} else {
+				check(where, /<section/i.test(html), "rendered markup must contain a <section>");
+			}
 			check(where, !html.includes("{en}") && !html.includes("{sw}"), "unresolved locale nodes must not leak into markup");
 		} catch (err) {
 			fail(where, `render threw: ${err?.message}`);
@@ -707,7 +714,8 @@ function main() {
 			if (typeof value !== "object" || value === null) return fail(at, "section is missing its value object");
 			// Every stored section must render in both locales without
 			// leaking unresolved locale nodes — the renderability proof for
-			// migrated content (M4).
+			// migrated content (M4). `gprJumpNav` renders a `<nav>` root
+			// (documented batch-13 exemption); the rest must render `<section>`.
 			for (const locale of LOCALES) {
 				const renderWhere = `${at}/${locale}:render`;
 				try {
@@ -717,7 +725,9 @@ function main() {
 						continue;
 					}
 					const html = renderToStaticMarkup(element);
-					if (!/<section/i.test(html)) fail(renderWhere, "rendered markup has no <section>");
+					if (section.discriminant === "gprJumpNav") {
+						if (!/<nav/i.test(html)) fail(renderWhere, "rendered markup has no <nav>");
+					} else if (!/<section/i.test(html)) fail(renderWhere, "rendered markup has no <section>");
 					if (html.includes("{en}") || html.includes("{sw}")) fail(renderWhere, "unresolved locale nodes in markup");
 				} catch (err) {
 					fail(renderWhere, `render threw: ${err?.message}`);

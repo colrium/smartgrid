@@ -19,21 +19,33 @@ interface FinalCtaContent {
 	actions?: CtaAction[] | null;
 }
 
+export interface GprFinalCtaData {
+	tag?: string | null;
+	headline: string;
+	description?: string | null;
+	note?: string | null;
+	actions?: CtaAction[] | null;
+}
+
 /**
  * GPR closing CTA — shared full-bleed dark CTA with accent lede, note and
  * action cards (content: surveying/ground-penetrating-radar:finalCta).
  */
-export function GprFinalCtaSection(): ReactElement | null {
+export function GprFinalCtaSection({ data, id }: { data?: GprFinalCtaData | null; id?: string } = {}): ReactElement | null {
 	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
-	const section = t("surveying/ground-penetrating-radar:finalCta", {
-		returnObjects: true,
-	}) as unknown as FinalCtaContent;
+	// Keystatic-owned content when `data` is provided (M11 `gprFinalCta`
+	// unique section); legacy locale strings otherwise. Accent lede,
+	// `watermark="radar"` and 3 columns stay in the renderer.
+	const section = (data ??
+		(t("surveying/ground-penetrating-radar:finalCta", {
+			returnObjects: true,
+		}) as unknown as FinalCtaContent)) as FinalCtaContent;
 
 	if (!section?.headline) return null;
 
 	return (
 		<FinalCta
-			id="get-started"
+			id={id ?? "get-started"}
 			tag={section.tag}
 			headline={section.headline}
 			description={section.description}

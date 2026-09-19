@@ -12,17 +12,27 @@ interface SummaryContent {
 	chips?: string[] | null;
 }
 
-export function GprSummarySection(): ReactElement {
+export interface GprSummaryData {
+	tag?: string | null;
+	headline: string;
+	description?: string | null;
+	chips?: string[] | null;
+}
+
+export function GprSummarySection({ data, id }: { data?: GprSummaryData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
-	const section = t("surveying/ground-penetrating-radar:summary", {
-		returnObjects: true,
-	}) as unknown as SummaryContent;
+	// Keystatic-owned content when `data` is provided (M11 `gprSummary`
+	// unique section); legacy locale strings otherwise.
+	const section = (data ??
+		(t("surveying/ground-penetrating-radar:summary", {
+			returnObjects: true,
+		}) as unknown as SummaryContent)) as SummaryContent;
 	const chips = Array.isArray(section?.chips) ? section.chips : [];
 
 	if (!section?.headline) return <></>;
 
 	return (
-		<section id="summary" className="scroll-mt-36 py-20 sm:py-24 relative overflow-hidden">
+		<section id={id ?? "summary"} className="scroll-mt-36 py-20 sm:py-24 relative overflow-hidden">
 			<div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
 					<div className="relative overflow-hidden rounded-c pale-panel hairline card-shadow px-8 py-12 sm:px-12 sm:py-14 text-center">

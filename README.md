@@ -361,7 +361,7 @@ Full, canonical standards live in [`AGENTS.md`](./AGENTS.md).
 ## Keystatic Page Builder (operator guide)
 
 Structured pages are composed in the Keystatic admin (`/keystatic`, local dev needs
-no login) from ninety-five registered sections: `introText`, `ctaBand`, `stats`, `hero`,
+no login) from one hundred nine registered sections: `introText`, `ctaBand`, `stats`, `hero`,
 `cardGrid`, `splitMedia`, `legal`, `faq`, `process`, `gallery`, `pricing`, `trustees`,
 `certifications`, `keyFacts`, `metrics`, `whyChooseUs`, `about`,
 `surveyingInstruments`, `coreExpertise`, `planningInfographic`, `coverageArea`,
@@ -382,7 +382,10 @@ no login) from ninety-five registered sections: `introText`, `ctaBand`, `stats`,
 `aerialTechStack`, `aerialCapabilityCta`, `aerialFinalCta`, `aerialProjects`,
 `aerialAdditionalServices`, `cadastralPostHeroCta`, `cadastralWhenYouNeed`,
 `cadastralProcess`, `cadastralProcessCta`, `cadastralCost`, `cadastralTimeline`,
-`cadastralCompliance`, `cadastralCaseStudy`, `cadastralFinalCta`. See
+`cadastralCompliance`, `cadastralCaseStudy`, `cadastralFinalCta`, `gprHero`,
+`gprHighlights`, `gprJumpNav`, `gprOverview`, `gprMethodology`, `gprApplications`,
+`gprDetect`, `gprSue`, `gprLimitations`, `gprBeforeAfter`, `gprTechnology`,
+`gprFeaturedProjects`, `gprSummary`, `gprFinalCta`. See
 `src/lib/keystatic/sectionRegistry.ts` — the single
 source for editor options and renderer mappings.
 

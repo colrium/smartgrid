@@ -4,7 +4,7 @@ import PageHead from "@/components/Head";
 import { getI18nProps, getLocale } from "@/lib/i18n";
 import type { Lang } from "@/lib/types";
 import { resolveKeystaticPage, type ResolvedKeystaticPage } from "@/lib/keystatic/resolvePage";
-import { renderSection } from "@/lib/keystatic/sectionRenderers";
+import { PageBuilderDocument } from "@/components/keystatic/PageBuilderDocument";
 import {
 	GprServiceHero,
 	GprTechnicalProposalCta,
@@ -31,65 +31,26 @@ type PageProps = {
 };
 
 /**
- * Sections migrated to Keystatic in page order (see the
+ * All seventeen legacy sections are Keystatic-owned in page order (see the
  * `ground-penetrating-radar` mapping in
- * `scripts/migrate-locale-to-keystatic.mjs`): technicalCta ctaBand, faqs faq.
- * Fifteen legacy tails (bespoke service hero, highlights/jumpNav/overview/
- * methodology bespoke, `indexed` applications grid, `fallbackIcons` detect
- * grid, deliverables/sue/limitations/beforeAfter/technology/summary/
- * featuredProjects bespoke, FinalCta) sit at fixed positions between them, so
- * the route renders each Keystatic section by index instead of one whole
- * PageBuilderDocument. If an edit changes the section COUNT, the route falls
- * back to legacy rather than misplacing sections — keep this in sync with
- * the mapping.
+ * `scripts/migrate-locale-to-keystatic.mjs`): gprHero, technicalCta ctaBand,
+ * gprHighlights, gprJumpNav, gprOverview, gprMethodology, gprApplications,
+ * gprDetect, deliverables, gprSue, gprLimitations, gprBeforeAfter,
+ * gprTechnology, gprFeaturedProjects, gprSummary, faqs faq, gprFinalCta
+ * (M11 batch 13, 2026-09-19 — entry order IS page order, so editors can add,
+ * remove, and reorder sections freely; the M3 resolver taxonomy remains the
+ * only fallback).
  */
-const KEYSTATIC_SECTION_COUNT = 2;
-
-function orderedSections(page: ResolvedKeystaticPage) {
-	if (page.sections.length !== KEYSTATIC_SECTION_COUNT) {
-		console.warn(
-			`[keystatic] page "ground-penetrating-radar" has ${page.sections.length} sections, expected ${KEYSTATIC_SECTION_COUNT} — falling back to legacy content`
-		);
-		return null;
-	}
-	return page.sections;
-}
-
 const Page: NextPage<PageProps> = ({ keystaticPage }) => {
-	// Migration source switch (M3/M7): Keystatic owns the two migrated
-	// sections only when the slug is allowlisted via `KEYSTATIC_PAGES` and the
-	// entry is published. Otherwise the legacy locale-JSON implementation
+	// Migration source switch (M3/M7, completed M11 batch 13): Keystatic owns
+	// the whole page when the slug is allowlisted via `KEYSTATIC_PAGES` and
+	// the entry is published. Otherwise the legacy locale-JSON implementation
 	// renders unchanged.
-	const sections = keystaticPage ? orderedSections(keystaticPage) : null;
-
-	if (keystaticPage && sections) {
-		const locale = keystaticPage.locale;
-		const renderAt = (index: number) => {
-			const section = sections[index];
-			return renderSection(section.id, section.value, locale, section.key);
-		};
+	if (keystaticPage) {
 		return (
 			<div className="relative">
 				<PageHead pageName="ground-penetrating-radar" />
-				<div className="flex flex-col min-h-screen" data-keystatic-page={keystaticPage.slug}>
-					<GprServiceHero />
-					{renderAt(0)}
-					<GprHighlightsBar />
-					<GprJumpNav />
-					<GprOverviewSection />
-					<GprMethodologySection />
-					<GprApplicationsSection />
-					<GprDetectSection />
-					<GprDeliverablesSection />
-					<GprSueComplianceSection />
-					<GprLimitationsSection />
-					<GprBeforeAfterSection />
-					<GprTechnologySection />
-					<FeaturedProjectsSection />
-					<GprSummarySection />
-					{renderAt(1)}
-					<GprFinalCtaSection />
-				</div>
+				<PageBuilderDocument page={keystaticPage} />
 			</div>
 		);
 	}

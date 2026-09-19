@@ -243,7 +243,7 @@ import {
  * from DATA (the wrapper is page-owned), so edits change output.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyWorkflow", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "bathyFinalCta", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "rmFinalCta", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation", "aerialIntro", "aerialWhyDrones", "aerialServices", "aerialWorkflow", "aerialSurveyingGrid", "aerialIndustries", "aerialIndustryCta", "aerialTechStack", "aerialCapabilityCta", "aerialFinalCta", "aerialProjects", "aerialAdditionalServices", "cadastralPostHeroCta", "cadastralWhenYouNeed", "cadastralProcess", "cadastralProcessCta", "cadastralCost", "cadastralTimeline", "cadastralCompliance", "cadastralCaseStudy", "cadastralFinalCta"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyWorkflow", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "bathyFinalCta", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "rmFinalCta", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation", "aerialIntro", "aerialWhyDrones", "aerialServices", "aerialWorkflow", "aerialSurveyingGrid", "aerialIndustries", "aerialIndustryCta", "aerialTechStack", "aerialCapabilityCta", "aerialFinalCta", "aerialProjects", "aerialAdditionalServices", "cadastralPostHeroCta", "cadastralWhenYouNeed", "cadastralProcess", "cadastralProcessCta", "cadastralCost", "cadastralTimeline", "cadastralCompliance", "cadastralCaseStudy", "cadastralFinalCta", "gprHero", "gprHighlights", "gprJumpNav", "gprOverview", "gprMethodology", "gprApplications", "gprDetect", "gprSue", "gprLimitations", "gprBeforeAfter", "gprTechnology", "gprFeaturedProjects", "gprSummary", "gprFinalCta"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -7280,6 +7280,902 @@ const cadastralFinalCta: SectionDefinition = {
 	}),
 };
 
+/**
+ * M11 batch 13 — ground-penetrating-radar page (2026-09-19): `gprHero` wraps
+ * the `GprServiceHero` slider hero (`<bold>` description parsing + image
+ * slider stay in the renderer). Unique — only valid on
+ * `/surveying/ground-penetrating-radar`. Image urls/hrefs shared; labels,
+ * titles and descriptions localized. The dead `headline`/`image` locale keys
+ * (never rendered) are dropped from the migrated contract — documented here.
+ */
+const gprHero: SectionDefinition = {
+	id: "gprHero",
+	version: 1,
+	label: "GPR hero (unique)",
+	description: "Unique: the GPR slider hero with bold-lede description. Only valid on that page.",
+	schema: fields.object({
+		title: localeText("Title"),
+		images: fields.array(
+			fields.object({
+				url: imagePath("Image (shared)"),
+				label: localeText("Label", { optionalInEnglish: true }),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Slides",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Slide"),
+			}
+		),
+		browseAll: fields.object(
+			{
+				label: localeText("Label"),
+				href: fields.text({
+					label: "Link (shared)",
+					description: "Internal path. Identical in en/sw.",
+				}),
+			},
+			{ label: "Browse-all link" }
+		),
+		description: localeLongText("Description"),
+		ctaPrimary: linkObject("Primary action"),
+		ctaSecondary: linkObject("Secondary action"),
+		id: anchorField(),
+		// Excluded from v1 (documented): dead `headline`/`image` keys,
+		// slider props and `className` (presentation, not editor contracts).
+	}),
+	example: {
+		title: { en: "Ground Penetrating Radar", sw: "Radar ya Kupenya Ardhi" },
+		images: [
+			{
+				url: "/media/surveying/ground-penetrating-radar/gpr-20.jpeg",
+				label: { en: "LMX200", sw: "" },
+				description: { en: "", sw: "" },
+			},
+		],
+		browseAll: { label: { en: "Browse All Services", sw: "Vinjari Huduma Zote" }, href: "/surveying" },
+		description: { en: "See what lies beneath.", sw: "" },
+		ctaPrimary: { label: { en: "Request a Quote", sw: "Omba Nukuu" }, href: "mailto:smartgridsurveying@gmail.com", icon: "" },
+		ctaSecondary: { label: { en: "Book a Scan", sw: "Weka Uchunguzi" }, href: "mailto:smartgridsurveying@gmail.com", icon: "calendar-check" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			title: resolved.title,
+			images: Array.isArray(resolved.images)
+				? resolved.images.map((image: any) => ({
+						url: typeof image?.url === "string" ? image.url : "",
+						label: image?.label ?? "",
+						description: image?.description ?? "",
+					}))
+				: [],
+			browseAll:
+				resolved.browseAll && typeof resolved.browseAll.href === "string" && resolved.browseAll.href
+					? { label: resolved.browseAll.label ?? "", href: resolved.browseAll.href }
+					: null,
+			description: resolved.description,
+			ctaPrimary:
+				resolved.ctaPrimary && typeof resolved.ctaPrimary.href === "string" && resolved.ctaPrimary.href
+					? { label: resolved.ctaPrimary.label ?? "", href: resolved.ctaPrimary.href }
+					: null,
+			ctaSecondary:
+				resolved.ctaSecondary && typeof resolved.ctaSecondary.href === "string" && resolved.ctaSecondary.href
+					? { label: resolved.ctaSecondary.label ?? "", href: resolved.ctaSecondary.href, icon: resolved.ctaSecondary.icon || undefined }
+					: null,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 13 — ground-penetrating-radar page (2026-09-19): `gprHighlights`
+ * wraps the `GprHighlightsBar` 3-up strip. Unique — only valid on
+ * `/surveying/ground-penetrating-radar`. The locale node is a root array —
+ * the migration wraps it as `{ items }`. Icons shared; labels localized.
+ * Renders nothing without items (legacy guard, preserved).
+ */
+const gprHighlights: SectionDefinition = {
+	id: "gprHighlights",
+	version: 1,
+	label: "GPR highlights (unique)",
+	description: "Unique: the GPR highlight strip. Only valid on that page.",
+	schema: fields.object({
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				label: localeText("Label"),
+			}),
+			{
+				label: "Highlights",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Highlight"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` (visual tuning, not
+		// an editor contract).
+	}),
+	example: {
+		items: [
+			{
+				icon: "shield-check-outline",
+				label: { en: "Non-Destructive", sw: "Isiyo Haribu" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({ icon: item?.icon || undefined, label: item?.label ?? "" }))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 13 — ground-penetrating-radar page (2026-09-19): `gprJumpNav`
+ * wraps the `GprJumpNav` sticky scroll-spy nav. Unique — only valid on
+ * `/surveying/ground-penetrating-radar`. Hrefs (anchors) shared; labels
+ * localized. Scroll-spy/lenis behavior stays in the renderer. NOTE: renders
+ * a `<nav>` root (not `<section>`) so sticky positioning survives — the
+ * check-script pins a documented nav-root exemption for this id.
+ */
+const gprJumpNav: SectionDefinition = {
+	id: "gprJumpNav",
+	version: 1,
+	label: "GPR jump nav (unique)",
+	description: "Unique: the GPR sticky section nav (nav root). Only valid on that page.",
+	schema: fields.object({
+		items: fields.array(
+			fields.object({
+				label: localeText("Label"),
+				href: fields.text({
+					label: "Anchor (shared)",
+					description: "Section anchor, e.g. #overview. Identical in en/sw.",
+				}),
+			}),
+			{
+				label: "Links",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Link"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): sticky offsets, scroll-spy
+		// config (behavior, not editor contracts).
+	}),
+	example: {
+		items: [
+			{
+				label: { en: "Overview", sw: "Muhtasari" },
+				href: "#overview",
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({ label: item?.label ?? "", href: typeof item?.href === "string" ? item.href : "" }))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 13 — ground-penetrating-radar page (2026-09-19): `gprOverview`
+ * wraps the `GprOverviewSection` centered copy with optional top image.
+ * Unique — only valid on `/surveying/ground-penetrating-radar`. The sw
+ * locale has no `image` key, so the schema carries it per-locale and sw
+ * renders imageless exactly like legacy. Renders nothing without paragraphs
+ * (legacy guard, preserved).
+ */
+const gprOverview: SectionDefinition = {
+	id: "gprOverview",
+	version: 1,
+	label: "GPR overview (unique)",
+	description: "Unique: the GPR overview copy with optional image. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		paragraphs: fields.array(localeLongText("Paragraph"), {
+			label: "Paragraphs",
+			itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Paragraph"),
+		}),
+		image: localeMedia("Image (optional)"),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` (visual tuning, not
+		// an editor contract).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "What Is GPR", sw: "GPR ni Nini" },
+		paragraphs: [{ en: "GPR maps the subsurface.", sw: "" }],
+		image: { en: "/media/surveying/ground-penetrating-radar/gpr-lmx-200.gif", sw: "" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			paragraphs: Array.isArray(resolved.paragraphs)
+				? resolved.paragraphs.filter((entry: unknown) => typeof entry === "string" && entry)
+				: [],
+			image: resolved.image || undefined,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 13 — ground-penetrating-radar page (2026-09-19): `gprMethodology`
+ * wraps the `GprMethodologySection` timeline rail (positional method icons
+ * + hardcoded `Step N` labels stay in the renderer). Unique — only valid on
+ * `/surveying/ground-penetrating-radar`. Titles and points localized.
+ * Renders nothing without items (legacy guard, preserved).
+ */
+const gprMethodology: SectionDefinition = {
+	id: "gprMethodology",
+	version: 1,
+	label: "GPR methodology (unique)",
+	description: "Unique: the GPR method timeline. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				title: localeText("Title"),
+				points: fields.array(localeText("Point", { optionalInEnglish: true }), {
+					label: "Points",
+					itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Point"),
+				}),
+			}),
+			{
+				label: "Steps",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Step"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, positional icons and
+		// hardcoded `Step N` labels (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Our Methodology", sw: "Mbinu Zetu" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				title: { en: "Site Preparation", sw: "Maandalizi ya Tovuti" },
+				points: [{ en: "Review drawings.", sw: "" }],
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						title: item?.title ?? "",
+						points: Array.isArray(item?.points)
+							? item.points.filter((entry: unknown) => typeof entry === "string" && entry)
+							: [],
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 13 — ground-penetrating-radar page (2026-09-19):
+ * `gprApplications` wraps the `GprApplicationsSection` indexed card grid
+ * (header-row number badges + inset point checklists — outside the shared
+ * `cardGrid` contract). Unique — only valid on
+ * `/surveying/ground-penetrating-radar`. Icons shared; titles and points
+ * localized. Renders nothing without items (legacy guard, preserved).
+ */
+const gprApplications: SectionDefinition = {
+	id: "gprApplications",
+	version: 1,
+	label: "GPR applications (unique)",
+	description: "Unique: the GPR indexed application grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				points: fields.array(localeText("Point", { optionalInEnglish: true }), {
+					label: "Points",
+					itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Point"),
+				}),
+			}),
+			{
+				label: "Applications",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Application"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, columns, header
+		// alignment, indexed badges (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "GPR Applications", sw: "Matumizi ya GPR" },
+		items: [
+			{
+				icon: "road-variant",
+				title: { en: "Infrastructure", sw: "Miundombinu" },
+				points: [{ en: "Road corridors.", sw: "" }],
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? "",
+						points: Array.isArray(item?.points)
+							? item.points.filter((entry: unknown) => typeof entry === "string" && entry)
+							: [],
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 13 — ground-penetrating-radar page (2026-09-19): `gprDetect`
+ * wraps the `GprDetectSection` capability grid (note → description mapping,
+ * positional fallback icons, surface tone). Unique — only valid on
+ * `/surveying/ground-penetrating-radar` (`fallbackIcons` is outside the
+ * shared `cardGrid` contract). Icons shared; titles and notes localized.
+ * Renders nothing without items (legacy guard, preserved).
+ */
+const gprDetect: SectionDefinition = {
+	id: "gprDetect",
+	version: 1,
+	label: "GPR detect (unique)",
+	description: "Unique: the GPR detection capability grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Empty = positional default. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				note: localeLongText("Note"),
+			}),
+			{
+				label: "Capabilities",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Capability"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, columns, tone and
+		// positional fallback icons (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "What GPR Detects", sw: "GPR Hugundua Nini" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				icon: "pipe",
+				title: { en: "Metallic Pipes", sw: "Mabomba ya Chuma" },
+				note: { en: "GI & asbestos.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? "",
+						note: item?.note ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 13 — ground-penetrating-radar page (2026-09-19): `gprSue` wraps
+ * the `GprSueComplianceSection` SUE level cards (positional A–D letter
+ * watermark stays in the renderer). Unique — only valid on
+ * `/surveying/ground-penetrating-radar`. Icons shared; levels, titles,
+ * descriptions and note localized. Renders nothing without levels (legacy
+ * guard, preserved).
+ */
+const gprSue: SectionDefinition = {
+	id: "gprSue",
+	version: 1,
+	label: "GPR SUE (unique)",
+	description: "Unique: the GPR SUE quality-level cards. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		levels: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				level: localeText("Level"),
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Levels",
+				itemLabel: (item) => previewText(item, ["fields", "level", "fields", "en", "value"], "Level"),
+			}
+		),
+		note: localeLongText("Note"),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` and the positional
+		// letter watermark (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "SUE Quality Levels", sw: "Viwango vya Ubora" },
+		description: { en: "", sw: "" },
+		levels: [
+			{
+				icon: "file-search-outline",
+				level: { en: "SUE Level D", sw: "SUE Level D" },
+				title: { en: "Records & Desk Studies", sw: "Rekodi" },
+				description: { en: "", sw: "" },
+			},
+		],
+		note: { en: "", sw: "" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			levels: Array.isArray(resolved.levels)
+				? resolved.levels.map((level: any) => ({
+						icon: level?.icon || undefined,
+						level: level?.level ?? "",
+						title: level?.title ?? "",
+						description: level?.description ?? "",
+					}))
+				: [],
+			note: resolved.note,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 13 — ground-penetrating-radar page (2026-09-19): `gprLimitations`
+ * wraps the `GprLimitationsSection` factor cards + note pill (positional
+ * fallback icons stay in the renderer). Unique — only valid on
+ * `/surveying/ground-penetrating-radar`. Icons shared; titles,
+ * descriptions and note localized. Renders nothing without a headline and
+ * items (legacy guard, preserved).
+ */
+const gprLimitations: SectionDefinition = {
+	id: "gprLimitations",
+	version: 1,
+	label: "GPR limitations (unique)",
+	description: "Unique: the GPR limitation cards with note. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Empty = positional default. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Limitations",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Limitation"),
+			}
+		),
+		note: localeLongText("Note"),
+		noteIcon: fields.text({
+			label: "Note icon (shared, optional)",
+			description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+		}),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` and positional
+		// fallback icons (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "GPR Limitations", sw: "Mapungufu ya GPR" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				icon: "earth",
+				title: { en: "Soil Conditions", sw: "Hali ya Udongo" },
+				description: { en: "", sw: "" },
+			},
+		],
+		note: { en: "", sw: "" },
+		noteIcon: "check-decagram",
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+					}))
+				: [],
+			note: resolved.note,
+			noteIcon: resolved.noteIcon || undefined,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 13 — ground-penetrating-radar page (2026-09-19): `gprBeforeAfter`
+ * wraps the `GprBeforeAfterSection` flip card (flip behavior, layoutId and
+ * after-side icon/watermark stay in the renderer). Unique — only valid on
+ * `/surveying/ground-penetrating-radar`. All strings localized. Renders
+ * nothing without a headline (legacy guard, preserved).
+ */
+const gprBeforeAfter: SectionDefinition = {
+	id: "gprBeforeAfter",
+	version: 1,
+	label: "GPR before/after (unique)",
+	description: "Unique: the GPR flip comparison card. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		flipHint: localeText("Flip hint", { optionalInEnglish: true }),
+		before: fields.object(
+			{
+				label: localeText("Label"),
+				tagline: localeText("Tagline", { optionalInEnglish: true }),
+				items: fields.array(localeText("Point"), {
+					label: "Points",
+					itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Point"),
+				}),
+			},
+			{ label: "Before" }
+		),
+		after: fields.object(
+			{
+				label: localeText("Label"),
+				tagline: localeText("Tagline", { optionalInEnglish: true }),
+				items: fields.array(localeText("Point"), {
+					label: "Points",
+					itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Point"),
+				}),
+			},
+			{ label: "After" }
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, layoutId and
+		// after-side icon/watermark (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Before vs After GPR", sw: "Kabla na Baada ya GPR" },
+		flipHint: { en: "Tap the card to flip", sw: "" },
+		before: {
+			label: { en: "BEFORE", sw: "KABLA" },
+			tagline: { en: "", sw: "" },
+			items: [{ en: "Unknown utilities.", sw: "" }],
+		},
+		after: {
+			label: { en: "AFTER", sw: "BAADA" },
+			tagline: { en: "", sw: "" },
+			items: [{ en: "Verified map.", sw: "" }],
+		},
+		id: "",
+	},
+	normalize: (resolved) => {
+		const side = (node: any) =>
+			node
+				? {
+						label: node.label ?? "",
+						tagline: node.tagline,
+						items: Array.isArray(node.items) ? node.items.filter((entry: unknown) => typeof entry === "string" && entry) : [],
+					}
+				: undefined;
+		return {
+			data: {
+				tag: resolved.tag,
+				headline: resolved.headline,
+				flipHint: resolved.flipHint,
+				before: side(resolved.before),
+				after: side(resolved.after),
+			},
+			id: resolved.id || undefined,
+		};
+	},
+};
+
+/**
+ * M11 batch 13 — ground-penetrating-radar page (2026-09-19): `gprTechnology`
+ * wraps the `GprTechnologySection` horizontal cards (image-vs-icon branch
+ * stays in the renderer). Unique — only valid on
+ * `/surveying/ground-penetrating-radar`. Icons/images shared; titles and
+ * descriptions localized. Renders nothing without items (legacy guard,
+ * preserved).
+ */
+const gprTechnology: SectionDefinition = {
+	id: "gprTechnology",
+	version: 1,
+	label: "GPR technology (unique)",
+	description: "Unique: the GPR equipment cards. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				image: imagePath("Image (shared, optional)"),
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Systems",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "System"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` (visual tuning, not
+		// an editor contract).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "GPR Technology", sw: "Teknolojia ya GPR" },
+		items: [
+			{
+				icon: "radar",
+				image: "/media/surveying/ground-penetrating-radar/gpr-lmx-200.jpeg",
+				title: { en: "LMX200 GPR System", sw: "Mfumo wa LMX200" },
+				description: { en: "", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						image: item?.image || undefined,
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 13 — ground-penetrating-radar page (2026-09-19):
+ * `gprFeaturedProjects` wraps the `FeaturedProjectsSection` project cards
+ * (positional `Project N` eyebrows + hardcoded Used/Objective/Result row
+ * labels stay in the renderer, documented exclusion). Unique — only valid
+ * on `/surveying/ground-penetrating-radar`. All strings localized. Renders
+ * nothing without items (legacy guard, preserved).
+ */
+const gprFeaturedProjects: SectionDefinition = {
+	id: "gprFeaturedProjects",
+	version: 1,
+	label: "GPR featured projects (unique)",
+	description: "Unique: the GPR project cards. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				title: localeText("Title"),
+				used: localeLongText("Used"),
+				objective: localeLongText("Objective"),
+				result: localeLongText("Result"),
+			}),
+			{
+				label: "Projects",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Project"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, positional eyebrows
+		// and hardcoded row labels (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Featured Projects", sw: "Miradi Mashuhuri" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				title: { en: "Utility Mapping", sw: "Uchoraji wa Huduma" },
+				used: { en: "LMX200 with RTK-GNSS.", sw: "" },
+				objective: { en: "Map utilities.", sw: "" },
+				result: { en: "Identified all lines.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						title: item?.title ?? "",
+						used: item?.used ?? "",
+						objective: item?.objective ?? "",
+						result: item?.result ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 13 — ground-penetrating-radar page (2026-09-19): `gprSummary`
+ * wraps the `GprSummarySection` centered panel with chips. Unique — only
+ * valid on `/surveying/ground-penetrating-radar`. All strings localized.
+ * Renders nothing without a headline (legacy guard, preserved).
+ */
+const gprSummary: SectionDefinition = {
+	id: "gprSummary",
+	version: 1,
+	label: "GPR summary (unique)",
+	description: "Unique: the GPR closing summary panel. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		chips: fields.array(localeText("Chip"), {
+			label: "Chips",
+			itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Chip"),
+		}),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` (visual tuning, not
+		// an editor contract).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Why GPR With Us", sw: "Kwa Nini GPR Nasi" },
+		description: { en: "", sw: "" },
+		chips: [{ en: "LMX200 + RTK-GNSS", sw: "" }],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			chips: Array.isArray(resolved.chips) ? resolved.chips.filter((entry: unknown) => typeof entry === "string" && entry) : [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 13 — ground-penetrating-radar page (2026-09-19): `gprFinalCta`
+ * wraps the `GprFinalCtaSection` closing cards (accent lede, note,
+ * `watermark="radar"`, 3 columns stay in the renderer — same data contract
+ * as `rmFinalCta`, shared `rmFinalCtaBuild`). Unique — only valid on
+ * `/surveying/ground-penetrating-radar`. Icons/hrefs shared; labels and
+ * descriptions localized. Renders nothing without a headline (legacy guard,
+ * preserved).
+ */
+const gprFinalCta: SectionDefinition = {
+	id: "gprFinalCta",
+	version: 1,
+	label: "GPR final CTA (unique)",
+	description: "Unique: the GPR closing action cards. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		note: localeLongText("Note"),
+		actions: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				label: localeText("Label"),
+				description: localeLongText("Description"),
+				href: fields.text({
+					label: "Link (shared)",
+					description: "Internal path or full URL. Identical in en/sw.",
+				}),
+			}),
+			{
+				label: "Actions",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Action"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): accent lede, `watermark="radar"`,
+		// columns and `className` (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Book Your GPR Survey", sw: "Weka Upimaji Wako wa GPR" },
+		description: { en: "", sw: "" },
+		note: { en: "", sw: "" },
+		actions: [
+			{
+				icon: "calendar-check",
+				label: { en: "Book Site Survey", sw: "Weka Ziara" },
+				description: { en: "Schedule a field team.", sw: "" },
+				href: "mailto:smartgridsurveying@gmail.com",
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			note: resolved.note,
+			actions: Array.isArray(resolved.actions)
+				? resolved.actions.map((action: any) => ({
+						icon: action?.icon || undefined,
+						label: action?.label ?? "",
+						description: action?.description ?? "",
+						href: typeof action?.href === "string" ? action.href : "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
 export const sectionRegistry: readonly SectionDefinition[] = [
 	introText,
 	ctaBand,
@@ -7376,6 +8272,20 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	cadastralCompliance,
 	cadastralCaseStudy,
 	cadastralFinalCta,
+	gprHero,
+	gprHighlights,
+	gprJumpNav,
+	gprOverview,
+	gprMethodology,
+	gprApplications,
+	gprDetect,
+	gprSue,
+	gprLimitations,
+	gprBeforeAfter,
+	gprTechnology,
+	gprFeaturedProjects,
+	gprSummary,
+	gprFinalCta,
 ];
 
 export function getSectionDefinition(id: string): SectionDefinition {
@@ -7480,6 +8390,20 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	cadastralCompliance: cadastralCompliance.label,
 	cadastralCaseStudy: cadastralCaseStudy.label,
 	cadastralFinalCta: cadastralFinalCta.label,
+	gprHero: gprHero.label,
+	gprHighlights: gprHighlights.label,
+	gprJumpNav: gprJumpNav.label,
+	gprOverview: gprOverview.label,
+	gprMethodology: gprMethodology.label,
+	gprApplications: gprApplications.label,
+	gprDetect: gprDetect.label,
+	gprSue: gprSue.label,
+	gprLimitations: gprLimitations.label,
+	gprBeforeAfter: gprBeforeAfter.label,
+	gprTechnology: gprTechnology.label,
+	gprFeaturedProjects: gprFeaturedProjects.label,
+	gprSummary: gprSummary.label,
+	gprFinalCta: gprFinalCta.label,
 };
 
 /**

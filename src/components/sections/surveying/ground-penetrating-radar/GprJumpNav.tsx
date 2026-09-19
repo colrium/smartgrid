@@ -9,15 +9,26 @@ interface JumpNavItem {
 	href: string;
 }
 
-export function GprJumpNav(): ReactElement {
+export interface GprJumpNavData {
+	items: JumpNavItem[];
+}
+
+export function GprJumpNav({ data }: { data?: GprJumpNavData | null } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
-	const items = useMemo(
+	// Keystatic-owned content when `data` is provided (M11 `gprJumpNav`
+	// unique section); legacy locale strings otherwise. The locale node is a
+	// root array — the migration wraps it as `{ items }`. Sticky scroll-spy
+	// behavior stays in the renderer. NOTE: renders a `<nav>` root (not
+	// `<section>`) so sticky positioning survives — the check-script pins a
+	// documented `nav`-root exemption for this id.
+	const legacy = useMemo(
 		() =>
 			(t("surveying/ground-penetrating-radar:jumpNav", {
 				returnObjects: true,
 			}) as unknown as JumpNavItem[]) ?? [],
 		[t],
 	);
+	const items = (data?.items ?? legacy) as JumpNavItem[];
 	const lenis = useLenis();
 	const [activeId, setActiveId] = useState<string>("");
 
