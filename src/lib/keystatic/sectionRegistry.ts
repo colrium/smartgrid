@@ -243,7 +243,7 @@ import {
  * from DATA (the wrapper is page-owned), so edits change output.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "workflow", "finalCta", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyWorkflow", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "bathyFinalCta", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "rmFinalCta", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation", "aerialIntro", "aerialWhyDrones", "aerialServices", "aerialSurveyingGrid", "aerialIndustries", "aerialIndustryCta", "aerialTechStack", "aerialCapabilityCta", "aerialProjects", "aerialAdditionalServices", "cadastralPostHeroCta", "cadastralWhenYouNeed", "cadastralProcessCta", "cadastralCost", "cadastralTimeline", "cadastralCompliance", "cadastralCaseStudy", "gprHero", "gprHighlights", "gprJumpNav", "gprOverview", "gprMethodology", "gprApplications", "gprDetect", "gprSue", "gprLimitations", "gprBeforeAfter", "gprTechnology", "gprFeaturedProjects", "gprSummary", "gisHero", "gisWhatIs", "gisImportance", "gisServices", "gisIndustries", "gisTechStack", "gisWhatsappCta", "gisComponents", "gisWhySmartgrid", "gisDataAccuracy", "gisBeforeAfter", "gisProjectImpact", "gisRelatedServices", "highwayServices", "asBuiltSolutions"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "workflow", "finalCta", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "rmFinalCta", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation", "aerialIntro", "aerialWhyDrones", "aerialServices", "aerialSurveyingGrid", "aerialIndustries", "aerialIndustryCta", "aerialTechStack", "aerialCapabilityCta", "aerialProjects", "aerialAdditionalServices", "cadastralPostHeroCta", "cadastralWhenYouNeed", "cadastralProcessCta", "cadastralCost", "cadastralTimeline", "cadastralCompliance", "cadastralCaseStudy", "gprHero", "gprHighlights", "gprJumpNav", "gprOverview", "gprMethodology", "gprApplications", "gprDetect", "gprSue", "gprLimitations", "gprBeforeAfter", "gprTechnology", "gprFeaturedProjects", "gprSummary", "gisHero", "gisWhatIs", "gisImportance", "gisServices", "gisIndustries", "gisTechStack", "gisWhatsappCta", "gisComponents", "gisWhySmartgrid", "gisDataAccuracy", "gisBeforeAfter", "gisProjectImpact", "gisRelatedServices", "highwayServices", "asBuiltSolutions"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -4402,73 +4402,6 @@ const sectionalWhoNeeds: SectionDefinition = {
 	}),
 };
 
-/**
- * M11 batch 8 — bathymetric-surveys page (2026-09-18): `bathyWorkflow`
- * wraps the `BathymetricWorkflowSection` WorkflowSection passthrough (tag +
- * headline + description + phased steps + outcome). Unique — only valid on
- * `/surveying/bathymetric-surveys`. Phase keys are shared literals; labels
- * and descriptions are localized. Renders nothing without steps (legacy
- * guard via WorkflowSection, preserved).
- */
-const bathyWorkflow: SectionDefinition = {
-	id: "bathyWorkflow",
-	version: 1,
-	label: "Bathy workflow (unique)",
-	description: "Unique: the bathymetric-surveys phased workflow. Only valid on that page.",
-	schema: fields.object({
-		tag: localeText("Tag", { optionalInEnglish: true }),
-		headline: localeText("Headline"),
-		description: localeLongText("Description"),
-		steps: fields.array(
-			fields.object({
-				phase: fields.text({
-					label: "Phase key (shared)",
-					description: "Phase bucket key (e.g. PLANNING). Identical in en/sw.",
-				}),
-				label: localeText("Label"),
-				description: localeLongText("Description"),
-			}),
-			{
-				label: "Steps",
-				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Step"),
-			}
-		),
-		outcome: localeText("Outcome", { optionalInEnglish: true }),
-		id: anchorField(),
-		// Excluded from v1 (documented): `className` (visual tuning, not
-		// an editor contract).
-	}),
-	example: {
-		tag: { en: "Workflow", sw: "Mtiririko" },
-		headline: { en: "How It Works", sw: "Jinsi Inavyofanya Kazi" },
-		description: { en: "", sw: "" },
-		steps: [
-			{
-				phase: "PLANNING",
-				label: { en: "Project Planning", sw: "Mipango ya Mradi" },
-				description: { en: "Assess the waterbody.", sw: "" },
-			},
-		],
-		outcome: { en: "", sw: "" },
-		id: "",
-	},
-	normalize: (resolved) => ({
-		data: {
-			tag: resolved.tag,
-			headline: resolved.headline,
-			description: resolved.description,
-			steps: Array.isArray(resolved.steps)
-				? resolved.steps.map((step: any) => ({
-						phase: step?.phase ?? "",
-						label: step?.label ?? "",
-						description: step?.description ?? "",
-					}))
-				: [],
-			outcome: resolved.outcome,
-		},
-		id: resolved.id || undefined,
-	}),
-};
 
 /**
  * M11 batch 8 — bathymetric-surveys page (2026-09-18): `bathyEquipment`
@@ -4776,78 +4709,6 @@ const bathyBeforeAfter: SectionDefinition = {
 	},
 };
 
-/**
- * M11 batch 8 — bathymetric-surveys page (2026-09-18): `bathyFinalCta`
- * wraps the `FinalCtaSection` closing panel (tag + headline + description
- * + note + actions). Unique — only valid on
- * `/surveying/bathymetric-surveys`. Action hrefs/icons are shared; labels
- * and descriptions are localized. Presentation (accent tone, water
- * watermark, 3 columns) stays in the wrapper. Renders nothing without a
- * headline (legacy guard, preserved).
- */
-const bathyFinalCta: SectionDefinition = {
-	id: "bathyFinalCta",
-	version: 1,
-	label: "Bathy final CTA (unique)",
-	description: "Unique: the bathymetric-surveys closing panel. Only valid on that page.",
-	schema: fields.object({
-		tag: localeText("Tag", { optionalInEnglish: true }),
-		headline: localeText("Headline"),
-		description: localeLongText("Description"),
-		note: localeLongText("Note"),
-		actions: fields.array(
-			fields.object({
-				icon: fields.text({
-					label: "MDI icon (shared, optional)",
-					description: "Icon slug without the `mdi-` prefix. Empty = email fallback. Identical in en/sw.",
-				}),
-				label: localeText("Label"),
-				description: localeLongText("Description"),
-				href: fields.text({ label: "Link", description: "Internal path or full URL." }),
-			}),
-			{
-				label: "Actions",
-				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Action"),
-			}
-		),
-		id: anchorField(),
-		// Excluded from v1 (documented): `className`, description tone,
-		// watermark, columns and the email icon fallback (presentation,
-		// not editor contracts).
-	}),
-	example: {
-		tag: { en: "Ready When You Are", sw: "Tayari Tukiwa Tayari" },
-		headline: { en: "READY TO SURVEY YOUR WATER BODY?", sw: "UKO TAYARI KUPIMA MAJI YAKO?" },
-		description: { en: "We respond quickly.", sw: "" },
-		note: { en: "", sw: "" },
-		actions: [
-			{
-				icon: "",
-				label: { en: "Request a Quote", sw: "Omba Nukuu" },
-				description: { en: "", sw: "" },
-				href: "mailto:info@smartgridsurveying.com",
-			},
-		],
-		id: "get-started",
-	},
-	normalize: (resolved) => ({
-		data: {
-			tag: resolved.tag,
-			headline: resolved.headline,
-			description: resolved.description,
-			note: resolved.note,
-			actions: Array.isArray(resolved.actions)
-				? resolved.actions.map((action: any) => ({
-						icon: action?.icon || undefined,
-						label: action?.label ?? "",
-						description: action?.description ?? "",
-						href: typeof action?.href === "string" && action.href ? action.href : "",
-					}))
-				: [],
-		},
-		id: resolved.id || undefined,
-	}),
-};
 
 /**
  * M11 batch 9 — resource-mapping page (2026-09-18): `rmWhatIs` wraps the
@@ -9042,13 +8903,11 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	sectionalWorkflow,
 	sectionalTimeline,
 	sectionalWhoNeeds,
-	bathyWorkflow,
 	bathyEquipment,
 	bathyLimitations,
 	bathyDamsLakes,
 	bathyApplications,
 	bathyBeforeAfter,
-	bathyFinalCta,
 	rmWhatIs,
 	rmTypes,
 	rmSector,
@@ -9172,13 +9031,11 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	sectionalWorkflow: sectionalWorkflow.label,
 	sectionalTimeline: sectionalTimeline.label,
 	sectionalWhoNeeds: sectionalWhoNeeds.label,
-	bathyWorkflow: bathyWorkflow.label,
 	bathyEquipment: bathyEquipment.label,
 	bathyLimitations: bathyLimitations.label,
 	bathyDamsLakes: bathyDamsLakes.label,
 	bathyApplications: bathyApplications.label,
 	bathyBeforeAfter: bathyBeforeAfter.label,
-	bathyFinalCta: bathyFinalCta.label,
 	rmWhatIs: rmWhatIs.label,
 	rmTypes: rmTypes.label,
 	rmSector: rmSector.label,

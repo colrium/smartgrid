@@ -1,21 +1,13 @@
-export { TopographicalHeroSection } from "./TopographicalHeroSection";
-export { WhatIsTopographicalSection } from "./WhatIsTopographicalSection";
 export { WhenYouNeedSection } from "./WhenYouNeedSection";
-export { WhatYouGetSection } from "./WhatYouGetSection";
 export { TopographicalCostSection } from "./TopographicalCostSection";
-export { IntroSection } from "./IntroSection";
 export { WhatWeOfferSection } from "./WhatWeOfferSection";
 export { DetailedSurveysSection } from "./DetailedSurveysSection";
 export { SampleMapSection } from "./SampleMapSection";
 export { InstrumentsSection } from "./InstrumentsSection";
 export { WhyConductSection } from "./WhyConductSection";
 
-export { default as TopographicalHeroSectionDefault } from "./TopographicalHeroSection";
-export { default as WhatIsTopographicalSectionDefault } from "./WhatIsTopographicalSection";
 export { default as WhenYouNeedSectionDefault } from "./WhenYouNeedSection";
-export { default as WhatYouGetSectionDefault } from "./WhatYouGetSection";
 export { default as TopographicalCostSectionDefault } from "./TopographicalCostSection";
-export { default as IntroSectionDefault } from "./IntroSection";
 export { default as WhatWeOfferSectionDefault } from "./WhatWeOfferSection";
 export { default as DetailedSurveysSectionDefault } from "./DetailedSurveysSection";
 export { default as SampleMapSectionDefault } from "./SampleMapSection";

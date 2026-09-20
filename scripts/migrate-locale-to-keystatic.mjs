@@ -61,29 +61,6 @@ function sharedValue(enNode, swNode, key, where) {
 // tails → unique sections. Phase keys, icons, image paths and hrefs
 // shared; titles, descriptions, points, factors, outputs localized. The
 // hardcoded limitations card headings are not migrated (legacy quirk).
-function bathyWorkflowBuild(en, sw, where) {
-	const enSteps = en.steps ?? [];
-	const swSteps = sw.steps ?? [];
-	if (!Array.isArray(swSteps) || swSteps.length !== enSteps.length) {
-		gap(where, `step count diverged (en=${enSteps.length} sw=${swSteps?.length})`);
-	}
-	return {
-		tag: { en: optText(en.tag), sw: optText(sw.tag) },
-		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
-		description: { en: optText(en.description), sw: optText(sw.description) },
-		steps: enSteps.map((step, i) => {
-			const swStep = swSteps[i] ?? {};
-			return {
-				phase: sharedValue(step, swStep, "phase", `${where}.steps[${i}]`) ?? "",
-				label: { en: reqText(step.label, `${where}.steps[${i}].label.en`), sw: reqText(swStep.label, `${where}.steps[${i}].label.sw`) },
-				description: { en: reqText(step.description, `${where}.steps[${i}].description.en`), sw: reqText(swStep.description, `${where}.steps[${i}].description.sw`) },
-			};
-		}),
-		outcome: { en: optText(en.outcome), sw: optText(sw.outcome) },
-		id: "",
-	};
-}
-
 function bathyEquipmentBuild(en, sw, where) {
 	const enImages = en.images ?? [];
 	const swImages = sw.images ?? [];
@@ -198,29 +175,6 @@ function bathyBeforeAfterBuild(en, sw, where) {
 	};
 }
 
-function bathyFinalCtaBuild(en, sw, where) {
-	const enActions = en.actions ?? [];
-	const swActions = sw.actions ?? [];
-	if (!Array.isArray(swActions) || swActions.length !== enActions.length) {
-		gap(where, `action count diverged (en=${enActions.length} sw=${swActions?.length})`);
-	}
-	return {
-		tag: { en: optText(en.tag), sw: optText(sw.tag) },
-		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
-		description: { en: optText(en.description), sw: optText(sw.description) },
-		note: { en: optText(en.note), sw: optText(sw.note) },
-		actions: enActions.map((action, i) => {
-			const swAction = swActions[i] ?? {};
-			return {
-				icon: sharedValue(action, swAction, "icon", `${where}.actions[${i}]`) ?? "",
-				label: { en: reqText(action.label, `${where}.actions[${i}].label.en`), sw: reqText(swAction.label, `${where}.actions[${i}].label.sw`) },
-				description: { en: optText(action.description), sw: optText(swAction.description) },
-				href: sharedValue(action, swAction, "href", `${where}.actions[${i}]`) ?? "",
-			};
-		}),
-		id: "get-started",
-	};
-}
 
 // --- Page mappings -----------------------------------------------------------
 // Each entry mirrors one legacy wrapper: content keys from the locale
@@ -3669,7 +3623,7 @@ const PAGES = {
 			{
 				discriminant: "hero",
 				from: "hero",
-				// Legacy: TopographicalHeroSection → <Hero data={t(hero)} />
+				// Legacy: shared <Hero> used directly on the page (M13 batch 8 — wrapper retired; shared used directly on the page).
 				// (default bottom layout; `subTitle` is unrendered by Hero and
 				// not migrated). Pill overrides travel as shared values.
 				build(en, sw, where) {
@@ -3701,7 +3655,7 @@ const PAGES = {
 			{
 				discriminant: "introText",
 				from: "whatIs",
-				// Legacy: WhatIsTopographicalSection → <IntroTextSection ... /> (all defaults)
+				// Legacy: shared <IntroTextSection ... /> used directly (M13 batch 8 — wrapper retired; shared used directly on the page). (all defaults)
 				build: introTextBuild({ tone: "default", align: "left", split: false }),
 			},
 			{
@@ -3717,8 +3671,8 @@ const PAGES = {
 			{
 				discriminant: "deliverables",
 				from: "whatYouGet",
-				// Legacy: WhatYouGetSection → <Deliverables
-				// ns="surveying/topographical-surveys" baseKey="whatYouGet" />
+				// Legacy: shared <Deliverables ns="surveying/topographical-surveys"
+				// baseKey="whatYouGet" /> used directly on the page (M13 batch 8 — wrapper retired; shared used directly on the page).
 				// (no className = tone default).
 				build: deliverablesBuild("default"),
 			},
@@ -3731,7 +3685,7 @@ const PAGES = {
 			{
 				discriminant: "introText",
 				from: "section1",
-				// Legacy: IntroSection → <IntroTextSection ... split /> (split hardcoded; the content `split` key is not read)
+				// Legacy: shared <IntroTextSection ... split /> used directly (M13 batch 8 — wrapper retired; shared used directly on the page). (split hardcoded; the content `split` key is not read)
 				build: introTextBuild({ tone: "default", align: "left", split: true }),
 			},
 			{
@@ -3803,7 +3757,7 @@ const PAGES = {
 			{
 				discriminant: "hero",
 				from: "hero",
-				// Legacy: SectionalHeroSection → <Hero data={t(hero)} />
+				// Legacy: shared <Hero> used directly on the page (M13 batch 8 — wrapper retired; shared used directly on the page).
 				// (default bottom layout; no title key — the h1 falls back to
 				// description exactly as in legacy).
 				build(en, sw, where) {
@@ -3839,7 +3793,7 @@ const PAGES = {
 			{
 				discriminant: "introText",
 				from: "section1",
-				// Legacy: IntroSection → <IntroTextSection ... cta={ctaPrimary} /> (all defaults + pill CTA)
+				// Legacy: shared <IntroTextSection ... cta={ctaPrimary} /> used directly (M13 batch 8 — wrapper retired; shared used directly on the page). (all defaults + pill CTA)
 				build: introTextBuild({ tone: "default", align: "left", split: false }, "ctaPrimary"),
 			},
 			{
@@ -3880,7 +3834,7 @@ const PAGES = {
 			{
 				discriminant: "deliverables",
 				from: "deliverables",
-				// Legacy: SectionalDeliverablesSection → <Deliverables
+				// Legacy: shared <Deliverables (M13 batch 8 — wrapper retired; shared used directly on the page).
 				// ns="surveying/sectional-properties" className="bg-surface" />
 				// (tone surface).
 				build: deliverablesBuild("surface"),
@@ -3998,7 +3952,7 @@ const PAGES = {
 			{
 				discriminant: "hero",
 				from: "hero",
-				// Legacy: BathymetricHeroSection → <Hero data={t(hero)} />
+				// Legacy: shared <Hero> used directly on the page (M13 batch 8 — wrapper retired; shared used directly on the page).
 				// (default bottom layout; no layout/frame/scrollCue keys).
 				build(en, sw, where) {
 					return {
@@ -4029,7 +3983,7 @@ const PAGES = {
 			{
 				discriminant: "splitMedia",
 				from: "whatIsBathymetricSurveys",
-				// Legacy: WhatIsBathymetricSection → <SplitMedia data
+				// Legacy: shared <SplitMedia data (M13 batch 8 — wrapper retired; shared used directly on the page).
 				// imagePosition="right" tone="surface" /> (no points, no
 				// mediaAspect/mediaFit overrides).
 				build(en, sw, where) {
@@ -4083,13 +4037,13 @@ const PAGES = {
 				},
 			},
 			{
-				discriminant: "bathyWorkflow",
+				discriminant: "workflow",
 				from: "bathymetricWorkflow",
-				// Legacy: BathymetricWorkflowSection → <WorkflowSection
-				// {...section} /> (no domain phase styles on this page).
-				build(en, sw, where) {
-					return bathyWorkflowBuild(en, sw, where);
-				},
+				// Legacy: shared <WorkflowSection {...section} /> used directly
+				// on the page (M13 batch 8 — retired the
+				// BathymetricWorkflowSection wrapper; no domain phase styles
+				// on this page).
+				build: workflowBuild("default"),
 			},
 			{
 				discriminant: "bathyEquipment",
@@ -4103,7 +4057,7 @@ const PAGES = {
 			{
 				discriminant: "deliverables",
 				from: "deliverables",
-				// Legacy: BathymetricDeliverablesSection → <Deliverables
+				// Legacy: shared <Deliverables (M13 batch 8 — wrapper retired; shared used directly on the page).
 				// ns="surveying/bathymetric-surveys" className="bg-surface" />
 				// (tone surface).
 				build: deliverablesBuild("surface"),
@@ -4180,13 +4134,18 @@ const PAGES = {
 				},
 			},
 			{
-				discriminant: "bathyFinalCta",
+				discriminant: "finalCta",
 				from: "finalCta",
-				// Legacy: FinalCtaSection → <FinalCta id="get-started"
-				// descriptionTone="accent" watermark="water" ... />.
-				build(en, sw, where) {
-					return bathyFinalCtaBuild(en, sw, where);
-				},
+				// Legacy: shared <FinalCta id="get-started"
+				// descriptionTone="accent" watermark="water" ... /> used
+				// directly on the page (M13 batch 8 — retired the
+				// FinalCtaSection wrapper; presentation literals travel as
+				// shared fields).
+				build: finalCtaBuild("water", 3, "center", {
+					descriptionTone: "accent",
+					actionIconFallback: "email-outline",
+					id: "get-started",
+				}),
 			},
 		],
 },

@@ -204,7 +204,7 @@
 			}
 		},
 		{
-			"discriminant": "bathyWorkflow",
+			"discriminant": "workflow",
 			"value": {
 				"tag": {
 					"en": "Engineering Grade Process",
@@ -218,9 +218,14 @@
 					"en": "Structured underwater survey pipeline for engineering-grade deliverables:",
 					"sw": "Mwelekeo ulio na muundo wa uchunguzi chini ya maji kwa matokeo ya kiwango cha uhandisi:"
 				},
+				"outcome": {
+					"en": "Complete hydrographic dataset ready for engineering design & decision-making",
+					"sw": "Dataset kamili ya hydrographic tayari kwa muundo wa uhandisi & maamuzi"
+				},
 				"steps": [
 					{
 						"phase": "PLANNING",
+						"icon": "",
 						"label": {
 							"en": "1. Project Planning & Waterbody Assessment",
 							"sw": "1. Mpangilio wa Mradi & Tathmini ya Kiotu cha Maji"
@@ -232,6 +237,7 @@
 					},
 					{
 						"phase": "CONTROL",
+						"icon": "",
 						"label": {
 							"en": "2. GNSS Control Setup",
 							"sw": "2. Uwekezaji wa Kudhibiti GNSS"
@@ -243,6 +249,7 @@
 					},
 					{
 						"phase": "ACQUISITION",
+						"icon": "",
 						"label": {
 							"en": "3. Bathymetric Data Acquisition",
 							"sw": "3. Kukusanya Data ya Bathymetric"
@@ -254,6 +261,7 @@
 					},
 					{
 						"phase": "PROCESSING",
+						"icon": "",
 						"label": {
 							"en": "4. Data Processing & Correction",
 							"sw": "4. Uchakataji wa Data & Usahihisho"
@@ -265,6 +273,7 @@
 					},
 					{
 						"phase": "MODELLING",
+						"icon": "",
 						"label": {
 							"en": "5. Surface Modelling",
 							"sw": "5. Uundaji wa Mfano wa Uso"
@@ -276,6 +285,7 @@
 					},
 					{
 						"phase": "DELIVERY",
+						"icon": "",
 						"label": {
 							"en": "6. Final Deliverables",
 							"sw": "6. Matokeo ya Mwisho"
@@ -286,10 +296,19 @@
 						}
 					}
 				],
-				"outcome": {
-					"en": "Complete hydrographic dataset ready for engineering design & decision-making",
-					"sw": "Dataset kamili ya hydrographic tayari kwa muundo wa uhandisi & maamuzi"
+				"ctaNote": {
+					"en": "",
+					"sw": ""
 				},
+				"cta": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"acquisition": "default",
 				"id": ""
 			}
 		},
@@ -930,7 +949,7 @@
 			}
 		},
 		{
-			"discriminant": "bathyFinalCta",
+			"discriminant": "finalCta",
 			"value": {
 				"tag": {
 					"en": "Ready When You Are",
@@ -944,9 +963,14 @@
 					"en": "We respond quickly to urgent engineering and environmental survey needs.",
 					"sw": "Tunajibu kwa haraka mahitaji ya uchunguzi ya uhandisi na mazingira ya dharura."
 				},
+				"descriptionTone": "accent",
 				"note": {
 					"en": "Rapid mobilisation • Kenya-wide coverage • Engineering-grade deliverables",
 					"sw": "Mobilizasi haraka • Uwanja wote Kenya • Matokeo ya kiwango cha uhandisi"
+				},
+				"actionsLabel": {
+					"en": "",
+					"sw": ""
 				},
 				"actions": [
 					{
@@ -986,6 +1010,10 @@
 						"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20speak%20with%20a%20hydrographic%20engineer%20about%20bathymetric%20survey%20for%20my%20project.%20Please%20advise%20on%20next%20steps."
 					}
 				],
+				"actionIconFallback": "email-outline",
+				"watermark": "water",
+				"columns": "3",
+				"align": "center",
 				"id": "get-started"
 			}
 		}

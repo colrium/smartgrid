@@ -53,13 +53,11 @@ import { ServicesDetailSection } from "@/components/sections/surveying/sectional
 import { ProcessSection as SectionalProcessSection } from "@/components/sections/surveying/sectional-properties/ProcessSection";
 import { TimelineSection } from "@/components/sections/surveying/sectional-properties/TimelineSection";
 import { WhoNeedsSection } from "@/components/sections/surveying/sectional-properties/WhoNeedsSection";
-import { BathymetricWorkflowSection } from "@/components/sections/surveying/bathymetric-surveys/BathymetricWorkflowSection";
 import { EquipmentTechnologySection } from "@/components/sections/surveying/bathymetric-surveys/EquipmentTechnologySection";
 import { TechnicalLimitationsSection } from "@/components/sections/surveying/bathymetric-surveys/TechnicalLimitationsSection";
 import { DamsLakesSection } from "@/components/sections/surveying/bathymetric-surveys/DamsLakesSection";
 import { ApplicationsSection as BathyApplicationsSection } from "@/components/sections/surveying/bathymetric-surveys/ApplicationsSection";
 import { BathymetricBeforeAfterSection } from "@/components/sections/surveying/bathymetric-surveys/BathymetricBeforeAfterSection";
-import { FinalCtaSection as BathyFinalCtaSection } from "@/components/sections/surveying/bathymetric-surveys/FinalCtaSection";
 import { WhatIsResourceMappingSection } from "@/components/sections/surveying/resource-mapping/WhatIsResourceMappingSection";
 import { TypesOfResourceMappingSection } from "@/components/sections/surveying/resource-mapping/TypesOfResourceMappingSection";
 import { ResourceMappingWorkflowSection } from "@/components/sections/surveying/resource-mapping/ResourceMappingWorkflowSection";
@@ -194,13 +192,11 @@ export const sectionRenderers = {
 	sectionalWorkflow: SectionalProcessSection,
 	sectionalTimeline: TimelineSection,
 	sectionalWhoNeeds: WhoNeedsSection,
-	bathyWorkflow: BathymetricWorkflowSection,
 	bathyEquipment: EquipmentTechnologySection,
 	bathyLimitations: TechnicalLimitationsSection,
 	bathyDamsLakes: DamsLakesSection,
 	bathyApplications: BathyApplicationsSection,
 	bathyBeforeAfter: BathymetricBeforeAfterSection,
-	bathyFinalCta: BathyFinalCtaSection,
 	rmWhatIs: WhatIsResourceMappingSection,
 	rmTypes: TypesOfResourceMappingSection,
 	rmSector: SectorSection,

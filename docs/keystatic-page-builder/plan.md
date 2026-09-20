@@ -1292,16 +1292,28 @@ Batches (one commit each, in this order):
       (IntroSection is a kept component, not intro text — fixed before
       commit). Mapping comments refreshed. Validation DEFERRED per M13
       policy.
-- [ ] Batch 8 — `surveying/topographical-surveys` + `sectional-properties` +
-      `bathymetric-surveys`: Type 1 heroes → `Hero`, `Intro`/`WhatIsTopo`/
-      `IntroSection` → `IntroTextSection`, `WhatIsBathymetric` → `SplitMedia`,
-      `FinalCtaSection`(bathy) → shared `finalCta`, `DeliverablesSection`
-      shims → `Deliverables`; Type 2 `sectionalWorkflow` + `bathyWorkflow`
-      → shared `workflow`, `bathyFinalCta` → shared `finalCta`
+- [x] Batch 8 — `surveying/topographical-surveys` + `sectional-properties` +
+      `bathymetric-surveys` (done 2026-09-20): Type 1 topo hero/whatIs/
+      section1-split/WhatYouGet → `Hero`/`IntroTextSection`/`Deliverables`,
+      sectional hero/section1-cta/deliverables → shared, bathy hero/whatIs/
+      deliverables → shared; Type 2 `bathyWorkflow` → shared `workflow`
+      (`workflowBuild("default")`), `bathyFinalCta` → shared `finalCta`
       (`finalCtaBuild("water", 3, "center", {descriptionTone: "accent",
-      actionIconFallback: "email-outline", id: "get-started"})").
-      `bathyBeforeAfter` stays unique (shell, per batch-3 refinement). Keep: shaping grids,
-      `SampleMap`, `Process` timeline variant, bespoke tails.
+      actionIconFallback: "email-outline", id: "get-started"})`).
+      12 wrapper files deleted; legacy branches render shared directly
+      (guards/literals preserved); bathy entry regenerated (12 sections,
+      `draft`); deleted `bathyWorkflowBuild` + `bathyFinalCtaBuild`
+      (CAUGHT: first delete script died on a bad slice assert before
+      writing — verified via git diff, deleted precisely on retry).
+      Registry 121→119; README list + count updated.
+      DECIDED: `sectionalWorkflow` + `rmWorkflow` stay unique — their
+      multi-phase custom styles (FIELD/OFFICE/REGISTRY,
+      ACQUISITION/PROCESSING/DELIVERY) have no shared-contract home;
+      rule refined: shared `workflow` covers default phases + the
+      `satellite` ACQUISITION variant only; anything beyond stays unique
+      (no page-leaking presets). `bathyBeforeAfter` stays unique (shell).
+      Keep: shaping grids, `SampleMap`, pricing `CostSection`, `Process`
+      timeline variant, bespoke tails. Validation DEFERRED per M13 policy.
 - [ ] Batch 9 — `surveying/resource-mapping` + `building-site-surveys`:
       Type 1 `ResourceMappingHeroSection` → `Hero`, `IntroSection` →
       `IntroTextSection`, `ExploreMoreSection` → `Gallery`,

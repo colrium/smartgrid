@@ -361,7 +361,7 @@ Full, canonical standards live in [`AGENTS.md`](./AGENTS.md).
 ## Keystatic Page Builder (operator guide)
 
 Structured pages are composed in the Keystatic admin (`/keystatic`, local dev needs
-no login) from one hundred twenty-one registered sections: `introText`, `ctaBand`, `stats`, `hero`,
+no login) from one hundred nineteen registered sections: `introText`, `ctaBand`, `stats`, `hero`,
 `cardGrid`, `splitMedia`, `legal`, `faq`, `process`, `gallery`, `pricing`, `trustees`,
 `certifications`, `keyFacts`, `metrics`, `whyChooseUs`, `about`,
 `surveyingInstruments`, `coreExpertise`, `planningInfographic`, `coverageArea`,
@@ -372,9 +372,9 @@ no login) from one hundred twenty-one registered sections: `introText`, `ctaBand
 `civilHero`, `civilProcess`, `deliverables`, `topoWhenYouNeed`, `topoWhatWeOffer`,
 `topoDetailedSurveys`, `topoSampleMap`, `topoInstruments`, `topoWhyConduct`,
 `sectionalWhatIs`, `sectionalServicesDetail`, `sectionalWorkflow`,
-`sectionalTimeline`, `sectionalWhoNeeds`, `bathyWorkflow`, `bathyEquipment`,
+`sectionalTimeline`, `sectionalWhoNeeds`, `bathyEquipment`,
 `bathyLimitations`, `bathyDamsLakes`, `bathyApplications`, `bathyBeforeAfter`,
-`bathyFinalCta`, `rmWhatIs`, `rmTypes`, `rmSector`, `rmWorkflow`, `rmWhoUses`,
+`rmWhatIs`, `rmTypes`, `rmSector`, `rmWorkflow`, `rmWhoUses`,
 `rmTechStack`, `rmDataAccuracy`, `rmFinalCta`, `bsHero`, `bsSection2`,
 `bsSiteEngineering`, `bsProcess`, `bsAccuracyMatters`, `bsTechnology`,
 `bsConsultation`, `aerialIntro`, `aerialWhyDrones`, `aerialServices`,
