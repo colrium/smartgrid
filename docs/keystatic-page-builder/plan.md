@@ -1107,7 +1107,12 @@ legacy fallback still guards count mismatches.
 
 ### M13: Collapse Single-Shared-Child Wrappers onto Shared Sections
 
-**Status: IN PROGRESS** (added 2026-09-20 per user request; batch 1 = aerial-surveys).
+**Status: IN PROGRESS** (added 2026-09-20 per user request; batches 1–11 +
+exit-criterion sweep DONE 2026-09-20 — automated deferred validation green
+(`check:keystatic` 118 sections/31 fixtures, `--verify` clean ×30, typecheck +
+lint clean). Remaining for DONE: per-page dev-smoke parity (temp publish flip
++ browser check, revert to `draft`) and the rollback test — both need a
+browser session, joined to the M6/M10 carry-overs.)
 
 Dependencies: M11 (unique sections + additive-`data` precedent), M12
 (whole-owned pages render `PageBuilderDocument`).
@@ -1314,20 +1319,34 @@ Batches (one commit each, in this order):
       (no page-leaking presets). `bathyBeforeAfter` stays unique (shell).
       Keep: shaping grids, `SampleMap`, pricing `CostSection`, `Process`
       timeline variant, bespoke tails. Validation DEFERRED per M13 policy.
-- [ ] Batch 9 — `surveying/resource-mapping` + `building-site-surveys`:
-      Type 1 `ResourceMappingHeroSection` → `Hero`, `IntroSection` →
-      `IntroTextSection`, `ExploreMoreSection` → `Gallery`,
-      `DeliverablesSection` shims → `Deliverables`;       Type 2 `rmWorkflow` →
-      shared `workflow`, `rmFinalCta` → shared `finalCta`
+- [x] Batch 9 — `surveying/resource-mapping` + `building-site-surveys` (done
+      2026-09-20, commit `6dbc47f`): Type 1 `ResourceMappingHeroSection` →
+      `Hero`, `WhyStandOutSection` → `CardGrid`,
+      `ResourceMappingDeliverablesSection` → `Deliverables` (bg-surface),
+      building-site `IntroSection` → `IntroTextSection` (split),
+      `ActionCtaBand` → `CtaBand` (split/shimmer + headline guard),
+      `DeliverablesSection` → `Deliverables`, `ExploreMoreSection` →
+      `Gallery` (items guard); Type 2 `rmFinalCta` → shared `finalCta`
       (`finalCtaBuild("map-marker-radius", 3, "center",
-      {descriptionTone: "accent", id: "get-started"})`). Keep: shaping
-      grids (`Sector` + `leadImages`, `fallbackIcons`, `wide`), bespoke
-      hero/accuracy/consultation tails, `Process` (label→title map).
-- [ ] Batch 10 — hubs (`surveying`, `civil`): Type 1 `SurveyingHeroSection`
-      → `Hero`, `SurveyingDeliverablesSection`/`CivilDeliverablesSection` →
-      `Deliverables`; Type 2 none (`surveyingProcess`/`civilProcess` wrap
-      with shaping — re-evaluate per rule; keep if disqualified). Keep:
-      shaping services grids, bespoke civil hero/process.
+      {descriptionTone: "accent", id: "get-started"})`; deleted
+      `rmFinalCtaBuild` — single use). 8 wrapper files deleted; entry
+      regenerated via `--write` (16 sections, content preserved, `draft`);
+      registry 119→118. DECIDED per the batch-8 rule refinement:
+      `rmWorkflow` STAYS UNIQUE (ACQUISITION/PROCESSING/DELIVERY custom
+      phase styles have no shared-contract home — checklist text below the
+      refinement said otherwise). Keep: shaping grids (`Sector` +
+      `leadImages`, `fallbackIcons`, category→subItems), bespoke heroes
+      (bsHero/contact), accuracy/consultation/build-smarter tails,
+      `bsProcess` (label→title map). Validation DEFERRED per M13 policy.
+- [x] Batch 10 — hubs (`surveying`, `civil`) (done 2026-09-20, commit
+      `6458d2e`, all Type 1): `SurveyingHeroSection` → `Hero`,
+      `SurveyingDeliverablesSection`/`CivilDeliverablesSection` →
+      `Deliverables` (3 wrapper files deleted; legacy branches render
+      shared directly with identical `t()`/props); Type 2 none —
+      `surveyingProcess`/`civilProcess` wrap with shaping (watermarkedIndexed
+      / custom phases), `civilHero` is bespoke — kept per rule. Mapping
+      comments refreshed. No registry/entry/migration-output changes.
+      Validation DEFERRED per M13 policy.
 - [ ] Batch 11 — `about` + `contact` + `careers` + `company-profile` + `home`
       + legal: Type 1 heroes → `Hero`, `OurStorySection` → `SplitMedia`,
       `CompanyAboutSection` → `SplitMedia`, `CompanyStatsStrip` → `Stats`,
@@ -1338,11 +1357,48 @@ Batches (one commit each, in this order):
       shims → shared directly. Type 2: `aboutAerialSurveying`/`aboutLandSurveying`
       re-evaluate (minimal-map grids — keep unless pure); `companyProfileViewer`,
       `contactForm`, `careers*`, `homeHero`/`homeDrones` stay (bespoke).
-- [ ] Deferred validation (all batches done): `check:keystatic` fixture/render
-      coverage for new shared `workflow`/`finalCta`/`beforeAfter` + updated
-      per-page strings, `--verify` for every touched page, full
-      `yarn typecheck` + `yarn lint`, per-page dev-smoke parity (temp publish
-      flip + browser check, revert to `draft`), rollback test.
+- [x] Batch 11 — `about` + `contact` + `careers` + `company-profile` +
+      `home` + legal (done 2026-09-20, commit `d9efe0b`): home — all
+      twelve 1:1 wrappers (`AboutSection`, `CertificationsSection`,
+      `KeyFactsSection`, `TrusteesSection`, `MetricsSection` (commented
+      out of the route), `WhyChooseUsSection`,
+      `PlanningInfographicSection`, `SurveyingInstrumentsSection`,
+      `CoreExpertiseSection`, `SurveyCostSection`, `CoverageAreaSection`,
+      `IndustriesWeServeSection`) + the shaping `FaqSection` deleted; the
+      legacy branch renders the shared components directly with the
+      identical `t()` lookups, anchor ids and the items-empty guard
+      (ActionCta x2 + CtaSection wrappers stay — they collapse onto
+      `ctaBand` in the entries already). about — `HeroSection` (pure
+      Hero forward, swept in `26f64be`) + `OurStorySection` →
+      `SplitMedia` (left/square/contain). company-profile —
+      `CompanyAboutSection` → `SplitMedia` (right/square/classes),
+      `CompanyStatsStrip` → `Stats` (panel). equipment — dead-code
+      `CatalogueOverviewSection` deleted (zero page imports). Type 2:
+      `aboutAerialSurveying`/`aboutLandSurveying` re-evaluated — KEEP
+      (popup items + `<primary>` parsing). STAY per rule: `contactHero`
+      (badge panel), `contactOffices` (map), `contactForm`,
+      `TalkToUsSection` (accent `.map`), `careersOpenings` (modal),
+      `careersProcess` (`<bold>`), `careersStatement`,
+      `companyProfileViewer`, `homeHero`/`homeDrones` (bespoke); legal
+      already renders the shared `LegalPageSection` directly (nothing to
+      collapse). Legacy-only fixes riding this batch: stale
+      `ActionCtaBand` import in building-site-surveys + pre-existing
+      duplicate import in monitoring-and-evaluation (both caught by
+      typecheck). 18 wrapper files deleted in `d9efe0b` + 2 in `26f64be`;
+      registry unchanged (120 — home/about/company entries already used
+      shared ids).
+      Validation DEFERRED per M13 policy.
+- [x] Deferred validation (all batches done, 2026-09-20, automated scope
+      green): `check:keystatic` OK (registry 118 sections — final count
+      after unregisters; 31 fixtures; the 3 fallback warnings are expected
+      negative diagnostics), `--verify` clean for ALL 30 mapped pages (no
+      gaps), full `yarn typecheck` clean (24s) + `yarn lint` clean (80s)
+      across the whole repo. README section list + count updated
+      (`rmFinalCta` out). Remaining (browser-session residuals, same class
+      as the M6/M7 carry-overs): per-page dev-smoke parity (temp publish
+      flip + revert), keyboard/responsive/visual spot checks, perf
+      sampling, `yarn build` (standing environment skip until all
+      milestones complete).
 
 **Exit criteria:** no wrapper file remains that meets the qualification rule;
 every M11 unique that was a pure single-shared-child forward is unregistered
@@ -1467,3 +1523,8 @@ For every implementation change:
 | 2026-09-20 | M13 | Batch 5 DONE — highway-surveys + as-built-surveys: 11 legacy-only wrappers deleted (heroes, Overview, Benefits, DeliverablesSection, TextSection + 3 shims, KeyIndustries, Applications); legacy branches render shared `Hero`/`IntroTextSection`/`CardGrid`/`Deliverables` directly (tones/guards preserved); no registry/entry changes (entries already shared); mapping comments refreshed. Kept: `highwayServices`/`asBuiltSolutions` uniques (`indexed`). CAUGHT: bulk comment edit touched 3 other pages — reverted | Validation DEFERRED per M13 policy. Next: batch 6 — civil bim + site-engineering + site-setting-out + volumetric | |
 | 2026-09-20 | M13 | Batch 6 DONE — bim + site-engineering + site-setting-out + volumetric-surveys: 12 wrappers deleted (heroes, BimServices/WhatWeDo/OurServices/OurInstruments/VolServices grids, TextSection + shims, Precision split); both branches render shared components directly (guards/literals preserved); no registry/entry changes; mapping comments refreshed. Kept: shaping CTAs/Faq/ExploreMore, Split overview, `<bold>` heroes | Validation DEFERRED per M13 policy. Next: batch 7 — aerial-drones children | |
 | 2026-09-20 | M13 | Batch 7 DONE — 7 aerial-drones children: 37 wrappers deleted (heroes, TextSections + shims, splits, Processes, Stats, 9 grids, LidarCardGrid/shims/re-export); both branches render shared directly; no registry/entry changes; mapping comments refreshed. Kept: shaping CTAs/SmartMonitoring/WhatWeOffer(monitoring)/IntroSection(vol). CAUGHT: missing barrel import (fixed); vol page misorder (fixed) | Validation DEFERRED per M13 policy. Next: batch 8 — topo + sectional + bathy | |
+| 2026-09-20 | M13 | Batch 8 DONE — topographical-surveys + sectional-properties + bathymetric-surveys (row appended retroactively; work committed as `fb99334`): 12 wrapper files deleted; Type 1 topo hero/whatIs/section1-split/WhatYouGet → `Hero`/`IntroTextSection`/`Deliverables`, sectional hero/section1-cta/deliverables → shared, bathy hero/whatIs/deliverables → shared; Type 2 `bathyWorkflow` → shared `workflow` (`workflowBuild("default")`) + `bathyFinalCta` → shared `finalCta` (`finalCtaBuild("water", 3, "center", {descriptionTone: "accent", actionIconFallback: "email-outline", id: "get-started"})`); bathy entry regenerated (12 sections, `draft`); registry 121→119; README updated. DECIDED: `sectionalWorkflow` + `rmWorkflow` stay unique — multi-phase custom styles (FIELD/OFFICE/REGISTRY, ACQUISITION/PROCESSING/DELIVERY) have no shared-contract home; rule refined: shared `workflow` covers default phases + the `satellite` ACQUISITION variant only. CAUGHT: first delete script died on a bad slice assert before writing — verified via git diff, deleted precisely on retry. Keep: shaping grids, `SampleMap`, pricing `CostSection`, `Process` timeline variant, `bathyBeforeAfter` (shell) | Validation DEFERRED per M13 policy. Next: batch 9 — resource-mapping + building-site-surveys | |
+| 2026-09-20 | M13 | Batch 9 DONE — resource-mapping + building-site-surveys (commit `6dbc47f`): 8 wrappers deleted; Type 1 `ResourceMappingHeroSection` → `Hero`, `WhyStandOutSection` → `CardGrid` (cols 4 surface centred + items guard), `ResourceMappingDeliverablesSection` → `Deliverables` (bg-surface), building-site `IntroSection` → `IntroTextSection` (split), `ActionCtaBand` → `CtaBand` (split/shimmer + headline guard), `DeliverablesSection` → `Deliverables`, `ExploreMoreSection` → `Gallery` (items guard); Type 2 `rmFinalCta` → shared `finalCta` (`finalCtaBuild("map-marker-radius", 3, "center", {descriptionTone: "accent", id: "get-started"})`, deleted      `rmFinalCtaBuild` — single use); resource-mapping entry regenerated via `--write` (16 sections, content byte-verified preserved, `draft`); registry 119→118 (rmFinalCta out); README list + count updated. DECIDED per batch-8 refinement: `rmWorkflow` STAYS UNIQUE (ACQUISITION/PROCESSING/DELIVERY custom phase styles). Keep: Sector/leadImages grids, category→subItems + fallbackIcons grids, bsHero + bsSection2/bsAccuracyMatters/bsConsultation bespoke tails, `bsProcess` (label→title map) | Validation DEFERRED per M13 policy. Next: batch 10 — hubs | |
+| 2026-09-20 | M13 | Batch 10 DONE — hubs surveying + civil (commit `6458d2e`): 3 wrappers deleted; Type 1 `SurveyingHeroSection` → `Hero`, `SurveyingDeliverablesSection`/`CivilDeliverablesSection` → `Deliverables`; legacy branches render shared directly with identical `t()`/props. Type 2 none — `surveyingProcess`/`civilProcess` wrap with shaping (watermarkedIndexed / custom phases), `civilHero` bespoke — kept per rule. Mapping comments refreshed; no registry/entry changes | Validation DEFERRED per M13 policy. Next: batch 11 — about/contact/careers/company-profile/home/legal | |
+| 2026-09-20 | M13 | Batch 11 DONE — about + contact + careers + company-profile + home + legal (commit `d9efe0b`, sweep `26f64be`): 18 wrappers deleted. Home: all twelve 1:1 wrappers (`AboutSection`, `CertificationsSection`, `KeyFactsSection`, `TrusteesSection`, `MetricsSection` (commented out), `WhyChooseUsSection`, `PlanningInfographicSection`, `SurveyingInstrumentsSection`, `CoreExpertiseSection`, `SurveyCostSection`, `CoverageAreaSection`, `IndustriesWeServeSection`) + shaping `FaqSection` deleted; legacy branch renders shared components directly with identical `t()` lookups, anchor ids and the items-empty guard (ActionCta ×2 + `CtaSection` stay live — they collapse onto `ctaBand` in the entries already). about: `HeroSection` (pure Hero forward, `26f64be`) + `OurStorySection` → `SplitMedia` (left/square/contain). company-profile: `CompanyAboutSection` → `SplitMedia` (right/square/classes), `CompanyStatsStrip` → `Stats` (panel). equipment: dead-code `CatalogueOverviewSection` deleted (zero page imports). Type 2: `aboutAerialSurveying`/`aboutLandSurveying` re-evaluated — KEEP (popup items + `<primary>` parsing). STAY per rule: `contactHero` (badge panel), `contactOffices` (map), `contactForm`, `TalkToUsSection` (accent `.map`), careers uniques (modal/`<bold>`), `companyProfileViewer`, `homeHero`/`homeDrones`; legal already renders the shared `LegalPageSection` directly. Legacy-only fixes riding the batch: stale `ActionCtaBand` import (building-site route) + pre-existing duplicate import (monitoring-and-evaluation), both caught by typecheck. Registry unchanged at 118 (batch 9 already dropped rmFinalCta) | Validation DEFERRED per M13 policy | |
+| 2026-09-20 | M13 | CLOSE-OUT — all M13 batches + exit-criterion sweep done. Registry reconciliation: final count 118 (batch 9 −1 rmFinalCta from 119; Type-1-only batches 5–7/10/11 and the batch-11 sweep change nothing — the check script is the authoritative counter). Exit criterion "no wrapper file remains that meets the qualification rule" verified by a full grep sweep — two stragglers found and collapsed in `26f64be` (about `HeroSection`, drone-imagery-surveys `AerialSurveyDeliverablesSection` on the bespoke-only page). Deferred automated validation green: `check:keystatic` OK (registry 118 sections, 31 fixtures; the 3 fallback warnings are expected negative diagnostics), `--verify` clean for ALL 30 mapped pages (no gaps), `yarn typecheck` clean (24s), `yarn lint` clean (80s). README list + count updated (`rmFinalCta` out, 118). Remaining for M13 DONE (browser-session residuals, joined to the M6/M10 carry-overs): per-page dev-smoke parity (temp publish flip + revert to `draft`), rollback test; `yarn build` stays behind the all-milestones-complete gate | `check:keystatic` OK (118 sections, 31 fixtures); `--verify` OK ×30; `yarn typecheck` clean; `yarn lint` clean. M13 stays IN PROGRESS on browser residuals only | |
