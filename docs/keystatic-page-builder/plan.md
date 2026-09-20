@@ -1084,7 +1084,29 @@ Rules (decided 2026-09-18, before implementing):
       (130 sections, 31 fixtures), `--verify` clean both (4 + 5 sections,
       no gaps, first try), `yarn typecheck` clean, `yarn lint` clean;
       dev-smoke DEFERRED per M11/M12 policy. Next: Batch 18 —
-      monitoring-and-evaluation + aerial-drones as-built-surveys.) **Status-log correction:** the
+      monitoring-and-evaluation + aerial-drones as-built-surveys.)
+      (Batch 18 — aerial-drones monitoring-and-evaluation +
+      as-built-surveys — done 2026-09-20: 6 uniques (`meOurCapabilities`
+      + `meImpact` with hardcoded `fallbackIcons` arrays, `meSmartMonitoring`
+      with the computed primary/surface action pills kept as shaping over
+      two locale CTA objects, `meWhatWeOffer` with the `leadImages`
+      empty-to-null strip + label/image items, `abWhyUseDrones` with its
+      fallback array, `abProcess` — the `Process` grid variant
+      (`layout="grid"`, `columns={4}`) that made M7 batch 14b skip the
+      node); M13 batch 7 had deleted the OurCapabilities/Impact/
+      WhyUseDrones/Process wrappers → renderer components render the
+      shared `CardGrid`/`Process` directly with the deleted wrappers'
+      literals; the surviving `SmartMonitoringSection`/`WhatWeOfferSection`
+      wrappers got the M9 additive-`data` refactor; whole pages in page
+      order (9 + 5 sections) → one `PageBuilderDocument` each, `skipped`
+      now `[]` both; registry 130→136; README list updated. CAUGHT by the
+      completeness gate (M7-batch-14 precedent): sw `ctaSecondary.href`
+      in `smartMonitoringAndEval` used a straight apostrophe where en has
+      a curly one — aligned to en. Validation: `check:keystatic` OK
+      (136 sections, 31 fixtures), `--verify` clean both (9 + 5 sections,
+      no gaps), `yarn typecheck` clean, `yarn lint` clean; dev-smoke
+      DEFERRED per M11/M12 policy. Next: Batch 19 — agricultural-ndvi +
+      lidar-mapping.) **Status-log correction:** the
       batch-15 close read "registry 123→125" — the check script counted
       125 total (123 before), but this note is stale after M13: M13
       unregistered 7 uniques (118 final), so batch 16 starts from 118,

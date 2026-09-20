@@ -391,7 +391,8 @@ no login) from one hundred eighteen registered sections: `introText`, `ctaBand`,
 `gisBeforeAfter`, `gisProjectImpact`, `gisRelatedServices`, `highwayServices`,
 `asBuiltSolutions`, `bimServices`, `seHero`, `seOverview`, `seWhatWeDo`,
 `seExploreMore`, `ssoServices`, `ssoInstruments`, `vsServices`, `solWhatWeDo`,
-`solProcess`, `lqQuarryServicesItems`, `lqWhatWeOffer`. See
+`solProcess`, `lqQuarryServicesItems`, `lqWhatWeOffer`, `meOurCapabilities`,
+`meImpact`, `meSmartMonitoring`, `meWhatWeOffer`, `abWhyUseDrones`, `abProcess`. See
 `src/lib/keystatic/sectionRegistry.ts` — the single
 source for editor options and renderer mappings.
 

@@ -49,6 +49,118 @@
 			}
 		},
 		{
+			"discriminant": "abWhyUseDrones",
+			"value": {
+				"tag": {
+					"en": "Why Drones?",
+					"sw": "Kwa Nini Ndege Zisizo na Rubani?"
+				},
+				"headline": {
+					"en": "Why Use Drones for As-Built Surveys?",
+					"sw": "Kwa Nini Utumie Ndege Zisizo na Rubani kwa Uchunguzi wa As-Built?"
+				},
+				"items": [
+					{
+						"title": {
+							"en": "Precision Mapping",
+							"sw": "Uchoraji Ramani Sahihi"
+						},
+						"description": {
+							"en": "Generate true-to-scale digital blueprints using high-resolution orthomosaics and 3D reconstructions.",
+							"sw": "Zalisha blueprints za dijitali zenye usahihi wa ukubwa halisi kwa kutumia orthomosaic za mwonekano wa juu na miundo ya 3D."
+						}
+					},
+					{
+						"title": {
+							"en": "Speed & Efficiency",
+							"sw": "Kasi na Ufanisi"
+						},
+						"description": {
+							"en": "Survey vast construction zones in record time, improving timelines and reducing rework.",
+							"sw": "Chunguza maeneo makubwa ya ujenzi kwa rekodi ya muda, kuboresha ratiba na kupunguza kazi ya kurudia."
+						}
+					},
+					{
+						"title": {
+							"en": "Environmental Monitoring",
+							"sw": "Ufuatiliaji wa Mazingira"
+						},
+						"description": {
+							"en": "Visualize ecological change and monitor conservation areas.",
+							"sw": "Ona mabadiliko ya ikolojia na fuatilia maeneo ya uhifadhi."
+						}
+					},
+					{
+						"title": {
+							"en": "Seamless Integration",
+							"sw": "Ujumuishaji Usio na Mshono"
+						},
+						"description": {
+							"en": "Compatible outputs for CAD, Revit, GIS, and all major BIM platforms.",
+							"sw": "Matokeo yanayoendana na CAD, Revit, GIS, na majukwaa yote makubwa ya BIM."
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "abProcess",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "How Our Process Works",
+					"sw": "Mchakato Wetu Unavyofanya Kazi"
+				},
+				"items": [
+					{
+						"title": {
+							"en": "Site Planning",
+							"sw": "Upangaji wa Tovuti"
+						},
+						"description": {
+							"en": "Our engineers assess the environment and establish drone flight logistics and control stations.",
+							"sw": "Wahandisi wetu hutathmini mazingira na kuanzisha mantiki ya ndege zisizo na rubani na vituo vya udhibiti."
+						}
+					},
+					{
+						"title": {
+							"en": "Drone Data Capture",
+							"sw": "Ukamataji wa Data wa Ndege Zisizo na Rubani"
+						},
+						"description": {
+							"en": "We deploy drones equipped with photogrammetry or LiDAR sensors to capture as-built surface conditions.",
+							"sw": "Tunatumia ndege zisizo na rubani zilizotengenezwa kwa vitambuzi vya photogrammetry au LiDAR kukamata hali ya uso ya as-built."
+						}
+					},
+					{
+						"title": {
+							"en": "3D Model Generation",
+							"sw": "Uzalishaji wa Mifano ya 3D"
+						},
+						"description": {
+							"en": "Collected data is processed into interactive 3D models and geo-referenced layers.",
+							"sw": "Data iliyokusanywa inachakatwa kuwa mifano ya 3D inayoingiliana na tabaka zilizo na marejeleo ya kijiografia."
+						}
+					},
+					{
+						"title": {
+							"en": "Final Survey Delivery",
+							"sw": "Utoaji wa Uchunguzi wa Mwisho"
+						},
+						"description": {
+							"en": "Receive actionable deliverables that feed directly into your construction management tools.",
+							"sw": "Pokea matokeo yanayoweza kutekelezwa yanayolisha moja kwa moja kwenye zana zako za usimamizi wa ujenzi."
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
 			"discriminant": "stats",
 			"value": {
 				"tag": {

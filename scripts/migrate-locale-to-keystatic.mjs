@@ -6183,18 +6183,23 @@ const PAGES = {
 			},
 		],
 	},
-	// M7 batch 14a: monitoring-and-evaluation. Five sections migrate in page
-	// order — `hero` (shared Hero, single pill) + `drivingSustainability`/
-	// `techWeUse`/`whyPartnerWithUs` (introTexts default/surface/default) +
-	// `cta` (ctaBand centred; wrapper `iconPosition: "end"` collapses to the
-	// solid-pill default). Tails stay legacy: OurCapabilitiesSection +
-	// ImpactSection (`fallbackIcons`), SmartMonitoringSection
-	// (`card.iconShape` + `actions`, both outside the contract),
-	// WhatWeOfferSection (`leadImages` + media cards).
+	// M7 batch 14a: monitoring-and-evaluation. `hero` (shared Hero, single
+	// pill) + `drivingSustainability`/`techWeUse`/`whyPartnerWithUs`
+	// (introTexts default/surface/default) + `cta` (ctaBand centred;
+	// wrapper `iconPosition: "end"` collapses to the solid-pill default).
+	// M11 batch 18 (2026-09-20): whole page in page order —
+	// `meOurCapabilities` + `meImpact` (hardcoded fallbackIcons arrays),
+	// `meSmartMonitoring` (computed action pills) and `meWhatWeOffer`
+	// (leadImages strip) are uniques (icon shapes, the fallback arrays, the
+	// pill shaping and the lead strip sit outside the shared cardGrid
+	// contract); M13 batch 7 deleted the OurCapabilities/Impact wrappers →
+	// MeOurCapabilitiesCard/MeImpactCard renderers render the shared
+	// `CardGrid` directly; the surviving SmartMonitoring/WhatWeOffer
+	// wrappers get the M9 additive-`data` refactor. `skipped` now `[]`.
 	"monitoring-and-evaluation": {
 		namespace: "aerial-drones/monitoring-and-evaluation",
 		title: "Monitoring and Evaluation",
-		skipped: ["ourCapabilities", "impact", "smartMonitoringAndEval", "whatWeOffer"],
+		skipped: [],
 		sections: [
 			{
 				discriminant: "hero",
@@ -6235,10 +6240,70 @@ const PAGES = {
 				build: introTextBuild({ tone: "default", align: "left", split: false }),
 			},
 			{
+				discriminant: "meOurCapabilities",
+				from: "ourCapabilities",
+				// Legacy: OurCapabilitiesSection → <CardGrid columns={4}
+				// align="center" tone="surface" card={{ iconShape: "xl" }}
+				// fallbackIcons={…} /> (M13 batch 7 retired the wrapper; the
+				// MeOurCapabilitiesCard renderer reproduces the literals and
+				// keeps the fallback array hardcoded). Icons come from the
+				// fallback array; titles/descriptions localized.
+				build(en, sw, where) {
+					const enItems = en.items ?? [];
+					const swItems = sw.items ?? [];
+					if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+						gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+					}
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						items: enItems.map((item, i) => {
+							const swItem = swItems[i] ?? {};
+							return {
+								title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+								description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+							};
+						}),
+						id: "",
+					};
+				},
+			},
+			{
 				discriminant: "introText",
 				from: "techWeUse",
 				// Legacy: shared <IntroTextSection tone="surface" /> used directly (M13 batch 7 — wrapper retired; shared used directly on the page)..
 				build: introTextBuild({ tone: "surface", align: "left", split: false }),
+			},
+			{
+				discriminant: "meImpact",
+				from: "impact",
+				// Legacy: ImpactSection → <CardGrid columns={3} align="center"
+				// card={{ density: "roomy", iconShape: "xl" }}
+				// fallbackIcons={…} /> (M13 batch 7 retired the wrapper; the
+				// MeImpactCard renderer reproduces the literals and keeps the
+				// fallback array hardcoded). Icons come from the fallback
+				// array; titles/descriptions localized.
+				build(en, sw, where) {
+					const enItems = en.items ?? [];
+					const swItems = sw.items ?? [];
+					if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+						gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+					}
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						items: enItems.map((item, i) => {
+							const swItem = swItems[i] ?? {};
+							return {
+								title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+								description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+							};
+						}),
+						id: "",
+					};
+				},
 			},
 			{
 				discriminant: "introText",
@@ -6246,6 +6311,81 @@ const PAGES = {
 				// Legacy: shared <IntroTextSection /> used directly (M13 batch 7 — wrapper retired; shared used directly on the page). (tone
 				// default, align/split unset).
 				build: introTextBuild({ tone: "default", align: "left", split: false }),
+			},
+			{
+				discriminant: "meSmartMonitoring",
+				from: "smartMonitoringAndEval",
+				// Legacy: SmartMonitoringSection (M9 additive-`data` refactor,
+				// wrapper survived M13) → <CardGrid columns={4} tone="surface"
+				// card={{ iconShape: "xl", iconSize: "sm" }} actions={…} />.
+				// The action pills are pure shaping over the two locale CTA
+				// objects (variant primary/surface), so the strings stay data.
+				build(en, sw, where) {
+					const enItems = en.items ?? [];
+					const swItems = sw.items ?? [];
+					if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+						gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+					}
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						items: enItems.map((item, i) => {
+							const swItem = swItems[i] ?? {};
+							return {
+								icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+								title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+								description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+							};
+						}),
+						ctaPrimary: {
+							label: { en: optText(en.ctaPrimary?.label), sw: optText(sw.ctaPrimary?.label) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+						},
+						ctaSecondary: {
+							label: { en: optText(en.ctaSecondary?.label), sw: optText(sw.ctaSecondary?.label) },
+							href: sharedValue(en.ctaSecondary, sw.ctaSecondary, "href", where) ?? "",
+							icon: sharedValue(en.ctaSecondary, sw.ctaSecondary, "icon", where) ?? "",
+						},
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "meWhatWeOffer",
+				from: "whatWeOffer",
+				// Legacy: WhatWeOfferSection (M9 additive-`data` refactor,
+				// wrapper survived M13) → <CardGrid columns={4}
+				// headerAlign="left" leadImages={empty-to-null} card={{
+				// mediaPosition: "top", mediaAspect: "h-40" }} />. Item labels
+				// localized; images shared (verified identical en/sw).
+				build(en, sw, where) {
+					const enItems = en.items ?? [];
+					const swItems = sw.items ?? [];
+					if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+						gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+					}
+					const enImages = en.images ?? [];
+					const swImages = sw.images ?? [];
+					if (!Array.isArray(swImages) || swImages.length !== enImages.length) {
+						gap(where, `images count diverged (en=${enImages.length} sw=${swImages?.length})`);
+					}
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						images: enImages.map((image, i) => sharedValue({ image }, { image: swImages[i] }, "image", where) ?? ""),
+						items: enItems.map((item, i) => {
+							const swItem = swItems[i] ?? {};
+							return {
+								label: { en: reqText(item.label ?? item.title, `${where}.items[${i}].label.en`), sw: reqText(swItem.label ?? swItem.title, `${where}.items[${i}].label.sw`) },
+								image: sharedValue(item, swItem, "image", `${where}.items[${i}]`) ?? "",
+							};
+						}),
+						id: "",
+					};
+				},
 			},
 			{
 				discriminant: "ctaBand",
@@ -6286,11 +6426,16 @@ const PAGES = {
 	// `card.iconShape`), ProcessSection (layout/columns outside the registry
 	// `process` contract). Slug is hub-prefixed
 	// (`aerial-drones-as-built-surveys`) — the bare `as-built-surveys` slug is
-	// taken by the civil child.
+	// taken by the civil child. M11 batch 18 (2026-09-20): whole page in page
+	// order — `abWhyUseDrones` (hardcoded fallbackIcons array) + `abProcess`
+	// (`Process` grid variant, outside the shared process contract) are
+	// uniques; M13 batch 7 deleted their wrappers → AbWhyUseDronesCard/
+	// AbProcessTimeline renderers render the shared `CardGrid`/`Process`
+	// directly; `skipped` now `[]`.
 	"aerial-drones-as-built-surveys": {
 		namespace: "aerial-drones/aerial-drones-as-built-surveys",
 		title: "Aerial As-Built Surveys",
-		skipped: ["whyUseDrones", "process"],
+		skipped: [],
 		sections: [
 			{
 				discriminant: "hero",
@@ -6320,6 +6465,60 @@ const PAGES = {
 							})(),
 						},
 						ctaSecondary: { label: emptyPair(), href: "", icon: "" },
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "abWhyUseDrones",
+				from: "whyUseDrones",
+				// Legacy: WhyUseDronesSection → <CardGrid columns={2}
+				// align="center" tone="surface" card={{ density: "roomy",
+				// iconShape: "xl", iconSize: "lg" }} fallbackIcons={…} /> (M13
+				// batch 7 retired the wrapper; the AbWhyUseDronesCard renderer
+				// reproduces the literals and keeps the fallback array
+				// hardcoded). Icons come from the fallback array;
+				// titles/descriptions localized.
+				build(en, sw, where) {
+					const enItems = en.items ?? [];
+					const swItems = sw.items ?? [];
+					if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+						gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+					}
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						items: enItems.map((item, i) => {
+							const swItem = swItems[i] ?? {};
+							return {
+								title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+								description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+							};
+						}),
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "abProcess",
+				from: "process",
+				// Legacy: ProcessSection → <Process layout="grid" columns={4} />
+				// (M13 batch 7 retired the wrapper; the AbProcessTimeline
+				// renderer reproduces the literals — the grid variant is why
+				// M7 batch 14b skipped this node).
+				build(en, sw, where) {
+					const enItems = en.items ?? [];
+					const swItems = sw.items ?? [];
+					if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+						gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+					}
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						items: enItems.map((item, i) => ({
+							title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItems[i]?.title, `${where}.items[${i}].title.sw`) },
+							description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItems[i]?.description, `${where}.items[${i}].description.sw`) },
+						})),
 						id: "",
 					};
 				},

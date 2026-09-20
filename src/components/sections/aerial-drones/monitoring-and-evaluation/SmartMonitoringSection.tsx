@@ -21,11 +21,22 @@ interface SmartMonitoringContent {
 	ctaSecondary?: SmartLink | null;
 }
 
-export function SmartMonitoringSection(): ReactElement | null {
+/**
+ * `data` (M11 batch 18, 2026-09-20): Keystatic-owned content for the
+ * `meSmartMonitoring` unique section. When provided, the locale lookup is
+ * skipped; omitted = legacy `t()` render (bare callers untouched).
+ */
+export interface SmartMonitoringSectionProps {
+	data?: SmartMonitoringContent | null;
+}
+
+export function SmartMonitoringSection({ data }: SmartMonitoringSectionProps = {}): ReactElement | null {
 	const { t } = useTranslation([NS]);
-	const section = t(`${NS}:smartMonitoringAndEval`, {
-		returnObjects: true,
-	}) as unknown as SmartMonitoringContent;
+	const section =
+		data ??
+		(t(`${NS}:smartMonitoringAndEval`, {
+			returnObjects: true,
+		}) as unknown as SmartMonitoringContent);
 	const items = Array.isArray(section?.items) ? section.items : [];
 
 	if (items.length === 0) return null;

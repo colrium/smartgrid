@@ -20,11 +20,22 @@ interface WhatWeOfferContent {
 	items?: OfferItem[] | null;
 }
 
-export function WhatWeOfferSection(): ReactElement | null {
+/**
+ * `data` (M11 batch 18, 2026-09-20): Keystatic-owned content for the
+ * `meWhatWeOffer` unique section. When provided, the locale lookup is
+ * skipped; omitted = legacy `t()` render (bare callers untouched).
+ */
+export interface WhatWeOfferSectionProps {
+	data?: WhatWeOfferContent | null;
+}
+
+export function WhatWeOfferSection({ data }: WhatWeOfferSectionProps = {}): ReactElement | null {
 	const { t } = useTranslation([NS]);
-	const section = t(`${NS}:whatWeOffer`, {
-		returnObjects: true,
-	}) as unknown as WhatWeOfferContent;
+	const section =
+		data ??
+		(t(`${NS}:whatWeOffer`, {
+			returnObjects: true,
+		}) as unknown as WhatWeOfferContent);
 	const items = Array.isArray(section?.items) ? section.items : [];
 	const leadImages = Array.isArray(section?.images) ? section.images : [];
 

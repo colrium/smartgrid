@@ -125,6 +125,12 @@ import { SolWhatWeDoCard } from "@/components/sections/aerial-drones/solar-panel
 import { SolProcessCard } from "@/components/sections/aerial-drones/solar-panel-drone-surveys/SolProcessCard";
 import { LqQuarryServicesCard } from "@/components/sections/aerial-drones/landfill-quarry-drone-surveys/LqQuarryServicesCard";
 import { LqWhatWeOfferCard } from "@/components/sections/aerial-drones/landfill-quarry-drone-surveys/LqWhatWeOfferCard";
+import { MeOurCapabilitiesCard } from "@/components/sections/aerial-drones/monitoring-and-evaluation/MeOurCapabilitiesCard";
+import { MeImpactCard } from "@/components/sections/aerial-drones/monitoring-and-evaluation/MeImpactCard";
+import { SmartMonitoringSection } from "@/components/sections/aerial-drones/monitoring-and-evaluation/SmartMonitoringSection";
+import { WhatWeOfferSection as MeWhatWeOfferSection } from "@/components/sections/aerial-drones/monitoring-and-evaluation/WhatWeOfferSection";
+import { AbWhyUseDronesCard } from "@/components/sections/aerial-drones/as-built-surveys/AbWhyUseDronesCard";
+import { AbProcessTimeline } from "@/components/sections/aerial-drones/as-built-surveys/AbProcessTimeline";
 import { ProcessSection as BsProcessSection } from "@/components/sections/surveying/building-site/ProcessSection";
 import { AccuracyMattersSection } from "@/components/sections/surveying/building-site/AccuracyMattersSection";
 import { TechnologyStackSection } from "@/components/sections/surveying/building-site/TechnologyStackSection";
@@ -279,6 +285,12 @@ export const sectionRenderers = {
 	solProcess: SolProcessCard,
 	lqQuarryServicesItems: LqQuarryServicesCard,
 	lqWhatWeOffer: LqWhatWeOfferCard,
+	meOurCapabilities: MeOurCapabilitiesCard,
+	meImpact: MeImpactCard,
+	meSmartMonitoring: SmartMonitoringSection,
+	meWhatWeOffer: MeWhatWeOfferSection,
+	abWhyUseDrones: AbWhyUseDronesCard,
+	abProcess: AbProcessTimeline,
 } satisfies Record<SectionId, ComponentType<any>>;
 
 export function renderSection(
