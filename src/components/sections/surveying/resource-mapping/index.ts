@@ -1,21 +1,15 @@
-export { ResourceMappingHeroSection } from "./ResourceMappingHeroSection";
-export { default as ResourceMappingHeroSectionDefault } from "./ResourceMappingHeroSection";
 export { WhatIsResourceMappingSection } from "./WhatIsResourceMappingSection";
 export { default as WhatIsResourceMappingSectionDefault } from "./WhatIsResourceMappingSection";
 export { TypesOfResourceMappingSection } from "./TypesOfResourceMappingSection";
 export { default as TypesOfResourceMappingSectionDefault } from "./TypesOfResourceMappingSection";
 export { ResourceMappingWorkflowSection } from "./ResourceMappingWorkflowSection";
 export { default as ResourceMappingWorkflowSectionDefault } from "./ResourceMappingWorkflowSection";
-export { ResourceMappingDeliverablesSection } from "./ResourceMappingDeliverablesSection";
-export { default as ResourceMappingDeliverablesSectionDefault } from "./ResourceMappingDeliverablesSection";
 export { WhoUsesResourceMappingSection } from "./WhoUsesResourceMappingSection";
 export { default as WhoUsesResourceMappingSectionDefault } from "./WhoUsesResourceMappingSection";
 export { ResourceMappingTechStackSection } from "./ResourceMappingTechStackSection";
 export { default as ResourceMappingTechStackSectionDefault } from "./ResourceMappingTechStackSection";
 export { DataAccuracySection } from "./DataAccuracySection";
 export { default as DataAccuracySectionDefault } from "./DataAccuracySection";
-export { FinalCtaSection } from "./FinalCtaSection";
-export { default as FinalCtaSectionDefault } from "./FinalCtaSection";
 export { AgricultureSection } from "./AgricultureSection";
 export { default as AgricultureSectionDefault } from "./AgricultureSection";
 export { UtilitiesEnergySection } from "./UtilitiesEnergySection";
@@ -28,5 +22,3 @@ export { EnvironmentalConservationSection } from "./EnvironmentalConservationSec
 export { default as EnvironmentalConservationSectionDefault } from "./EnvironmentalConservationSection";
 export { DisasterRiskReductionSection } from "./DisasterRiskReductionSection";
 export { default as DisasterRiskReductionSectionDefault } from "./DisasterRiskReductionSection";
-export { WhyStandOutSection } from "./WhyStandOutSection";
-export { default as WhyStandOutSectionDefault } from "./WhyStandOutSection";

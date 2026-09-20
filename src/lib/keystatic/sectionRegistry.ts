@@ -243,7 +243,7 @@ import {
  * from DATA (the wrapper is page-owned), so edits change output.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "workflow", "finalCta", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "rmFinalCta", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation", "aerialIntro", "aerialWhyDrones", "aerialServices", "aerialSurveyingGrid", "aerialIndustries", "aerialIndustryCta", "aerialTechStack", "aerialCapabilityCta", "aerialProjects", "aerialAdditionalServices", "cadastralPostHeroCta", "cadastralWhenYouNeed", "cadastralProcessCta", "cadastralCost", "cadastralTimeline", "cadastralCompliance", "cadastralCaseStudy", "gprHero", "gprHighlights", "gprJumpNav", "gprOverview", "gprMethodology", "gprApplications", "gprDetect", "gprSue", "gprLimitations", "gprBeforeAfter", "gprTechnology", "gprFeaturedProjects", "gprSummary", "gisHero", "gisWhatIs", "gisImportance", "gisServices", "gisIndustries", "gisTechStack", "gisWhatsappCta", "gisComponents", "gisWhySmartgrid", "gisDataAccuracy", "gisBeforeAfter", "gisProjectImpact", "gisRelatedServices", "highwayServices", "asBuiltSolutions"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "workflow", "finalCta", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation", "aerialIntro", "aerialWhyDrones", "aerialServices", "aerialSurveyingGrid", "aerialIndustries", "aerialIndustryCta", "aerialTechStack", "aerialCapabilityCta", "aerialProjects", "aerialAdditionalServices", "cadastralPostHeroCta", "cadastralWhenYouNeed", "cadastralProcessCta", "cadastralCost", "cadastralTimeline", "cadastralCompliance", "cadastralCaseStudy", "gprHero", "gprHighlights", "gprJumpNav", "gprOverview", "gprMethodology", "gprApplications", "gprDetect", "gprSue", "gprLimitations", "gprBeforeAfter", "gprTechnology", "gprFeaturedProjects", "gprSummary", "gisHero", "gisWhatIs", "gisImportance", "gisServices", "gisIndustries", "gisTechStack", "gisWhatsappCta", "gisComponents", "gisWhySmartgrid", "gisDataAccuracy", "gisBeforeAfter", "gisProjectImpact", "gisRelatedServices", "highwayServices", "asBuiltSolutions"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -5221,75 +5221,6 @@ const rmDataAccuracy: SectionDefinition = {
 	}),
 };
 
-/**
- * M11 batch 9 — resource-mapping page (2026-09-18): `rmFinalCta` wraps the
- * `FinalCtaSection` closing panel. Unique — only valid on
- * `/surveying/resource-mapping`. Action hrefs are shared; labels and
- * descriptions are localized. Presentation (accent lede, map-marker
- * watermark, 3 columns) stays in the wrapper.
- */
-const rmFinalCta: SectionDefinition = {
-	id: "rmFinalCta",
-	version: 1,
-	label: "RM final CTA (unique)",
-	description: "Unique: the resource-mapping closing panel. Only valid on that page.",
-	schema: fields.object({
-		tag: localeText("Tag", { optionalInEnglish: true }),
-		headline: localeText("Headline"),
-		description: localeLongText("Description"),
-		note: localeLongText("Note"),
-		actions: fields.array(
-			fields.object({
-				icon: fields.text({
-					label: "MDI icon (shared, optional)",
-					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
-				}),
-				label: localeText("Label"),
-				description: localeLongText("Description"),
-				href: fields.text({ label: "Link", description: "Internal path or full URL." }),
-			}),
-			{
-				label: "Actions",
-				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Action"),
-			}
-		),
-		id: anchorField(),
-		// Excluded from v1 (documented): `className`, description tone,
-		// watermark and columns (presentation, not editor contracts).
-	}),
-	example: {
-		tag: { en: "", sw: "" },
-		headline: { en: "Start Mapping", sw: "Anza Ramani" },
-		description: { en: "", sw: "" },
-		note: { en: "", sw: "" },
-		actions: [
-			{
-				icon: "",
-				label: { en: "Request a Quote", sw: "Omba Nukuu" },
-				description: { en: "", sw: "" },
-				href: "/contact",
-			},
-		],
-		id: "get-started",
-	},
-	normalize: (resolved) => ({
-		data: {
-			tag: resolved.tag,
-			headline: resolved.headline,
-			description: resolved.description,
-			note: resolved.note,
-			actions: Array.isArray(resolved.actions)
-				? resolved.actions.map((action: any) => ({
-						icon: action?.icon || undefined,
-						label: action?.label ?? "",
-						description: action?.description ?? "",
-						href: typeof action?.href === "string" && action.href ? action.href : "",
-					}))
-				: [],
-		},
-		id: resolved.id || undefined,
-	}),
-};
 
 /**
  * M11 batch 9 — building-site-surveys page (2026-09-18): `bsHero` wraps the
@@ -8915,7 +8846,6 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	rmWhoUses,
 	rmTechStack,
 	rmDataAccuracy,
-	rmFinalCta,
 	bsHero,
 	bsSection2,
 	bsSiteEngineering,
@@ -9043,7 +8973,6 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	rmWhoUses: rmWhoUses.label,
 	rmTechStack: rmTechStack.label,
 	rmDataAccuracy: rmDataAccuracy.label,
-	rmFinalCta: rmFinalCta.label,
 	bsHero: bsHero.label,
 	bsSection2: bsSection2.label,
 	bsSiteEngineering: bsSiteEngineering.label,

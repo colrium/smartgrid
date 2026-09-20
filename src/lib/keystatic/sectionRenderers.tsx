@@ -64,7 +64,6 @@ import { ResourceMappingWorkflowSection } from "@/components/sections/surveying/
 import { WhoUsesResourceMappingSection } from "@/components/sections/surveying/resource-mapping/WhoUsesResourceMappingSection";
 import { ResourceMappingTechStackSection } from "@/components/sections/surveying/resource-mapping/ResourceMappingTechStackSection";
 import { DataAccuracySection } from "@/components/sections/surveying/resource-mapping/DataAccuracySection";
-import { FinalCtaSection as RmFinalCtaSection } from "@/components/sections/surveying/resource-mapping/FinalCtaSection";
 import { SectorSection } from "@/components/sections/surveying/resource-mapping/SectorSection";
 import { BuildingSiteHeroSection } from "@/components/sections/surveying/building-site/BuildingSiteHeroSection";
 import { BuildSmarterSection } from "@/components/sections/surveying/building-site/BuildSmarterSection";
@@ -204,7 +203,6 @@ export const sectionRenderers = {
 	rmWhoUses: WhoUsesResourceMappingSection,
 	rmTechStack: ResourceMappingTechStackSection,
 	rmDataAccuracy: DataAccuracySection,
-	rmFinalCta: RmFinalCtaSection,
 	bsHero: BuildingSiteHeroSection,
 	bsSection2: BuildSmarterSection,
 	bsSiteEngineering: SiteEngineeringSection,

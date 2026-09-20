@@ -1862,29 +1862,9 @@ function rmDataAccuracyBuild(en, sw, where) {
 	};
 }
 
-function rmFinalCtaBuild(en, sw, where) {
-	const enActions = en.actions ?? [];
-	const swActions = sw.actions ?? [];
-	if (!Array.isArray(swActions) || swActions.length !== enActions.length) {
-		gap(where, `action count diverged (en=${enActions.length} sw=${swActions?.length})`);
-	}
-	return {
-		tag: { en: optText(en.tag), sw: optText(sw.tag) },
-		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
-		description: { en: optText(en.description), sw: optText(sw.description) },
-		note: { en: optText(en.note), sw: optText(sw.note) },
-		actions: enActions.map((action, i) => {
-			const swAction = swActions[i] ?? {};
-			return {
-				icon: sharedValue(action, swAction, "icon", `${where}.actions[${i}]`) ?? "",
-				label: { en: reqText(action.label, `${where}.actions[${i}].label.en`), sw: reqText(swAction.label, `${where}.actions[${i}].label.sw`) },
-				description: { en: optText(action.description), sw: optText(swAction.description) },
-				href: sharedValue(action, swAction, "href", `${where}.actions[${i}]`) ?? "",
-			};
-		}),
-		id: "get-started",
-	};
-}
+// M13 batch 9: `rmFinalCtaBuild` deleted — resource-mapping's final CTA now
+// uses the shared `finalCta` branch via `finalCtaBuild(...)` (content
+// preserved; presentation literals travel as shared fields).
 
 // M11 batch 11 — aerial-surveys page (2026-09-19): the twelve bespoke tails
 // → unique sections (+ shared `deliverables`). Icons, image paths, hrefs,
@@ -4292,12 +4272,17 @@ const PAGES = {
 				},
 			},
 			{
-				discriminant: "rmFinalCta",
+				discriminant: "finalCta",
 				from: "finalCta",
-				// Legacy: FinalCtaSection → cta-closing with multiple actions.
-				build(en, sw, where) {
-					return rmFinalCtaBuild(en, sw, where);
-				},
+				// Legacy: shared <FinalCta id="get-started"
+				// descriptionTone="accent" watermark="map-marker-radius" ... />
+				// used directly on the page (M13 batch 9 — retired the
+				// FinalCtaSection wrapper; presentation literals travel as
+				// shared fields).
+				build: finalCtaBuild("map-marker-radius", 3, "center", {
+					descriptionTone: "accent",
+					id: "get-started",
+				}),
 			},
 		],
 	},
