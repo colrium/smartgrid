@@ -243,7 +243,7 @@ import {
  * from DATA (the wrapper is page-owned), so edits change output.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "workflow", "finalCta", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation", "aerialIntro", "aerialWhyDrones", "aerialServices", "aerialSurveyingGrid", "aerialIndustries", "aerialIndustryCta", "aerialTechStack", "aerialCapabilityCta", "aerialProjects", "aerialAdditionalServices", "cadastralPostHeroCta", "cadastralWhenYouNeed", "cadastralProcessCta", "cadastralCost", "cadastralTimeline", "cadastralCompliance", "cadastralCaseStudy", "gprHero", "gprHighlights", "gprJumpNav", "gprOverview", "gprMethodology", "gprApplications", "gprDetect", "gprSue", "gprLimitations", "gprBeforeAfter", "gprTechnology", "gprFeaturedProjects", "gprSummary", "gisHero", "gisWhatIs", "gisImportance", "gisServices", "gisIndustries", "gisTechStack", "gisWhatsappCta", "gisComponents", "gisWhySmartgrid", "gisDataAccuracy", "gisBeforeAfter", "gisProjectImpact", "gisRelatedServices", "highwayServices", "asBuiltSolutions", "bimServices", "seHero", "seOverview", "seWhatWeDo", "seExploreMore", "ssoServices", "ssoInstruments", "vsServices"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "workflow", "finalCta", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation", "aerialIntro", "aerialWhyDrones", "aerialServices", "aerialSurveyingGrid", "aerialIndustries", "aerialIndustryCta", "aerialTechStack", "aerialCapabilityCta", "aerialProjects", "aerialAdditionalServices", "cadastralPostHeroCta", "cadastralWhenYouNeed", "cadastralProcessCta", "cadastralCost", "cadastralTimeline", "cadastralCompliance", "cadastralCaseStudy", "gprHero", "gprHighlights", "gprJumpNav", "gprOverview", "gprMethodology", "gprApplications", "gprDetect", "gprSue", "gprLimitations", "gprBeforeAfter", "gprTechnology", "gprFeaturedProjects", "gprSummary", "gisHero", "gisWhatIs", "gisImportance", "gisServices", "gisIndustries", "gisTechStack", "gisWhatsappCta", "gisComponents", "gisWhySmartgrid", "gisDataAccuracy", "gisBeforeAfter", "gisProjectImpact", "gisRelatedServices", "highwayServices", "asBuiltSolutions", "bimServices", "seHero", "seOverview", "seWhatWeDo", "seExploreMore", "ssoServices", "ssoInstruments", "vsServices", "solWhatWeDo", "solProcess", "lqQuarryServicesItems", "lqWhatWeOffer"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -9222,6 +9222,276 @@ const vsServices: SectionDefinition = {
 	}),
 };
 
+/**
+ * M11 batch 17 — solar-panel-drone-surveys page (2026-09-20):
+ * `solWhatWeDo` wraps the capabilities grid (columns 4, centered align,
+ * surface tone, `iconShape: "xl"` — outside the shared `cardGrid`
+ * contract). Unique — only valid on
+ * `/aerial-drones/solar-panel-drone-surveys`. M13 batch 7 deleted the
+ * `WhatWeDoSection` wrapper; the renderer renders the shared `CardGrid`
+ * directly with the wrapper's literals. Item icons shared; titles and
+ * descriptions localized. Renders nothing without items (legacy guard,
+ * preserved).
+ */
+const solWhatWeDo: SectionDefinition = {
+	id: "solWhatWeDo",
+	version: 1,
+	label: "Solar what-we-do (unique)",
+	description: "Unique: the solar-panel capabilities grid with xl icon shapes. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Capabilities",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Capability"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): columns, align, tone, iconShape
+		// card literal (presentation).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "What We Do", sw: "Tunachofanya" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				icon: "map-search",
+				title: { en: "Solar Farm Mapping", sw: "Ramani ya Shamba la Jua" },
+				description: { en: "Imagery and terrain models for panel layouts.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 17 — solar-panel-drone-surveys page (2026-09-20):
+ * `solProcess` wraps the drone-integration process grid (columns 3,
+ * headerRow, indexed numbering, comfortable density + end index badges —
+ * outside the shared `cardGrid` contract). Unique — only valid on
+ * `/aerial-drones/solar-panel-drone-surveys`. M13 batch 7 deleted the
+ * `DroneIntegrationProcessSection` wrapper; the renderer renders the
+ * shared `CardGrid` directly with the wrapper's literals. Item icons
+ * shared; titles and descriptions localized. Renders nothing without
+ * items (legacy guard, preserved).
+ */
+const solProcess: SectionDefinition = {
+	id: "solProcess",
+	version: 1,
+	label: "Solar process (unique)",
+	description: "Unique: the drone-integration indexed process grid with end index badges. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Steps",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Step"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): columns, headerRow, indexed
+		// numbering, density/iconShape/iconSize/indexBadge card literal
+		// (presentation).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Drone Integration Process", sw: "Mchakato wa Kuunganisha Droni" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				icon: "map-marker-check",
+				title: { en: "Site Feasibility Assessment", sw: "Tathmini ya Uwezekano" },
+				description: { en: "Terrain, shading and viability evaluated from the air.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 17 — landfill-quarry-drone-surveys page (2026-09-20):
+ * `lqQuarryServicesItems` wraps the quarry services grid (columns 3,
+ * centered align, roomy density + `iconShape: "xl"` — outside the shared
+ * `cardGrid` contract). Unique — only valid on
+ * `/aerial-drones/landfill-quarry-drone-surveys`. M13 batch 7 deleted the
+ * `QuarryServicesItemsSection` wrapper; the renderer renders the shared
+ * `CardGrid` directly with the wrapper's literals. Item icons shared;
+ * titles and descriptions localized. Renders nothing without items
+ * (legacy guard, preserved).
+ */
+const lqQuarryServicesItems: SectionDefinition = {
+	id: "lqQuarryServicesItems",
+	version: 1,
+	label: "Landfill quarry services (unique)",
+	description: "Unique: the landfill-quarry services grid with xl icon shapes. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Services",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Service"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): columns, align, density/iconShape
+		// card literal (presentation).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Landfill Volume Monitoring", sw: "Ufuatiliaji wa Mazingira" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				icon: "cube-scan",
+				title: { en: "Landfill Volume Monitoring", sw: "Ufuatiliaji wa Kiasi" },
+				description: { en: "Estimate capacity and manage future space.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 17 — landfill-quarry-drone-surveys page (2026-09-20):
+ * `lqWhatWeOffer` wraps the what-we-offer grid (columns 3, centered align,
+ * surface tone, roomy density + circle/lg icon shapes + the hardcoded
+ * `fallbackIcons` array — outside the shared `cardGrid` contract). Unique —
+ * only valid on `/aerial-drones/landfill-quarry-drone-surveys`. M13 batch 7
+ * deleted the `WhatWeOfferSection` wrapper; the renderer renders the
+ * shared `CardGrid` directly with the wrapper's literals and passes items
+ * straight through (locale items carry `popupContent` for the card modals;
+ * icons come from the fallback array). Titles, descriptions and popup
+ * content localized. Renders nothing without items (legacy guard,
+ * preserved).
+ */
+const lqWhatWeOffer: SectionDefinition = {
+	id: "lqWhatWeOffer",
+	version: 1,
+	label: "Landfill quarry what-we-offer (unique)",
+	description: "Unique: the landfill-quarry what-we-offer grid with modal popups and fallback icons. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		items: fields.array(
+			fields.object({
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+				popupContent: localeLongText("Popup content"),
+			}),
+			{
+				label: "Offers",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Offer"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): columns, align, tone, density/
+		// iconShape/iconSize card literal, `fallbackIcons` array (hardcoded
+		// presentation — icons render from it when an item has no icon).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "What We Offer", sw: "Tunachotoa" },
+		items: [
+			{
+				title: { en: "Aerial Mapping", sw: "Ramani ya Angani" },
+				description: { en: "Accurate drone-based imagery.", sw: "" },
+				popupContent: { en: "Ultra-precise aerial mapping details.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+						popupContent: item?.popupContent || undefined,
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
 export const sectionRegistry: readonly SectionDefinition[] = [
 	introText,
 	ctaBand,
@@ -9349,6 +9619,10 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	ssoServices,
 	ssoInstruments,
 	vsServices,
+	solWhatWeDo,
+	solProcess,
+	lqQuarryServicesItems,
+	lqWhatWeOffer,
 ];
 
 export function getSectionDefinition(id: string): SectionDefinition {
@@ -9484,6 +9758,10 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	ssoServices: ssoServices.label,
 	ssoInstruments: ssoInstruments.label,
 	vsServices: vsServices.label,
+	solWhatWeDo: solWhatWeDo.label,
+	solProcess: solProcess.label,
+	lqQuarryServicesItems: lqQuarryServicesItems.label,
+	lqWhatWeOffer: lqWhatWeOffer.label,
 };
 
 /**

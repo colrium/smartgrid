@@ -1061,13 +1061,30 @@ Rules (decided 2026-09-18, before implementing):
       `FaqSection` shim) got the M9 additive-`data` refactor instead.
       Whole pages in page order (4 + 6 + 5 + 7 sections) → one
       `PageBuilderDocument` each, `skipped` now `[]` all four; registry
-      118→126; README list updated. CAUGHT by lint: conditional
+      118→126; README list updated.      CAUGHT by lint: conditional
       `useTranslation` after the early return in 3 routes (hook hoisted
       above the switch, per the bim route) + an unused faq renderer
       import (the entry uses the shared branch). Validation: `check:keystatic`
       OK (126 sections, 31 fixtures), `--verify` clean all four (no gaps,
       first try), `yarn typecheck` clean, `yarn lint` clean; dev-smoke
-      DEFERRED per M11/M12 policy.) **Status-log correction:** the
+      DEFERRED per M11/M12 policy.)
+      (Batch 17 — aerial-drones solar-panel-drone-surveys +
+      landfill-quarry-drone-surveys — done 2026-09-20: 4 uniques
+      (`solWhatWeDo` columns-4/centered/surface/`iconShape:"xl"`,
+      `solProcess` headerRow/indexed with end index badges,
+      `lqQuarryServicesItems` roomy + `iconShape:"xl"`, `lqWhatWeOffer`
+      roomy + circle/lg icons + hardcoded `fallbackIcons` array + items
+      carried popupContent for the card modals); M13 batch 7 had deleted
+      all four grid wrappers → renderer components (`SolWhatWeDoCard`,
+      `SolProcessCard`, `LqQuarryServicesCard`, `LqWhatWeOfferCard`)
+      render the shared `CardGrid` directly with the deleted wrappers'
+      literals; whole pages in page order (4 + 5 sections) → one
+      `PageBuilderDocument` each, `skipped` now `[]` both; registry
+      126→130; README list updated. Validation: `check:keystatic` OK
+      (130 sections, 31 fixtures), `--verify` clean both (4 + 5 sections,
+      no gaps, first try), `yarn typecheck` clean, `yarn lint` clean;
+      dev-smoke DEFERRED per M11/M12 policy. Next: Batch 18 —
+      monitoring-and-evaluation + aerial-drones as-built-surveys.) **Status-log correction:** the
       batch-15 close read "registry 123→125" — the check script counted
       125 total (123 before), but this note is stale after M13: M13
       unregistered 7 uniques (118 final), so batch 16 starts from 118,

@@ -121,6 +121,10 @@ import { ExploreMoreSection as SeExploreMoreSection } from "@/components/section
 import { SsoServicesCard } from "@/components/sections/civil/site-setting-out/SsoServicesCard";
 import { SsoInstrumentsCard } from "@/components/sections/civil/site-setting-out/SsoInstrumentsCard";
 import { VsServicesCard } from "@/components/sections/civil/volumetric-surveys/VsServicesCard";
+import { SolWhatWeDoCard } from "@/components/sections/aerial-drones/solar-panel-drone-surveys/SolWhatWeDoCard";
+import { SolProcessCard } from "@/components/sections/aerial-drones/solar-panel-drone-surveys/SolProcessCard";
+import { LqQuarryServicesCard } from "@/components/sections/aerial-drones/landfill-quarry-drone-surveys/LqQuarryServicesCard";
+import { LqWhatWeOfferCard } from "@/components/sections/aerial-drones/landfill-quarry-drone-surveys/LqWhatWeOfferCard";
 import { ProcessSection as BsProcessSection } from "@/components/sections/surveying/building-site/ProcessSection";
 import { AccuracyMattersSection } from "@/components/sections/surveying/building-site/AccuracyMattersSection";
 import { TechnologyStackSection } from "@/components/sections/surveying/building-site/TechnologyStackSection";
@@ -271,6 +275,10 @@ export const sectionRenderers = {
 	ssoServices: SsoServicesCard,
 	ssoInstruments: SsoInstrumentsCard,
 	vsServices: VsServicesCard,
+	solWhatWeDo: SolWhatWeDoCard,
+	solProcess: SolProcessCard,
+	lqQuarryServicesItems: LqQuarryServicesCard,
+	lqWhatWeOffer: LqWhatWeOfferCard,
 } satisfies Record<SectionId, ComponentType<any>>;
 
 export function renderSection(

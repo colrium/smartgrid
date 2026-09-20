@@ -78,6 +78,59 @@
 			}
 		},
 		{
+			"discriminant": "lqQuarryServicesItems",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "Transforming Quarries, Waste & Resource Management",
+					"sw": "Kubadilisha Usimamizi wa Machimbo, Taka na Rasilimali"
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"icon": "cube-scan",
+						"title": {
+							"en": "Landfill Volume Monitoring",
+							"sw": "Ufuatiliaji wa Kiasi cha Tovuti ya Taka"
+						},
+						"description": {
+							"en": "Use high-resolution drone surveys to estimate landfill capacity and manage future space efficiently.",
+							"sw": "Tumia uchunguzi wa ndege wa mwonekano wa juu kukadiria uwezo wa tovuti ya taka na kusimamia nafasi ya baadaye kwa ufanisi."
+						}
+					},
+					{
+						"icon": "excavator",
+						"title": {
+							"en": "Quarry Cut & Fill Analysis",
+							"sw": "Uchambuzi wa Kukata na Kujaza kwa Machimbo"
+						},
+						"description": {
+							"en": "Track extraction volumes and surface changes over time to maintain compliance and profitability.",
+							"sw": "Fuatilia kiasi cha uchimbaji na mabadiliko ya uso kwa muda kudumisha kufuata kanuni na faida."
+						}
+					},
+					{
+						"icon": "map",
+						"title": {
+							"en": "Topographic Mapping",
+							"sw": "Uchoraji Ramani wa Topografia"
+						},
+						"description": {
+							"en": "Accurate 3D terrain models generated via UAV and GNSS for grading, design, and planning.",
+							"sw": "Mifano sahihi ya ardhi ya 3D inayozalishwa kupitia UAV na GNSS kwa upangaji, kubuni, na mipango."
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
 			"discriminant": "introText",
 			"value": {
 				"tag": {
@@ -103,6 +156,148 @@
 					"href": "",
 					"icon": ""
 				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "lqWhatWeOffer",
+			"value": {
+				"tag": {
+					"en": "Services",
+					"sw": "Huduma"
+				},
+				"headline": {
+					"en": "Our Aerial Surveying Services",
+					"sw": "Huduma Zetu za Uchunguzi wa Angani"
+				},
+				"items": [
+					{
+						"title": {
+							"en": "Aerial Mapping",
+							"sw": "Uchoraji Ramani wa Angani"
+						},
+						"description": {
+							"en": "Accurate drone-based imagery for planning, documentation, and analysis.",
+							"sw": "Picha sahihi za ndege zisizo na rubani kwa upangaji, nyaraka, na uchambuzi."
+						},
+						"popupContent": {
+							"en": "SmartGrid Surveying delivers ultra-precise aerial mapping using UAVs to generate georeferenced orthomosaics, topographic data, and planning-grade base maps. Our solutions support infrastructure, utilities, and land development with unmatched speed and accuracy.",
+							"sw": "SmartGrid Surveying hutoa uchoraji ramani wa angani wa usahihi wa hali ya juu kwa kutumia UAV kuzalisha orthomosaic zenye marejeleo ya kijiografia, data ya topografia, na ramani za msingi za kiwango cha upangaji. Suluhisho zetu zinasaidia miundombinu, huduma, na maendeleo ya ardhi kwa kasi na usahihi usio na mfano."
+						}
+					},
+					{
+						"title": {
+							"en": "Construction Monitoring",
+							"sw": "Ufuatiliaji wa Ujenzi"
+						},
+						"description": {
+							"en": "Track site activity using consistent, real-time aerial visuals.",
+							"sw": "Fuatilia shughuli za tovuti kwa taswira thabiti za angani za wakati halisi."
+						},
+						"popupContent": {
+							"en": "SmartGrid offers site monitoring through high-resolution drone flyovers. Our automated flights provide weekly visual updates, detect deviations from schedule, and support decision-making for project managers and developers.",
+							"sw": "SmartGrid hutoa ufuatiliaji wa tovuti kupitia safari za ndege za mwonekano wa juu. Safari zetu za kiotomatiki hutoa sasisho za kila wiki, kugundua mkengeuko kutoka kwa ratiba, na kusaidia ufanyaji maamuzi kwa wasimamizi wa mradi na waendelezaji."
+						}
+					},
+					{
+						"title": {
+							"en": "Environmental Monitoring",
+							"sw": "Ufuatiliaji wa Mazingira"
+						},
+						"description": {
+							"en": "Visualize ecological change and monitor conservation areas.",
+							"sw": "Ona mabadiliko ya ikolojia na fuatilia maeneo ya uhifadhi."
+						},
+						"popupContent": {
+							"en": "Using UAVs, SmartGrid tracks land cover change, deforestation, erosion, and other ecological indicators. Our data supports impact assessments and regulatory compliance with repeatable, time-stamped visuals.",
+							"sw": "Kwa kutumia UAV, SmartGrid hufuatilia mabadiliko ya chanjo ya ardhi, ukataji miti, mmomonyoko, na viashiria vingine vya ikolojia. Data yetu inasaidia tathmini za athari na kufuata kanuni kwa taswira zinazorudiwa, zenye muhuri wa muda."
+						}
+					},
+					{
+						"title": {
+							"en": "Agricultural Mapping",
+							"sw": "Uchoraji Ramani wa Kilimo"
+						},
+						"description": {
+							"en": "Drone-based multispectral data for crop health and farm optimization.",
+							"sw": "Data ya multispectral ya ndege zisizo na rubani kwa afya ya mazao na uboreshaji wa shamba."
+						},
+						"popupContent": {
+							"en": "SmartGrid empowers agronomists with data on crop health, plant stress, and irrigation patterns. We use NDVI and multispectral analysis to optimize input use and improve yield sustainability.",
+							"sw": "SmartGrid huiwezesha agronomists kwa data kuhusu afya ya mazao, mkazo wa mimea, na mifumo ya umwagiliaji. Tunatumia uchambuzi wa NDVI na multispectral kuboresha matumizi ya pembejeo na kuboresha uendelevu wa mavuno."
+						}
+					},
+					{
+						"title": {
+							"en": "3D Modeling",
+							"sw": "Uundaji wa Mifano ya 3D"
+						},
+						"description": {
+							"en": "Photorealistic 3D models to support planning and inspections.",
+							"sw": "Mifano ya 3D yenye mwonekano halisi kusaidia upangaji na ukaguzi."
+						},
+						"popupContent": {
+							"en": "We create detailed 3D mesh and textured models of terrain, buildings, and infrastructure. These models are BIM-ready and useful for design validation, inspection, and immersive planning.",
+							"sw": "Tunaunda mifano ya kina ya mesh na yenye maandishi ya ardhi, majengo, na miundombinu. Mifano hizi ziko tayari za BIM na muhimu kwa uthibitishaji wa kubuni, ukaguzi, na upangaji wa kina."
+						}
+					},
+					{
+						"title": {
+							"en": "Infrastructure Planning",
+							"sw": "Upangaji wa Miundombinu"
+						},
+						"description": {
+							"en": "Route and terrain data for smart infrastructure layout.",
+							"sw": "Data ya njia na ardhi kwa mpangilio bora wa miundombinu."
+						},
+						"popupContent": {
+							"en": "We map routes and sites using drone LiDAR and photogrammetry. This ensures smart siting of roads, pipelines, and urban developments while minimizing environmental disruption.",
+							"sw": "Tunachora ramani za njia na tovuti kwa kutumia LiDAR ya ndege na photogrammetry. Hii inahakikisha uwekaji bora wa barabara, mabomba, na maendeleo ya miji huku ikipunguza usumbufu wa mazingira."
+						}
+					},
+					{
+						"title": {
+							"en": "DTMs & DEMs",
+							"sw": "DTMs na DEMs"
+						},
+						"description": {
+							"en": "Digital terrain and elevation models for hydrological and civil works.",
+							"sw": "Mifano ya ardhi na mwinuko ya dijitali kwa kazi za maji na uhandisi wa kiraia."
+						},
+						"popupContent": {
+							"en": "Our terrain and elevation models help civil engineers and hydrologists analyze runoff, slope stability, and grading. We deliver precise elevation data to support resilient infrastructure.",
+							"sw": "Mifano yetu ya ardhi na mwinuko huwasaidia wahandisi wa kiraia na wanahidrolojia kuchambua mtiririko wa maji, uthabiti wa mteremko, na upangaji. Tunatoa data sahihi ya mwinuko kusaidia miundombinu inayostahimili."
+						}
+					},
+					{
+						"title": {
+							"en": "Volumetric Calculations",
+							"sw": "Hesabu za Kiasi"
+						},
+						"description": {
+							"en": "Calculate material volumes and manage resources accurately.",
+							"sw": "Hesabu kiasi cha nyenzo na kusimamia rasilimali kwa usahihi."
+						},
+						"popupContent": {
+							"en": "SmartGrid computes cut/fill volumes and stockpile measurements with centimeter-level accuracy. Our aerial photogrammetry offers fast, safe, and repeatable results.",
+							"sw": "SmartGrid huhesabu kiasi cha kukata/kujaza na vipimo vya mrundikano kwa usahihi wa kiwango cha sentimita. Photogrammetry yetu ya angani hutoa matokeo ya haraka, salama, na yanayorudiwa."
+						}
+					},
+					{
+						"title": {
+							"en": "Disaster Assessment",
+							"sw": "Tathmini ya Maafa"
+						},
+						"description": {
+							"en": "Route and terrain data for smart infrastructure layout.",
+							"sw": "Data ya njia na ardhi kwa mpangilio bora wa miundombinu."
+						},
+						"popupContent": {
+							"en": "After floods, landslides, or earthquakes, SmartGrid uses drones to quickly document damage. Our data helps responders prioritize actions, allocate aid, and plan recovery operations.",
+							"sw": "Baada ya mafuriko, maporomoko ya ardhi, au matetemeko ya ardhi, SmartGrid hutumia ndege zisizo na rubani kuandika uharibifu haraka. Data yetu husaidia wajibu kuweka vipaumbele vya hatua, kutenga msaada, na kupanga shughuli za uokoaji."
+						}
+					}
+				],
 				"id": ""
 			}
 		}

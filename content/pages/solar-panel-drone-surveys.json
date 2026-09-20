@@ -49,6 +49,145 @@
 			}
 		},
 		{
+			"discriminant": "solWhatWeDo",
+			"value": {
+				"tag": {
+					"en": "Services",
+					"sw": "Huduma"
+				},
+				"headline": {
+					"en": "What We Do",
+					"sw": "Tunachofanya"
+				},
+				"description": {
+					"en": "At SmartGrid Surveying, we leverage cutting-edge drone technology to perform precise, efficient, and safe surveys for solar panel installations. From planning and inspection to thermal mapping and post-installation assessments, our drone surveys offer unmatched insight for both corporate and individual clients.",
+					"sw": "Katika SmartGrid Surveying, tunatumia teknolojia ya kisasa ya ndege zisizo na rubani kufanya uchunguzi sahihi, bora, na salama kwa usakinishaji wa paneli za sola. Kuanzia upangaji na ukaguzi hadi uchoraji ramani wa joto na tathmini za baada ya usakinishaji, uchunguzi wetu wa ndege hutoa maarifa yasiyo na mfano kwa wateja wa kampuni na binafsi."
+				},
+				"items": [
+					{
+						"icon": "map-search",
+						"title": {
+							"en": "Solar Farm Mapping",
+							"sw": "Uchoraji Ramani wa Shamba la Sola"
+						},
+						"description": {
+							"en": "High-resolution aerial imagery and terrain models to design and plan optimal solar panel layouts with full site visibility.",
+							"sw": "Picha za mwonekano wa juu na mifano ya ardhi kubuni na kupanga mipangilio bora ya paneli za sola kwa mwonekano kamili wa tovuti."
+						}
+					},
+					{
+						"icon": "chart-bell-curve",
+						"title": {
+							"en": "Pre-Installation Analysis",
+							"sw": "Uchambuzi wa Kabla ya Usakinishaji"
+						},
+						"description": {
+							"en": "3D site scans and shadow simulations help you make better positioning decisions for maximum efficiency.",
+							"sw": "Uchanganuzi wa tovuti wa 3D na uigaji wa vivuli hukusaidia kufanya maamuzi bora ya nafasi kwa ufanisi wa juu."
+						}
+					},
+					{
+						"icon": "thermometer-lines",
+						"title": {
+							"en": "Thermal Inspections",
+							"sw": "Ukaguzi wa Joto"
+						},
+						"description": {
+							"en": "Thermal imaging detects malfunctioning or underperforming panels to reduce downtime and improve ROI.",
+							"sw": "Upigaji picha wa joto hugundua paneli zisizofanya kazi au zenye utendaji duni kupunguza muda wa kusimama na kuboresha ROI."
+						}
+					},
+					{
+						"icon": "clipboard-check-outline",
+						"title": {
+							"en": "Post-Deployment Audits",
+							"sw": "Ukaguzi wa Baada ya Uwekaji"
+						},
+						"description": {
+							"en": "Ensure solar assets meet specs and performance benchmarks with audit-ready geospatial documentation.",
+							"sw": "Hakikisha mali za sola zinakidhi vipimo na viwango vya utendaji kwa nyaraka za kijiografia zinazotayari kwa ukaguzi."
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "solProcess",
+			"value": {
+				"tag": {
+					"en": "Process",
+					"sw": "Mchakato"
+				},
+				"headline": {
+					"en": "Drone Integration in the Solar Installation Process",
+					"sw": "Ujumuishaji wa Ndege Zisizo na Rubani katika Mchakato wa Usakinishaji wa Sola"
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"icon": "map-marker-check",
+						"title": {
+							"en": "Site Feasibility Assessment",
+							"sw": "Tathmini ya Uwezekano wa Tovuti"
+						},
+						"description": {
+							"en": "Drones capture aerial imagery and topography, evaluating terrain, shading, and viability for solar deployment.",
+							"sw": "Ndege zisizo na rubani hukamata picha za angani na topografia, kutathmini ardhi, vivuli, na uwezekano wa uwekaji wa sola."
+						}
+					},
+					{
+						"icon": "cube-outline",
+						"title": {
+							"en": "Pre-Installation Planning",
+							"sw": "Upangaji wa Kabla ya Usakinishaji"
+						},
+						"description": {
+							"en": "3D modeling and solar irradiance mapping guide optimal panel layout and orientation for maximum output.",
+							"sw": "Uundaji wa mifano ya 3D na uchoraji ramani wa mionzi ya sola huongoza mpangilio na mwelekeo bora wa paneli kwa matokeo ya juu."
+						}
+					},
+					{
+						"icon": "drone",
+						"title": {
+							"en": "Construction Monitoring",
+							"sw": "Ufuatiliaji wa Ujenzi"
+						},
+						"description": {
+							"en": "Live drone footage and photogrammetry ensure build alignment, real-time updates, and progress tracking.",
+							"sw": "Rekodi za moja kwa moja za ndege na photogrammetry huhakikisha upatanishi wa ujenzi, sasisho za wakati halisi, na ufuatiliaji wa maendeleo."
+						}
+					},
+					{
+						"icon": "checkbox-marked-circle",
+						"title": {
+							"en": "Final Inspection & QA",
+							"sw": "Ukaguzi wa Mwisho na QA"
+						},
+						"description": {
+							"en": "Thermal and visual drone inspections identify faults or misalignments before commissioning.",
+							"sw": "Ukaguzi wa joto na wa mwonekano wa ndege hugundua hitilafu au kupotoka kabla ya kuwasilisha mradi."
+						}
+					},
+					{
+						"icon": "wrench-outline",
+						"title": {
+							"en": "Ongoing Maintenance",
+							"sw": "Matengenezo Yanayoendelea"
+						},
+						"description": {
+							"en": "Scheduled drone flyovers monitor panel health, detect dirt or damage, and maintain peak system efficiency.",
+							"sw": "Safari za ndege zilizoratibiwa hufuatilia afya ya paneli, kugundua uchafu au uharibifu, na kudumisha ufanisi wa juu wa mfumo."
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
 			"discriminant": "ctaBand",
 			"value": {
 				"tag": {

@@ -5924,13 +5924,18 @@ const PAGES = {
 	// order — `hero` (shared Hero, single pill) + `cta` (ctaBand centred;
 	// wrapper hardcodes primary `icon: "arrow-right"` + `iconPosition: "end"`,
 	// stored as shared literals — content carries label/href only — with
-	// `iconPosition` collapsing to the solid-pill default). Tails stay legacy:
-	// WhatWeDoSection (`card.iconShape: "xl"`, outside the contract),
-	// DroneIntegrationProcessSection (`indexed` numbering).
+	// `iconPosition` collapsing to the solid-pill default). M11 batch 17
+	// (2026-09-20): whole page in page order — `solWhatWeDo` (columns 4,
+	// centered, surface, `iconShape: "xl"`) + `solProcess` (columns 3,
+	// headerRow, indexed, end index badges) are uniques (icon shapes,
+	// numbering and the badge card literal sit outside the shared cardGrid
+	// contract — M13 batch 7 retired their wrappers; the SolWhatWeDoCard/
+	// SolProcessCard renderers render the shared `CardGrid` directly);
+	// `skipped` now `[]`.
 	"solar-panel-drone-surveys": {
 		namespace: "aerial-drones/solar-panel-drone-surveys",
 		title: "Solar Panel Drone Surveys",
-		skipped: ["whatWeDo", "droneIntegrationProcess"],
+		skipped: [],
 		sections: [
 			{
 				discriminant: "hero",
@@ -5959,6 +5964,66 @@ const PAGES = {
 							})(),
 						},
 						ctaSecondary: { label: emptyPair(), href: "", icon: "" },
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "solWhatWeDo",
+				from: "whatWeDo",
+				// Legacy: WhatWeDoSection → <CardGrid columns={4} align="center"
+				// tone="surface" card={{ iconShape: "xl" }} /> (M13 batch 7
+				// retired the wrapper; the SolWhatWeDoCard renderer reproduces
+				// the literals). Item icons shared; titles/descriptions
+				// localized.
+				build(en, sw, where) {
+					const enItems = en.items ?? [];
+					const swItems = sw.items ?? [];
+					if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+						gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+					}
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						items: enItems.map((item, i) => {
+							const swItem = swItems[i] ?? {};
+							return {
+								icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+								title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+								description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+							};
+						}),
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "solProcess",
+				from: "droneIntegrationProcess",
+				// Legacy: DroneIntegrationProcessSection → <CardGrid columns={3}
+				// headerRow indexed card={{ density: "comfortable",
+				// iconShape: "xl", iconSize: "sm", indexBadgePosition: "end",
+				// indexBadgeClassName: … }} /> (M13 batch 7 retired the wrapper;
+				// the SolProcessCard renderer reproduces the literals).
+				build(en, sw, where) {
+					const enItems = en.items ?? [];
+					const swItems = sw.items ?? [];
+					if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+						gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+					}
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						items: enItems.map((item, i) => {
+							const swItem = swItems[i] ?? {};
+							return {
+								icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+								title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+								description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+							};
+						}),
 						id: "",
 					};
 				},
@@ -5995,15 +6060,20 @@ const PAGES = {
 			},
 		],
 	},
-	// M7 batch 13b: landfill-quarry-drone-surveys. Three sections migrate in
-	// page order — `hero` (shared Hero, single pill) + `quarryServices`/
-	// `maximizeProductivity` (introTexts default/surface). Tails stay legacy:
-	// QuarryServicesItemsSection (`card.iconShape: "xl"` + roomy density —
-	// iconShape outside the contract), WhatWeOfferSection (`fallbackIcons`).
+	// M7 batch 13b: landfill-quarry-drone-surveys. `hero` (shared Hero,
+	// single pill) + `quarryServices`/`maximizeProductivity` (introTexts
+	// default/surface). M11 batch 17 (2026-09-20): whole page in page order —
+	// `lqQuarryServicesItems` (columns 3, centered, roomy + `iconShape:
+	// "xl"`) + `lqWhatWeOffer` (surface, roomy + circle/lg icons, hardcoded
+	// fallbackIcons array, items carry popupContent for the card modals) are
+	// uniques (icon shapes/densities, the fallback array and popup items sit
+	// outside the shared cardGrid contract — M13 batch 7 retired their
+	// wrappers; the LqQuarryServicesCard/LqWhatWeOfferCard renderers render
+	// the shared `CardGrid` directly); `skipped` now `[]`.
 	"landfill-quarry-drone-surveys": {
 		namespace: "aerial-drones/landfill-quarry-drone-surveys",
 		title: "Landfill Quarry Drone Surveys",
-		skipped: ["quarryServicesItems", "whatWeOffer"],
+		skipped: [],
 		sections: [
 			{
 				discriminant: "hero",
@@ -6044,10 +6114,72 @@ const PAGES = {
 				build: introTextBuild({ tone: "default", align: "left", split: false }),
 			},
 			{
+				discriminant: "lqQuarryServicesItems",
+				from: "quarryServicesItems",
+				// Legacy: QuarryServicesItemsSection → <CardGrid columns={3}
+				// align="center" card={{ density: "roomy", iconShape: "xl" }} />
+				// (M13 batch 7 retired the wrapper; the LqQuarryServicesCard
+				// renderer reproduces the literals). Item icons shared;
+				// titles/descriptions localized.
+				build(en, sw, where) {
+					const enItems = en.items ?? [];
+					const swItems = sw.items ?? [];
+					if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+						gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+					}
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						items: enItems.map((item, i) => {
+							const swItem = swItems[i] ?? {};
+							return {
+								icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+								title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+								description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+							};
+						}),
+						id: "",
+					};
+				},
+			},
+			{
 				discriminant: "introText",
 				from: "maximizeProductivity",
 				// Legacy: shared <IntroTextSection tone="surface" /> used directly (M13 batch 7 — wrapper retired; shared used directly on the page)..
 				build: introTextBuild({ tone: "surface", align: "left", split: false }),
+			},
+			{
+				discriminant: "lqWhatWeOffer",
+				from: "whatWeOffer",
+				// Legacy: WhatWeOfferSection → <CardGrid columns={3}
+				// align="center" tone="surface" card={{ density: "roomy",
+				// iconShape: "circle", iconSize: "lg" }} fallbackIcons={…} />
+				// (M13 batch 7 retired the wrapper; the LqWhatWeOfferCard
+				// renderer reproduces the literals and keeps the fallback array
+				// hardcoded). Items flow straight through: locale items carry
+				// popupContent for the card modals; icons come from the
+				// fallback array. Titles/descriptions/popups localized.
+				build(en, sw, where) {
+					const enItems = en.items ?? [];
+					const swItems = sw.items ?? [];
+					if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+						gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+					}
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						items: enItems.map((item, i) => {
+							const swItem = swItems[i] ?? {};
+							return {
+								title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+								description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+								popupContent: { en: optText(item.popupContent), sw: optText(swItem.popupContent) },
+							};
+						}),
+						id: "",
+					};
+				},
 			},
 		],
 	},
