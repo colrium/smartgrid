@@ -1254,11 +1254,23 @@ Batches (one commit each, in this order):
       `asBuiltSolutions` uniques (`indexed` outside the cardGrid contract).
       Mapping comments updated (CAUGHT + fixed: a bulk hero-comment replace
       touched 3 other pages — reverted). Validation DEFERRED per M13 policy.
-- [ ] Batch 6 — civil `bim` + `site-engineering` + `site-setting-out` +
-      `volumetric-surveys`: Type 1 heroes → `Hero`, `TextSection` shims →
-      `IntroTextSection`, `PrecisionVolumetricAnalysis` → `SplitMedia`;
-      Type 2 none. Keep: bespoke `CivilHero`(landing twin untouched),
-      shaping grids/CTAs, `Split` overview, indexed/media-bg grids.
+- [x] Batch 6 — civil `bim` + `site-engineering` + `site-setting-out` +
+      `volumetric-surveys` (done 2026-09-20, all Type 1, no registry/entry/
+      migration-output changes): bim `HeroSection` → `Hero`,
+      `BimServicesSection` → `CardGrid` (indexed + left header, both
+      branches); site-engineering `WhatWeDoSection` → `CardGrid` (indexed,
+      both branches); site-setting-out `HeroSection` → `Hero`,
+      `OurServicesSection`/`OurInstrumentsSection` → `CardGrid`
+      (indexed / mediaBadged + card literal, both branches); volumetric
+      `HeroSection` → `Hero`, `TextSection` + 2 shims → `IntroTextSection`
+      (default/surface), `PrecisionVolumetricAnalysisSection` → `SplitMedia`
+      (right), `ServicesSection` → `CardGrid` (surface + left header).
+      12 wrapper files deleted; guards/literals preserved. Kept per rule:
+      shaping `CtaSection`s (conditional link shaping), `FaqSection`
+      (title→question map), `ExploreMoreSection` (media map), `Split`
+      overview, custom `<bold>` heroes. Mapping comments refreshed (fixed 3
+      mislabeled wrapper names from a bulk replace). Validation DEFERRED
+      per M13 policy.
 - [ ] Batch 7 — aerial-drones children (`solar-panel`, `landfill-quarry`,
       `monitoring-and-evaluation`, `as-built-surveys`, `agricultural-ndvi`,
       `lidar-mapping`, `volumetric-surveys`): Type 1 heroes → `Hero`,
@@ -1428,3 +1440,4 @@ For every implementation change:
 | 2026-09-20 | M13 | Batch 3 DONE — ground-penetrating-radar: deleted `GprDeliverablesSection`, `GprFinalCtaSection` (+ barrel lines); legacy renders shared `Deliverables`/`FinalCta` directly (accent lede + note + radar + 3 cols + `get-started` anchor); shared `finalCta` v1→v2 (`note`, `descriptionTone`, `actionIconFallback`); migration `finalCtaBuild` gains `opts`; GPR uses `finalCtaBuild("radar", 3, "center", {descriptionTone: "accent", id: "get-started"})`; entries regenerated (GPR 17, aerial 15, cadastral 10; `draft`); registry 123→122; README updated. DECIDED: before/after shell wrappers stay unique (multiple shared children + DOM — rule refinement recorded; batches 4/8/9 updated) | Validation DEFERRED per M13 policy. Next: batch 4 — gis-mapping | |
 | 2026-09-20 | M13 | Batch 4 DONE — gis-mapping: deleted `GisAnalystCtaSection` (+ barrel lines); legacy renders shared `FinalCta` directly (muted lede, map-search-outline, 3 cols, `talk-to-analyst` anchor); `finalCtaBuild("map-search-outline", 3, "center", {id: "talk-to-analyst"})`; deleted `gisAnalystCtaBuild`; entry regenerated (15 sections, `draft`); registry 122→121; README updated | Validation DEFERRED per M13 policy. Next: batch 5 — civil highway + as-built | |
 | 2026-09-20 | M13 | Batch 5 DONE — highway-surveys + as-built-surveys: 11 legacy-only wrappers deleted (heroes, Overview, Benefits, DeliverablesSection, TextSection + 3 shims, KeyIndustries, Applications); legacy branches render shared `Hero`/`IntroTextSection`/`CardGrid`/`Deliverables` directly (tones/guards preserved); no registry/entry changes (entries already shared); mapping comments refreshed. Kept: `highwayServices`/`asBuiltSolutions` uniques (`indexed`). CAUGHT: bulk comment edit touched 3 other pages — reverted | Validation DEFERRED per M13 policy. Next: batch 6 — civil bim + site-engineering + site-setting-out + volumetric | |
+| 2026-09-20 | M13 | Batch 6 DONE — bim + site-engineering + site-setting-out + volumetric-surveys: 12 wrappers deleted (heroes, BimServices/WhatWeDo/OurServices/OurInstruments/VolServices grids, TextSection + shims, Precision split); both branches render shared components directly (guards/literals preserved); no registry/entry changes; mapping comments refreshed. Kept: shaping CTAs/Faq/ExploreMore, Split overview, `<bold>` heroes | Validation DEFERRED per M13 policy. Next: batch 7 — aerial-drones children | |

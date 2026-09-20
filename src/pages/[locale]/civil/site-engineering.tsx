@@ -3,13 +3,14 @@ import PageHead from "@/components/Head";
 
 import { getI18nProps, getLocale } from "@/lib/i18n";
 import type { Lang } from "@/lib/types";
+import { useTranslation } from "@/hooks";
 import { resolveKeystaticPage, type ResolvedKeystaticPage } from "@/lib/keystatic/resolvePage";
 import { renderSection } from "@/lib/keystatic/sectionRenderers";
 import { Deliverables } from "@/components/sections/Deliverables";
+import { CardGrid, type CardItem } from "@/components/sections/shared/CardGrid";
 import {
 	HeroSection,
 	OverviewSection,
-	WhatWeDoSection,
 	CtaSection,
 	ExploreMoreSection,
 } from "@/components/sections/civil/site-engineering";
@@ -19,6 +20,13 @@ type PageProps = {
 	keystaticPage: ResolvedKeystaticPage | null;
 };
 
+interface WhatWeDoContent {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+	items: { title: string; description: string }[];
+};
+
 /**
  * Sections migrated to Keystatic in page order (see the `site-engineering`
  * mapping in `scripts/migrate-locale-to-keystatic.mjs`): cta ctaBand only.
@@ -26,7 +34,9 @@ type PageProps = {
  * stay legacy; WhatWeDoSection is `indexed`; ExploreMoreSection uses
  * media-background cards; the deliverables explorer stays legacy. If an edit
  * changes the section COUNT, the route falls back to legacy rather than
- * misplacing sections — keep this in sync with the mapping.
+ * misplacing sections — keep this in sync with the mapping. (M13 batch 6,
+ * 2026-09-20 — the single-shared-child wrapper `WhatWeDoSection` was
+ * removed; both branches below render the shared `CardGrid` directly.)
  */
 const KEYSTATIC_SECTION_COUNT = 1;
 
@@ -46,6 +56,25 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 	// Otherwise the legacy locale-JSON implementation renders unchanged.
 	const sections = keystaticPage ? orderedSections(keystaticPage) : null;
 
+	const { t } = useTranslation(["civil/site-engineering"]);
+	const whatWeDo = t("civil/site-engineering:WhatWeDo", {
+		returnObjects: true,
+	}) as unknown as WhatWeDoContent;
+	const whatWeDoItems: CardItem[] = Array.isArray(whatWeDo?.items) ? whatWeDo.items : [];
+	const whatWeDoGrid =
+		whatWeDoItems.length === 0 ? null : (
+			<CardGrid
+				tag={whatWeDo.tag}
+				headline={whatWeDo.headline}
+				description={whatWeDo.description}
+				items={whatWeDoItems}
+				columns={3}
+				tone="surface"
+				headerAlign="left"
+				indexed
+			/>
+		);
+
 	if (keystaticPage && sections) {
 		const locale = keystaticPage.locale;
 		const renderAt = (index: number) => {
@@ -58,7 +87,7 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 				<div className="flex flex-col min-h-screen" data-keystatic-page={keystaticPage.slug}>
 					<HeroSection />
 					<OverviewSection />
-					<WhatWeDoSection />
+					{whatWeDoGrid}
 					<Deliverables ns="civil/site-engineering" className="bg-surface" />
 					{renderAt(0)}
 					<ExploreMoreSection />
@@ -73,7 +102,7 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 			<div className="flex flex-col min-h-screen">
 				<HeroSection />
 				<OverviewSection />
-				<WhatWeDoSection />
+				{whatWeDoGrid}
 				<Deliverables ns="civil/site-engineering" className="bg-surface" />
 				<CtaSection />
 				<ExploreMoreSection />

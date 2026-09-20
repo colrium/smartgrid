@@ -5472,8 +5472,8 @@ const PAGES = {
 			{
 				discriminant: "hero",
 				from: "hero",
-				// Legacy: HeroSection → <Hero data={t(hero)} /> (default
-				// bottom layout; secondary-only pill).
+				// Legacy: shared <Hero> used directly on the page (M13 batch 6 — HeroSection wrapper retired).
+				// (default bottom layout; secondary-only pill).
 				build(en, sw, where) {
 					return {
 						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
@@ -5579,8 +5579,8 @@ const PAGES = {
 			{
 				discriminant: "hero",
 				from: "hero",
-				// Legacy: HeroSection → <Hero data={t(hero)} /> (default
-				// bottom layout; dual pills, neither with an icon key).
+				// Legacy: shared <Hero> used directly on the page (M13 batch 6 — HeroSection wrapper retired).
+				// (default bottom layout; dual pills, neither with an icon key).
 				build(en, sw, where) {
 					return {
 						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
@@ -5662,8 +5662,9 @@ const PAGES = {
 			{
 				discriminant: "hero",
 				from: "hero",
-				// Legacy: HeroSection → <Hero data={t(hero)} /> (default
-				// bottom layout; dual pills with icons).
+				// Legacy: shared <Hero> used directly on the page (M13 batch 6
+				// — HeroSection wrapper retired; default bottom layout; dual
+				// pills with icons).
 				build(en, sw, where) {
 					return {
 						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
@@ -5697,16 +5698,15 @@ const PAGES = {
 			{
 				discriminant: "introText",
 				from: "maxProductivityMinGuesswork",
-				// Legacy: MaxProductivityMinGuessworkSection → <TextSection />
+				// Legacy: shared <IntroTextSection /> used directly (M13 batch 6 — MaxProductivityMinGuessworkSection/TextSection wrappers retired).
 				// (tone default, align/split unset).
 				build: introTextBuild({ tone: "default", align: "left", split: false }),
 			},
 			{
 				discriminant: "splitMedia",
 				from: "precisionVolumetricAnalysis",
-				// Legacy: PrecisionVolumetricAnalysisSection → <SplitMedia
-				// data imagePosition="right" /> (tone/mediaAspect/mediaFit
-				// unset = defaults).
+				// Legacy: shared <SplitMedia data imagePosition="right" /> used directly (M13 batch 6 — PrecisionVolumetricAnalysisSection wrapper retired).
+				// (tone/mediaAspect/mediaFit unset = defaults).
 				build(en, sw, where) {
 					return {
 						tag: { en: reqText(en.tag, `${where}.tag.en`), sw: reqText(sw.tag, `${where}.tag.sw`) },
@@ -5725,8 +5725,7 @@ const PAGES = {
 			{
 				discriminant: "introText",
 				from: "clarityAndControl",
-				// Legacy: ClarityAndControlSection → <TextSection
-				// tone="surface" />.
+				// Legacy: shared <IntroTextSection tone="surface" /> used directly (M13 batch 6 — ClarityAndControlSection/TextSection wrappers retired).
 				build: introTextBuild({ tone: "surface", align: "left", split: false }),
 			},
 			{

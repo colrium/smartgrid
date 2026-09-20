@@ -2,8 +2,6 @@ export { HeroSection } from "./HeroSection";
 export { default as HeroSectionDefault } from "./HeroSection";
 export { OverviewSection } from "./OverviewSection";
 export { default as OverviewSectionDefault } from "./OverviewSection";
-export { WhatWeDoSection } from "./WhatWeDoSection";
-export { default as WhatWeDoSectionDefault } from "./WhatWeDoSection";
 export { ExploreMoreSection } from "./ExploreMoreSection";
 export { default as ExploreMoreSectionDefault } from "./ExploreMoreSection";
 export { CtaSection } from "./CtaSection";

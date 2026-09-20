@@ -3,19 +3,31 @@ import PageHead from "@/components/Head";
 
 import { getI18nProps, getLocale } from "@/lib/i18n";
 import type { Lang } from "@/lib/types";
+import { useTranslation } from "@/hooks";
 import { resolveKeystaticPage, type ResolvedKeystaticPage } from "@/lib/keystatic/resolvePage";
 import { renderSection } from "@/lib/keystatic/sectionRenderers";
 import { Deliverables } from "@/components/sections/Deliverables";
-import {
-	HeroSection,
-	OurServicesSection,
-	OurInstrumentsSection,
-	FaqSection,
-} from "@/components/sections/civil/site-setting-out";
+import { Hero, type HeroContent } from "@/components/sections/shared/Hero";
+import { CardGrid, type CardItem } from "@/components/sections/shared/CardGrid";
+import { FaqSection } from "@/components/sections/civil/site-setting-out";
 
 type PageProps = {
 	/** Keystatic page when the `site-setting-out` slug is opted in; otherwise `null` (legacy). */
 	keystaticPage: ResolvedKeystaticPage | null;
+};
+
+interface ServicesContent {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+	items: { title: string; description: string }[];
+}
+
+interface InstrumentsContent {
+	tag?: string | null;
+	headline: string;
+	description?: string | null;
+	items?: CardItem[] | null;
 };
 
 /**
@@ -25,6 +37,9 @@ type PageProps = {
  * (`indexed`), OurInstrumentsSection (`mediaBadged`), bespoke Deliverables
  * explorer. If an edit changes the section COUNT, the route falls back to
  * legacy rather than misplacing sections — keep this in sync with the mapping.
+ * (M13 batch 6, 2026-09-20 — the single-shared-child wrappers `HeroSection`,
+ * `OurServicesSection` and `OurInstrumentsSection` were removed; both
+ * branches below render the shared `Hero`/`CardGrid` directly.)
  */
 const KEYSTATIC_SECTION_COUNT = 2;
 
@@ -45,6 +60,42 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 	// renders unchanged.
 	const sections = keystaticPage ? orderedSections(keystaticPage) : null;
 
+	const { t } = useTranslation(["civil/site-setting-out"]);
+	const heroData = t("civil/site-setting-out:hero", { returnObjects: true }) as unknown as HeroContent;
+	const ourServices = t("civil/site-setting-out:ourServices", {
+		returnObjects: true,
+	}) as unknown as ServicesContent;
+	const ourServiceItems: CardItem[] = Array.isArray(ourServices?.items) ? ourServices.items : [];
+	const ourServicesGrid =
+		ourServiceItems.length === 0 ? null : (
+			<CardGrid
+				tag={ourServices.tag}
+				headline={ourServices.headline}
+				description={ourServices.description}
+				items={ourServiceItems}
+				columns={3}
+				headerAlign="left"
+				indexed
+			/>
+		);
+	const ourInstruments = t("civil/site-setting-out:ourInstruments", {
+		returnObjects: true,
+	}) as unknown as InstrumentsContent;
+	const ourInstrumentItems = Array.isArray(ourInstruments?.items) ? ourInstruments.items : [];
+	const ourInstrumentsGrid =
+		ourInstrumentItems.length === 0 ? null : (
+			<CardGrid
+				tag={ourInstruments.tag ?? null}
+				headline={ourInstruments.headline}
+				description={ourInstruments.description}
+				items={ourInstrumentItems}
+				columns={3}
+				tone="surface"
+				mediaBadged
+				card={{ mediaPosition: "background", mediaAspect: "h-64 sm:h-72" }}
+			/>
+		);
+
 	if (keystaticPage && sections) {
 		const locale = keystaticPage.locale;
 		const renderAt = (index: number) => {
@@ -56,8 +107,8 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 				<PageHead pageName="civil-site-setting-out" />
 				<div className="flex flex-col min-h-screen" data-keystatic-page={keystaticPage.slug}>
 					{renderAt(0)}
-					<OurServicesSection />
-					<OurInstrumentsSection />
+					{ourServicesGrid}
+					{ourInstrumentsGrid}
 					<Deliverables ns="civil/site-setting-out" className="bg-surface" />
 					{renderAt(1)}
 				</div>
@@ -69,9 +120,9 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 		<div className="relative">
 			<PageHead pageName="civil-site-setting-out" />
 			<div className="flex flex-col min-h-screen">
-				<HeroSection />
-				<OurServicesSection />
-				<OurInstrumentsSection />
+				<Hero data={heroData} />
+				{ourServicesGrid}
+				{ourInstrumentsGrid}
 				<Deliverables ns="civil/site-setting-out" className="bg-surface" />
 				<FaqSection />
 			</div>
