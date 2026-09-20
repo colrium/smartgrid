@@ -22,8 +22,6 @@ export { GisComponentsSection } from "./GisComponentsSection";
 export { default as GisComponentsSectionDefault } from "./GisComponentsSection";
 export { GisWhySmartgridSection } from "./GisWhySmartgridSection";
 export { default as GisWhySmartgridSectionDefault } from "./GisWhySmartgridSection";
-export { GisAnalystCtaSection } from "./GisAnalystCtaSection";
-export { default as GisAnalystCtaSectionDefault } from "./GisAnalystCtaSection";
 export { GisDataAccuracySection } from "./GisDataAccuracySection";
 export { default as GisDataAccuracySectionDefault } from "./GisDataAccuracySection";
 export { GisBeforeAfterSection } from "./GisBeforeAfterSection";

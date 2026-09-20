@@ -2992,29 +2992,6 @@ function gisWhySmartgridBuild(en, sw, where) {
 	};
 }
 
-function gisAnalystCtaBuild(en, sw, where) {
-	const enActions = en.actions ?? [];
-	const swActions = sw.actions ?? [];
-	if (!Array.isArray(swActions) || swActions.length !== enActions.length) {
-		gap(where, `action count diverged (en=${enActions.length} sw=${swActions?.length})`);
-	}
-	return {
-		tag: { en: optText(en.tag), sw: optText(sw.tag) },
-		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
-		description: { en: optText(en.description), sw: optText(sw.description) },
-		actions: enActions.map((action, i) => {
-			const swAction = swActions[i] ?? {};
-			return {
-				icon: sharedValue(action, swAction, "icon", `${where}.actions[${i}]`) ?? "",
-				label: { en: reqText(action.label, `${where}.actions[${i}].label.en`), sw: reqText(swAction.label, `${where}.actions[${i}].label.sw`) },
-				description: { en: optText(action.description), sw: optText(swAction.description) },
-				href: sharedValue(action, swAction, "href", `${where}.actions[${i}]`) ?? "",
-			};
-		}),
-		id: "talk-to-analyst",
-	};
-}
-
 function gisDataAccuracyBuild(en, sw, where) {
 	const enFactors = en.factors ?? [];
 	const swFactors = sw.factors ?? [];
@@ -5294,11 +5271,14 @@ const PAGES = {
 				build: gisRelatedServicesBuild,
 			},
 			{
-				discriminant: "gisAnalystCta",
+				discriminant: "finalCta",
 				from: "analystCta",
-				// Legacy: GisAnalystCtaSection (closing cards) →
-				// <GisAnalystCtaSection data />.
-				build: gisAnalystCtaBuild,
+				// Legacy: shared <FinalCta watermark="map-search-outline"
+				// columns={3} id="talk-to-analyst" /> used directly on the
+				// page (M13 batch 4 — retired the GisAnalystCtaSection
+				// wrapper; presentation literals + anchor default travel as
+				// shared fields).
+				build: finalCtaBuild("map-search-outline", 3, "center", { id: "talk-to-analyst" }),
 			},
 		],
 	},

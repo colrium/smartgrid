@@ -110,7 +110,6 @@ import { GisTechStackSection } from "@/components/sections/surveying/gis-mapping
 import { GisWhatsappCtaSection } from "@/components/sections/surveying/gis-mapping/GisWhatsappCtaSection";
 import { GisComponentsSection } from "@/components/sections/surveying/gis-mapping/GisComponentsSection";
 import { GisWhySmartgridSection } from "@/components/sections/surveying/gis-mapping/GisWhySmartgridSection";
-import { GisAnalystCtaSection } from "@/components/sections/surveying/gis-mapping/GisAnalystCtaSection";
 import { GisDataAccuracySection } from "@/components/sections/surveying/gis-mapping/GisDataAccuracySection";
 import { GisBeforeAfterSection } from "@/components/sections/surveying/gis-mapping/GisBeforeAfterSection";
 import { GisProjectImpactSection } from "@/components/sections/surveying/gis-mapping/GisProjectImpactSection";
@@ -256,7 +255,6 @@ export const sectionRenderers = {
 	gisWhatsappCta: GisWhatsappCtaSection,
 	gisComponents: GisComponentsSection,
 	gisWhySmartgrid: GisWhySmartgridSection,
-	gisAnalystCta: GisAnalystCtaSection,
 	gisDataAccuracy: GisDataAccuracySection,
 	gisBeforeAfter: GisBeforeAfterSection,
 	gisProjectImpact: GisProjectImpactSection,

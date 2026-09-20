@@ -1230,12 +1230,17 @@ Batches (one commit each, in this order):
       applications/detect/sue/limitations/technology/featured/summary +
       shaping `Faq`, `Cta`, `Deliverables` hop note stands.
       Validation DEFERRED per M13 policy.
-- [ ] Batch 4 — `surveying/gis-mapping`: Type 2 `gisAnalystCta` → shared
-      `finalCta` (`finalCtaBuild("map-search-outline", 3, "center",
-      {id: "talk-to-analyst"})`). `gisBeforeAfter` stays unique (shell,
-      per batch-3 refinement). Keep: bespoke
-      hero/whatIs/techStack/whatsapp/components/whySmartgrid/dataAccuracy/
-      projectImpact/relatedServices + shaping grids/CTAs (+ 2 dormant).
+- [x] Batch 4 — `surveying/gis-mapping` (done 2026-09-20): Type 2
+      `gisAnalystCta` → shared `finalCta`
+      (`finalCtaBuild("map-search-outline", 3, "center",
+      {id: "talk-to-analyst"})`, 1 wrapper file deleted, legacy renders
+      shared `FinalCta` directly with the anchor default); deleted
+      `gisAnalystCtaBuild` (single-use); entry regenerated (15 sections,
+      `draft`). `gisBeforeAfter` stays unique (shell, per batch-3
+      refinement). Registry 122→121; README list + count updated. Keep:
+      bespoke hero/whatIs/techStack/whatsapp/components/whySmartgrid/
+      dataAccuracy/projectImpact/relatedServices + shaping grids/CTAs
+      (+ 2 dormant). Validation DEFERRED per M13 policy.
 - [ ] Batch 5 — civil `highway-surveys` + `as-built-surveys`: Type 1 heroes →
       `Hero`, `Overview`/`TextSection` shims → `IntroTextSection`,
       `DeliverablesSection` → `Deliverables`; Type 2 none (indexed grids
@@ -1412,3 +1417,4 @@ For every implementation change:
 | 2026-09-20 | M13 | Batch 1 DONE — aerial-surveys: deleted `AerialHeroSection`, `PrecisionSection`, `AerialWorkflowSection`, `DeliverablesSection`, `AerialFinalCtaSection` (+ barrel lines); legacy branch renders shared `Hero`/`SplitMedia`/`WorkflowSection`/`Deliverables`/`FinalCta` directly (identical `t()` calls, guards, literals); registered shared `workflow` + `finalCta` (schema + example + flat normalize + renderer); migration `workflowBuild` + `finalCtaBuild("drone", 4, "center")`; entry regenerated (15 sections, content preserved); README list updated. Kept per rule: bespoke intro/whyDrones/services/grid/projects/additional + shaping industries/techStack/industryCta/capabilityCta | Validation DEFERRED per M13 policy (no check/verify/typecheck/lint/smoke this batch). Next: batch 2 — cadastral-surveys | |
 | 2026-09-20 | M13 | Batch 2 DONE — cadastral-surveys: deleted `CadastralHeroSection`, `ProcessFlowSection`, `FinalCtaSection` (+ barrel lines); legacy renders shared `Hero`/`WorkflowSection` (+ page-level phase override)/`FinalCta` directly; shared `workflow` v1→v2 (`phase` + `acquisition` preset → `phaseStyles`); migration `workflowBuild` factory + `finalCtaBuild("vector-square", 4, "left")`; deleted `cadastralProcessBuild` + `aerialFinalCtaBuild`; entries regenerated (cadastral 10, aerial 15 sections; statuses `draft`); registry 125→123; README updated. CAUGHT: 4th positional build param catches `siteTitle` — factories only (recorded as batch rule) | Validation DEFERRED per M13 policy. Next: batch 3 — ground-penetrating-radar | |
 | 2026-09-20 | M13 | Batch 3 DONE — ground-penetrating-radar: deleted `GprDeliverablesSection`, `GprFinalCtaSection` (+ barrel lines); legacy renders shared `Deliverables`/`FinalCta` directly (accent lede + note + radar + 3 cols + `get-started` anchor); shared `finalCta` v1→v2 (`note`, `descriptionTone`, `actionIconFallback`); migration `finalCtaBuild` gains `opts`; GPR uses `finalCtaBuild("radar", 3, "center", {descriptionTone: "accent", id: "get-started"})`; entries regenerated (GPR 17, aerial 15, cadastral 10; `draft`); registry 123→122; README updated. DECIDED: before/after shell wrappers stay unique (multiple shared children + DOM — rule refinement recorded; batches 4/8/9 updated) | Validation DEFERRED per M13 policy. Next: batch 4 — gis-mapping | |
+| 2026-09-20 | M13 | Batch 4 DONE — gis-mapping: deleted `GisAnalystCtaSection` (+ barrel lines); legacy renders shared `FinalCta` directly (muted lede, map-search-outline, 3 cols, `talk-to-analyst` anchor); `finalCtaBuild("map-search-outline", 3, "center", {id: "talk-to-analyst"})`; deleted `gisAnalystCtaBuild`; entry regenerated (15 sections, `draft`); registry 122→121; README updated | Validation DEFERRED per M13 policy. Next: batch 5 — civil highway + as-built | |

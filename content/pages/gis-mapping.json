@@ -1020,7 +1020,7 @@
 			}
 		},
 		{
-			"discriminant": "gisAnalystCta",
+			"discriminant": "finalCta",
 			"value": {
 				"tag": {
 					"en": "GIS Support Desk",
@@ -1033,6 +1033,15 @@
 				"description": {
 					"en": "From data audits to enterprise GIS deployment — get expert guidance on scope, accuracy, and deliverables before you commit.",
 					"sw": "Kutoka ukaguzi wa data hadi uwekaji wa GIS kwa makampuni — pata miongozo ya kitaalamu kuhusu wigo, usahihi, na matokeo kabla ya kuanza."
+				},
+				"descriptionTone": "muted",
+				"note": {
+					"en": "",
+					"sw": ""
+				},
+				"actionsLabel": {
+					"en": "",
+					"sw": ""
 				},
 				"actions": [
 					{
@@ -1072,6 +1081,10 @@
 						"href": "mailto:smartgridsurveying@gmail.com?subject=Book a GIS Consultation&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a GIS consultation.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AScope (mapping / analysis / dashboards):%0D%0APreferred date & time:%0D%0A%0D%0AThank you."
 					}
 				],
+				"actionIconFallback": "",
+				"watermark": "map-search-outline",
+				"columns": "3",
+				"align": "center",
 				"id": "talk-to-analyst"
 			}
 		}
