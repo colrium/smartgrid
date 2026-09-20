@@ -361,7 +361,7 @@
 			}
 		},
 		{
-			"discriminant": "aerialWorkflow",
+			"discriminant": "workflow",
 			"value": {
 				"tag": {
 					"en": "Field-to-Design Pipeline",
@@ -375,7 +375,7 @@
 					"en": "A transparent, seven-stage aerial pipeline — from the first scope call to CAD/GIS handover, you always know where your project stands.",
 					"sw": "Mstari wa angani wa hatua saba ulio wazi — kutoka wito wa kwanza wa wigo hadi uhandishaji wa CAD/GIS, unajua wakati wowote mradi wako upo wapi."
 				},
-				"outcomeLabel": {
+				"outcome": {
 					"en": "Engineering-ready data, on your desk",
 					"sw": "Data tayari kwa uhandisi, kwenye dawati lako"
 				},
@@ -1090,7 +1090,7 @@
 			}
 		},
 		{
-			"discriminant": "aerialFinalCta",
+			"discriminant": "finalCta",
 			"value": {
 				"tag": {
 					"en": "Start Your Aerial Survey",
@@ -1158,6 +1158,9 @@
 						"href": "mailto:smartgridsurveying@gmail.com?subject=Site Visit Booking: Drone Survey&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a site visit for a drone survey.%0D%0A%0D%0ALocation (County / Area):%0D%0ASite size:%0D%0APreferred date & time:%0D%0A%0D%0AThank you."
 					}
 				],
+				"watermark": "drone",
+				"columns": "4",
+				"align": "center",
 				"id": ""
 			}
 		}

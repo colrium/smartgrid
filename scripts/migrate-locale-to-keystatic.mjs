@@ -1995,7 +1995,10 @@ function aerialServicesBuild(en, sw, where) {
 	};
 }
 
-function aerialWorkflowBuild(en, sw, where) {
+// M13 batch 1: shared `workflow` build — same contract as the retired
+// `aerialWorkflowBuild`, but the outcome key is `outcome` (the shared
+// `WorkflowSection` prop) instead of the wrapper-local `outcomeLabel`.
+function workflowBuild(en, sw, where) {
 	const enSteps = en.steps ?? [];
 	const swSteps = sw.steps ?? [];
 	if (!Array.isArray(swSteps) || swSteps.length !== enSteps.length) {
@@ -2005,7 +2008,7 @@ function aerialWorkflowBuild(en, sw, where) {
 		tag: { en: optText(en.tag), sw: optText(sw.tag) },
 		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
 		description: { en: optText(en.description), sw: optText(sw.description) },
-		outcomeLabel: { en: optText(en.outcomeLabel), sw: optText(sw.outcomeLabel) },
+		outcome: { en: optText(en.outcomeLabel ?? en.outcome), sw: optText(sw.outcomeLabel ?? sw.outcome) },
 		steps: enSteps.map((step, i) => {
 			const swStep = swSteps[i] ?? {};
 			return {
@@ -2021,6 +2024,38 @@ function aerialWorkflowBuild(en, sw, where) {
 			icon: sharedValue(en.cta, sw.cta, "icon", where) ?? "",
 		},
 		id: "",
+	};
+}
+
+// M13 batch 1: shared `finalCta` build factory — same contract as the
+// page-local final-CTA builds, plus the wrapper-hardcoded presentation
+// literals (`watermark`/`columns`/`align`) filled per page.
+function finalCtaBuild(watermark, columns, align) {
+	return (en, sw, where) => {
+		const enActions = en.actions ?? [];
+		const swActions = sw.actions ?? [];
+		if (!Array.isArray(swActions) || swActions.length !== enActions.length) {
+			gap(where, `action count diverged (en=${enActions.length} sw=${swActions?.length})`);
+		}
+		return {
+			tag: { en: optText(en.tag), sw: optText(sw.tag) },
+			headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+			description: { en: optText(en.description), sw: optText(sw.description) },
+			actionsLabel: { en: optText(en.actionsLabel), sw: optText(sw.actionsLabel) },
+			actions: enActions.map((action, i) => {
+				const swAction = swActions[i] ?? {};
+				return {
+					icon: sharedValue(action, swAction, "icon", `${where}.actions[${i}]`) ?? "",
+					label: { en: reqText(action.label, `${where}.actions[${i}].label.en`), sw: reqText(swAction.label, `${where}.actions[${i}].label.sw`) },
+					description: { en: optText(action.description), sw: optText(swAction.description) },
+					href: sharedValue(action, swAction, "href", `${where}.actions[${i}]`) ?? "",
+				};
+			}),
+			watermark,
+			columns: String(columns),
+			align,
+			id: "",
+		};
 	};
 }
 
@@ -4645,13 +4680,15 @@ const PAGES = {
 	// M11 batch 11: aerial-surveys. Whole page Keystatic-owned in page order
 	// (2026-09-19) — `hero` (shared) + `section1` (aerialIntro) +
 	// `whyDroneSurveys` (aerialWhyDrones) + `whatWeOffer` (aerialServices) +
-	// `precision` (splitMedia) + `workflow` (aerialWorkflow) +
+	// `precision` (splitMedia) + `workflow` (shared; M13 batch 1 collapsed
+	// the `aerialWorkflow` unique) +
 	// `aerialSurveying` (aerialSurveyingGrid) + `deliverables` (shared,
 	// surface tone for the `bg-surface` wrapper) + `industries`
 	// (aerialIndustries) + `industryCta` (aerialIndustryCta) + `projects`
 	// (aerialProjects) + `techStack` (aerialTechStack) + `capabilityCta`
 	// (aerialCapabilityCta) + `additionalServices`
-	// (aerialAdditionalServices) + `finalCta` (aerialFinalCta). Mapping
+	// (aerialAdditionalServices) + `finalCta` (shared; M13 batch 1 collapsed
+	// the `aerialFinalCta` unique). Mapping
 	// order = entry order = page order (M12 flexible rule).
 	"aerial-surveys": {
 		namespace: "surveying/aerial-surveys",
@@ -4661,7 +4698,8 @@ const PAGES = {
 			{
 				discriminant: "hero",
 				from: "hero",
-				// Legacy: AerialHeroSection → <Hero data={t(hero)} /> (default
+				// Legacy: shared <Hero> used directly on the page (M13
+				// batch 1 — retired the AerialHeroSection wrapper; default
 				// bottom layout; footnote chips travel as shared icons +
 				// localized text — first hero migration with footnotes).
 				build(en, sw, where) {
@@ -4725,8 +4763,9 @@ const PAGES = {
 			{
 				discriminant: "splitMedia",
 				from: "precision",
-				// Legacy: PrecisionSection → <SplitMedia data
-				// imagePosition="right" tone="surface" /> (no points).
+				// Legacy: shared <SplitMedia data imagePosition="right"
+				// tone="surface" /> used directly on the page (M13 batch 1 —
+				// retired the PrecisionSection wrapper; no points).
 				build(en, sw, where) {
 					return {
 						tag: { en: reqText(en.tag, `${where}.tag.en`), sw: reqText(sw.tag, `${where}.tag.sw`) },
@@ -4743,11 +4782,12 @@ const PAGES = {
 				},
 			},
 			{
-				discriminant: "aerialWorkflow",
+				discriminant: "workflow",
 				from: "workflow",
-				// Legacy: AerialWorkflowSection (WorkflowSection passthrough,
-				// outcomeLabel → outcome) → <AerialWorkflowSection data />.
-				build: aerialWorkflowBuild,
+				// Legacy: shared <WorkflowSection> used directly on the page
+				// (M13 batch 1 — retired the AerialWorkflowSection wrapper;
+				// `outcomeLabel` → `outcome` folded into the shared build).
+				build: workflowBuild,
 			},
 			{
 				discriminant: "aerialSurveyingGrid",
@@ -4759,8 +4799,9 @@ const PAGES = {
 			{
 				discriminant: "deliverables",
 				from: "deliverables",
-				// Legacy: DeliverablesSection → <Deliverables
-				// ns="surveying/aerial-surveys" className="bg-surface" /> —
+				// Legacy: shared <Deliverables ns="surveying/aerial-surveys"
+				// className="bg-surface" /> used directly on the page (M13
+				// batch 1 — retired the DeliverablesSection wrapper) —
 				// shared `deliverables` with surface tone.
 				build: deliverablesBuild("surface"),
 			},
@@ -4807,11 +4848,13 @@ const PAGES = {
 				build: aerialAdditionalServicesBuild,
 			},
 			{
-				discriminant: "aerialFinalCta",
+				discriminant: "finalCta",
 				from: "finalCta",
-				// Legacy: AerialFinalCtaSection (closing cards) →
-				// <AerialFinalCtaSection data />.
-				build: aerialFinalCtaBuild,
+				// Legacy: shared <FinalCta watermark="drone" columns={4} />
+				// used directly on the page (M13 batch 1 — retired the
+				// AerialFinalCtaSection wrapper; presentation literals travel
+				// as shared fields).
+				build: finalCtaBuild("drone", 4, "center"),
 			},
 		],
 	},

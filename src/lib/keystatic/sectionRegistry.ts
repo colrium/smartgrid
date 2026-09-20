@@ -243,7 +243,7 @@ import {
  * from DATA (the wrapper is page-owned), so edits change output.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyWorkflow", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "bathyFinalCta", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "rmFinalCta", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation", "aerialIntro", "aerialWhyDrones", "aerialServices", "aerialWorkflow", "aerialSurveyingGrid", "aerialIndustries", "aerialIndustryCta", "aerialTechStack", "aerialCapabilityCta", "aerialFinalCta", "aerialProjects", "aerialAdditionalServices", "cadastralPostHeroCta", "cadastralWhenYouNeed", "cadastralProcess", "cadastralProcessCta", "cadastralCost", "cadastralTimeline", "cadastralCompliance", "cadastralCaseStudy", "cadastralFinalCta", "gprHero", "gprHighlights", "gprJumpNav", "gprOverview", "gprMethodology", "gprApplications", "gprDetect", "gprSue", "gprLimitations", "gprBeforeAfter", "gprTechnology", "gprFeaturedProjects", "gprSummary", "gprFinalCta", "gisHero", "gisWhatIs", "gisImportance", "gisServices", "gisIndustries", "gisTechStack", "gisWhatsappCta", "gisComponents", "gisWhySmartgrid", "gisAnalystCta", "gisDataAccuracy", "gisBeforeAfter", "gisProjectImpact", "gisRelatedServices", "highwayServices", "asBuiltSolutions"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "workflow", "finalCta", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyWorkflow", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "bathyFinalCta", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "rmFinalCta", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation", "aerialIntro", "aerialWhyDrones", "aerialServices", "aerialSurveyingGrid", "aerialIndustries", "aerialIndustryCta", "aerialTechStack", "aerialCapabilityCta", "aerialProjects", "aerialAdditionalServices", "cadastralPostHeroCta", "cadastralWhenYouNeed", "cadastralProcess", "cadastralProcessCta", "cadastralCost", "cadastralTimeline", "cadastralCompliance", "cadastralCaseStudy", "cadastralFinalCta", "gprHero", "gprHighlights", "gprJumpNav", "gprOverview", "gprMethodology", "gprApplications", "gprDetect", "gprSue", "gprLimitations", "gprBeforeAfter", "gprTechnology", "gprFeaturedProjects", "gprSummary", "gprFinalCta", "gisHero", "gisWhatIs", "gisImportance", "gisServices", "gisIndustries", "gisTechStack", "gisWhatsappCta", "gisComponents", "gisWhySmartgrid", "gisAnalystCta", "gisDataAccuracy", "gisBeforeAfter", "gisProjectImpact", "gisRelatedServices", "highwayServices", "asBuiltSolutions"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -3436,6 +3436,187 @@ const deliverables: SectionDefinition = {
 };
 
 /**
+ * M13 batch 1 — shared `workflow` (2026-09-20): the `WorkflowSection`
+ * timeline (tag + headline + description + steps + outcome pill + closing
+ * CTA) as a reusable branch. Collapses the M11 `aerialWorkflow` unique
+ * (single-shared-child forward, `outcomeLabel` → `outcome` rename folded
+ * into the contract); later batches collapse the remaining workflow
+ * uniques onto this id. Icons/hrefs shared; labels and descriptions
+ * localized. `phaseStyles` stays renderer-owned for now (only the
+ * cadastral override needs it — decided at batch 2). Renders nothing
+ * without steps (shared-component guard, preserved).
+ */
+const workflow: SectionDefinition = {
+	id: "workflow",
+	version: 1,
+	label: "Workflow",
+	description: "Process timeline with an outcome pill and closing action. Works on any page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		outcome: localeText("Outcome label", { optionalInEnglish: true }),
+		steps: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				label: localeText("Label"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Steps",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Step"),
+			}
+		),
+		ctaNote: localeLongText("CTA note"),
+		cta: linkObject("Closing action"),
+		id: anchorField(),
+		// Excluded from v1 (documented): `phaseStyles`, `classes`,
+		// `className` (presentation, not editor contracts).
+	}),
+	example: {
+		tag: { en: "Pipeline", sw: "Mchakato" },
+		headline: { en: "Our Drone Survey Workflow", sw: "Mtiririko Wetu wa Upimaji wa Droni" },
+		description: { en: "", sw: "" },
+		outcome: { en: "Engineering-ready data", sw: "" },
+		steps: [
+			{
+				icon: "clipboard-list-outline",
+				label: { en: "Site Assessment", sw: "Tathmini ya Tovuti" },
+				description: { en: "Define the survey area.", sw: "" },
+			},
+		],
+		ctaNote: { en: "", sw: "" },
+		cta: { label: { en: "Request samples", sw: "Omba sampuli" }, href: "mailto:smartgridsurveying@gmail.com", icon: "" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		tag: resolved.tag,
+		headline: resolved.headline,
+		description: resolved.description,
+		outcome: resolved.outcome,
+		steps: Array.isArray(resolved.steps)
+			? resolved.steps.map((step: any) => ({
+					icon: step?.icon || undefined,
+					label: step?.label ?? "",
+					description: step?.description ?? "",
+				}))
+			: [],
+		ctaNote: resolved.ctaNote,
+		cta:
+			resolved.cta && typeof resolved.cta.href === "string" && resolved.cta.href
+				? { label: resolved.cta.label ?? "", href: resolved.cta.href, icon: resolved.cta.icon || undefined }
+				: null,
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M13 batch 1 — shared `finalCta` (2026-09-20): the `FinalCta` closing
+ * action cards as a reusable branch. Collapses the M11 `aerialFinalCta`
+ * unique (single-shared-child forward); later batches collapse the
+ * remaining final-CTA uniques onto this id. `watermark`/`columns`/`align`
+ * were hardcoded per-page in the wrappers, so they travel as shared
+ * (non-localized) fields here — the migration fills the legacy literals.
+ * Icons/hrefs shared; labels and descriptions localized. The legacy
+ * render-nothing-without-headline guard stays page-side; the schema
+ * requires a headline.
+ */
+const finalCta: SectionDefinition = {
+	id: "finalCta",
+	version: 1,
+	label: "Final CTA",
+	description: "Closing action cards with a watermark icon. Works on any page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		actionsLabel: localeText("Actions label", { optionalInEnglish: true }),
+		actions: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				label: localeText("Label"),
+				description: localeLongText("Description"),
+				href: fields.text({
+					label: "Link (shared)",
+					description: "Internal path or full URL. Identical in en/sw.",
+				}),
+			}),
+			{
+				label: "Actions",
+				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Action"),
+			}
+		),
+		watermark: fields.text({
+			label: "Watermark icon (shared)",
+			description: "MDI icon slug without the `mdi-` prefix, copied from the legacy wrapper. Identical in en/sw.",
+		}),
+		columns: fields.select({
+			label: "Columns",
+			description: "Card grid columns on sm+ screens, copied from the legacy wrapper.",
+			options: [
+				{ label: "3 columns", value: "3" },
+				{ label: "4 columns", value: "4" },
+			],
+			defaultValue: "4",
+		}),
+		align: fields.select({
+			label: "Alignment",
+			description: "Card text alignment, copied from the legacy wrapper.",
+			options: [
+				{ label: "Center", value: "center" },
+				{ label: "Left", value: "left" },
+			],
+			defaultValue: "center",
+		}),
+		id: anchorField(),
+		// Excluded from v1 (documented): `classes`, `className`
+		// (visual tuning, not editor contracts).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Start Your Aerial Survey", sw: "Anza Upimaji Wako wa Angani" },
+		description: { en: "", sw: "" },
+		actionsLabel: { en: "", sw: "" },
+		actions: [
+			{
+				icon: "cash-multiple",
+				label: { en: "Get Instant Quote", sw: "Pata Nukuu" },
+				description: { en: "24-hour response.", sw: "" },
+				href: "mailto:smartgridsurveying@gmail.com",
+			},
+		],
+		watermark: "drone",
+		columns: "4",
+		align: "center",
+		id: "",
+	},
+	normalize: (resolved) => ({
+		tag: resolved.tag,
+		headline: resolved.headline,
+		description: resolved.description,
+		actionsLabel: resolved.actionsLabel,
+		actions: Array.isArray(resolved.actions)
+			? resolved.actions.map((action: any) => ({
+					icon: action?.icon || undefined,
+					label: action?.label ?? "",
+					description: action?.description ?? "",
+					href: typeof action?.href === "string" ? action.href : "",
+				}))
+			: [],
+		watermark: resolved.watermark || undefined,
+		columns: resolved.columns === "3" ? 3 : 4,
+		align: resolved.align === "left" ? "left" : "center",
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
  * M11 batch 6 — topographical-surveys page (2026-09-18): `topoWhenYouNeed`
  * wraps the `WhenYouNeedSection` 2-col grid whose items with `children`
  * render as wide cards with an inset sub-item checklist. Unique — only
@@ -5854,83 +6035,6 @@ const aerialServices: SectionDefinition = {
 };
 
 /**
- * M11 batch 11 — aerial-surveys page (2026-09-19): `aerialWorkflow` wraps
- * the `AerialWorkflowSection` WorkflowSection passthrough (outcomeLabel →
- * outcome rename preserved). Unique — only valid on
- * `/surveying/aerial-surveys` (the shared `process` renders a different
- * component and excludes workflow CTA fields). Icons/hrefs shared; labels
- * and descriptions localized.
- */
-const aerialWorkflow: SectionDefinition = {
-	id: "aerialWorkflow",
-	version: 1,
-	label: "Aerial workflow (unique)",
-	description: "Unique: the aerial-surveys drone pipeline workflow. Only valid on that page.",
-	schema: fields.object({
-		tag: localeText("Tag", { optionalInEnglish: true }),
-		headline: localeText("Headline"),
-		description: localeLongText("Description"),
-		outcomeLabel: localeText("Outcome label", { optionalInEnglish: true }),
-		steps: fields.array(
-			fields.object({
-				icon: fields.text({
-					label: "MDI icon (shared, optional)",
-					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
-				}),
-				label: localeText("Label"),
-				description: localeLongText("Description"),
-			}),
-			{
-				label: "Steps",
-				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Step"),
-			}
-		),
-		ctaNote: localeLongText("CTA note"),
-		cta: linkObject("Closing action"),
-		id: anchorField(),
-		// Excluded from v1 (documented): `className` (visual tuning, not
-		// an editor contract).
-	}),
-	example: {
-		tag: { en: "Pipeline", sw: "Mchakato" },
-		headline: { en: "Our Drone Survey Workflow", sw: "Mtiririko Wetu wa Upimaji wa Droni" },
-		description: { en: "", sw: "" },
-		outcomeLabel: { en: "Engineering-ready data", sw: "" },
-		steps: [
-			{
-				icon: "clipboard-list-outline",
-				label: { en: "Site Assessment", sw: "Tathmini ya Tovuti" },
-				description: { en: "Define the survey area.", sw: "" },
-			},
-		],
-		ctaNote: { en: "", sw: "" },
-		cta: { label: { en: "Request samples", sw: "Omba sampuli" }, href: "mailto:smartgridsurveying@gmail.com", icon: "" },
-		id: "",
-	},
-	normalize: (resolved) => ({
-		data: {
-			tag: resolved.tag,
-			headline: resolved.headline,
-			description: resolved.description,
-			outcome: resolved.outcomeLabel,
-			steps: Array.isArray(resolved.steps)
-				? resolved.steps.map((step: any) => ({
-						icon: step?.icon || undefined,
-						label: step?.label ?? "",
-						description: step?.description ?? "",
-					}))
-				: [],
-			ctaNote: resolved.ctaNote,
-			cta:
-				resolved.cta && typeof resolved.cta.href === "string" && resolved.cta.href
-					? { label: resolved.cta.label ?? "", href: resolved.cta.href, icon: resolved.cta.icon || undefined }
-					: null,
-		},
-		id: resolved.id || undefined,
-	}),
-};
-
-/**
  * M11 batch 11 — aerial-surveys page (2026-09-19): `aerialSurveyingGrid`
  * wraps the `AerialSurveyingSection` image cards (gradient overlay, hover
  * arrow, label alt text). Unique — only valid on
@@ -6237,79 +6341,6 @@ const aerialCapabilityCta: SectionDefinition = {
 				resolved.secondary && typeof resolved.secondary.href === "string" && resolved.secondary.href
 					? { label: resolved.secondary.label ?? "", href: resolved.secondary.href, icon: resolved.secondary.icon || undefined }
 					: null,
-		},
-		id: resolved.id || undefined,
-	}),
-};
-
-/**
- * M11 batch 11 — aerial-surveys page (2026-09-19): `aerialFinalCta` wraps
- * the `AerialFinalCtaSection` closing cards (hardcoded `watermark="drone"`
- * + 4 columns stay in the renderer). Unique — only valid on
- * `/surveying/aerial-surveys`. Icons/hrefs shared; labels and descriptions
- * localized. Renders nothing without a headline (legacy guard, preserved).
- */
-const aerialFinalCta: SectionDefinition = {
-	id: "aerialFinalCta",
-	version: 1,
-	label: "Aerial final CTA (unique)",
-	description: "Unique: the aerial-surveys closing action cards. Only valid on that page.",
-	schema: fields.object({
-		tag: localeText("Tag", { optionalInEnglish: true }),
-		headline: localeText("Headline"),
-		description: localeLongText("Description"),
-		actionsLabel: localeText("Actions label", { optionalInEnglish: true }),
-		actions: fields.array(
-			fields.object({
-				icon: fields.text({
-					label: "MDI icon (shared, optional)",
-					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
-				}),
-				label: localeText("Label"),
-				description: localeLongText("Description"),
-				href: fields.text({
-					label: "Link (shared)",
-					description: "Internal path or full URL. Identical in en/sw.",
-				}),
-			}),
-			{
-				label: "Actions",
-				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Action"),
-			}
-		),
-		id: anchorField(),
-		// Excluded from v1 (documented): `watermark="drone"`, columns and
-		// `className` (presentation, not editor contracts).
-	}),
-	example: {
-		tag: { en: "", sw: "" },
-		headline: { en: "Start Your Aerial Survey", sw: "Anza Upimaji Wako wa Angani" },
-		description: { en: "", sw: "" },
-		actionsLabel: { en: "", sw: "" },
-		actions: [
-			{
-				icon: "cash-multiple",
-				label: { en: "Get Instant Quote", sw: "Pata Nukuu" },
-				description: { en: "24-hour response.", sw: "" },
-				href: "mailto:smartgridsurveying@gmail.com",
-			},
-		],
-		id: "",
-	},
-	normalize: (resolved) => ({
-		data: {
-			tag: resolved.tag,
-			headline: resolved.headline,
-			description: resolved.description,
-			actionsLabel: resolved.actionsLabel,
-			actions: Array.isArray(resolved.actions)
-				? resolved.actions.map((action: any) => ({
-						icon: action?.icon || undefined,
-						label: action?.label ?? "",
-						description: action?.description ?? "",
-						href: typeof action?.href === "string" ? action.href : "",
-					}))
-				: [],
 		},
 		id: resolved.id || undefined,
 	}),
@@ -9248,6 +9279,8 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	civilHero,
 	civilProcess,
 	deliverables,
+	workflow,
+	finalCta,
 	topoWhenYouNeed,
 	topoWhatWeOffer,
 	topoDetailedSurveys,
@@ -9284,13 +9317,11 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	aerialIntro,
 	aerialWhyDrones,
 	aerialServices,
-	aerialWorkflow,
 	aerialSurveyingGrid,
 	aerialIndustries,
 	aerialIndustryCta,
 	aerialTechStack,
 	aerialCapabilityCta,
-	aerialFinalCta,
 	aerialProjects,
 	aerialAdditionalServices,
 	cadastralPostHeroCta,
@@ -9382,6 +9413,8 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	civilHero: civilHero.label,
 	civilProcess: civilProcess.label,
 	deliverables: deliverables.label,
+	workflow: workflow.label,
+	finalCta: finalCta.label,
 	topoWhenYouNeed: topoWhenYouNeed.label,
 	topoWhatWeOffer: topoWhatWeOffer.label,
 	topoDetailedSurveys: topoDetailedSurveys.label,
@@ -9418,13 +9451,11 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	aerialIntro: aerialIntro.label,
 	aerialWhyDrones: aerialWhyDrones.label,
 	aerialServices: aerialServices.label,
-	aerialWorkflow: aerialWorkflow.label,
 	aerialSurveyingGrid: aerialSurveyingGrid.label,
 	aerialIndustries: aerialIndustries.label,
 	aerialIndustryCta: aerialIndustryCta.label,
 	aerialTechStack: aerialTechStack.label,
 	aerialCapabilityCta: aerialCapabilityCta.label,
-	aerialFinalCta: aerialFinalCta.label,
 	aerialProjects: aerialProjects.label,
 	aerialAdditionalServices: aerialAdditionalServices.label,
 	cadastralPostHeroCta: cadastralPostHeroCta.label,

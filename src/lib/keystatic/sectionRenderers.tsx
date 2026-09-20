@@ -40,6 +40,8 @@ import { SurveyingProcessSection } from "@/components/sections/surveying/landing
 import { CivilHeroSection } from "@/components/sections/civil/landing/CivilHeroSection";
 import { CivilProcessSection } from "@/components/sections/civil/landing/CivilProcessSection";
 import { Deliverables } from "@/components/sections/Deliverables";
+import { WorkflowSection } from "@/components/sections/shared/WorkflowSection";
+import { FinalCta } from "@/components/sections/shared/FinalCta";
 import { WhenYouNeedSection } from "@/components/sections/surveying/topographical/WhenYouNeedSection";
 import { WhatWeOfferSection } from "@/components/sections/surveying/topographical/WhatWeOfferSection";
 import { DetailedSurveysSection } from "@/components/sections/surveying/topographical/DetailedSurveysSection";
@@ -72,13 +74,11 @@ import { SiteEngineeringSection } from "@/components/sections/surveying/building
 import { IntroSection as AerialIntroSection } from "@/components/sections/surveying/aerial/IntroSection";
 import { WhyDroneSurveysSection } from "@/components/sections/surveying/aerial/WhyDroneSurveysSection";
 import { AerialServicesSection } from "@/components/sections/surveying/aerial/AerialServicesSection";
-import { AerialWorkflowSection } from "@/components/sections/surveying/aerial/AerialWorkflowSection";
 import { AerialSurveyingSection as AerialSurveyingGridSection } from "@/components/sections/surveying/aerial/AerialSurveyingSection";
 import { AerialIndustriesSection } from "@/components/sections/surveying/aerial/AerialIndustriesSection";
 import { IndustryCtaSection } from "@/components/sections/surveying/aerial/IndustryCtaSection";
 import { TechStackSection as AerialTechStackSection } from "@/components/sections/surveying/aerial/TechStackSection";
 import { CapabilityCtaSection } from "@/components/sections/surveying/aerial/CapabilityCtaSection";
-import { AerialFinalCtaSection } from "@/components/sections/surveying/aerial/AerialFinalCtaSection";
 import { ProjectsSection as AerialProjectsSection } from "@/components/sections/surveying/aerial/ProjectsSection";
 import { AdditionalServicesSection as AerialAdditionalServicesSection } from "@/components/sections/surveying/aerial/AdditionalServicesSection";
 import { PostHeroCtaSection } from "@/components/sections/surveying/cadastral/PostHeroCtaSection";
@@ -185,6 +185,8 @@ export const sectionRenderers = {
 	civilHero: CivilHeroSection,
 	civilProcess: CivilProcessSection,
 	deliverables: Deliverables,
+	workflow: WorkflowSection,
+	finalCta: FinalCta,
 	topoWhenYouNeed: WhenYouNeedSection,
 	topoWhatWeOffer: WhatWeOfferSection,
 	topoDetailedSurveys: DetailedSurveysSection,
@@ -221,13 +223,11 @@ export const sectionRenderers = {
 	aerialIntro: AerialIntroSection,
 	aerialWhyDrones: WhyDroneSurveysSection,
 	aerialServices: AerialServicesSection,
-	aerialWorkflow: AerialWorkflowSection,
 	aerialSurveyingGrid: AerialSurveyingGridSection,
 	aerialIndustries: AerialIndustriesSection,
 	aerialIndustryCta: IndustryCtaSection,
 	aerialTechStack: AerialTechStackSection,
 	aerialCapabilityCta: CapabilityCtaSection,
-	aerialFinalCta: AerialFinalCtaSection,
 	aerialProjects: AerialProjectsSection,
 	aerialAdditionalServices: AerialAdditionalServicesSection,
 	cadastralPostHeroCta: PostHeroCtaSection,

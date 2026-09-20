@@ -1105,6 +1105,159 @@ Rules (decided 2026-09-18, before implementing):
 entry order == page order; reordering blocks in the editor reorders the page;
 legacy fallback still guards count mismatches.
 
+### M13: Collapse Single-Shared-Child Wrappers onto Shared Sections
+
+**Status: IN PROGRESS** (added 2026-09-20 per user request; batch 1 = aerial-surveys).
+
+Dependencies: M11 (unique sections + additive-`data` precedent), M12
+(whole-owned pages render `PageBuilderDocument`).
+
+Problem (per user request 2026-09-20): M11 registered a unique Keystatic
+section per page tail, but many of those tails (and many legacy-only
+wrappers) render exactly ONE shared component with props passed straight
+through — e.g. `components/sections/surveying/aerial/AerialHeroSection.tsx`
+is just `t("surveying/aerial-surveys:hero")` forwarded into shared `Hero`.
+Each such wrapper is a duplicate registry id + schema + renderer + file that
+editors must learn, while the shared section already exists. They must be
+removed: the page uses the shared section component directly (legacy branch)
+and the entry uses the shared branch id (Keystatic branch), with content
+preserved byte-identical via the migration mapping.
+
+Qualification rule (decided 2026-09-20, before implementing): a wrapper
+qualifies iff its render output is a SINGLE shared-component element whose
+props come straight from `data ?? t(ns:key, {returnObjects:true})`, plus
+optional static presentation literals (`tone`/`columns`/`watermark`/`layout`/
+`imagePosition`/`ns`/`className`). ANY of the following disqualifies it for
+M13 (stays as-is, recorded per batch): array/object field remapping (`.map`
+shaping, `title->question`, `note->description`), computed values (wide-card
+math, positional `fallbackIcons`, computed `href`s/`actions`), hooks/state/
+modals, `<Trans>` or pseudo-markup (`<primary>`/`<bold>`) parsing, extra JSX
+(`<section>`/`<div>`/`<Image>` shells), or client-only behavior beyond
+`next/dynamic ssr:false` + effect-only code.
+
+Work types:
+
+- Type 1 (legacy-only pure wrapper, entry ALREADY uses the shared id):
+  delete the wrapper file, render the shared component directly in the page's
+  legacy branch with the identical `t()` call + presentation literals.
+  No registry/entry/migration change; Keystatic output untouched.
+  (Example: `AerialHeroSection` → `<Hero data={t(...)} />` — the entry
+  already stores shared `hero`, so "unregistered and replaced with Hero"
+  is a deletion + call-site swap with content unchanged.)
+- Type 2 (M11 unique wrapping a single shared component, entry uses the
+  unique id): register ONE shared branch id for the wrapped component where
+  none exists yet (`workflow` → `WorkflowSection`, `finalCta` → `FinalCta`,
+  `beforeAfter` → `BeforeAfterFlipCard` — each registered once, first batch
+  that needs it), remap the migration build to emit the shared discriminant
+  with content preserved, regenerate the entry via `--write`, unregister the
+  unique id (registry + renderer + check-script fixture + README), delete the
+  wrapper file, render the shared component directly in the legacy branch.
+  Presentation literals hardcoded in the wrapper (`watermark`, `columns`,
+  phase-style overrides) move into shared schema fields or renderer
+  defaults — recorded per section so output stays identical.
+
+Test policy for M13 (per user request 2026-09-20, overrides the M11/M12
+per-batch gate): NO per-batch validation — skip `check:keystatic`,
+`--verify`, `typecheck`, `lint`, and dev-smoke while batching. One commit
+per page batch with a simple message; run the full deferred validation once
+after ALL M13 batches are done. Entries keep their checked-in `status`
+(`--write` resets to `draft` — restore `published` where it was, per the
+M11-batch-3 rule).
+
+Batches (one commit each, in this order):
+
+- [x] Batch 1 — `surveying/aerial-surveys` (pilot, done 2026-09-20): Type 1
+      `AerialHeroSection` → `Hero`, `PrecisionSection` → `SplitMedia`,
+      `DeliverablesSection` → `Deliverables` (5 wrapper files deleted,
+      legacy branch renders shared directly with identical `t()` calls +
+      guards + presentation literals); Type 2 `aerialWorkflow` → shared
+      `workflow` (registered once: `outcome` contract, flat normalize onto
+      `WorkflowSection` props) + `aerialFinalCta` → shared `finalCta`
+      (registered once: aerial contract + shared `watermark`/`columns`/
+      `align` fields; flat normalize onto `FinalCta` props).
+      Migration: new `workflowBuild` (`outcomeLabel ?? outcome` → `outcome`)
+      + `finalCtaBuild(watermark, columns, align)` factory; aerial entry
+      regenerated via `--write` (15 sections, order unchanged, content
+      preserved — diff is 2 discriminant renames + `outcome` key +
+      `watermark:"drone"`/`columns:"4"`/`align:"center"` literals; status
+      stays `draft`). Registry 125→125 (2 uniques out, 2 shared in); README
+      list updated; `aerialFinalCtaBuild` kept (cadastral reuses it until
+      batch 2); `aerialWorkflowBuild` deleted (single use).
+      Validation DEFERRED per M13 policy.
+- [ ] Batch 2 — `surveying/cadastral-surveys`: Type 1 hero → `Hero`;
+      Type 2 `cadastralProcess` → shared `workflow` (phase-style override
+      kept as renderer default), `cadastralFinalCta` → shared `finalCta`.
+      Keep: bespoke `PostHeroCta`, `WhenYouNeed`, `ProcessCta`, `Cost`,
+      `Timeline`, `Compliance`, `CaseStudy` (+ dormant `whatsABoundarySurvey`).
+- [ ] Batch 3 — `surveying/ground-penetrating-radar`: Type 2 `gprFinalCta` →
+      shared `finalCta`, `gprBeforeAfter` → shared `beforeAfter` (register
+      once). Keep: bespoke hero/highlights/jumpNav/overview/methodology/
+      applications/detect/sue/limitations/technology/featured/summary +
+      shaping `Faq` (title→question map), `Cta` (link shaping),
+      `Deliverables` hop (anchor-id note stands).
+- [ ] Batch 4 — `surveying/gis-mapping`: Type 2 `gisAnalystCta` → shared
+      `finalCta`, `gisBeforeAfter` → shared `beforeAfter`. Keep: bespoke
+      hero/whatIs/techStack/whatsapp/components/whySmartgrid/dataAccuracy/
+      projectImpact/relatedServices + shaping grids/CTAs (+ 2 dormant).
+- [ ] Batch 5 — civil `highway-surveys` + `as-built-surveys`: Type 1 heroes →
+      `Hero`, `Overview`/`TextSection` shims → `IntroTextSection`,
+      `DeliverablesSection` → `Deliverables`; Type 2 none (indexed grids
+      stay — shaping). Keep: `highwayServices`/`asBuiltSolutions` uniques.
+- [ ] Batch 6 — civil `bim` + `site-engineering` + `site-setting-out` +
+      `volumetric-surveys`: Type 1 heroes → `Hero`, `TextSection` shims →
+      `IntroTextSection`, `PrecisionVolumetricAnalysis` → `SplitMedia`;
+      Type 2 none. Keep: bespoke `CivilHero`(landing twin untouched),
+      shaping grids/CTAs, `Split` overview, indexed/media-bg grids.
+- [ ] Batch 7 — aerial-drones children (`solar-panel`, `landfill-quarry`,
+      `monitoring-and-evaluation`, `as-built-surveys`, `agricultural-ndvi`,
+      `lidar-mapping`, `volumetric-surveys`): Type 1 heroes → `Hero`,
+      `TextSection`/`IntroSection` shims → `IntroTextSection`,
+      `DroneTechLeverage`/`Construction`/`Forestry`/`Powerline`/`WhyUseDrones`
+      → `SplitMedia`, `HowItWorks`/`Process` → `Process`,
+      `MetricsSection` → `Stats`, `LidarSplitSection` re-export → delete.
+      Type 2 none (CTA/grid shaping stays). Keep: shaping grids/CTAs.
+- [ ] Batch 8 — `surveying/topographical-surveys` + `sectional-properties` +
+      `bathymetric-surveys`: Type 1 heroes → `Hero`, `Intro`/`WhatIsTopo`/
+      `IntroSection` → `IntroTextSection`, `WhatIsBathymetric` → `SplitMedia`,
+      `FinalCtaSection`(bathy) → shared `finalCta`, `DeliverablesSection`
+      shims → `Deliverables`; Type 2 `sectionalWorkflow` + `bathyWorkflow`
+      → shared `workflow`, `bathyFinalCta` → shared `finalCta`,
+      `bathyBeforeAfter` → shared `beforeAfter`. Keep: shaping grids,
+      `SampleMap`, `Process` timeline variant, bespoke tails.
+- [ ] Batch 9 — `surveying/resource-mapping` + `building-site-surveys`:
+      Type 1 `ResourceMappingHeroSection` → `Hero`, `IntroSection` →
+      `IntroTextSection`, `ExploreMoreSection` → `Gallery`,
+      `DeliverablesSection` shims → `Deliverables`; Type 2 `rmWorkflow` →
+      shared `workflow`, `rmFinalCta` → shared `finalCta`. Keep: shaping
+      grids (`Sector` + `leadImages`, `fallbackIcons`, `wide`), bespoke
+      hero/accuracy/consultation tails, `Process` (label→title map).
+- [ ] Batch 10 — hubs (`surveying`, `civil`): Type 1 `SurveyingHeroSection`
+      → `Hero`, `SurveyingDeliverablesSection`/`CivilDeliverablesSection` →
+      `Deliverables`; Type 2 none (`surveyingProcess`/`civilProcess` wrap
+      with shaping — re-evaluate per rule; keep if disqualified). Keep:
+      shaping services grids, bespoke civil hero/process.
+- [ ] Batch 11 — `about` + `contact` + `careers` + `company-profile` + `home`
+      + legal: Type 1 heroes → `Hero`, `OurStorySection` → `SplitMedia`,
+      `CompanyAboutSection` → `SplitMedia`, `CompanyStatsStrip` → `Stats`,
+      `CatalogueOverviewSection` (equipment, if touched) →
+      `IntroTextSection`, home 1:1 wrappers (`AboutSection`,
+      `CertificationsSection`, … — 12 files) → shared components directly,
+      `home/FaqSection` → `Faq`, `TextSection`/`SectorSection`/`ActionableInsights`
+      shims → shared directly. Type 2: `aboutAerialSurveying`/`aboutLandSurveying`
+      re-evaluate (minimal-map grids — keep unless pure); `companyProfileViewer`,
+      `contactForm`, `careers*`, `homeHero`/`homeDrones` stay (bespoke).
+- [ ] Deferred validation (all batches done): `check:keystatic` fixture/render
+      coverage for new shared `workflow`/`finalCta`/`beforeAfter` + updated
+      per-page strings, `--verify` for every touched page, full
+      `yarn typecheck` + `yarn lint`, per-page dev-smoke parity (temp publish
+      flip + browser check, revert to `draft`), rollback test.
+
+**Exit criteria:** no wrapper file remains that meets the qualification rule;
+every M11 unique that was a pure single-shared-child forward is unregistered
+and its entry sections use shared ids with content preserved; legacy branches
+render shared components directly with byte-identical output; deferred
+validation green.
+
 ## Parallel Workstreams
 
 These may proceed independently after their stated dependencies are met:
@@ -1214,3 +1367,5 @@ For every implementation change:
 | 2026-09-19 | M11 | Batch 13 DONE — ground-penetrating-radar (GPR only; GIS splits to Batch 14): 14 uniques (`gprHero`, `gprHighlights`, `gprJumpNav`, `gprOverview`, `gprMethodology`, `gprApplications`, `gprDetect`, `gprSue`, `gprLimitations`, `gprBeforeAfter`, `gprTechnology`, `gprFeaturedProjects`, `gprSummary`, `gprFinalCta` reusing `rmFinalCtaBuild`) + shared `deliverables` (surface + `id` via extended `deliverablesBuild(tone, id)`); additive-`data` refactors with legacy anchor ids via `??` defaults; whole page in page order (17 sections) → one `PageBuilderDocument`, `skipped` now `[]`; registry 95→109; README 95→109. DECISIONS: `gprJumpNav` keeps its `<nav>` root (sticky) + documented check exemption; shared-deliverables `scroll-mt-36` drop documented (anchor offset only) | `check:keystatic` OK (109 sections, 31 fixtures); `--verify` clean (17 sections, no gaps, first try); `yarn typecheck` clean (92s); `eslint --max-warnings=0` clean on touched files. Dev-smoke DEFERRED per M11/M12 policy. Next: Batch 14 — gis-mapping tails | |
 | 2026-09-19 | M11 | Batch 14 DONE — gis-mapping: 14 uniques (`gisHero`, `gisWhatIs`, `gisImportance`, `gisServices`, `gisIndustries`, `gisTechStack`, `gisWhatsappCta`, `gisComponents`, `gisWhySmartgrid`, `gisAnalystCta`, `gisDataAccuracy`, `gisBeforeAfter`, `gisProjectImpact`, `gisRelatedServices`); additive-`data` refactors on all 14 wrappers (`gisServices` + `gisBeforeAfter` + `gisAnalystCta` keep legacy anchor ids via `??` defaults); `remoteSensingSolutions` + `mappingServices` stay DORMANT; mapping reordered to page order (15 sections), route → one `PageBuilderDocument`, `skipped` now 2 dead keys; registry 109→123; README 109→123. Shared-build reuse: `gisChecklistGridBuild` serves importance/industries, `gisServicesBuild` adds the anchor id | `check:keystatic` OK (123 sections, 31 fixtures); `--verify` clean (15 sections, no gaps, first try); `yarn typecheck` clean (75s); `eslint --max-warnings=0` clean on touched files. Dev-smoke DEFERRED per M11/M12 policy. Next: Batch 15 — civil highway-surveys + as-built-surveys tails | |
 | 2026-09-19 | M11 | Batch 15 DONE — highway-surveys (5 sections: hero, overview, highwayServices, benefits, deliverables) + as-built-surveys (8 sections: hero, 3 introTexts, asBuiltSolutions, 2 cardGrids, deliverables): 2 uniques sharing `civilIndexedGridBuild` + 2 shared `deliverables` (default/surface tones); additive-`data` refactors; both routes → one `PageBuilderDocument`, `skipped` now `[]` both; registry 123→125; README 123→125 | `check:keystatic` OK (125 sections, 31 fixtures); `--verify` clean both (5 + 8 sections, no gaps, first try); `yarn typecheck` clean (65s); `eslint --max-warnings=0` clean on touched files. Dev-smoke DEFERRED per M11/M12 policy. Next: Batch 16 — civil bim + site-engineering + site-setting-out + volumetric-surveys tails | |
+| 2026-09-20 | M13 | M13 opened per user request: collapse single-shared-child wrappers onto shared sections (Type 1 = legacy-only pure wrapper deletion, entry already shared; Type 2 = M11 unique → shared id, unregister + remap + regenerate). Qualification rule recorded (single shared child + straight-through props + static literals only; any remapping/computed/hooks/Trans/extra JSX disqualifies). Test policy per user request: NO per-batch validation (check/verify/typecheck/lint/smoke all deferred until ALL M13 batches done); one commit per page batch. `AGENTS.md`/`CLAUDE.md` still absent (glob no match) — README + plan remain source of truth | No tests run (deferred per user request); plan-only change | |
+| 2026-09-20 | M13 | Batch 1 DONE — aerial-surveys: deleted `AerialHeroSection`, `PrecisionSection`, `AerialWorkflowSection`, `DeliverablesSection`, `AerialFinalCtaSection` (+ barrel lines); legacy branch renders shared `Hero`/`SplitMedia`/`WorkflowSection`/`Deliverables`/`FinalCta` directly (identical `t()` calls, guards, literals); registered shared `workflow` + `finalCta` (schema + example + flat normalize + renderer); migration `workflowBuild` + `finalCtaBuild("drone", 4, "center")`; entry regenerated (15 sections, content preserved); README list updated. Kept per rule: bespoke intro/whyDrones/services/grid/projects/additional + shaping industries/techStack/industryCta/capabilityCta | Validation DEFERRED per M13 policy (no check/verify/typecheck/lint/smoke this batch). Next: batch 2 — cadastral-surveys | |
