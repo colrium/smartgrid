@@ -131,6 +131,13 @@ import { SmartMonitoringSection } from "@/components/sections/aerial-drones/moni
 import { WhatWeOfferSection as MeWhatWeOfferSection } from "@/components/sections/aerial-drones/monitoring-and-evaluation/WhatWeOfferSection";
 import { AbWhyUseDronesCard } from "@/components/sections/aerial-drones/as-built-surveys/AbWhyUseDronesCard";
 import { AbProcessTimeline } from "@/components/sections/aerial-drones/as-built-surveys/AbProcessTimeline";
+import { AgWhyUseDronesCard } from "@/components/sections/aerial-drones/agricultural-ndvi-mapping/AgWhyUseDronesCard";
+import { AgProcessGrid } from "@/components/sections/aerial-drones/agricultural-ndvi-mapping/AgProcessGrid";
+import { LidIndustriesGrid } from "@/components/sections/aerial-drones/lidar-mapping/LidIndustriesGrid";
+import { LidWhyChooseGrid } from "@/components/sections/aerial-drones/lidar-mapping/LidWhyChooseGrid";
+import { LidPowerlineSplit } from "@/components/sections/aerial-drones/lidar-mapping/LidPowerlineSplit";
+import { LidHowItWorksGrid } from "@/components/sections/aerial-drones/lidar-mapping/LidHowItWorksGrid";
+import { LidarCtaSection } from "@/components/sections/aerial-drones/lidar-mapping";
 import { ProcessSection as BsProcessSection } from "@/components/sections/surveying/building-site/ProcessSection";
 import { AccuracyMattersSection } from "@/components/sections/surveying/building-site/AccuracyMattersSection";
 import { TechnologyStackSection } from "@/components/sections/surveying/building-site/TechnologyStackSection";
@@ -291,6 +298,13 @@ export const sectionRenderers = {
 	meWhatWeOffer: MeWhatWeOfferSection,
 	abWhyUseDrones: AbWhyUseDronesCard,
 	abProcess: AbProcessTimeline,
+	agWhyUseDrones: AgWhyUseDronesCard,
+	agProcess: AgProcessGrid,
+	lidIndustries: LidIndustriesGrid,
+	lidWhyChoose: LidWhyChooseGrid,
+	lidPowerline: LidPowerlineSplit,
+	lidHowItWorks: LidHowItWorksGrid,
+	lidCta: LidarCtaSection,
 } satisfies Record<SectionId, ComponentType<any>>;
 
 export function renderSection(

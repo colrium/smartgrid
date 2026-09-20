@@ -16,6 +16,9 @@ interface LidarCtaContent {
 	headline: string;
 	description?: string;
 	ctaPrimary?: LidarCtaLink | null;
+	/** Keystatic-owned shape (lidCta normalize): pre-normalized href + label. */
+	ctaHref?: string;
+	ctaLabel?: string;
 }
 
 function normalizeHref(href?: string): string | undefined {
@@ -25,12 +28,22 @@ function normalizeHref(href?: string): string | undefined {
 	return href;
 }
 
-export function LidarCtaSection(): ReactElement {
+/**
+ * LiDAR closing CTA — kept through M13 (its `normalizeHref` bare-email
+ * transform is real shaping, outside the shared `ctaBand` contract) and
+ * refactored per the M9 additive-`data` precedent to serve as the
+ * `lidCta` unique renderer (M11 batch 19): `data` is the Keystatic-owned
+ * content (with `ctaHref` already mailto-normalized by the registry
+ * normalize — identical transform); omitted = legacy `t()` render.
+ */
+export function LidarCtaSection({ data }: { data?: LidarCtaContent | null }): ReactElement {
 	const { t } = useTranslation([NS]);
-	const section = t(`${NS}:ctaSection`, {
-		returnObjects: true,
-	}) as unknown as LidarCtaContent;
-	const ctaHref = normalizeHref(section?.ctaPrimary?.href);
+	const section =
+		data ??
+		(t(`${NS}:ctaSection`, {
+			returnObjects: true,
+		}) as unknown as LidarCtaContent);
+	const ctaHref = data ? (data.ctaHref ?? "") : normalizeHref(section?.ctaPrimary?.href);
 
 	return (
 		<CtaBand
@@ -41,7 +54,7 @@ export function LidarCtaSection(): ReactElement {
 			primary={
 				ctaHref
 					? {
-							label: section?.ctaPrimary?.label ?? "",
+							label: section?.ctaLabel ?? section?.ctaPrimary?.label ?? "",
 							href: ctaHref,
 							icon: "email-outline",
 							iconPosition: "end",

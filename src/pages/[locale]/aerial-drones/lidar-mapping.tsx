@@ -5,7 +5,7 @@ import { getI18nProps, getLocale } from "@/lib/i18n";
 import type { Lang } from "@/lib/types";
 import { useTranslation } from "@/hooks";
 import { resolveKeystaticPage, type ResolvedKeystaticPage } from "@/lib/keystatic/resolvePage";
-import { renderSection } from "@/lib/keystatic/sectionRenderers";
+import { PageBuilderDocument } from "@/components/keystatic/PageBuilderDocument";
 import { Hero, type HeroContent } from "@/components/sections/shared/Hero";
 import { SplitMedia, type SplitMediaContent } from "@/components/sections/shared/SplitMedia";
 import { CardGrid, type CardItem } from "@/components/sections/shared/CardGrid";
@@ -32,41 +32,29 @@ interface HowItWorksContent {
 }
 
 /**
- * Sections migrated to Keystatic in page order (see the `lidar-mapping`
- * mapping in `scripts/migrate-locale-to-keystatic.mjs`): hero, forestry
- * splitMedia, construction splitMedia. Five legacy tails
- * (IndustriesWeServeSection with an `indexed` grid, WhyChoose/Powerline
- * bespoke, HowItWorksSection with layout/columns outside the registry
- * `process` contract, LidarCtaSection with a wrapper `normalizeHref`
- * transform) sit at fixed positions between them, so the route renders each
- * Keystatic section by index instead of one whole PageBuilderDocument. If an
- * edit changes the section COUNT, the route falls back to legacy rather than
- * misplacing sections — keep this in sync with the mapping. (M13 batch 7,
- * 2026-09-20 — the single-shared-child wrappers `LidarHeroSection`,
- * `IndustriesWeServeSection`, `WhyChooseLidarSection`,
- * `LidarPowerlineSection`, `ForestrySection`, `ConstructionSection` and
- * `HowItWorksSection` were removed; both branches below render the shared
- * `Hero`/`CardGrid`/`SplitMedia`/`Process` directly.)
+ * M11 batch 19 (2026-09-20): all eight sections (hero, industries grid,
+ * why-choose grid, powerline split, forestry + construction splitMedia,
+ * how-it-works grid, CTA) are Keystatic-owned in page order, so the whole
+ * page renders from one `PageBuilderDocument` when the slug is allowlisted
+ * via `KEYSTATIC_PAGES` and the entry is published. Otherwise the legacy
+ * locale-JSON implementation renders unchanged.
  */
-const KEYSTATIC_SECTION_COUNT = 3;
-
-function orderedSections(page: ResolvedKeystaticPage) {
-	if (page.sections.length !== KEYSTATIC_SECTION_COUNT) {
-		console.warn(
-			`[keystatic] page "lidar-mapping" has ${page.sections.length} sections, expected ${KEYSTATIC_SECTION_COUNT} — falling back to legacy content`
-		);
-		return null;
-	}
-	return page.sections;
-}
-
 const Page: NextPage<PageProps> = ({ keystaticPage }) => {
-	// Migration source switch (M3/M7): Keystatic owns the three migrated
-	// sections only when the slug is allowlisted via `KEYSTATIC_PAGES` and the
-	// entry is published. Otherwise the legacy locale-JSON implementation
-	// renders unchanged.
-	const sections = keystaticPage ? orderedSections(keystaticPage) : null;
+	if (keystaticPage) {
+		return <PageBuilderDocument page={keystaticPage} />;
+	}
 
+	return (
+		<div className="relative">
+			<PageHead pageName="lidar-mapping" />
+			<div className="flex flex-col min-h-screen">
+				<LidarLegacy />
+			</div>
+		</div>
+	);
+};
+
+function LidarLegacy() {
 	const NS = "aerial-drones/lidar-mapping";
 	const { t } = useTranslation([NS]);
 	const heroData = t(`${NS}:hero`, { returnObjects: true }) as unknown as HeroContent;
@@ -126,45 +114,19 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 			/>
 		);
 
-	if (keystaticPage && sections) {
-		const locale = keystaticPage.locale;
-		const renderAt = (index: number) => {
-			const section = sections[index];
-			return renderSection(section.id, section.value, locale, section.key);
-		};
-		return (
-			<div className="relative">
-				<PageHead pageName="lidar-mapping" />
-				<div className="flex flex-col min-h-screen" data-keystatic-page={keystaticPage.slug}>
-					{renderAt(0)}
-					{industriesGrid}
-					{whyChooseGrid}
-					<SplitMedia data={powerline} mediaAspect="aspect-16/10" />
-					{renderAt(1)}
-					{renderAt(2)}
-					{howItWorksGrid}
-					<LidarCtaSection />
-				</div>
-			</div>
-		);
-	}
-
 	return (
-		<div className="relative">
-			<PageHead pageName="lidar-mapping" />
-			<div className="flex flex-col min-h-screen">
-				<Hero data={heroData} />
-				{industriesGrid}
-				{whyChooseGrid}
-				<SplitMedia data={powerline} mediaAspect="aspect-16/10" />
-				<SplitMedia data={forestry} imagePosition="left" tone="surface" mediaAspect="aspect-16/10" />
-				<SplitMedia data={construction} imagePosition="right" tone="default" mediaAspect="aspect-16/10" />
-				{howItWorksGrid}
-				<LidarCtaSection />
-			</div>
-		</div>
+		<>
+			<Hero data={heroData} />
+			{industriesGrid}
+			{whyChooseGrid}
+			<SplitMedia data={powerline} mediaAspect="aspect-16/10" />
+			<SplitMedia data={forestry} imagePosition="left" tone="surface" mediaAspect="aspect-16/10" />
+			<SplitMedia data={construction} imagePosition="right" tone="default" mediaAspect="aspect-16/10" />
+			{howItWorksGrid}
+			<LidarCtaSection />
+		</>
 	);
-};
+}
 export const getServerSideProps: GetServerSideProps = async (context) => {
 	const i18nProps = await getI18nProps(context, [
 		"common",

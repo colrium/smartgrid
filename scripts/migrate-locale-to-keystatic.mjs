@@ -6589,10 +6589,15 @@ const PAGES = {
 	// SplitMedia with card items (`columns`/`card.iconShape`, outside the
 	// splitMedia text+image+points contract); ProcessSection passes
 	// layout/columns outside the registry `process` contract.
+	// M11 batch 19 (2026-09-20): whole page migrates in page order —
+	// `hero`, `agWhyUseDrones` unique (the legacy why-use SplitMedia with
+	// its below-the-split card row; M13 batch 7 deleted the wrapper) and
+	// `agProcess` unique (the Process grid variant, columns={3}).
+	// `skipped` is now [].
 	"agricultural-ndvi-mapping": {
 		namespace: "aerial-drones/agricultural-ndvi-mapping",
 		title: "Agricultural NDVI Mapping",
-		skipped: ["whyUseDronesInAgriculture", "process"],
+		skipped: [],
 		sections: [
 			{
 				discriminant: "hero",
@@ -6625,19 +6630,67 @@ const PAGES = {
 					};
 				},
 			},
+			{
+				discriminant: "agWhyUseDrones",
+				from: "whyUseDronesInAgriculture",
+				// Legacy: shared <SplitMedia data tone="surface" columns={4}
+				// items align="left" card={{density comfortable, iconShape xl,
+				// iconSize sm}} /> (M13 batch 7 — wrapper retired).
+				build(en, sw, where) {
+					return {
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						image: { en: optText(en.image), sw: optText(sw.image) },
+						points: [],
+						items: (() => {
+							const enItems = Array.isArray(en.items) ? en.items : [];
+							const swItems = Array.isArray(sw.items) ? sw.items : [];
+							return enItems.map((item, i) => ({
+								icon: { en: optText(item?.icon), sw: optText(swItems[i]?.icon) },
+								title: { en: reqText(item?.title, `${where}.items.${i}.title.en`), sw: reqText(swItems[i]?.title, `${where}.items.${i}.title.sw`) },
+								description: { en: reqText(item?.description, `${where}.items.${i}.description.en`), sw: reqText(swItems[i]?.description, `${where}.items.${i}.description.sw`) },
+							}));
+						})(),
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "agProcess",
+				from: "process",
+				// Legacy: shared <Process layout="grid" columns={3} /> (M13
+				// batch 7 — wrapper retired; layout/columns outside the shared
+				// `process` contract).
+				build(en, sw, where) {
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						items: (() => {
+							const enItems = Array.isArray(en.items) ? en.items : [];
+							const swItems = Array.isArray(sw.items) ? sw.items : [];
+							return enItems.map((item, i) => ({
+								title: { en: reqText(item?.title, `${where}.items.${i}.title.en`), sw: reqText(swItems[i]?.title, `${where}.items.${i}.title.sw`) },
+								description: { en: reqText(item?.description, `${where}.items.${i}.description.en`), sw: reqText(swItems[i]?.description, `${where}.items.${i}.description.sw`) },
+							}));
+						})(),
+						id: "",
+					};
+				},
+			},
 		],
 	},
 	// M7 batch 15b: lidar-mapping. Three sections migrate in page order —
 	// `hero` + `forestry` (splitMedia left/surface/wide) + `construction`
-	// (splitMedia right/default/wide). Tails stay legacy:
-	// IndustriesWeServeSection (`indexed` LidarCardGrid), WhyChoose/Powerline/
-	// Split bespoke, HowItWorksSection (layout/columns outside the registry
-	// `process` contract), LidarCtaSection (wrapper `normalizeHref` transform —
-	// migrating the bare-email href verbatim would break the link).
+	// (splitMedia right/default/wide). M11 batch 19: the remaining five
+	// tails migrate as uniques — `lidIndustries` (indexed 4-col surface
+	// grid), `lidWhyChoose` (indexed 4-col default grid), `lidPowerline`
+	// (wide split band), `lidHowItWorks` (Process grid, columns={4}),
+	// `lidCta` (the wrapper `normalizeHref` bare-email transform, kept in
+	// the registry normalize). `skipped` is now [].
 	"lidar-mapping": {
 		namespace: "aerial-drones/lidar-mapping",
 		title: "LiDAR Mapping",
-		skipped: ["industriesWeServe", "whyChooseLidar", "lidarPowerlineInspection", "howItWorks", "ctaSection"],
+		skipped: [],
 		sections: [
 			{
 				discriminant: "hero",
@@ -6666,6 +6719,68 @@ const PAGES = {
 							})(),
 						},
 						ctaSecondary: { label: emptyPair(), href: "", icon: "" },
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "lidIndustries",
+				from: "industriesWeServe",
+				// Legacy: shared <CardGrid columns={4} indexed tone="surface" />
+				// (M13 batch 7 — wrapper retired; `indexed` outside the shared
+				// `cardGrid` contract).
+				build(en, sw, where) {
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						items: (() => {
+							const enItems = Array.isArray(en.items) ? en.items : [];
+							const swItems = Array.isArray(sw.items) ? sw.items : [];
+							return enItems.map((item, i) => ({
+								title: { en: reqText(item?.title, `${where}.items.${i}.title.en`), sw: reqText(swItems[i]?.title, `${where}.items.${i}.title.sw`) },
+								description: { en: reqText(item?.description, `${where}.items.${i}.description.en`), sw: reqText(swItems[i]?.description, `${where}.items.${i}.description.sw`) },
+							}));
+						})(),
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "lidWhyChoose",
+				from: "whyChooseLidar",
+				// Legacy: shared <CardGrid columns={4} indexed /> (M13 batch 7 —
+				// wrapper retired; `indexed` outside the shared `cardGrid`
+				// contract; tone stays the component default).
+				build(en, sw, where) {
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						items: (() => {
+							const enItems = Array.isArray(en.items) ? en.items : [];
+							const swItems = Array.isArray(sw.items) ? sw.items : [];
+							return enItems.map((item, i) => ({
+								title: { en: reqText(item?.title, `${where}.items.${i}.title.en`), sw: reqText(swItems[i]?.title, `${where}.items.${i}.title.sw`) },
+								description: { en: reqText(item?.description, `${where}.items.${i}.description.en`), sw: reqText(swItems[i]?.description, `${where}.items.${i}.description.sw`) },
+							}));
+						})(),
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "lidPowerline",
+				from: "lidarPowerlineInspection",
+				// Legacy: shared <SplitMedia data mediaAspect="aspect-16/10" />
+				// band (M13 batch 7 — wrapper retired; defaults for
+				// position/tone).
+				build(en, sw, where) {
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						image: { en: optText(en.image), sw: optText(sw.image) },
 						id: "",
 					};
 				},
@@ -6707,6 +6822,49 @@ const PAGES = {
 						tone: "default",
 						mediaAspect: "wide",
 						mediaFit: "cover",
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "lidHowItWorks",
+				from: "howItWorks",
+				// Legacy: shared <Process layout="grid" columns={4} /> (M13
+				// batch 7 — wrapper retired; layout/columns outside the shared
+				// `process` contract).
+				build(en, sw, where) {
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						items: (() => {
+							const enItems = Array.isArray(en.items) ? en.items : [];
+							const swItems = Array.isArray(sw.items) ? sw.items : [];
+							return enItems.map((item, i) => ({
+								title: { en: reqText(item?.title, `${where}.items.${i}.title.en`), sw: reqText(swItems[i]?.title, `${where}.items.${i}.title.sw`) },
+								description: { en: reqText(item?.description, `${where}.items.${i}.description.en`), sw: reqText(swItems[i]?.description, `${where}.items.${i}.description.sw`) },
+							}));
+						})(),
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "lidCta",
+				from: "ctaSection",
+				// Legacy: <LidarCtaSection /> — the wrapper `normalizeHref`
+				// bare-email transform (mailto:), now in the registry normalize;
+				// icon email-outline + position are renderer literals. `tag` is
+				// null in both locales.
+				build(en, sw, where) {
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						ctaPrimary: {
+							label: { en: reqText(en.ctaPrimary?.label, `${where}.ctaPrimary.label.en`), sw: reqText(sw.ctaPrimary?.label, `${where}.ctaPrimary.label.sw`) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+						},
 						id: "",
 					};
 				},

@@ -243,7 +243,7 @@ import {
  * from DATA (the wrapper is page-owned), so edits change output.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "workflow", "finalCta", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation", "aerialIntro", "aerialWhyDrones", "aerialServices", "aerialSurveyingGrid", "aerialIndustries", "aerialIndustryCta", "aerialTechStack", "aerialCapabilityCta", "aerialProjects", "aerialAdditionalServices", "cadastralPostHeroCta", "cadastralWhenYouNeed", "cadastralProcessCta", "cadastralCost", "cadastralTimeline", "cadastralCompliance", "cadastralCaseStudy", "gprHero", "gprHighlights", "gprJumpNav", "gprOverview", "gprMethodology", "gprApplications", "gprDetect", "gprSue", "gprLimitations", "gprBeforeAfter", "gprTechnology", "gprFeaturedProjects", "gprSummary", "gisHero", "gisWhatIs", "gisImportance", "gisServices", "gisIndustries", "gisTechStack", "gisWhatsappCta", "gisComponents", "gisWhySmartgrid", "gisDataAccuracy", "gisBeforeAfter", "gisProjectImpact", "gisRelatedServices", "highwayServices", "asBuiltSolutions", "bimServices", "seHero", "seOverview", "seWhatWeDo", "seExploreMore", "ssoServices", "ssoInstruments", "vsServices", "solWhatWeDo", "solProcess", "lqQuarryServicesItems", "lqWhatWeOffer", "meOurCapabilities", "meImpact", "meSmartMonitoring", "meWhatWeOffer", "abWhyUseDrones", "abProcess"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "workflow", "finalCta", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation", "aerialIntro", "aerialWhyDrones", "aerialServices", "aerialSurveyingGrid", "aerialIndustries", "aerialIndustryCta", "aerialTechStack", "aerialCapabilityCta", "aerialProjects", "aerialAdditionalServices", "cadastralPostHeroCta", "cadastralWhenYouNeed", "cadastralProcessCta", "cadastralCost", "cadastralTimeline", "cadastralCompliance", "cadastralCaseStudy", "gprHero", "gprHighlights", "gprJumpNav", "gprOverview", "gprMethodology", "gprApplications", "gprDetect", "gprSue", "gprLimitations", "gprBeforeAfter", "gprTechnology", "gprFeaturedProjects", "gprSummary", "gisHero", "gisWhatIs", "gisImportance", "gisServices", "gisIndustries", "gisTechStack", "gisWhatsappCta", "gisComponents", "gisWhySmartgrid", "gisDataAccuracy", "gisBeforeAfter", "gisProjectImpact", "gisRelatedServices", "highwayServices", "asBuiltSolutions", "bimServices", "seHero", "seOverview", "seWhatWeDo", "seExploreMore", "ssoServices", "ssoInstruments", "vsServices", "solWhatWeDo", "solProcess", "lqQuarryServicesItems", "lqWhatWeOffer", "meOurCapabilities", "meImpact", "meSmartMonitoring", "meWhatWeOffer", "abWhyUseDrones", "abProcess", "agWhyUseDrones", "agProcess", "lidIndustries", "lidWhyChoose", "lidPowerline", "lidHowItWorks", "lidCta"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -9861,6 +9861,378 @@ const abProcess: SectionDefinition = {
 	}),
 };
 
+/**
+ * M11 batch 19 — aerial-drones agricultural-ndvi-mapping page
+ * (2026-09-20). `agWhyUseDrones` reproduces the legacy "why use drones"
+ * section: a full shared `SplitMedia` (M13 batch 7 deleted the
+ * `WhyUseDronesSection` wrapper) with the card row below the split — a
+ * contract the shared `splitMedia` section excludes, so the image + card
+ * literals ride on this unique. Unique — only valid on that page.
+ * `description` optional (optionalInEnglish — the node's own headline
+ * field carries it). Renders nothing without a headline (legacy guard).
+ */
+const agWhyUseDrones: SectionDefinition = {
+	id: "agWhyUseDrones",
+	version: 1,
+	label: "Agricultural NDVI why-drones (unique)",
+	description: "Unique: the agricultural NDVI why-use-drones split with its below-the-split card row. Only valid on that page.",
+	schema: fields.object({
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		image: localeMedia("Image"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (optional)",
+					description: "Icon slug without the `mdi-` prefix.",
+				}),
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Reasons",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Reason"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): columns, align, tone, density/
+		// iconShape/iconSize card literal.
+	}),
+	example: {
+		headline: { en: "Why Use Drones in Agriculture?", sw: "Kwa Nini Droni Kilimo" },
+		description: { en: "", sw: "" },
+		image: { en: "/media/aerial-drones/agricultural-ndvi-mapping/agricultural-ndvi-mapping-02.jpg", sw: "" },
+		items: [
+			{
+				icon: "clock-fast",
+				title: { en: "Save Time & Labor", sw: "Okoa Muda na Kazi" },
+				description: { en: "Cover large areas in minutes.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			headline: resolved.headline,
+			description: resolved.description,
+			image: resolved.image,
+			points: [],
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 19 — agricultural-ndvi-mapping page (2026-09-20).
+ * `agProcess` is the same `Process` grid variant (`layout="grid"`,
+ * `columns={3}`) that made M7 batch 15a skip the node — outside the
+ * shared `process` contract. Unique — only valid on that page. Renders
+ * nothing without items (legacy guard, preserved).
+ */
+const agProcess: SectionDefinition = {
+	id: "agProcess",
+	version: 1,
+	label: "Agricultural NDVI process (unique)",
+	description: "Unique: the agricultural NDVI process grid variant. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		items: fields.array(
+			fields.object({
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Steps",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Step"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): description (legacy empty in both
+		// locales), layout="grid" + columns (fixed presentation, reproduced
+		// by the renderer).
+	}),
+	example: {
+		tag: { en: "Process", sw: "Mchakato" },
+		headline: { en: "Agricultural Aerial Survey Process", sw: "Mchakato Wetu" },
+		items: [
+			{
+				title: { en: "Needs Assessment & Site Planning", sw: "Tathmini ya Mahitaji" },
+				description: { en: "We begin by understanding the specific agricultural goals.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({ title: item?.title ?? "", description: item?.description ?? "" }))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 19 — aerial-drones lidar-mapping page (2026-09-20). Six
+ * uniques register the page's remaining legacy tails (M13 batch 7 had
+ * deleted their single-shared-child wrappers, so the renderers render the
+ * shared components directly with the wrappers' literals):
+ * `lidIndustries` (indexed 4-col grid, `indexed` outside the shared
+ * `cardGrid` contract) and `lidWhyChoose` (indexed 4-col, default tone)
+ * over the shared `CardGrid`; `lidPowerline` over the shared `SplitMedia`
+ * (wide aspect). Unique — only valid on that page. Both grids render
+ * nothing without items (legacy guard, preserved).
+ */
+const lidIndustries: SectionDefinition = {
+	id: "lidIndustries",
+	version: 1,
+	label: "LiDAR industries grid (unique)",
+	description: "Unique: the LiDAR indexed industries grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				title: localeText("Title", { optionalInEnglish: true }),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Industries",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Industry"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): columns=4, `indexed` (outside the
+		// shared `cardGrid` contract), tone="surface".
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Industries We Serve", sw: "Sekta Tunazohudumia" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				title: { en: "Construction", sw: "Ujenzi" },
+				description: { en: "LiDAR mapping for accurate site surveys.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({ title: item?.title ?? "", description: item?.description ?? "" }))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+const lidWhyChoose: SectionDefinition = {
+	id: "lidWhyChoose",
+	version: 1,
+	label: "LiDAR why-choose grid (unique)",
+	description: "Unique: the LiDAR indexed why-choose grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				title: localeText("Title", { optionalInEnglish: true }),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Reasons",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Reason"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): columns=4, `indexed` (outside the
+		// shared `cardGrid` contract; tone stays the component default).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Why Choose LiDAR", sw: "Kwa Nini LiDAR" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				title: { en: "High Accuracy Data", sw: "Data Sahihi" },
+				description: { en: "Centimeter-level accuracy.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({ title: item?.title ?? "", description: item?.description ?? "" }))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+const lidPowerline: SectionDefinition = {
+	id: "lidPowerline",
+	version: 1,
+	label: "LiDAR powerline split (unique)",
+	description: "Unique: the LiDAR powerline split-media band. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		image: localeMedia("Image"),
+		id: anchorField(),
+		// Excluded from v1 (documented): imagePosition/tone defaults +
+		// mediaAspect="aspect-16/10" (wide) — the route's inline band literal.
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Powerline Inspection", sw: "Ukaguzi wa Mistari" },
+		description: { en: "", sw: "" },
+		image: { en: "/media/aerial-drones/lidar-mapping/lidar-mapping-03.jpg", sw: "" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			image: resolved.image,
+			points: [],
+		},
+		mediaAspect: "aspect-16/10",
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * `lidHowItWorks` — the same `Process` grid variant (`layout="grid"`,
+ * `columns={4}`) that made M7 batch 15b skip the node. Unique — only
+ * valid on `/aerial-drones/lidar-mapping`. Renders nothing without items
+ * (legacy guard, preserved).
+ */
+const lidHowItWorks: SectionDefinition = {
+	id: "lidHowItWorks",
+	version: 1,
+	label: "LiDAR how-it-works grid (unique)",
+	description: "Unique: the LiDAR how-it-works process grid variant. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Steps",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Step"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): layout="grid" + columns (fixed
+		// presentation, reproduced by the renderer).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "How It Works", sw: "Inavyofanya Kazi" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				title: { en: "Preparation", sw: "Maandalizi" },
+				description: { en: "We work with you to understand the scope and goals.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({ title: item?.title ?? "", description: item?.description ?? "" }))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * `lidCta` — the legacy `LidarCtaSection` (kept through M13: its
+ * `normalizeHref` bare-email transform is real shaping) registered as a
+ * unique with the SAME transform in the normalize. `tag` is null in both
+ * locales; `description` optional (optionalInEnglish). Icon (email-outline)
+ * + position are presentation literals, reproduced by the renderer.
+ */
+const lidCta: SectionDefinition = {
+	id: "lidCta",
+	version: 1,
+	label: "LiDAR CTA (unique)",
+	description: "Unique: the LiDAR closing CTA band with the bare-email normalizeHref transform. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		ctaPrimary: fields.object({
+			label: localeText("Label", { optionalInEnglish: true }),
+			href: fields.text({ label: "Link" }),
+		}),
+		id: anchorField(),
+		// Excluded from v1 (documented): className (pb-24 sm:pb-28 overflow
+		// shell, route chrome), the mailto transform (normalize below),
+		// icon="email-outline" + iconPosition (presentation literals).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Get started Today!", sw: "Anza Leo!" },
+		description: { en: "Ready to take your projects to the next level?", sw: "" },
+		ctaPrimary: { label: { en: "Email us!", sw: "Tutumie barua pepe!" }, href: "smartgridsurveying@gmail.com" },
+		id: "",
+	},
+	normalize: (resolved) => {
+		// Same transform as the legacy wrapper: bare emails become mailto,
+		// scheme'd hrefs pass through untouched.
+		const href = resolved.ctaPrimary?.href;
+		const normalizedHref = href
+			? /^[a-z]+:/i.test(href)
+				? href
+				: href.includes("@")
+					? `mailto:${href}`
+					: href
+			: "";
+		return {
+			data: {
+				tag: resolved.tag,
+				headline: resolved.headline,
+				description: resolved.description,
+				ctaHref: normalizedHref,
+				ctaLabel: resolved.ctaPrimary?.label ?? "",
+			},
+			id: resolved.id || undefined,
+		};
+	},
+};
+
 export const sectionRegistry: readonly SectionDefinition[] = [
 	introText,
 	ctaBand,
@@ -9998,6 +10370,13 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	meWhatWeOffer,
 	abWhyUseDrones,
 	abProcess,
+	agWhyUseDrones,
+	agProcess,
+	lidIndustries,
+	lidWhyChoose,
+	lidPowerline,
+	lidHowItWorks,
+	lidCta,
 ];
 
 export function getSectionDefinition(id: string): SectionDefinition {
@@ -10143,6 +10522,13 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	meWhatWeOffer: meWhatWeOffer.label,
 	abWhyUseDrones: abWhyUseDrones.label,
 	abProcess: abProcess.label,
+	agWhyUseDrones: agWhyUseDrones.label,
+	agProcess: agProcess.label,
+	lidIndustries: lidIndustries.label,
+	lidWhyChoose: lidWhyChoose.label,
+	lidPowerline: lidPowerline.label,
+	lidHowItWorks: lidHowItWorks.label,
+	lidCta: lidCta.label,
 };
 
 /**

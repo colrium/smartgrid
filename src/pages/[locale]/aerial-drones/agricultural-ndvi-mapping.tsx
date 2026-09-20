@@ -3,9 +3,9 @@ import PageHead from "@/components/Head";
 
 import { getI18nProps, getLocale } from "@/lib/i18n";
 import type { Lang } from "@/lib/types";
-import { useTranslation } from "@/hooks";
 import { resolveKeystaticPage, type ResolvedKeystaticPage } from "@/lib/keystatic/resolvePage";
-import { renderSection } from "@/lib/keystatic/sectionRenderers";
+import { PageBuilderDocument } from "@/components/keystatic/PageBuilderDocument";
+import { useTranslation } from "@/hooks";
 import { Hero, type HeroContent } from "@/components/sections/shared/Hero";
 import { SplitMedia, type SplitMediaContent } from "@/components/sections/shared/SplitMedia";
 import { type CardItem } from "@/components/sections/shared/CardGrid";
@@ -28,37 +28,28 @@ interface WhyUseContent extends SplitMediaContent {
 }
 
 /**
- * Sections migrated to Keystatic in page order (see the
- * `agricultural-ndvi-mapping` mapping in
- * `scripts/migrate-locale-to-keystatic.mjs`): hero only. Two legacy tails
- * (WhyUseDronesSection wrapping SplitMedia with card items, ProcessSection
- * with layout/columns outside the registry `process` contract) sit at fixed
- * positions after it, so the route renders the Keystatic section by index
- * instead of one whole PageBuilderDocument. If an edit changes the section
- * COUNT, the route falls back to legacy rather than misplacing sections —
- * keep this in sync with the mapping. (M13 batch 7, 2026-09-20 — the
- * single-shared-child wrappers `AgriculturalNdviHeroSection`,
- * `WhyUseDronesSection` and `ProcessSection` were removed; both branches
- * below render the shared `Hero`/`SplitMedia`/`Process` directly.)
+ * M11 batch 19 (2026-09-20): all three sections (hero, why-use-drones
+ * split + card row, process grid) are Keystatic-owned in page order, so
+ * the whole page renders from one `PageBuilderDocument` when the slug is
+ * allowlisted via `KEYSTATIC_PAGES` and the entry is published. Otherwise
+ * the legacy locale-JSON implementation renders unchanged.
  */
-const KEYSTATIC_SECTION_COUNT = 1;
-
-function orderedSections(page: ResolvedKeystaticPage) {
-	if (page.sections.length !== KEYSTATIC_SECTION_COUNT) {
-		console.warn(
-			`[keystatic] page "agricultural-ndvi-mapping" has ${page.sections.length} sections, expected ${KEYSTATIC_SECTION_COUNT} — falling back to legacy content`
-		);
-		return null;
-	}
-	return page.sections;
-}
-
 const Page: NextPage<PageProps> = ({ keystaticPage }) => {
-	// Migration source switch (M3/M7): Keystatic owns the hero only when the
-	// slug is allowlisted via `KEYSTATIC_PAGES` and the entry is published.
-	// Otherwise the legacy locale-JSON implementation renders unchanged.
-	const sections = keystaticPage ? orderedSections(keystaticPage) : null;
+	if (keystaticPage) {
+		return <PageBuilderDocument page={keystaticPage} />;
+	}
 
+	return (
+		<div className="relative">
+			<PageHead pageName="agricultural-ndvi-mapping" />
+			<div className="flex flex-col min-h-screen">
+				<AgriculturalNdviLegacy />
+			</div>
+		</div>
+	);
+};
+
+function AgriculturalNdviLegacy() {
 	const NS = "aerial-drones/agricultural-ndvi-mapping";
 	const { t } = useTranslation([NS]);
 	const heroData = t(`${NS}:hero`, { returnObjects: true }) as unknown as HeroContent;
@@ -93,35 +84,14 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 			/>
 		);
 
-	if (keystaticPage && sections) {
-		const locale = keystaticPage.locale;
-		const renderAt = (index: number) => {
-			const section = sections[index];
-			return renderSection(section.id, section.value, locale, section.key);
-		};
-		return (
-			<div className="relative">
-				<PageHead pageName="agricultural-ndvi-mapping" />
-				<div className="flex flex-col min-h-screen" data-keystatic-page={keystaticPage.slug}>
-					{renderAt(0)}
-					{whyUseGrid}
-					{processGrid}
-				</div>
-			</div>
-		);
-	}
-
 	return (
-		<div className="relative">
-			<PageHead pageName="agricultural-ndvi-mapping" />
-			<div className="flex flex-col min-h-screen">
-				<Hero data={heroData} />
-				{whyUseGrid}
-				{processGrid}
-			</div>
-		</div>
+		<>
+			<Hero data={heroData} />
+			{whyUseGrid}
+			{processGrid}
+		</>
 	);
-};
+}
 export const getServerSideProps: GetServerSideProps = async (context) => {
 	const i18nProps = await getI18nProps(context, ["common", "meta", "aerial-drones/agricultural-ndvi-mapping"]);
 

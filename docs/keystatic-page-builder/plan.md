@@ -1106,7 +1106,30 @@ Rules (decided 2026-09-18, before implementing):
       (136 sections, 31 fixtures), `--verify` clean both (9 + 5 sections,
       no gaps), `yarn typecheck` clean, `yarn lint` clean; dev-smoke
       DEFERRED per M11/M12 policy. Next: Batch 19 — agricultural-ndvi +
-      lidar-mapping.) **Status-log correction:** the
+      lidar-mapping.)
+      (Batch 19 — aerial-drones agricultural-ndvi-mapping + lidar-mapping
+      — done 2026-09-20, completing the six aerial-drones children and
+      ALL of M11's in-scope legacy tails: 7 uniques (`agWhyUseDrones` —
+      the full SplitMedia with its below-the-split card row, whose image
+      + card literals the shared `splitMedia` contract excludes;
+      `agProcess` and `lidHowItWorks` — the `Process` grid variants
+      (`layout="grid"`, columns 3/4) that made M7 batches 15a/15b skip
+      the nodes; `lidIndustries` + `lidWhyChoose` — indexed 4-col
+      `CardGrid`s (`indexed` outside the shared `cardGrid` contract);
+      `lidPowerline` — the wide SplitMedia band; `lidCta` — the kept
+      `LidarCtaSection` with its `normalizeHref` bare-email transform
+      moved into the registry normalize, refactored per the M9
+      additive-`data` precedent); M13 batch 7 had deleted the
+      WhyUseDrones/Process/IndustriesWeServe/WhyChooseLidar/
+      LidarPowerlineSection/HowItWorksSection wrappers → renderer
+      components render the shared `SplitMedia`/`Process`/`CardGrid`
+      directly with the deleted wrappers' literals; whole pages in page
+      order (3 + 8 sections) → one `PageBuilderDocument` each, `skipped`
+      now `[]` both; registry 136→143; README list updated. Validation:
+      `check:keystatic` OK (143 sections, 31 fixtures), `--verify` clean
+      both (3 + 8 sections, no gaps), `yarn typecheck` clean, `yarn lint`
+      clean; dev-smoke DEFERRED per M11/M12 policy.)
+      **Status-log correction:** the
       batch-15 close read "registry 123→125" — the check script counted
       125 total (123 before), but this note is stale after M13: M13
       unregistered 7 uniques (118 final), so batch 16 starts from 118,

@@ -392,7 +392,9 @@ no login) from one hundred eighteen registered sections: `introText`, `ctaBand`,
 `asBuiltSolutions`, `bimServices`, `seHero`, `seOverview`, `seWhatWeDo`,
 `seExploreMore`, `ssoServices`, `ssoInstruments`, `vsServices`, `solWhatWeDo`,
 `solProcess`, `lqQuarryServicesItems`, `lqWhatWeOffer`, `meOurCapabilities`,
-`meImpact`, `meSmartMonitoring`, `meWhatWeOffer`, `abWhyUseDrones`, `abProcess`. See
+`meImpact`, `meSmartMonitoring`, `meWhatWeOffer`, `abWhyUseDrones`, `abProcess`,
+`agWhyUseDrones`, `agProcess`, `lidIndustries`, `lidWhyChoose`, `lidPowerline`,
+`lidHowItWorks`, `lidCta`. See
 `src/lib/keystatic/sectionRegistry.ts` — the single
 source for editor options and renderer mappings.
 

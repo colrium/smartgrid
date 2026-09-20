@@ -47,6 +47,159 @@
 				},
 				"id": ""
 			}
+		},
+		{
+			"discriminant": "agWhyUseDrones",
+			"value": {
+				"headline": {
+					"en": "Why Use Drones in Agriculture?",
+					"sw": "Kwa Nini Utumie Ndege Zisizo na Rubani Kilimoni?"
+				},
+				"description": {
+					"en": "Our drone technology brings real-time insights from above—helping farmers monitor crops, optimize inputs, and make informed decisions across their agricultural operations.",
+					"sw": "Teknolojia yetu ya ndege zisizo na rubani huleta maarifa ya wakati halisi kutoka juu—kusaidia wakulima kufuatilia mazao, kuboresha pembejeo, na kufanya maamuzi sahihi katika shughuli zao za kilimo."
+				},
+				"image": {
+					"en": "/media/aerial-drones/agricultural-ndvi-mapping/agricultural-ndvi-mapping-02.jpg",
+					"sw": "/media/aerial-drones/agricultural-ndvi-mapping/agricultural-ndvi-mapping-02.jpg"
+				},
+				"points": [],
+				"items": [
+					{
+						"icon": {
+							"en": "clock-fast",
+							"sw": "clock-fast"
+						},
+						"title": {
+							"en": "Save Time & Labor",
+							"sw": "Okoa Muda na Kazi"
+						},
+						"description": {
+							"en": "Cover large areas in minutes compared to manual fieldwork.",
+							"sw": "Funika maeneo makubwa kwa dakika ikilinganishwa na kazi ya shambani ya mikono."
+						}
+					},
+					{
+						"icon": {
+							"en": "leaf",
+							"sw": "leaf"
+						},
+						"title": {
+							"en": "Improve Resource Efficiency",
+							"sw": "Boresha Ufanisi wa Rasilimali"
+						},
+						"description": {
+							"en": "Apply inputs only where needed, reducing cost and environmental impact.",
+							"sw": "Tumia pembejeo pale zinapohitajika tu, kupunguza gharama na athari za mazingira."
+						}
+					},
+					{
+						"icon": {
+							"en": "brain",
+							"sw": "brain"
+						},
+						"title": {
+							"en": "Make Smarter Decisions",
+							"sw": "Fanya Maamuzi Bora"
+						},
+						"description": {
+							"en": "Use aerial data for real-time field assessments and historical trend analysis.",
+							"sw": "Tumia data ya angani kwa tathmini za shambani za wakati halisi na uchambuzi wa mwelekeo wa kihistoria."
+						}
+					},
+					{
+						"icon": {
+							"en": "recycle",
+							"sw": "recycle"
+						},
+						"title": {
+							"en": "Enhance Sustainability",
+							"sw": "Imarisha Uendelevu"
+						},
+						"description": {
+							"en": "Promote conservation agriculture through better land and input management.",
+							"sw": "Kukuza kilimo cha uhifadhi kupitia usimamizi bora wa ardhi na pembejeo."
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "agProcess",
+			"value": {
+				"tag": {
+					"en": "Process",
+					"sw": "Mchakato"
+				},
+				"headline": {
+					"en": "Agricultural Aerial Survey Process",
+					"sw": "Mchakato wa Uchunguzi wa Angani wa Kilimo"
+				},
+				"items": [
+					{
+						"title": {
+							"en": "Needs Assessment & Site Planning",
+							"sw": "Tathmini ya Mahitaji na Upangaji wa Tovuti"
+						},
+						"description": {
+							"en": "We begin by understanding the specific agricultural goals—whether it’s crop health, irrigation analysis, or yield estimation—and plan the flight accordingly.",
+							"sw": "Tunaanza kwa kuelewa malengo maalum ya kilimo—iwe ni afya ya mazao, uchambuzi wa umwagiliaji, au makadirio ya mavuno—na kupanga ndege ipasavyo."
+						}
+					},
+					{
+						"title": {
+							"en": "Drone Deployment",
+							"sw": "Uwekaji wa Ndege Zisizo na Rubani"
+						},
+						"description": {
+							"en": "Using multispectral or RGB drones, we conduct automated flights capturing aerial data with GPS precision, ensuring full field coverage.",
+							"sw": "Kwa kutumia ndege za multispectral au RGB, tunafanya safari za kiotomatiki zinazokamata data ya angani kwa usahihi wa GPS, kuhakikisha chanjo kamili ya shamba."
+						}
+					},
+					{
+						"title": {
+							"en": "Data Capture",
+							"sw": "Ukamataji wa Data"
+						},
+						"description": {
+							"en": "Collect NDVI, RGB, thermal, or LiDAR data depending on the survey needs. High-resolution geotagged imagery is recorded in real-time.",
+							"sw": "Kusanya data ya NDVI, RGB, joto, au LiDAR kulingana na mahitaji ya uchunguzi. Picha za mwonekano wa juu zenye marejeleo ya kijiografia hurekodiwa kwa wakati halisi."
+						}
+					},
+					{
+						"title": {
+							"en": "Data Processing & Mapping",
+							"sw": "Uchakataji wa Data na Uchoraji Ramani"
+						},
+						"description": {
+							"en": "The imagery is stitched into orthomosaics and analyzed to generate crop health maps, topographic contours, and vegetation indices.",
+							"sw": "Picha hushonwa kuwa orthomosaic na kuchambuliwa kuzalisha ramani za afya ya mazao, contours za topografia, na viashiria vya mimea."
+						}
+					},
+					{
+						"title": {
+							"en": "Report Generation & Insights",
+							"sw": "Uzalishaji wa Ripoti na Maarifa"
+						},
+						"description": {
+							"en": "We compile actionable insights—highlighting issues such as underperforming zones or stress areas—for improved farming decisions.",
+							"sw": "Tunakusanya maarifa yanayoweza kutekelezwa—kuangazia masuala kama maeneo yasiyofanya vizuri au maeneo ya mkazo—kwa maamuzi bora ya kilimo."
+						}
+					},
+					{
+						"title": {
+							"en": "Delivery & Support",
+							"sw": "Utoaji na Usaidizi"
+						},
+						"description": {
+							"en": "Final maps and data are delivered in GIS-ready formats with expert interpretation support and integration guidance.",
+							"sw": "Ramani na data za mwisho hutolewa katika miundo tayari ya GIS pamoja na usaidizi wa kitaalamu wa ufafanuzi na mwongozo wa ujumuishaji."
+						}
+					}
+				],
+				"id": ""
+			}
 		}
 	]
 }
