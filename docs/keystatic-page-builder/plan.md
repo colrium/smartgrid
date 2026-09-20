@@ -807,11 +807,16 @@ behavior) is documented so the next new page does not 404.
 ### M11: Register Unregistered Page Sections as Unique Sections
 
 **Status: IN PROGRESS** (home pilot: `homeHero` + `homeDrones`; remaining pages
-batched after. All per-page batches 1–16 DONE as of 2026-09-20 — every
-in-scope legacy tail now has a registry branch, and every touched page is
-whole-owned in page order → one `PageBuilderDocument`; M13's wrapper
-deletions reconciled into batch 16. Remaining: deferred dev-smoke
-residuals only.)
+batched after. All per-page batches 1–19 DONE as of 2026-09-20 — batches
+17–19 (2026-09-20) registered the six aerial-drones children the original
+batch plan never listed (solar-panel, landfill-quarry, monitoring-and-
+evaluation, aerial as-built, agricultural-ndvi, lidar — see the status log
+below), closing the last in-scope legacy tails; every in-scope legacy tail now
+has a registry branch, and every touched page is whole-owned in page order →
+one `PageBuilderDocument`; M13's wrapper deletions reconciled into batches
+16–19 (unique renderers render the shared components directly). Remaining:
+deferral-class residuals only — per-page dev-smoke parity and the rollback
+test, joined to the M6/M10/M13 browser-session carry-overs.)
 
 Dependencies: M2 registry + schema factories, M7 per-page wiring, M8/M9 additive-`data`
 precedent (`LeadGenBar`, `ServicesSection`).
@@ -1155,7 +1160,12 @@ card, icons) — `git show` them when re-deriving a renderer.
       fixture/render coverage extended per batch. (M13 note, 2026-09-20:
       batch 16's unique renderers render the shared `CardGrid`/`Hero`/
       `Split`/`Deliverables` directly — their wrapped single-child wrappers
-      were deleted by M13 batch 6; see the M13-impact note above.)
+      were deleted by M13 batch 6; see the M13-impact note above. Batches
+      17–19 (2026-09-20): the six aerial-drones children followed the same
+      rule — their wrappers were deleted by M13 batch 7, so renderers render
+      the shared `CardGrid`/`Process`/`SplitMedia` directly; the surviving
+      bespoke `SmartMonitoringSection`/`WhatWeOfferSection`/`LidarCtaSection`
+      wrappers got the M9 additive-`data` refactor instead.)
 
 **Exit criteria:** every in-scope legacy tail has a registry id + schema +
 example + renderer + check coverage; entries carry its content; `/en` + `/sw`
@@ -1164,8 +1174,16 @@ render it from Keystatic when opted in, legacy otherwise.
 ### M12: Keystatic Order Becomes Page Order (Remove renderAt Indexes)
 
 **Status: IN PROGRESS** (home named-slot conversion done 2026-09-18; flexible
-rule decided 2026-09-19 — whole-owned pages go straight to `PageBuilderDocument`;
-Batch 10 converts about/topographical/sectional/bathymetric).
+rule decided 2026-09-19 — whole-owned pages go straight to
+`PageBuilderDocument`; Batch 10 converted about/topographical/sectional/
+bathymetric 2026-09-19. STALE-HEADER CORRECTION 2026-09-20: this header's
+original "Batch 10 converts…" phrasing predated the flexible rule — it did not
+mean the old interleaved about/topographical/sectional/bathymetric routes (those
+were whole-owned in M11 batches 3–5 and re-verified in M13); M11 batches 16–19
+(2026-09-20) then whole-owned the civil tails and all six aerial-drones
+children, so every migrated page now renders whole from one
+`PageBuilderDocument` — no `renderAt(<index>)` hybrids remain. What is left for
+DONE is the reconciliation sweep below.)
 
 Dependencies: M11 per page (a page can only drop its indexes once ALL its
 sections are Keystatic-owned).
@@ -1215,7 +1233,20 @@ Rules (decided 2026-09-18, before implementing):
       `PageBuilderDocument`); entries already in page order, `--verify`
       unaffected. `home` keeps named slots (chrome exception) until its chrome
       decision is recorded.)
-- [ ] `check:keystatic` fixture strings + `--verify` green per batch.
+- [x] `check:keystatic` fixture strings + `--verify` green per batch. (Done
+      continuously through M11 batches 1–19 and M13: every batch ran
+      `check:keystatic` + `--verify` for its pages and the full typecheck +
+      lint before its commit; final state — `check:keystatic` OK (143
+      sections, 31 fixtures), all mapped entries verify with no gaps.)
+- [ ] Reconciliation sweep (remaining for DONE): confirm no migrated page
+      still carries a `renderAt(<index>)` hybrid — VERIFIED 2026-09-20, zero
+      `renderAt(` literals remain in `src/pages/[locale]`; `home` intentionally
+      keeps its count guard + named slots (the recorded chrome exception, not
+      an index hybrid); confirm every entry's order is the legacy page order
+      (batches 16–19 regenerated entries in page order via `--write`, all
+      verifying clean); and spot-check one page in the editor that reordering
+      blocks reorders the page (browser session — joined to the
+      M6/M10/M13 carry-overs).
 
 **Exit criteria:** no `renderAt(<index>)` literals remain on migrated pages;
 entry order == page order; reordering blocks in the editor reorders the page;
