@@ -83,13 +83,11 @@ import { ProjectsSection as AerialProjectsSection } from "@/components/sections/
 import { AdditionalServicesSection as AerialAdditionalServicesSection } from "@/components/sections/surveying/aerial/AdditionalServicesSection";
 import { PostHeroCtaSection } from "@/components/sections/surveying/cadastral/PostHeroCtaSection";
 import { WhenYouNeedSection as CadastralWhenYouNeedSection } from "@/components/sections/surveying/cadastral/WhenYouNeedSection";
-import { ProcessFlowSection } from "@/components/sections/surveying/cadastral/ProcessFlowSection";
 import { ProcessCtaSection } from "@/components/sections/surveying/cadastral/ProcessCtaSection";
 import { CostSection as CadastralCostSection } from "@/components/sections/surveying/cadastral/CostSection";
 import { TimelineSection as CadastralTimelineSection } from "@/components/sections/surveying/cadastral/TimelineSection";
 import { ComplianceSection } from "@/components/sections/surveying/cadastral/ComplianceSection";
 import { CaseStudySection } from "@/components/sections/surveying/cadastral/CaseStudySection";
-import { FinalCtaSection as CadastralFinalCtaSection } from "@/components/sections/surveying/cadastral/FinalCtaSection";
 import { GprServiceHero } from "@/components/sections/surveying/ground-penetrating-radar/GprServiceHero";
 import { GprHighlightsBar } from "@/components/sections/surveying/ground-penetrating-radar/GprHighlightsBar";
 import { GprJumpNav } from "@/components/sections/surveying/ground-penetrating-radar/GprJumpNav";
@@ -232,13 +230,11 @@ export const sectionRenderers = {
 	aerialAdditionalServices: AerialAdditionalServicesSection,
 	cadastralPostHeroCta: PostHeroCtaSection,
 	cadastralWhenYouNeed: CadastralWhenYouNeedSection,
-	cadastralProcess: ProcessFlowSection,
 	cadastralProcessCta: ProcessCtaSection,
 	cadastralCost: CadastralCostSection,
 	cadastralTimeline: CadastralTimelineSection,
 	cadastralCompliance: ComplianceSection,
 	cadastralCaseStudy: CaseStudySection,
-	cadastralFinalCta: CadastralFinalCtaSection,
 	gprHero: GprServiceHero,
 	gprHighlights: GprHighlightsBar,
 	gprJumpNav: GprJumpNav,

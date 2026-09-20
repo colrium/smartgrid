@@ -192,7 +192,7 @@
 			}
 		},
 		{
-			"discriminant": "cadastralProcess",
+			"discriminant": "workflow",
 			"value": {
 				"tag": {
 					"en": "How It Works",
@@ -284,6 +284,19 @@
 						}
 					}
 				],
+				"ctaNote": {
+					"en": "",
+					"sw": ""
+				},
+				"cta": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"acquisition": "satellite",
 				"id": ""
 			}
 		},
@@ -1058,7 +1071,7 @@
 			}
 		},
 		{
-			"discriminant": "cadastralFinalCta",
+			"discriminant": "finalCta",
 			"value": {
 				"tag": {
 					"en": "Next Steps",
@@ -1126,6 +1139,9 @@
 						"href": "/contact"
 					}
 				],
+				"watermark": "vector-square",
+				"columns": "4",
+				"align": "left",
 				"id": ""
 			}
 		}

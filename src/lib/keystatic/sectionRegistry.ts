@@ -243,7 +243,7 @@ import {
  * from DATA (the wrapper is page-owned), so edits change output.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "workflow", "finalCta", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyWorkflow", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "bathyFinalCta", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "rmFinalCta", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation", "aerialIntro", "aerialWhyDrones", "aerialServices", "aerialSurveyingGrid", "aerialIndustries", "aerialIndustryCta", "aerialTechStack", "aerialCapabilityCta", "aerialProjects", "aerialAdditionalServices", "cadastralPostHeroCta", "cadastralWhenYouNeed", "cadastralProcess", "cadastralProcessCta", "cadastralCost", "cadastralTimeline", "cadastralCompliance", "cadastralCaseStudy", "cadastralFinalCta", "gprHero", "gprHighlights", "gprJumpNav", "gprOverview", "gprMethodology", "gprApplications", "gprDetect", "gprSue", "gprLimitations", "gprBeforeAfter", "gprTechnology", "gprFeaturedProjects", "gprSummary", "gprFinalCta", "gisHero", "gisWhatIs", "gisImportance", "gisServices", "gisIndustries", "gisTechStack", "gisWhatsappCta", "gisComponents", "gisWhySmartgrid", "gisAnalystCta", "gisDataAccuracy", "gisBeforeAfter", "gisProjectImpact", "gisRelatedServices", "highwayServices", "asBuiltSolutions"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "workflow", "finalCta", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyWorkflow", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "bathyFinalCta", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "rmFinalCta", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation", "aerialIntro", "aerialWhyDrones", "aerialServices", "aerialSurveyingGrid", "aerialIndustries", "aerialIndustryCta", "aerialTechStack", "aerialCapabilityCta", "aerialProjects", "aerialAdditionalServices", "cadastralPostHeroCta", "cadastralWhenYouNeed", "cadastralProcessCta", "cadastralCost", "cadastralTimeline", "cadastralCompliance", "cadastralCaseStudy", "gprHero", "gprHighlights", "gprJumpNav", "gprOverview", "gprMethodology", "gprApplications", "gprDetect", "gprSue", "gprLimitations", "gprBeforeAfter", "gprTechnology", "gprFeaturedProjects", "gprSummary", "gprFinalCta", "gisHero", "gisWhatIs", "gisImportance", "gisServices", "gisIndustries", "gisTechStack", "gisWhatsappCta", "gisComponents", "gisWhySmartgrid", "gisAnalystCta", "gisDataAccuracy", "gisBeforeAfter", "gisProjectImpact", "gisRelatedServices", "highwayServices", "asBuiltSolutions"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -3448,7 +3448,7 @@ const deliverables: SectionDefinition = {
  */
 const workflow: SectionDefinition = {
 	id: "workflow",
-	version: 1,
+	version: 2,
 	label: "Workflow",
 	description: "Process timeline with an outcome pill and closing action. Works on any page.",
 	schema: fields.object({
@@ -3458,6 +3458,10 @@ const workflow: SectionDefinition = {
 		outcome: localeText("Outcome label", { optionalInEnglish: true }),
 		steps: fields.array(
 			fields.object({
+				phase: fields.text({
+					label: "Phase key (shared, optional)",
+					description: "Phase bucket key (e.g. ACQUISITION) for the timeline chips. Identical in en/sw.",
+				}),
 				icon: fields.text({
 					label: "MDI icon (shared, optional)",
 					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
@@ -3472,9 +3476,19 @@ const workflow: SectionDefinition = {
 		),
 		ctaNote: localeLongText("CTA note"),
 		cta: linkObject("Closing action"),
+		acquisition: fields.select({
+			label: "Acquisition phase style",
+			description:
+				"Chip style for ACQUISITION steps. Satellite suits land-based acquisition (cadastral); the hydrographic default suits bathymetric-style pages. Copied from the legacy wrapper.",
+			options: [
+				{ label: "Default (hydrographic)", value: "default" },
+				{ label: "Purple satellite", value: "satellite" },
+			],
+			defaultValue: "default",
+		}),
 		id: anchorField(),
-		// Excluded from v1 (documented): `phaseStyles`, `classes`,
-		// `className` (presentation, not editor contracts).
+		// Excluded from v1 (documented): `classes`, `className`
+		// (visual tuning, not editor contracts).
 	}),
 	example: {
 		tag: { en: "Pipeline", sw: "Mchakato" },
@@ -3483,6 +3497,7 @@ const workflow: SectionDefinition = {
 		outcome: { en: "Engineering-ready data", sw: "" },
 		steps: [
 			{
+				phase: "",
 				icon: "clipboard-list-outline",
 				label: { en: "Site Assessment", sw: "Tathmini ya Tovuti" },
 				description: { en: "Define the survey area.", sw: "" },
@@ -3490,6 +3505,7 @@ const workflow: SectionDefinition = {
 		],
 		ctaNote: { en: "", sw: "" },
 		cta: { label: { en: "Request samples", sw: "Omba sampuli" }, href: "mailto:smartgridsurveying@gmail.com", icon: "" },
+		acquisition: "default",
 		id: "",
 	},
 	normalize: (resolved) => ({
@@ -3499,6 +3515,7 @@ const workflow: SectionDefinition = {
 		outcome: resolved.outcome,
 		steps: Array.isArray(resolved.steps)
 			? resolved.steps.map((step: any) => ({
+					phase: step?.phase || undefined,
 					icon: step?.icon || undefined,
 					label: step?.label ?? "",
 					description: step?.description ?? "",
@@ -3509,6 +3526,10 @@ const workflow: SectionDefinition = {
 			resolved.cta && typeof resolved.cta.href === "string" && resolved.cta.href
 				? { label: resolved.cta.label ?? "", href: resolved.cta.href, icon: resolved.cta.icon || undefined }
 				: null,
+		phaseStyles:
+			resolved.acquisition === "satellite"
+				? { ACQUISITION: { chip: "border-purple-300/60 bg-purple-50 text-purple-700", icon: "satellite-variant" } }
+				: undefined,
 		id: resolved.id || undefined,
 	}),
 };
@@ -6563,81 +6584,6 @@ const cadastralWhenYouNeed: SectionDefinition = {
 };
 
 /**
- * M11 batch 12 — cadastral-surveys page (2026-09-19): `cadastralProcess`
- * wraps the `ProcessFlowSection` WorkflowSection passthrough with the
- * ACQUISITION phase-style override (purple chip + satellite icon — the
- * default hydrographic icon would mislead). Unique — only valid on
- * `/surveying/cadastral-surveys` (the shared `process` renders a different
- * component and excludes `phaseStyles`). Phase keys/icons shared; labels
- * and descriptions localized.
- */
-const cadastralProcess: SectionDefinition = {
-	id: "cadastralProcess",
-	version: 1,
-	label: "Cadastral process (unique)",
-	description: "Unique: the cadastral-surveys phased workflow. Only valid on that page.",
-	schema: fields.object({
-		tag: localeText("Tag", { optionalInEnglish: true }),
-		headline: localeText("Headline"),
-		description: localeLongText("Description"),
-		outcome: localeText("Outcome", { optionalInEnglish: true }),
-		steps: fields.array(
-			fields.object({
-				phase: fields.text({
-					label: "Phase key (shared)",
-					description: "Phase bucket key (e.g. ACQUISITION). Identical in en/sw.",
-				}),
-				icon: fields.text({
-					label: "MDI icon (shared, optional)",
-					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
-				}),
-				label: localeText("Label"),
-				description: localeLongText("Description"),
-			}),
-			{
-				label: "Steps",
-				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Step"),
-			}
-		),
-		id: anchorField(),
-		// Excluded from v1 (documented): `className` and the ACQUISITION
-		// phase-style override (presentation, not editor contracts).
-	}),
-	example: {
-		tag: { en: "", sw: "" },
-		headline: { en: "Our Cadastral Process", sw: "Mchakato Wetu wa Ardhi" },
-		description: { en: "", sw: "" },
-		outcome: { en: "Registered, titled & dispute-free", sw: "" },
-		steps: [
-			{
-				phase: "ACQUISITION",
-				icon: "file-search-outline",
-				label: { en: "Site Visit & Document Review", sw: "Ziara ya Tovuti" },
-				description: { en: "Walk the parcel with you.", sw: "" },
-			},
-		],
-		id: "",
-	},
-	normalize: (resolved) => ({
-		data: {
-			tag: resolved.tag,
-			headline: resolved.headline,
-			description: resolved.description,
-			outcome: resolved.outcome,
-			steps: Array.isArray(resolved.steps)
-				? resolved.steps.map((step: any) => ({
-						phase: step?.phase ?? "",
-						icon: step?.icon || undefined,
-						label: step?.label ?? "",
-						description: step?.description ?? "",
-					}))
-				: [],
-		},
-		id: resolved.id || undefined,
-	}),
-};
-
-/**
  * M11 batch 12 — cadastral-surveys page (2026-09-19): `cadastralProcessCta`
  * wraps the `ProcessCtaSection` dark ink-panel band (watermark + blur,
  * dual CTAs, check-decagram chips). Unique — only valid on
@@ -7235,80 +7181,6 @@ const cadastralCaseStudy: SectionDefinition = {
 			id: resolved.id || undefined,
 		};
 	},
-};
-
-/**
- * M11 batch 12 — cadastral-surveys page (2026-09-19): `cadastralFinalCta`
- * wraps the `FinalCtaSection` closing cards (hardcoded
- * `watermark="vector-square"` + 4 columns + left align stay in the
- * renderer). Unique — only valid on `/surveying/cadastral-surveys`.
- * Icons/hrefs shared; labels and descriptions localized. Renders nothing
- * without a headline (legacy guard, preserved).
- */
-const cadastralFinalCta: SectionDefinition = {
-	id: "cadastralFinalCta",
-	version: 1,
-	label: "Cadastral final CTA (unique)",
-	description: "Unique: the cadastral-surveys closing action cards. Only valid on that page.",
-	schema: fields.object({
-		tag: localeText("Tag", { optionalInEnglish: true }),
-		headline: localeText("Headline"),
-		description: localeLongText("Description"),
-		actionsLabel: localeText("Actions label", { optionalInEnglish: true }),
-		actions: fields.array(
-			fields.object({
-				icon: fields.text({
-					label: "MDI icon (shared, optional)",
-					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
-				}),
-				label: localeText("Label"),
-				description: localeLongText("Description"),
-				href: fields.text({
-					label: "Link (shared)",
-					description: "Internal path or full URL. Identical in en/sw.",
-				}),
-			}),
-			{
-				label: "Actions",
-				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Action"),
-			}
-		),
-		id: anchorField(),
-		// Excluded from v1 (documented): `watermark="vector-square"`,
-		// columns, align and `className` (presentation, not editor contracts).
-	}),
-	example: {
-		tag: { en: "", sw: "" },
-		headline: { en: "Book Your Cadastral Survey", sw: "Weka Upimaji Wako" },
-		description: { en: "", sw: "" },
-		actionsLabel: { en: "", sw: "" },
-		actions: [
-			{
-				icon: "calendar-check",
-				label: { en: "Book Site Visit", sw: "Weka Ziara" },
-				description: { en: "Walk your parcel.", sw: "" },
-				href: "mailto:smartgridsurveying@gmail.com",
-			},
-		],
-		id: "",
-	},
-	normalize: (resolved) => ({
-		data: {
-			tag: resolved.tag,
-			headline: resolved.headline,
-			description: resolved.description,
-			actionsLabel: resolved.actionsLabel,
-			actions: Array.isArray(resolved.actions)
-				? resolved.actions.map((action: any) => ({
-						icon: action?.icon || undefined,
-						label: action?.label ?? "",
-						description: action?.description ?? "",
-						href: typeof action?.href === "string" ? action.href : "",
-					}))
-				: [],
-		},
-		id: resolved.id || undefined,
-	}),
 };
 
 /**
@@ -9326,13 +9198,11 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	aerialAdditionalServices,
 	cadastralPostHeroCta,
 	cadastralWhenYouNeed,
-	cadastralProcess,
 	cadastralProcessCta,
 	cadastralCost,
 	cadastralTimeline,
 	cadastralCompliance,
 	cadastralCaseStudy,
-	cadastralFinalCta,
 	gprHero,
 	gprHighlights,
 	gprJumpNav,
@@ -9460,13 +9330,11 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	aerialAdditionalServices: aerialAdditionalServices.label,
 	cadastralPostHeroCta: cadastralPostHeroCta.label,
 	cadastralWhenYouNeed: cadastralWhenYouNeed.label,
-	cadastralProcess: cadastralProcess.label,
 	cadastralProcessCta: cadastralProcessCta.label,
 	cadastralCost: cadastralCost.label,
 	cadastralTimeline: cadastralTimeline.label,
 	cadastralCompliance: cadastralCompliance.label,
 	cadastralCaseStudy: cadastralCaseStudy.label,
-	cadastralFinalCta: cadastralFinalCta.label,
 	gprHero: gprHero.label,
 	gprHighlights: gprHighlights.label,
 	gprJumpNav: gprJumpNav.label,

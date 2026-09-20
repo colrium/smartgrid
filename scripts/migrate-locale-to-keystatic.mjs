@@ -1998,32 +1998,40 @@ function aerialServicesBuild(en, sw, where) {
 // M13 batch 1: shared `workflow` build — same contract as the retired
 // `aerialWorkflowBuild`, but the outcome key is `outcome` (the shared
 // `WorkflowSection` prop) instead of the wrapper-local `outcomeLabel`.
-function workflowBuild(en, sw, where) {
-	const enSteps = en.steps ?? [];
-	const swSteps = sw.steps ?? [];
-	if (!Array.isArray(swSteps) || swSteps.length !== enSteps.length) {
-		gap(where, `step count diverged (en=${enSteps.length} sw=${swSteps?.length})`);
-	}
-	return {
-		tag: { en: optText(en.tag), sw: optText(sw.tag) },
-		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
-		description: { en: optText(en.description), sw: optText(sw.description) },
-		outcome: { en: optText(en.outcomeLabel ?? en.outcome), sw: optText(sw.outcomeLabel ?? sw.outcome) },
-		steps: enSteps.map((step, i) => {
-			const swStep = swSteps[i] ?? {};
-			return {
-				icon: sharedValue(step, swStep, "icon", `${where}.steps[${i}]`) ?? "",
-				label: { en: reqText(step.label, `${where}.steps[${i}].label.en`), sw: reqText(swStep.label, `${where}.steps[${i}].label.sw`) },
-				description: { en: reqText(step.description, `${where}.steps[${i}].description.en`), sw: reqText(swStep.description, `${where}.steps[${i}].description.sw`) },
-			};
-		}),
-		ctaNote: { en: optText(en.ctaNote), sw: optText(sw.ctaNote) },
-		cta: {
-			label: { en: reqText(en.cta?.label, `${where}.cta.label.en`), sw: reqText(sw.cta?.label, `${where}.cta.label.sw`) },
-			href: sharedValue(en.cta, sw.cta, "href", where) ?? "",
-			icon: sharedValue(en.cta, sw.cta, "icon", where) ?? "",
-		},
-		id: "",
+// M13 batch 2: v2 — steps carry the shared `phase` key (cadastral-style
+// phased timelines), `cta`/`ctaNote` tolerate pages without a closing CTA,
+// and `acquisition` fills the shared preset (default hydrographic, or
+// satellite for land-based acquisition pages like cadastral).
+function workflowBuild(acquisition = "default") {
+	return (en, sw, where) => {
+		const enSteps = en.steps ?? [];
+		const swSteps = sw.steps ?? [];
+		if (!Array.isArray(swSteps) || swSteps.length !== enSteps.length) {
+			gap(where, `step count diverged (en=${enSteps.length} sw=${swSteps?.length})`);
+		}
+		return {
+			tag: { en: optText(en.tag), sw: optText(sw.tag) },
+			headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+			description: { en: optText(en.description), sw: optText(sw.description) },
+			outcome: { en: optText(en.outcomeLabel ?? en.outcome), sw: optText(sw.outcomeLabel ?? sw.outcome) },
+			steps: enSteps.map((step, i) => {
+				const swStep = swSteps[i] ?? {};
+				return {
+					phase: sharedValue(step, swStep, "phase", `${where}.steps[${i}]`) ?? "",
+					icon: sharedValue(step, swStep, "icon", `${where}.steps[${i}]`) ?? "",
+					label: { en: reqText(step.label, `${where}.steps[${i}].label.en`), sw: reqText(swStep.label, `${where}.steps[${i}].label.sw`) },
+					description: { en: reqText(step.description, `${where}.steps[${i}].description.en`), sw: reqText(swStep.description, `${where}.steps[${i}].description.sw`) },
+				};
+			}),
+			ctaNote: { en: optText(en.ctaNote), sw: optText(sw.ctaNote) },
+			cta: {
+				label: { en: optText(en.cta?.label), sw: optText(sw.cta?.label) },
+				href: sharedValue(en.cta ?? {}, sw.cta ?? {}, "href", where) ?? "",
+				icon: sharedValue(en.cta ?? {}, sw.cta ?? {}, "icon", where) ?? "",
+			},
+			acquisition,
+			id: "",
+		};
 	};
 }
 
@@ -2145,30 +2153,6 @@ function aerialTechStackBuild(en, sw, where) {
 	};
 }
 
-function aerialFinalCtaBuild(en, sw, where) {
-	const enActions = en.actions ?? [];
-	const swActions = sw.actions ?? [];
-	if (!Array.isArray(swActions) || swActions.length !== enActions.length) {
-		gap(where, `action count diverged (en=${enActions.length} sw=${swActions?.length})`);
-	}
-	return {
-		tag: { en: optText(en.tag), sw: optText(sw.tag) },
-		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
-		description: { en: optText(en.description), sw: optText(sw.description) },
-		actionsLabel: { en: optText(en.actionsLabel), sw: optText(sw.actionsLabel) },
-		actions: enActions.map((action, i) => {
-			const swAction = swActions[i] ?? {};
-			return {
-				icon: sharedValue(action, swAction, "icon", `${where}.actions[${i}]`) ?? "",
-				label: { en: reqText(action.label, `${where}.actions[${i}].label.en`), sw: reqText(swAction.label, `${where}.actions[${i}].label.sw`) },
-				description: { en: optText(action.description), sw: optText(swAction.description) },
-				href: sharedValue(action, swAction, "href", `${where}.actions[${i}]`) ?? "",
-			};
-		}),
-		id: "",
-	};
-}
-
 function aerialProjectsBuild(en, sw, where) {
 	const enImages = en.images ?? [];
 	const swImages = sw.images ?? [];
@@ -2252,30 +2236,6 @@ function cadastralWhenYouNeedBuild(en, sw, where) {
 				title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
 				description: { en: optText(item.description), sw: optText(swItem.description) },
 				href: sharedValue(item, swItem, "href", `${where}.items[${i}]`) ?? "",
-			};
-		}),
-		id: "",
-	};
-}
-
-function cadastralProcessBuild(en, sw, where) {
-	const enSteps = en.steps ?? [];
-	const swSteps = sw.steps ?? [];
-	if (!Array.isArray(swSteps) || swSteps.length !== enSteps.length) {
-		gap(where, `step count diverged (en=${enSteps.length} sw=${swSteps?.length})`);
-	}
-	return {
-		tag: { en: optText(en.tag), sw: optText(sw.tag) },
-		headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
-		description: { en: optText(en.description), sw: optText(sw.description) },
-		outcome: { en: optText(en.outcome), sw: optText(sw.outcome) },
-		steps: enSteps.map((step, i) => {
-			const swStep = swSteps[i] ?? {};
-			return {
-				phase: sharedValue(step, swStep, "phase", `${where}.steps[${i}]`) ?? "",
-				icon: sharedValue(step, swStep, "icon", `${where}.steps[${i}]`) ?? "",
-				label: { en: reqText(step.label, `${where}.steps[${i}].label.en`), sw: reqText(swStep.label, `${where}.steps[${i}].label.sw`) },
-				description: { en: reqText(step.description, `${where}.steps[${i}].description.en`), sw: reqText(swStep.description, `${where}.steps[${i}].description.sw`) },
 			};
 		}),
 		id: "",
@@ -4787,7 +4747,7 @@ const PAGES = {
 				// Legacy: shared <WorkflowSection> used directly on the page
 				// (M13 batch 1 — retired the AerialWorkflowSection wrapper;
 				// `outcomeLabel` → `outcome` folded into the shared build).
-				build: workflowBuild,
+				build: workflowBuild("default"),
 			},
 			{
 				discriminant: "aerialSurveyingGrid",
@@ -4861,11 +4821,12 @@ const PAGES = {
 	// M11 batch 12: cadastral-surveys. Whole page Keystatic-owned in page
 	// order (2026-09-19) — `hero` (shared) + `postHeroCta`
 	// (cadastralPostHeroCta) + `whenYouNeed` (cadastralWhenYouNeed) +
-	// `process` (cadastralProcess, ACQUISITION override kept in renderer) +
-	// `processCta` (cadastralProcessCta) + `cost` (cadastralCost) +
+	// `process` (shared `workflow`; M13 batch 2 collapsed the
+	// `cadastralProcess` unique, ACQUISITION override as the satellite
+	// preset) + `processCta` (cadastralProcessCta) + `cost` (cadastralCost) +
 	// `timeline` (cadastralTimeline) + `compliance` (cadastralCompliance) +
-	// `caseStudy` (cadastralCaseStudy) + `finalCta` (cadastralFinalCta, same
-	// contract as the aerial closer). `whatsABoundarySurvey` stays DORMANT:
+	// `caseStudy` (cadastralCaseStudy) + `finalCta` (shared; M13 batch 2
+	// collapsed the `cadastralFinalCta` unique). `whatsABoundarySurvey` stays DORMANT:
 	// its IntroSection is commented out of the route, so migrating it would
 	// re-enable content the editors switched off. Mapping order = entry
 	// order = page order (M12 flexible rule).
@@ -4877,8 +4838,9 @@ const PAGES = {
 			{
 				discriminant: "hero",
 				from: "hero",
-				// Legacy: CadastralHeroSection → <Hero data={t(hero)} />
-				// (default bottom layout; empty description in both locales).
+				// Legacy: shared <Hero> used directly on the page (M13
+				// batch 2 — retired the CadastralHeroSection wrapper;
+				// default bottom layout; empty description in both locales).
 				build(en, sw, where) {
 					return {
 						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
@@ -4920,11 +4882,13 @@ const PAGES = {
 				build: cadastralWhenYouNeedBuild,
 			},
 			{
-				discriminant: "cadastralProcess",
+				discriminant: "workflow",
 				from: "process",
-				// Legacy: ProcessFlowSection (WorkflowSection + ACQUISITION
-				// override) → <ProcessFlowSection data />.
-				build: cadastralProcessBuild,
+				// Legacy: shared <WorkflowSection> used directly on the page
+				// (M13 batch 2 — retired the ProcessFlowSection wrapper; the
+				// ACQUISITION purple-chip/satellite override travels as the
+				// shared `acquisition: "satellite"` preset).
+				build: workflowBuild("satellite"),
 			},
 			{
 				discriminant: "cadastralProcessCta",
@@ -4961,12 +4925,13 @@ const PAGES = {
 				build: cadastralCaseStudyBuild,
 			},
 			{
-				discriminant: "cadastralFinalCta",
+				discriminant: "finalCta",
 				from: "finalCta",
-				// Legacy: FinalCtaSection (closing cards) →
-				// <FinalCtaSection data /> — same contract as the aerial
-				// closer, shared build.
-				build: aerialFinalCtaBuild,
+				// Legacy: shared <FinalCta watermark="vector-square"
+				// columns={4} align="left" /> used directly on the page (M13
+				// batch 2 — retired the FinalCtaSection wrapper; presentation
+				// literals travel as shared fields).
+				build: finalCtaBuild("vector-square", 4, "left"),
 			},
 		],
 	},

@@ -1184,11 +1184,27 @@ Batches (one commit each, in this order):
       list updated; `aerialFinalCtaBuild` kept (cadastral reuses it until
       batch 2); `aerialWorkflowBuild` deleted (single use).
       Validation DEFERRED per M13 policy.
-- [ ] Batch 2 — `surveying/cadastral-surveys`: Type 1 hero → `Hero`;
-      Type 2 `cadastralProcess` → shared `workflow` (phase-style override
-      kept as renderer default), `cadastralFinalCta` → shared `finalCta`.
-      Keep: bespoke `PostHeroCta`, `WhenYouNeed`, `ProcessCta`, `Cost`,
-      `Timeline`, `Compliance`, `CaseStudy` (+ dormant `whatsABoundarySurvey`).
+- [x] Batch 2 — `surveying/cadastral-surveys` (done 2026-09-20): Type 1
+      `CadastralHeroSection` → `Hero`; Type 2 `cadastralProcess` → shared
+      `workflow` + `cadastralFinalCta` → shared `finalCta` (3 wrapper files
+      deleted, legacy branch renders shared directly; ACQUISITION
+      purple-chip/satellite override kept as a page-level literal).
+      Shared `workflow` v1→v2 (additive): steps gain shared `phase`, new
+      shared `acquisition` select (`default` hydrographic / `satellite`
+      purple) mapped to `phaseStyles` in normalize. Migration:
+      `workflowBuild` is now a factory (`workflowBuild(acquisition)` —
+      builds are invoked as `build(en, sw, where, siteTitle, extra)`, so a
+      4th positional param would catch `siteTitle`; CAUGHT on first
+      `--write` when aerial `acquisition` came out as the site title —
+      fixed before commit) + tolerant `cta`/`ctaNote` for pages without a
+      closing CTA; cadastral uses `workflowBuild("satellite")` +
+      `finalCtaBuild("vector-square", 4, "left")`; deleted
+      `cadastralProcessBuild` + `aerialFinalCtaBuild` (both single-use).
+      Entries regenerated (cadastral 10 sections, aerial 15 — adds
+      `phase:""` per step + `acquisition`; statuses stay `draft`).
+      Registry 125→123; README list + count updated. Rule for later
+      batches: shared builds with per-page literals MUST be factories,
+      never extra positional params. Validation DEFERRED per M13 policy.
 - [ ] Batch 3 — `surveying/ground-penetrating-radar`: Type 2 `gprFinalCta` →
       shared `finalCta`, `gprBeforeAfter` → shared `beforeAfter` (register
       once). Keep: bespoke hero/highlights/jumpNav/overview/methodology/
@@ -1369,3 +1385,4 @@ For every implementation change:
 | 2026-09-19 | M11 | Batch 15 DONE — highway-surveys (5 sections: hero, overview, highwayServices, benefits, deliverables) + as-built-surveys (8 sections: hero, 3 introTexts, asBuiltSolutions, 2 cardGrids, deliverables): 2 uniques sharing `civilIndexedGridBuild` + 2 shared `deliverables` (default/surface tones); additive-`data` refactors; both routes → one `PageBuilderDocument`, `skipped` now `[]` both; registry 123→125; README 123→125 | `check:keystatic` OK (125 sections, 31 fixtures); `--verify` clean both (5 + 8 sections, no gaps, first try); `yarn typecheck` clean (65s); `eslint --max-warnings=0` clean on touched files. Dev-smoke DEFERRED per M11/M12 policy. Next: Batch 16 — civil bim + site-engineering + site-setting-out + volumetric-surveys tails | |
 | 2026-09-20 | M13 | M13 opened per user request: collapse single-shared-child wrappers onto shared sections (Type 1 = legacy-only pure wrapper deletion, entry already shared; Type 2 = M11 unique → shared id, unregister + remap + regenerate). Qualification rule recorded (single shared child + straight-through props + static literals only; any remapping/computed/hooks/Trans/extra JSX disqualifies). Test policy per user request: NO per-batch validation (check/verify/typecheck/lint/smoke all deferred until ALL M13 batches done); one commit per page batch. `AGENTS.md`/`CLAUDE.md` still absent (glob no match) — README + plan remain source of truth | No tests run (deferred per user request); plan-only change | |
 | 2026-09-20 | M13 | Batch 1 DONE — aerial-surveys: deleted `AerialHeroSection`, `PrecisionSection`, `AerialWorkflowSection`, `DeliverablesSection`, `AerialFinalCtaSection` (+ barrel lines); legacy branch renders shared `Hero`/`SplitMedia`/`WorkflowSection`/`Deliverables`/`FinalCta` directly (identical `t()` calls, guards, literals); registered shared `workflow` + `finalCta` (schema + example + flat normalize + renderer); migration `workflowBuild` + `finalCtaBuild("drone", 4, "center")`; entry regenerated (15 sections, content preserved); README list updated. Kept per rule: bespoke intro/whyDrones/services/grid/projects/additional + shaping industries/techStack/industryCta/capabilityCta | Validation DEFERRED per M13 policy (no check/verify/typecheck/lint/smoke this batch). Next: batch 2 — cadastral-surveys | |
+| 2026-09-20 | M13 | Batch 2 DONE — cadastral-surveys: deleted `CadastralHeroSection`, `ProcessFlowSection`, `FinalCtaSection` (+ barrel lines); legacy renders shared `Hero`/`WorkflowSection` (+ page-level phase override)/`FinalCta` directly; shared `workflow` v1→v2 (`phase` + `acquisition` preset → `phaseStyles`); migration `workflowBuild` factory + `finalCtaBuild("vector-square", 4, "left")`; deleted `cadastralProcessBuild` + `aerialFinalCtaBuild`; entries regenerated (cadastral 10, aerial 15 sections; statuses `draft`); registry 125→123; README updated. CAUGHT: 4th positional build param catches `siteTitle` — factories only (recorded as batch rule) | Validation DEFERRED per M13 policy. Next: batch 3 — ground-penetrating-radar | |

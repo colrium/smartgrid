@@ -361,7 +361,7 @@ Full, canonical standards live in [`AGENTS.md`](./AGENTS.md).
 ## Keystatic Page Builder (operator guide)
 
 Structured pages are composed in the Keystatic admin (`/keystatic`, local dev needs
-no login) from one hundred twenty-five registered sections: `introText`, `ctaBand`, `stats`, `hero`,
+no login) from one hundred twenty-three registered sections: `introText`, `ctaBand`, `stats`, `hero`,
 `cardGrid`, `splitMedia`, `legal`, `faq`, `process`, `gallery`, `pricing`, `trustees`,
 `certifications`, `keyFacts`, `metrics`, `whyChooseUs`, `about`,
 `surveyingInstruments`, `coreExpertise`, `planningInfographic`, `coverageArea`,
@@ -381,8 +381,8 @@ no login) from one hundred twenty-five registered sections: `introText`, `ctaBan
 `workflow`, `aerialSurveyingGrid`, `aerialIndustries`, `aerialIndustryCta`,
 `aerialTechStack`, `aerialCapabilityCta`, `finalCta`, `aerialProjects`,
 `aerialAdditionalServices`, `cadastralPostHeroCta`, `cadastralWhenYouNeed`,
-`cadastralProcess`, `cadastralProcessCta`, `cadastralCost`, `cadastralTimeline`,
-`cadastralCompliance`, `cadastralCaseStudy`, `cadastralFinalCta`, `gprHero`,
+`cadastralProcessCta`, `cadastralCost`, `cadastralTimeline`,
+`cadastralCompliance`, `cadastralCaseStudy`, `gprHero`,
 `gprHighlights`, `gprJumpNav`, `gprOverview`, `gprMethodology`, `gprApplications`,
 `gprDetect`, `gprSue`, `gprLimitations`, `gprBeforeAfter`, `gprTechnology`,
 `gprFeaturedProjects`, `gprSummary`, `gprFinalCta`, `gisHero`, `gisWhatIs`,

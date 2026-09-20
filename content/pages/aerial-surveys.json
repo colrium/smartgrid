@@ -381,6 +381,7 @@
 				},
 				"steps": [
 					{
+						"phase": "",
 						"icon": "clipboard-list-outline",
 						"label": {
 							"en": "Site Assessment & Scope Definition",
@@ -392,6 +393,7 @@
 						}
 					},
 					{
+						"phase": "",
 						"icon": "google-maps",
 						"label": {
 							"en": "Flight Planning & Regulatory Clearance (KCAA)",
@@ -403,6 +405,7 @@
 						}
 					},
 					{
+						"phase": "",
 						"icon": "crosshairs-gps",
 						"label": {
 							"en": "Ground Control Point (GCP) Setup",
@@ -414,6 +417,7 @@
 						}
 					},
 					{
+						"phase": "",
 						"icon": "quadcopter",
 						"label": {
 							"en": "UAV Data Capture (RGB / LiDAR / Multispectral)",
@@ -425,6 +429,7 @@
 						}
 					},
 					{
+						"phase": "",
 						"icon": "cube-scan",
 						"label": {
 							"en": "Photogrammetry & Point Cloud Processing",
@@ -436,6 +441,7 @@
 						}
 					},
 					{
+						"phase": "",
 						"icon": "clipboard-check-outline",
 						"label": {
 							"en": "QA/QC Accuracy Validation (RMS Report)",
@@ -447,6 +453,7 @@
 						}
 					},
 					{
+						"phase": "",
 						"icon": "file-cad",
 						"label": {
 							"en": "CAD / GIS Deliverables & Client Handover",
@@ -470,6 +477,7 @@
 					"href": "mailto:smartgridsurveying@gmail.com?subject=Request: Sample Drone Survey Deliverable Folder&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to receive a sample deliverable folder to review your drone survey outputs.%0D%0A%0D%0AName:%0D%0AOrganisation:%0D%0AEmail:%0D%0AProject type:%0D%0A%0D%0AThank you.",
 					"icon": "download"
 				},
+				"acquisition": "default",
 				"id": ""
 			}
 		},
