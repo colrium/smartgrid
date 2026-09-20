@@ -1404,7 +1404,7 @@
 			}
 		},
 		{
-			"discriminant": "gprFinalCta",
+			"discriminant": "finalCta",
 			"value": {
 				"tag": {
 					"en": "Start Your Survey",
@@ -1418,9 +1418,14 @@
 					"en": "Get Professional Utility Mapping Support Today",
 					"sw": "Pata Usaidizi wa Kitaalamu wa Ramani za Huduma Leo"
 				},
+				"descriptionTone": "accent",
 				"note": {
 					"en": "We respond within hours and can mobilize field teams quickly.",
 					"sw": "Tunajibu ndani ya masaa machache na tunaweza kuhamasisha timu za shamba haraka."
+				},
+				"actionsLabel": {
+					"en": "",
+					"sw": ""
 				},
 				"actions": [
 					{
@@ -1460,6 +1465,10 @@
 						"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20talk%20to%20the%20GPR%20survey%20team."
 					}
 				],
+				"actionIconFallback": "",
+				"watermark": "radar",
+				"columns": "3",
+				"align": "center",
 				"id": "get-started"
 			}
 		}

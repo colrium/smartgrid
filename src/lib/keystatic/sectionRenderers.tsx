@@ -101,7 +101,6 @@ import { GprBeforeAfterSection } from "@/components/sections/surveying/ground-pe
 import { GprTechnologySection } from "@/components/sections/surveying/ground-penetrating-radar/GprTechnologySection";
 import { FeaturedProjectsSection as GprFeaturedProjectsSection } from "@/components/sections/surveying/ground-penetrating-radar/FeaturedProjectsSection";
 import { GprSummarySection } from "@/components/sections/surveying/ground-penetrating-radar/GprSummarySection";
-import { GprFinalCtaSection } from "@/components/sections/surveying/ground-penetrating-radar/GprFinalCtaSection";
 import { GisHeroSection } from "@/components/sections/surveying/gis-mapping/GisHeroSection";
 import { WhatIsGisSection } from "@/components/sections/surveying/gis-mapping/WhatIsGisSection";
 import { GisImportanceSection } from "@/components/sections/surveying/gis-mapping/GisImportanceSection";
@@ -248,7 +247,6 @@ export const sectionRenderers = {
 	gprTechnology: GprTechnologySection,
 	gprFeaturedProjects: GprFeaturedProjectsSection,
 	gprSummary: GprSummarySection,
-	gprFinalCta: GprFinalCtaSection,
 	gisHero: GisHeroSection,
 	gisWhatIs: WhatIsGisSection,
 	gisImportance: GisImportanceSection,

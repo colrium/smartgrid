@@ -1085,6 +1085,11 @@
 					"en": "Avoid costly disputes and delays in title processing.",
 					"sw": "Epuka migogoro ya gharama kubwa na ucheleweshaji wa uchakataji wa hati."
 				},
+				"descriptionTone": "muted",
+				"note": {
+					"en": "",
+					"sw": ""
+				},
 				"actionsLabel": {
 					"en": "Choose your action:",
 					"sw": "Chagua hatua yako:"
@@ -1139,6 +1144,7 @@
 						"href": "/contact"
 					}
 				],
+				"actionIconFallback": "",
 				"watermark": "vector-square",
 				"columns": "4",
 				"align": "left",

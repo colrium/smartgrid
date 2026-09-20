@@ -2038,7 +2038,13 @@ function workflowBuild(acquisition = "default") {
 // M13 batch 1: shared `finalCta` build factory — same contract as the
 // page-local final-CTA builds, plus the wrapper-hardcoded presentation
 // literals (`watermark`/`columns`/`align`) filled per page.
-function finalCtaBuild(watermark, columns, align) {
+// M13 batch 3: `opts` covers the remaining wrapper literals —
+// `descriptionTone` (accent lede pages), `actionIconFallback` and the
+// legacy anchor `id` default (entries store it explicitly so the Keystatic
+// branch keeps the anchor without a renderer default). `note` always
+// migrates from the locale node (empty where the page has none).
+function finalCtaBuild(watermark, columns, align, opts = {}) {
+	const { descriptionTone = "muted", actionIconFallback = "", id = "" } = opts;
 	return (en, sw, where) => {
 		const enActions = en.actions ?? [];
 		const swActions = sw.actions ?? [];
@@ -2049,6 +2055,8 @@ function finalCtaBuild(watermark, columns, align) {
 			tag: { en: optText(en.tag), sw: optText(sw.tag) },
 			headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
 			description: { en: optText(en.description), sw: optText(sw.description) },
+			descriptionTone,
+			note: { en: optText(en.note), sw: optText(sw.note) },
 			actionsLabel: { en: optText(en.actionsLabel), sw: optText(sw.actionsLabel) },
 			actions: enActions.map((action, i) => {
 				const swAction = swActions[i] ?? {};
@@ -2059,10 +2067,11 @@ function finalCtaBuild(watermark, columns, align) {
 					href: sharedValue(action, swAction, "href", `${where}.actions[${i}]`) ?? "",
 				};
 			}),
+			actionIconFallback,
 			watermark,
 			columns: String(columns),
 			align,
-			id: "",
+			id,
 		};
 	};
 }
@@ -4956,7 +4965,8 @@ const PAGES = {
 		// `limitations` (gprLimitations) + `beforeAfter` (gprBeforeAfter) +
 		// `technology` (gprTechnology) + `featuredProjects`
 		// (gprFeaturedProjects) + `summary` (gprSummary) + `faqs` (shared
-		// faq) + `finalCta` (gprFinalCta, shared rmFinalCtaBuild). Mapping
+		// faq) + `finalCta` (shared; M13 batch 3 collapsed the `gprFinalCta`
+		// unique). Mapping
 		// order = entry order = page order (M12 flexible rule). Known minor
 		// divergence: the shared `deliverables` hop drops the wrapper's
 		// `scroll-mt-36` (tone maps to `bg-surface` only) — anchor scroll
@@ -5044,11 +5054,12 @@ const PAGES = {
 			{
 				discriminant: "deliverables",
 				from: "deliverables",
-				// Legacy: GprDeliverablesSection → <Deliverables
+				// Legacy: shared <Deliverables
 				// ns="surveying/ground-penetrating-radar" id="deliverables"
-				// className="bg-surface scroll-mt-36" /> — shared
-				// `deliverables`, surface tone + jump-nav id (scroll-mt-36
-				// documented drop, see mapping comment).
+				// className="bg-surface scroll-mt-36" /> used directly on the
+				// page (M13 batch 3 — retired the GprDeliverablesSection
+				// wrapper) — shared `deliverables`, surface tone + jump-nav
+				// id (scroll-mt-36 documented drop, see mapping comment).
 				build: deliverablesBuild("surface", "deliverables"),
 			},
 			{
@@ -5126,12 +5137,14 @@ const PAGES = {
 				},
 			},
 			{
-				discriminant: "gprFinalCta",
+				discriminant: "finalCta",
 				from: "finalCta",
-				// Legacy: GprFinalCtaSection (closing cards) →
-				// <GprFinalCtaSection data /> — same contract as rmFinalCta,
-				// shared build.
-				build: rmFinalCtaBuild,
+				// Legacy: shared <FinalCta watermark="radar" columns={3}
+				// descriptionTone="accent" id="get-started" /> used directly
+				// on the page (M13 batch 3 — retired the GprFinalCtaSection
+				// wrapper; presentation literals + anchor default travel as
+				// shared fields).
+				build: finalCtaBuild("radar", 3, "center", { descriptionTone: "accent", id: "get-started" }),
 			},
 		],
 	},

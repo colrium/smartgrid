@@ -243,7 +243,7 @@ import {
  * from DATA (the wrapper is page-owned), so edits change output.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "workflow", "finalCta", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyWorkflow", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "bathyFinalCta", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "rmFinalCta", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation", "aerialIntro", "aerialWhyDrones", "aerialServices", "aerialSurveyingGrid", "aerialIndustries", "aerialIndustryCta", "aerialTechStack", "aerialCapabilityCta", "aerialProjects", "aerialAdditionalServices", "cadastralPostHeroCta", "cadastralWhenYouNeed", "cadastralProcessCta", "cadastralCost", "cadastralTimeline", "cadastralCompliance", "cadastralCaseStudy", "gprHero", "gprHighlights", "gprJumpNav", "gprOverview", "gprMethodology", "gprApplications", "gprDetect", "gprSue", "gprLimitations", "gprBeforeAfter", "gprTechnology", "gprFeaturedProjects", "gprSummary", "gprFinalCta", "gisHero", "gisWhatIs", "gisImportance", "gisServices", "gisIndustries", "gisTechStack", "gisWhatsappCta", "gisComponents", "gisWhySmartgrid", "gisAnalystCta", "gisDataAccuracy", "gisBeforeAfter", "gisProjectImpact", "gisRelatedServices", "highwayServices", "asBuiltSolutions"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "workflow", "finalCta", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyWorkflow", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "bathyFinalCta", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "rmFinalCta", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation", "aerialIntro", "aerialWhyDrones", "aerialServices", "aerialSurveyingGrid", "aerialIndustries", "aerialIndustryCta", "aerialTechStack", "aerialCapabilityCta", "aerialProjects", "aerialAdditionalServices", "cadastralPostHeroCta", "cadastralWhenYouNeed", "cadastralProcessCta", "cadastralCost", "cadastralTimeline", "cadastralCompliance", "cadastralCaseStudy", "gprHero", "gprHighlights", "gprJumpNav", "gprOverview", "gprMethodology", "gprApplications", "gprDetect", "gprSue", "gprLimitations", "gprBeforeAfter", "gprTechnology", "gprFeaturedProjects", "gprSummary", "gisHero", "gisWhatIs", "gisImportance", "gisServices", "gisIndustries", "gisTechStack", "gisWhatsappCta", "gisComponents", "gisWhySmartgrid", "gisAnalystCta", "gisDataAccuracy", "gisBeforeAfter", "gisProjectImpact", "gisRelatedServices", "highwayServices", "asBuiltSolutions"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -3547,13 +3547,23 @@ const workflow: SectionDefinition = {
  */
 const finalCta: SectionDefinition = {
 	id: "finalCta",
-	version: 1,
+	version: 2,
 	label: "Final CTA",
 	description: "Closing action cards with a watermark icon. Works on any page.",
 	schema: fields.object({
 		tag: localeText("Tag", { optionalInEnglish: true }),
 		headline: localeText("Headline"),
 		description: localeLongText("Description"),
+		descriptionTone: fields.select({
+			label: "Lede tone",
+			description: "Muted standard lede or the emphasised accent line, copied from the legacy wrapper.",
+			options: [
+				{ label: "Muted", value: "muted" },
+				{ label: "Accent", value: "accent" },
+			],
+			defaultValue: "muted",
+		}),
+		note: localeLongText("Note"),
 		actionsLabel: localeText("Actions label", { optionalInEnglish: true }),
 		actions: fields.array(
 			fields.object({
@@ -3573,6 +3583,11 @@ const finalCta: SectionDefinition = {
 				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Action"),
 			}
 		),
+		actionIconFallback: fields.text({
+			label: "Fallback action icon (shared)",
+			description:
+				"MDI icon slug without the `mdi-` prefix for actions without their own icon, copied from the legacy wrapper. Empty = component default.",
+		}),
 		watermark: fields.text({
 			label: "Watermark icon (shared)",
 			description: "MDI icon slug without the `mdi-` prefix, copied from the legacy wrapper. Identical in en/sw.",
@@ -3603,6 +3618,8 @@ const finalCta: SectionDefinition = {
 		tag: { en: "", sw: "" },
 		headline: { en: "Start Your Aerial Survey", sw: "Anza Upimaji Wako wa Angani" },
 		description: { en: "", sw: "" },
+		descriptionTone: "muted",
+		note: { en: "", sw: "" },
 		actionsLabel: { en: "", sw: "" },
 		actions: [
 			{
@@ -3612,6 +3629,7 @@ const finalCta: SectionDefinition = {
 				href: "mailto:smartgridsurveying@gmail.com",
 			},
 		],
+		actionIconFallback: "",
 		watermark: "drone",
 		columns: "4",
 		align: "center",
@@ -3621,6 +3639,8 @@ const finalCta: SectionDefinition = {
 		tag: resolved.tag,
 		headline: resolved.headline,
 		description: resolved.description,
+		descriptionTone: resolved.descriptionTone === "accent" ? "accent" : "muted",
+		note: resolved.note,
 		actionsLabel: resolved.actionsLabel,
 		actions: Array.isArray(resolved.actions)
 			? resolved.actions.map((action: any) => ({
@@ -3630,6 +3650,7 @@ const finalCta: SectionDefinition = {
 					href: typeof action?.href === "string" ? action.href : "",
 				}))
 			: [],
+		actionIconFallback: resolved.actionIconFallback || undefined,
 		watermark: resolved.watermark || undefined,
 		columns: resolved.columns === "3" ? 3 : 4,
 		align: resolved.align === "left" ? "left" : "center",
@@ -8004,80 +8025,6 @@ const gprSummary: SectionDefinition = {
 	}),
 };
 
-/**
- * M11 batch 13 — ground-penetrating-radar page (2026-09-19): `gprFinalCta`
- * wraps the `GprFinalCtaSection` closing cards (accent lede, note,
- * `watermark="radar"`, 3 columns stay in the renderer — same data contract
- * as `rmFinalCta`, shared `rmFinalCtaBuild`). Unique — only valid on
- * `/surveying/ground-penetrating-radar`. Icons/hrefs shared; labels and
- * descriptions localized. Renders nothing without a headline (legacy guard,
- * preserved).
- */
-const gprFinalCta: SectionDefinition = {
-	id: "gprFinalCta",
-	version: 1,
-	label: "GPR final CTA (unique)",
-	description: "Unique: the GPR closing action cards. Only valid on that page.",
-	schema: fields.object({
-		tag: localeText("Tag", { optionalInEnglish: true }),
-		headline: localeText("Headline"),
-		description: localeLongText("Description"),
-		note: localeLongText("Note"),
-		actions: fields.array(
-			fields.object({
-				icon: fields.text({
-					label: "MDI icon (shared, optional)",
-					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
-				}),
-				label: localeText("Label"),
-				description: localeLongText("Description"),
-				href: fields.text({
-					label: "Link (shared)",
-					description: "Internal path or full URL. Identical in en/sw.",
-				}),
-			}),
-			{
-				label: "Actions",
-				itemLabel: (item) => previewText(item, ["fields", "label", "fields", "en", "value"], "Action"),
-			}
-		),
-		id: anchorField(),
-		// Excluded from v1 (documented): accent lede, `watermark="radar"`,
-		// columns and `className` (presentation, not editor contracts).
-	}),
-	example: {
-		tag: { en: "", sw: "" },
-		headline: { en: "Book Your GPR Survey", sw: "Weka Upimaji Wako wa GPR" },
-		description: { en: "", sw: "" },
-		note: { en: "", sw: "" },
-		actions: [
-			{
-				icon: "calendar-check",
-				label: { en: "Book Site Survey", sw: "Weka Ziara" },
-				description: { en: "Schedule a field team.", sw: "" },
-				href: "mailto:smartgridsurveying@gmail.com",
-			},
-		],
-		id: "",
-	},
-	normalize: (resolved) => ({
-		data: {
-			tag: resolved.tag,
-			headline: resolved.headline,
-			description: resolved.description,
-			note: resolved.note,
-			actions: Array.isArray(resolved.actions)
-				? resolved.actions.map((action: any) => ({
-						icon: action?.icon || undefined,
-						label: action?.label ?? "",
-						description: action?.description ?? "",
-						href: typeof action?.href === "string" ? action.href : "",
-					}))
-				: [],
-		},
-		id: resolved.id || undefined,
-	}),
-};
 
 /**
  * M11 batch 14 — gis-mapping page (2026-09-19): `gisHero` wraps the
@@ -9216,7 +9163,6 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	gprTechnology,
 	gprFeaturedProjects,
 	gprSummary,
-	gprFinalCta,
 	gisHero,
 	gisWhatIs,
 	gisImportance,
@@ -9348,7 +9294,6 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	gprTechnology: gprTechnology.label,
 	gprFeaturedProjects: gprFeaturedProjects.label,
 	gprSummary: gprSummary.label,
-	gprFinalCta: gprFinalCta.label,
 	gisHero: gisHero.label,
 	gisWhatIs: gisWhatIs.label,
 	gisImportance: gisImportance.label,

@@ -1112,6 +1112,11 @@
 					"en": "Get engineering-grade aerial survey data delivered within timelines aligned to construction, design, and approval workflows.",
 					"sw": "Pata data ya uchunguzi wa angani ya darasa la uhandisi iliyolelewa ndani ya muda uliopangwa kulingana na mifumo ya ujenzi, usanidi, na uidhinishaji."
 				},
+				"descriptionTone": "muted",
+				"note": {
+					"en": "",
+					"sw": ""
+				},
 				"actionsLabel": {
 					"en": "Choose your action:",
 					"sw": "Chagua hatua yako:"
@@ -1166,6 +1171,7 @@
 						"href": "mailto:smartgridsurveying@gmail.com?subject=Site Visit Booking: Drone Survey&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a site visit for a drone survey.%0D%0A%0D%0ALocation (County / Area):%0D%0ASite size:%0D%0APreferred date & time:%0D%0A%0D%0AThank you."
 					}
 				],
+				"actionIconFallback": "",
 				"watermark": "drone",
 				"columns": "4",
 				"align": "center",

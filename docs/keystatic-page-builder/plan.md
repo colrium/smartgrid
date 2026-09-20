@@ -1146,15 +1146,22 @@ Work types:
   is a deletion + call-site swap with content unchanged.)
 - Type 2 (M11 unique wrapping a single shared component, entry uses the
   unique id): register ONE shared branch id for the wrapped component where
-  none exists yet (`workflow` → `WorkflowSection`, `finalCta` → `FinalCta`,
-  `beforeAfter` → `BeforeAfterFlipCard` — each registered once, first batch
-  that needs it), remap the migration build to emit the shared discriminant
-  with content preserved, regenerate the entry via `--write`, unregister the
-  unique id (registry + renderer + check-script fixture + README), delete the
-  wrapper file, render the shared component directly in the legacy branch.
+  none exists yet (`workflow` → `WorkflowSection`, `finalCta` → `FinalCta`
+  — each registered once, first batch that needs it), remap the migration
+  build to emit the shared discriminant with content preserved, regenerate
+  the entry via `--write`, unregister the unique id (registry + renderer +
+  check-script fixture + README), delete the wrapper file, render the shared
+  component directly in the legacy branch.
   Presentation literals hardcoded in the wrapper (`watermark`, `columns`,
   phase-style overrides) move into shared schema fields or renderer
   defaults — recorded per section so output stays identical.
+  Refinement (decided 2026-09-20, batch 3): before/after wrappers
+  (`bathyBeforeAfter`, `gprBeforeAfter`, `gisBeforeAfter`) do NOT qualify —
+  each renders a full shell (`<section>` + `Blob` + container + centered
+  `SectionHeader` + `FadeUp`) around the flip card, i.e. multiple shared
+  children plus DOM, with per-page `layoutId`/`beforeIcon`/`afterIcon`/
+  watermark literals. They stay unique until a shared shell component
+  exists; no shared `beforeAfter` id is registered in M13.
 
 Test policy for M13 (per user request 2026-09-20, overrides the M11/M12
 per-batch gate): NO per-batch validation — skip `check:keystatic`,
@@ -1205,14 +1212,28 @@ Batches (one commit each, in this order):
       Registry 125→123; README list + count updated. Rule for later
       batches: shared builds with per-page literals MUST be factories,
       never extra positional params. Validation DEFERRED per M13 policy.
-- [ ] Batch 3 — `surveying/ground-penetrating-radar`: Type 2 `gprFinalCta` →
-      shared `finalCta`, `gprBeforeAfter` → shared `beforeAfter` (register
-      once). Keep: bespoke hero/highlights/jumpNav/overview/methodology/
+- [x] Batch 3 — `surveying/ground-penetrating-radar` (done 2026-09-20):
+      Type 1 `GprDeliverablesSection` → `Deliverables` (ns + jump-nav id +
+      `bg-surface scroll-mt-36` preserved in legacy; Keystatic hop keeps the
+      documented scroll-mt-36 drop); Type 2 `gprFinalCta` → shared `finalCta`
+      (2 wrapper files deleted, legacy renders shared `FinalCta` directly
+      with accent lede + note + radar watermark + 3 columns + `get-started`
+      anchor). Shared `finalCta` v1→v2 (additive): `note`, `descriptionTone`
+      select, `actionIconFallback`; migration `finalCtaBuild` gains `opts`
+      (`{descriptionTone, actionIconFallback, id}`); GPR uses
+      `finalCtaBuild("radar", 3, "center", {descriptionTone: "accent",
+      id: "get-started"})`. Entries regenerated (GPR 17, aerial 15,
+      cadastral 10 sections — v2 keys additive; statuses `draft`).
+      Registry 123→122; README list + count updated. DECIDED: before/after
+      shell wrappers stay unique (see Type-2 refinement — `gprBeforeAfter`
+      kept). Keep: bespoke hero/highlights/jumpNav/overview/methodology/
       applications/detect/sue/limitations/technology/featured/summary +
-      shaping `Faq` (title→question map), `Cta` (link shaping),
-      `Deliverables` hop (anchor-id note stands).
+      shaping `Faq`, `Cta`, `Deliverables` hop note stands.
+      Validation DEFERRED per M13 policy.
 - [ ] Batch 4 — `surveying/gis-mapping`: Type 2 `gisAnalystCta` → shared
-      `finalCta`, `gisBeforeAfter` → shared `beforeAfter`. Keep: bespoke
+      `finalCta` (`finalCtaBuild("map-search-outline", 3, "center",
+      {id: "talk-to-analyst"})`). `gisBeforeAfter` stays unique (shell,
+      per batch-3 refinement). Keep: bespoke
       hero/whatIs/techStack/whatsapp/components/whySmartgrid/dataAccuracy/
       projectImpact/relatedServices + shaping grids/CTAs (+ 2 dormant).
 - [ ] Batch 5 — civil `highway-surveys` + `as-built-surveys`: Type 1 heroes →
@@ -1237,14 +1258,18 @@ Batches (one commit each, in this order):
       `IntroSection` → `IntroTextSection`, `WhatIsBathymetric` → `SplitMedia`,
       `FinalCtaSection`(bathy) → shared `finalCta`, `DeliverablesSection`
       shims → `Deliverables`; Type 2 `sectionalWorkflow` + `bathyWorkflow`
-      → shared `workflow`, `bathyFinalCta` → shared `finalCta`,
-      `bathyBeforeAfter` → shared `beforeAfter`. Keep: shaping grids,
+      → shared `workflow`, `bathyFinalCta` → shared `finalCta`
+      (`finalCtaBuild("water", 3, "center", {descriptionTone: "accent",
+      actionIconFallback: "email-outline", id: "get-started"})").
+      `bathyBeforeAfter` stays unique (shell, per batch-3 refinement). Keep: shaping grids,
       `SampleMap`, `Process` timeline variant, bespoke tails.
 - [ ] Batch 9 — `surveying/resource-mapping` + `building-site-surveys`:
       Type 1 `ResourceMappingHeroSection` → `Hero`, `IntroSection` →
       `IntroTextSection`, `ExploreMoreSection` → `Gallery`,
-      `DeliverablesSection` shims → `Deliverables`; Type 2 `rmWorkflow` →
-      shared `workflow`, `rmFinalCta` → shared `finalCta`. Keep: shaping
+      `DeliverablesSection` shims → `Deliverables`;       Type 2 `rmWorkflow` →
+      shared `workflow`, `rmFinalCta` → shared `finalCta`
+      (`finalCtaBuild("map-marker-radius", 3, "center",
+      {descriptionTone: "accent", id: "get-started"})`). Keep: shaping
       grids (`Sector` + `leadImages`, `fallbackIcons`, `wide`), bespoke
       hero/accuracy/consultation tails, `Process` (label→title map).
 - [ ] Batch 10 — hubs (`surveying`, `civil`): Type 1 `SurveyingHeroSection`
@@ -1386,3 +1411,4 @@ For every implementation change:
 | 2026-09-20 | M13 | M13 opened per user request: collapse single-shared-child wrappers onto shared sections (Type 1 = legacy-only pure wrapper deletion, entry already shared; Type 2 = M11 unique → shared id, unregister + remap + regenerate). Qualification rule recorded (single shared child + straight-through props + static literals only; any remapping/computed/hooks/Trans/extra JSX disqualifies). Test policy per user request: NO per-batch validation (check/verify/typecheck/lint/smoke all deferred until ALL M13 batches done); one commit per page batch. `AGENTS.md`/`CLAUDE.md` still absent (glob no match) — README + plan remain source of truth | No tests run (deferred per user request); plan-only change | |
 | 2026-09-20 | M13 | Batch 1 DONE — aerial-surveys: deleted `AerialHeroSection`, `PrecisionSection`, `AerialWorkflowSection`, `DeliverablesSection`, `AerialFinalCtaSection` (+ barrel lines); legacy branch renders shared `Hero`/`SplitMedia`/`WorkflowSection`/`Deliverables`/`FinalCta` directly (identical `t()` calls, guards, literals); registered shared `workflow` + `finalCta` (schema + example + flat normalize + renderer); migration `workflowBuild` + `finalCtaBuild("drone", 4, "center")`; entry regenerated (15 sections, content preserved); README list updated. Kept per rule: bespoke intro/whyDrones/services/grid/projects/additional + shaping industries/techStack/industryCta/capabilityCta | Validation DEFERRED per M13 policy (no check/verify/typecheck/lint/smoke this batch). Next: batch 2 — cadastral-surveys | |
 | 2026-09-20 | M13 | Batch 2 DONE — cadastral-surveys: deleted `CadastralHeroSection`, `ProcessFlowSection`, `FinalCtaSection` (+ barrel lines); legacy renders shared `Hero`/`WorkflowSection` (+ page-level phase override)/`FinalCta` directly; shared `workflow` v1→v2 (`phase` + `acquisition` preset → `phaseStyles`); migration `workflowBuild` factory + `finalCtaBuild("vector-square", 4, "left")`; deleted `cadastralProcessBuild` + `aerialFinalCtaBuild`; entries regenerated (cadastral 10, aerial 15 sections; statuses `draft`); registry 125→123; README updated. CAUGHT: 4th positional build param catches `siteTitle` — factories only (recorded as batch rule) | Validation DEFERRED per M13 policy. Next: batch 3 — ground-penetrating-radar | |
+| 2026-09-20 | M13 | Batch 3 DONE — ground-penetrating-radar: deleted `GprDeliverablesSection`, `GprFinalCtaSection` (+ barrel lines); legacy renders shared `Deliverables`/`FinalCta` directly (accent lede + note + radar + 3 cols + `get-started` anchor); shared `finalCta` v1→v2 (`note`, `descriptionTone`, `actionIconFallback`); migration `finalCtaBuild` gains `opts`; GPR uses `finalCtaBuild("radar", 3, "center", {descriptionTone: "accent", id: "get-started"})`; entries regenerated (GPR 17, aerial 15, cadastral 10; `draft`); registry 123→122; README updated. DECIDED: before/after shell wrappers stay unique (multiple shared children + DOM — rule refinement recorded; batches 4/8/9 updated) | Validation DEFERRED per M13 policy. Next: batch 4 — gis-mapping | |
