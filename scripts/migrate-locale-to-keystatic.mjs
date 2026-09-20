@@ -3094,7 +3094,9 @@ const PAGES = {
 			{
 				discriminant: "stats",
 				from: "stats",
-				// Legacy: CompanyStatsStrip → <Stats items layout="panel" />
+				// Legacy: shared <Stats items layout="panel" /> used directly
+				// on the page (M13 batch 11 — retired the CompanyStatsStrip
+				// shim).
 				build(en, sw, where) {
 					const items = en.items ?? [];
 					if (!Array.isArray(sw.items) || sw.items.length !== items.length) {
@@ -3120,7 +3122,9 @@ const PAGES = {
 			{
 				discriminant: "splitMedia",
 				from: "about",
-				// Legacy: CompanyAboutSection → <SplitMedia data imagePosition="right" mediaAspect="aspect-square" />
+				// Legacy: shared <SplitMedia data imagePosition="right"
+				// mediaAspect="aspect-square" /> used directly on the page
+				// (M13 batch 11 — retired the CompanyAboutSection wrapper).
 				build(en, sw, where) {
 					const enPoints = en.points ?? [];
 					const swPoints = sw.points ?? [];
@@ -3387,7 +3391,10 @@ const PAGES = {
 			{
 				discriminant: "splitMedia",
 				from: "ourStory",
-				// Legacy: OurStorySection → <SplitMedia data imagePosition="left" mediaAspect="aspect-square" mediaFit="contain" /> (no points).
+				// Legacy: shared <SplitMedia data imagePosition="left"
+				// mediaAspect="aspect-square" mediaFit="contain" /> used
+				// directly on the page (M13 batch 11 — retired the
+				// OurStorySection wrapper; no points).
 				build(en, sw, where) {
 					return {
 						tag: { en: reqText(en.tag, `${where}.tag.en`), sw: reqText(sw.tag, `${where}.tag.sw`) },
@@ -5563,8 +5570,9 @@ const PAGES = {
 			{
 				discriminant: "faq",
 				from: "faq",
-				// Legacy: FaqSection → <SharedFaq tag headline description
-				// items /> with icon/title/description items mapped to
+				// Legacy: shared <Faq tag headline description items /> used
+				// directly on the page (M13 batch 11 — retired the FaqSection
+				// shaping wrapper) with icon/title/description items mapped to
 				// question/answer/icon (no points, no still-curious card).
 				build(en, sw, where) {
 					const enItems = en.items ?? [];
@@ -6183,13 +6191,15 @@ const PAGES = {
 	// `faq`, `actionCtaEngineer`, `cta`) now live in `common.json`, so every
 	// build in this mapping reads from `extra.common`, exactly like the
 	// cross-namespace `trustees` build below.
-	// Tails stay legacy: bespoke WebGL hero,
-	// global LeadGenBar (`home` ns, never a page-builder branch),
-	// CoreExpertiseSection (`headerRow` + `hoverArrow` + `watermarkedIndexed`),
-	// client-only CoverageAreaSection (ProjectsGlobe), About/
-	// Tails stay legacy: bespoke WebGL hero, Drones bespoke (every other home
-	// section migrates in M7/M8 plus the M9 follow-up; `metrics` stays in
-	// `skipped` — unrendered, commented out of the route).
+	// Tails stay legacy: bespoke WebGL hero (`homeHero` unique), the global
+	// LeadGenBar (`home` ns, never a page-builder branch), Drones bespoke
+	// (`homeDrones` unique); `metrics` stays `skipped` — unrendered,
+	// commented out of the route. M13 batch 11 (2026-09-20): the twelve
+	// 1:1 home wrappers (About/KeyFacts/Certifications/Trustees/Metrics/
+	// WhyChooseUs/PlanningInfographic/SurveyingInstruments/CoreExpertise/
+	// SurveyCost/CoverageArea/IndustriesWeServe `*Section`) + the shaping
+	// FaqSection were deleted — the legacy branch renders the shared
+	// components directly (entries already use shared branches).
 	// M11 home pilot (2026-09-18): the hero + drones tails migrate too, as
 	// unique sections (`homeHero` from the `home` namespace via `ns`,
 	// `homeDrones` from `common:drones`); only `metrics` stays skipped.
@@ -6232,8 +6242,9 @@ const PAGES = {
 			{
 				discriminant: "about",
 				from: "about",
-				// Legacy: AboutSection → <About id="about" /> over
-				// `common:about` (same `common.json` content namespace as
+				// Legacy: shared <About id="about" /> over `common:about`
+				// used directly on the page (M13 batch 11 — retired the
+				// AboutSection wrapper; same `common.json` content namespace as
 				// every other section in this mapping since HEAD `9b3f8d0`).
 				build(en, sw, where) {
 					return aboutBuild(en, sw, where);
@@ -6242,10 +6253,11 @@ const PAGES = {
 			{
 				discriminant: "planningInfographic",
 				from: "planningInfographic",
-				// Legacy: PlanningInfographicSection → <PlanningInfographic
-				// /> over `common:planningInfographic` (same `common.json`
-				// content namespace as every other section in this mapping
-				// since HEAD `9b3f8d0`).
+				// Legacy: shared <PlanningInfographic /> over
+				// `common:planningInfographic` used directly on the page (M13
+				// batch 11 — retired the PlanningInfographicSection wrapper;
+				// same `common.json` content namespace as every other section
+				// in this mapping since HEAD `9b3f8d0`).
 				build(en, sw, where) {
 					return planningInfographicBuild(en, sw, where);
 				},
@@ -6253,11 +6265,11 @@ const PAGES = {
 			{
 				discriminant: "surveyingInstruments",
 				from: "surveyingInstruments",
-				// Legacy: SurveyingInstrumentsSection →
-				// <SurveyingInstruments id="surveying-instruments" /> over
-				// `common:surveyingInstruments` (same `common.json` content
-				// namespace as every other section in this mapping since
-				// HEAD `9b3f8d0`).
+				// Legacy: shared <SurveyingInstruments id="surveying-instruments"
+				// /> over `common:surveyingInstruments` used directly on the
+				// page (M13 batch 11 — retired the SurveyingInstrumentsSection
+				// wrapper; same `common.json` content namespace as every other
+				// section in this mapping since HEAD `9b3f8d0`).
 				build(en, sw, where) {
 					return surveyingInstrumentsBuild(en, sw, where);
 				},
@@ -6466,9 +6478,11 @@ const PAGES = {
 			{
 				discriminant: "keyFacts",
 				from: "keyFacts",
-				// Legacy: KeyFactsSection → <KeyFacts id="key-facts" /> over
-				// `common:keyFacts` (same `common.json` content namespace as
-				// every other section in this mapping since HEAD `9b3f8d0`).
+				// Legacy: shared <KeyFacts id="key-facts" /> over
+				// `common:keyFacts` used directly on the page (M13 batch 11 —
+				// retired the KeyFactsSection wrapper; same `common.json`
+				// content namespace as every other section in this mapping
+				// since HEAD `9b3f8d0`).
 				build(en, sw, where) {
 					return keyFactsBuild(en, sw, where);
 				},
@@ -6476,8 +6490,9 @@ const PAGES = {
 			{
 				discriminant: "certifications",
 				from: "certifications",
-				// Legacy: CertificationsSection → <Certifications
-				// id="certifications" /> over `common:certifications` (same
+				// Legacy: shared <Certifications id="certifications" /> over
+				// `common:certifications` used directly on the page (M13 batch
+				// 11 — retired the CertificationsSection wrapper; same
 				// `common.json` content namespace as every other section in
 				// this mapping since HEAD `9b3f8d0`).
 				build(en, sw, where) {
@@ -6487,9 +6502,11 @@ const PAGES = {
 			{
 				discriminant: "trustees",
 				from: "trustees",
-				// Legacy: TrusteesSection → <Trustees id="trustees" /> over
-				// `common:trustees` (same `common.json` content namespace as
-				// every other section in this mapping since HEAD `9b3f8d0`).
+				// Legacy: shared <Trustees id="trustees" /> over
+				// `common:trustees` used directly on the page (M13 batch 11 —
+				// retired the TrusteesSection wrapper; same `common.json`
+				// content namespace as every other section in this mapping
+				// since HEAD `9b3f8d0`).
 				build(en, sw, where) {
 					return trusteesBuild(en, sw, where);
 				},

@@ -16,7 +16,6 @@ import {
 	SiteEngineeringSection,
 	ProcessSection,
 	AccuracyMattersSection,
-	ActionCtaBand,
 	TechnologyStackSection,
 	ConsultationSection,
 	SiteCtaSection,

@@ -1,9 +1,5 @@
 export { CompanyProfileHero } from "./CompanyProfileHero";
 export { default as CompanyProfileHeroDefault } from "./CompanyProfileHero";
-export { CompanyStatsStrip } from "./CompanyStatsStrip";
-export { default as CompanyStatsStripDefault } from "./CompanyStatsStrip";
-export { CompanyAboutSection } from "./CompanyAboutSection";
-export { default as CompanyAboutSectionDefault } from "./CompanyAboutSection";
 export { CompanyMissionVisionSection } from "./CompanyMissionVisionSection";
 export { default as CompanyMissionVisionSectionDefault } from "./CompanyMissionVisionSection";
 export { CompanyServicesSection } from "./CompanyServicesSection";

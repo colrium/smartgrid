@@ -3,11 +3,12 @@ import PageHead from "@/components/Head";
 
 import { getI18nProps, getLocale } from "@/lib/i18n";
 import type { Lang } from "@/lib/types";
+import { useTranslation } from "@/hooks";
 import { resolveKeystaticPage, type ResolvedKeystaticPage } from "@/lib/keystatic/resolvePage";
 import { PageBuilderDocument } from "@/components/keystatic/PageBuilderDocument";
+import { SplitMedia } from "@/components/sections/shared/SplitMedia";
 import {
 	HeroSection,
-	OurStorySection,
 	AerialSurveyingSection,
 	ServicesByImagesSection,
 	DronePhotographyImageSliderSection,
@@ -23,6 +24,13 @@ type PageProps = {
 	keystaticPage: ResolvedKeystaticPage | null;
 };
 
+interface OurStoryContent {
+	tag?: string | null;
+	headline: string;
+	image?: string | null;
+	description?: string | null;
+}
+
 /**
  * All ten legacy sections are Keystatic-owned in page order (see the `about`
  * mapping in `scripts/migrate-locale-to-keystatic.mjs`): hero, ourStory,
@@ -31,9 +39,14 @@ type PageProps = {
  * projectsCompletedImagesMasonry (M11 batch 4; converted to
  * `PageBuilderDocument` in M12 batch 10, 2026-09-19 — entry order IS page
  * order, so editors can add, remove, and reorder sections freely; the M3
- * resolver taxonomy remains the only fallback).
+ * resolver taxonomy remains the only fallback). M13 batch 11, 2026-09-20 —
+ * the single-shared-child wrapper `OurStorySection` was removed; the legacy
+ * branch below renders the shared `SplitMedia` directly with the identical
+ * `t()` lookup and presentation literals, and the entry already uses the
+ * shared `splitMedia` branch with content preserved.
  */
 const Page: NextPage<PageProps> = ({ keystaticPage }) => {
+	const { t } = useTranslation(["about"]);
 	// Migration source switch (M3/M7, completed M11 batch 4, flexible since
 	// M12 batch 10): Keystatic owns the whole page when the slug is
 	// allowlisted via `KEYSTATIC_PAGES` and the entry is published.
@@ -47,12 +60,26 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 		);
 	}
 
+	const ourStory = t("about:ourStory", { returnObjects: true }) as unknown as OurStoryContent;
+
 	return (
 		<div className="relative">
 			<PageHead pageName="about" />
 			<div className="flex flex-col min-h-screen">
 				<HeroSection />
-				<OurStorySection />
+				{ourStory?.headline ? (
+					<SplitMedia
+						data={{
+							tag: ourStory.tag ?? null,
+							headline: ourStory.headline,
+							description: ourStory.description ?? null,
+							image: ourStory.image ?? null,
+						}}
+						imagePosition="left"
+						mediaAspect="aspect-square"
+						mediaFit="contain"
+					/>
+				) : null}
 				<AerialSurveyingSection />
 				<ServicesByImagesSection />
 				<DronePhotographyImageSliderSection />

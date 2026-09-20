@@ -14,11 +14,6 @@ import {
 	WhatWeOfferSection,
 	CtaSection,
 } from "@/components/sections/aerial-drones/monitoring-and-evaluation";
-import {
-	SmartMonitoringSection,
-	WhatWeOfferSection,
-	CtaSection,
-} from "@/components/sections/aerial-drones/monitoring-and-evaluation";
 
 
 type PageProps = {

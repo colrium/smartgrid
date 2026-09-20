@@ -1,36 +1,61 @@
 import type { GetServerSideProps, NextPage } from "next";
-// import { cloneElement, type ReactElement } from "react";
 import PageHead from "@/components/Head";
 
 import { getI18nProps, getLocale } from "@/lib/i18n";
 import type { Lang } from "@/lib/types";
+import { useTranslation } from "@/hooks";
 import { resolveKeystaticPage, type ResolvedKeystaticPage } from "@/lib/keystatic/resolvePage";
 import { renderSection } from "@/lib/keystatic/sectionRenderers";
 import HeroSection from "@/components/sections/home/HeroSection";
-import { AboutSection } from "@/components/sections/home/AboutSection";
-import { PlanningInfographicSection } from "@/components/sections/home/PlanningInfographicSection";
 import LeadGenBar from "@/components/sections/shared/LeadGenBar";
 import {
-	SurveyingInstrumentsSection,
-	DronesSection,
-	WhyChooseUsSection,
-	KeyFactsSection,
-	CoreExpertiseSection,
-	CertificationsSection,
-	ServicesSection,
-	CtaSection,
-	TrusteesSection,
-	// MetricsSection,
-	IndustriesWeServeSection,
-	SurveyCostSection,
-	CoverageAreaSection,
-	FaqSection,
+	About,
+	Certifications,
+	CoreExpertise,
+	CoverageArea,
+	Faq,
+	IndustriesWeServe,
+	KeyFacts,
+	PlanningInfographic,
+	SurveyCost,
+	SurveyingInstruments,
+	Trustees,
+	WhyChooseUs,
+	type AboutProps,
+	type CertificationsProps,
+	type CoreExpertiseProps,
+	type CoverageAreaProps,
+	type IndustriesWeServeProps,
+	type KeyFactsProps,
+	type PlanningInfographicProps,
+	type SurveyCostProps,
+	type SurveyingInstrumentsProps,
+	type TrusteesProps,
+	type WhyChooseUsProps,
+} from "@/components/sections/shared";
+import type { FaqSectionItem } from "@/components/sections/FaqSectionItems";
+import {
 	ActionCtaSection,
+	CtaSection,
+	DronesSection,
+	ServicesSection,
 } from "@/components/sections/home";
 
 interface PageProps {
 	/** Keystatic page when the `home` slug is opted in; otherwise `null` (legacy). */
 	keystaticPage: ResolvedKeystaticPage | null;
+}
+
+interface FaqContent {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+	items?: FaqSectionItem[];
+	stillCurious?: {
+		label?: string;
+		description?: string;
+		cta?: { label: string; href: string; icon?: string };
+	};
 }
 
 /**
@@ -51,6 +76,19 @@ interface PageProps {
  *
  * `leadGenBar` keeps its route-level positioning (`-mt-48` overlap) via
  * `cloneElement`: the registry stores content only, never `className`.
+ *
+ * M13 batch 11, 2026-09-20 — the twelve single-shared-child wrappers
+ * (`AboutSection`, `CertificationsSection`, `KeyFactsSection`,
+ * `TrusteesSection`, `MetricsSection` (commented out of the route),
+ * `WhyChooseUsSection`, `PlanningInfographicSection`,
+ * `SurveyingInstrumentsSection`, `CoreExpertiseSection`,
+ * `SurveyCostSection`, `CoverageAreaSection`, `IndustriesWeServeSection`)
+ * and the shaping `FaqSection` were deleted; the legacy branch below renders
+ * the shared components directly with the identical `t()` lookups, anchor
+ * ids and guards, and the entries already use the shared branches with
+ * content preserved. `homeHero`/`homeDrones` keep their uniques (bespoke);
+ * the two ActionCta/CtaSection wrappers collapsed in M7 batch 17 stay
+ * collapsed onto `ctaBand`.
  */
 const KEYSTATIC_SECTION_COUNT = 19;
 
@@ -65,6 +103,7 @@ function orderedSections(page: ResolvedKeystaticPage) {
 }
 
 const Page: NextPage<PageProps> = ({ keystaticPage }) => {
+	const { t } = useTranslation(["common"]);
 	// Migration source switch (M3/M7): Keystatic owns the nineteen migrated
 	// sections only when the slug is allowlisted via `KEYSTATIC_PAGES` and the
 	// entry is published. Otherwise the legacy locale-JSON implementation
@@ -133,7 +172,7 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 						{keyFacts}
 						{certifications}
 						{trustees}
-						{/* <MetricsSection /> */}
+						{/* <Metrics /> (metrics stays registered-only — commented out of the route) */}
 					</div>
 
 					{defaultCta}
@@ -141,6 +180,36 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 			</div>
 		);
 	}
+
+	const aboutData = t("common:about", { returnObjects: true }) as unknown as AboutProps["data"];
+	const planningData = t("common:planningInfographic", {
+		returnObjects: true,
+	}) as unknown as PlanningInfographicProps["data"];
+	const instrumentsData = t("common:surveyingInstruments", {
+		returnObjects: true,
+	}) as unknown as SurveyingInstrumentsProps["data"];
+	const industriesData = t("common:industriesWeServe", {
+		returnObjects: true,
+	}) as unknown as IndustriesWeServeProps["data"];
+	const whyChooseUsData = t("common:whyChooseUs", {
+		returnObjects: true,
+	}) as unknown as WhyChooseUsProps["data"];
+	const coreExpertiseData = t("common:coreExpertise", {
+		returnObjects: true,
+	}) as unknown as CoreExpertiseProps["data"];
+	const surveyCostData = t("common:surveyCostInKenya", {
+		returnObjects: true,
+	}) as unknown as SurveyCostProps["data"];
+	const coverageAreaData = t("common:coverageArea", {
+		returnObjects: true,
+	}) as unknown as CoverageAreaProps["data"];
+	const faqContent = t("common:faq", { returnObjects: true }) as unknown as FaqContent;
+	const faqItems = Array.isArray(faqContent?.items) ? faqContent.items : [];
+	const keyFactsData = t("common:keyFacts", { returnObjects: true }) as unknown as KeyFactsProps["data"];
+	const certificationsData = t("common:certifications", {
+		returnObjects: true,
+	}) as unknown as CertificationsProps["data"];
+	const trusteesData = t("common:trustees", { returnObjects: true }) as unknown as TrusteesProps["data"];
 
 	return (
 		<div className="relative ">
@@ -152,29 +221,38 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 						className="my-12  -mt-48"
 						// className="my-12 "
 					/>
-					<AboutSection />
-					<PlanningInfographicSection />
+					<About data={aboutData} id="about" />
+					<PlanningInfographic data={planningData} />
 				</div>
-				<SurveyingInstrumentsSection />
+				<SurveyingInstruments data={instrumentsData} id="surveying-instruments" />
 				<DronesSection />
 
 				<ActionCtaSection contentKey="actionCtaSurveyor" />
 
 				<ServicesSection />
-				<IndustriesWeServeSection />
+				<IndustriesWeServe data={industriesData} id="industries-we-serve" />
 				<div className="flex flex-col  w-full">
-					<WhyChooseUsSection />
+					<WhyChooseUs data={whyChooseUsData} id="why-choose-us" />
 
-					<CoreExpertiseSection />
+					<CoreExpertise data={coreExpertiseData} id="core-expertise" />
 
-					<SurveyCostSection />
-					<CoverageAreaSection />
-					<FaqSection />
+					<SurveyCost data={surveyCostData} id="survey-cost" />
+					<CoverageArea data={coverageAreaData} id="coverage-area" />
+					{faqItems.length === 0 ? null : (
+						<Faq
+							tag={faqContent.tag}
+							headline={faqContent.headline}
+							description={faqContent.description}
+							items={faqItems}
+							stillCurious={faqContent.stillCurious}
+						/>
+					)}
+					{/* ActionCtaSection contentKey="actionCtaEngineer" */}
 					<ActionCtaSection contentKey="actionCtaEngineer" />
-					<KeyFactsSection />
-					<CertificationsSection />
-					<TrusteesSection />
-					{/* <MetricsSection /> */}
+					<KeyFacts data={keyFactsData} id="key-facts" />
+					<Certifications data={certificationsData} id="certifications" />
+					<Trustees data={trusteesData} id="trustees" />
+					{/* <Metrics /> (metrics stays registered-only — commented out of the route) */}
 				</div>
 
 				<CtaSection />
