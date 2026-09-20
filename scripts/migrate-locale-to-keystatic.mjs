@@ -5299,8 +5299,8 @@ const PAGES = {
 			{
 				discriminant: "hero",
 				from: "hero",
-				// Legacy: HeroSection → <Hero data={t(hero)} /> (default
-				// bottom layout).
+				// Legacy: shared <Hero> used directly on the page (M13 batch 5 — wrapper retired; shared used directly on the page).
+				// (default bottom layout).
 				build(en, sw, where) {
 					return {
 						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
@@ -5330,7 +5330,7 @@ const PAGES = {
 			{
 				discriminant: "introText",
 				from: "overview",
-				// Legacy: OverviewSection → <IntroTextSection tone="surface" />
+				// Legacy: shared <IntroTextSection tone="surface" /> used directly (M13 batch 5 — wrapper retired; shared used directly on the page).
 				// (align/split unset = left/false).
 				build: introTextBuild({ tone: "surface", align: "left", split: false }),
 			},
@@ -5344,24 +5344,26 @@ const PAGES = {
 			{
 				discriminant: "cardGrid",
 				from: "benefitsOfHighwaySurveys",
-				// Legacy: BenefitsSection → <CardGrid columns={3}
-				// tone="surface" /> (align/card unset = defaults).
+				// Legacy: shared <CardGrid columns={3} tone="surface" /> used directly (M13 batch 5 — wrapper retired; shared used directly on the page).
+				// (align/card unset = defaults).
 				build: cardGridBuild({ columns: "3", align: "left", tone: "surface", headerRow: false, cardDensity: "comfortable", cardIconSize: "md" }),
 			},
 			{
 				discriminant: "deliverables",
 				from: "highwaySurveyDeliverables",
-				// Legacy: DeliverablesSection → <Deliverables
+				// Legacy: shared <Deliverables
 				// ns="civil/highway-surveys"
-				// baseKey="highwaySurveyDeliverables" /> — shared
-				// `deliverables`, default tone (no wrapper className).
+				// baseKey="highwaySurveyDeliverables" /> used directly on the
+				// page (M13 batch 5 — DeliverablesSection wrapper retired) —
+				// shared `deliverables`, default tone (no wrapper className).
 				build: deliverablesBuild("default"),
 			},
 		],
 	},
 	// M7 batch 11b: as-built-surveys. Six sections migrate in page order —
 	// `hero` + `whatAreAsBuiltSurveys`/`maxProductivityMinGuesswork`/
-	// `actionableInsights` (introText via shared TextSection) +
+	// `actionableInsights` (introText; M13 batch 5 retired the shared
+	// TextSection shims, pages use IntroTextSection directly) +
 	// `keyIndustries`/`applications` (cardGrids). Tails stay legacy:
 	// AsBuiltSolutionsSection (`indexed` numbering) + bespoke Deliverables
 	// explorer.
@@ -5378,8 +5380,8 @@ const PAGES = {
 			{
 				discriminant: "hero",
 				from: "hero",
-				// Legacy: HeroSection → <Hero data={t(hero)} /> (default
-				// bottom layout).
+				// Legacy: shared <Hero> used directly on the page (M13 batch 5 — wrapper retired; shared used directly on the page).
+				// (default bottom layout).
 				build(en, sw, where) {
 					return {
 						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
@@ -5409,7 +5411,7 @@ const PAGES = {
 			{
 				discriminant: "introText",
 				from: "whatAreAsBuiltSurveys",
-				// Legacy: WhatAreAsBuiltSurveysSection → <TextSection /> (tone
+				// Legacy: shared <IntroTextSection /> used directly (M13 batch 5 — wrapper retired; shared used directly on the page). (tone
 				// default, align/split unset).
 				build: introTextBuild({ tone: "default", align: "left", split: false }),
 			},
@@ -5423,28 +5425,27 @@ const PAGES = {
 			{
 				discriminant: "cardGrid",
 				from: "keyIndustries",
-				// Legacy: KeyIndustriesSection → <CardGrid columns={3}
-				// align="center" /> (tone/card unset = defaults).
+				// Legacy: shared <CardGrid columns={3} align="center" /> used directly (M13 batch 5 — wrapper retired; shared used directly on the page).
+				// (tone/card unset = defaults).
 				build: cardGridBuild({ columns: "3", align: "center", tone: "default", headerRow: false, cardDensity: "comfortable", cardIconSize: "md" }),
 			},
 			{
 				discriminant: "introText",
 				from: "maxProductivityMinGuesswork",
-				// Legacy: MaxProductivityMinGuessworkSection → <TextSection
-				// tone="surface" />.
+				// Legacy: shared <IntroTextSection tone="surface" /> used directly (M13 batch 5 — wrapper retired; shared used directly on the page)..
 				build: introTextBuild({ tone: "surface", align: "left", split: false }),
 			},
 			{
 				discriminant: "cardGrid",
 				from: "applications",
-				// Legacy: ApplicationsSection → <CardGrid columns={3}
-				// tone="surface" align="center" />.
+				// Legacy: shared <CardGrid columns={3} tone="surface" align="center" />
+				// used directly (M13 batch 5 — wrapper retired; shared used directly on the page)..
 				build: cardGridBuild({ columns: "3", align: "center", tone: "surface", headerRow: false, cardDensity: "comfortable", cardIconSize: "md" }),
 			},
 			{
 				discriminant: "introText",
 				from: "actionableInsights",
-				// Legacy: ActionableInsightsSection → <TextSection /> (tone
+				// Legacy: shared <IntroTextSection /> used directly (M13 batch 5 — wrapper retired; shared used directly on the page). (tone
 				// default, align/split unset).
 				build: introTextBuild({ tone: "default", align: "left", split: false }),
 			},

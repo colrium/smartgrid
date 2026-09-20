@@ -1241,10 +1241,19 @@ Batches (one commit each, in this order):
       bespoke hero/whatIs/techStack/whatsapp/components/whySmartgrid/
       dataAccuracy/projectImpact/relatedServices + shaping grids/CTAs
       (+ 2 dormant). Validation DEFERRED per M13 policy.
-- [ ] Batch 5 — civil `highway-surveys` + `as-built-surveys`: Type 1 heroes →
-      `Hero`, `Overview`/`TextSection` shims → `IntroTextSection`,
-      `DeliverablesSection` → `Deliverables`; Type 2 none (indexed grids
-      stay — shaping). Keep: `highwayServices`/`asBuiltSolutions` uniques.
+- [x] Batch 5 — civil `highway-surveys` + `as-built-surveys` (done 2026-09-20,
+      all Type 1, no registry/entry/migration-output changes):
+      highway `HeroSection` → `Hero`, `OverviewSection` → `IntroTextSection`
+      (surface), `BenefitsSection` → `CardGrid` (straight-through items +
+      empty-guard preserved), `DeliverablesSection` → `Deliverables`
+      (ns + baseKey); as-built `HeroSection` → `Hero`, `TextSection` + its
+      3 shims → `IntroTextSection` directly (default/surface/default tones),
+      `KeyIndustriesSection`/`ApplicationsSection` → `CardGrid` (centered /
+      surface+centered, guards preserved). 11 wrapper files deleted; legacy
+      branches render shared directly. Kept per rule: `highwayServices` +
+      `asBuiltSolutions` uniques (`indexed` outside the cardGrid contract).
+      Mapping comments updated (CAUGHT + fixed: a bulk hero-comment replace
+      touched 3 other pages — reverted). Validation DEFERRED per M13 policy.
 - [ ] Batch 6 — civil `bim` + `site-engineering` + `site-setting-out` +
       `volumetric-surveys`: Type 1 heroes → `Hero`, `TextSection` shims →
       `IntroTextSection`, `PrecisionVolumetricAnalysis` → `SplitMedia`;
@@ -1418,3 +1427,4 @@ For every implementation change:
 | 2026-09-20 | M13 | Batch 2 DONE — cadastral-surveys: deleted `CadastralHeroSection`, `ProcessFlowSection`, `FinalCtaSection` (+ barrel lines); legacy renders shared `Hero`/`WorkflowSection` (+ page-level phase override)/`FinalCta` directly; shared `workflow` v1→v2 (`phase` + `acquisition` preset → `phaseStyles`); migration `workflowBuild` factory + `finalCtaBuild("vector-square", 4, "left")`; deleted `cadastralProcessBuild` + `aerialFinalCtaBuild`; entries regenerated (cadastral 10, aerial 15 sections; statuses `draft`); registry 125→123; README updated. CAUGHT: 4th positional build param catches `siteTitle` — factories only (recorded as batch rule) | Validation DEFERRED per M13 policy. Next: batch 3 — ground-penetrating-radar | |
 | 2026-09-20 | M13 | Batch 3 DONE — ground-penetrating-radar: deleted `GprDeliverablesSection`, `GprFinalCtaSection` (+ barrel lines); legacy renders shared `Deliverables`/`FinalCta` directly (accent lede + note + radar + 3 cols + `get-started` anchor); shared `finalCta` v1→v2 (`note`, `descriptionTone`, `actionIconFallback`); migration `finalCtaBuild` gains `opts`; GPR uses `finalCtaBuild("radar", 3, "center", {descriptionTone: "accent", id: "get-started"})`; entries regenerated (GPR 17, aerial 15, cadastral 10; `draft`); registry 123→122; README updated. DECIDED: before/after shell wrappers stay unique (multiple shared children + DOM — rule refinement recorded; batches 4/8/9 updated) | Validation DEFERRED per M13 policy. Next: batch 4 — gis-mapping | |
 | 2026-09-20 | M13 | Batch 4 DONE — gis-mapping: deleted `GisAnalystCtaSection` (+ barrel lines); legacy renders shared `FinalCta` directly (muted lede, map-search-outline, 3 cols, `talk-to-analyst` anchor); `finalCtaBuild("map-search-outline", 3, "center", {id: "talk-to-analyst"})`; deleted `gisAnalystCtaBuild`; entry regenerated (15 sections, `draft`); registry 122→121; README updated | Validation DEFERRED per M13 policy. Next: batch 5 — civil highway + as-built | |
+| 2026-09-20 | M13 | Batch 5 DONE — highway-surveys + as-built-surveys: 11 legacy-only wrappers deleted (heroes, Overview, Benefits, DeliverablesSection, TextSection + 3 shims, KeyIndustries, Applications); legacy branches render shared `Hero`/`IntroTextSection`/`CardGrid`/`Deliverables` directly (tones/guards preserved); no registry/entry changes (entries already shared); mapping comments refreshed. Kept: `highwayServices`/`asBuiltSolutions` uniques (`indexed`). CAUGHT: bulk comment edit touched 3 other pages — reverted | Validation DEFERRED per M13 policy. Next: batch 6 — civil bim + site-engineering + site-setting-out + volumetric | |
