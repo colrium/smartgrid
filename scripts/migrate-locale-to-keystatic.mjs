@@ -3489,7 +3489,10 @@ const PAGES = {
 			{
 				discriminant: "hero",
 				from: "hero",
-				// Legacy: SurveyingHeroSection → <Hero data={t(hero)} />
+				// Legacy: shared <Hero data={t(hero)} /> used directly on the
+				// page (M13 batch 10 — retired the SurveyingHeroSection
+				// wrapper; framed centre-stage layout is driven by the locale
+				// entry).
 				build(en, sw, where) {
 					return {
 						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
@@ -3532,9 +3535,10 @@ const PAGES = {
 			{
 				discriminant: "deliverables",
 				from: "deliverables",
-				// Legacy: SurveyingDeliverablesSection → <Deliverables
-				// ns="surveying/landing" className="bg-surface" /> (tone
-				// surface).
+				// Legacy: shared <Deliverables ns="surveying/landing"
+				// className="bg-surface" /> used directly on the page (M13
+				// batch 10 — retired the SurveyingDeliverablesSection shim;
+				// tone surface).
 				build: deliverablesBuild("surface"),
 			},
 		],
@@ -3576,8 +3580,9 @@ const PAGES = {
 			{
 				discriminant: "deliverables",
 				from: "deliverables",
-				// Legacy: CivilDeliverablesSection → <Deliverables
-				// ns="civil/landing" className="bg-surface" /> (tone
+				// Legacy: shared <Deliverables ns="civil/landing"
+				// className="bg-surface" /> used directly on the page (M13
+				// batch 10 — retired the CivilDeliverablesSection shim; tone
 				// surface).
 				build: deliverablesBuild("surface"),
 			},

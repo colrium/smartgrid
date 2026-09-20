@@ -5,11 +5,11 @@ import { getI18nProps, getLocale } from "@/lib/i18n";
 import type { Lang } from "@/lib/types";
 import { PageBuilderDocument } from "@/components/keystatic/PageBuilderDocument";
 import { resolveKeystaticPage, type ResolvedKeystaticPage } from "@/lib/keystatic/resolvePage";
+import { Deliverables } from "@/components/sections/Deliverables";
 import {
 	CivilHeroSection,
 	CivilServicesSection,
 	CivilProcessSection,
-	CivilDeliverablesSection,
 } from "@/components/sections/civil/landing";
 
 type PageProps = {
@@ -17,6 +17,17 @@ type PageProps = {
 	keystaticPage: ResolvedKeystaticPage | null;
 };
 
+/**
+ * All four hub sections are Keystatic-owned in page order (see the `civil`
+ * mapping in `scripts/migrate-locale-to-keystatic.mjs`): civilHero,
+ * services cardGrid, civilProcess, deliverables (M11 batch 5; M13 batch 10,
+ * 2026-09-20 — the single-shared-child wrapper `CivilDeliverablesSection`
+ * was removed; the legacy branch below renders the shared `Deliverables`
+ * directly with identical props, and the entry already uses the shared
+ * `deliverables` branch with content preserved. `CivilHeroSection`,
+ * `CivilServicesSection` and `CivilProcessSection` keep their wrappers —
+ * bespoke hero and shaping grids/process outside the shared contracts).
+ */
 const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 	// Migration source switch (M3/M7, completed M11 batch 5): Keystatic owns
 	// the whole hub in page order — `civilHero`, `services` cardGrid,
@@ -34,7 +45,7 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 						<CivilHeroSection />
 						<CivilServicesSection />
 						<CivilProcessSection />
-						<CivilDeliverablesSection />
+						<Deliverables ns="civil/landing" className="bg-surface" />
 					</>
 				)}
 			</div>
