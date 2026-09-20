@@ -9,11 +9,22 @@ interface ExploreContent {
 	items: { image?: string | null; title: string; href?: string }[];
 }
 
-export function ExploreMoreSection(): ReactElement | null {
+/**
+ * `data` (M11 batch 16, 2026-09-20): Keystatic-owned content for the
+ * `seExploreMore` unique section. When provided, the locale lookup is
+ * skipped; omitted = legacy `t()` render (bare callers untouched).
+ */
+export interface ExploreMoreSectionProps {
+	data?: ExploreContent | null;
+}
+
+export function ExploreMoreSection({ data }: ExploreMoreSectionProps = {}): ReactElement | null {
 	const { t } = useTranslation(["civil/site-engineering"]);
-	const section = t("civil/site-engineering:exploreMore", {
-		returnObjects: true,
-	}) as unknown as ExploreContent;
+	const section =
+		data ??
+		(t("civil/site-engineering:exploreMore", {
+			returnObjects: true,
+		}) as unknown as ExploreContent);
 	const items: CardItem[] = Array.isArray(section?.items)
 		? section.items.map((item) => ({
 				title: item.title,

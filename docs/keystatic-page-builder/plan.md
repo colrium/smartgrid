@@ -806,7 +806,12 @@ behavior) is documented so the next new page does not 404.
 
 ### M11: Register Unregistered Page Sections as Unique Sections
 
-**Status: IN PROGRESS** (home pilot: `homeHero` + `homeDrones`; remaining pages batched after).
+**Status: IN PROGRESS** (home pilot: `homeHero` + `homeDrones`; remaining pages
+batched after. All per-page batches 1–16 DONE as of 2026-09-20 — every
+in-scope legacy tail now has a registry branch, and every touched page is
+whole-owned in page order → one `PageBuilderDocument`; M13's wrapper
+deletions reconciled into batch 16. Remaining: deferred dev-smoke
+residuals only.)
 
 Dependencies: M2 registry + schema factories, M7 per-page wiring, M8/M9 additive-`data`
 precedent (`LeadGenBar`, `ServicesSection`).
@@ -1038,8 +1043,57 @@ Rules (decided 2026-09-18, before implementing):
       `eslint --max-warnings=0` clean on touched files; dev-smoke DEFERRED
       per M11/M12 policy. Next: Batch 16 — civil bim + site-engineering +
       site-setting-out + volumetric-surveys tails.)
-- [ ] README operator list + `.env.example` untouched (no new env); check-script
-      fixture/render coverage extended per batch.
+      (Batch 16 — civil bim + site-engineering + site-setting-out +
+      volumetric-surveys — done 2026-09-20: 8 uniques (`bimServices`,
+      `seHero` with `<bold>` parsed from data, `seOverview` Split+media
+      card, `seWhatWeDo`, `seExploreMore` with image/href items,
+      `ssoServices`, `ssoInstruments` with title/image items, `vsServices`
+      with icon/title/description items) + 4 shared `deliverables`
+      (surface tones). M13 batch 6 had DELETED the five grid wrappers
+      (`BimServicesSection`, `WhatWeDoSection`,
+      `OurServicesSection`/`OurInstrumentsSection`, volumetric
+      `ServicesSection`), so the new renderer components
+      (`BimServicesCard`, `SeWhatWeDoCard`, `SsoServicesCard`,
+      `SsoInstrumentsCard`, `VsServicesCard`) render the shared `CardGrid`
+      directly with the deleted wrappers' presentation literals; the
+      four SURVIVING bespoke/shaping wrappers (`HeroSection`,
+      `OverviewSection`, `ExploreMoreSection` on site-engineering + the
+      `FaqSection` shim) got the M9 additive-`data` refactor instead.
+      Whole pages in page order (4 + 6 + 5 + 7 sections) → one
+      `PageBuilderDocument` each, `skipped` now `[]` all four; registry
+      118→126; README list updated. CAUGHT by lint: conditional
+      `useTranslation` after the early return in 3 routes (hook hoisted
+      above the switch, per the bim route) + an unused faq renderer
+      import (the entry uses the shared branch). Validation: `check:keystatic`
+      OK (126 sections, 31 fixtures), `--verify` clean all four (no gaps,
+      first try), `yarn typecheck` clean, `yarn lint` clean; dev-smoke
+      DEFERRED per M11/M12 policy.) **Status-log correction:** the
+      batch-15 close read "registry 123→125" — the check script counted
+      125 total (123 before), but this note is stale after M13: M13
+      unregistered 7 uniques (118 final), so batch 16 starts from 118,
+      not 125.
+
+M13 impact on this milestone (2026-09-20): M13 batch 6 DELETED the
+single-shared-child wrappers that batches 9–15 had registered — including
+`BimServicesSection` (→ `CardGrid`), `OurServicesSection`/`OurInstrumentsSection`
+(→ `CardGrid`), `ServicesSection` (volumetric, → `CardGrid`) and
+`WhatWeDoSection` (site-engineering, → `CardGrid`) — so batch 16's unique
+renderers CANNOT re-import those wrappers; they must render the shared
+components directly with the presentation literals the wrappers used to carry
+(the batch-15 `highwayServices`/`asBuiltSolutions` renderer imports would
+be broken by the same rule if those files were ever retired — they were
+kept, so they stay). What survives untouched: `bim`/`site-engineering`/
+`site-setting-out`/`volumetric-surveys` CTA + FAQ shims stayed per the M13
+qualification rule (conditional link shaping / title→question mapping),
+and the shared `deliverables`/`hero`/`cardGrid`/`introText`/`splitMedia`
+contracts are unchanged. The deleted wrappers remain the authoritative
+definitions of the presentation literals (indexed, headerAlign, mediaBadged
+card, icons) — `git show` them when re-deriving a renderer.
+- [x] README operator list + `.env.example` untouched (no new env); check-script
+      fixture/render coverage extended per batch. (M13 note, 2026-09-20:
+      batch 16's unique renderers render the shared `CardGrid`/`Hero`/
+      `Split`/`Deliverables` directly — their wrapped single-child wrappers
+      were deleted by M13 batch 6; see the M13-impact note above.)
 
 **Exit criteria:** every in-scope legacy tail has a registry id + schema +
 example + renderer + check coverage; entries carry its content; `/en` + `/sw`
@@ -1527,4 +1581,5 @@ For every implementation change:
 | 2026-09-20 | M13 | Batch 9 DONE — resource-mapping + building-site-surveys (commit `6dbc47f`): 8 wrappers deleted; Type 1 `ResourceMappingHeroSection` → `Hero`, `WhyStandOutSection` → `CardGrid` (cols 4 surface centred + items guard), `ResourceMappingDeliverablesSection` → `Deliverables` (bg-surface), building-site `IntroSection` → `IntroTextSection` (split), `ActionCtaBand` → `CtaBand` (split/shimmer + headline guard), `DeliverablesSection` → `Deliverables`, `ExploreMoreSection` → `Gallery` (items guard); Type 2 `rmFinalCta` → shared `finalCta` (`finalCtaBuild("map-marker-radius", 3, "center", {descriptionTone: "accent", id: "get-started"})`, deleted      `rmFinalCtaBuild` — single use); resource-mapping entry regenerated via `--write` (16 sections, content byte-verified preserved, `draft`); registry 119→118 (rmFinalCta out); README list + count updated. DECIDED per batch-8 refinement: `rmWorkflow` STAYS UNIQUE (ACQUISITION/PROCESSING/DELIVERY custom phase styles). Keep: Sector/leadImages grids, category→subItems + fallbackIcons grids, bsHero + bsSection2/bsAccuracyMatters/bsConsultation bespoke tails, `bsProcess` (label→title map) | Validation DEFERRED per M13 policy. Next: batch 10 — hubs | |
 | 2026-09-20 | M13 | Batch 10 DONE — hubs surveying + civil (commit `6458d2e`): 3 wrappers deleted; Type 1 `SurveyingHeroSection` → `Hero`, `SurveyingDeliverablesSection`/`CivilDeliverablesSection` → `Deliverables`; legacy branches render shared directly with identical `t()`/props. Type 2 none — `surveyingProcess`/`civilProcess` wrap with shaping (watermarkedIndexed / custom phases), `civilHero` bespoke — kept per rule. Mapping comments refreshed; no registry/entry changes | Validation DEFERRED per M13 policy. Next: batch 11 — about/contact/careers/company-profile/home/legal | |
 | 2026-09-20 | M13 | Batch 11 DONE — about + contact + careers + company-profile + home + legal (commit `d9efe0b`, sweep `26f64be`): 18 wrappers deleted. Home: all twelve 1:1 wrappers (`AboutSection`, `CertificationsSection`, `KeyFactsSection`, `TrusteesSection`, `MetricsSection` (commented out), `WhyChooseUsSection`, `PlanningInfographicSection`, `SurveyingInstrumentsSection`, `CoreExpertiseSection`, `SurveyCostSection`, `CoverageAreaSection`, `IndustriesWeServeSection`) + shaping `FaqSection` deleted; legacy branch renders shared components directly with identical `t()` lookups, anchor ids and the items-empty guard (ActionCta ×2 + `CtaSection` stay live — they collapse onto `ctaBand` in the entries already). about: `HeroSection` (pure Hero forward, `26f64be`) + `OurStorySection` → `SplitMedia` (left/square/contain). company-profile: `CompanyAboutSection` → `SplitMedia` (right/square/classes), `CompanyStatsStrip` → `Stats` (panel). equipment: dead-code `CatalogueOverviewSection` deleted (zero page imports). Type 2: `aboutAerialSurveying`/`aboutLandSurveying` re-evaluated — KEEP (popup items + `<primary>` parsing). STAY per rule: `contactHero` (badge panel), `contactOffices` (map), `contactForm`, `TalkToUsSection` (accent `.map`), careers uniques (modal/`<bold>`), `companyProfileViewer`, `homeHero`/`homeDrones`; legal already renders the shared `LegalPageSection` directly. Legacy-only fixes riding the batch: stale `ActionCtaBand` import (building-site route) + pre-existing duplicate import (monitoring-and-evaluation), both caught by typecheck. Registry unchanged at 118 (batch 9 already dropped rmFinalCta) | Validation DEFERRED per M13 policy | |
+| 2026-09-20 | M11 | Batch 16 DONE — civil bim (4 sections: hero, bimServices, deliverables, cta) + site-engineering (6: seHero, seOverview, seWhatWeDo, deliverables, cta, seExploreMore) + site-setting-out (5: hero, ssoServices, ssoInstruments, deliverables, faq) + volumetric-surveys (7: hero, 2 introTexts, splitMedia, vsServices, deliverables, cta): 8 uniques + 4 shared `deliverables` (surface tones) + `civilIndexedGridBuild` reuse; additive-`data` refactors on the 4 SURVIVING site-engineering/site-setting-out wrappers; the 5 grid wrappers M13 batch 6 deleted are re-materialized as renderer components (`BimServicesCard`/`SeWhatWeDoCard`/`SsoServicesCard`/`SsoInstrumentsCard`/`VsServicesCard`) rendering the shared `CardGrid` directly with the deleted wrappers' literals; whole pages in page order → one `PageBuilderDocument` each, `skipped` now `[]` all four; registry 118→126; README list updated. CAUGHT: conditional `useTranslation` after the early return in 3 routes (hook hoisted) + unused faq renderer import (entry uses the shared branch) — fixed | `check:keystatic` OK (126 sections, 31 fixtures); `--verify` clean all four (4+6+5+7 sections, no gaps, first try); `yarn typecheck` clean; `yarn lint` clean. Dev-smoke DEFERRED per M11/M12 policy | |
 | 2026-09-20 | M13 | CLOSE-OUT — all M13 batches + exit-criterion sweep done. Registry reconciliation: final count 118 (batch 9 −1 rmFinalCta from 119; Type-1-only batches 5–7/10/11 and the batch-11 sweep change nothing — the check script is the authoritative counter). Exit criterion "no wrapper file remains that meets the qualification rule" verified by a full grep sweep — two stragglers found and collapsed in `26f64be` (about `HeroSection`, drone-imagery-surveys `AerialSurveyDeliverablesSection` on the bespoke-only page). Deferred automated validation green: `check:keystatic` OK (registry 118 sections, 31 fixtures; the 3 fallback warnings are expected negative diagnostics), `--verify` clean for ALL 30 mapped pages (no gaps), `yarn typecheck` clean (24s), `yarn lint` clean (80s). README list + count updated (`rmFinalCta` out, 118). Remaining for M13 DONE (browser-session residuals, joined to the M6/M10 carry-overs): per-page dev-smoke parity (temp publish flip + revert to `draft`), rollback test; `yarn build` stays behind the all-milestones-complete gate | `check:keystatic` OK (118 sections, 31 fixtures); `--verify` OK ×30; `yarn typecheck` clean; `yarn lint` clean. M13 stays IN PROGRESS on browser residuals only | |

@@ -5,7 +5,7 @@ import { getI18nProps, getLocale } from "@/lib/i18n";
 import type { Lang } from "@/lib/types";
 import { useTranslation } from "@/hooks";
 import { resolveKeystaticPage, type ResolvedKeystaticPage } from "@/lib/keystatic/resolvePage";
-import { renderSection } from "@/lib/keystatic/sectionRenderers";
+import { PageBuilderDocument } from "@/components/keystatic/PageBuilderDocument";
 import { Deliverables } from "@/components/sections/Deliverables";
 import { Hero, type HeroContent } from "@/components/sections/shared/Hero";
 import { CardGrid, type CardItem } from "@/components/sections/shared/CardGrid";
@@ -28,39 +28,39 @@ interface InstrumentsContent {
 	headline: string;
 	description?: string | null;
 	items?: CardItem[] | null;
-};
-
-/**
- * Sections migrated to Keystatic in page order (see the `site-setting-out`
- * mapping in `scripts/migrate-locale-to-keystatic.mjs`): hero (dual pills),
- * faq (icon/title/description items). Tails stay legacy: OurServicesSection
- * (`indexed`), OurInstrumentsSection (`mediaBadged`), bespoke Deliverables
- * explorer. If an edit changes the section COUNT, the route falls back to
- * legacy rather than misplacing sections — keep this in sync with the mapping.
- * (M13 batch 6, 2026-09-20 — the single-shared-child wrappers `HeroSection`,
- * `OurServicesSection` and `OurInstrumentsSection` were removed; both
- * branches below render the shared `Hero`/`CardGrid` directly.)
- */
-const KEYSTATIC_SECTION_COUNT = 2;
-
-function orderedSections(page: ResolvedKeystaticPage) {
-	if (page.sections.length !== KEYSTATIC_SECTION_COUNT) {
-		console.warn(
-			`[keystatic] page "site-setting-out" has ${page.sections.length} sections, expected ${KEYSTATIC_SECTION_COUNT} — falling back to legacy content`
-		);
-		return null;
-	}
-	return page.sections;
 }
 
+/**
+ * All five legacy sections are Keystatic-owned in page order (see the
+ * `site-setting-out` mapping in `scripts/migrate-locale-to-keystatic.mjs`):
+ * hero (dual pills), ssoServices (the indexed grid), ssoInstruments (the
+ * media-badged grid), deliverables (surface), faq — M11 batch 16,
+ * 2026-09-20. Entry order IS page order, so editors can add, remove, and
+ * reorder sections freely; the M3 resolver taxonomy remains the only
+ * fallback. The hero entry keeps its shared branch and `faq` stays shared
+ * with the icon/title→question/answer mapping; `ssoServices` and
+ * `ssoInstruments` are the batch-16 uniques (indexed numbering and the
+ * mediaBadged chips sit outside the shared `cardGrid` contract). M13 batch
+ * 6 retired the `OurServicesSection`/`OurInstrumentsSection` wrappers; the
+ * legacy branch renders the shared `CardGrid` directly with the wrappers'
+ * literals, and the shaping `FaqSection` stays per the M13 rule
+ * (title→question mapping).
+ */
 const Page: NextPage<PageProps> = ({ keystaticPage }) => {
-	// Migration source switch (M3/M7): Keystatic owns the two migrated
-	// sections only when the slug is allowlisted via `KEYSTATIC_PAGES` and the
-	// entry is published. Otherwise the legacy locale-JSON implementation
-	// renders unchanged.
-	const sections = keystaticPage ? orderedSections(keystaticPage) : null;
-
 	const { t } = useTranslation(["civil/site-setting-out"]);
+	// Migration source switch (M3/M7, completed M11 batch 16): Keystatic owns
+	// the whole page when the slug is allowlisted via `KEYSTATIC_PAGES` and
+	// the entry is published. Otherwise the legacy locale-JSON implementation
+	// renders unchanged.
+	if (keystaticPage) {
+		return (
+			<div className="relative">
+				<PageHead pageName="civil-site-setting-out" />
+				<PageBuilderDocument page={keystaticPage} />
+			</div>
+		);
+	}
+
 	const heroData = t("civil/site-setting-out:hero", { returnObjects: true }) as unknown as HeroContent;
 	const ourServices = t("civil/site-setting-out:ourServices", {
 		returnObjects: true,
@@ -95,26 +95,6 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 				card={{ mediaPosition: "background", mediaAspect: "h-64 sm:h-72" }}
 			/>
 		);
-
-	if (keystaticPage && sections) {
-		const locale = keystaticPage.locale;
-		const renderAt = (index: number) => {
-			const section = sections[index];
-			return renderSection(section.id, section.value, locale, section.key);
-		};
-		return (
-			<div className="relative">
-				<PageHead pageName="civil-site-setting-out" />
-				<div className="flex flex-col min-h-screen" data-keystatic-page={keystaticPage.slug}>
-					{renderAt(0)}
-					{ourServicesGrid}
-					{ourInstrumentsGrid}
-					<Deliverables ns="civil/site-setting-out" className="bg-surface" />
-					{renderAt(1)}
-				</div>
-			</div>
-		);
-	}
 
 	return (
 		<div className="relative">

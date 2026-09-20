@@ -19,11 +19,23 @@ interface FaqContent {
 	items: FaqItem[];
 }
 
-export function FaqSection(): ReactElement | null {
+/**
+ * `data` (M11 batch 16, 2026-09-20): Keystatic-owned content for the
+ * `faq` shared section as used on site-setting-out. When provided, the
+ * locale lookup is skipped; omitted = legacy `t()` render (bare callers
+ * untouched).
+ */
+export interface FaqSectionProps {
+	data?: FaqContent | null;
+}
+
+export function FaqSection({ data }: FaqSectionProps = {}): ReactElement | null {
 	const { t } = useTranslation(["civil/site-setting-out"]);
-	const section = t("civil/site-setting-out:faq", {
-		returnObjects: true,
-	}) as unknown as FaqContent;
+	const section =
+		data ??
+		(t("civil/site-setting-out:faq", {
+			returnObjects: true,
+		}) as unknown as FaqContent);
 	const items: FaqSectionItem[] = Array.isArray(section.items)
 		? section.items.map((item) => ({
 				question: item.title,

@@ -5,7 +5,7 @@ import { getI18nProps, getLocale } from "@/lib/i18n";
 import type { Lang } from "@/lib/types";
 import { useTranslation } from "@/hooks";
 import { resolveKeystaticPage, type ResolvedKeystaticPage } from "@/lib/keystatic/resolvePage";
-import { renderSection } from "@/lib/keystatic/sectionRenderers";
+import { PageBuilderDocument } from "@/components/keystatic/PageBuilderDocument";
 import { Deliverables } from "@/components/sections/Deliverables";
 import { Hero, type HeroContent } from "@/components/sections/shared/Hero";
 import { IntroTextSection } from "@/components/sections/shared/IntroTextSection";
@@ -36,44 +36,39 @@ interface ServicesContent {
 	headline: string;
 	description?: string;
 	items: { icon?: string | null; title: string; description: string }[];
-};
-
-/**
- * Sections migrated to Keystatic in page order (see the `volumetric-surveys`
- * mapping in `scripts/migrate-locale-to-keystatic.mjs`): hero, maxProductivity
- * introText, precision splitMedia, clarityAndControl introText, cta ctaBand.
- * Two legacy tails (ServicesSection with a non-default `headerAlign="left"` —
- * a plain cardGrid would centre it — bespoke Deliverables explorer) sit at
- * fixed positions between them, so the route renders each Keystatic section
- * by index instead of one whole PageBuilderDocument. If an edit changes the
- * section COUNT, the route falls back to legacy rather than misplacing
- * sections — keep this in sync with the mapping. (M13 batch 6, 2026-09-20 —
- * the single-shared-child wrappers `HeroSection`, `TextSection` (+ its
- * `MaxProductivity`/`ClarityAndControl` shims),
- * `PrecisionVolumetricAnalysisSection` and `ServicesSection` were removed;
- * both branches below render the shared `Hero`, `IntroTextSection`,
- * `SplitMedia` and `CardGrid` directly.)
- */
-const KEYSTATIC_SECTION_COUNT = 5;
-
-function orderedSections(page: ResolvedKeystaticPage) {
-	if (page.sections.length !== KEYSTATIC_SECTION_COUNT) {
-		console.warn(
-			`[keystatic] page "volumetric-surveys" has ${page.sections.length} sections, expected ${KEYSTATIC_SECTION_COUNT} — falling back to legacy content`
-		);
-		return null;
-	}
-	return page.sections;
 }
 
+/**
+ * All seven legacy sections are Keystatic-owned in page order (see the
+ * `volumetric-surveys` mapping in `scripts/migrate-locale-to-keystatic.mjs`):
+ * hero, maxProductivityMinGuesswork introText, precisionVolumetricAnalysis
+ * splitMedia, vsServices (the surface + left-header grid),
+ * clarityAndControl introText, deliverables (surface), cta ctaBand — M11
+ * batch 16, 2026-09-20. Entry order IS page order, so editors can add,
+ * remove, and reorder sections freely; the M3 resolver taxonomy remains the
+ * only fallback. The hero/introText/splitMedia/cta entries keep their
+ * shared branches; `vsServices` is the batch-16 unique (the left header on
+ * a surface grid sits outside the shared `cardGrid` contract — a plain
+ * cardGrid would centre it). M13 batch 6 retired the `ServicesSection`
+ * wrapper; the legacy branch renders the shared `CardGrid` directly with
+ * the wrapper's literals, and the shaping `CtaSection` stays per the M13
+ * rule (conditional link shaping).
+ */
 const Page: NextPage<PageProps> = ({ keystaticPage }) => {
-	// Migration source switch (M3/M7): Keystatic owns the five migrated
-	// sections only when the slug is allowlisted via `KEYSTATIC_PAGES` and the
-	// entry is published. Otherwise the legacy locale-JSON implementation
-	// renders unchanged.
-	const sections = keystaticPage ? orderedSections(keystaticPage) : null;
-
 	const { t } = useTranslation(["civil/volumetric-surveys"]);
+	// Migration source switch (M3/M7, completed M11 batch 16): Keystatic owns
+	// the whole page when the slug is allowlisted via `KEYSTATIC_PAGES` and
+	// the entry is published. Otherwise the legacy locale-JSON implementation
+	// renders unchanged.
+	if (keystaticPage) {
+		return (
+			<div className="relative">
+				<PageHead pageName="civil-volumetric-surveys" />
+				<PageBuilderDocument page={keystaticPage} />
+			</div>
+		);
+	}
+
 	const heroData = t("civil/volumetric-surveys:hero", { returnObjects: true }) as unknown as HeroContent;
 	const maxProductivity = t("civil/volumetric-surveys:maxProductivityMinGuesswork", {
 		returnObjects: true,
@@ -100,28 +95,6 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 	const clarityAndControl = t("civil/volumetric-surveys:clarityAndControl", {
 		returnObjects: true,
 	}) as unknown as TextContent;
-
-	if (keystaticPage && sections) {
-		const locale = keystaticPage.locale;
-		const renderAt = (index: number) => {
-			const section = sections[index];
-			return renderSection(section.id, section.value, locale, section.key);
-		};
-		return (
-			<div className="relative">
-				<PageHead pageName="civil-volumetric-surveys" />
-				<div className="flex flex-col min-h-screen" data-keystatic-page={keystaticPage.slug}>
-					{renderAt(0)}
-					{renderAt(1)}
-					{renderAt(2)}
-					{servicesGrid}
-					{renderAt(3)}
-					<Deliverables ns="civil/volumetric-surveys" className="bg-surface" />
-					{renderAt(4)}
-				</div>
-			</div>
-		);
-	}
 
 	return (
 		<div className="relative">

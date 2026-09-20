@@ -49,6 +49,294 @@
 			}
 		},
 		{
+			"discriminant": "ssoServices",
+			"value": {
+				"tag": {
+					"en": "Core Capabilities",
+					"sw": "Uwezo wa Msingi"
+				},
+				"headline": {
+					"en": "Our Services",
+					"sw": "Huduma Zetu"
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"title": {
+							"en": "Building Layouts",
+							"sw": "Mpangilio wa Majengo"
+						},
+						"description": {
+							"en": "Accurate marking of building corners, walls, and structural elements to design specifications.",
+							"sw": "Uwekaji sahihi wa kona za majengo, kuta, na vipengele vya kimuundo kulingana na vipimo vya kubuni."
+						}
+					},
+					{
+						"title": {
+							"en": "Road & Infrastructure Alignment",
+							"sw": "Usawazishaji wa Barabara na Miundombinu"
+						},
+						"description": {
+							"en": "Precise positioning of roads, drainage, and utility corridors for engineering and construction.",
+							"sw": "Uwekaji sahihi wa barabara, mifereji, na korido za huduma kwa uhandisi na ujenzi."
+						}
+					},
+					{
+						"title": {
+							"en": "Boundary & Plot Setting",
+							"sw": "Uwekaji wa Mipaka na Viwanja"
+						},
+						"description": {
+							"en": "Physical demarcation of land plots, fences, and property lines according to cadastral plans.",
+							"sw": "Mgawanyo wa kimwili wa viwanja vya ardhi, ua, na mistari ya mali kulingana na mipango ya cadastral."
+						}
+					},
+					{
+						"title": {
+							"en": "Leveling & Grid Establishment",
+							"sw": "Uanzishwaji wa Usawazishaji na Gridi"
+						},
+						"description": {
+							"en": "Setting benchmarks, grids, and reference points for construction works and surveys.",
+							"sw": "Kuweka benchmarks, gridi, na pointi za marejeleo kwa kazi za ujenzi na uchunguzi."
+						}
+					},
+					{
+						"title": {
+							"en": "Design Verification",
+							"sw": "Uthibitishaji wa Kubuni"
+						},
+						"description": {
+							"en": "Field verification to ensure construction aligns with architectural, civil, and engineering plans.",
+							"sw": "Uthibitishaji wa shambani kuhakikisha ujenzi unalingana na mipango ya usanifu, kiraia, na uhandisi."
+						}
+					},
+					{
+						"title": {
+							"en": "Utility & Services Layout",
+							"sw": "Mpangilio wa Huduma na Utawala"
+						},
+						"description": {
+							"en": "Accurate marking of water, electrical, and communication lines on site to prevent future conflicts.",
+							"sw": "Uwekaji sahihi wa mistari ya maji, umeme, na mawasiliano tovutini kuzuia migongano ya siku zijazo."
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "ssoInstruments",
+			"value": {
+				"tag": {
+					"en": "Accurate & Reliable",
+					"sw": "Sahihi na Kuaminika"
+				},
+				"headline": {
+					"en": "Our Surveying Instruments",
+					"sw": "Vyombo Vyetu vya Upimaji"
+				},
+				"description": {
+					"en": "We use advanced, precise equipment to ensure every point is accurate and reliable for your construction and engineering projects.",
+					"sw": "Tunatumia vifaa vya kisasa na sahihi kuhakikisha kila pointi ni sahihi na kuaminika kwa miradi yako ya ujenzi na uhandisi."
+				},
+				"items": [
+					{
+						"title": {
+							"en": "RTK GNSS FOIF A90",
+							"sw": "RTK GNSS FOIF A90"
+						},
+						"image": "/media/civil/site-setting-out/04.jpg"
+					},
+					{
+						"title": {
+							"en": "Total Station",
+							"sw": "Kituo Kamili (Total Station)"
+						},
+						"image": "/media/civil/site-setting-out/05.jpg"
+					},
+					{
+						"title": {
+							"en": "Automatic Level",
+							"sw": "Kiwango cha Kiotomatiki"
+						},
+						"image": "/media/civil/site-setting-out/02.jpg"
+					},
+					{
+						"title": {
+							"en": "Laser Scanners",
+							"sw": "Skana za Laser"
+						},
+						"image": "/media/civil/site-setting-out/03.jpg"
+					},
+					{
+						"title": {
+							"en": "Theodolite",
+							"sw": "Theodolite"
+						},
+						"image": "/media/civil/site-setting-out/01.jpg"
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "deliverables",
+			"value": {
+				"tag": {
+					"en": "Setting Out Outputs",
+					"sw": "Matokeo ya Setting Out"
+				},
+				"headline": {
+					"en": "Site Setting Out Deliverables",
+					"sw": "Matokeo ya Setting Out ya Tovuti"
+				},
+				"description": {
+					"en": "Everything your crew needs to build exactly to design:",
+					"sw": "Kila kitu ambacho timu yako inahitaji kujenga kikamilifu kama usanifu:"
+				},
+				"liveLabel": {
+					"en": "Deliverable package",
+					"sw": "Kifurushi cha matokeo"
+				},
+				"checks": [
+					{
+						"en": "Derived from approved designs",
+						"sw": "Imetokana na michoro iliyoidhinishwa"
+					},
+					{
+						"en": "Checked against site control",
+						"sw": "Imekaguliwa dhidi ya udhibiti wa tovuti"
+					},
+					{
+						"en": "Licensed surveyor supervision",
+						"sw": "Usimamizi wa mchunguzi aliyeidhinishwa"
+					}
+				],
+				"items": [
+					{
+						"title": {
+							"en": "Pegged & Marked Positions",
+							"sw": "Nafasi Zilizowekwa Alama"
+						},
+						"format": {
+							"en": "On-site",
+							"sw": "Tovutini"
+						},
+						"icon": "map-marker-check",
+						"image": {
+							"en": "/media/deliverables/pegged-and-marked-positions.jpg",
+							"sw": "/media/deliverables/pegged-and-marked-positions.jpg"
+						},
+						"description": {
+							"en": "Buildings, roads, services and boundaries physically pegged from approved design coordinates.",
+							"sw": "Majengo, barabara, huduma na mipaka vimewekewa alama ardhini kutoka kwa kuratibu za usanifu."
+						}
+					},
+					{
+						"title": {
+							"en": "Setting-Out Coordinate Sheets",
+							"sw": "Majedwali ya Kuratibu za Setting-Out"
+						},
+						"format": {
+							"en": "CSV / PDF",
+							"sw": "CSV / PDF"
+						},
+						"icon": "table-large",
+						"image": {
+							"en": "/media/deliverables/setting-out-coordinate-sheets.jpg",
+							"sw": "/media/deliverables/setting-out-coordinate-sheets.jpg"
+						},
+						"description": {
+							"en": "Checked coordinate schedules for every stakeout point, referenced to site control.",
+							"sw": "Ratiba ya kuratibu iliyokaguliwa kwa kila hatua ya stakeout, ikirejelea udhibiti wa tovuti."
+						}
+					},
+					{
+						"title": {
+							"en": "Offset Lines & Reference Marks",
+							"sw": "Mistari ya Offset na Alama za Rejea"
+						},
+						"format": {
+							"en": "On-site",
+							"sw": "Tovutini"
+						},
+						"icon": "vector-square",
+						"image": {
+							"en": "/media/deliverables/offset-lines-and-reference-marks.jpg",
+							"sw": "/media/deliverables/offset-lines-and-reference-marks.jpg"
+						},
+						"description": {
+							"en": "Batter boards, offset lines and reference marks that preserve alignment throughout the works.",
+							"sw": "Batter boards, mistari ya offset na alama za rejea zinazohifadhi mwelekeo katika kazi zote."
+						}
+					},
+					{
+						"title": {
+							"en": "Setting-Out Drawings",
+							"sw": "Michoro ya Setting-Out"
+						},
+						"format": {
+							"en": "DWG / PDF",
+							"sw": "DWG / PDF"
+						},
+						"icon": "file-cad",
+						"image": {
+							"en": "/media/deliverables/setting-out-drawings.jpg",
+							"sw": "/media/deliverables/setting-out-drawings.jpg"
+						},
+						"description": {
+							"en": "Annotated drawings showing pegged positions, offsets and control points for site records.",
+							"sw": "Michoro iliyoainishwa inayoonyesha nafasi zilizowekwa alama, offset na pointi za udhibiti kwa kumbukumbu."
+						}
+					},
+					{
+						"title": {
+							"en": "Benchmarks & Datum Levels",
+							"sw": "Benchmarks na Viwango vya Mwinuko"
+						},
+						"format": {
+							"en": "PDF",
+							"sw": "PDF"
+						},
+						"icon": "axis-z-arrow",
+						"image": {
+							"en": "/media/deliverables/benchmarks-and-datum-levels.jpg",
+							"sw": "/media/deliverables/benchmarks-and-datum-levels.jpg"
+						},
+						"description": {
+							"en": "Vertical control established on site and documented for levels, gradients and finishes.",
+							"sw": "Udhibiti wa wima ulioanzishwa tovutini na kurekodiwa kwa mwinuko, mteremko na kumaliza."
+						}
+					},
+					{
+						"title": {
+							"en": "Verification & As-Built Checks",
+							"sw": "Uthibitisho na Ukaguzi wa As-Built"
+						},
+						"format": {
+							"en": "PDF",
+							"sw": "PDF"
+						},
+						"icon": "clipboard-check-outline",
+						"image": {
+							"en": "/media/deliverables/verification-and-as-built-checks.jpg",
+							"sw": "/media/deliverables/verification-and-as-built-checks.jpg"
+						},
+						"description": {
+							"en": "Post-construction checks confirming completed works match the approved setting out.",
+							"sw": "Ukaguzi wa baada ya ujenzi unaothibitisha kazi zilizokamilika zinalingana na setting out iliyoidhinishwa."
+						}
+					}
+				],
+				"tone": "surface",
+				"id": ""
+			}
+		},
+		{
 			"discriminant": "faq",
 			"value": {
 				"tag": {

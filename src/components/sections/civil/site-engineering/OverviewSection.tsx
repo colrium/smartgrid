@@ -8,13 +8,22 @@ interface OverviewContent {
 	headline: string;
 	description?: string;
 	image?: string | null;
+}/**
+ * `data` (M11 batch 16, 2026-09-20): Keystatic-owned content for the
+ * `seOverview` unique section. When provided, the locale lookup is skipped;
+ * omitted = legacy `t()` render (bare callers untouched).
+ */
+export interface OverviewSectionProps {
+	data?: OverviewContent | null;
 }
 
-export function OverviewSection(): ReactElement {
+export function OverviewSection({ data }: OverviewSectionProps = {}): ReactElement {
 	const { t } = useTranslation(["civil/site-engineering"]);
-	const section = t("civil/site-engineering:overview", {
-		returnObjects: true,
-	}) as unknown as OverviewContent;
+	const section =
+		data ??
+		(t("civil/site-engineering:overview", {
+			returnObjects: true,
+		}) as unknown as OverviewContent);
 	const hasImage = typeof section.image === "string" && section.image.startsWith("/");
 
 	return (

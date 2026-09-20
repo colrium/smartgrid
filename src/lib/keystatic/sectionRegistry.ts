@@ -243,7 +243,7 @@ import {
  * from DATA (the wrapper is page-owned), so edits change output.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "workflow", "finalCta", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation", "aerialIntro", "aerialWhyDrones", "aerialServices", "aerialSurveyingGrid", "aerialIndustries", "aerialIndustryCta", "aerialTechStack", "aerialCapabilityCta", "aerialProjects", "aerialAdditionalServices", "cadastralPostHeroCta", "cadastralWhenYouNeed", "cadastralProcessCta", "cadastralCost", "cadastralTimeline", "cadastralCompliance", "cadastralCaseStudy", "gprHero", "gprHighlights", "gprJumpNav", "gprOverview", "gprMethodology", "gprApplications", "gprDetect", "gprSue", "gprLimitations", "gprBeforeAfter", "gprTechnology", "gprFeaturedProjects", "gprSummary", "gisHero", "gisWhatIs", "gisImportance", "gisServices", "gisIndustries", "gisTechStack", "gisWhatsappCta", "gisComponents", "gisWhySmartgrid", "gisDataAccuracy", "gisBeforeAfter", "gisProjectImpact", "gisRelatedServices", "highwayServices", "asBuiltSolutions"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "workflow", "finalCta", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation", "aerialIntro", "aerialWhyDrones", "aerialServices", "aerialSurveyingGrid", "aerialIndustries", "aerialIndustryCta", "aerialTechStack", "aerialCapabilityCta", "aerialProjects", "aerialAdditionalServices", "cadastralPostHeroCta", "cadastralWhenYouNeed", "cadastralProcessCta", "cadastralCost", "cadastralTimeline", "cadastralCompliance", "cadastralCaseStudy", "gprHero", "gprHighlights", "gprJumpNav", "gprOverview", "gprMethodology", "gprApplications", "gprDetect", "gprSue", "gprLimitations", "gprBeforeAfter", "gprTechnology", "gprFeaturedProjects", "gprSummary", "gisHero", "gisWhatIs", "gisImportance", "gisServices", "gisIndustries", "gisTechStack", "gisWhatsappCta", "gisComponents", "gisWhySmartgrid", "gisDataAccuracy", "gisBeforeAfter", "gisProjectImpact", "gisRelatedServices", "highwayServices", "asBuiltSolutions", "bimServices", "seHero", "seOverview", "seWhatWeDo", "seExploreMore", "ssoServices", "ssoInstruments", "vsServices"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -8779,6 +8779,449 @@ const asBuiltSolutions: SectionDefinition = {
 	}),
 };
 
+/**
+ * M11 batch 16 — civil bim page (2026-09-20): `bimServices` wraps the
+ * indexed BIM capabilities grid (indexed numbering + left header are
+ * outside the shared `cardGrid` contract). Unique — only valid on
+ * `/civil/bim`. M13 batch 6 deleted the `BimServicesSection` wrapper, so
+ * the renderer renders the shared `CardGrid` directly with the
+ * presentation literals the wrapper carried. Titles and descriptions
+ * localized. Renders nothing without items (legacy guard, preserved).
+ */
+const bimServices: SectionDefinition = {
+	id: "bimServices",
+	version: 1,
+	label: "BIM services (unique)",
+	description: "Unique: the bim indexed capabilities grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Capabilities",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Capability"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, columns, tone,
+		// headerAlign="left", indexed numbering (presentation, not editor
+		// contracts — the renderer reproduces them).
+	}),
+	example: {
+		tag: { en: "Our Capabilities", sw: "" },
+		headline: { en: "Building Information Modeling (BIM) in Engineering Surveying", sw: "Uundaji wa Taarifa za Ujenzi (BIM)" },
+		description: { en: "Drone and geospatial data integrated with BIM workflows.", sw: "" },
+		items: [
+			{
+				title: { en: "Reality Capture", sw: "Ukamataji wa Uhalisia" },
+				description: { en: "Geo-referenced imagery feeding BIM software.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({ title: item?.title ?? "", description: item?.description ?? "" }))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 16 — civil site-engineering page (2026-09-20): `seHero` wraps
+ * the bespoke site-engineering hero (image floor with dual ink gradients,
+ * `<bold>` pseudo-markup parsed from data). Unique — only valid on
+ * `/civil/site-engineering`. The pseudo-markup stays in the locale JSON;
+ * the renderer parses the inline tags itself so Keystatic edits change
+ * output. Localized: headline, title, description; image + primary CTA are
+ * shared. The secondary pill renders nothing without a href (legacy
+ * guard, preserved).
+ */
+const seHero: SectionDefinition = {
+	id: "seHero",
+	version: 1,
+	label: "Site-engineering hero (unique)",
+	description: "Unique: the /civil/site-engineering image-floor hero with <bold> description parsing. Only valid on that page.",
+	schema: fields.object({
+		headline: localeText("Headline"),
+		title: localeText("Title"),
+		description: localeLongText("Description"),
+		image: imagePath("Image"),
+		ctaPrimary: linkObject("Primary action"),
+		ctaSecondary: linkObject("Secondary action"),
+		id: anchorField(),
+		// Excluded from v1 (documented): min-height/gradients/layout classes
+		// (fixed presentation, not content).
+	}),
+	example: {
+		headline: { en: "Precision Construction", sw: "Ujenzi wa Usahihi" },
+		title: { en: "SITE ENGINEERING SURVEYS", sw: "UPIMAJI WA UHANDISI WA TOVUTI" },
+		description: { en: "Build smarter from the ground up with drone-enabled site surveys.", sw: "" },
+		image: "/media/civil/site-engineering/01.jpg",
+		ctaPrimary: { label: { en: "Email Us Today!", sw: "" }, href: "mailto:example@example.com", icon: "" },
+		ctaSecondary: { label: { en: "", sw: "" }, href: "", icon: "" },
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			headline: resolved.headline,
+			title: resolved.title,
+			description: resolved.description,
+			image: resolved.image || null,
+			ctaPrimary: presentLink(resolved.ctaPrimary),
+			ctaSecondary: presentLink(resolved.ctaSecondary),
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 16 — civil site-engineering page (2026-09-20): `seOverview`
+ * wraps the `Split`-primitive overview (headline header + lede + a framed
+ * rounded media card with blur blobs). Unique — only valid on
+ * `/civil/site-engineering`. M13 batch 6 deleted the `OverviewSection`
+ * wrapper; the renderer composes the shared `Split` + `Image` directly.
+ * Localized: tag, headline, description; image shared.
+ */
+const seOverview: SectionDefinition = {
+	id: "seOverview",
+	version: 1,
+	label: "Site-engineering overview (unique)",
+	description: "Unique: the /civil/site-engineering framed split overview. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		image: imagePath("Image"),
+		id: anchorField(),
+		// Excluded from v1 (documented): frame/blob/hover classes (fixed
+		// presentation, not content).
+	}),
+	example: {
+		tag: { en: "Precision Construction", sw: "Ujenzi wa Usahihi" },
+		headline: { en: "Reliable. Scalable. Fast. Powerful.", sw: "" },
+		description: { en: "High-resolution topographic data for site planning.", sw: "" },
+		image: "/media/civil/site-engineering/01.jpg",
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			image: resolved.image || null,
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 16 — civil site-engineering page (2026-09-20): `seWhatWeDo`
+ * wraps the indexed WhatWeDo grid (indexed numbering + left header outside
+ * the shared `cardGrid` contract). Unique — only valid on
+ * `/civil/site-engineering`. M13 batch 6 deleted the `WhatWeDoSection`
+ * wrapper; the renderer renders the shared `CardGrid` directly. Titles and
+ * descriptions localized. Renders nothing without items (legacy guard,
+ * preserved).
+ */
+const seWhatWeDo: SectionDefinition = {
+	id: "seWhatWeDo",
+	version: 1,
+	label: "Site-engineering what-we-do (unique)",
+	description: "Unique: the site-engineering indexed service grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Services",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Service"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, columns, tone,
+		// headerAlign="left", indexed numbering (presentation).
+	}),
+	example: {
+		tag: { en: "Precision Construction", sw: "" },
+		headline: { en: "Precision Site Engineering Surveys", sw: "" },
+		description: { en: "Drone-powered site surveys for modern construction.", sw: "" },
+		items: [
+			{
+				title: { en: "Topographic Mapping", sw: "Ramani ya Tovuti" },
+				description: { en: "Elevation models for earthworks planning.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({ title: item?.title ?? "", description: item?.description ?? "" }))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 16 — civil site-engineering page (2026-09-20): `seExploreMore`
+ * wraps the explore-more grid (media-background cards + elevation + left
+ * header, outside the shared `cardGrid` contract). Unique — only valid on
+ * `/civil/site-engineering`. M13 batch 6 deleted the `ExploreMoreSection`
+ * wrapper; the renderer renders the shared `CardGrid` with the same card
+ * literal. Titles and descriptions localized; images and the optional
+ * per-item href are shared. Renders nothing without items (legacy guard,
+ * preserved).
+ */
+const seExploreMore: SectionDefinition = {
+	id: "seExploreMore",
+	version: 1,
+	label: "Site-engineering explore-more (unique)",
+	description: "Unique: the site-engineering media-background explore grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				image: imagePath("Image"),
+				title: localeText("Title"),
+				href: fields.text({ label: "Link (optional)", description: "Card links to this URL when set." }),
+			}),
+			{
+				label: "Cards",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Card"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): columns, mediaPosition/aspect/
+		// elevation card literal, headerAlign="left" (presentation).
+	}),
+	example: {
+		tag: { en: "", sw: "" },
+		headline: { en: "Explore more...", sw: "Chunguza zaidi..." },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				image: "/media/civil/site-engineering/04.jpg",
+				title: { en: "Leveling", sw: "Uwiano" },
+				href: "",
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						title: item?.title ?? "",
+						image: item?.image || null,
+						href: item?.href || null,
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 16 — civil site-setting-out page (2026-09-20): `ssoServices`
+ * wraps the indexed services grid (indexed numbering + left header outside
+ * the shared `cardGrid` contract). Unique — only valid on
+ * `/civil/site-setting-out`. M13 batch 6 deleted the `OurServicesSection`
+ * wrapper; the renderer renders the shared `CardGrid` directly. Titles and
+ * descriptions localized. Renders nothing without items (legacy guard,
+ * preserved).
+ */
+const ssoServices: SectionDefinition = {
+	id: "ssoServices",
+	version: 1,
+	label: "Site-setting-out services (unique)",
+	description: "Unique: the site-setting-out indexed service grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Services",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Service"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, columns, indexed
+		// numbering (presentation).
+	}),
+	example: {
+		tag: { en: "Core Capabilities", sw: "" },
+		headline: { en: "Our Services", sw: "Huduma Zetu" },
+		description: { en: "", sw: "" },
+		items: [
+			{
+				title: { en: "Building Layouts", sw: "Mipango ya Majengo" },
+				description: { en: "Accurate marking of structural elements.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({ title: item?.title ?? "", description: item?.description ?? "" }))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 16 — civil site-setting-out page (2026-09-20):
+ * `ssoInstruments` wraps the media-badged instruments grid (auto-numbered
+ * glass chips over background media, outside the shared `cardGrid`
+ * contract). Unique — only valid on `/civil/site-setting-out`. M13 batch 6
+ * deleted the `OurInstrumentsSection` wrapper; the renderer renders the
+ * shared `CardGrid` with the same `mediaBadged` + card literal. Titles
+ * localized; images shared. Renders nothing without items (legacy guard,
+ * preserved).
+ */
+const ssoInstruments: SectionDefinition = {
+	id: "ssoInstruments",
+	version: 1,
+	label: "Site-setting-out instruments (unique)",
+	description: "Unique: the site-setting-out media-badged instrument grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				title: localeText("Title"),
+				image: imagePath("Image"),
+			}),
+			{
+				label: "Instruments",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Instrument"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): columns, tone, mediaBadged
+		// numbering, mediaPosition/aspect card literal (presentation).
+	}),
+	example: {
+		tag: { en: "Accurate & Reliable", sw: "" },
+		headline: { en: "Our Surveying Instruments", sw: "Vifaa Vyetu vya Upimaji" },
+		description: { en: "Advanced, precise equipment for every point.", sw: "" },
+		items: [{ title: { en: "Total Station", sw: "Kituo cha Jumla" }, image: "/media/civil/site-setting-out/05.jpg" }],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({ title: item?.title ?? "", image: item?.image || null }))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M11 batch 16 — civil volumetric-surveys page (2026-09-20): `vsServices`
+ * wraps the surface-toned services grid with the left header (outside the
+ * shared `cardGrid` contract — a plain cardGrid would centre it). Unique —
+ * only valid on `/civil/volumetric-surveys`. M13 batch 6 deleted the
+ * `ServicesSection` wrapper; the renderer renders the shared `CardGrid`
+ * directly. Titles and descriptions localized; icons shared. Renders
+ * nothing without items (legacy guard, preserved).
+ */
+const vsServices: SectionDefinition = {
+	id: "vsServices",
+	version: 1,
+	label: "Volumetric services (unique)",
+	description: "Unique: the volumetric-surveys surface services grid. Only valid on that page.",
+	schema: fields.object({
+		tag: localeText("Tag", { optionalInEnglish: true }),
+		headline: localeText("Headline"),
+		description: localeLongText("Description"),
+		items: fields.array(
+			fields.object({
+				icon: fields.text({
+					label: "MDI icon (shared, optional)",
+					description: "Icon slug without the `mdi-` prefix. Identical in en/sw.",
+				}),
+				title: localeText("Title"),
+				description: localeLongText("Description"),
+			}),
+			{
+				label: "Services",
+				itemLabel: (item) => previewText(item, ["fields", "title", "fields", "en", "value"], "Service"),
+			}
+		),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className`, columns, tone,
+		// headerAlign="left" (presentation).
+	}),
+	example: {
+		tag: { en: "Volume Services", sw: "" },
+		headline: { en: "Stockpile Volume Measurement", sw: "" },
+		description: { en: "Actionable volumetric data captured from above.", sw: "" },
+		items: [
+			{
+				icon: "weight",
+				title: { en: "Stockpile Volume Measurement", sw: "" },
+				description: { en: "Quick and safe volumetric data.", sw: "" },
+			},
+		],
+		id: "",
+	},
+	normalize: (resolved) => ({
+		data: {
+			tag: resolved.tag,
+			headline: resolved.headline,
+			description: resolved.description,
+			items: Array.isArray(resolved.items)
+				? resolved.items.map((item: any) => ({
+						icon: item?.icon || undefined,
+						title: item?.title ?? "",
+						description: item?.description ?? "",
+					}))
+				: [],
+		},
+		id: resolved.id || undefined,
+	}),
+};
+
 export const sectionRegistry: readonly SectionDefinition[] = [
 	introText,
 	ctaBand,
@@ -8898,6 +9341,14 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	gisRelatedServices,
 	highwayServices,
 	asBuiltSolutions,
+	bimServices,
+	seHero,
+	seOverview,
+	seWhatWeDo,
+	seExploreMore,
+	ssoServices,
+	ssoInstruments,
+	vsServices,
 ];
 
 export function getSectionDefinition(id: string): SectionDefinition {
@@ -9025,6 +9476,14 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	gisRelatedServices: gisRelatedServices.label,
 	highwayServices: highwayServices.label,
 	asBuiltSolutions: asBuiltSolutions.label,
+	bimServices: bimServices.label,
+	seHero: seHero.label,
+	seOverview: seOverview.label,
+	seWhatWeDo: seWhatWeDo.label,
+	seExploreMore: seExploreMore.label,
+	ssoServices: ssoServices.label,
+	ssoInstruments: ssoInstruments.label,
+	vsServices: vsServices.label,
 };
 
 /**

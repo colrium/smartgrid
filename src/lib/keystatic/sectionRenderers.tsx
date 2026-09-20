@@ -113,6 +113,14 @@ import { GisProjectImpactSection } from "@/components/sections/surveying/gis-map
 import { GisRelatedServicesSection } from "@/components/sections/surveying/gis-mapping/GisRelatedServicesSection";
 import { ServicesSection as HighwayServicesSection } from "@/components/sections/civil/highway-surveys/ServicesSection";
 import { AsBuiltSolutionsSection } from "@/components/sections/civil/as-built-surveys/AsBuiltSolutionsSection";
+import { BimServicesCard } from "@/components/sections/civil/bim/BimServicesCard";
+import { HeroSection as SeHeroSection } from "@/components/sections/civil/site-engineering/HeroSection";
+import { OverviewSection as SeOverviewSection } from "@/components/sections/civil/site-engineering/OverviewSection";
+import { SeWhatWeDoCard } from "@/components/sections/civil/site-engineering/SeWhatWeDoCard";
+import { ExploreMoreSection as SeExploreMoreSection } from "@/components/sections/civil/site-engineering/ExploreMoreSection";
+import { SsoServicesCard } from "@/components/sections/civil/site-setting-out/SsoServicesCard";
+import { SsoInstrumentsCard } from "@/components/sections/civil/site-setting-out/SsoInstrumentsCard";
+import { VsServicesCard } from "@/components/sections/civil/volumetric-surveys/VsServicesCard";
 import { ProcessSection as BsProcessSection } from "@/components/sections/surveying/building-site/ProcessSection";
 import { AccuracyMattersSection } from "@/components/sections/surveying/building-site/AccuracyMattersSection";
 import { TechnologyStackSection } from "@/components/sections/surveying/building-site/TechnologyStackSection";
@@ -255,6 +263,14 @@ export const sectionRenderers = {
 	gisRelatedServices: GisRelatedServicesSection,
 	highwayServices: HighwayServicesSection,
 	asBuiltSolutions: AsBuiltSolutionsSection,
+	bimServices: BimServicesCard,
+	seHero: SeHeroSection,
+	seOverview: SeOverviewSection,
+	seWhatWeDo: SeWhatWeDoCard,
+	seExploreMore: SeExploreMoreSection,
+	ssoServices: SsoServicesCard,
+	ssoInstruments: SsoInstrumentsCard,
+	vsServices: VsServicesCard,
 } satisfies Record<SectionId, ComponentType<any>>;
 
 export function renderSection(

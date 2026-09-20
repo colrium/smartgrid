@@ -389,7 +389,8 @@ no login) from one hundred eighteen registered sections: `introText`, `ctaBand`,
 `gisImportance`, `gisServices`, `gisIndustries`, `gisTechStack`, `gisWhatsappCta`,
 `gisComponents`, `gisWhySmartgrid`, `gisDataAccuracy`,
 `gisBeforeAfter`, `gisProjectImpact`, `gisRelatedServices`, `highwayServices`,
-`asBuiltSolutions`. See
+`asBuiltSolutions`, `bimServices`, `seHero`, `seOverview`, `seWhatWeDo`,
+`seExploreMore`, `ssoServices`, `ssoInstruments`, `vsServices`. See
 `src/lib/keystatic/sectionRegistry.ts` — the single
 source for editor options and renderer mappings.
 

@@ -134,6 +134,234 @@
 			}
 		},
 		{
+			"discriminant": "vsServices",
+			"value": {
+				"tag": {
+					"en": "VOLUME SERVICES",
+					"sw": "HUDUMA ZA KIASI"
+				},
+				"headline": {
+					"en": "Whether you're a government agency, an NGO, or a private developer, Smartgrid Surveying is your trusted partner!\n\n Our drones deliver actionable data where it matters most. ",
+					"sw": "Iwe wewe ni wakala wa serikali, shirika lisilo la kiserikali, au msanidi binafsi, Smartgrid Surveying ni mshirika wako wa kuaminika!\n\n Ndege zetu zisizo na rubani hutoa data inayoweza kutekelezwa mahali inapohitajika zaidi."
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"icon": "weight",
+						"title": {
+							"en": "Stockpile Volume Measurement",
+							"sw": "Kipimo cha Kiasi cha Mrundikano"
+						},
+						"description": {
+							"en": "Quick and safe volumetric data for materials like gravel, sand, and coal — reducing the need for manual measurement and risk.",
+							"sw": "Data ya kiasi ya haraka na salama kwa nyenzo kama changarawe, mchanga, na makaa—kupunguza hitaji la kipimo cha mikono na hatari."
+						}
+					},
+					{
+						"icon": "excavator",
+						"title": {
+							"en": "Quarry and Mine Monitoring",
+							"sw": "Ufuatiliaji wa Machimbo na Madini"
+						},
+						"description": {
+							"en": "Track cut/fill volumes and changes over time with high-resolution terrain data captured from above.",
+							"sw": "Fuatilia kiasi cha kukata/kujaza na mabadiliko kwa muda kwa data ya ardhi ya mwonekano wa juu iliyokamatwa kutoka juu."
+						}
+					},
+					{
+						"icon": "bulldozer",
+						"title": {
+							"en": "Earthworks Progress Tracking",
+							"sw": "Ufuatiliaji wa Maendeleo ya Kazi za Ardhi"
+						},
+						"description": {
+							"en": "Compare as-built models against designs to monitor progress and confirm excavation volumes with centimeter-level accuracy.",
+							"sw": "Linganisha mifano ya as-built dhidi ya mibuni kufuatilia maendeleo na kuthibitisha kiasi cha uchimbaji kwa usahihi wa kiwango cha sentimita."
+						}
+					},
+					{
+						"icon": "ruler-square",
+						"title": {
+							"en": "Cut and Fill Calculations",
+							"sw": "Hesabu za Kukata na Kujaza"
+						},
+						"description": {
+							"en": "Generate detailed 3D models to determine how much material needs to be removed or added—ideal for grading and leveling.",
+							"sw": "Zalisha mifano ya kina ya 3D kuamua ni kiasi gani cha nyenzo kinahitaji kuondolewa au kuongezwa—bora kwa usawazishaji na kusawazisha."
+						}
+					},
+					{
+						"icon": "history",
+						"title": {
+							"en": "Historical Comparison and Audits",
+							"sw": "Ulinganisho wa Kihistoria na Ukaguzi"
+						},
+						"description": {
+							"en": "Compare datasets over time for performance reviews, billing verification, and regulatory compliance.",
+							"sw": "Linganisha seti za data kwa muda kwa hakiki za utendaji, uthibitishaji wa bili, na kufuata kanuni."
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "deliverables",
+			"value": {
+				"tag": {
+					"en": "Project Outputs",
+					"sw": "Matokeo ya Mradi"
+				},
+				"headline": {
+					"en": "Volumetric Survey Deliverables",
+					"sw": "Matokeo ya Uchunguzi wa Vina"
+				},
+				"description": {
+					"en": "Audit-ready volumes and quantities for earthworks and stockpiles:",
+					"sw": "Vina na wingi tayari kwa ukaguzi kwa kazi za ardhi na makusanyo:"
+				},
+				"liveLabel": {
+					"en": "Deliverable package",
+					"sw": "Kifurushi cha matokeo"
+				},
+				"checks": [
+					{
+						"en": "Traceable methodology",
+						"sw": "Mbinu zinazofuatilika"
+					},
+					{
+						"en": "Repeatable survey surfaces",
+						"sw": "Nyuso za uchunguzi zinazorudiwa"
+					},
+					{
+						"en": "GIS & CAD compatible",
+						"sw": "Inaoendana na GIS na CAD"
+					}
+				],
+				"items": [
+					{
+						"title": {
+							"en": "Volume Calculation Reports",
+							"sw": "Ripoti za Kokotoo za Vina"
+						},
+						"format": {
+							"en": "PDF / Excel",
+							"sw": "PDF / Excel"
+						},
+						"icon": "chart-histogram",
+						"image": {
+							"en": "/media/deliverables/volume-calculation-reports.jpg",
+							"sw": "/media/deliverables/volume-calculation-reports.jpg"
+						},
+						"description": {
+							"en": "Cut and fill quantities with surfaces, methodology and tolerance clearly documented.",
+							"sw": "Wingi wa kuchimba na kujaza pamoja na nyuso, mbinu na uvumilivu vilivyoelezwa wazi."
+						}
+					},
+					{
+						"title": {
+							"en": "Stockpile Volume Surveys",
+							"sw": "Uchunguzi wa Vina vya Makusanyo"
+						},
+						"format": {
+							"en": "PDF / Excel",
+							"sw": "PDF / Excel"
+						},
+						"icon": "image-filter-hdr",
+						"image": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "Individual and cumulative stockpile volumes, with densities applied on request.",
+							"sw": "Vina vya makusanyo binafsi na jumla, huku wiani ukitumika unapohitajika."
+						}
+					},
+					{
+						"title": {
+							"en": "Surface Models (DTM / DSM)",
+							"sw": "Modeli za Nyuso (DTM / DSM)"
+						},
+						"format": {
+							"en": "GeoTIFF / DWG",
+							"sw": "GeoTIFF / DWG"
+						},
+						"icon": "axis-z-arrow-lock",
+						"image": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "Base and comparison surfaces that make every volume computation repeatable and defensible.",
+							"sw": "Nyuso za msingi na za kulinganisha zinazofanya kila kokotoo la vina kurudiwa na kuaminika."
+						}
+					},
+					{
+						"title": {
+							"en": "Contour & Elevation Maps",
+							"sw": "Ramani za Contour na Mwinuko"
+						},
+						"format": {
+							"en": "DWG / PDF",
+							"sw": "DWG / PDF"
+						},
+						"icon": "map-legend",
+						"image": {
+							"en": "/media/deliverables/contour-and-elevation-maps.jpg",
+							"sw": "/media/deliverables/contour-and-elevation-maps.jpg"
+						},
+						"description": {
+							"en": "Contour plans of pre- and post-works terrain for design, records and compliance.",
+							"sw": "Ramani za contour za ardhi kabla na baada ya kazi kwa usanifu, kumbukumbu na ufuasi."
+						}
+					},
+					{
+						"title": {
+							"en": "Progress Earthwork Reports",
+							"sw": "Ripoti za Maendeleo ya Kazi za Ardhi"
+						},
+						"format": {
+							"en": "PDF",
+							"sw": "PDF"
+						},
+						"icon": "chart-timeline-variant",
+						"image": {
+							"en": "/media/deliverables/progress-earthwork-reports.jpg",
+							"sw": "/media/deliverables/progress-earthwork-reports.jpg"
+						},
+						"description": {
+							"en": "Periodic cut and fill movement reports aligned to payment applications and programmes.",
+							"sw": "Ripoti za mara kwa mara za kuchimba na kujaza zinazolingana na maombi ya malipo na programu."
+						}
+					},
+					{
+						"title": {
+							"en": "CAD & GIS Data Packages",
+							"sw": "Vifurushi vya Data za CAD na GIS"
+						},
+						"format": {
+							"en": "DWG / SHP",
+							"sw": "DWG / SHP"
+						},
+						"icon": "database-outline",
+						"image": {
+							"en": "/media/deliverables/cad-and-gis-data-packages.jpg",
+							"sw": "/media/deliverables/cad-and-gis-data-packages.jpg"
+						},
+						"description": {
+							"en": "Surfaces, contours and volumes exported in open formats for CAD and GIS workflows.",
+							"sw": "Nyuso, contour na vina vilivyoagizwa kwa miundo wazi kwa mchakato wa CAD na GIS."
+						}
+					}
+				],
+				"tone": "surface",
+				"id": ""
+			}
+		},
+		{
 			"discriminant": "ctaBand",
 			"value": {
 				"tag": {

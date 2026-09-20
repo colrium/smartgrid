@@ -5415,15 +5415,28 @@ const PAGES = {
 			},
 		],
 	},
-	// M7 batch 12a: bim. Two sections migrate in page order — `hero`
-	// (shared Hero with secondary-only pill: no `ctaPrimary` key in content)
-	// + `cta` (ctaBand centred; wrapper `iconPosition: "end"` collapses to the
-	// solid-pill default per CtaPill `iconAtEnd`). Tails stay legacy:
-	// BimServicesSection (`indexed` numbering) + bespoke Deliverables explorer.
+	// M11 batch 16 — civil tails (2026-09-20): the four remaining civil
+	// pages (bim, site-engineering, site-setting-out, volumetric-surveys)
+	// become whole-owned in page order. M13 batch 6 (2026-09-20) had DELETED
+	// the single-shared-child grid wrappers on these pages
+	// (`BimServicesSection`, `WhatWeDoSection`, `OurServicesSection`,
+	// `OurInstrumentsSection`, volumetric `ServicesSection`), so their
+	// batch-16 unique renderers render the shared `CardGrid` directly with
+	// the deleted wrappers' presentation literals; the bespoke
+	// site-engineering hero/overview/exploreMore and the site-setting-out
+	// `FaqSection`/`CtaSection` shims survived M13 and keep the M9
+	// additive-`data` refactor instead. Whole pages in page order → one
+	// `PageBuilderDocument` each (flexible rule), `skipped: []` all four.
+
+	// M11 batch 16a — bim (whole page in page order: hero, bimServices,
+	// deliverables, cta). `bimServices` is a unique (indexed numbering +
+	// left header outside the shared cardGrid contract); hero/cta keep the
+	// M7 shared branches unchanged; deliverables is the shared explorer
+	// (surface tone reproduces the wrapper `bg-surface`).
 	"bim": {
 		namespace: "civil/bim",
 		title: "BIM",
-		skipped: ["bimServices", "deliverables"],
+		skipped: [],
 		sections: [
 			{
 				discriminant: "hero",
@@ -5450,6 +5463,22 @@ const PAGES = {
 						id: "",
 					};
 				},
+			},
+			{
+				discriminant: "bimServices",
+				from: "bimServices",
+				// Legacy: BimServicesSection → <CardGrid columns={3} tone="surface"
+				// headerAlign="left" indexed /> (M13 batch 6 retired the wrapper;
+				// the BimServicesCard renderer reproduces the literals).
+				build: civilIndexedGridBuild,
+			},
+			{
+				discriminant: "deliverables",
+				from: "deliverables",
+				// Legacy: <Deliverables ns="civil/bim" className="bg-surface" />
+				// (M11 batch 5 shared explorer; surface tone reproduces the
+				// wrapper className).
+				build: deliverablesBuild("surface"),
 			},
 			{
 				discriminant: "ctaBand",
@@ -5482,17 +5511,74 @@ const PAGES = {
 			},
 		],
 	},
-	// M7 batch 12b: site-engineering. One section migrates — `cta` (ctaBand
-	// centred, plain pill, no wrapper overrides). The bespoke hero (`<bold>`
-	// pseudo-markup) and `Split`-primitive overview stay legacy;
-	// WhatWeDoSection is `indexed`; ExploreMoreSection uses media-background
-	// cards (`mediaPosition`/`headerAlign` outside the contract); deliverables
-	// explorer stays legacy.
+	// M11 batch 16b — site-engineering (whole page in page order: seHero,
+	// seOverview, seWhatWeDo, deliverables, cta, seExploreMore). The bespoke
+	// image-floor hero (`<bold>` parsed from data), the `Split`-primitive
+	// overview and the media-background explore grid have no shared-contract
+	// home → page-scoped uniques with the M9 additive-`data` refactor on
+	// their surviving wrappers; `seWhatWeDo` is a unique (indexed numbering
+	// + left header outside the shared cardGrid contract — M13 batch 6
+	// retired its wrapper, the SeWhatWeDoCard renderer renders the shared
+	// `CardGrid` directly); deliverables is the shared explorer (surface).
 	"site-engineering": {
 		namespace: "civil/site-engineering",
 		title: "Site Engineering",
-		skipped: ["hero", "overview", "WhatWeDo", "exploreMore", "deliverables"],
+		skipped: [],
 		sections: [
+			{
+				discriminant: "seHero",
+				from: "hero",
+				// Legacy: bespoke HeroSection (image floor + dual ink gradients,
+				// `<bold>` pseudo-markup parsed from data — pseudo-markup stays
+				// in the locale JSON; the renderer parses the inline tags itself
+				// so Keystatic edits change output).
+				build(en, sw, where) {
+					return {
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						title: { en: reqText(en.title, `${where}.title.en`), sw: reqText(sw.title, `${where}.title.sw`) },
+						description: { en: reqText(en.description, `${where}.description.en`), sw: reqText(sw.description, `${where}.description.sw`) },
+						image: sharedValue(en, sw, "image", where) ?? "",
+						ctaPrimary: {
+							label: { en: optText(en.ctaPrimary?.label), sw: optText(sw.ctaPrimary?.label) },
+							href: sharedValue(en.ctaPrimary, sw.ctaPrimary, "href", where) ?? "",
+							icon: sharedValue(en.ctaPrimary, sw.ctaPrimary, "icon", where) ?? "",
+						},
+						ctaSecondary: { label: emptyPair(), href: "", icon: "" },
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "seOverview",
+				from: "overview",
+				// Legacy: OverviewSection → shared <Split tag headline
+				// description> with a framed rounded media card (blur blobs,
+				// hover zoom). Presentation lives in the renderer.
+				build(en, sw, where) {
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						image: sharedValue(en, sw, "image", where) ?? "",
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "seWhatWeDo",
+				from: "WhatWeDo",
+				// Legacy: WhatWeDoSection → <CardGrid columns={3} tone="surface"
+				// headerAlign="left" indexed /> (M13 batch 6 retired the wrapper;
+				// the SeWhatWeDoCard renderer reproduces the literals).
+				build: civilIndexedGridBuild,
+			},
+			{
+				discriminant: "deliverables",
+				from: "deliverables",
+				// Legacy: <Deliverables ns="civil/site-engineering"
+				// className="bg-surface" /> (M11 batch 5 shared explorer).
+				build: deliverablesBuild("surface"),
+			},
 			{
 				discriminant: "ctaBand",
 				from: "cta",
@@ -5520,17 +5606,50 @@ const PAGES = {
 					};
 				},
 			},
+			{
+				discriminant: "seExploreMore",
+				from: "exploreMore",
+				// Legacy: ExploreMoreSection → <CardGrid columns={3}
+				// headerAlign="left" card={{ mediaPosition: "background",
+				// mediaAspect: "h-64 sm:h-72", elevation: 1 }} /> with item
+				// image→media, mediaAlt=title and optional href shaping.
+				build(en, sw, where) {
+					const enItems = en.items ?? [];
+					const swItems = sw.items ?? [];
+					if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+						gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+					}
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						items: enItems.map((item, i) => {
+							const swItem = swItems[i] ?? {};
+							return {
+								image: sharedValue(item, swItem, "image", `${where}.items[${i}]`) ?? "",
+								title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+								href: sharedValue(item, swItem, "href", `${where}.items[${i}]`) ?? "",
+							};
+						}),
+						id: "",
+					};
+				},
+			},
 		],
 	},
-	// M7 batch 12c: site-setting-out. Two sections migrate in page order —
-	// `hero` (shared Hero, dual pills without icons) + `faq` (icon/title/
-	// description items, no points, no still-curious card). Tails stay legacy:
-	// OurServicesSection (`indexed`), OurInstrumentsSection (`mediaBadged`),
-	// bespoke Deliverables explorer.
+	// M11 batch 16c — site-setting-out (whole page in page order: hero,
+	// ssoServices, ssoInstruments, deliverables, faq). The hero keeps the
+	// M7 shared branch; `ssoServices` + `ssoInstruments` are uniques
+	// (indexed numbering / mediaBadged chips outside the shared cardGrid
+	// contract — M13 batch 6 retired their wrappers; the SsoServicesCard/
+	// SsoInstrumentsCard renderers render the shared `CardGrid` directly);
+	// deliverables is the shared explorer (surface); faq keeps the M7
+	// shared branch (icon/title→question/answer mapping, no points, no
+	// still-curious card).
 	"site-setting-out": {
 		namespace: "civil/site-setting-out",
 		title: "Site Setting Out",
-		skipped: ["ourServices", "ourInstruments", "deliverables"],
+		skipped: [],
 		sections: [
 			{
 				discriminant: "hero",
@@ -5568,12 +5687,57 @@ const PAGES = {
 				},
 			},
 			{
+				discriminant: "ssoServices",
+				from: "ourServices",
+				// Legacy: OurServicesSection → <CardGrid columns={3}
+				// headerAlign="left" indexed /> (M13 batch 6 retired the wrapper;
+				// the SsoServicesCard renderer reproduces the literals).
+				build: civilIndexedGridBuild,
+			},
+			{
+				discriminant: "ssoInstruments",
+				from: "ourInstruments",
+				// Legacy: OurInstrumentsSection → <CardGrid columns={3}
+				// tone="surface" mediaBadged card={{ mediaPosition:
+				// "background", mediaAspect: "h-64 sm:h-72" }} /> (M13 batch 6
+				// retired the wrapper; the SsoInstrumentsCard renderer
+				// reproduces the literals). Images are shared (verified
+				// identical en/sw).
+				build(en, sw, where) {
+					const enItems = en.items ?? [];
+					const swItems = sw.items ?? [];
+					if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+						gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+					}
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						items: enItems.map((item, i) => {
+							const swItem = swItems[i] ?? {};
+							return {
+								title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+								image: sharedValue(item, swItem, "image", `${where}.items[${i}]`) ?? "",
+							};
+						}),
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "deliverables",
+				from: "deliverables",
+				// Legacy: <Deliverables ns="civil/site-setting-out"
+				// className="bg-surface" /> (M11 batch 5 shared explorer).
+				build: deliverablesBuild("surface"),
+			},
+			{
 				discriminant: "faq",
 				from: "faq",
-				// Legacy: shared <Faq tag headline description items /> used
-				// directly on the page (M13 batch 11 — retired the FaqSection
-				// shaping wrapper) with icon/title/description items mapped to
-				// question/answer/icon (no points, no still-curious card).
+				// Legacy: shaping FaqSection (title→question/description→answer
+				// map — stays per the M13 rule) over the shared <Faq /> contract
+				// with icon/title/description items (no points, no still-curious
+				// card).
 				build(en, sw, where) {
 					const enItems = en.items ?? [];
 					const swItems = sw.items ?? [];
@@ -5602,19 +5766,22 @@ const PAGES = {
 			},
 		],
 	},
-	// M7 batch 12d: volumetric-surveys. Five sections migrate in page order —
-	// `hero` (dual pills with icons) + `maxProductivityMinGuesswork`/
-	// `clarityAndControl` (introTexts default/surface) +
-	// `precisionVolumetricAnalysis` (splitMedia right/default) + `cta`
-	// (ctaBand centred; wrapper `iconPosition: "end"` is the solid-pill
-	// default; content `icon: "email"` shared so the `?? "arrow-right"`
-	// fallback never fires). Tails stay legacy: ServicesSection
-	// (`headerAlign="left"`, non-default — plain cardGrid would centre it) +
-	// bespoke Deliverables explorer.
+	// M11 batch 16d — volumetric-surveys (whole page in page order: hero,
+	// maxProductivityMinGuesswork, precisionVolumetricAnalysis, vsServices,
+	// clarityAndControl, deliverables, cta). `hero` (dual pills with icons)
+	// + the two introTexts (default/surface) + splitMedia (right/default)
+	// keep their M7 shared branches; `vsServices` is a unique (left header
+	// on a surface grid — a plain cardGrid would centre it; M13 batch 6
+	// retired the ServicesSection wrapper, the VsServicesCard renderer
+	// renders the shared `CardGrid` directly); deliverables is the shared
+	// explorer (surface); cta keeps the M7 shared branch (wrapper
+	// `iconPosition: "end"` is the solid-pill default; content
+	// `icon: "email"` shared so the `?? "arrow-right"` fallback never
+	// fires).
 	"volumetric-surveys": {
 		namespace: "civil/volumetric-surveys",
 		title: "Volumetric Surveys",
-		skipped: ["services", "deliverables"],
+		skipped: [],
 		sections: [
 			{
 				discriminant: "hero",
@@ -5684,6 +5851,43 @@ const PAGES = {
 				from: "clarityAndControl",
 				// Legacy: shared <IntroTextSection tone="surface" /> used directly (M13 batch 6 — ClarityAndControlSection/TextSection wrappers retired).
 				build: introTextBuild({ tone: "surface", align: "left", split: false }),
+			},
+			{
+				discriminant: "vsServices",
+				from: "services",
+				// Legacy: ServicesSection → <CardGrid columns={3} tone="surface"
+				// headerAlign="left" /> (M13 batch 6 retired the wrapper; the
+				// VsServicesCard renderer reproduces the literals). Item icons
+				// are shared (verified identical en/sw); titles and
+				// descriptions localized.
+				build(en, sw, where) {
+					const enItems = en.items ?? [];
+					const swItems = sw.items ?? [];
+					if (!Array.isArray(swItems) || swItems.length !== enItems.length) {
+						gap(where, `item count diverged (en=${enItems.length} sw=${swItems?.length})`);
+					}
+					return {
+						tag: { en: optText(en.tag), sw: optText(sw.tag) },
+						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+						description: { en: optText(en.description), sw: optText(sw.description) },
+						items: enItems.map((item, i) => {
+							const swItem = swItems[i] ?? {};
+							return {
+								icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+								title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+								description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+							};
+						}),
+						id: "",
+					};
+				},
+			},
+			{
+				discriminant: "deliverables",
+				from: "deliverables",
+				// Legacy: <Deliverables ns="civil/volumetric-surveys"
+				// className="bg-surface" /> (M11 batch 5 shared explorer).
+				build: deliverablesBuild("surface"),
 			},
 			{
 				discriminant: "ctaBand",

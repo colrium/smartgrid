@@ -40,11 +40,22 @@ function renderDescription(text: string): ReactNode[] {
 	return nodes;
 }
 
-export function HeroSection() {
+/**
+ * `data` (M11 batch 16, 2026-09-20): Keystatic-owned content for the
+ * `seHero` unique section. When provided, the locale lookup is skipped;
+ * omitted = legacy `t()` render (bare callers untouched).
+ */
+export interface HeroSectionProps {
+	data?: HeroContent | null;
+}
+
+export function HeroSection({ data }: HeroSectionProps = {}) {
 	const { t } = useTranslation(["civil/site-engineering"]);
-	const hero = t("civil/site-engineering:hero", {
-		returnObjects: true,
-	}) as unknown as HeroContent;
+	const hero =
+		data ??
+		(t("civil/site-engineering:hero", {
+			returnObjects: true,
+		}) as unknown as HeroContent);
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");
 
 	return (
