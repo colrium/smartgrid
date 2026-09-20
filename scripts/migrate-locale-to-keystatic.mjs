@@ -5774,8 +5774,8 @@ const PAGES = {
 			{
 				discriminant: "hero",
 				from: "hero",
-				// Legacy: HeroSection → <Hero data={t(hero)} /> (default
-				// bottom layout).
+				// Legacy: shared <Hero> used directly on the page (M13 batch 7 — wrapper retired).
+				// (default bottom layout).
 				build(en, sw, where) {
 					return {
 						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
@@ -5847,8 +5847,8 @@ const PAGES = {
 			{
 				discriminant: "hero",
 				from: "hero",
-				// Legacy: HeroSection → <Hero data={t(hero)} /> (default
-				// bottom layout).
+				// Legacy: shared <Hero> used directly on the page (M13 batch 7 — wrapper retired).
+				// (default bottom layout).
 				build(en, sw, where) {
 					return {
 						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
@@ -5878,15 +5878,14 @@ const PAGES = {
 			{
 				discriminant: "introText",
 				from: "quarryServices",
-				// Legacy: QuarryServicesSection → <TextSection /> (tone
+				// Legacy: shared <IntroTextSection /> used directly (M13 batch 7 — wrapper retired; shared used directly on the page). (tone
 				// default, align/split unset).
 				build: introTextBuild({ tone: "default", align: "left", split: false }),
 			},
 			{
 				discriminant: "introText",
 				from: "maximizeProductivity",
-				// Legacy: MaximizeProductivitySection → <TextSection
-				// tone="surface" />.
+				// Legacy: shared <IntroTextSection tone="surface" /> used directly (M13 batch 7 — wrapper retired; shared used directly on the page)..
 				build: introTextBuild({ tone: "surface", align: "left", split: false }),
 			},
 		],
@@ -5907,8 +5906,8 @@ const PAGES = {
 			{
 				discriminant: "hero",
 				from: "hero",
-				// Legacy: HeroSection → <Hero data={t(hero)} /> (default
-				// bottom layout).
+				// Legacy: shared <Hero> used directly on the page (M13 batch 7 — wrapper retired).
+				// (default bottom layout).
 				build(en, sw, where) {
 					return {
 						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
@@ -5938,20 +5937,20 @@ const PAGES = {
 			{
 				discriminant: "introText",
 				from: "drivingSustainability",
-				// Legacy: DrivingSustainabilitySection → <TextSection />
+				// Legacy: shared <IntroTextSection /> used directly (M13 batch 7 — wrapper retired; shared used directly on the page).
 				// (tone default, align/split unset).
 				build: introTextBuild({ tone: "default", align: "left", split: false }),
 			},
 			{
 				discriminant: "introText",
 				from: "techWeUse",
-				// Legacy: TechWeUseSection → <TextSection tone="surface" />.
+				// Legacy: shared <IntroTextSection tone="surface" /> used directly (M13 batch 7 — wrapper retired; shared used directly on the page)..
 				build: introTextBuild({ tone: "surface", align: "left", split: false }),
 			},
 			{
 				discriminant: "introText",
 				from: "whyPartnerWithUs",
-				// Legacy: WhyPartnerWithUsSection → <TextSection /> (tone
+				// Legacy: shared <IntroTextSection /> used directly (M13 batch 7 — wrapper retired; shared used directly on the page). (tone
 				// default, align/split unset).
 				build: introTextBuild({ tone: "default", align: "left", split: false }),
 			},
@@ -6003,7 +6002,7 @@ const PAGES = {
 			{
 				discriminant: "hero",
 				from: "hero",
-				// Legacy: AsBuiltHeroSection → <Hero data={t(hero)} />
+				// Legacy: shared <Hero> used directly on the page (M13 batch 7 — wrapper retired; shared used directly on the page).
 				// (default bottom layout; no title key — the h1 falls back to
 				// description exactly as in legacy).
 				build(en, sw, where) {
@@ -6035,7 +6034,7 @@ const PAGES = {
 			{
 				discriminant: "stats",
 				from: "metrics",
-				// Legacy: MetricsSection → <Stats items columns={3} />
+				// Legacy: shared <Stats items columns={3} /> used directly on the page (M13 batch 7 — wrapper retired; shared used directly on the page).
 				// (layout/tone unset = band/default). Items carry
 				// value/description only — labels/icons stay empty.
 				build(en, sw, where) {
@@ -6106,7 +6105,7 @@ const PAGES = {
 			{
 				discriminant: "hero",
 				from: "hero",
-				// Legacy: AgriculturalNdviHeroSection → <Hero data={t(hero)} />
+				// Legacy: shared <Hero> used directly on the page (M13 batch 7 — wrapper retired; shared used directly on the page).
 				// (default bottom layout).
 				build(en, sw, where) {
 					return {
@@ -6151,8 +6150,8 @@ const PAGES = {
 			{
 				discriminant: "hero",
 				from: "hero",
-				// Legacy: LidarHeroSection → <Hero data={t(hero)} /> (default
-				// bottom layout).
+				// Legacy: shared <Hero> used directly on the page (M13 batch 7 — wrapper retired; shared used directly on the page).
+				// (default bottom layout).
 				build(en, sw, where) {
 					return {
 						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
@@ -6182,8 +6181,8 @@ const PAGES = {
 			{
 				discriminant: "splitMedia",
 				from: "forestry",
-				// Legacy: ForestrySection → <SplitMedia data
-				// imagePosition="left" tone="surface" mediaAspect="aspect-16/10" />
+				// Legacy: shared <SplitMedia data imagePosition="left" tone="surface"
+				// mediaAspect="aspect-16/10" /> used directly (M13 batch 7 — wrapper retired; shared used directly on the page).
 				// (registry "wide" maps to aspect-16/10).
 				build(en, sw, where) {
 					return {
@@ -6203,8 +6202,8 @@ const PAGES = {
 			{
 				discriminant: "splitMedia",
 				from: "construction",
-				// Legacy: ConstructionSection → <SplitMedia data
-				// imagePosition="right" tone="default" mediaAspect="aspect-16/10" />.
+				// Legacy: shared <SplitMedia data imagePosition="right" tone="default"
+				// mediaAspect="aspect-16/10" /> used directly (M13 batch 7 — wrapper retired; shared used directly on the page)..
 				build(en, sw, where) {
 					return {
 						tag: { en: reqText(en.tag, `${where}.tag.en`), sw: reqText(sw.tag, `${where}.tag.sw`) },

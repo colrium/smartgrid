@@ -1271,14 +1271,27 @@ Batches (one commit each, in this order):
       overview, custom `<bold>` heroes. Mapping comments refreshed (fixed 3
       mislabeled wrapper names from a bulk replace). Validation DEFERRED
       per M13 policy.
-- [ ] Batch 7 — aerial-drones children (`solar-panel`, `landfill-quarry`,
+- [x] Batch 7 — aerial-drones children (`solar-panel`, `landfill-quarry`,
       `monitoring-and-evaluation`, `as-built-surveys`, `agricultural-ndvi`,
-      `lidar-mapping`, `volumetric-surveys`): Type 1 heroes → `Hero`,
-      `TextSection`/`IntroSection` shims → `IntroTextSection`,
-      `DroneTechLeverage`/`Construction`/`Forestry`/`Powerline`/`WhyUseDrones`
-      → `SplitMedia`, `HowItWorks`/`Process` → `Process`,
-      `MetricsSection` → `Stats`, `LidarSplitSection` re-export → delete.
-      Type 2 none (CTA/grid shaping stays). Keep: shaping grids/CTAs.
+      `lidar-mapping`, `volumetric-surveys`) (done 2026-09-20, all Type 1,
+      no registry/entry/migration-output changes): 7 heroes → `Hero`;
+      3 `TextSection`s + 9 shims → `IntroTextSection` directly
+      (per-key tones); 5 split-medias → `SplitMedia` (positions/tones/
+      aspects preserved; agri card-row variant kept verbatim);
+      3 `Process` grids → `Process`; as-built `MetricsSection` → `Stats`;
+      9 card grids → `CardGrid` (straight-through items; `indexed`,
+      `fallbackIcons` consts, `headerRow/Align`, `card` literals, guards
+      preserved); lidar `LidarCardGrid` + 2 shims + `LidarSplitSection`
+      re-export deleted (inlined per call site). 37 wrapper files deleted;
+      both branches render shared directly. Kept per rule: shaping
+      `CtaSection`s (conditional link shaping), `SmartMonitoringSection`
+      (computed actions), monitoring `WhatWeOfferSection` (leadImages
+      empty-to-null), vol `IntroSection` (cta shaping).
+      CAUGHT: dropped the monitoring barrel import for 3 kept components
+      (fixed before commit); misordered the legacy-only volumetric page
+      (IntroSection is a kept component, not intro text — fixed before
+      commit). Mapping comments refreshed. Validation DEFERRED per M13
+      policy.
 - [ ] Batch 8 — `surveying/topographical-surveys` + `sectional-properties` +
       `bathymetric-surveys`: Type 1 heroes → `Hero`, `Intro`/`WhatIsTopo`/
       `IntroSection` → `IntroTextSection`, `WhatIsBathymetric` → `SplitMedia`,
@@ -1441,3 +1454,4 @@ For every implementation change:
 | 2026-09-20 | M13 | Batch 4 DONE — gis-mapping: deleted `GisAnalystCtaSection` (+ barrel lines); legacy renders shared `FinalCta` directly (muted lede, map-search-outline, 3 cols, `talk-to-analyst` anchor); `finalCtaBuild("map-search-outline", 3, "center", {id: "talk-to-analyst"})`; deleted `gisAnalystCtaBuild`; entry regenerated (15 sections, `draft`); registry 122→121; README updated | Validation DEFERRED per M13 policy. Next: batch 5 — civil highway + as-built | |
 | 2026-09-20 | M13 | Batch 5 DONE — highway-surveys + as-built-surveys: 11 legacy-only wrappers deleted (heroes, Overview, Benefits, DeliverablesSection, TextSection + 3 shims, KeyIndustries, Applications); legacy branches render shared `Hero`/`IntroTextSection`/`CardGrid`/`Deliverables` directly (tones/guards preserved); no registry/entry changes (entries already shared); mapping comments refreshed. Kept: `highwayServices`/`asBuiltSolutions` uniques (`indexed`). CAUGHT: bulk comment edit touched 3 other pages — reverted | Validation DEFERRED per M13 policy. Next: batch 6 — civil bim + site-engineering + site-setting-out + volumetric | |
 | 2026-09-20 | M13 | Batch 6 DONE — bim + site-engineering + site-setting-out + volumetric-surveys: 12 wrappers deleted (heroes, BimServices/WhatWeDo/OurServices/OurInstruments/VolServices grids, TextSection + shims, Precision split); both branches render shared components directly (guards/literals preserved); no registry/entry changes; mapping comments refreshed. Kept: shaping CTAs/Faq/ExploreMore, Split overview, `<bold>` heroes | Validation DEFERRED per M13 policy. Next: batch 7 — aerial-drones children | |
+| 2026-09-20 | M13 | Batch 7 DONE — 7 aerial-drones children: 37 wrappers deleted (heroes, TextSections + shims, splits, Processes, Stats, 9 grids, LidarCardGrid/shims/re-export); both branches render shared directly; no registry/entry changes; mapping comments refreshed. Kept: shaping CTAs/SmartMonitoring/WhatWeOffer(monitoring)/IntroSection(vol). CAUGHT: missing barrel import (fixed); vol page misorder (fixed) | Validation DEFERRED per M13 policy. Next: batch 8 — topo + sectional + bathy | |

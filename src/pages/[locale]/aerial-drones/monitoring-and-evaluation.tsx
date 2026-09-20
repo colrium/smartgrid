@@ -3,15 +3,18 @@ import PageHead from "@/components/Head";
 
 import { getI18nProps, getLocale } from "@/lib/i18n";
 import type { Lang } from "@/lib/types";
+import { useTranslation } from "@/hooks";
 import { resolveKeystaticPage, type ResolvedKeystaticPage } from "@/lib/keystatic/resolvePage";
 import { renderSection } from "@/lib/keystatic/sectionRenderers";
+import { Hero, type HeroContent } from "@/components/sections/shared/Hero";
+import { IntroTextSection } from "@/components/sections/shared/IntroTextSection";
+import { CardGrid, type CardItem } from "@/components/sections/shared/CardGrid";
 import {
-	HeroSection,
-	DrivingSustainabilitySection,
-	OurCapabilitiesSection,
-	TechWeUseSection,
-	ImpactSection,
-	WhyPartnerWithUsSection,
+	SmartMonitoringSection,
+	WhatWeOfferSection,
+	CtaSection,
+} from "@/components/sections/aerial-drones/monitoring-and-evaluation";
+import {
 	SmartMonitoringSection,
 	WhatWeOfferSection,
 	CtaSection,
@@ -22,6 +25,30 @@ type PageProps = {
 	/** Keystatic page when the `monitoring-and-evaluation` slug is opted in; otherwise `null` (legacy). */
 	keystaticPage: ResolvedKeystaticPage | null;
 };
+
+interface TextContent {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+}
+
+interface CapabilitiesContent {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+	items?: CardItem[] | null;
+}
+
+interface ImpactContent {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+	items?: CardItem[] | null;
+}
+
+const CAPABILITIES_FALLBACK_ICONS = ["terrain", "water-outline", "thermometer-lines", "swap-horizontal"];
+
+const IMPACT_FALLBACK_ICONS = ["water", "sprout", "home-flood"];
 
 /**
  * Sections migrated to Keystatic in page order (see the
@@ -34,7 +61,12 @@ type PageProps = {
  * between them, so the route renders each Keystatic section by index instead
  * of one whole PageBuilderDocument. If an edit changes the section COUNT, the
  * route falls back to legacy rather than misplacing sections — keep this in
- * sync with the mapping.
+ * sync with the mapping. (M13 batch 7, 2026-09-20 — the single-shared-child
+ * wrappers `HeroSection`, `TextSection` (+ its `DrivingSustainability`/
+ * `TechWeUse`/`WhyPartnerWithUs` shims), `OurCapabilitiesSection` and
+ * `ImpactSection` were removed; both branches below render the shared
+ * `Hero`/`IntroTextSection`/`CardGrid` directly. `WhatWeOfferSection` keeps
+ * its wrapper (leadImages empty-to-null shaping).)
  */
 const KEYSTATIC_SECTION_COUNT = 5;
 
@@ -55,6 +87,55 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 	// renders unchanged.
 	const sections = keystaticPage ? orderedSections(keystaticPage) : null;
 
+	const { t } = useTranslation(["aerial-drones/monitoring-and-evaluation"]);
+	const heroData = t("aerial-drones/monitoring-and-evaluation:hero", {
+		returnObjects: true,
+	}) as unknown as HeroContent;
+	const drivingSustainability = t("aerial-drones/monitoring-and-evaluation:drivingSustainability", {
+		returnObjects: true,
+	}) as unknown as TextContent;
+	const ourCapabilities = t("aerial-drones/monitoring-and-evaluation:ourCapabilities", {
+		returnObjects: true,
+	}) as unknown as CapabilitiesContent;
+	const capabilityItems = Array.isArray(ourCapabilities?.items) ? ourCapabilities.items : [];
+	const capabilitiesGrid =
+		capabilityItems.length === 0 ? null : (
+			<CardGrid
+				tag={ourCapabilities.tag}
+				headline={ourCapabilities.headline}
+				description={ourCapabilities.description}
+				items={capabilityItems}
+				columns={4}
+				align="center"
+				tone="surface"
+				card={{ iconShape: "xl" }}
+				fallbackIcons={CAPABILITIES_FALLBACK_ICONS}
+			/>
+		);
+	const techWeUse = t("aerial-drones/monitoring-and-evaluation:techWeUse", {
+		returnObjects: true,
+	}) as unknown as TextContent;
+	const impact = t("aerial-drones/monitoring-and-evaluation:impact", {
+		returnObjects: true,
+	}) as unknown as ImpactContent;
+	const impactItems = Array.isArray(impact?.items) ? impact.items : [];
+	const impactGrid =
+		impactItems.length === 0 ? null : (
+			<CardGrid
+				tag={impact.tag}
+				headline={impact.headline}
+				description={impact.description}
+				items={impactItems}
+				columns={3}
+				align="center"
+				card={{ density: "roomy", iconShape: "xl" }}
+				fallbackIcons={IMPACT_FALLBACK_ICONS}
+			/>
+		);
+	const whyPartnerWithUs = t("aerial-drones/monitoring-and-evaluation:whyPartnerWithUs", {
+		returnObjects: true,
+	}) as unknown as TextContent;
+
 	if (keystaticPage && sections) {
 		const locale = keystaticPage.locale;
 		const renderAt = (index: number) => {
@@ -67,9 +148,9 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 				<div className="flex flex-col min-h-screen" data-keystatic-page={keystaticPage.slug}>
 					{renderAt(0)}
 					{renderAt(1)}
-					<OurCapabilitiesSection />
+					{capabilitiesGrid}
 					{renderAt(2)}
-					<ImpactSection />
+					{impactGrid}
 					{renderAt(3)}
 					<SmartMonitoringSection />
 					<WhatWeOfferSection />
@@ -83,12 +164,25 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 		<div className="relative">
 			<PageHead pageName="monitoring-and-evaluation" />
 			<div className="flex flex-col min-h-screen">
-				<HeroSection />
-				<DrivingSustainabilitySection />
-				<OurCapabilitiesSection />
-				<TechWeUseSection />
-				<ImpactSection />
-				<WhyPartnerWithUsSection />
+				<Hero data={heroData} />
+				<IntroTextSection
+					tag={drivingSustainability?.tag}
+					headline={drivingSustainability?.headline}
+					description={drivingSustainability?.description}
+				/>
+				{capabilitiesGrid}
+				<IntroTextSection
+					tone="surface"
+					tag={techWeUse?.tag}
+					headline={techWeUse?.headline}
+					description={techWeUse?.description}
+				/>
+				{impactGrid}
+				<IntroTextSection
+					tag={whyPartnerWithUs?.tag}
+					headline={whyPartnerWithUs?.headline}
+					description={whyPartnerWithUs?.description}
+				/>
 				<SmartMonitoringSection />
 				<WhatWeOfferSection />
 				<CtaSection />

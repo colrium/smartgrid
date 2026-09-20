@@ -3,18 +3,29 @@ import PageHead from "@/components/Head";
 
 import { getI18nProps, getLocale } from "@/lib/i18n";
 import type { Lang } from "@/lib/types";
+import { useTranslation } from "@/hooks";
 import { resolveKeystaticPage, type ResolvedKeystaticPage } from "@/lib/keystatic/resolvePage";
 import { renderSection } from "@/lib/keystatic/sectionRenderers";
-import {
-	AgriculturalNdviHeroSection,
-	WhyUseDronesSection,
-	ProcessSection,
-} from "@/components/sections/aerial-drones/agricultural-ndvi-mapping";
+import { Hero, type HeroContent } from "@/components/sections/shared/Hero";
+import { SplitMedia, type SplitMediaContent } from "@/components/sections/shared/SplitMedia";
+import { type CardItem } from "@/components/sections/shared/CardGrid";
+import { Process } from "@/components/sections/shared/Process";
 
 type PageProps = {
 	/** Keystatic page when the `agricultural-ndvi-mapping` slug is opted in; otherwise `null` (legacy). */
 	keystaticPage: ResolvedKeystaticPage | null;
 };
+
+interface ProcessContent {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+	items: { title: string; description: string }[];
+}
+
+interface WhyUseContent extends SplitMediaContent {
+	items?: CardItem[] | null;
+}
 
 /**
  * Sections migrated to Keystatic in page order (see the
@@ -25,7 +36,10 @@ type PageProps = {
  * positions after it, so the route renders the Keystatic section by index
  * instead of one whole PageBuilderDocument. If an edit changes the section
  * COUNT, the route falls back to legacy rather than misplacing sections —
- * keep this in sync with the mapping.
+ * keep this in sync with the mapping. (M13 batch 7, 2026-09-20 — the
+ * single-shared-child wrappers `AgriculturalNdviHeroSection`,
+ * `WhyUseDronesSection` and `ProcessSection` were removed; both branches
+ * below render the shared `Hero`/`SplitMedia`/`Process` directly.)
  */
 const KEYSTATIC_SECTION_COUNT = 1;
 
@@ -45,6 +59,40 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 	// Otherwise the legacy locale-JSON implementation renders unchanged.
 	const sections = keystaticPage ? orderedSections(keystaticPage) : null;
 
+	const NS = "aerial-drones/agricultural-ndvi-mapping";
+	const { t } = useTranslation([NS]);
+	const heroData = t(`${NS}:hero`, { returnObjects: true }) as unknown as HeroContent;
+	const whyUseDrones = t(`${NS}:whyUseDronesInAgriculture`, {
+		returnObjects: true,
+	}) as unknown as WhyUseContent;
+	const whyUseItems = Array.isArray(whyUseDrones?.items) ? whyUseDrones.items : [];
+	const whyUseGrid =
+		!whyUseDrones?.headline ? null : (
+			<SplitMedia
+				data={whyUseDrones}
+				tone="surface"
+				columns={4}
+				items={whyUseItems}
+				align="left"
+				card={{ density: "comfortable", iconShape: "xl", iconSize: "sm" }}
+			/>
+		);
+	const process = t(`${NS}:process`, {
+		returnObjects: true,
+	}) as unknown as ProcessContent;
+	const processItems = Array.isArray(process?.items) ? process.items : [];
+	const processGrid =
+		processItems.length === 0 ? null : (
+			<Process
+				tag={process.tag}
+				headline={process.headline}
+				description={process.description}
+				items={processItems}
+				layout="grid"
+				columns={3}
+			/>
+		);
+
 	if (keystaticPage && sections) {
 		const locale = keystaticPage.locale;
 		const renderAt = (index: number) => {
@@ -56,8 +104,8 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 				<PageHead pageName="agricultural-ndvi-mapping" />
 				<div className="flex flex-col min-h-screen" data-keystatic-page={keystaticPage.slug}>
 					{renderAt(0)}
-					<WhyUseDronesSection />
-					<ProcessSection />
+					{whyUseGrid}
+					{processGrid}
 				</div>
 			</div>
 		);
@@ -67,9 +115,9 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 		<div className="relative">
 			<PageHead pageName="agricultural-ndvi-mapping" />
 			<div className="flex flex-col min-h-screen">
-				<AgriculturalNdviHeroSection />
-				<WhyUseDronesSection />
-				<ProcessSection />
+				<Hero data={heroData} />
+				{whyUseGrid}
+				{processGrid}
 			</div>
 		</div>
 	);

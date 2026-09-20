@@ -3,23 +3,33 @@ import PageHead from "@/components/Head";
 
 import { getI18nProps, getLocale } from "@/lib/i18n";
 import type { Lang } from "@/lib/types";
+import { useTranslation } from "@/hooks";
 import { resolveKeystaticPage, type ResolvedKeystaticPage } from "@/lib/keystatic/resolvePage";
 import { renderSection } from "@/lib/keystatic/sectionRenderers";
-import {
-	LidarHeroSection,
-	IndustriesWeServeSection,
-	WhyChooseLidarSection,
-	LidarPowerlineSection,
-	ForestrySection,
-	ConstructionSection,
-	LidarCtaSection,
-	HowItWorksSection,
-} from "@/components/sections/aerial-drones/lidar-mapping";
+import { Hero, type HeroContent } from "@/components/sections/shared/Hero";
+import { SplitMedia, type SplitMediaContent } from "@/components/sections/shared/SplitMedia";
+import { CardGrid, type CardItem } from "@/components/sections/shared/CardGrid";
+import { Process, type ProcessItem } from "@/components/sections/shared/Process";
+import { LidarCtaSection } from "@/components/sections/aerial-drones/lidar-mapping";
 
 type PageProps = {
 	/** Keystatic page when the `lidar-mapping` slug is opted in; otherwise `null` (legacy). */
 	keystaticPage: ResolvedKeystaticPage | null;
 };
+
+interface LidarCardsContent {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+	items: { title: string; description: string }[];
+}
+
+interface HowItWorksContent {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+	items?: ProcessItem[] | null;
+}
 
 /**
  * Sections migrated to Keystatic in page order (see the `lidar-mapping`
@@ -31,7 +41,12 @@ type PageProps = {
  * transform) sit at fixed positions between them, so the route renders each
  * Keystatic section by index instead of one whole PageBuilderDocument. If an
  * edit changes the section COUNT, the route falls back to legacy rather than
- * misplacing sections — keep this in sync with the mapping.
+ * misplacing sections — keep this in sync with the mapping. (M13 batch 7,
+ * 2026-09-20 — the single-shared-child wrappers `LidarHeroSection`,
+ * `IndustriesWeServeSection`, `WhyChooseLidarSection`,
+ * `LidarPowerlineSection`, `ForestrySection`, `ConstructionSection` and
+ * `HowItWorksSection` were removed; both branches below render the shared
+ * `Hero`/`CardGrid`/`SplitMedia`/`Process` directly.)
  */
 const KEYSTATIC_SECTION_COUNT = 3;
 
@@ -52,6 +67,65 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 	// renders unchanged.
 	const sections = keystaticPage ? orderedSections(keystaticPage) : null;
 
+	const NS = "aerial-drones/lidar-mapping";
+	const { t } = useTranslation([NS]);
+	const heroData = t(`${NS}:hero`, { returnObjects: true }) as unknown as HeroContent;
+	const industriesWeServe = t(`${NS}:industriesWeServe`, {
+		returnObjects: true,
+	}) as unknown as LidarCardsContent;
+	const industriesItems: CardItem[] = Array.isArray(industriesWeServe?.items) ? industriesWeServe.items : [];
+	const industriesGrid =
+		industriesItems.length === 0 ? null : (
+			<CardGrid
+				tag={industriesWeServe.tag}
+				headline={industriesWeServe.headline}
+				description={industriesWeServe.description}
+				items={industriesItems}
+				columns={4}
+				indexed
+				tone="surface"
+			/>
+		);
+	const whyChooseLidar = t(`${NS}:whyChooseLidar`, {
+		returnObjects: true,
+	}) as unknown as LidarCardsContent;
+	const whyChooseItems: CardItem[] = Array.isArray(whyChooseLidar?.items) ? whyChooseLidar.items : [];
+	const whyChooseGrid =
+		whyChooseItems.length === 0 ? null : (
+			<CardGrid
+				tag={whyChooseLidar.tag}
+				headline={whyChooseLidar.headline}
+				description={whyChooseLidar.description}
+				items={whyChooseItems}
+				columns={4}
+				indexed
+			/>
+		);
+	const powerline = t(`${NS}:lidarPowerlineInspection`, {
+		returnObjects: true,
+	}) as unknown as SplitMediaContent;
+	const forestry = t(`${NS}:forestry`, {
+		returnObjects: true,
+	}) as unknown as SplitMediaContent;
+	const construction = t(`${NS}:construction`, {
+		returnObjects: true,
+	}) as unknown as SplitMediaContent;
+	const howItWorks = t(`${NS}:howItWorks`, {
+		returnObjects: true,
+	}) as unknown as HowItWorksContent;
+	const howItWorksItems = Array.isArray(howItWorks?.items) ? howItWorks.items : [];
+	const howItWorksGrid =
+		howItWorksItems.length === 0 ? null : (
+			<Process
+				tag={howItWorks.tag}
+				headline={howItWorks.headline}
+				description={howItWorks.description}
+				items={howItWorksItems}
+				layout="grid"
+				columns={4}
+			/>
+		);
+
 	if (keystaticPage && sections) {
 		const locale = keystaticPage.locale;
 		const renderAt = (index: number) => {
@@ -63,12 +137,12 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 				<PageHead pageName="lidar-mapping" />
 				<div className="flex flex-col min-h-screen" data-keystatic-page={keystaticPage.slug}>
 					{renderAt(0)}
-					<IndustriesWeServeSection />
-					<WhyChooseLidarSection />
-					<LidarPowerlineSection />
+					{industriesGrid}
+					{whyChooseGrid}
+					<SplitMedia data={powerline} mediaAspect="aspect-16/10" />
 					{renderAt(1)}
 					{renderAt(2)}
-					<HowItWorksSection />
+					{howItWorksGrid}
 					<LidarCtaSection />
 				</div>
 			</div>
@@ -79,13 +153,13 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 		<div className="relative">
 			<PageHead pageName="lidar-mapping" />
 			<div className="flex flex-col min-h-screen">
-				<LidarHeroSection />
-				<IndustriesWeServeSection />
-				<WhyChooseLidarSection />
-				<LidarPowerlineSection />
-				<ForestrySection />
-				<ConstructionSection />
-				<HowItWorksSection />
+				<Hero data={heroData} />
+				{industriesGrid}
+				{whyChooseGrid}
+				<SplitMedia data={powerline} mediaAspect="aspect-16/10" />
+				<SplitMedia data={forestry} imagePosition="left" tone="surface" mediaAspect="aspect-16/10" />
+				<SplitMedia data={construction} imagePosition="right" tone="default" mediaAspect="aspect-16/10" />
+				{howItWorksGrid}
 				<LidarCtaSection />
 			</div>
 		</div>
