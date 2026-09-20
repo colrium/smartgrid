@@ -7,8 +7,8 @@ import { useTranslation } from "@/hooks";
 import { resolveKeystaticPage, type ResolvedKeystaticPage } from "@/lib/keystatic/resolvePage";
 import { PageBuilderDocument } from "@/components/keystatic/PageBuilderDocument";
 import { SplitMedia } from "@/components/sections/shared/SplitMedia";
+import { Hero, type HeroContent } from "@/components/sections/shared/Hero";
 import {
-	HeroSection,
 	AerialSurveyingSection,
 	ServicesByImagesSection,
 	DronePhotographyImageSliderSection,
@@ -40,10 +40,11 @@ interface OurStoryContent {
  * `PageBuilderDocument` in M12 batch 10, 2026-09-19 — entry order IS page
  * order, so editors can add, remove, and reorder sections freely; the M3
  * resolver taxonomy remains the only fallback). M13 batch 11, 2026-09-20 —
- * the single-shared-child wrapper `OurStorySection` was removed; the legacy
- * branch below renders the shared `SplitMedia` directly with the identical
- * `t()` lookup and presentation literals, and the entry already uses the
- * shared `splitMedia` branch with content preserved.
+ * the single-shared-child wrappers `OurStorySection` and `HeroSection` were
+ * removed; the legacy branch below renders the shared `SplitMedia` and
+ * `Hero` directly with the identical `t()` lookups and presentation
+ * literals, and the entry already uses the shared `splitMedia`/`hero`
+ * branches with content preserved.
  */
 const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 	const { t } = useTranslation(["about"]);
@@ -61,12 +62,13 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 	}
 
 	const ourStory = t("about:ourStory", { returnObjects: true }) as unknown as OurStoryContent;
+	const heroData = t("about:hero", { returnObjects: true }) as unknown as HeroContent;
 
 	return (
 		<div className="relative">
 			<PageHead pageName="about" />
 			<div className="flex flex-col min-h-screen">
-				<HeroSection />
+				<Hero data={heroData} />
 				{ourStory?.headline ? (
 					<SplitMedia
 						data={{

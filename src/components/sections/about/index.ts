@@ -1,5 +1,3 @@
-export { HeroSection } from "./HeroSection";
-export { default as HeroSectionDefault } from "./HeroSection";
 export { AerialSurveyingSection } from "./AerialSurveyingSection";
 export { default as AerialSurveyingSectionDefault } from "./AerialSurveyingSection";
 export { ServicesByImagesSection } from "./ServicesByImagesSection";

@@ -2,11 +2,11 @@ import type { GetServerSideProps, NextPage } from "next";
 import PageHead from "@/components/Head";
 
 import { getI18nProps } from "@/lib/i18n";
+import { Deliverables } from "@/components/sections/Deliverables";
 import {
 	DroneImageryHeroSection,
 	WhatWeOfferSection,
 	WhyDronesMatterSection,
-	AerialSurveyDeliverablesSection,
 	DronesSection,
 	ProjectsAcrossAfricaSection,
 } from "@/components/sections/aerial-drones/drone-imagery-surveys";
@@ -23,7 +23,7 @@ const Page: NextPage<PageProps> = () => {
 				<DroneImageryHeroSection />
 				<WhatWeOfferSection />
 				<WhyDronesMatterSection />
-				<AerialSurveyDeliverablesSection />
+				<Deliverables ns="aerial-drones/drone-imagery-surveys" baseKey="aerialSurveyDeliverables" />
 				<DronesSection />
 				<ProjectsAcrossAfricaSection />
 			</div>
