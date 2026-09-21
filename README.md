@@ -431,14 +431,18 @@ source for editor options and renderer mappings.
   `common:locales`/`misc` and `meta:site` stay legacy-owned (unrendered or
   routing/brand); the legacy `/contact` tail follows the singleton, while the
   `/contact` page entry copy wins on `/contact` when opted in.
-- **New pages (no code deploy):** create the entry in `Pages` (single-segment
-  slug — lowercase/hyphens, must not collide with a fixed route or `home`),
-  compose sections in both locales, publish it, and add the slug to
-  `KEYSTATIC_PAGES`. It renders at `/<slug>` (default locale) and `/sw/<slug>`
-  via the catch-all route (`src/pages/[locale]/[...slug].tsx`); unpublished or
-  unallowlisted slugs 404. Published + allowlisted entries are picked up by the
-  sitemap automatically (wired pages are excluded — they keep their
-  `meta.json` URLs). Rollback: drop the slug / re-draft / `KEYSTATIC_DISABLE=1`.
+- **New pages:** every public route needs BOTH a content entry
+  (`content/pages/<slug>.json`) and a wired route file — the M7 pattern is a
+  `src/pages/[locale]/<slug>.tsx` page calling `resolveKeystaticPage("<slug>", lang)`
+  plus a root `src/pages/<slug>.tsx` proxy (re-exporting the page and its
+  `getServerSideProps` for default-locale URLs). Create/edit the entry in the
+  `Pages` collection (single-segment slug — lowercase/hyphens, must not collide
+  with a fixed route or `home`), compose sections in both locales, publish it,
+  and make sure the slug is servable (`KEYSTATIC_PAGES` — empty/unset serves
+  every published entry; a list must include the slug). Unpublished or
+  unallowlisted slugs fall back to the route's legacy rendering; a slug with no
+  route file has no URL at all (editor-created content-only pages are out of
+  v1 scope — see plan §M10). Wired pages keep their `meta.json` sitemap URLs.
 - **Admin access:** non-development `/keystatic/*` and `/api/keystatic/*` require
   HTTP Basic Auth (`KEYSTATIC_ADMIN_USER` / `KEYSTATIC_ADMIN_PASSWORD`, fail-closed,
   constant-time compare in `src/proxy.ts`). Generate the password with
