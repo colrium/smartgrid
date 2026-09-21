@@ -86,6 +86,13 @@ export function mergeSiteLayoutIntoStore(
 	common.footer = layout.footer;
 	common.contacts = layout.contacts;
 	common.cookies = layout.cookies;
+	// `chat` (WhatsApp floating button) merges only when the group carries
+	// content: an editor-empty group collapses to the legacy representation
+	// (no `chat` key at all — legacy locales have none), keeping the store
+	// identical to legacy until the button is configured. When present it
+	// replaces wholesale (single-source); `WhatsappButton` falls back per
+	// field (env number / t() defaults) for any empty value.
+	if (layout.chat.number) common.chat = layout.chat;
 	store[locale].common = common;
 
 	const contact = { ...(store[locale].contact ?? {}) };

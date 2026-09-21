@@ -735,5 +735,16 @@
 			"url": "https://www.youtube.com/@SmartGridsurveyingCivilworks",
 			"icon": "youtube"
 		}
-	]
+	],
+	"chat": {
+		"number": "",
+		"whatsappMessage": {
+			"en": "",
+			"sw": ""
+		},
+		"whatsappLabel": {
+			"en": "",
+			"sw": ""
+		}
+	}
 }

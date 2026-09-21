@@ -268,12 +268,13 @@ const UNKNOWN_ONLY_ENTRY = {
 	title: "Odd",
 	status: "published",
 	pageBuilder: [{ discriminant: "ghost", value: {} }],
-};
-
-const resolutionCases = await (async () => {
+};	const resolutionCases = await (async () => {
 	const outcomes = [];
+	// Empty allowlist = every published entry serves from Keystatic
+	// (adoption decision 2026-09-21, commit 2b54e7c); `draft` status stays
+	// the visibility gate. An explicit list restricts to the listed slugs.
 	setSwitchEnv(undefined, undefined);
-	outcomes.push(["switch-off-by-default", isKeystaticPageEnabled("terms-of-use") === false]);
+	outcomes.push(["switch-off-by-default", isKeystaticPageEnabled("terms-of-use") === true]);
 	setSwitchEnv("terms-of-use, home", undefined);
 	outcomes.push(["switch-allowlist", isKeystaticPageEnabled("terms-of-use") && isKeystaticPageEnabled("home") && !isKeystaticPageEnabled("about")]);
 	setSwitchEnv("terms-of-use", "1");
@@ -389,7 +390,7 @@ const resolutionCases = await (async () => {
 	// fixture, and the i18n-store merge — all from the real sources.
 	const layoutSchema = siteLayout.siteLayoutSchema;
 	const layoutExample = siteLayout.siteLayoutExample;
-	for (const key of ["status", "nav", "footer", "contacts", "cookies", "footerContacts", "socialChannels"]) {
+	for (const key of ["status", "nav", "footer", "contacts", "cookies", "footerContacts", "socialChannels", "chat"]) {
 		outcomes.push([`layout-schema-${key}`, layoutSchema && key in layoutSchema]);
 	}
 	outcomes.push([
@@ -402,6 +403,8 @@ const resolutionCases = await (async () => {
 		exampleResolved.nav.links[0]?.label === "Surveying" &&
 			typeof exampleResolved.footerContacts[0]?.label === "string" &&
 			exampleResolved.socialChannels.length === 1 &&
+			exampleResolved.chat.number === "254107393023" &&
+			exampleResolved.chat.whatsappLabel === "Chat on WhatsApp" &&
 			!JSON.stringify(exampleResolved).includes('"en"'),
 	]);
 
@@ -414,7 +417,7 @@ const resolutionCases = await (async () => {
 		}
 		return base;
 	};
-	setSwitchEnv(undefined, undefined);
+	setSwitchEnv("terms-of-use", undefined);
 	const layoutDisabled = await resolveSiteLayout("en", { baseDir: makeLayoutBase({}) });
 	outcomes.push(["layout-disabled", layoutDisabled.status === "legacy" && layoutDisabled.reason === "disabled"]);
 
@@ -444,9 +447,10 @@ const resolutionCases = await (async () => {
 			layoutPublished.site.layout.nav.links.length === 6 &&
 			layoutPublished.site.layout.nav.links[0]?.label === "Upimaji" &&
 			layoutPublished.site.layout.footerContacts.length === 6 &&
-			layoutPublished.site.layout.socialChannels.length === 4 &&
+			layoutPublished.site.layout.socialChannels.length === 3 &&
 			typeof layoutPublished.site.layout.cookies.categories.necessary.label === "string" &&
-			typeof layoutPublished.site.layout.contacts.phone[0]?.href === "string",
+			typeof layoutPublished.site.layout.contacts.phone[0]?.href === "string" &&
+			typeof layoutPublished.site.layout.chat.number === "string",
 	]);
 
 	// Store merge: owned slices replace legacy values; `nav` merges
@@ -470,7 +474,28 @@ const resolutionCases = await (async () => {
 			mergeStore.en.meta.site.title === "Brand" &&
 			mergeStore.en.contact.talkToUs.title === "T" &&
 			mergeStore.en.contact.talkToUs.contacts.length === 6 &&
-			mergeStore.en.contact.social.channels.length === 4,
+			mergeStore.en.contact.social.channels.length === 3,
+	]);
+
+	// Chat group (M9 follow-up): merges under `common.chat` only when the
+	// singleton carries a non-empty number — an empty group must leave the
+	// store untouched (legacy locales have no `chat` key).
+	const chatStore = { en: { common: { chat: { legacy: true } } } };
+	mergeSiteLayoutIntoStore(chatStore, "en", exampleResolved);
+	const chatlessStore = { en: { common: {} } };
+	mergeSiteLayoutIntoStore(
+		chatlessStore,
+		"en",
+		layoutPublished.status === "keystatic"
+			? layoutPublished.site.layout
+			: { ...exampleResolved, chat: { number: "", whatsappMessage: "", whatsappLabel: "" } }
+	);
+	outcomes.push([
+		"layout-merge-chat",
+		chatStore.en.common.chat?.legacy === undefined &&
+			chatStore.en.common.chat?.number === "254107393023" &&
+			chatStore.en.common.chat?.whatsappLabel === "Chat on WhatsApp" &&
+			chatlessStore.en.common.chat === undefined,
 	]);
 
 	// Parity: the published fixture migrates verbatim from locale JSON, so
@@ -489,7 +514,7 @@ const resolutionCases = await (async () => {
 	const legacyOwned = JSON.parse(JSON.stringify(parityStore));
 	const layoutEn = await resolveSiteLayout("en", { baseDir: makeLayoutBase({ "site.json": { ...realSite, status: "published" } }) });
 	const layoutSw = await resolveSiteLayout("sw", { baseDir: makeLayoutBase({ "site.json": { ...realSite, status: "published" } }) });
-	const ownedPaths = [["common", "nav"], ["common", "footer"], ["common", "contacts"], ["common", "cookies"]];
+	const ownedPaths = [["common", "nav"], ["common", "footer"], ["common", "contacts"], ["common", "cookies"], ["common", "chat"]];
 	let parity = layoutEn.status === "keystatic" && layoutSw.status === "keystatic";
 	if (parity) {
 		mergeSiteLayoutIntoStore(parityStore, "en", layoutEn.site.layout);
@@ -507,22 +532,20 @@ const resolutionCases = await (async () => {
 	outcomes.push(["layout-parity", parity]);
 
 	// --- Catch-all route for editor-created pages (M10) --------------------
-	// File contract: the localized catch-all plus the root proxy that keeps
-	// default-locale URLs unprefixed (same pattern as `about.tsx`).
-	const catchAllSrc = readFileSync(join(ROOT, "src", "pages", "[locale]", "[...slug].tsx"), "utf8");
-	const catchAllProxy = readFileSync(join(ROOT, "src", "pages", "[...slug].tsx"), "utf8");
-	outcomes.push([
-		"catchall-files",
-		catchAllProxy.includes('./[locale]/[...slug]') &&
-			catchAllSrc.includes("PageBuilderDocument") &&
-			catchAllSrc.includes("notFound") &&
-			catchAllSrc.includes('"home"') &&
-			catchAllSrc.includes('"keystatic"'),
-	]);
+	// SKIPPED (2026-09-21): M10 was superseded — the catch-all route files
+	// (`src/pages/[...slug].tsx`, `src/pages/[locale]/[...slug].tsx` and the
+	// `test-custom` pilot fixture) were removed from the codebase (commit
+	// 33bdbdb), so editor-created single-segment pages are not served in v1.
+	// The novel-slug resolution probes below still run: the M3 pipeline
+	// remains the substrate should the route return.
+	const catchAllSrcPath = join(ROOT, "src", "pages", "[locale]", "[...slug].tsx");
+	const catchAllProxyPath = join(ROOT, "src", "pages", "[...slug].tsx");
+	const catchAllRemoved = !existsSync(catchAllSrcPath) && !existsSync(catchAllProxyPath);
+	outcomes.push(["catchall-files", catchAllRemoved]);
 
 	// Content-only slugs resolve through the unchanged M3 pipeline: a novel
-	// published + allowlisted slug is servable, anything else falls back
-	// (the route turns every fallback into a 404 — it has no legacy page).
+	// published + allowlisted slug resolves at the reader level (no route
+	// serves it since the catch-all removal — see `catchall-files` above).
 	const probeEntry = (status) => ({
 		slug: "Test Custom Probe",
 		title: "Test Custom Probe",
@@ -546,17 +569,8 @@ const resolutionCases = await (async () => {
 	});
 	outcomes.push(["catchall-novel-unpublished", probeDraft.status === "legacy" && probeDraft.reason === "unpublished"]);
 
-	// The committed `test-custom` pilot fixture resolves once published.
-	const realTestCustom = JSON.parse(readFileSync(join(ROOT, "content", "pages", "test-custom.json"), "utf8"));
-	setSwitchEnv("test-custom", undefined);
-	const testCustomRes = await resolveKeystaticPage("test-custom", "en", {
-		baseDir: makeContentBase({ "test-custom.json": { ...realTestCustom, status: "published" } }),
-	});
-	outcomes.push([
-		"catchall-pilot-fixture",
-		testCustomRes.status === "keystatic" &&
-			testCustomRes.page.sections.map((s) => s.id).join(",") === "hero,ctaBand",
-	]);
+	// The committed `test-custom` pilot fixture was removed with the route;
+	// the novel-slug probe above covers the same pipeline contract.
 
 	// Sitemap: published + allowlisted + unwired slugs only (helper is
 	// exercised against a throwaway root so fixtures stay hermetic).

@@ -7,14 +7,15 @@ import { getSectionDefinition } from "./sectionRegistry";
 /**
  * Page resolution with explicit source precedence (M3).
  *
- * Source switch (per-page opt-in, migration policy):
- * - `KEYSTATIC_PAGES="slug-a,slug-b"` allowlists slugs served from
- *   Keystatic. Unset/empty (the default) means every route renders its
- *   legacy locale-JSON implementation byte-identically — no URL changes,
- *   no duplicated route logic.
+ * Source switch (adoption decided 2026-09-21, commit 2b54e7c):
+ * - `KEYSTATIC_PAGES="slug-a,slug-b"` restricts which slugs serve from
+ *   Keystatic. Unset/empty (the default) means every PUBLISHED entry
+ *   serves from Keystatic (`draft` entries never serve — status stays the
+ *   visibility gate, so legacy remains the visitor-facing source until a
+ *   page is published).
  * - `KEYSTATIC_DISABLE="1"` is the emergency rollback: every route renders
- *   legacy regardless of the allowlist. Never commit either variable with
- *   values; see `.env.example`.
+ *   legacy regardless of the allowlist or status. Never commit either
+ *   variable with values; see `.env.example`.
  *
  * Failure taxonomy (all resolve to safe, diagnosable outcomes):
  * - disabled   → legacy (slug not opted in, or global kill-switch).

@@ -210,6 +210,19 @@ function socialChannelsBuild(en, sw, where) {
 	});
 }
 
+// Chat (M9 follow-up): `common:chat.*` does not exist in legacy locale
+// JSON — the button used env number + t() defaultValues. The singleton owns
+// all three; number is a brand literal (en === sw), copy is localized.
+function chatBuild(en, sw, where) {
+	const number = sharedValue(en, sw, "number", `${where}.number`) ?? "";
+	if (number && /\D/.test(number)) gap(where, `"number" must be digits (got ${JSON.stringify(number)})`);
+	return {
+		number,
+		whatsappMessage: { en: optText(en?.whatsappMessage), sw: optText(sw?.whatsappMessage) },
+		whatsappLabel: { en: optText(en?.whatsappLabel), sw: optText(sw?.whatsappLabel) },
+	};
+}
+
 function loadLocaleFile(locale, namespace) {
 	return JSON.parse(readFileSync(join(ROOT, "public", "locales", locale, `${namespace}.json`), "utf8"));
 }
@@ -228,6 +241,7 @@ function generate() {
 		cookies: cookiesBuild(enCommon.cookies ?? {}, swCommon.cookies ?? {}, "cookies"),
 		footerContacts: footerContactsBuild(enContact.talkToUs?.contacts, swContact.talkToUs?.contacts, "talkToUs.contacts"),
 		socialChannels: socialChannelsBuild(enContact.social?.channels, swContact.social?.channels, "social.channels"),
+		chat: chatBuild(enCommon.chat ?? {}, swCommon.chat ?? {}, "chat"),
 	};
 }
 

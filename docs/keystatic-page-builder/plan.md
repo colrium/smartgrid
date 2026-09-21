@@ -208,7 +208,12 @@ Dependencies: M4 and M5.
 - [x] Record the migration completion date, known limitations, and rollback point.
       (Migration policy: per-page opt-in via `KEYSTATIC_PAGES`, default legacy; pilot
       `company-profile` migrated M4, entry stays `draft` until each page's publish; rollback =
-      allowlist/draft flip per page + global `KEYSTATIC_DISABLE=1`. Known limitations carried
+      allowlist/draft flip per page + global `KEYSTATIC_DISABLE=1`. AMENDED 2026-09-21:
+      commit `2b54e7c` flipped the default — an empty `KEYSTATIC_PAGES` now serves
+      every PUBLISHED entry (`draft` still never serves), and an explicit list
+      restricts to the listed slugs; adoption confirmed with the owner, resolver
+      header + check pins + `.env.example`/README updated to the opt-out contract.
+      Known limitations carried
       from M3: opted-in pages still embed the page locale namespace in `__NEXT_DATA__`;
       no `next build` gate per standing environment rule.)
 - [x] Update README, `AGENTS.md`, `CLAUDE.md`, and any operator documentation to match the final
@@ -713,6 +718,20 @@ singleton/collection (e.g. `content/site.json` or `content/layout/*.json`), NOT 
       `logo_alt`); `nav` merges additively so dead keys (`logo_dark`,
       `cta*`) survive. Ops: `check:keystatic` chain + `migrate:layout`
       helper in `package.json`; `site` slug documented in `.env.example`.)
+- [x] Apply the layout content to ALL common layout components: the M9 store
+      override already drives Navbar, both Footers and CookieConsent — extended the
+      singleton with a `chat` group so the floating WhatsApp button
+      (`src/components/WhatsappButton.tsx`) is editor-owned too.
+      (DONE 2026-09-21: schema `chat` group — `number` shared digits,
+      `whatsappMessage`/`whatsappLabel` per-locale; `resolveLayout` merges it
+      under `common:chat` ONLY when the group carries a non-empty number, so
+      empty groups keep the store legacy-identical; the component reads the
+      store first with `NEXT_PUBLIC_WHATSAPP_NUMBER` + hardcoded defaults as
+      fallback, keeping unconfigured deploys working. Migration gains
+      `chatBuild` (empty today — no legacy keys), check gains
+      `layout-schema-chat`/`layout-example-normalizes`/`layout-merge-chat` pins;
+      `migrate:layout --verify` OK, check/typecheck/lint green. Site-wide
+      rollout: publish `content/site.json` + keep `site` servable.)
 - [x] Prove `check:keystatic` + `typecheck` + `lint` + dev-smoke parity (layout change
       visible on multiple routes, rollback via kill-switch).
       (`check:keystatic` OK incl. layout matrix + parity, `typecheck` clean,

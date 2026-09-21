@@ -15,6 +15,16 @@ import { imagePath, localeLongText, localeText, previewText } from "./fields";
  * (`common:cookies.*`). PageTransitionLoader reads `nav.logo` too and
  * inherits the override.
  *
+ * Chat (added 2026-09-21, M9 follow-up): the WhatsApp floating button
+ * (`WhatsappButton`) is the one layout component that did not read the i18n
+ * store — its number came from `NEXT_PUBLIC_WHATSAPP_NUMBER` (build-time
+ * env) and its copy from `t()` defaultValues (no `common:chat.*` legacy
+ * keys exist). The singleton's `chat` group owns all three: `number`,
+ * `whatsappMessage`, `whatsappLabel`. `resolveLayout` merges it under
+ * `common.chat` and the component reads the store first, falling back to
+ * the env number when the group is empty — keeping deploys without a
+ * configured chat group working unchanged.
+ *
  * Deliberately NOT modelled (documented Stage 1 exclusions):
  * - `common:socials` — unrendered dead content (no reader in `src`).
  * - `nav.ctaPrimary/ctaSecondary/ctaSearch`, `nav.logo_dark` — unrendered.
@@ -250,6 +260,20 @@ export const siteLayoutSchema = {
 			itemLabel: (item) => previewText(item, ["fields", "platform", "value"], "Channel"),
 		}
 	),
+	chat: fields.object(
+		{
+			number: fields.text({
+				label: "WhatsApp number (shared)",
+				description: "Digits with country code, e.g. 254107393023. Empty = fall back to NEXT_PUBLIC_WHATSAPP_NUMBER.",
+			}),
+			whatsappMessage: localeLongText("Prefilled message", { optionalInEnglish: true }),
+			whatsappLabel: localeText("Tooltip label", { optionalInEnglish: true }),
+		},
+		{
+			label: "WhatsApp chat button",
+			description: "The floating button (`WhatsappButton`). Copy per locale; the number is a brand literal — identical in en/sw.",
+		}
+	),
 };
 
 /** Merge-ready layout data: plain locale-resolved values (no `{en,sw}` nodes). */
@@ -260,6 +284,7 @@ export interface NormalizedSiteLayout {
 	cookies: any;
 	footerContacts: any[];
 	socialChannels: any[];
+	chat: { number: string; whatsappMessage: string; whatsappLabel: string };
 }
 
 /**
@@ -333,6 +358,13 @@ export function normalizeSiteLayout(resolved: any): NormalizedSiteLayout {
 					icon: item?.icon ?? "",
 				}))
 			: [],
+		// Empty group = the pre-chat behavior: `WhatsappButton` falls back
+		// to `NEXT_PUBLIC_WHATSAPP_NUMBER` and the hardcoded defaultValues.
+		chat: {
+			number: resolved?.chat?.number ?? "",
+			whatsappMessage: resolved?.chat?.whatsappMessage ?? "",
+			whatsappLabel: resolved?.chat?.whatsappLabel ?? "",
+		},
 	};
 }
 
@@ -457,4 +489,9 @@ export const siteLayoutExample = {
 			icon: "linkedin",
 		},
 	],
+	chat: {
+		number: "254107393023",
+		whatsappMessage: { en: "Hello, I would like to speak with your team.", sw: "Habari, ningependa kuzungumza na timu yako." },
+		whatsappLabel: { en: "Chat on WhatsApp", sw: "Zungumza kwa WhatsApp" },
+	},
 };
