@@ -102,9 +102,7 @@
 						"description": {
 							"en": "We map both natural and built features, offering vital elevation and terrain insights for civil and structural planning.",
 							"sw": "Tunaweka ramani ya vipengele vya asili na vilivyojengwa, tukitoa maarifa muhimu ya mwinuko na ardhi kwa upangaji wa kirahisi na wa kimuundo."
-						},
-						"image": "",
-						"href": ""
+						}
 					},
 					{
 						"icon": "",
@@ -115,9 +113,7 @@
 						"description": {
 							"en": "Precision layout services ensure construction follows design specifications exactly—minimizing errors and delays.",
 							"sw": "Huduma za mpangilio wa usahihi huhakikisha ujenzi unafuata vipimo vya kubuni hasa—kupunguza makosa na ucheleweshaji."
-						},
-						"image": "",
-						"href": ""
+						}
 					},
 					{
 						"icon": "",
@@ -128,9 +124,7 @@
 						"description": {
 							"en": "From point clouds to mesh models, we digitize your site for design coordination, BIM input, and pre-construction validation.",
 							"sw": "Kutoka point clouds hadi mifano ya mesh, tunadijitalisha kiwanja chako kwa uratibu wa kubuni, uingizaji wa BIM, na uthibitishaji wa awali wa ujenzi."
-						},
-						"image": "",
-						"href": ""
+						}
 					},
 					{
 						"icon": "",
@@ -141,9 +135,7 @@
 						"description": {
 							"en": "Establish legal property limits, easements, and encroachments—essential for permitting and land development.",
 							"sw": "Taasisi ya mipaka ya kisheria ya mali, easements, na uvamizi—muhimu kwa vibali na maendeleo ya ardhi."
-						},
-						"image": "",
-						"href": ""
+						}
 					},
 					{
 						"icon": "",
@@ -154,9 +146,7 @@
 						"description": {
 							"en": "Document and verify completed works against original plans for certification, compliance, and project closeout.",
 							"sw": "Andika kumbukumbu na uhakiki kazi zilizokamilishwa dhidi ya mipango ya awali kwa uthibitisho, uzingatiaji, na kufunga mradi."
-						},
-						"image": "",
-						"href": ""
+						}
 					},
 					{
 						"icon": "",
@@ -167,9 +157,7 @@
 						"description": {
 							"en": "Detect and map buried infrastructure with minimal disruption—vital for excavation planning and utility coordination.",
 							"sw": "Gundua na weka ramani ya miundombinu iliyozikwa kwa usumbufu mdogo—muhimu kwa upangaji wa uchimbaji na uratibu wa huduma."
-						},
-						"image": "",
-						"href": ""
+						}
 					}
 				],
 				"id": ""

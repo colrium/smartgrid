@@ -6,7 +6,7 @@ import { resolveKeystaticPage, type ResolvedKeystaticPage } from "@/lib/keystati
 import type { Lang } from "@/lib/types";
 
 /**
- * Catch-all for editor-created Keystatic pages (M10).
+ * Single-segment dynamic route for editor-created Keystatic pages (M10).
  *
  * Any single-segment slug with no dedicated fixed route (fixed files take
  * Next.js precedence and are unaffected) resolves through the unchanged M3
@@ -15,9 +15,13 @@ import type { Lang } from "@/lib/types";
  *
  * Content-only pages have no legacy implementation, so every non-keystatic
  * outcome is a 404 (the resolver already server-warns with slug + reason —
- * never a blank page). Explicit 404s: multi-segment paths (nested URLs
- * belong to fixed routes), the reserved `keystatic` segment, and `home`
- * (served at `/` by `[locale]/index.tsx`).
+ * never a blank page). Explicit 404s: the reserved `keystatic` segment and
+ * `home` (served at `/` by `[locale]/index.tsx`); multi-segment paths 404
+ * naturally — there is deliberately no catch-all here. NOTE (2026-09-20,
+ * M10 dev-smoke): the original `[...slug].tsx` catch-all NEVER MATCHED —
+ * with Next's i18n routing the catch-all was absent from the routes
+ * manifest, so `/en/<slug>` 404'd at the router; renamed to `[slug].tsx`,
+ * which registers like every other dynamic route.
  *
  * Known limitation (documented in the plan): published + allowlisted
  * nested/hub entries also resolve at their flat `/<slug>` URL — don't link
@@ -44,8 +48,10 @@ const KeystaticCatchAllPage: NextPage<PageProps> = ({ keystaticPage }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-	const segments = context.params?.slug;
-	const slug = Array.isArray(segments) && segments.length === 1 ? segments[0] : null;
+	// Shape-agnostic slug extraction: the `[locale]` route passes a string
+	// (single segment), while the root `[...slug]` proxy passes an array.
+	const raw = context.params?.slug;
+	const slug = typeof raw === "string" ? raw : Array.isArray(raw) && raw.length === 1 ? raw[0] : null;
 	if (!slug || RESERVED_SLUGS.has(slug)) return { notFound: true };
 
 	const i18nProps = await getI18nProps(context, ["common", "meta"]);

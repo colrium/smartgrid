@@ -63,13 +63,9 @@
 					"en": "/media/aerial-drones/agricultural-ndvi-mapping/agricultural-ndvi-mapping-02.jpg",
 					"sw": "/media/aerial-drones/agricultural-ndvi-mapping/agricultural-ndvi-mapping-02.jpg"
 				},
-				"points": [],
 				"items": [
 					{
-						"icon": {
-							"en": "clock-fast",
-							"sw": "clock-fast"
-						},
+						"icon": "clock-fast",
 						"title": {
 							"en": "Save Time & Labor",
 							"sw": "Okoa Muda na Kazi"
@@ -80,10 +76,7 @@
 						}
 					},
 					{
-						"icon": {
-							"en": "leaf",
-							"sw": "leaf"
-						},
+						"icon": "leaf",
 						"title": {
 							"en": "Improve Resource Efficiency",
 							"sw": "Boresha Ufanisi wa Rasilimali"
@@ -94,10 +87,7 @@
 						}
 					},
 					{
-						"icon": {
-							"en": "brain",
-							"sw": "brain"
-						},
+						"icon": "brain",
 						"title": {
 							"en": "Make Smarter Decisions",
 							"sw": "Fanya Maamuzi Bora"
@@ -108,10 +98,7 @@
 						}
 					},
 					{
-						"icon": {
-							"en": "recycle",
-							"sw": "recycle"
-						},
+						"icon": "recycle",
 						"title": {
 							"en": "Enhance Sustainability",
 							"sw": "Imarisha Uendelevu"

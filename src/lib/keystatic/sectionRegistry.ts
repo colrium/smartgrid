@@ -5243,16 +5243,14 @@ const bsHero: SectionDefinition = {
 			href: fields.text({ label: "Link", description: "Internal path or full URL." }),
 			icon: fields.text({ label: "MDI icon (shared, optional)", description: "Icon slug without the `mdi-` prefix. Identical in en/sw." }),
 		}, { label: "Primary action" }),
-		footnoteItems: fields.array(
-			fields.object({
-				en: localeText("English text"),
-				sw: localeText("Swahili text"),
-			}),
-			{
-				label: "Footnote chips",
-				itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Footnote"),
-			}
-		),
+		// NOTE: flat `localeText` items ({en, sw} strings) — NOT a
+		// fields.object({en, sw}) wrapper (that would double-nest the pair
+		// and the reader would reject the stored value with
+		// "footnoteItems.N.en: Must be an object").
+		footnoteItems: fields.array(localeText("Footnote chip"), {
+			label: "Footnote chips",
+			itemLabel: (item) => previewText(item, ["fields", "en", "value"], "Footnote"),
+		}),
 		id: anchorField(),
 	}),
 	example: {

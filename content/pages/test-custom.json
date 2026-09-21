@@ -1,1 +1,91 @@
-{"pageBuilder":[{"discriminant":"hero","value":{"ctaPrimary":{"href":"/contact","icon":"","label":{"en":"Contact us","sw":"Wasiliana nasi"}},"ctaSecondary":{"href":"","icon":"","label":{"en":"","sw":""}},"cueLabel":{"en":"","sw":""},"description":{"en":"A test page proving editor-created Keystatic entries resolve to real routes.","sw":"Ukurasa wa majaribio unaothibitisha kurasa zilizoundwa na mhariri zinafunguka."},"footnoteItems":[],"frame":false,"headline":{"en":"Test Custom Page","sw":"Ukurasa wa Majaribio"},"id":"","image":"","layout":"light","scrollCue":false,"title":{"en":"Custom test","sw":"Jaribio maalum"}}},{"discriminant":"ctaBand","value":{"decor":"glow","description":{"en":"If you can read this in both locales, the catch-all route works.","sw":"Ukiweza kusoma hii katika lugha zote, njia ya catch-all inafanya kazi."},"hairline":false,"headline":{"en":"Catch-all proof","sw":"Uthibitisho wa catch-all"},"id":"","images":[],"layout":"split","primary":{"href":"/contact","icon":"","label":{"en":"Contact us","sw":"Wasiliana nasi"}},"secondary":{"href":"","icon":"","label":{"en":"","sw":""}},"shimmer":false,"tag":{"en":"Test","sw":"Jaribio"},"variant":"panel","watermark":""}}],"slug":"Test Custom","status":"draft","title":"Test Custom (migrated)"}
+{
+	"pageBuilder": [
+		{
+			"discriminant": "hero",
+			"value": {
+				"ctaPrimary": {
+					"href": "/contact",
+					"icon": "",
+					"label": {
+						"en": "Contact us",
+						"sw": "Wasiliana nasi"
+					}
+				},
+				"ctaSecondary": {
+					"href": "",
+					"icon": "",
+					"label": {
+						"en": "",
+						"sw": ""
+					}
+				},
+				"cueLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"description": {
+					"en": "A test page proving editor-created Keystatic entries resolve to real routes.",
+					"sw": "Ukurasa wa majaribio unaothibitisha kurasa zilizoundwa na mhariri zinafunguka."
+				},
+				"footnoteItems": [],
+				"frame": false,
+				"headline": {
+					"en": "Test Custom Page",
+					"sw": "Ukurasa wa Majaribio"
+				},
+				"id": "",
+				"image": "",
+				"layout": "light",
+				"scrollCue": false,
+				"title": {
+					"en": "Custom test",
+					"sw": "Jaribio maalum"
+				}
+			}
+		},
+		{
+			"discriminant": "ctaBand",
+			"value": {
+				"decor": "glow",
+				"description": {
+					"en": "If you can read this in both locales, the catch-all route works.",
+					"sw": "Ukiweza kusoma hii katika lugha zote, njia ya catch-all inafanya kazi."
+				},
+				"hairline": false,
+				"headline": {
+					"en": "Catch-all proof",
+					"sw": "Uthibitisho wa catch-all"
+				},
+				"id": "",
+				"images": [],
+				"layout": "split",
+				"primary": {
+					"href": "/contact",
+					"icon": "",
+					"label": {
+						"en": "Contact us",
+						"sw": "Wasiliana nasi"
+					}
+				},
+				"secondary": {
+					"href": "",
+					"icon": "",
+					"label": {
+						"en": "",
+						"sw": ""
+					}
+				},
+				"shimmer": false,
+				"tag": {
+					"en": "Test",
+					"sw": "Jaribio"
+				},
+				"variant": "panel",
+				"watermark": ""
+			}
+		}
+	],
+	"slug": "Test Custom",
+	"status": "published",
+	"title": "Test Custom (migrated)"
+}

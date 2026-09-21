@@ -4355,20 +4355,20 @@ const PAGES = {
 						description: { en: optText(en.description), sw: optText(sw.description) },
 						items: enItems.map((item, i) => {
 							const swItem = swItems[i] ?? {};
-							return {
-								icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
-								title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
-								description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
-								image: "",
-								href: "",
+							return {										icon: sharedValue(item, swItem, "icon", `${where}.items[${i}]`) ?? "",
+										title: { en: reqText(item.title, `${where}.items[${i}].title.en`), sw: reqText(swItem.title, `${where}.items[${i}].title.sw`) },
+										description: { en: reqText(item.description, `${where}.items[${i}].description.en`), sw: reqText(swItem.description, `${where}.items[${i}].description.sw`) },
+										// NOTE: no `image`/`href` keys — the bsSiteEngineering
+										// schema doesn't declare them and the reader rejects
+										// undeclared keys (values were empty strings anyway).
+									};
+								}),
+								id: "",
 							};
-						}),
-						id: "",
-					};
-				},
-			},
-			{
-				discriminant: "bsSection2",
+						},
+					},
+					{
+						discriminant: "bsSection2",
 				from: "section2",
 				// Legacy: BuildSmarterSection (bespoke with subtitle + CTA).
 				build(en, sw, where) {
@@ -6637,21 +6637,26 @@ const PAGES = {
 				// items align="left" card={{density comfortable, iconShape xl,
 				// iconSize sm}} /> (M13 batch 7 — wrapper retired).
 				build(en, sw, where) {
-					return {
-						headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
-						description: { en: optText(en.description), sw: optText(sw.description) },
-						image: { en: optText(en.image), sw: optText(sw.image) },
-						points: [],
-						items: (() => {
-							const enItems = Array.isArray(en.items) ? en.items : [];
-							const swItems = Array.isArray(sw.items) ? sw.items : [];
-							return enItems.map((item, i) => ({
-								icon: { en: optText(item?.icon), sw: optText(swItems[i]?.icon) },
-								title: { en: reqText(item?.title, `${where}.items.${i}.title.en`), sw: reqText(swItems[i]?.title, `${where}.items.${i}.title.sw`) },
-								description: { en: reqText(item?.description, `${where}.items.${i}.description.en`), sw: reqText(swItems[i]?.description, `${where}.items.${i}.description.sw`) },
-							}));
-						})(),
-						id: "",
+					return {								headline: { en: reqText(en.headline, `${where}.headline.en`), sw: reqText(sw.headline, `${where}.headline.sw`) },
+								description: { en: optText(en.description), sw: optText(sw.description) },
+								image: { en: optText(en.image), sw: optText(sw.image) },
+								// NOTE: no `points` key — the agWhyUseDrones schema declares
+								// headline/description/image/items/id only, and the Keystatic
+								// reader REJECTS stored object values with undeclared keys
+								// ("Key on object value \"points\" is not allowed"), which
+								// would silently fall the page back to legacy at resolution.
+								items: (() => {
+									const enItems = Array.isArray(en.items) ? en.items : [];
+									const swItems = Array.isArray(sw.items) ? sw.items : [];
+									return enItems.map((item, i) => ({
+										// icon is a SHARED string field (fields.text), not a locale
+										// pair — the reader rejects pair objects here.
+										icon: sharedValue(enItems[i], swItems[i], "icon", `${where}.items.${i}`) ?? "",
+										title: { en: reqText(item?.title, `${where}.items.${i}.title.en`), sw: reqText(swItems[i]?.title, `${where}.items.${i}.title.sw`) },
+										description: { en: reqText(item?.description, `${where}.items.${i}.description.en`), sw: reqText(swItems[i]?.description, `${where}.items.${i}.description.sw`) },
+									}));
+								})(),
+								id: "",
 					};
 				},
 			},
