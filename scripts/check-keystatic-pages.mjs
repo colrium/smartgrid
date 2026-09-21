@@ -426,7 +426,13 @@ const UNKNOWN_ONLY_ENTRY = {
 	outcomes.push(["layout-missing", layoutMissing.status === "legacy" && layoutMissing.reason === "missing"]);
 
 	const realSite = JSON.parse(readFileSync(join(ROOT, "content", "site.json"), "utf8"));
-	const layoutDraft = await resolveSiteLayout("en", { baseDir: makeLayoutBase({ "site.json": realSite }) });
+	// The unpublished-taxonomy probe is status-agnostic: the checked-in entry's
+	// status is an owner rollout decision (published = Keystatic serves the
+	// layout site-wide), so force `draft` on a copy instead of assuming the
+	// checked-in status stays `draft`.
+	const layoutDraft = await resolveSiteLayout("en", {
+		baseDir: makeLayoutBase({ "site.json": { ...realSite, status: "draft" } }),
+	});
 	outcomes.push(["layout-unpublished", layoutDraft.status === "legacy" && layoutDraft.reason === "unpublished"]);
 
 	const layoutBroken = await resolveSiteLayout("sw", { baseDir: makeLayoutBase({ "site.json": "{oops" }) });

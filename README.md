@@ -422,9 +422,14 @@ source for editor options and renderer mappings.
   chat button):** edit
   once in the `Site layout` singleton (`content/site.json`), in both locales, and
   it applies site-wide — no component changes needed (the server merges the
-  published layout into the i18n store in `getI18nProps`). Publish flow is the
-  same as pages: `status: published` **plus** the reserved slug `site` in
-  `KEYSTATIC_PAGES`; rollback is per-site (drop `site` / re-draft) or the same
+  published layout into the i18n store in `getI18nProps`). **Rolled out
+  2026-09-21:** the checked-in singleton is `status: published`, so with the
+  default empty `KEYSTATIC_PAGES` every route serves navbar/footer/cookie/
+  contacts/WhatsApp content from Keystatic in both locales (the locale-JSON
+  values it migrated from stay as fallback). Publish flow: `status: published`
+  **plus** the reserved slug `site` servable (`KEYSTATIC_PAGES` — empty/unset
+  serves every published entry; a list must include `site`); rollback is
+  per-site (drop `site` / set the singleton back to `draft`) or the same
   global `KEYSTATIC_DISABLE=1`. Regenerate/verify with
   `node scripts/migrate-layout-to-keystatic.mjs --write|--verify`
   (`yarn migrate:layout`). Notes: `common:socials`, `nav.cta*`, `nav.logo_dark`,
