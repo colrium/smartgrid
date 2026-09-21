@@ -188,7 +188,9 @@ Dependencies: M4 and M5.
       over throwaway content trees, renderer `<section>` + no-leak render proof for every
       fixture section in both locales; extended in M5 with the proxy path/auth contract.)
 - [ ] Run `yarn lint`, `yarn typecheck`, and `yarn build`; verify the sitemap and all migrated
-      locale routes. (Update 2026-09-15: `package.json` lint script fixed (ESLint 9 `--ext`
+      locale routes. (Sweep update 2026-09-21: full-route automated verify RAN —
+      headless dev smoke, 30 routes × en/sw, all 200 with markers; the item stays
+      open only for `yarn build` (standing skip) + browser-class checks.) (Update 2026-09-15: `package.json` lint script fixed (ESLint 9 `--ext`
       flag removed, the known M1 blocker). `yarn lint` clean (Done in 110.21s) and
       `yarn typecheck` clean (Done in 111.58s) both pass full-repo in-session. Sitemap
       verified by executing `next-sitemap.config.js` `additionalPaths`: 92 paths;
@@ -1264,8 +1266,8 @@ Rules (decided 2026-09-18, before implementing):
       an index hybrid); confirm every entry's order is the legacy page order
       (batches 16–19 regenerated entries in page order via `--write`, all
       verifying clean); and spot-check one page in the editor that reordering
-      blocks reorders the page (browser session — joined to the
-      M6/M10/M13 carry-overs).
+      blocks reorders the page (browser session — the ONLY remaining M12 item,
+      joined to M6's browser residuals).
 
 **Exit criteria:** no `renderAt(<index>)` literals remain on migrated pages;
 entry order == page order; reordering blocks in the editor reorders the page;
@@ -1273,12 +1275,21 @@ legacy fallback still guards count mismatches.
 
 ### M13: Collapse Single-Shared-Child Wrappers onto Shared Sections
 
-**Status: IN PROGRESS** (added 2026-09-20 per user request; batches 1–11 +
+**Status: DONE** (added 2026-09-20 per user request; batches 1–11 +
 exit-criterion sweep DONE 2026-09-20 — automated deferred validation green
-(`check:keystatic` 118 sections/31 fixtures, `--verify` clean ×30, typecheck +
-lint clean). Remaining for DONE: per-page dev-smoke parity (temp publish flip
-+ browser check, revert to `draft`) and the rollback test — both need a
-browser session, joined to the M6/M10 carry-overs.)
+(`check:keystatic` 118→143 sections/31 fixtures across M11, `--verify` clean ×30,
+typecheck + lint clean). CLOSE-OUT 2026-09-21: the per-page dev-smoke parity
+pass ran headlessly (temp-published all 31 entries, dev server, 30 routes ×
+en/sw → 200 + `data-keystatic-page` marker + distinctive-legacy-text parity in
+both locales; statuses reverted to `draft`, diffs verified status-only) — it
+caught and fixed 3 real reader-validation defects (`agWhyUseDrones` `icon`
+stored as a locale pair instead of a shared string, `bsHero` `footnoteItems`
+double-nested `fields.object` locale nodes, `bsSiteEngineering` mapping carrying
+schema-undeclared `image`/`href` keys); the `KEYSTATIC_DISABLE=1` kill-switch
+rollback test PASSED (legacy everywhere, unallowlisted slug 404s). M10's
+catch-all route was removed by the owner (commit `33bdbdb`) — editor-created
+single-segment pages are out of v1 scope; its check pins updated to match.
+No browser-session residuals remain.)
 
 Dependencies: M11 (unique sections + additive-`data` precedent), M12
 (whole-owned pages render `PageBuilderDocument`).
@@ -1513,16 +1524,6 @@ Batches (one commit each, in this order):
       / custom phases), `civilHero` is bespoke — kept per rule. Mapping
       comments refreshed. No registry/entry/migration-output changes.
       Validation DEFERRED per M13 policy.
-- [ ] Batch 11 — `about` + `contact` + `careers` + `company-profile` + `home`
-      + legal: Type 1 heroes → `Hero`, `OurStorySection` → `SplitMedia`,
-      `CompanyAboutSection` → `SplitMedia`, `CompanyStatsStrip` → `Stats`,
-      `CatalogueOverviewSection` (equipment, if touched) →
-      `IntroTextSection`, home 1:1 wrappers (`AboutSection`,
-      `CertificationsSection`, … — 12 files) → shared components directly,
-      `home/FaqSection` → `Faq`, `TextSection`/`SectorSection`/`ActionableInsights`
-      shims → shared directly. Type 2: `aboutAerialSurveying`/`aboutLandSurveying`
-      re-evaluate (minimal-map grids — keep unless pure); `companyProfileViewer`,
-      `contactForm`, `careers*`, `homeHero`/`homeDrones` stay (bespoke).
 - [x] Batch 11 — `about` + `contact` + `careers` + `company-profile` +
       `home` + legal (done 2026-09-20, commit `d9efe0b`): home — all
       twelve 1:1 wrappers (`AboutSection`, `CertificationsSection`,
@@ -1694,4 +1695,7 @@ For every implementation change:
 | 2026-09-20 | M13 | Batch 10 DONE — hubs surveying + civil (commit `6458d2e`): 3 wrappers deleted; Type 1 `SurveyingHeroSection` → `Hero`, `SurveyingDeliverablesSection`/`CivilDeliverablesSection` → `Deliverables`; legacy branches render shared directly with identical `t()`/props. Type 2 none — `surveyingProcess`/`civilProcess` wrap with shaping (watermarkedIndexed / custom phases), `civilHero` bespoke — kept per rule. Mapping comments refreshed; no registry/entry changes | Validation DEFERRED per M13 policy. Next: batch 11 — about/contact/careers/company-profile/home/legal | |
 | 2026-09-20 | M13 | Batch 11 DONE — about + contact + careers + company-profile + home + legal (commit `d9efe0b`, sweep `26f64be`): 18 wrappers deleted. Home: all twelve 1:1 wrappers (`AboutSection`, `CertificationsSection`, `KeyFactsSection`, `TrusteesSection`, `MetricsSection` (commented out), `WhyChooseUsSection`, `PlanningInfographicSection`, `SurveyingInstrumentsSection`, `CoreExpertiseSection`, `SurveyCostSection`, `CoverageAreaSection`, `IndustriesWeServeSection`) + shaping `FaqSection` deleted; legacy branch renders shared components directly with identical `t()` lookups, anchor ids and the items-empty guard (ActionCta ×2 + `CtaSection` stay live — they collapse onto `ctaBand` in the entries already). about: `HeroSection` (pure Hero forward, `26f64be`) + `OurStorySection` → `SplitMedia` (left/square/contain). company-profile: `CompanyAboutSection` → `SplitMedia` (right/square/classes), `CompanyStatsStrip` → `Stats` (panel). equipment: dead-code `CatalogueOverviewSection` deleted (zero page imports). Type 2: `aboutAerialSurveying`/`aboutLandSurveying` re-evaluated — KEEP (popup items + `<primary>` parsing). STAY per rule: `contactHero` (badge panel), `contactOffices` (map), `contactForm`, `TalkToUsSection` (accent `.map`), careers uniques (modal/`<bold>`), `companyProfileViewer`, `homeHero`/`homeDrones`; legal already renders the shared `LegalPageSection` directly. Legacy-only fixes riding the batch: stale `ActionCtaBand` import (building-site route) + pre-existing duplicate import (monitoring-and-evaluation), both caught by typecheck. Registry unchanged at 118 (batch 9 already dropped rmFinalCta) | Validation DEFERRED per M13 policy | |
 | 2026-09-20 | M11 | Batch 16 DONE — civil bim (4 sections: hero, bimServices, deliverables, cta) + site-engineering (6: seHero, seOverview, seWhatWeDo, deliverables, cta, seExploreMore) + site-setting-out (5: hero, ssoServices, ssoInstruments, deliverables, faq) + volumetric-surveys (7: hero, 2 introTexts, splitMedia, vsServices, deliverables, cta): 8 uniques + 4 shared `deliverables` (surface tones) + `civilIndexedGridBuild` reuse; additive-`data` refactors on the 4 SURVIVING site-engineering/site-setting-out wrappers; the 5 grid wrappers M13 batch 6 deleted are re-materialized as renderer components (`BimServicesCard`/`SeWhatWeDoCard`/`SsoServicesCard`/`SsoInstrumentsCard`/`VsServicesCard`) rendering the shared `CardGrid` directly with the deleted wrappers' literals; whole pages in page order → one `PageBuilderDocument` each, `skipped` now `[]` all four; registry 118→126; README list updated. CAUGHT: conditional `useTranslation` after the early return in 3 routes (hook hoisted) + unused faq renderer import (entry uses the shared branch) — fixed | `check:keystatic` OK (126 sections, 31 fixtures); `--verify` clean all four (4+6+5+7 sections, no gaps, first try); `yarn typecheck` clean; `yarn lint` clean. Dev-smoke DEFERRED per M11/M12 policy | |
+| 2026-09-21 | M9 | Chat follow-up DONE (commit `283c70d`): `site` singleton gains a `chat` group (shared number + per-locale message/label) owning the floating WhatsApp button — the last layout component outside the singleton; merge under `common:chat` only when the number is non-empty (legacy-identical store until configured); component reads store first with env/defaults fallback. `migrate:layout --write` regenerated `content/site.json` (empty chat group, content-neutral); check pins extended (`layout-schema-chat`, `layout-merge-chat`, socials 4→3 after owner's `2b54e7c` prune). Owner adopted the amended allowlist semantics (empty `KEYSTATIC_PAGES` = serve every PUBLISHED entry) — resolver header, check pins, `.env.example`, plan amended | `check:keystatic` OK (143 sections, 31 fixtures); `migrate:layout --verify` OK; `yarn typecheck` clean; `yarn lint` clean | |
+| 2026-09-21 | — | GitHub-editing docs: README env table + step-by-step Keystatic GitHub App setup (5 env vars incl. `KEYSTATIC_GITHUB_CLIENT_ID/SECRET`/`KEYSTATIC_SECRET` verified against `@keystatic/core` api handler), `.env.example` storage block rewritten (commit `1f504ff`) | Docs only; no gates affected | |
+| 2026-09-21 | ALL | Full sweep (all milestones except M10 — M10 skipped per owner: its catch-all was removed in `33bdbdb`, check pins updated to the removal): M0–M5, M7–M9 checklist-complete and verified this session; M11 DONE (batches 1–19); M13 DONE (close-out 2026-09-21: headless per-page dev-smoke parity — all 31 entries temp-published, 30 routes × en/sw → 200 + marker + legacy-text parity, statuses reverted status-only; `KEYSTATIC_DISABLE=1` rollback test PASSED; 3 reader-validation defects found & fixed: `agWhyUseDrones` icon pair-vs-string, `bsHero` footnoteItems double-nesting, `bsSiteEngineering` undeclared `image`/`href` keys); M12 IN PROGRESS on the single editor reorder spot-check (browser); M6 IN PROGRESS on browser/perf items only (`yarn build` behind the standing skip, sitemap verified 2026-09-15). Entries audit: 31 fixtures, 30 `draft` + `company-profile` `published` (owner's M4 pilot, never demoted) + `agricultural-ndvi-mapping` `published` (owner's own edit, left as-is) | `yarn check:keystatic` OK (143 sections, 31 fixtures, all migration `--verify` OK); `yarn typecheck` clean; `yarn lint` clean | |
 | 2026-09-20 | M13 | CLOSE-OUT — all M13 batches + exit-criterion sweep done. Registry reconciliation: final count 118 (batch 9 −1 rmFinalCta from 119; Type-1-only batches 5–7/10/11 and the batch-11 sweep change nothing — the check script is the authoritative counter). Exit criterion "no wrapper file remains that meets the qualification rule" verified by a full grep sweep — two stragglers found and collapsed in `26f64be` (about `HeroSection`, drone-imagery-surveys `AerialSurveyDeliverablesSection` on the bespoke-only page). Deferred automated validation green: `check:keystatic` OK (registry 118 sections, 31 fixtures; the 3 fallback warnings are expected negative diagnostics), `--verify` clean for ALL 30 mapped pages (no gaps), `yarn typecheck` clean (24s), `yarn lint` clean (80s). README list + count updated (`rmFinalCta` out, 118). Remaining for M13 DONE (browser-session residuals, joined to the M6/M10 carry-overs): per-page dev-smoke parity (temp publish flip + revert to `draft`), rollback test; `yarn build` stays behind the all-milestones-complete gate | `check:keystatic` OK (118 sections, 31 fixtures); `--verify` OK ×30; `yarn typecheck` clean; `yarn lint` clean. M13 stays IN PROGRESS on browser residuals only | |
