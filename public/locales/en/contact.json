@@ -341,25 +341,19 @@
 			{
 				"platform": "LinkedIn",
 				"handle": "Smartgrid Surveying",
-				"url": "https://linkedin.com/company/smartgridsurveying",
+				"url": "https://www.linkedin.com/company/smartgrid-surveying/",
 				"icon": "linkedin"
-			},
-			{
-				"platform": "X / Twitter",
-				"handle": "@smartgridsurvey",
-				"url": "https://twitter.com/smartgridsurvey",
-				"icon": "twitter"
 			},
 			{
 				"platform": "Instagram",
 				"handle": "@smartgridsurveying",
-				"url": "https://instagram.com/smartgridsurveying",
+				"url": "https://www.instagram.com/smartgrid_surveying/",
 				"icon": "instagram"
 			},
 			{
 				"platform": "YouTube",
 				"handle": "Smartgrid Surveying",
-				"url": "https://youtube.com/smartgridsurveying",
+				"url": "https://www.youtube.com/@SmartGridsurveyingCivilworks",
 				"icon": "youtube"
 			}
 		]

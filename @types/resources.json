@@ -3350,22 +3350,17 @@ export default interface Resources {
   "handle": "Smartgrid Surveying",
   "icon": "linkedin",
   "platform": "LinkedIn",
-  "url": "https://linkedin.com/company/smartgridsurveying"
-}, {
-  "handle": "@smartgridsurvey",
-  "icon": "twitter",
-  "platform": "X / Twitter",
-  "url": "https://twitter.com/smartgridsurvey"
+  "url": "https://www.linkedin.com/company/smartgrid-surveying/"
 }, {
   "handle": "@smartgridsurveying",
   "icon": "instagram",
   "platform": "Instagram",
-  "url": "https://instagram.com/smartgridsurveying"
+  "url": "https://www.instagram.com/smartgrid_surveying/"
 }, {
   "handle": "Smartgrid Surveying",
   "icon": "youtube",
   "platform": "YouTube",
-  "url": "https://youtube.com/smartgridsurveying"
+  "url": "https://www.youtube.com/@SmartGridsurveyingCivilworks"
 }],
       "headline": "Stay connected",
       "tag": "Follow Us"
@@ -5820,11 +5815,10 @@ export default interface Resources {
       "name": "SMARTGRID SURVEYING & CIVIL ENGINEERING LTD",
       "phone": "+254 10 7393023",
       "socialMedia": {
-        "facebook": "https://facebook.com/smartgridsurveying",
-        "instagram": "https://instagram.com/smartgridsurveying",
-        "linkedin": "https://linkedin.com/company/smartgridsurveying",
-        "twitter": "https://twitter.com/smartgridsurvey",
-        "youtube": "https://youtube.com/smartgridsurveying"
+        "facebook": "https://www.facebook.com/p/SmartGrid-Surveying-and-Engineering-61573692652626/",
+        "instagram": "https://www.instagram.com/smartgrid_surveying/",
+        "linkedin": "https://www.linkedin.com/company/smartgrid-surveying/",
+        "youtube": "https://www.youtube.com/@SmartGridsurveyingCivilworks"
       },
       "tagline": "Survey Smarter, Build Stronger"
     },
