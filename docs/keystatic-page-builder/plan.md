@@ -177,7 +177,9 @@ an environment representative of deployment, and an unauthorized request is reje
 
 ### M6: Verification and Cutover
 
-**Status: IN PROGRESS**
+**Status: IN PROGRESS** (keyboard/responsive/visual + performance items DONE
+2026-09-21 via the in-browser dev preview; remaining: `yarn build` behind the
+standing all-milestones skip and the final sitemap re-verify at cutover.)
 
 Dependencies: M4 and M5.
 
@@ -204,9 +206,37 @@ Dependencies: M4 and M5.
       (`company-profile` stays `published` per M4). Still open: `yarn build`
       (standing skip) + keyboard/responsive/visual + perf sampling — M6 stays
       IN PROGRESS on those browser residuals.)
-- [ ] Perform keyboard, responsive, and visual checks in the editor and rendered pages.
-- [ ] Measure page performance for representative pages, especially pages containing images,
-      animation, maps, or 3D components.
+- [x] Perform keyboard, responsive, and visual checks in the editor and rendered pages.
+      (DONE 2026-09-21, in-browser via the dev preview: /keystatic dashboard + Pages
+      collection expose proper ARIA table semantics (grid/row/columnheader/rowheader),
+      the collection searchbox filters live and dismisses on Escape; entry form
+      keyboard audit: 38 visible focusables, 0 zero-size stops, 0 negative tabindex,
+      logical order, inputs carry associated labels with required marks; Site layout
+      singleton (incl. the new chat group) renders every group with bilingual
+      sub-labels. Rendered pages (/en, /en/about, /sw/contact, published agri page):
+      single h1, all images carry alt attributes, 0 unnamed interactive controls,
+      no horizontal overflow at 471px, focus indicators present on all links
+      (auto outline / ring / tint; social chips verified), cookie dialog renders
+      and dismisses. Findings: one H2→H5 heading jump on /en (pre-existing legacy
+      section markup); brand teal #0097B2 text fails 4.5:1 on light surfaces
+      (≈3.46:1, legacy-wide token issue, NOT migration-introduced) — recorded for
+      the design-token owner.)
+- [x] Measure page performance for representative pages, especially pages containing images,
+      animation, maps, or 3D components. (DONE 2026-09-21, warm dev-server measurements
+      via PerformanceObserver: home /en ≈0.5s TTFB, ≈4.0s FCP; /en/about ≈0.6s/4.8s;
+      /en/contact (map + form) ≈0.5s/4.3s; /en/aerial-drones/lidar-mapping (images
+      heavy) ≈0.4s/4.5s; published Keystatic-served agri page ≈0.3s/4.3s — parity
+      with legacy, no Keystatic overhead. Payload: home ≈10.6MB (dev mode, 29/31
+      images lazy-loaded; production build optimizes further), lidar ≈6.6MB, contact
+      ≈6.6MB. 3/5 images on the agri page lack width/height — pre-existing legacy
+      hero pattern; no horizontal overflow anywhere. Dev log notes one gSSP payload
+      >128kB (agri entry) — dev-only i18n store duplication already recorded as an
+      M3 known limitation. CAUGHT & FIXED a real defect: whole-owned Keystatic
+      branches rendered NO <head> (empty <title>, no meta/canonical/hreflang/JSON-LD
+      — every route file renders PageHead only in its legacy branch); PageBuilderDocument
+      now emits PageHead from the same meta:pages.<slug> data — verified en/sw title,
+      canonical, description, alternates identical to legacy, single <title>,
+      typecheck + lint clean.)
 - [x] Record the migration completion date, known limitations, and rollback point.
       (Migration policy: per-page opt-in via `KEYSTATIC_PAGES`, default legacy; pilot
       `company-profile` migrated M4, entry stays `draft` until each page's publish; rollback =
@@ -1698,4 +1728,5 @@ For every implementation change:
 | 2026-09-21 | M9 | Chat follow-up DONE (commit `283c70d`): `site` singleton gains a `chat` group (shared number + per-locale message/label) owning the floating WhatsApp button — the last layout component outside the singleton; merge under `common:chat` only when the number is non-empty (legacy-identical store until configured); component reads store first with env/defaults fallback. `migrate:layout --write` regenerated `content/site.json` (empty chat group, content-neutral); check pins extended (`layout-schema-chat`, `layout-merge-chat`, socials 4→3 after owner's `2b54e7c` prune). Owner adopted the amended allowlist semantics (empty `KEYSTATIC_PAGES` = serve every PUBLISHED entry) — resolver header, check pins, `.env.example`, plan amended | `check:keystatic` OK (143 sections, 31 fixtures); `migrate:layout --verify` OK; `yarn typecheck` clean; `yarn lint` clean | |
 | 2026-09-21 | — | GitHub-editing docs: README env table + step-by-step Keystatic GitHub App setup (5 env vars incl. `KEYSTATIC_GITHUB_CLIENT_ID/SECRET`/`KEYSTATIC_SECRET` verified against `@keystatic/core` api handler), `.env.example` storage block rewritten (commit `1f504ff`) | Docs only; no gates affected | |
 | 2026-09-21 | ALL | Full sweep (all milestones except M10 — M10 skipped per owner: its catch-all was removed in `33bdbdb`, check pins updated to the removal): M0–M5, M7–M9 checklist-complete and verified this session; M11 DONE (batches 1–19); M13 DONE (close-out 2026-09-21: headless per-page dev-smoke parity — all 31 entries temp-published, 30 routes × en/sw → 200 + marker + legacy-text parity, statuses reverted status-only; `KEYSTATIC_DISABLE=1` rollback test PASSED; 3 reader-validation defects found & fixed: `agWhyUseDrones` icon pair-vs-string, `bsHero` footnoteItems double-nesting, `bsSiteEngineering` undeclared `image`/`href` keys); M12 IN PROGRESS on the single editor reorder spot-check (browser); M6 IN PROGRESS on browser/perf items only (`yarn build` behind the standing skip, sitemap verified 2026-09-15). Entries audit: 31 fixtures, 30 `draft` + `company-profile` `published` (owner's M4 pilot, never demoted) + `agricultural-ndvi-mapping` `published` (owner's own edit, left as-is) | `yarn check:keystatic` OK (143 sections, 31 fixtures, all migration `--verify` OK); `yarn typecheck` clean; `yarn lint` clean | |
+| 2026-09-21 | M6 | Browser checks + performance DONE via the in-browser dev preview (editor: ARIA grid/search + Escape, 38 focusables/0 traps, labeled required inputs, chat group renders; pages: single h1, 100% alt coverage, 0 unnamed controls, no 471px overflow, focus indicators verified incl. social chips, warm perf ≈0.3–0.6s TTFB / ≈4.0–4.8s FCP on home/about/contact/lidar/agri, 29/31 home images lazy). CAUGHT & FIXED: whole-owned Keystatic branches emitted no `<head>` (empty `<title>`, no canonical/hreflang/JSON-LD) — `PageBuilderDocument` now renders `PageHead` from the same `meta:pages.<slug>` data; verified en/sw vs legacy identical, single `<title>`, typecheck/lint clean. Pre-existing findings recorded (H2→H5 jump on home, brand-teal 3.46:1 contrast, 3/5 agri images without dimensions) | `yarn typecheck` clean; `yarn lint` clean; head verified via curl on published + fallback routes | |
 | 2026-09-20 | M13 | CLOSE-OUT — all M13 batches + exit-criterion sweep done. Registry reconciliation: final count 118 (batch 9 −1 rmFinalCta from 119; Type-1-only batches 5–7/10/11 and the batch-11 sweep change nothing — the check script is the authoritative counter). Exit criterion "no wrapper file remains that meets the qualification rule" verified by a full grep sweep — two stragglers found and collapsed in `26f64be` (about `HeroSection`, drone-imagery-surveys `AerialSurveyDeliverablesSection` on the bespoke-only page). Deferred automated validation green: `check:keystatic` OK (registry 118 sections, 31 fixtures; the 3 fallback warnings are expected negative diagnostics), `--verify` clean for ALL 30 mapped pages (no gaps), `yarn typecheck` clean (24s), `yarn lint` clean (80s). README list + count updated (`rmFinalCta` out, 118). Remaining for M13 DONE (browser-session residuals, joined to the M6/M10 carry-overs): per-page dev-smoke parity (temp publish flip + revert to `draft`), rollback test; `yarn build` stays behind the all-milestones-complete gate | `check:keystatic` OK (118 sections, 31 fixtures); `--verify` OK ×30; `yarn typecheck` clean; `yarn lint` clean. M13 stays IN PROGRESS on browser residuals only | |
