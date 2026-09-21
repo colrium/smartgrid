@@ -453,7 +453,7 @@ export const siteLayoutExample = {
 		{
 			platform: "LinkedIn",
 			handle: "Smartgrid Surveying",
-			url: "https://linkedin.com/company/smartgridsurveying",
+			url: "https://www.linkedin.com/company/smartgrid-surveying/",
 			icon: "linkedin",
 		},
 	],
