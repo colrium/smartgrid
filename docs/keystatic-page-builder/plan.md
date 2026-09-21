@@ -679,7 +679,7 @@ fail safe per M3 taxonomy.
 
 ### M9: Editable Common Layout Content
 
-**Status: DONE** (2026-09-17 — singleton live behind `site` opt-in; dev-smoke parity user-confirmed; see close-out log row).
+**Status: DONE** (2026-09-17 — singleton live behind `site` opt-in; dev-smoke parity user-confirmed; the four-component layout surface incl. the chat/WhatsApp group re-verified 2026-09-21; see close-out log rows).
 
 Dependencies: M8 (registry pattern proven on the new sections); layout sources today:
 `src/layouts/LandingPage/Navbar.tsx` (`common:nav` + `common:contacts` + `meta:site`),
@@ -750,10 +750,14 @@ singleton/collection (e.g. `content/site.json` or `content/layout/*.json`), NOT 
       `logo_alt`); `nav` merges additively so dead keys (`logo_dark`,
       `cta*`) survive. Ops: `check:keystatic` chain + `migrate:layout`
       helper in `package.json`; `site` slug documented in `.env.example`.)
-- [x] Apply the layout content to ALL common layout components: the M9 store
-      override already drives Navbar, both Footers and CookieConsent — extended the
-      singleton with a `chat` group so the floating WhatsApp button
-      (`src/components/WhatsappButton.tsx`) is editor-owned too.
+- [x] Apply the common layout content on the common layout components — the navbar
+      (`src/layouts/LandingPage/Navbar.tsx`), the footer
+      (`src/layouts/LandingPage/Footer*.tsx`), the cookie-consent dialog
+      (`src/components/CookieConsent.tsx`) and the floating WhatsApp contact
+      button (`src/components/WhatsappButton.tsx`): the M9 store override in
+      `getI18nProps` drives the first three site-wide (zero component changes),
+      and the singleton's `chat` group owns the WhatsApp button (merged under
+      `common:chat` when the group carries a non-empty number).
       (DONE 2026-09-21: schema `chat` group — `number` shared digits,
       `whatsappMessage`/`whatsappLabel` per-locale; `resolveLayout` merges it
       under `common:chat` ONLY when the group carries a non-empty number, so
@@ -761,8 +765,13 @@ singleton/collection (e.g. `content/site.json` or `content/layout/*.json`), NOT 
       store first with `NEXT_PUBLIC_WHATSAPP_NUMBER` + hardcoded defaults as
       fallback, keeping unconfigured deploys working. Migration gains
       `chatBuild` (empty today — no legacy keys), check gains
-      `layout-schema-chat`/`layout-example-normalizes`/`layout-merge-chat` pins;
-      `migrate:layout --verify` OK, check/typecheck/lint green. Site-wide
+      `layout-schema-chat`/`layout-example-normalizes`/`layout-merge-chat` pins.
+      RE-VERIFIED 2026-09-21 (session sweep): temp publish flip with
+      distinctive copy — a test navbar item, the footer description, the
+      cookie-dialog title and the WhatsApp label/message (encoded in the
+      `wa.me` href) all served from the singleton on `/en` + `/sw`;
+      `KEYSTATIC_DISABLE=1` forced every marker back to legacy (0 markers,
+      legacy cookie title); entry reverted to `draft` after. Site-wide
       rollout: publish `content/site.json` + keep `site` servable.)
 - [x] Prove `check:keystatic` + `typecheck` + `lint` + dev-smoke parity (layout change
       visible on multiple routes, rollback via kill-switch).
