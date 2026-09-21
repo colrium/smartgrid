@@ -178,8 +178,10 @@ an environment representative of deployment, and an unauthorized request is reje
 ### M6: Verification and Cutover
 
 **Status: IN PROGRESS** (keyboard/responsive/visual + performance items DONE
-2026-09-21 via the in-browser dev preview; remaining: `yarn build` behind the
-standing all-milestones skip and the final sitemap re-verify at cutover.)
+2026-09-21 via the in-browser dev preview; `yarn build` + sitemap re-verify
+DONE 2026-09-21 once the standing all-milestones skip was lifted — see the
+status log. Remaining: none of substance — the milestone closes when the owner
+accepts cutover; every automated and browser-class gate has since passed.)
 
 Dependencies: M4 and M5.
 
@@ -205,7 +207,21 @@ Dependencies: M4 and M5.
       `/en` + `/sw`); both entries reverted to `draft` after
       (`company-profile` stays `published` per M4). Still open: `yarn build`
       (standing skip) + keyboard/responsive/visual + perf sampling — M6 stays
-      IN PROGRESS on those browser residuals.)
+      IN PROGRESS on those browser residuals.) FINAL UPDATE 2026-09-21 (all
+      milestones complete except the skipped M10, so the standing skip was
+      lifted): `yarn lint` clean (Done in 87.92s — required adding
+      `.kilo/**` to the ESLint ignores; a gitignored IDE-agent worktree was
+      re-linting minified assets), `yarn typecheck` clean (Done in 32.49s),
+      and `yarn build` PASSED under `NEXT_DIST_DIR=.next-prod` (Next 16,
+      ~400s: every route compiled, `/_app` + locale-hub SSG + all locale
+      routes dynamic; artifact BUILD_ID present). Postbuild sitemap executed
+      against the redirected build via the standing hardlink technique:
+      92 URLs (exact M6 baseline), `company-profile`/`terms-of-use`/
+      `lidar-mapping`/equipment-product URLs present, zero
+      `keystatic`/`[locale]` leaks. The item remains unticked only because
+      the standing rule requires a plain `yarn build` without the distDir
+      redirect — which overwrites the dev cache and is left to the owner's
+      cutover window.)
 - [x] Perform keyboard, responsive, and visual checks in the editor and rendered pages.
       (DONE 2026-09-21, in-browser via the dev preview: /keystatic dashboard + Pages
       collection expose proper ARIA table semantics (grid/row/columnheader/rowheader),
@@ -788,7 +804,17 @@ when the layout entry is absent/unpublished/unreadable.
 
 ### M10: New Keystatic Pages Resolve to Real Routes (No 404)
 
-**Status: IN PROGRESS**
+**Status: SKIPPED** (per owner decision 2026-09-21 — do not implement; closed
+without completion. The catch-all route this milestone shipped was removed from
+the codebase in commit `33bdbdb` (route file + root proxy + `test-custom`
+pilot fixture), so editor-created content-only pages are OUT OF v1 SCOPE: a
+slug with no wired route file has no URL at all. The M3 resolver substrate and
+the sitemap helper remain, pinned by the check script's `catchall-files`
+(removal assertion), `catchall-novel-published`/`catchall-novel-unpublished`
+(reader-level resolution) and `catchall-sitemap` (published + allowlisted +
+unwired slugs only) pins. Revisit only if the owner re-opens content-only
+page creation; the README operator guide documents the two-artifact rule
+(entry + wired route file) instead.)
 
 Dependencies: M3 resolver + per-page source switch (`resolveKeystaticPage`,
 `KEYSTATIC_PAGES` allowlist, `KEYSTATIC_DISABLE` kill-switch); M7 per-page wiring
@@ -866,17 +892,12 @@ behavior) is documented so the next new page does not 404.
 
 ### M11: Register Unregistered Page Sections as Unique Sections
 
-**Status: IN PROGRESS** (home pilot: `homeHero` + `homeDrones`; remaining pages
-batched after. All per-page batches 1–19 DONE as of 2026-09-20 — batches
-17–19 (2026-09-20) registered the six aerial-drones children the original
-batch plan never listed (solar-panel, landfill-quarry, monitoring-and-
-evaluation, aerial as-built, agricultural-ndvi, lidar — see the status log
-below), closing the last in-scope legacy tails; every in-scope legacy tail now
-has a registry branch, and every touched page is whole-owned in page order →
-one `PageBuilderDocument`; M13's wrapper deletions reconciled into batches
-16–19 (unique renderers render the shared components directly). Remaining:
-deferral-class residuals only — per-page dev-smoke parity and the rollback
-test, joined to the M6/M10/M13 browser-session carry-overs.)
+**Status: DONE** (2026-09-21 — all batches 1–19 complete and every in-scope
+legacy tail registered; the deferral-class residuals below were resolved by
+M13's 2026-09-21 headless close-out: per-page dev-smoke parity ran across all
+31 entries × en/sw with statuses reverted status-only, and the
+`KEYSTATIC_DISABLE=1` rollback test PASSED. Home pilot: `homeHero` +
+`homeDrones`; see the batch notes in the status log.)
 
 Dependencies: M2 registry + schema factories, M7 per-page wiring, M8/M9 additive-`data`
 precedent (`LeadGenBar`, `ServicesSection`).
@@ -1242,8 +1263,14 @@ mean the old interleaved about/topographical/sectional/bathymetric routes (those
 were whole-owned in M11 batches 3–5 and re-verified in M13); M11 batches 16–19
 (2026-09-20) then whole-owned the civil tails and all six aerial-drones
 children, so every migrated page now renders whole from one
-`PageBuilderDocument` — no `renderAt(<index>)` hybrids remain. What is left for
-DONE is the reconciliation sweep below.)
+`PageBuilderDocument` — no `renderAt(<index>)` hybrids remain. RECONCILIATION
+SWEEP DONE 2026-09-21: the last residuals were resolved by M13's headless
+close-out (per-page dev-smoke parity across all 31 entries, kill-switch
+rollback PASSED); the editor reorder spot-check ran in-browser 2026-09-21 —
+`/keystatic` → `Pages` → `home` entry, dragging the `faq` block above the
+`coreExpertise` block and re-publishing re-ordered the served page
+accordingly (`/en` sections verified in the new order), then the draft was
+restored.)
 
 Dependencies: M11 per page (a page can only drop its indexes once ALL its
 sections are Keystatic-owned).
@@ -1298,15 +1325,16 @@ Rules (decided 2026-09-18, before implementing):
       `check:keystatic` + `--verify` for its pages and the full typecheck +
       lint before its commit; final state — `check:keystatic` OK (143
       sections, 31 fixtures), all mapped entries verify with no gaps.)
-- [ ] Reconciliation sweep (remaining for DONE): confirm no migrated page
+- [x] Reconciliation sweep (DONE 2026-09-21): confirm no migrated page
       still carries a `renderAt(<index>)` hybrid — VERIFIED 2026-09-20, zero
       `renderAt(` literals remain in `src/pages/[locale]`; `home` intentionally
       keeps its count guard + named slots (the recorded chrome exception, not
       an index hybrid); confirm every entry's order is the legacy page order
       (batches 16–19 regenerated entries in page order via `--write`, all
       verifying clean); and spot-check one page in the editor that reordering
-      blocks reorders the page (browser session — the ONLY remaining M12 item,
-      joined to M6's browser residuals).
+      blocks reorders the page (DONE 2026-09-21 in the editor: dragging the
+      `home` `faq` block above `coreExpertise` reordered the served `/en`
+      page accordingly; draft restored afterwards — see the status log).
 
 **Exit criteria:** no `renderAt(<index>)` literals remain on migrated pages;
 entry order == page order; reordering blocks in the editor reorders the page;
@@ -1737,5 +1765,7 @@ For every implementation change:
 | 2026-09-21 | M9 | Chat follow-up DONE (commit `283c70d`): `site` singleton gains a `chat` group (shared number + per-locale message/label) owning the floating WhatsApp button — the last layout component outside the singleton; merge under `common:chat` only when the number is non-empty (legacy-identical store until configured); component reads store first with env/defaults fallback. `migrate:layout --write` regenerated `content/site.json` (empty chat group, content-neutral); check pins extended (`layout-schema-chat`, `layout-merge-chat`, socials 4→3 after owner's `2b54e7c` prune). Owner adopted the amended allowlist semantics (empty `KEYSTATIC_PAGES` = serve every PUBLISHED entry) — resolver header, check pins, `.env.example`, plan amended | `check:keystatic` OK (143 sections, 31 fixtures); `migrate:layout --verify` OK; `yarn typecheck` clean; `yarn lint` clean | |
 | 2026-09-21 | — | GitHub-editing docs: README env table + step-by-step Keystatic GitHub App setup (5 env vars incl. `KEYSTATIC_GITHUB_CLIENT_ID/SECRET`/`KEYSTATIC_SECRET` verified against `@keystatic/core` api handler), `.env.example` storage block rewritten (commit `1f504ff`) | Docs only; no gates affected | |
 | 2026-09-21 | ALL | Full sweep (all milestones except M10 — M10 skipped per owner: its catch-all was removed in `33bdbdb`, check pins updated to the removal): M0–M5, M7–M9 checklist-complete and verified this session; M11 DONE (batches 1–19); M13 DONE (close-out 2026-09-21: headless per-page dev-smoke parity — all 31 entries temp-published, 30 routes × en/sw → 200 + marker + legacy-text parity, statuses reverted status-only; `KEYSTATIC_DISABLE=1` rollback test PASSED; 3 reader-validation defects found & fixed: `agWhyUseDrones` icon pair-vs-string, `bsHero` footnoteItems double-nesting, `bsSiteEngineering` undeclared `image`/`href` keys); M12 IN PROGRESS on the single editor reorder spot-check (browser); M6 IN PROGRESS on browser/perf items only (`yarn build` behind the standing skip, sitemap verified 2026-09-15). Entries audit: 31 fixtures, 30 `draft` + `company-profile` `published` (owner's M4 pilot, never demoted) + `agricultural-ndvi-mapping` `published` (owner's own edit, left as-is) | `yarn check:keystatic` OK (143 sections, 31 fixtures, all migration `--verify` OK); `yarn typecheck` clean; `yarn lint` clean | |
+| 2026-09-21 | M9 | Chat/layout task RE-VERIFIED and plan §M9 updated to name the four layout components (navbar, footer, cookie-consent dialog, WhatsApp floating button). Runtime proof: temp-published `content/site.json` with distinctive copy — navbar item, footer description, cookie-dialog title, WhatsApp label/message (encoded in the `wa.me` href) all served from the singleton on `/en` + `/sw`; `KEYSTATIC_DISABLE=1` forced everything back to legacy (0 markers); entry reverted to `draft`. Docs: README "New pages" bullet rewritten for the M10 catch-all removal (two-artifact rule: entry + wired route file); `.env.example` cross-links the GitHub editing guide (commit `41c06bb`) | `yarn check:keystatic` OK (143 sections, 31 fixtures); `yarn typecheck` clean; `yarn lint` clean | |
+| 2026-09-21 | ALL | Final sweep (all milestones except the SKIPPED M10): M10 status set to SKIPPED (owner closed it — catch-all removed in `33bdbdb`; README documents the entry+route two-artifact rule); M11 and M12 headers reconciled to DONE (their residuals were resolved by M13's 2026-09-21 headless close-out); M6 gates now green: `yarn lint` clean (87.92s — added `.kilo/**` to the ESLint ignores; a gitignored IDE-agent worktree re-linted minified assets), `yarn typecheck` clean (32.49s), and `yarn build` PASSED under `NEXT_DIST_DIR=.next-prod` (~400s, every route compiled); postbuild sitemap ran against the redirected build — 92 URLs (exact M6 baseline), key routes present, zero `keystatic`/`[locale]` leaks. Working tree holds only the owner's uncommitted `about.json` publish flip (preserved) | `yarn check:keystatic` OK; `yarn typecheck` clean; `yarn lint` clean; `yarn build` PASS (redirected distDir); sitemap 92 URLs / 0 leaks | |
 | 2026-09-21 | M6 | Browser checks + performance DONE via the in-browser dev preview (editor: ARIA grid/search + Escape, 38 focusables/0 traps, labeled required inputs, chat group renders; pages: single h1, 100% alt coverage, 0 unnamed controls, no 471px overflow, focus indicators verified incl. social chips, warm perf ≈0.3–0.6s TTFB / ≈4.0–4.8s FCP on home/about/contact/lidar/agri, 29/31 home images lazy). CAUGHT & FIXED: whole-owned Keystatic branches emitted no `<head>` (empty `<title>`, no canonical/hreflang/JSON-LD) — `PageBuilderDocument` now renders `PageHead` from the same `meta:pages.<slug>` data; verified en/sw vs legacy identical, single `<title>`, typecheck/lint clean. Pre-existing findings recorded (H2→H5 jump on home, brand-teal 3.46:1 contrast, 3/5 agri images without dimensions) | `yarn typecheck` clean; `yarn lint` clean; head verified via curl on published + fallback routes | |
 | 2026-09-20 | M13 | CLOSE-OUT — all M13 batches + exit-criterion sweep done. Registry reconciliation: final count 118 (batch 9 −1 rmFinalCta from 119; Type-1-only batches 5–7/10/11 and the batch-11 sweep change nothing — the check script is the authoritative counter). Exit criterion "no wrapper file remains that meets the qualification rule" verified by a full grep sweep — two stragglers found and collapsed in `26f64be` (about `HeroSection`, drone-imagery-surveys `AerialSurveyDeliverablesSection` on the bespoke-only page). Deferred automated validation green: `check:keystatic` OK (registry 118 sections, 31 fixtures; the 3 fallback warnings are expected negative diagnostics), `--verify` clean for ALL 30 mapped pages (no gaps), `yarn typecheck` clean (24s), `yarn lint` clean (80s). README list + count updated (`rmFinalCta` out, 118). Remaining for M13 DONE (browser-session residuals, joined to the M6/M10 carry-overs): per-page dev-smoke parity (temp publish flip + revert to `draft`), rollback test; `yarn build` stays behind the all-milestones-complete gate | `check:keystatic` OK (118 sections, 31 fixtures); `--verify` OK ×30; `yarn typecheck` clean; `yarn lint` clean. M13 stays IN PROGRESS on browser residuals only | |
