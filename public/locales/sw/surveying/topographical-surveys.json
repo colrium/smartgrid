@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "Uchunguzi wa Topografia Kenya, Afrika Mashariki na Zaidi",
 		"title": "Data Sahihi ya Tovuti kwa Usanidi, Upangaji na Ujenzi",
 		"subTitle": "Kiongozi katika upimaji wa Ardhi na Hewa Kenya.",
@@ -7,16 +8,20 @@
         "image": "/media/surveying/topographical/AG8ng.jpeg",
 		"ctaPrimary": {
 			"icon": "email",
+			"iconPosition": "start",
+			"trailingArrow": true,
 			"label": "Omba Nukuu ya Uchunguzi wa Topografia Leo",
 			"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Topographical Survey&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for a Topographical Survey. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0APlot size:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
 	"whatIs": {
+		"type": "intro",
 		"tag": "Msingi wa Kila Mradi",
 		"headline": "Uchunguzi wa Topografia ni Nini?",
 		"description": "Uchunguzi wa topografia hutoa uwakilishi wa kina wa ardhi yako — ukikamata mwinuko, contours, vipengele vya asili, na miundo iliyopo ardhini kama ilivyo. Ni msingi wa miradi yote ya usanidi wa uhandisi na ujenzi, ukipa waanachitecture, wahandisi, na wapangaji data sahihi ya tovuti wanayohitaji kusanidi kwa uhakika."
 	},
 	"whenYouNeed": {
+		"type": "card-grid",
 		"tag": "Matumizi",
 		"headline": "Linahitaji Uchunguzi wa Topografia lini?",
 		"description": "Kutoka rasimu ya kwanza ya usanidi hadi idhini ya mwisho ya kaunti, uchunguzi sahihi wa topografia una msingi wa kila maamuzi makubwa kwenye mradi wako.",
@@ -66,6 +71,7 @@
 		]
 	},
 	"whatYouGet": {
+		"type": "deliverables",
 		"tag": "Matokeo",
 		"headline": "Unachopata",
 		"description": "Kila uchunguzi wa topografia hutolewa kwa jumla kamili, tayari kwa uhandisi.",
@@ -119,6 +125,7 @@
 		]
 	},
 	"cost": {
+		"type": "pricing",
 		"tag": "Bei",
 		"headline": "Gharama ya Uchunguzi wa Topografia Kenya",
 		"description": "Bei ya uchunguzi wa topografia huathiriwa na hali za tovuti na kiwango cha maelezo kinachohitajika kwa madhumuni ya uhandisi na idhini. Kila mradi hutathminiwa kwa kipekee kuhakikisha bei sahihi na inayofaa kwa madhumuni.",
@@ -141,11 +148,14 @@
 		]
 	},
 	"section1": {
+		"type": "intro",
+		"split": true,
 		"tag": "Uchunguzi wa Topografia",
 		"headline": "Ona Ardhi Jinsi Ilivyo",
 		"description": "SmartGrid Surveying hutoa uchunguzi wa topografia wenye undani na usahihi wa hali ya juu kwa ajili ya uhandisi, upangaji, na ujenzi. Iwe Nairobi, Kisumu, Mombasa — au kote Afrika na nje yake — timu yetu ya wataalamu inakamata mandhari kwa usahihi wa ngazi ya sentimita kwa kutumia GNSS, Total Stations, na Uchoraji wa Ramani kwa Drone LiDAR."
 	},
 	"whatWeOffer": {
+		"type": "card-grid",
 		"tag": "Huduma",
 		"headline": "Tunachotoa kama SmartGrid!",
 		"items": [
@@ -164,6 +174,7 @@
 		]
 	},
 	"detailedTopographicalSurveys": {
+		"type": "card-grid",
 		"tag": null,
 		"headline": "Uchunguzi wa Topografia wa Kina kote Afrika Mashariki!",
 		"description": "Katika SmartGrid Surveying Ltd, tunabobea katika kutoa uchunguzi wa topografia wa usahihi wa hali ya juu kote Afrika Mashariki, ukijumuisha Kenya, Uganda, Tanzania, Rwanda, Burundi, Somalia, Sudan Kusini, Ethiopia, na Sehemu Nyingine za Afrika. Timu yetu ya wapima ardhi wataalamu hutumia teknolojia ya kisasa, ikijumuisha GPS, dronzi, na total stations, ili kutoa suluhisho sahihi na za kina za uchoraji ramani kwa miradi mbalimbali.",
@@ -211,6 +222,7 @@
 		]
 	},
 	"sampleTopographicalMap": {
+		"type": "split-media",
 		"tag": null,
 		"headline": "RAMANI YA MFANO WA TOPOGRAFIA",
 		"description": "SmartGrid Surveying ilifanya uchunguzi kamili wa topografia huko Usenge, Kaunti ya Siaya, ukizingatia uchoraji na utambuzi wa miundombinu iliyopo na inayowezekana ya bomba la maji. Mradi huu unasaidia juhudi za jamii za kuongeza ufanisi wa usambazaji wa maji na upangaji wa miundombinu kote eneo hilo.",
@@ -228,6 +240,7 @@
 		}
 	},
 	"surveyingInstruments": {
+		"type": "card-grid",
 		"tag": null,
 		"headline": "Vyombo Vyetu vya Upimaji",
 		"description": "Tunatumia vifaa vya kisasa, vilivyopimwa, na sahihi ili kuhakikisha kila nukta ni sahihi na ya kuaminika kwa miradi yako ya ujenzi na uhandisi kote Kenya na nje yake.",
@@ -251,6 +264,7 @@
 		]
 	},
 	"whyConductSurvey": {
+		"type": "card-grid",
 		"tag": null,
 		"headline": "Kwa Nini Ufanye Uchunguzi wa Topografia",
 		"description": "",

@@ -1,10 +1,8 @@
 "use client";
 
 import type { ReactElement } from "react";
-
 import { useTranslation } from "@/hooks";
-import { SectionHeader } from "@/components/sections/home";
-import { FadeUp } from "@/components/animations/Fade";
+import { CardGrid, type CardItem } from "@/components/sections/shared/CardGrid";
 
 interface WhyItem {
 	icon?: string | null;
@@ -14,46 +12,44 @@ interface WhyItem {
 interface WhySmartgridContent {
 	tag?: string | null;
 	headline: string;
-	description?: string;
+	description?: string | null;
 	items?: WhyItem[] | null;
 }
 
-export function GisWhySmartgridSection(): ReactElement {
-	const { t } = useTranslation(["surveying/gis-mapping"]);
-	const section = t("surveying/gis-mapping:whySmartgrid", {
-		returnObjects: true,
-	}) as unknown as WhySmartgridContent;
-	const items = Array.isArray(section?.items) ? section.items : [];
+export interface GisWhySmartgridData {
+	tag?: string | null;
+	headline: string;
+	description?: string | null;
+	items?: WhyItem[] | null;
+}
 
-	if (items.length === 0) return <></>;
+/**
+ * Why-SmartGrid GIS differentiators — shared icon card grid (content:
+ * surveying/gis-mapping:whySmartgrid).
+ */
+export function GisWhySmartgridSection({ data }: { data?: GisWhySmartgridData | null } = {}): ReactElement | null {
+	const { t } = useTranslation(["surveying/gis-mapping"]);
+	// Keystatic-owned content when `data` is provided (M11 `gisWhySmartgrid`
+	// unique section — tone + `fallbackIcons` are outside the shared
+	// `cardGrid` contract); legacy locale strings otherwise.
+	const section = (data ??
+		(t("surveying/gis-mapping:whySmartgrid", {
+			returnObjects: true,
+		}) as unknown as WhySmartgridContent)) as WhySmartgridContent;
+	const items = (Array.isArray(section?.items) ? section.items : []) as CardItem[];
+
+	if (items.length === 0) return null;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
-
-			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-				<SectionHeader
-					tag={section.tag || undefined}
-					headline={section.headline}
-					description={section.description || undefined}
-					align="center"
-				/>
-
-				<div className="mt-14 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-					{items.map((item, index) => (
-						<FadeUp key={index} delay={(index % 3) * 0.07} className="h-full">
-							<article className="group relative h-full flex items-center gap-5 rounded-c bg-paper hairline card-shadow p-6 transition-all duration-250 hover:card-shadow-lift hover:border-primary">
-								<span className="inline-flex h-13 w-13 min-h-[3.25rem] min-w-[3.25rem] items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
-									<span className={`mdi mdi-${item.icon || "check-decagram"} text-2xl`} />
-								</span>
-								<h3 className="text-base sm:text-lg font-medium tracking-tight text-ink leading-snug">
-									{item.title}
-								</h3>
-							</article>
-						</FadeUp>
-					))}
-				</div>
-			</div>
-		</section>
+		<CardGrid
+			tag={section.tag ?? null}
+			headline={section.headline}
+			description={section.description}
+			items={items}
+			columns={3}
+			tone="surface"
+			fallbackIcons={["check-decagram"]}
+		/>
 	);
 }
 

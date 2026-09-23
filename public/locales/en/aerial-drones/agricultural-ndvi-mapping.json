@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "AGRICULTURAL NDVI MAPPING",
 		"title": "Transforming Agriculture with Aerial Intelligence",
 		"image": "/media/aerial-drones/agricultural-ndvi-mapping/agricultural-ndvi-mapping-01.jpg",
@@ -10,6 +11,7 @@
 		}
 	},
 	"whyUseDronesInAgriculture": {
+		"type": "split-media",
 		"tag": "Precision Farming",
 		"headline": "Why Use Drones in Agriculture?",
 		"image": "/media/aerial-drones/agricultural-ndvi-mapping/agricultural-ndvi-mapping-02.jpg",
@@ -38,6 +40,7 @@
 		]
 	},
 	"process": {
+		"type": "process",
 		"tag": "Process",
 		"headline": "Agricultural Aerial Survey Process",
 		"description": "",

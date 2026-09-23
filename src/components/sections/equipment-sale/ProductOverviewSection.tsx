@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionTag } from "@/components/SectionTag";
-import { Blob } from "@/components/sections/home/decor";
+import { Blob } from "@/components/sections/shared/decor";
 import DeferredMount from "@/components/ui/DeferredMount";
 
 const MorphSlider = dynamic(() => import("@/components/ui/MorphSlider"), {

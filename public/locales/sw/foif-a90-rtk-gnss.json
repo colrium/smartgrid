@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"tag": "Vifaa vya Upimaji",
 		"headline": "Kipokezi cha GNSS cha Usahihi wa Juu kwa Upimaji wa Kitaalamu",
 		"title": "FOIF A90 RTK GNSS",
@@ -11,6 +12,7 @@
 		}
 	},
 	"productImages": {
+		"type": "unique",
 		"images": [
 			"/media/equipment-sale/foif-a90-rtk-gnss/01.png",
 			"/media/equipment-sale/foif-a90-rtk-gnss/04.png",
@@ -24,16 +26,19 @@
 		]
 	},
 	"breadcrumb": {
+		"type": "unique",
 		"home": "Nyumbani",
 		"section": "Uuzaji wa Vifaa",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
 	"catalogue": {
+		"type": "unique",
 		"icon": "satellite",
 		"description": "Mfumo wa GNSS wa usahihi wa juu wenye msaada wa vyombo vingi ukitoa usahihi wa RTK wa sentimita kwa upimaji wa ramani na uhandisi.",
 		"badge": "Katika Hisa"
 	},
 	"pricing": {
+		"type": "pricing",
 		"new": {
 			"label": "Mpya Kabisa",
 			"currency": "KES",
@@ -80,6 +85,7 @@
 		}
 	],
 	"productOverview": {
+		"type": "unique",
 		"tag": "Muhtasari wa Bidhaa",
 		"headline": "Imeundwa kwa Usahihi, Iko Tayari Shambani",
 		"images": [
@@ -89,6 +95,7 @@
 		"description": "FOIF A90 ni kipokezi cha GNSS cha mawimbi mengi, makundi mengi kilichoundwa kwa uchunguzi wa RTK wa usahihi wa juu. Hutoa utendaji imara hata katika mazingira magumu, na kuifanya kufaa kwa miradi ya cadastral, ujenzi, na uhandisi."
 	},
 	"keyFeatures": {
+		"type": "card-grid",
 		"tag": "Mambo Muhimu",
 		"headline": "Vipengele Muhimu",
 		"description": "Uchunguzi wa karibu wa kile kinachomfanya A90 kuwa mshirika wa kuaminika shambani.",
@@ -116,6 +123,7 @@
 		]
 	},
 	"engineAndSignal": {
+		"type": "unique",
 		"tag": "Mawimbi",
 		"headline": "Injini ya GNSS na Upokeaji wa Mawimbi",
 		"description": "Ufuatiliaji wa makundi mengi na bendi zote kwa mwonekano wa juu wa satelaiti.",
@@ -130,6 +138,7 @@
 		]
 	},
 	"performance": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Utendaji",
 		"description": "Usahihi na kasi zilizothibitishwa shambani unazoweza kuzitegemea.",
@@ -151,6 +160,7 @@
 		}
 	},
 	"configurationAndConnectivity": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Usanidi na Muunganisho",
 		"description": "Chaguo rahisi za usanidi na viungo vya kuaminika vya data shambani.",
@@ -164,6 +174,7 @@
 		]
 	},
 	"physicalAndBattery": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Kimwili na Betri",
 		"description": "Ujenzi imara na nishati ya siku nzima kwa maeneo magumu.",
@@ -175,6 +186,7 @@
 		]
 	},
 	"environmentalSpecs": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Vipimo vya Mazingira",
 		"description": "Imeundwa kuendelea kufanya kazi katikati ya joto, vumbi, mvua, na mianguko.",
@@ -187,11 +199,13 @@
 		]
 	},
 	"specs": {
+		"type": "unique",
 		"tag": "Data ya Kiufundi",
 		"headline": "Vipimo vya Kiufundi",
 		"description": "Maelezo kamili ya kiufundi kwa mfumo wa FOIF A90 RTK GNSS."
 	},
 	"includedInPackage": {
+		"type": "card-grid",
 		"tag": "Maudhui ya Kifurushi",
 		"headline": "Yaliyomo kwenye Kifurushi",
 		"description": "Kila kitu unachohitaji kuanza upimaji, moja kwa moja kutoka kwenye kifurushi.",
@@ -234,6 +248,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Pata Nukuu",
 		"headline": "Ulizia Kuhusu Kifaa Hiki",
 		"description": "Tuambie kuhusu mradi wako na upate nukuu iliyoundwa kwa ajili ya FOIF A90 RTK GNSS.",
@@ -249,6 +264,7 @@
 		}
 	},
 	"relatedProducts": {
+		"type": "unique",
 		"tag": "Chunguza",
 		"headline": "Bidhaa Nyingine Unazoweza Kuzipenda",
 		"description": "Gundua vifaa vingine vya upimaji kutoka kwenye katalogi ya SmartGrid.",

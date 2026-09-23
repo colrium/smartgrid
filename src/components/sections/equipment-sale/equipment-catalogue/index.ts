@@ -2,8 +2,6 @@ export { CatalogueHeroSection } from "./CatalogueHeroSection";
 export { default as CatalogueHeroSectionDefault } from "./CatalogueHeroSection";
 export { ProductListingSection } from "./ProductListingSection";
 export { default as ProductListingSectionDefault } from "./ProductListingSection";
-export { CatalogueOverviewSection } from "./CatalogueOverviewSection";
-export { default as CatalogueOverviewSectionDefault } from "./CatalogueOverviewSection";
 export { EquipmentCategoriesSection } from "./EquipmentCategoriesSection";
 export { default as EquipmentCategoriesSectionDefault } from "./EquipmentCategoriesSection";
 export { CtaSection } from "./CtaSection";

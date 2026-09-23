@@ -3,52 +3,52 @@
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
-import { SectionHeader } from "@/components/sections/home/SectionHeader";
-import { Blob } from "@/components/sections/home/decor";
+import { SectionHeader } from "@/components/sections/shared/SectionHeader";
+import { Blob } from "@/components/sections/shared/decor";
 
 interface Deadline {
-	label: string;
-	value: string;
+	label?: string | null;
+	value?: string | null;
 }
 
 interface OpeningAction {
-	icon?: string;
-	label: string;
-	href: string;
+	icon?: string | null;
+	label?: string | null;
+	href?: string | null;
 }
 
 interface TorData {
-	positionSummary: string;
-	duties: string[];
-	qualifications: string[];
-	engagement?: string;
+	positionSummary?: string | null;
+	duties?: (string | null)[] | null;
+	qualifications?: (string | null)[] | null;
+	engagement?: string | null;
 }
 
 interface TorLabels {
-	button: string;
-	modalTitle: string;
-	summaryTitle: string;
-	dutiesTitle: string;
-	qualificationsTitle: string;
-	engagementTitle: string;
+	button?: string | null;
+	modalTitle?: string | null;
+	summaryTitle?: string | null;
+	dutiesTitle?: string | null;
+	qualificationsTitle?: string | null;
+	engagementTitle?: string | null;
 }
 
 interface Opening {
-	icon?: string;
-	title: string;
+	icon?: string | null;
+	title?: string | null;
 	applicationDeadline?: Deadline | null;
-	description: string;
-	actions: OpeningAction[];
+	description?: string | null;
+	actions?: OpeningAction[] | null;
 	tor?: TorData | null;
 }
 
-interface CurrentOpeningsContent {
+export interface CurrentOpeningsContent {
 	tag?: string | null;
-	headline: string;
-	description?: string;
-	torLabels?: TorLabels;
+	headline?: string | null;
+	description?: string | null;
+	torLabels?: TorLabels | null;
 	featuredOpenings?: Opening[] | null;
-	items: Opening[];
+	items?: Opening[] | null;
 }
 
 function parseDeadline(value: string): Date | null {
@@ -56,8 +56,8 @@ function parseDeadline(value: string): Date | null {
 	return isNaN(date.getTime()) ? null : date;
 }
 
-function formatDeadline(value: string, mounted: boolean): string {
-	if (!mounted) return value;
+function formatDeadline(value: string | null | undefined, mounted: boolean): string {
+	if (!mounted || !value) return value ?? "";
 	const date = parseDeadline(value);
 	if (!date) return value;
 
@@ -77,8 +77,8 @@ function formatDeadline(value: string, mounted: boolean): string {
 	);
 }
 
-function isPast(value: string, mounted: boolean): boolean {
-	if (!mounted) return false;
+function isPast(value: string | null | undefined, mounted: boolean): boolean {
+	if (!mounted || !value) return false;
 	const date = parseDeadline(value);
 	if (!date) return false;
 
@@ -108,7 +108,7 @@ function OpeningActionButton({
 		: "inline-flex items-center gap-2.5 rounded-full bg-ink px-5 py-2.5 text-xs font-semibold uppercase tracking-widest text-surface transition-colors duration-300 hover:bg-primary";
 
 	return (
-		<a href={action.href} aria-disabled={disabled} className={classes}>
+		<a href={action.href ?? "#"} aria-disabled={disabled} className={classes}>
 			{action.icon && <span className={`mdi mdi-${action.icon} text-base`} />}
 			{action.label}
 		</a>
@@ -121,7 +121,7 @@ function TorButton({
 	disabled,
 	tone = "light",
 }: {
-	label: string;
+	label: string | null | undefined;
 	onOpen: () => void;
 	disabled: boolean;
 	tone?: "light" | "dark";
@@ -165,7 +165,7 @@ function DeadlinePill({ deadline, mounted }: { deadline: Deadline; mounted: bool
 interface OpeningCardProps {
 	opening: Opening;
 	mounted: boolean;
-	labels?: TorLabels;
+	labels?: TorLabels | null;
 	onViewTor?: (opening: Opening) => void;
 	featured?: boolean;
 }
@@ -237,7 +237,7 @@ function OpeningCard({
 
 							<div className="flex flex-wrap gap-3">
 								{torButton}
-								{opening.actions.map((action, index) => (
+								{(opening.actions ?? []).map((action, index) => (
 									<OpeningActionButton key={index} action={action} disabled={disabled} tone="dark" />
 								))}
 							</div>
@@ -271,7 +271,7 @@ function OpeningCard({
 
 				<div className="mt-7 flex flex-wrap gap-3">
 					{torButton}
-					{opening.actions.map((action, index) => (
+					{(opening.actions ?? []).map((action, index) => (
 						<OpeningActionButton key={index} action={action} disabled={disabled} />
 					))}
 				</div>
@@ -344,7 +344,7 @@ function TorModal({ opening, labels, onClose }: TorModalProps) {
 						{labels.dutiesTitle}
 					</h4>
 					<ul className="mt-3 grid grid-cols-1 gap-2.5">
-						{opening.tor!.duties.map((duty, index) => (
+						{(opening.tor!.duties ?? []).map((duty, index) => (
 							<li
 								key={index}
 								className="flex items-start gap-3 text-sm text-on-surface/70 leading-relaxed"
@@ -363,7 +363,7 @@ function TorModal({ opening, labels, onClose }: TorModalProps) {
 						{labels.qualificationsTitle}
 					</h4>
 					<ul className="mt-3 grid grid-cols-1 gap-2.5">
-						{opening.tor!.qualifications.map((qualification, index) => (
+						{(opening.tor!.qualifications ?? []).map((qualification, index) => (
 							<li
 								key={index}
 								className="flex items-start gap-3 text-sm text-on-surface/70 leading-relaxed"
@@ -393,11 +393,16 @@ function TorModal({ opening, labels, onClose }: TorModalProps) {
 	);
 }
 
-export function CurrentOpeningsSection() {
+export function CurrentOpeningsSection({ data, id }: { data?: CurrentOpeningsContent | null; id?: string } = {}) {
 	const { t } = useTranslation(["careers"]);
-	const section = t("careers:currentOpenings", {
-		returnObjects: true,
-	}) as unknown as CurrentOpeningsContent;
+	// Keystatic-owned content when `data` is provided (M11
+	// `careersOpenings` unique section); legacy `careers:currentOpenings`
+	// locale strings otherwise. Deadline math, the TOR modal and the
+	// mounted flag stay in the renderer — only strings and dates are data.
+	const section = (data ??
+		(t("careers:currentOpenings", {
+			returnObjects: true,
+		}) as unknown as CurrentOpeningsContent)) as CurrentOpeningsContent;
 
 	// Hydration-safe "mounted" flag: false during SSR + hydration, true after.
 	// Lets date formatting / "deadline passed" checks render stable markup on
@@ -414,15 +419,15 @@ export function CurrentOpeningsSection() {
 	const items = Array.isArray(section.items) ? section.items : [];
 
 	return (
-		<section id="openings" className="py-24 sm:py-28 relative overflow-hidden bg-surface">
+		<section id={id ?? "openings"} className="py-24 sm:py-28 relative overflow-hidden ">
 			<Blob className="w-[28rem] h-[28rem] bg-primary-100/60 -top-24 -right-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
 					<SectionHeader
 						tag={section.tag ?? undefined}
-						headline={section.headline}
-						description={section.description}
+						headline={section.headline ?? ""}
+						description={section.description ?? undefined}
 						align="center"
 					/>
 				</FadeUp>

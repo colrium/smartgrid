@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { useTranslation } from "@/hooks";
 import { FadeLeft, FadeRight } from "@/components/animations/Fade";
-import { Blob } from "@/components/sections/home/decor";
+import { Blob } from "@/components/sections/shared/decor";
 import { MediaImage } from "@/lib/types";
 import Slider from "@/components/Slider";
 
@@ -20,9 +20,16 @@ interface BrowseLink {
 }
 
 interface GprHeroContent {
-	headline?: string;
 	title: string;
-	image?: string | null;
+	images?: string[] | MediaImage[];
+	browseAll?: BrowseLink | null;
+	description?: string;
+	ctaPrimary?: GprCta | null;
+	ctaSecondary?: GprCta | null;
+}
+
+export interface GprHeroData {
+	title: string;
 	images?: string[] | MediaImage[];
 	browseAll?: BrowseLink | null;
 	description?: string;
@@ -56,12 +63,17 @@ function renderDescription(text: string): ReactNode[] {
 	return nodes;
 }
 
-export function GprServiceHero() {
+export function GprServiceHero({ data, id }: { data?: GprHeroData | null; id?: string } = {}) {
 	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
-	const hero = t("surveying/ground-penetrating-radar:hero", {
-		returnObjects: true,
-	}) as unknown as GprHeroContent;
-    const images = Array.isArray(hero?.images) ? hero.images : [];
+	// Keystatic-owned content when `data` is provided (M11 `gprHero` unique
+	// section); legacy locale strings otherwise. The image slider, `<bold>`
+	// description parsing and dead `headline`/`image` keys (never rendered —
+	// dropped from the migrated contract) stay as documented.
+	const hero = (data ??
+		(t("surveying/ground-penetrating-radar:hero", {
+			returnObjects: true,
+		}) as unknown as GprHeroContent)) as GprHeroContent;
+	const images = Array.isArray(hero?.images) ? hero.images : [];
     const slides = images
 		.filter((item) => {
 			const url = typeof item === "object" ? item.url : item;
@@ -74,7 +86,7 @@ export function GprServiceHero() {
 			description: (typeof item === "object" ? item.description : null) ?? `Ground Penetrating Radar ${index+1}`,
         }));
 	return (
-		<section className="relative overflow-hidden pt-40 sm:pt-44 pb-10">
+		<section id={id} className="relative overflow-hidden pt-40 sm:pt-44 pb-10">
 			<Blob
 				className="w-[26rem] h-[26rem] bg-primary-100/50 -top-24 -right-20"
 				opacity={0.5}

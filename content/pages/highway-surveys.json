@@ -1,0 +1,489 @@
+{
+	"slug": "Highway Surveys",
+	"title": "Highway Surveys (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "hero",
+			"value": {
+				"headline": {
+					"en": "HIGHWAY SURVEYS",
+					"sw": "UCHUNGUZI WA BARABARA KUU"
+				},
+				"title": {
+					"en": "Highway Surveys Solutions",
+					"sw": "Suluhisho za Uchunguzi wa Barabara Kuu"
+				},
+				"description": {
+					"en": "Leading Africa's Land and Aerial Surveying Revolution. Highway surveys play a critical role in the planning, design, construction, and operation of road infrastructure.",
+					"sw": "Kuongoza Mapinduzi ya Upimaji wa Ardhi na Angani barani Afrika. Uchunguzi wa barabara kuu una jukumu muhimu katika upangaji, kubuni, ujenzi, na uendeshaji wa miundombinu ya barabara."
+				},
+				"image": "/media/civil/highway-surveys/01.jpg",
+				"layout": "bottom",
+				"frame": false,
+				"scrollCue": false,
+				"cueLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"footnoteItems": [],
+				"ctaPrimary": {
+					"label": {
+						"en": "Get Your Free Consultation",
+						"sw": "Pata Ushauri Wako wa Bure"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Highway Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Highway Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "",
+					"iconPosition": "end",
+					"trailingArrow": "auto"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "introText",
+			"value": {
+				"tag": {
+					"en": "Critical Infrastructure",
+					"sw": "Miundombinu Muhimu"
+				},
+				"headline": {
+					"en": "Overview",
+					"sw": "Muhtasari"
+				},
+				"description": {
+					"en": "Leveraging a mix of aerial imaging, UAV photogrammetry, LiDAR, GNSS, and conventional surveying, engineers can make data-driven decisions that ensure safety, efficiency, and sustainability throughout the lifecycle of a highway project.",
+					"sw": "Kwa kutumia mchanganyiko wa picha za angani, photogrammetry ya UAV, LiDAR, GNSS, na upimaji wa kawaida, wahandisi wanaweza kufanya maamuzi yanayoendeshwa na data yanayohakikisha usalama, ufanisi, na uendelevu katika mzunguko wote wa maisha ya mradi wa barabara kuu."
+				},
+				"tone": "surface",
+				"align": "left",
+				"split": false,
+				"cta": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "highwayServices",
+			"value": {
+				"tag": {
+					"en": "What we offer",
+					"sw": "Tunachotoa"
+				},
+				"headline": {
+					"en": "Highway Surveying Services",
+					"sw": "Huduma za Uchunguzi wa Barabara Kuu"
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"title": {
+							"en": "Preliminary Route Analysis",
+							"sw": "Uchambuzi wa Njia ya Awali"
+						},
+						"description": {
+							"en": "Remote sensing and aerial imagery used to identify optimal highway corridors, avoid sensitive terrain, and assess land use.",
+							"sw": "Remote sensing na picha za angani hutumika kutambua njia bora za barabara kuu, kuepuka ardhi nyeti, na kutathmini matumizi ya ardhi."
+						}
+					},
+					{
+						"title": {
+							"en": "Topographic Mapping",
+							"sw": "Uchoraji Ramani wa Topografia"
+						},
+						"description": {
+							"en": "Drone-based LiDAR and photogrammetry capture high-resolution elevation models for design-grade mapping and cut-fill analysis.",
+							"sw": "LiDAR na photogrammetry za ndege zisizo na rubani hukamata mifano ya mwinuko wa mwonekano wa juu kwa ramani za kiwango cha kubuni na uchambuzi wa kukata-kujaza."
+						}
+					},
+					{
+						"title": {
+							"en": "Ground Control Surveys",
+							"sw": "Uchunguzi wa Udhibiti wa Ardhi"
+						},
+						"description": {
+							"en": "Establishment of ground control points (GCPs) using GNSS RTK for geo-referencing aerial data and validating spatial accuracy.",
+							"sw": "Uanzishwaji wa pointi za udhibiti wa ardhi (GCPs) kwa kutumia GNSS RTK kwa marejeleo ya kijiografia ya data ya angani na kuthibitisha usahihi wa anga."
+						}
+					},
+					{
+						"title": {
+							"en": "Alignment & Corridor Surveys",
+							"sw": "Uchunguzi wa Upangaji na Njia"
+						},
+						"description": {
+							"en": "Detailed corridor surveying using total stations, GNSS, and mobile mapping systems to define centerlines, ROW, and cross-sections.",
+							"sw": "Uchunguzi wa kina wa njia kwa kutumia total station, GNSS, na mifumo ya ramani ya simu kufafanua mistari ya katikati, ROW, na sehemu za msalaba."
+						}
+					},
+					{
+						"title": {
+							"en": "Safety",
+							"sw": "Usalama"
+						},
+						"description": {
+							"en": "Accurate surveys contribute to road safety by ensuring proper alignment, clear sight distances, and appropriate signage.",
+							"sw": "Uchunguzi sahihi huchangia usalama wa barabara kwa kuhakikisha upangaji sahihi, umbali wazi wa mwonekano, na alama sahihi za barabara."
+						}
+					},
+					{
+						"title": {
+							"en": "Construction Monitoring",
+							"sw": "Ufuatiliaji wa Ujenzi"
+						},
+						"description": {
+							"en": "Integrated UAV flyovers and terrestrial control check progress, ensure compliance, and detect deviations in real time.",
+							"sw": "Safari za UAV zilizounganishwa na udhibiti wa ardhini hukagua maendeleo, kuhakikisha kufuata kanuni, na kugundua mkengeuko kwa wakati halisi."
+						}
+					},
+					{
+						"title": {
+							"en": "As-Built & Digital Twins",
+							"sw": "As-Built na Digital Twins"
+						},
+						"description": {
+							"en": "Post-construction 3D mapping using UAV and scanning tech feeds into BIM and digital twin environments for lifecycle asset management.",
+							"sw": "Uchoraji ramani wa 3D wa baada ya ujenzi kwa kutumia UAV na teknolojia ya skanning huingia kwenye BIM na mazingira ya digital twin kwa usimamizi wa mali za mzunguko wa maisha."
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "cardGrid",
+			"value": {
+				"tag": {
+					"en": "Value Drivers",
+					"sw": "Viendeshaji vya Thamani"
+				},
+				"headline": {
+					"en": "Benefits of Integrated Highway Surveys",
+					"sw": "Faida za Uchunguzi Jumuishi wa Barabara Kuu"
+				},
+				"subheading": {
+					"en": "",
+					"sw": ""
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"icon": "ruler-compass",
+						"title": {
+							"en": "Planning & Design",
+							"sw": "Upangaji na Kubuni"
+						},
+						"description": {
+							"en": "Surveys provide essential data for designing new roads, considering factors like traffic volume, safety, and environmental impact.",
+							"sw": "Uchunguzi hutoa data muhimu kwa kubuni barabara mpya, kuzingatia vipengele kama kiwango cha trafiki, usalama, na athari za mazingira."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "wrench",
+						"title": {
+							"en": "Maintenance",
+							"sw": "Matengenezo"
+						},
+						"description": {
+							"en": "Surveys help identify areas in need of repair, prioritize maintenance, and evaluate the effectiveness of repairs.",
+							"sw": "Uchunguzi husaidia kutambua maeneo yanayohitaji ukarabati, kuweka vipaumbele vya matengenezo, na kutathmini ufanisi wa ukarabati."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "pipe-valve",
+						"title": {
+							"en": "Utility Protection",
+							"sw": "Ulinzi wa Huduma"
+						},
+						"description": {
+							"en": "Identifying and mapping utilities helps avoid damaging them during construction, minimizing disruptions.",
+							"sw": "Kutambua na kuweka ramani za huduma husaidia kuepuka kuziharibu wakati wa ujenzi, kupunguza usumbufu."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "office-building",
+						"title": {
+							"en": "Construction",
+							"sw": "Ujenzi"
+						},
+						"description": {
+							"en": "Construction layout surveys ensure roads are built according to design plans and safety standards.",
+							"sw": "Uchunguzi wa mpangilio wa ujenzi huhakikisha barabara zinajengwa kulingana na mipango ya kubuni na viwango vya usalama."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "shield-check",
+						"title": {
+							"en": "Safety",
+							"sw": "Usalama"
+						},
+						"description": {
+							"en": "Accurate surveys contribute to road safety by ensuring proper alignment, clear sight distances, and appropriate signage.",
+							"sw": "Uchunguzi sahihi huchangia usalama wa barabara kwa kuhakikisha upangaji sahihi, umbali wazi wa mwonekano, na alama sahihi za barabara."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "clipboard-list",
+						"title": {
+							"en": "Assets Management",
+							"sw": "Usimamizi wa Mali"
+						},
+						"description": {
+							"en": "Inventory surveys provide data for managing and maintaining highway infrastructure.",
+							"sw": "Uchunguzi wa hesabu hutoa data kwa kusimamia na kudumisha miundombinu ya barabara kuu."
+						},
+						"image": "",
+						"href": ""
+					}
+				],
+				"columns": "3",
+				"align": "left",
+				"tone": "surface",
+				"headerRow": false,
+				"cardDensity": "comfortable",
+				"cardIconSize": "md",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "deliverables",
+			"value": {
+				"tag": {
+					"en": "Project Outputs",
+					"sw": "Matokeo ya Mradi"
+				},
+				"headline": {
+					"en": "Highway Surveys Deliverables",
+					"sw": "Matokeo ya Uchunguzi wa Barabara Kuu"
+				},
+				"description": {
+					"en": "We deliver comprehensive data packages tailored for highway engineering and construction workflows.",
+					"sw": "Tunatoa vifurushi kamili vya data vilivyoundwa kwa mtiririko wa kazi wa uhandisi wa barabara kuu na ujenzi."
+				},
+				"liveLabel": {
+					"en": "Deliverable package",
+					"sw": "Furushi la Matokeo"
+				},
+				"checks": [
+					{
+						"en": "Design-grade accuracy",
+						"sw": "Usahihi wa kiwango cha kubuni"
+					},
+					{
+						"en": "CAD & GIS compatible",
+						"sw": "Zinazoendana na CAD na GIS"
+					},
+					{
+						"en": "Corridor-wide coverage",
+						"sw": "Ufunikaji wa njia nzima"
+					}
+				],
+				"items": [
+					{
+						"title": {
+							"en": "As-Built Maps",
+							"sw": "Ramani za As-Built"
+						},
+						"format": {
+							"en": "PDF / DWG",
+							"sw": "PDF / DWG"
+						},
+						"icon": "file-document",
+						"image": {
+							"en": "/media/deliverables/as-built-maps.jpg",
+							"sw": "/media/deliverables/as-built-maps.jpg"
+						},
+						"description": {
+							"en": "As-constructed corridor maps verifying completed works against the approved design.",
+							"sw": "Ramani za njia zilizojengwa zinazothibitisha kazi zilizokamilika dhidi ya kubuni iliyoidhinishwa."
+						}
+					},
+					{
+						"title": {
+							"en": "Digital Elevation Models (DSM, DTM)",
+							"sw": "Mifano ya Mwinuko wa Dijitali (DSM, DTM)"
+						},
+						"format": {
+							"en": "GeoTIFF",
+							"sw": "GeoTIFF"
+						},
+						"icon": "image-filter-hdr",
+						"image": {
+							"en": "/media/deliverables/digital-elevation-models.jpg",
+							"sw": "/media/deliverables/digital-elevation-models.jpg"
+						},
+						"description": {
+							"en": "Terrain and surface models for grading, drainage design, and earthworks balances along the route.",
+							"sw": "Mifano ya ardhi na uso kwa upangaji wa daraja, mifereji, na usawazishaji wa ujenzi kwenye njia."
+						}
+					},
+					{
+						"title": {
+							"en": "Setting Out Coordinates",
+							"sw": "Viambatanisho vya Kuweka"
+						},
+						"format": {
+							"en": "CSV / DXF",
+							"sw": "CSV / DXF"
+						},
+						"icon": "crosshairs-gps",
+						"image": {
+							"en": "/media/deliverables/setting-out-coordinates.jpg",
+							"sw": "/media/deliverables/setting-out-coordinates.jpg"
+						},
+						"description": {
+							"en": "Centerline, curve, and structure positions ready for stakeout and machine control.",
+							"sw": "Nafuni ya mistari ya katikati, mikunjano, na majengo tayari kwa kuweka alama na machine control."
+						}
+					},
+					{
+						"title": {
+							"en": "3D Spatial Data (X, Y, Z)",
+							"sw": "Data ya Anga ya 3D (X, Y, Z)"
+						},
+						"format": {
+							"en": "CSV / DWG",
+							"sw": "CSV / DWG"
+						},
+						"icon": "axis-z-arrow",
+						"image": {
+							"en": "/media/deliverables/3d-spatial-data.jpg",
+							"sw": "/media/deliverables/3d-spatial-data.jpg"
+						},
+						"description": {
+							"en": "Corridor-wide positional data for design verification and digital twin workflows.",
+							"sw": "Data ya nafuni ya njia nzima kwa uthibitisho wa kubuni na mtiririko wa kazi wa digital twin."
+						}
+					},
+					{
+						"title": {
+							"en": "Contour Maps",
+							"sw": "Ramani za Contour"
+						},
+						"format": {
+							"en": "DWG / DXF",
+							"sw": "DWG / DXF"
+						},
+						"icon": "chart-bell-curve",
+						"image": {
+							"en": "/media/deliverables/contour-maps.jpg",
+							"sw": "/media/deliverables/contour-maps.jpg"
+						},
+						"description": {
+							"en": "Contours at design intervals supporting grading, cut-fill, and drainage analysis.",
+							"sw": "Kontua kwa vipindi vya kubuni vinavyosaidia daraja, kukata-kujaza, na uchambuzi wa mifereji."
+						}
+					},
+					{
+						"title": {
+							"en": "Comprehensive Master Plans",
+							"sw": "Mipango Mikuu Kamili"
+						},
+						"format": {
+							"en": "PDF / DWG",
+							"sw": "PDF / DWG"
+						},
+						"icon": "map",
+						"image": {
+							"en": "/media/deliverables/master-plans.jpg",
+							"sw": "/media/deliverables/master-plans.jpg"
+						},
+						"description": {
+							"en": "Consolidated route plans aligning alignment, ROW, utilities, and access points.",
+							"sw": "Mipango ya njia inayounganisha upangaji, ROW, huduma, na maeneo ya kuingia."
+						}
+					},
+					{
+						"title": {
+							"en": "Building Layouts & BIM Integration",
+							"sw": "Mipangilio ya Majengo na Ujumuishaji wa BIM"
+						},
+						"format": {
+							"en": "IFC / DWG",
+							"sw": "IFC / DWG"
+						},
+						"icon": "office-building",
+						"image": {
+							"en": "/media/deliverables/building-layouts-bim.jpg",
+							"sw": "/media/deliverables/building-layouts-bim.jpg"
+						},
+						"description": {
+							"en": "BIM-ready geometry and layouts for interchanges, structures, and roadside assets.",
+							"sw": "Jiometri na mipangilio tayari kwa BIM kwa viunganishi, majengo, na mali za barabara."
+						}
+					},
+					{
+						"title": {
+							"en": "CAD and GIS-Compatible Shapefiles",
+							"sw": "Shapefiles Zinazoendana na CAD na GIS"
+						},
+						"format": {
+							"en": "SHP / DWG",
+							"sw": "SHP / DWG"
+						},
+						"icon": "layers-triple",
+						"image": {
+							"en": "/media/deliverables/cad-shapefiles.jpg",
+							"sw": "/media/deliverables/cad-shapefiles.jpg"
+						},
+						"description": {
+							"en": "Data packages that plug straight into CAD and GIS design environments.",
+							"sw": "Vifurushi vya data vinavyoingia moja kwa moja kwenye mazingira ya kubuni ya CAD na GIS."
+						}
+					},
+					{
+						"title": {
+							"en": "Professional PDF Map Exports",
+							"sw": "Utoaji wa Ramani za PDF za Kitaalamu"
+						},
+						"format": {
+							"en": "PDF",
+							"sw": "PDF"
+						},
+						"icon": "file-pdf-box",
+						"image": {
+							"en": "/media/deliverables/pdf-map-outputs.jpg",
+							"sw": "/media/deliverables/pdf-map-outputs.jpg"
+						},
+						"description": {
+							"en": "Print-ready plan and profile exports for tenders, approvals, and site teams.",
+							"sw": "Mipango na wasifu tayari kuchapishwa kwa zabuni, idhini, na timu za tovuti."
+						}
+					}
+				],
+				"tone": "default",
+				"id": ""
+			}
+		}
+	]
+}

@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"headline": "GROUND PENETRATING RADAR",
 		"title": "Ground Penetrating Radar (GPR) & Subsurface Utility Engineering (SUE) in Kenya",
 		"image": "/media/surveying/ground-penetrating-radar/hero.png",
@@ -86,6 +87,7 @@
 		}
 	},
 	"technicalCta": {
+		"type": "cta",
 		"tag": "Technical Proposal",
 		"headline": "Request Technical Proposal (24hr Turnaround)",
 		"description": "Send us your site details — access, area, and utility concerns — and receive a scoped GPR / SUE technical proposal with methodology, deliverables and pricing within 24 hours.",
@@ -131,6 +133,7 @@
 		{ "label": "FAQs", "href": "#faqs" }
 	],
 	"overview": {
+		"type": "unique",
 		"tag": "Overview",
 		"headline": "Ground Penetrating Radar Survey in Kenya",
         "image": "/media/surveying/ground-penetrating-radar/gpr-lmx-200.gif",        
@@ -141,6 +144,7 @@
 		]
 	},
 	"methodology": {
+		"type": "unique",
 		"tag": "Our GPR Survey Workflow",
 		"headline": "Our GPR Survey Workflow (Engineering Standard Method)",
 		"description": "We follow a structured Subsurface Utility Engineering (SUE) approach:",
@@ -173,6 +177,7 @@
 		]
 	},
 	"applications": {
+		"type": "card-grid",
 		"tag": "Applications",
 		"headline": "Industry sectors and use cases we serve",
 		"items": [
@@ -228,6 +233,7 @@
 		]
 	},
 	"deliverables": {
+		"type": "deliverables",
 		"tag": "Deliverables You Receive",
 		"headline": "Deliverables You Receive",
 		"description": "We don't just scan — we deliver engineering-ready outputs:",
@@ -290,6 +296,7 @@
 		]
 	},
 	"detectCaps": {
+		"type": "card-grid",
 		"tag": "Capabilities",
 		"headline": "What We Detect (GPR Capabilities)",
 		"description": "Subsurface targets identified with high-resolution LMX200 + RTK-GNSS integration:",
@@ -327,6 +334,7 @@
 		]
 	},
 	"sue": {
+		"type": "unique",
 		"tag": "Compliance",
 		"headline": "Subsurface Utility Engineering (SUE) Compliance",
 		"description": "We apply international SUE standards to every utility mapping project — giving engineers the confidence to excavate safely:",
@@ -359,6 +367,7 @@
 		"note": "Ensures engineering-grade confidence before excavation"
 	},
 	"limitations": {
+		"type": "unique",
 		"tag": "Transparency",
 		"headline": "Technical Limitations (Transparency You Can Trust)",
 		"description": "Ground Penetrating Radar performance depends on site conditions. We tell you exactly what to expect:",
@@ -388,6 +397,7 @@
 		"noteIcon": "check-decagram"
 	},
 	"beforeAfter": {
+		"type": "unique",
 		"tag": "Before vs After",
 		"headline": "Before vs After GPR Survey",
 		"flipHint": "Tap the card to flip",
@@ -413,6 +423,7 @@
 		}
 	},
 	"summary": {
+		"type": "unique",
 		"tag": "GPR Survey & Utility Mapping in Kenya",
 		"headline": "GPR Survey & Utility Mapping in Kenya | Subsurface Utility Engineering (SUE)",
 		"description": "Professional Ground Penetrating Radar (GPR) services in Kenya for utility mapping, construction safety, and subsurface engineering. RTK-GNSS + LMX200 systems.",
@@ -423,6 +434,7 @@
 		]
 	},
 	"finalCta": {
+		"type": "cta-closing",
 		"tag": "Start Your Survey",
 		"headline": "Ready to De-Risk Your Project?",
 		"description": "Get Professional Utility Mapping Support Today",
@@ -449,6 +461,7 @@
 		]
 	},
 	"technology": {
+		"type": "unique",
 		"tag": "Technology Stack",
 		"headline": "Industry-leading equipment and software",
 		"items": [
@@ -483,6 +496,7 @@
 		]
 	},
 	"faqs": {
+		"type": "faq",
 		"tag": "FAQs",
 		"headline": "Frequently Asked Questions",
 		"items": [
@@ -519,6 +533,7 @@
 		}
 	},
 	"featuredProjects": {
+		"type": "unique",
 		"tag": "Featured Projects",
 		"headline": "Featured Projects Across Kenya",
 		"description": "Real-world GPR deployments delivering actionable subsurface intelligence.",

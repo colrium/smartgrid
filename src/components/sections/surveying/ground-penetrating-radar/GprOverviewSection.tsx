@@ -7,21 +7,33 @@ import Image from "next/image";
 interface OverviewContent {
 	tag?: string | null;
 	headline: string;
-    paragraphs?: string[] | null;
-    image?: string | null;
+	paragraphs?: string[] | null;
+	image?: string | null;
 }
 
-export function GprOverviewSection() {
+export interface GprOverviewData {
+	tag?: string | null;
+	headline: string;
+	paragraphs?: string[] | null;
+	image?: string | null;
+}
+
+export function GprOverviewSection({ data, id }: { data?: GprOverviewData | null; id?: string } = {}) {
 	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
-	const section = t("surveying/ground-penetrating-radar:overview", {
-		returnObjects: true,
-	}) as unknown as OverviewContent;
+	// Keystatic-owned content when `data` is provided (M11 `gprOverview`
+	// unique section); legacy locale strings otherwise. The sw locale has no
+	// `image` key — the schema carries it per-locale so sw renders imageless
+	// exactly like legacy.
+	const section = (data ??
+		(t("surveying/ground-penetrating-radar:overview", {
+			returnObjects: true,
+		}) as unknown as OverviewContent)) as OverviewContent;
 	const paragraphs = Array.isArray(section?.paragraphs) ? section.paragraphs : [];
-    const hasImage = typeof section.image === "string" && section.image.startsWith("/");
+	const hasImage = typeof section.image === "string" && section.image.startsWith("/");
 	if (paragraphs.length === 0) return null;
 
 	return (
-		<section id="overview" className="scroll-mt-36 py-20 sm:py-24 relative overflow-hidden">
+		<section id={id ?? "overview"} className="scroll-mt-36 py-20 sm:py-24 relative overflow-hidden">
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				{hasImage && (
 					<FadeUp delay={0.08}>

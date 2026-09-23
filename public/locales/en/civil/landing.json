@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"headline": "Precision Construction",
 		"title": "Civil Engineering",
 		"image": "/media/civil/01.jpeg",
@@ -14,6 +15,7 @@
 		}
 	},
 	"services": {
+		"type": "card-grid",
 		"tag": "Civil Solutions",
 		"headline": "Our Civil Engineering Services",
 		"description": "We provide comprehensive civil engineering support for infrastructure projects of all scales.",
@@ -56,6 +58,7 @@
 		]
 	},
 	"process": {
+		"type": "unique",
 		"tag": "Our Workflow",
 		"headline": "Engineering Survey Process",
 		"image": "/media/civil/03.jpeg",
@@ -94,6 +97,7 @@
 		]
 	},
 	"deliverables": {
+		"type": "deliverables",
 		"tag": "Deliverables",
 		"headline": "Engineering Deliverables",
 		"description": "Accurate outputs for planning and engineering decisions.",

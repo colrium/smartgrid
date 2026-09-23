@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"tag": "Droni ya Upimaji",
 		"headline": "Droni ya Upimaji wa Multispectral na Kilimo",
 		"title": "DJI Mavic 3 Multispectral (M3M)",
@@ -11,6 +12,7 @@
 		}
 	},
 	"productImages": {
+		"type": "unique",
 		"images": [
 			"/media/equipment-sale/dji-mavic-3-multispectral/images/02.png",
 			"/media/equipment-sale/dji-mavic-3-multispectral/images/03.png",
@@ -19,17 +21,20 @@
 		]
 	},
 	"breadcrumb": {
+		"type": "unique",
 		"home": "Nyumbani",
 		"section": "Uuzaji wa Vifaa",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
 	"catalogue": {
+		"type": "unique",
 		"icon": "leaf",
 		"title": "DJI Mavic 3 Multispectral",
 		"description": "Droni ya RGB + bendi nne za multispectral kwa ramani za NDVI, ufuatiliaji wa afya ya mazao, na uchambuzi wa mazingira tayari kwa GIS katika uruka mmoja.",
 		"badge": "Kipya"
 	},
 	"pricing": {
+		"type": "pricing",
 		"new": {
 			"label": "Mpya Kabisa",
 			"currency": "KES",
@@ -66,6 +71,7 @@
 		}
 	],
 	"productOverview": {
+		"type": "unique",
 		"tag": "Muhtasari wa Bidhaa",
 		"headline": "Kilimo cha Usahihi Kinakutana na Uchambuzi wa GIS",
 		"images": [
@@ -85,6 +91,7 @@
 		"description": "DJI Mavic 3 Multispectral inaunganisha kamera ya RGB na sensa ya bendi nne za multispectral, kuwezesha ramani za NDVI, ufuatiliaji wa afya ya mazao, na uchambuzi wa athari za mazingira katika uruka mmoja."
 	},
 	"keyFeatures": {
+		"type": "card-grid",
 		"tag": "Mambo Muhimu",
 		"headline": "Vipengele Muhimu",
 		"description": "Uwezo wa sensa zilizoundwa kwa kazi za upimaji wa kilimo na mazingira.",
@@ -112,6 +119,7 @@
 		]
 	},
 	"sensorSpecifications": {
+		"type": "unique",
 		"tag": "Sensa",
 		"headline": "Vipimo vya Sensa",
 		"description": "Upigaji picha wa RGB na multispectral katika mfumo mmoja wa ndege.",
@@ -121,6 +129,7 @@
 		]
 	},
 	"mappingCapabilities": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Uwezo wa Ramani",
 		"description": "Imeundwa mahsusi kwa uchambuzi wa mimea na ardhi.",
@@ -132,11 +141,13 @@
 		]
 	},
 	"specs": {
+		"type": "unique",
 		"tag": "Data ya Kiufundi",
 		"headline": "Vipimo vya Kiufundi",
 		"description": "Maelezo kamili ya kiufundi kwa DJI Mavic 3 Multispectral."
 	},
 	"surveyApplications": {
+		"type": "unique",
 		"tag": "Matumizi",
 		"headline": "Matumizi ya Upimaji na Muunganisho wa GIS",
 		"description": "Pale M3M inavyopinda katika kazi za kilimo na mazingira.",
@@ -150,6 +161,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Pata Nukuu",
 		"headline": "Ulizia Droni Hii",
 		"description": "Tuambie kuhusu mradi wako na upate nukuu iliyoundwa kwa ajili ya DJI Mavic 3 Multispectral.",
@@ -165,6 +177,7 @@
 		}
 	},
 	"relatedProducts": {
+		"type": "unique",
 		"tag": "Chunguza",
 		"headline": "Droni Nyingine Unazoweza Kuzipenda",
 		"description": "Gundua droni zaidi za upimaji kutoka kwenye katalogi ya SmartGrid."

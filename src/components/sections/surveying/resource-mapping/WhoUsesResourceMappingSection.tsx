@@ -5,26 +5,33 @@ import type { ReactElement } from "react";
 import { useTranslation } from "@/hooks";
 import { SectionHeader } from "@/components/sections/home";
 import { FadeUp } from "@/components/animations/Fade";
-import { Blob } from "@/components/sections/home/decor";
+import { Blob } from "@/components/sections/shared/decor";
 
 interface WhoUsesItem {
 	icon?: string | null;
-	title: string;
-	description?: string;
+	title?: string | null;
+	description?: string | null;
 	href?: string | null;
 }
 
 interface WhoUsesCategory {
-	title: string;
-	icon?: string;
-	items: WhoUsesItem[];
+	title?: string | null;
+	icon?: string | null;
+	items?: WhoUsesItem[] | null;
 }
 
 interface WhoUsesResourceMappingContent {
 	tag?: string | null;
-	headline: string;
-	description?: string;
-	categories: WhoUsesCategory[];
+	headline?: string | null;
+	description?: string | null;
+	categories?: WhoUsesCategory[] | null;
+}
+
+export interface RmWhoUsesData {
+	tag?: string | null;
+	headline?: string | null;
+	description?: string | null;
+	categories?: WhoUsesCategory[] | null;
 }
 
 const FALLBACK_ICONS = [
@@ -35,23 +42,26 @@ const FALLBACK_ICONS = [
 	"briefcase",
 ];
 
-export function WhoUsesResourceMappingSection(): ReactElement {
+export function WhoUsesResourceMappingSection({ data, id }: { data?: RmWhoUsesData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/resource-mapping"]);
-	const section = t("surveying/resource-mapping:whoUsesResourceMapping", {
-		returnObjects: true,
-	}) as unknown as WhoUsesResourceMappingContent;
+	// Keystatic-owned content when `data` is provided (M11 `rmWhoUses`
+	// unique section); legacy locale strings otherwise.
+	const section = (data ??
+		(t("surveying/resource-mapping:whoUsesResourceMapping", {
+			returnObjects: true,
+		}) as unknown as WhoUsesResourceMappingContent)) as WhoUsesResourceMappingContent;
 	const categories = Array.isArray(section.categories) ? section.categories : [];
 
 	if (categories.length === 0) return <></>;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden">
+		<section id={id} className="py-24 sm:py-28 relative overflow-hidden">
 			<Blob className="w-[28rem] h-[28rem] bg-primary-100/60 -bottom-24 -right-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader
 					tag={section.tag || undefined}
-					headline={section.headline}
+					headline={section.headline ?? ""}
 					description={section.description || undefined}
 					align="center"
 				/>
@@ -70,7 +80,7 @@ export function WhoUsesResourceMappingSection(): ReactElement {
 								</div>
 
 								<ul className="mt-5 flex-1 space-y-4">
-									{category.items.map((item, itemIndex) => (
+									{(category.items ?? []).map((item, itemIndex) => (
 										<li key={itemIndex} className="flex items-start gap-3">
 											{item.icon && (
 												<span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">

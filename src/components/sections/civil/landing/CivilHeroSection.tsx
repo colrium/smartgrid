@@ -7,26 +7,40 @@ import { FadeLeft } from "@/components/animations/Fade";
 import { SectionTag } from "@/components/SectionTag";
 
 interface HeroCta {
-	label: string;
-	href: string;
+	label?: string | null;
+	href?: string | null;
 }
 
 interface CivilHeroContent {
-	headline: string;
-	title: string;
-	description?: string;
+	headline?: string | null;
+	title?: string | null;
+	description?: string | null;
 	image?: string | null;
 	ctaPrimary?: HeroCta | null;
 	ctaSecondary?: HeroCta | null;
 }
 
-export function CivilHeroSection() {
+export interface CivilHeroData {
+	headline?: string | null;
+	title?: string | null;
+	description?: string | null;
+	image?: string | null;
+	ctaPrimary?: HeroCta | null;
+	ctaSecondary?: HeroCta | null;
+}
+
+export function CivilHeroSection({ data, id }: { data?: CivilHeroData | null; id?: string } = {}) {
 	const { t } = useTranslation(["civil/landing"]);
-	const hero = t("civil/landing:hero", { returnObjects: true }) as unknown as CivilHeroContent;
+	// Keystatic-owned content when `data` is provided (M11 `civilHero`
+	// unique section); legacy `civil/landing:hero` locale strings
+	// otherwise. Presentation (diagonal seam, pill styles) stays in the
+	// wrapper — only strings, image and links are data.
+	const hero = (data ??
+		(t("civil/landing:hero", { returnObjects: true }) as unknown as CivilHeroContent)) as CivilHeroContent;
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");
 
 	return (
-		<section className="relative overflow-hidden bg-ink">
+		<section id={id} className="relative overflow-hidden bg-ink">
 			<div className="relative flex min-h-[92vh] items-center">
 				{/* full-bleed image panel with diagonal seam */}
 				{hasImage && (

@@ -21,6 +21,15 @@ interface GisHeroContent {
 	ctaPrimary?: HeroCta | null;
 }
 
+export interface GisHeroData {
+	headline: string;
+	title: string;
+	description?: string;
+	footnoteItems?: string[] | null;
+	image?: string | null;
+	ctaPrimary?: HeroCta | null;
+}
+
 /** Render "\n\n"-separated paragraphs with inline <bold> segments (dark background). */
 function renderDescription(text: string): ReactNode[] {
 	const paragraphs = text.split(/\n+/).filter(Boolean);
@@ -58,16 +67,20 @@ function renderDescription(text: string): ReactNode[] {
 	});
 }
 
-export function GisHeroSection() {
+export function GisHeroSection({ data, id }: { data?: GisHeroData | null; id?: string } = {}) {
 	const { t } = useTranslation(["surveying/gis-mapping"]);
-	const hero = t("surveying/gis-mapping:hero", {
-		returnObjects: true,
-	}) as unknown as GisHeroContent;
+	// Keystatic-owned content when `data` is provided (M11 `gisHero` unique
+	// section); legacy locale strings otherwise. The `<bold>` description
+	// parsing stays in the renderer so Keystatic edits change output.
+	const hero = (data ??
+		(t("surveying/gis-mapping:hero", {
+			returnObjects: true,
+		}) as unknown as GisHeroContent)) as GisHeroContent;
 	const hasImage = typeof hero.image === "string" && hero.image.startsWith("/");
 	const footnoteItems = Array.isArray(hero.footnoteItems) ? hero.footnoteItems : [];
 
 	return (
-		<section className="relative min-h-[86dvh] flex items-end overflow-hidden pb-14 sm:pb-20">
+		<section id={id} className="relative min-h-[86dvh] flex items-end overflow-hidden pb-14 sm:pb-20">
 			{hasImage ? (
 				<Image
 					src={hero.image as string}

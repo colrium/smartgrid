@@ -1,0 +1,139 @@
+{
+	"slug": "Privacy Policy",
+	"title": "Privacy Policy (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "legal",
+			"value": {
+				"label": {
+					"en": "Privacy",
+					"sw": "Faragha"
+				},
+				"title": {
+					"en": "Privacy Policy",
+					"sw": "Sera ya Faragha"
+				},
+				"description": {
+					"en": "This policy explains how SmartGrid handles information submitted through our website, contact forms, investor enquiries, and site-visit requests.",
+					"sw": "Sera hii inaelezea jinsi SmartGrid inavyoshughulikia taarifa zinazowasilishwa kupitia tovuti yetu, fomu za mawasiliano, maswali ya wawekezaji, na maombi ya ziara za tovuti."
+				},
+				"lastUpdated": {
+					"en": "Last Updated Aug, 2026",
+					"sw": "Ilisasishwa Mwisho Aug, 2026"
+				},
+				"articles": [
+					{
+						"title": {
+							"en": "Information We Collect",
+							"sw": "Taarifa Tunazokusanya"
+						},
+						"paragraphs": [
+							{
+								"en": "We collect information you choose to provide when you submit an enquiry, request investor materials, schedule a site visit, or contact SmartGrid. This may include your name, email address, phone number, country, organisation, investment interest, and message details.",
+								"sw": "Tunakusanya taarifa unazochagua kutoa unapowasilisha swali, kuomba nyaraka za wawekezaji, kupanga ziara ya tovuti, au kuwasiliana na SmartGrid. Hii inaweza kujumuisha jina lako, anwani ya barua pepe, nambari ya simu, nchi, shirika, maslahi ya uwekezaji, na maelezo ya ujumbe."
+							},
+							{
+								"en": "We may also collect basic technical information from your browser or device, such as pages visited, approximate location, referring links, and usage patterns, to help us keep the website reliable and improve the experience.",
+								"sw": "Tunaweza pia kukusanya taarifa za kiufundi za msingi kutoka kwenye kivinjari au kifaa chako, kama vile kurasa zilizotembelewa, eneo la takriban, viungo vya marejeleo, na mifumo ya matumizi, ili kutusaidia kuweka tovuti kuwa ya kuaminika na kuboresha uzoefu."
+							}
+						]
+					},
+					{
+						"title": {
+							"en": "How We Use Your Information",
+							"sw": "Jinsi Tunavyotumia Taarifa Zako"
+						},
+						"paragraphs": [
+							{
+								"en": "We use submitted information to respond to enquiries, prepare relevant investor or operations information, arrange calls or site visits, and maintain communication with prospective partners.",
+								"sw": "Tunatumia taarifa zilizowasilishwa kujibu maswali, kuandaa taarifa husika za wawekezaji au uendeshaji, kupanga simu au ziara za tovuti, na kudumisha mawasiliano na washirika watarajiwa."
+							},
+							{
+								"en": "We may use website usage data to monitor site performance, protect against abuse, understand demand for our content, and improve navigation, forms, and page content.",
+								"sw": "Tunaweza kutumia data ya matumizi ya tovuti kufuatilia utendaji wa tovuti, kujikinga dhidi ya matumizi mabaya, kuelewa mahitaji ya maudhui yao yetu, na kuboresha urambazaji, fomu, na maudhui ya ukurasa."
+							}
+						]
+					},
+					{
+						"title": {
+							"en": "Sharing and disclosure",
+							"sw": "Kushiriki na ufichuzi"
+						},
+						"paragraphs": [
+							{
+								"en": "We do not sell personal information. We may share information with service providers, professional advisers, compliance partners, or operational team members where this is reasonably needed to respond to your request or operate the website.",
+								"sw": "Hatuuzi taarifa za kibinafsi. Tunaweza kushiriki taarifa na watoa huduma, washauri wa kitaalamu, washirika wa uzingatiaji, au wanachama wa timu ya uendeshaji pale ambapo inahitajika kwa kiasi cha kuridhisha kujibu ombi lako au kuendesha tovuti."
+							},
+							{
+								"en": "We may disclose information if required by law, regulation, court order, or a legitimate request from a competent authority, or where disclosure is necessary to protect our rights, users, operations, or partners.",
+								"sw": "Tunaweza kufichua taarifa ikiwa inahitajika na sheria, kanuni, amri ya mahakama, au ombi halali kutoka kwa mamlaka yenye sifa, au pale ufichuzi unapohitajika kulinda haki zetu, watumiaji, shughuli, au washirika."
+							}
+						]
+					},
+					{
+						"title": {
+							"en": "Retention and security",
+							"sw": "Uhifadhi na usalama"
+						},
+						"paragraphs": [
+							{
+								"en": "We retain personal information only for as long as reasonably necessary for the purposes described on this page, including enquiry handling, investor relationship management, legal compliance, dispute prevention, and business record keeping.",
+								"sw": "Tunahifadhi taarifa za kibinafsi kwa muda mrefu tu kama inavyohitajika kwa mujibu wa madhumuni yaliyoelezewa kwenye ukurasa huu, ikijumuisha kushughulikia maswali, usimamizi wa mahusiano ya wawekezaji, uzingatiaji wa kisheria, kuzuia mizozo, na utunzaji wa rekodi za biashara."
+							},
+							{
+								"en": "We use administrative, technical, and organisational safeguards designed to protect information. No website or transmission method is completely secure, so users should avoid sending sensitive identity, financial, or confidential documents through general website forms unless specifically requested through an approved channel.",
+								"sw": "Tunatumia ulinzi wa kiutawala, kiufundi, na wa kimuundo ulioundwa kulinda taarifa. Hakuna tovuti au njia ya usambazaji iliyo salama kabisa, kwa hivyo watumiaji wanapaswa kuepuka kutuma hati nyeti za utambulisho, za kifedha, au za siri kupitia fomu za jumla za tovuti isipokuwa ziombwe maalum kupitia njia iliyoidhinishwa."
+							}
+						]
+					},
+					{
+						"title": {
+							"en": "Your choices and rights",
+							"sw": "Chaguo na haki zako"
+						},
+						"paragraphs": [
+							{
+								"en": "You may ask us to update, correct, or delete information you have submitted, subject to legal, regulatory, security, and legitimate business retention requirements.",
+								"sw": "Unaweza kutuomba kusasisha, kusahihisha, au kufuta taarifa ulizowasilisha, kwa kuzingatia mahitaji ya kisheria, ya kanuni, ya usalama, na ya kihalali ya kuhifadhi biashara."
+							},
+							{
+								"en": "You may also opt out of non-essential communications by contacting us. Transactional, compliance, or enquiry-related messages may still be sent where necessary to handle an active request.",
+								"sw": "Unaweza pia kutojiongeza kwenye mawasiliano yasiyo ya lazima kwa kuwasiliana nasi. Ujumbe wa kimiamala, wa uzingatiaji, au unaohusiana na maswali bado unaweza kutumwa pale inapohitajika kushughulikia ombi linaloendelea."
+							}
+						]
+					},
+					{
+						"title": {
+							"en": "International operations",
+							"sw": "Shughuli za kimataifa"
+						},
+						"paragraphs": [
+							{
+								"en": "SmartGrid operates across multiple African jurisdictions and may handle enquiries from users in other countries. Information may therefore be processed in a country different from your own, subject to appropriate operational and compliance controls.",
+								"sw": "SmartGrid hufanya kazi katika eneo nyingi za Kiafrika na inaweza kushughulikia maswali kutoka kwa watumiaji katika nchi nyingine. Taarifa zinaweza kwa hivyo kuchakatwa katika nchi tofauti na yako, kwa kuzingatia udhibiti ufaao wa uendeshaji na uzingatiaji."
+							},
+							{
+								"en": "This page is intended as a practical website privacy notice and should be reviewed with qualified counsel for jurisdiction-specific legal requirements before being treated as a final legal policy.",
+								"sw": "Ukurasa huu unakusudiwa kuwa taarifa ya faragha ya tovuti ya vitendo na unapaswa kupitiwa na wakili mwenye sifa kwa mahitaji ya kisheria yanayotegemea eneo kabla ya kuchukuliwa kama sera ya mwisho ya kisheria."
+							}
+						]
+					}
+				],
+				"contactHref": {
+					"en": "/contact?reason=privacy#contact-form",
+					"sw": "/contact?reason=privacy#contact-form"
+				},
+				"contactLabel": {
+					"en": "Contact Privacy Team",
+					"sw": "Wasiliana na Timu ya Faragha"
+				},
+				"note": {
+					"en": "Questions about this policy or how it applies to your enquiry can be sent to the SmartGrid team.",
+					"sw": "Maswali kuhusu faragha hii au jinsi yanavyohusu swali lako yanaweza kutumwa kwa timu ya SmartGrid."
+				},
+				"id": ""
+			}
+		}
+	]
+}

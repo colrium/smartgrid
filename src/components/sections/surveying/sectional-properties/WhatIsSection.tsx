@@ -5,38 +5,49 @@ import type { ReactElement } from "react";
 import { useTranslation } from "@/hooks";
 import { SectionHeader } from "@/components/sections/home";
 import { FadeUp, FadeLeft } from "@/components/animations/Fade";
-import { Blob } from "@/components/sections/home/decor";
+import { Blob } from "@/components/sections/shared/decor";
 
 interface WhatIsItem {
 	icon?: string | null;
-	title?: string;
-	points?: string[];
-	impactsLabel?: string;
-	impacts?: string[];
+	title?: string | null;
+	points?: (string | null)[] | null;
+	impactsLabel?: string | null;
+	impacts?: (string | null)[] | null;
 }
 
 interface WhatIsContent {
 	tag?: string | null;
-	headline?: string;
-	description?: string;
-	diagramLabel?: string;
-	items?: WhatIsItem[];
+	headline?: string | null;
+	description?: string | null;
+	diagramLabel?: string | null;
+	items?: WhatIsItem[] | null;
+}
+
+export interface SectionalWhatIsData {
+	tag?: string | null;
+	headline?: string | null;
+	description?: string | null;
+	items?: WhatIsItem[] | null;
 }
 
 const CARD_ICONS = ["door-open", "elevator", "chart-donut"];
 const CARD_NUMBERS = ["01", "02", "03"];
 
-export function WhatIsSection(): ReactElement {
+export function WhatIsSection({ data, id }: { data?: SectionalWhatIsData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/sectional-properties"]);
-	const section = t("surveying/sectional-properties:whatIs", {
-		returnObjects: true,
-	}) as unknown as WhatIsContent;
+	// Keystatic-owned content when `data` is provided (M11 `sectionalWhatIs`
+	// unique section); legacy locale strings otherwise. NOTE: the legacy
+	// `diagramLabel` key is unrendered (figure commented out) — not migrated.
+	const section = (data ??
+		(t("surveying/sectional-properties:whatIs", {
+			returnObjects: true,
+		}) as unknown as WhatIsContent)) as WhatIsContent;
 	const items = Array.isArray(section?.items) ? section.items : [];
 
 	if (!section?.headline && items.length === 0) return <></>;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden">
+		<section id={id} className="py-24 sm:py-28 relative overflow-hidden">
 			<Blob
 				className="w-[26rem] h-[26rem] bg-primary-100/50 -top-24 -left-32"
 				opacity={0.4}

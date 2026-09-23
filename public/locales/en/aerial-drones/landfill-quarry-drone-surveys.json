@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "Survey Smarter, Build Stronger",
 		"title": "LANDFILL & QUARRY DRONE SURVEYS",
 		"image": "/media/aerial-drones/landfill-quarry-drone-surveys/01.jpg",
@@ -11,11 +12,13 @@
 		}
 	},
 	"quarryServices": {
+		"type": "intro",
 		"tag": "Site Intelligence",
 		"headline": "QUARRY SERVICES",
 		"description": "Unlock Precision. Boost Profitability. Our drone and land surveys for quarries deliver the data you need—faster, safer, and more accurately than ever before."
 	},
 	"quarryServicesItems": {
+		"type": "card-grid",
 		"tag": null,
 		"headline": "Transforming Quarries, Waste & Resource Management",
 		"description": "",
@@ -38,11 +41,13 @@
 		]
 	},
 	"maximizeProductivity": {
+		"type": "intro",
 		"tag": "Faster, Smarter",
 		"headline": "Maximize Productivity. Minimize Guesswork.",
 		"description": "Leverage SmartGrid's cutting-edge drone volume surveys to make faster, smarter decisions on site. Let data lead the way to profitability."
 	},
 	"whatWeOffer": {
+		"type": "card-grid",
 		"tag": "Services",
 		"headline": "Our Aerial Surveying Services",
 		"items": [

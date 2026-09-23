@@ -1,5 +1,16 @@
 import { useTranslation } from "@/hooks";
 
+/**
+ * Floating WhatsApp contact button (M9 layout content).
+ *
+ * Content precedence, per field:
+ * 1. Keystatic `site` singleton `chat` group — merged into the i18n store
+ *    as `common:chat.*` by `mergeSiteLayoutIntoStore` when published and
+ *    opted in (number is locale-shared; message/label are localized).
+ * 2. `NEXT_PUBLIC_WHATSAPP_NUMBER` for the number (deploys without a
+ *    configured chat group keep working; copy falls to the hardcoded
+ *    defaults below, which match the previous behavior).
+ */
 const getWhatsAppNumber = () => {
     const configuredNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
     if (!configuredNumber || configuredNumber?.trim?.().length < 4) {
@@ -10,7 +21,16 @@ const getWhatsAppNumber = () => {
 
 const WhatsappButton = ({ className = "", ...rest }: React.ComponentProps<"a">) => {
 	const { t } = useTranslation("common");
-	const phoneNumber = getWhatsAppNumber();
+
+	// `chat` exists in the store only when the published singleton carries
+	// a non-empty number (empty groups are never merged — see resolveLayout).
+	const chat = t("common:chat", { returnObjects: true }) as
+		| { number?: string; whatsappMessage?: string; whatsappLabel?: string }
+		| undefined;
+	const phoneNumber =
+		chat?.number && chat.number.replace(/\D/g, "").length >= 4
+			? chat.number.replace(/\D/g, "")
+			: getWhatsAppNumber();
 
 	if (!phoneNumber) return null;
 

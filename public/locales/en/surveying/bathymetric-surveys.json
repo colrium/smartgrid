@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "BATHYMETRIC SURVEYS",
 		"title": "BATHYMETRIC & HYDROGRAPHIC SURVEY SERVICES IN KENYA",
 		"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-01.jpg",
@@ -10,12 +11,14 @@
 		}
 	},
 	"whatIsBathymetricSurveys": {
+		"type": "split-media",
 		"tag": "Underwater Topography",
 		"headline": "What is Bathymetric Surveys?",
 		"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-09.png",
 		"description": "Bathymetric surveys involve measuring the depth of water bodies and charting the underwater terrain. This technique is crucial for understanding sediment levels, water volume, and underwater hazards. It supports safer construction, better water resource management, and proactive environmental protection. SmartGrid Surveying uses high-resolution echo sounders, GNSS positioning systems, and remote-controlled survey boats to access shallow and restricted water zones safely and efficiently."
 	},
 	"whyBathymetricCritical": {
+		"type": "card-grid",
 		"tag": "Why It Matters in Kenya",
 		"headline": "Why Bathymetric Surveys Are Critical in Kenya",
 		"description": "Kenya's water infrastructure depends on accurate underwater data for:",
@@ -30,6 +33,7 @@
 		]
 	},
 	"bathymetricWorkflow": {
+		"type": "process",
 		"tag": "Engineering Grade Process",
 		"headline": "OUR HYDROGRAPHIC SURVEY WORKFLOW",
 		"description": "Structured underwater survey pipeline for engineering-grade deliverables:",
@@ -68,6 +72,7 @@
 		"outcome": "Complete hydrographic dataset ready for engineering design & decision-making"
 	},
 	"equipmentTechnology": {
+		"type": "unique",
 		"tag": "Equipment & Technology",
 		"headline": "EQUIPMENT & TECHNOLOGY",
 		"description": "We deploy:\n\n• High-resolution echo sounders (single beam systems)\n• GNSS RTK positioning systems\n• Survey boats for shallow & deep water access\n• GIS & hydrographic modelling software\n\nIntegrated land + water geospatial reference ensures full terrain continuity.",
@@ -79,6 +84,7 @@
 		]
 	},
 	"deliverables": {
+		"type": "deliverables",
 		"tag": "What You Receive",
 		"headline": "WHAT YOU RECEIVE (DELIVERABLES)",
 		"description": "Engineering-grade hydrographic outputs:",
@@ -141,6 +147,7 @@
 		]
 	},
 	"whySmartGridBathymetric": {
+		"type": "card-grid",
 		"tag": "Our Advantages",
 		"headline": "WHY SMARTGRID BATHYMETRIC SURVEYS",
 		"items": [
@@ -153,6 +160,7 @@
 		]
 	},
 	"technicalLimitations": {
+		"type": "unique",
 		"tag": "Transparency",
 		"headline": "TECHNICAL LIMITATIONS (TRUST BUILDER)",
 		"description": "Bathymetric accuracy depends on:",
@@ -168,6 +176,7 @@
 		]
 	},
 	"beforeAfter": {
+		"type": "unique",
 		"tag": "Value Demonstration",
 		"headline": "BEFORE vs AFTER SURVEY VALUE",
 		"flipHint": "Click or tap to flip",
@@ -193,6 +202,7 @@
 		}
 	},
 	"finalCta": {
+		"type": "cta-closing",
 		"tag": "Ready When You Are",
 		"headline": "READY TO SURVEY YOUR WATER BODY?",
 		"description": "We respond quickly to urgent engineering and environmental survey needs.",
@@ -219,6 +229,7 @@
 		]
 	},
 	"damsLakesSeaOcean": {
+		"type": "card-grid",
 		"tag": "Water Infrastructure & Environment",
 		"headline": "DAMS, LAKES, SEA & OCEAN",
 		"images": [
@@ -260,6 +271,7 @@
 		]
 	},
 	"applications": {
+		"type": "card-grid",
 		"tag": "Key Applications",
 		"headline": "Our Applications of Bathymetric Surveys at SmartGrid Surveying",		
 		"description": "",

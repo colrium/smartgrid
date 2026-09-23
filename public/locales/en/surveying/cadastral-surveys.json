@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "CADASTRAL SURVEYS",
 		"title": "Know Your Boundaries, Build with Confidence",
 		"image": "/media/surveying/cadastral-surveys/AG8ng.jpg",
@@ -10,12 +11,14 @@
 		}
 	},
 	"whatsABoundarySurvey": {
+		"type": "split-media",
 		"tag": "Build Confidently",
 		"headline": "What is a boundary survey?",
 		"image": "/media/surveying/cadastral-surveys/AG8ngQ.png",
 		"description": "A boundary survey determines the legal property lines of a parcel of land. Using advanced GPS, total stations, and historical land records, SmartGrid Surveying provides highly accurate maps that define property limits and identify any encroachments or discrepancies."
 	},
 	"postHeroCta": {
+		"type": "unique",
 		"tag": "Cadastral Surveys in Kenya",
 		"headline": "Cadastral Surveys in Kenya for Title Deeds, Subdivision & Boundary Verification",
 		"description": "Registry-accurate boundary surveys prepared by licensed surveyors and packaged for Ardhisasa submission — for buyers, landowners and developers.",
@@ -31,6 +34,7 @@
 		}
 	},
 	"whenYouNeed": {
+		"type": "unique",
 		"tag": "When You Need It",
 		"headline": "When You Need a Cadastral Survey",
 		"description": "From title verification to dispute resolution — these are the moments a licensed boundary survey protects your land, your money and your paperwork.",
@@ -77,6 +81,7 @@
 		]
 	},
 	"process": {
+		"type": "process",
 		"tag": "How It Works",
 		"headline": "Boundary Survey Process — From Site Visit to County Approval",
 		"description": "A transparent, six-step cadastral workflow. You always know which stage your parcel is in and exactly what happens next.",
@@ -121,6 +126,7 @@
 		]
 	},
 	"processCta": {
+		"type": "unique",
 		"tag": "Start Now",
 		"headline": "Start Your Survey Process Today",
 		"description": "Send us your parcel details — title deed number, location and size — and we will map out the exact survey steps, costs and approvals for your land.",
@@ -141,6 +147,7 @@
 		]
 	},
 	"cost": {
+		"type": "unique",
 		"tag": "Cost Guidance",
 		"headline": "Cadastral Survey Cost in Kenya",
 		"description": "Indicative pricing for cadastral and boundary surveys. Every parcel is quoted after a registry check — no hidden charges, no surprises.",
@@ -189,6 +196,7 @@
 		}
 	},
 	"timeline": {
+		"type": "unique",
 		"tag": "Timelines",
 		"headline": "How Long Does a Cadastral Survey Take?",
 		"description": "Survey duration depends on registry approvals and parcel complexity. Here is what to realistically plan for.",
@@ -225,6 +233,7 @@
 		}
 	},
 	"compliance": {
+		"type": "unique",
 		"tag": "Legal & Regulatory Compliance",
 		"headline": "Legal & Ardhisasa Compliance You Can Rely On",
 		"description": "Every cadastral survey we deliver is executed under the statutes that govern land in Kenya — so your documents survive scrutiny at the registry, the bank and the court.",
@@ -273,6 +282,7 @@
 		]
 	},
 	"caseStudy": {
+		"type": "unique",
 		"tag": "Case Study · Kiambu County",
 		"headline": "Kiambu Subdivision Survey – 40-Acre Parcel",
 		"subtitle": "Title Registration & Boundary Dispute Resolution Using High-Precision GNSS Surveying",
@@ -442,6 +452,7 @@
 		}
 	},
 	"finalCta": {
+		"type": "cta-closing",
 		"tag": "Next Steps",
 		"headline": "Ready to Secure Your Land Boundaries?",
 		"description": "Avoid costly disputes and delays in title processing.",

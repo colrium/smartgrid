@@ -6,7 +6,7 @@ import { useTranslation } from "@/hooks";
 import Link from "@/components/Link";
 import { SectionHeader } from "@/components/sections/home";
 import { FadeUp } from "@/components/animations/Fade";
-import { Blob } from "@/components/sections/home/decor";
+import { Blob } from "@/components/sections/shared/decor";
 
 interface CostTier {
 	icon?: string | null;
@@ -27,17 +27,29 @@ interface CostContent {
 	cta?: { label?: string; href?: string; icon?: string | null } | null;
 }
 
-export function CostSection(): ReactElement {
+export interface CadastralCostData {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+	featuredLabel?: string | null;
+	tiers?: CostTier[] | null;
+	cta?: { label?: string; href?: string; icon?: string | null } | null;
+}
+
+export function CostSection({ data, id }: { data?: CadastralCostData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/cadastral-surveys"]);
-	const section = t("surveying/cadastral-surveys:cost", {
-		returnObjects: true,
-	}) as unknown as CostContent;
+	// Keystatic-owned content when `data` is provided (M11 `cadastralCost`
+	// unique section); legacy locale strings otherwise.
+	const section = (data ??
+		(t("surveying/cadastral-surveys:cost", {
+			returnObjects: true,
+		}) as unknown as CostContent)) as CostContent;
 	const tiers = Array.isArray(section?.tiers) ? section.tiers : [];
 
 	if (tiers.length === 0) return <></>;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
+		<section id={id} className="py-24 sm:py-28 relative overflow-hidden bg-surface">
 			<Blob
 				className="w-[28rem] h-[28rem] bg-primary-100/60 -bottom-24 -left-24"
 				opacity={0.5}

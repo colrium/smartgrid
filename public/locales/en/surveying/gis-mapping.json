@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"headline": "GIS, MAPPING & REMOTE SENSING",
 		"title": "GIS MAPPING & SPATIAL DATA INTELLIGENCE IN KENYA",
 		"image": "/media/surveying/gis-mapping/gis-mapping-01.jpg",
@@ -15,6 +16,7 @@
 		}
 	},
 	"whatIsGis": {
+		"type": "unique",
 		"tag": "Spatial Intelligence",
 		"headline": "What is GIS Mapping?",
 		"description": "Geographic Information Systems (GIS) is a technology that:",
@@ -39,6 +41,7 @@
 		"closingStatement": "In simple terms:\nGIS turns survey data into <bold>intelligent decision systems</bold>"
 	},
 	"consultationCta": {
+		"type": "cta",
 		"tag": "GIS Consultation",
 		"headline": "Book a GIS Consultation",
 		"description": "Tell us about your site, assets, or datasets — a GIS specialist will map the fastest route from raw survey data to decision-ready maps and systems.",
@@ -54,6 +57,7 @@
 		}
 	},
 	"whyGisCritical": {
+		"type": "card-grid",
 		"tag": "Why It Matters",
 		"headline": "Why GIS Mapping is Critical in Kenya",
 		"description": "GIS is now essential in:",
@@ -97,6 +101,7 @@
 		]
 	},
 	"gisServices": {
+		"type": "card-grid",
 		"tag": "GIS Solutions",
 		"headline": "GIS Services",
 		"description": "Decision-ready spatial products and systems, engineered from survey-grade data.",
@@ -149,6 +154,7 @@
 		]
 	},
 	"remoteSensingSolutions": {
+		"type": "card-grid",
 		"tag": "Advanced Data Capture",
 		"headline": "Remote Sensing Solutions",
 		
@@ -177,6 +183,7 @@
 		]
 	},
 	"mappingServices": {
+		"type": "card-grid",
 		"tag": "Core Capabilities",
 		"headline": "Mapping Services",
 		"description": "SmartGrid Surveying provides precise GIS and remote sensing services — from UAV photogrammetry, LiDAR mapping, to multispectral analysis and DEM creation. We deliver accurate spatial data to support planning, engineering, and environmental projects across Kenya and Africa.",
@@ -199,6 +206,7 @@
 		]
 	},
 	"industries": {
+		"type": "card-grid",
 		"tag": "Who We Serve",
 		"headline": "Industries",
 		"description": "Spatial intelligence delivered to the standards of governments, contractors, utilities, and development partners.",
@@ -242,6 +250,7 @@
 		]
 	},
 	"techStack": {
+		"type": "unique",
 		"tag": "Technology Stack",
 		"headline": "Technology Stack",
 		"description": "We use industry-grade geospatial tools:",
@@ -289,6 +298,7 @@
 		]
 	},
 	"whatsappCta": {
+		"type": "unique",
 		"tag": "Instant Support",
 		"headline": "WhatsApp a GIS Specialist",
 		"description": "Skip the back-and-forth — chat directly with our GIS team about datasets, deliverables, timelines, or pricing.",
@@ -300,6 +310,7 @@
 		}
 	},
 	"gisComponents": {
+		"type": "unique",
 		"tag": "Technology Stack",
 		"headline": "GIS Components",
 		"description": "Our GIS solutions integrate hardware, software, data, people, and methods to create comprehensive spatial analysis and mapping systems.",
@@ -331,6 +342,7 @@
         ]
 	},
 	"whySmartgrid": {
+		"type": "card-grid",
 		"tag": "Why SmartGrid",
 		"headline": "Why SmartGrid GIS Services",
 		"description": "One team from field survey to final geospatial system — accuracy carried through every layer.",
@@ -362,6 +374,7 @@
 		]
 	},
 	"analystCta": {
+		"type": "cta-closing",
 		"tag": "GIS Support Desk",
 		"headline": "Talk to a GIS Analyst",
 		"description": "From data audits to enterprise GIS deployment — get expert guidance on scope, accuracy, and deliverables before you commit.",
@@ -387,6 +400,7 @@
 		]
 	},
 	"dataAccuracy": {
+		"type": "unique",
 		"tag": "Quality Assurance",
 		"headline": "Data Accuracy & Quality Control in GIS",
 		"ensureTitle": "We ensure:",
@@ -416,6 +430,7 @@
 		]
 	},
 	"beforeAfter": {
+		"type": "unique",
 		"tag": "Before vs After",
 		"headline": "Before vs After GIS Implementation",
 		"flipHint": "Tap to compare",
@@ -441,6 +456,7 @@
 		}
 	},
 	"projectImpact": {
+		"type": "card-grid",
 		"tag": "Outcomes",
 		"headline": "Typical Project Impact",
 		"description": "GIS mapping enables:",
@@ -468,6 +484,7 @@
 		]
 	},
 	"relatedServices": {
+		"type": "unique",
 		"tag": "Keep Exploring",
 		"headline": "Related Services",
 		"description": "Combine GIS with:",

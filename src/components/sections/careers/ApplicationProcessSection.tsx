@@ -5,8 +5,13 @@ import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 
 interface ApplicationProcessContent {
-	subtitle?: string;
-	description?: string;
+	subtitle?: string | null;
+	description?: string | null;
+}
+
+export interface ApplicationProcessData {
+	subtitle?: string | null;
+	description?: string | null;
 }
 
 function renderBold(text: string): ReactNode[] {
@@ -31,16 +36,22 @@ function renderBold(text: string): ReactNode[] {
 	return nodes;
 }
 
-export function ApplicationProcessSection() {
+export function ApplicationProcessSection({ data, id }: { data?: ApplicationProcessData | null; id?: string } = {}) {
 	const { t } = useTranslation(["careers"]);
-	const section = t("careers:applicationProcess", {
-		returnObjects: true,
-	}) as unknown as ApplicationProcessContent;
+	// Keystatic-owned content when `data` is provided (M11
+	// `careersProcess` unique section); legacy
+	// `careers:applicationProcess` locale strings otherwise. The `<bold>`
+	// pseudo-markup is parsed from DATA by `renderBold` (page-owned
+	// wrapper), so edits change output.
+	const section = (data ??
+		(t("careers:applicationProcess", {
+			returnObjects: true,
+		}) as unknown as ApplicationProcessContent)) as ApplicationProcessContent;
 
 	if (!section.subtitle && !section.description) return null;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
+		<section id={id} className="py-24 sm:py-28 relative overflow-hidden bg-surface">
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<span className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary-300/10 blur-[90px] pointer-events-none" />
 				<span className="absolute bottom-2 -left-20 w-72 h-72 rounded-full bg-primary/10 blur-[90px] pointer-events-none" />

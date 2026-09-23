@@ -4,38 +4,51 @@ import Image from "next/image";
 import { useTranslation } from "@/hooks";
 import { FadeLeft, FadeRight } from "@/components/animations/Fade";
 import { SectionHeader } from "@/components/sections/home";
-import { Blob } from "@/components/sections/home/decor";
+import { Blob } from "@/components/sections/shared/decor";
 
 interface ProcessItem {
 	icon?: string | null;
-	title: string;
-	description?: string;
+	title?: string | null;
+	description?: string | null;
 }
 
 interface ProcessContent {
 	tag?: string | null;
-	headline: string;
-	description?: string;
+	headline?: string | null;
+	description?: string | null;
 	image?: string | null;
-	items: ProcessItem[];
+	items?: ProcessItem[] | null;
 }
 
-export function CivilProcessSection() {
+export interface CivilProcessData {
+	tag?: string | null;
+	headline?: string | null;
+	description?: string | null;
+	image?: string | null;
+	items?: ProcessItem[] | null;
+}
+
+export function CivilProcessSection({ data, id }: { data?: CivilProcessData | null; id?: string } = {}) {
 	const { t } = useTranslation(["civil/landing"]);
-	const section = t("civil/landing:process", { returnObjects: true }) as unknown as ProcessContent;
+	// Keystatic-owned content when `data` is provided (M11 `civilProcess`
+	// unique section); legacy `civil/landing:process` locale strings
+	// otherwise. Presentation (image stepper, step rails) stays in the
+	// wrapper — only strings, image and icons are data.
+	const section = (data ??
+		(t("civil/landing:process", { returnObjects: true }) as unknown as ProcessContent)) as ProcessContent;
 	const items = Array.isArray(section?.items) ? section.items : [];
 	const hasImage = typeof section.image === "string" && section.image.startsWith("/");
 
 	if (items.length === 0) return null;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden">
+		<section id={id} className="py-24 sm:py-28 relative overflow-hidden">
 			<Blob className="w-[28rem] h-[28rem] bg-primary-200/40 -bottom-24 -right-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader
 					tag={section.tag || undefined}
-					headline={section.headline}
+					headline={section.headline ?? ""}
 					description={section.description || undefined}
 					align="center"
 				/>

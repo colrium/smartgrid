@@ -1,10 +1,8 @@
 "use client";
 
 import type { ReactElement } from "react";
-
 import { useTranslation } from "@/hooks";
-import { SectionHeader } from "@/components/sections/home";
-import { FadeUp } from "@/components/animations/Fade";
+import { CardGrid, type CardItem } from "@/components/sections/shared/CardGrid";
 
 interface IndustryItem {
 	icon?: string | null;
@@ -15,71 +13,50 @@ interface IndustryItem {
 interface IndustriesContent {
 	tag?: string | null;
 	headline: string;
-	description?: string;
+	description?: string | null;
 	items?: IndustryItem[] | null;
 }
 
-export function GisIndustriesSection(): ReactElement {
-	const { t } = useTranslation(["surveying/gis-mapping"]);
-	const section = t("surveying/gis-mapping:industries", {
-		returnObjects: true,
-	}) as unknown as IndustriesContent;
-	const items = Array.isArray(section?.items) ? section.items : [];
+export interface GisIndustriesData {
+	tag?: string | null;
+	headline: string;
+	description?: string | null;
+	items?: IndustryItem[] | null;
+}
 
-	if (items.length === 0) return <></>;
+/**
+ * GIS industries — shared 2-col card grid; each industry's feature list
+ * renders as the card inset checklist (content:
+ * surveying/gis-mapping:industries).
+ */
+export function GisIndustriesSection({ data }: { data?: GisIndustriesData | null } = {}): ReactElement | null {
+	const { t } = useTranslation(["surveying/gis-mapping"]);
+	// Keystatic-owned content when `data` is provided (M11 `gisIndustries`
+	// unique section — 2 columns + `fallbackIcons` are outside the shared
+	// `cardGrid` contract); legacy locale strings otherwise.
+	const section = (data ??
+		(t("surveying/gis-mapping:industries", {
+			returnObjects: true,
+		}) as unknown as IndustriesContent)) as IndustriesContent;
+	const rows = Array.isArray(section?.items) ? section.items : [];
+
+	if (rows.length === 0) return null;
+
+	const items: CardItem[] = rows.map((item) => ({
+		icon: item.icon ?? null,
+		title: item.title,
+		subItems: (Array.isArray(item.features) ? item.features : []).map((feature) => ({ title: feature })),
+	}));
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden">
-			
-			
-
-			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-				<SectionHeader
-					tag={section.tag || undefined}
-					headline={section.headline}
-					description={section.description || undefined}
-					align="center"
-				/>
-
-				<div className="mt-14 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
-					{items.map((item, index) => {
-						const features = Array.isArray(item.features) ? item.features : [];
-
-						return (
-							<FadeUp key={index} delay={(index % 2) * 0.08} className="h-full">
-								<article className="group relative h-full flex flex-col rounded-c bg-surface hairline card-shadow p-7 sm:p-8 transition-all duration-250 hover:card-shadow-lift hover:border-primary">
-									<div className="flex items-center gap-4">
-										<span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
-											<span className={`mdi mdi-${item.icon || "account-group"} text-2xl`} />
-										</span>
-										<h3 className="text-lg sm:text-xl font-semibold tracking-tight text-ink leading-snug">
-											{item.title}
-										</h3>
-									</div>
-
-									{features.length > 0 && (
-										<ul className="mt-6 flex flex-wrap gap-2.5">
-											{features.map((feature, fIndex) => (
-												<li
-													key={fIndex}
-													className="inline-flex items-center gap-2 rounded-full bg-ink-50 px-4 py-2 text-sm font-medium text-ink/80"
-												>
-													<span
-														aria-hidden
-														className="mdi mdi-check-circle-outline text-base text-primary"
-													/>
-													{feature}
-												</li>
-											))}
-										</ul>
-									)}
-								</article>
-							</FadeUp>
-						);
-					})}
-				</div>
-			</div>
-		</section>
+		<CardGrid
+			tag={section.tag ?? null}
+			headline={section.headline}
+			description={section.description}
+			items={items}
+			columns={2}
+			fallbackIcons={["account-group"]}
+		/>
 	);
 }
 

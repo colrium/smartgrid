@@ -5,28 +5,40 @@ import type { ReactElement } from "react";
 import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionHeader } from "@/components/sections/home";
-import { Blob } from "@/components/sections/home/decor";
-import { BeforeAfterFlipCard, type FlipSide } from "@/components/sections/BeforeAfterFlipCard";
+import { Blob } from "@/components/sections/shared/decor";
+import { BeforeAfterFlipCard, type FlipSide } from "@/components/sections/shared/BeforeAfterFlipCard";
 
 interface BeforeAfterContent {
 	tag?: string | null;
-	headline: string;
+	headline?: string | null;
 	flipHint?: string | null;
-	before: FlipSide;
-	after: FlipSide;
+	before?: FlipSide | null;
+	after?: FlipSide | null;
 }
 
-export function BathymetricBeforeAfterSection(): ReactElement {
+export interface BathyBeforeAfterData {
+	tag?: string | null;
+	headline?: string | null;
+	flipHint?: string | null;
+	before?: FlipSide | null;
+	after?: FlipSide | null;
+}
+
+export function BathymetricBeforeAfterSection({ data, id }: { data?: BathyBeforeAfterData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/bathymetric-surveys"]);
-	const section = t("surveying/bathymetric-surveys:beforeAfter", {
-		returnObjects: true,
-	}) as unknown as BeforeAfterContent;
+	// Keystatic-owned content when `data` is provided (M11 `bathyBeforeAfter`
+	// unique section); legacy locale strings otherwise. Presentation (flip
+	// card, ferry icon, watermark) stays in the wrapper.
+	const section = (data ??
+		(t("surveying/bathymetric-surveys:beforeAfter", {
+			returnObjects: true,
+		}) as unknown as BeforeAfterContent)) as BeforeAfterContent;
 
 	if (!section?.headline) return <></>;
 
 	return (
 		<section
-			id="before-after"
+			id={id ?? "before-after"}
 			className="scroll-mt-36 py-20 sm:py-24 relative overflow-hidden"
 		>
 			<Blob
@@ -42,10 +54,10 @@ export function BathymetricBeforeAfterSection(): ReactElement {
 				/>
 
 				<FadeUp delay={0.1}>
-					<BeforeAfterFlipCard
-						before={section.before}
-						after={section.after}
-						flipHint={section.flipHint}
+						<BeforeAfterFlipCard
+							before={section.before ?? {}}
+							after={section.after ?? {}}
+							flipHint={section.flipHint ?? undefined}
 						layoutId="bathymetric-before-after-toggle"
 						afterIcon="ferry"
 						afterWatermarkClass="text-green-50/10"

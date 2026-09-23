@@ -50,6 +50,43 @@ and tested fallback/source-precedence behavior.
     validation, decisions, and blockers.
 14. When done with a task automatically start on the next
 
+## M8/M9 — New milestones (added 2026-09-16, per user request)
+
+- M8 — Register the migrated `/` shared section components (`About`,
+  `Certifications`, `CoreExpertise`, `CoverageArea`, `IndustriesWeServe`,
+  `KeyFacts`, `Metrics`, `PlanningInfographic`, `SurveyCost`, `Trustees`,
+  `WhyChooseUs`, `SurveyingInstruments`) in Keystatic so they are editable in
+  `/` and addable to any page. See plan §M8 (status `IN PROGRESS`) for scope,
+  constraints, checklist, and exit criteria.
+- M9 — Make common layout content editable in Keystatic (`navbar`, `footer`,
+  `cookieConsent`, `socials`, `contacts`) once, site-wide, both locales. See
+  plan §M9 (status `NOT STARTED`) for the singleton-vs-collection decision,
+  checklist, and exit criteria.
+- M10 — New Keystatic pages must resolve to real routes (currently content-only
+  entries 404, e.g. `test-custom`). See plan §M10 (status `NOT STARTED`) for
+  the fixed-route-vs-catch-all URL decision, checklist, and exit criteria.
+
+## M7 Test Deferral Policy (2026-09-16, per user request)
+
+During M7 (Full-Site Keystatic Coverage) all per-batch/stage tests are SKIPPED
+and done last after all M7 stages are complete:
+
+- Skip per batch: `yarn typecheck`, `yarn lint` / `eslint`, `yarn build`,
+  `node scripts/check-keystatic-pages.mjs` (`yarn check:keystatic`),
+  `node scripts/migrate-locale-to-keystatic.mjs --page <slug> --verify`,
+  `--dump-text` / leak checks, and dev-smoke parity (temp publish flip +
+  browser check, then revert to `draft`).
+- Keep implementing M7 batches back-to-back (mappings + entries + route
+  wiring + plan checklist/status-log updates) without running the above.
+- After the last M7 page/equipment decision is wired, run the deferred
+  validation once across the whole site: `check:keystatic` for all fixtures,
+  `--verify` for every mapped page, full `yarn typecheck` + `yarn lint` +
+  `yarn build`, sitemap/route verification, keyboard/responsive/visual checks,
+  performance sampling, and per-page dev-smoke parity + rollback test.
+- M6's `yarn build` standing skip and the plan's Definition of Done still
+  apply; this policy only defers *when* M7 validation runs, it does not drop
+  any exit criteria.
+
 ## Your First/Next task
 
 Start with the next task whose status is "NOT STARTED" in the plan only if one of the following:
@@ -136,6 +173,27 @@ and tested fallback/source-precedence behavior.
     validation, decisions, and blockers.
 14. When done with a task automatically start on the next
 
+## M7 Test Deferral Policy (2026-09-16, per user request)
+
+During M7 (Full-Site Keystatic Coverage) all per-batch/stage tests are SKIPPED
+and done last after all M7 stages are complete:
+
+- Skip per batch: `yarn typecheck`, `yarn lint` / `eslint`, `yarn build`,
+  `node scripts/check-keystatic-pages.mjs` (`yarn check:keystatic`),
+  `node scripts/migrate-locale-to-keystatic.mjs --page <slug> --verify`,
+  `--dump-text` / leak checks, and dev-smoke parity (temp publish flip +
+  browser check, then revert to `draft`).
+- Keep implementing M7 batches back-to-back (mappings + entries + route
+  wiring + plan checklist/status-log updates) without running the above.
+- After the last M7 page/equipment decision is wired, run the deferred
+  validation once across the whole site: `check:keystatic` for all fixtures,
+  `--verify` for every mapped page, full `yarn typecheck` + `yarn lint` +
+  `yarn build`, sitemap/route verification, keyboard/responsive/visual checks,
+  performance sampling, and per-page dev-smoke parity + rollback test.
+- M6's `yarn build` standing skip and the plan's Definition of Done still
+  apply; this policy only defers *when* M7 validation runs, it does not drop
+  any exit criteria.
+
 ## Your First/Next task
 
 Start with the next task whose status is "NOT STARTED" in the plan only if one of the following:
@@ -160,6 +218,45 @@ c. If M2 status is "IN PROGRESS" and changes affect/block M3("NOT STARTED") ask 
 
 Do not jump any incomplete task unless asked by user to do so. e.g. Do not continue to registering every component before the config and content contract are stable.
 When a task is complete, record its exit-criteria validation and continue to the next task only if no decision or blocker remains. e.g.
+
+
+## Handoff Format
+
+At the end of the session, report:
+
+- milestone and checklist items completed;
+- files changed;
+- commands run and their results;
+- decisions made or still required;
+- blockers and the exact next action;
+- the next plan milestone to pick up.
+
+Keep the final report concise, but leave the plan accurate enough that another agent can resume without reconstructing the session from chat history.
+
+## M11/M12 — Unique page sections + Keystatic page order (added 2026-09-18, per user request)
+
+- M11 — Register all unregistered page sections as UNIQUE Keystatic sections
+  (e.g. the `/` hero becomes `homeHero`). Page-specific tails get page-scoped
+  ids never reused elsewhere; follow the M9 additive-`data` refactor precedent
+  (omitted `data` = legacy `t()` render). Home pilot first, then per-page
+  batches, one commit per batch. See plan §M11 (status `IN PROGRESS`) for rules,
+  checklist, and exit criteria.
+- M12 — Remove all `renderAt(<index>)` entries so the Keystatic section order
+  IS the page order (e.g. home renders its sections sequentially, no index
+  literals). Reorder each entry into legacy page order, render sequentially at
+  the legacy positions, keep the count guard + byte-identical legacy branch.
+  Home first, then each M11-completed page. See plan §M12 (status `NOT STARTED`).
+
+## M11/M12 Smoke-Test Deferral Policy (2026-09-18, per user request)
+
+During M11/M12 all dev-smoke parity checks are SKIPPED and done last after all
+batches are complete (temp publish flip + browser check per page, then revert
+to `draft`). M10's pending `test-custom` dev-smoke joins the deferred set.
+
+Per batch, KEEP running (unlike the M7 policy): `yarn check:keystatic`,
+`node scripts/migrate-locale-to-keystatic.mjs --page <slug> --verify`,
+`yarn typecheck`, and `yarn lint`. The M6 `yarn build` standing skip still
+applies; this policy only defers *when* smoke validation runs.
 
 
 ## Handoff Format

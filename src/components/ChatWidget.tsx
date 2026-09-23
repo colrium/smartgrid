@@ -17,8 +17,7 @@ const ChatWidget = (): ReactElement | null => {
 
 	// GDPR: Tawk.to sets cookies on load, so the widget stays unloaded until
 	// "functional" consent is granted (see src/lib/consent.ts).
-    if (!tawkUrl || process.env.NODE_ENV === "development") return null;
-    if (!functionalAllowed) return null;
+    if (!tawkUrl || !functionalAllowed) return null;
 
 	return (
 		<Script id="tawk-to-widget" strategy="lazyOnload">

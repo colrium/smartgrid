@@ -9,8 +9,9 @@ export default defineConfig([
 		// them (public/draco ships minified third-party decoder output).
 		// Build output dirs are generated artifacts; the ".next*" glob also
 		// covers verification builds that redirect distDir via NEXT_DIST_DIR
-		// (e.g. ".next-dev").
-		ignores: ["public/**", ".next*/**"],
+		// (e.g. ".next-dev"). Gitignored IDE-agent worktrees (".kilo/**")
+		// duplicate the whole repo incl. minified assets — never lint them.
+		ignores: ["public/**", ".next*/**", ".kilo/**"],
 	},
 	{
 		plugins: {

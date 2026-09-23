@@ -1,0 +1,489 @@
+{
+	"slug": "Company Profile",
+	"title": "Company Profile (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "hero",
+			"value": {
+				"headline": {
+					"en": "SMARTGRID SURVEYING & CIVIL WORKS",
+					"sw": "SMARTGRID SURVEYING & CIVIL WORKS"
+				},
+				"title": {
+					"en": "Company Profile",
+					"sw": "Wasifu wa Kampuni"
+				},
+				"description": {
+					"en": "Survey Smarter, Build Stronger. Building Trust and Integrity every step of the way.",
+					"sw": "Pima kwa Akili, Jenga kwa Nguvu. Kujenga Uaminifu na Uadilifu katika kila hatua."
+				},
+				"image": "",
+				"layout": "light",
+				"frame": false,
+				"scrollCue": false,
+				"cueLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"footnoteItems": [],
+				"ctaPrimary": {
+					"label": {
+						"en": "Download Company Profile",
+						"sw": "Pakua Wasifu wa Kampuni"
+					},
+					"href": "https://drive.google.com/file/d/1LuUk8Hl_J84tMHb-NKqBvs1QFdJGVTpH/view",
+					"icon": "cloud-download"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "stats",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "",
+					"sw": ""
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"value": {
+							"en": "10,000+",
+							"sw": "10,000+"
+						},
+						"label": {
+							"en": "Hectares Surveyed Across Africa",
+							"sw": "Hekta Zimepimwa Barani Afrika"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						},
+						"icon": "map"
+					},
+					{
+						"value": {
+							"en": "7+",
+							"sw": "7+"
+						},
+						"label": {
+							"en": "Countries Served",
+							"sw": "Nchi Zilizohudumiwa"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						},
+						"icon": "earth"
+					},
+					{
+						"value": {
+							"en": "4+",
+							"sw": "4+"
+						},
+						"label": {
+							"en": "Advanced UAV Platforms",
+							"sw": "Jukwaa za UAV za Kisasa"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						},
+						"icon": "quadcopter"
+					},
+					{
+						"value": {
+							"en": "cm-Level",
+							"sw": "Kiwango cha cm"
+						},
+						"label": {
+							"en": "Positioning Accuracy",
+							"sw": "Usahihi wa Uwekaji Nafasi"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						},
+						"icon": "target"
+					}
+				],
+				"layout": "panel",
+				"tone": "default",
+				"columns": 3,
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "splitMedia",
+			"value": {
+				"tag": {
+					"en": "Who We Are",
+					"sw": "Sisi ni Nani"
+				},
+				"headline": {
+					"en": "A Geospatial & Engineering Partner You Can Build On",
+					"sw": "Mshirika wa Kijiografia na Uhandisi Unaoweza Kutegemewa"
+				},
+				"description": {
+					"en": "SmartGrid Surveying & Civil Works Ltd is a professional geospatial and engineering firm delivering precision land surveying, UAV mapping, GIS analysis, underground utility detection, and civil infrastructure solutions.\n\n From our base in Nairobi we serve government agencies, NGOs, private developers, and donor-funded programmes across Kenya and Africa — combining cutting-edge RTK GNSS, drone LiDAR, and total station technologies with disciplined project management to turn spatial data into confident decisions.",
+					"sw": "SmartGrid Surveying & Civil Works Ltd ni kampuni ya kitaalamu ya kijiografia na uhandisi inayotoa huduma za upimaji ardhi wa usahihi, ramani za UAV, uchambuzi wa GIS, utambuzi wa huduga za chini ya ardhi, na suluhisho za miundombinu ya civil.\n\n Kutoka ofisi yetu jijini Nairobi tunahudumia wakala za serikali, NGOs, wasanidi binafsi, na miradi ya wafadhili barani Kenya na Afrika — tukichanganya teknolojia za kisasa za RTK GNSS, drone LiDAR, na total stations pamoja na usimamizi mwepesi wa mradi ili kugeuza data ya anga kuwa maamuzi yenye uhakika."
+				},
+				"image": {
+					"en": "/img/logo.svg",
+					"sw": "/media/surveying/AG8ng.jpeg"
+				},
+				"points": [
+					{
+						"en": "Licensed professional surveyors and engineers (EBK / ISK registered)",
+						"sw": "Wataalamu waliosajiliwa wa upimaji na uhandisi (EBK / ISK)"
+					},
+					{
+						"en": "Donor-compliant delivery aligned to World Bank and UN standards",
+						"sw": "Utekelezaji unaotimiza masharti ya wafadhili kwa mujibu wa viwango vya World Bank na UN"
+					},
+					{
+						"en": "In-house UAV fleet with KCAA-certified remote pilots",
+						"sw": "Foleni ya droni ya ndani yenye rubani wa KCAA waliosajiliwa"
+					},
+					{
+						"en": "Proven track record across 7+ African countries",
+						"sw": "Rekodi iliyothibitishwa katika nchi zaidi ya 7 za Afrika"
+					}
+				],
+				"imagePosition": "right",
+				"tone": "default",
+				"mediaAspect": "square",
+				"mediaFit": "cover",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "cardGrid",
+			"value": {
+				"tag": {
+					"en": "Our Foundation",
+					"sw": "Msingi Wetu"
+				},
+				"headline": {
+					"en": "Mission, Vision & Core Values",
+					"sw": "Dhamira, Maono na Maadili ya Msingi"
+				},
+				"subheading": {
+					"en": "",
+					"sw": ""
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"icon": "flag-variant-outline",
+						"title": {
+							"en": "Our Mission",
+							"sw": "Dhamira Yetu"
+						},
+						"description": {
+							"en": "To deliver innovative, high-precision surveying and civil works solutions that enhance the efficiency and sustainability of projects.",
+							"sw": "Kutoa suluhisho sahihi, za kuaminika, na za kiutendaji za kijiografia na uhandisi zinazowezesha maamuzi bora ya usanidi, maendeleo, na utawala wa ardhi."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "eye-outline",
+						"title": {
+							"en": "Our Vision",
+							"sw": "Maono Yetu"
+						},
+						"description": {
+							"en": "To be Africa's most trusted surveying and civil engineering partner — where every decision is built on accurate spatial data and uncompromising integrity.",
+							"sw": "Kuwa mshirika wa kuaminika zaidi wa upimaji na uhandisi wa civil barani Afrika — ambapo kila maamuzi hujengwa juu ya data sahihi ya anga na uadilifu usio na mabadiliko."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "diamond-outline",
+						"title": {
+							"en": "Core Values",
+							"sw": "Maadili ya Msingi"
+						},
+						"description": {
+							"en": "Accuracy in every measurement. Integrity in every engagement. Safety on every site. Innovation in every workflow. Professionalism in every deliverable.",
+							"sw": "Usahihi katika kila kipimo. Uadilifu katika kila uhusiano. Usalama kwenye kila tovuti. Ubunifu katika kila mchakato. Utaalamu katika kila matokeo."
+						},
+						"image": "",
+						"href": ""
+					}
+				],
+				"columns": "3",
+				"align": "center",
+				"tone": "surface",
+				"headerRow": false,
+				"cardDensity": "roomy",
+				"cardIconSize": "lg",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "cardGrid",
+			"value": {
+				"tag": {
+					"en": "What We Do",
+					"sw": "Tunachofanya"
+				},
+				"headline": {
+					"en": "Integrated Service Capabilities",
+					"sw": "Uwezo Kamili wa Huduma"
+				},
+				"subheading": {
+					"en": "",
+					"sw": ""
+				},
+				"description": {
+					"en": "One partner across the full project lifecycle — from reconnaissance to final deliverables.",
+					"sw": "Mshirika mmoja katika mzunguko mzima wa mradi — kutoka utafiti hadi matokeo ya mwisho."
+				},
+				"items": [
+					{
+						"icon": "map",
+						"title": {
+							"en": "Land Surveying",
+							"sw": "Upimaji Ardhi"
+						},
+						"description": {
+							"en": "Topographical, cadastral, and boundary surveys with centimeter-level accuracy.",
+							"sw": "Uchunguzi wa topografia, cadastral, na mipaka kwa usahihi wa kiwango cha sentimita."
+						},
+						"image": "",
+						"href": "/surveying/topographical-surveys"
+					},
+					{
+						"icon": "quadcopter",
+						"title": {
+							"en": "Aerial Drone Surveys",
+							"sw": "Uchunguzi wa Droni za Hewa"
+						},
+						"description": {
+							"en": "UAV photogrammetry and LiDAR mapping, volumetrics, and monitoring.",
+							"sw": "Photogrammetry ya UAV na ramani za LiDAR, volumetrics, na ufuatiliaji."
+						},
+						"image": "",
+						"href": "/aerial-drones/drone-imagery-surveys"
+					},
+					{
+						"icon": "layers",
+						"title": {
+							"en": "GIS & Spatial Analysis",
+							"sw": "GIS na Uchambuzi wa Anga"
+						},
+						"description": {
+							"en": "Spatial databases, NDVI analytics, and cartographic deliverables.",
+							"sw": "Database za anga, uchambuzi wa NDVI, na matokeo ya ramani."
+						},
+						"image": "",
+						"href": "/surveying/gis-mapping"
+					},
+					{
+						"icon": "tunnel",
+						"title": {
+							"en": "Underground Utility Detection",
+							"sw": "Utambuzi wa Huduga za Chini ya Ardhi"
+						},
+						"description": {
+							"en": "GPR and electromagnetic locating for safe excavation and design.",
+							"sw": "GPR na utambuzi wa electromagnetic kwa kuchimba salama na usanidi."
+						},
+						"image": "",
+						"href": "/surveying/ground-penetrating-radar"
+					},
+					{
+						"icon": "office-building",
+						"title": {
+							"en": "Civil & Engineering Surveys",
+							"sw": "Upimaji wa Civil na Uhandisi"
+						},
+						"description": {
+							"en": "Setting out, as-built verification, and construction monitoring.",
+							"sw": "Setting out, uthibitisho wa as-built, na ufuatiliaji wa ujenzi."
+						},
+						"image": "",
+						"href": "/civil/site-engineering"
+					},
+					{
+						"icon": "calculator",
+						"title": {
+							"en": "Volumetric Analysis",
+							"sw": "Uchambuzi wa Volumetric"
+						},
+						"description": {
+							"en": "Stockpile quantities and cut/fill computations for mining and construction.",
+							"sw": "Vina za makusanyo na mahesabu ya cut/fill kwa migodi na ujenzi."
+						},
+						"image": "",
+						"href": "/civil/volumetric-surveys"
+					}
+				],
+				"columns": "3",
+				"align": "left",
+				"tone": "default",
+				"headerRow": true,
+				"cardDensity": "comfortable",
+				"cardIconSize": "lg",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "cardGrid",
+			"value": {
+				"tag": {
+					"en": "Why SmartGrid",
+					"sw": "Kwa Nini SmartGrid"
+				},
+				"headline": {
+					"en": "The SmartGrid Difference",
+					"sw": "Tofauti ya SmartGrid"
+				},
+				"subheading": {
+					"en": "",
+					"sw": ""
+				},
+				"description": {
+					"en": "Clients choose us because precision is not a promise — it is a procedure.",
+					"sw": "Wateja hutuchagua kwa sababu usahihi si ahadi — ni taratibu."
+				},
+				"items": [
+					{
+						"icon": "certificate-outline",
+						"title": {
+							"en": "Certified Professionals",
+							"sw": "Wataalamu Waliosajiliwa"
+						},
+						"description": {
+							"en": "EBK-registered engineers, ISK-licensed surveyors, and KCAA-certified pilots on every engagement.",
+							"sw": "Wahandisi waliosajiliwa na EBK, wapimaji wenye leseni za ISK, na rubani waliosajiliwa na KCAA kwenye kila kazi."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "cellphone-link",
+						"title": {
+							"en": "Advanced Technology",
+							"sw": "Teknolojia ya Kisasa"
+						},
+						"description": {
+							"en": "RTK GNSS networks, robotic total stations, drone LiDAR, and GPR — calibrated and field-proven.",
+							"sw": "Mitandao ya RTK GNSS, robotic total stations, drone LiDAR, na GPR — vilivyorekebishwa navilivyothibitika shambani."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "shield-check-outline",
+						"title": {
+							"en": "Donor-Compliant Processes",
+							"sw": "Taratibu Zinazotimiza Masharti ya Wafadhili"
+						},
+						"description": {
+							"en": "QA/QC, ethics, and safeguarding procedures aligned to World Bank, UN, and development partner standards.",
+							"sw": "Tararibu za QA/QC, maadili, na safeguarding zinazolingana na viwango vya World Bank, UN, na washirika wa maendeleo."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "hard-hat",
+						"title": {
+							"en": "Safety Without Compromise",
+							"sw": "Usalama Bila Fursa"
+						},
+						"description": {
+							"en": "Dedicated HSE officers, method statements, and statutory compliance on every site.",
+							"sw": "Maafisa wa HSE waliotengwa, method statements, na ufuaso wa kisheria kwenye kila tovuti."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "compass-outline",
+						"title": {
+							"en": "Pan-African Reach",
+							"sw": "Ufikiaji Pan-Afrika"
+						},
+						"description": {
+							"en": "Mobilization experience across Kenya, Uganda, Tanzania, Ghana, Rwanda, Nigeria, and South Africa.",
+							"sw": "Uzoefu wa kupeleka timu nchini Kenya, Uganda, Tanzania, Ghana, Rwanda, Nigeria, na Afrika Kusini."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "file-document-check-outline",
+						"title": {
+							"en": "Submission-Ready Deliverables",
+							"sw": "Matokeo Tayari kwa Kuwasilisha"
+						},
+						"description": {
+							"en": "CAD drawings, GIS layers, survey reports, and title-ready documentation delivered right the first time.",
+							"sw": "Michoro ya CAD, tabaka za GIS, ripoti za upimaji, na nyaraka tayari kwa hati zikifika sahii mara ya kwanza."
+						},
+						"image": "",
+						"href": ""
+					}
+				],
+				"columns": "3",
+				"align": "left",
+				"tone": "surface",
+				"headerRow": false,
+				"cardDensity": "comfortable",
+				"cardIconSize": "lg",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "companyProfileViewer",
+			"value": {
+				"tag": {
+					"en": "Company Profile Document",
+					"sw": "Nyaraka za Wasifu wa Kampuni"
+				},
+				"headline": {
+					"en": "Read the Full Profile",
+					"sw": "Soma Wasifu Kamili"
+				},
+				"description": {
+					"en": "Browse our complete company profile below — capabilities, experience, equipment, and references. You can also download it for sharing.",
+					"sw": "Vinjari wasifu wetu kamili wa kampuni hapa chini — uwezo, uzoefu, vifaa, na marejeleo. Unaweza pia kupakua kwa ajili ya kushirikisha wengine."
+				},
+				"pdfLink": "https://drive.google.com/file/d/1LuUk8Hl_J84tMHb-NKqBvs1QFdJGVTpH/preview",
+				"downloadLabel": {
+					"en": "Open / Download PDF",
+					"sw": "Fungua / Pakua PDF"
+				},
+				"viewerTitle": {
+					"en": "SmartGrid Surveying & Civil Works — Company Profile",
+					"sw": "SmartGrid Surveying & Civil Works — Wasifu wa Kampuni"
+				},
+				"id": "profile-viewer"
+			}
+		}
+	]
+}

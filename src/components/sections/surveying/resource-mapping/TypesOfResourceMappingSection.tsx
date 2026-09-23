@@ -1,79 +1,67 @@
 "use client";
 
 import type { ReactElement } from "react";
-
 import { useTranslation } from "@/hooks";
-import { SectionHeader } from "@/components/sections/home";
-import { FadeUp } from "@/components/animations/Fade";
-import { Blob } from "@/components/sections/home/decor";
+import { CardGrid, type CardItem } from "@/components/sections/shared/CardGrid";
 
 interface TypeCategory {
-	title: string;
-	icon?: string;
-	items: string[];
+	title?: string | null;
+	icon?: string | null;
+	items?: (string | null)[] | null;
 }
 
-interface TypesOfResourceMappingContent {
+interface TypesContent {
 	tag?: string | null;
-	headline: string;
-	description?: string;
-	categories: TypeCategory[];
+	headline?: string | null;
+	description?: string | null;
+	categories?: TypeCategory[] | null;
+}
+
+export interface RmTypesData {
+	tag?: string | null;
+	headline?: string | null;
+	description?: string | null;
+	categories?: TypeCategory[] | null;
 }
 
 const FALLBACK_ICONS = ["earth", "factory", "tractor-variant", "city-variant"];
 
-export function TypesOfResourceMappingSection(): ReactElement {
+/**
+ * Types of resource mapping — shared card grid; each category's string list
+ * renders as the card inset checklist (content:
+ * surveying/resource-mapping:typesOfResourceMapping).
+ */
+export function TypesOfResourceMappingSection({ data, id }: { data?: RmTypesData | null; id?: string } = {}): ReactElement | null {
 	const { t } = useTranslation(["surveying/resource-mapping"]);
-	const section = t("surveying/resource-mapping:typesOfResourceMapping", {
-		returnObjects: true,
-	}) as unknown as TypesOfResourceMappingContent;
-	const categories = Array.isArray(section.categories) ? section.categories : [];
+	// Keystatic-owned content when `data` is provided (M11 `rmTypes`
+	// unique section); legacy locale strings otherwise. The
+	// category→subItems computation stays in the wrapper.
+	const section = (data ??
+		(t("surveying/resource-mapping:typesOfResourceMapping", {
+			returnObjects: true,
+		}) as unknown as TypesContent)) as TypesContent;
+	const categories = Array.isArray(section?.categories) ? section.categories : [];
 
-	if (categories.length === 0) return <></>;
+	if (categories.length === 0) return null;
+
+	const items: CardItem[] = categories.map((category) => ({
+		icon: category.icon ?? null,
+		title: category.title ?? "",
+		subItems: (Array.isArray(category.items) ? category.items : [])
+			.filter((item): item is string => typeof item === "string" && item.length > 0)
+			.map((item) => ({ title: item })),
+	}));
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden">
-			<Blob className="w-[28rem] h-[28rem] bg-primary-100/60 -bottom-24 -left-24" opacity={0.5} />
-
-			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-				<SectionHeader
-					tag={section.tag || undefined}
-					headline={section.headline}
-					description={section.description || undefined}
-					align="center"
-				/>
-
-				<div className="mt-14 sm:mt-20 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-5 sm:gap-6">
-					{categories.map((category, catIndex) => (
-						<FadeUp key={catIndex} delay={catIndex * 0.07} className="h-full">
-							<article className="group relative h-full flex flex-col rounded-c bg-surface hairline card-shadow p-7 transition-all duration-250 hover:card-shadow-lift hover:border-primary">
-								<div className="flex items-center gap-3">
-									<span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
-										<span className={`mdi mdi-${category.icon || FALLBACK_ICONS[catIndex % FALLBACK_ICONS.length]} text-xl`} />
-									</span>
-									<h3 className="text-lg font-semibold tracking-tight text-ink leading-snug">
-										{category.title}
-									</h3>
-								</div>
-
-								<ul className="mt-5 flex-1 space-y-3">
-									{category.items.map((item, itemIndex) => (
-										<li key={itemIndex} className="flex items-start gap-3">
-											<span className="mt-1.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-												<span className="mdi mdi-check text-xs" />
-											</span>
-											<span className="text-sm text-on-surface/70 leading-relaxed">
-												{item}
-											</span>
-										</li>
-									))}
-								</ul>
-							</article>
-						</FadeUp>
-					))}
-				</div>
-			</div>
-		</section>
+		<CardGrid
+			id={id}
+			tag={section.tag ?? null}
+			headline={section.headline ?? ""}
+			description={section.description ?? undefined}
+			items={items}
+			columns={4}
+			fallbackIcons={FALLBACK_ICONS}
+		/>
 	);
 }
 

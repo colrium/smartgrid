@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"tag": "Surveying Equipment",
 		"headline": "AUTOMATIC LEVEL HUEPER",
 		"title": "Huepar ALX32 Automatic Level",
@@ -11,6 +12,7 @@
 		}
 	},
 	"productImages": {
+		"type": "unique",
 		"images": [
 			"/media/equipment-sale/automatic-level-hueper/03.png",
 			"/media/equipment-sale/automatic-level-hueper/02.png",
@@ -20,17 +22,20 @@
 		]
 	},
 	"breadcrumb": {
+		"type": "unique",
 		"home": "Home",
 		"section": "Equipment Sale",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
 	"catalogue": {
+		"type": "unique",
 		"icon": "spirit-level",
 		"title": "Huepar ALX32 Level",
 		"description": "Affordable 32x automatic level offering reliable accuracy for construction and general leveling tasks.",
 		"badge": "Budget"
 	},
 	"pricing": {
+		"type": "pricing",
 		"new": {
 			"label": "Brand New",
 			"currency": "KES",
@@ -50,11 +55,13 @@
 		}
 	],
 	"specs": {
+		"type": "unique",
 		"tag": "Tech Data",
 		"headline": "Technical Specifications",
 		"description": "Complete technical details for the Huepar ALX32 Automatic Level."
 	},
 	"opticalPerformance": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Optical Performance",
 		"description": "Crisp, bright optics built for precise sighting.",
@@ -66,6 +73,7 @@
 		]
 	},
 	"accuracyAndLeveling": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Accuracy & Leveling",
 		"description": "Fast, accurate leveling with a dependable automatic compensator.",
@@ -77,6 +85,7 @@
 		]
 	},
 	"buildAndDurability": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Build & Durability",
 		"description": "Rugged, weather-ready build that travels light.",
@@ -88,6 +97,7 @@
 		]
 	},
 	"operationAndFeatures": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Operation & Features",
 		"description": "Simple controls for quick setup and smooth operation.",
@@ -99,6 +109,7 @@
 		]
 	},
 	"applications": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Applications",
 		"description": "Proven use cases across construction and surveying work.",
@@ -110,6 +121,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Get a Quote",
 		"headline": "Get This Equipment",
 		"description": "Contact us for pricing, availability, and expert guidance.",
@@ -125,6 +137,7 @@
 		}
 	},
 	"relatedProducts": {
+		"type": "unique",
 		"tag": "Explore",
 		"headline": "Other Products You May Like",
 		"description": "Discover more surveying instruments from the SmartGrid catalogue."

@@ -22,17 +22,29 @@ interface ProcessCtaContent {
 	chips?: string[] | null;
 }
 
-export function ProcessCtaSection(): ReactElement {
+export interface CadastralProcessCtaData {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+	ctaPrimary?: CtaAction | null;
+	ctaSecondary?: CtaAction | null;
+	chips?: string[] | null;
+}
+
+export function ProcessCtaSection({ data, id }: { data?: CadastralProcessCtaData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/cadastral-surveys"]);
-	const section = t("surveying/cadastral-surveys:processCta", {
-		returnObjects: true,
-	}) as unknown as ProcessCtaContent;
+	// Keystatic-owned content when `data` is provided (M11
+	// `cadastralProcessCta` unique section); legacy locale strings otherwise.
+	const section = (data ??
+		(t("surveying/cadastral-surveys:processCta", {
+			returnObjects: true,
+		}) as unknown as ProcessCtaContent)) as ProcessCtaContent;
 	const chips = Array.isArray(section?.chips) ? section.chips : [];
 
 	if (!section?.headline) return <></>;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden">
+		<section id={id} className="py-24 sm:py-28 relative overflow-hidden">
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
 					<div className="group/band relative rounded-c ink-panel card-shadow overflow-hidden px-8 py-14 sm:px-12 sm:py-16 text-center shimmer-t shimmer-gold-200">

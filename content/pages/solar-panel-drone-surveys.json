@@ -1,0 +1,232 @@
+{
+	"slug": "Solar Panel Drone Surveys",
+	"title": "Solar Panel Drone Surveys (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "hero",
+			"value": {
+				"headline": {
+					"en": "Leading Africa's Land and Aerial Surveying Revolution",
+					"sw": "UCHUNGUZI WA NDEGE WA PANELI ZA SOLA"
+				},
+				"title": {
+					"en": "Solar Panels Drone surveys",
+					"sw": "Kuaminika. Kupanuka. Haraka. Nguvu."
+				},
+				"description": {
+					"en": "Illuminate your energy future—our drone-powered solar panel surveys deliver unmatched precision, faster insights, and smarter decisions from the sky down. By capturing high-resolution imagery, 3D terrain data, and thermal analytics, we help optimize solar performance while reducing costly on-site inspections. Whether you're planning a new installation or maintaining an existing solar farm, our surveys provide the data clarity you need to maximize ROI and system efficiency. \n\n With SmartGrid, the power of geospatial intelligence takes your solar projects to the next level. \n\n Smartgrid Surveying is your trusted surveying partner!",
+					"sw": "Angazia mustakabali wako wa nishati—uchunguzi wetu wa paneli za sola unaoendeshwa na ndege zisizo na rubani hutoa usahihi usio na mfano, maarifa ya haraka, na maamuzi bora kutoka angani kwenda chini. Kwa kukamata picha za mwonekano wa juu, data ya ardhi ya 3D, na uchambuzi wa joto, tunasaidia kuboresha utendaji wa sola huku tukipunguza ukaguzi wa gharama kubwa wa tovuti. Iwe unapanga usakinishaji mpya au unatunza shamba la sola lililopo, uchunguzi wetu hutoa uwazi wa data unaohitaji kuongeza ROI na ufanisi wa mfumo. \n\n Kwa SmartGrid, nguvu ya akili ya kijiografia inapeleka miradi yako ya sola kwenye kiwango kinachofuata. \n\n Smartgrid Surveying ni mshirika wako wa kuaminika wa upimaji!"
+				},
+				"image": "/media/aerial-drones/solar-panel-drone-surveys/01.jpg",
+				"layout": "bottom",
+				"frame": false,
+				"scrollCue": false,
+				"cueLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"footnoteItems": [],
+				"ctaPrimary": {
+					"label": {
+						"en": "Explore Other Aerial Services",
+						"sw": "Chunguza Huduma Nyingine za Angani"
+					},
+					"href": "/aerial-drones/drone-imagery-surveys",
+					"icon": "compass",
+					"iconPosition": "end",
+					"trailingArrow": "auto"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "solWhatWeDo",
+			"value": {
+				"tag": {
+					"en": "Services",
+					"sw": "Huduma"
+				},
+				"headline": {
+					"en": "What We Do",
+					"sw": "Tunachofanya"
+				},
+				"description": {
+					"en": "At SmartGrid Surveying, we leverage cutting-edge drone technology to perform precise, efficient, and safe surveys for solar panel installations. From planning and inspection to thermal mapping and post-installation assessments, our drone surveys offer unmatched insight for both corporate and individual clients.",
+					"sw": "Katika SmartGrid Surveying, tunatumia teknolojia ya kisasa ya ndege zisizo na rubani kufanya uchunguzi sahihi, bora, na salama kwa usakinishaji wa paneli za sola. Kuanzia upangaji na ukaguzi hadi uchoraji ramani wa joto na tathmini za baada ya usakinishaji, uchunguzi wetu wa ndege hutoa maarifa yasiyo na mfano kwa wateja wa kampuni na binafsi."
+				},
+				"items": [
+					{
+						"icon": "map-search",
+						"title": {
+							"en": "Solar Farm Mapping",
+							"sw": "Uchoraji Ramani wa Shamba la Sola"
+						},
+						"description": {
+							"en": "High-resolution aerial imagery and terrain models to design and plan optimal solar panel layouts with full site visibility.",
+							"sw": "Picha za mwonekano wa juu na mifano ya ardhi kubuni na kupanga mipangilio bora ya paneli za sola kwa mwonekano kamili wa tovuti."
+						}
+					},
+					{
+						"icon": "chart-bell-curve",
+						"title": {
+							"en": "Pre-Installation Analysis",
+							"sw": "Uchambuzi wa Kabla ya Usakinishaji"
+						},
+						"description": {
+							"en": "3D site scans and shadow simulations help you make better positioning decisions for maximum efficiency.",
+							"sw": "Uchanganuzi wa tovuti wa 3D na uigaji wa vivuli hukusaidia kufanya maamuzi bora ya nafasi kwa ufanisi wa juu."
+						}
+					},
+					{
+						"icon": "thermometer-lines",
+						"title": {
+							"en": "Thermal Inspections",
+							"sw": "Ukaguzi wa Joto"
+						},
+						"description": {
+							"en": "Thermal imaging detects malfunctioning or underperforming panels to reduce downtime and improve ROI.",
+							"sw": "Upigaji picha wa joto hugundua paneli zisizofanya kazi au zenye utendaji duni kupunguza muda wa kusimama na kuboresha ROI."
+						}
+					},
+					{
+						"icon": "clipboard-check-outline",
+						"title": {
+							"en": "Post-Deployment Audits",
+							"sw": "Ukaguzi wa Baada ya Uwekaji"
+						},
+						"description": {
+							"en": "Ensure solar assets meet specs and performance benchmarks with audit-ready geospatial documentation.",
+							"sw": "Hakikisha mali za sola zinakidhi vipimo na viwango vya utendaji kwa nyaraka za kijiografia zinazotayari kwa ukaguzi."
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "solProcess",
+			"value": {
+				"tag": {
+					"en": "Process",
+					"sw": "Mchakato"
+				},
+				"headline": {
+					"en": "Drone Integration in the Solar Installation Process",
+					"sw": "Ujumuishaji wa Ndege Zisizo na Rubani katika Mchakato wa Usakinishaji wa Sola"
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"icon": "map-marker-check",
+						"title": {
+							"en": "Site Feasibility Assessment",
+							"sw": "Tathmini ya Uwezekano wa Tovuti"
+						},
+						"description": {
+							"en": "Drones capture aerial imagery and topography, evaluating terrain, shading, and viability for solar deployment.",
+							"sw": "Ndege zisizo na rubani hukamata picha za angani na topografia, kutathmini ardhi, vivuli, na uwezekano wa uwekaji wa sola."
+						}
+					},
+					{
+						"icon": "cube-outline",
+						"title": {
+							"en": "Pre-Installation Planning",
+							"sw": "Upangaji wa Kabla ya Usakinishaji"
+						},
+						"description": {
+							"en": "3D modeling and solar irradiance mapping guide optimal panel layout and orientation for maximum output.",
+							"sw": "Uundaji wa mifano ya 3D na uchoraji ramani wa mionzi ya sola huongoza mpangilio na mwelekeo bora wa paneli kwa matokeo ya juu."
+						}
+					},
+					{
+						"icon": "drone",
+						"title": {
+							"en": "Construction Monitoring",
+							"sw": "Ufuatiliaji wa Ujenzi"
+						},
+						"description": {
+							"en": "Live drone footage and photogrammetry ensure build alignment, real-time updates, and progress tracking.",
+							"sw": "Rekodi za moja kwa moja za ndege na photogrammetry huhakikisha upatanishi wa ujenzi, sasisho za wakati halisi, na ufuatiliaji wa maendeleo."
+						}
+					},
+					{
+						"icon": "checkbox-marked-circle",
+						"title": {
+							"en": "Final Inspection & QA",
+							"sw": "Ukaguzi wa Mwisho na QA"
+						},
+						"description": {
+							"en": "Thermal and visual drone inspections identify faults or misalignments before commissioning.",
+							"sw": "Ukaguzi wa joto na wa mwonekano wa ndege hugundua hitilafu au kupotoka kabla ya kuwasilisha mradi."
+						}
+					},
+					{
+						"icon": "wrench-outline",
+						"title": {
+							"en": "Ongoing Maintenance",
+							"sw": "Matengenezo Yanayoendelea"
+						},
+						"description": {
+							"en": "Scheduled drone flyovers monitor panel health, detect dirt or damage, and maintain peak system efficiency.",
+							"sw": "Safari za ndege zilizoratibiwa hufuatilia afya ya paneli, kugundua uchafu au uharibifu, na kudumisha ufanisi wa juu wa mfumo."
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "ctaBand",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "Want to Elevate Your Solar Projects?",
+					"sw": "Unataka Kuinua Miradi Yako ya Sola?"
+				},
+				"description": {
+					"en": "Contact us for a tailored drone survey solution.",
+					"sw": "Wasiliana nasi kwa suluhisho la uchunguzi wa ndege lililoundwa mahsusi."
+				},
+				"primary": {
+					"label": {
+						"en": "Get in Touch",
+						"sw": "Wasiliana Nasi"
+					},
+					"href": "mailto:contact@smartgridsurveying.com?subject=Quote Request: Solar Panel Drone Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Solar Panel Drone Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "arrow-right"
+				},
+				"secondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"layout": "centered",
+				"variant": "panel",
+				"decor": "glow",
+				"watermark": "",
+				"images": [],
+				"shimmer": false,
+				"hairline": false,
+				"id": ""
+			}
+		}
+	]
+}

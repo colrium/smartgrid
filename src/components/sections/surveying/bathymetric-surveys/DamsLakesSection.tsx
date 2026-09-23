@@ -1,100 +1,61 @@
 "use client";
 
-import Image from "next/image";
+import type { ReactElement } from "react";
 import { useTranslation } from "@/hooks";
-import { SectionHeader } from "@/components/sections/home";
-import { FadeUp } from "@/components/animations/Fade";
-import { Blob } from "@/components/sections/home/decor";
+import { CardGrid, type CardItem } from "@/components/sections/shared/CardGrid";
 
 interface DamsLakesItem {
-	icon?: string;
-	title: string;
-	description: string;
+	icon?: string | null;
+	title?: string | null;
+	description?: string | null;
 }
 
 interface DamsLakesContent {
 	tag?: string | null;
-	headline: string;
-	description?: string;
-	images?: string[];
-	items: DamsLakesItem[];
+	headline?: string | null;
+	description?: string | null;
+	images?: (string | null)[] | null;
+	items?: DamsLakesItem[] | null;
 }
 
-export function DamsLakesSection() {
+export interface BathyDamsLakesData {
+	tag?: string | null;
+	headline?: string | null;
+	description?: string | null;
+	images?: (string | null)[] | null;
+	items?: DamsLakesItem[] | null;
+}
+
+/**
+ * Dams/lakes/sea/ocean coverage — shared card grid with a lead image strip
+ * above the cards (content: surveying/bathymetric-surveys:damsLakesSeaOcean).
+ */
+export function DamsLakesSection({ data, id }: { data?: BathyDamsLakesData | null; id?: string } = {}): ReactElement | null {
 	const { t } = useTranslation(["surveying/bathymetric-surveys"]);
-	const section = t("surveying/bathymetric-surveys:damsLakesSeaOcean", {
-		returnObjects: true,
-	}) as unknown as DamsLakesContent;
-	const items = Array.isArray(section.items) ? section.items : [];
-	const images = Array.isArray(section.images) ? section.images : [];
+	// Keystatic-owned content when `data` is provided (M11 `bathyDamsLakes`
+	// unique section); legacy locale strings otherwise. The lead-image
+	// computation (first two) stays in the wrapper.
+	const section = (data ??
+		(t("surveying/bathymetric-surveys:damsLakesSeaOcean", {
+			returnObjects: true,
+		}) as unknown as DamsLakesContent)) as DamsLakesContent;
+	const items = (Array.isArray(section?.items) ? section.items : []) as CardItem[];
+	const images = (Array.isArray(section?.images) ? section.images : []).filter(
+		(src): src is string => typeof src === "string" && src.length > 0
+	);
+
+	if (items.length === 0 && images.length === 0) return null;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden">
-			<Blob
-				className="w-[26rem] h-[26rem] bg-primary-200/40 -bottom-24 -left-24"
-				opacity={0.5}
-			/>
-
-			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-				<div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-					<FadeUp className="lg:col-span-6">
-						<SectionHeader tag={section.tag} headline={section.headline} />
-
-						{section.description && (
-							<p className="mt-8 text-base sm:text-lg leading-relaxed text-on-surface/60 whitespace-pre-line">
-								{section.description}
-							</p>
-						)}
-					</FadeUp>
-
-					<FadeUp delay={0.1} className="lg:col-span-6">
-						{images.length > 0 && (
-							<div className="grid grid-cols-2 gap-4 sm:gap-5">
-								{images.slice(0, 2).map((src, index) => (
-									<div
-										key={index}
-										className={`relative overflow-hidden aspect-square rounded-c!  card-shadow ${
-											index === 0 ? "mt-6" : "-mt-6"
-										}`}
-									>
-										<div className="relative aspect-square">
-											<Image
-												src={src}
-												alt={`${section.headline} ${index + 1}`}
-												fill
-												sizes="(min-width: 1024px) 25vw, 50vw"
-												className="object-fill object-center transition-transform duration-700 hover:scale-105"
-											/>
-										</div>
-									</div>
-								))}
-							</div>
-						)}
-					</FadeUp>
-				</div>
-
-				<div className="mt-14 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-					{items.map((item, index) => (
-						<FadeUp key={index} delay={(index % 3) * 0.08}>
-							<article className="group relative h-full flex flex-col gap-4 rounded-c bg-surface hairline card-shadow p-7 transition-all duration-250 hover:card-shadow-lift hover:border-primary">
-								{item.icon && (
-									<span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
-										<span className={`mdi mdi-${item.icon} text-lg`} />
-									</span>
-								)}
-
-								<h3 className="text-base sm:text-lg font-medium tracking-tight text-ink leading-snug">
-									{item.title}
-								</h3>
-								<p className="flex-1 text-sm text-on-surface/60 leading-relaxed">
-									{item.description}
-								</p>
-							</article>
-						</FadeUp>
-					))}
-				</div>
-			</div>
-		</section>
+		<CardGrid
+			id={id}
+			tag={section.tag ?? null}
+			headline={section.headline ?? ""}
+			description={section.description ?? undefined}
+			items={items}
+			columns={3}
+			leadImages={images.slice(0, 2)}
+		/>
 	);
 }
 

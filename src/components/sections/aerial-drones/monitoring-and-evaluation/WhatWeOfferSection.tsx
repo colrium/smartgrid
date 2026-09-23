@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
+import type { ReactElement } from "react";
 import { useTranslation } from "@/hooks";
-import { SectionHeader } from "@/components/sections/home";
-import { FadeUp } from "@/components/animations/Fade";
-import { Blob } from "@/components/sections/home/decor";
+import { CardGrid } from "@/components/sections/shared";
+
+const NS = "aerial-drones/monitoring-and-evaluation";
 
 interface OfferItem {
 	label?: string;
@@ -16,77 +16,42 @@ interface WhatWeOfferContent {
 	tag?: string | null;
 	headline: string;
 	description?: string;
-	images?: string[];
-	items: OfferItem[];
+	images?: string[] | null;
+	items?: OfferItem[] | null;
 }
 
-export function WhatWeOfferSection() {
-	const { t } = useTranslation(["aerial-drones/monitoring-and-evaluation"]);
-	const section = t("aerial-drones/monitoring-and-evaluation:whatWeOffer", {
-		returnObjects: true,
-	}) as unknown as WhatWeOfferContent;
-	const items = Array.isArray(section.items) ? section.items : [];
-	const leadImages = Array.isArray(section.images) ? section.images : [];
+/**
+ * `data` (M11 batch 18, 2026-09-20): Keystatic-owned content for the
+ * `meWhatWeOffer` unique section. When provided, the locale lookup is
+ * skipped; omitted = legacy `t()` render (bare callers untouched).
+ */
+export interface WhatWeOfferSectionProps {
+	data?: WhatWeOfferContent | null;
+}
+
+export function WhatWeOfferSection({ data }: WhatWeOfferSectionProps = {}): ReactElement | null {
+	const { t } = useTranslation([NS]);
+	const section =
+		data ??
+		(t(`${NS}:whatWeOffer`, {
+			returnObjects: true,
+		}) as unknown as WhatWeOfferContent);
+	const items = Array.isArray(section?.items) ? section.items : [];
+	const leadImages = Array.isArray(section?.images) ? section.images : [];
+
+	if (items.length === 0) return null;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden">
-			<Blob className="w-[28rem] h-[28rem] bg-primary-200/40 -top-24 -right-24" opacity={0.5} />
-
-			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-				<SectionHeader
-					tag={section.tag}
-					headline={section.headline}
-					description={section.description || undefined}
-				/>
-
-				{leadImages.length > 0 && (
-					<FadeUp>
-						<div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-							{leadImages.map((src, index) => (
-								<div
-									key={index}
-									className="relative h-64 sm:h-80 rounded-c overflow-hidden hairline"
-								>
-									<Image
-										src={src}
-										alt=""
-										fill
-										sizes="(min-width: 640px) 50vw, 100vw"
-										className="object-cover object-center transition-transform duration-700 hover:scale-105"
-									/>
-								</div>
-							))}
-						</div>
-					</FadeUp>
-				)}
-
-				<div className="mt-12 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-					{items.map((item, index) => (
-						<FadeUp key={index} delay={(index % 4) * 0.06}>
-							<article className="group relative flex flex-col rounded-c overflow-hidden bg-surface hairline card-shadow transition-all duration-250 hover:card-shadow-lift hover:border-primary">
-								{item.image && (
-									<div className="relative h-40 overflow-hidden">
-										<Image
-											src={item.image}
-											alt={item.title || item.label || ""}
-											fill
-											sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-											className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-										/>
-									</div>
-								)}
-
-								<div className="p-5">
-									<h3 className="text-sm sm:text-base font-medium tracking-tight text-ink leading-snug">
-										{item.title || item.label}
-									</h3>
-								</div>
-							</article>
-						</FadeUp>
-					))}
-				</div>
-			</div>
-		</section>
+		<CardGrid
+			tag={section.tag}
+			headline={section.headline}
+			description={section.description}
+			items={items}
+			columns={4}
+			headerAlign="left"
+			leadImages={leadImages.length > 0 ? leadImages : null}
+			card={{ mediaPosition: "top", mediaAspect: "h-40" }}
+		/>
 	);
 }
 

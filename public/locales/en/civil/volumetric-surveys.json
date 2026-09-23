@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "Reliable. Scalable. Fast. Powerful.",
 		"title": "Volumetric Surveys done Smarter.",
 		"image": "/media/civil/volumetric-surveys/01.jpg",
@@ -16,17 +17,20 @@
 		}
 	},
 	"maxProductivityMinGuesswork": {
+		"type": "intro",
 		"tag": "Lead with Data",
 		"headline": "Maximize Productivity. Minimize Guesswork.",
 		"description": "Leverage SmartGrid's cutting-edge drone volume surveys to make faster, smarter decisions on site. Let data lead the way to profitability."
 	},
 	"precisionVolumetricAnalysis": {
+		"type": "split-media",
 		"tag": "Accurate Site Intelligence",
 		"headline": "Precision Volumetric Analysis with Drone Technology",
 		"image": "/media/civil/volumetric-surveys/02.jpg",
 		"description": "SmartGrid leverages advanced UAVs and photogrammetry to deliver fast, accurate volumetric measurements.\n\n Whether you’re managing stockpiles, quarries, or earthworks, our drone solutions cut time and cost while enhancing safety and data reliability."
 	},
 	"services": {
+		"type": "card-grid",
 		"tag": "VOLUME SERVICES",
 		"headline": "Whether you're a government agency, an NGO, or a private developer, Smartgrid Surveying is your trusted partner!\n\n Our drones deliver actionable data where it matters most. ",
 		"items": [
@@ -58,11 +62,13 @@
 		]
 	},
 	"clarityAndControl": {
+		"type": "intro",
 		"tag": "Clarity & Control",
 		"headline": "Boost Accuracy. Drive Efficiency.",
 		"description": "Say goodbye to outdated manual surveys. Our drone-based volume calculations bring clarity and control to every project milestone."
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Let’s Collaborate",
 		"headline": "Need Accurate Volumetric Data for Your Site?",
 		"description": "Contact SmartGrid Surveying for a custom drone volume survey that saves time, reduces risk, and delivers results.",
@@ -73,6 +79,7 @@
 		}
 	},
 	"deliverables": {
+		"type": "deliverables",
 		"tag": "Project Outputs",
 		"headline": "Volumetric Survey Deliverables",
 		"description": "Audit-ready volumes and quantities for earthworks and stockpiles:",

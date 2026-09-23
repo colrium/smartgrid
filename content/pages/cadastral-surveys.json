@@ -1,0 +1,1155 @@
+{
+	"slug": "Cadastral Surveys",
+	"title": "Cadastral Surveys (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "hero",
+			"value": {
+				"headline": {
+					"en": "CADASTRAL SURVEYS",
+					"sw": "UCHUNGUZI WA CADASTRAL"
+				},
+				"title": {
+					"en": "Know Your Boundaries, Build with Confidence",
+					"sw": "Jua Mipaka Yako, Jenga kwa Ujasiri"
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"image": "/media/surveying/cadastral-surveys/AG8ng.jpg",
+				"layout": "bottom",
+				"frame": false,
+				"scrollCue": false,
+				"cueLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"footnoteItems": [],
+				"ctaPrimary": {
+					"label": {
+						"en": "Get Your Free Consultation",
+						"sw": "Pata Ushauri Wako wa Bure"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Cadastral Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Cadastral Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "",
+					"iconPosition": "end",
+					"trailingArrow": "auto"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "cadastralPostHeroCta",
+			"value": {
+				"tag": {
+					"en": "Cadastral Surveys in Kenya",
+					"sw": "Uchunguzi wa Cadastral nchini Kenya"
+				},
+				"headline": {
+					"en": "Cadastral Surveys in Kenya for Title Deeds, Subdivision & Boundary Verification",
+					"sw": "Uchunguzi wa Cadastral nchini Kenya kwa Hati Miliki, Ugawaji wa Viwanja na Uthibitisho wa Mipaka"
+				},
+				"description": {
+					"en": "Registry-accurate boundary surveys prepared by licensed surveyors and packaged for Ardhisasa submission — for buyers, landowners and developers.",
+					"sw": "Uchunguzi sahihi wa mipaka kwa viwango vya usajili, ulioandaliwa na wachunguzi walioidhinishwa na kutayarishwa kwa uwasilishaji wa Ardhisasa — kwa wanunuzi, wamiliki wa ardhi na wasanidi miradi."
+				},
+				"ctaPrimary": {
+					"label": {
+						"en": "Talk to a Surveyor",
+						"sw": "Zungumza na Mchunguzi"
+					},
+					"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20talk%20to%20a%20surveyor%20about%20a%20cadastral%20survey.",
+					"icon": "whatsapp"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "Send a Request",
+						"sw": "Tuma Ombi"
+					},
+					"href": "/contact",
+					"icon": "email-fast-outline"
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "cadastralWhenYouNeed",
+			"value": {
+				"tag": {
+					"en": "When You Need It",
+					"sw": "Unapohitaji"
+				},
+				"headline": {
+					"en": "When You Need a Cadastral Survey",
+					"sw": "Unapohitaji Uchunguzi wa Cadastral"
+				},
+				"description": {
+					"en": "From title verification to dispute resolution — these are the moments a licensed boundary survey protects your land, your money and your paperwork.",
+					"sw": "Kuanzia uthibitisho wa hati hadi suluhisho la migogoro — hivi ni muda ambao uchunguzi wa mipaka ulioidhinishwa unalinda ardhi yako, pesa yako na nyaraka zako."
+				},
+				"image": "/media/surveying/cadastral-surveys/01-02.jpg",
+				"imageBadge": {
+					"en": "Survey Act Cap 299 · Ardhisasa-ready",
+					"sw": "Sheria ya Upimaji Sura ya 299 · Tayari kwa Ardhisasa"
+				},
+				"items": [
+					{
+						"icon": "file-certificate-outline",
+						"title": {
+							"en": "Buying Land / Verifying a Title Deed",
+							"sw": "Kununua Ardhi / Kuhakiki Hati Miliki"
+						},
+						"description": {
+							"en": "Confirm the parcel on the ground matches the deed plan and registry records — before you pay a single shilling.",
+							"sw": "Thibitisha kuwa kiwanja kilichopo ardhini kinaendana na ramani ya hati na rekodi za usajili — kabla ya kulipa shilingi hata moja."
+						},
+						"href": ""
+					},
+					{
+						"icon": "grid-large",
+						"title": {
+							"en": "Subdividing Plots",
+							"sw": "Kugawa Viwanja"
+						},
+						"description": {
+							"en": "Legally split a parcel into saleable units with approved subdivision plans, mutation survey and new beacons.",
+							"sw": "Gawa kiwanja kisheria kuwa vitengo vinavyouzwa kwa ramani za ugawaji zilizoidhinishwa, uchunguzi wa mutation na beacon mpya."
+						},
+						"href": ""
+					},
+					{
+						"icon": "scale-balance",
+						"title": {
+							"en": "Resolving Legal Boundary Disputes",
+							"sw": "Kutatua Migogoro ya Kisheria ya Mipaka"
+						},
+						"description": {
+							"en": "Court-ready boundary evidence and re-established beacons to settle ownership lines with adjoining owners.",
+							"sw": "Ushahidi wa mipaka unaofaa mahakamani na beacon zilizohuishwa upya kutatua mistari ya umiliki na wamiliki jirani."
+						},
+						"href": ""
+					},
+					{
+						"icon": "account-hard-hat",
+						"title": {
+							"en": "Preparing for Construction Approval",
+							"sw": "Kujiandaa kwa Idhini ya Ujenzi"
+						},
+						"description": {
+							"en": "Certified boundary data that counties, banks and authorities expect before approving building plans.",
+							"sw": "Takwimu za mipaka zilizothibitishwa ambazo kaunti, benki na mamlaka huhitaji kabla ya kuidhinisha ramani za ujenzi."
+						},
+						"href": "/surveying/building-site-surveys"
+					},
+					{
+						"icon": "domain",
+						"title": {
+							"en": "Sectional Property Registration (Apartments)",
+							"sw": "Usajili wa Mali ya Kipande (Ghorofa)"
+						},
+						"description": {
+							"en": "Unit boundary determination and sectional plans for apartment and mixed-use registrations.",
+							"sw": "Uamuzi wa mipaka ya vitengo na ramani za sectional kwa usajili wa ghorofa na maeneo ya matumizi mchanganyiko."
+						},
+						"href": "/surveying/sectional-properties"
+					},
+					{
+						"icon": "shield-sun-outline",
+						"title": {
+							"en": "Protect Your Investment",
+							"sw": "Linda Uwekezaji Wako"
+						},
+						"description": {
+							"en": "Know exactly what you own before buying, selling, mortgaging or developing land.",
+							"sw": "Jua hasa unachomiliki kabla ya kununua, kuuza, kuweka rehani au kuendeleza ardhi."
+						},
+						"href": ""
+					},
+					{
+						"icon": "fence",
+						"title": {
+							"en": "Resolve Encroachments",
+							"sw": "Suluhisha Uvamizi"
+						},
+						"description": {
+							"en": "Detect overlapping fences, structures and access rights early — and correct them before they escalate into legal battles or stalled transactions.",
+							"sw": "Gundua ua, miundo na haki za njia zinazopishana mapema — na uzirekebishe kabla ya kuwa migogoro ya kisheria au miamala iliyosimama."
+						},
+						"href": ""
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "workflow",
+			"value": {
+				"tag": {
+					"en": "How It Works",
+					"sw": "Inavyofanya Kazi"
+				},
+				"headline": {
+					"en": "Boundary Survey Process — From Site Visit to County Approval",
+					"sw": "Mchakato wa Uchunguzi wa Mipaka — Kutoka Ziara ya Tovuti hadi Idhini ya Kaunti"
+				},
+				"description": {
+					"en": "A transparent, six-step cadastral workflow. You always know which stage your parcel is in and exactly what happens next.",
+					"sw": "Mtiririko wa kazi wa hati sita ulio wazi. Unajua wakati wowote kiwanja chako kiko katika hatua gani na kinachofuata hasa."
+				},
+				"outcome": {
+					"en": "Registered, titled & dispute-free",
+					"sw": "Imesajiliwa, ina hati & haina migogoro"
+				},
+				"steps": [
+					{
+						"phase": "PLANNING",
+						"icon": "file-search-outline",
+						"label": {
+							"en": "Site Visit & Document Review",
+							"sw": "Ziara ya Tovuti & Ukaguzi wa Nyaraka"
+						},
+						"description": {
+							"en": "We walk the parcel with you, review the title deed, deed plan and prior surveys, and record existing occupation and improvements.",
+							"sw": "Tunatembea kiwanja pamoja nawe, tunakagua hati miliki, ramani ya hati na uchunguzi wa awali, na kurekodi makazi na maboresho yaliyopo."
+						}
+					},
+					{
+						"phase": "CONTROL",
+						"icon": "database-search-outline",
+						"label": {
+							"en": "Registry (Ardhisasa / RIM) Verification",
+							"sw": "Uthibitisho wa Usajili (Ardhisasa / RIM)"
+						},
+						"description": {
+							"en": "Parcel records are retrieved and cross-checked against the Registry Index Map (RIM) and the Ardhisasa cadastral database to confirm the legal boundaries.",
+							"sw": "Rekodi za kiwanja zinapatikana na kulinganishwa na Ramani ya Faharasa ya Usajili (RIM) na hifadhidata ya Ardhisasa ili kuthibitisha mipaka ya kisheria."
+						}
+					},
+					{
+						"phase": "ACQUISITION",
+						"icon": "satellite-variant",
+						"label": {
+							"en": "GNSS Field Survey (RTK Control)",
+							"sw": "Uchunguzi wa Shamba wa GNSS (RTK Control)"
+						},
+						"description": {
+							"en": "RTK GNSS and total station observations establish a control network tied to the national grid for centimetre-level accuracy.",
+							"sw": "Uchunguzi wa RTK GNSS na total station unaanzisha mtandao wa udhibiti uliounganishwa na gridi ya kitaifa kwa usahihi wa kiwango cha sentimita."
+						}
+					},
+					{
+						"phase": "VALIDATION",
+						"icon": "map-marker-check",
+						"label": {
+							"en": "Beaconing & Boundary Confirmation",
+							"sw": "Kuweka Beacon & Uthibitisho wa Mipaka"
+						},
+						"description": {
+							"en": "Boundary corners are computed, confirmed with adjoining owners, and permanent beacons are placed or re-fixed on the ground.",
+							"sw": "Kona za mipaka zinakokotolewa, zinathibitishwa na wamiliki jirani, na beacon za kudura zinawekwa au kurekebishwa ardhini."
+						}
+					},
+					{
+						"phase": "PROCESSING",
+						"icon": "ruler-square-compass",
+						"label": {
+							"en": "Plan Preparation & Computation",
+							"sw": "Maandalizi ya Ramani & Kokotoo"
+						},
+						"description": {
+							"en": "Observations are reduced and adjusted; areas, traverses and final survey plans are computed and checked by a licensed surveyor.",
+							"sw": "Uchunguzi unapunguzwa na kurekebishwa; eneo, traverses na ramani za mwisho zinakokotolewa na kukaguliwa na mchunguzi aliyeidhinishwa."
+						}
+					},
+					{
+						"phase": "DELIVERY",
+						"icon": "clipboard-check-outline",
+						"label": {
+							"en": "Submission & County Approval",
+							"sw": "Uwasilishaji & Idhini ya Kaunti"
+						},
+						"description": {
+							"en": "The compiled cadastral documentation is lodged with the registry (Ardhisasa) and county offices for approval and registration.",
+							"sw": "Nyaraka za cadastral zilizokusanyika zinawasilishwa kwa usajili (Ardhisasa) na ofisi za kaunti kwa idhini na usajili."
+						}
+					}
+				],
+				"ctaNote": {
+					"en": "",
+					"sw": ""
+				},
+				"cta": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"acquisition": "satellite",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "cadastralProcessCta",
+			"value": {
+				"tag": {
+					"en": "Start Now",
+					"sw": "Anza Sasa"
+				},
+				"headline": {
+					"en": "Start Your Survey Process Today",
+					"sw": "Anza Mchakato Wako wa Uchunguzi Leo"
+				},
+				"description": {
+					"en": "Send us your parcel details — title deed number, location and size — and we will map out the exact survey steps, costs and approvals for your land.",
+					"sw": "Tutumie maelezo ya kiwanja chako — namba ya hati, eneo na ukubwa — nasi tutakupangia hatua halisi za uchunguzi, gharama na idhini za ardhi yako."
+				},
+				"ctaPrimary": {
+					"label": {
+						"en": "Request Your Survey Plan",
+						"sw": "Omba Mpango Wako wa Uchunguzi"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Survey Process Request: Cadastral Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to start the cadastral survey process for my parcel.%0D%0A%0D%0ALocation (County / Area):%0D%0ATitle deed or parcel number:%0D%0AApproximate size (acres):%0D%0AService needed (boundary / subdivision / dispute):%0D%0A%0D%0AThank you.",
+					"icon": "email-fast-outline"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "WhatsApp a Surveyor",
+						"sw": "WhatsApp Mchunguzi"
+					},
+					"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20start%20a%20cadastral%20survey%20process%20for%20my%20parcel.",
+					"icon": "whatsapp"
+				},
+				"chips": [
+					{
+						"en": "Licensed surveyors",
+						"sw": "Wachunguzi walioidhinishwa"
+					},
+					{
+						"en": "Ardhisasa-ready submissions",
+						"sw": "Uwasilishaji tayari kwa Ardhisasa"
+					},
+					{
+						"en": "ISK compliant",
+						"sw": "Inazingatia ISK"
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "cadastralCost",
+			"value": {
+				"tag": {
+					"en": "Cost Guidance",
+					"sw": "Mwongozo wa Gharama"
+				},
+				"headline": {
+					"en": "Cadastral Survey Cost in Kenya",
+					"sw": "Gharama ya Uchunguzi wa Cadastral nchini Kenya"
+				},
+				"description": {
+					"en": "Indicative pricing for cadastral and boundary surveys. Every parcel is quoted after a registry check — no hidden charges, no surprises.",
+					"sw": "Bei za kielelezo kwa uchunguzi wa cadastral na mipaka. Kila kiwanja hunukuliwa baada ya ukaguzi wa usajili — hakuna malipo yaliyofichwa, hakuna mashangazo."
+				},
+				"featuredLabel": {
+					"en": "Most Requested",
+					"sw": "Iliyohitajiwa Zaidi"
+				},
+				"tiers": [
+					{
+						"icon": "home-outline",
+						"title": {
+							"en": "Small Residential Plot",
+							"sw": "Kiwanja Ndogo cha Makazi"
+						},
+						"price": {
+							"en": "KES 15,000 – 80,000",
+							"sw": "KES 15,000 – 80,000"
+						},
+						"priceUnit": {
+							"en": "",
+							"sw": ""
+						},
+						"note": {
+							"en": "Boundary verification, beacon replacement and title-ready survey reports for standard residential parcels.",
+							"sw": "Uthibitisho wa mipaka, ubadilishaji wa beacon na taarifa za uchunguzi zilizo tayari kwa hati kwa viwanja vya kawaida vya makazi."
+						},
+						"features": [
+							{
+								"en": "Registry search & deed plan check",
+								"sw": "Utafutaji wa usajili & ukaguzi wa ramani ya hati"
+							},
+							{
+								"en": "Boundary beacons placed or re-fixed",
+								"sw": "Beacon za mipaka zinawekwa au kurekebishwa"
+							},
+							{
+								"en": "Signed survey report for your records",
+								"sw": "Taarifa ya uchunguzi iliyosainiwa kwa rekodi zako"
+							}
+						],
+						"featured": false
+					},
+					{
+						"icon": "grid-large",
+						"title": {
+							"en": "Subdivision Projects",
+							"sw": "Miradi ya Ugawaji"
+						},
+						"price": {
+							"en": "Project-based quotation",
+							"sw": "Nukuu kwa mradi"
+						},
+						"priceUnit": {
+							"en": "from KES 10,000 per unit",
+							"sw": "kuanzia KES 10,000 kwa kila kitengo"
+						},
+						"note": {
+							"en": "Full subdivision workflow from planning consent to registry-approved subdivision plans for every unit.",
+							"sw": "Mtiririko kamili wa ugawaji kutoka idhini ya mipango hadi ramani za ugawaji zilizoidhinishwa na usajili kwa kila kitengo."
+						},
+						"features": [
+							{
+								"en": "Subdivision design & planning liaison",
+								"sw": "Kubuni ugawaji & mawasiliano ya mipango"
+							},
+							{
+								"en": "Mutation survey & new beacons per unit",
+								"sw": "Uchunguzi wa mutation & beacon mpya kwa kila kitengo"
+							},
+							{
+								"en": "Submission-ready Ardhisasa documentation",
+								"sw": "Nyaraka tayari kwa uwasilishaji wa Ardhisasa"
+							}
+						],
+						"featured": true
+					},
+					{
+						"icon": "land-fields",
+						"title": {
+							"en": "Large Estates",
+							"sw": "Mashamba Makubwa"
+						},
+						"price": {
+							"en": "Custom engineering pricing",
+							"sw": "Bei maalum ya uhandisi"
+						},
+						"priceUnit": {
+							"en": "",
+							"sw": ""
+						},
+						"note": {
+							"en": "Multi-parcel estates, ranches and institutional land scoped with dedicated project teams and control networks.",
+							"sw": "Mashamba ya vipande vingi, ranchi na ardhi ya taasisi vinapangwa na timu za miradi maalum na mitandao ya udhibiti."
+						},
+						"features": [
+							{
+								"en": "GNSS control network across the estate",
+								"sw": "Mtandao wa udhibiti wa GNSS kote shambani"
+							},
+							{
+								"en": "Boundary reconciliation of all parcels",
+								"sw": "Upatanishaji wa mipaka wa vipande vyote"
+							},
+							{
+								"en": "Dedicated licensed surveyor & project team",
+								"sw": "Mchunguzi aliyeidhinishwa & timu ya mradi maalum"
+							}
+						],
+						"featured": false
+					}
+				],
+				"cta": {
+					"label": {
+						"en": "Get Accurate Pricing for Your Parcel",
+						"sw": "Pata Bei Sahihi kwa Kiwanja Chako"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Pricing Request: Cadastral Survey&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like accurate pricing for a cadastral survey on my parcel.%0D%0A%0D%0ALocation (County / Area):%0D%0ATitle deed or parcel number:%0D%0AApproximate size (acres):%0D%0AService needed (boundary / subdivision / dispute):%0D%0A%0D%0AThank you.",
+					"icon": "cash-multiple"
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "cadastralTimeline",
+			"value": {
+				"tag": {
+					"en": "Timelines",
+					"sw": "Muda Unachukua"
+				},
+				"headline": {
+					"en": "How Long Does a Cadastral Survey Take?",
+					"sw": "Uchunguzi wa Cadastral Huchukua Muda Gani?"
+				},
+				"description": {
+					"en": "Survey duration depends on registry approvals and parcel complexity. Here is what to realistically plan for.",
+					"sw": "Muda wa uchunguzi unategemea idhini za usajili na ugumu wa kiwanja. Hii ni ya kweli ya kupanga nayo."
+				},
+				"scaleNote": {
+					"en": "Bar length shows the typical maximum duration of each service.",
+					"sw": "Urefu wa mstari unaonyesha muda wa juu wa kawaida wa kila huduma."
+				},
+				"items": [
+					{
+						"icon": "calendar-clock",
+						"title": {
+							"en": "Standard Survey",
+							"sw": "Uchunguzi wa Kawaida"
+						},
+						"range": {
+							"en": "7–21 days",
+							"sw": "Siku 7–21"
+						},
+						"minDays": 7,
+						"maxDays": 21,
+						"description": {
+							"en": "Boundary verification and beaconing, depending on registry approvals and access to the parcel.",
+							"sw": "Uthibitisho wa mipaka na kuweka beacon, kulingana na idhini za usajili na ufikiaji wa kiwanja."
+						}
+					},
+					{
+						"icon": "grid-large",
+						"title": {
+							"en": "Subdivision",
+							"sw": "Ugawaji"
+						},
+						"range": {
+							"en": "2–6 weeks",
+							"sw": "Wiki 2–6"
+						},
+						"minDays": 14,
+						"maxDays": 42,
+						"description": {
+							"en": "Planning consent, mutation survey, plan approval and registration of the new units.",
+							"sw": "Idhini ya mipango, uchunguzi wa mutation, idhini ya ramani na usajili wa vitengo vipya."
+						}
+					},
+					{
+						"icon": "gavel",
+						"title": {
+							"en": "Dispute Resolution",
+							"sw": "Suluhisho la Migogoro"
+						},
+						"range": {
+							"en": "Depends on complexity",
+							"sw": "Inategemea ugumu"
+						},
+						"minDays": null,
+						"maxDays": null,
+						"description": {
+							"en": "Court or family-mediated disputes take longer — evidence quality determines how fast they settle.",
+							"sw": "Migogoro ya mahakama au ya kifamilia hudumu muda mrefu — ubora wa ushahidi unaamua kasi ya kutatuliwa."
+						}
+					}
+				],
+				"note": {
+					"en": "Delays almost always come from registry queues and missing documents — we pre-clear both before fieldwork starts.",
+					"sw": "Chelezo karibu daima hutoka kwa foleni za usajili na nyaraka zilizokosekana — tunayatatua zote mbili kabla ya kazi ya shamba kuanza."
+				},
+				"cta": {
+					"label": {
+						"en": "Check Timeline for Your Land Today",
+						"sw": "Angalia Muda wa Ardhi Yako Leo"
+					},
+					"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20know%20the%20timeline%20for%20a%20cadastral%20survey%20on%20my%20land.",
+					"icon": "whatsapp"
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "cadastralCompliance",
+			"value": {
+				"tag": {
+					"en": "Legal & Regulatory Compliance",
+					"sw": "Uzingatiaji wa Kisheria & Udhibiti"
+				},
+				"headline": {
+					"en": "Legal & Ardhisasa Compliance You Can Rely On",
+					"sw": "Uzingatiaji wa Kisheria & Ardhisasa Unaweza Kutegemea"
+				},
+				"description": {
+					"en": "Every cadastral survey we deliver is executed under the statutes that govern land in Kenya — so your documents survive scrutiny at the registry, the bank and the court.",
+					"sw": "Kila uchunguzi wa cadastral tunaoleta hutekelezwa chini ya sheria zinazosimamia ardhi nchini Kenya — hivyo nyaraka zako zinapita ukaguzi kwa usajili, benki na mahakama."
+				},
+				"checklistTitle": {
+					"en": "The SmartGrid compliance checklist",
+					"sw": "Orodha ya uthibitisho ya SmartGrid"
+				},
+				"checklist": [
+					{
+						"icon": "gavel",
+						"title": {
+							"en": "Land Registration Act, 2012",
+							"sw": "Sheria ya Usajili wa Ardhi, 2012"
+						},
+						"description": {
+							"en": "Surveys prepared for registration under the Act governing title deeds, parcel boundaries and transfers in Kenya.",
+							"sw": "Uchunguzi ulioandaliwa kwa usajili chini ya Sheria inayosimamia hati miliki, mipaka ya vipande na uhamisho nchini Kenya."
+						}
+					},
+					{
+						"icon": "seal",
+						"title": {
+							"en": "Survey Act, Cap 299",
+							"sw": "Sheria ya Upimaji, Sura ya 299"
+						},
+						"description": {
+							"en": "All fieldwork, computations and plans conform to the Survey Act and its Regulations — signed by a licensed surveyor.",
+							"sw": "Kazi zote za shamba, kokotoo na ramani zinazingatia Sheria ya Upimaji na Kanuni zake — zikisainiwa na mchunguzi aliyeidhinishwa."
+						}
+					},
+					{
+						"icon": "earth",
+						"title": {
+							"en": "Ardhisasa Cadastral Submission Requirements",
+							"sw": "Mahitaji ya Uwasilishaji wa Ardhisasa"
+						},
+						"description": {
+							"en": "Deliverables are packaged to Ardhisasa digital lodgement standards: georeferenced data, deed plans and supporting documents.",
+							"sw": "Matokeo yamepakitiwa kwa viwango vya uwasilishaji wa kidijitali vya Ardhisasa: takwimu zilizogeoreferensiwa, ramani za hati na nyaraka za ziada."
+						}
+					},
+					{
+						"icon": "city",
+						"title": {
+							"en": "County Approval Process",
+							"sw": "Mchakato wa Idhini ya Kaunti"
+						},
+						"description": {
+							"en": "We liaise with county planning offices for subdivision consents and development approvals tied to your survey.",
+							"sw": "Tunashirikiana na ofisi za mipango za kaunti kwa idhini za ugawaji na uidhinishaji wa maendeleo yanayohusiana na uchunguzi wako."
+						}
+					},
+					{
+						"icon": "account-check-outline",
+						"title": {
+							"en": "ISK Compliance & Licensed Surveyor",
+							"sw": "Uzingatiaji wa ISK & Mchunguzi Aliyeidhinishwa"
+						},
+						"description": {
+							"en": "Work is executed and signed off by an Institution of Surveyors of Kenya (ISK) registered, licensed surveyor.",
+							"sw": "Kazi hutekelezwa na kusainiwa na mchunguzi aliyeandikishwa na aliyeidhinishwa wa Taasisi ya Wapimaji Ardhi Kenya (ISK)."
+						}
+					}
+				],
+				"relatedLabel": {
+					"en": "Related compliance guides",
+					"sw": "Miongozo mingine ya uzingatiaji"
+				},
+				"related": [
+					{
+						"label": {
+							"en": "Sectional Properties Act, 2020",
+							"sw": "Sheria ya Mali ya Kipande, 2020"
+						},
+						"href": "/surveying/sectional-properties"
+					},
+					{
+						"label": {
+							"en": "Construction & Site Engineering Surveys",
+							"sw": "Uchunguzi wa Ujenzi & Uhandisi wa Tovuti"
+						},
+						"href": "/surveying/building-site-surveys"
+					},
+					{
+						"label": {
+							"en": "Topographical Surveys for Planning",
+							"sw": "Uchunguzi wa Topografia kwa Mpango"
+						},
+						"href": "/surveying/topographical-surveys"
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "cadastralCaseStudy",
+			"value": {
+				"tag": {
+					"en": "Case Study · Kiambu County",
+					"sw": "Kesi Uliyofanya · Kaunti ya Kiambu"
+				},
+				"headline": {
+					"en": "Kiambu Subdivision Survey – 40-Acre Parcel",
+					"sw": "Uchunguzi wa Ugawaji wa Kiambu – Kiwanja cha Eka 40"
+				},
+				"subtitle": {
+					"en": "Title Registration & Boundary Dispute Resolution Using High-Precision GNSS Surveying",
+					"sw": "Usajili wa Hati & Utatuzi wa Migogoro ya Mipaka Kwa Kutumia Uchunguzi sahihi wa GNSS"
+				},
+				"overview": {
+					"label": {
+						"en": "01 · Project Overview",
+						"sw": "01 · Muhtasari wa Mradi"
+					},
+					"paragraphs": [
+						{
+							"en": "A 40-acre parcel in Kiambu County required formal subdivision, cadastral verification, and resolution of long-standing boundary disputes between adjoining landowners.",
+							"sw": "Kiwanja cha eka 40 katika Kaunti ya Kiambu kilihitaji ugawaji rasmi, uthibitisho wa cadastral, na utatuzi wa migogoro ya muda mrefu ya mipaka kati ya wamiliki jirani."
+						}
+					],
+					"criticalTitle": {
+						"en": "The project was critical for:",
+						"sw": "Mradi huu ulikuwa muhimu kwa:"
+					},
+					"critical": [
+						{
+							"en": "Title deed processing under Kenyan land registry requirements",
+							"sw": "Uchakataji wa hati miliki chini ya mahitaji ya usajili wa ardhi ya Kenya"
+						},
+						{
+							"en": "Resolving overlapping boundary claims",
+							"sw": "Kutatua madai ya mipaka yanayopishana"
+						},
+						{
+							"en": "Preparing legally defensible subdivision plans",
+							"sw": "Kuandaa ramani za ugawaji zinazotetea kisheria"
+						},
+						{
+							"en": "Enabling future development and land sales",
+							"sw": "Kuwezesha maendeleo na mauzo ya ardhi siku zijazo"
+						}
+					],
+					"deployNote": {
+						"en": "SmartGrid Surveying deployed RTK GNSS, total station control networks, and registry reconciliation workflows to restore spatial accuracy and legal clarity.",
+						"sw": "SmartGrid Surveying ilitumia RTK GNSS, mitandao ya udhibiti ya total station, na mtiririko wa upatanishaji wa usajili kurejesha usahihi wa kimwili na uwazi wa kisheria."
+					},
+					"deployIcon": "satellite-variant"
+				},
+				"challenge": {
+					"label": {
+						"en": "02 · The Challenge (Before Condition)",
+						"sw": "02 · Changamoto (Hali ya Awali)"
+					},
+					"intro": {
+						"en": "The site presented multiple complications:",
+						"sw": "Tovuti ilikuwa na utata mwingi:"
+					},
+					"items": [
+						{
+							"en": "Conflicting boundary interpretations between landowners",
+							"sw": "Tafsiri zinazopingana za mipaka kati ya wamiliki wa ardhi"
+						},
+						{
+							"en": "Outdated registry map (deed plan discrepancies)",
+							"sw": "Ramani ya usajili iliyopitilizaaje (tofauti za ramani za hati)"
+						},
+						{
+							"en": "Missing or disturbed boundary beacons",
+							"sw": "Beacon za mipaka zilizopotea au zilizoharibika"
+						},
+						{
+							"en": "Overlapping parcel claims in adjacent subdivisions",
+							"sw": "Madai ya vipande yanayopishana katika ugawaji jirani"
+						},
+						{
+							"en": "Lack of georeferenced control tied to modern coordinate systems",
+							"sw": "Ukosefu wa udhibiti uliogeoreferensiwa unaounganishwa na mifumo ya kisasa ya kuradiani"
+						}
+					],
+					"images": [
+						{
+							"src": "/media/surveying/cadastral-surveys/02-02.jpg",
+							"alt": {
+								"en": "Disturbed boundary beacon awaiting re-establishment on site",
+								"sw": "Beacon ya mipaka iliyoharibika ikisubiri kuanzishwa upya kwenye tovuti"
+							}
+						},
+						{
+							"src": "/media/surveying/cadastral-surveys/02-03.jpg",
+							"alt": {
+								"en": "Adjoining parcels with overlapping claims in Kiambu County",
+								"sw": "Vipande jirani vinavyopishana na madai katika Kaunti ya Kiambu"
+							}
+						},
+						{
+							"src": "/media/surveying/cadastral-surveys/02-01.jpg",
+							"alt": {
+								"en": "Overgrown and unmarked boundary line on the Kiambu parcel before the survey",
+								"sw": "Mstari wa mipaka uliokuzwa na usio na alama kwenye kiwanja cha Kiambu kabla ya uchunguzi"
+							}
+						}
+					]
+				},
+				"methodology": {
+					"label": {
+						"en": "03 · Survey Methodology & GPS Workflow",
+						"sw": "03 · Mbinu ya Uchunguzi & Mtiririko wa GPS"
+					},
+					"intro": {
+						"en": "A structured engineering-grade workflow was applied to ensure legal and spatial accuracy in compliance with Kenyan cadastral standards and Ardhisasa requirements.",
+						"sw": "Mtiririko wa kazi wa kiwango cha uhandisi ulio na muundo ulitumika kuhakikisha usahihi wa kisheria na wa kimwili kwa kuzingatia viwango vya cadastral vya Kenya na mahitaji ya Ardhisasa."
+					},
+					"steps": [
+						{
+							"title": {
+								"en": "Step 1: Desk Study & Registry Retrieval",
+								"sw": "Hatua ya 1: Somo la Dawati & Upatikanaji wa Usajili"
+							},
+							"points": [
+								{
+									"en": "Retrieved original RIM (Registry Index Map)",
+									"sw": "RIM ya awali (Ramani ya Faharasa ya Usajili) ilipatikana"
+								},
+								{
+									"en": "Reviewed historical deed plans and parcel references",
+									"sw": "Ramani za hati za kihistoria na marejeo ya vipande yilikaguliwa"
+								},
+								{
+									"en": "Identified inconsistencies in boundary alignments",
+									"sw": "Kutosiana katika mwelekeo wa mipaka kulitambuliwa"
+								}
+							]
+						},
+						{
+							"title": {
+								"en": "Step 2: Establishment of Control Network",
+								"sw": "Hatua ya 2: Kuanzishwa kwa Mtandao wa Udhibiti"
+							},
+							"points": [
+								{
+									"en": "RTK GNSS base station setup on stable benchmark",
+									"sw": "Kituo cha RTK GNSS kiliwekwa kwenye alama imara"
+								},
+								{
+									"en": "Primary control points established across parcel corners",
+									"sw": "Vidhibiti vikuu viliwekwa kwenye kona za kiwanja"
+								},
+								{
+									"en": "Total station used for dense control in obstructed zones",
+									"sw": "Total station ilitumika kwa udhibiti mnene katika maeneo yenye vizuizi"
+								}
+							]
+						},
+						{
+							"title": {
+								"en": "Step 3: Field Boundary Reconstruction",
+								"sw": "Hatua ya 3: Ujenzi Upya wa Mipaka Shambani"
+							},
+							"points": [
+								{
+									"en": "Walked perimeter with landowners and witnesses",
+									"sw": "Mzingo uliotembelewa na wamiliki wa ardhi na mashahidi"
+								},
+								{
+									"en": "Identified existing beacons and restored missing markers",
+									"sw": "Beacon zilizopo zilitambuliwa na alama zilizopotea zilirejeshwa"
+								},
+								{
+									"en": "Captured high-density coordinate points",
+									"sw": "Vidhibiti vya kuradiani vya msongamano wa juu vilirekodiwa"
+								}
+							]
+						},
+						{
+							"title": {
+								"en": "Step 4: Data Processing & Adjustment",
+								"sw": "Hatua ya 4: Uchakataji wa Takwimu & Marekebisho"
+							},
+							"points": [
+								{
+									"en": "Coordinate transformation into UTM Arc 1960 system",
+									"sw": "Kubadilishwa kuradiani kwenye mfumo wa UTM Arc 1960"
+								},
+								{
+									"en": "Least squares adjustment of control network",
+									"sw": " Marekebisho ya squares madogo ya mtandao wa udhibiti"
+								},
+								{
+									"en": "Overlay with cadastral registry data",
+									"sw": "Uwekaji juu wa takwimu za usajili wa cadastral"
+								}
+							]
+						},
+						{
+							"title": {
+								"en": "Step 5: Subdivision Design & Legal Drafting",
+								"sw": "Hatua ya 5: Kubuni Ugawaji & Rasimu ya Kisheria"
+							},
+							"points": [
+								{
+									"en": "Parcel segmentation based on agreed ownership units",
+									"sw": "Ugawaji wa vipande kulingana na vitengo vilivyokubaliwa vya umiliki"
+								},
+								{
+									"en": "Generation of subdivision plan sheets",
+									"sw": "Uzalishaji wa kurasa za ramani za ugawaji"
+								},
+								{
+									"en": "Preparation for submission to land registry",
+									"sw": "Maandalizi ya uwasilishaji kwa usajili wa ardhi"
+								}
+							]
+						}
+					],
+					"images": [
+						{
+							"src": "/media/surveying/cadastral-surveys/03-01.jpg",
+							"alt": {
+								"en": "RTK GNSS receiver set up over a control point on the parcel",
+								"sw": "Kipokea cha RTK GNSS kilichowekwa juu ya kidhibiti kwenye kiwanja"
+							}
+						},
+						{
+							"src": "/media/surveying/cadastral-surveys/03-02.jpg",
+							"alt": {
+								"en": "Surveyor confirming a restored boundary beacon in the field",
+								"sw": "Mchunguzi akithibitisha beacon ya mipaka iliyorejeshwa shambani"
+							}
+						}
+					]
+				},
+				"outcome": {
+					"label": {
+						"en": "04 · Outcome (After Condition)",
+						"sw": "04 · Matokeo (Hali ya Baadaye)"
+					},
+					"intro": {
+						"en": "The intervention resulted in a fully resolved cadastral structure with legal and spatial clarity.",
+						"sw": "Uingiliaji ulisababisha muundo wa cadastral uliotatuliwa kikamilifu na uwazi wa kisheria na wa kimwili."
+					},
+					"deliverablesTitle": {
+						"en": "Key Deliverables",
+						"sw": "Matokeo Makuu"
+					},
+					"deliverables": [
+						{
+							"en": "Accurate subdivision plan approved for registration",
+							"sw": "Ramani sahihi ya ugawaji iliyoidhinishwa kwa usajili"
+						},
+						{
+							"en": "Restored and verified boundary beacons",
+							"sw": "Beacon za mipaka zilizorejeshwa na kuthibitishwa"
+						},
+						{
+							"en": "Elimination of overlapping parcel claims",
+							"sw": "Kuondolewa kwa madai ya vipande yanayopishana"
+						},
+						{
+							"en": "Digitally georeferenced cadastral dataset",
+							"sw": "Hifadhi ya takwimu za cadastral iliogeoreferensiwa kidijitali"
+						},
+						{
+							"en": "Submission-ready Ardhisasa-compliant documentation",
+							"sw": "Nyaraka tayari kwa uwasilishaji zinazozingatia Ardhisasa"
+						}
+					]
+				},
+				"impact": {
+					"label": {
+						"en": "05 · Project Impact",
+						"sw": "05 · Athari ya Mradi"
+					},
+					"items": [
+						{
+							"icon": "handshake-outline",
+							"text": {
+								"en": "Dispute resolved without litigation escalation",
+								"sw": "Migogoro imetatuliwa bila kuongezeka kwa kesi mahakamani"
+							}
+						},
+						{
+							"icon": "file-check-outline",
+							"text": {
+								"en": "Enabled formal title processing for all subdivided units",
+								"sw": "Imewezesha uchakataji rasmi wa hati kwa vitengo vyote vilivyogawanywa"
+							}
+						},
+						{
+							"icon": "trending-up",
+							"text": {
+								"en": "Increased land valuation potential due to legal clarity",
+								"sw": "Uwezo wa thamani ya ardhi umeongezeka kutokana na uwazi wa kisheria"
+							}
+						},
+						{
+							"icon": "database-outline",
+							"text": {
+								"en": "Provided a permanent geospatial reference dataset for future developments",
+								"sw": "Imetoa hifadhi ya kuduru ya jioreferensi kwa maendeleo ya siku zijazo"
+							}
+						},
+						{
+							"icon": "shield-check",
+							"text": {
+								"en": "Reduced risk exposure for buyers and developers",
+								"sw": "Hatari kwa wanunuzi na wasanidi miradi imepungua"
+							}
+						}
+					]
+				},
+				"techSummary": {
+					"label": {
+						"en": "06 · Technical Summary",
+						"sw": "06 · Muhtasari wa Kiufundi"
+					},
+					"componentHeader": {
+						"en": "Component",
+						"sw": "Kipengele"
+					},
+					"specHeader": {
+						"en": "Specification",
+						"sw": "Maelezo"
+					},
+					"rows": [
+						{
+							"component": {
+								"en": "Survey System",
+								"sw": "Mfumo wa Uchunguzi"
+							},
+							"specification": {
+								"en": "RTK GNSS + Total Station",
+								"sw": "RTK GNSS + Total Station"
+							}
+						},
+						{
+							"component": {
+								"en": "Coordinate System",
+								"sw": "Mfumo wa Kuradiani"
+							},
+							"specification": {
+								"en": "Arc 1960 / UTM Zone 37S",
+								"sw": "Arc 1960 / UTM Zone 37S"
+							}
+						},
+						{
+							"component": {
+								"en": "Methodology",
+								"sw": "Mbinu"
+							},
+							"specification": {
+								"en": "Cadastral Reconstruction + Boundary Reconciliation",
+								"sw": "Ujenzi Upya wa Cadastral + Upatanishaji wa Mipaka"
+							}
+						},
+						{
+							"component": {
+								"en": "Output",
+								"sw": "Matokeo"
+							},
+							"specification": {
+								"en": "Subdivision Plan + Verified Beacons",
+								"sw": "Ramani ya Ugawaji + Beacon Zilizothibitishwa"
+							}
+						},
+						{
+							"component": {
+								"en": "Compliance",
+								"sw": "Uzingatiaji"
+							},
+							"specification": {
+								"en": "Kenyan Land Act + Survey Act Cap 299",
+								"sw": "Sheria ya Ardhi ya Kenya + Sheria ya Upimaji Sura ya 299"
+							}
+						}
+					]
+				},
+				"engineeringNote": {
+					"label": {
+						"en": "07 · Final Engineering Note",
+						"sw": "07 · Kumbukumbu ya Mwisho ya Uhandisi"
+					},
+					"text": {
+						"en": "This project demonstrates how modern GNSS-based cadastral surveying eliminates ambiguity in land ownership boundaries while ensuring compliance with Kenyan land registration frameworks. SmartGrid Surveying integrates field precision + legal geospatial intelligence to convert disputed land into registrable, investment-ready assets.",
+						"sw": "Mradi huu unaonyesha jinsi uchunguzi wa kisasa wa cadastral unaotumia GNSS unavyoondoa utata katika mipaka ya umiliki wa ardhi huku ukidumisha uzingatiaji wa mifumo ya usajili wa ardhi ya Kenya. SmartGrid Surveying inaunganisha usahihi wa shamba + akili ya kijiografia ya kisheria kubadilisha ardhi inayogombaniwa kuwa mali zinazosajiliwa na tayari kwa uwekezaji."
+					}
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "finalCta",
+			"value": {
+				"tag": {
+					"en": "Next Steps",
+					"sw": "Hatua Zifuatazo"
+				},
+				"headline": {
+					"en": "Ready to Secure Your Land Boundaries?",
+					"sw": "Uko Tayari kulinda Mipaka ya Ardhi Yako?"
+				},
+				"description": {
+					"en": "Avoid costly disputes and delays in title processing.",
+					"sw": "Epuka migogoro ya gharama kubwa na ucheleweshaji wa uchakataji wa hati."
+				},
+				"descriptionTone": "muted",
+				"note": {
+					"en": "",
+					"sw": ""
+				},
+				"actionsLabel": {
+					"en": "Choose your action:",
+					"sw": "Chagua hatua yako:"
+				},
+				"actions": [
+					{
+						"icon": "calendar-check",
+						"label": {
+							"en": "Book Site Visit",
+							"sw": "Panga Ziara ya Tovuti"
+						},
+						"description": {
+							"en": "Walk your parcel with a licensed surveyor.",
+							"sw": "Tembea kiwanja chako na mchunguzi aliyeidhinishwa."
+						},
+						"href": "mailto:smartgridsurveying@gmail.com?subject=Site Visit Booking: Cadastral Survey&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a site visit for a cadastral survey.%0D%0A%0D%0ALocation (County / Area):%0D%0AParcel size:%0D%0APreferred date & time:%0D%0A%0D%0AThank you."
+					},
+					{
+						"icon": "cash-multiple",
+						"label": {
+							"en": "Get Survey Quote",
+							"sw": "Pata Nukuu ya Uchunguzi"
+						},
+						"description": {
+							"en": "Accurate pricing after a registry check.",
+							"sw": "Bei sahihi baada ya ukaguzi wa usajili."
+						},
+						"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Cadastral Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Cadastral Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+					},
+					{
+						"icon": "whatsapp",
+						"label": {
+							"en": "WhatsApp Surveyor Now",
+							"sw": "WhatsApp Mchunguzi Sasa"
+						},
+						"description": {
+							"en": "Fast answers from a real surveyor.",
+							"sw": "Majibu ya haraka kutoka kwa mchunguzi halisi."
+						},
+						"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20talk%20to%20a%20surveyor%20about%20my%20land%20boundaries."
+					},
+					{
+						"icon": "map-search-outline",
+						"label": {
+							"en": "Check Parcel Feasibility",
+							"sw": "Angalia Uwezekano wa Kiwanja"
+						},
+						"description": {
+							"en": "We verify registry status before you buy.",
+							"sw": "Tunathibitisha hali ya usajili kabla ya kununua."
+						},
+						"href": "/contact"
+					}
+				],
+				"actionIconFallback": "",
+				"watermark": "vector-square",
+				"columns": "4",
+				"align": "left",
+				"id": ""
+			}
+		}
+	]
+}

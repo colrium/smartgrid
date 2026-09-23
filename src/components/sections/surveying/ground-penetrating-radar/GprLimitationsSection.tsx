@@ -3,7 +3,7 @@
 import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionHeader } from "@/components/sections/home";
-import { Blob } from "@/components/sections/home/decor";
+import { Blob } from "@/components/sections/shared/decor";
 import { ReactElement } from "react";
 
 interface LimitationItem {
@@ -21,20 +21,32 @@ interface LimitationsContent {
 	noteIcon?: string | null;
 }
 
+export interface GprLimitationsData {
+	tag?: string | null;
+	headline: string;
+	description?: string | null;
+	items?: LimitationItem[] | null;
+	note?: string | null;
+	noteIcon?: string | null;
+}
+
 const FALLBACK_ICONS = ["earth", "grid-large", "water-outline", "arrow-down-bold"];
 
-export function GprLimitationsSection(): ReactElement {
+export function GprLimitationsSection({ data, id }: { data?: GprLimitationsData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
-	const section = t("surveying/ground-penetrating-radar:limitations", {
-		returnObjects: true,
-	}) as unknown as LimitationsContent;
+	// Keystatic-owned content when `data` is provided (M11 `gprLimitations`
+	// unique section); legacy locale strings otherwise.
+	const section = (data ??
+		(t("surveying/ground-penetrating-radar:limitations", {
+			returnObjects: true,
+		}) as unknown as LimitationsContent)) as LimitationsContent;
 	const items = Array.isArray(section?.items) ? section.items : [];
 
 	if (!section?.headline && items.length === 0) return <></>;
 
 	return (
 		<section
-			id="limitations"
+			id={id ?? "limitations"}
 			className="scroll-mt-36 py-20 sm:py-24 relative overflow-hidden bg-surface"
 		>
 			<Blob className="w-[26rem] h-[26rem] bg-primary-100/60 -bottom-24 -left-24" opacity={0.5} />

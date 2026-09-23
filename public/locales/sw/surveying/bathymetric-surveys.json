@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "UCHUNGUZI WA BATHYMETRIC",
 		"title": "HUDUMA ZA UCHUNGUZI WA BATHYMETRIC & HYDROGRAPHIC NCHINI KENYA",
 		"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-01.jpg",
@@ -10,12 +11,14 @@
 		}
 	},
 	"whatIsBathymetricSurveys": {
+		"type": "split-media",
 		"tag": "Topografia ya Chini ya Maji",
 		"headline": "Uchunguzi wa Bathymetric ni Nini?",
 		"image": "/media/surveying/bathymetric-surveys/bathymetric-surveys-09.png",
 		"description": "Uchunguzi wa bathymetric unahusisha kupima kina cha maji na kuchora ardhi ya chini ya maji. Mbinu hii ni muhimu kwa kuelewa viwango vya mashapo, kiasi cha maji, na hatari za chini ya maji. Inasaidia ujenzi salama, usimamizi bora wa rasilimali za maji, na ulinzi wa mazingira makini. SmartGrid Surveying hutumia echo sounders za mwonekano wa juu, mifumo ya uwekaji ya GNSS, na boti za uchunguzi zinazodhibitiwa kwa mbali kufikia maeneo ya maji ya kina kifupi na yaliyozuiliwa kwa usalama na ufanisi."
 	},
 	"whyBathymetricCritical": {
+		"type": "card-grid",
 		"tag": "Kwanini Ni Muhimu Kenya",
 		"headline": "Kwanini Uchunguzi wa Bathymetric Ni Muhimu nchini Kenya",
 		"description": "Miundombinu ya maji ya Kenya inategemea data sahihi ya chini ya maji kwa:",
@@ -30,6 +33,7 @@
 		]
 	},
 	"bathymetricWorkflow": {
+		"type": "process",
 		"tag": "Mchakato wa Kiwango cha Uhandisi",
 		"headline": "MCHAKATO WETU WA UCHUNGUZI WA HYDROGRAPHIC",
 		"description": "Mwelekeo ulio na muundo wa uchunguzi chini ya maji kwa matokeo ya kiwango cha uhandisi:",
@@ -68,6 +72,7 @@
 		"outcome": "Dataset kamili ya hydrographic tayari kwa muundo wa uhandisi & maamuzi"
 	},
 	"equipmentTechnology": {
+		"type": "unique",
 		"tag": "Vifaa na Teknolojia",
 		"headline": "VIFAA NA TEKNOLOJIA",
 		"description": "Tunatumia:\n\n• Echo sounders za mwonekano wa juu (mifumo ya single beam)\n• Mifumo ya uwekaji wa GNSS RTK\n• Boti za uchunguzi kwa ufikiaji wa maji ya kina na ya kina\n• Programu ya GIS na uundaji wa mfano wa hydrographic\n\nRejea ya kijiografia ya ardhi + maji inahakikisha uendelevu kamili wa ardhi.",
@@ -79,6 +84,7 @@
 		]
 	},
 	"deliverables": {
+		"type": "deliverables",
 		"tag": "Unavyopokea",
 		"headline": "UNVYOPOKEA (MATOKEO)",
 		"description": "Matokeo ya hydrographic ya kiwango cha uhandisi:",
@@ -141,6 +147,7 @@
 		]
 	},
 	"whySmartGridBathymetric": {
+		"type": "card-grid",
 		"tag": "Faida Zetu",
 		"headline": "KWA NINI SMARTGRID BATHYMETRIC SURVEYS",
 		"items": [
@@ -153,6 +160,7 @@
 		]
 	},
 	"technicalLimitations": {
+		"type": "unique",
 		"tag": "Uwazi",
 		"headline": "VIPINGAMIZI VYA KIUFUNDI (KUJENGA AMANA)",
 		"description": "Usahihi wa bathymetric unategemea:",
@@ -168,6 +176,7 @@
 		]
 	},
 	"beforeAfter": {
+		"type": "unique",
 		"tag": "Onyesho la Thamani",
 		"headline": "KABLA vs BADA YA THAMANI YA UCHUNGUZI",
 		"flipHint": "Bofya au gusa kugeuza",
@@ -193,6 +202,7 @@
 		}
 	},
 	"finalCta": {
+		"type": "cta-closing",
 		"tag": "Tayari Wakati Wote",
 		"headline": "TAYARI KUCHUNGUZA KIOTU CHAKO CHA MAJI?",
 		"description": "Tunajibu kwa haraka mahitaji ya uchunguzi ya uhandisi na mazingira ya dharura.",
@@ -219,6 +229,7 @@
 		]
 	},
 	"damsLakesSeaOcean": {
+		"type": "card-grid",
 		"tag": "Miundombinu ya Maji na Mazingira",
 		"headline": "MABWAWA, MAZIWA, BAHARI NA OCEAN",
 		"images": [
@@ -260,6 +271,7 @@
 		]
 	},
 	"applications": {
+		"type": "card-grid",
 		"tag": "Matumizi Muhimu",
 		"headline": "Matumizi Yetu ya Uchunguzi wa Bathymetric katika SmartGrid Surveying",		
 		"description": "",

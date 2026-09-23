@@ -1,0 +1,250 @@
+{
+	"slug": "Contact",
+	"title": "Contact (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "contactHero",
+			"value": {
+				"tag": {
+					"en": "Get In Touch",
+					"sw": "Wasiliana Nasi"
+				},
+				"headline": {
+					"en": "Let's talk about your surveying or engineering project",
+					"sw": "Hebu tuzungumze kuhusu mradi wako wa upimaji au uhandisi"
+				},
+				"description": {
+					"en": "Whether you need land surveying, aerial surveys, civil engineering, equipment hire, or drone photography, our team is ready to help.",
+					"sw": "Iwe unahitaji upimaji wa ardhi, uchunguzi wa angani, uhandisi wa kiraia, ukodishaji wa vifaa, au upigaji picha kwa ndege zisizo na rubani, timu yetu iko tayari kukusaidia."
+				},
+				"badge": {
+					"text": {
+						"en": "Response within 24 hours",
+						"sw": "Majibu ndani ya saa 24"
+					},
+					"status": "active"
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "cardGrid",
+			"value": {
+				"tag": {
+					"en": "Reach Out",
+					"sw": "Fikia Nasi"
+				},
+				"headline": {
+					"en": "Talk to Us",
+					"sw": "Zungumza Nasi"
+				},
+				"subheading": {
+					"en": "",
+					"sw": ""
+				},
+				"description": {
+					"en": "Reach out to our experts via call or email for service inquiries, support, or proposals.",
+					"sw": "Wasiliana na wataalamu wetu kwa simu au barua pepe kwa maswali ya huduma, msaada, au mapendekezo."
+				},
+				"items": [
+					{
+						"icon": "phone",
+						"title": {
+							"en": "+254 107 393 023",
+							"sw": "+254 107 393 023"
+						},
+						"description": {
+							"en": "HQ (Ruiru)",
+							"sw": "HQ (Ruiru)"
+						},
+						"image": "",
+						"href": "tel:+254107393023",
+						"accent": "primary"
+					},
+					{
+						"icon": "phone",
+						"title": {
+							"en": "+254 701 618 282",
+							"sw": "+254 701 618 282"
+						},
+						"description": {
+							"en": "Nairobi",
+							"sw": "Nairobi"
+						},
+						"image": "",
+						"href": "tel:+254701618282",
+						"accent": "primary-500"
+					},
+					{
+						"icon": "email",
+						"title": {
+							"en": "info@smartgridsurveying.com",
+							"sw": "info@smartgridsurveying.com"
+						},
+						"description": {
+							"en": "Queries",
+							"sw": "Queries"
+						},
+						"image": "",
+						"href": "mailto:info@smartgridsurveying.com?subject=General Inquiry&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to make an inquiry.%0D%0A%0D%0AName:%0D%0AMessage:%0D%0A%0D%0AThank you.",
+						"accent": "primary-700"
+					},
+					{
+						"icon": "gmail",
+						"title": {
+							"en": "smartgridsurveying@gmail.com",
+							"sw": "smartgridsurveying@gmail.com"
+						},
+						"description": {
+							"en": "Quotes",
+							"sw": "Quotes"
+						},
+						"image": "",
+						"href": "mailto:smartgridsurveying@gmail.com?subject=General Inquiry&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to make an inquiry.%0D%0A%0D%0AName:%0D%0AMessage:%0D%0A%0D%0AThank you.",
+						"accent": "gmail"
+					},
+					{
+						"icon": "whatsapp",
+						"title": {
+							"en": "Chat on WhatsApp",
+							"sw": "Zungumza kwenye WhatsApp"
+						},
+						"description": {
+							"en": "Quick",
+							"sw": "Quick"
+						},
+						"image": "",
+						"href": "https://wa.me/254107393023",
+						"accent": "whatsapp"
+					},
+					{
+						"icon": "calendar",
+						"title": {
+							"en": "Schedule via Calendly",
+							"sw": "Panga kwa Calendly"
+						},
+						"description": {
+							"en": "Scheduled",
+							"sw": "Scheduled"
+						},
+						"image": "",
+						"href": "https://calendly.com/smartgridsurveying",
+						"accent": "calendly"
+					}
+				],
+				"columns": "3",
+				"align": "left",
+				"tone": "default",
+				"headerRow": true,
+				"cardDensity": "comfortable",
+				"cardIconSize": "md",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "contactOffices",
+			"value": {
+				"tag": {
+					"en": "Our Offices",
+					"sw": "Ofisi Zetu"
+				},
+				"headline": {
+					"en": "Reach Our Offices",
+					"sw": "Fikia Ofisi Zetu"
+				},
+				"description": {
+					"en": "Visit our head office for professional consultation on land, aerial, and engineering surveys.",
+					"sw": "Tembelea ofisi kuu yetu kwa mashauriano ya kitaalamu kuhusu upimaji wa ardhi, angani, na uhandisi."
+				},
+				"items": [
+					{
+						"id": "hq-nairobi",
+						"label": "SmartGrid Surveying HQ",
+						"city": "Ruiru",
+						"country": "Kenya",
+						"flag": "🇰🇪",
+						"address_lines": [
+							{
+								"en": "SmartGrid Surveying HQ, Nord Mall, Ruiru, Kenya",
+								"sw": "SmartGrid Surveying HQ, Nord Mall, Ruiru, Kenya"
+							}
+						],
+						"phone": "+254 10 7393023",
+						"email": "smartgridsurveying@gmail.com",
+						"hours": "Mon–Fri 08:00–17:00 EAT",
+						"type": "hq",
+						"note": {
+							"en": "Contact us to discuss your surveying, civil engineering, equipment hire, or drone services requirements.",
+							"sw": "Wasiliana nasi kujadili mahitaji yako ya upimaji, uhandisi wa kiraia, ukodishaji wa vifaa, au huduma za droni."
+						},
+						"lat": -1.1466,
+						"lng": 36.9609
+					},
+					{
+						"id": "field-office-nairobi",
+						"label": "TRM Mall, Thika Rd",
+						"city": "Nairobi",
+						"country": "Kenya",
+						"flag": "🇰🇪",
+						"address_lines": [
+							{
+								"en": "SmartGrid Field Office, 2nd Floor, TRM Mall, Thika Rd, Nairobi, Kenya",
+								"sw": "SmartGrid Field Office, 2nd Floor, TRM Mall, Thika Rd, Nairobi, Kenya"
+							}
+						],
+						"phone": "+254 701 618 282",
+						"email": "smartgridsurveying@gmail.com",
+						"hours": "Mon–Fri 08:30–17:30 EAT",
+						"type": "field",
+						"note": {
+							"en": "",
+							"sw": ""
+						},
+						"lat": -1.2188769,
+						"lng": 36.8876524
+					}
+				],
+				"cta": {
+					"label": {
+						"en": "Book a consultation",
+						"sw": "Panga mashauriano"
+					},
+					"href": "/contact?reason=book-consultation#contact-form",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "contactForm",
+			"value": {
+				"tag": {
+					"en": "Send a Message",
+					"sw": "Tuma Ujumbe"
+				},
+				"headline": {
+					"en": "Start the conversation",
+					"sw": "Anza mazungumzo"
+				},
+				"description": {
+					"en": "Fill in the form and the right member of our team will respond within one business day.",
+					"sw": "Jaza fomu na mwanachama sahihi wa timu yetu atajibu ndani ya siku moja ya kazi."
+				},
+				"submitLabel": {
+					"en": "Send Message",
+					"sw": "Tuma Ujumbe"
+				},
+				"successHeading": {
+					"en": "Message received",
+					"sw": "Ujumbe umepokelewa"
+				},
+				"successBody": {
+					"en": "Thank you for reaching out. A member of our team will respond to your enquiry within one business day.",
+					"sw": "Asante kwa kuwasiliana nasi. Mwanachama wa timu yetu atajibu swali lako ndani ya siku moja ya kazi."
+				},
+				"id": "contact-form"
+			}
+		}
+	]
+}

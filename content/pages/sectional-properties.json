@@ -1,0 +1,1051 @@
+{
+	"slug": "Sectional Properties",
+	"title": "Sectional Properties (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "hero",
+			"value": {
+				"headline": {
+					"en": "Sectional Properties, Plans and Units.",
+					"sw": "Mali za Sehemu, Mipango na Vitengo."
+				},
+				"title": {
+					"en": "",
+					"sw": ""
+				},
+				"description": {
+					"en": "Sectional Property Surveys & Sectional Plan Preparation in Kenya.\n\nWe prepare geo-referenced sectional plans for apartments, offices, and mixed-use developments for registration under the Sectional Properties Act, 2020.",
+					"sw": "Uchunguzi wa Mali za Sehemu na Maandalizi ya Mipango ya Sehemu Kenya.\n\nTunaandaa mipango ya sehemu iliyorejelewa kijiografia kwa vyumba vya kufikia, ofisi, na maendeleo ya matumizi mchanganyiko kwa ajili ya usajili chini ya Sheria ya Mali za Sehemu, 2020."
+				},
+				"image": "/media/surveying/sectional-properties/AG8ng.jpg",
+				"layout": "bottom",
+				"frame": false,
+				"scrollCue": false,
+				"cueLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"footnoteItems": [],
+				"ctaPrimary": {
+					"label": {
+						"en": "Request Sectional Survey Quote",
+						"sw": "Omba Nukuu ya Uchunguzi wa Mali za Sehemu"
+					},
+					"href": "mailto:info@smartgridsurveying.com?subject=Request%20for%20Sectional%20Property%20Survey%20Quote&body=Dear%20SmartGrid%20Surveying%20Team,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20quotation%20for%20a%20Sectional%20Property%20Survey.%20Please%20find%20my%20project%20details%20below:%0D%0A%0D%0AProject%20Name:%20%0D%0ALocation:%20%0D%0AProperty%20Type:%20(e.g.%20apartment,%20commercial,%20mixed-use)%0D%0ANumber%20of%20Units:%20%0D%0AAdditional%20Information:%20%0D%0A%0D%0AThank%20you.%0D%0A%0D%0ABest%20regards,%0D%0A[Your%20Full%20Name]%0D%0A[Your%20Phone%20Number]",
+					"icon": "",
+					"iconPosition": "end",
+					"trailingArrow": "auto"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "WhatsApp for Compliance Review",
+						"sw": "WhatsApp kwa Ukaguzi wa Uzingatiaji"
+					},
+					"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20a%20sectional%20properties%20compliance%20review%20for%20my%20development.%20Please%20advise%20on%20the%20next%20steps.",
+					"icon": "whatsapp"
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "introText",
+			"value": {
+				"tag": {
+					"en": "Certified sectional property surveys",
+					"sw": "Uchunguzi wa mali za sehemu ulioidhinishwa"
+				},
+				"headline": {
+					"en": "Reliable. Scalable. Fast. Effective.",
+					"sw": "Ya Kuaminika. Inaweza Kupanuliwa. Haraka. Yenye Ufanisi."
+				},
+				"description": {
+					"en": "SmartGrid provides certified sectional property surveys (strata plans) that comply with local land registry requirements. \n\nWe map common property, exclusive use areas, unit extents and prepare certified floor plans and area schedules ready for submission.",
+					"sw": "SmartGrid hutoa uchunguzi wa mali za sehemu ulioidhinishwa (mipango ya strata) unaozingatia mahitaji ya usajili wa ardhi wa eneo. \n\nTunaweka ramani ya mali ya pamoja, sehemu za matumizi ya kipekee, ukubwa wa vitengo na kuandaa mipango ya sakafu iliyoidhinishwa na ratiba za maeneo tayari kwa uwasilishaji."
+				},
+				"tone": "default",
+				"align": "left",
+				"split": false,
+				"cta": {
+					"label": {
+						"en": "Start your Survey with Us!",
+						"sw": "Anza Uchunguzi wa Mali za Sehemu Nasi!"
+					},
+					"href": "/aerial-drones/drone-imagery-surveys",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "sectionalWhatIs",
+			"value": {
+				"tag": {
+					"en": "Sectional Properties Act, 2020",
+					"sw": "Sheria ya Mali za Sehemu, 2020"
+				},
+				"headline": {
+					"en": "What is Sectional Property?",
+					"sw": "Mali za Sehemu ni nini?"
+				},
+				"description": {
+					"en": "A sectional property is a building divided into individually owned units (apartments, offices, shops) where each owner receives a title deed and shares common areas.",
+					"sw": "Mali ya sehemu ni jengo lililogawanywa katika vitengo vinavyomilikiwa kibinafsi (vyumba vya kufikia, ofisi, maduka) ambapo kila mmiliki hupata hati ya umiliki na kushiriki maeneo ya pamoja."
+				},
+				"items": [
+					{
+						"icon": "door-open",
+						"title": {
+							"en": "Private Unit Ownership",
+							"sw": "Umiliki wa Kitengo Binafsi"
+						},
+						"points": [
+							{
+								"en": "Each apartment/office unit is individually owned.",
+								"sw": "Kila chumba au kitengo cha ofisi kinamilikiwa kibinafsi."
+							},
+							{
+								"en": "A title deed is issued for the specific unit.",
+								"sw": "Hati ya umiliki inatolewa kwa kitengo hicho mahususi."
+							},
+							{
+								"en": "The owner has exclusive rights to occupy, lease, or sell their unit.",
+								"sw": "Mmiliki ana haki za kipekee za kukaa, kukodisha, au kuuza kitengo chake."
+							}
+						],
+						"impactsLabel": {
+							"en": "",
+							"sw": ""
+						},
+						"impacts": []
+					},
+					{
+						"icon": "elevator",
+						"title": {
+							"en": "Common Property Ownership",
+							"sw": "Umiliki wa Mali ya Pamoja"
+						},
+						"points": [
+							{
+								"en": "Shared spaces like corridors, lifts, gardens, parking, and recreational areas.",
+								"sw": "Nafasi zinazoshirikiwa kama makoridori, lifti, bustani, maegesho na maeneo ya mapumziko."
+							},
+							{
+								"en": "Jointly owned by all unit holders.",
+								"sw": "Vinamilikiwa pamoja na wamiliki wote wa vitengo."
+							},
+							{
+								"en": "Managed collectively through the owners' association.",
+								"sw": "Husimamiwa kwa pamoja kupitia chama cha wamiliki."
+							}
+						],
+						"impactsLabel": {
+							"en": "",
+							"sw": ""
+						},
+						"impacts": []
+					},
+					{
+						"icon": "chart-donut",
+						"title": {
+							"en": "Unit Factor Allocation",
+							"sw": "Mgawanyo wa Kipengele cha Kitengo (Unit Factor)"
+						},
+						"points": [
+							{
+								"en": "Determines each owner's share in common property.",
+								"sw": "Huamua hisa ya kila mmiliki katika mali ya pamoja."
+							},
+							{
+								"en": "Based on unit size/value relative to the whole development.",
+								"sw": "Inatokana na ukubwa au thamani ya kitengo ikilinganishwa na maendeleo yote."
+							}
+						],
+						"impactsLabel": {
+							"en": "Impacts:",
+							"sw": "Huathiri:"
+						},
+						"impacts": [
+							{
+								"en": "Contribution to maintenance costs",
+								"sw": "Mchango wa gharama za matunzio"
+							},
+							{
+								"en": "Voting rights in the association",
+								"sw": "Haki za kupiga kura katika chama"
+							},
+							{
+								"en": "Share of common property",
+								"sw": "Hisa ya mali ya pamoja"
+							}
+						]
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "gallery",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "SECTIONAL SERVICES",
+					"sw": "HUDUMA ZA SEHEMU"
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"image": "/media/surveying/sectional-properties/sectional-title-plans.jpeg",
+						"title": {
+							"en": "Sectional Title Plans",
+							"sw": "Mipango ya Hatimiliki za Sehemu"
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/surveying/sectional-properties/unit-surveys-area-schedules.jpeg",
+						"title": {
+							"en": "Unit Surveys & Area Schedules",
+							"sw": "Uchunguzi wa Vitengo na Ratiba za Maeneo"
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/surveying/sectional-properties/boundary-encroachment-checks.jpeg",
+						"title": {
+							"en": "Boundary & Encroachment Checks",
+							"sw": "Ukaguzi wa Mipaka na Uvamizi"
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/surveying/sectional-properties/3d-scanning-as-built-survey.jpeg",
+						"title": {
+							"en": "3D Scanning and As-built survey",
+							"sw": "Uchanganuzi wa 3D na Uchunguzi wa As-built"
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					}
+				],
+				"layout": "grid",
+				"columns": "4",
+				"tone": "default",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "sectionalServicesDetail",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "Our Sectional Property Services",
+					"sw": "Huduma Zetu za Mali za Sehemu"
+				},
+				"description": {
+					"en": "Comprehensive services from sectional plans to 3D as-builts — designed for accuracy, compliance, and efficiency.",
+					"sw": "Huduma kamili kuanzia mipango ya sehemu hadi as-builts za 3D — iliyoundwa kwa usahihi, uzingatiaji, na ufanisi."
+				},
+				"items": [
+					{
+						"title": {
+							"en": "Sectional Title Plans",
+							"sw": "Mipango ya Hatimiliki za Sehemu"
+						},
+						"description": {
+							"en": "Prepare and certify sectional title / strata plans for new developments and subdivisions into units.",
+							"sw": "Andaa na uidhinishe mipango ya hatimiliki ya sehemu / strata kwa maendeleo mapya na migawanyo katika vitengo."
+						}
+					},
+					{
+						"title": {
+							"en": "Unit Surveys & Area Schedules",
+							"sw": "Uchunguzi wa Vitengo na Ratiba za Maeneo"
+						},
+						"description": {
+							"en": "Accurate internal and external unit measurements, net/gross floor area calculations and schedules for record.",
+							"sw": "Vipimo sahihi vya ndani na nje vya vitengo, mahesabu ya maeneo ya wavu/jumla na ratiba za kumbukumbu."
+						}
+					},
+					{
+						"title": {
+							"en": "Boundary & Encroachment Checks",
+							"sw": "Ukaguzi wa Mipaka na Uvamizi"
+						},
+						"description": {
+							"en": "Confirm boundaries, check party wall lines and identify encroachments affecting sectional plans.",
+							"sw": "Thibitisha mipaka, angalia mistari ya kuta za pamoja na tambua uvamizi unaoathiri mipango ya sehemu."
+						}
+					},
+					{
+						"title": {
+							"en": "3D Scanning & As-Builts",
+							"sw": "Uchanganuzi wa 3D na As-Builts"
+						},
+						"description": {
+							"en": "Laser scanning (terrestrial LiDAR) for multi-storey complexes and complex geometries — rapid, detailed point clouds.",
+							"sw": "Uchanganuzi wa laser (LiDAR ya ardhini) kwa majengo ya orofa nyingi na jiometri ngumu — point clouds za haraka na za kina."
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "sectionalWorkflow",
+			"value": {
+				"tag": {
+					"en": "Process",
+					"sw": "Mchakato"
+				},
+				"headline": {
+					"en": "Sectional Property Survey Process",
+					"sw": "Mchakato wa Uchunguzi wa Mali za Sehemu"
+				},
+				"description": {
+					"en": "Seven verified stages take your building from the first site visit to a lodged sectional plan — you always know exactly where your plan stands.",
+					"sw": "Hatua saba zilizothibitishwa zinachukua jengo lako kutoka ziara ya kwanza hadi mpango wa sehemu uliowasilishwa — kila wakati unajua ni wapi mpango wako ulipo."
+				},
+				"steps": [
+					{
+						"phase": "FIELD",
+						"label": {
+							"en": "Site & Building Data Collection",
+							"sw": "Mkusanyiko wa Data za Tovuti na Jengo"
+						},
+						"description": {
+							"en": "We visit the site to capture the building footprint, verify the mother title and gather existing architectural documents.",
+							"sw": "Tunatembelea tovuti kunasa alama ya jengo, kuthibitisha hati-kuu na kukusanya nyaraka zilizopo za usanifu."
+						}
+					},
+					{
+						"phase": "OFFICE",
+						"label": {
+							"en": "Architectural Plan Review & Verification",
+							"sw": "Uhakiki na Uthibitisho wa Mipango ya Usanifu"
+						},
+						"description": {
+							"en": "Approved drawings are cross-checked against the physical structure and county approvals before any measurement begins.",
+							"sw": "Michoro iliyoidhinishwa hulinganishwa na muundo halisi na uidhinisho vya kaunti kabla ya kuanza vipimo."
+						}
+					},
+					{
+						"phase": "FIELD",
+						"label": {
+							"en": "Field Survey & Control Establishment (GNSS RTK)",
+							"sw": "Uchunguzi wa Shamba na Uwekaji wa Udhibiti (GNSS RTK)"
+						},
+						"description": {
+							"en": "GNSS RTK receivers and robotic total stations establish geo-referenced control tied to registry beacons.",
+							"sw": "Vipokezi vya GNSS RTK na total stations za roboti huweka udhibiti uliorejelewa kijiografia unaounganishwa na alama za rejesta."
+						}
+					},
+					{
+						"phase": "FIELD",
+						"label": {
+							"en": "Unit Delineation & Measurement",
+							"sw": "Ufafanuzi na Upimaji wa Vitengo"
+						},
+						"description": {
+							"en": "Every unit is measured — floors, walls and ceilings — fixing boundaries in line with Section 10 of the Act.",
+							"sw": "Kila kitengo kinapimwa — sakafu, kuta na madaraja — ukirekebisha mipaka kwa mujibu wa Sehemu ya 10 ya Sheria."
+						}
+					},
+					{
+						"phase": "OFFICE",
+						"label": {
+							"en": "Geo-referencing & Coordinate Assignment",
+							"sw": "Kurejelewa Kijiografia na Ugawaji wa Kuratibu"
+						},
+						"description": {
+							"en": "Registry-aligned coordinates are assigned to each unit and to the common property.",
+							"sw": "Kuratibu zinazolingana na rejesta zinapewa kwa kila kitengo na mali ya pamoja."
+						}
+					},
+					{
+						"phase": "OFFICE",
+						"label": {
+							"en": "Sectional Plan Drafting (CAD)",
+							"sw": "Uchoraji wa Mpango wa Sehemu (CAD)"
+						},
+						"description": {
+							"en": "The sectional plan is drafted in CAD with the unit schedule, unit factors and common-property extents.",
+							"sw": "Mpango wa sehemu unachorwa kwa CAD ukiwa na ratiba ya vitengo, vipengele vya vitengo na ukubwa wa mali ya pamoja."
+						}
+					},
+					{
+						"phase": "REGISTRY",
+						"label": {
+							"en": "Submission for Registration",
+							"sw": "Wasilishaji kwa Usajili"
+						},
+						"description": {
+							"en": "The signed plan is lodged with the survey authority, and we support registration through Ardhisasa.",
+							"sw": "Mpango uliosainiwa unawasilishwa kwa mamlaka ya upimaji, na tunaunga mkono usajili kupitia Ardhisasa."
+						}
+					}
+				],
+				"outcome": {
+					"en": "Sectional plan registered — individual unit titles issue.",
+					"sw": "Mpango wa sehemu umesajiliwa — hati za vitengo binafsi zinatolewa."
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "deliverables",
+			"value": {
+				"tag": {
+					"en": "What you receive",
+					"sw": "Unachopokea"
+				},
+				"headline": {
+					"en": "Deliverables You Receive",
+					"sw": "Matokeo Unayopokea"
+				},
+				"description": {
+					"en": "Every sectional plan package is prepared for lands-registry acceptance — CAD, PDF and schedules in the formats the registry expects.",
+					"sw": "Kila kifurushi cha mpango wa sehemu huandaliwa kwa ajiliya ukubaliaji wa ofisi ya rejesta ya ardhi — CAD, PDF na ratiba katika muundo unaoatarajiwa na rejesta."
+				},
+				"liveLabel": {
+					"en": "Deliverable package",
+					"sw": "Kifurushi cha matokeo"
+				},
+				"checks": [
+					{
+						"en": "Signed & stamped by a licensed surveyor",
+						"sw": "Imesainiwa na kupewa mohoro na mchunguzi aliyoidhinishwa"
+					},
+					{
+						"en": "Registry-ready formats",
+						"sw": "Muundo tayari kwa rejesta"
+					},
+					{
+						"en": "Ardhisasa-compatible data",
+						"sw": "Data zinazooana na Ardhisasa"
+					}
+				],
+				"items": [
+					{
+						"title": {
+							"en": "Registered Sectional Plan",
+							"sw": "Mpango wa Sehemu Uliyosajiliwa"
+						},
+						"format": {
+							"en": "CAD + PDF",
+							"sw": "CAD + PDF"
+						},
+						"icon": "vector-square",
+						"image": {
+							"en": "/media/surveying/sectional-properties/sectional-title-plans.jpeg",
+							"sw": "/media/surveying/sectional-properties/sectional-title-plans.jpeg"
+						},
+						"description": {
+							"en": "The certified sectional plan drafted in CAD and issued as a signed PDF, ready for lodgement at the survey office.",
+							"sw": "Mpango wa sehemu ulioidhinishwa uliochorwa kwa CAD na kutolewa kama PDF iliyosainiwa, tayari kwa kuwasilishwa ofisini."
+						}
+					},
+					{
+						"title": {
+							"en": "Unit Boundaries & Floor Layouts",
+							"sw": "Mipaka ya Vitengo na Ramani za Sakafu"
+						},
+						"format": {
+							"en": "Floor by floor",
+							"sw": "Sakafu kwa sakafu"
+						},
+						"icon": "floor-plan",
+						"image": {
+							"en": "/media/surveying/sectional-properties/unit-surveys-area-schedules.jpeg",
+							"sw": "/media/surveying/sectional-properties/unit-surveys-area-schedules.jpeg"
+						},
+						"description": {
+							"en": "Clear delineation of every unit — floors, walls and ceilings — with net and gross floor areas computed per level.",
+							"sw": "Ufafanuzi wazi wa kila kitengo — sakafu, kuta na madaraja — pamoja na maeneo ya wavu na jumla yaliyohesabiwa kwa kila ngazi."
+						}
+					},
+					{
+						"title": {
+							"en": "Geo-referenced Coordinates",
+							"sw": "Kuratibu Zilizorejelewa Kijiografia"
+						},
+						"format": {
+							"en": "Registry control",
+							"sw": "Udhibiti wa rejesta"
+						},
+						"icon": "crosshairs-gps",
+						"image": {
+							"en": "/media/deliverables/georeferenced-coordinates.jpg",
+							"sw": "/media/deliverables/georeferenced-coordinates.jpg"
+						},
+						"description": {
+							"en": "Unit and common-property corners tied to national registry beacons for survey-office and Ardhisasa acceptance.",
+							"sw": "Vipimo vya vitengo na mali ya pamoja vimelifungwa kwa alama za rejesta ya kitaifa kwa ukubaliaji wa ofisi ya uchunguzi na Ardhisasa."
+						}
+					},
+					{
+						"title": {
+							"en": "Unit Factor Schedule",
+							"sw": "Ratiba ya Kipengele cha Kitengo"
+						},
+						"format": {
+							"en": "Excel + PDF",
+							"sw": "Excel + PDF"
+						},
+						"icon": "table-large",
+						"image": {
+							"en": "/media/deliverables/unit-factor-schedules.jpg",
+							"sw": "/media/deliverables/unit-factor-schedules.jpg"
+						},
+						"description": {
+							"en": "Each owner's proportional share of the common property — maintenance levies and voting rights computed fairly.",
+							"sw": "Hisa ya uwiano ya kila mmiliki katika mali ya pamoja — ada za matunzio na haki za kupiga kura zinahesabiwa kwa usawa."
+						}
+					},
+					{
+						"title": {
+							"en": "Survey Report for Lands Registry",
+							"sw": "Ripoti ya Uchunguzi kwa Rejesta ya Ardhi"
+						},
+						"format": {
+							"en": "Signed report",
+							"sw": "Ripoti iliyosainiwa"
+						},
+						"icon": "file-certificate",
+						"image": {
+							"en": "/media/deliverables/survey-reports-for-the-lands-registry.jpg",
+							"sw": "/media/deliverables/survey-reports-for-the-lands-registry.jpg"
+						},
+						"description": {
+							"en": "A narrative report by the licensed surveyor documenting methodology, control, boundaries and easements.",
+							"sw": "Ripoti ya maelezo na mchunguzi aliyoidhinishwa inayoelezea mbinu, udhibiti, mipaka na urahisi wa njia."
+						}
+					},
+					{
+						"title": {
+							"en": "Support for Ardhisasa Submission",
+							"sw": "Msaada wa Kuwasilisha Ardhisasa"
+						},
+						"format": {
+							"en": "Digital lodgement",
+							"sw": "Uwasilishaji wa kidijitali"
+						},
+						"icon": "cloud-upload-outline",
+						"image": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "We prepare and upload the plan data in the format Ardhisasa expects, and follow the file through to registration.",
+							"sw": "Tunaandaa na kupakia data ya mpango katika muundo unaoatarajiwa na Ardhisasa, na tunafuatilia faili hadi usajili."
+						}
+					}
+				],
+				"tone": "surface",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "sectionalWhoNeeds",
+			"value": {
+				"tag": {
+					"en": "Who we serve",
+					"sw": "Tunayehudumia"
+				},
+				"headline": {
+					"en": "Who Needs Sectional Surveys?",
+					"sw": "Nani Anahitaji Uchunguzi wa Sehemu?"
+				},
+				"description": {
+					"en": "If your project ends in individually owned units, you need a sectional plan — and the earlier it enters your programme, the smoother registration goes.",
+					"sw": "Ikiwa mradi wako unamalizia kwa vitengo vinavyomilikiwa kibinafsi, unahitaji mpango wa sehemu — na ukianza mapema katika mpango wako, usajili huenda laini zaidi."
+				},
+				"linkLabel": {
+					"en": "Start here",
+					"sw": "Anza hapa"
+				},
+				"items": [
+					{
+						"icon": "city",
+						"title": {
+							"en": "Real Estate Developers",
+							"sw": "Wasanidi wa Miradi ya Nyumba"
+						},
+						"description": {
+							"en": "Register apartment and mixed-use developments so every unit carries its own marketable title.",
+							"sw": "Sajili maendeleo ya vyumba vya kufikia na matumizi mchanganyiko ili kila kitengo kiwe na hati yake inayouzwa."
+						},
+						"href": "/contact?reason=request-survey#contact-form"
+					},
+					{
+						"icon": "home-city",
+						"title": {
+							"en": "Apartment Block Owners",
+							"sw": "Wamiliki wa Majengo ya Vyumba vya Kufikia"
+						},
+						"description": {
+							"en": "Convert long-term leasehold buildings into sectional titles you can sell or mortgage unit by unit.",
+							"sw": "Badilisha majengo ya leasehold ya muda mrefu kuwa hatimiliki za sehemu unazoweza kuuza au kuweka rehani kitengo kwa kitengo."
+						},
+						"href": "/contact?reason=request-survey#contact-form"
+					},
+					{
+						"icon": "math-compass",
+						"title": {
+							"en": "Architects & Planners",
+							"sw": "Wasanifu Majengo na Wapangaji"
+						},
+						"description": {
+							"en": "Align approved drawings with unit boundaries before design freeze — we verify what you have drawn.",
+							"sw": "Linganisha michoro iliyoidhinishwa na mipaka ya vitengo kabla ya kufunga muundo — tunathibitisha ulichochora."
+						},
+						"href": "/surveying"
+					},
+					{
+						"icon": "gavel",
+						"title": {
+							"en": "Legal Firms Handling Property Conversion",
+							"sw": "Mashirika ya Sheria ya Kubadilisha Mali"
+						},
+						"description": {
+							"en": "Convert long-term leases to sectional titles with registry-ready survey evidence and boundary verification.",
+							"sw": "Badilisha makodisho ya muda mrefu kuwa hatimiliki za sehemu kwa uthibitisho wa uchunguzi tayari kwa rejesta."
+						},
+						"href": "/contact?reason=compliance-legal#contact-form"
+					},
+					{
+						"icon": "domain",
+						"title": {
+							"en": "Property Management Companies",
+							"sw": "Mashirika ya Usimamizi wa Mali"
+						},
+						"description": {
+							"en": "Administer unit factors, maintenance contributions and common property with certified schedules.",
+							"sw": "Simamia vipengele vya vitengo, michango ya matunzio na mali ya pamoja kwa ratiba zilizoidhinishwa."
+						},
+						"href": "/contact?reason=services-enquiry#contact-form"
+					},
+					{
+						"icon": "office-building",
+						"title": {
+							"en": "County-Approved Construction Projects",
+							"sw": "Miradi ya Ujenzi Iliyoidhinishwa na Kaunti"
+						},
+						"description": {
+							"en": "Close out multi-storey developments with a sectional plan that matches the county-approved structure.",
+							"sw": "Funga maendeleo ya orofa nyingi kwa mpango wa sehemu unaoendana na muundo ulioidhinishwa na kaunti."
+						},
+						"href": "/civil"
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "sectionalTimeline",
+			"value": {
+				"tag": {
+					"en": "Plan ahead",
+					"sw": "Panga mapema"
+				},
+				"headline": {
+					"en": "Timeline & Cost Expectation",
+					"sw": "Muda & Matumizi Tarajiwa"
+				},
+				"description": {
+					"en": "Typical sectional plan preparation: 7–21 days depending on building complexity. Larger or geometrically complex buildings sit at the upper end; single-block apartments move faster.",
+					"sw": "Maandalizi ya kawaida ya mpango wa sehemu: siku 7–21 kutegemea ugumu wa jengo. Majengo makubwa au yenye jiometri ngumu huchukua muda mrefu; majengo ya kawaida huharakisha."
+				},
+				"barLabel": {
+					"en": "Typical preparation window",
+					"sw": "Dirisha la kawaida la maandalizi"
+				},
+				"startLabel": {
+					"en": "Day 1",
+					"sw": "Siku ya 1"
+				},
+				"endLabel": {
+					"en": "Day 21",
+					"sw": "Siku ya 21"
+				},
+				"costNote": {
+					"en": "Cost is quoted per building — unit count, number of floors and documentation status determine the final fee.",
+					"sw": "Gharama hupangiwa kwa jengo — idadi ya vitengo, orofa na hali ya nyaraka huamia ada ya mwisho."
+				},
+				"stages": [
+					{
+						"label": {
+							"en": "Data Collection",
+							"sw": "Mkusanyiko wa Data"
+						},
+						"range": {
+							"en": "Days 1–2",
+							"sw": "Siku ya 1–2"
+						},
+						"days": 2
+					},
+					{
+						"label": {
+							"en": "Plan Review",
+							"sw": "Uhakiki wa Mpango"
+						},
+						"range": {
+							"en": "Days 3–4",
+							"sw": "Siku ya 3–4"
+						},
+						"days": 2
+					},
+					{
+						"label": {
+							"en": "Field Survey & Control",
+							"sw": "Uchunguzi wa Shamba na Udhibiti"
+						},
+						"range": {
+							"en": "Days 5–7",
+							"sw": "Siku ya 5–7"
+						},
+						"days": 3
+					},
+					{
+						"label": {
+							"en": "Unit Delineation",
+							"sw": "Ufafanuzi wa Vitengo"
+						},
+						"range": {
+							"en": "Days 8–10",
+							"sw": "Siku ya 8–10"
+						},
+						"days": 3
+					},
+					{
+						"label": {
+							"en": "Geo-referencing",
+							"sw": "Kurejelewa Kijiografia"
+						},
+						"range": {
+							"en": "Days 11–13",
+							"sw": "Siku ya 11–13"
+						},
+						"days": 3
+					},
+					{
+						"label": {
+							"en": "CAD Drafting",
+							"sw": "Uchoraji wa CAD"
+						},
+						"range": {
+							"en": "Days 14–18",
+							"sw": "Siku ya 14–18"
+						},
+						"days": 5
+					},
+					{
+						"label": {
+							"en": "Submission",
+							"sw": "Wasilishaji"
+						},
+						"range": {
+							"en": "Days 19–21",
+							"sw": "Siku ya 19–21"
+						},
+						"days": 3
+					}
+				],
+				"ctaEmail": {
+					"label": {
+						"en": "Request Exact Timeline for Your Project",
+						"sw": "Omba Muda Halisi kwa Mradi Wako"
+					},
+					"href": "mailto:info@smartgridsurveying.com?subject=Request%20Exact%20Timeline%20for%20My%20Sectional%20Plan&body=Dear%20SmartGrid%20Surveying%20Team,%0D%0A%0D%0AI%20would%20like%20an%20exact%20timeline%20estimate%20for%20preparing%20a%20sectional%20plan.%0D%0A%0D%0AProject%20Name:%20%0D%0ALocation:%20%0D%0ANumber%20of%20Units:%20%0D%0ANumber%20of%20Floors:%20%0D%0A%0D%0AThank%20you.",
+					"icon": ""
+				},
+				"id": "timeline"
+			}
+		},
+		{
+			"discriminant": "faq",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "FREQUENTLY ASKED QUESTION",
+					"sw": "MASWALI YANAYOULIZWA MARA KWA MARA"
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"question": {
+							"en": "What is a “sectional plan” and when is it required?",
+							"sw": "Ni nini \"mpango wa sehemu\" na unahitajika lini?"
+						},
+						"answer": {
+							"en": "Under Section 4 of the Act of Kenya, a “sectional plan” is the document by which an existing structure or parcel is divided into two or more units for separate ownership. The Act applies to land held on freehold or on leasehold with at least 21 years remaining.\n\nHow we comply at SmartGrid:",
+							"sw": "Chini ya Sehemu ya 4 ya Sheria ya Kenya, \"mpango wa sehemu\" ni hati kwa ajili ya kugawanya muundo au sehemu iliyopo katika vitengo viwili au zaidi kwa umiliki tofauti. Sheria inatumika kwa ardhi inayomilikiwa kwa freehold au leasehold yenye mwaka angalau 21 uliosalia.\n\nJinsi tunavyozingatia SmartGrid:"
+						},
+						"points": [
+							{
+								"en": "We engage licensed surveyors to prepare geo‑referenced sectional plans meeting the legal criteria (see Section 9) including clear unit delineation, unit factors, and common property mapping.",
+								"sw": "Tunatumia wapima ardhi walioidhinishwa kuandaa mipango ya sehemu iliyorejelewa kijiografia inayokidhi vigezo vya kisheria (tazama Sehemu ya 9) ikiwa pamoja na ufafanuzi wazi wa vitengo, mambo ya vitengo, na uchoraji wa ramani ya mali ya pamoja."
+							},
+							{
+								"en": "We verify that the head‑title (mother parcel) is valid (freehold or leasehold with ≥21 years remaining) before initiating the plan.",
+								"sw": "Tunathibitisha kwamba hati-kuu ya umiliki (parcel mama) ni halali (freehold au leasehold yenye mwaka ≥21 uliosalia) kabla ya kuanza mpango."
+							}
+						],
+						"icon": ""
+					},
+					{
+						"question": {
+							"en": "What are the technical and regulatory requirements for a sectional plan?",
+							"sw": "Ni mahitaji gani ya kiufundi na kikanuni kwa mpango wa sehemu?"
+						},
+						"answer": {
+							"en": "The Act’s Section 9 sets out the requirements: the plan must be geo‑referenced, have a heading stating “Sectional Plan”, show unit boundaries by floors/walls/ceilings, have a schedule of unit‑factors, show user category, and be signed by the proprietor and the survey authority. \n\n Additionally, Section 11 requires endorsements: by a surveyor certifying that the units lie within the parcel boundaries, and by the county government approving the building division.\n\nHow SmartGrid complies:",
+							"sw": "Sehemu ya 9 ya Sheria inaweka mahitaji: mpango lazima urejelewe kijiografia, uwe na kichwa kinachosema \"Sectional Plan\", uonyeshe mipaka ya vitengo kwa sakafu/kuta/dari, uwe na ratiba ya mambo ya vitengo, uonyeshe kategoria ya mtumiaji, na utiwe saini na mwenye mali na mamlaka ya upimaji. \n\n Zaidi ya hayo, Sehemu ya 11 inahitaji uidhinisho: wa mchunguzi anayethibitisha kwamba vitengo viko ndani ya mipaka ya kiwanja, na wa serikali ya kaunti ikikubali mgawanyo wa jengo.\n\nJinsi SmartGrid inavyozingatia:"
+						},
+						"points": [
+							{
+								"en": "We perform GNSS/total‑station surveys and deliver a geo‑referenced CAD drawing that aligns with the parcel’s coordinates and registry survey control.",
+								"sw": "Tunafanya uchunguzi wa GNSS/total-station na kutoa mchoro wa CAD uliorejelewa kijiografia unaoendana na kuratibu za kiwanja na mfumo wa udhibiti wa usajili."
+							},
+							{
+								"en": "We liaise with the county government’s building approval authority to ensure the division conforms with approved building plans and obtain the required certificate before registration.",
+								"sw": "Tunashirikiana na mamlaka ya uidhinishaji wa majengo ya serikali ya kaunti kuhakikisha mgawanyo unaoendana na mipango iliyoidhinishwa ya jengo na kupata cheti kinachohitajika kabla ya usajili."
+							},
+							{
+								"en": "Our deliverable includes the schedule of unit‑factors and common‑property share calculations.",
+								"sw": "Bidhaa zetu zinajumuisha ratiba ya mambo ya vitengo na mahesabu ya hisa za mali ya pamoja."
+							}
+						],
+						"icon": ""
+					},
+					{
+						"question": {
+							"en": "What happens after a sectional plan is registered?",
+							"sw": "Nini hufanyika baada ya mpango wa sehemu kusajiliwa?"
+						},
+						"answer": {
+							"en": "Once registered (under Section 5), the register of the original parcel is closed, separate registers are opened for each unit, and each unit gets its own certificate of title (freehold) or certificate of lease (leasehold). The interest in the common property is shown. \n\nMoreover, the corporation (body corporate) is automatically constituted under Section 17 to manage the common property.\n\nHow SmartGrid complies:",
+							"sw": "Mara tu ukisajiliwa (chini ya Sehemu ya 5), rejesta ya kiwanja cha awali hufungwa, rejesta tofauti hufunguliwa kwa kila kitengo, na kila kitengo kinapata cheti chake cha umiliki (freehold) au cheti cha kukodisha (leasehold). Maslahi katika mali ya pamoja yanaonyeshwa. \n\nZaidi ya hayo, shirika (body corporate) huundwa moja kwa moja chini ya Sehemu ya 17 kusimamia mali ya pamoja.\n\nJinsi SmartGrid inavyozingatia:"
+						},
+						"points": [
+							{
+								"en": "Our surveys clearly mark the common property and exclusive‑use areas so that the title deed can contain the correct share in common property (Section 6).",
+								"sw": "Uchunguzi wetu unaweka wazi mali ya pamoja na maeneo ya matumizi ya kipekee ili hati ya umiliki iweze kuwa na hisa sahihi ya mali ya pamoja (Sehemu ya 6)."
+							},
+							{
+								"en": "We provide the documentation in a format compatible with the land registry so that the register can be updated efficiently.",
+								"sw": "Tunatoa nyaraka katika muundo unaoendana na rejesta ya ardhi ili rejesta iweze kusasishwa kwa ufanisi."
+							}
+						],
+						"icon": ""
+					},
+					{
+						"question": {
+							"en": "What rights and obligations do unit owners have under the Sectional Act of Kenya?",
+							"sw": "Wamiliki wa vitengo wana haki na wajibu gani chini ya Sheria ya Sehemu ya Kenya?"
+						},
+						"answer": {
+							"en": "Under Section 7, each unit and the common property enjoy rights of support, shelter, and access to services (including water, sewer, and electricity) as appurtenant rights. \n\n Section 8 states that an owner’s liability for burdens on common property is proportionate to their unit factor. \n\nHow SmartGrid complies:",
+							"sw": "Chini ya Sehemu ya 7, kila kitengo na mali ya pamoja hufurahia haki za msaada, makao, na ufikiaji wa huduma (ikijumuisha maji, mfumo wa maji taka, na umeme) kama haki za appurtenant. \n\n Sehemu ya 8 inasema kwamba dhima ya mmiliki kwa mizigo kwenye mali ya pamoja inalingana na kipengele chao cha kitengo. \n\nJinsi SmartGrid inavyozingatia:"
+						},
+						"points": [
+							{
+								"en": "In our unit schedules, we compute the unit‑factor (proportional share) correctly so that owners’ liability and voting rights (in the corporation) are determined fairly.",
+								"sw": "Katika ratiba zetu za vitengo, tunahesabu kipengele cha kitengo (hisa ya uwiano) kwa usahihi ili dhima ya wamiliki na haki za kupiga kura (katika shirika) ziamuliwe kwa haki."
+							},
+							{
+								"en": "Our survey deliverables map service routes and easements so the rights of access and services are clearly defined and documented.",
+								"sw": "Bidhaa zetu za uchunguzi zinaweka ramani za njia za huduma na easements ili haki za ufikiaji na huduma zifafanuliwe na kuandikwe waziwazi."
+							}
+						],
+						"icon": ""
+					},
+					{
+						"question": {
+							"en": "Why convert existing long‑term leases to sectional titles?",
+							"sw": "Kwa nini kubadilisha kodi za muda mrefu zilizopo kuwa hatimiliki za sehemu?"
+						},
+						"answer": {
+							"en": "Section 13 of the Act mandates that a building containing premises not included in a sectional plan cannot be sold as a unit until the plan is registered. \n\n Additionally, the Regulation requires geo‑referencing of sectional plans and the conversion of older long‑term leases where necessary.\n\n How SmartGrid complies:",
+							"sw": "Sehemu ya 13 ya Sheria inaamuru kwamba jengo linalojumuisha majengo yasiyojumuishwa katika mpango wa sehemu haliwezi kuuzwa kama kitengo hadi mpango huo usajiliwe. \n\n Zaidi ya hayo, Kanuni inahitaji kurejelewa kijiografia kwa mipango ya sehemu na ubadilishaji wa kodi za zamani za muda mrefu pale inapohitajika.\n\n Jinsi SmartGrid inavyozingatia:"
+						},
+						"points": [
+							{
+								"en": "For older developments, we undertake the diagnostics: we check existing leases, confirm if a sectional plan exists, and if not, we prepare and geo–reference a new plan, enabling lawful conversion.",
+								"sw": "Kwa maendeleo ya zamani, tunafanya uchunguzi (diagnostics): tunaangalia kodi zilizopo, tunathibitisha kama mpango wa sehemu upo, na kama haupo, tunaandaa na kurejelea kijiografia mpango mpya, kuwezesha ubadilishaji halali."
+							},
+							{
+								"en": "We work with legal advisors and the land registry to ensure the conversion process is correctly managed and the new titles are issued.",
+								"sw": "Tunafanya kazi na washauri wa kisheria na rejesta ya ardhi kuhakikisha mchakato wa ubadilishaji unasimamiwa kwa usahihi na hatimiliki mpya inatolewa."
+							}
+						],
+						"icon": ""
+					},
+					{
+						"question": {
+							"en": "What are the consequences of non‑compliance?",
+							"sw": "Ni nini matokeo ya kutozingatia?"
+						},
+						"answer": {
+							"en": "Failure to register a sectional plan when required means any sale, transfer or financing based on a unit without proper title may be unenforceable.\n\n The Registrar may place a restriction on a title if a developer fails to convert (per Section 13).\n\n How at SmartGrid surveying complies:",
+							"sw": "Kushindwa kusajili mpango wa sehemu inapohitajika kunamaanisha kwamba mauzo, uhamisho au ufadhili wowote kulingana na kitengo bila hati sahihi yanaweza kutoishia kutekelezeka.\n\n Msajili anaweza kuweka kizuizi kwenye hati kama mwendelezaji atashindwa kubadilisha (kulingana na Sehemu ya 13).\n\n Jinsi SmartGrid Surveying inavyozingatia:"
+						},
+						"points": [
+							{
+								"en": "We ensure that our services guard against non‑compliance by delivering survey plans that meet legal registration requirements—so developers/owners can avoid the risk of transactions being invalid.",
+								"sw": "Tunahakikisha huduma zetu zinalinda dhidi ya kutozingatia kwa kutoa mipango ya uchunguzi inayokidhi mahitaji ya usajili wa kisheria—ili waendelezaji/wamiliki waepuke hatari ya shughuli kutofanya kazi."
+							},
+							{
+								"en": "Our quality control process ensures that the sectional plan is registered and titles can issue, avoiding restrictions or penalties.",
+								"sw": "Mchakato wetu wa udhibiti wa ubora unahakikisha kwamba mpango wa sehemu unasajiliwa na hatimiliki zinaweza kutolewa, kuepuka vikwazo au adhabu."
+							}
+						],
+						"icon": ""
+					},
+					{
+						"question": {
+							"en": "How do boundary and encroachment issues work for sectional properties?",
+							"sw": "Masuala ya mipaka na uvamizi hushughulikiwaje kwa mali za sehemu?"
+						},
+						"answer": {
+							"en": "The Act requires that the sectional plan be prepared by a surveyor who certifies that the structure lies within the parcel boundaries and that any easements (e.g., for overhangs) are granted. \n\nSection 10 deals with boundaries of units: if a load‑bearing wall forms a boundary, the finishing materials inside count as part of the unit. \n\n How at SmartGrid surveying complies:",
+							"sw": "Sheria inahitaji kwamba mpango wa sehemu uandaliwe na mchunguzi anayethibitisha kwamba muundo upo ndani ya mipaka ya kiwanja na kwamba easements zozote (k.m., kwa overhangs) zinatolewa. \n\n Sehemu ya 10 inahusu mipaka ya vitengo: ikiwa ukuta wa kubeba mzigo unafanya mipaka, nyenzo za kumalizia ndani huhesabiwa kama sehemu ya kitengo. \n\n Jinsi SmartGrid Surveying inavyozingatia:"
+						},
+						"points": [
+							{
+								"en": "We perform full boundary verification using GNSS/total station and produce control‑net coordinates tied to registry beacons; we then confirm that building footprints and projections (e.g., gutter overhangs) comply with recorded parcel boundaries.",
+								"sw": "Tunafanya uhakiki kamili wa mipaka kwa kutumia GNSS/total station na kutoa kuratibu za mfumo wa udhibiti zilizounganishwa na alama za rejesta; kisha tunathibitisha kwamba alama za jengo na maramuko (kama overhangs za mifereji) zinaendana na mipaka iliyosajiliwa ya kiwanja."
+							},
+							{
+								"en": "We document encroachments or deviations, map them in CAD/PDF, and advise on required easements or amendments before submission to land registry.",
+								"sw": "Tunarekodi uvamizi au kukengeuka, kuyachora kwenye CAD/PDF, na kushauri easements zinazohitajika au masahihisho kabla ya uwasilishaji kwa rejesta ya ardhi."
+							}
+						],
+						"icon": ""
+					},
+					{
+						"question": {
+							"en": "What sectional properties deliverables should a developer/owner expect from the surveyor?",
+							"sw": "Ni bidhaa gani za mali za sehemu mwendelezaji/mwenye anapaswa kutarajia kutoka kwa mchunguzi?"
+						},
+						"answer": {
+							"en": "The law expects a professionally prepared sectional plan (in quadruplicate) ready for registration, unit schedule with unit factors, geo‑referenced drawing, and county/certification endorsements. \n\n How SmartGrid complies:",
+							"sw": "Sheria inatarajia mpango wa sehemu ulioandaliwa kitaalamu (kwa nakala nne) tayari kwa usajili, ratiba ya vitengo yenye mambo ya vitengo, mchoro uliorejelewa kijiografia, na uidhinisho wa kaunti/cheti. \n\n Jinsi SmartGrid inavyozingatia:"
+						},
+						"points": [
+							{
+								"en": "We provide a full deliverable package: geo‑referenced CAD drawings, PDF plans endorsed by licensed surveyor, unit‑factors schedule, coordinate report, certificate of compliance, and support documentation for registry submission.",
+								"sw": "Tunatoa kifurushi kamili: michoro ya CAD iliyorejelewa kijiografia, mipango ya PDF iliyoidhinishwa na mchunguzi aliyeidhinishwa, ratiba ya mambo ya vitengo, ripoti ya kuratibu, cheti cha kufuata, na nyaraka za msaada kwa uwasilishaji wa rejesta."
+							},
+							{
+								"en": "We also assist in liaison with relevant authorities (county planning office, land registry) to ensure proper registration.",
+								"sw": "Pia tunasaidia katika mawasiliano na mamlaka husika (ofisi ya mipango ya kaunti, rejesta ya ardhi) kuhakikisha usajili sahihi."
+							}
+						],
+						"icon": ""
+					}
+				],
+				"stillCuriousLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"stillCuriousDescription": {
+					"en": "",
+					"sw": ""
+				},
+				"stillCuriousCta": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "ctaBand",
+			"value": {
+				"tag": {
+					"en": "Ready when you are",
+					"sw": "Tuko tayari unapokuwa tayari"
+				},
+				"headline": {
+					"en": "Start Your Sectional Plan Registration",
+					"sw": "Anza Usajili wa Mpango Wako wa Sehemu"
+				},
+				"description": {
+					"en": "Send us your building details and we will confirm eligibility under the Sectional Properties Act, 2020 — then prepare, geo-reference and lodge the plan on your behalf.",
+					"sw": "Tutumie maelezo ya jengo lako nasi tutathibitisha uhalali chini ya Sheria ya Mali za Sehemu, 2020 — kisha tutaandaa, turejele kijiografia na kuwasilisha mpango kwa niaba yako."
+				},
+				"primary": {
+					"label": {
+						"en": "Request Sectional Survey Quote",
+						"sw": "Omba Nukuu ya Uchunguzi wa Mali za Sehemu"
+					},
+					"href": "mailto:info@smartgridsurveying.com?subject=Request%20for%20Sectional%20Property%20Survey%20Quote&body=Dear%20SmartGrid%20Surveying%20Team,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20quotation%20for%20a%20Sectional%20Property%20Survey.%20Please%20find%20my%20project%20details%20below:%0D%0A%0D%0AProject%20Name:%20%0D%0ALocation:%20%0D%0AProperty%20Type:%20(e.g.%20apartment,%20commercial,%20mixed-use)%0D%0ANumber%20of%20Units:%20%0D%0AAdditional%20Information:%20%0D%0A%0D%0AThank%20you.%0D%0A%0D%0ABest%20regards,%0D%0A[Your%20Full%20Name]%0D%0A[Your%20Phone%20Number]",
+					"icon": "arrow-right"
+				},
+				"secondary": {
+					"label": {
+						"en": "WhatsApp for Compliance Review",
+						"sw": "WhatsApp kwa Ukaguzi wa Uzingatiaji"
+					},
+					"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20a%20sectional%20properties%20compliance%20review%20for%20my%20development.%20Please%20advise%20on%20the%20next%20steps.",
+					"icon": "whatsapp"
+				},
+				"layout": "centered",
+				"variant": "panel",
+				"decor": "glow",
+				"watermark": "domain",
+				"images": [],
+				"shimmer": false,
+				"hairline": false,
+				"id": ""
+			}
+		}
+	]
+}

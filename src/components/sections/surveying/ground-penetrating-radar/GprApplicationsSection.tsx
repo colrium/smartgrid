@@ -1,9 +1,8 @@
 "use client";
 
+import type { ReactElement } from "react";
 import { useTranslation } from "@/hooks";
-import { FadeUp } from "@/components/animations/Fade";
-import { SectionHeader } from "@/components/sections/home";
-import { Blob } from "@/components/sections/home/decor";
+import { CardGrid, type CardItem } from "@/components/sections/shared/CardGrid";
 
 interface ApplicationItem {
 	icon?: string | null;
@@ -14,69 +13,55 @@ interface ApplicationItem {
 interface ApplicationsContent {
 	tag?: string | null;
 	headline: string;
-	items: ApplicationItem[];
+	items?: ApplicationItem[] | null;
 }
 
-export function GprApplicationsSection() {
-	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
-	const section = t("surveying/ground-penetrating-radar:applications", {
-		returnObjects: true,
-	}) as unknown as ApplicationsContent;
-	const items = Array.isArray(section?.items) ? section.items : [];
+export interface GprApplicationsData {
+	tag?: string | null;
+	headline: string;
+	items?: ApplicationItem[] | null;
+}
 
-	if (items.length === 0) return null;
+/**
+ * GPR applications — shared indexed card grid with header-row number badges;
+ * each application's point list renders as the card inset checklist (content:
+ * surveying/ground-penetrating-radar:applications).
+ */
+export function GprApplicationsSection({ data, id }: { data?: GprApplicationsData | null; id?: string } = {}): ReactElement | null {
+	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
+	// Keystatic-owned content when `data` is provided (M11 `gprApplications`
+	// unique section — `indexed` + header-row badges are outside the shared
+	// `cardGrid` contract); legacy locale strings otherwise.
+	const section = (data ??
+		(t("surveying/ground-penetrating-radar:applications", {
+			returnObjects: true,
+		}) as unknown as ApplicationsContent)) as ApplicationsContent;
+	const rows = Array.isArray(section?.items) ? section.items : [];
+
+	if (rows.length === 0) return null;
+
+	const items: CardItem[] = rows.map((item) => ({
+		icon: item.icon ?? null,
+		title: item.title,
+		subItems: (Array.isArray(item.points) ? item.points : []).map((point) => ({ title: point })),
+	}));
 
 	return (
-		<section id="applications" className="scroll-mt-36 py-20 sm:py-24 relative overflow-hidden">
-			<Blob className="w-[28rem] h-[28rem] bg-primary-200/40 -bottom-24 -right-24" opacity={0.4} />
-
-			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-				<SectionHeader
-					tag={section.tag || undefined}
-					headline={section.headline}
-					align="center"
-				/>
-
-				<div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-					{items.map((item, index) => {
-						const points = Array.isArray(item.points) ? item.points : [];
-
-						return (
-							<FadeUp key={index} delay={(index % 3) * 0.07} className="h-full">
-								<article className="group h-full flex flex-col gap-3.5 rounded-[16px] bg-surface hairline card-shadow p-6 transition-all duration-250 hover:card-shadow-lift hover:border-primary">
-									<div className="flex items-center justify-between gap-4">
-										<span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
-											{item.icon && <span className={`mdi mdi-${item.icon} text-xl`} />}
-										</span>
-										<span className="text-sm font-semibold tabular-nums tracking-[0.14em] text-on-surface/25">
-											{String(index + 1).padStart(2, "0")}
-										</span>
-									</div>
-
-									<h3 className="text-sm sm:text-[15px] font-semibold tracking-tight text-ink leading-snug">
-										{item.title}
-									</h3>
-
-									{points.length > 0 && (
-										<ul className="flex flex-col gap-2">
-											{points.map((point, pointIndex) => (
-												<li
-													key={pointIndex}
-													className="flex items-start gap-2 text-[13px] text-on-surface/60 leading-snug"
-												>
-													<span className="mdi mdi-circle-small text-primary text-lg shrink-0 -mt-1" />
-													{point}
-												</li>
-											))}
-										</ul>
-									)}
-								</article>
-							</FadeUp>
-						);
-					})}
-				</div>
-			</div>
-		</section>
+		<CardGrid
+			id={id ?? "applications"}
+			tag={section.tag ?? null}
+			headline={section.headline}
+			items={items}
+			columns={3}
+			headerAlign="left"
+			indexed
+			card={{
+				headerRow: true,
+				indexBadgePosition: "end",
+				indexBadgeClassName:
+					"text-sm font-semibold tabular-nums tracking-[0.14em] text-on-surface/30",
+			}}
+		/>
 	);
 }
 

@@ -19,6 +19,14 @@ interface NavBarLink {
 	links?: NavBarLink[];
 }
 
+interface ContactItem {
+	label: string;
+	href: string;
+	icon?: string;
+	value?: string;
+}
+
+
 export interface NavbarProps {
 	/** Base color variant of the navbar. Defaults to "light". */
 	variant?: "light" | "dark";
@@ -54,7 +62,14 @@ export default function Navbar({
 		code: string;
 		label: string;
 		flag: string;
-	}[];
+    }[];
+    const contacts = t("common:contacts", { returnObjects: true }) as {
+		address?: ContactItem[];
+		phone?: ContactItem[];
+		mail?: ContactItem[];
+		whatsapp?: ContactItem[];
+    };
+    
 
 	const localeCodes = locales.map((locale) => locale.code);
 
@@ -155,11 +170,11 @@ export default function Navbar({
 			: (variant === "light" && state.scrollVariantToggled) ||
 				(variant === "dark" && !state.scrollVariantToggled);
 
-	const iconColor = isDark ? "text-primary-200" : "text-primary";
-	const accentColor = isDark ? "text-accent-200" : "text-accent-700";
+	const iconColor = isDark ? "text-primary-100" : "text-primary";
+	const accentColor = isDark ? "text-accent-100" : "text-accent-700";
 	const hoverColor = isDark ? "hover:text-primary-300" : "hover:text-primary";
-	const menuClassName = isDark ? "bg-primary-700/95! text-surface!" : "bg-surface/95! text-ink!";
-
+	const menuClassName = isDark ? "bg-primary-600! text-surface!" : "bg-surface/95! text-ink!";
+   
 	return (
 		<>
 			<header className="sticky top-0 z-9999 w-full bg-transparent px-4 md:px-8 transition-all duration-500">
@@ -176,24 +191,36 @@ export default function Navbar({
 						}`}
 					>
 						<span className="inline-flex items-center gap-2">
-							<span className={`mdi mdi-map-marker text-sm ${iconColor}`} />
-							<span className={accentColor}>{t("common:contacts.address")}</span>
+							<span
+								className={`mdi mdi-${contacts?.address?.[0]?.icon || "map-marker"} text-sm ${iconColor}`}
+							/>
+							<span className={accentColor}>{contacts?.address?.[0]?.label}</span>
 						</span>
 
 						<div className="flex items-center gap-8">
 							<a
-								href={`tel:${t("common:contacts.mobile").replace(/\s/g, "")}`}
+								href={
+									contacts?.phone?.[0]?.href ||
+									`tel:${contacts?.phone?.[0]?.value?.replace(/\s/g, "")}`
+								}
 								className={`inline-flex items-center gap-2 transition-colors duration-300 ${hoverColor}`}
 							>
-								<span className={`mdi mdi-phone text-sm ${iconColor}`} />
-								<span className={accentColor}>{t("common:contacts.mobile")}</span>
+								<span
+									className={`mdi mdi-${contacts?.phone?.[0]?.icon || "phone"} text-sm ${iconColor}`}
+								/>
+								<span className={accentColor}>{contacts?.phone?.[0]?.label}</span>
 							</a>
 							<a
-								href={`mailto:${t("common:contacts.Email")}`}
+								href={
+									contacts?.mail?.[0]?.href ||
+									`mailto:${contacts?.mail?.[0]?.value}`
+								}
 								className={`inline-flex items-center gap-2 transition-colors duration-300 ${hoverColor}`}
 							>
-								<span className={`mdi mdi-email-outline text-sm ${iconColor}`} />
-								<span className={accentColor}>{t("common:contacts.Email")}</span>
+								<span
+									className={`mdi mdi-${contacts?.mail?.[0]?.icon || "email-outline"} text-sm ${iconColor}`}
+								/>
+								<span className={accentColor}>{contacts?.mail?.[0]?.label}</span>
 							</a>
 						</div>
 					</div>
@@ -219,14 +246,16 @@ export default function Navbar({
 								{/* Brand wordmark — intentionally not a heading: it must not
 							    precede the page <h1> in the document outline. */}
 								<p
-									className={`flex uppercase font-semibold tracking-wide font-display no-underline transition-all duration-500 ${
+									className={`flex uppercase font-semibold tracking-wide font-display no-underline transition-all duration-250 ${
 										isDark ? "text-surface" : "text-ink"
 									}`}
 								>
 									{t("meta:site.title")}
 								</p>
 								<span
-									className={`capitalize hidden  lg:flex font-bold text-[7px] no-underline transition-all duration-500 ${accentColor}`}
+									className={`capitalize hidden  lg:flex font-bold text-[7px] no-underline transition-colors duration-250  ${
+										isDark ? "text-surface-100" : "text-ink-500"
+									}`}
 								>
 									{t("meta:site.subtitle")}
 								</span>

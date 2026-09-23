@@ -1,23 +1,17 @@
-export { CadastralHeroSection } from "./CadastralHeroSection";
 export { PostHeroCtaSection } from "./PostHeroCtaSection";
 export { IntroSection } from "./IntroSection";
 export { WhenYouNeedSection } from "./WhenYouNeedSection";
-export { ProcessFlowSection } from "./ProcessFlowSection";
 export { ProcessCtaSection } from "./ProcessCtaSection";
 export { CostSection } from "./CostSection";
 export { TimelineSection } from "./TimelineSection";
 export { ComplianceSection } from "./ComplianceSection";
 export { CaseStudySection } from "./CaseStudySection";
-export { FinalCtaSection } from "./FinalCtaSection";
 
-export { default as CadastralHeroSectionDefault } from "./CadastralHeroSection";
 export { default as PostHeroCtaSectionDefault } from "./PostHeroCtaSection";
 export { default as IntroSectionDefault } from "./IntroSection";
 export { default as WhenYouNeedSectionDefault } from "./WhenYouNeedSection";
-export { default as ProcessFlowSectionDefault } from "./ProcessFlowSection";
 export { default as ProcessCtaSectionDefault } from "./ProcessCtaSection";
 export { default as CostSectionDefault } from "./CostSection";
 export { default as TimelineSectionDefault } from "./TimelineSection";
 export { default as ComplianceSectionDefault } from "./ComplianceSection";
 export { default as CaseStudySectionDefault } from "./CaseStudySection";
-export { default as FinalCtaSectionDefault } from "./FinalCtaSection";

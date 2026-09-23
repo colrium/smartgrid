@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"tag": "Survey Drone",
 		"headline": "Mid-Range Survey & Photogrammetry Platform",
 		"title": "DJI Mavic 3 Enterprise Series",
@@ -11,6 +12,7 @@
 		}
 	},
 	"productImages": {
+		"type": "unique",
 		"images": [
 			"/media/equipment-sale/dji-mavic-3-enterprise/02.jpeg",
 			"/media/equipment-sale/dji-mavic-3-enterprise/03.jpeg",
@@ -18,11 +20,13 @@
 		]
 	},
 	"breadcrumb": {
+		"type": "unique",
 		"home": "Home",
 		"section": "Equipment Sale",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
 	"pricing": {
+		"type": "pricing",
 		"new": {
 			"label": "Brand New",
 			"currency": "KES",
@@ -59,12 +63,14 @@
 		}
 	],
 	"productOverview": {
+		"type": "unique",
 		"tag": "Product Overview",
 		"headline": "Your Daily Driver for Rapid Survey Deployment",
 		"images": [],
 		"description": "The DJI Mavic 3 Enterprise is a highly portable RTK-enabled mapping drone built for rapid deployment, land subdivision, cadastral overlays, and site progress monitoring."
 	},
 	"keyFeatures": {
+		"type": "card-grid",
 		"tag": "Highlights",
 		"headline": "Key Features",
 		"description": "What makes the Mavic 3 Enterprise the go-to daily survey drone.",
@@ -92,6 +98,7 @@
 		]
 	},
 	"cameraSystem": {
+		"type": "unique",
 		"tag": "Camera",
 		"headline": "Camera System",
 		"description": "Purpose-built optics for accurate photogrammetric capture.",
@@ -103,6 +110,7 @@
 		]
 	},
 	"positioningAndFlight": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Positioning & Flight Performance",
 		"description": "RTK-backed accuracy with efficient area coverage.",
@@ -116,11 +124,13 @@
 		]
 	},
 	"specs": {
+		"type": "unique",
 		"tag": "Tech Data",
 		"headline": "Technical Specifications",
 		"description": "Complete technical details for the DJI Mavic 3 Enterprise Series."
 	},
 	"surveyApplications": {
+		"type": "unique",
 		"tag": "Applications",
 		"headline": "Survey Advantages & Applications",
 		"description": "Where the Mavic 3 Enterprise fits best.",
@@ -136,6 +146,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Get a Quote",
 		"headline": "Inquire About This Drone",
 		"description": "Tell us about your project and get a tailored quote for the DJI Mavic 3 Enterprise.",
@@ -151,6 +162,7 @@
 		}
 	},
 	"relatedProducts": {
+		"type": "unique",
 		"tag": "Explore",
 		"headline": "Other Drones You May Like",
 		"description": "Discover more survey drones from the SmartGrid catalogue."

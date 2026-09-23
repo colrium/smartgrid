@@ -21,17 +21,29 @@ interface SueContent {
 	note?: string | null;
 }
 
-export function GprSueComplianceSection(): ReactElement {
+export interface GprSueData {
+	tag?: string | null;
+	headline: string;
+	description?: string | null;
+	levels: SueLevel[];
+	note?: string | null;
+}
+
+export function GprSueComplianceSection({ data, id }: { data?: GprSueData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
-	const section = t("surveying/ground-penetrating-radar:sue", {
-		returnObjects: true,
-	}) as unknown as SueContent;
+	// Keystatic-owned content when `data` is provided (M11 `gprSue` unique
+	// section); legacy locale strings otherwise. The positional A–D letter
+	// watermark stays in the renderer.
+	const section = (data ??
+		(t("surveying/ground-penetrating-radar:sue", {
+			returnObjects: true,
+		}) as unknown as SueContent)) as SueContent;
 	const levels = Array.isArray(section?.levels) ? section.levels : [];
 
 	if (levels.length === 0) return <></>;
 
 	return (
-		<section id="sue" className="scroll-mt-36 py-20 sm:py-24 relative overflow-hidden">
+		<section id={id ?? "sue"} className="scroll-mt-36 py-20 sm:py-24 relative overflow-hidden">
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader
 					tag={section.tag || undefined}

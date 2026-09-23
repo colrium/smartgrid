@@ -13,8 +13,11 @@ import { FadeUp, FadeRight, FadeLeft } from "@/components/animations/Fade";
 import ScrollIndicator from "@/components/ui/ScrollIndicator";
 
 // Three.js + loaders (~500-700KB) stay out of the initial page bundle:
-// the WebGL scene is code-split and mounted client-side only.
-const HeroScene = dynamic(() => import("./HeroScene"), { ssr: false });
+// the WebGL scene is code-split and mounted client-side only, after idle.
+const HeroScene = dynamic(() => import("./HeroScene"), {
+	ssr: false,
+	loading: () => null,
+});
 
 // Local button token types (replacing the removed MUI ButtonProps types).
 type ButtonVariant = "text" | "contained" | "outlined";
@@ -36,18 +39,59 @@ interface CtaItem {
 	color?: ButtonColor;
 }
 interface LocationTagItem {
-	label: string;
-	code: string;
+	label?: string | null;
+	code?: string | null;
 	href?: string;
 	icon?: string;
 	class?: string;
 }
 interface Location {
-	label: string;
-	items?: LocationTagItem[];
+	label?: string | null;
+	items?: LocationTagItem[] | null;
 }
 
-export default function HeroSection() {
+/**
+ * Keystatic-owned content for the home hero (M11 `homeHero` unique section).
+ * When omitted, the legacy `home:hero` locale strings render (unchanged
+ * behavior for non-Keystatic callers). The headline carries inline
+ * `<primary>`/`<accent>` tags in both worlds: legacy renders them via
+ * `<Trans>`, Keystatic via `renderHeroHeadline` below (identical output, so
+ * opting in never changes the pixels — and edits apply, unlike the
+ * gate-only Trans precedents).
+ */
+export interface HeroSectionContent {
+	badge?: string | null;
+	headline?: string | null;
+	description?: string | null;
+	ctaPrimary?: CtaItem | null;
+	ctaSecondary?: CtaItem | null;
+	location?: Location | null;
+}
+
+function renderHeroHeadline(headline: string) {
+	const parts = String(headline ?? "").split(/(<primary>.*?<\/primary>|<accent>.*?<\/accent>)/g);
+	return parts.map((part, index) => {
+		const primary = part.match(/^<primary>(.*)<\/primary>$/s);
+		if (primary) {
+			return (
+				<span key={index} className="text-primary">
+					{primary[1]}
+				</span>
+			);
+		}
+		const accent = part.match(/^<accent>(.*)<\/accent>$/s);
+		if (accent) {
+			return (
+				<span key={index} className="text-accent">
+					{accent[1]}
+				</span>
+			);
+		}
+		return part;
+	});
+}
+
+export default function HeroSection({ data, id }: { data?: HeroSectionContent | null; id?: string } = {}) {
 	const heroRef = useRef<HTMLElement>(null);
 
 	// WebGL scene is only for capable desktop-class devices. Deciding here -
@@ -58,28 +102,59 @@ export default function HeroSection() {
 	// hero content and fixed instrument frame carry the design on their own.
 	const [sceneEnabled, setSceneEnabled] = useState(true);
 
-	/* eslint-disable react-hooks/set-state-in-effect -- intentional one-shot
-	   capability probe after hydration; a lazy initializer would touch
-	   window/navigator during SSR and break the render. */
-    useEffect(() => {
-		/* 
-		const nav = navigator as Navigator & { deviceMemory?: number };
-		const supported = (nav.hardwareConcurrency ?? 8) > 4 &&
-            (nav.deviceMemory ?? 8) > 4;
-        console.log("window.matchMedia(\"(pointer: coarse)\").matches", window.matchMedia("(pointer: coarse)").matches);
-        console.log("window.matchMedia(\"(prefers-reduced-motion: reduce)\").matches", window.matchMedia("(prefers-reduced-motion: reduce)").matches);
-        console.log("window.innerWidth", window.innerWidth);
-        console.log("nav.hardwareConcurrency", nav.hardwareConcurrency);
-        console.log("nav.deviceMemory", nav.deviceMemory); 
-		if (supported) setSceneEnabled(true);
-        */
+	// One-shot capability probe after hydration; a lazy initializer would
+	// touch window/navigator during SSR and break the render.
+	useEffect(() => {
+		const nav = navigator as Navigator & {
+			deviceMemory?: number;
+			connection?: { saveData?: boolean };
+		};
+		const conn = nav.connection;
+		// Lighthouse mobile (Moto G4, 4x throttle) reports desktop-class
+		// hardwareConcurrency/deviceMemory, so CPU/RAM alone cannot gate the
+		// ~600KB three.js chunk. Also bail on touch / small viewports /
+		// reduced-motion / data-saver, where the full-window canvas would
+		// saturate the main thread during load (TBT + LCP delay).
+		// const coarse = window.matchMedia("(pointer: coarse)").matches;
+		// const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+		// const small = window.innerWidth < 768;
+		const saveData = conn?.saveData === true;
+		const supported =
+			(nav.hardwareConcurrency ?? 8) > 4 && (nav.deviceMemory ?? 8) > 4;
+		if (!supported || saveData) return;
+		// Defer even the chunk *fetch* until the browser is idle so three.js
+		// parse/eval + shader compile never compete with hydration and LCP.
+		const idleWindow = window as Window & {
+			requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
+			cancelIdleCallback?: (id: number) => void;
+		};
+		if (idleWindow.requestIdleCallback) {
+			const id = idleWindow.requestIdleCallback(() => setSceneEnabled(true), {
+				timeout: 3000,
+			});
+			return () => idleWindow.cancelIdleCallback?.(id);
+		}
+		const timer = window.setTimeout(() => setSceneEnabled(true), 1500);
+		return () => window.clearTimeout(timer);
 	}, []);
-	/* eslint-enable react-hooks/set-state-in-effect */
 
 	const { t } = useTranslation(["home"]);
-	const ctaPrimary = t("home:hero.ctaPrimary", { returnObjects: true }) as CtaItem;
-	const ctaSecondary = t("home:hero.ctaSecondary", { returnObjects: true }) as CtaItem;
-	const location = t("home:hero.location", { returnObjects: true }) as Location;
+	const badge = data ? (data.badge ?? "") : (t("home:hero.badge") as string);
+	const description = data ? (data.description ?? "") : (t("home:hero.description") as string);
+	const ctaPrimary = (
+		data ? (data.ctaPrimary ?? null) : (t("home:hero.ctaPrimary", { returnObjects: true }) as CtaItem)
+	) as CtaItem | null;
+	const ctaSecondary = (
+		data ? (data.ctaSecondary ?? null) : (t("home:hero.ctaSecondary", { returnObjects: true }) as CtaItem)
+	) as CtaItem | null;
+	const location = (
+		data
+			? {
+					label: data.location?.label ?? "",
+					items: Array.isArray(data.location?.items) ? data.location.items : [],
+				}
+			: (t("home:hero.location", { returnObjects: true }) as Location)
+	) as Location;
 	const scrollYPercentage = useMotionValue(0);
 
 	// Hero height is cached in a ref (so the Lenis callback reads the latest
@@ -109,6 +184,7 @@ export default function HeroSection() {
 	return (
 		<section
 			ref={heroRef}
+			id={id}
 			className="relative min-h-screen flex items-center justify-center pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-32 overflow-hidden"
 		>
 			{/* WebGL Background (code-split, client-only, capable devices only) */}
@@ -121,25 +197,29 @@ export default function HeroSection() {
 					<FadeLeft delay={0.1} className="reveal active">
 						<div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full text-ink text-xs font-semibold uppercase tracking-[0.18em] mb-8 sm:mb-10">
 							<span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-							<span className="whitespace-pre-line">{t("home:hero.badge")}</span>
+							<span className="whitespace-pre-line">{badge}</span>
 						</div>
 					</FadeLeft>
 
 					<FadeRight delay={0.1} className="reveal active">
 						<h1 className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight text-ink leading-[1.05] mb-8 sm:mb-10 lg:mb-12 whitespace-pre-line">
-							<Trans
-								i18nKey={["home:hero.headline"]}
-								defaults="Survey <primary>Smarter</primary>, Build Stronger"
-								components={{
-									accent: <span className="text-accent" />,
-									primary: <span className="text-primary" />,
-								}}
-							/>
+							{data ? (
+								renderHeroHeadline(data.headline ?? "")
+							) : (
+								<Trans
+									i18nKey={["home:hero.headline"]}
+									defaults="Survey <primary>Smarter</primary>, Build Stronger"
+									components={{
+										accent: <span className="text-accent" />,
+										primary: <span className="text-primary" />,
+									}}
+								/>
+							)}
 						</h1>
 					</FadeRight>
 					<FadeUp delay={0.15} className="mt-12 sm:mt-14">
 						<p className="text-base sm:text-lg text-on-surface/60 max-w-2xl font-normal leading-relaxed mb-10 sm:mb-12 whitespace-pre-line">
-							{t("home:hero.description")}
+							{description}
 						</p>
 					</FadeUp>
 
@@ -218,7 +298,7 @@ export default function HeroSection() {
 				{/* LCP element - priority + high fetch priority so it is discovered
 				    in the initial document and requested ahead of everything else. */}
 				<Image
-					src="/img/instruments/total-station-color.png"
+					src="/img/instruments/total-station-color.webp"
 					alt="total-station-color"
 					fill
 					priority

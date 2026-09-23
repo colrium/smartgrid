@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "Teknolojia ya UAV",
 		"title": "Droni za Hewa",
 		"image": "/media/aerial-drones/01.jpeg",
@@ -15,6 +16,7 @@
 	},
 
 	"services": {
+		"type": "card-grid",
 		"tag": "Uwezo wa Msingi",
 		"headline": "Huduma Zetu za Upimaji wa Hewa",
 		"description": "Gundua anuwai kamili ya huduma na matokeo yetu ya upimaji wa droni za hewa.",
@@ -67,6 +69,7 @@
 		]
 	},
 	"droneFleet": {
+		"type": "card-grid",
 		"tag": "Ndege za Hewa",
 		"headline": "Foleni Yetu ya Droni",
 		"description": "Katika SmartGrid Surveying, tunapeleka droni za kisasa kukamata picha za hewa za ubora wa juu na data ya multispectral kwa ramani, ufuatiliaji, na upimaji sahihi.",
@@ -98,6 +101,7 @@
 		]
 	},
 	"whyAerialSurveyDronesMatter": {
+		"type": "card-grid",
 		"tag": "Matumizi Makuu",
 		"headline": "Kwa Nini Droni za Upimaji wa Hewa Zina Umuhimu?",
 		"description": "Suluhisho zetu za droni hutoa maarifa muhimu katika sekta nyingi, zikibadilisha namna miradi inavyopangwa, kusimamiwa, na kufuatiliwa.",
@@ -145,6 +149,7 @@
 		]
 	},
 	"exploreMore": {
+		"type": "card-grid",
 		"tag": null,
 		"headline": "Chunguza zaidi...",
 		"description": "",
@@ -189,6 +194,7 @@
 		]
 	},
 	"projects": {
+		"type": "unique",
 		"tag": "Miradi Iliyokamilika",
 		"headline": "MIRADI ILIYOFANYIKA AFRIKA",
 		"description": "Tumekamilisha uchunguzi wa droni za hewa katika nchi kadhaa za Afrika, tukiunga mkono serikali, wasanidi binafsi, na NGOs. Hizi ni baadhi ya mionekano:",
@@ -203,6 +209,7 @@
 		]
 	},
 	"dronePhotography": {
+		"type": "unique",
 		"tag": "Mbali na uchunguzi wa kiufundi",
 		"headline": "Upigaji Panga wa Droni na Hadithi za Anga",
 		"description": "Tunapuka ng'ambo ya matarajio – picha za sinema, matukio, na hadithi za kipekee za chapa kutoka angani. Unahitaji vifaa? Huduma yetu ya kukodisha droni inawapa wateja droni bora kwa ajili ya muda mfupi au mrefu, pamoja na mafunzo au usaidizi wa operator.",

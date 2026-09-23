@@ -1,0 +1,326 @@
+{
+	"slug": "BIM",
+	"title": "BIM (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "hero",
+			"value": {
+				"headline": {
+					"en": "Reliable. Scalable. Fast. Powerful.",
+					"sw": "Kuaminika. Kupanuka. Haraka. Nguvu."
+				},
+				"title": {
+					"en": "Building Information Modelling (BIM)",
+					"sw": "Muundo wa Taarifa za Ujenzi (BIM)"
+				},
+				"description": {
+					"en": "Illuminate your energy future—our drone-powered solar panel surveys deliver unmatched precision, faster insights, and smarter decisions from the sky down. By capturing high-resolution imagery, 3D terrain data, and thermal analytics, we help optimize solar performance while reducing costly on-site inspections. Whether you're planning a new installation or maintaining an existing solar farm, our surveys provide the data clarity you need to maximize ROI and system efficiency. With SmartGrid, the power of geospatial intelligence takes your solar projects to the next level.\n\n Smartgrid Surveying is your trusted surveying partner!",
+					"sw": "Mwangaza mustakabali wako wa nishati—uchunguzi wetu wa paneli za sola unaoendeshwa na ndege zisizo na rubani hutoa usahihi usio na kifani, maarifa ya haraka, na maamuzi ya busara zaidi kutoka angani kwenda chini. Kwa kukamata picha za mwonekano wa juu, data ya ardhi ya 3D, na uchanganuzi wa joto, tunasaidia kuboresha utendaji wa sola huku tukipunguza ukaguzi wa gharama wa tovutini. Iwe unapanga usakinishaji mpya au unadumisha shamba lililopo la sola, uchunguzi wetu hutoa uwazi wa data unaohitaji kuongeza ROI na ufanisi wa mfumo. Kwa SmartGrid, nguvu ya akili ya kijiografia hupeleka miradi yako ya sola kiwango kingine.\n\n Smartgrid Surveying ni mshirika wako wa upimaji anayeaminika!"
+				},
+				"image": "/media/civil/bim/01.jpg",
+				"layout": "bottom",
+				"frame": false,
+				"scrollCue": false,
+				"cueLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"footnoteItems": [],
+				"ctaPrimary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": "",
+					"iconPosition": "end",
+					"trailingArrow": "auto"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "Email Us Today!",
+						"sw": "Tutumie Barua Pepe Leo!"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Building Information Modelling (BIM)&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Building Information Modelling (BIM). Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "email"
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "bimServices",
+			"value": {
+				"tag": {
+					"en": "Our Capabilities",
+					"sw": "Uwezo Wetu"
+				},
+				"headline": {
+					"en": "Building Information Modeling (BIM) in Engineering Surveying",
+					"sw": "Muundo wa Taarifa za Ujenzi (BIM) katika Upimaji wa Uhandisi"
+				},
+				"description": {
+					"en": "Discover how SmartGrid Surveying integrates drone and geospatial data with BIM workflows to power modern infrastructure development with precision and efficiency.",
+					"sw": "Gundua jinsi SmartGrid Surveying inavyounganisha data ya ndege zisizo na rubani na kijiografia na mtiririko wa kazi wa BIM kukuza maendeleo ya miundombinu ya kisasa kwa usahihi na ufanisi."
+				},
+				"items": [
+					{
+						"title": {
+							"en": "Reality Capture",
+							"sw": "Ukamataji wa Uhalisia"
+						},
+						"description": {
+							"en": "We use drones to capture detailed, geo-referenced aerial imagery and point clouds, feeding into BIM software for accurate modeling of existing conditions.",
+							"sw": "Tunatumia ndege zisizo na rubani kukamata picha za angani zilizorejelewa kijiografia na point clouds, zinazoliswa kwenye programu ya BIM kwa uundaji sahihi wa mifano ya hali zilizopo."
+						}
+					},
+					{
+						"title": {
+							"en": "Topographic Surveys",
+							"sw": "Uchunguzi wa Topografia"
+						},
+						"description": {
+							"en": "Drone-based topographic data helps engineers design around real-world terrain, reducing assumptions and errors in planning stages.",
+							"sw": "Data ya topografia inayotokana na ndege zisizo na rubani huwasaidia wahandisi kubuni kulingana na ardhi halisi ya dunia, kupunguza mawazo na makosa katika hatua za upangaji."
+						}
+					},
+					{
+						"title": {
+							"en": "3D Site Modeling",
+							"sw": "Uundaji wa Mifano ya 3D ya Tovuti"
+						},
+						"description": {
+							"en": "Our aerial LiDAR and photogrammetry solutions generate 3D models of construction sites, integrated seamlessly into BIM platforms.",
+							"sw": "Suluhisho zetu za LiDAR za angani na photogrammetry huzalisha mifano ya 3D ya maeneo ya ujenzi, ikijumuishwa kwa urahisi katika majukwaa ya BIM."
+						}
+					},
+					{
+						"title": {
+							"en": "Progress Tracking",
+							"sw": "Ufuatiliaji wa Maendeleo"
+						},
+						"description": {
+							"en": "Timelapse drone imagery allows for tracking project phases, comparing BIM models with real-world builds to identify delays or discrepancies.",
+							"sw": "Picha za muda wa ndege zisizo na rubani huruhusu kufuatilia awamu za mradi, kulinganisha mifano ya BIM na ujenzi wa ulimwengu halisi kutambua ucheleweshaji au kutofautiana."
+						}
+					},
+					{
+						"title": {
+							"en": "Asset Management",
+							"sw": "Usimamizi wa Mali"
+						},
+						"description": {
+							"en": "We embed geospatial data into BIM for lifecycle asset tracking—useful in utilities, transport, and urban infrastructure.",
+							"sw": "Tunapachika data ya kijiografia ndani ya BIM kwa ufuatiliaji wa mali katika mzunguko wake wote wa maisha—muhimu katika huduma, usafiri, na miundombinu ya mijini."
+						}
+					},
+					{
+						"title": {
+							"en": "Clash Detection",
+							"sw": "Ugunduzi wa Migongano"
+						},
+						"description": {
+							"en": "By combining drone scans with BIM models, engineers identify potential design conflicts before construction begins.",
+							"sw": "Kwa kuchanganya skana za ndege zisizo na rubani na mifano ya BIM, wahandisi hutambua migongano inayowezekana ya kubuni kabla ya ujenzi kuanza."
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "deliverables",
+			"value": {
+				"tag": {
+					"en": "BIM Outputs",
+					"sw": "Matokeo ya BIM"
+				},
+				"headline": {
+					"en": "BIM & Digital Twin Deliverables",
+					"sw": "Matokeo ya BIM na Digital Twin"
+				},
+				"description": {
+					"en": "Survey-grade data modelled for BIM workflows and digital twins:",
+					"sw": "Data ya kiwango cha uchunguzi imemodeliwa kwa mchakato wa BIM na digital twins:"
+				},
+				"liveLabel": {
+					"en": "Deliverable package",
+					"sw": "Kifurushi cha matokeo"
+				},
+				"checks": [
+					{
+						"en": "IFC & native formats",
+						"sw": "Miundo ya IFC na asili"
+					},
+					{
+						"en": "LOD mapped to project needs",
+						"sw": "LOD iliyopangwa kwa mahitaji ya mradi"
+					},
+					{
+						"en": "Consistent coordinate systems",
+						"sw": "Mifumo ya kuratibu inayoendana"
+					}
+				],
+				"items": [
+					{
+						"title": {
+							"en": "Scan-to-BIM Models",
+							"sw": "Modeli za Scan-to-BIM"
+						},
+						"format": {
+							"en": "IFC / RVT",
+							"sw": "IFC / RVT"
+						},
+						"icon": "cube-outline",
+						"image": {
+							"en": "/media/deliverables/scan-to-bim-models.jpg",
+							"sw": "/media/deliverables/scan-to-bim-models.jpg"
+						},
+						"description": {
+							"en": "Existing-conditions models generated from point clouds and classified to your required level of development.",
+							"sw": "Modeli za hali iliyopo zinazotokana na point clouds zilizainishwa kwa kiwango cha maendeleo kinachohitajika."
+						}
+					},
+					{
+						"title": {
+							"en": "Registered Point Clouds",
+							"sw": "Point Clouds Zilizosajiliwa"
+						},
+						"format": {
+							"en": "RCP / E57 / LAS",
+							"sw": "RCP / E57 / LAS"
+						},
+						"icon": "vector-square",
+						"image": {
+							"en": "/media/deliverables/registered-point-clouds.jpg",
+							"sw": "/media/deliverables/registered-point-clouds.jpg"
+						},
+						"description": {
+							"en": "Clean, geo-referenced scans with control registration, ready for direct use in BIM authoring tools.",
+							"sw": "Uchunguzi safi ulioelezwa kijiografia na usajili wa udhibiti, tayari kwa zana za uandishi wa BIM."
+						}
+					},
+					{
+						"title": {
+							"en": "As-Built BIM Models",
+							"sw": "Modeli za BIM za As-Built"
+						},
+						"format": {
+							"en": "IFC / RVT",
+							"sw": "IFC / RVT"
+						},
+						"icon": "domain",
+						"image": {
+							"en": "/media/deliverables/as-built-bim-models.jpg",
+							"sw": "/media/deliverables/as-built-bim-models.jpg"
+						},
+						"description": {
+							"en": "Construction-stage models updated with field verification for handover, operations and maintenance.",
+							"sw": "Modeli za hatua ya ujenzi zilizosasishwa kwa uthibitisho wa shamba kwa uhamishaji, uendeshaji na matunzo."
+						}
+					},
+					{
+						"title": {
+							"en": "Deviation & Clash Reports",
+							"sw": "Ripoti za Tofauti na Clash"
+						},
+						"format": {
+							"en": "PDF / Excel",
+							"sw": "PDF / Excel"
+						},
+						"icon": "chart-histogram",
+						"image": {
+							"en": "/media/deliverables/deviation-and-clash-reports.jpg",
+							"sw": "/media/deliverables/deviation-and-clash-reports.jpg"
+						},
+						"description": {
+							"en": "Design-versus-built comparisons with quantified deviations for engineering review and resolution.",
+							"sw": "Ulinganisho wa usanifu dhidi ya lililojengwa na tofauti zilizopimwa kwa uhakiki na utatuzi wa uhandisi."
+						}
+					},
+					{
+						"title": {
+							"en": "2D Documentation",
+							"sw": "Nyaraka za 2D"
+						},
+						"format": {
+							"en": "DWG / PDF",
+							"sw": "DWG / PDF"
+						},
+						"icon": "file-document-outline",
+						"image": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "Plans, sections and elevations extracted from the model for permits, tenders and site use.",
+							"sw": "Ramani, sehemu na mwinuko yaliyotolewa kutoka kwa modeli kwa leseni, zabuni na matumizi ya tovuti."
+						}
+					},
+					{
+						"title": {
+							"en": "Digital Twin Datasets",
+							"sw": "Seti za Data za Digital Twin"
+						},
+						"format": {
+							"en": "Web / GIS",
+							"sw": "Web / GIS"
+						},
+						"icon": "earth",
+						"image": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "Geo-referenced datasets that feed web maps, dashboards and digital twin platforms.",
+							"sw": "Seti za data zilizoelezwa kijiografia zinazolisha ramani za mtandao, dashibodi na majukwaa ya digital twin."
+						}
+					}
+				],
+				"tone": "surface",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "ctaBand",
+			"value": {
+				"tag": {
+					"en": "Let’s Collaborate",
+					"sw": "Tuushirikiane"
+				},
+				"headline": {
+					"en": "Ready to Elevate Your Infrastructure with BIM?",
+					"sw": "Uko Tayari Kuinua Miundombinu Yako kwa BIM?"
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"primary": {
+					"label": {
+						"en": "Get in Touch",
+						"sw": "Wasiliana Nasi"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Building Information Modelling (BIM)&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Building Information Modelling (BIM). Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "email"
+				},
+				"secondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"layout": "centered",
+				"variant": "panel",
+				"decor": "glow",
+				"watermark": "",
+				"images": [],
+				"shimmer": false,
+				"hairline": false,
+				"id": ""
+			}
+		}
+	]
+}

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useTranslation } from "@/hooks";
 import { FadeLeft, FadeRight } from "@/components/animations/Fade";
 import { SectionTag } from "@/components/SectionTag";
-import { Blob } from "@/components/sections/home/decor";
+import { Blob } from "@/components/sections/shared/decor";
 import { Breadcrumbs } from "@/components/sections/equipment-sale/Breadcrumbs";
 
 interface HeroCta {

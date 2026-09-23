@@ -7,7 +7,7 @@ import { useTranslation } from "@/hooks";
 import Link from "@/components/Link";
 import { SectionHeader } from "@/components/sections/home";
 import { FadeUp } from "@/components/animations/Fade";
-import { Blob, ParallaxDecor } from "@/components/sections/home/decor";
+import { Blob, ParallaxDecor } from "@/components/sections/shared/decor";
 
 interface NeedItem {
 	icon?: string | null;
@@ -17,6 +17,15 @@ interface NeedItem {
 }
 
 interface WhenYouNeedContent {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+	image?: string | null;
+	imageBadge?: string | null;
+	items: NeedItem[];
+}
+
+export interface CadastralWhenYouNeedData {
 	tag?: string | null;
 	headline: string;
 	description?: string;
@@ -35,17 +44,22 @@ const FALLBACK_ICONS = [
 	"fence",
 ];
 
-export function WhenYouNeedSection(): ReactElement {
+export function WhenYouNeedSection({ data, id }: { data?: CadastralWhenYouNeedData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/cadastral-surveys"]);
-	const section = t("surveying/cadastral-surveys:whenYouNeed", {
-		returnObjects: true,
-	}) as unknown as WhenYouNeedContent;
+	// Keystatic-owned content when `data` is provided (M11
+	// `cadastralWhenYouNeed` unique section); legacy locale strings
+	// otherwise. Sticky image, wide-last card and positional fallback icons
+	// stay in the renderer.
+	const section = (data ??
+		(t("surveying/cadastral-surveys:whenYouNeed", {
+			returnObjects: true,
+		}) as unknown as WhenYouNeedContent)) as WhenYouNeedContent;
 	const items = Array.isArray(section?.items) ? section.items : [];
 
 	if (items.length === 0) return <></>;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden">
+		<section id={id} className="py-24 sm:py-28 relative overflow-hidden">
 			<Blob className="w-[28rem] h-[28rem] bg-primary-100/60 -bottom-24 -right-24" opacity={0.5} />
 			<ParallaxDecor speed={-0.06} className="absolute top-24 -left-24 z-0">
 				<Blob className="w-72 h-72 bg-primary-50" opacity={0.6} />

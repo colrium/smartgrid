@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from "@/hooks";
 import { SectionHeader } from "@/components/sections/home";
 import { FadeUp } from "@/components/animations/Fade";
-import { Blob } from "@/components/sections/home/decor";
+import { Blob } from "@/components/sections/shared/decor";
 
 interface GisComponentItem {
 	title: string;
@@ -12,6 +12,17 @@ interface GisComponentItem {
 }
 
 interface GisComponentsContent {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+	lifecycle?: {
+		title?: string | null;
+		subtitle?: string | null;
+	} | null;
+	list: GisComponentItem[];
+}
+
+export interface GisComponentsData {
 	tag?: string | null;
 	headline: string;
 	description?: string;
@@ -31,17 +42,21 @@ function nodePosition(index: number, total: number, radius = 40): { left: number
 	};
 }
 
-export function GisComponentsSection() {
+export function GisComponentsSection({ data, id }: { data?: GisComponentsData | null; id?: string } = {}) {
 	const { t } = useTranslation(["surveying/gis-mapping"]);
-	const section = t("surveying/gis-mapping:gisComponents", {
-		returnObjects: true,
-	}) as unknown as GisComponentsContent;
+	// Keystatic-owned content when `data` is provided (M11 `gisComponents`
+	// unique section); legacy locale strings otherwise. The lifecycle ring
+	// geometry + hardcoded "GIS"/"Lifecycle" fallbacks stay in the renderer.
+	const section = (data ??
+		(t("surveying/gis-mapping:gisComponents", {
+			returnObjects: true,
+		}) as unknown as GisComponentsContent)) as GisComponentsContent;
 	const list = Array.isArray(section.list) ? section.list : [];
 	const lifecycleTitle = section.lifecycle?.title || "GIS";
 	const lifecycleSubtitle = section.lifecycle?.subtitle || "Lifecycle";
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
+		<section id={id} className="py-24 sm:py-28 relative overflow-hidden bg-surface">
 			<Blob className="w-[28rem] h-[28rem] bg-primary-100/60 -bottom-24 -right-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">

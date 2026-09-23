@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "RESOURCE MAPPING",
 		"title": "Land, Infrastructure & Natural Resources into Actionable Geospatial Intelligence data",
 		"image": "/media/surveying/resource-mapping/hero.jpg",
@@ -15,6 +16,7 @@
 		}
 	},
 	"whatIsResourceMapping": {
+		"type": "unique",
 		"tag": "What we do",
 		"headline": "What is Resource Mapping?",
 		"description": "Resource mapping is the process of capturing, analyzing, and visualizing physical and natural resources in a geospatial system to support planning, management, and decision-making.",
@@ -48,6 +50,7 @@
 		"closingStatement": "It turns unknown landscapes into measurable, decision-ready datasets"
 	},
 	"typesOfResourceMapping": {
+		"type": "card-grid",
 		"tag": "Our Expertise",
 		"headline": "Types of Resource Mapping We Deliver",
 		"description": "Comprehensive geospatial intelligence across four core domains",
@@ -95,6 +98,7 @@
 		]
 	},
 	"resourceMappingWorkflow": {
+		"type": "process",
 		"tag": "Engineering Grade",
 		"headline": "Our Resource Mapping Workflow (Engineering Grade)",
 		"description": "We follow a structured geospatial production pipeline:",
@@ -139,6 +143,7 @@
 		"outcome": "Engineering-grade geospatial deliverables ready for planning, design & decision-making"
 	},
 	"deliverables": {
+		"type": "deliverables",
 		"tag": "What you receive",
 		"headline": "Deliverables You Receive",
 		"description": "We deliver decision-ready geospatial intelligence, not just maps:",
@@ -208,6 +213,7 @@
 		]
 	},
 	"whoUsesResourceMapping": {
+		"type": "unique",
 		"tag": "Who we serve",
 		"headline": "Who Uses Our Resource Mapping Services?",
 		"description": "Trusted by public and private sector leaders across East Africa",
@@ -260,6 +266,7 @@
 		]
 	},
 	"techStack": {
+		"type": "card-grid",
 		"tag": "Technology Stack",
 		"headline": "Technology Stack We Use",
 		"description": "Industry-leading tools and platforms for engineering-grade deliverables",
@@ -298,6 +305,7 @@
 		]
 	},
 	"dataAccuracy": {
+		"type": "unique",
 		"tag": "Accuracy & Transparency",
 		"headline": "Data Accuracy & Method Transparency",
 		"description": "Accuracy depends on:",
@@ -323,6 +331,7 @@
 		]
 	},
 	"finalCta": {
+		"type": "cta-closing",
 		"tag": "Get Expert GIS Support",
 		"headline": "Get Expert GIS Support Today",
 		"description": "We help you transform raw geographic areas into actionable intelligence for planning, engineering, and investment decisions.",
@@ -349,6 +358,7 @@
 		]
 	},
 	"agriculture": {
+		"type": "card-grid",
 		"tag": "Precision Agriculture",
 		"headline": "AGRICULTURE",
 		"images": ["/media/surveying/resource-mapping/agriculture-1.jpg", "/media/surveying/resource-mapping/agriculture-2.png"],
@@ -372,6 +382,7 @@
 		]
 	},
 	"utilitiesEnergySmartInfrastructure": {
+		"type": "card-grid",
 		"tag": "Utilities & Energy",
 		"headline": "Utilities, Energy & Smart Infrastructure",
 		"images": [
@@ -398,6 +409,7 @@
 		]
 	},
 	"quarryMining": {
+		"type": "card-grid",
 		"tag": "Mining & Extraction",
 		"headline": "QUARRY & MINING",
 		"images": [
@@ -424,6 +436,7 @@
 		]
 	},
 	"constructionCivilEngineering": {
+		"type": "card-grid",
 		"tag": "Construction & Engineering",
 		"headline": "Construction & Civil Engineering",
 		"images": [
@@ -450,6 +463,7 @@
 		]
 	},
 	"environmentalManagementConservation": {
+		"type": "card-grid",
 		"tag": "Environmental Conservation",
 		"headline": "Environmental Management & Conservation",
 		"images": [
@@ -476,6 +490,7 @@
 		]
 	},
 	"disasterRiskReduction": {
+		"type": "card-grid",
 		"tag": "Emergency Response",
 		"headline": "Disaster Risk Reduction & Emergency Response",
 		"images": [
@@ -502,6 +517,7 @@
 		]
 	},
 	"whySmartGridStandsOut": {
+		"type": "card-grid",
 		"tag": "Our Advantages",
 		"headline": "Why SmartGrid Surveying Stands Out",
 		"description": "",

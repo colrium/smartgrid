@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "UWEKAJI WA ALAMA ZA TOVUTI",
 		"title": "Staking Out na Setting Out",
 		"image": "/media/civil/site-setting-out/01.jpg",
@@ -14,6 +15,7 @@
 		}
 	},
 	"ourServices": {
+		"type": "card-grid",
 		"tag": "Uwezo wa Msingi",
 		"headline": "Huduma Zetu",
 		"description": "",
@@ -45,6 +47,7 @@
 		]
 	},
 	"ourInstruments": {
+		"type": "card-grid",
 		"tag": "Sahihi na Kuaminika",
 		"headline": "Vyombo Vyetu vya Upimaji",
 		"description": "Tunatumia vifaa vya kisasa na sahihi kuhakikisha kila pointi ni sahihi na kuaminika kwa miradi yako ya ujenzi na uhandisi.",
@@ -72,6 +75,7 @@
 		]
 	},
 	"faq": {
+		"type": "faq",
 		"tag": "Maswali ya Kawaida",
 		"headline": "Maswali Yanayoulizwa Mara kwa Mara",
 		"description": "",
@@ -124,6 +128,7 @@
 		]
 	},
 	"deliverables": {
+		"type": "deliverables",
 		"tag": "Matokeo ya Setting Out",
 		"headline": "Matokeo ya Setting Out ya Tovuti",
 		"description": "Kila kitu ambacho timu yako inahitaji kujenga kikamilifu kama usanifu:",

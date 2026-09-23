@@ -12,6 +12,13 @@ export interface FinalCtaAction {
 	href: string;
 }
 
+export interface FinalCtaClassesProp {
+	tag?: string;
+	headline?: string;
+	description?: string;
+	note?: string;
+	actions?: string;
+}
 interface FinalCtaProps {
 	id?: string;
 	tag?: string | null;
@@ -30,6 +37,7 @@ interface FinalCtaProps {
 	columns?: 3 | 4;
 	/** Action card text alignment. */
 	align?: "center" | "left";
+	classes?: FinalCtaClassesProp;
 	className?: string;
 }
 
@@ -51,6 +59,7 @@ export function FinalCta({
 	actionIconFallback = "arrow-right",
 	columns = 4,
 	align = "center",
+	classes,
 	className = "",
 }: FinalCtaProps): ReactElement {
 	const cards = Array.isArray(actions) ? actions : [];
@@ -82,22 +91,22 @@ export function FinalCta({
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
 					<div className="flex flex-col items-center text-center">
-						{tag && <SectionTag dark>{tag}</SectionTag>}
-						<h2 className="mt-5 font-light tracking-tight leading-[1.08] text-3xl sm:text-4xl lg:text-5xl text-surface max-w-3xl">
+						{tag && <SectionTag dark className={classes?.tag ?? ""}>{tag}</SectionTag>}
+						<h2 className={`mt-5 font-light tracking-tight leading-[1.08] text-3xl sm:text-4xl lg:text-5xl text-surface max-w-3xl ${classes?.headline ?? ""}`}>
 							{headline}
 						</h2>
 						{description &&
 							(descriptionTone === "accent" ? (
-								<p className="mt-5 text-base sm:text-lg font-medium text-primary-200">
+								<p className={`mt-5 text-base sm:text-lg font-medium text-primary-200 ${classes?.description ?? ""}`}>
 									{description}
 								</p>
 							) : (
-								<p className="mt-5 text-base sm:text-lg text-surface/65 leading-relaxed max-w-2xl">
+								<p className={`mt-5 text-base sm:text-lg text-surface/65 leading-relaxed max-w-2xl ${classes?.description ?? ""}`}>
 									{description}
 								</p>
 							))}
 						{note && (
-							<p className="mt-3 text-sm sm:text-base text-surface/60 leading-relaxed max-w-2xl">
+							<p className={`mt-3 text-sm sm:text-base text-surface/60 leading-relaxed max-w-2xl ${classes?.note ?? ""}`}>
 								{note}
 							</p>
 						)}
@@ -113,7 +122,7 @@ export function FinalCta({
 								</p>
 							)}
 
-							<div className={gridClass}>
+							<div className={`${gridClass} ${classes?.actions ?? ""}`}>
 								{cards.map((action, index) => (
 									<Link key={index} href={action.href} className={cardClass}>
 										<span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/15 text-primary-200 transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">

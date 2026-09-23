@@ -1,0 +1,1476 @@
+{
+	"slug": "Ground Penetrating Radar",
+	"title": "Ground Penetrating Radar (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "gprHero",
+			"value": {
+				"title": {
+					"en": "Ground Penetrating Radar (GPR) & Subsurface Utility Engineering (SUE) in Kenya",
+					"sw": "Uchunguzi wa Ground Penetrating Radar (GPR) & Uhandisi wa Huduma za Chini ya Ardhi (SUE) nchini Kenya"
+				},
+				"images": [
+					{
+						"url": "/media/surveying/ground-penetrating-radar/gpr-20.jpeg",
+						"label": {
+							"en": "LMX200",
+							"sw": "LMX200"
+						},
+						"description": {
+							"en": "The LMX200 GPR system with SmartCart® – the industry standard for utility locating, concrete scanning, and subsurface imaging.",
+							"sw": "The LMX200 GPR system with SmartCart® – the industry standard for utility locating, concrete scanning, and subsurface imaging."
+						}
+					},
+					{
+						"url": "/media/surveying/ground-penetrating-radar/gpr-22.jpeg",
+						"label": {
+							"en": "Non-Destructive",
+							"sw": "Non-Destructive"
+						},
+						"description": {
+							"en": "Non-invasive subsurface investigation that preserves infrastructure integrity while delivering accurate underground data.",
+							"sw": "Non-invasive subsurface investigation that preserves infrastructure integrity while delivering accurate underground data."
+						}
+					},
+					{
+						"url": "/media/surveying/ground-penetrating-radar/gpr-21.jpeg",
+						"label": {
+							"en": "Deep Detection",
+							"sw": "Deep Detection"
+						},
+						"description": {
+							"en": "Penetrates up to 8 meters (26 feet) depth, capturing rebar, conduits, voids, and utility lines with high-resolution clarity.",
+							"sw": "Penetrates up to 8 meters (26 feet) depth, capturing rebar, conduits, voids, and utility lines with high-resolution clarity."
+						}
+					},
+					{
+						"url": "/media/surveying/ground-penetrating-radar/gpr-22.jpeg",
+						"label": {
+							"en": "Portable & Rugged",
+							"sw": "Portable & Rugged"
+						},
+						"description": {
+							"en": "Lightweight, collapsible design with IP65-rated weather resistance – built for demanding job sites and easy transport.",
+							"sw": "Lightweight, collapsible design with IP65-rated weather resistance – built for demanding job sites and easy transport."
+						}
+					},
+					{
+						"url": "/media/surveying/ground-penetrating-radar/gpr-03.jpeg",
+						"label": {
+							"en": "GPS-Integrated Mapping",
+							"sw": "GPS-Integrated Mapping"
+						},
+						"description": {
+							"en": "Built-in GPS and DMI (Distance Measurement Instrument) for precise georeferencing and seamless GIS data export.",
+							"sw": "Built-in GPS and DMI (Distance Measurement Instrument) for precise georeferencing and seamless GIS data export."
+						}
+					},
+					{
+						"url": "/media/surveying/ground-penetrating-radar/gpr-22.jpeg",
+						"label": {
+							"en": "Real-Time Data Display",
+							"sw": "Real-Time Data Display"
+						},
+						"description": {
+							"en": "Live on-screen radargrams with adjustable depth and gain settings for instant field analysis and decision-making.",
+							"sw": "Live on-screen radargrams with adjustable depth and gain settings for instant field analysis and decision-making."
+						}
+					},
+					{
+						"url": "/media/surveying/ground-penetrating-radar/gpr-23.jpeg",
+						"label": {
+							"en": "Multi-Frequency Antenna",
+							"sw": "Multi-Frequency Antenna"
+						},
+						"description": {
+							"en": "Dual-frequency (200 MHz & 500 MHz) antenna support for balancing depth penetration and near-surface resolution in one system.",
+							"sw": "Dual-frequency (200 MHz & 500 MHz) antenna support for balancing depth penetration and near-surface resolution in one system."
+						}
+					},
+					{
+						"url": "/media/surveying/ground-penetrating-radar/gpr-07.jpeg",
+						"label": {
+							"en": "Utility Mapping",
+							"sw": "Utility Mapping"
+						},
+						"description": {
+							"en": "Accurately maps metal and non-metallic utilities including PVC, asbestos-cement, and fiber-optic cables beneath pavements.",
+							"sw": "Accurately maps metal and non-metallic utilities including PVC, asbestos-cement, and fiber-optic cables beneath pavements."
+						}
+					},
+					{
+						"url": "/media/surveying/ground-penetrating-radar/gpr-19.jpeg",
+						"label": {
+							"en": "Concrete Scanning",
+							"sw": "Concrete Scanning"
+						},
+						"description": {
+							"en": "Identifies rebar, post-tension cables, conduits, and voids within concrete slabs – essential for safe core drilling and cutting.",
+							"sw": "Identifies rebar, post-tension cables, conduits, and voids within concrete slabs – essential for safe core drilling and cutting."
+						}
+					},
+					{
+						"url": "/media/surveying/ground-penetrating-radar/gpr-18.jpeg",
+						"label": {
+							"en": "Void & Sinkhole Detection",
+							"sw": "Void & Sinkhole Detection"
+						},
+						"description": {
+							"en": "Detects subsurface voids, cavities, and sinkhole precursors to prevent structural failures and enhance site safety.",
+							"sw": "Detects subsurface voids, cavities, and sinkhole precursors to prevent structural failures and enhance site safety."
+						}
+					},
+					{
+						"url": "/media/surveying/ground-penetrating-radar/gpr-16.jpeg",
+						"label": {
+							"en": "Asphalt Thickness Measurement",
+							"sw": "Asphalt Thickness Measurement"
+						},
+						"description": {
+							"en": "Measures pavement and asphalt layer thickness with millimeter accuracy for quality control and road rehabilitation projects.",
+							"sw": "Measures pavement and asphalt layer thickness with millimeter accuracy for quality control and road rehabilitation projects."
+						}
+					},
+					{
+						"url": "/media/surveying/ground-penetrating-radar/gpr-15.jpeg",
+						"label": {
+							"en": "Environmental & Geotechnical Surveys",
+							"sw": "Environmental & Geotechnical Surveys"
+						},
+						"description": {
+							"en": "Maps soil strata, water table levels, and buried contamination plumes for environmental assessments and geotechnical investigations.",
+							"sw": "Maps soil strata, water table levels, and buried contamination plumes for environmental assessments and geotechnical investigations."
+						}
+					},
+					{
+						"url": "/media/surveying/ground-penetrating-radar/gpr-11.jpeg",
+						"label": {
+							"en": "Data Processing & 3D Visualization",
+							"sw": "Data Processing & 3D Visualization"
+						},
+						"description": {
+							"en": "Advanced post-processing software with 3D slice-view and depth-slice animation for comprehensive subsurface interpretation and reporting.",
+							"sw": "Advanced post-processing software with 3D slice-view and depth-slice animation for comprehensive subsurface interpretation and reporting."
+						}
+					}
+				],
+				"browseAll": {
+					"label": {
+						"en": "Browse All Services",
+						"sw": "Tazama Huduma Zote"
+					},
+					"href": "/surveying"
+				},
+				"description": {
+					"en": "<bold>Accurate Underground Utility Mapping Before You Dig, Design, or Build</bold>\n\nWe provide <bold>high-resolution Ground Penetrating Radar (GPR) surveys</bold> using advanced LMX200 systems integrated with RTK GNSS to detect, map, and validate underground utilities with engineering-grade accuracy across Kenya and East Africa.\n\n<bold>Avoid excavation risks. Prevent utility strikes. Build with confidence.</bold>",
+					"sw": "<bold>Ramani Sahihi za Huduma za Chini ya Ardhi Kabla ya Kuchimba, Kubuni, au Kujenga</bold>\n\nTunatoa <bold>uchunguzi wa Ground Penetrating Radar (GPR) wa mwonekano wa juu</bold> kwa kutumia mifumo ya hali ya juu ya LMX200 iliyounganishwa na RTK GNSS kutambua, kupanga ramani, na kuthibitisha huduma za chini ya ardhi kwa usahihi wa darasa la uhandisi nchini Kenya na Afrika Mashariki.\n\n<bold>Epuka hatari za kuchimba. Zuia kupigwa kwa huduma. Jenga kwa ujasiri.</bold>"
+				},
+				"ctaPrimary": {
+					"label": {
+						"en": "Request a Quote",
+						"sw": "Omba Nukuu"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Ground Penetrating Radar&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Ground Penetrating Radar. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": ""
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "Book a GPR Utility Scan",
+						"sw": "Panga Uchunguzi wa GPR"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Book a GPR Utility Scan&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a GPR utility scan on my site.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AArea to scan (approx):%0D%0ASubject of concern (utilities / voids / rebar):%0D%0APreferred date:%0D%0A%0D%0AThank you.",
+					"icon": "calendar-check"
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "ctaBand",
+			"value": {
+				"tag": {
+					"en": "Technical Proposal",
+					"sw": "Pendekezo la Kiufundi"
+				},
+				"headline": {
+					"en": "Request Technical Proposal (24hr Turnaround)",
+					"sw": "Omba Pendekezo la Kiufundi (Majibu ya Saa 24)"
+				},
+				"description": {
+					"en": "Send us your site details — access, area, and utility concerns — and receive a scoped GPR / SUE technical proposal with methodology, deliverables and pricing within 24 hours.",
+					"sw": "Tutumie maelezo ya tovuti yako — ufikiaji, eneo, na mahangaiko ya huduma — nasi tutapokea pendekezo la kiufundi la GPR / SUE lenye mbinu, matokeo na bei ndani ya saa 24."
+				},
+				"primary": {
+					"label": {
+						"en": "Request Technical Proposal",
+						"sw": "Omba Pendekezo la Kiufundi"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Technical Proposal Request: GPR & SUE&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like a technical proposal for a GPR / subsurface utility engineering survey.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AArea to survey:%0D%0AUtility concerns:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "file-document-outline"
+				},
+				"secondary": {
+					"label": {
+						"en": "WhatsApp a GPR Specialist",
+						"sw": "WhatsApp Mtaalamu wa GPR"
+					},
+					"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20request%20a%20GPR%20technical%20proposal.",
+					"icon": "whatsapp"
+				},
+				"layout": "split",
+				"variant": "panel",
+				"decor": "glow",
+				"watermark": "file-document-outline",
+				"images": [],
+				"shimmer": true,
+				"hairline": true,
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "gprHighlights",
+			"value": {
+				"items": [
+					{
+						"icon": "shield-check-outline",
+						"label": {
+							"en": "Non-Destructive",
+							"sw": "Isiyo Haribu"
+						}
+					},
+					{
+						"icon": "arrow-down-bold-box-outline",
+						"label": {
+							"en": "Deep Detection",
+							"sw": "Utabiri wa Kina"
+						}
+					},
+					{
+						"icon": "clock-fast",
+						"label": {
+							"en": "Real Time Results",
+							"sw": "Matokeo ya Papo Hapo"
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "gprJumpNav",
+			"value": {
+				"items": [
+					{
+						"label": {
+							"en": "Overview",
+							"sw": "Muhtasari"
+						},
+						"href": "#overview"
+					},
+					{
+						"label": {
+							"en": "Workflow",
+							"sw": "Mtiririko"
+						},
+						"href": "#methodology"
+					},
+					{
+						"label": {
+							"en": "Applications",
+							"sw": "Matumizi"
+						},
+						"href": "#applications"
+					},
+					{
+						"label": {
+							"en": "What We Detect",
+							"sw": "Tunachogundua"
+						},
+						"href": "#detect"
+					},
+					{
+						"label": {
+							"en": "Deliverables",
+							"sw": "Matokeo"
+						},
+						"href": "#deliverables"
+					},
+					{
+						"label": {
+							"en": "SUE Compliance",
+							"sw": "Viwango vya SUE"
+						},
+						"href": "#sue"
+					},
+					{
+						"label": {
+							"en": "Limitations",
+							"sw": "Vikwazo"
+						},
+						"href": "#limitations"
+					},
+					{
+						"label": {
+							"en": "Before vs After",
+							"sw": "Kabla vs Baada"
+						},
+						"href": "#before-after"
+					},
+					{
+						"label": {
+							"en": "Technology",
+							"sw": "Teknolojia"
+						},
+						"href": "#technology"
+					},
+					{
+						"label": {
+							"en": "Projects",
+							"sw": "Miradi"
+						},
+						"href": "#projects"
+					},
+					{
+						"label": {
+							"en": "Summary",
+							"sw": "Kwa Ufupi"
+						},
+						"href": "#summary"
+					},
+					{
+						"label": {
+							"en": "Get Started",
+							"sw": "Anza"
+						},
+						"href": "#get-started"
+					},
+					{
+						"label": {
+							"en": "FAQs",
+							"sw": "Maswali"
+						},
+						"href": "#faqs"
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "gprOverview",
+			"value": {
+				"tag": {
+					"en": "Overview",
+					"sw": "Muhtasari"
+				},
+				"headline": {
+					"en": "Ground Penetrating Radar Survey in Kenya",
+					"sw": "Uchunguzi wa Ground Penetrating Radar Kenya"
+				},
+				"paragraphs": [
+					{
+						"en": "Ground Penetrating Radar (GPR) surveys use electromagnetic pulses to detect and map buried utilities, voids, rebar, and subsurface anomalies without excavation. GPR is the primary tool for pre-excavation utility mapping, concrete scanning, and void detection across construction sites in Nairobi and beyond.",
+						"sw": "Uchunguzi wa Ground Penetrating Radar (GPR) hutumia miale ya electromagnetic kutambua na kupanga ramani za huduga zilizojificha, mashimo, rebar, na kasoro za chini ya ardhi bila kuchimba. GPR ni zana kuu ya ramani za huduga kabla ya kuchimba, upimaji wa zege, na utambuzi wa mashimo kwenye tovuti za ujenzi Nairobi na zaidi."
+					},
+					{
+						"en": "SmartGrid Surveying uses GSSI-class GPR systems with experienced operators, delivering same-day preliminary findings and detailed reports with CAD-ready drawings.",
+						"sw": "SmartGrid Surveying hutumia mifumo ya GSSI-class GPR yenye waendeshaji wenye uzoefu, kutoa matokeo ya awali siku hiyo hiyo na ripoti za kina zenye michoro tayari kwa CAD."
+					},
+					{
+						"en": "Searching for a ground penetrating radar survey near you? Our GPR teams are based in Nairobi and dispatch across Kenya — Kiambu, Nakuru, Kisumu, Mombasa — with most requests mobilized within 24 hours.",
+						"sw": "Unatafuta uchunguzi wa GPR karibu nawe? Timu zetu za GPR ziko Nairobi na hupeleka huduma nchini kote — Kiambu, Nakuru, Kisumu, Mombasa — na ombi kubwa la maombi huwekwa ratiba ndani ya saa 24."
+					}
+				],
+				"image": {
+					"en": "/media/surveying/ground-penetrating-radar/gpr-lmx-200.gif",
+					"sw": ""
+				},
+				"id": "overview"
+			}
+		},
+		{
+			"discriminant": "gprMethodology",
+			"value": {
+				"tag": {
+					"en": "Our GPR Survey Workflow",
+					"sw": "Mtiririko Wetu wa Kazi wa GPR"
+				},
+				"headline": {
+					"en": "Our GPR Survey Workflow (Engineering Standard Method)",
+					"sw": "Mtiririko Wetu wa Kazi wa Uchunguzi wa GPR (Mbinu ya Kiwango cha Uhandisi)"
+				},
+				"description": {
+					"en": "We follow a structured Subsurface Utility Engineering (SUE) approach:",
+					"sw": "Tunafuata mbinu iliyopangwa ya Uhandisi wa Huduma za Chini ya Ardhi (SUE):"
+				},
+				"items": [
+					{
+						"title": {
+							"en": "Site Preparation & Utility Desk Study",
+							"sw": "Maandalizi ya Tovuti na Somo la Dawati la Huduma"
+						},
+						"points": [
+							{
+								"en": "Review existing utility drawings",
+								"sw": "Kagua michoro zilizopo za huduma"
+							},
+							{
+								"en": "Identify risk zones & scan grid design",
+								"sw": "Tambua maeneo ya hatari na kubuni gridi ya scan"
+							},
+							{
+								"en": "Survey grid establishment",
+								"sw": "Uanzishaji wa gridi ya uchunguzi"
+							}
+						]
+					},
+					{
+						"title": {
+							"en": "GPR Data Acquisition",
+							"sw": "Upataji wa Data ya GPR"
+						},
+						"points": [
+							{
+								"en": "Multi-frequency systematic LMX200 scanning",
+								"sw": "Uscanaji wa mfumo wa LMX200 wa mzunguko mwingi"
+							},
+							{
+								"en": "RTK XYZ data collection",
+								"sw": "Ukusanyaji wa data ya XYZ ya RTK"
+							},
+							{
+								"en": "Dense grid or corridor-based scanning",
+								"sw": "Gridi mnene au uscanaji wa korido"
+							}
+						]
+					},
+					{
+						"title": {
+							"en": "Radargrams Interpretation & Mapping",
+							"sw": "Tafsiri ya Radargrams na Ramani"
+						},
+						"points": [
+							{
+								"en": "Hyperbola signatures analysis",
+								"sw": "Uchambuzi wa saini za hyperbola"
+							},
+							{
+								"en": "Depth slicing & anomaly classification",
+								"sw": "Kuweka slices za kina na uainishaji wa kasoro"
+							},
+							{
+								"en": "Cross-check with manholes & records",
+								"sw": "Kulinganisha na manholes na rekodi"
+							},
+							{
+								"en": "CAD, GIS, PDF & georeferenced drawings",
+								"sw": "Michoro za CAD, GIS, PDF na zilizogeoreferensiwa"
+							}
+						]
+					}
+				],
+				"id": "methodology"
+			}
+		},
+		{
+			"discriminant": "gprApplications",
+			"value": {
+				"tag": {
+					"en": "Applications",
+					"sw": "Matumizi"
+				},
+				"headline": {
+					"en": "Industry sectors and use cases we serve",
+					"sw": "Sekta za uhandesi na matumizi tunayohudumia"
+				},
+				"items": [
+					{
+						"icon": "road-variant",
+						"title": {
+							"en": "Infrastructure & Engineering",
+							"sw": "Miundombinu & Uhandisi"
+						},
+						"points": [
+							{
+								"en": "KeNHA road corridors",
+								"sw": "Korido za barabara za KeNHA"
+							},
+							{
+								"en": "KURA urban upgrades",
+								"sw": "Maboresho ya mijini ya KURA"
+							},
+							{
+								"en": "County infrastructure projects",
+								"sw": "Miradi ya miundombinu ya kaunti"
+							}
+						]
+					},
+					{
+						"icon": "transmission-tower",
+						"title": {
+							"en": "Utilities & Energy",
+							"sw": "Huduma & Nishati"
+						},
+						"points": [
+							{
+								"en": "Power transmission networks",
+								"sw": "Mitandao ya usambazaji wa umeme"
+							},
+							{
+								"en": "Substations & distribution lines",
+								"sw": "Vituo vidogo vya nishati na mistari ya usambazaji"
+							}
+						]
+					},
+					{
+						"icon": "water-pump",
+						"title": {
+							"en": "Water & Sewer Authorities",
+							"sw": "Mamlaka za Maji & Mifereji"
+						},
+						"points": [
+							{
+								"en": "Pipeline upgrades",
+								"sw": "Maboresho ya mifereji ya maji"
+							},
+							{
+								"en": "Sewer rehabilitation",
+								"sw": "Ukarabati wa mifereji ya maji machafu"
+							}
+						]
+					},
+					{
+						"icon": "office-building",
+						"title": {
+							"en": "Real Estate & Construction",
+							"sw": "Mali Isiyohamishika & Ujenzi"
+						},
+						"points": [
+							{
+								"en": "High-rise developments",
+								"sw": "Maendeleo ya majengo marefu"
+							},
+							{
+								"en": "Subdivision projects",
+								"sw": "Miradi ya ugawaji wa viwanja"
+							}
+						]
+					},
+					{
+						"icon": "router-wireless",
+						"title": {
+							"en": "Telecom & Fiber Networks",
+							"sw": "Mitandao ya Telecom & Fiber"
+						},
+						"points": [
+							{
+								"en": "Fiber rollout plans",
+								"sw": "Mipango ya kupeleka fiber"
+							},
+							{
+								"en": "Duct mapping",
+								"sw": "Ramani za mifereji ya dti"
+							}
+						]
+					},
+					{
+						"icon": "mine",
+						"title": {
+							"en": "Mining & Geotechnical",
+							"sw": "Madini & Geotechnical"
+						},
+						"points": [
+							{
+								"en": "Void, subsidence & geohazard detection",
+								"sw": "Utambuzi wa mashimo, mwimo na hatari za kijiolojia"
+							},
+							{
+								"en": "Pre-blast & construction monitoring",
+								"sw": "Ufuatiliaji kabla ya mlipuko na ujenzi"
+							}
+						]
+					}
+				],
+				"id": "applications"
+			}
+		},
+		{
+			"discriminant": "gprDetect",
+			"value": {
+				"tag": {
+					"en": "Capabilities",
+					"sw": "Uwezo wa GPR"
+				},
+				"headline": {
+					"en": "What We Detect (GPR Capabilities)",
+					"sw": "Tunachogundua (Uwezo wa GPR)"
+				},
+				"description": {
+					"en": "Subsurface targets identified with high-resolution LMX200 + RTK-GNSS integration:",
+					"sw": "Malengo ya chini ya ardhi yanayotambuliwa kwa mwonekano wa juu wa LMX200 + muunganisho wa RTK-GNSS:"
+				},
+				"items": [
+					{
+						"icon": "pipe",
+						"title": {
+							"en": "Metallic Pipes",
+							"sw": "Mabomba ya Chuma"
+						},
+						"note": {
+							"en": "GI & Asbestos",
+							"sw": "GI na Asbestos"
+						}
+					},
+					{
+						"icon": "barrel-outline",
+						"title": {
+							"en": "Non-Metallic Pipes",
+							"sw": "Mabomba Yasiyo ya Chuma"
+						},
+						"note": {
+							"en": "PVC, HDPE",
+							"sw": "PVC, HDPE"
+						}
+					},
+					{
+						"icon": "cable-data",
+						"title": {
+							"en": "Electrical Conduits",
+							"sw": "Mifereji ya Umeme"
+						},
+						"note": {
+							"en": "PVC, EML",
+							"sw": "PVC, EML"
+						}
+					},
+					{
+						"icon": "access-point-network",
+						"title": {
+							"en": "Telecom Ducts & Fiber Routes",
+							"sw": "Mifereji ya Telecom na Njia za Fiber"
+						},
+						"note": {
+							"en": "Duct & fiber alignments",
+							"sw": "Uelekeo wa dti na fiber"
+						}
+					},
+					{
+						"icon": "circle-multiple",
+						"title": {
+							"en": "Voids, Trenches & Anomalies",
+							"sw": "Mashimo, Mifereji na Kasoro"
+						},
+						"note": {
+							"en": "Subsurface hazards",
+							"sw": "Hatari za chini ya ardhi"
+						}
+					},
+					{
+						"icon": "archive-outline",
+						"title": {
+							"en": "Abandoned Infrastructure",
+							"sw": "Miundombinu Iliyoachwa"
+						},
+						"note": {
+							"en": "Old tanks, cables & chambers",
+							"sw": "Tanki za zamani, nyaya na vyumba"
+						}
+					}
+				],
+				"id": "detect"
+			}
+		},
+		{
+			"discriminant": "deliverables",
+			"value": {
+				"tag": {
+					"en": "Deliverables You Receive",
+					"sw": "Matokeo Unayopokea"
+				},
+				"headline": {
+					"en": "Deliverables You Receive",
+					"sw": "Matokeo Unayopokea"
+				},
+				"description": {
+					"en": "We don't just scan — we deliver engineering-ready outputs:",
+					"sw": "Hatuchambui tu — tunatoa matokeo tayari kwa uhandisi:"
+				},
+				"liveLabel": {
+					"en": "Deliverable package",
+					"sw": "Kifurushi cha matokeo"
+				},
+				"checks": [
+					{
+						"en": "Georeferenced to national control",
+						"sw": "Imethibitishwa kwa udhibiti wa taifa"
+					},
+					{
+						"en": "CAD & GIS compatible",
+						"sw": "Inaendana na CAD & GIS"
+					},
+					{
+						"en": "Engineering-ready formats",
+						"sw": "Miundo tayari kwa uhandisi"
+					}
+				],
+				"items": [
+					{
+						"title": {
+							"en": "Geo-referenced Utility Maps",
+							"sw": "Ramani za Huduma Zilizogeoreferensiwa"
+						},
+						"format": {
+							"en": "DWG / DXF / SHP",
+							"sw": "DWG / DXF / SHP"
+						},
+						"icon": "map-marker-path",
+						"image": {
+							"en": "/media/deliverables/georeferenced-utility-maps.jpg",
+							"sw": "/media/deliverables/georeferenced-utility-maps.jpg"
+						},
+						"description": {
+							"en": "Every detected utility plotted on a georeferenced plan you can drop straight into CAD or GIS for design.",
+							"sw": "Kila huduma iliyotambuliwa imewekwa kwenye mpango uliogeoreferensiwa unaoweza kuingia moja kwa moja kwenye CAD au GIS kwa mradi."
+						}
+					},
+					{
+						"title": {
+							"en": "3D Subsurface Interpretation Models",
+							"sw": "Miundo ya 3D ya Ufafanuzi wa Chini ya Ardhi"
+						},
+						"format": {
+							"en": "Interactive 3D",
+							"sw": "3D inayoingiliana"
+						},
+						"icon": "cube-outline",
+						"image": {
+							"en": "/media/deliverables/3d-subsurface-interpretation-models.jpg",
+							"sw": "/media/deliverables/3d-subsurface-interpretation-models.jpg"
+						},
+						"description": {
+							"en": "Depth-sliced 3D visualisation of buried pipes, cables, voids and structures to support clash-free design.",
+							"sw": "Ufafanuzi wa 3D wa mabomba, nyaya, mashimo na miundo iliyofichwa ili kusaidia mradi usio na mgongano."
+						}
+					},
+					{
+						"title": {
+							"en": "Utility Conflict Analysis Report",
+							"sw": "Ripoti ya Uchambuzi wa Mgongano wa Huduma"
+						},
+						"format": {
+							"en": "Report + Plan",
+							"sw": "Ripoti + Mpango"
+						},
+						"icon": "vector-combine",
+						"image": {
+							"en": "/media/deliverables/utility-conflict-analysis-reports.jpg",
+							"sw": "/media/deliverables/utility-conflict-analysis-reports.jpg"
+						},
+						"description": {
+							"en": "Identifies overlapping utilities and design conflicts before they become costly site surprises.",
+							"sw": "Inabainisha huduma zinazopishana na migongano ya mradi kabla ya kuwa mashangazo ya gharama kubwa."
+						}
+					},
+					{
+						"title": {
+							"en": "Depth Estimation & Classification Tables",
+							"sw": "Jedwali za Ukadiriaji wa Kina na Uainishaji"
+						},
+						"format": {
+							"en": "XLSX / PDF",
+							"sw": "XLSX / PDF"
+						},
+						"icon": "table-large",
+						"image": {
+							"en": "/media/deliverables/depth-estimation-and-classification-tables.jpg",
+							"sw": "/media/deliverables/depth-estimation-and-classification-tables.jpg"
+						},
+						"description": {
+							"en": "Tabulated depth, size and confidence classes for every target — ready for engineering sign-off.",
+							"sw": "Kina, ukubwa na viwango vya uthubutu kwa kila lengo — tayari kwa saini ya uhandisi."
+						}
+					},
+					{
+						"title": {
+							"en": "GIS-Ready Datasets",
+							"sw": "Datasets Tayari za GIS"
+						},
+						"format": {
+							"en": "ArcGIS / QGIS",
+							"sw": "ArcGIS / QGIS"
+						},
+						"icon": "database-outline",
+						"image": {
+							"en": "/media/deliverables/gis-ready-datasets.jpg",
+							"sw": "/media/deliverables/gis-ready-datasets.jpg"
+						},
+						"description": {
+							"en": "Attribute-rich shapefiles and geodatabases that integrate into your existing asset management systems.",
+							"sw": "Shapefile na geodatabase zenye sifa nyingi zinazoungana na mifumo yako iliyopo ya usimamizi wa mali."
+						}
+					},
+					{
+						"title": {
+							"en": "Construction Risk Maps",
+							"sw": "Ramani za Hatari za Ujenzi"
+						},
+						"format": {
+							"en": "Plan overlay",
+							"sw": "Mpangilio wa ramani"
+						},
+						"icon": "shield-alert-outline",
+						"image": {
+							"en": "/media/deliverables/construction-risk-maps.jpg",
+							"sw": "/media/deliverables/construction-risk-maps.jpg"
+						},
+						"description": {
+							"en": "Colour-coded risk zones highlight where excavation needs extra care, protection or method statements.",
+							"sw": "Maeneo ya hatari yaliyorangiwa huonyesha mahali uchimbaji unahitaji uangalifu zaidi, ulinzi au taarifa za mbinu."
+						}
+					},
+					{
+						"title": {
+							"en": "Client-Ready Technical Report",
+							"sw": "Ripoti ya Kiufundi Tayari kwa Mteja"
+						},
+						"format": {
+							"en": "PDF",
+							"sw": "PDF"
+						},
+						"icon": "file-pdf-box",
+						"image": {
+							"en": "/media/deliverables/client-ready-technical-reports.jpg",
+							"sw": "/media/deliverables/client-ready-technical-reports.jpg"
+						},
+						"description": {
+							"en": "A signed, standalone report documenting methodology, findings, radargrams and recommendations.",
+							"sw": "Ripoti iliyosainiwa, huru inayorekodi mbinu, matokeo, radargrams na mapendekezo."
+						}
+					}
+				],
+				"tone": "surface",
+				"id": "deliverables"
+			}
+		},
+		{
+			"discriminant": "gprSue",
+			"value": {
+				"tag": {
+					"en": "Compliance",
+					"sw": "Uzingatiaji"
+				},
+				"headline": {
+					"en": "Subsurface Utility Engineering (SUE) Compliance",
+					"sw": "Uzingatiaji wa Uhandisi wa Huduma za Chini ya Ardhi (SUE)"
+				},
+				"description": {
+					"en": "We apply international SUE standards to every utility mapping project — giving engineers the confidence to excavate safely:",
+					"sw": "Tunatumia viwango vya kimataifa vya SUE kwa kila mradi wa ramani za huduma — kuwapa wahandisi imani ya kuchimba kwa usalama:"
+				},
+				"levels": [
+					{
+						"icon": "file-search-outline",
+						"level": {
+							"en": "SUE Level D",
+							"sw": "SUE Level D"
+						},
+						"title": {
+							"en": "Records & Desk Studies",
+							"sw": "Rekodi na Masomo ya Dawati"
+						},
+						"description": {
+							"en": "Compile existing as-builts and utility records to build an initial risk picture before fieldwork.",
+							"sw": "Kukusanya as-builts zilizopo na rekodi za huduma kujenga picha ya hatari kabla ya kazi ya shamba."
+						}
+					},
+					{
+						"icon": "map-outline",
+						"level": {
+							"en": "SUE Level C",
+							"sw": "SUE Level C"
+						},
+						"title": {
+							"en": "Surface Utility Mapping",
+							"sw": "Ubunifu wa Huduma wa Uso"
+						},
+						"description": {
+							"en": "Locate and record visible surface features — manholes, valves, poles — and correlate them with records.",
+							"sw": "Kutafuta na kurekodi vipengele vinavyoonekana — manholes, vali, nguzo — na kuvilinganisha na rekodi."
+						}
+					},
+					{
+						"icon": "radar",
+						"level": {
+							"en": "SUE Level B",
+							"sw": "SUE Level B"
+						},
+						"title": {
+							"en": "GPR & Geophysical Detection",
+							"sw": "Ugunduzi wa GPR & Kijiografia"
+						},
+						"description": {
+							"en": "Deploy GPR and EM locators to detect, map and classify buried utilities without excavation.",
+							"sw": "Kutumia GPR na vitambuzi vya EM kutambua, kupanga na kuainisha huduma zilizofichwa bila kuchimba."
+						}
+					},
+					{
+						"icon": "shovel",
+						"level": {
+							"en": "SUE Level A",
+							"sw": "SUE Level A"
+						},
+						"title": {
+							"en": "Physical Verification (Potholing)",
+							"sw": "Uthibitisho wa Kimwili (Potholing)"
+						},
+						"description": {
+							"en": "Safely expose utilities to confirm exact depth, size and material before construction.",
+							"sw": "Kufunua huduma kwa usalama kuthibitisha kina halisi, ukubwa na nyenzo kabla ya ujenzi."
+						}
+					}
+				],
+				"note": {
+					"en": "Ensures engineering-grade confidence before excavation",
+					"sw": "Inahakikisha imani ya darasa la uhandisi kabla ya uchimbaji"
+				},
+				"id": "sue"
+			}
+		},
+		{
+			"discriminant": "gprLimitations",
+			"value": {
+				"tag": {
+					"en": "Transparency",
+					"sw": "Uwazi"
+				},
+				"headline": {
+					"en": "Technical Limitations (Transparency You Can Trust)",
+					"sw": "Vikwazo vya Kiufundi (Uwazi Unaoweza Kuaminiwa)"
+				},
+				"description": {
+					"en": "Ground Penetrating Radar performance depends on site conditions. We tell you exactly what to expect:",
+					"sw": "Utendaji wa Ground Penetrating Radar unategemea hali ya tovuti. Tunakwambia hasa unachopaswa kutarajia:"
+				},
+				"items": [
+					{
+						"icon": "earth",
+						"title": {
+							"en": "Clay Soils",
+							"sw": "Udongo wa Clay"
+						},
+						"description": {
+							"en": "Heavy clay attenuates the radar signal and reduces effective penetration depth.",
+							"sw": "Clay nzito hupunguza mawimbi ya redio na hudhibiti kina cha uenezaji."
+						}
+					},
+					{
+						"icon": "grid-large",
+						"title": {
+							"en": "Dense Reinforcement",
+							"sw": "Kuimarisha kwa Rebar Msongamano"
+						},
+						"description": {
+							"en": "Concentrated rebar and mesh cause signal scattering and clutter inside concrete.",
+							"sw": "Rebar na mesh zilizokusanyika husababisha mtawanyiko wa mawimbi na clutter ndani ya zege."
+						}
+					},
+					{
+						"icon": "water-outline",
+						"title": {
+							"en": "Wet Ground",
+							"sw": "Ardhi yenye Maji"
+						},
+						"description": {
+							"en": "High soil moisture changes the dielectric response and can mask target signatures.",
+							"sw": "Unyevu mwingi wa udongo hubadilisha mwitikio wa dielectric na unaweza kuficha saini za malengo."
+						}
+					},
+					{
+						"icon": "arrow-down-bold",
+						"title": {
+							"en": "Maximum Effective Depth",
+							"sw": "Kina cha Juu cha Ufanisi"
+						},
+						"description": {
+							"en": "Typical detection depth varies between 0.5m – 4m depending on soil and antenna configuration.",
+							"sw": "Kina cha kawaida cha utambuzi kinatofautiana kati ya 0.5m – 4m kulingana na udongo na usanidi wa antenna."
+						}
+					}
+				],
+				"note": {
+					"en": "We combine GPR with EM locating & site verification to improve reliability.",
+					"sw": "Tunachanganya GPR na vitambuzi vya EM na uthibitisho wa tovuti kuboresha kuegemea."
+				},
+				"noteIcon": "check-decagram",
+				"id": "limitations"
+			}
+		},
+		{
+			"discriminant": "gprBeforeAfter",
+			"value": {
+				"tag": {
+					"en": "Before vs After",
+					"sw": "Kabla vs Baada"
+				},
+				"headline": {
+					"en": "Before vs After GPR Survey",
+					"sw": "Kabla vs Baada ya Uchunguzi wa GPR"
+				},
+				"flipHint": {
+					"en": "Tap the card to flip",
+					"sw": "Gusa kadi ili kuiburudisha"
+				},
+				"before": {
+					"label": {
+						"en": "BEFORE SMARTGRID",
+						"sw": "KABLA YA SMARTGRID"
+					},
+					"tagline": {
+						"en": "Without a GPR utility survey",
+						"sw": "Bila uchunguzi wa huduma wa GPR"
+					},
+					"items": [
+						{
+							"en": "Unknown underground utilities",
+							"sw": "Huduma za chini ya ardhi zisizojulikana"
+						},
+						{
+							"en": "Excavation risk",
+							"sw": "Hatari ya kuchimba"
+						},
+						{
+							"en": "Design uncertainty",
+							"sw": "Kutokuwa na uhakika wa mradi"
+						},
+						{
+							"en": "Cost overruns & delays",
+							"sw": "Kuongezeka kwa gharama na ucheleweshaji"
+						}
+					]
+				},
+				"after": {
+					"label": {
+						"en": "AFTER SMARTGRID",
+						"sw": "BAADA YA SMARTGRID"
+					},
+					"tagline": {
+						"en": "With a SmartGrid GPR survey",
+						"sw": "Pamoja na uchunguzi wa GPR wa SmartGrid"
+					},
+					"items": [
+						{
+							"en": "Verified underground map",
+							"sw": "Ramani ya huduma iliyothibitishwa"
+						},
+						{
+							"en": "Reduced construction risk",
+							"sw": "Kupungua kwa hatari ya ujenzi"
+						},
+						{
+							"en": "Accurate design alignment",
+							"sw": "Uelekeo sahihi wa mradi"
+						},
+						{
+							"en": "Faster approvals & execution",
+							"sw": "Idhini na utekelezaji wa haraka"
+						}
+					]
+				},
+				"id": "before-after"
+			}
+		},
+		{
+			"discriminant": "gprTechnology",
+			"value": {
+				"tag": {
+					"en": "Technology Stack",
+					"sw": "Mfumo wa Teknolojia"
+				},
+				"headline": {
+					"en": "Industry-leading equipment and software",
+					"sw": "Vifaa na programu zinazoongoza tasnia"
+				},
+				"items": [
+					{
+						"icon": "radar",
+						"image": "/media/surveying/ground-penetrating-radar/gpr-lmx-200.jpeg",
+						"title": {
+							"en": "LMX200 GPR System",
+							"sw": "Mfumo wa LMX200 GPR"
+						},
+						"description": {
+							"en": "Real-time subsurface imaging for utility detection and void mapping.",
+							"sw": "Upigaji panga wa wakati halisi wa chini ya ardhi kwa utambuzi wa huduga na ramani za mashimo."
+						}
+					},
+					{
+						"icon": "cable-data",
+						"image": "",
+						"title": {
+							"en": "Cable & Pipe Locators",
+							"sw": "Vitambuzi vya Waya na Mabomba"
+						},
+						"description": {
+							"en": "Electromagnetic locating of live metallic services to complement GPR.",
+							"sw": "Utambuzi wa electromagnetic wa huduga za chuma zinazohusika kukamilisha GPR."
+						}
+					},
+					{
+						"icon": "chart-scatter-plot",
+						"image": "/media/surveying/ground-penetrating-radar/data-integration.png",
+						"title": {
+							"en": "GPR-Slice Software",
+							"sw": "Programu ya GPR-Slice"
+						},
+						"description": {
+							"en": "Advanced radargram processing and 3D slice visualization.",
+							"sw": "Uchakataji wa juu wa radargram na uonyeshaji wa 3D slices."
+						}
+					},
+					{
+						"icon": "monitor-dashboard",
+						"image": "",
+						"title": {
+							"en": "AutoCAD & Civil 3D",
+							"sw": "AutoCAD na Civil 3D"
+						},
+						"description": {
+							"en": "CAD-ready utility plans and engineering drawing integration.",
+							"sw": "Ramani za huduga tayari kwa CAD na muunganisho wa michoro ya uhandisi."
+						}
+					},
+					{
+						"icon": "crosshairs-gps",
+						"image": "/media/surveying/ground-penetrating-radar/topographical-mapping.png",
+						"title": {
+							"en": "GPS/GNSS Positioning",
+							"sw": "Uwekaji Nafuni wa GPS/GNSS"
+						},
+						"description": {
+							"en": "RTK-accurate geolocation of every detected utility and anomaly.",
+							"sw": "Jiografia sahihi wa RTK ya kila huduga na kasoro iliyotambuliwa."
+						}
+					}
+				],
+				"id": "technology"
+			}
+		},
+		{
+			"discriminant": "gprFeaturedProjects",
+			"value": {
+				"tag": {
+					"en": "Featured Projects",
+					"sw": "Miradi Iliyokua"
+				},
+				"headline": {
+					"en": "Featured Projects Across Kenya",
+					"sw": "Miradi Iliyofanyika Kenya"
+				},
+				"description": {
+					"en": "Real-world GPR deployments delivering actionable subsurface intelligence.",
+					"sw": "Miradi halisi ya GPR iliyotokea Kenya inayotoa maarifa ya chini ya ardhi."
+				},
+				"items": [
+					{
+						"title": {
+							"en": "Utility Mapping – Nairobi CBD",
+							"sw": "Ramani ya Huduga – Nairobi CBD"
+						},
+						"used": {
+							"en": "LMX200 Ground Penetrating Radar integrated with RTK-GNSS positioning.",
+							"sw": "LMX200 Ground Penetrating Radar iliyounganishwa na RTK-GNSS positioning."
+						},
+						"objective": {
+							"en": "Detect and map existing underground utilities before foundation excavation.",
+							"sw": "Kutambua na kupanga ramani huduga zilizopo chini ya ardhi kabla ya kuchimba misingi."
+						},
+						"result": {
+							"en": "Successfully identified fiber optics, power conduits, and storm drains — preventing costly conflicts during construction.",
+							"sw": "Kutambua kwa mafanikio fiber optics, mabomu ya umbe, na mifereji ya mvua — kuzuia migogoro ya gharama wakati wa ujenzi."
+						}
+					},
+					{
+						"title": {
+							"en": "Pipeline Integrity Survey – Kisumu",
+							"sw": "Uchunguzi wa Uimara wa Mabomba – Kisumu"
+						},
+						"used": {
+							"en": "LMX200 GPR for non-destructive assessment of aging municipal water lines.",
+							"sw": "LMX200 GPR kwa tathmini isiyoharibu ya mabomba ya maji ya kitaalamu ya jiji."
+						},
+						"objective": {
+							"en": "Identify voids, pipe fractures, and leakage zones along the corridor.",
+							"sw": "Kutambua mashimo, mifwafwa ya mabomba, na sehemu za mchakato wa maji pamoja na barabara."
+						},
+						"result": {
+							"en": "Detected subsurface anomalies consistent with leakage and pipe deterioration, enabling targeted maintenance.",
+							"sw": "Kugundua kasoro za chini ya ardhi zilizo fanana na mchakato na mifwafwa ya mabomba, ikisaidia matengenezo ya lengo."
+						}
+					},
+					{
+						"title": {
+							"en": "Archaeological Site Survey – Tharaka Nithi",
+							"sw": "Uchunguzi wa Eneo la Kiakolojia – Tharaka Nithi"
+						},
+						"used": {
+							"en": "LMX200 GPR combined with drone-based topographical mapping.",
+							"sw": "LMX200 GPR iliyochanganywa na ramani za juu ya droni."
+						},
+						"objective": {
+							"en": "Locate buried cultural features without intrusive excavation.",
+							"sw": "Kutafuta vipengele vya kitamaduni vilivyokowwa bila uchimbuzi uharibifu."
+						},
+						"result": {
+							"en": "Mapped subsurface stone alignments and structural remains while preserving site integrity.",
+							"sw": "Ramani za mwelekeo wa mawe na miundo ya kimwili iliyowekwa chini ya ardhi huku akiba hali ya tovuti."
+						}
+					},
+					{
+						"title": {
+							"en": "Highway Expansion Risk Mapping – Nakuru",
+							"sw": "Uchambuzi wa Hatari ya Upanuzi wa Barabara – Nakuru"
+						},
+						"used": {
+							"en": "LMX200 GPR in corridor scanning mode synchronized with GNSS data.",
+							"sw": "LMX200 GPR kwa mode ya uscanaji wa korido iliyolingana na data ya GNSS."
+						},
+						"objective": {
+							"en": "Identify underground utilities and potential weak zones ahead of road widening works.",
+							"sw": "Kutambua huduga za chini ya ardhi na maeneo dhaifu kabla ya kapanuzi wa barabara."
+						},
+						"result": {
+							"en": "Provided high-resolution GPR profiles highlighting voids and buried services, improving design safety margins.",
+							"sw": "Kutolewa viwango vya GPR vya kina vya juu vya mashimo na huduga zilizojificha, ikiboresha mipaka ya usalama wa muundo."
+						}
+					},
+					{
+						"title": {
+							"en": "Industrial Site Clearance – Mombasa",
+							"sw": "Usafi wa Tovuti ya Kiwandani – Mombasa"
+						},
+						"used": {
+							"en": "LMX200 Ground Penetrating Radar for pre-redevelopment clearance verification.",
+							"sw": "LMX200 Ground Penetrating Radar kwa uthibitisho wa awali wa usafi wa ujenzi."
+						},
+						"objective": {
+							"en": "Confirm absence of buried tanks, debris, or metallic hazards across a decommissioned port depot.",
+							"sw": "Kuthibitisha kutokuwepo kwa tanki zilizokowwa, mabaki, au hatari ya metalliki kwenye depo ya banda iliyochomwa."
+						},
+						"result": {
+							"en": "Verified the site as clear of subsurface obstructions, supporting safe redevelopment and compliance certification.",
+							"sw": "Uthibitisho wa tovuti kuwa hakuna vikingilio vya chini ya ardhi, ikisaidia ujenzi upya salama na uthibitisho wa ufuasi."
+						}
+					}
+				],
+				"id": "projects"
+			}
+		},
+		{
+			"discriminant": "gprSummary",
+			"value": {
+				"tag": {
+					"en": "GPR Survey & Utility Mapping in Kenya",
+					"sw": "Uchunguzi wa GPR na Ramani za Huduma nchini Kenya"
+				},
+				"headline": {
+					"en": "GPR Survey & Utility Mapping in Kenya | Subsurface Utility Engineering (SUE)",
+					"sw": "Uchunguzi wa GPR na Ramani za Huduma nchini Kenya | Uhandisi wa Huduma za Chini ya Ardhi (SUE)"
+				},
+				"description": {
+					"en": "Professional Ground Penetrating Radar (GPR) services in Kenya for utility mapping, construction safety, and subsurface engineering. RTK-GNSS + LMX200 systems.",
+					"sw": "Huduma za kitaalamu za Ground Penetrating Radar (GPR) nchini Kenya kwa ramani za huduma, usalama wa ujenzi, na uhandisi wa chini ya ardhi. Mifumo ya RTK-GNSS + LMX200."
+				},
+				"chips": [
+					{
+						"en": "LMX200 + RTK-GNSS systems",
+						"sw": "Mifumo ya LMX200 + RTK-GNSS"
+					},
+					{
+						"en": "Countywide mobilization",
+						"sw": "Usafirishaji nchini kote"
+					},
+					{
+						"en": "Engineering-grade outputs",
+						"sw": "Matokeo ya darasa la uhandisi"
+					}
+				],
+				"id": "summary"
+			}
+		},
+		{
+			"discriminant": "faq",
+			"value": {
+				"tag": {
+					"en": "FAQs",
+					"sw": "Maswali"
+				},
+				"headline": {
+					"en": "Frequently Asked Questions",
+					"sw": "Maswali Yanayoulizwa Mara Kwa Mara"
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"question": {
+							"en": "What is a GPR survey?",
+							"sw": "Uchunguzi wa GPR ni nini?"
+						},
+						"answer": {
+							"en": "A GPR (Ground Penetrating Radar) survey uses electromagnetic pulses fired into the ground to locate buried utilities, rebar, voids, and other subsurface features without excavation or drilling. The radar unit is pushed across the surface and the reflected signals are processed into a map showing the depth and position of detected features.",
+							"sw": "Uchunguzi wa GPR (Ground Penetrating Radar) hutumia miale ya electromagnetic inayofyatuliwa chini ya ardhi kutafuta huduga zilizojificha, rebar, mashimo, na vitu vingine vya chini ya ardhi bila kuchimba au kuchimba mashimo. Kifaa cha radar husukwa juu ya uso na ishara zilizorudishwa huchakatwa kuwa ramani inayoonyesha kina na mahali pa vitu vilivyotambuliwa."
+						},
+						"points": [],
+						"icon": ""
+					},
+					{
+						"question": {
+							"en": "How deep can GPR detect in Kenyan soil conditions?",
+							"sw": "GPR inaweza kufikia kina gani katika udongo wa Kenya?"
+						},
+						"answer": {
+							"en": "Detection depth depends on soil type. In sandy or volcanic soils we typically achieve 3-8 meters of penetration, while wet clay heavily attenuates the signal and may limit depth to 1-2 meters. Where deeper targets are expected, we deploy lower-frequency antennas and combine GPR with electromagnetic locators.",
+							"sw": "Kina cha utambuzi kinategemea aina ya udongo. Katika mchanga au udongo wa volkeno tunafikia kina cha mita 3-8, huku udongo mwitu wa udongo unapunguza ishara na kupunguza kina hadi 1-2 mita. Pale malengo ya kina yanapatarajiwa, tunatumia antennas za chini na kuchanganya GPR na vitambuzi vya electromagnetic."
+						},
+						"points": [],
+						"icon": ""
+					},
+					{
+						"question": {
+							"en": "Can GPR work through concrete?",
+							"sw": "Je, GPR inafanya kazi kupitia zege?"
+						},
+						"answer": {
+							"en": "Yes. Concrete scanning is one of the most common GPR applications — we locate rebar, post-tension cables, conduits, and voids within slabs, walls, and beams quickly and without any damage to the structure.",
+							"sw": "Ndiyo. Uscanaji wa zege ni mojawapo ya matumizi ya kawaida ya GPR — tunatambua rebar, kanda za post-tension, conduits, na mashimo ndani ya slabs, kuta, na beams kwa haraka bila madhara yoyote kwa muundo."
+						},
+						"points": [],
+						"icon": ""
+					},
+					{
+						"question": {
+							"en": "Do you provide same-day results?",
+							"sw": "Je, mnatoa matokeo siku hiyo hiyo?"
+						},
+						"answer": {
+							"en": "Preliminary findings and on-site markouts are provided immediately after scanning. Full interpreted reports and CAD drawings are delivered within the timeline agreed for your project — typically a few days depending on site size.",
+							"sw": "Matokeo ya awali na alama za tovuti hutolewa papo hapo baada ya uscanaji. Ripoti kamili zilizotafsiriwa na michoro ya CAD hutolewa ndani ya muda uliokubaliwa kwa mradi wako — kwa kawaida siku chache kulingana na ukubwa wa tovuti."
+						},
+						"points": [],
+						"icon": ""
+					},
+					{
+						"question": {
+							"en": "Is GPR safe to use indoors?",
+							"sw": "Je, GPR ni salama kutumia ndani ya majengo?"
+						},
+						"answer": {
+							"en": "Completely safe. GPR emits low-power radio waves — there is no radiation risk to people, and the method is entirely non-destructive, making it ideal for occupied buildings, hospitals, and live industrial facilities.",
+							"sw": "Ni salama kabisa. GPR hutuma miale ya redio yenye nguvu ndogo — hakuna hatari ya mionzi kwa watu, na njia hii haiharibu kabisa, na kuifanya kuwa bora kwa majengo yaliyokaliwa, hospitali, na viwanda vinavyofanya kazi."
+						},
+						"points": [],
+						"icon": ""
+					},
+					{
+						"question": {
+							"en": "Do you offer ground penetrating radar surveys near me?",
+							"sw": "Je, mnatoa huduma za GPR karibu nawe?"
+						},
+						"answer": {
+							"en": "Our GPR teams are based in Nairobi and mobilize countrywide — Kiambu, Nakuru, Kisumu, Mombasa, and beyond — with most requests scheduled within 24 hours.",
+							"sw": "Timu zetu za GPR ziko Nairobi na hupeleka huduma nchini kote — Kiambu, Nakuru, Kisumu, Mombasa, na zaidi — na ombi kubwa la maombi huwekwa ratiba ndani ya saa 24."
+						},
+						"points": [],
+						"icon": ""
+					}
+				],
+				"stillCuriousLabel": {
+					"en": "Have more questions?",
+					"sw": "Una maswali mengine?"
+				},
+				"stillCuriousDescription": {
+					"en": "Our team of experts is ready to assist you with your specific project requirements. Contact us today.",
+					"sw": "Timu yetu ya wataalamu iko tayari kukusaidia na mahitaji mahsusi ya mradi wako. Wasiliana nasi leo."
+				},
+				"stillCuriousCta": {
+					"label": {
+						"en": "Contact Us",
+						"sw": "Wasiliana Nasi"
+					},
+					"href": "/contact",
+					"icon": ""
+				},
+				"id": "faqs"
+			}
+		},
+		{
+			"discriminant": "finalCta",
+			"value": {
+				"tag": {
+					"en": "Start Your Survey",
+					"sw": "Anza Uchunguzi Wako"
+				},
+				"headline": {
+					"en": "Ready to De-Risk Your Project?",
+					"sw": "Uko Tayari Kupunguza Hatari ya Mradi Wako?"
+				},
+				"description": {
+					"en": "Get Professional Utility Mapping Support Today",
+					"sw": "Pata Usaidizi wa Kitaalamu wa Ramani za Huduma Leo"
+				},
+				"descriptionTone": "accent",
+				"note": {
+					"en": "We respond within hours and can mobilize field teams quickly.",
+					"sw": "Tunajibu ndani ya masaa machache na tunaweza kuhamasisha timu za shamba haraka."
+				},
+				"actionsLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"actions": [
+					{
+						"icon": "calendar-check",
+						"label": {
+							"en": "Book Site Survey",
+							"sw": "Panga Uchunguzi wa Tovuti"
+						},
+						"description": {
+							"en": "Schedule a field team at your site.",
+							"sw": "Panga timu ya shamba kwenye tovuti yako."
+						},
+						"href": "mailto:smartgridsurveying@gmail.com?subject=Book Site Survey: GPR & SUE&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to book a GPR site survey.%0D%0A%0D%0ALocation:%0D%0ASite size:%0D%0APreferred date:%0D%0A%0D%0AThank you."
+					},
+					{
+						"icon": "email-fast-outline",
+						"label": {
+							"en": "Request Engineering Quote",
+							"sw": "Omba Nukuu ya Uhandisi"
+						},
+						"description": {
+							"en": "Detailed scope & pricing for your site.",
+							"sw": "Wigo na bei za kina kwa tovuti yako."
+						},
+						"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Ground Penetrating Radar&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Ground Penetrating Radar. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+					},
+					{
+						"icon": "whatsapp",
+						"label": {
+							"en": "WhatsApp Survey Team",
+							"sw": "WhatsApp Timu ya Uchunguzi"
+						},
+						"description": {
+							"en": "Fast answers from a GPR specialist.",
+							"sw": "Majibu ya haraka kutoka kwa mtaalamu wa GPR."
+						},
+						"href": "https://wa.me/254107393023?text=Hello%20SmartGrid%20Surveying%2C%20I%27d%20like%20to%20talk%20to%20the%20GPR%20survey%20team."
+					}
+				],
+				"actionIconFallback": "",
+				"watermark": "radar",
+				"columns": "3",
+				"align": "center",
+				"id": "get-started"
+			}
+		}
+	]
+}

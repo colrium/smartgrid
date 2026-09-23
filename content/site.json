@@ -1,0 +1,750 @@
+{
+	"status": "draft",
+	"nav": {
+		"logo": "/img/logo.svg",
+		"logoLight": "/img/logo-light.svg",
+		"logoAlt": {
+			"en": "SmartGrid",
+			"sw": "SmartGrid"
+		},
+		"links": [
+			{
+				"label": {
+					"en": "Surveying",
+					"sw": "Upimaji"
+				},
+				"href": "/surveying",
+				"type": "standard",
+				"excludeOnMainNav": false,
+				"links": [
+					{
+						"label": {
+							"en": "Topographical surveys",
+							"sw": "Upimaji wa topografia"
+						},
+						"href": "/surveying/topographical-surveys"
+					},
+					{
+						"label": {
+							"en": "Building site surveys",
+							"sw": "Upimaji wa tovuti za ujenzi"
+						},
+						"href": "/surveying/building-site-surveys"
+					},
+					{
+						"label": {
+							"en": "Sectional properties",
+							"sw": "Mali za sehemu"
+						},
+						"href": "/surveying/sectional-properties"
+					},
+					{
+						"label": {
+							"en": "Cadastral surveys",
+							"sw": "Upimaji wa cadastral"
+						},
+						"href": "/surveying/cadastral-surveys"
+					},
+					{
+						"label": {
+							"en": "Aerial surveys",
+							"sw": "Upimaji wa angani"
+						},
+						"href": "/surveying/aerial-surveys"
+					},
+					{
+						"label": {
+							"en": "Ground penetrating radar",
+							"sw": "Rada ya kupenya ardhini"
+						},
+						"href": "/surveying/ground-penetrating-radar"
+					},
+					{
+						"label": {
+							"en": "Resource Mapping",
+							"sw": "Ramani ya Rasilimali"
+						},
+						"href": "/surveying/resource-mapping"
+					},
+					{
+						"label": {
+							"en": "Bathymetric surveys",
+							"sw": "Upimaji wa bathymetric"
+						},
+						"href": "/surveying/bathymetric-surveys"
+					},
+					{
+						"label": {
+							"en": "GIS & Mapping",
+							"sw": "GIS na Ramani"
+						},
+						"href": "/surveying/gis-mapping"
+					}
+				]
+			},
+			{
+				"label": {
+					"en": "Aerial Drones",
+					"sw": "Ndege zisizo na rubani"
+				},
+				"href": "/aerial-drones",
+				"type": "standard",
+				"excludeOnMainNav": false,
+				"links": [
+					{
+						"label": {
+							"en": "Drone imagery surveys",
+							"sw": "Upimaji wa picha za ndege zisizo na rubani"
+						},
+						"href": "/aerial-drones/drone-imagery-surveys"
+					},
+					{
+						"label": {
+							"en": "Lidar Mapping",
+							"sw": "Ramani ya Lidar"
+						},
+						"href": "/aerial-drones/lidar-mapping"
+					},
+					{
+						"label": {
+							"en": "Agricultural NDVI Mapping",
+							"sw": "Ramani ya NDVI ya Kilimo"
+						},
+						"href": "/aerial-drones/agricultural-ndvi-mapping"
+					},
+					{
+						"label": {
+							"en": "As built surveys",
+							"sw": "Upimaji wa 'as built'"
+						},
+						"href": "/aerial-drones/as-built-surveys"
+					},
+					{
+						"label": {
+							"en": "Monitoring and Evaluation",
+							"sw": "Ufuatiliaji na Tathmini"
+						},
+						"href": "/aerial-drones/monitoring-and-evaluation"
+					},
+					{
+						"label": {
+							"en": "Solar Panel Drone Surveys",
+							"sw": "Upimaji wa Paneli za Jua kwa Ndege zisizo na rubani"
+						},
+						"href": "/aerial-drones/solar-panel-drone-surveys"
+					},
+					{
+						"label": {
+							"en": "Volumetric Surveys",
+							"sw": "Upimaji wa Kiasi (Volumetric)"
+						},
+						"href": "/aerial-drones/volumetric-surveys"
+					},
+					{
+						"label": {
+							"en": "Landfill & Quarry Drone Surveys",
+							"sw": "Upimaji wa Dampo na Machimbo kwa Ndege zisizo na rubani"
+						},
+						"href": "/aerial-drones/landfill-quarry-drone-surveys"
+					},
+					{
+						"label": {
+							"en": "Photography & Video Marketing",
+							"sw": "Upigaji picha na Uuzaji wa Video"
+						},
+						"href": "/aerial-drones/photography-video-marketing"
+					}
+				]
+			},
+			{
+				"label": {
+					"en": "Civil",
+					"sw": "Uhandisi wa Miundombinu"
+				},
+				"href": "/civil",
+				"type": "standard",
+				"excludeOnMainNav": false,
+				"links": [
+					{
+						"label": {
+							"en": "Highway Surveys",
+							"sw": "Upimaji wa Barabara kuu"
+						},
+						"href": "/civil/highway-surveys"
+					},
+					{
+						"label": {
+							"en": "As-built surveys",
+							"sw": "Upimaji wa 'as built'"
+						},
+						"href": "/civil/as-built-surveys"
+					},
+					{
+						"label": {
+							"en": "Volumetric surveys",
+							"sw": "Upimaji wa kiasi (Volumetric)"
+						},
+						"href": "/civil/volumetric-surveys"
+					},
+					{
+						"label": {
+							"en": "BIM",
+							"sw": "BIM"
+						},
+						"href": "/civil/bim"
+					},
+					{
+						"label": {
+							"en": "Site Engineering",
+							"sw": "Uhandisi wa Tovuti"
+						},
+						"href": "/civil/site-engineering"
+					},
+					{
+						"label": {
+							"en": "Site setting out",
+							"sw": "Uwekezaji wa tovuti"
+						},
+						"href": "/civil/site-setting-out"
+					}
+				]
+			},
+			{
+				"label": {
+					"en": "Equipment sale",
+					"sw": "Uuzaji wa Vifaa"
+				},
+				"href": "/equipment-sale/equipment-catalogue",
+				"type": "standard",
+				"excludeOnMainNav": false,
+				"links": [
+					{
+						"label": {
+							"en": "FOIF A90 RTK GNSS",
+							"sw": "FOIF A90 RTK GNSS"
+						},
+						"href": "/equipment-sale/foif-a90-rtk-gnss"
+					},
+					{
+						"label": {
+							"en": "TOTAL STATION ESURVEY",
+							"sw": "TOTAL STATION ESURVEY"
+						},
+						"href": "/equipment-sale/total-station-esurvey"
+					},
+					{
+						"label": {
+							"en": "TOTAL STATION DTM 152M",
+							"sw": "TOTAL STATION DTM 152M"
+						},
+						"href": "/equipment-sale/total-station-dtm-152m"
+					},
+					{
+						"label": {
+							"en": "AUTOMATIC LEVEL BOSCH",
+							"sw": "AUTOMATIC LEVEL BOSCH"
+						},
+						"href": "/equipment-sale/automatic-level-bosch"
+					},
+					{
+						"label": {
+							"en": "AUTOMATIC LEVEL HUEPER",
+							"sw": "AUTOMATIC LEVEL HUEPER"
+						},
+						"href": "/equipment-sale/automatic-level-hueper"
+					},
+					{
+						"label": {
+							"en": "EQUIPMENT CATALOGUE",
+							"sw": "KATALOGI YA VIFAA"
+						},
+						"href": "/equipment-sale/equipment-catalogue"
+					}
+				]
+			},
+			{
+				"label": {
+					"en": "About",
+					"sw": "Kuhusu"
+				},
+				"href": "/about",
+				"type": "standard",
+				"excludeOnMainNav": false,
+				"links": [
+					{
+						"label": {
+							"en": "About Us",
+							"sw": "Kutuhusu"
+						},
+						"href": "/about"
+					},
+					{
+						"label": {
+							"en": "Company Profile",
+							"sw": "Wasifu wa Kampuni"
+						},
+						"href": "/company-profile"
+					},
+					{
+						"label": {
+							"en": "Careers",
+							"sw": "Ajira"
+						},
+						"href": "/careers"
+					}
+				]
+			},
+			{
+				"label": {
+					"en": "Contact Us",
+					"sw": "Wasiliana Nasi"
+				},
+				"href": "/contact",
+				"type": "pill",
+				"excludeOnMainNav": false,
+				"links": []
+			}
+		]
+	},
+	"footer": {
+		"description": {
+			"en": "Reliable. Scalable. Fast. Accurate.",
+			"sw": "Inaaminika. Inaweza kupanuka. Haraka. Sahihi."
+		},
+		"columns": {
+			"company": {
+				"heading": {
+					"en": "Company",
+					"sw": "Kampuni"
+				},
+				"links": [
+					{
+						"label": {
+							"en": "About Us",
+							"sw": "Kuhusu Sisi"
+						},
+						"href": "/about"
+					},
+					{
+						"label": {
+							"en": "Careers",
+							"sw": "Kazi"
+						},
+						"href": "/careers"
+					},
+					{
+						"label": {
+							"en": "Contact Us",
+							"sw": "Wasiliana Nasi"
+						},
+						"href": "/contact"
+					},
+					{
+						"label": {
+							"en": "Equipment Catalogue",
+							"sw": "Katalogi ya Vifaa"
+						},
+						"href": "/equipment-sale/equipment-catalogue"
+					}
+				]
+			},
+			"surveying": {
+				"heading": {
+					"en": "Surveying",
+					"sw": "Upimaji"
+				},
+				"links": [
+					{
+						"label": {
+							"en": "Topographical Surveys",
+							"sw": "Upimaji wa Topografia"
+						},
+						"href": "/surveying/topographical-surveys"
+					},
+					{
+						"label": {
+							"en": "Cadastral Surveys",
+							"sw": "Upimaji wa Cadastral"
+						},
+						"href": "/surveying/cadastral-surveys"
+					},
+					{
+						"label": {
+							"en": "Aerial Surveys",
+							"sw": "Upimaji wa Angani"
+						},
+						"href": "/surveying/aerial-surveys"
+					},
+					{
+						"label": {
+							"en": "Building Site Surveys",
+							"sw": "Upimaji wa Maeneo ya Ujenzi"
+						},
+						"href": "/surveying/building-site-surveys"
+					},
+					{
+						"label": {
+							"en": "Ground Penetrating Radar",
+							"sw": "Radar ya Kupenya Ardhi"
+						},
+						"href": "/surveying/ground-penetrating-radar"
+					},
+					{
+						"label": {
+							"en": "Bathymetric Surveys",
+							"sw": "Upimaji wa Bathymetric"
+						},
+						"href": "/surveying/bathymetric-surveys"
+					}
+				]
+			},
+			"drones": {
+				"heading": {
+					"en": "Aerial Drones",
+					"sw": "Ndege za Drone"
+				},
+				"links": [
+					{
+						"label": {
+							"en": "Drone Imagery Surveys",
+							"sw": "Upimaji wa Picha za Drone"
+						},
+						"href": "/aerial-drones/drone-imagery-surveys"
+					},
+					{
+						"label": {
+							"en": "LiDAR Mapping",
+							"sw": "Uchoraji wa LiDAR"
+						},
+						"href": "/aerial-drones/lidar-mapping"
+					},
+					{
+						"label": {
+							"en": "Monitoring & Evaluation",
+							"sw": "Ufuatiliaji na Tathmini"
+						},
+						"href": "/aerial-drones/monitoring-and-evaluation"
+					},
+					{
+						"label": {
+							"en": "Volumetric Surveys",
+							"sw": "Upimaji wa Volumetric"
+						},
+						"href": "/aerial-drones/volumetric-surveys"
+					},
+					{
+						"label": {
+							"en": "Photography & Video Marketing",
+							"sw": "Upigaji Picha na Video"
+						},
+						"href": "/aerial-drones/photography-video-marketing"
+					}
+				]
+			},
+			"civil": {
+				"heading": {
+					"en": "Civil Engineering",
+					"sw": "Uhandisi wa Kiraia"
+				},
+				"links": [
+					{
+						"label": {
+							"en": "Highway Surveys",
+							"sw": "Upimaji wa Barabara"
+						},
+						"href": "/civil/highway-surveys"
+					},
+					{
+						"label": {
+							"en": "As-Built Surveys",
+							"sw": "Upimaji wa Hali Halisi"
+						},
+						"href": "/civil/as-built-surveys"
+					},
+					{
+						"label": {
+							"en": "Building Information Modelling",
+							"sw": "Muundo wa Taarifa za Jengo"
+						},
+						"href": "/civil/bim"
+					},
+					{
+						"label": {
+							"en": "Site Engineering",
+							"sw": "Uhandisi wa Maeneo"
+						},
+						"href": "/civil/site-engineering"
+					},
+					{
+						"label": {
+							"en": "Site Setting Out",
+							"sw": "Uwekaji wa Maeneo"
+						},
+						"href": "/civil/site-setting-out"
+					}
+				]
+			}
+		},
+		"copyright": {
+			"en": "© {{year}} {{organization}} All rights reserved.",
+			"sw": "© {{year}} {{organization}} Haki zote zimehifadhiwa."
+		},
+		"legal": {
+			"privacy": {
+				"en": "Privacy Policy",
+				"sw": "Sera ya Faragha"
+			},
+			"terms": {
+				"en": "Terms of Use",
+				"sw": "Masharti ya Matumizi"
+			},
+			"cookies": {
+				"en": "Cookie Settings",
+				"sw": "Mipangilio ya Kuki"
+			}
+		}
+	},
+	"contacts": {
+		"address": [
+			{
+				"icon": "map-marker",
+				"label": {
+					"en": "Nairobi, Kenya",
+					"sw": "Nairobi, Kenya"
+				},
+				"value": {
+					"en": "Nairobi, Kenya",
+					"sw": "Nairobi, Kenya"
+				},
+				"href": ""
+			}
+		],
+		"phone": [
+			{
+				"icon": "phone",
+				"label": {
+					"en": "+254 10 7393023",
+					"sw": "+254 10 7393023"
+				},
+				"value": {
+					"en": "+254107393023",
+					"sw": "+254107393023"
+				},
+				"href": "tel:+254107393023"
+			}
+		],
+		"mail": [
+			{
+				"icon": "gmail",
+				"label": {
+					"en": "smartgridsurveying@gmail.com",
+					"sw": "smartgridsurveying@gmail.com"
+				},
+				"value": {
+					"en": "smartgridsurveying@gmail.com",
+					"sw": "smartgridsurveying@gmail.com"
+				},
+				"href": "mailto:smartgridsurveying@gmail.com"
+			}
+		],
+		"whatsapp": [
+			{
+				"icon": "whatsapp",
+				"label": {
+					"en": "Chat On Whatsapp",
+					"sw": "Chat On Whatsapp"
+				},
+				"value": {
+					"en": "254107393023",
+					"sw": "254107393023"
+				},
+				"href": "https://wa.me/254107393023?text=Hello%2C%20I%20would%20like%20to%20speak%20with%20your%20team."
+			}
+		]
+	},
+	"cookies": {
+		"title": {
+			"en": "We value your privacy",
+			"sw": "Tunajali faragha yako"
+		},
+		"description": {
+			"en": "We use essential cookies to keep this site working, plus optional ones to enhance your experience and measure how it is used. Choose \"Accept all\", \"Reject all\", or customise your preferences — you can change your choice at any time.",
+			"sw": "Tunatumia kuki muhimu ili tovuti hii ifanye kazi, na kuki za hiari ili kuboresha uzoefu wako na kupima jinsi inavyotumika. Chagua \"Kubali zote\", \"Kataa zote\", au kubinafsisha mapendeleo yako — unaweza kubadilisha chaguo lako wakati wowote."
+		},
+		"privacyLink": {
+			"en": "Read our Privacy Policy",
+			"sw": "Soma Sera ya Faragha"
+		},
+		"acceptAll": {
+			"en": "Accept all",
+			"sw": "Kubali zote"
+		},
+		"rejectAll": {
+			"en": "Reject all",
+			"sw": "Kataa zote"
+		},
+		"customize": {
+			"en": "Customise",
+			"sw": "Kubinafsisha"
+		},
+		"savePreferences": {
+			"en": "Save preferences",
+			"sw": "Hifadhi mapendeleo"
+		},
+		"back": {
+			"en": "Back",
+			"sw": "Rudi"
+		},
+		"preferencesDescription": {
+			"en": "Choose which cookies you allow. Essential cookies keep the site working and cannot be switched off.",
+			"sw": "Chagua kuki unazoruhusu. Kuki muhimu huifanya tovuti ifanye kazi na haziwezi kuzimwa."
+		},
+		"categories": {
+			"necessary": {
+				"label": {
+					"en": "Strictly necessary",
+					"sw": "Muhimu sana"
+				},
+				"description": {
+					"en": "Required for core features such as security, your language setting and remembering these cookie choices.",
+					"sw": "Inahitajika kwa vitendaji muhimu kama usalama, mpangilio wako wa lugha na kukumbuka chaguo zako za kuki."
+				},
+				"alwaysActive": {
+					"en": "Always active",
+					"sw": "Imewashwa kila wakati"
+				}
+			},
+			"functional": {
+				"label": {
+					"en": "Functional",
+					"sw": "Za kiutendaji"
+				},
+				"description": {
+					"en": "Enable enhanced features like live chat support and remember your settings for a more personal experience.",
+					"sw": "Huwezesha vipengele kama mazungumzo ya moja kwa moja na kukumbuka mipangilio yako kwa uzoefu wa kibinafsi zaidi."
+				}
+			},
+			"analytics": {
+				"label": {
+					"en": "Analytics",
+					"sw": "Za uchambuzi"
+				},
+				"description": {
+					"en": "Help us understand how visitors use the site so we can improve it. Data is aggregated and does not identify you.",
+					"sw": "Hutusaidia kuelewa jinsi wageni wanavyotumia tovuti ili tuiboreshe. Takwimu hukusanywa kwa pamoja na hazimtambui mtumiaji."
+				}
+			}
+		}
+	},
+	"footerContacts": [
+		{
+			"icon": "phone",
+			"label": {
+				"en": "+254 107 393 023",
+				"sw": "+254 107 393 023"
+			},
+			"href": "tel:+254107393023",
+			"note": {
+				"en": "HQ (Ruiru)",
+				"sw": "HQ (Ruiru)"
+			},
+			"color": "primary"
+		},
+		{
+			"icon": "phone",
+			"label": {
+				"en": "+254 701 618 282",
+				"sw": "+254 701 618 282"
+			},
+			"href": "tel:+254701618282",
+			"note": {
+				"en": "Nairobi",
+				"sw": "Nairobi"
+			},
+			"color": "primary-500"
+		},
+		{
+			"icon": "email",
+			"label": {
+				"en": "info@smartgridsurveying.com",
+				"sw": "info@smartgridsurveying.com"
+			},
+			"href": "mailto:info@smartgridsurveying.com?subject=General Inquiry&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to make an inquiry.%0D%0A%0D%0AName:%0D%0AMessage:%0D%0A%0D%0AThank you.",
+			"note": {
+				"en": "Queries",
+				"sw": "Queries"
+			},
+			"color": "primary-700"
+		},
+		{
+			"icon": "gmail",
+			"label": {
+				"en": "smartgridsurveying@gmail.com",
+				"sw": "smartgridsurveying@gmail.com"
+			},
+			"href": "mailto:smartgridsurveying@gmail.com?subject=General Inquiry&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to make an inquiry.%0D%0A%0D%0AName:%0D%0AMessage:%0D%0A%0D%0AThank you.",
+			"note": {
+				"en": "Quotes",
+				"sw": "Quotes"
+			},
+			"color": "gmail"
+		},
+		{
+			"icon": "whatsapp",
+			"label": {
+				"en": "Chat on WhatsApp",
+				"sw": "Zungumza kwenye WhatsApp"
+			},
+			"href": "https://wa.me/254107393023",
+			"note": {
+				"en": "Quick",
+				"sw": "Quick"
+			},
+			"color": "whatsapp"
+		},
+		{
+			"icon": "calendar",
+			"label": {
+				"en": "Schedule via Calendly",
+				"sw": "Panga kwa Calendly"
+			},
+			"href": "https://calendly.com/smartgridsurveying",
+			"note": {
+				"en": "Scheduled",
+				"sw": "Scheduled"
+			},
+			"color": "calendly"
+		}
+	],
+	"socialChannels": [
+		{
+			"platform": "LinkedIn",
+			"handle": "Smartgrid Surveying",
+			"url": "https://www.linkedin.com/company/smartgrid-surveying/",
+			"icon": "linkedin"
+		},
+		{
+			"platform": "Instagram",
+			"handle": "@smartgridsurveying",
+			"url": "https://www.instagram.com/smartgrid_surveying/",
+			"icon": "instagram"
+		},
+		{
+			"platform": "YouTube",
+			"handle": "Smartgrid Surveying",
+			"url": "https://www.youtube.com/@SmartGridsurveyingCivilworks",
+			"icon": "youtube"
+		}
+	],
+	"chat": {
+		"number": "",
+		"whatsappMessage": {
+			"en": "",
+			"sw": ""
+		},
+		"whatsappLabel": {
+			"en": "",
+			"sw": ""
+		}
+	}
+}

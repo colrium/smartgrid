@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"tag": "Vifaa vya Upimaji",
 		"headline": "Vituo Kamili vya Usahihi wa Juu kwa Upimaji Sahihi",
 		"title": "TOTAL STATION ESURVEY",
@@ -11,17 +12,20 @@
 		}
 	},
 	"breadcrumb": {
+		"type": "unique",
 		"home": "Nyumbani",
 		"section": "Uuzaji wa Vifaa",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
 	"catalogue": {
+		"type": "unique",
 		"icon": "ruler-square",
 		"title": "E-Survey E3L Total Station",
 		"description": "Total station yenye usahihi wa 2” na mbalimbali ya mita 5000, bora kwa mpangilio wa ujenzi, upimaji wa mipaka, na uchoraji ramani topografia.",
 		"badge": "Inapatikana"
 	},
 	"pricing": {
+		"type": "pricing",
 		"new": {
 			"label": "Mpya Kabisa",
 			"currency": "KES",
@@ -34,24 +38,29 @@
 			"label": "Vifaa vya Upimaji",
 			"href": "/equipment-sale/equipment-catalogue"
 		},
-        {
+		{
 			"name": "total-stations",
 			"label": "Vituo Kamili",
 			"href": "/equipment-sale/equipment-catalogue?category=total-stations"
 		}
 	],
 	"productOverview": {
+		"type": "unique",
 		"tag": "Muhtasari wa Bidhaa",
 		"headline": "Imeundwa kwa Usahihi, Imejengwa kwa Uzalishaji",
-		"images": ["/media/equipment-sale/total-station-esurvey/06.png"],
+		"images": [
+			"/media/equipment-sale/total-station-esurvey/06.png"
+		],
 		"description": "Kituo kamili cha utendaji wa juu kilichoundwa kwa upimaji wa usahihi, mpangilio wa ujenzi, na matumizi ya uhandisi kwa usahihi wa kuaminika na mtiririko mzuri wa kazi shambani."
 	},
 	"specs": {
+		"type": "unique",
 		"tag": "Data ya Kiufundi",
 		"headline": "Vipimo vya Kiufundi",
 		"description": "Maelezo kamili ya kiufundi kwa E-Survey E3L Total Station."
 	},
 	"includedInPackage": {
+		"type": "card-grid",
 		"tag": "Maudhui ya Kifurushi",
 		"headline": "Yaliyomo kwenye Kifurushi",
 		"description": "Kila kitu unachohitaji kuanza upimaji, moja kwa moja kutoka kwenye kifurushi.",
@@ -71,6 +80,7 @@
 		]
 	},
 	"measurementCapability": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Uwezo wa Kipimo",
 		"description": "Vipimo vya pembe za usahihi wa juu na umbali wa mbali.",
@@ -82,6 +92,7 @@
 		]
 	},
 	"accuracyAndPerformance": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Usahihi na Utendaji",
 		"description": "Usahihi unaorudiwa wa kiwango cha milimita katika hali halisi za shambani.",
@@ -93,6 +104,7 @@
 		]
 	},
 	"dataAndInterface": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Data na Kiolesura",
 		"description": "Usimamizi rahisi wa data kwa muunganisho wa haraka na unaojulikana.",
@@ -104,6 +116,7 @@
 		]
 	},
 	"applications": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Matumizi",
 		"description": "Inatumiwa kwenye kazi za topografia, mpangilio, na mipaka.",
@@ -115,6 +128,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Pata Nukuu",
 		"headline": "Pata Kifaa Hiki",
 		"description": "Wasiliana nasi moja kwa moja kwa bei, upatikanaji, na mwongozo wa kitaalamu.",
@@ -130,6 +144,7 @@
 		}
 	},
 	"relatedProducts": {
+		"type": "unique",
 		"tag": "Chunguza",
 		"headline": "Bidhaa Nyingine Unazoweza Kuzipenda",
 		"description": "Gundua vifaa vingine vya upimaji kutoka kwenye katalogi ya SmartGrid."

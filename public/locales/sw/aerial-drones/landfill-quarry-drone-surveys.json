@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "Upime Kwa Busara, Jenga Kwa Nguvu Zaidi",
 		"title": "UCHUNGUZI WA NDEGE WA MASHIMO YA TAKA NA MACHIMBO",
 		"image": "/media/aerial-drones/landfill-quarry-drone-surveys/01.jpg",
@@ -11,11 +12,13 @@
 		}
 	},
 	"quarryServices": {
+		"type": "intro",
 		"tag": "Akili ya Tovuti",
 		"headline": "HUDUMA ZA MACHIMBO",
 		"description": "Fungua Usahihi. Kuza Faida. Uchunguzi wetu wa ndege na ardhi kwa machimbo hutoa data unayohitaji—haraka, salama, na sahihi zaidi kuliko hapo awali."
 	},
 	"quarryServicesItems": {
+		"type": "card-grid",
 		"tag": null,
 		"headline": "Kubadilisha Usimamizi wa Machimbo, Taka na Rasilimali",
 		"description": "",
@@ -38,11 +41,13 @@
 		]
 	},
 	"maximizeProductivity": {
+		"type": "intro",
 		"tag": "Haraka, Busara Zaidi",
 		"headline": "Kuongeza Tija. Kupunguza Bahati Nasibu.",
 		"description": "Tumia uchunguzi wa kiasi wa kisasa wa ndege za SmartGrid kufanya maamuzi ya haraka na ya busara zaidi tovutini. Acha data iongoze njia ya faida."
 	},
 	"whatWeOffer": {
+		"type": "card-grid",
 		"tag": "Huduma",
 		"headline": "Huduma Zetu za Uchunguzi wa Angani",
 		"items": [

@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"headline": "Survey Smarter, Build Stronger",
 		"title": "SITE ENGINEERING SURVEYS",
 		"image": "/media/civil/site-engineering/01.jpg",
@@ -10,12 +11,14 @@
 		}
 	},
 	"overview": {
+		"type": "split",
 		"tag": "Precision Construction",
 		"headline": "Reliable. Scalable. Fast. Powerful.",
 		"image": "/media/civil/site-engineering/01.jpg",
 		"description": "By capturing high-resolution topographic data, 3D ground models, and accurate boundary visuals, we streamline site planning and reduce costly rework. Whether you're breaking ground or managing infrastructure upgrades, SmartGrid Surveying gives you the geospatial clarity needed to engineer with confidence and precision."
 	},
 	"WhatWeDo": {
+		"type": "card-grid",
 		"tag": "Precision Construction",
 		"headline": "Precision Site Engineering Surveys",
 		"description": "Build smarter from the ground up—SmartGrid Surveying's drone-powered site surveys deliver real-time terrain data, accurate site modeling, and faster decision-making for modern construction projects.",
@@ -51,6 +54,7 @@
 		]
 	},
     "cta": {
+		"type": "cta",
 		"tag": "Let’s Collaborate",
 		"headline": "Need High-Precision Surveys for Your Next Build?",
 		"description": "",
@@ -61,6 +65,7 @@
 		}
 	},
 	"exploreMore": {
+		"type": "card-grid",
 		"tag": null,
 		"headline": "Explore more...",
 		"description": "",
@@ -93,6 +98,7 @@
 		]
 	},
 	"deliverables": {
+		"type": "deliverables",
 		"tag": "Engineering Outputs",
 		"headline": "Site Engineering Deliverables",
 		"description": "Precise data products that keep site works on control:",

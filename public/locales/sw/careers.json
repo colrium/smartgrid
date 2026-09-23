@@ -1,5 +1,7 @@
 {
 	"hero": {
+		"type": "hero",
+		"layout": "banner",
 		"headline": "Tufanye Kazi Pamoja Kenya na Nje.",
 		"title": "Ajira",
 		"description": "SmartGrid Surveying ni kampuni ya kitaalamu ya kijiografia na uhandisi inayotoa huduma za upimaji ardhi wa usahihi, ramani za UAV, GIS, utambuzi wa huduma za chini ya ardhi, na suluhisho za miundombinu ya civil. Tunatafuta wataalamu wenye nidhamu na uwezo wa kiufundi waliojitolea kwa usahihi, usalama, na ubora wa utekelezaji wa miradi.",
@@ -9,6 +11,7 @@
 		}
 	},
 	"currentOpenings": {
+		"type": "unique",
 		"tag": "Jiunge na Timu Yetu",
 		"headline": "Fursa za Sasa",
 		"description": "Chungua nafasi zilizopo hapa chini na apply ili kuwa sehemu ya timu yetu inayokua.",
@@ -485,12 +488,14 @@
 		]
 	},
 	"applicationProcess": {
+		"type": "unique",
 		"tag": null,
 		"title": "",
 		"subtitle": "Mchakato wa Maombi",
 		"description": "Tuma CV yako na barua ya maombi kwa <bold>info@smartgridsurveying.com<bold> ukionyesha nafasi uliyoomba kwenye mstari wa somo.\n\n Ni wanaofuatiliwa tu watawasilishwa. SmartGrid Surveying ni mwajiri wa fursa sawa aliyejitolea kwa ubora wa kitaalamu, uadilifu, na ubora."
 	},
 	"statement": {
+		"type": "unique",
 		"tag": null,
 		"title": "",
 		"subtitle": "Tamko la Fursa Sawa na Ufuaso wa Wafadhili",

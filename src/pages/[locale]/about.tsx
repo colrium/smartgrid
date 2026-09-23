@@ -1,10 +1,14 @@
 import type { GetServerSideProps, NextPage } from "next";
 import PageHead from "@/components/Head";
 
-import { getI18nProps } from "@/lib/i18n";
+import { getI18nProps, getLocale } from "@/lib/i18n";
+import type { Lang } from "@/lib/types";
+import { useTranslation } from "@/hooks";
+import { resolveKeystaticPage, type ResolvedKeystaticPage } from "@/lib/keystatic/resolvePage";
+import { PageBuilderDocument } from "@/components/keystatic/PageBuilderDocument";
+import { SplitMedia } from "@/components/sections/shared/SplitMedia";
+import { Hero, type HeroContent } from "@/components/sections/shared/Hero";
 import {
-	HeroSection,
-	OurStorySection,
 	AerialSurveyingSection,
 	ServicesByImagesSection,
 	DronePhotographyImageSliderSection,
@@ -16,16 +20,68 @@ import {
 } from "@/components/sections/about";
 
 type PageProps = {
-	// Add custom props here
+	/** Keystatic page when the `about` slug is opted in; otherwise `null` (legacy). */
+	keystaticPage: ResolvedKeystaticPage | null;
 };
 
-const Page: NextPage<PageProps> = () => {
+interface OurStoryContent {
+	tag?: string | null;
+	headline: string;
+	image?: string | null;
+	description?: string | null;
+}
+
+/**
+ * All ten legacy sections are Keystatic-owned in page order (see the `about`
+ * mapping in `scripts/migrate-locale-to-keystatic.mjs`): hero, ourStory,
+ * aboutAerialSurveying, servicesByImages, dronePhotographyimageSlider,
+ * aboutLandSurveying, landSurveyingImages, aboutImpact, whyChooseSmartGrid,
+ * projectsCompletedImagesMasonry (M11 batch 4; converted to
+ * `PageBuilderDocument` in M12 batch 10, 2026-09-19 — entry order IS page
+ * order, so editors can add, remove, and reorder sections freely; the M3
+ * resolver taxonomy remains the only fallback). M13 batch 11, 2026-09-20 —
+ * the single-shared-child wrappers `OurStorySection` and `HeroSection` were
+ * removed; the legacy branch below renders the shared `SplitMedia` and
+ * `Hero` directly with the identical `t()` lookups and presentation
+ * literals, and the entry already uses the shared `splitMedia`/`hero`
+ * branches with content preserved.
+ */
+const Page: NextPage<PageProps> = ({ keystaticPage }) => {
+	const { t } = useTranslation(["about"]);
+	// Migration source switch (M3/M7, completed M11 batch 4, flexible since
+	// M12 batch 10): Keystatic owns the whole page when the slug is
+	// allowlisted via `KEYSTATIC_PAGES` and the entry is published.
+	// Otherwise the legacy locale-JSON implementation renders unchanged.
+	if (keystaticPage) {
+		return (
+			<div className="relative">
+				<PageHead pageName="about" />
+				<PageBuilderDocument page={keystaticPage} />
+			</div>
+		);
+	}
+
+	const ourStory = t("about:ourStory", { returnObjects: true }) as unknown as OurStoryContent;
+	const heroData = t("about:hero", { returnObjects: true }) as unknown as HeroContent;
+
 	return (
 		<div className="relative">
 			<PageHead pageName="about" />
 			<div className="flex flex-col min-h-screen">
-				<HeroSection />
-				<OurStorySection />
+				<Hero data={heroData} />
+				{ourStory?.headline ? (
+					<SplitMedia
+						data={{
+							tag: ourStory.tag ?? null,
+							headline: ourStory.headline,
+							description: ourStory.description ?? null,
+							image: ourStory.image ?? null,
+						}}
+						imagePosition="left"
+						mediaAspect="aspect-square"
+						mediaFit="contain"
+					/>
+				) : null}
 				<AerialSurveyingSection />
 				<ServicesByImagesSection />
 				<DronePhotographyImageSliderSection />
@@ -43,7 +99,11 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 	if (!i18nProps) return { notFound: true };
 
-	return { props: { ...i18nProps } };
+	const locale = getLocale(context);
+	const lang: Lang = locale === "sw" ? "sw" : "en";
+	const resolution = await resolveKeystaticPage("about", lang);
+
+	return { props: { ...i18nProps, keystaticPage: resolution.status === "keystatic" ? resolution.page : null } };
 };
 
 export default Page;

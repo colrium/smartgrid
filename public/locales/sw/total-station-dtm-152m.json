@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"tag": "Vifaa vya Upimaji",
 		"headline": "Kituo Kamili cha Usahihi kwa Uchunguzi wa Kuhitajika",
 		"title": "TOTAL STATION DTM 152M",
@@ -11,6 +12,7 @@
 		}
 	},
 	"productImages": {
+		"type": "unique",
 		"images": [
 			"/media/equipment-sale/total-station-dtm-152m/02-01.png",
 			"/media/equipment-sale/total-station-dtm-152m/02-02.png",
@@ -20,17 +22,20 @@
 		]
 	},
 	"breadcrumb": {
+		"type": "unique",
 		"home": "Nyumbani",
 		"section": "Uuzaji wa Vifaa",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
 	"catalogue": {
+		"type": "unique",
 		"icon": "ruler-square",
 		"title": "DTM 152M Total Station",
 		"description": "Total station inayoaminika na yenye ufanisi kwa upimaji wa uhandisi na cadastral yenye utendaji thabiti wa kipimo.",
 		"badge": "Mkataba Moto"
 	},
 	"pricing": {
+		"type": "pricing",
 		"new": {
 			"label": "Mpya Kabisa",
 			"currency": "KES",
@@ -50,11 +55,13 @@
 		}
 	],
 	"specs": {
+		"type": "unique",
 		"tag": "Data ya Kiufundi",
 		"headline": "Vipimo vya Kiufundi",
 		"description": "Maelezo kamili ya kiufundi kwa DTM 152M Total Station."
 	},
 	"includedInPackage": {
+		"type": "card-grid",
 		"tag": "Maudhui ya Kifurushi",
 		"headline": "Yaliyomo kwenye Kifurushi",
 		"description": "Kila kitu unachohitaji kuanza upimaji, moja kwa moja kutoka kwenye kifurushi.",
@@ -74,6 +81,7 @@
 		]
 	},
 	"measurementCapability": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Uwezo wa Kipimo",
 		"description": "Vipimo vya pembe za usahihi wa juu na umbali wa mbali.",
@@ -85,6 +93,7 @@
 		]
 	},
 	"accuracyAndPerformance": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Usahihi na Utendaji",
 		"description": "Usahihi wa kiwango cha milimita unazoweza kuzitegemea kwa kila kipimo.",
@@ -96,6 +105,7 @@
 		]
 	},
 	"dataAndInterface": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Data na Kiolesura",
 		"description": "Hifadhi ya ndani na muunganisho rahisi kwa mchakato mzuri wa kazi.",
@@ -107,6 +117,7 @@
 		]
 	},
 	"buildAndDurability": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Ujenzi na Uimara",
 		"description": "Changa, imara, na tayari kwa siku ndefu shambani.",
@@ -118,6 +129,7 @@
 		]
 	},
 	"applications": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Matumizi",
 		"description": "Inatumiwa kwenye kazi za topografia, mpangilio, na uhandisi.",
@@ -129,6 +141,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Pata Nukuu",
 		"headline": "Pata Kifaa Hiki",
 		"description": "Wasiliana nasi kwa bei, upatikanaji, na msaada wa kitaalamu.",
@@ -144,6 +157,7 @@
 		}
 	},
 	"relatedProducts": {
+		"type": "unique",
 		"tag": "Chunguza",
 		"headline": "Bidhaa Nyingine Unazoweza Kuzipenda",
 		"description": "Gundua vifaa vingine vya upimaji kutoka kwenye katalogi ya SmartGrid."

@@ -6,7 +6,7 @@ import { useTranslation } from "@/hooks";
 import Link from "@/components/Link";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionTag } from "@/components/SectionTag";
-import { Blob } from "@/components/sections/home/decor";
+import { Blob } from "@/components/sections/shared/decor";
 
 interface ChecklistItem {
 	icon?: string | null;
@@ -29,18 +29,31 @@ interface ComplianceContent {
 	related?: RelatedLink[] | null;
 }
 
-export function ComplianceSection(): ReactElement {
+export interface CadastralComplianceData {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+	checklistTitle?: string | null;
+	checklist?: ChecklistItem[] | null;
+	relatedLabel?: string | null;
+	related?: RelatedLink[] | null;
+}
+
+export function ComplianceSection({ data, id }: { data?: CadastralComplianceData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/cadastral-surveys"]);
-	const section = t("surveying/cadastral-surveys:compliance", {
-		returnObjects: true,
-	}) as unknown as ComplianceContent;
+	// Keystatic-owned content when `data` is provided (M11
+	// `cadastralCompliance` unique section); legacy locale strings otherwise.
+	const section = (data ??
+		(t("surveying/cadastral-surveys:compliance", {
+			returnObjects: true,
+		}) as unknown as ComplianceContent)) as ComplianceContent;
 	const checklist = Array.isArray(section?.checklist) ? section.checklist : [];
 	const related = Array.isArray(section?.related) ? section.related : [];
 
 	if (!section?.headline && checklist.length === 0) return <></>;
 
 	return (
-		<section className="relative overflow-hidden bg-surface py-24 sm:py-28">
+		<section id={id} className="relative overflow-hidden bg-surface py-24 sm:py-28">
 			<Blob className="w-[26rem] h-[26rem] bg-primary-100/60 -top-24 -right-24" opacity={0.5} />
 			<span
 				aria-hidden

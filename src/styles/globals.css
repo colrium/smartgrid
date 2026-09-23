@@ -21,9 +21,6 @@
     --color-primary-800: #004f5e;
     --color-primary-900: #003742;
     --color-secondary: #000000;
-    
-
-    
 
     --color-accent: #975604;
     --color-accent-50: #f8eedd;
@@ -369,6 +366,79 @@ select option {
 @utility ink-panel {
     background: linear-gradient(225deg, #01373d 0%, #004f5e 55%, #0097b2 130%);
 }
+
+@utility hgb-panel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.25rem;
+    
+    --hgb-bg-color: var(--color-surface);
+    --hgb-aurora-color: var(--color-primary-500);
+    --hgb-aurora-color-mid: var(--color-primary-600);
+    --hgb-border-color: var(--color-surface);
+    --hgb-shadow-color: var(--color-ink);
+    background: color-mix(in srgb, var(--hgb-bg-color) 45%, transparent);
+        backdrop-filter: blur(25px);
+    border: 1px solid color-mix(in srgb, var(--hgb-border-color) 40%, transparent);
+    
+  
+    /* content stacks above both pseudo-elements */
+        &>* {
+            position: relative;
+            z-index: 3;
+        }
+  
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 6px;
+      border-radius: 1em;
+      background: linear-gradient(145deg, color-mix(in srgb, var(--hgb-bg-color) 95%, transparent), color-mix(in srgb, var(--hgb-bg-color) 85%, transparent));
+      backdrop-filter: blur(25px);
+      border: 1px solid color-mix(in srgb, var(--hgb-border-color) 70%, transparent);
+      z-index: 2;
+    }
+  
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 78%;
+      height: 64%;
+      border-radius: 50%;
+      filter: blur(1.75em);
+      z-index: 1;
+      opacity: .9;
+      background: radial-gradient(
+        circle,
+        color-mix(in srgb, var(--hgb-aurora-color) 85%, transparent),
+        color-mix(in srgb, var(--hgb-aurora-color-mid) 40%, transparent),
+        transparent
+      );
+      animation: hgb-aurora-motion 20s infinite ease-in-out;
+    }
+}
+@utility hgb-aurora-* {
+    --hgb-aurora-color: --value(--color-*);
+    --hgb-aurora-color-mid: --value(--color-*); 
+}
+
+@utility hgb-bg-* {
+    --hgb-bg-color: --value(--color-*);
+}
+@utility hgb-border-* {
+    --hgb-border-color: --value(--color-*);
+}
+@keyframes hgb-aurora-motion {
+    0% {
+            transform: rotate(0deg) translate(-100%, 100%);
+        }
+    
+        100% {
+            transform: rotate(360deg) translate(100%, -100%);
+        } }
+
 @keyframes scroll-line {
     0% {
         transform: translateY(0);

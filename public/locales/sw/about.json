@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "Ya Kuaminika. Inayoweza Kupanuka. Ya Haraka. Inayofaa.",
 		"title": "Kuhusu Sisi",
 		"image": "/media/about/01.jpeg",
@@ -10,12 +11,14 @@
 		}
 	},
 	"ourStory": {
+		"type": "split-media",
 		"tag": "Safari Yetu",
 		"headline": "SMARTGRID SURVEYING & ENGINEERING",
 		"image": "/img/logo.svg",
 		"description": "Katika Smartgrid Surveying, iliyoanzishwa 2020. Tunafafanua upya mustakabali wa uchunguzi wa ardhi na anga kote Afrika na kuendelea. Kwa teknolojia ya kisasa na kujitolea thabiti kwa usahihi, tunatoa huduma kamili za upimaji wa kitaalamu zinazosaidia maendeleo ya miundombinu, usimamizi wa ardhi, ufuatiliaji wa mazingira, na miradi ya upangaji ya viwango vyote."
 	},
 	"aerialSurveying": {
+		"type": "card-grid",
 		"tag": "Akili ya Angani",
 		"headline": "UPIMAJI WA ANGANI",
 		"description": "Droni zimebadilisha tasnia ya upimaji—na sisi tunaongoza. Smartgrid Surveying hutumia droni za angani kwa uchoraji ramani, uundaji wa modeli 3D, kiasi, tathmini za mazingira, na ufuatiliaji wa maeneo makubwa au yasiyofikika. Zaidi ya uchoraji ramani wa kiufundi, tunatoa upigaji picha wa kitaalamu wa droni kwa mali isiyohamishika, uuzaji wa ujenzi, utalii, na matukio. Kwa kutumia droni zilizo na RTK GPS na vitambuzi vya azimio la juu, tunakamata data ya kijiografia sahihi inayowawezesha wahandisi, wasanidi, serikali, na NGO kufanya maamuzi mahiri, haraka.",
@@ -68,6 +71,7 @@
 		]
 	},
 	"servicesByImages": {
+		"type": "gallery-grid",
 		"tag": null,
 		"headline": "",
 		"description": "",
@@ -107,6 +111,7 @@
 		]
 	},
 	"dronePhotographyimageSlider": {
+		"type": "gallery-slider",
 		"tag": null,
 		"headline": "Upigaji Picha wa Droni",
 		"description": "",
@@ -119,6 +124,8 @@
 		]
 	},
 	"landSurveying": {
+		"type": "card-grid",
+		"type": "card-grid",
 		"tag": "Usahihi wa Ardhi",
 		"headline": "UPIMAJI WA ARDHI WA SMARTGRID",
 		"description": "Katika Smartgrid Surveying, tunafafanua upya mustakabali wa <primary>uchunguzi wa ardhi na anga</primary> kote Afrika na kuendelea. Kwa teknolojia ya kisasa na kujitolea thabiti kwa <primary>usahihi</primary>, tunatoa huduma kamili ya <primary>upimaji wa kitaalamu</primary> inayosaidia maendeleo ya miundombinu, usimamizi wa ardhi, ufuatiliaji wa mazingira, na miradi ya upangaji ya viwango vyote. Smartgrid Surveying hutoa suluhisho kamili za upimaji wa ardhi zilizoundwa kwa <primary>wasanidi, serikali, makandarasi, na wateja binafsi</primary>. Iwe ni kwa hati miliki, uwekaji wa mipaka, mipangilio ya ujenzi, au uchoraji ramani wa cadastral, tunaleta uzoefu na ubora kwa kila tovuti.",
@@ -155,6 +162,7 @@
 		]
 	},
 	"landSurveyingImages": {
+		"type": "gallery-grid",
 		"tag": null,
 		"headline": "",
 		"description": "",
@@ -178,6 +186,7 @@
 		]
 	},
 	"impactAcrossAfrica": {
+		"type": "globe",
 		"tag": "Ufikiaji Wetu",
 		"headline": "Athari Kote Afrika",
 		"image": "/media/about/28.jpeg",
@@ -195,6 +204,8 @@
 		}
 	},
 	"whyChooseSmartGrid": {
+		"type": "card-grid",
+		"type": "card-grid",
 		"tag": "Kwa Nini Sisi",
 		"headline": "Kwa Nini Uchague SmartGrid kwa Huduma za Droni?",
 		"description": "",
@@ -227,6 +238,7 @@
 		]
 	},
 	"projectsCompletedImagesMasonry": {
+		"type": "gallery-masonry",
 		"tag": null,
 		"headline": "MIRADI IMEKAMILIKA",
 		"description": "",

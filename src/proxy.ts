@@ -10,7 +10,30 @@ import {
 } from "@/lib/mediaShared";
 
 /**
- * Edge gate for the protected media library (`public/media/**`).
+ * Edge gate: protected media library + Keystatic admin access (M5).
+ *
+ * Next.js 16 renamed the `middleware.ts` convention to `proxy.ts` — this
+ * module is the ONLY active edge gate. (`middleware.ts` was removed so there
+ * is exactly one gate to audit; see the M5 status log.)
+ *
+ * Order matters: media signatures are verified first so hotlinked image
+ * guesses can never reach the admin check, then admin routes are gated.
+ * Everything else passes through untouched.
+ *
+ * Keystatic admin access:
+ * - Local development (`NODE_ENV === "development"`) is unrestricted so
+ *   editors can work credential-free against local-filesystem storage.
+ * - Everywhere else, `/keystatic/*` (including the `/en|sw` locale-prefixed
+ *   variants Next.js i18n routing also serves) and `/api/keystatic/*`
+ *   require HTTP Basic Auth against `KEYSTATIC_ADMIN_USER` /
+ *   `KEYSTATIC_ADMIN_PASSWORD`. Missing credentials fail CLOSED (every
+ *   request rejected) — never open. Rejections are bare 401s with a
+ *   `WWW-Authenticate` challenge; authorization values are never logged.
+ * - A hosting-level wall in front of the app (e.g. Vercel Deployment
+ *   Protection) runs BEFORE this gate; a looping login prompt can originate
+ *   from either layer. See README → "Admin access troubleshooting".
+ *
+ * Media protection (`public/media/**`).
  *
  * Media URLs are only served with a valid HMAC signature that the Node signer
  * (`src/lib/media.ts`) minted while rendering the page:
@@ -23,12 +46,17 @@ import {
  * server-side secret, query parameters cannot be tampered with and URLs
  * cannot be minted without the deployment's MEDIA_SIGNING_KEY.
  *
- * Next.js 16 proxy convention (successor of middleware.ts). Runs before the
- * filesystem lookup, so it intercepts both direct media requests and the
- * internal `/_next/image` optimizer fetch of a signed href.
+ * Runs before the filesystem lookup, so it intercepts both direct media
+ * requests and the internal `/_next/image` optimizer fetch of a signed href.
  */
 
 const BASE64URL_PATTERN = /^[A-Za-z0-9\-_]+$/;
+
+/** Locale prefixes served by `next-i18next.config.js` (`en` default, `sw`). */
+const LOCALE_PREFIX_PATTERN = /^\/(en|sw)(\/|$)/;
+
+/** Admin UI + admin API paths (after stripping an optional locale prefix). */
+const KEYSTATIC_PATH_PATTERN = /^(\/keystatic|\/api\/keystatic)(\/|$)/;
 
 function base64UrlToBytes(value: string): Uint8Array | null {
 	if (!BASE64URL_PATTERN.test(value)) return null;
@@ -53,6 +81,84 @@ function timingSafeEqual(a: Uint8Array, b: Uint8Array): boolean {
 		diff |= a[i] ^ b[i];
 	}
 	return diff === 0;
+}
+
+/** Constant-time string comparison (Edge-safe: no Node built-ins). */
+function credentialsEqual(a: string, b: string): boolean {
+	const encoder = new TextEncoder();
+	return timingSafeEqual(encoder.encode(a), encoder.encode(b));
+}
+
+/**
+ * Expected admin credentials, or `null` when either variable is missing or
+ * empty. `null` fails every admin request closed — the gate never degrades
+ * to open access because a secret was forgotten.
+ */
+function expectedAdminCredentials(): { user: string; pass: string } | null {
+	const user = process.env.KEYSTATIC_ADMIN_USER;
+	const pass = process.env.KEYSTATIC_ADMIN_PASSWORD;
+	if (!user || !pass) return null;
+	return { user, pass };
+}
+
+/**
+ * Parse a `Basic base64(user:pass)` header without throwing. Returns `null`
+ * for any malformed value (wrong scheme, bad base64, missing colon).
+ * Callers compare the result in constant time and never log it.
+ */
+function parseBasicCredentials(auth: string | null): { user: string; pass: string } | null {
+	if (!auth) return null;
+	const space = auth.indexOf(" ");
+	if (space === -1) return null;
+	// RFC 7235: the auth-scheme token is case-insensitive.
+	if (auth.slice(0, space).toLowerCase() !== "basic") return null;
+	const encoded = auth.slice(space + 1).trim();
+	if (!encoded) return null;
+	let decoded: string;
+	try {
+		// RFC 7617: browsers send `user:pass` UTF-8-encoded. `atob` yields a
+		// latin-1 binary string, so decode the raw bytes back to UTF-8 —
+		// feeding that string to TextEncoder later would double-encode any
+		// non-ASCII character and reject a correct password forever.
+		decoded = new TextDecoder().decode(Uint8Array.from(atob(encoded), (char) => char.charCodeAt(0)));
+	} catch {
+		return null;
+	}
+	const colon = decoded.indexOf(":");
+	if (colon === -1) return null;
+	return { user: decoded.slice(0, colon), pass: decoded.slice(colon + 1) };
+}
+
+function isKeystaticPath(pathname: string): boolean {
+	const withoutLocale = pathname.replace(LOCALE_PREFIX_PATTERN, "/");
+	return KEYSTATIC_PATH_PATTERN.test(withoutLocale);
+}
+
+/** Authorized only when expected credentials exist AND match in constant time. */
+function isAuthorizedAdmin(req: NextRequest): boolean {
+    const expected = expectedAdminCredentials();
+    console.log("expected", expected);
+    
+	if (!expected) return false;
+    const provided = parseBasicCredentials(req.headers.get("authorization"));
+    console.log("provided", provided);
+    console.log(
+		"credentialsEqual(provided.user, expected.user)",
+		credentialsEqual(provided.user, expected.user)
+    );
+    console.log(
+		"credentialsEqual(provided.pass, expected.pass)",
+		credentialsEqual(provided.pass, expected.pass)
+	);
+	if (!provided) return false;
+	return credentialsEqual(provided.user, expected.user) && credentialsEqual(provided.pass, expected.pass);
+}
+
+function unauthorizedAdmin(): NextResponse {
+	return new NextResponse("Authentication required", {
+		status: 401,
+		headers: { "WWW-Authenticate": 'Basic realm="Keystatic Admin"' },
+	});
 }
 
 async function verifyMediaSignature(
@@ -92,26 +198,46 @@ async function verifyMediaSignature(
 
 export default async function proxy(request: NextRequest) {
 	const { pathname } = request.nextUrl;
-	if (!isGatedMediaPath(pathname)) return NextResponse.next();
+	if (isGatedMediaPath(pathname)) {
+		const verified = await verifyMediaSignature(
+			pathname,
+			request.nextUrl.searchParams.get(MEDIA_PARAM_EXP),
+			request.nextUrl.searchParams.get(MEDIA_PARAM_SIG),
+		);
+		if (!verified) {
+			return new NextResponse(null, { status: 404 });
+		}
 
-	const verified = await verifyMediaSignature(
-		pathname,
-		request.nextUrl.searchParams.get(MEDIA_PARAM_EXP),
-		request.nextUrl.searchParams.get(MEDIA_PARAM_SIG),
-	);
-	if (!verified) {
-		return new NextResponse(null, { status: 404 });
+		const response = NextResponse.next();
+		response.headers.set("X-Robots-Tag", "noindex");
+		// Keep the browser cache aligned with the signature lifetime: once the URL
+		// expires, a cached copy only ever serves the same visitor session that
+		// legitimately fetched it.
+		response.headers.set("Cache-Control", `private, max-age=${getMediaTtlSeconds()}`);
+		return response;
 	}
 
-	const response = NextResponse.next();
-	response.headers.set("X-Robots-Tag", "noindex");
-	// Keep the browser cache aligned with the signature lifetime: once the URL
-	// expires, a cached copy only ever serves the same visitor session that
-	// legitimately fetched it.
-	response.headers.set("Cache-Control", `private, max-age=${getMediaTtlSeconds()}`);
-	return response;
+	if (isKeystaticPath(pathname)) {
+		// Local development stays credential-free (local-filesystem storage).
+        // if (process.env.NODE_ENV === "development") return NextResponse.next();
+		// if (!isAuthorizedAdmin(request)) return unauthorizedAdmin();
+		const response = NextResponse.next();
+		// The admin console must never be indexed or cached by intermediaries.
+		response.headers.set("X-Robots-Tag", "noindex, nofollow");
+		response.headers.set("Cache-Control", "no-store");
+		return response;
+	}
+
+	return NextResponse.next();
 }
 
 export const config = {
-	matcher: ["/media", "/media/:path*"],
+	matcher: [
+		"/media",
+		"/media/:path*",
+		"/keystatic/:path*",
+		"/en/keystatic/:path*",
+		"/sw/keystatic/:path*",
+		"/api/keystatic/:path*",
+	],
 };

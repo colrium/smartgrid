@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"tag": "Surveying Equipment",
 		"headline": "High-Precision Total Stations for Accurate Surveying",
 		"title": "TOTAL STATION ESURVEY",
@@ -11,23 +12,29 @@
 		}
 	},
 	"productOverview": {
+		"type": "unique",
 		"tag": "Product Overview",
 		"headline": "Engineered for Precision, Built for Productivity",
-		"images": ["/media/equipment-sale/total-station-esurvey/06.png"],
+		"images": [
+			"/media/equipment-sale/total-station-esurvey/06.png"
+		],
 		"description": "High-performance total station engineered for precision surveying, construction layout, and engineering applications with reliable accuracy and efficient field workflows."
 	},
 	"breadcrumb": {
+		"type": "unique",
 		"home": "Home",
 		"section": "Equipment Sale",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
 	"catalogue": {
+		"type": "unique",
 		"icon": "ruler-square",
 		"title": "E-Survey E3L Total Station",
 		"description": "2” accuracy total station with 5000m range, ideal for construction layout, boundary surveys, and topographic mapping.",
 		"badge": "Available"
 	},
 	"pricing": {
+		"type": "pricing",
 		"new": {
 			"label": "Brand New",
 			"currency": "KES",
@@ -40,18 +47,20 @@
 			"label": "Surveying Equipment",
 			"href": "/equipment-sale/equipment-catalogue"
 		},
-        {
+		{
 			"name": "total-stations",
 			"label": "Total Stations",
 			"href": "/equipment-sale/equipment-catalogue?category=total-stations"
 		}
 	],
 	"specs": {
+		"type": "unique",
 		"tag": "Tech Data",
 		"headline": "Technical Specifications",
 		"description": "Complete technical details for the E-Survey E3L Total Station."
 	},
 	"measurementCapability": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Measurement Capability",
 		"description": "High-precision angles and long-range distance measurement.",
@@ -63,6 +72,7 @@
 		]
 	},
 	"accuracyAndPerformance": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Accuracy & Performance",
 		"description": "Repeatable, millimeter-grade accuracy in real field conditions.",
@@ -74,6 +84,7 @@
 		]
 	},
 	"dataAndInterface": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Data & Interface",
 		"description": "Simple data handling with fast, familiar connectivity.",
@@ -85,6 +96,7 @@
 		]
 	},
 	"applications": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Applications",
 		"description": "Trusted across topographic, layout, and boundary work.",
@@ -96,6 +108,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Get a Quote",
 		"headline": "Get This Equipment",
 		"description": "Contact us directly for pricing, availability, and expert guidance.",
@@ -111,6 +124,7 @@
 		}
 	},
 	"includedInPackage": {
+		"type": "card-grid",
 		"tag": "Package Contents",
 		"headline": "Included in Package",
 		"description": "Everything you need to get surveying, right out of the box.",
@@ -130,6 +144,7 @@
 		]
 	},
 	"relatedProducts": {
+		"type": "unique",
 		"tag": "Explore",
 		"headline": "Other Products You May Like",
 		"description": "Discover more surveying instruments from the SmartGrid catalogue."

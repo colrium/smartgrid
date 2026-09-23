@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "SITE SETTING OUT",
 		"title": "Staking Out and Setting Out",
 		"image": "/media/civil/site-setting-out/01.jpg",
@@ -14,6 +15,7 @@
 		}
 	},
 	"ourServices": {
+		"type": "card-grid",
 		"tag": "Core Capabilities",
 		"headline": "Our Services",
 		"description": "",
@@ -45,6 +47,7 @@
 		]
 	},
 	"ourInstruments": {
+		"type": "card-grid",
 		"tag": "Accurate & Reliable",
 		"headline": "Our Surveying Instruments",
 		"description": "We use advanced, precise equipment to ensure every point is accurate and reliable for your construction and engineering projects.",
@@ -72,6 +75,7 @@
 		]
 	},
 	"faq": {
+		"type": "faq",
 		"tag": "Common Questions",
 		"headline": "Frequently Asked Questions",
 		"description": "",
@@ -124,6 +128,7 @@
 		]
 	},
 	"deliverables": {
+		"type": "deliverables",
 		"tag": "Setting Out Outputs",
 		"headline": "Site Setting Out Deliverables",
 		"description": "Everything your crew needs to build exactly to design:",

@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"tag": "Wasiliana Nasi",
 		"headline": "Hebu tuzungumze kuhusu mradi wako wa upimaji au uhandisi",
 		"description": "Iwe unahitaji upimaji wa ardhi, uchunguzi wa angani, uhandisi wa kiraia, ukodishaji wa vifaa, au upigaji picha kwa ndege zisizo na rubani, timu yetu iko tayari kukusaidia.",
@@ -9,6 +10,7 @@
 		}
 	},
 	"talkToUs": {
+		"type": "card-grid",
 		"tag": "Fikia Nasi",
 		"headline": "Zungumza Nasi",
 		"description": "Wasiliana na wataalamu wetu kwa simu au barua pepe kwa maswali ya huduma, msaada, au mapendekezo.",
@@ -31,10 +33,11 @@
 				"icon": "email",
 				"label": "info@smartgridsurveying.com",
 				"href": "mailto:info@smartgridsurveying.com?subject=General Inquiry&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to make an inquiry.%0D%0A%0D%0AName:%0D%0AMessage:%0D%0A%0D%0AThank you.",
-				"note": "Queries"
+				"note": "Queries",
+				"color": "primary-700"
 			},
 			{
-				"icon": "email",
+				"icon": "gmail",
 				"label": "smartgridsurveying@gmail.com",
 				"href": "mailto:smartgridsurveying@gmail.com?subject=General Inquiry&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to make an inquiry.%0D%0A%0D%0AName:%0D%0AMessage:%0D%0A%0D%0AThank you.",
 				"note": "Quotes",
@@ -57,11 +60,13 @@
 		]
 	},
 	"opportunities": {
+		"type": "unique",
 		"tag": "Chagua Njia",
 		"headline": "Elekeza swali lako kwa timu sahihi",
 		"description": "Chagua huduma inayofaa zaidi mradi wako ili tuweze kutoa taarifa sahihi na hatua zinazofuata."
 	},
 	"offices": {
+		"type": "unique",
 		"tag": "Ofisi Zetu",
 		"headline": "Fikia Ofisi Zetu",
 		"description": "Tembelea ofisi kuu yetu kwa mashauriano ya kitaalamu kuhusu upimaji wa ardhi, angani, na uhandisi.",
@@ -107,6 +112,7 @@
 		}
 	},
 	"contact_reasons": {
+		"type": "unique",
 		"label": "Tunaweza kusaidia na nini?",
 		"options": [
 			{
@@ -180,6 +186,7 @@
 		]
 	},
 	"form": {
+		"type": "contact",
 		"tag": "Tuma Ujumbe",
 		"headline": "Anza mazungumzo",
 		"description": "Jaza fomu na mwanachama sahihi wa timu yetu atajibu ndani ya siku moja ya kazi.",
@@ -315,6 +322,7 @@
 		"error_body": "Kuna tatizo limetokea kutuma ujumbe wako. Tafadhali jaribu tena au tutumie barua pepe moja kwa moja kwa smartgridsurveying@gmail.com."
 	},
 	"direct_contacts": {
+		"type": "unique",
 		"tag": "Mawasiliano ya Moja kwa Moja",
 		"headline": "Fikia mtu sahihi",
 		"items": [
@@ -369,6 +377,7 @@
 		]
 	},
 	"site_visit": {
+		"type": "unique",
 		"tag": "Ziara za Tovuti",
 		"headline": "Jionee uendeshaji mwenyewe",
 		"description": "Wateja wanakaribishwa kupanga mashauriano ya mradi na timu yetu jijini Nairobi. Ziara zinaweza kujumuisha mjadala wa mahitaji yako ya upimaji, uhandisi wa kirahisi, vifaa, au huduma za droni.",
@@ -406,6 +415,7 @@
 		}
 	},
 	"faq": {
+		"type": "unique",
 		"tag": "Majibu ya Haraka",
 		"headline": "Maswali ya kawaida ya mawasiliano",
 		"items": [
@@ -432,6 +442,7 @@
 		]
 	},
 	"social": {
+		"type": "unique",
 		"tag": "Tufuate",
 		"headline": "Endelea kuwa karibu nasi",
 		"channels": [

@@ -2,8 +2,8 @@
 
 import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
-import { SectionHeader } from "@/components/sections/home/SectionHeader";
-import { Blob } from "@/components/sections/home/decor";
+import { SectionHeader } from "@/components/sections/shared/SectionHeader";
+import { Blob } from "@/components/sections/shared/decor";
 import dynamic from "next/dynamic";
 const ProjectsGlobe = dynamic(() => import("@/components/ui/ProjectsGlobe"), {
 	ssr: false,
@@ -36,29 +36,43 @@ const ProjectsGlobe = dynamic(() => import("@/components/ui/ProjectsGlobe"), {
 });
 interface WhyChooseUsContent {
 	icon?: string | null;
-	title: string;
-	items: string[];
+	title?: string | null;
+	items?: (string | null)[] | null;
 }
 
 interface ImpactAcrossAfricaContent {
 	tag?: string | null;
-	headline: string;
+	headline?: string | null;
 	image?: string | null;
-	description?: string;
+	description?: string | null;
 	whyChooseUs?: WhyChooseUsContent | null;
 }
 
-export function ImpactAcrossAfricaSection() {
+export interface ImpactAcrossAfricaData {
+	tag?: string | null;
+	headline?: string | null;
+	image?: string | null;
+	description?: string | null;
+	whyChooseUs?: WhyChooseUsContent | null;
+}
+
+export function ImpactAcrossAfricaSection({ data, id }: { data?: ImpactAcrossAfricaData | null; id?: string } = {}) {
 	const { t } = useTranslation(["about"]);
-	const section = t("about:impactAcrossAfrica", {
-		returnObjects: true,
-	}) as unknown as ImpactAcrossAfricaContent;
+	// Keystatic-owned content when `data` is provided (M11 `aboutImpact`
+	// unique section); legacy `about:impactAcrossAfrica` locale strings
+	// otherwise. The WebGL globe stays client-only (`dynamic ssr:false`,
+	// spinner fallback on the server) — only strings and the image path
+	// are data.
+	const section = (data ??
+		(t("about:impactAcrossAfrica", {
+			returnObjects: true,
+		}) as unknown as ImpactAcrossAfricaContent)) as ImpactAcrossAfricaContent;
 	const hasImage = typeof section.image === "string" && section.image.startsWith("/");
 	const whyChooseUs = section.whyChooseUs;
 	const whyItems = Array.isArray(whyChooseUs?.items) ? whyChooseUs.items : [];
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
+		<section id={id} className="py-24 sm:py-28 relative overflow-hidden bg-surface">
 			<Blob
 				className="w-[28rem] h-[28rem] bg-primary-100/60 -top-24 -right-24"
 				opacity={0.5}
@@ -88,8 +102,8 @@ export function ImpactAcrossAfricaSection() {
 					<FadeUp delay={0.1} className="lg:col-span-6">
 						<SectionHeader
 							tag={section.tag ?? undefined}
-							headline={section.headline}
-							description={section.description}
+							headline={section.headline ?? ""}
+							description={section.description ?? undefined}
 						/>
 
 						{whyChooseUs && (

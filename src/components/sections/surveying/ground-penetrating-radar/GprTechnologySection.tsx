@@ -18,17 +18,27 @@ interface TechnologyContent {
 	items: TechItem[];
 }
 
-export function GprTechnologySection() {
+export interface GprTechnologyData {
+	tag?: string | null;
+	headline: string;
+	items: TechItem[];
+}
+
+export function GprTechnologySection({ data, id }: { data?: GprTechnologyData | null; id?: string } = {}) {
 	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
-	const section = t("surveying/ground-penetrating-radar:technology", {
-		returnObjects: true,
-	}) as unknown as TechnologyContent;
+	// Keystatic-owned content when `data` is provided (M11 `gprTechnology`
+	// unique section); legacy locale strings otherwise. The image-vs-icon
+	// branch stays in the renderer.
+	const section = (data ??
+		(t("surveying/ground-penetrating-radar:technology", {
+			returnObjects: true,
+		}) as unknown as TechnologyContent)) as TechnologyContent;
 	const items = Array.isArray(section?.items) ? section.items : [];
 
 	if (items.length === 0) return null;
 
 	return (
-		<section id="technology" className="scroll-mt-36 py-20 sm:py-24 relative overflow-hidden">
+		<section id={id ?? "technology"} className="scroll-mt-36 py-20 sm:py-24 relative overflow-hidden">
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader
 					tag={section.tag || undefined}

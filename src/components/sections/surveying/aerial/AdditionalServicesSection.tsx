@@ -3,7 +3,7 @@
 import { useTranslation } from "@/hooks";
 import { SectionHeader } from "@/components/sections/home";
 import { FadeUp } from "@/components/animations/Fade";
-import { Blob } from "@/components/sections/home/decor";
+import { Blob } from "@/components/sections/shared/decor";
 
 interface AdditionalServicesContent {
 	tag?: string | null;
@@ -12,15 +12,26 @@ interface AdditionalServicesContent {
 	description?: string;
 }
 
-export function AdditionalServicesSection() {
+export interface AerialAdditionalServicesData {
+	tag?: string | null;
+	headline: string;
+	items: string[];
+	description?: string;
+}
+
+export function AdditionalServicesSection({ data, id }: { data?: AerialAdditionalServicesData | null; id?: string } = {}) {
 	const { t } = useTranslation(["surveying/aerial-surveys"]);
-	const section = t("surveying/aerial-surveys:additionalServices", {
-		returnObjects: true,
-	}) as unknown as AdditionalServicesContent;
+	// Keystatic-owned content when `data` is provided (M11
+	// `aerialAdditionalServices` unique section); legacy locale strings
+	// otherwise.
+	const section = (data ??
+		(t("surveying/aerial-surveys:additionalServices", {
+			returnObjects: true,
+		}) as unknown as AdditionalServicesContent)) as AdditionalServicesContent;
 	const items = Array.isArray(section.items) ? section.items : [];
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden">
+		<section id={id} className="py-24 sm:py-28 relative overflow-hidden">
 			<Blob className="w-[28rem] h-[28rem] bg-primary-200/40 -bottom-24 -left-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">

@@ -11,11 +11,11 @@ interface CtaLink {
 }
 
 export function CtaSection(): ReactElement {
-	const { t } = useTranslation(["home"]);
-	const primary = t("home:cta.primary", {
+	const { t } = useTranslation(["common"]);
+	const primary = t("common:defaultCta.primary", {
 		returnObjects: true,
 	}) as unknown as CtaLink;
-	const secondary = t("home:cta.secondary", {
+	const secondary = t("common:defaultCta.secondary", {
 		returnObjects: true,
 	}) as unknown as CtaLink;
 
@@ -25,9 +25,9 @@ export function CtaSection(): ReactElement {
 			className="pb-24 sm:pb-28 relative overflow-hidden"
 			decor="masked"
 			glyph="↗"
-			tag={t("home:cta.tag")}
-			headline={t("home:cta.headline")}
-			description={t("home:cta.description")}
+			tag={t("common:defaultCta.tag")}
+			headline={t("common:defaultCta.headline")}
+			description={t("common:defaultCta.description")}
 			primary={
 				primary?.href
 					? {

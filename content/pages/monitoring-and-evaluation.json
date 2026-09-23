@@ -1,0 +1,494 @@
+{
+	"slug": "Monitoring and Evaluation",
+	"title": "Monitoring and Evaluation (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "hero",
+			"value": {
+				"headline": {
+					"en": "MONITORING AND EVALUATION",
+					"sw": "UFUATILIAJI NA TATHMINI"
+				},
+				"title": {
+					"en": "Monitoring & Evaluation to Build Stronger",
+					"sw": "Ufuatiliaji na Tathmini kwa Kujenga Kwa Nguvu Zaidi"
+				},
+				"description": {
+					"en": "Precision-driven solutions for sustainability, conservation, and compliance.",
+					"sw": "Suluhisho zinazoendeshwa na usahihi kwa uendelevu, uhifadhi, na kufuata kanuni."
+				},
+				"image": "/media/aerial-drones/monitoring-and-evaluation/01.jpg",
+				"layout": "bottom",
+				"frame": false,
+				"scrollCue": false,
+				"cueLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"footnoteItems": [],
+				"ctaPrimary": {
+					"label": {
+						"en": "Get Your Free Consultation",
+						"sw": "Pata Ushauri Wako wa Bure"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Drone Monitoring and Evaluation&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Drone Monitoring and Evaluation. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "gift",
+					"iconPosition": "end",
+					"trailingArrow": "auto"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "introText",
+			"value": {
+				"tag": {
+					"en": "Sustainability",
+					"sw": "Uendelevu"
+				},
+				"headline": {
+					"en": "Driving Sustainability with Data",
+					"sw": "Kuendesha Uendelevu kwa Data"
+				},
+				"description": {
+					"en": "At SmartGrid, we leverage aerial and terrestrial geospatial tools to support environmental protection, conservation, and sustainable land use through precision monitoring.",
+					"sw": "Katika SmartGrid, tunatumia zana za kijiografia za angani na za ardhini kusaidia ulinzi wa mazingira, uhifadhi, na matumizi endelevu ya ardhi kupitia ufuatiliaji wa usahihi."
+				},
+				"tone": "default",
+				"align": "left",
+				"split": false,
+				"cta": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "meOurCapabilities",
+			"value": {
+				"tag": {
+					"en": "What we do",
+					"sw": "Tunachofanya"
+				},
+				"headline": {
+					"en": "Our Capabilities",
+					"sw": "Uwezo Wetu"
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"title": {
+							"en": "NDVI & Habitat Analysis",
+							"sw": "Uchambuzi wa NDVI na Makazi"
+						},
+						"description": {
+							"en": "Multispectral drone imaging for vegetation health and ecosystem vitality.",
+							"sw": "Upigaji picha wa multispectral kwa ndege zisizo na rubani kwa afya ya mimea na uhai wa mfumo ikolojia."
+						}
+					},
+					{
+						"title": {
+							"en": "Watershed Mapping",
+							"sw": "Uchoraji Ramani wa Mabonde"
+						},
+						"description": {
+							"en": "River basin terrain, hydrology and erosion risk analysis for planning.",
+							"sw": "Topografia ya bonde la mto, hidrolojia na uchambuzi wa hatari ya mmomonyoko kwa upangaji."
+						}
+					},
+					{
+						"title": {
+							"en": "Thermal Imaging",
+							"sw": "Upigaji Picha wa Joto"
+						},
+						"description": {
+							"en": "Identifying pollution, urban heat zones, and water quality issues via aerial infrared.",
+							"sw": "Kutambua uchafuzi, maeneo ya joto mijini, na masuala ya ubora wa maji kupitia infrared ya angani."
+						}
+					},
+					{
+						"title": {
+							"en": "Wetland Boundaries",
+							"sw": "Mipaka ya Ardhi Oevu"
+						},
+						"description": {
+							"en": "Accurate delineation for riparian protection and EIA documentation.",
+							"sw": "Uwekaji mipaka sahihi kwa ulinzi wa mito na nyaraka za EIA."
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "introText",
+			"value": {
+				"tag": {
+					"en": "Detailed, Accurate Insights",
+					"sw": "Maarifa ya Kina, Sahihi"
+				},
+				"headline": {
+					"en": "Technology We Use",
+					"sw": "Teknolojia Tunayotumia"
+				},
+				"description": {
+					"en": "Our team utilizes LiDAR drones, RTK GNSS units, total stations, bathymetry kits and advanced GIS software such as QGIS, Pix4D, and ArcGIS Pro. These tools help us provide detailed, spatially accurate insights to support your environmental needs.",
+					"sw": "Timu yetu hutumia ndege zisizo na rubani za LiDAR, vitengo vya RTK GNSS, total station, vitanda vya bathymetry na programu za hali ya juu za GIS kama QGIS, Pix4D, na ArcGIS Pro. Zana hizi hutusaidia kutoa maarifa ya kina, sahihi kijiografia kusaidia mahitaji yako ya mazingira."
+				},
+				"tone": "surface",
+				"align": "left",
+				"split": false,
+				"cta": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "meImpact",
+			"value": {
+				"tag": {
+					"en": "Impact",
+					"sw": "Athari"
+				},
+				"headline": {
+					"en": "Real-World Impact",
+					"sw": "Athari ya Ulimwengu Halisi"
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"title": {
+							"en": "Reservoir Monitoring",
+							"sw": "Ufuatiliaji wa Mabwawa"
+						},
+						"description": {
+							"en": "Track sediment levels and plan dredging strategies for long-term sustainability.",
+							"sw": "Fuatilia viwango vya mashapo na panga mikakati ya kuchimba kwa uendelevu wa muda mrefu."
+						}
+					},
+					{
+						"title": {
+							"en": "Vegetation Loss Tracking",
+							"sw": "Ufuatiliaji wa Upotevu wa Mimea"
+						},
+						"description": {
+							"en": "Compare seasonal aerial surveys to detect changes and inform conservation",
+							"sw": "Linganisha uchunguzi wa msimu wa angani kugundua mabadiliko na kufahamisha uhifadhi."
+						}
+					},
+					{
+						"title": {
+							"en": "Flood Risk Zones",
+							"sw": "Maeneo ya Hatari ya Mafuriko"
+						},
+						"description": {
+							"en": "Model runoff, catchments, and build flood resilience maps for local authorities.",
+							"sw": "Tengeneza mfano wa mtiririko wa maji, beseni, na ujenge ramani za ustahimilivu wa mafuriko kwa mamlaka za mitaa."
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "introText",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "Why Partner With Us?",
+					"sw": "Kwa Nini Ushirikiane Nasi?"
+				},
+				"description": {
+					"en": "We deliver high-quality geospatial and survey intelligence for sustainable outcomes. Our responsive team ensures timely reporting, customizable services, and GIS outputs that are compatible with your workflow.",
+					"sw": "Tunatoa akili ya kijiografia na uchunguzi wa hali ya juu kwa matokeo endelevu. Timu yetu inayoitikia huhakikisha ripoti kwa wakati, huduma zinazoweza kubadilishwa, na matokeo ya GIS yanayoendana na mtiririko wako wa kazi."
+				},
+				"tone": "default",
+				"align": "left",
+				"split": false,
+				"cta": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "meSmartMonitoring",
+			"value": {
+				"tag": {
+					"en": "With Drones",
+					"sw": "Kwa Ndege Zisizo na Rubani"
+				},
+				"headline": {
+					"en": "Smart Monitoring & Evaluation with Drones",
+					"sw": "Ufuatiliaji na Tathmini Mahiri kwa Ndege Zisizo na Rubani"
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"icon": "table-clock",
+						"title": {
+							"en": "Real-Time Project Oversight",
+							"sw": "Usimamizi wa Mradi wa Wakati Halisi"
+						},
+						"description": {
+							"en": "Track construction or agricultural progress with up-to-date drone visuals and aerial analytics for decision-making confidence.",
+							"sw": "Fuatilia maendeleo ya ujenzi au kilimo kwa taswira za hivi karibuni za ndege zisizo na rubani na uchambuzi wa angani kwa imani ya kufanya maamuzi."
+						}
+					},
+					{
+						"icon": "map-marker-multiple",
+						"title": {
+							"en": "Geospatial Change Detection",
+							"sw": "Utambuzi wa Mabadiliko ya Kijiografia"
+						},
+						"description": {
+							"en": "Use drone-captured orthomosaics to monitor terrain shifts, crop health, or site compliance over time.",
+							"sw": "Tumia orthomosaic zilizokamatwa na ndege zisizo na rubani kufuatilia mabadiliko ya ardhi, afya ya mazao, au kufuata tovuti kwa muda."
+						}
+					},
+					{
+						"icon": "chart-line",
+						"title": {
+							"en": "Performance Benchmarking",
+							"sw": "Upimaji wa Utendaji"
+						},
+						"description": {
+							"en": "Compare field conditions before and after project milestones, ensuring outcomes match design intent and timeline.",
+							"sw": "Linganisha hali ya shamba kabla na baada ya hatua muhimu za mradi, kuhakikisha matokeo yanalingana na lengo la kubuni na ratiba."
+						}
+					},
+					{
+						"icon": "view-dashboard",
+						"title": {
+							"en": "Instant Reports & Dashboards",
+							"sw": "Ripoti na Dashibodi za Papo Hapo"
+						},
+						"description": {
+							"en": "Integrate visual data into BIM, GIS, or custom dashboards with automatic export options in your preferred format.",
+							"sw": "Unganisha data ya taswira kwenye BIM, GIS, au dashibodi maalum na chaguo za kuhamisha kiotomatiki katika muundo unaoupendelea."
+						}
+					},
+					{
+						"icon": "clipboard-check",
+						"title": {
+							"en": "Aerial Compliance Audits",
+							"sw": "Ukaguzi wa Kufuata Kanuni wa Angani"
+						},
+						"description": {
+							"en": "Conduct automated inspections to verify regulatory and contractual compliance without boots on the ground.",
+							"sw": "Fanya ukaguzi wa kiotomatiki kuthibitisha kufuata kanuni na mikataba bila hitaji la watu kwenye ardhi."
+						}
+					},
+					{
+						"icon": "robot",
+						"title": {
+							"en": "AI-Driven Insights",
+							"sw": "Maarifa Yanayoendeshwa na AI"
+						},
+						"description": {
+							"en": "Leverage machine learning to detect patterns, anomalies, or risks in site conditions before they escalate.",
+							"sw": "Tumia kujifunza kwa maprimary kugundua mifumo, hitilafu, au hatari katika hali ya tovuti kabla hazijakua."
+						}
+					},
+					{
+						"icon": "cube",
+						"title": {
+							"en": "3D Models & Topography",
+							"sw": "Mifano ya 3D na Topografia"
+						},
+						"description": {
+							"en": "Generate detailed 3D models and topographic maps that support planning, design validation, and volumetric calculations.",
+							"sw": "Zalisha mifano ya kina ya 3D na ramani za topografia zinazosaidia upangaji, uthibitishaji wa kubuni, na hesabu za kiasi."
+						}
+					},
+					{
+						"icon": "wrench",
+						"title": {
+							"en": "Infrastructure & Maintenance Inspections",
+							"sw": "Ukaguzi wa Miundombinu na Matengenezo"
+						},
+						"description": {
+							"en": "Use drones to inspect hard-to-reach infrastructure like rooftops, towers, and pipelines, enabling early detection of wear and faults.",
+							"sw": "Tumia ndege zisizo na rubani kukagua miundombinu ngumu kufikia kama paa, minara, na mabomba, kuwezesha kutambua uchakavu na hitilafu mapema."
+						}
+					}
+				],
+				"ctaPrimary": {
+					"label": {
+						"en": "Message on WhatsApp",
+						"sw": "Tuma Ujumbe kwa WhatsApp"
+					},
+					"href": "https://wa.me/254107393023?text=Hi%20SmartGrid%20Surveying,%20I%E2%80%99m%20interested%20in%20drone%20monitoring%20and%20evaluation%20services.",
+					"icon": "whatsapp"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "Send Email",
+						"sw": "Tuma Barua Pepe"
+					},
+					"href": "mailto:Smartgridsurveying@gmail.com?subject=Drone Monitoring Services Request&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI’d like to learn more about drone monitoring and evaluation solutions for my project. Please contact me with details.%0D%0A%0D%0AThank you.",
+					"icon": "email"
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "meWhatWeOffer",
+			"value": {
+				"tag": {
+					"en": "Tech + Expertise",
+					"sw": "Teknolojia + Utaalamu"
+				},
+				"headline": {
+					"en": "What We Offer",
+					"sw": "Tunachotoa"
+				},
+				"description": {
+					"en": "At SmartGrid Surveying & Engineering Ltd, we combine drone technology, remote sensing, and GIS expertise to provide actionable insights for environmental decision-making. Our services are trusted by environmental consultants, conservation NGOs, developers, and regulatory bodies across Kenya and the region.",
+					"sw": "Katika SmartGrid Surveying & Engineering Ltd, tunachanganya teknolojia ya ndege zisizo na rubani, remote sensing, na utaalamu wa GIS kutoa maarifa yanayoweza kutekelezwa kwa ufanyaji maamuzi wa mazingira. Huduma zetu zinaaminika na washirika wa mazingira, mashirika ya uhifadhi yasiyo ya kiserikali, waendelezaji, na mamlaka za udhibiti kote Kenya na kanda."
+				},
+				"images": [
+					"/media/aerial-drones/monitoring-and-evaluation/02.jpg",
+					"/media/aerial-drones/monitoring-and-evaluation/04.jpg"
+				],
+				"items": [
+					{
+						"label": {
+							"en": "Aerial Mapping",
+							"sw": "Uchoraji Ramani wa Angani"
+						},
+						"image": "/media/aerial-drones/monitoring-and-evaluation/05.jpg"
+					},
+					{
+						"label": {
+							"en": "3d models",
+							"sw": "Mifano ya 3D"
+						},
+						"image": "/media/aerial-drones/monitoring-and-evaluation/06.jpg"
+					},
+					{
+						"label": {
+							"en": "Digital Terrain & Elevation Models (DTMs & DEMs)",
+							"sw": "Mifano ya Uso na Mwinuko wa Dijitali (DTMs & DEMs)"
+						},
+						"image": "/media/aerial-drones/monitoring-and-evaluation/07.jpg"
+					},
+					{
+						"label": {
+							"en": "Construction Monitoring",
+							"sw": "Ufuatiliaji wa Ujenzi"
+						},
+						"image": "/media/aerial-drones/monitoring-and-evaluation/08.jpg"
+					},
+					{
+						"label": {
+							"en": "Agricultural Mapping",
+							"sw": "Uchoraji Ramani wa Kilimo"
+						},
+						"image": "/media/aerial-drones/monitoring-and-evaluation/09.jpg"
+					},
+					{
+						"label": {
+							"en": "Environmental Monitoring",
+							"sw": "Ufuatiliaji wa Mazingira"
+						},
+						"image": "/media/aerial-drones/monitoring-and-evaluation/03.png"
+					},
+					{
+						"label": {
+							"en": "Infrastructure Planning",
+							"sw": "Upangaji wa Miundombinu"
+						},
+						"image": "/media/aerial-drones/monitoring-and-evaluation/10.jpg"
+					},
+					{
+						"label": {
+							"en": "Volumetric calculations",
+							"sw": "Hesabu za Kiasi"
+						},
+						"image": "/media/aerial-drones/monitoring-and-evaluation/11.jpg"
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "ctaBand",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "Let’s Collaborate",
+					"sw": "Tuushirikiane"
+				},
+				"description": {
+					"en": "Have a project in mind or need a consultation?",
+					"sw": "Una mradi akilini au unahitaji ushauri?"
+				},
+				"primary": {
+					"label": {
+						"en": "Request a Quotation",
+						"sw": "Omba Nukta ya Bei"
+					},
+					"href": "mailto:info@smartgridsurveying.com?subject=Request%20for%20Environmental%20Survey%20Quotation&body=Hello%20SmartGrid%20Team%2C%0A%0AI would like to request a quotation for the following environmental service:%0A%0AType of Survey:%0ALocation:%0AProject Size:%0ATimeline:%0A%0ARegards,",
+					"icon": "email"
+				},
+				"secondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"layout": "centered",
+				"variant": "panel",
+				"decor": "glow",
+				"watermark": "",
+				"images": [],
+				"shimmer": false,
+				"hairline": false,
+				"id": ""
+			}
+		}
+	]
+}

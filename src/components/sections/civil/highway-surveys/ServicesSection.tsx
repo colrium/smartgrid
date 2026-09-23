@@ -1,61 +1,44 @@
-"use client";
-
+import type { ReactElement } from "react";
 import { useTranslation } from "@/hooks";
-import { SectionHeader } from "@/components/sections/home";
-import { FadeUp } from "@/components/animations/Fade";
-import { Blob } from "@/components/sections/home/decor";
-
-interface ServiceItem {
-	title: string;
-	description: string;
-}
+import { CardGrid, type CardItem } from "@/components/sections/shared";
 
 interface ServicesContent {
 	tag?: string | null;
 	headline: string;
 	description?: string;
-	items: ServiceItem[];
+	items: { title: string; description: string }[];
 }
 
-export function ServicesSection() {
+export interface HighwayServicesData {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+	items: { title: string; description: string }[];
+}
+
+export function ServicesSection({ data, id }: { data?: HighwayServicesData | null; id?: string } = {}): ReactElement | null {
 	const { t } = useTranslation(["civil/highway-surveys"]);
-	const section = t("civil/highway-surveys:services", {
-		returnObjects: true,
-	}) as unknown as ServicesContent;
-	const items = Array.isArray(section.items) ? section.items : [];
+	// Keystatic-owned content when `data` is provided (M11 `highwayServices`
+	// unique section — `indexed` numbering is outside the shared `cardGrid`
+	// contract); legacy locale strings otherwise.
+	const section = (data ??
+		(t("civil/highway-surveys:services", {
+			returnObjects: true,
+		}) as unknown as ServicesContent)) as ServicesContent;
+	const items: CardItem[] = Array.isArray(section?.items) ? section.items : [];
+
+	if (items.length === 0) return null;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden">
-			<Blob className="w-[28rem] h-[28rem] bg-primary-200/40 -top-24 -right-24" opacity={0.5} />
-
-			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-				<SectionHeader
-					tag={section.tag}
-					headline={section.headline}
-					description={section.description || undefined}
-					align="center"
-				/>
-
-				<div className="mt-14 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-					{items.map((item, index) => (
-						<FadeUp key={index} delay={(index % 3) * 0.07}>
-							<article className="group relative h-full flex flex-col gap-4 rounded-c bg-surface hairline card-shadow p-7 transition-all duration-250 hover:card-shadow-lift hover:border-primary">
-								<span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-surface font-semibold card-shadow-lift">
-									{String(index + 1).padStart(2, "0")}
-								</span>
-
-								<h3 className="text-base sm:text-lg font-medium tracking-tight text-ink leading-snug">
-									{item.title}
-								</h3>
-								<p className="flex-1 text-sm text-on-surface/60 leading-relaxed">
-									{item.description}
-								</p>
-							</article>
-						</FadeUp>
-					))}
-				</div>
-			</div>
-		</section>
+		<CardGrid
+			id={id}
+			tag={section.tag}
+			headline={section.headline}
+			description={section.description}
+			items={items}
+			columns={3}
+			indexed
+		/>
 	);
 }
 

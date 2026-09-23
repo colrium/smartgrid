@@ -18,8 +18,8 @@ export interface CtaAction {
 
 interface CtaPillProps {
 	action: CtaAction;
-	/** `solid` = light pill on dark band, `outline` = hairline pill. */
-	variant?: "solid" | "outline";
+	/** `solid`/`outline` = pills on dark bands; `primary`/`surface` = pills on light backgrounds. */
+	variant?: "solid" | "outline" | "primary" | "surface";
 	/** `lg` = flagship bands (h-14), `md` = compact split bands (h-12). */
 	size?: "lg" | "md";
 	className?: string;
@@ -52,6 +52,10 @@ export function CtaPill({
 	const baseClass =
 		variant === "solid"
 			? `${groupClass} inline-flex items-center gap-3 ${sizeClasses} rounded-full bg-surface text-ink font-medium transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]`
+			: variant === "primary"
+			? `${groupClass} inline-flex items-center gap-3 ${sizeClasses} rounded-full bg-primary text-surface font-medium transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_42px_-10px_rgba(1,55,61,0.55)]`
+			: variant === "surface"
+			? `${groupClass} inline-flex items-center gap-3 ${sizeClasses} rounded-full bg-surface text-ink font-medium hairline card-shadow transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:card-shadow-lift`
 			: `${groupClass} inline-flex items-center gap-2.5 ${sizeClasses} rounded-full border border-surface/30 text-surface font-medium transition-[border-color,background-color] duration-300 hover:border-surface hover:bg-surface/10`;
 
 	const iconAtEnd = iconPosition ? iconPosition === "end" : variant === "solid";
@@ -74,7 +78,7 @@ export function CtaPill({
 				<span
 					className={`mdi mdi-${icon} ${
 						isMd ? "text-lg" : "text-xl"
-					} ${variant === "solid" ? "text-primary" : "text-primary-200"}`}
+					} ${variant === "solid" ? "text-primary" : variant === "outline" ? "text-primary-200" : variant === "primary" ? "text-surface/90" : "text-ink/70"}`}
 					aria-hidden
 				/>
 			)}

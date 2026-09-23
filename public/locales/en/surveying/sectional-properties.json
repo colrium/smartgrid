@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "Sectional Properties, Plans and Units.",
 		"image": "/media/surveying/sectional-properties/AG8ng.jpg",
 		"description": "Sectional Property Surveys & Sectional Plan Preparation in Kenya.\n\nWe prepare geo-referenced sectional plans for apartments, offices, and mixed-use developments for registration under the Sectional Properties Act, 2020.",
@@ -15,6 +16,7 @@
 		
 	},
 	"section1": {
+		"type": "intro",
 		"tag": "Certified sectional property surveys",
 		"headline": "Reliable. Scalable. Fast. Effective.",
 		"description": "SmartGrid provides certified sectional property surveys (strata plans) that comply with local land registry requirements. \n\nWe map common property, exclusive use areas, unit extents and prepare certified floor plans and area schedules ready for submission.",
@@ -24,6 +26,7 @@
 		}
 	},
 	"whatIs": {
+		"type": "unique",
 		"tag": "Sectional Properties Act, 2020",
 		"headline": "What is Sectional Property?",
 		"description": "A sectional property is a building divided into individually owned units (apartments, offices, shops) where each owner receives a title deed and shares common areas.",
@@ -64,10 +67,11 @@
 		]
 	},
 	"process": {
+		"type": "process",
 		"tag": "Process",
 		"headline": "Sectional Property Survey Process",
         "description": "Seven verified stages take your building from the first site visit to a lodged sectional plan — you always know exactly where your plan stands.",
-        "items": [
+        "steps": [
 			{
 				"label": "Site & Building Data Collection",
 				"description": "We visit the site to capture the building footprint, verify the mother title and gather existing architectural documents.",
@@ -115,6 +119,7 @@
 		}
 	},
 	"sectionalServices": {
+		"type": "gallery-grid",
 		"tag": null,
 		"headline": "SECTIONAL SERVICES",
 		"description": "",
@@ -142,6 +147,7 @@
 		]
 	},
 	"sectionalPropertyServices": {
+		"type": "card-grid",
 		"tag": null,
 		"headline": "Our Sectional Property Services",
 		"description": "Comprehensive services from sectional plans to 3D as-builts — designed for accuracy, compliance, and efficiency.",
@@ -165,6 +171,7 @@
         ]
 	},
 	"deliverables": {
+		"type": "deliverables",
 		"tag": "What you receive",
 		"headline": "Deliverables You Receive",
 		"description": "Every sectional plan package is prepared for lands-registry acceptance — CAD, PDF and schedules in the formats the registry expects.",
@@ -219,6 +226,7 @@
 		]
 	},
 	"whoNeeds": {
+		"type": "card-grid",
 		"tag": "Who we serve",
 		"headline": "Who Needs Sectional Surveys?",
 		"description": "If your project ends in individually owned units, you need a sectional plan — and the earlier it enters your programme, the smoother registration goes.",
@@ -263,6 +271,7 @@
 		]
 	},
 	"timeline": {
+		"type": "unique",
 		"tag": "Plan ahead",
 		"headline": "Timeline & Cost Expectation",
 		"description": "Typical sectional plan preparation: 7–21 days depending on building complexity. Larger or geometrically complex buildings sit at the upper end; single-block apartments move faster.",
@@ -285,6 +294,7 @@
 		}
 	},
 	"registrationCta": {
+		"type": "cta",
 		"tag": "Ready when you are",
 		"headline": "Start Your Sectional Plan Registration",
 		"description": "Send us your building details and we will confirm eligibility under the Sectional Properties Act, 2020 — then prepare, geo-reference and lodge the plan on your behalf.",
@@ -302,6 +312,7 @@
 	},
 
 	"faq": {
+		"type": "faq",
 		"tag": null,
 		"headline": "FREQUENTLY ASKED QUESTION",
 		"items": [
@@ -373,6 +384,7 @@
 		]
 	},
 	"socials": {
+		"type": "unique",
         
 		"items": [
 			{

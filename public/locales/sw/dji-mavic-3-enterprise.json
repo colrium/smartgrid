@@ -1,0 +1,170 @@
+{
+	"hero": {
+		"type": "unique",
+		"tag": "Droni ya Upimaji",
+		"headline": "Jukwaa la Kati la Upimaji na Photogrammetry",
+		"title": "DJI Mavic 3 Enterprise Series",
+		"image": "/media/equipment-sale/dji-mavic-3-enterprise/01.jpeg",
+		"description": "Droni ndogo yenye RTK iliyoboreshwa kwa ajili ya ramani za kupelekwa kwa haraka, inayofaa kwa uchunguzi wa topografia, ramani za cadastral, na miradi midogo hadi ya kati ya ujenzi.",
+		"ctaPrimary": {
+			"label": "Ulizia Droni Hii",
+			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Mavic 3 Enterprise&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Mavic 3 Enterprise. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+		}
+	},
+	"productImages": {
+		"type": "unique",
+		"images": [
+			"/media/equipment-sale/dji-mavic-3-enterprise/02.jpeg",
+			"/media/equipment-sale/dji-mavic-3-enterprise/03.jpeg",
+			"/media/equipment-sale/dji-mavic-3-enterprise/04.jpeg"
+		]
+	},
+	"breadcrumb": {
+		"type": "unique",
+		"home": "Nyumbani",
+		"section": "Uuzaji wa Vifaa",
+		"sectionHref": "/equipment-sale/equipment-catalogue"
+	},
+	"pricing": {
+		"type": "pricing",
+		"new": {
+			"label": "Mpya Kabisa",
+			"currency": "KES",
+			"amount": 1599000
+		}
+	},
+	"categories": [
+		{
+			"name": "drones",
+			"label": "Droni",
+			"href": "/equipment-sale/equipment-catalogue?category=drones"
+		}
+	],
+	"quickFacts": [
+		{
+			"icon": "crosshairs-gps",
+			"label": "Usahihi wa RTK",
+			"value": "±cm 2-3 kwa mlalo"
+		},
+		{
+			"icon": "camera",
+			"label": "Kamera",
+			"value": "MP 20, CMOS 4/3"
+		},
+		{
+			"icon": "clock-outline",
+			"label": "Muda wa Kuruka",
+			"value": "~Dakika 43"
+		},
+		{
+			"icon": "map",
+			"label": "Ufunikaji",
+			"value": "Hadi hekta 200 kwa siku"
+		}
+	],
+	"productOverview": {
+		"type": "unique",
+		"tag": "Muhtasari wa Bidhaa",
+		"headline": "Msaidizi Wako wa Kila Siku kwa Upelekaji wa Haraka wa Upimaji",
+		"images": [],
+		"description": "DJI Mavic 3 Enterprise ni droni ya ramani inayobebeka sana yenye RTK, iliyojengwa kwa ajili ya upelekaji wa haraka, ugawaji wa ardhi, uwekaji wa cadastral, na ufuatiliaji wa maendeleo ya tovuti."
+	},
+	"keyFeatures": {
+		"type": "card-grid",
+		"tag": "Mambo Muhimu",
+		"headline": "Vipengele Muhimu",
+		"description": "Kinachofanya Mavic 3 Enterprise kuwa droni ya kila siku ya upimaji.",
+		"items": [
+			{
+				"icon": "camera",
+				"title": "Kamera ya CMOS 4/3",
+				"description": "Azimia ya MP 20 yenye shutter ya mitambo, muhimu kwa ramani sahihi."
+			},
+			{
+				"icon": "crosshairs-gps",
+				"title": "Moduli ya RTK ya Hiari",
+				"description": "Hutoa usahihi wa ±cm 2-3 kwa mlalo na ±cm 3-5 kwa wima inapowekwa."
+			},
+			{
+				"icon": "rocket-launch",
+				"title": "Upelekaji wa Haraka",
+				"description": "Tayari kuruka chini ya dakika 2, inaingia kwenye kifaa kidogo cha shambani."
+			},
+			{
+				"icon": "battery-90",
+				"title": "Ufunikaji Bora",
+				"description": "Muda wa kuruka wa ~dakika 43 unaofunikia hadi hekta 200 kwa siku."
+			}
+		]
+	},
+	"cameraSystem": {
+		"type": "unique",
+		"tag": "Kamera",
+		"headline": "Mfumo wa Kamera",
+		"description": "Optiki zilizoundwa mahsusi kwa ukamataji sahihi wa photogrammetry.",
+		"list": [
+			"Sensor: CMOS 4/3",
+			"Azimia: MP 20",
+			"Shutter ya mitambo (muhimu kwa usahihi wa ramani)",
+			"GSD: ~cm 2-5 kwa mwinuko wa m 100"
+		]
+	},
+	"positioningAndFlight": {
+		"type": "unique",
+		"tag": null,
+		"headline": "Uwekaji & Utendaji wa Kuruka",
+		"description": "Usahihi unaoungwa mkono na RTK pamoja na ufunikaji bora wa eneo.",
+		"list": [
+			"Moduli ya RTK (ya hiari lakini muhimu)",
+			"Usahihi wa mlalo: ±cm 2-3",
+			"Usahihi wa wima: ±cm 3-5",
+			"Muda wa kuruka: ~dakika 43",
+			"Ufunikaji: Hadi hekta 200 kwa siku",
+			"Upelekaji wa haraka (usanidi chini ya dakika 2)"
+		]
+	},
+	"specs": {
+		"type": "unique",
+		"tag": "Data ya Kiufundi",
+		"headline": "Vipimo vya Kiufundi",
+		"description": "Maelezo kamili ya kiufundi kwa DJI Mavic 3 Enterprise Series."
+	},
+	"surveyApplications": {
+		"type": "unique",
+		"tag": "Matumizi",
+		"headline": "Faida na Matumizi ya Upimaji",
+		"description": "Pale Mavic 3 Enterprise inapofaa zaidi.",
+		"list": [
+			"Inabebeka sana, inaingia kwenye kifaa cha shambani",
+			"Gharama za uendeshaji zilizopunguzwa dhidi ya M350",
+			"Ugawaji wa ardhi",
+			"Ramani za nyumba za biashara",
+			"Ufuatiliaji wa maendeleo ya tovuti",
+			"Uchunguzi wa usanifu wa barabara",
+			"Unganisha na GNSS RTK (FOIF A90) kwa GCP",
+			"Huhamishia moja kwa moja kwenye AutoCAD Civil 3D, ArcGIS Pro, Global Mapper"
+		]
+	},
+	"cta": {
+		"type": "cta",
+		"tag": "Pata Nukuu",
+		"headline": "Ulizia Droni Hii",
+		"description": "Tuambie kuhusu mradi wako na upate nukuu iliyoundwa kwa ajili ya DJI Mavic 3 Enterprise.",
+		"ctaPrimary": {
+			"icon": "email",
+			"label": "Tutumie Barua Pepe",
+			"href": "mailto:info@smartgridsurveying.com?subject=Quote Request: DJI Mavic 3 Enterprise&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for the DJI Mavic 3 Enterprise. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
+		},
+		"ctaSecondary": {
+			"icon": "whatsapp",
+			"label": "Tutumie WhatsApp",
+			"href": "https://wa.me/254701618282"
+		}
+	},
+	"relatedProducts": {
+		"type": "unique",
+		"tag": "Chunguza",
+		"headline": "Droni Nyingine Unazoweza Kuzipenda",
+		"description": "Gundua droni zaidi za upimaji kutoka kwenye katalogi ya SmartGrid."
+	}
+}

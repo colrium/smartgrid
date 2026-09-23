@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "UCHUNGUZI WA ANGANI",
 		"title": "Uchunguzi wa Drone wa Angani nchini Kenya, Uganda, Tanzania na zaidi",
 		"image": "/media/surveying/aerial-surveys/AG8ng.jpeg",
@@ -24,6 +25,7 @@
 		]
 	},
 	"section1": {
+		"type": "intro",
 		"tag": "Mshirika wako wa kuaminika",
 		"headline": "Kuaminika. Kupanuka. Haraka. Ufanisi.",
 		"description": "Iwe wewe ni wakala wa serikali, shirika lisilo la kiserikali, au mwekezaji binafsi, Smartgrid Surveying ni mshirika wako wa kuaminika! \n Ndege zetu zisizo na rubani hutoa data inayoweza kutumiwa pale inapohitajika zaidi.",
@@ -33,6 +35,7 @@
 		}
 	},
 	"whatWeOffer": {
+		"type": "unique",
 		"tag": "Huduma",
 		"headline": "Huduma Zetu za Uchunguzi wa Angani",
 		"items": [
@@ -84,12 +87,14 @@
 		]
 	},
 	"precision": {
+		"type": "split-media",
 		"tag": "Usahihi",
 		"headline": "Jicho Angani, Usahihi Ardhini",
 		"description": "Katika SmartGrid Surveying, suluhisho zetu za uchunguzi wa drone wa angani hutoa picha za mwonekano wa juu, ramani za topografia, na uchambuzi wa kiasi kwa usahihi na kasi isio na mfano. Kutoka mashamba makubwa hadi miundombinu ya mijini, teknolojia yetu ya drone inakamata data kwa haraka, kwa usalama, na kwa gharama nafuu — hasa katika maeneo magumu kufikia au mapana. \n\n Tumekamilisha uchunguzi wa drone wa angani katika sekta nyingi katika nchi 10+ za Afrika, tukihudumia wasanidi wa ardhi, serikali, kampuni za madini, na wamiliki wa biashara za kilimo.",
 		"image": "/media/surveying/aerial-surveys/drone-piloting.jpeg"
 	},
 	"aerialSurveying": {
+		"type": "unique",
 		"tag": "",
 		"headline": "Uchunguzi wa Angani",
 		"description": "Drone zimebadilisha sekta ya uchunguzi — na sisi tuko mbele. Smartgrid Surveying inatumia drone wa angani kwa uchoraji ramani, uundaji wa mifano ya 3D, vipimo vya kiasi, tathmini za mazingira, na ufuatiliaji wa maeneo makubwa au yasiyofikika. Mbali na uchoraji ramani wa kiufundi, tunatoa huduma za kitaalamu za upigaji picha wa angani kwa ajili ya mali isiyohamishika, uuzaji wa ujenzi, utalii, na matukio. Kwa kutumia ndege zisizo na rubani zenye RTK GPS na sensorer za mwonekano wa juu, tunakamata data ya kijiografia sahihi inayowawezesha wahandisi, wasanidi, serikali, na NGO kufanya maamuzi bora, haraka. \n\n Tunatoa uchunguzi wa haraka, sahihi, na wa kina kwa:",
@@ -129,6 +134,7 @@
 		]
 	},
 	"deliverables": {
+		"type": "deliverables",
 		"tag": "Unachopokea",
 		"headline": "Unachopokea Kutoka kwa Mradi wa Uchunguzi wa Drone",
 		"description": "Kila uhusiano hufungwa na kifurushi kamili cha data tayari kwa uhandisi — zinalemazwa kwa miundo wazi inayolisha moja kwa moja kwenye zana za CAD, GIS na usimamizi wa ujenzi.",
@@ -197,6 +203,7 @@
 		]
 	},
 	"whyDroneSurveys": {
+		"type": "unique",
 		"tag": "Kwa Nini Drone",
 		"headline": "Kwa Nini Wahandisi & Wasanidi nchini Kenya Wanatumia Uchunguzi wa Drone",
 		"description": "Uchunguzi wa drone umekuwa chaguo la kawaida kwa timu za uhandisi, ujenzi na maendeleo ya ardhi zinazohitaji data ya kuaminika kwenye ratiba za mkazo.",
@@ -230,6 +237,7 @@
 		]
 	},
 	"workflow": {
+		"type": "process",
 		"tag": "Mstari wa Shamba-hadi-Usanidi",
 		"headline": "Mtiririko Wetu wa Kazi wa Uchunguzi wa Drone",
 		"description": "Mstari wa angani wa hatua saba ulio wazi — kutoka wito wa kwanza wa wigo hadi uhandishaji wa CAD/GIS, unajua wakati wowote mradi wako upo wapi.",
@@ -279,6 +287,7 @@
 		}
 	},
 	"industries": {
+		"type": "card-grid",
 		"tag": "Matumizi kwa Sekta",
 		"headline": "Uchunguzi wa Angani kwa Sekta Muhimu nchini Kenya",
 		"description": "Kutoka njia za kitaifa hadi mipango ya master ya kaunti — data yetu ya drone inaunga mkono maamuzi yanayounda mazingira ya ujenzi ya Kenya.",
@@ -328,6 +337,7 @@
 		]
 	},
 	"industryCta": {
+		"type": "cta",
 		"tag": "Mapendekezo Maalum",
 		"headline": "Pata Pendekezo la Uchunguzi kwa Sekta Yako",
 		"description": "Barabara, nishati, madini, kilimo au upangaji wa kaunti — tuambie sekta yako nasi tutaweka wigo wa ndege, bidhaa na darasa la usahihi mradi wako unahitaji.",
@@ -344,6 +354,7 @@
 		}
 	},
 	"techStack": {
+		"type": "card-grid",
 		"tag": "Teknolojia Yetu",
 		"headline": "Teknolojia ya Uchunguzi Tunayotumia",
 		"description": "Vifaa na programu za darasa la uhandisi — kila bidhaa inatengenezwa kwenye majukwaa timu yako ya kiufundi inayoyaamini.",
@@ -384,6 +395,7 @@
 		]
 	},
 	"capabilityCta": {
+		"type": "cta",
 		"tag": "Kwa Tendero & Uhalalishaji",
 		"headline": "Omba Taarifa ya Uwezo wa Kiufundi (PDF)",
 		"description": "Orodha za vifaa, viwango vya usahihi, uzingatiaji wa KCAA, bima na marejeo ya miradi iliyopita — kila kitu timu za ununuzi wanahitaji kuhalalisha SmartGrid Surveying.",
@@ -400,6 +412,7 @@
 		}
 	},
 	"finalCta": {
+		"type": "cta-closing",
 		"tag": "Anza Uchunguzi Wako wa Angani",
 		"headline": "Unahitaji Ramani Sahihi ya Drone kwa Mradi Wako?",
 		"description": "Pata data ya uchunguzi wa angani ya darasa la uhandisi iliyolelewa ndani ya muda uliopangwa kulingana na mifumo ya ujenzi, usanidi, na uidhinishaji.",
@@ -432,6 +445,7 @@
 		]
 	},
 	"projects": {
+		"type": "unique",
 		"tag": "Miradi Iliyokamilika",
 		"headline": "MIRADI ILIYOFANYWA KOTE AFRIKA",
 		"images": [
@@ -452,6 +466,7 @@
 		]
 	},
 	"additionalServices": {
+		"type": "unique",
 		"tag": "Mbali na uchunguzi wa kiufundi",
 		"headline": "tunatoa huduma za upigaji picha za angani kwa",
 		"items": ["Uuzaji wa mali isiyohamishika na majengo", "Ushughulikiaji wa matukio", "Vyombo vya utangazaji"],

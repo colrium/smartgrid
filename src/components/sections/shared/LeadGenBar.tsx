@@ -18,17 +18,44 @@ interface LeadGenItem {
     action?: LeadGenItemLink;
 }
 
+export interface LeadGenBarContent {
+	tag?: string | null;
+	headline: string;
+	description?: string | null;
+	items?: LeadGenItem[] | null;
+}
+
+interface LeadGenBarProps {
+	/** Section content. When omitted, the legacy `common:leadGenBar` locale
+	 * strings render (all non-Keystatic callers, e.g. careers). */
+	data?: LeadGenBarContent | null;
+	className?: string;
+	id?: string;
+}
+
 // Soft radial falloff used instead of an expensive CSS blur filter.
 const GLOW_MASK =
 	"radial-gradient(closest-side, black 30%, transparent 72%)";
 
-const LeadGenBar: React.FC<{ className?: string }> = ({ className }) => {
+const LeadGenBar: React.FC<LeadGenBarProps> = ({ data, className, id }) => {
     
-    const { t } = useTranslation(["common"]);
-    const leadGenItems = t("common:leadGenBar.items", { returnObjects: true }) as unknown as LeadGenItem[];
+    const { t } = useTranslation(["home"]);
+    // Keystatic-owned fields when `data` is provided; legacy locale strings
+    // otherwise (unchanged behavior for non-Keystatic callers). The
+    // description always renders via `<Trans>` from the locale store
+    // (`<bold>` pseudo-markup) — `data.description` is a visibility gate
+    // only (same precedent as `PlanningInfographic.closingStatement`).
+    const tag = data ? (data.tag ?? "") : (t("common:leadGenBar.tag") as string);
+    const headline = data ? data.headline : (t("common:leadGenBar.headline") as string);
+    const showDescription = data ? Boolean(data.description) : true;
+    const leadGenItems = (
+		Array.isArray(data?.items)
+			? data.items
+			: (t("common:leadGenBar.items", { returnObjects: true }) as unknown as LeadGenItem[])
+	) as LeadGenItem[];
 
     return (
-		<section className={`relative  ${className || ""}`}>
+		<section id={id} className={`relative mx-auto max-w-7xl px-6 w-full  ${className || ""}`}>
 			<div
 				className="absolute -top-6 -left-6 w-64 h-64 bg-primary/10 rounded-full pointer-events-none"
 				style={{ WebkitMaskImage: GLOW_MASK, maskImage: GLOW_MASK }}
@@ -43,11 +70,12 @@ const LeadGenBar: React.FC<{ className?: string }> = ({ className }) => {
 				<div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 					<FadeUp viewport={{ amount: 0.01, margin: "0px 0px 0% 0px" }}>
 						<div className="flex flex-col items-center gap-4">
-							<SectionTag>{t("common:leadGenBar.tag")}</SectionTag>
+							<SectionTag>{tag}</SectionTag>
 							<h2 className="text-3xl sm:text-5xl font-light tracking-tight text-ink leading-tight whitespace-pre-line max-w-3xl">
-								{t("common:leadGenBar.headline")}
+								{headline}
 							</h2>
 
+							{showDescription && (
 							<p className="text-md text-center text-on-surface/60 max-w-2xl font-normal leading-relaxed mb-10 sm:mb-16 whitespace-pre-line">
 								<Trans
 									// @ts-expect-error
@@ -60,6 +88,7 @@ const LeadGenBar: React.FC<{ className?: string }> = ({ className }) => {
 									}}
 								/>
 							</p>
+							)}
 						</div>
 					</FadeUp>
 

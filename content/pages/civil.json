@@ -1,0 +1,447 @@
+{
+	"slug": "Civil",
+	"title": "Civil (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "civilHero",
+			"value": {
+				"headline": {
+					"en": "Precision Construction",
+					"sw": "Ujenzi wa Usahihi"
+				},
+				"title": {
+					"en": "Civil Engineering",
+					"sw": "Uhandisi wa Civil"
+				},
+				"description": {
+					"en": "Unlock faster, more cost-effective, and safer mapping, measurement, and monitoring of construction sites across the world. At Smartgrid Surveying, we turn this vision into reality—across Africa and beyond. With our cutting-edge drones and Land surveying techniques, we deliver the actionable data you need, exactly where it matters.",
+					"sw": "Fungua ramani, kipimo, na ufuatiliaji wa tovuti za ujenzi wa haraka, wenye gharama nafuu na salama zaidi duniani kote. Katika SmartGrid Surveying, tunageuza maono haya kuwa ukweli—kote Afrika na kuendelea. Kwa droni zetu za kisasa na mbinu za upimaji ardhi, tunatoa data ya kiutendaji unayohitaji, hasa pale inapohitajika."
+				},
+				"image": "/media/civil/01.jpeg",
+				"ctaPrimary": {
+					"label": {
+						"en": "Get Your Free Consultation",
+						"sw": "Pata Ushauri Wako Bure"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Consultation Request: Civil Engineering&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a free consultation about civil engineering services. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": ""
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "Explore Our Aerial Services",
+						"sw": "Chunguza Huduma Zetu za Hewa"
+					},
+					"href": "/aerial-drones/drone-imagery-surveys",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "cardGrid",
+			"value": {
+				"tag": {
+					"en": "Civil Solutions",
+					"sw": "Suluhisho za Civil"
+				},
+				"headline": {
+					"en": "Our Civil Engineering Services",
+					"sw": "Huduma Zetu za Uhandisi wa Civil"
+				},
+				"subheading": {
+					"en": "",
+					"sw": ""
+				},
+				"description": {
+					"en": "We provide comprehensive civil engineering support for infrastructure projects of all scales.",
+					"sw": "Tunatoa msaada kamili wa uhandisi wa civil kwa miradi ya miundombinu ya vipimo vyote."
+				},
+				"items": [
+					{
+						"icon": "road-variant",
+						"title": {
+							"en": "Highway Surveys",
+							"sw": "Uchunguzi wa Barabara"
+						},
+						"description": {
+							"en": "Initial alignment and route planning with precision GNSS.",
+							"sw": "Mpangilio wa awali na upangaji wa njia kwa GNSS sahihi."
+						},
+						"image": "",
+						"href": "/civil/highway-surveys"
+					},
+					{
+						"icon": "file-document",
+						"title": {
+							"en": "As-Built Surveys",
+							"sw": "Uchunguzi wa As-Built"
+						},
+						"description": {
+							"en": "Verification of constructed works against original designs.",
+							"sw": "Uthibitisho wa kazi zilizojengwa dhidi ya michoro ya awali."
+						},
+						"image": "",
+						"href": "/civil/as-built-surveys"
+					},
+					{
+						"icon": "calculator",
+						"title": {
+							"en": "Volumetric Surveys",
+							"sw": "Uchunguzi wa Volumetric"
+						},
+						"description": {
+							"en": "3D modeling and volume computations for stockpiles.",
+							"sw": "Modeli za 3D na mahesabu ya vina kwa makusanyo."
+						},
+						"image": "",
+						"href": "/civil/volumetric-surveys"
+					},
+					{
+						"icon": "content-duplicate",
+						"title": {
+							"en": "BIM & Digital Twins",
+							"sw": "BIM na Digital Twins"
+						},
+						"description": {
+							"en": "Integrating spatial data into your BIM workflows.",
+							"sw": "Kuunganisha data ya eneo kwenye mchakato wako wa BIM."
+						},
+						"image": "",
+						"href": "/civil/bim"
+					},
+					{
+						"icon": "window-closed-variant",
+						"title": {
+							"en": "Indoor Mapping",
+							"sw": "Ramani za Ndani ya Majengo"
+						},
+						"description": {
+							"en": "Mapping and navigation inside complex facilities.",
+							"sw": "Ramani na urambazaji ndani ya majengo magumu."
+						},
+						"image": "",
+						"href": ""
+					},
+					{
+						"icon": "map-marker",
+						"title": {
+							"en": "Site Engineering",
+							"sw": "Uhandisi wa Tovuti"
+						},
+						"description": {
+							"en": "Construction layout, setting out, and geospatial monitoring.",
+							"sw": "Mpangilio wa ujenzi, setting out, na ufuatiliaji wa kijiografia."
+						},
+						"image": "",
+						"href": "/civil/site-engineering"
+					}
+				],
+				"columns": "3",
+				"align": "left",
+				"tone": "surface",
+				"headerRow": false,
+				"cardDensity": "comfortable",
+				"cardIconSize": "md",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "civilProcess",
+			"value": {
+				"tag": {
+					"en": "Our Workflow",
+					"sw": "Mchakato Wetu"
+				},
+				"headline": {
+					"en": "Engineering Survey Process",
+					"sw": "Mchakato wa Upimaji wa Uhandisi"
+				},
+				"description": {
+					"en": "Our systematic approach ensures accuracy, efficiency, and reliable deliverables for every civil engineering project.",
+					"sw": "Njia yetu ya mfumo huhakikisha usahihi, ufanisi, na matokeo ya kuaminika kwa kila mradi wa uhandisi wa civil."
+				},
+				"image": "/media/civil/03.jpeg",
+				"items": [
+					{
+						"icon": "map-search",
+						"title": {
+							"en": "Reconnaissance & Planning",
+							"sw": "Utafiti wa Awali na Mipango"
+						},
+						"description": {
+							"en": "Initial site assessment and mission design using RTK GNSS and SmartGrid survey frameworks.",
+							"sw": "Tathmini ya awali ya tovuti na ubunifu wa misheni kwa kutumia RTK GNNS na mifumo ya SmartGrid survey."
+						}
+					},
+					{
+						"icon": "map-marker",
+						"title": {
+							"en": "Ground Control Setup",
+							"sw": "Usanidi wa Udhibiti wa Ardhi"
+						},
+						"description": {
+							"en": "Deployment of marked GCPs and total station validation to anchor aerial data in real-world coordinates.",
+							"sw": "Uwekaji wa GCPs zilizoalamiwa na uthibitisho wa total station kushikamata data ya hewa katika kuratibu halisi za dunia."
+						}
+					},
+					{
+						"icon": "drone",
+						"title": {
+							"en": "Drone Flight & Data Acquisition",
+							"sw": "Ruka la Droni na Upataji wa Data"
+						},
+						"description": {
+							"en": "RTK-enabled drones execute flight plans to capture imagery and topographic data with centimeter accuracy.",
+							"sw": "Droni zenye RTK hutekeleza mipango ya uruka kukamata picha na data ya topografia kwa usahihi wa sentimita."
+						}
+					},
+					{
+						"icon": "cube-scan",
+						"title": {
+							"en": "Photogrammetry Processing",
+							"sw": "Uchakataji wa Photogrammetry"
+						},
+						"description": {
+							"en": "SmartGrid software processes imagery into orthomosaics, DSMs, and 3D point clouds for engineering models.",
+							"sw": "Programu ya SmartGrid inachakata picha kuwa orthomosaics, DSMs, na mawingu ya pointi za 3D kwa modeli za uhandisi."
+						}
+					},
+					{
+						"icon": "ruler-square",
+						"title": {
+							"en": "Ground Verification",
+							"sw": "Uthibitisho wa Ardhi"
+						},
+						"description": {
+							"en": "Total station and rover cross-checks are performed to verify aerial accuracy and validate deliverables.",
+							"sw": "Ukaguzi wa total station na rover hufanyika kuhakiki usahihi wa anga na kuthibitisha matokeo."
+						}
+					},
+					{
+						"icon": "file-document",
+						"title": {
+							"en": "Final Output Delivery",
+							"sw": "Utoaji wa Pato la Mwisho"
+						},
+						"description": {
+							"en": "We compile CAD drawings, contour maps, volume analyses, and BIM-ready geospatial layers for site integration.",
+							"sw": "Tunakusanya michoro ya CAD, ramani za contour, uchambuzi wa vina, na tabaka za kijiografia tayari kwa BIM kwa muunganisho wa tovuti."
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "deliverables",
+			"value": {
+				"tag": {
+					"en": "Deliverables",
+					"sw": "Matokeo"
+				},
+				"headline": {
+					"en": "Engineering Deliverables",
+					"sw": "Matokeo ya Uhandisi"
+				},
+				"description": {
+					"en": "Accurate outputs for planning and engineering decisions.",
+					"sw": "Pato sahihi kwa maamuzi ya mipango na uhandisi."
+				},
+				"liveLabel": {
+					"en": "Deliverable package",
+					"sw": "Furushi la Matokeo"
+				},
+				"checks": [
+					{
+						"en": "Engineer-ready formats",
+						"sw": "Fomati tayari kwa wahandisi"
+					},
+					{
+						"en": "CAD & GIS compatible",
+						"sw": "Zinazoendana na CAD na GIS"
+					},
+					{
+						"en": "Site-verified accuracy",
+						"sw": "Usahihi uliothibitishwa kwenye tovuti"
+					}
+				],
+				"items": [
+					{
+						"title": {
+							"en": "AS - BUILT Maps",
+							"sw": "Ramani za AS-BUILT"
+						},
+						"format": {
+							"en": "PDF / DWG",
+							"sw": "PDF / DWG"
+						},
+						"icon": "file-document",
+						"image": {
+							"en": "/media/deliverables/as-built-maps.jpg",
+							"sw": "/media/deliverables/as-built-maps.jpg"
+						},
+						"description": {
+							"en": "As-constructed maps verifying completed works for handover and records.",
+							"sw": "Ramani za kazi zilizojengwa zinazothibitisha ukamilishaji kwa kukabidhi na kumbukumbu."
+						}
+					},
+					{
+						"title": {
+							"en": "Digital Elevation Models (DSM, DTM)",
+							"sw": "Modeli za Mwinuko wa Kidijitali (DSM, DTM)"
+						},
+						"format": {
+							"en": "GeoTIFF",
+							"sw": "GeoTIFF"
+						},
+						"icon": "image-filter-hdr",
+						"image": {
+							"en": "/media/deliverables/digital-elevation-models.jpg",
+							"sw": "/media/deliverables/digital-elevation-models.jpg"
+						},
+						"description": {
+							"en": "Surface and terrain models for grading, volumes, and drainage design.",
+							"sw": "Mifano ya uso na ardhi kwa daraja, vina, na kubuni mifereji."
+						}
+					},
+					{
+						"title": {
+							"en": "Setting Out Coordinates",
+							"sw": "Kuratibu za Setting Out"
+						},
+						"format": {
+							"en": "CSV / DXF",
+							"sw": "CSV / DXF"
+						},
+						"icon": "crosshairs-gps",
+						"image": {
+							"en": "/media/deliverables/setting-out-coordinates.jpg",
+							"sw": "/media/deliverables/setting-out-coordinates.jpg"
+						},
+						"description": {
+							"en": "Exact positions for structures and services, ready for stakeout.",
+							"sw": "Nafuni kamili za majengo na huduma, tayari kwa kuweka alama."
+						}
+					},
+					{
+						"title": {
+							"en": "3D DATA (X, Y, Z)",
+							"sw": "Data ya 3D (X, Y, Z)"
+						},
+						"format": {
+							"en": "CSV / DWG",
+							"sw": "CSV / DWG"
+						},
+						"icon": "axis-z-arrow",
+						"image": {
+							"en": "/media/deliverables/3d-data-xyz.jpg",
+							"sw": "/media/deliverables/3d-data-xyz.jpg"
+						},
+						"description": {
+							"en": "Three-dimensional positional data for machine control and design verification.",
+							"sw": "Data ya nafuni ya pande tatu kwa machine control na uthibitisho wa kubuni."
+						}
+					},
+					{
+						"title": {
+							"en": "Contours",
+							"sw": "Contours"
+						},
+						"format": {
+							"en": "DWG / DXF",
+							"sw": "DWG / DXF"
+						},
+						"icon": "chart-bell-curve",
+						"image": {
+							"en": "/media/deliverables/contour-maps.jpg",
+							"sw": "/media/deliverables/contour-maps.jpg"
+						},
+						"description": {
+							"en": "Contours at engineering intervals for earthworks and levels.",
+							"sw": "Kontua kwa vipindi vya uhandisi kwa ujenzi wa ardhi na viwango."
+						}
+					},
+					{
+						"title": {
+							"en": "Master plans",
+							"sw": "Mipango Kuu"
+						},
+						"format": {
+							"en": "PDF / DWG",
+							"sw": "PDF / DWG"
+						},
+						"icon": "map",
+						"image": {
+							"en": "/media/deliverables/master-plans.jpg",
+							"sw": ""
+						},
+						"description": {
+							"en": "Composite site plans consolidating layouts, services, and levels.",
+							"sw": "Mipango ya tovuti inayounganisha mipangilio, huduma, na viwango."
+						}
+					},
+					{
+						"title": {
+							"en": "Buildings Layout / BIM",
+							"sw": "Mipango wa Majengo / BIM"
+						},
+						"format": {
+							"en": "IFC / DWG",
+							"sw": "IFC / DWG"
+						},
+						"icon": "office-building",
+						"image": {
+							"en": "/media/deliverables/building-layouts-bim.jpg",
+							"sw": ""
+						},
+						"description": {
+							"en": "BIM-ready layouts and geometry for coordinated construction.",
+							"sw": "Mipangilio na jiometri tayari kwa BIM kwa ujenzi ulioratibiwa."
+						}
+					},
+					{
+						"title": {
+							"en": "CAD Shapefiles",
+							"sw": "Shapefiles za CAD"
+						},
+						"format": {
+							"en": "SHP / DWG",
+							"sw": "SHP / DWG"
+						},
+						"icon": "vector-square",
+						"image": {
+							"en": "/media/deliverables/cad-shapefiles.jpg",
+							"sw": ""
+						},
+						"description": {
+							"en": "GIS shapefiles and CAD layers for engineering workflows.",
+							"sw": "Shapefiles za GIS na tabaka za CAD kwa michoro ya uhandisi."
+						}
+					},
+					{
+						"title": {
+							"en": "PDF Map",
+							"sw": "Ramani za PDF"
+						},
+						"format": {
+							"en": "PDF",
+							"sw": "PDF"
+						},
+						"icon": "file-pdf-box",
+						"image": {
+							"en": "/media/deliverables/pdf-maps.jpg",
+							"sw": ""
+						},
+						"description": {
+							"en": "Print-ready map exports for site teams and documentation.",
+							"sw": "Ramani tayari kuchapishwa kwa timu za tovuti na nyaraka."
+						}
+					}
+				],
+				"tone": "surface",
+				"id": ""
+			}
+		}
+	]
+}

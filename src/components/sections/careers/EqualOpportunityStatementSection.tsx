@@ -4,20 +4,29 @@ import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 
 interface StatementContent {
-	subtitle?: string;
-	description?: string;
+	subtitle?: string | null;
+	description?: string | null;
 }
 
-export function EqualOpportunityStatementSection() {
+export interface EqualOpportunityStatementData {
+	subtitle?: string | null;
+	description?: string | null;
+}
+
+export function EqualOpportunityStatementSection({ data, id }: { data?: EqualOpportunityStatementData | null; id?: string } = {}) {
 	const { t } = useTranslation(["careers"]);
-	const section = t("careers:statement", {
-		returnObjects: true,
-	}) as unknown as StatementContent;
+	// Keystatic-owned content when `data` is provided (M11
+	// `careersStatement` unique section); legacy `careers:statement`
+	// locale strings otherwise.
+	const section = (data ??
+		(t("careers:statement", {
+			returnObjects: true,
+		}) as unknown as StatementContent)) as StatementContent;
 
 	if (!section.subtitle && !section.description) return null;
 
 	return (
-		<section className="py-32 sm:py-28 relative overflow-hidden ">
+		<section id={id} className="py-32 sm:py-48 relative overflow-hidden ">
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<FadeUp>
 					<div className="rounded-c bg-surface hairline card-shadow p-8 sm:p-10 lg:p-12">

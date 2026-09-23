@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"tag": "Surveying Equipment",
 		"headline": "High-Precision GNSS Receiver for Professional Surveying",
 		"title": "FOIF A90 RTK GNSS",
@@ -11,29 +12,33 @@
 		}
 	},
 	"productImages": {
+		"type": "unique",
 		"images": [
 			"/media/equipment-sale/foif-a90-rtk-gnss/01.png",
 			"/media/equipment-sale/foif-a90-rtk-gnss/04.png",
 			"/media/equipment-sale/foif-a90-rtk-gnss/10.png",
 			"/media/equipment-sale/foif-a90-rtk-gnss/02.png",
 			"/media/equipment-sale/foif-a90-rtk-gnss/03.png",
-            "/media/equipment-sale/foif-a90-rtk-gnss/09.jpeg",
-            "/media/equipment-sale/foif-a90-rtk-gnss/11.jpeg",
-            "/media/equipment-sale/foif-a90-rtk-gnss/12.jpeg",
-            "/media/equipment-sale/foif-a90-rtk-gnss/13.jpeg"
+			"/media/equipment-sale/foif-a90-rtk-gnss/09.jpeg",
+			"/media/equipment-sale/foif-a90-rtk-gnss/11.jpeg",
+			"/media/equipment-sale/foif-a90-rtk-gnss/12.jpeg",
+			"/media/equipment-sale/foif-a90-rtk-gnss/13.jpeg"
 		]
 	},
 	"breadcrumb": {
+		"type": "unique",
 		"home": "Home",
 		"section": "Equipment Sale",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
 	"catalogue": {
+		"type": "unique",
 		"icon": "satellite",
 		"description": "High-precision GNSS system with multi-constellation support delivering centimeter-level RTK accuracy for mapping and engineering surveys.",
 		"badge": "In Stock"
 	},
 	"pricing": {
+		"type": "pricing",
 		"new": {
 			"label": "Brand New",
 			"currency": "KES",
@@ -51,7 +56,7 @@
 			"label": "Surveying Equipment",
 			"href": "/equipment-sale/equipment-catalogue?category=surveying-equipment"
 		},
-        {
+		{
 			"name": "gnss",
 			"label": "GNSS",
 			"href": "/equipment-sale/equipment-catalogue?category=gnss"
@@ -80,15 +85,17 @@
 		}
 	],
 	"productOverview": {
+		"type": "unique",
 		"tag": "Product Overview",
 		"headline": "Built for Precision, Ready for the Field",
 		"images": [
-            "/media/equipment-sale/foif-a90-rtk-gnss/06.png",
-            "/media/equipment-sale/foif-a90-rtk-gnss/07.png"
-        ],
+			"/media/equipment-sale/foif-a90-rtk-gnss/06.png",
+			"/media/equipment-sale/foif-a90-rtk-gnss/07.png"
+		],
 		"description": "The FOIF A90 is a multi-frequency, multi-constellation GNSS receiver designed for high-precision RTK surveys. It offers robust performance even in challenging environments, making it ideal for cadastral, construction, and engineering projects."
 	},
 	"keyFeatures": {
+		"type": "card-grid",
 		"tag": "Highlights",
 		"headline": "Key Features",
 		"description": "A closer look at what makes the A90 a dependable field partner.",
@@ -116,6 +123,7 @@
 		]
 	},
 	"engineAndSignal": {
+		"type": "unique",
 		"tag": "Signal",
 		"headline": "GNSS Engine & Signal Reception",
 		"description": "Multi-constellation, all-band tracking for maximum satellite visibility.",
@@ -130,6 +138,7 @@
 		]
 	},
 	"performance": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Performance",
 		"description": "Field-proven accuracy and speed you can rely on.",
@@ -151,6 +160,7 @@
 		}
 	},
 	"configurationAndConnectivity": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Configuration & Connectivity",
 		"description": "Flexible setup options and dependable data links in the field.",
@@ -164,6 +174,7 @@
 		]
 	},
 	"physicalAndBattery": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Physical & Battery",
 		"description": "A rugged build and all-day power for demanding sites.",
@@ -175,6 +186,7 @@
 		]
 	},
 	"environmentalSpecs": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Environmental Specs",
 		"description": "Engineered to keep performing through heat, dust, rain, and drops.",
@@ -187,11 +199,13 @@
 		]
 	},
 	"specs": {
+		"type": "unique",
 		"tag": "Tech Data",
 		"headline": "Technical Specifications",
 		"description": "Complete technical details for the FOIF A90 RTK GNSS system."
 	},
 	"includedInPackage": {
+		"type": "card-grid",
 		"tag": "Package Contents",
 		"headline": "Included in Package",
 		"description": "Everything you need to get surveying, right out of the box.",
@@ -234,6 +248,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Get a Quote",
 		"headline": "Inquire About This Equipment",
 		"description": "Tell us about your project and get a tailored quote for the FOIF A90 RTK GNSS.",
@@ -249,6 +264,7 @@
 		}
 	},
 	"relatedProducts": {
+		"type": "unique",
 		"tag": "Explore",
 		"headline": "Other Products You May Like",
 		"description": "Discover more surveying instruments from the SmartGrid catalogue.",

@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"headline": "GIS, UCHORAJI RAMANI NA VIHISISHI VYA MBALI",
 		"title": "RAMANI ZA GIS NA AKILI YA DATA YA KIJIOGRAFIA KENYA",
 		"image": "/media/surveying/gis-mapping/gis-mapping-01.jpg",
@@ -15,6 +16,7 @@
 		}
 	},
 	"whatIsGis": {
+		"type": "unique",
 		"tag": "Akili ya Kijiografia",
 		"headline": "Ramani za GIS ni nini?",
 		"description": "Mifumo ya Taarifa za Kijiografia (GIS) ni teknolojia inayofanya yafuatayo:",
@@ -39,6 +41,7 @@
 		"closingStatement": "Kwa maneno rahisi:\nInageuza data za upimaji kuwa <bold>mifumo mahiri ya maamuzi</bold>"
 	},
 	"consultationCta": {
+		"type": "cta",
 		"tag": "Ushauri wa GIS",
 		"headline": "Panga Ushauri wa GIS",
 		"description": "Tuambie kuhusu eneo lako, mali, au data — mtaalamu wa GIS atapanga njia ya haraka zaidi kutoka data ghafi za upimaji hadi ramani na mifumo inayowezesha maamuzi.",
@@ -54,6 +57,7 @@
 		}
 	},
 	"whyGisCritical": {
+		"type": "card-grid",
 		"tag": "Kwa Nini Ni Muhimu",
 		"headline": "Kwa Nini Ramani za GIS ni Muhimu Kenya",
 		"description": "GIS ni muhimu sasa katika:",
@@ -97,6 +101,7 @@
 		]
 	},
 	"gisServices": {
+		"type": "card-grid",
 		"tag": "Suluhisho za GIS",
 		"headline": "Huduma za GIS",
 		"description": "Bidhaa na mifumo ya kijografia inayowezesha maamuzi, iliyojengwa kutoka kwa data sahihi za upimaji.",
@@ -149,6 +154,7 @@
 		]
 	},
 	"remoteSensingSolutions": {
+		"type": "card-grid",
 		"tag": "Ukusanyaji wa Data wa Kisasa",
 		"headline": "Suluhisho za Vihisishi vya Mbali",
 		"description": "SmartGrid Surveying hutoa huduma sahihi za GIS na vihisishi vya mbali — kutoka photogrammetry ya UAV, uchoraji wa LiDAR, hadi uchambuzi wa multispectral na uundaji wa DEM. Tunatoa data sahihi ya kijiografia kusaidia miradi ya upangaji, uhandisi, na mazingira kote Kenya na Afrika.",
@@ -176,6 +182,7 @@
 		]
 	},
 	"mappingServices": {
+		"type": "card-grid",
 		"tag": "Uwezo wa Msingi",
 		"headline": "Huduma za Uchoraji Ramani",
 		"description": "SmartGrid Surveying hutoa huduma sahihi za GIS na vihisishi vya mbali — kutoka photogrammetry ya UAV, uchoraji wa LiDAR, hadi uchambuzi wa multispectral na uundaji wa DEM. Tunatoa data sahihi ya kijiografia kusaidia miradi ya upangaji, uhandisi, na mazingira kote Kenya na Afrika.",
@@ -198,6 +205,7 @@
 		]
 	},
 	"industries": {
+		"type": "card-grid",
 		"tag": "Tunawahudumia Nani",
 		"headline": "Sekta",
 		"description": "Akili ya kijografia inayotolewa kwa viwango vya serikali, wakandarasi, huduma za umma, na wadau wa maendeleo.",
@@ -241,6 +249,7 @@
 		]
 	},
 	"techStack": {
+		"type": "unique",
 		"tag": "Msururu wa Teknolojia",
 		"headline": "Msururu wa Teknolojia",
 		"description": "Tunatumia zana za kijiografia za kiwango cha tasnia:",
@@ -288,6 +297,7 @@
 		]
 	},
 	"whatsappCta": {
+		"type": "unique",
 		"tag": "Msaada wa Papo Hapo",
 		"headline": "Tuma WhatsApp kwa Mtaalamu wa GIS",
 		"description": "Ruka hatua za muda mrefu — wasiliana moja kwa moja na timu yetu ya GIS kuhusu data, matokeo, muda, au bei.",
@@ -299,6 +309,7 @@
 		}
 	},
 	"gisComponents": {
+		"type": "unique",
 		"tag": "Msururu wa Teknolojia",
 		"headline": "Vipengele vya GIS",
 		"description": "Suluhisho zetu za GIS zinajumuisha maunzi, programu, data, watu, na mbinu kuunda mifumo kamili ya uchambuzi wa kijiografia na uchoraji ramani.",
@@ -330,6 +341,7 @@
 		]
 	},
 	"whySmartgrid": {
+		"type": "card-grid",
 		"tag": "Kwa Nini SmartGrid",
 		"headline": "Kwa Nini Huduma za GIS za SmartGrid",
 		"description": "Timu moja kutoka uwanja hadi mfumo wa mwisho wa kijografia — usahihi unahifadhiwa katika kila tabaka.",
@@ -361,6 +373,7 @@
 		]
 	},
 	"analystCta": {
+		"type": "cta-closing",
 		"tag": "Dawati la Msaada GIS",
 		"headline": "Zungumza na Mchambuzi wa GIS",
 		"description": "Kutoka ukaguzi wa data hadi uwekaji wa GIS kwa makampuni — pata miongozo ya kitaalamu kuhusu wigo, usahihi, na matokeo kabla ya kuanza.",
@@ -386,6 +399,7 @@
 		]
 	},
 	"dataAccuracy": {
+		"type": "unique",
 		"tag": "Uhakiki wa Ubora",
 		"headline": "Usahihi wa Data na Udhibiti wa Ubora katika GIS",
 		"ensureTitle": "Tunahakikisha:",
@@ -415,6 +429,7 @@
 		]
 	},
 	"beforeAfter": {
+		"type": "unique",
 		"tag": "Kabla dhidi ya Baada",
 		"headline": "Kabla dhidi ya Baada ya Kutekeleza GIS",
 		"flipHint": "Bonyeza kulinganisha",
@@ -440,6 +455,7 @@
 		}
 	},
 	"projectImpact": {
+		"type": "card-grid",
 		"tag": "Matokeo",
 		"headline": "Athari ya Kawaida ya Mradi",
 		"description": "Ramani za GIS huwezesha:",
@@ -467,6 +483,7 @@
 		]
 	},
 	"relatedServices": {
+		"type": "unique",
 		"tag": "Endelea Kuchunguza",
 		"headline": "Huduma Zinazohusiana",
 		"description": "Changanya GIS na:",

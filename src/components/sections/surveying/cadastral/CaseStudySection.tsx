@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionTag } from "@/components/SectionTag";
-import { Blob } from "@/components/sections/home/decor";
+import { Blob } from "@/components/sections/shared/decor";
 
 interface CaseImage {
 	src: string;
@@ -28,7 +28,7 @@ interface TechRow {
 	specification: string;
 }
 
-interface CaseStudyContent {
+export interface CadastralCaseStudyData {
 	tag?: string | null;
 	headline: string;
 	subtitle?: string | null;
@@ -109,11 +109,15 @@ function CaseFigure({
 	);
 }
 
-export function CaseStudySection(): ReactElement {
+export function CaseStudySection({ data, id }: { data?: CadastralCaseStudyData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/cadastral-surveys"]);
-	const section = t("surveying/cadastral-surveys:caseStudy", {
-		returnObjects: true,
-	}) as unknown as CaseStudyContent;
+	// Keystatic-owned content when `data` is provided (M11 `cadastralCaseStudy`
+	// unique section); legacy locale strings otherwise. Positional spans
+	// (first challenge image, wide last method step) stay in the renderer.
+	const section = (data ??
+		(t("surveying/cadastral-surveys:caseStudy", {
+			returnObjects: true,
+		}) as unknown as CadastralCaseStudyData)) as CadastralCaseStudyData;
 
 	if (!section?.headline) return <></>;
 
@@ -126,7 +130,7 @@ export function CaseStudySection(): ReactElement {
 	const engineeringNote = section.engineeringNote;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
+		<section id={id} className="py-24 sm:py-28 relative overflow-hidden bg-surface">
 			<Blob className="w-[28rem] h-[28rem] bg-primary-100/50 -top-32 -right-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">

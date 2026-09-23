@@ -5,8 +5,8 @@ import type { ReactElement } from "react";
 import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionHeader } from "@/components/sections/home";
-import { Blob } from "@/components/sections/home/decor";
-import { BeforeAfterFlipCard, type FlipSide } from "@/components/sections/BeforeAfterFlipCard";
+import { Blob } from "@/components/sections/shared/decor";
+import { BeforeAfterFlipCard, type FlipSide } from "@/components/sections/shared/BeforeAfterFlipCard";
 
 interface BeforeAfterContent {
 	tag?: string | null;
@@ -16,17 +16,29 @@ interface BeforeAfterContent {
 	after: FlipSide;
 }
 
-export function GprBeforeAfterSection(): ReactElement {
+export interface GprBeforeAfterData {
+	tag?: string | null;
+	headline: string;
+	flipHint?: string | null;
+	before: FlipSide;
+	after: FlipSide;
+}
+
+export function GprBeforeAfterSection({ data, id }: { data?: GprBeforeAfterData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
-	const section = t("surveying/ground-penetrating-radar:beforeAfter", {
-		returnObjects: true,
-	}) as unknown as BeforeAfterContent;
+	// Keystatic-owned content when `data` is provided (M11 `gprBeforeAfter`
+	// unique section); legacy locale strings otherwise. Flip behavior,
+	// layoutId and after-side icon/watermark stay in the renderer.
+	const section = (data ??
+		(t("surveying/ground-penetrating-radar:beforeAfter", {
+			returnObjects: true,
+		}) as unknown as BeforeAfterContent)) as BeforeAfterContent;
 
 	if (!section?.headline) return <></>;
 
 	return (
 		<section
-			id="before-after"
+			id={id ?? "before-after"}
 			className="scroll-mt-36 py-20 sm:py-24 relative overflow-hidden"
 		>
 			<Blob

@@ -3,27 +3,29 @@
 import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionTag } from "@/components/SectionTag";
-import { Blob } from "@/components/sections/home/decor";
+import { Blob } from "@/components/sections/shared/decor";
 
 interface HeroBadge {
-	text: string;
-	status: string;
+	text?: string | null;
+	status?: string | null;
 }
 
-interface ContactHeroContent {
-	tag: string;
-	headline: string;
-	description?: string;
+export interface ContactHeroContent {
+	tag?: string | null;
+	headline?: string | null;
+	description?: string | null;
 	badge?: HeroBadge | null;
 }
 
-export function ContactHeroSection() {
+export function ContactHeroSection({ data, id }: { data?: ContactHeroContent | null; id?: string } = {}) {
 	const { t } = useTranslation(["contact"]);
-	const hero = t("contact:hero", { returnObjects: true }) as unknown as ContactHeroContent;
+	// Keystatic-owned content when `data` is provided (M11 `contactHero`
+	// unique section); legacy `contact:hero` locale strings otherwise.
+	const hero = (data ?? (t("contact:hero", { returnObjects: true }) as unknown as ContactHeroContent)) as ContactHeroContent;
 	const active = hero.badge?.status === "active";
 
 	return (
-		<section className="relative overflow-hidden bg-surface pt-40 sm:pt-44 pb-20 sm:pb-24">
+		<section id={id} className="relative overflow-hidden bg-surface pt-40 sm:pt-44 pb-20 sm:pb-24">
 			
 			<Blob className="w-[30rem] h-[30rem] bg-primary-100/60 -top-32 -left-24" opacity={0.5} />
 			<Blob className="w-[26rem] h-[26rem] bg-primary/10 -bottom-24 -right-20" opacity={0.5} />

@@ -1,3 +1,9 @@
+import { locales } from "./i18n";
+
+
+
+export type Lang = typeof locales[number];
+
 export interface EnquiryCtaContent {
 	icon?: string;
 	label: string;

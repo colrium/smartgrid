@@ -1,25 +1,28 @@
 "use client";
 
 import type { ReactElement } from "react";
-
 import { useTranslation } from "@/hooks";
-import Link from "@/components/Link";
-import { SectionHeader } from "@/components/sections/home";
-import { FadeUp } from "@/components/animations/Fade";
-import { Blob } from "@/components/sections/home/decor";
+import { CardGrid, type CardItem } from "@/components/sections/shared/CardGrid";
 
 interface IndustryItem {
 	icon?: string | null;
-	title: string;
-	description?: string;
+	title?: string;
+	description?: string | null;
 	href?: string | null;
 }
 
 interface IndustriesContent {
 	tag?: string | null;
 	headline: string;
-	description?: string;
-	items: IndustryItem[];
+	description?: string | null;
+	items?: IndustryItem[] | null;
+}
+
+export interface AerialIndustriesData {
+	tag?: string | null;
+	headline: string;
+	description?: string | null;
+	items?: IndustryItem[] | null;
 }
 
 const FALLBACK_ICONS = [
@@ -32,82 +35,40 @@ const FALLBACK_ICONS = [
 	"forest",
 ];
 
-export function AerialIndustriesSection(): ReactElement {
+/**
+ * Aerial industries — shared link-card grid; the last card widens to a full
+ * row when the count leaves a single remainder (content:
+ * surveying/aerial-surveys:industries).
+ */
+export function AerialIndustriesSection({ data }: { data?: AerialIndustriesData | null } = {}): ReactElement | null {
 	const { t } = useTranslation(["surveying/aerial-surveys"]);
-	const section = t("surveying/aerial-surveys:industries", {
-		returnObjects: true,
-	}) as unknown as IndustriesContent;
-	const items = Array.isArray(section?.items) ? section.items : [];
+	// Keystatic-owned content when `data` is provided (M11 `aerialIndustries`
+	// unique section); legacy locale strings otherwise. The wide-last-card
+	// computation + positional fallback icons stay in the renderer.
+	const section = (data ??
+		(t("surveying/aerial-surveys:industries", { returnObjects: true }) as unknown as IndustriesContent)) as IndustriesContent;
+	const raw = Array.isArray(section?.items) ? section.items : [];
 
-	if (items.length === 0) return <></>;
+	if (raw.length === 0) return null;
+
+	const items: CardItem[] = raw.map((item, index) => ({
+		title: item.title,
+		description: item.description ?? undefined,
+		href: item.href ?? null,
+		icon: item.icon ?? null,
+		wide: index === raw.length - 1 && raw.length % 3 === 1,
+	}));
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden">
-			<Blob className="w-[28rem] h-[28rem] bg-primary-100/60 -bottom-24 -right-24" opacity={0.5} />
-
-			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-				<SectionHeader
-					tag={section.tag || undefined}
-					headline={section.headline}
-					description={section.description || undefined}
-					align="center"
-				/>
-
-				<div className="mt-14 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-					{items.map((item, index) => {
-						const isWide = index === items.length - 1 && items.length % 3 === 1;
-						const isLinked = Boolean(item.href);
-
-						const card = (
-							<article
-								className={`group relative h-full rounded-c bg-surface hairline card-shadow p-7 transition-all duration-250 hover:card-shadow-lift ${
-									isLinked ? "hover:border-primary cursor-pointer" : ""
-								} ${isWide ? "lg:col-span-3 lg:flex lg:items-center lg:gap-8" : "flex flex-col"}`}
-							>
-								<div className="flex items-start justify-between gap-4">
-									<span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface">
-										<span
-											className={`mdi mdi-${
-												item.icon || FALLBACK_ICONS[index % FALLBACK_ICONS.length]
-											} text-xl`}
-										/>
-									</span>
-									{isLinked && (
-										<span className="mdi mdi-arrow-top-right text-xl text-primary transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-									)}
-								</div>
-
-								<h3 className={`mt-5 text-base sm:text-lg font-semibold tracking-tight text-ink leading-snug ${isWide ? "lg:mt-0 lg:min-w-[16rem]" : ""}`}>
-									{item.title}
-								</h3>
-
-								{item.description && (
-									<p className={`text-sm text-on-surface/60 leading-relaxed ${isWide ? "lg:flex-1" : "mt-2.5"}`}>
-										{item.description}
-									</p>
-								)}
-							</article>
-						);
-
-						return (
-							<FadeUp
-								key={index}
-								delay={(index % 3) * 0.07}
-								className={`h-full ${isWide ? "lg:col-span-3" : ""}`}
-							>
-								{isLinked ? (
-									<Link href={item.href as string} className="block h-full">
-										{card}
-									</Link>
-								) : (
-									card
-								)}
-							</FadeUp>
-						);
-					})}
-				</div>
-			</div>
-		</section>
+		<CardGrid
+			tag={section.tag ?? null}
+			headline={section.headline}
+			description={section.description}
+			items={items}
+			columns={3}
+			headerRow
+			fallbackIcons={FALLBACK_ICONS}
+		/>
 	);
 }
 

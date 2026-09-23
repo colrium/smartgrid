@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "Survey Smarter, Build Stronger",
 		"title": "Photography & Video Marketing",
 		"image": "/media/aerial-drones/photography-video-marketing/01.jpg",
@@ -11,6 +12,7 @@
 		}
 	},
 	"services": {
+		"type": "card-grid",
 		"tag": "Cinematic excellence",
 		"headline": "Corporate Drone Photography & Video Marketing",
 		"description": "Showcase your business with cinematic excellence. Our DJI Air 3s drones deliver unmatched visuals for campaigns, events, and executive storytelling.",
@@ -55,6 +57,7 @@
 		}
 	},
 	"imageSlider": {
+		"type": "gallery-slider",
 		"items": [
 			{
 				"image": "/media/aerial-drones/photography-video-marketing/02.jpg",

@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "UCHUNGUZI WA NDEGE WA PANELI ZA SOLA",
 		"title": "Kuaminika. Kupanuka. Haraka. Nguvu.",
 		"image": "/media/aerial-drones/solar-panel-drone-surveys/01.jpg",
@@ -11,6 +12,7 @@
 		}
 	},
 	"whatWeDo": {
+		"type": "card-grid",
 		"tag": "Huduma",
 		"headline": "Tunachofanya",
 		"description": "Katika SmartGrid Surveying, tunatumia teknolojia ya kisasa ya ndege zisizo na rubani kufanya uchunguzi sahihi, bora, na salama kwa usakinishaji wa paneli za sola. Kuanzia upangaji na ukaguzi hadi uchoraji ramani wa joto na tathmini za baada ya usakinishaji, uchunguzi wetu wa ndege hutoa maarifa yasiyo na mfano kwa wateja wa kampuni na binafsi.",
@@ -38,6 +40,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": null,
 		"headline": "Unataka Kuinua Miradi Yako ya Sola?",
 		"description": "Wasiliana nasi kwa suluhisho la uchunguzi wa ndege lililoundwa mahsusi.",
@@ -47,6 +50,7 @@
 		}
 	},
 	"droneIntegrationProcess": {
+		"type": "card-grid",
 		"tag": "Mchakato",
 		"headline": "Ujumuishaji wa Ndege Zisizo na Rubani katika Mchakato wa Usakinishaji wa Sola",
 		"description": "",

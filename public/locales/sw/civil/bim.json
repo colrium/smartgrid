@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "Kuaminika. Kupanuka. Haraka. Nguvu.",
 		"title": "Muundo wa Taarifa za Ujenzi (BIM)",
 		"image": "/media/civil/bim/01.jpg",
@@ -11,6 +12,7 @@
 		}
 	},
 	"bimServices": {
+		"type": "card-grid",
 		"tag": "Uwezo Wetu",
 		"headline": "Muundo wa Taarifa za Ujenzi (BIM) katika Upimaji wa Uhandisi",
 		"description": "Gundua jinsi SmartGrid Surveying inavyounganisha data ya ndege zisizo na rubani na kijiografia na mtiririko wa kazi wa BIM kukuza maendeleo ya miundombinu ya kisasa kwa usahihi na ufanisi.",
@@ -42,6 +44,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Tuushirikiane",
 		"headline": "Uko Tayari Kuinua Miundombinu Yako kwa BIM?",
 		"description": "",
@@ -52,6 +55,7 @@
 		}
 	},
 	"deliverables": {
+		"type": "deliverables",
 		"tag": "Matokeo ya BIM",
 		"headline": "Matokeo ya BIM na Digital Twin",
 		"description": "Data ya kiwango cha uchunguzi imemodeliwa kwa mchakato wa BIM na digital twins:",

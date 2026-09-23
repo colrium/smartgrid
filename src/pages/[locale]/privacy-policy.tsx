@@ -2,18 +2,38 @@ import type { GetServerSideProps, NextPage } from "next";
 import PageHead from "@/components/Head";
 import { LegalPageSection } from "@/components/sections";
 import { useTranslation } from "@/hooks";
-import { getI18nProps } from "@/lib/i18n";
-type PageProps = {
-	// Add custom props here
+import { getI18nProps, getLocale } from "@/lib/i18n";
+import { PageBuilderDocument } from "@/components/keystatic/PageBuilderDocument";
+import { resolveKeystaticPage, type ResolvedKeystaticPage } from "@/lib/keystatic/resolvePage";
+import type { Lang } from "@/lib/types";
+
+type LegalSection = {
+	title: string;
+	content: string[];
 };
 
-const PrivacyPolicyPage: NextPage<PageProps> = () => {
+type PageProps = {
+	/** Keystatic page when the `privacy-policy` slug is opted in; otherwise `null` (legacy). */
+	keystaticPage: ResolvedKeystaticPage | null;
+};
+
+const PrivacyPolicyPage: NextPage<PageProps> = ({ keystaticPage }) => {
     const { t } = useTranslation(["common", "privacy", "meta"]);
+
+	// Migration source switch (M3/M7): Keystatic owns this route only when the
+	// slug is allowlisted via `KEYSTATIC_PAGES` and the entry is published.
+	// Otherwise the legacy locale-JSON implementation renders unchanged.
+	if (keystaticPage) {
+		return (
+			<div className="relative">
+				<PageHead pageName="privacy_policy" />
+				<PageBuilderDocument page={keystaticPage} />
+			</div>
+		);
+	}
+
     const siteTitle = t("meta:site.title", { defaultValue: "" });
-	const sections = t("privacy:articles", { returnObjects: true, site_title: siteTitle, defaultValue: [] }) as {
-		title: string;
-		content: string[];
-	}[];
+	const sections = t("privacy:articles", { returnObjects: true, site_title: siteTitle, defaultValue: [] }) as LegalSection[];
 	return (
 		<div className="relative">
 			<PageHead pageName="privacy_policy" />
@@ -36,7 +56,13 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 	if (!i18nProps) return { notFound: true };
 
-	return { props: { ...i18nProps } };
+	const locale = getLocale(context);
+	const lang: Lang = locale === "sw" ? "sw" : "en";
+	const resolution = await resolveKeystaticPage("privacy-policy", lang);
+
+	return {
+		props: { ...i18nProps, keystaticPage: resolution.status === "keystatic" ? resolution.page : null },
+	};
 };
 
 export default PrivacyPolicyPage;

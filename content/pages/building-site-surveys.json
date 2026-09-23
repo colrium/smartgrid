@@ -1,0 +1,918 @@
+{
+	"slug": "Building Site Surveys",
+	"title": "Building Site Surveys (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "bsHero",
+			"value": {
+				"headline": {
+					"en": "BUILDING & ENGINEERING SURVEYS",
+					"sw": "UCHUNGUZI WA UJENZI NA UHANDISI"
+				},
+				"title": {
+					"en": "Survey Smarter, Build Stronger",
+					"sw": "Pima Kwa Umaalimu, Jenga kwa Nguvu"
+				},
+				"description": {
+					"en": "We deliver centimeter-accurate boundary surveys, topographical mapping, and engineering control data for developers, landowners,and infrastructure projects across Kenya.",
+					"sw": "Tunatoa uchunguzi wa mipaka wenye usahihi wa sentimita, ramani za topografia,and data ya udhibiti wa uhandisi kwa watengenezaji,wamiliki wa ardhi,and miradi ya miundombinu kote Kenya."
+				},
+				"image": "/media/surveying/building-site-surveys/AG8ng.jpeg",
+				"ctaPrimary": {
+					"label": {
+						"en": "Get Your Free Consultation",
+						"sw": "Pata Ushauri Wako wa Bure"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Building Site Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Building Site Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": ""
+				},
+				"footnoteItems": [
+					{
+						"en": "RTK GNSS",
+						"sw": "RTK GNSS"
+					},
+					{
+						"en": "Licensed Survey Workflow",
+						"sw": "Licensed Survey Workflow"
+					},
+					{
+						"en": "Drone Mapping",
+						"sw": "Drone Mapping"
+					},
+					{
+						"en": "CAD Deliverables",
+						"sw": "CAD Deliverables"
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "introText",
+			"value": {
+				"tag": {
+					"en": "Smarter Construction",
+					"sw": "Ujenzi Bora"
+				},
+				"headline": {
+					"en": "Precision Surveys for Smarter Construction",
+					"sw": "Uchunguzi wa Usahihi kwa Ujenzi Bora"
+				},
+				"description": {
+					"en": "At Smartgrid Surveying, we provide expert building site surveying services designed to ensure accuracy, efficiency, and compliance in construction projects. Whether you're planning a residential, commercial, or industrial development, our advanced surveying technology and experienced professionals deliver the data you need to build with confidence.",
+					"sw": "Katika Smartgrid Surveying, tunatoa huduma za kitaalam za uchunguzi wa kiwanja cha ujenzi zilizoundwa kuhakikisha usahihi, ufanisi, na uzingatiaji katika miradi ya ujenzi. Iwe unapanga maendeleo ya makazi, biashara, au viwanda, teknolojia yetu ya kisasa ya upimaji na wataalamu wenye uzoefu hutoa data unayohitaji kujenga kwa ujasiri."
+				},
+				"tone": "default",
+				"align": "left",
+				"split": true,
+				"cta": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "bsSiteEngineering",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "Precision Site Engineering Surveys",
+					"sw": "Uchunguzi wa Usahihi wa Uhandisi wa Kiwanja"
+				},
+				"description": {
+					"en": "Explore how SmartGrid Surveying leverages cutting-edge drone, LiDAR, and geospatial technologies to deliver engineering-grade surveys that empower construction and infrastructure development.",
+					"sw": "Chunguza jinsi SmartGrid Surveying inavyotumia teknolojia za kisasa za dronzi, LiDAR, na kijiografia kutoa uchunguzi wa kiwango cha uhandisi unaowezesha ujenzi na maendeleo ya miundombinu."
+				},
+				"items": [
+					{
+						"icon": "",
+						"title": {
+							"en": "Topographic Surveys",
+							"sw": "Uchunguzi wa Topografia"
+						},
+						"description": {
+							"en": "We map both natural and built features, offering vital elevation and terrain insights for civil and structural planning.",
+							"sw": "Tunaweka ramani ya vipengele vya asili na vilivyojengwa, tukitoa maarifa muhimu ya mwinuko na ardhi kwa upangaji wa kirahisi na wa kimuundo."
+						}
+					},
+					{
+						"icon": "",
+						"title": {
+							"en": "Construction Staking & Layout",
+							"sw": "Uwekaji Alama na Mpangilio wa Ujenzi"
+						},
+						"description": {
+							"en": "Precision layout services ensure construction follows design specifications exactly—minimizing errors and delays.",
+							"sw": "Huduma za mpangilio wa usahihi huhakikisha ujenzi unafuata vipimo vya kubuni hasa—kupunguza makosa na ucheleweshaji."
+						}
+					},
+					{
+						"icon": "",
+						"title": {
+							"en": "3D Laser Scanning & LiDAR Mapping",
+							"sw": "Uchanganuzi wa 3D wa Laser na Uchoraji wa Ramani wa LiDAR"
+						},
+						"description": {
+							"en": "From point clouds to mesh models, we digitize your site for design coordination, BIM input, and pre-construction validation.",
+							"sw": "Kutoka point clouds hadi mifano ya mesh, tunadijitalisha kiwanja chako kwa uratibu wa kubuni, uingizaji wa BIM, na uthibitishaji wa awali wa ujenzi."
+						}
+					},
+					{
+						"icon": "",
+						"title": {
+							"en": "Boundary & Title Surveys",
+							"sw": "Uchunguzi wa Mipaka na Mali"
+						},
+						"description": {
+							"en": "Establish legal property limits, easements, and encroachments—essential for permitting and land development.",
+							"sw": "Taasisi ya mipaka ya kisheria ya mali, easements, na uvamizi—muhimu kwa vibali na maendeleo ya ardhi."
+						}
+					},
+					{
+						"icon": "",
+						"title": {
+							"en": "As-Built Surveys",
+							"sw": "Uchunguzi wa As-Built"
+						},
+						"description": {
+							"en": "Document and verify completed works against original plans for certification, compliance, and project closeout.",
+							"sw": "Andika kumbukumbu na uhakiki kazi zilizokamilishwa dhidi ya mipango ya awali kwa uthibitisho, uzingatiaji, na kufunga mradi."
+						}
+					},
+					{
+						"icon": "",
+						"title": {
+							"en": "Underground Utility Surveys",
+							"sw": "Uchunguzi wa Huduma za Chini ya Ardhi"
+						},
+						"description": {
+							"en": "Detect and map buried infrastructure with minimal disruption—vital for excavation planning and utility coordination.",
+							"sw": "Gundua na weka ramani ya miundombinu iliyozikwa kwa usumbufu mdogo—muhimu kwa upangaji wa uchimbaji na uratibu wa huduma."
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "bsSection2",
+			"value": {
+				"tag": {
+					"en": "Build Smarter",
+					"sw": "Jenga kwa Umaalimu"
+				},
+				"headline": {
+					"en": "Reliable. Accurate. Fast. Powerful.",
+					"sw": "Ya Kuaminika. Sahihi. Haraka. Yenye Nguvu."
+				},
+				"subtitle": {
+					"en": "Smartgrid Surveying is your trusted surveying partner!",
+					"sw": "Smartgrid Surveying ni mshirika wako wa upimaji anayeaminika!"
+				},
+				"description": {
+					"en": "Build Smarter from the Ground Up—our drone-enabled site engineering surveys deliver precise measurements, rapid terrain insights, and informed decision-making for your construction projects. By capturing high-resolution topographic data, 3D ground models, and accurate boundary visuals, we streamline site planning and reduce costly rework. Whether you're breaking ground or managing infrastructure upgrades, SmartGrid Surveying gives you the geospatial clarity needed to engineer with confidence and precision.",
+					"sw": "Jenga kwa Umaalimu tangu Mwanzo—uchunguzi wetu wa kiwanja unaowezeshwa na dronzi hutoa vipimo sahihi, maarifa ya haraka ya ardhi, na kufanya maamuzi yenye taarifa kwa miradi yako ya ujenzi. Kwa kunasa data ya topografia ya azimio la juu, mifano ya ardhi ya 3D, na taswira sahihi za mipaka, tunarahisisha upangaji wa kiwanja na kupunguza kazi ya kurudia ya gharama. Iwe unaanza ujenzi au unasimamia upyaji wa miundombinu, SmartGrid Surveying inakupa uwazi wa kijiografia unaohitajika kuhandisi kwa ujasiri na usahihi."
+				},
+				"ctaPrimary": {
+					"label": {
+						"en": "Email Us Today!",
+						"sw": "Tutumie Barua Pepe Leo!"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Building Site Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Building Site Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "bsProcess",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "Land Surveying Process",
+					"sw": "Mchakato wa Upimaji wa Ardhi"
+				},
+				"image": "",
+				"steps": [
+					{
+						"label": {
+							"en": "Pre-Survey Planning",
+							"sw": "Upangaji wa Awali wa Uchunguzi"
+						},
+						"description": {
+							"en": "Conduct a thorough site evaluation and assess flight parameters for drone survey readiness.",
+							"sw": "Fanya tathmini kamili ya kiwanja na tathmini vigezo vya ndege kwa utayari wa uchunguzi wa droni."
+						},
+						"icon": ""
+					},
+					{
+						"label": {
+							"en": "Establishing Ground Control",
+							"sw": "Uanzishaji wa Udhibiti wa Ardhi"
+						},
+						"description": {
+							"en": "Place georeferenced ground control points (GCPs) for accurate integration of aerial data.",
+							"sw": "Weka pointi za udhibiti wa ardhi zilizorejelewana kijiografia (GCPs) kwa ujumuishaji sahihi wa data ya angani."
+						},
+						"icon": ""
+					},
+					{
+						"label": {
+							"en": "Drone Flight Operation",
+							"sw": "Operesheni ya Ndege ya Droni"
+						},
+						"description": {
+							"en": "Deploy drone with precise flight paths, capturing high-resolution imagery and topographic data.",
+							"sw": "Tumia droni kwa njia sahihi za ndege, kunasa taswira za azimio la juu na data ya topografia."
+						},
+						"icon": ""
+					},
+					{
+						"label": {
+							"en": "Data Processing & Analysis",
+							"sw": "Usindikaji na Uchambuzi wa Data"
+						},
+						"description": {
+							"en": "Process aerial data using photogrammetry software to generate 3D models, orthoimages, and contours.",
+							"sw": "Chakata data ya angani kwa kutumia programu ya photogrammetry kutoa mifano ya 3D, orthoimages, na kontua."
+						},
+						"icon": ""
+					},
+					{
+						"label": {
+							"en": "Validation & Accuracy Check",
+							"sw": "Uthibitishaji na Ukaguzi wa Usahihi"
+						},
+						"description": {
+							"en": "Use total stations and RTK-GNSS systems to validate drone data and ensure the highest accuracy.",
+							"sw": "Tumia total stations na mifumo ya RTK-GNSS kuthibitisha data ya droni na kuhakikisha usahihi wa juu zaidi."
+						},
+						"icon": ""
+					},
+					{
+						"label": {
+							"en": "Final Survey Deliverables",
+							"sw": "Bidhaa za Mwisho za Uchunguzi"
+						},
+						"description": {
+							"en": "Generate CAD drawings, GIS layers, and digital reports for final project handover and analysis.",
+							"sw": "Tengeneza michoro za CAD, tabaka za GIS, na ripoti za dijiti kwa makabidhiano ya mwisho ya mradi na uchambuzi."
+						},
+						"icon": ""
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "bsAccuracyMatters",
+			"value": {
+				"tag": {
+					"en": "Survey Accuracy Kenya",
+					"sw": "Usahihi wa Upimaji Kenya"
+				},
+				"headline": {
+					"en": "Why Accuracy Matters",
+					"sw": "Kwa Nini Usahihi Ni Muhimu"
+				},
+				"description": {
+					"en": "In land development, a 5–10 cm error can lead to boundary disputes, design misalignment, construction rework,and legal delays.",
+					"sw": "Katika maendeleo ya ardhi, kosa la 5–10 cm linaweza kusababisha migogoro ya mipaka, kupotoka kwa muundo, kurudia kazi ya ujenzi, na ucheleweshaji wa kisheria."
+				},
+				"solution": {
+					"en": "At SmartGrid Surveying, we eliminate uncertainty by combining GNSS RTK positioning, robotic total stations,and UAV photogrammetry workflows.",
+					"sw": "Katika SmartGrid Surveying, tunaondoa kutokuwa na uhakika kwa kuchanganya mifumo ya GNSS RTK, total stations za robotiki, na mifumo ya upigaji picha kwa droni."
+				},
+				"items": [
+					{
+						"icon": "vector-polyline",
+						"title": {
+							"en": "Boundary Disputes",
+							"sw": "Migogoro ya Mipaka"
+						},
+						"description": {
+							"en": "Millimeter drift on a boundary line can trigger a costly boundary dispute survey Kenya-wide — protecting titles, neighbors,and investments.",
+							"sw": "Kupotoka kwa milimita kwenye mstari wa mpaka kunaweza kusababisha uchunguzi wa mipaka wenye gharama kote Kenya — kulinda hati za ardhi, majirani, na uwekezaji."
+						},
+						"stat": {
+							"en": "5–10 cm",
+							"sw": "5–10 cm"
+						}
+					},
+					{
+						"icon": "ruler-square-compass",
+						"title": {
+							"en": "Design Misalignment",
+							"sw": "Kupotoka kwa Muundo"
+						},
+						"description": {
+							"en": "Models built on approximate ground data force field revisions that ripple through budgets — engineering survey precision keeps CAD,and BIM in true position.",
+							"sw": "Miundo iliyojengwa juu ya data isiyo sahihi hulazimisha marekebisho ya shambani ambayo hupiga bajeti — usahihi wa upimaji wa uhandisi huweka CAD na BIM katika nafasi sahihi."
+						},
+						"stat": {
+							"en": "±2 cm",
+							"sw": "±2 cm"
+						}
+					},
+					{
+						"icon": "hammer-wrench",
+						"title": {
+							"en": "Construction Rework",
+							"sw": "Kurudia Kazi ya Ujenzi"
+						},
+						"description": {
+							"en": "Wrong coordinates mean poured foundations, relocated services,and aborted works. Accurate control networks cut rework,and keep programs moving.",
+							"sw": "Viwianishio visivyo sahihi vinamaanisha misingi iliyomwagwa, huduma zilizohamishwa, na kazi iliyoachwa. Mitandao sahihi ya udhibiti inapunguza kurudia kazi na kuendeleza programu."
+						},
+						"stat": {
+							"en": "0 rework",
+							"sw": "Hakuna kurudia"
+						}
+					},
+					{
+						"icon": "scale-balance",
+						"title": {
+							"en": "Legal Delays",
+							"sw": "Ucheleweshaji wa Kisheria"
+						},
+						"description": {
+							"en": "Cadastral survey Nairobi approvals stall when plans don't match the ground. We deliver evidence-grade data that moves permits forward.",
+							"sw": "Uidhinishaji wa uchunguzi wa kadastral Nairobi husimama mipango isipolingana na ardhi. Tunatoa data yenye ushahidi inayosogeza vibali mbele."
+						},
+						"stat": {
+							"en": "Faster permits",
+							"sw": "Vibali vya haraka"
+						}
+					}
+				],
+				"keywords": {
+					"en": [
+						"Boundary Dispute Survey Kenya",
+						"Cadastral Survey Nairobi",
+						"Engineering Survey Precision",
+						"Survey Accuracy Kenya"
+					],
+					"sw": [
+						"Uchunguzi wa Migogoro ya Mipaka Kenya",
+						"Uchunguzi wa Kadastral Nairobi",
+						"Usahihi wa Upimaji wa Uhandisi",
+						"Usahihi wa Upimaji Kenya"
+					]
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "ctaBand",
+			"value": {
+				"tag": {
+					"en": "Build on Certainty",
+					"sw": "Jenga kwa Uhakika"
+				},
+				"headline": {
+					"en": "Every structure deserves a foundation of verified ground truth.",
+					"sw": "Kila muundo unastahili msingi wa ukweli uliothibitishwa."
+				},
+				"description": {
+					"en": "Talk to a SmartGrid engineer about your site,and we'll recommend the right survey technology, workflow,and deliverables to keep your project on schedule,and on budget.",
+					"sw": "Ongea na mhandisi wa SmartGrid kuhusu kiwanja chako, na tutapendekeza teknolojia sahihi ya upimaji, mfumo wa kazi, na bidhaa zinazohakikisha mradi wako unakamilika kwa wakati na bajeti."
+				},
+				"primary": {
+					"label": {
+						"en": "Talk to an Engineer",
+						"sw": "Ongea na Mhandisi"
+					},
+					"href": "/contact?reason=engage-engineer#contact-form",
+					"icon": "hard-hat"
+				},
+				"secondary": {
+					"label": {
+						"en": "Explore Surveying Services",
+						"sw": "Chunguza Huduma za Upimaji"
+					},
+					"href": "/surveying",
+					"icon": "arrow-right"
+				},
+				"layout": "split",
+				"variant": "panel",
+				"decor": "glow",
+				"watermark": "hard-hat",
+				"images": [],
+				"shimmer": true,
+				"hairline": false,
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "deliverables",
+			"value": {
+				"tag": {
+					"en": "Project Outputs",
+					"sw": "Bidhaa za Mradi"
+				},
+				"headline": {
+					"en": "Deliverables You Receive",
+					"sw": "Bidhaa Unazopokea"
+				},
+				"description": {
+					"en": "Every engagement closes with a complete, engineer-ready data package — exported in open formats that feed straight into CAD, GIS,and construction management tools.",
+					"sw": "Kila shughuli inafungwa kwa kifurushi kamili cha data kilicho tayari kwa wahandisi — kinasafirishwa katika miundo wazi inayoingia moja kwa moja kwenye zana za CAD,GIS, na usimamizi wa ujenzi."
+				},
+				"liveLabel": {
+					"en": "Live data package",
+					"sw": "Kifurushi cha data cha moja kwa moja"
+				},
+				"checks": [
+					{
+						"en": "Georeferenced",
+						"sw": "Imerejelewa kijiografia"
+					},
+					{
+						"en": "Project-ready",
+						"sw": "Iko tayari kwa mradi"
+					},
+					{
+						"en": "Open formats",
+						"sw": "Miundo wazi"
+					}
+				],
+				"items": [
+					{
+						"title": {
+							"en": "CAD Drawings",
+							"sw": "Michoro ya CAD"
+						},
+						"format": {
+							"en": "DWG / DXF",
+							"sw": "DWG / DXF"
+						},
+						"icon": "vector-square",
+						"image": {
+							"en": "/media/deliverables/cad-drawings.jpg",
+							"sw": "/media/deliverables/cad-drawings.jpg"
+						},
+						"description": {
+							"en": "Layer-ready drawings for architects, engineers,and drafters — georeferenced to the project coordinate system.",
+							"sw": "Michoro iliyo tayari kwa tabaka kwa wasanifu, wahandisi, na wachora — iliyorejelewa kijiografia kwenye mfumo wa viwianishio vya mradi."
+						}
+					},
+					{
+						"title": {
+							"en": "PDF Survey Plans",
+							"sw": "Mipango ya PDF ya Upimaji"
+						},
+						"format": {
+							"en": "PDF",
+							"sw": "PDF"
+						},
+						"icon": "file-pdf-box",
+						"image": {
+							"en": "/media/deliverables/pdf-survey-plans.jpg",
+							"sw": "/media/deliverables/pdf-survey-plans.jpg"
+						},
+						"description": {
+							"en": "Print-ready, scale-correct plans for approvals, permitting,and record keeping.",
+							"sw": "Mipango iliyo tayari kuchapishwa, yenye mizani sahihi kwa uidhinishaji, vibali, na kumbukumbu."
+						}
+					},
+					{
+						"title": {
+							"en": "Contour Maps",
+							"sw": "Ramani za Kontua"
+						},
+						"format": {
+							"en": "0.5m / 1m",
+							"sw": "0.5m / 1m"
+						},
+						"icon": "map-marker-path",
+						"image": {
+							"en": "/media/deliverables/contour-maps.jpg",
+							"sw": "/media/deliverables/contour-maps.jpg"
+						},
+						"description": {
+							"en": "Precision contours at 0.5 m or 1 m vertical intervals for grading, drainage,and earthworks design.",
+							"sw": "Kontua za usahihi kwa vipindi vya wima vya 0.5 m au 1 m kwa muundo wa grading, mifereji, na udongo."
+						}
+					},
+					{
+						"title": {
+							"en": "Orthomosaic Maps",
+							"sw": "Ramani za Orthomosaic"
+						},
+						"format": {
+							"en": "GeoTIFF",
+							"sw": "GeoTIFF"
+						},
+						"icon": "image-filter-hdr",
+						"image": {
+							"en": "/media/deliverables/orthomosaic-maps.jpg",
+							"sw": "/media/deliverables/orthomosaic-maps.jpg"
+						},
+						"description": {
+							"en": "Scale-correct aerial imagery mosaics that double as site basemaps for planning and monitoring.",
+							"sw": "Picha za angani zenye mizani sahihi zinazotumika kama ramani za msingi za kiwanja kwa upangaji na ufuatiliaji."
+						}
+					},
+					{
+						"title": {
+							"en": "Point Cloud Data",
+							"sw": "Data ya Point Cloud"
+						},
+						"format": {
+							"en": "LAS / LAZ",
+							"sw": "LAS / LAZ"
+						},
+						"icon": "axis-z-arrow",
+						"image": {
+							"en": "/media/deliverables/point-cloud-data.jpg",
+							"sw": "/media/deliverables/point-cloud-data.jpg"
+						},
+						"description": {
+							"en": "Millions of georeferenced points ready for volumetric analysis, BIM,and 3D modelling.",
+							"sw": "Mamilioni ya pointi zilizorejelewa kijiografia ziko tayari kwa uchambuzi wa ujazo,BIM, na uundaji wa mifano ya 3D."
+						}
+					},
+					{
+						"title": {
+							"en": "Coordinate Tables",
+							"sw": "Majedwali ya Viwianishio"
+						},
+						"format": {
+							"en": "Excel",
+							"sw": "Excel"
+						},
+						"icon": "table-large",
+						"image": {
+							"en": "/media/deliverables/coordinate-tables.jpg",
+							"sw": "/media/deliverables/coordinate-tables.jpg"
+						},
+						"description": {
+							"en": "Structured point lists — boundaries, pegs, control,and setting-out coordinates — readable by any field team.",
+							"sw": "Orodha za pointi zilizopangwa — mipaka, vigingi, udhibiti, na viwianishio vya uwekaji alama — zinazosomika na timu yoyote ya shambani."
+						}
+					},
+					{
+						"title": {
+							"en": "GIS Layers",
+							"sw": "Tabaka za GIS"
+						},
+						"format": {
+							"en": "Shapefile / GeoJSON",
+							"sw": "Shapefile / GeoJSON"
+						},
+						"icon": "layers-triple",
+						"image": {
+							"en": "/media/deliverables/gis-layers.jpg",
+							"sw": "/media/deliverables/gis-layers.jpg"
+						},
+						"description": {
+							"en": "Query-ready spatial layers that drop straight into QGIS, ArcGIS, or any web map stack.",
+							"sw": "Tabaka za anga ziko tayari kwa uchunguzi zinazoingia moja kwa moja kwenye QGIS, ArcGIS, au mrundikano wowote wa ramani za wavuti."
+						}
+					},
+					{
+						"title": {
+							"en": "Survey Report",
+							"sw": "Ripoti ya Upimaji"
+						},
+						"format": {
+							"en": "Signed & Stamped",
+							"sw": "Imesainiwa na Kuhitimishwa"
+						},
+						"icon": "file-certificate",
+						"image": {
+							"en": "/media/deliverables/survey-reports.jpg",
+							"sw": "/media/deliverables/survey-reports.jpg"
+						},
+						"description": {
+							"en": "A professional, legally-compliant report documenting the methodology, accuracy,and results.",
+							"sw": "Ripoti ya kitaalamu, inayozingatia sheria, Inayoandika mbinu, usahihi, na matokeo."
+						}
+					}
+				],
+				"tone": "default",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "bsTechnology",
+			"value": {
+				"tag": {
+					"en": "Technology Stack",
+					"sw": "Mfumo wa Teknolojia"
+				},
+				"headline": {
+					"en": "Surveying Technology We Use",
+					"sw": "Teknolojia ya Upimaji Tunayotumia"
+				},
+				"description": {
+					"en": "An integrated GNSS, total station, drone, LiDAR,and GPR toolkit — matched to each terrain, accuracy class,and deliverable.",
+					"sw": "Zana jumuishi za GNSS, total station, droni, LiDAR, na GPR — zinazolingana na kila ardhi, kiwango cha usahihi, na bidhaa."
+				},
+				"learnMore": {
+					"en": "Learn more",
+					"sw": "Jifunze zaidi"
+				},
+				"items": [
+					{
+						"icon": "satellite-variant",
+						"title": {
+							"en": "FOIF A90 RTK GNSS System",
+							"sw": "Mfumo wa FOIF A90 RTK GNSS"
+						},
+						"description": {
+							"en": "Centimeter-level GNSS RTK positioning for boundary, control,and stakeout work in real time.",
+							"sw": "Nafasi ya GNSS RTK ya usahihi wa kiwango cha sentimita kwa kazi za mipaka, udhibiti, na uwekaji alama kwa wakati halisi."
+						},
+						"href": "/equipment-sale/foif-a90-rtk-gnss"
+					},
+					{
+						"icon": "telescope",
+						"title": {
+							"en": "Robotic Total Stations",
+							"sw": "Total Stations za Robotiki"
+						},
+						"description": {
+							"en": "High-precision angle-and-distance measurement for tight urban sites,and engineering control.",
+							"sw": "Kipimo cha pembe na umbali cha usahihi wa juu kwa tovuti za mijini zilizobana na udhibiti wa uhandisi."
+						},
+						"href": ""
+					},
+					{
+						"icon": "quadcopter",
+						"title": {
+							"en": "UAV Mapping (DJI Matrice Series)",
+							"sw": "Uchoraji Ramani kwa Droni (Msururu wa DJI Matrice)"
+						},
+						"description": {
+							"en": "Enterprise drone platforms capturing high-resolution imagery for large-area mapping,and monitoring.",
+							"sw": "Majukwaa ya droni za biashara yanayonasa taswira za azimio la juu kwa uchoraji wa ramani za maeneo makubwa na ufuatiliaji."
+						},
+						"href": "/equipment-sale/dji-matrice-350-rtk"
+					},
+					{
+						"icon": "chart-bell-curve-cumulative",
+						"title": {
+							"en": "LiDAR & Photogrammetry Processing",
+							"sw": "Usindikaji wa LiDAR na Photogrammetry"
+						},
+						"description": {
+							"en": "Advanced point-cloud,and 3D modelling pipelines that turn raw captures into survey-grade products.",
+							"sw": "Mifumo ya kisasa ya point cloud na uundaji wa mifano ya 3D inayogeuzia ukamataji ghafi bidhaa za kiwango cha upimaji."
+						},
+						"href": ""
+					},
+					{
+						"icon": "radar",
+						"title": {
+							"en": "GPR Subsurface Utility Mapping",
+							"sw": "Uchoraji Ramani wa Huduma za Chini ya Ardhi kwa GPR"
+						},
+						"description": {
+							"en": "Non-destructive ground penetrating radar that sees buried utilities before the excavator arrives.",
+							"sw": "Rada ya kupenya ardhini isiyo na uharibifu inayoona huduma zilizozikwa kabla ya kuchimba."
+						},
+						"href": "/surveying/ground-penetrating-radar"
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "bsConsultation",
+			"value": {
+				"tag": {
+					"en": "Technology-Assisted Consultation",
+					"sw": "Ushauri Unaosaidiwa na Teknolojia"
+				},
+				"headline": {
+					"en": "Request a Technology-Assisted Survey Consultation",
+					"sw": "Omba Ushauri wa Upimaji Unaosaidiwa na Teknolojia"
+				},
+				"description": {
+					"en": "Tell us about your land, site, or project — we'll match you with the right instrument mix, a licensed workflow,and a fixed, transparent quote.",
+					"sw": "Tuambie kuhusu ardhi yako, kiwanja chako, au mradi wako — tutakulinganisha na mchanganyiko sahihi wa zana, mfumo wa kazi ulioidhinishwa, na bei iliyo wazi na isiyobadilika."
+				},
+				"stepsLabel": {
+					"en": "What happens next",
+					"sw": "Kinachofuata baadaye"
+				},
+				"steps": [
+					{
+						"title": {
+							"en": "Share Your Site Details",
+							"sw": "Shiriki Maelezo ya Kiwanja Chako"
+						},
+						"description": {
+							"en": "Location, size, terrain,and what you plan to build.",
+							"sw": "Eneo, ukubwa, ardhi, na unachopanga kujenga."
+						}
+					},
+					{
+						"title": {
+							"en": "Get a Technology Match",
+							"sw": "Pata Ulinganishaji wa Teknolojia"
+						},
+						"description": {
+							"en": "We propose the optimal GNSS, drone, station, or GPR mix for your accuracy needs.",
+							"sw": "Tunapendekeza mchanganyiko bora wa GNSS, droni, total station, au GPR kwa mahitaji yako ya usahihi."
+						}
+					},
+					{
+						"title": {
+							"en": "Receive a Fixed Quote",
+							"sw": "Pokea Bei Isiyobadilika"
+						},
+						"description": {
+							"en": "A transparent timeline, deliverable list,and price — no surprises.",
+							"sw": "Muda ulio wazi, orodha ya bidhaa, na bei — bila mshangazo."
+						}
+					}
+				],
+				"ctaPrimary": {
+					"label": {
+						"en": "Request My Consultation",
+						"sw": "Omba Ushauri Wangu"
+					},
+					"href": "/contact?reason=engage-engineer#contact-form",
+					"icon": "calendar-check"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "Email the Survey Team",
+						"sw": "Tumia Barua Pepe kwa Timu ya Upimaji"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Technology-Assisted Survey Consultation&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a technology-assisted survey consultation. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "email-outline"
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "gallery",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "Explore more...",
+					"sw": "Chunguza zaidi..."
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"image": "/media/surveying/building-site-surveys/leveling.jpeg",
+						"title": {
+							"en": "Leveling",
+							"sw": "Upimaji Viwango"
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/surveying/building-site-surveys/excavation-services.jpg",
+						"title": {
+							"en": "Excavation services",
+							"sw": "Huduma za Uchimbaji"
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/surveying/building-site-surveys/as-built-surveys.jpeg",
+						"title": {
+							"en": "As-built Surveys",
+							"sw": "Uchunguzi wa As-Built"
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/surveying/building-site-surveys/buildings-stakeout.jpeg",
+						"title": {
+							"en": "Buildings stakeout",
+							"sw": "Uwekaji Alama wa Majengo"
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/surveying/building-site-surveys/utilities-mapping.jpeg",
+						"title": {
+							"en": "Utilities mapping",
+							"sw": "Uchoraji wa Ramani ya Huduma"
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					},
+					{
+						"image": "/media/surveying/building-site-surveys/evaluation-monitoring.jpeg",
+						"title": {
+							"en": "Evaluation and monitoring",
+							"sw": "Tathmini na Ufuatiliaji"
+						},
+						"label": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						}
+					}
+				],
+				"layout": "grid",
+				"columns": "3",
+				"tone": "default",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "ctaBand",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "Partner with SmartGrid for Precision Site Surveys",
+					"sw": "Shirikiana na SmartGrid kwa Uchunguzi wa Usahihi wa Kiwanja"
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"primary": {
+					"label": {
+						"en": "Get in Touch",
+						"sw": "Wasiliana Nasi"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Building Site Surveys&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for Building Site Surveys. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": ""
+				},
+				"secondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"layout": "centered",
+				"variant": "panel",
+				"decor": "glow",
+				"watermark": "",
+				"images": [],
+				"shimmer": false,
+				"hairline": true,
+				"id": ""
+			}
+		}
+	]
+}

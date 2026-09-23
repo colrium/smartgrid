@@ -62,7 +62,7 @@ const ScrollTop = ({
 	return (
 		<motion.button
 			data-ripple-dark="true"
-			className={` h-10 max-h-[40px] w-10 max-w-[40px] rounded-full bg-ink p-1 border border-transparent text-center text-md text-surface hover:text-primary transition-all shadow-sm  hover:shadow-lg focus:bg-surface focus:shadow-none active:bg-surface hover:bg-surface active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none cursor-pointer ${className}`}
+			className={` h-10 max-h-[40px] w-10 max-w-[40px] rounded-full bg-ink p-1 border border-transparent text-center text-md text-surface hover:text-surface transition-all shadow-sm  hover:shadow-lg focus:shadow-none  hover:bg-primary active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none cursor-pointer ${className}`}
 			type="button"
 			onClick={handleClick}
 			style={{ ...style, scale: scale }}

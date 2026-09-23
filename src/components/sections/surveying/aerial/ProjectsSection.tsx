@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useTranslation } from "@/hooks";
 import { SectionHeader } from "@/components/sections/home";
 import { FadeUp } from "@/components/animations/Fade";
-import { Blob } from "@/components/sections/home/decor";
+import { Blob } from "@/components/sections/shared/decor";
 
 interface ProjectsContent {
 	tag?: string | null;
@@ -14,16 +14,28 @@ interface ProjectsContent {
 	items: string[];
 }
 
-export function ProjectsSection() {
+export interface AerialProjectsData {
+	tag?: string | null;
+	headline: string;
+	images?: string[];
+	description?: string;
+	items: string[];
+}
+
+export function ProjectsSection({ data, id }: { data?: AerialProjectsData | null; id?: string } = {}) {
 	const { t } = useTranslation(["surveying/aerial-surveys"]);
-	const section = t("surveying/aerial-surveys:projects", {
-		returnObjects: true,
-	}) as unknown as ProjectsContent;
+	// Keystatic-owned content when `data` is provided (M11 `aerialProjects`
+	// unique section); legacy locale strings otherwise. The mosaic layout +
+	// positional first-image treatment stay in the renderer.
+	const section = (data ??
+		(t("surveying/aerial-surveys:projects", {
+			returnObjects: true,
+		}) as unknown as ProjectsContent)) as ProjectsContent;
 	const images = Array.isArray(section.images) ? section.images : [];
 	const items = Array.isArray(section.items) ? section.items : [];
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden">
+		<section id={id} className="py-24 sm:py-28 relative overflow-hidden">
 			<Blob className="w-[28rem] h-[28rem] bg-primary-200/40 -top-24 -right-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">

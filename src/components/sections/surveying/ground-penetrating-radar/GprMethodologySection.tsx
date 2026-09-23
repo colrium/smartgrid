@@ -3,7 +3,7 @@
 import { useTranslation } from "@/hooks";
 import { FadeUp } from "@/components/animations/Fade";
 import { SectionHeader } from "@/components/sections/home";
-import { Blob } from "@/components/sections/home/decor";
+import { Blob } from "@/components/sections/shared/decor";
 
 interface MethodItem {
 	title: string;
@@ -17,19 +17,30 @@ interface MethodologyContent {
 	items: MethodItem[];
 }
 
+export interface GprMethodologyData {
+	tag?: string | null;
+	headline: string;
+	description?: string | null;
+	items: MethodItem[];
+}
+
 const METHOD_ICONS = ["clipboard-text-search-outline", "radar", "chart-timeline-variant"];
 
-export function GprMethodologySection() {
+export function GprMethodologySection({ data, id }: { data?: GprMethodologyData | null; id?: string } = {}) {
 	const { t } = useTranslation(["surveying/ground-penetrating-radar"]);
-	const section = t("surveying/ground-penetrating-radar:methodology", {
-		returnObjects: true,
-	}) as unknown as MethodologyContent;
+	// Keystatic-owned content when `data` is provided (M11 `gprMethodology`
+	// unique section); legacy locale strings otherwise. Positional method
+	// icons + hardcoded `Step N` labels stay in the renderer.
+	const section = (data ??
+		(t("surveying/ground-penetrating-radar:methodology", {
+			returnObjects: true,
+		}) as unknown as MethodologyContent)) as MethodologyContent;
 	const items = Array.isArray(section?.items) ? section.items : [];
 
 	if (items.length === 0) return null;
 
 	return (
-		<section id="methodology" className="scroll-mt-36 py-20 sm:py-24 relative overflow-hidden bg-surface">
+		<section id={id ?? "methodology"} className="scroll-mt-36 py-20 sm:py-24 relative overflow-hidden bg-surface">
 			<Blob className="w-[26rem] h-[26rem] bg-primary-100/60 -top-24 -right-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">

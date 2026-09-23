@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"tag": "Survey Drone",
 		"headline": "Next-Gen Mid-Range Mapping Drone",
 		"title": "DJI Air 3S",
@@ -11,6 +12,7 @@
 		}
 	},
 	"productImages": {
+		"type": "unique",
 		"images": [
 			"/media/equipment-sale/dji-air-3s/images/02.png",
 			"/media/equipment-sale/dji-air-3s/images/03.png",
@@ -18,16 +20,19 @@
 		]
 	},
 	"breadcrumb": {
+		"type": "unique",
 		"home": "Home",
 		"section": "Equipment Sale",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
 	"catalogue": {
+		"type": "unique",
 		"icon": "quadcopter",
 		"description": "Next-gen mid-range mapping drone with a dual-camera system, ~40-45 min flight time, and stable grids for rapid mapping and inspection workflows.",
 		"badge": "New"
 	},
 	"pricing": {
+		"type": "pricing",
 		"new": {
 			"label": "Brand New",
 			"currency": "KES",
@@ -42,6 +47,7 @@
 		}
 	],
 	"productOverview": {
+		"type": "unique",
 		"tag": "Product Overview",
 		"headline": "Cost-Efficient Mapping Without Compromise",
 		"images": [
@@ -52,6 +58,7 @@
 		"description": "The DJI Air 3S combines a dual-camera system with high wind resistance and stable mapping grids, making it a reliable choice for topographical surveys, road alignment reconnaissance, and construction monitoring."
 	},
 	"model3d": {
+		"type": "unique",
 		"tag": "Interactive 3D",
 		"headline": "Explore the Air 3S in 3D",
 		"description": "Drag to rotate the model and scroll or pinch to zoom.",
@@ -61,6 +68,7 @@
 		]
 	},
 	"keyFeatures": {
+		"type": "card-grid",
 		"tag": "Highlights",
 		"headline": "Key Features",
 		"description": "What makes the Air 3S a strong mid-range mapping option.",
@@ -110,6 +118,7 @@
 		}
 	],
 	"cameraSystem": {
+		"type": "unique",
 		"tag": "Camera",
 		"headline": "Camera System",
 		"description": "Dual-lens imaging built for versatile capture.",
@@ -120,6 +129,7 @@
 		]
 	},
 	"flightAndCoverage": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Flight & Coverage",
 		"description": "Efficient, stable coverage for mid-scale survey areas.",
@@ -130,6 +140,7 @@
 		]
 	},
 	"accuracyNotes": {
+		"type": "unique",
 		"tag": "Accuracy",
 		"headline": "Photogrammetry Capability & Accuracy",
 		"description": "GCP-dependent accuracy given no built-in RTK.",
@@ -141,11 +152,13 @@
 		]
 	},
 	"specs": {
+		"type": "unique",
 		"tag": "Tech Data",
 		"headline": "Technical Specifications",
 		"description": "Complete technical details for the DJI Air 3S."
 	},
 	"surveyApplications": {
+		"type": "unique",
 		"tag": "Applications",
 		"headline": "Engineering Use Cases",
 		"description": "Where the Air 3S fits into a survey workflow.",
@@ -157,6 +170,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Get a Quote",
 		"headline": "Inquire About This Drone",
 		"description": "Tell us about your project and get a tailored quote for the DJI Air 3S.",
@@ -172,6 +186,7 @@
 		}
 	},
 	"relatedProducts": {
+		"type": "unique",
 		"tag": "Explore",
 		"headline": "Other Drones You May Like",
 		"description": "Discover more survey drones from the SmartGrid catalogue."

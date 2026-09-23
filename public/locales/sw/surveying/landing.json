@@ -1,15 +1,21 @@
 {
 	"hero": {
+		"type": "hero",
+		"layout": "centered",
+		"frame": true,
+		"scrollCue": true,
 		"headline": "Upimaji wa Ardhi — Uone Ardhi Kama Ilivyo Kweli",
 		"title": "UPIMAJI WA ARDHI",
 		"image": "/media/surveying/AG8ng.jpeg",
 		"description": "Timu yetu hutoa data sahihi na ya kuaminika ya eneo kwa kutumia teknolojia za kisasa za GNSS, Total Stations, na Drone LiDAR — kuhakikisha usahihi wa kiwango cha sentimita kwenye kila tovuti. Kutoka Nairobi, Kiambu, Kisumu, Mombasa, na kote Afrika, tunapima na kuchora ramani za ardhi kwa maelezo yasiyoshindwa kuunga mkono maamuzi ya ubunifu na maendeleo.",
 		"ctaPrimary": {
+			"icon": "email-outline",
 			"label": "Pata Ushauri Wako Bure",
 			"href": "mailto:smartgridsurveying@gmail.com?subject=Consultation Request: Land Surveying&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a free consultation about land surveying. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you."
 		}
 	},
 	"services": {
+		"type": "card-grid",
 		"tag": "Huduma Zetu",
 		"headline": "Chunguza Zaidi...",
 		"image": "/media/surveying/05.png",
@@ -60,6 +66,7 @@
 		]
 	},
 	"process": {
+		"type": "process",
 		"tag": "Mchakato",
 		"headline": "Mchakato wa Upimaji wa Ardhi",
 		"description": "Katika SmartGrid Surveying, tunabobea upimaji wa ardhi kwa kutumia droni za hewa, vituo vya RTK Base Rover, na Total Stations kutoa suluhisho za ramani sahihi na zenye ufanisi. Droni zetu hukamata data ya juu ya ardhi, huku RTK ikihakikisha usahihi wa nafuni wa papo hapo. Kwa Total Stations zinazotoa vipimo sahihi ya umbali na pembe, tunahakikisha tathmini za kina za tovuti zenye makosa madogo. Njia hii ya kisasa huongeza ufanisi, kuboresha maamuzi, na kuhakikisha kiwango cha juu zaidi cha usahihi kwa mahitaji ya upimaji ya wateja wetu.",
@@ -91,6 +98,7 @@
 		]
 	},
 	"deliverables": {
+		"type": "deliverables",
 		"tag": "Matokeo",
 		"headline": "Matokeo ya Upimaji wa Ardhi",
 		"description": "Pato sahihi, tayari kwa kuwasilisha kwa maamuzi ya mipango, hati, na uhandisi.",

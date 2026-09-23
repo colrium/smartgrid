@@ -1,8 +1,5 @@
-export { SectionalHeroSection } from "./SectionalHeroSection";
-export { IntroSection } from "./IntroSection";
 export { WhatIsSection } from "./WhatIsSection";
 export { ProcessSection } from "./ProcessSection";
-export { SectionalDeliverablesSection } from "./SectionalDeliverablesSection";
 export { WhoNeedsSection } from "./WhoNeedsSection";
 export { TimelineSection } from "./TimelineSection";
 export { RegistrationCtaSection } from "./RegistrationCtaSection";
@@ -11,11 +8,8 @@ export { ServicesDetailSection } from "./ServicesDetailSection";
 export { SectionalFaqSection } from "./SectionalFaqSection";
 export { SocialsSection } from "./SocialsSection";
 
-export { default as SectionalHeroSectionDefault } from "./SectionalHeroSection";
-export { default as IntroSectionDefault } from "./IntroSection";
 export { default as WhatIsSectionDefault } from "./WhatIsSection";
 export { default as ProcessSectionDefault } from "./ProcessSection";
-export { default as SectionalDeliverablesSectionDefault } from "./SectionalDeliverablesSection";
 export { default as WhoNeedsSectionDefault } from "./WhoNeedsSection";
 export { default as TimelineSectionDefault } from "./TimelineSection";
 export { default as RegistrationCtaSectionDefault } from "./RegistrationCtaSection";

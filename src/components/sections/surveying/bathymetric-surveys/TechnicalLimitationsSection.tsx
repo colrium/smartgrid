@@ -5,34 +5,51 @@ import type { ReactElement } from "react";
 import { useTranslation } from "@/hooks";
 import { SectionHeader } from "@/components/sections/home";
 import { FadeUp } from "@/components/animations/Fade";
-import { Blob } from "@/components/sections/home/decor";
+import { Blob } from "@/components/sections/shared/decor";
 
 interface TechnicalLimitationsContent {
 	tag?: string | null;
-	headline: string;
-	description?: string;
-	factors: string[];
-	outputs: string[];
+	headline?: string | null;
+	description?: string | null;
+	factors?: (string | null)[] | null;
+	outputs?: (string | null)[] | null;
 }
 
-export function TechnicalLimitationsSection(): ReactElement {
+export interface BathyLimitationsData {
+	tag?: string | null;
+	headline?: string | null;
+	description?: string | null;
+	factors?: (string | null)[] | null;
+	outputs?: (string | null)[] | null;
+}
+
+export function TechnicalLimitationsSection({ data, id }: { data?: BathyLimitationsData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/bathymetric-surveys"]);
-	const section = t("surveying/bathymetric-surveys:technicalLimitations", {
-		returnObjects: true,
-	}) as unknown as TechnicalLimitationsContent;
-	const factors = Array.isArray(section.factors) ? section.factors : [];
-	const outputs = Array.isArray(section.outputs) ? section.outputs : [];
+	// Keystatic-owned content when `data` is provided (M11 `bathyLimitations`
+	// unique section); legacy locale strings otherwise. NOTE: the "Factors
+	// Affecting Accuracy" / "Typical Outputs" card headings are hardcoded in
+	// JSX (legacy quirk, both locales) — not migrated.
+	const section = (data ??
+		(t("surveying/bathymetric-surveys:technicalLimitations", {
+			returnObjects: true,
+		}) as unknown as TechnicalLimitationsContent)) as TechnicalLimitationsContent;
+	const factors = (Array.isArray(section.factors) ? section.factors : []).filter(
+		(factor): factor is string => typeof factor === "string" && factor.length > 0
+	);
+	const outputs = (Array.isArray(section.outputs) ? section.outputs : []).filter(
+		(output): output is string => typeof output === "string" && output.length > 0
+	);
 
 	if (factors.length === 0 && outputs.length === 0) return <></>;
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden bg-surface">
+		<section id={id} className="py-24 sm:py-28 relative overflow-hidden bg-surface">
 			<Blob className="w-[28rem] h-[28rem] bg-primary-100/60 -top-24 -left-24" opacity={0.5} />
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 				<SectionHeader
 					tag={section.tag || undefined}
-					headline={section.headline}
+					headline={section.headline ?? ""}
 					description={section.description || undefined}
 					align="center"
 				/>

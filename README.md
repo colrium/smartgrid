@@ -16,7 +16,7 @@ surveys**, **civil engineering**, and **surveying equipment** services across Ke
 - 🌐 **Live site:** [https://smartgrid-phi.vercel.app](https://smartgrid-phi.vercel.app)
 - 📍 **Headquarters:** Nairobi (Ruiru), Kenya
 - 🌍 **Locales:** English, Swahili (auto-detected)
-- 🏗️ **Built with:** Next.js 16 · TypeScript · Tailwind CSS · i18next · Sanity CMS
+- 🏗️ **Built with:** Next.js 16 · TypeScript · Tailwind CSS · i18next · Keystatic
 
 ---
 
@@ -56,7 +56,8 @@ surveys**, **civil engineering**, and **surveying equipment** services across Ke
 ## Features
 
 - **5 locales** with automatic browser-language detection and a language switcher.
-- **Sanity CMS** driven content (team, projects, certifications, metrics).
+- **Keystatic page builder** for structured pages composed from reusable shared sections.
+- **next-i18next locale content** remains the default/fallback source while pages are migrated.
 - **Equipment catalogue** driven by a JSON registry (`products.json`) — adding a product listing
   is a single JSON entry plus a per-product locale file.
 - **Code-split 3D WebGL hero** (`three.js` / `@react-three/fiber`) — loaded client-only and only
@@ -82,7 +83,7 @@ surveys**, **civil engineering**, and **surveying equipment** services across Ke
 | Language           | TypeScript (`strict: false`, bundler module resolution)                   |
 | Styling            | [Tailwind CSS v4](https://tailwindcss.com) + PostCSS                        |
 | Internationalization | [i18next](https://www.i18next.com/) + [next-i18next](https://github.com/i18next/next-i18next) |
-| Content / CMS      | [Sanity](https://www.sanity.io) (`next-sanity`, `@sanity/image-url`)       |
+| Content / CMS      | [Keystatic](https://keystatic.com) (`@keystatic/core`, `@keystatic/next`)  |
 | 3D / WebGL         | `three`, `@react-three/fiber`, `@react-three/drei`, `ogl` (code-split)      |
 | Animations         | `framer-motion`, `gsap`, `lenis` (smooth scroll)                            |
 | State              | `zustand`                                                                    |
@@ -113,8 +114,9 @@ npm install
 
 ### Environment Variables
 
-Copy the example and fill in the required values (Sanity credentials, Formspree form ID,
-Google Analytics / Maps keys):
+Copy the example and fill in the required values (Formspree form ID and Google Analytics / Maps
+keys). Keystatic uses local storage during development unless a deployed GitHub-backed storage
+mode is configured.
 
 ```bash
 cp .env.example .env.local
@@ -123,17 +125,24 @@ cp .env.example .env.local
 | Variable                          | Required | Description                                         |
 | --------------------------------- | -------- | --------------------------------------------------- |
 | `NEXT_PUBLIC_SITE_URL`            | no       | Site URL (used by sitemap / analytics)              |
-| `NEXT_PUBLIC_SANITY_PROJECT_ID`   | **yes**  | Sanity project ID                                   |
-| `NEXT_PUBLIC_SANITY_DATASET`      | **yes**  | Sanity dataset (e.g. `production`)                  |
-| `NEXT_PUBLIC_SANITY_API_VERSION`  | no       | Sanity API date version (default `2024-01-01`)      |
-| `NEXT_PUBLIC_SANITY_USE_CDN`      | no       | Use CDN for reads (default `true`)                  |
-| `SANITY_API_TOKEN`                | no       | Token for preview/write operations                  |
 | `NEXT_PUBLIC_FORMSPREE_FORM_ID`   | no       | Formspree contact form ID                           |
 | `NEXT_PUBLIC_GA_MEASUREMENT_ID`   | no       | Google Analytics 4 measurement ID                   |
 | `NEXT_PUBLIC_TAWK_PROPERTY_ID`    | no       | Tawk.to live-chat property ID                       |
 | `NEXT_PUBLIC_TAWK_WIDGET_ID`      | no       | Tawk.to widget ID                                   |
 | `NEXT_PUBLIC_WHATSAPP_NUMBER`     | no       | WhatsApp contact number (digits / intl format)      |
 | `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` | no       | Google Maps JS API key (maps section)               |
+| `KEYSTATIC_ADMIN_USER`            | deploy   | Production Keystatic Basic Auth username           |
+| `KEYSTATIC_ADMIN_PASSWORD`        | deploy   | Production Keystatic Basic Auth password           |
+| `KEYSTATIC_GITHUB_REPO`           | deploy   | GitHub storage as `owner/name` (enables GitHub-backed editing) |
+| `NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG` | deploy | Keystatic GitHub App URL slug                    |
+| `KEYSTATIC_GITHUB_CLIENT_ID`      | deploy   | Keystatic GitHub App client ID                     |
+| `KEYSTATIC_GITHUB_CLIENT_SECRET`  | deploy   | Keystatic GitHub App client secret                 |
+| `KEYSTATIC_SECRET`                | deploy   | Session-signing secret, ≥32 random chars           |
+
+Keystatic administration is available at `/keystatic` and `/api/keystatic/*`. Development is
+unrestricted; production requests are protected by the `src/proxy.ts` edge gate (HTTP Basic
+Auth). Configure the storage repository and GitHub integration in `keystatic.config.ts` through
+deployment-safe environment variables before enabling GitHub-backed editing.
 
 > Environment variables are validated at runtime with Zod (`src/lib/env.ts`). Invalid values
 > will crash the app at startup with a readable error.
@@ -159,6 +168,7 @@ smartgrid/
 ├─ CLAUDE.md                # Claude Code instructions
 ├─ README.md                # this file
 ├─ package.json
+├─ keystatic.config.ts                 # Keystatic schema and storage configuration
 ├─ tsconfig.json            # @/* -> ./src/*, bundler resolution
 ├─ next.config.js           # i18n, image formats/qualities, distDir
 ├─ next-i18next.config.js   # locales: en, de, sw, fr, pt
@@ -183,7 +193,7 @@ smartgrid/
 │   │   ├─ animations/       # Fade, ScrollReveal, ClipReveal, ParallaxTile, ...
 │   │   └─ ui/               # Avatar, Drawer, Menu, MenuItem, IconButton, ...
 │   ├─ layouts/LandingPage/  # Navbar, Footer, Layout (Lenis, ChatWidget, ...)
-│   ├─ lib/                  # i18n, sanity, catalogue, env(zod), types, product
+│   ├─ lib/                  # i18n, keystatic, catalogue, env(zod), types, product
 │   ├─ hooks/                # useTranslation (custom), useSetState
 │   ├─ styles/globals.css    # Tailwind theme + design tokens + utilities
 │   └─ types/next.d.ts
@@ -192,6 +202,10 @@ smartgrid/
    ├─ img/{earth,flags,instruments,products,...}
    ├─ fonts/              # Plus Jakarta Sans, Google Sans Flex, Brother 1816
       └─ geojson/            # world countries geometry for maps
+    ├─ content/pages/             # Keystatic page documents (created during migration)
+    └─ docs/
+       ├─ keystatic-page-builder-plan.md
+       └─ prompts/keystatic-page-builder-agent.md
 ```
 
 ---
@@ -211,6 +225,18 @@ The site uses Next.js **Pages Router** with **locale subpaths**.
   proxy + `[locale]` mirror pattern; `equipment-sale/[product].tsx` is a dynamic route.
 - Every page uses `getServerSideProps` → `getI18nProps(context, ["common", "meta", "<pageNS>"])`
   to load its namespaces. The shared layout auto-loads the `contact` namespace.
+
+### Content / Page Builder
+
+Keystatic is the structured page editor. `keystatic.config.ts` defines the page collection and
+ordered section data. `src/lib/keystatic/` contains the reader, locale normalization, and
+page-builder helpers. The approved component registry will connect serializable components from
+`src/components/sections/shared/` (and selected `src/components/ui/` components) to both the
+Keystatic schema and the runtime renderer.
+
+The existing `public/locales/{en,sw}/` files remain the default content source during the
+incremental migration. Each migrated page must document its source precedence and preserve the
+existing localized URL.
 
 ### Internationalization (i18n)
 
@@ -248,7 +274,7 @@ The site uses Next.js **Pages Router** with **locale subpaths**.
 npm install
 
 # 2. Configure environment
-cp .env.example .env.local   # fill in Sanity / Formspree / GA values
+cp .env.example .env.local   # fill in Formspree / GA / media + Keystatic values
 
 # 3. Develop
 npm run dev                  # http://localhost:3000
@@ -267,7 +293,6 @@ npm run build               # production build + next-sitemap
   add a namespace JSON per locale, load via `getI18nProps(context, ["common","meta","<page>"])`.
 - **Add an equipment/product:** register it in `public/locales/en/products.json` and add a
   per-product locale file (e.g. `dji-mavic-3-pro.json`) for each locale.
-- **Regenerate Sanity types:** `npm run typegen` (runs `sanity schema extract && sanity typegen`).
 
 ---
 
@@ -324,15 +349,186 @@ Full, canonical standards live in [`AGENTS.md`](./AGENTS.md).
 | `npm run lint`       | Lint all files (fails on any warning)            |
 | `npm run lint:fix`   | Auto-fix lint issues                             |
 | `npm run typecheck`  | Type-check with `tsc --noEmit`                   |
+| `npm run check:keystatic` | Verify page-builder registry, renderers, fixtures + migration |
+| `npm run migrate:keystatic` | Generate/verify a Keystatic page from locale JSON (`--page <slug> --write\|--verify`) |
+| `npm run mediakeygen` | Generate a random secret (admin password / media signing key) |
 | `npm run clean`      | Remove the `.next` build folder                  |
 | `npm run nuke:install` | Remove `node_modules` + lockfile (fresh install) |
 | `npm run toc`        | Regenerate `@types/resources.ts` from locale files |
 | `npm run merge`      | Merge locale resources into `@types/resources.json` |
 | `npm run interface`  | Generate `i18next` type definitions              |
-| `npm run typegen`    | Sanity schema extract + typegen                  |
 
 > Note: the dev script is registered as `"dev": "next"` in `package.json`; running
 > `npm run dev` starts the Next.js dev server.
+
+---
+
+## Keystatic Page Builder (operator guide)
+
+Structured pages are composed in the Keystatic admin (`/keystatic`, local dev needs
+no login) from one hundred eighteen registered sections: `introText`, `ctaBand`, `stats`, `hero`,
+`cardGrid`, `splitMedia`, `legal`, `faq`, `process`, `gallery`, `pricing`, `trustees`,
+`certifications`, `keyFacts`, `metrics`, `whyChooseUs`, `about`,
+`surveyingInstruments`, `coreExpertise`, `planningInfographic`, `coverageArea`,
+`surveyCost`, `leadGenBar`, `services`, `homeHero`, `homeDrones`, `contactHero`,
+`contactOffices`, `contactForm`, `careersOpenings`, `careersProcess`,
+`careersStatement`, `companyProfileViewer`, `aboutAerialSurveying`,
+`aboutLandSurveying`, `aboutImpact`, `surveyingServices`, `surveyingProcess`,
+`civilHero`, `civilProcess`, `deliverables`, `topoWhenYouNeed`, `topoWhatWeOffer`,
+`topoDetailedSurveys`, `topoSampleMap`, `topoInstruments`, `topoWhyConduct`,
+`sectionalWhatIs`, `sectionalServicesDetail`, `sectionalWorkflow`,
+`sectionalTimeline`, `sectionalWhoNeeds`, `bathyEquipment`,
+`bathyLimitations`, `bathyDamsLakes`, `bathyApplications`, `bathyBeforeAfter`,
+`rmWhatIs`, `rmTypes`, `rmSector`, `rmWorkflow`, `rmWhoUses`,
+`rmTechStack`, `rmDataAccuracy`, `bsHero`, `bsSection2`,
+`bsSiteEngineering`, `bsProcess`, `bsAccuracyMatters`, `bsTechnology`,
+`bsConsultation`, `aerialIntro`, `aerialWhyDrones`, `aerialServices`,
+`workflow`, `aerialSurveyingGrid`, `aerialIndustries`, `aerialIndustryCta`,
+`aerialTechStack`, `aerialCapabilityCta`, `finalCta`, `aerialProjects`,
+`aerialAdditionalServices`, `cadastralPostHeroCta`, `cadastralWhenYouNeed`,
+`cadastralProcessCta`, `cadastralCost`, `cadastralTimeline`,
+`cadastralCompliance`, `cadastralCaseStudy`, `gprHero`,
+`gprHighlights`, `gprJumpNav`, `gprOverview`, `gprMethodology`, `gprApplications`,
+`gprDetect`, `gprSue`, `gprLimitations`, `gprBeforeAfter`, `gprTechnology`,
+`gprFeaturedProjects`, `gprSummary`, `gisHero`, `gisWhatIs`,
+`gisImportance`, `gisServices`, `gisIndustries`, `gisTechStack`, `gisWhatsappCta`,
+`gisComponents`, `gisWhySmartgrid`, `gisDataAccuracy`,
+`gisBeforeAfter`, `gisProjectImpact`, `gisRelatedServices`, `highwayServices`,
+`asBuiltSolutions`, `bimServices`, `seHero`, `seOverview`, `seWhatWeDo`,
+`seExploreMore`, `ssoServices`, `ssoInstruments`, `vsServices`, `solWhatWeDo`,
+`solProcess`, `lqQuarryServicesItems`, `lqWhatWeOffer`, `meOurCapabilities`,
+`meImpact`, `meSmartMonitoring`, `meWhatWeOffer`, `abWhyUseDrones`, `abProcess`,
+`agWhyUseDrones`, `agProcess`, `lidIndustries`, `lidWhyChoose`, `lidPowerline`,
+`lidHowItWorks`, `lidCta`. See
+`src/lib/keystatic/sectionRegistry.ts` — the single
+source for editor options and renderer mappings.
+
+- **Create / edit / remove:** open the `Pages` collection, draft entries with the
+  section blocks (labels, descriptions, and defaults ship with every field), reorder
+  blocks, then set `status: published` to make the entry servable. Deleting or
+  re-drafting an entry falls back to legacy content — never a blank page.
+- **Preview / publish flow:** `draft` = invisible to visitors; `published` + slug
+  listed in `KEYSTATIC_PAGES` = served from Keystatic (`resolveKeystaticPage` in
+  `src/lib/keystatic/resolvePage.ts`, checked by `yarn check:keystatic`). Content
+  edits commit straight to the branch Keystatic writes to (local filesystem in dev,
+  `KEYSTATIC_GITHUB_REPO` on a deployed CMS environment); there is no separate
+  preview deploy — verify with `KEYSTATIC_PAGES=<slug> yarn dev` before widening
+  the allowlist.
+- **Rollback (two levels):** per-page — remove the slug from `KEYSTATIC_PAGES` or
+  set the entry back to `draft`; global kill-switch — `KEYSTATIC_DISABLE=1` forces
+  every route to legacy locale JSON. Both are tested in
+  `scripts/check-keystatic-pages.mjs` (resolver matrix).
+- **Site layout (navbar / footer / contacts / socials / cookie consent / WhatsApp
+  chat button):** edit
+  once in the `Site layout` singleton (`content/site.json`), in both locales, and
+  it applies site-wide — no component changes needed (the server merges the
+  published layout into the i18n store in `getI18nProps`). **Rolled out
+  2026-09-21:** the checked-in singleton is `status: published`, so with the
+  default empty `KEYSTATIC_PAGES` every route serves navbar/footer/cookie/
+  contacts/WhatsApp content from Keystatic in both locales (the locale-JSON
+  values it migrated from stay as fallback). Publish flow: `status: published`
+  **plus** the reserved slug `site` servable (`KEYSTATIC_PAGES` — empty/unset
+  serves every published entry; a list must include `site`); rollback is
+  per-site (drop `site` / set the singleton back to `draft`) or the same
+  global `KEYSTATIC_DISABLE=1`. Regenerate/verify with
+  `node scripts/migrate-layout-to-keystatic.mjs --write|--verify`
+  (`yarn migrate:layout`). Notes: `common:socials`, `nav.cta*`, `nav.logo_dark`,
+  `common:locales`/`misc` and `meta:site` stay legacy-owned (unrendered or
+  routing/brand); the legacy `/contact` tail follows the singleton, while the
+  `/contact` page entry copy wins on `/contact` when opted in.
+- **New pages:** every public route needs BOTH a content entry
+  (`content/pages/<slug>.json`) and a wired route file — the M7 pattern is a
+  `src/pages/[locale]/<slug>.tsx` page calling `resolveKeystaticPage("<slug>", lang)`
+  plus a root `src/pages/<slug>.tsx` proxy (re-exporting the page and its
+  `getServerSideProps` for default-locale URLs). Create/edit the entry in the
+  `Pages` collection (single-segment slug — lowercase/hyphens, must not collide
+  with a fixed route or `home`), compose sections in both locales, publish it,
+  and make sure the slug is servable (`KEYSTATIC_PAGES` — empty/unset serves
+  every published entry; a list must include the slug). Unpublished or
+  unallowlisted slugs fall back to the route's legacy rendering; a slug with no
+  route file has no URL at all (editor-created content-only pages are out of
+  v1 scope — see plan §M10). Wired pages keep their `meta.json` sitemap URLs.
+- **Admin access:** non-development `/keystatic/*` and `/api/keystatic/*` require
+  HTTP Basic Auth (`KEYSTATIC_ADMIN_USER` / `KEYSTATIC_ADMIN_PASSWORD`, fail-closed,
+  constant-time compare in `src/proxy.ts`). Generate the password with
+  `yarn mediakeygen`, store it in the host env (Vercel → Project Settings →
+  Environment Variables), and rotate regularly. Never commit credentials.
+- **GitHub-backed editing (deployed CMS) — full setup, including the GitHub side:** editors'
+  changes commit to the GitHub repository instead of local files. GitHub mode requires a
+  **custom GitHub App that you create yourself** — the public Keystatic app cannot hand out a
+  client secret, and the in-app setup wizard is development-only (`createdGithubApp` returns
+  400 outside `NODE_ENV=development`).
+
+  **On GitHub (one-time):**
+
+  1. Create the app: GitHub → Settings → Developer settings → GitHub Apps → **New GitHub App**.
+     - **GitHub App name:** e.g. `smartgrid-keystatic`.
+     - **Homepage URL:** your deployed site (e.g. `https://smartgridsurveying.com`).
+     - **Callback URL (must match exactly):**
+       `https://<your-domain>/api/keystatic/github/oauth/callback` — this is the `redirect_uri`
+       Keystatic sends editors to (verified against `@keystatic/core`'s OAuth handler; a typo
+       here makes GitHub reject every sign-in with `redirect_uri_mismatch`).
+     - **Webhook:** set **Active** to unchecked — Keystatic uses no webhooks.
+     - **Permissions → Repository permissions → Contents: Read and write** (Metadata:
+       Read-only is granted automatically; nothing else is needed — Keystatic only reads and
+       writes content files under `content/` and `public/`).
+     - **Where can this GitHub App be installed:** "Any account" (or "Only this account" when
+       the repo lives on a personal account).
+  2. After creating it, open the app's settings page: **Generate a client secret** (shown once
+     — copy it immediately), copy the **Client ID** (NOT the numeric App ID), and note the
+     **App slug** — the app's public page is `https://github.com/apps/<slug>`.
+  3. **Install the app** on the account/organization, selecting the repo (`colrium/smartgrid`
+     or your fork).
+  4. Create a session secret:
+     `node -e "console.log(require('crypto').randomBytes(40).toString('hex'))"`.
+
+  **On the deployment (Vercel) + local `.env.local`:**
+
+  5. Set the five env vars and redeploy:
+     `KEYSTATIC_GITHUB_REPO=owner/name`, `NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG=<app slug>`,
+     `KEYSTATIC_GITHUB_CLIENT_ID=<client id>`, `KEYSTATIC_GITHUB_CLIENT_SECRET=<client secret>`,
+     `KEYSTATIC_SECRET=<session secret>`. Omitting `KEYSTATIC_GITHUB_REPO` keeps
+     local-filesystem storage (`keystatic.config.ts` decides by env — local dev stays
+     credential-free by default). **Scope matters on Vercel:** branch/preview deployments read
+     the **Preview** environment values — add these (and the admin credentials below) to
+     Production **and** Preview if you edit from both.
+  6. Sign in at `/keystatic` (Basic gate first, then the GitHub sign-in). Edits commit to the
+     branch selected in the admin UI — the repo's default branch unless you switch or create a
+     branch / open a PR from the Keystatic sidebar.
+- **Admin access troubleshooting (the credentials popup keeps appearing):** the popup is the
+  `src/proxy.ts` Basic Auth gate (realm `Keystatic Admin`) returning 401 — the browser
+  re-prompts on every rejected request, so a loop means *something before or inside the gate
+  is still failing*. Two walls sit in front of the admin UI, in order:
+
+  1. **Vercel Deployment Protection** (if enabled on the project): unauthenticated requests
+     302-redirect to `vercel.com/sso-api` *before the app runs*. With "Password Protection"
+     mode the browser dialog asks for the **Vercel** deployment password — typing the Keystatic
+     admin credentials there loops forever. Fix it under Vercel → Settings → Deployment
+     Protection (use Vercel Authentication and stay signed in to Vercel, or set a password you
+     actually intend to type).
+  2. **The app's own Basic gate:** rejects EVERY request while `KEYSTATIC_ADMIN_USER` or
+     `KEYSTATIC_ADMIN_PASSWORD` is missing or empty in the **deployment's** environment —
+     fail-closed by design, so even correct credentials loop when the vars are absent from that
+     environment's scope (branch/preview deployments read **Preview** values; if the pair is
+     Production-only, add it to Preview too). Value hygiene: dashboard values are literal — no
+     surrounding quotes, no trailing whitespace/newline, case-sensitive. Non-ASCII passwords
+     are supported only since the 2026-09-22 RFC 7617 UTF-8 decode (older deployments reject
+     them) — prefer ASCII secrets.
+
+     Verify once past the Vercel wall:
+     `curl -sSI -u 'user:pass' https://<your-domain>/keystatic | head -1` → `HTTP/2 200`;
+     wrong credentials → `HTTP/2 401` with
+     `www-authenticate: Basic realm="Keystatic Admin"`.
+- **Media policy (decided):** no uploads — images are referenced as `/public` paths
+  (`imagePath` / `localeMedia` fields); `fields.image` uploads stay disabled until a
+  directory-per-entry layout is adopted. Allowed formats follow the existing
+  library: JPEG/PNG/WebP/AVIF/SVG under `public/` (gated `/media/**` photos are
+  served via short-lived HMAC-signed URLs — see `src/lib/mediaShared.ts`).
+- **Accessibility rules for editors:** every image path must render with meaningful
+  alt text (shared components fall back to the headline/title — never ship an empty
+  `alt` on a content image); keep one `h1` per page (the hero) with section
+  headlines as `h2` in stored order — do not skip heading levels when ordering
+  blocks.
 
 ---
 
@@ -355,10 +551,11 @@ the quality gate. See [`AGENTS.md`](./AGENTS.md) for the full reference.
 
 ## FAQ
 
-**Do I need a Sanity dataset to run locally?**
-Only `NEXT_PUBLIC_SANITY_PROJECT_ID` and `NEXT_PUBLIC_SANITY_DATASET` are *required* (Zod will
-fail-fast otherwise). If you don't have a Sanity project, point them at any value to start; pages
-that query Sanity will simply not render their dynamic content.
+**Do I need a CMS dataset to run locally?**
+No. Copy `.env.example` to `.env.local`, run `yarn dev`, and open `/keystatic` —
+local editing works credential-free against filesystem storage. Set
+`KEYSTATIC_PAGES=<slug>` to preview a published entry, or `KEYSTATIC_DISABLE=1`
+to force legacy locale-JSON rendering.
 
 **I added a translation key but TypeScript can't see it.**
 Run `npm run toc` to regenerate `@types/resources.ts`, then restart the dev server.

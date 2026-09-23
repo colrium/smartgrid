@@ -1,0 +1,803 @@
+{
+	"slug": "Topographical Surveys",
+	"title": "Topographical Surveys (migrated)",
+	"status": "draft",
+	"pageBuilder": [
+		{
+			"discriminant": "hero",
+			"value": {
+				"headline": {
+					"en": "Topographical Surveys in Kenya, East Africa and Beyond",
+					"sw": "Uchunguzi wa Topografia Kenya, Afrika Mashariki na Zaidi"
+				},
+				"title": {
+					"en": "Accurate Site Data for Design, Planning & Construction",
+					"sw": "Data Sahihi ya Tovuti kwa Usanidi, Upangaji na Ujenzi"
+				},
+				"description": {
+					"en": "Leading Land and Aerial surveying in Kenya.",
+					"sw": "Kiongozi katika upimaji wa Ardhi na Hewa Kenya."
+				},
+				"image": "/media/surveying/topographical/AG8ng.jpeg",
+				"layout": "bottom",
+				"frame": false,
+				"scrollCue": false,
+				"cueLabel": {
+					"en": "",
+					"sw": ""
+				},
+				"footnoteItems": [],
+				"ctaPrimary": {
+					"label": {
+						"en": "Request a Topographical Survey Quote Today",
+						"sw": "Omba Nukuu ya Uchunguzi wa Topografia Leo"
+					},
+					"href": "mailto:smartgridsurveying@gmail.com?subject=Quote Request: Topographical Survey&body=Hi SmartGrid Surveying,%0D%0A%0D%0AI'd like to request a quotation for a Topographical Survey. Please get in touch with me about my project.%0D%0A%0D%0AProject name:%0D%0ALocation:%0D%0APlot size:%0D%0AProject details:%0D%0ATimeline:%0D%0A%0D%0AThank you.",
+					"icon": "email",
+					"iconPosition": "start",
+					"trailingArrow": "show"
+				},
+				"ctaSecondary": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "introText",
+			"value": {
+				"tag": {
+					"en": "The Foundation of Every Project",
+					"sw": "Msingi wa Kila Mradi"
+				},
+				"headline": {
+					"en": "What is a Topographical Survey?",
+					"sw": "Uchunguzi wa Topografia ni Nini?"
+				},
+				"description": {
+					"en": "A topographical survey provides a detailed representation of your land — capturing elevations, contours, natural features, and existing structures as they exist on the ground. It is the foundation of all engineering design and construction projects, giving architects, engineers, and planners the accurate site data they need to design with confidence.",
+					"sw": "Uchunguzi wa topografia hutoa uwakilishi wa kina wa ardhi yako — ukikamata mwinuko, contours, vipengele vya asili, na miundo iliyopo ardhini kama ilivyo. Ni msingi wa miradi yote ya usanidi wa uhandisi na ujenzi, ukipa waanachitecture, wahandisi, na wapangaji data sahihi ya tovuti wanayohitaji kusanidi kwa uhakika."
+				},
+				"tone": "default",
+				"align": "left",
+				"split": false,
+				"cta": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "topoWhenYouNeed",
+			"value": {
+				"tag": {
+					"en": "Use Cases",
+					"sw": "Matumizi"
+				},
+				"headline": {
+					"en": "When Do You Need a Topographical Survey?",
+					"sw": "Linahitaji Uchunguzi wa Topografia lini?"
+				},
+				"description": {
+					"en": "From the first design sketch to final county approval, an accurate topographical survey underpins every critical decision on your project.",
+					"sw": "Kutoka rasimu ya kwanza ya usanidi hadi idhini ya mwisho ya kaunti, uchunguzi sahihi wa topografia una msingi wa kila maamuzi makubwa kwenye mradi wako."
+				},
+				"items": [
+					{
+						"icon": "math-compass",
+						"title": {
+							"en": "Before architectural or civil design",
+							"sw": "Kabla ya usanidi wa usanifu au civil"
+						},
+						"description": {
+							"en": "To provide accurate ground levels and site features for precise design work.",
+							"sw": "Kutoa viwango sahihi vya ardhi na vipengele vya tovuti kwa kazi sahihi ya usanidi."
+						},
+						"children": []
+					},
+					{
+						"icon": "file-certificate-outline",
+						"title": {
+							"en": "Before construction approvals",
+							"sw": "Kabla ya idhini za ujenzi"
+						},
+						"description": {
+							"en": "Required for submission drawings and compliance with planning authorities.",
+							"sw": "Inahitajika kwa michoro ya kuwasilisha na ufuaso wa mamlaka za mipango."
+						},
+						"children": []
+					},
+					{
+						"icon": "road-variant",
+						"title": {
+							"en": "For road, infrastructure, and drainage design",
+							"sw": "Kwa usanidi wa barabara, miundombinu, na mifereji"
+						},
+						"description": {
+							"en": "Enables proper alignment, grading, and stormwater planning.",
+							"sw": "Huwezesha alignment sahihi, grading, na upangaji wa maji ya mvua."
+						},
+						"children": []
+					},
+					{
+						"icon": "land-fields",
+						"title": {
+							"en": "For land development and subdivision",
+							"sw": "Kwa maendeleo ya ardhi na kugawanya"
+						},
+						"description": {
+							"en": "Defines terrain, access, and layout feasibility for planning and approvals.",
+							"sw": "Hufafanua ardhi, njia za kufikia, na uwezekano wa mpangilio kwa mipango na idhini."
+						},
+						"children": []
+					},
+					{
+						"icon": "office-building-marker",
+						"title": {
+							"en": "NCA and Physical Planning approvals",
+							"sw": "Idhini za NCA na Mipango ya Kimwili"
+						},
+						"description": {
+							"en": "",
+							"sw": ""
+						},
+						"children": [
+							{
+								"title": {
+									"en": "Before submission of architectural and structural drawings for County approval (PPA2 / Development Permission)",
+									"sw": "Kabla ya kuwasilisha michoro ya usanifu na kimuundo kwa idhini ya Kaunti (PPA2 / Development Permission)"
+								},
+								"description": {
+									"en": "Required to support planning applications under County Governments and Physical and Land Use Planning Act compliance requirements, ensuring accurate site context, access, and building positioning.",
+									"sw": "Inahitajika kuunga mkono maombi ya mipango chini ya Serikali za Kaunti na mahitaji ya ufuaso wa Physical and Land Use Planning Act, kuhakikisha muktadha sahihi wa tovuti, njia za kufikia, na uwekaji wa majengo."
+								}
+							},
+							{
+								"title": {
+									"en": "Before issuance of construction approval and NCA project registration",
+									"sw": "Kabla ya kutoa idhini ya ujenzi na usajili wa mradi wa NCA"
+								},
+								"description": {
+									"en": "Forms part of the technical documentation required for NCA project registration, alongside approved drawings, BoQs, and consultant engagement documents.",
+									"sw": "Huunda sehemu ya nyaraka za kiufundi zinazohitajika kwa usajili wa mradi wa NCA, pamoja na michoro iliyoidhinishwa, BoQs, na nyaraka za ushauri wa wataalamu."
+								}
+							},
+							{
+								"title": {
+									"en": "For infrastructure design submissions (roads, drainage, water, and utility layouts)",
+									"sw": "Kwa mawasilisho ya usanidi wa miundombinu (barabara, mifereji, maji, na mpangilio wa huduga)"
+								},
+								"description": {
+									"en": "Used by engineers and consultants to support design compliance with statutory standards for grading, drainage control, and service alignment.",
+									"sw": "Inatumika na wahandisi na washauri kuunga mkono ufuaso wa usanidi na viwango vya kisheria vya grading, udhibiti wa mifereji, na alignment ya huduga."
+								}
+							},
+							{
+								"title": {
+									"en": "For land subdivision, amalgamation, and development planning applications",
+									"sw": "Kwa maombi ya kugawanya ardhi, kuunganisha, na mipango ya maendeleo"
+								},
+								"description": {
+									"en": "Required for preparation and approval of mutation plans, ensuring compliance with Survey of Kenya and County physical planning requirements before survey plan authentication.",
+									"sw": "Inahitajika kwa maandalizi na idhini ya mutation plans, kuhakikisha ufuaso wa mahitaji ya Survey of Kenya na mipango ya kimwili ya Kaunti kabla ya uthibitisho wa ramani za upimaji."
+								}
+							}
+						]
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "deliverables",
+			"value": {
+				"tag": {
+					"en": "Deliverables",
+					"sw": "Matokeo"
+				},
+				"headline": {
+					"en": "What You Get",
+					"sw": "Unachopata"
+				},
+				"description": {
+					"en": "Every topographical survey is delivered as a complete, engineering-ready package.",
+					"sw": "Kila uchunguzi wa topografia hutolewa kwa jumla kamili, tayari kwa uhandisi."
+				},
+				"liveLabel": {
+					"en": "Deliverable package",
+					"sw": "Furushi la Matokeo"
+				},
+				"checks": [
+					{
+						"en": "Engineering-ready",
+						"sw": "Tayari kwa uhandisi"
+					},
+					{
+						"en": "AutoCAD compatible",
+						"sw": "Inaoendana na AutoCAD"
+					},
+					{
+						"en": "Approval-ready formats",
+						"sw": "Fomati tayari kwa idhini"
+					}
+				],
+				"items": [
+					{
+						"title": {
+							"en": "Detailed features topographical map",
+							"sw": "Ramani ya kina ya topografia yenye vipengele"
+						},
+						"format": {
+							"en": "DWG / PDF",
+							"sw": "DWG / PDF"
+						},
+						"icon": "map",
+						"image": {
+							"en": "/media/deliverables/topographical-maps.jpg",
+							"sw": "/media/deliverables/topographical-maps.jpg"
+						},
+						"description": {
+							"en": "Feature-rich map of the site: boundaries, structures, utilities, and levels.",
+							"sw": "Ramani yenye vipengele vya tovuti: mipaka, majengo, huduma, na viwango."
+						}
+					},
+					{
+						"title": {
+							"en": "Contour maps (major & minor intervals)",
+							"sw": "Ramani za contour (intervals kubwa na ndogo)"
+						},
+						"format": {
+							"en": "DWG / DXF",
+							"sw": "DWG / DXF"
+						},
+						"icon": "chart-bell-curve",
+						"image": {
+							"en": "/media/deliverables/contour-maps.jpg",
+							"sw": "/media/deliverables/contour-maps.jpg"
+						},
+						"description": {
+							"en": "Contours at major and minor intervals for design and earthworks.",
+							"sw": "Kontua kwa intervals kubwa na ndogo kwa kubuni na ujenzi wa ardhi."
+						}
+					},
+					{
+						"title": {
+							"en": "CAD drawings (AutoCAD-ready)",
+							"sw": "Michoro ya CAD (tayari kwa AutoCAD)"
+						},
+						"format": {
+							"en": "DWG",
+							"sw": "DWG"
+						},
+						"icon": "ruler-square",
+						"image": {
+							"en": "/media/deliverables/cad-drawings.jpg",
+							"sw": "/media/deliverables/cad-drawings.jpg"
+						},
+						"description": {
+							"en": "Layered CAD drawings that open directly in AutoCAD and civil design tools.",
+							"sw": "Michoro ya CAD yenye tabaka inayofunguka moja kwa moja AutoCAD na zana za kubuni."
+						}
+					},
+					{
+						"title": {
+							"en": "Digital Terrain Models (DTM)",
+							"sw": "Digital Terrain Models (DTM)"
+						},
+						"format": {
+							"en": "GeoTIFF",
+							"sw": "GeoTIFF"
+						},
+						"icon": "image-filter-hdr",
+						"image": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "Digital terrain models for cut-fill, drainage, and 3D site analysis.",
+							"sw": "Mifano ya ardhi ya kidijitali kwa kukata-kujaza, mifereji, na uchambuzi wa 3D."
+						}
+					},
+					{
+						"title": {
+							"en": "XYZ coordinates data, spot levels and site features",
+							"sw": "Data ya kuratibu XYZ, spot levels na vipengele vya tovuti"
+						},
+						"format": {
+							"en": "CSV",
+							"sw": "CSV"
+						},
+						"icon": "crosshairs-gps",
+						"image": {
+							"en": "",
+							"sw": ""
+						},
+						"description": {
+							"en": "Coordinates, spot levels, and coded features ready for engineering use.",
+							"sw": "Kuratibu, spot levels, na vipengele vilivyopangwa kwa matumizi ya uhandisi."
+						}
+					},
+					{
+						"title": {
+							"en": "Survey report",
+							"sw": "Ripoti ya uchunguzi"
+						},
+						"format": {
+							"en": "PDF",
+							"sw": "PDF"
+						},
+						"icon": "file-document",
+						"image": {
+							"en": "/media/deliverables/survey-reports.jpg",
+							"sw": "/media/deliverables/survey-reports.jpg"
+						},
+						"description": {
+							"en": "Signed report covering methodology, controls, and accuracy.",
+							"sw": "Ripoti iliyotiliwa sahihi inayoeleza mbinu, udhibiti, na usahihi."
+						}
+					}
+				],
+				"tone": "default",
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "pricing",
+			"value": {
+				"tag": {
+					"en": "Pricing",
+					"sw": "Bei"
+				},
+				"headline": {
+					"en": "Topographical Survey Cost in Kenya",
+					"sw": "Gharama ya Uchunguzi wa Topografia Kenya"
+				},
+				"description": {
+					"en": "Topographical survey pricing is influenced by site conditions and the level of detail required for engineering and approval purposes. Each project is assessed individually to ensure accurate and fit-for-purpose pricing.",
+					"sw": "Bei ya uchunguzi wa topografia huathiriwa na hali za tovuti na kiwango cha maelezo kinachohitajika kwa madhumuni ya uhandisi na idhini. Kila mradi hutathminiwa kwa kipekee kuhakikisha bei sahihi na inayofaa kwa madhumuni."
+				},
+				"cards": [
+					{
+						"title": {
+							"en": "Key Cost Factors",
+							"sw": "Mambo Makuu ya Gharama"
+						},
+						"items": [
+							{
+								"en": "Site size and land use intensity (small plots vs large developments)",
+								"sw": "Ukubwa wa tovuti na msongamano wa matumizi ya ardhi (ploti ndogo dhidi ya maendeleo makubwa)"
+							},
+							{
+								"en": "Terrain complexity (flat land, slopes, or heavily built-up areas)",
+								"sw": "Ugumu wa ardhi (ardhi tambarare, mitelemko, au maeneo yajengwa sana)"
+							},
+							{
+								"en": "Site accessibility (road access, vegetation cover, security conditions)",
+								"sw": "Urahisi wa kufikia tovuti (njia za barabara, mwonekano wa mimea, hali za usalama)"
+							},
+							{
+								"en": "Required accuracy and deliverables (basic contours vs full engineering datasets such as DTM/DSM and CAD integration)",
+								"sw": "Usahihi na matokeo yanayohitajika (contours za msingi dhidi ya datasets kamili za uhandisi kama DTM/DSM na muunganisho wa CAD)"
+							}
+						]
+					},
+					{
+						"title": {
+							"en": "What Influences Final Pricing for Our Clients",
+							"sw": "Kinachoathiri Bei ya Mwisho kwa Wateja Wetu"
+						},
+						"items": [
+							{
+								"en": "Mobilization cost to site",
+								"sw": "Gharama ya kupeleka vifaa tovutini"
+							},
+							{
+								"en": "Whether drone mapping is required",
+								"sw": "Ikiwa ramani za droni zinahitajika"
+							},
+							{
+								"en": "Level of detail required for county approval or design engineering",
+								"sw": "Kiwango cha maelezo kinachohitajika kwa idhini ya kaunti au usanidi wa uhandisi"
+							},
+							{
+								"en": "Integration with GIS, CAD, or BIM workflows",
+								"sw": "Muunganisho na mchakato wa GIS, CAD, au BIM"
+							}
+						]
+					}
+				],
+				"price": {
+					"label": {
+						"en": "Typical Price Range",
+						"sw": "Kiwango cha Kawaida cha Bei"
+					},
+					"value": {
+						"en": "KES 50,000 – 300,000+",
+						"sw": "KES 50,000 – 300,000+"
+					},
+					"note": {
+						"en": "This range applies to most residential, commercial, and mid-scale infrastructure projects across Nairobi, Kiambu and Kenya extensively. Large-scale developments, complex terrain, or high-precision engineering surveys may fall above this range.",
+						"sw": "Kiwango hiki kinatumika kwa miradi mingi ya makazi, biashara, na miundombinu ya wastani Nairobi, Kiambu na Kenya kwa ujumla. Maendeleo makubwa, ardhi ngumu, au uchunguzi wa usahihi wa juu wa uhandisi unaweza kuzidi kiwango hiki."
+					}
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "introText",
+			"value": {
+				"tag": {
+					"en": "Topographical Surveying",
+					"sw": "Uchunguzi wa Topografia"
+				},
+				"headline": {
+					"en": "See the Land as It Truly Is",
+					"sw": "Ona Ardhi Jinsi Ilivyo"
+				},
+				"description": {
+					"en": "SmartGrid Surveying delivers highly detailed and accurate topographical surveys for engineering, planning, and construction. Whether in Nairobi, Kisumu, Mombasa — or across Africa and beyond — our expert team captures terrain with centimeter-level precision using GNSS, Total Stations, and Drone LiDAR Mapping.",
+					"sw": "SmartGrid Surveying hutoa uchunguzi wa topografia wenye undani na usahihi wa hali ya juu kwa ajili ya uhandisi, upangaji, na ujenzi. Iwe Nairobi, Kisumu, Mombasa — au kote Afrika na nje yake — timu yetu ya wataalamu inakamata mandhari kwa usahihi wa ngazi ya sentimita kwa kutumia GNSS, Total Stations, na Uchoraji wa Ramani kwa Drone LiDAR."
+				},
+				"tone": "default",
+				"align": "left",
+				"split": true,
+				"cta": {
+					"label": {
+						"en": "",
+						"sw": ""
+					},
+					"href": "",
+					"icon": ""
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "topoWhatWeOffer",
+			"value": {
+				"tag": {
+					"en": "Services",
+					"sw": "Huduma"
+				},
+				"headline": {
+					"en": "What we offer as SmartGrid!",
+					"sw": "Tunachotoa kama SmartGrid!"
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"title": {
+							"en": "Engineering - Grade Accuracy",
+							"sw": "Usahihi wa Kiwango cha Uhandisi"
+						},
+						"description": {
+							"en": "We use state of art GNSS RTK, Total stations, UAV LiDAR and Automatic levels to achieve precise data for roads, drainage, features and construction design ",
+							"sw": "Tunatumia teknolojia ya kisasa ya GNSS RTK, Total stations, UAV LiDAR na Viwango vya Kiotomatiki ili kupata data sahihi kwa barabara, mifereji, vipengele na muundo wa ujenzi."
+						}
+					},
+					{
+						"title": {
+							"en": "Drone & Ground intergration",
+							"sw": "Ushirikiano wa Drone na Ardhi"
+						},
+						"description": {
+							"en": "Seamless intergration of aerial and terrestrial data ensures consistent, detailed 3D terrain models and contours.",
+							"sw": "Ushirikiano usio na mshono wa data ya angani na ya nchi kavu huhakikisha mifano thabiti na ya kina ya mandhari ya 3D na kontua."
+						}
+					},
+					{
+						"title": {
+							"en": "National & Cross Border Coverage",
+							"sw": "Chanjo ya Kitaifa na Kuvuka Mipaka"
+						},
+						"description": {
+							"en": "Our survey teams operate across Kenya, East Africa, and international territories - trusted by engineers, developers, and contractors worldwide.",
+							"sw": "Timu zetu za Upimaji zinafanya kazi kote Kenya, Afrika Mashariki, na maeneo ya kimataifa - zinaaminika na wahandisi, waendelezaji, na wakandarasi duniani."
+						}
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "topoDetailedSurveys",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "Detailed Topographical Surveys Across East Africa!",
+					"sw": "Uchunguzi wa Topografia wa Kina kote Afrika Mashariki!"
+				},
+				"description": {
+					"en": "At SmartGrid Surveying Ltd, we specialize in delivering high-precision topographical surveys across East Africa, covering Kenya, Uganda, Tanzania, Rwanda, Burundi, Somalia, South Sudan, Ethiopia, and Other Parts of Africa. Our team of expert surveyors utilizes the latest technology, including GPS, drones, and total stations, to provide accurate and detailed mapping solutions for various projects.",
+					"sw": "Katika SmartGrid Surveying Ltd, tunabobea katika kutoa uchunguzi wa topografia wa usahihi wa hali ya juu kote Afrika Mashariki, ukijumuisha Kenya, Uganda, Tanzania, Rwanda, Burundi, Somalia, Sudan Kusini, Ethiopia, na Sehemu Nyingine za Afrika. Timu yetu ya wapima ardhi wataalamu hutumia teknolojia ya kisasa, ikijumuisha GPS, dronzi, na total stations, ili kutoa suluhisho sahihi na za kina za uchoraji ramani kwa miradi mbalimbali."
+				},
+				"items": [
+					{
+						"title": {
+							"en": "Land Contours Mapping",
+							"sw": "Uchoraji wa Ramani ya Kontua za Ardhi"
+						},
+						"description": {
+							"en": "Our advanced surveying techniques allow us to create detailed contour maps, providing essential information for land development, construction planning, and environmental assessments.",
+							"sw": "Mbinu zetu za kisasa za upimaji zinatuwezesha kuunda ramani za kina za kontua, zikitoa taarifa muhimu kwa maendeleo ya ardhi, upangaji wa ujenzi, na tathmini za mazingira."
+						},
+						"image": "/media/surveying/topographical/land-contours-mapping.png"
+					},
+					{
+						"title": {
+							"en": "Land/ Man-made features",
+							"sw": "Vipengele vya Asili / vinavyotengenezwa na Binadamu"
+						},
+						"description": {
+							"en": "We accurately capture and map both natural and man-made features, including buildings, roads, vegetation, and water bodies, ensuring comprehensive data for your projects.",
+							"sw": "Tunakamata na kuweka ramani kwa usahihi vipengele vya asili na vinavyotengenezwa na binadamu, ikijumuisha majengo, barabara, mimea, na sehemu za maji, kuhakikisha data kamili kwa miradi yako."
+						},
+						"image": "/media/surveying/topographical/man-made-features.png"
+					},
+					{
+						"title": {
+							"en": "Infrastructure mapping",
+							"sw": "Uchoraji wa Ramani ya Miundombinu"
+						},
+						"description": {
+							"en": "Our team specializes in mapping critical infrastructure such as utilities, transportation networks, and public facilities, providing valuable insights for urban planning and development.",
+							"sw": "Timu yetu inabobea katika kuweka ramani za miundombinu muhimu kama vile huduma, mitandao ya usafirishaji, na vifaa vya umma, ikitoa maarifa muhimu kwa upangaji wa miji na maendeleo."
+						},
+						"image": "/media/surveying/topographical/infrastructure-mapping.png"
+					},
+					{
+						"title": {
+							"en": "Boundary Survey Inclusive",
+							"sw": "Uchunguzi wa Mipaka Jumuishi"
+						},
+						"description": {
+							"en": "We conduct precise boundary surveys to establish property lines and legal boundaries, ensuring compliance with local regulations and preventing disputes.",
+							"sw": "Tunafanya uchunguzi sahihi wa mipaka ili kuanzisha mistari ya mali na mipaka ya kisheria, kuhakikisha kufuata kanuni za mitaa na kuzuia migogoro."
+						},
+						"image": "/media/surveying/topographical/boundary-survey-inclusive.jpeg"
+					},
+					{
+						"title": {
+							"en": "Utilities mapping",
+							"sw": "Uchoraji wa Ramani ya Huduma"
+						},
+						"description": {
+							"en": "Our utility mapping services identify and document underground and above-ground utilities, aiding in construction planning, maintenance, and safety.",
+							"sw": "Huduma zetu za uchoraji ramani za huduma hugundua na kuandika huduma zilizo chini ya ardhi na juu yake, kusaidia katika upangaji wa ujenzi, matengenezo, na usalama."
+						},
+						"image": "/media/surveying/topographical/utilities-mapping.jpeg"
+					},
+					{
+						"title": {
+							"en": "Land Use reports",
+							"sw": "Ripoti za Matumizi ya Ardhi"
+						},
+						"description": {
+							"en": "Our land use reporting services provide comprehensive analysis of current and proposed land use patterns, supporting informed decision-making for development projects.",
+							"sw": "Huduma zetu za ripoti za matumizi ya ardhi hutoa uchambuzi kamili wa mifumo ya sasa na inayopendekezwa ya matumizi ya ardhi, zikisaidia kufanya maamuzi sahihi kwa miradi ya maendeleo."
+						},
+						"image": "/media/surveying/topographical/land-use-reports.png"
+					},
+					{
+						"title": {
+							"en": "3D Data Collection",
+							"sw": "Mkusanyo wa Data ya 3D"
+						},
+						"description": {
+							"en": "Our 3D data collection services utilize advanced technologies to create detailed and accurate 3D models of survey areas, supporting various applications in construction, planning, and analysis.",
+							"sw": "Huduma zetu za mkusanyo wa data ya 3D hutumia teknolojia za kisasa kuunda mifano sahihi na ya kina ya 3D ya maeneo ya utafiti, ikisaidia matumizi mbalimbali katika ujenzi, upangaji, na uchambuzi."
+						},
+						"image": "/media/surveying/topographical/3d-data-collection.jpeg"
+					},
+					{
+						"title": {
+							"en": "Data Processing(DEM, DTM,DSM, CAD shapefiles)",
+							"sw": "Usindikaji wa Data (DEM, DTM, DSM, CAD shapefiles)"
+						},
+						"description": {
+							"en": "We provide comprehensive data processing services, including the generation of Digital Elevation Models (DEM), Digital Terrain Models (DTM), Digital Surface Models (DSM), and CAD shapefiles, ensuring that survey data is ready for analysis and application.",
+							"sw": "Tunatoa huduma kamili za usindikaji wa data, ikijumuisha utengenezaji wa Mifano ya Kiwimbo cha Kielektroniki (DEM), Mifano ya Mandhari ya Dijiti (DTM), Mifano ya Sehemu ya Dijiti (DSM), na shapefiles za CAD, kuhakikisha kwamba data ya uchunguzi iko tayari kwa uchambuzi na matumizi."
+						},
+						"image": "/media/surveying/topographical/data-processing.png"
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "topoSampleMap",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "SAMPLE TOPOGRAPHICAL MAP",
+					"sw": "RAMANI YA MFANO WA TOPOGRAFIA"
+				},
+				"description": {
+					"en": "SmartGrid Surveying conducted a comprehensive topographical survey in Usenge, Siaya County, focused on mapping and identifying existing and potential water pipeline infrastructure. This project supports the community's initiative to enhance water distribution efficiency and infrastructure planning across the region.",
+					"sw": "SmartGrid Surveying ilifanya uchunguzi kamili wa topografia huko Usenge, Kaunti ya Siaya, ukizingatia uchoraji na utambuzi wa miundombinu iliyopo na inayowezekana ya bomba la maji. Mradi huu unasaidia juhudi za jamii za kuongeza ufanisi wa usambazaji wa maji na upangaji wa miundombinu kote eneo hilo."
+				},
+				"map": {
+					"title": {
+						"en": "MAP HIGHLIGHTS",
+						"sw": "VITU KUU VYA RAMANI"
+					},
+					"description": {
+						"en": "The topographical map integrates all essential cartographic elements:",
+						"sw": "Ramani ya topografia inajumuisha vipengele vyote muhimu vya katigrafia:"
+					},
+					"image": "/media/surveying/topographical/sample-topographical-map.png",
+					"items": [
+						{
+							"en": "Scale: 1:2500 for high‑resolution accuracy",
+							"sw": "Kiwango: 1:2500 kwa usahihi wa azimio la juu"
+						},
+						{
+							"en": "Grid lines for coordinate referencing",
+							"sw": "Mistari ya gridi kwa marejeleo ya kuratibu"
+						},
+						{
+							"en": "Contour and elevation data for terrain analysis",
+							"sw": "Data ya kontua na mwinuko kwa uchambuzi wa mandhari"
+						},
+						{
+							"en": "Legend detailing roads, pipelines, powerlines, and water facilities",
+							"sw": "Ufunguo unaoeleza barabara, mabomba, mistari ya umeme, na vifaa vya maji"
+						},
+						{
+							"en": "Survey metadata including date, locality, client, and verification signatures",
+							"sw": "Metadata ya uchunguzi ikijumuisha tarehe, eneo, mteja, na saini za uthibitishaji"
+						}
+					]
+				},
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "topoInstruments",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "Our Surveying Instruments",
+					"sw": "Vyombo Vyetu vya Upimaji"
+				},
+				"description": {
+					"en": "We Use Advanced, Calibrated, Precise equipment to ensure every point is accurate and reliable for your construction and engineering projects across Kenya and Beyond.",
+					"sw": "Tunatumia vifaa vya kisasa, vilivyopimwa, na sahihi ili kuhakikisha kila nukta ni sahihi na ya kuaminika kwa miradi yako ya ujenzi na uhandisi kote Kenya na nje yake."
+				},
+				"items": [
+					{
+						"label": {
+							"en": "RTK GNSS FOIF A90",
+							"sw": "RTK GNSS FOIF A90"
+						},
+						"image": "/media/instruments/RTK-GNSS-FOIF-A90.jpg"
+					},
+					{
+						"label": {
+							"en": "TOTAL STATIONS",
+							"sw": "TOTAL STATIONS"
+						},
+						"image": "/media/instruments/TOTAL-STATIONS.jpg"
+					},
+					{
+						"label": {
+							"en": "AUTOMATIC LEVELS",
+							"sw": "AUTOMATIC LEVELS"
+						},
+						"image": "/media/instruments/AUTOMATIC-LEVELS.jpg"
+					},
+					{
+						"label": {
+							"en": "LASER SCANNERS",
+							"sw": "LASER SCANNERS"
+						},
+						"image": "/media/instruments/LASER-SCANNERS.jpg"
+					}
+				],
+				"id": ""
+			}
+		},
+		{
+			"discriminant": "topoWhyConduct",
+			"value": {
+				"tag": {
+					"en": "",
+					"sw": ""
+				},
+				"headline": {
+					"en": "Why Conduct a Topographical Survey",
+					"sw": "Kwa Nini Ufanye Uchunguzi wa Topografia"
+				},
+				"description": {
+					"en": "",
+					"sw": ""
+				},
+				"items": [
+					{
+						"title": {
+							"en": "Accurate Land Mapping",
+							"sw": "Uchoraji Sahihi wa Ramani ya Ardhi"
+						},
+						"description": {
+							"en": "Smartgrid Engineering ensures every contour, elevation, and surface detail is measured with precision for error-free designs.",
+							"sw": "Smartgrid Engineering huhakikisha kila kontua, mwinuko, na maelezo ya sehemu hupimwa kwa usahihi kwa miundo isiyo na makosa."
+						}
+					},
+					{
+						"title": {
+							"en": "Better Construction Planning",
+							"sw": "Upangaji Bora wa Ujenzi"
+						},
+						"description": {
+							"en": "Identify slopes, drainage, and underground utilities before breaking ground to reduce costly surprises.",
+							"sw": "Tambua miteremko, mifereji ya maji, na huduma zilizo chini ya ardhi kabla ya kuanza ujenzi ili kupunguza mshangao wa gharama."
+						}
+					},
+					{
+						"title": {
+							"en": "Legal & Compliance",
+							"sw": "Kisheria na Uzingatiaji"
+						},
+						"description": {
+							"en": "Ensure your surveys meet government and municipal regulations to avoid legal issues during project approvals.",
+							"sw": "Hakikisha uchunguzi wako unakidhi kanuni za serikali na manispaa ili kuepuka masuala ya kisheria wakati wa idhini za mradi."
+						}
+					},
+					{
+						"title": {
+							"en": "Infrastructure Development",
+							"sw": "Maendeleo ya Miundombinu"
+						},
+						"description": {
+							"en": "Provide the foundation for roads, bridges, and large-scale projects with reliable survey data.",
+							"sw": "Toa msingi kwa barabara, madaraja, na miradi mikubwa kwa data ya uchunguzi ya kuaminika."
+						}
+					},
+					{
+						"title": {
+							"en": "Flood Risk Assessment",
+							"sw": "Tathmini ya Hatari ya Mafuriko"
+						},
+						"description": {
+							"en": "Analyze terrain elevations and drainage systems to mitigate flood risks in all developments.",
+							"sw": "Chambua mwinuko wa ardhi na mifumo ya mifereji ya maji ili kupunguza hatari za mafuriko katika maendeleo yote."
+						}
+					},
+					{
+						"title": {
+							"en": "Land Disputes & Boundary Clarifications",
+							"sw": "Migogoro ya Ardhi na Ufafanuzi wa Mipaka"
+						},
+						"description": {
+							"en": "Resolve disputes and clarify land boundaries with precise survey data from Smartgrid Engineering.",
+							"sw": "Tatua migogoro na ufafanue mipaka ya ardhi kwa data sahihi ya uchunguzi kutoka Smartgrid Engineering."
+						}
+					}
+				],
+				"id": ""
+			}
+		}
+	]
+}

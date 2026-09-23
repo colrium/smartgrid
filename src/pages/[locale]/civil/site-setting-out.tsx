@@ -1,27 +1,108 @@
 import type { GetServerSideProps, NextPage } from "next";
 import PageHead from "@/components/Head";
 
-import { getI18nProps } from "@/lib/i18n";
+import { getI18nProps, getLocale } from "@/lib/i18n";
+import type { Lang } from "@/lib/types";
+import { useTranslation } from "@/hooks";
+import { resolveKeystaticPage, type ResolvedKeystaticPage } from "@/lib/keystatic/resolvePage";
+import { PageBuilderDocument } from "@/components/keystatic/PageBuilderDocument";
 import { Deliverables } from "@/components/sections/Deliverables";
-import {
-	HeroSection,
-	OurServicesSection,
-	OurInstrumentsSection,
-	FaqSection,
-} from "@/components/sections/civil/site-setting-out";
+import { Hero, type HeroContent } from "@/components/sections/shared/Hero";
+import { CardGrid, type CardItem } from "@/components/sections/shared/CardGrid";
+import { FaqSection } from "@/components/sections/civil/site-setting-out";
 
 type PageProps = {
-	// Add custom props here
+	/** Keystatic page when the `site-setting-out` slug is opted in; otherwise `null` (legacy). */
+	keystaticPage: ResolvedKeystaticPage | null;
 };
 
-const Page: NextPage<PageProps> = () => {
+interface ServicesContent {
+	tag?: string | null;
+	headline: string;
+	description?: string;
+	items: { title: string; description: string }[];
+}
+
+interface InstrumentsContent {
+	tag?: string | null;
+	headline: string;
+	description?: string | null;
+	items?: CardItem[] | null;
+}
+
+/**
+ * All five legacy sections are Keystatic-owned in page order (see the
+ * `site-setting-out` mapping in `scripts/migrate-locale-to-keystatic.mjs`):
+ * hero (dual pills), ssoServices (the indexed grid), ssoInstruments (the
+ * media-badged grid), deliverables (surface), faq — M11 batch 16,
+ * 2026-09-20. Entry order IS page order, so editors can add, remove, and
+ * reorder sections freely; the M3 resolver taxonomy remains the only
+ * fallback. The hero entry keeps its shared branch and `faq` stays shared
+ * with the icon/title→question/answer mapping; `ssoServices` and
+ * `ssoInstruments` are the batch-16 uniques (indexed numbering and the
+ * mediaBadged chips sit outside the shared `cardGrid` contract). M13 batch
+ * 6 retired the `OurServicesSection`/`OurInstrumentsSection` wrappers; the
+ * legacy branch renders the shared `CardGrid` directly with the wrappers'
+ * literals, and the shaping `FaqSection` stays per the M13 rule
+ * (title→question mapping).
+ */
+const Page: NextPage<PageProps> = ({ keystaticPage }) => {
+	const { t } = useTranslation(["civil/site-setting-out"]);
+	// Migration source switch (M3/M7, completed M11 batch 16): Keystatic owns
+	// the whole page when the slug is allowlisted via `KEYSTATIC_PAGES` and
+	// the entry is published. Otherwise the legacy locale-JSON implementation
+	// renders unchanged.
+	if (keystaticPage) {
+		return (
+			<div className="relative">
+				<PageHead pageName="civil-site-setting-out" />
+				<PageBuilderDocument page={keystaticPage} />
+			</div>
+		);
+	}
+
+	const heroData = t("civil/site-setting-out:hero", { returnObjects: true }) as unknown as HeroContent;
+	const ourServices = t("civil/site-setting-out:ourServices", {
+		returnObjects: true,
+	}) as unknown as ServicesContent;
+	const ourServiceItems: CardItem[] = Array.isArray(ourServices?.items) ? ourServices.items : [];
+	const ourServicesGrid =
+		ourServiceItems.length === 0 ? null : (
+			<CardGrid
+				tag={ourServices.tag}
+				headline={ourServices.headline}
+				description={ourServices.description}
+				items={ourServiceItems}
+				columns={3}
+				headerAlign="left"
+				indexed
+			/>
+		);
+	const ourInstruments = t("civil/site-setting-out:ourInstruments", {
+		returnObjects: true,
+	}) as unknown as InstrumentsContent;
+	const ourInstrumentItems = Array.isArray(ourInstruments?.items) ? ourInstruments.items : [];
+	const ourInstrumentsGrid =
+		ourInstrumentItems.length === 0 ? null : (
+			<CardGrid
+				tag={ourInstruments.tag ?? null}
+				headline={ourInstruments.headline}
+				description={ourInstruments.description}
+				items={ourInstrumentItems}
+				columns={3}
+				tone="surface"
+				mediaBadged
+				card={{ mediaPosition: "background", mediaAspect: "h-64 sm:h-72" }}
+			/>
+		);
+
 	return (
 		<div className="relative">
 			<PageHead pageName="civil-site-setting-out" />
 			<div className="flex flex-col min-h-screen">
-				<HeroSection />
-				<OurServicesSection />
-				<OurInstrumentsSection />
+				<Hero data={heroData} />
+				{ourServicesGrid}
+				{ourInstrumentsGrid}
 				<Deliverables ns="civil/site-setting-out" className="bg-surface" />
 				<FaqSection />
 			</div>
@@ -33,7 +114,11 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 	if (!i18nProps) return { notFound: true };
 
-	return { props: { ...i18nProps } };
+	const locale = getLocale(context);
+	const lang: Lang = locale === "sw" ? "sw" : "en";
+	const resolution = await resolveKeystaticPage("site-setting-out", lang);
+
+	return { props: { ...i18nProps, keystaticPage: resolution.status === "keystatic" ? resolution.page : null } };
 };
 
 export default Page;

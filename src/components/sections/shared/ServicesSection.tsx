@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, type ReactElement } from "react";
+import { useState, type HTMLAttributes, type ReactElement } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "@/components/Link";
 import { useTranslation } from "@/hooks";
-import { SectionHeader } from "../home/SectionHeader";
+import { SectionHeader, type SectionHeaderClassesProp } from "./SectionHeader";
 import { FadeUp } from "@/components/animations/Fade";
 import { DeliverablesExplorer, type DeliverablesContent } from "@/components/sections/Deliverables";
 import { SectionTag } from "@/components/SectionTag";
@@ -25,12 +25,40 @@ interface ServiceItem {
 	whatWeOffer: SeviceItemList;
 	deliverables: DeliverablesContent & { label?: string };
 }
+export interface ServicesClassesProp {
+	sectionHeader?: SectionHeaderClassesProp;
+	panel?: string;
+	tabs?: string;
+	content?: string;
+}
+export interface ServicesContent {
+	tag?: string | null;
+	headline?: string;
+	items?: ServiceItem[] | null;
+}
+export interface ServicesProps extends HTMLAttributes<HTMLDivElement> {
+	id?: string;
+	classes?: ServicesClassesProp;
+	/** Section content. When omitted, the legacy locale strings render
+	 * (`common:services.items` + `home:services.tag/headline`) — unchanged
+	 * behavior for non-Keystatic callers. NOTE: `home:services.*` no longer
+	 * exists in locale JSON (nodes moved to `common.json`), so the legacy
+	 * header renders the raw key strings; the Keystatic branch sources
+	 * tag/headline from `common:services` instead (visible fix). */
+	data?: ServicesContent | null;
+}
 
 const PANEL_EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
-export function ServicesSection(): ReactElement | null {
+export function ServicesSection({ id = "services", className, classes, data }: ServicesProps): ReactElement | null {
 	const { t } = useTranslation(["common"]);
-	const items = t("common:services.items", { returnObjects: true }) as unknown as ServiceItem[];
+	const items = (
+		Array.isArray(data?.items)
+			? data.items
+			: (t("common:services.items", { returnObjects: true }) as unknown as ServiceItem[])
+	) as ServiceItem[];
+	const tag = data ? (data.tag ?? "") : (t("home:services.tag") as string);
+	const headline = data ? (data.headline ?? "") : (t("home:services.headline") as string);
 	const [activeTab, setActiveTab] = useState(0);
 
 	if (!Array.isArray(items) || items.length === 0) return null;
@@ -40,8 +68,8 @@ export function ServicesSection(): ReactElement | null {
 	const hasDeliverables = Array.isArray(deliverables?.items) && deliverables.items.length > 0;
 
 	return (
-		<section id="services" className="py-24 sm:py-28 relative overflow-hidden">
-			<div className="relative z-10 max-w-7xl mx-auto rounded-c pale-panel-soft hairline card-shadow pt-12 px-2 sm:px-3 lg:px-4">
+		<section id={id} className={`py-24 sm:py-28 relative overflow-hidden ${className || ""}`}>
+			<div className={`relative z-10 max-w-7xl mx-auto rounded-c pale-panel-soft hairline card-shadow pt-12 px-2 sm:px-3 lg:px-4 ${classes?.panel ?? ""}`}>
 				<span
 					className={`mdi mdi-${active.icon} text-7xl md:text-[15rem] lg:text-[20rem] absolute -top-2 -right-2 z-0 text-primary-50/40`}
 				/>
@@ -50,9 +78,10 @@ export function ServicesSection(): ReactElement | null {
 				/>
 				<FadeUp>
 					<SectionHeader
-						tag={t("common:services.tag") as string}
-						headline={t("common:services.headline") as string}
-						align="center"
+						tag={tag}
+						headline={headline}
+                        align="center"
+                        classes={classes?.sectionHeader}
 					/>
 				</FadeUp>
 
@@ -61,7 +90,7 @@ export function ServicesSection(): ReactElement | null {
 					<div
 						role="tablist"
 						aria-label="Services"
-						className="grid grid-cols-3 gap-2 sm:gap-3"
+						className={`grid grid-cols-3 gap-2 sm:gap-3 ${classes?.tabs ?? ""}`}
 					>
 						{items.map((service, index) => {
 							const selected = activeTab === index;
@@ -118,7 +147,7 @@ export function ServicesSection(): ReactElement | null {
 						>
 							{/* Row 2 - feature image beside description */}
 							<div
-								className={`mt-8 sm:mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12  items-start`}
+								className={`mt-8 sm:mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12  items-start ${classes?.content ?? ""}`}
 							>
 								<div>
 									<h3 className="inline-flex items-center gap-3 text-2xl sm:text-3xl font-light uppercase tracking-tight text-ink leading-tight">

@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "Mali za Sehemu, Mipango na Vitengo.",
 		"image": "/media/surveying/sectional-properties/AG8ng.jpg",
 		"description": "Uchunguzi wa Mali za Sehemu na Maandalizi ya Mipango ya Sehemu Kenya.\n\nTunaandaa mipango ya sehemu iliyorejelewa kijiografia kwa vyumba vya kufikia, ofisi, na maendeleo ya matumizi mchanganyiko kwa ajili ya usajili chini ya Sheria ya Mali za Sehemu, 2020.",
@@ -14,6 +15,7 @@
 		}
 	},
 	"section1": {
+		"type": "intro",
 		"tag": "Uchunguzi wa mali za sehemu ulioidhinishwa",
 		"headline": "Ya Kuaminika. Inaweza Kupanuliwa. Haraka. Yenye Ufanisi.",
 		"description": "SmartGrid hutoa uchunguzi wa mali za sehemu ulioidhinishwa (mipango ya strata) unaozingatia mahitaji ya usajili wa ardhi wa eneo. \n\nTunaweka ramani ya mali ya pamoja, sehemu za matumizi ya kipekee, ukubwa wa vitengo na kuandaa mipango ya sakafu iliyoidhinishwa na ratiba za maeneo tayari kwa uwasilishaji.",
@@ -23,6 +25,7 @@
 		}
 	},
 	"whatIs": {
+		"type": "unique",
 		"tag": "Sheria ya Mali za Sehemu, 2020",
 		"headline": "Mali za Sehemu ni nini?",
 		"description": "Mali ya sehemu ni jengo lililogawanywa katika vitengo vinavyomilikiwa kibinafsi (vyumba vya kufikia, ofisi, maduka) ambapo kila mmiliki hupata hati ya umiliki na kushiriki maeneo ya pamoja.",
@@ -62,51 +65,12 @@
 			}
 		]
 	},
-	"whatIs": {
-		"tag": "Sheria ya Mali za Sehemu, 2020",
-		"headline": "Mali ya Sehemu ni nini?",
-		"description": "Mali ya sehemu ni jengo lijigawanywalo vitengo vinavyomilikiwa kibinafsi (apartmenti, ofisi, maduka) ambapo kila mmiliki hupata hati ya umiliki na kushiriki maeneo ya pamoja.",
-		"diagramLabel": "Uchunguzi wa Mali za Sehemu — Mgawanyo wa Umiliki",
-		"items": [
-			{
-				"icon": "door-open",
-				"title": "Umiliki wa Kitengo Binafsi",
-				"points": [
-					"Kila apartmenti/ofisi inamilikiwa kibinafsi.",
-					"Hati ya umiliki inatolewa kwa kitengo husika.",
-					"Mmiliki ana haki za kipekee za kukaa, kupangisha, au kuuza kitengo chake."
-				]
-			},
-			{
-				"icon": "elevator",
-				"title": "Umiliki wa Mali ya Pamoja",
-				"points": [
-					"Nafasi za pamoja kama magati, lifti, bustani, maegesho na maeneo ya mapumziko.",
-					"Milikiwa kwa pamoja na wamiliki wote wa vitengo.",
-					"Isimamiwe kwa pamoja kupitia chama cha wamiliki."
-				]
-			},
-			{
-				"icon": "chart-donut",
-				"title": "Mgawanyo wa Mambo ya Vitengo",
-				"points": [
-					"Huamua hisa ya kila mmiliki katika mali ya pamoja.",
-					"Inatokana na ukubwa/thamani ya kitengo ikilinganishwa na maendeleo yote."
-				],
-				"impactsLabel": "Athari:",
-				"impacts": [
-					"Mchango kwa gharama za matunzo",
-					"Haki za kupiga kura katika chama",
-					"Hisa ya mali ya pamoja"
-				]
-			}
-		]
-	},
 	"process": {
+		"type": "process",
 		"tag": "Mchakato",
 		"headline": "Mchakato wa Uchunguzi wa Mali za Sehemu",
 		"description": "Hatua saba zilizothibitishwa zinachukua jengo lako kutoka ziara ya kwanza hadi mpango wa sehemu uliowasilishwa — kila wakati unajua ni wapi mpango wako ulipo.",
-		"items": [
+		"steps": [
 			{
 				"label": "Mkusanyiko wa Data za Tovuti na Jengo",
 				"description": "Tunatembelea tovuti kunasa alama ya jengo, kuthibitisha hati-kuu na kukusanya nyaraka zilizopo za usanifu.",
@@ -154,6 +118,7 @@
 		}
 	},
 	"sectionalServices": {
+		"type": "gallery-grid",
 		"tag": null,
 		"headline": "HUDUMA ZA SEHEMU",
 		"description": "",
@@ -181,6 +146,7 @@
 		]
 	},
 	"sectionalPropertyServices": {
+		"type": "card-grid",
 		"tag": null,
 		"headline": "Huduma Zetu za Mali za Sehemu",
 		"description": "Huduma kamili kuanzia mipango ya sehemu hadi as-builts za 3D — iliyoundwa kwa usahihi, uzingatiaji, na ufanisi.",
@@ -204,6 +170,7 @@
 		]
 	},
 	"deliverables": {
+		"type": "deliverables",
 		"tag": "Unachopokea",
 		"headline": "Matokeo Unayopokea",
 		"description": "Kila kifurushi cha mpango wa sehemu huandaliwa kwa ajiliya ukubaliaji wa ofisi ya rejesta ya ardhi — CAD, PDF na ratiba katika muundo unaoatarajiwa na rejesta.",
@@ -258,6 +225,7 @@
 		]
 	},
 	"whoNeeds": {
+		"type": "card-grid",
 		"tag": "Tunayehudumia",
 		"headline": "Nani Anahitaji Uchunguzi wa Sehemu?",
 		"description": "Ikiwa mradi wako unamalizia kwa vitengo vinavyomilikiwa kibinafsi, unahitaji mpango wa sehemu — na ukianza mapema katika mpango wako, usajili huenda laini zaidi.",
@@ -302,6 +270,7 @@
 		]
 	},
 	"timeline": {
+		"type": "unique",
 		"tag": "Panga mapema",
 		"headline": "Muda & Matumizi Tarajiwa",
 		"description": "Maandalizi ya kawaida ya mpango wa sehemu: siku 7–21 kutegemea ugumu wa jengo. Majengo makubwa au yenye jiometri ngumu huchukua muda mrefu; majengo ya kawaida huharakisha.",
@@ -352,6 +321,7 @@
 		}
 	},
 	"registrationCta": {
+		"type": "cta",
 		"tag": "Tuko tayari unapokuwa tayari",
 		"headline": "Anza Usajili wa Mpango Wako wa Sehemu",
 		"description": "Tutumie maelezo ya jengo lako nasi tutathibitisha uhalali chini ya Sheria ya Mali za Sehemu, 2020 — kisha tutaandaa, turejele kijiografia na kuwasilisha mpango kwa niaba yako.",
@@ -368,6 +338,7 @@
 		}
 	},
 	"faq": {
+		"type": "faq",
 		"tag": null,
 		"headline": "MASWALI YANAYOULIZWA MARA KWA MARA",
 		"items": [
@@ -439,6 +410,7 @@
 		]
 	},
 	"socials": {
+		"type": "unique",
 		"items": [
 			{
 				"name": "Linkedin",

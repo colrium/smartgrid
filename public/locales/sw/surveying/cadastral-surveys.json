@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "hero",
 		"headline": "UCHUNGUZI WA CADASTRAL",
 		"title": "Jua Mipaka Yako, Jenga kwa Ujasiri",
 		"image": "/media/surveying/cadastral-surveys/AG8ng.jpg",
@@ -10,12 +11,14 @@
 		}
 	},
 	"whatsABoundarySurvey": {
+		"type": "split-media",
 		"tag": "Jenga kwa Ujasiri",
 		"headline": "Ni nini uchunguzi wa mipaka?",
 		"image": "/media/surveying/cadastral-surveys/AG8ngQ.png",
 		"description": "Uchunguzi wa mipaka huamua mistari ya kisheria ya mali ya kiwanja cha ardhi. Kwa kutumia GPS ya kisasa, total stations, na rekodi za kihistoria za ardhi, SmartGrid Surveying hutoa ramani sahihi sana zinazofafanua mipaka ya mali na kutambua uvamizi au hitilafu zozote."
 	},
 	"postHeroCta": {
+		"type": "unique",
 		"tag": "Uchunguzi wa Cadastral nchini Kenya",
 		"headline": "Uchunguzi wa Cadastral nchini Kenya kwa Hati Miliki, Ugawaji wa Viwanja na Uthibitisho wa Mipaka",
 		"description": "Uchunguzi sahihi wa mipaka kwa viwango vya usajili, ulioandaliwa na wachunguzi walioidhinishwa na kutayarishwa kwa uwasilishaji wa Ardhisasa — kwa wanunuzi, wamiliki wa ardhi na wasanidi miradi.",
@@ -31,6 +34,7 @@
 		}
 	},
 	"whenYouNeed": {
+		"type": "unique",
 		"tag": "Unapohitaji",
 		"headline": "Unapohitaji Uchunguzi wa Cadastral",
 		"description": "Kuanzia uthibitisho wa hati hadi suluhisho la migogoro — hivi ni muda ambao uchunguzi wa mipaka ulioidhinishwa unalinda ardhi yako, pesa yako na nyaraka zako.",
@@ -77,6 +81,7 @@
 		]
 	},
 	"process": {
+		"type": "process",
 		"tag": "Inavyofanya Kazi",
 		"headline": "Mchakato wa Uchunguzi wa Mipaka — Kutoka Ziara ya Tovuti hadi Idhini ya Kaunti",
 		"description": "Mtiririko wa kazi wa hati sita ulio wazi. Unajua wakati wowote kiwanja chako kiko katika hatua gani na kinachofuata hasa.",
@@ -121,6 +126,7 @@
 		]
 	},
 	"processCta": {
+		"type": "unique",
 		"tag": "Anza Sasa",
 		"headline": "Anza Mchakato Wako wa Uchunguzi Leo",
 		"description": "Tutumie maelezo ya kiwanja chako — namba ya hati, eneo na ukubwa — nasi tutakupangia hatua halisi za uchunguzi, gharama na idhini za ardhi yako.",
@@ -141,6 +147,7 @@
 		]
 	},
 	"cost": {
+		"type": "unique",
 		"tag": "Mwongozo wa Gharama",
 		"headline": "Gharama ya Uchunguzi wa Cadastral nchini Kenya",
 		"description": "Bei za kielelezo kwa uchunguzi wa cadastral na mipaka. Kila kiwanja hunukuliwa baada ya ukaguzi wa usajili — hakuna malipo yaliyofichwa, hakuna mashangazo.",
@@ -189,6 +196,7 @@
 		}
 	},
 	"timeline": {
+		"type": "unique",
 		"tag": "Muda Unachukua",
 		"headline": "Uchunguzi wa Cadastral Huchukua Muda Gani?",
 		"description": "Muda wa uchunguzi unategemea idhini za usajili na ugumu wa kiwanja. Hii ni ya kweli ya kupanga nayo.",
@@ -225,6 +233,7 @@
 		}
 	},
 	"compliance": {
+		"type": "unique",
 		"tag": "Uzingatiaji wa Kisheria & Udhibiti",
 		"headline": "Uzingatiaji wa Kisheria & Ardhisasa Unaweza Kutegemea",
 		"description": "Kila uchunguzi wa cadastral tunaoleta hutekelezwa chini ya sheria zinazosimamia ardhi nchini Kenya — hivyo nyaraka zako zinapita ukaguzi kwa usajili, benki na mahakama.",
@@ -273,6 +282,7 @@
 		]
 	},
 	"caseStudy": {
+		"type": "unique",
 		"tag": "Kesi Uliyofanya · Kaunti ya Kiambu",
 		"headline": "Uchunguzi wa Ugawaji wa Kiambu – Kiwanja cha Eka 40",
 		"subtitle": "Usajili wa Hati & Utatuzi wa Migogoro ya Mipaka Kwa Kutumia Uchunguzi sahihi wa GNSS",
@@ -311,10 +321,10 @@
 					"src": "/media/surveying/cadastral-surveys/02-03.jpg",
 					"alt": "Vipande jirani vinavyopishana na madai katika Kaunti ya Kiambu"
 				},
-                {
+					{
 					"src": "/media/surveying/cadastral-surveys/02-01.jpg",
 					"alt": "Mstari wa mipaka uliokuzwa na usio na alama kwenye kiwanja cha Kiambu kabla ya uchunguzi"
-				},
+					}
 			]
 		},
 		"methodology": {
@@ -443,6 +453,7 @@
 		}
 	},
 	"finalCta": {
+		"type": "cta-closing",
 		"tag": "Hatua Zifuatazo",
 		"headline": "Uko Tayari kulinda Mipaka ya Ardhi Yako?",
 		"description": "Epuka migogoro ya gharama kubwa na ucheleweshaji wa uchakataji wa hati.",

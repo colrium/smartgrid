@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"type": "unique",
 		"tag": "Droni ya Upimaji",
 		"headline": "Droni ya Kisasa ya Ramani za Katikati",
 		"title": "DJI Air 3S",
@@ -11,6 +12,7 @@
 		}
 	},
 	"productImages": {
+		"type": "unique",
 		"images": [
 			"/media/equipment-sale/dji-air-3s/images/02.png",
 			"/media/equipment-sale/dji-air-3s/images/03.png",
@@ -18,16 +20,19 @@
 		]
 	},
 	"breadcrumb": {
+		"type": "unique",
 		"home": "Nyumbani",
 		"section": "Uuzaji wa Vifaa",
 		"sectionHref": "/equipment-sale/equipment-catalogue"
 	},
 	"catalogue": {
+		"type": "unique",
 		"icon": "quadcopter",
 		"description": "Droni ya kisasa ya katikati ya ramani yenye mfumo wa kamera mbili, muda wa kuruka wa dakika ~40-45, na matandao imara kwa kazi za haraka za ramani na ukaguzi.",
 		"badge": "Kipya"
 	},
 	"pricing": {
+		"type": "pricing",
 		"new": {
 			"label": "Mpya Kabisa",
 			"currency": "KES",
@@ -64,6 +69,7 @@
 		}
 	],
 	"productOverview": {
+		"type": "unique",
 		"tag": "Muhtasari wa Bidhaa",
 		"headline": "Ramani za Gharama Nafuu Bila Fursa",
 		"images": [
@@ -74,6 +80,7 @@
 		"description": "DJI Air 3S inaunganisha mfumo wa kamera mbili na uwezo wa juu wa kustahimili upepo na matandao imara ya ramani, na kuifanya kuwa chaguo la kuaminika kwa uchunguzi wa topografia, utafiti wa njia za barabara, na ufuatiliaji wa ujenzi."
 	},
 	"model3d": {
+		"type": "unique",
 		"tag": "Mwingiliano wa 3D",
 		"headline": "Chunguza Air 3S kwa 3D",
 		"description": "Buruta kuzungusha modeli na tumia gurudumu la kutanua au kidondoa kukaza.",
@@ -83,6 +90,7 @@
 		]
 	},
 	"keyFeatures": {
+		"type": "card-grid",
 		"tag": "Mambo Muhimu",
 		"headline": "Vipengele Muhimu",
 		"description": "Kinachomfanya Air 3S kuwa chaguo zuri la upimaji wa katikati.",
@@ -110,6 +118,7 @@
 		]
 	},
 	"cameraSystem": {
+		"type": "unique",
 		"tag": "Kamera",
 		"headline": "Mfumo wa Kamera",
 		"description": "Upigaji panga wa lensi mbili ulioundwa kwa ukamataji wa aina mbalimbali.",
@@ -120,6 +129,7 @@
 		]
 	},
 	"flightAndCoverage": {
+		"type": "unique",
 		"tag": null,
 		"headline": "Uruka na Ufunikaji",
 		"description": "Ufunikaji mzuri na imara kwa maeneo ya upimaji ya wastani.",
@@ -130,6 +140,7 @@
 		]
 	},
 	"accuracyNotes": {
+		"type": "unique",
 		"tag": "Usahihi",
 		"headline": "Uwezo na Usahihi wa Photogrammetry",
 		"description": "Usahihi unategemea GCP kwa kuwa haipo RTK iliyojengwa ndani.",
@@ -141,11 +152,13 @@
 		]
 	},
 	"specs": {
+		"type": "unique",
 		"tag": "Data ya Kiufundi",
 		"headline": "Vipimo vya Kiufundi",
 		"description": "Maelezo kamili ya kiufundi kwa DJI Air 3S."
 	},
 	"surveyApplications": {
+		"type": "unique",
 		"tag": "Matumizi",
 		"headline": "Matumizi ya Uhandisi",
 		"description": "Pale Air 3S inavyofaa katika mchakato wa upimaji.",
@@ -157,6 +170,7 @@
 		]
 	},
 	"cta": {
+		"type": "cta",
 		"tag": "Pata Nukuu",
 		"headline": "Ulizia Droni Hii",
 		"description": "Tuambie kuhusu mradi wako na upate nukuu iliyoundwa kwa ajili ya DJI Air 3S.",
@@ -172,6 +186,7 @@
 		}
 	},
 	"relatedProducts": {
+		"type": "unique",
 		"tag": "Chunguza",
 		"headline": "Droni Nyingine Unazoweza Kuzipenda",
 		"description": "Gundua droni zaidi za upimaji kutoka kwenye katalogi ya SmartGrid."

@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useTranslation } from "@/hooks";
 import { SectionHeader } from "@/components/sections/home";
 import { FadeUp } from "@/components/animations/Fade";
-import { Blob, ParallaxDecor } from "@/components/sections/home/decor";
+import { Blob, ParallaxDecor } from "@/components/sections/shared/decor";
 
 interface AerialServiceItem {
 	title: string;
@@ -14,6 +14,12 @@ interface AerialServiceItem {
 }
 
 interface AerialServicesContent {
+	tag?: string | null;
+	headline: string;
+	items: AerialServiceItem[];
+}
+
+export interface AerialServicesData {
 	tag?: string | null;
 	headline: string;
 	items: AerialServiceItem[];
@@ -31,11 +37,15 @@ const FALLBACK_ICONS = [
 	"alert-octagon-outline",
 ];
 
-export function AerialServicesSection(): ReactElement {
+export function AerialServicesSection({ data, id }: { data?: AerialServicesData | null; id?: string } = {}): ReactElement {
 	const { t } = useTranslation(["surveying/aerial-surveys"]);
-	const section = t("surveying/aerial-surveys:whatWeOffer", {
-		returnObjects: true,
-	}) as unknown as AerialServicesContent;
+	// Keystatic-owned content when `data` is provided (M11 `aerialServices`
+	// unique section); legacy locale strings otherwise. The popup modal +
+	// Escape/backdrop-close behavior stays in the renderer.
+	const section = (data ??
+		(t("surveying/aerial-surveys:whatWeOffer", {
+			returnObjects: true,
+		}) as unknown as AerialServicesContent)) as AerialServicesContent;
 	const items = Array.isArray(section.items) ? section.items : [];
 	const [active, setActive] = useState<AerialServiceItem | null>(null);
 
@@ -48,7 +58,7 @@ export function AerialServicesSection(): ReactElement {
 	}, []);
 
 	return (
-		<section className="py-24 sm:py-28 relative overflow-hidden">
+		<section id={id} className="py-24 sm:py-28 relative overflow-hidden">
 			<Blob
 				className="w-[28rem] h-[28rem] bg-primary-200/40 -top-24 -right-24"
 				opacity={0.5}
