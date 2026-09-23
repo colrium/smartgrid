@@ -57,12 +57,14 @@ export type PageResolution =
 	| { status: "legacy"; reason: LegacyReason; detail?: string };
 
 export function isKeystaticPageEnabled(slug: string): boolean {
-	if (process.env.KEYSTATIC_DISABLE === "1") return false;
-	const allowlist = (process.env.KEYSTATIC_PAGES ?? "")
-		.split(",")
-		.map((entry) => entry.trim())
-		.filter((entry) => entry.length > 0);
-	return allowlist.length === 0 || allowlist.includes(slug);
+    
+	// if (process.env.KEYSTATIC_DISABLE === "1") return false;
+	// const allowlist = (process.env.KEYSTATIC_PAGES ?? "")
+	// 	.split(",")
+	// 	.map((entry) => entry.trim())
+	// 	.filter((entry) => entry.length > 0);
+    // return allowlist.length === 0 || allowlist.includes(slug);
+    return true;
 }
 
 function toErrorDetail(error: unknown): string {
