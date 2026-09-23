@@ -1,7 +1,7 @@
 {
 	"slug": "Careers",
 	"title": "Careers (migrated)",
-	"status": "published",
+	"status": "draft",
 	"pageBuilder": [
 		{
 			"discriminant": "hero",

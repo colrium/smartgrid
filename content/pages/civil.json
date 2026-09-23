@@ -1,7 +1,7 @@
 {
 	"slug": "Civil",
 	"title": "Civil (migrated)",
-	"status": "published",
+	"status": "draft",
 	"pageBuilder": [
 		{
 			"discriminant": "civilHero",

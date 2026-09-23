@@ -1,7 +1,7 @@
 {
 	"slug": "Bathymetric Surveys",
 	"title": "Bathymetric Surveys (migrated)",
-	"status": "published",
+	"status": "draft",
 	"pageBuilder": [
 		{
 			"discriminant": "hero",

@@ -1,7 +1,7 @@
 {
 	"slug": "LiDAR Mapping",
 	"title": "LiDAR Mapping (migrated)",
-	"status": "published",
+	"status": "draft",
 	"pageBuilder": [
 		{
 			"discriminant": "hero",

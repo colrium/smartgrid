@@ -1,7 +1,7 @@
 {
 	"slug": "Resource Mapping",
 	"title": "Resource Mapping (migrated)",
-	"status": "published",
+	"status": "draft",
 	"pageBuilder": [
 		{
 			"discriminant": "hero",
