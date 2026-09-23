@@ -51,6 +51,7 @@ export default config({
 	// storage: storageConfig(),
 	storage: {
 		kind: "cloud",
+		branchPrefix: "dev/page-builder",
 	},
 	cloud: {
 		project: "smartgrid/smartgrid",
