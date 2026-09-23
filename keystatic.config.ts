@@ -50,8 +50,7 @@ function storageConfig() {
 export default config({
 	// storage: storageConfig(),
 	storage: {
-		kind: "cloud",
-		branchPrefix: "dev/page-builder",
+		kind: "cloud"
 	},
 	cloud: {
 		project: "smartgrid/smartgrid",
