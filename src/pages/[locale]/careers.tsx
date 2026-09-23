@@ -26,7 +26,8 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 	// Otherwise the legacy locale-JSON implementation renders unchanged.
 	// NOTE: the `leadGenBar`/`services` entry copies embed the global
 	// `common:leadGenBar`/`common:services` instances verbatim (same copy
-	// as home); re-run the migration to refresh them.
+    // as home); re-run the migration to refresh them.
+    console.log("keystaticPage", keystaticPage);
 	return (
 		<div className="relative">
 			<PageHead pageName="careers" />
