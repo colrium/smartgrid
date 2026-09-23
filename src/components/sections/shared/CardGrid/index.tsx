@@ -71,7 +71,7 @@ export function CardGrid(props: CardGridProps): ReactElement | null {
 					<div className={`${leadClass} grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 ${props.classes?.leadGrid ?? ""}`}>
 						{leadImages.map((src, index) => (
 							<div key={index} className={`relative rounded-c overflow-hidden hairline ${props.leadAspect ?? "h-64 sm:h-80"} ${props.classes?.leadImage ?? ""}`}>
-								<Image src={src} alt="" fill sizes="(min-width: 640px) 50vw, 100vw" className="object-cover object-center transition-transform duration-700 hover:scale-105" />
+								<Image src={src} alt="" fill sizes="(min-width: 640px) 50vw, 100vw" className="object-fill object-center transition-transform duration-700 hover:scale-105" />
 							</div>
 						))}
 					</div>
