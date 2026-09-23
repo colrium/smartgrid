@@ -40,8 +40,8 @@ export interface ServicesProps extends HTMLAttributes<HTMLDivElement> {
 	id?: string;
 	classes?: ServicesClassesProp;
 	/** Section content. When omitted, the legacy locale strings render
-	 * (`common:services.items` + `home:services.tag/headline`) — unchanged
-	 * behavior for non-Keystatic callers. NOTE: `home:services.*` no longer
+	 * (`common:services.items` + `common:services.tag/headline`) — unchanged
+	 * behavior for non-Keystatic callers. NOTE: `common:services.*` no longer
 	 * exists in locale JSON (nodes moved to `common.json`), so the legacy
 	 * header renders the raw key strings; the Keystatic branch sources
 	 * tag/headline from `common:services` instead (visible fix). */
@@ -57,8 +57,8 @@ export function ServicesSection({ id = "services", className, classes, data }: S
 			? data.items
 			: (t("common:services.items", { returnObjects: true }) as unknown as ServiceItem[])
 	) as ServiceItem[];
-	const tag = data ? (data.tag ?? "") : (t("home:services.tag") as string);
-	const headline = data ? (data.headline ?? "") : (t("home:services.headline") as string);
+	const tag = data ? (data.tag ?? "") : (t("common:services.tag") as string);
+	const headline = data ? (data.headline ?? "") : (t("common:services.headline") as string);
 	const [activeTab, setActiveTab] = useState(0);
 
 	if (!Array.isArray(items) || items.length === 0) return null;
