@@ -58,13 +58,12 @@ export type PageResolution =
 
 export function isKeystaticPageEnabled(slug: string): boolean {
     
-	// if (process.env.KEYSTATIC_DISABLE === "1") return false;
-	// const allowlist = (process.env.KEYSTATIC_PAGES ?? "")
-	// 	.split(",")
-	// 	.map((entry) => entry.trim())
-	// 	.filter((entry) => entry.length > 0);
-    // return allowlist.length === 0 || allowlist.includes(slug);
-    return true;
+	if (process.env.KEYSTATIC_DISABLE === "1") return false;
+	const allowlist = (process.env.KEYSTATIC_PAGES ?? "")
+		.split(",")
+		.map((entry) => entry.trim())
+		.filter((entry) => entry.length > 0);
+    return allowlist.length === 0 || allowlist.includes(slug);
 }
 
 function toErrorDetail(error: unknown): string {
@@ -77,7 +76,7 @@ export async function resolveKeystaticPage(
 	locale: Lang,
 	opts?: { baseDir?: string }
 ): Promise<PageResolution> {
-	if (!isKeystaticPageEnabled(slug)) return { status: "legacy", reason: "disabled" };
+	// if (!isKeystaticPageEnabled(slug)) return { status: "legacy", reason: "disabled" };
 
 	let entry;
 	try {
