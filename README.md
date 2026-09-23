@@ -140,9 +140,9 @@ cp .env.example .env.local
 | `KEYSTATIC_SECRET`                | deploy   | Session-signing secret, ≥32 random chars           |
 
 Keystatic administration is available at `/keystatic` and `/api/keystatic/*`. Development is
-unrestricted; production requests are protected by the middleware Basic Auth gate. Configure the
-storage repository and GitHub integration in `keystatic.config.ts` through deployment-safe
-environment variables before enabling GitHub-backed editing.
+unrestricted; production requests are protected by the `src/proxy.ts` edge gate (HTTP Basic
+Auth). Configure the storage repository and GitHub integration in `keystatic.config.ts` through
+deployment-safe environment variables before enabling GitHub-backed editing.
 
 > Environment variables are validated at runtime with Zod (`src/lib/env.ts`). Invalid values
 > will crash the app at startup with a readable error.
@@ -453,27 +453,72 @@ source for editor options and renderer mappings.
   constant-time compare in `src/proxy.ts`). Generate the password with
   `yarn mediakeygen`, store it in the host env (Vercel → Project Settings →
   Environment Variables), and rotate regularly. Never commit credentials.
-- **GitHub-backed editing (deployed CMS, step by step):** editors' changes commit
-  straight to the GitHub repository instead of local files.
-  1. Install the [Keystatic GitHub App](https://github.com/apps/keystatic) on the
-     repo (`colrium/smartgrid` or your fork) — grant access to **content/** and
-     **public/** (all it writes).
-  2. From the app's settings page, copy the **App Slug**, **Client ID**, and
-     generate a **Client Secret**.
-  3. Create a session secret: `node -e "console.log(require('crypto').randomBytes(40).toString('hex'))"`.
-  4. Set five env vars on the deployed environment (Vercel → Project Settings →
-     Environment Variables) and in `.env.local` for local testing of GitHub mode:
+- **GitHub-backed editing (deployed CMS) — full setup, including the GitHub side:** editors'
+  changes commit to the GitHub repository instead of local files. GitHub mode requires a
+  **custom GitHub App that you create yourself** — the public Keystatic app cannot hand out a
+  client secret, and the in-app setup wizard is development-only (`createdGithubApp` returns
+  400 outside `NODE_ENV=development`).
+
+  **On GitHub (one-time):**
+
+  1. Create the app: GitHub → Settings → Developer settings → GitHub Apps → **New GitHub App**.
+     - **GitHub App name:** e.g. `smartgrid-keystatic`.
+     - **Homepage URL:** your deployed site (e.g. `https://smartgridsurveying.com`).
+     - **Callback URL (must match exactly):**
+       `https://<your-domain>/api/keystatic/github/oauth/callback` — this is the `redirect_uri`
+       Keystatic sends editors to (verified against `@keystatic/core`'s OAuth handler; a typo
+       here makes GitHub reject every sign-in with `redirect_uri_mismatch`).
+     - **Webhook:** set **Active** to unchecked — Keystatic uses no webhooks.
+     - **Permissions → Repository permissions → Contents: Read and write** (Metadata:
+       Read-only is granted automatically; nothing else is needed — Keystatic only reads and
+       writes content files under `content/` and `public/`).
+     - **Where can this GitHub App be installed:** "Any account" (or "Only this account" when
+       the repo lives on a personal account).
+  2. After creating it, open the app's settings page: **Generate a client secret** (shown once
+     — copy it immediately), copy the **Client ID** (NOT the numeric App ID), and note the
+     **App slug** — the app's public page is `https://github.com/apps/<slug>`.
+  3. **Install the app** on the account/organization, selecting the repo (`colrium/smartgrid`
+     or your fork).
+  4. Create a session secret:
+     `node -e "console.log(require('crypto').randomBytes(40).toString('hex'))"`.
+
+  **On the deployment (Vercel) + local `.env.local`:**
+
+  5. Set the five env vars and redeploy:
      `KEYSTATIC_GITHUB_REPO=owner/name`, `NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG=<app slug>`,
      `KEYSTATIC_GITHUB_CLIENT_ID=<client id>`, `KEYSTATIC_GITHUB_CLIENT_SECRET=<client secret>`,
      `KEYSTATIC_SECRET=<session secret>`. Omitting `KEYSTATIC_GITHUB_REPO` keeps
      local-filesystem storage (`keystatic.config.ts` decides by env — local dev stays
-     credential-free by default).
-  5. Sign in at `/keystatic` with the GitHub account the app was installed for;
-     edits commit to the deployment branch by default (branch/PR behavior follows
-     the Keystatic GitHub app configuration). Keep the Basic Auth
-     (`KEYSTATIC_ADMIN_USER`/`KEYSTATIC_ADMIN_PASSWORD`) gate enabled — it protects
-     `/keystatic/*` and `/api/keystatic/*` before GitHub auth even starts. Never
-     commit credentials; rotate the client secret and `KEYSTATIC_SECRET` regularly.
+     credential-free by default). **Scope matters on Vercel:** branch/preview deployments read
+     the **Preview** environment values — add these (and the admin credentials below) to
+     Production **and** Preview if you edit from both.
+  6. Sign in at `/keystatic` (Basic gate first, then the GitHub sign-in). Edits commit to the
+     branch selected in the admin UI — the repo's default branch unless you switch or create a
+     branch / open a PR from the Keystatic sidebar.
+- **Admin access troubleshooting (the credentials popup keeps appearing):** the popup is the
+  `src/proxy.ts` Basic Auth gate (realm `Keystatic Admin`) returning 401 — the browser
+  re-prompts on every rejected request, so a loop means *something before or inside the gate
+  is still failing*. Two walls sit in front of the admin UI, in order:
+
+  1. **Vercel Deployment Protection** (if enabled on the project): unauthenticated requests
+     302-redirect to `vercel.com/sso-api` *before the app runs*. With "Password Protection"
+     mode the browser dialog asks for the **Vercel** deployment password — typing the Keystatic
+     admin credentials there loops forever. Fix it under Vercel → Settings → Deployment
+     Protection (use Vercel Authentication and stay signed in to Vercel, or set a password you
+     actually intend to type).
+  2. **The app's own Basic gate:** rejects EVERY request while `KEYSTATIC_ADMIN_USER` or
+     `KEYSTATIC_ADMIN_PASSWORD` is missing or empty in the **deployment's** environment —
+     fail-closed by design, so even correct credentials loop when the vars are absent from that
+     environment's scope (branch/preview deployments read **Preview** values; if the pair is
+     Production-only, add it to Preview too). Value hygiene: dashboard values are literal — no
+     surrounding quotes, no trailing whitespace/newline, case-sensitive. Non-ASCII passwords
+     are supported only since the 2026-09-22 RFC 7617 UTF-8 decode (older deployments reject
+     them) — prefer ASCII secrets.
+
+     Verify once past the Vercel wall:
+     `curl -sSI -u 'user:pass' https://<your-domain>/keystatic | head -1` → `HTTP/2 200`;
+     wrong credentials → `HTTP/2 401` with
+     `www-authenticate: Basic realm="Keystatic Admin"`.
 - **Media policy (decided):** no uploads — images are referenced as `/public` paths
   (`imagePath` / `localeMedia` fields); `fields.image` uploads stay disabled until a
   directory-per-entry layout is adopted. Allowed formats follow the existing

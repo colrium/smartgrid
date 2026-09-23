@@ -29,6 +29,9 @@ import {
  *   `KEYSTATIC_ADMIN_PASSWORD`. Missing credentials fail CLOSED (every
  *   request rejected) — never open. Rejections are bare 401s with a
  *   `WWW-Authenticate` challenge; authorization values are never logged.
+ * - A hosting-level wall in front of the app (e.g. Vercel Deployment
+ *   Protection) runs BEFORE this gate; a looping login prompt can originate
+ *   from either layer. See README → "Admin access troubleshooting".
  *
  * Media protection (`public/media/**`).
  *
@@ -107,12 +110,17 @@ function parseBasicCredentials(auth: string | null): { user: string; pass: strin
 	if (!auth) return null;
 	const space = auth.indexOf(" ");
 	if (space === -1) return null;
-	if (auth.slice(0, space) !== "Basic") return null;
+	// RFC 7235: the auth-scheme token is case-insensitive.
+	if (auth.slice(0, space).toLowerCase() !== "basic") return null;
 	const encoded = auth.slice(space + 1).trim();
 	if (!encoded) return null;
 	let decoded: string;
 	try {
-		decoded = atob(encoded);
+		// RFC 7617: browsers send `user:pass` UTF-8-encoded. `atob` yields a
+		// latin-1 binary string, so decode the raw bytes back to UTF-8 —
+		// feeding that string to TextEncoder later would double-encode any
+		// non-ASCII character and reject a correct password forever.
+		decoded = new TextDecoder().decode(Uint8Array.from(atob(encoded), (char) => char.charCodeAt(0)));
 	} catch {
 		return null;
 	}
@@ -200,7 +208,7 @@ export default async function proxy(request: NextRequest) {
 
 	if (isKeystaticPath(pathname)) {
 		// Local development stays credential-free (local-filesystem storage).
-        if (process.env.NODE_ENV === "development") return NextResponse.next();
+        // if (process.env.NODE_ENV === "development") return NextResponse.next();
 		if (!isAuthorizedAdmin(request)) return unauthorizedAdmin();
 		const response = NextResponse.next();
 		// The admin console must never be indexed or cached by intermediaries.
