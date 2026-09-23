@@ -93,7 +93,7 @@ export function SplitMedia(props: SplitMediaProps): ReactElement | null {
 								className={`${
 									props.mediaFit === "contain"
 										? "object-contain object-center p-8 sm:p-10"
-										: "object-cover object-center transition-transform duration-700 hover:scale-105"
+										: "object-fill object-center transition-transform duration-700 hover:scale-105"
 								}  ${props.classes?.media ?? ""}`}
 							/>
 						</div>
