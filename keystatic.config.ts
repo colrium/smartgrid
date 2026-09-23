@@ -48,7 +48,13 @@ function storageConfig() {
 }
 
 export default config({
-	storage: storageConfig(),
+	// storage: storageConfig(),
+	storage: {
+		kind: "cloud",
+	},
+	cloud: {
+		project: "smartgrid/smartgrid",
+	},
 	collections: {
 		pages: collection({
 			label: "Pages",

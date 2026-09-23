@@ -4,6 +4,7 @@ const withAnalyzer = require("@next/bundle-analyzer")({ enabled: process.env.ANA
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	allowedDevOrigins: ["127.0.0.1"],
 	// Allow redirecting the build output (e.g. CI/verification builds) without
 	// disturbing a running dev server that owns the default `.next` folder.
 	distDir: process.env.NEXT_DIST_DIR || ".next",
