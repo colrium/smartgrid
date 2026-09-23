@@ -1,7 +1,7 @@
 {
 	"slug": "GIS Mapping",
 	"title": "GIS Mapping (migrated)",
-	"status": "draft",
+	"status": "published",
 	"pageBuilder": [
 		{
 			"discriminant": "gisHero",

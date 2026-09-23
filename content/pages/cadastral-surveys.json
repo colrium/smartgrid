@@ -1,7 +1,7 @@
 {
 	"slug": "Cadastral Surveys",
 	"title": "Cadastral Surveys (migrated)",
-	"status": "draft",
+	"status": "published",
 	"pageBuilder": [
 		{
 			"discriminant": "hero",

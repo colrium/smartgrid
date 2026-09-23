@@ -136,9 +136,20 @@ function isKeystaticPath(pathname: string): boolean {
 
 /** Authorized only when expected credentials exist AND match in constant time. */
 function isAuthorizedAdmin(req: NextRequest): boolean {
-	const expected = expectedAdminCredentials();
+    const expected = expectedAdminCredentials();
+    console.log("expected", expected);
+    
 	if (!expected) return false;
-	const provided = parseBasicCredentials(req.headers.get("authorization"));
+    const provided = parseBasicCredentials(req.headers.get("authorization"));
+    console.log("provided", provided);
+    console.log(
+		"credentialsEqual(provided.user, expected.user)",
+		credentialsEqual(provided.user, expected.user)
+    );
+    console.log(
+		"credentialsEqual(provided.pass, expected.pass)",
+		credentialsEqual(provided.pass, expected.pass)
+	);
 	if (!provided) return false;
 	return credentialsEqual(provided.user, expected.user) && credentialsEqual(provided.pass, expected.pass);
 }
@@ -209,7 +220,7 @@ export default async function proxy(request: NextRequest) {
 	if (isKeystaticPath(pathname)) {
 		// Local development stays credential-free (local-filesystem storage).
         // if (process.env.NODE_ENV === "development") return NextResponse.next();
-		// if (!isAuthorizedAdmin(request)) return unauthorizedAdmin();
+		if (!isAuthorizedAdmin(request)) return unauthorizedAdmin();
 		const response = NextResponse.next();
 		// The admin console must never be indexed or cached by intermediaries.
 		response.headers.set("X-Robots-Tag", "noindex, nofollow");
