@@ -17,8 +17,8 @@ interface PreferenceRow {
 
 const PREFERENCE_ROWS: PreferenceRow[] = [
     { key: "necessary", locked: true },
-    { key: "functional", locked: true },
-    { key: "analytics", locked: true },
+    { key: "functional", locked: false },
+    { key: "analytics", locked: false },
 ];
 
 /**
@@ -36,9 +36,9 @@ export default function CookieConsent(): ReactElement | null {
         useCookieConsent();
     const containerRef = useRef<HTMLElement>(null);
     const [draft, setDraft] = useState<ConsentCategories>({
-        functional: false,
-        analytics: false,
-    });
+		functional: true,
+		analytics: true,
+	});
 
     useEffect(() => {
         hydrate();
