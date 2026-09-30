@@ -40,7 +40,8 @@ export interface ResolvedPageSection {
 	/** Registry section id (discriminant). */
 	id: string;
 	/** Raw stored `value` for the section (locale resolution happens at render). */
-	value: unknown;
+    value: unknown;
+    
 }
 
 export interface ResolvedKeystaticPage {
@@ -53,8 +54,8 @@ export interface ResolvedKeystaticPage {
 export type LegacyReason = "disabled" | "missing" | "unpublished" | "error" | "empty";
 
 export type PageResolution =
-	| { status: "keystatic"; page: ResolvedKeystaticPage }
-	| { status: "legacy"; reason: LegacyReason; detail?: string };
+	| { status: "keystatic"; page: ResolvedKeystaticPage; statusMessage?: string }
+	| { status: "legacy"; reason: LegacyReason; detail?: string; statusMessage?: string };
 
 export function isKeystaticPageEnabled(slug: string): boolean {
     
@@ -97,7 +98,12 @@ export async function resolveKeystaticPage(
 	const stored = Array.isArray(entry.pageBuilder) ? entry.pageBuilder : [];
 	if (stored.length === 0) {
 		console.warn(`[keystatic] page "${slug}" falls back to legacy content (no sections).`);
-		return { status: "legacy", reason: "empty", detail: "Page has no sections." };
+		return {
+			status: "legacy",
+			reason: "empty",
+			detail: "Page has no sections.",
+			statusMessage: `[keystatic] page "${slug}" falls back to legacy content (no sections).`,
+		};
 	}
 	// Discriminants are validated by the reader against the registry-derived
 	// branch options; re-check here so a registry/reader skew still resolves
@@ -119,6 +125,11 @@ export async function resolveKeystaticPage(
 	} catch (error) {
 		const detail = toErrorDetail(error);
 		console.warn(`[keystatic] page "${slug}" falls back to legacy content (unknown section): ${detail}`);
-		return { status: "legacy", reason: "error", detail };
+		return {
+			status: "legacy",
+			reason: "error",
+			detail,
+			statusMessage: `[keystatic] page "${slug}" falls back to legacy content (unknown section): ${detail}`,
+		};
 	}
 }

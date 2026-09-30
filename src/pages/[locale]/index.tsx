@@ -44,6 +44,7 @@ import {
 interface PageProps {
 	/** Keystatic page when the `home` slug is opted in; otherwise `null` (legacy). */
 	keystaticPage: ResolvedKeystaticPage | null;
+    resolution: any;
 }
 
 interface FaqContent {
@@ -102,14 +103,14 @@ function orderedSections(page: ResolvedKeystaticPage) {
 	return page.sections;
 }
 
-const Page: NextPage<PageProps> = ({ keystaticPage }) => {
+const Page: NextPage<PageProps> = ({ keystaticPage, resolution }) => {
 	const { t } = useTranslation(["common"]);
 	// Migration source switch (M3/M7): Keystatic owns the nineteen migrated
 	// sections only when the slug is allowlisted via `KEYSTATIC_PAGES` and the
 	// entry is published. Otherwise the legacy locale-JSON implementation
 	// renders unchanged.
 	const sections = keystaticPage ? orderedSections(keystaticPage) : null;
-    console.log("keystaticPage", keystaticPage);
+	console.log("resolution", resolution);
 	if (keystaticPage && sections) {
 		const locale = keystaticPage.locale;
 		// M12: entry order IS page order — destructure once into named
@@ -135,9 +136,10 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 			keyFacts,
 			certifications,
 			trustees,
-            defaultCta,
-            
-		] = sections.map((section) => renderSection(section.id, section.value, locale, section.key));
+			defaultCta,
+		] = sections.map((section) =>
+			renderSection(section.id, section.value, locale, section.key)
+		);
 		return (
 			<div className="relative ">
 				<PageHead pageName="home" />
@@ -206,11 +208,15 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 	}) as unknown as CoverageAreaProps["data"];
 	const faqContent = t("common:faq", { returnObjects: true }) as unknown as FaqContent;
 	const faqItems = Array.isArray(faqContent?.items) ? faqContent.items : [];
-	const keyFactsData = t("common:keyFacts", { returnObjects: true }) as unknown as KeyFactsProps["data"];
+	const keyFactsData = t("common:keyFacts", {
+		returnObjects: true,
+	}) as unknown as KeyFactsProps["data"];
 	const certificationsData = t("common:certifications", {
 		returnObjects: true,
 	}) as unknown as CertificationsProps["data"];
-	const trusteesData = t("common:trustees", { returnObjects: true }) as unknown as TrusteesProps["data"];
+	const trusteesData = t("common:trustees", {
+		returnObjects: true,
+	}) as unknown as TrusteesProps["data"];
 
 	return (
 		<div className="relative ">
@@ -276,7 +282,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 	const lang: Lang = locale === "sw" ? "sw" : "en";
 	const resolution = await resolveKeystaticPage("home", lang);
 
-	return { props: { ...i18nProps, keystaticPage: resolution.status === "keystatic" ? resolution.page : null } };
+	return { props: { ...i18nProps, keystaticPage: resolution.status === "keystatic" ? resolution.page : null, resolution } };
 };
 
 export default Page;
