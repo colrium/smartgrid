@@ -289,7 +289,7 @@ export default function HeroSection({ data, id }: { data?: HeroSectionContent | 
 				<div className="lg:col-span-2 pointer-events-auto" />
 			</div>
 			<div className="absolute bottom-0 left-1/2 -translate-x-1/2 p-4 flex">
-				<ScrollIndicator />
+				<ScrollIndicator color="primary"/>
 			</div>
 			<motion.div
 				className={`rounded-3xl fixed  -right-40 md:-right-20 lg:-right-8 bottom-0 overflow-hidden w-80 md:w-100 lg:w-140 aspect-3/4 z-0`}

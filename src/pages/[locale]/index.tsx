@@ -103,14 +103,13 @@ function orderedSections(page: ResolvedKeystaticPage) {
 	return page.sections;
 }
 
-const Page: NextPage<PageProps> = ({ keystaticPage, resolution }) => {
+const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 	const { t } = useTranslation(["common"]);
 	// Migration source switch (M3/M7): Keystatic owns the nineteen migrated
 	// sections only when the slug is allowlisted via `KEYSTATIC_PAGES` and the
 	// entry is published. Otherwise the legacy locale-JSON implementation
 	// renders unchanged.
 	const sections = keystaticPage ? orderedSections(keystaticPage) : null;
-	console.log("resolution", resolution);
 	if (keystaticPage && sections) {
 		const locale = keystaticPage.locale;
 		// M12: entry order IS page order — destructure once into named

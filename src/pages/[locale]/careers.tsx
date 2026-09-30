@@ -19,7 +19,7 @@ type PageProps = {
 	resolution: any;
 };
 
-const Page: NextPage<PageProps> = ({ keystaticPage, resolution }) => {
+const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 	// Migration source switch (M3/M7, completed M11 batch 2): Keystatic owns
 	// the whole page in page order — `hero`, `leadGenBar`, `services`,
 	// `careersOpenings`, `careersProcess`, `careersStatement` — when the
@@ -28,7 +28,6 @@ const Page: NextPage<PageProps> = ({ keystaticPage, resolution }) => {
 	// NOTE: the `leadGenBar`/`services` entry copies embed the global
 	// `common:leadGenBar`/`common:services` instances verbatim (same copy
 	// as home); re-run the migration to refresh them.
-	console.log("resolution", resolution);
 	return (
 		<div className="relative">
 			<PageHead pageName="careers" />

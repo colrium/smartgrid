@@ -17,8 +17,8 @@ interface PreferenceRow {
 
 const PREFERENCE_ROWS: PreferenceRow[] = [
     { key: "necessary", locked: true },
-    { key: "functional", locked: false },
-    { key: "analytics", locked: false },
+    { key: "functional", locked: true },
+    { key: "analytics", locked: true },
 ];
 
 /**
