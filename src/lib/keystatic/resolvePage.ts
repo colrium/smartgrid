@@ -81,7 +81,11 @@ export async function resolveKeystaticPage(
 	locale: Lang,
 	opts?: { baseDir?: string }
 ): Promise<PageResolution> {
-	// if (!isKeystaticPageEnabled(slug)) return { status: "legacy", reason: "disabled" };
+	if (!isKeystaticPageEnabled(slug)) return {
+		status: "legacy",
+		reason: "disabled",
+		statusMessage: `[keystatic] page "${slug}" falls back to legacy content disabled.`,
+	};
 
 	let entry;
 	try {
