@@ -9,6 +9,9 @@ const nextConfig = {
 	// disturbing a running dev server that owns the default `.next` folder.
 	distDir: process.env.NEXT_DIST_DIR || ".next",
 	cacheComponents: true, // Enables the 'use cache' directive functionality
+	outputFileTracingIncludes: {
+		'/*': ['./content/pages/**/*.json', './content/site.json'],
+	},
 	images: {
 		// Next 16 rejects local image sources that carry a query string unless
 		// images.localPatterns is configured. The gated media library serves
