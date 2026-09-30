@@ -16,9 +16,10 @@ import { ServicesSection, LeadGenBar } from "@/components/sections/shared";
 type PageProps = {
 	/** Keystatic page when the `careers` slug is opted in; otherwise `null` (legacy). */
 	keystaticPage: ResolvedKeystaticPage | null;
+	resolution: any;
 };
 
-const Page: NextPage<PageProps> = ({ keystaticPage }) => {
+const Page: NextPage<PageProps> = ({ keystaticPage, resolution }) => {
 	// Migration source switch (M3/M7, completed M11 batch 2): Keystatic owns
 	// the whole page in page order — `hero`, `leadGenBar`, `services`,
 	// `careersOpenings`, `careersProcess`, `careersStatement` — when the
@@ -26,8 +27,8 @@ const Page: NextPage<PageProps> = ({ keystaticPage }) => {
 	// Otherwise the legacy locale-JSON implementation renders unchanged.
 	// NOTE: the `leadGenBar`/`services` entry copies embed the global
 	// `common:leadGenBar`/`common:services` instances verbatim (same copy
-    // as home); re-run the migration to refresh them.
-    console.log("keystaticPage", keystaticPage);
+	// as home); re-run the migration to refresh them.
+	console.log("resolution", resolution);
 	return (
 		<div className="relative">
 			<PageHead pageName="careers" />
@@ -57,7 +58,13 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 	const lang: Lang = locale === "sw" ? "sw" : "en";
 	const resolution = await resolveKeystaticPage("careers", lang);
 
-	return { props: { ...i18nProps, keystaticPage: resolution.status === "keystatic" ? resolution.page : null } };
+	return {
+		props: {
+			...i18nProps,
+			keystaticPage: resolution.status === "keystatic" ? resolution.page : null,
+			resolution,
+		},
+	};
 };
 
 export default Page;

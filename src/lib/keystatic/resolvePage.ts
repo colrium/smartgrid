@@ -92,8 +92,12 @@ export async function resolveKeystaticPage(
 		console.warn(`[keystatic] page "${slug}" falls back to legacy content (unreadable entry): ${detail}`);
 		return { status: "legacy", reason: "error", detail };
 	}
-	if (!entry) return { status: "legacy", reason: "missing" };
-	if (entry.status !== "published") return { status: "legacy", reason: "unpublished" };
+	if (!entry) return { status: "legacy", reason: "missing", statusMessage: `[keystatic] page "${slug}" falls back to legacy content missing.`, };
+	if (entry.status !== "published") return {
+		status: "legacy",
+		reason: "unpublished",
+		statusMessage: `[keystatic] page "${slug}" falls back to legacy content unpublished.`,
+	};
 
 	const stored = Array.isArray(entry.pageBuilder) ? entry.pageBuilder : [];
 	if (stored.length === 0) {
