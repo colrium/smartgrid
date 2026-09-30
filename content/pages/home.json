@@ -1,7 +1,7 @@
 {
   "slug": "Home",
   "title": "Home (migrated)",
-  "status": "draft",
+  "status": "published",
   "pageBuilder": [
     {
       "discriminant": "homeHero",
@@ -1700,11 +1700,11 @@
               },
               "includes": [
                 {
-                  "en": "Boundary delineation & beacon placement",
+                  "en": "Boundary confirmation & beacon placement",
                   "sw": "Kutambua mipaka na kuweka nguzo"
                 },
                 {
-                  "en": "Registry maps & title processing support",
+                  "en": "Registry maps & title processing ",
                   "sw": "Ramani za rejesta na msaada wa hatimiliki"
                 },
                 {
@@ -1719,7 +1719,7 @@
                 "en": "Topographical Surveys",
                 "sw": "Upimaji wa Topografia"
               },
-              "price": 50000,
+              "price": 40000,
               "pricePrefix": {
                 "en": "From KES",
                 "sw": "Kuanzia KES"
@@ -1880,6 +1880,18 @@
               {
                 "en": "Kajiado",
                 "sw": "Kajiado"
+              },
+              {
+                "en": "Nakuru",
+                "sw": "Nakuru"
+              },
+              {
+                "en": "Kisumu",
+                "sw": "Kisumu"
+              },
+              {
+                "en": "Coast",
+                "sw": "Coast"
               }
             ]
           },
@@ -1894,6 +1906,10 @@
               "sw": "Timu kamili na vifaa vinapelekwa mara kwa mara katika miji mikuu ya Kenya."
             },
             "items": [
+              {
+                "en": "Nairobi",
+                "sw": "Nairobi"
+              },
               {
                 "en": "Mombasa",
                 "sw": "Mombasa"
@@ -1930,6 +1946,10 @@
               {
                 "en": "Somalia & wider East Africa",
                 "sw": "Somalia na Afrika Mashariki pana"
+              },
+              {
+                "en": "South Africa",
+                "sw": "South Africa"
               }
             ]
           }
