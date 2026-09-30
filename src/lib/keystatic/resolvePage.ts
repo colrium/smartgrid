@@ -59,7 +59,11 @@ export type PageResolution =
 export function isKeystaticPageEnabled(slug: string): boolean {
     
 	if (process.env.KEYSTATIC_DISABLE === "1") return false;
-	const allowlist = (process.env.KEYSTATIC_PAGES ?? "")
+    const allowlistStr = (process.env.KEYSTATIC_PAGES ?? "").trim()
+    if (allowlistStr === "*") {
+		return true;
+	}
+    const allowlist = allowlistStr
 		.split(",")
 		.map((entry) => entry.trim())
 		.filter((entry) => entry.length > 0);
