@@ -68,4 +68,6 @@ export { IndustriesWeServe } from "./IndustriesWeServe";
 export type { IndustriesWeServeClassesProp, IndustriesWeServeContent, IndustriesWeServeProps } from "./IndustriesWeServe";
 export { SurveyingInstruments } from "./SurveyingInstruments";
 export type { SurveyingInstrumentsClassesProp, SurveyingInstrumentsContent, SurveyingInstrumentsProps } from "./SurveyingInstruments";
+export { Spacer } from "./Spacer";
+export type { SpacerProps, SpacerSize } from "./Spacer";
 

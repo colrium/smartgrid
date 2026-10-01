@@ -23,6 +23,7 @@ import { CoverageArea } from "@/components/sections/shared/CoverageArea";
 import { SurveyCost } from "@/components/sections/shared/SurveyCost";
 import LeadGenBar from "@/components/sections/shared/LeadGenBar";
 import { ServicesSection } from "@/components/sections/shared/ServicesSection";
+import { Spacer } from "@/components/sections/shared/Spacer";
 import HeroSection from "@/components/sections/home/HeroSection";
 import { DronesSection } from "@/components/sections/home/DronesSection";
 import { ContactHeroSection } from "@/components/sections/contact/ContactHeroSection";
@@ -186,6 +187,7 @@ export const sectionRenderers = {
 	surveyCost: SurveyCost,
 	leadGenBar: LeadGenBar,
 	services: ServicesSection,
+	spacer: Spacer,
 	homeHero: HeroSection,
 	homeDrones: DronesSection,
 	contactHero: ContactHeroSection,

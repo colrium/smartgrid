@@ -170,6 +170,10 @@ check(
 const normalizedStats = registry.getSectionDefinition("stats").normalize({ items: null, columns: 7 });
 check("registry/normalize", Array.isArray(normalizedStats.items), "stats must coerce missing items to an array");
 check("registry/normalize", normalizedStats.columns === 3, "stats must coerce out-of-range columns to 3");
+// M14: spacer sizes fall back to `md`, empty anchor ids stay absent.
+const normalizedSpacer = registry.getSectionDefinition("spacer").normalize({ size: "huge", id: "" });
+check("registry/normalize", normalizedSpacer.size === "md", "spacer must coerce unknown sizes to md");
+check("registry/normalize", normalizedSpacer.id === undefined, "spacer must drop an empty anchor id");
 
 // --- Renderer coverage -----------------------------------------------------
 

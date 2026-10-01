@@ -241,9 +241,12 @@ import {
  * additive-`data` contract as the M9 follow-up (omitted = legacy `t()`).
  * Unlike the gate-only Trans precedents, unique sections render markup
  * from DATA (the wrapper is page-owned), so edits change output.
+ *
+ * M14 (reusable spacer, 2026-10-01): `spacer` is a SHARED layout id
+ * (preset gap + anchor id, locale-free) — addable to any page order.
  */
 
-export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "workflow", "finalCta", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation", "aerialIntro", "aerialWhyDrones", "aerialServices", "aerialSurveyingGrid", "aerialIndustries", "aerialIndustryCta", "aerialTechStack", "aerialCapabilityCta", "aerialProjects", "aerialAdditionalServices", "cadastralPostHeroCta", "cadastralWhenYouNeed", "cadastralProcessCta", "cadastralCost", "cadastralTimeline", "cadastralCompliance", "cadastralCaseStudy", "gprHero", "gprHighlights", "gprJumpNav", "gprOverview", "gprMethodology", "gprApplications", "gprDetect", "gprSue", "gprLimitations", "gprBeforeAfter", "gprTechnology", "gprFeaturedProjects", "gprSummary", "gisHero", "gisWhatIs", "gisImportance", "gisServices", "gisIndustries", "gisTechStack", "gisWhatsappCta", "gisComponents", "gisWhySmartgrid", "gisDataAccuracy", "gisBeforeAfter", "gisProjectImpact", "gisRelatedServices", "highwayServices", "asBuiltSolutions", "bimServices", "seHero", "seOverview", "seWhatWeDo", "seExploreMore", "ssoServices", "ssoInstruments", "vsServices", "solWhatWeDo", "solProcess", "lqQuarryServicesItems", "lqWhatWeOffer", "meOurCapabilities", "meImpact", "meSmartMonitoring", "meWhatWeOffer", "abWhyUseDrones", "abProcess", "agWhyUseDrones", "agProcess", "lidIndustries", "lidWhyChoose", "lidPowerline", "lidHowItWorks", "lidCta"] as const;
+export const SECTION_IDS = ["introText", "ctaBand", "stats", "hero", "cardGrid", "splitMedia", "legal", "faq", "process", "gallery", "pricing", "trustees", "certifications", "keyFacts", "metrics", "whyChooseUs", "about", "surveyingInstruments", "coreExpertise", "planningInfographic", "coverageArea", "surveyCost", "leadGenBar", "services", "spacer", "homeHero", "homeDrones", "contactHero", "contactOffices", "contactForm", "careersOpenings", "careersProcess", "careersStatement", "companyProfileViewer", "aboutAerialSurveying", "aboutLandSurveying", "aboutImpact", "surveyingServices", "surveyingProcess", "civilHero", "civilProcess", "deliverables", "workflow", "finalCta", "topoWhenYouNeed", "topoWhatWeOffer", "topoDetailedSurveys", "topoSampleMap", "topoInstruments", "topoWhyConduct", "sectionalWhatIs", "sectionalServicesDetail", "sectionalWorkflow", "sectionalTimeline", "sectionalWhoNeeds", "bathyEquipment", "bathyLimitations", "bathyDamsLakes", "bathyApplications", "bathyBeforeAfter", "rmWhatIs", "rmTypes", "rmSector", "rmWorkflow", "rmWhoUses", "rmTechStack", "rmDataAccuracy", "bsHero", "bsSection2", "bsSiteEngineering", "bsProcess", "bsAccuracyMatters", "bsTechnology", "bsConsultation", "aerialIntro", "aerialWhyDrones", "aerialServices", "aerialSurveyingGrid", "aerialIndustries", "aerialIndustryCta", "aerialTechStack", "aerialCapabilityCta", "aerialProjects", "aerialAdditionalServices", "cadastralPostHeroCta", "cadastralWhenYouNeed", "cadastralProcessCta", "cadastralCost", "cadastralTimeline", "cadastralCompliance", "cadastralCaseStudy", "gprHero", "gprHighlights", "gprJumpNav", "gprOverview", "gprMethodology", "gprApplications", "gprDetect", "gprSue", "gprLimitations", "gprBeforeAfter", "gprTechnology", "gprFeaturedProjects", "gprSummary", "gisHero", "gisWhatIs", "gisImportance", "gisServices", "gisIndustries", "gisTechStack", "gisWhatsappCta", "gisComponents", "gisWhySmartgrid", "gisDataAccuracy", "gisBeforeAfter", "gisProjectImpact", "gisRelatedServices", "highwayServices", "asBuiltSolutions", "bimServices", "seHero", "seOverview", "seWhatWeDo", "seExploreMore", "ssoServices", "ssoInstruments", "vsServices", "solWhatWeDo", "solProcess", "lqQuarryServicesItems", "lqWhatWeOffer", "meOurCapabilities", "meImpact", "meSmartMonitoring", "meWhatWeOffer", "abWhyUseDrones", "abProcess", "agWhyUseDrones", "agProcess", "lidIndustries", "lidWhyChoose", "lidPowerline", "lidHowItWorks", "lidCta"] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export interface SectionDefinition {
@@ -2230,6 +2233,52 @@ const services: SectionDefinition = {
 					}))
 				: [],
 		},
+		id: resolved.id || undefined,
+	}),
+};
+
+/**
+ * M14 (reusable spacer, 2026-10-01): `spacer` wraps the shared `Spacer`
+ * section (preset vertical gap + optional anchor id). Shared id — spacing
+ * is page-agnostic layout, not page content. Locale-free contract (no
+ * `localeText` nodes): the gap renders identically in `en`/`sw` with zero
+ * translation burden. SSR-safe: pure static `<section>`, no hooks.
+ */
+const spacer: SectionDefinition = {
+	id: "spacer",
+	version: 1,
+	label: "Spacer",
+	description: "Vertical whitespace between sections: pick a preset gap height.",
+	schema: fields.object({
+		size: fields.select({
+			label: "Height",
+			description: "Preset gap height.",
+			options: [
+				{ label: "Extra small (16px)", value: "xs" },
+				{ label: "Small (32px)", value: "sm" },
+				{ label: "Medium (64px)", value: "md" },
+				{ label: "Large (96px)", value: "lg" },
+				{ label: "Extra large (128px)", value: "xl" },
+			],
+			defaultValue: "md",
+		}),
+		id: anchorField(),
+		// Excluded from v1 (documented): `className` (visual tuning, not
+		// an editor contract).
+	}),
+	example: {
+		size: "md",
+		id: "",
+	},
+	normalize: (resolved) => ({
+		size:
+			resolved.size === "xs" ||
+			resolved.size === "sm" ||
+			resolved.size === "md" ||
+			resolved.size === "lg" ||
+			resolved.size === "xl"
+				? resolved.size
+				: "md",
 		id: resolved.id || undefined,
 	}),
 };
@@ -10256,6 +10305,7 @@ export const sectionRegistry: readonly SectionDefinition[] = [
 	surveyCost,
 	leadGenBar,
 	services,
+	spacer,
 	homeHero,
 	homeDrones,
 	contactHero,
@@ -10408,6 +10458,7 @@ const SECTION_LABELS: Record<SectionId, string> = {
 	surveyCost: surveyCost.label,
 	leadGenBar: leadGenBar.label,
 	services: services.label,
+	spacer: spacer.label,
 	homeHero: homeHero.label,
 	homeDrones: homeDrones.label,
 	contactHero: contactHero.label,

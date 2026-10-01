@@ -1652,6 +1652,42 @@ and its entry sections use shared ids with content preserved; legacy branches
 render shared components directly with byte-identical output; deferred
 validation green.
 
+### M14: Reusable Spacer Section
+
+**Status: DONE** (2026-10-01 — shared `spacer` id registered, rendered, and
+pinned; no entry or migration changes needed).
+
+Dependencies: M2 registry + schema factories (shared-section pattern only).
+No migration dependency: a spacer carries no locale content, so no locale-JSON
+source exists and no entry is regenerated — editors add it where needed.
+
+Design (decided 2026-10-01, before implementing):
+
+- Shared id `spacer` (usable on any page), NOT a page-scoped unique: spacing
+  is page-agnostic layout, like `introText`/`ctaBand`.
+- Locale-free contract: a `size` preset select (`xs` 16px / `sm` 32px /
+  `md` 64px / `lg` 96px / `xl` 128px) plus the standard `anchorField` id.
+  No `localeText` nodes — `resolveLocaleValue` passes shared strings
+  through, so both locales render the identical gap with zero translation
+  burden.
+- SSR-safe pure renderer (`<section aria-hidden>` + fixed pixel height via
+  inline style, no hooks/browser APIs, no `className` in content per the
+  M12 chrome rule); unknown sizes normalize to `md`.
+
+- [x] Create the shared `Spacer` component (`src/components/sections/shared/Spacer.tsx`,
+      exported from the shared barrel) with preset heights + optional anchor id.
+- [x] Register `spacer` v1 in `sectionRegistry.ts` (schema + example +
+      normalizer), add the `SECTION_IDS` / registry / `SECTION_LABELS`
+      entries, and map the renderer in `sectionRenderers.tsx`.
+- [x] Prove `yarn check:keystatic` (registry integrity + example/render proof
+      for both locales) + `yarn typecheck` + `yarn lint` green; no entry or
+      migration changes.
+- [x] Update the README operator section list + count and record this log row.
+
+**Exit criteria:** editors can insert a `spacer` block anywhere in a page's
+section order in Keystatic (both locales render the same gap); unknown sizes
+fall back safely; quality gates green.
+
 ## Parallel Workstreams
 
 These may proceed independently after their stated dependencies are met:
@@ -1784,3 +1820,4 @@ For every implementation change:
 | 2026-09-21 | M6 | Browser checks + performance DONE via the in-browser dev preview (editor: ARIA grid/search + Escape, 38 focusables/0 traps, labeled required inputs, chat group renders; pages: single h1, 100% alt coverage, 0 unnamed controls, no 471px overflow, focus indicators verified incl. social chips, warm perf ≈0.3–0.6s TTFB / ≈4.0–4.8s FCP on home/about/contact/lidar/agri, 29/31 home images lazy). CAUGHT & FIXED: whole-owned Keystatic branches emitted no `<head>` (empty `<title>`, no canonical/hreflang/JSON-LD) — `PageBuilderDocument` now renders `PageHead` from the same `meta:pages.<slug>` data; verified en/sw vs legacy identical, single `<title>`, typecheck/lint clean. Pre-existing findings recorded (H2→H5 jump on home, brand-teal 3.46:1 contrast, 3/5 agri images without dimensions) | `yarn typecheck` clean; `yarn lint` clean; head verified via curl on published + fallback routes | |
 | 2026-09-20 | M13 | CLOSE-OUT — all M13 batches + exit-criterion sweep done. Registry reconciliation: final count 118 (batch 9 −1 rmFinalCta from 119; Type-1-only batches 5–7/10/11 and the batch-11 sweep change nothing — the check script is the authoritative counter). Exit criterion "no wrapper file remains that meets the qualification rule" verified by a full grep sweep — two stragglers found and collapsed in `26f64be` (about `HeroSection`, drone-imagery-surveys `AerialSurveyDeliverablesSection` on the bespoke-only page). Deferred automated validation green: `check:keystatic` OK (registry 118 sections, 31 fixtures; the 3 fallback warnings are expected negative diagnostics), `--verify` clean for ALL 30 mapped pages (no gaps), `yarn typecheck` clean (24s), `yarn lint` clean (80s). README list + count updated (`rmFinalCta` out, 118). Remaining for M13 DONE (browser-session residuals, joined to the M6/M10 carry-overs): per-page dev-smoke parity (temp publish flip + revert to `draft`), rollback test; `yarn build` stays behind the all-milestones-complete gate | `check:keystatic` OK (118 sections, 31 fixtures); `--verify` OK ×30; `yarn typecheck` clean; `yarn lint` clean. M13 stays IN PROGRESS on browser residuals only | |
 | 2026-09-22 | M5 | Production credentials-popup investigation + fixes (user report: the /keystatic login prompt repeats on `smartgrid-git-dev-page-builder-*.vercel.app` even with correct credentials). Live probes: the deployment answers `/keystatic` and `/api/keystatic/github/login` with `302 → vercel.com/sso-api` — a Vercel Deployment Protection wall runs BEFORE the app, so the repeating popup is either Vercel's own prompt (Keystatic creds typed into the Vercel wall loop forever) or the `src/proxy.ts` gate failing closed because `KEYSTATIC_ADMIN_USER/PASSWORD` are missing from that environment's scope (branch/preview deployments read Preview values; fail-closed by design rejects even correct creds). CODE FIX: `parseBasicCredentials` now decodes RFC 7617 UTF-8 (bytes → TextDecoder) instead of the raw `atob` string — the old `atob`+TextEncoder path double-encoded non-ASCII characters and rejected a correct non-ASCII password forever; scheme match is now case-insensitive. DOCS: README gains "Admin access troubleshooting" (two-wall checklist — Vercel Deployment Protection, then env-var scope/values, with curl verification) and the "GitHub-backed editing" section rewritten with the full GitHub side: a CUSTOM GitHub App must be created (the public Keystatic app cannot work — an OAuth client secret is required and the in-app creation wizard is dev-only per `createdGithubApp` 400 outside development; callback `https://<domain>/api/keystatic/github/oauth/callback` verified against `@keystatic/core`'s `githubLogin` redirect_uri; Contents: Read & write; no webhooks; install on the repo; App slug/Client ID/Client Secret; 5 env vars with a Vercel Preview/Production scope warning). `.env.example` gains the same scope note | `yarn check:keystatic` OK (143 sections, 31 fixtures); `yarn typecheck` clean (68s); `yarn lint` clean (79s). Session env note: system `node` is v12 on PATH — run checks under nvm Node v24 (`export PATH="$HOME/.nvm/versions/node/v24.21.0/bin:$PATH"`). Also observed: the main domain `smartgridsurveying.com` currently 404s `/keystatic` (deployment predates the admin route) — the branch URL is the only environment serving the console | |
+| 2026-10-01 | M14 | DONE — reusable Spacer section: shared Spacer component (preset xs-xl heights + anchor id, SSR-safe static section), registered as shared id spacer v1 (schema + example + normalizer + renderer + SECTION_IDS/registry/LABELS), check-script normalize pins (unknown size -> md, empty id dropped), README list 143->144 | check:keystatic: 0 spacer/normalize violations (14 pre-existing fixture-render failures unchanged from clean-tree baseline, verified via stash); yarn typecheck clean (43s); eslint clean on all touched files (full lint has 3 pre-existing warnings in keystatic.config.ts + src/proxy.ts, untouched files) | |
