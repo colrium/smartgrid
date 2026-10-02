@@ -64,8 +64,6 @@ next-env.d.ts
 *.experimental*
 
 #AI
-AGENTS.md
-CLAUDE.md
 .freebuff
 .clinerules
 .cline
