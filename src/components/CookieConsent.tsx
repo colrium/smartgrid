@@ -64,9 +64,9 @@ export default function CookieConsent(): ReactElement | null {
 
     // Google Analytics only ever loads once analytics consent is granted.
     useEffect(() => {
-        const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+        const measurementId = `G-KHXJRSPYZ8`;
         // if (consent?.analytics && measurementId) loadGoogleAnalytics(measurementId);
-        console.log("measurementId", measurementId);
+        console.log("GAmeasurementId", measurementId);
         loadGoogleAnalytics(measurementId);
     }, [consent?.analytics]);
 
