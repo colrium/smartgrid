@@ -65,7 +65,8 @@ export default function CookieConsent(): ReactElement | null {
     // Google Analytics only ever loads once analytics consent is granted.
     useEffect(() => {
         const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
-        if (consent?.analytics && measurementId) loadGoogleAnalytics(measurementId);
+        // if (consent?.analytics && measurementId) loadGoogleAnalytics(measurementId);
+        loadGoogleAnalytics(measurementId);
     }, [consent?.analytics]);
 
     // Mirror the @next/third-parties behaviour: page_view on client-side
