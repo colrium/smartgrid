@@ -66,6 +66,7 @@ export default function CookieConsent(): ReactElement | null {
     useEffect(() => {
         const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
         // if (consent?.analytics && measurementId) loadGoogleAnalytics(measurementId);
+        console.log("measurementId", measurementId);
         loadGoogleAnalytics(measurementId);
     }, [consent?.analytics]);
 
