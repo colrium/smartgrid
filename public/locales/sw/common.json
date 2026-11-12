@@ -1341,14 +1341,14 @@
 	},
 	"cookies": {
 		"title": "Tunajali faragha yako",
-		"description": "Tunatumia kuki muhimu ili tovuti hii ifanye kazi, na kuki za hiari ili kuboresha uzoefu wako na kupima jinsi inavyotumika. Chagua \"Kubali zote\", \"Kataa zote\", au kubinafsisha mapendeleo yako — unaweza kubadilisha chaguo lako wakati wowote.",
+		"description": "Tunatumia kuki muhimu ili tovuti hii ifanye kazi. Kuki za hiari huwashwa kwa chaguo-msingi ili kuboresha uzoefu wako na kupima matumizi ya tovuti; unaweza kuzizima wakati wowote kwenye mipangilio ya kuki.",
 		"privacyLink": "Soma Sera ya Faragha",
 		"acceptAll": "Kubali zote",
 		"rejectAll": "Kataa zote",
 		"customize": "Kubinafsisha",
 		"savePreferences": "Hifadhi mapendeleo",
 		"back": "Rudi",
-		"preferencesDescription": "Chagua kuki unazoruhusu. Kuki muhimu huifanya tovuti ifanye kazi na haziwezi kuzimwa.",
+		"preferencesDescription": "Kuki za hiari huwashwa kwa chaguo-msingi. Zima aina zozote usizotaka; kuki muhimu huifanya tovuti ifanye kazi na haziwezi kuzimwa.",
 		"categories": {
 			"necessary": {
 				"label": "Muhimu sana",

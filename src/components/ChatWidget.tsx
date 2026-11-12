@@ -15,8 +15,8 @@ const ChatWidget = (): ReactElement | null => {
 	const tawkUrl = getTawkUrl();
 	const functionalAllowed = useCookieConsent((state) => state.consent?.functional === true);
 
-	// GDPR: Tawk.to sets cookies on load, so the widget stays unloaded until
-	// "functional" consent is granted (see src/lib/consent.ts).
+	// Tawk.to sets cookies on load, so the widget stays unloaded after
+	// functional cookies are disabled (see src/lib/consent.ts).
     if (!tawkUrl || !functionalAllowed) return null;
 
 	return (

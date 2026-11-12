@@ -9,6 +9,7 @@ import { Checkbox } from "@/components/ui/Checkbox";
 import Link from "@/components/Link";
 import { loadGoogleAnalytics, trackPageView } from "@/lib/consent";
 import type { ConsentCategories } from "@/lib/consent";
+import env from "@/lib/env";
 
 interface PreferenceRow {
     key: "necessary" | "functional" | "analytics";
@@ -26,8 +27,8 @@ const PREFERENCE_ROWS: PreferenceRow[] = [
  *
  * Renders a small, non-blocking card in the bottom-left corner - no backdrop,
  * no scroll lock, the page stays fully interactive while the visitor decides.
- * Non-essential cookies (analytics, live chat) are never set until consent is
- * given, and can be reviewed or withdrawn at any time via the footer link.
+ * Optional cookies (analytics, live chat) are enabled by default and can be
+ * disabled at any time via the banner or footer preferences link.
  */
 export default function CookieConsent(): ReactElement | null {
     const { t } = useTranslation("common");
@@ -36,23 +37,21 @@ export default function CookieConsent(): ReactElement | null {
         useCookieConsent();
     const containerRef = useRef<HTMLElement>(null);
     const [draft, setDraft] = useState<ConsentCategories>({
-		functional: true,
-		analytics: true,
-	});
+        functional: true,
+        analytics: true,
+    });
 
     useEffect(() => {
         hydrate();
     }, [hydrate]);
 
-    // Seed the draft from the stored decision whenever the dialog appears, so
-    // re-opening preferences shows the current state (never pre-ticked opt-ins
-    // on a first visit - GDPR requires unticked boxes by default).
+    // Seed the draft from the active defaults or stored choice whenever the
+    // dialog appears.
     useEffect(() => {
         if (open) {
-            
             setDraft({
-                functional: consent?.functional ?? false,
-                analytics: consent?.analytics ?? false,
+                functional: consent?.functional ?? true,
+                analytics: consent?.analytics ?? true,
             });
         }
     }, [open, consent]);
@@ -62,16 +61,14 @@ export default function CookieConsent(): ReactElement | null {
         if (open) containerRef.current?.focus({ preventScroll: true });
     }, [open, customizing]);
 
-    // Google Analytics only ever loads once analytics consent is granted.
+    // Google Analytics loads unless the visitor has opted out of analytics.
     useEffect(() => {
-        const measurementId = `G-KHXJRSPYZ8`;
-        // if (consent?.analytics && measurementId) loadGoogleAnalytics(measurementId);
-        console.log("GAmeasurementId", measurementId);
-        loadGoogleAnalytics(measurementId);
+        const gaMeasurementId = env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+        if (consent?.analytics && gaMeasurementId) loadGoogleAnalytics(gaMeasurementId);
     }, [consent?.analytics]);
 
     // Mirror the @next/third-parties behaviour: page_view on client-side
-    // navigation, but only while analytics consent is active.
+    // navigation, but only while analytics is enabled.
     useEffect(() => {
         if (!consent?.analytics) return;
         const handler = (url: string) => trackPageView(url, document.title);
@@ -222,7 +219,6 @@ export default function CookieConsent(): ReactElement | null {
 							transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
 							className="overflow-hidden"
 						>
-							{/* Rejecting is as prominent as accepting (no dark patterns). */}
 							<div className="grid grid-cols-2 gap-2">
 								<Button
 									variant="contained"

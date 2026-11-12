@@ -202,7 +202,7 @@ export default function HeroSection({ data, id }: { data?: HeroSectionContent | 
 					</FadeLeft>
 
 					<FadeRight delay={0.1} className="reveal active">
-						<h1 className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight text-ink leading-[1.05] mb-8 sm:mb-10 lg:mb-12 whitespace-pre-line">
+						<h1 className="text-[clamp(3rem,8vw,6rem)] font-bold tracking-tight text-ink leading-[1.05] mb-8 sm:mb-10 lg:mb-12 whitespace-pre-line">
 							{data ? (
 								renderHeroHeadline(data.headline ?? "")
 							) : (

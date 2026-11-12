@@ -1,8 +1,8 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import i18nextConfig from "../../next-i18next.config";
-// Google Analytics is intentionally NOT loaded here: it would set `_ga`
-// cookies before consent. It is injected on the client only after the visitor
-// grants "analytics" consent (see src/components/CookieConsent.tsx +
+// Google Analytics is intentionally NOT loaded here. It is injected on the
+// client after preferences hydrate, and remains disabled when the visitor
+// opts out of analytics (see src/components/CookieConsent.tsx +
 // src/lib/consent.ts).
 
 export default function MyDocument(props) {

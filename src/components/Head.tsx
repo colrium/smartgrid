@@ -2,7 +2,7 @@
 import NextHead from "next/head";
 import { useRouter } from "next/router";
 import { useTranslation } from "@/hooks";
-
+import env from "@/lib/env";
 type HeadProps = {
 	pageName: string;
 };
@@ -14,7 +14,7 @@ type HeadProps = {
  * the on-page metadata always resolve to the same host (a prerequisite for
  * consistent crawling and Google sitelink generation).
  */
-const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://smartgridsurveying.com").replace(
+const SITE_URL = (env.NEXT_PUBLIC_SITE_URL || "https://smartgridsurveying.com").replace(
 	/\/+$/,
 	""
 );

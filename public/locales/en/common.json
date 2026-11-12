@@ -1343,14 +1343,14 @@
 	},
 	"cookies": {
 		"title": "We value your privacy",
-		"description": "We use essential cookies to keep this site working, plus optional ones to enhance your experience and measure how it is used. Choose \"Accept all\", \"Reject all\", or customise your preferences — you can change your choice at any time.",
+		"description": "We use essential cookies to keep this site working. Optional cookies are active by default to enhance your experience and measure how the site is used; you can turn them off at any time in cookie settings.",
 		"privacyLink": "Read our Privacy Policy",
 		"acceptAll": "Accept all",
 		"rejectAll": "Reject all",
 		"customize": "Customise",
 		"savePreferences": "Save preferences",
 		"back": "Back",
-		"preferencesDescription": "Choose which cookies you allow. Essential cookies keep the site working and cannot be switched off.",
+		"preferencesDescription": "Optional cookies are active by default. Turn off any categories you do not want; essential cookies keep the site working and cannot be switched off.",
 		"categories": {
 			"necessary": {
 				"label": "Strictly necessary",

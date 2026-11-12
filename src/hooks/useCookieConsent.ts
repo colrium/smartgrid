@@ -33,15 +33,23 @@ export const useCookieConsentStore = create<CookieConsentState>()((set, get) => 
 
     hydrate: () => {
         if (get().hydrated || typeof window === "undefined") return;
-        const consent = readConsent();
-        set({ hydrated: true, consent, open: !consent });
+        const savedConsent = readConsent();
+        const consent =
+            savedConsent ??
+            buildConsent({ functional: true, analytics: true }, "all");
+        if (!savedConsent) persistConsent(consent);
+        set({ hydrated: true, consent, open: !savedConsent });
 
         // Keep tabs in sync: a decision made in another tab closes (or reopens)
         // the banner here too.
         window.addEventListener("storage", (event: StorageEvent) => {
             if (event.key !== null && event.key !== CONSENT_STORAGE_KEY) return;
-            const next = readConsent();
-            set({ consent: next, open: !next });
+            const savedNext = readConsent();
+            const next =
+                savedNext ??
+                buildConsent({ functional: true, analytics: true }, "all");
+            if (!savedNext) persistConsent(next);
+            set({ consent: next, open: !savedNext });
         });
     },
 
@@ -50,8 +58,8 @@ export const useCookieConsentStore = create<CookieConsentState>()((set, get) => 
     },
 
     close: () => {
-        // The banner cannot be dismissed before a decision (GDPR); after one,
-        // re-opened preferences may simply be closed again.
+        // The default preferences are already active, so the banner can be
+        // dismissed even when the visitor has not changed the defaults.
         if (get().consent) set({ open: false });
     },
 
