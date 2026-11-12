@@ -5,7 +5,7 @@ const envSchema = z.object({
 	NEXT_PUBLIC_WHATSAPP_NUMBER: z.string().optional().default(null),
 	NEXT_PUBLIC_TAWK_PROPERTY_ID: z.string().optional().default(null),
 	NEXT_PUBLIC_TAWK_WIDGET_ID: z.string().optional().default(null),
-	NEXT_PUBLIC_GA_MEASUREMENT_ID: z.string().optional().default('G-KHXJRSPYZ8'),
+	NEXT_PUBLIC_GA_MEASUREMENT_ID: z.string().optional().default("G-MJ2TFNWP31"),
 	NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: z.string().optional(),
 	// Display-only media protection: HMAC secret for signed /media/* URLs and
 	// their lifetime in seconds (30s–7d). Server-side only (never NEXT_PUBLIC_*).
@@ -14,7 +14,10 @@ const envSchema = z.object({
 	ANALYZE: z.coerce.boolean().default(false),
 });
 
-const parsedEnv = envSchema.safeParse(process.env)
+const parsedEnv = envSchema.safeParse({
+	...process.env,
+	NEXT_PUBLIC_GA_MEASUREMENT_ID: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID,
+})
 
 if (!parsedEnv.success) {
   const issues = parsedEnv.error.issues.map(
