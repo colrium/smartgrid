@@ -1,9 +1,9 @@
 /**
- * GDPR cookie-consent domain logic.
+ * Cookie preference domain logic.
  *
- * Non-essential cookies (Google Analytics, Tawk.to live chat) may only be set
- * after the visitor has given consent (GDPR Art. 6(1)(a) + ePrivacy Directive).
- * This module owns the consent record (proof of consent), its persistence
+ * Optional cookies (Google Analytics, Tawk.to live chat) are enabled by
+ * default and disabled when a visitor opts out. This module owns the preference
+ * record, its persistence
  * (localStorage + a mirrored cookie), the purge of previously-granted optional
  * cookies on withdrawal, and the consent-gated Google Analytics loader.
  *
@@ -26,7 +26,7 @@ export interface ConsentRecord extends ConsentCategories {
     version: number;
     necessary: true;
     decision: ConsentDecision;
-    /** ISO-8601 timestamp - proof of when consent was given (GDPR Art. 7(1)). */
+    /** ISO-8601 timestamp when these preferences were recorded. */
     timestamp: string;
 }
 

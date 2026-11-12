@@ -568,8 +568,8 @@
 			"sw": "Tunajali faragha yako"
 		},
 		"description": {
-			"en": "We use essential cookies to keep this site working, plus optional ones to enhance your experience and measure how it is used. Choose \"Accept all\", \"Reject all\", or customise your preferences — you can change your choice at any time.",
-			"sw": "Tunatumia kuki muhimu ili tovuti hii ifanye kazi, na kuki za hiari ili kuboresha uzoefu wako na kupima jinsi inavyotumika. Chagua \"Kubali zote\", \"Kataa zote\", au kubinafsisha mapendeleo yako — unaweza kubadilisha chaguo lako wakati wowote."
+			"en": "We use essential cookies to keep this site working. Optional cookies are active by default to enhance your experience and measure how the site is used; you can turn them off at any time in cookie settings.",
+			"sw": "Tunatumia kuki muhimu ili tovuti hii ifanye kazi. Kuki za hiari huwashwa kwa chaguo-msingi ili kuboresha uzoefu wako na kupima matumizi ya tovuti; unaweza kuzizima wakati wowote kwenye mipangilio ya kuki."
 		},
 		"privacyLink": {
 			"en": "Read our Privacy Policy",
@@ -596,8 +596,8 @@
 			"sw": "Rudi"
 		},
 		"preferencesDescription": {
-			"en": "Choose which cookies you allow. Essential cookies keep the site working and cannot be switched off.",
-			"sw": "Chagua kuki unazoruhusu. Kuki muhimu huifanya tovuti ifanye kazi na haziwezi kuzimwa."
+			"en": "Optional cookies are active by default. Turn off any categories you do not want; essential cookies keep the site working and cannot be switched off.",
+			"sw": "Kuki za hiari huwashwa kwa chaguo-msingi. Zima aina zozote usizotaka; kuki muhimu huifanya tovuti ifanye kazi na haziwezi kuzimwa."
 		},
 		"categories": {
 			"necessary": {
