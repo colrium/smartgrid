@@ -1,5 +1,5 @@
 import localFont from "next/font/local";
-
+import { Plus_Jakarta_Sans } from "next/font/google";
 export const fontSansSerif = localFont({
 	src: [
 		{ path: "./GoogleSansFlex/google-sans-flex-latin-100-normal.woff2", weight: "100" },
@@ -26,5 +26,11 @@ export const fontDisplay = localFont({
 		{ path: "./Brother1816/Brother-1816-Black.woff2", weight: "900" },
 	],
 	variable: "--font-display", // display variable for special purpose
+	display: "swap",
+});
+
+export const fontSans = Plus_Jakarta_Sans({
+	subsets: ["latin"],
+	variable: "--font-sans", // sans variable for headers (decorative feet)
 	display: "swap",
 });

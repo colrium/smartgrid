@@ -5,18 +5,14 @@ import i18nextConfig from "../../next-i18next.config";
 import type { AppPropsWithLayout } from "@/types/next";
 import LandingPageLayout from "@/layouts/LandingPage/Layout";
 import PageTransitionLoader from "@/components/PageTransitionLoader";
-import { Plus_Jakarta_Sans } from "next/font/google";
-import { fontDisplay, fontSansSerif } from "@/fonts";
+
+import { fontDisplay, fontSansSerif, fontSans } from "@/fonts";
 import { useEffect } from "react";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { LazyMotion, MotionConfig, domAnimation } from "framer-motion";
 
-const fontSans = Plus_Jakarta_Sans({
-	subsets: ["latin"],
-	variable: "--font-sans", // sans variable for headers (decorative feet)
-	display: "swap",
-});
+
 
 const withLandingPageLayout = (page: ReactElement) => <LandingPageLayout>{page}</LandingPageLayout>;
 function App({ Component, pageProps }: AppPropsWithLayout) {
