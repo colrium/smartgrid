@@ -139,6 +139,10 @@ cp .env.example .env.local
 | `KEYSTATIC_GITHUB_CLIENT_SECRET`  | deploy   | Keystatic GitHub App client secret                 |
 | `KEYSTATIC_SECRET`                | deploy   | Session-signing secret, ≥32 random chars           |
 
+Google Analytics uses `NEXT_PUBLIC_GA_MEASUREMENT_ID` from the build environment.
+Page views are sent in Google Consent Mode even when analytics storage is denied;
+in that case, Google receives cookieless pings rather than analytics cookies.
+
 Keystatic administration is available at `/keystatic` and `/api/keystatic/*`. Development is
 unrestricted; production requests are protected by the `src/proxy.ts` edge gate (HTTP Basic
 Auth). Configure the storage repository and GitHub integration in `keystatic.config.ts` through

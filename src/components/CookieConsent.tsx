@@ -11,6 +11,9 @@ import { loadGoogleAnalytics, trackPageView } from "@/lib/consent";
 import type { ConsentCategories } from "@/lib/consent";
 import env from "@/lib/env";
 
+const GA_MEASUREMENT_ID =
+    process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
 interface PreferenceRow {
     key: "necessary" | "functional" | "analytics";
     locked: boolean;
@@ -36,6 +39,7 @@ export default function CookieConsent(): ReactElement | null {
     const { hydrated, consent, open, customizing, hydrate, close, setCustomizing, save } =
         useCookieConsent();
     const containerRef = useRef<HTMLElement>(null);
+    const initialPageViewSent = useRef(false);
     const [draft, setDraft] = useState<ConsentCategories>({
         functional: true,
         analytics: true,
@@ -61,22 +65,30 @@ export default function CookieConsent(): ReactElement | null {
         if (open) containerRef.current?.focus({ preventScroll: true });
     }, [open, customizing]);
 
-    // Google Analytics loads unless the visitor has opted out of analytics.
+    // Always load GA in Consent Mode so declined visitors can still send
+    // cookieless page-view pings without analytics storage.
     useEffect(() => {
-        const gaMeasurementId = env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
-        if (consent?.analytics && gaMeasurementId) loadGoogleAnalytics(gaMeasurementId);
+        if (GA_MEASUREMENT_ID) {
+            loadGoogleAnalytics(GA_MEASUREMENT_ID, consent?.analytics === true);
+        }
     }, [consent?.analytics]);
 
-    // Mirror the @next/third-parties behaviour: page_view on client-side
-    // navigation, but only while analytics is enabled.
+    // Manually track the initial document and SPA navigations. Page views are
+    // sent in either consent state; Consent Mode controls cookie use.
     useEffect(() => {
-        if (!consent?.analytics) return;
-        const handler = (url: string) => trackPageView(url, document.title);
+        if (!GA_MEASUREMENT_ID) return;
+
+        if (!initialPageViewSent.current) {
+            trackPageView(router.asPath, document.title, GA_MEASUREMENT_ID);
+            initialPageViewSent.current = true;
+        }
+        const handler = (url: string) =>
+            trackPageView(url, document.title, GA_MEASUREMENT_ID);
         router.events.on("routeChangeComplete", handler);
         return () => {
             router.events.off("routeChangeComplete", handler);
         };
-    }, [consent?.analytics, router.events]);
+    }, [router.asPath, router.events]);
 
     if (!hydrated || !open) return null;
 

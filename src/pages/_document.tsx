@@ -1,9 +1,8 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import i18nextConfig from "../../next-i18next.config";
-// Google Analytics is intentionally NOT loaded here. It is injected on the
-// client after preferences hydrate, and remains disabled when the visitor
-// opts out of analytics (see src/components/CookieConsent.tsx +
-// src/lib/consent.ts).
+// Google Analytics is loaded client-side in Consent Mode after hydration.
+// Analytics storage remains denied for visitors who opt out, but page views
+// are still sent as cookieless pings (see CookieConsent and src/lib/consent.ts).
 
 export default function MyDocument(props) {
         const currentLocale = (props.__NEXT_DATA__.query.locale ?? i18nextConfig.i18n.defaultLocale) as string;

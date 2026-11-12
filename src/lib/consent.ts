@@ -5,7 +5,7 @@
  * default and disabled when a visitor opts out. This module owns the preference
  * record, its persistence
  * (localStorage + a mirrored cookie), the purge of previously-granted optional
- * cookies on withdrawal, and the consent-gated Google Analytics loader.
+ * cookies on withdrawal, and the Google Analytics Consent Mode loader.
  *
  * Strictly-necessary storage only: the consent record itself (this file) and
  * the locale cookie (NEXT_LOCALE, set on explicit user action in the navbar).
@@ -43,6 +43,8 @@ const CONSENT_COOKIE_MAX_AGE = 60 * 60 * 24 * 365;
 type GtagWindow = Window & {
     dataLayer?: unknown[];
     gtag?: (...args: unknown[]) => void;
+    gaConsentInitialized?: boolean;
+    gaConfiguredMeasurementIds?: Set<string>;
 };
 
 /** Read and validate the stored consent record. SSR-safe. */
@@ -131,10 +133,13 @@ export function purgeOptionalCookies(): void {
 }
 
 /**
- * Inject gtag.js (the same output `@next/third-parties` produces) - but only
- * ever called once analytics consent has been granted.
+ * Inject gtag.js using Consent Mode. Analytics storage remains denied when a
+ * visitor opts out, while cookieless page-view pings can still be sent.
  */
-export function loadGoogleAnalytics(measurementId: string): void {
+export function loadGoogleAnalytics(
+    measurementId: string,
+    analyticsAllowed: boolean,
+): void {
     if (typeof window === "undefined" || !measurementId) return;
     const dataWindow = window as GtagWindow;
     dataWindow.dataLayer = dataWindow.dataLayer || [];
@@ -144,21 +149,53 @@ export function loadGoogleAnalytics(measurementId: string): void {
         };
         dataWindow.gtag("js", new Date());
     }
-    const existing = document.querySelector(
-        `script[src^="https://www.googletagmanager.com/gtag/js?id=${measurementId}"]`,
+
+    if (!dataWindow.gaConsentInitialized) {
+        dataWindow.gtag("consent", "default", {
+            analytics_storage: "denied",
+            ad_storage: "denied",
+            functionality_storage: "granted",
+            security_storage: "granted",
+        });
+        dataWindow.gaConsentInitialized = true;
+    }
+    dataWindow.gtag("consent", "update", {
+        analytics_storage: analyticsAllowed ? "granted" : "denied",
+    });
+
+    const scriptUrl = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+    const scriptExists = Array.from(document.scripts).some(
+        (script) => script.src === scriptUrl,
     );
-    if (existing) return;
-    const script = document.createElement("script");
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
-    script.async = true;
-    document.head.appendChild(script);
-    dataWindow.gtag("config", measurementId, { anonymize_ip: true });
+    if (!scriptExists) {
+        const script = document.createElement("script");
+        script.src = scriptUrl;
+        script.async = true;
+        document.head.appendChild(script);
+    }
+
+    dataWindow.gaConfiguredMeasurementIds ??= new Set<string>();
+    if (!dataWindow.gaConfiguredMeasurementIds.has(measurementId)) {
+        dataWindow.gtag("config", measurementId, {
+            anonymize_ip: true,
+            send_page_view: false,
+        });
+        dataWindow.gaConfiguredMeasurementIds.add(measurementId);
+    }
 }
 
-/** Send a SPA page_view - a no-op until the GA script exists (i.e. consent). */
-export function trackPageView(url: string, title?: string): void {
+/** Send a page_view, including a cookieless ping when analytics is declined. */
+export function trackPageView(
+    url: string,
+    title: string | undefined,
+    measurementId: string,
+): void {
     if (typeof window === "undefined") return;
     const dataWindow = window as GtagWindow;
     if (!dataWindow.gtag) return;
-    dataWindow.gtag("event", "page_view", { page_path: url, page_title: title });
+    dataWindow.gtag("event", "page_view", {
+        page_path: url,
+        page_title: title,
+        send_to: measurementId,
+    });
 }
