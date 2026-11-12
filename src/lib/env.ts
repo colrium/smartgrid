@@ -22,7 +22,6 @@ if (!parsedEnv.success) {
   )
   throw new Error(`Invalid environment variables:\n${issues.join('\n')}`)
 }
-console.log("Unparsed environment variables:", process.env)
 export const env = parsedEnv.data
 
 export default env;
