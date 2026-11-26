@@ -11,7 +11,11 @@ import { useEffect } from "react";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { LazyMotion, MotionConfig, domAnimation } from "framer-motion";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import env from "@/lib/env";
 
+const GA_MEASUREMENT_ID =
+    process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 
 const withLandingPageLayout = (page: ReactElement) => <LandingPageLayout>{page}</LandingPageLayout>;
@@ -47,6 +51,7 @@ function App({ Component, pageProps }: AppPropsWithLayout) {
 					{renderPageWithLayout(<Component {...pageProps} />)}
 					<Analytics />
 					<SpeedInsights />
+					<GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
 				</div>
 			</MotionConfig>
 		</LazyMotion>

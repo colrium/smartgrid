@@ -7,12 +7,8 @@ import { useTranslation, useCookieConsent } from "@/hooks";
 import { Button } from "@/components/ui/Button";
 import { Checkbox } from "@/components/ui/Checkbox";
 import Link from "@/components/Link";
-import { loadGoogleAnalytics, trackPageView } from "@/lib/consent";
 import type { ConsentCategories } from "@/lib/consent";
-import env from "@/lib/env";
 
-const GA_MEASUREMENT_ID =
-    process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 interface PreferenceRow {
     key: "necessary" | "functional" | "analytics";
@@ -65,30 +61,8 @@ export default function CookieConsent(): ReactElement | null {
         if (open) containerRef.current?.focus({ preventScroll: true });
     }, [open, customizing]);
 
-    // Always load GA in Consent Mode so declined visitors can still send
-    // cookieless page-view pings without analytics storage.
-    useEffect(() => {
-        if (GA_MEASUREMENT_ID) {
-            loadGoogleAnalytics(GA_MEASUREMENT_ID, consent?.analytics === true);
-        }
-    }, [consent?.analytics]);
+    
 
-    // Manually track the initial document and SPA navigations. Page views are
-    // sent in either consent state; Consent Mode controls cookie use.
-    useEffect(() => {
-        if (!GA_MEASUREMENT_ID) return;
-
-        if (!initialPageViewSent.current) {
-            trackPageView(router.asPath, document.title, GA_MEASUREMENT_ID);
-            initialPageViewSent.current = true;
-        }
-        const handler = (url: string) =>
-            trackPageView(url, document.title, GA_MEASUREMENT_ID);
-        router.events.on("routeChangeComplete", handler);
-        return () => {
-            router.events.off("routeChangeComplete", handler);
-        };
-    }, [router.asPath, router.events]);
 
     if (!hydrated || !open) return null;
 
